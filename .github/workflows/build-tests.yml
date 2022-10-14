@@ -38,9 +38,12 @@ jobs:
         gcovr . --exclude-unreachable-branches --exclude-throw-branches --xml --output ./coverage.xml --exclude tests/
       
     - name: Upload Coverage Data
-      uses: codecov/codecov-action@v2
+      uses: codecov/codecov-action@v3
       with:
-        path: coverage.xml
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: coverage.xml
+        verbose: true
+        fail_ci_if_error: true
 
   build-windows:
     runs-on: windows-latest
