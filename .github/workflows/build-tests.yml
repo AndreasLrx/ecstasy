@@ -24,10 +24,23 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Configure CMake
-      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBUILD_TEST_SUITE=TRUE -DENABLE_TEST_COVERAGE=TRUE
 
     - name: Build
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} -j
+
+    - name: Run Unit Tests
+      run: cd ${{github.workspace}}/build && ctest -C ${{env.BUILD_TYPE}} --output-on-failure
+
+    - name: Collect Coverage Files
+      run: |
+        find build -iname "*.gcda" -or -iname "*.gcno" -exec cp {} . \;
+        gcovr . --exclude-unreachable-branches --exclude-throw-branches --xml --output ./coverage.xml --exclude tests/
+      
+    - name: Upload Coverage Data
+      uses: codecov/codecov-action@v2
+      with:
+        path: coverage.xml
 
   build-windows:
     runs-on: windows-latest
@@ -37,8 +50,10 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Configure CMake
-      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} 
+      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBUILD_TEST_SUITE=TRUE
 
     - name: Build
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} -j
-      
+
+    - name: Run Unit Tests
+      run: cd ${{github.workspace}}/build && ctest -C ${{env.BUILD_TYPE}} --output-on-failure

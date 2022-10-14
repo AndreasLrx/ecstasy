@@ -40,6 +40,10 @@
                 "BUILD_TEST_SUITE": {
                     "type": "BOOL",
                     "value": "TRUE"
+                },
+                "ENABLE_TEST_COVERAGE": {
+                    "type": "BOOL",
+                    "value": "TRUE"
                 }
             }
         },

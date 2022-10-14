@@ -2,7 +2,7 @@ set(SRCROOT ${PROJECT_SOURCE_DIR}/src/ecstasy)
 set(INCROOT ${PROJECT_SOURCE_DIR}/src/ecstasy)
 
 set(SRC
-    hello.cpp)
+    return_input.cpp)
 set(INCDIRS ${INCROOT})
 
 
@@ -12,6 +12,7 @@ source_group("" FILES ${SRC})
 set(TARGET_NAME ecstasy)
 set(LIB_NAME ${TARGET_NAME})
 
+include(CompilerFlags)
 
 add_library(${LIB_NAME} ${SRC})
 target_include_directories(${LIB_NAME} PRIVATE ${INCDIRS})
