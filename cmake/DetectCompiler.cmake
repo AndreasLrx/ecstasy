@@ -10,10 +10,13 @@
 
 
 if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  message(STATUS "Detected Clang compiler")
   set(COMPILER_TYPE "clang")
 elseif (CMAKE_COMPILER_IS_GNUCXX)
+  message(STATUS "Detected G++ compiler")
   set(COMPILER_TYPE "gcc")
 elseif (MSVC)
+  message(STATUS "Detected MSVC compiler")
   set(COMPILER_TYPE "msvc")
 else ()
   set(COMPILER_TYPE "unknown")
