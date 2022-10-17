@@ -12,6 +12,7 @@
 #ifndef ECSTASY_STORAGE_INSTANCES_HPP_
 #define ECSTASY_STORAGE_INSTANCES_HPP_
 
+#include <concepts>
 #include <memory>
 #include <typeindex>
 #include <unordered_map>
