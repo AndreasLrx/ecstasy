@@ -1,8 +1,7 @@
 set(SRCROOT ${PROJECT_SOURCE_DIR}/src)
 set(INCROOT ${PROJECT_SOURCE_DIR}/src)
 
-set(SRC
-    return_input.cpp)
+set(SRC)
 set(INCDIRS ${INCROOT})
 
 add_subdirectory(ecstasy)
