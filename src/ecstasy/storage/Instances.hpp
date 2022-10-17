@@ -14,6 +14,7 @@
 
 #include <concepts>
 #include <memory>
+#include <stdexcept>
 #include <typeindex>
 #include <unordered_map>
 
