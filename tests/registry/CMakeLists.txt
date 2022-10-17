@@ -1,0 +1,11 @@
+set(SRCROOT ${SRCROOT}/registry)
+
+set(SRC
+    ${SRCROOT}/tests_Registry.cpp
+)
+
+add_ecstasy_test(
+    NAME ecstasy_test_registry
+    DISPLAY_NAME "Ecstasy-Registry-Tests"
+    SOURCES ${SRC}
+)

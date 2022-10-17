@@ -2,7 +2,7 @@
 /// @file System.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
 /// @brief
-/// @version 0.1.0
+/// @version 1.0.0
 /// @date 2022-10-17
 ///
 /// @copyright Copyright (c) ECSTASY 2022
@@ -21,7 +21,7 @@ namespace ecstasy
     /// @brief System interface, base class of all systems.
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-    /// @since 0.0.1 (2022-10-17)
+    /// @since 1.0.0 (2022-10-17)
     ///
     class ISystem {
       public:
@@ -34,7 +34,7 @@ namespace ecstasy
         /// @param[in] registry Reference to the registry running the system.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 0.0.1 (2022-10-17)
+        /// @since 1.0.0 (2022-10-17)
         ///
         virtual void run(Registry &registry) = 0;
     };

@@ -70,7 +70,7 @@
   /// @returns Some value
   /// @throws std::logic_error Error condition.
   /// @author Andreas Leroux (andreas.leroux@epitech.eu)
-  /// @since 0.1.0 (2022-07-09)
+  /// @since 1.0.0 (2022-07-09)
   ///
   int someFunction(int parameter1);
   ```

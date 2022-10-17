@@ -2,7 +2,7 @@
 /// @file Instances.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
 /// @brief
-/// @version 0.1.0
+/// @version 1.0.0
 /// @date 2022-10-17
 ///
 /// @copyright Copyright (c) ECSTASY 2022
@@ -24,7 +24,7 @@ namespace ecstasy
     /// @tparam Base base type for all instances.
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-    /// @since 0.0.1 (2022-10-17)
+    /// @since 1.0.0 (2022-10-17)
     ///
     template <typename Base>
     class Instances {
@@ -33,7 +33,7 @@ namespace ecstasy
         /// @brief Construct a new Instances storage.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 0.0.1 (2022-10-17)
+        /// @since 1.0.0 (2022-10-17)
         ///
         Instances() = default;
 
@@ -41,7 +41,7 @@ namespace ecstasy
         /// @brief Destroy the Instances storage. All elements are freed.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 0.0.1 (2022-10-17)
+        /// @since 1.0.0 (2022-10-17)
         ///
         ~Instances() = default;
 
@@ -51,7 +51,7 @@ namespace ecstasy
         /// @param[in] other instance to copy.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 0.0.1 (2022-10-17)
+        /// @since 1.0.0 (2022-10-17)
         ///
         Instances(const Instances &other) = delete;
 
@@ -68,7 +68,7 @@ namespace ecstasy
         /// @throw std::logic_error If an instance of type @b Derived was already set.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 0.0.1 (2022-10-17)
+        /// @since 1.0.0 (2022-10-17)
         ///
         template <std::derived_from<Base> Derived, typename... Args>
         Derived &emplace(Args &&...args)
@@ -93,7 +93,7 @@ namespace ecstasy
         /// @throw std::logic_error If no instance matching @b type is in the set.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 0.0.1 (2022-10-17)
+        /// @since 1.0.0 (2022-10-17)
         ///
         const Base &get(const std::type_index &type) const
         {
@@ -110,7 +110,7 @@ namespace ecstasy
         /// @throw std::logic_error If no instance of @b Derived is in the set.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 0.0.1 (2022-10-17)
+        /// @since 1.0.0 (2022-10-17)
         ///
         template <std::derived_from<Base> Derived>
         const Derived &get() const
@@ -128,7 +128,7 @@ namespace ecstasy
         /// @throw std::logic_error If no instance matching @b type is in the set.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 0.0.1 (2022-10-17)
+        /// @since 1.0.0 (2022-10-17)
         ///
         Base &get(const std::type_index &type)
         {
@@ -145,7 +145,7 @@ namespace ecstasy
         /// @throw std::logic_error If no instance of @b Derived is in the set.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 0.0.1 (2022-10-17)
+        /// @since 1.0.0 (2022-10-17)
         ///
         template <std::derived_from<Base> Derived>
         Derived &get()
@@ -163,7 +163,7 @@ namespace ecstasy
         /// @throw std::logic_error If no instance matching @b type is in the set.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 0.0.1 (2022-10-17)
+        /// @since 1.0.0 (2022-10-17)
         ///
         Base *getPtr(const std::type_index &type) const
         {
@@ -184,7 +184,7 @@ namespace ecstasy
         /// @throw std::logic_error If no instance of @b Derived is in the set.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 0.0.1 (2022-10-17)
+        /// @since 1.0.0 (2022-10-17)
         ///
         template <std::derived_from<Base> Derived>
         Derived *getPtr() const
@@ -200,7 +200,7 @@ namespace ecstasy
         /// @return Whether the given @b type match one of the instance contained in the set.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 0.0.1 (2022-10-17)
+        /// @since 1.0.0 (2022-10-17)
         ///
         bool contains(const std::type_index &type) const
         {
@@ -215,7 +215,7 @@ namespace ecstasy
         /// @return  Whether the given instance type is contained in the set.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 0.0.1 (2022-10-17)
+        /// @since 1.0.0 (2022-10-17)
         ///
         template <std::derived_from<Base> Derived>
         bool contains() const
@@ -227,7 +227,7 @@ namespace ecstasy
         /// @brief Remove all stored instances.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 0.0.1 (2022-10-17)
+        /// @since 1.0.0 (2022-10-17)
         ///
         void clear()
         {
@@ -240,7 +240,7 @@ namespace ecstasy
         /// @return constexpr const std::unordered_map<std::type_index, std::unique_ptr<Base>>& backing container.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 0.0.1 (2022-10-17)
+        /// @since 1.0.0 (2022-10-17)
         ///
         constexpr const std::unordered_map<std::type_index, std::unique_ptr<Base>> &getInner() const
         {
