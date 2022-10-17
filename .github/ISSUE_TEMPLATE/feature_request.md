@@ -2,7 +2,7 @@
 name: Feature Request
 about: Create a missing feature request to help us improve
 title: "[FEATURE]"
-labels: feature
+labels: enhancement
 assignees: ""
 ---
 
