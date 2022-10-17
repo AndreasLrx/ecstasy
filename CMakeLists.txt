@@ -20,7 +20,7 @@ set(ECSTASY_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/lib/")
 file(MAKE_DIRECTORY ${ECSTASY_OUTPUT_DIRECTORY})
 
 
-add_subdirectory(src/ecstasy)
+add_subdirectory(src)
 
 # Unit testing
 if(BUILD_TEST_SUITE)
