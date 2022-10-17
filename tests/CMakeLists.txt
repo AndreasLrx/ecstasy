@@ -41,7 +41,7 @@ function(add_ecstasy_test)
     add_test(NAME "${DISPLAY_NAME}" COMMAND ${TARGET_NAME} WORKING_DIRECTORY ${WORKING_DIRECTORY})
 endfunction()
 
-add_ecstasy_test(
-    NAME ecstasy_test_setup
-    DISPLAY_NAME "ecstasy setup tests"
-    SOURCES test_return_input.cpp)
+set(INCROOT ${PROJECT_SOURCE_DIR}/tests)
+set(SRCROOT ${PROJECT_SOURCE_DIR}/tests)
+
+add_subdirectory(storage)
