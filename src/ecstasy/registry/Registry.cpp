@@ -10,9 +10,16 @@
 ///
 
 #include "Registry.hpp"
+#include "ecstasy/resource/entity/Entities.hpp"
 
 namespace ecstasy
 {
+    Registry::Registry(bool addEntities)
+    {
+        if (addEntities)
+            addResource<Entities>();
+    }
+
     void Registry::runSystems()
     {
         for (auto &[type, system] : _systems.getInner())
