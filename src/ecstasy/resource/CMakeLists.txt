@@ -6,3 +6,5 @@ set(SRC
     ${SRCROOT}/Resource.hpp
     PARENT_SCOPE
 )
+
+add_subdirectory(entity)
