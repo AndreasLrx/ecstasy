@@ -9,8 +9,8 @@
 ///
 ///
 
-#ifndef UTILS_BITSET_HPP_
-#define UTILS_BITSET_HPP_
+#ifndef UTIL_BITSET_HPP_
+#define UTIL_BITSET_HPP_
 
 #include <bit>
 #include <cstddef>
@@ -272,4 +272,4 @@ namespace util
     std::ostream &operator<<(std::ostream &output, BitSet const &set);
 } // namespace util
 
-#endif // !defined(UTILS_BITSET_HPP_)
+#endif // !defined(UTIL_BITSET_HPP_)

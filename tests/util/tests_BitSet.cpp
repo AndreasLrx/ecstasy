@@ -11,7 +11,7 @@
 
 #include <gtest/gtest.h>
 
-#include "utils/BitSet.hpp"
+#include "util/BitSet.hpp"
 
 namespace util
 {

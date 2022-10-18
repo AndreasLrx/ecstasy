@@ -1,5 +1,5 @@
-set(INCROOT ${INCROOT}/utils)
-set(SRCROOT ${SRCROOT}/utils)
+set(INCROOT ${INCROOT}/util)
+set(SRCROOT ${SRCROOT}/util)
 
 set(SRC 
     ${SRC}

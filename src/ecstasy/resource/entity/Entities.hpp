@@ -16,7 +16,7 @@
 
 #include "Entity.hpp"
 #include "ecstasy/resource/Resource.hpp"
-#include "utils/BitSet.hpp"
+#include "util/BitSet.hpp"
 
 namespace ecstasy
 {
