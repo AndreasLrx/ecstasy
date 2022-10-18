@@ -5,6 +5,7 @@ set(SRC)
 set(INCDIRS ${INCROOT})
 
 add_subdirectory(ecstasy)
+add_subdirectory(utils)
 
 
 # Source groups are a feature in Visual Studio.

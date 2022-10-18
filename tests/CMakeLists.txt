@@ -46,3 +46,4 @@ set(SRCROOT ${PROJECT_SOURCE_DIR}/tests)
 
 add_subdirectory(storage)
 add_subdirectory(registry)
+add_subdirectory(utils)
