@@ -39,6 +39,7 @@ namespace ecstasy
         /// @brief Get the entity identifier,
         ///
         /// @return constexpr Index entity index (identifier)
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-18)
         ///
@@ -52,7 +53,10 @@ namespace ecstasy
         /// If two entities have the same id, it mean the one with the lowest generation is outdated and no longer
         /// exists.
         ///
+        /// @note A generation greater than 0 doesn't mean the entity is always alive.
+        ///
         /// @return constexpr Generation The generation of this entity.
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-18)
         ///

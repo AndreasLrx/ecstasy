@@ -3,7 +3,9 @@ set(SRCROOT ${SRCROOT}/entity)
 
 set(SRC
     ${SRC}
-    ${SRCROOT}/Entity.hpp
+    ${SRCROOT}/Entities.cpp
+    ${INCROOT}/Entities.hpp
+    ${INCROOT}/Entity.hpp
     PARENT_SCOPE
 )
 
