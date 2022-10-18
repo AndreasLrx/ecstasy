@@ -21,8 +21,16 @@ namespace ecstasy
 
     class Registry {
       public:
-        /// @brief Default constructor.
-        Registry() = default;
+        ///
+        /// @brief Construct a new Registry.
+        ///
+        /// @param[in] addEntities Whether or not the @ref Entities @ref Resource should be declared or not in the
+        /// registry.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-19)
+        ///
+        Registry(bool addEntities = true);
 
         /// @brief Default destructor.
         ~Registry() = default;
