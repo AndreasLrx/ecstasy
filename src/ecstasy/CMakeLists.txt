@@ -3,6 +3,7 @@ set(SRCROOT ${SRCROOT}/ecstasy)
 
 
 add_subdirectory(registry)
+add_subdirectory(resource)
 add_subdirectory(storage)
 add_subdirectory(system)
 

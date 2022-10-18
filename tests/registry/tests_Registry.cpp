@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include "ecstasy/registry/Registry.hpp"
+#include "ecstasy/resource/Resource.hpp"
 #include "ecstasy/system/ISystem.hpp"
 
 class A : public ecstasy::ISystem {
@@ -20,7 +21,21 @@ class B : public ecstasy::ISystem {
     }
 };
 
-TEST(Instances, all)
+struct Counter : public ecstasy::Resource {
+    int value;
+
+    Counter(int initial = 0)
+    {
+        this->value = initial;
+    }
+
+    void count()
+    {
+        ++this->value;
+    }
+};
+
+TEST(Registry, systems)
 {
     testing::internal::CaptureStdout();
     ecstasy::Registry registry;
@@ -37,4 +52,19 @@ TEST(Instances, all)
     /// Order depends on type_index except for the first runSystem
     std::string output = testing::internal::GetCapturedStdout();
     EXPECT_TRUE((output == "AABAB") || (output == "ABABA"));
+}
+
+TEST(Registry, resources)
+{
+    ecstasy::Registry registry;
+
+    /// Resource not present
+    EXPECT_THROW(registry.getResource<Counter>(), std::logic_error);
+
+    /// Add resource with an initial value of 5 and add one
+    registry.addResource<Counter>(5).count();
+    EXPECT_EQ(registry.getResource<Counter>().value, 6);
+
+    /// Try to add resource already present
+    EXPECT_THROW(registry.addResource<Counter>(), std::logic_error);
 }

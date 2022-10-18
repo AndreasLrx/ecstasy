@@ -17,6 +17,8 @@
 
 namespace ecstasy
 {
+    class Resource;
+
     class Registry {
       public:
         /// @brief Default constructor.
@@ -47,6 +49,45 @@ namespace ecstasy
         }
 
         ///
+        /// @brief Add a new resource in the registry.
+        ///
+        /// @tparam R Resource to add.
+        /// @tparam Args The type of arguments to pass to the constructor of @b R.
+        ///
+        /// @param[in] args The arguments to pass to the constructor of @b R.
+        ///
+        /// @return R& newly created Resource.
+        ///
+        /// @throw std::logic_error If the resource @b R was already present in the registry.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-18)
+        ///
+        template <std::derived_from<Resource> R, typename... Args>
+        R &addResource(Args &&...args)
+        {
+            return _resources.emplace<R>(std::forward<Args>(args)...);
+        }
+
+        ///
+        /// @brief Get the Resource of type @b R.
+        ///
+        /// @tparam R Type of the resource to fetch.
+        ///
+        /// @return R& Reference to an instance of type @b R.
+        ///
+        /// @throw std::logic_error If the resource @b R was not present in the registry.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-18)
+        ///
+        template <std::derived_from<Resource> R>
+        R &getResource()
+        {
+            return _resources.get<R>();
+        }
+
+        ///
         /// @brief Run a specific system from the registry.
         ///
         /// @tparam S System class to run.
@@ -72,6 +113,7 @@ namespace ecstasy
 
       private:
         Instances<ISystem> _systems;
+        Instances<Resource> _resources;
     };
 } // namespace ecstasy
 
