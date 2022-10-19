@@ -78,12 +78,14 @@ TEST(Registry, resources)
     EXPECT_THROW(registry.addResource<Counter>(), std::logic_error);
 }
 
-TEST(Registry, sotrages)
+TEST(Registry, storages)
 {
     ecstasy::Registry registry;
 
     /// Resource not present
     EXPECT_THROW(registry.getStorage<Counter>(), std::logic_error);
+    EXPECT_THROW(registry.getStorage<A>(), std::logic_error);
+    EXPECT_EQ(registry.getStorageSafe<A>().size(), 0);
 
     /// Add resource with an initial value of 5 and add one
     registry.addStorage<Counter>();

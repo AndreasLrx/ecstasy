@@ -136,6 +136,24 @@ namespace ecstasy
         }
 
         ///
+        /// @brief Get the Storage of a component and create it if not found.
+        ///
+        /// @tparam C Type of the comonent for which we want the storage.
+        ///
+        /// @return getStorageType<C>& Reference to the storage of the component type @b C.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-19)
+        ///
+        template <typename C>
+        getStorageType<C> &getStorageSafe()
+        {
+            if (!_storages.contains<getStorageType<C>>())
+                addStorage<C>();
+            return _storages.get<getStorageType<C>>();
+        }
+
+        ///
         /// @brief Run a specific system from the registry.
         ///
         /// @tparam S System class to run.
