@@ -3,6 +3,8 @@ set(SRCROOT ${SRCROOT}/storage)
 
 set(SRC
     ${SRC}
-    ${SRCROOT}/Instances.hpp
+    ${INCROOT}/Instances.hpp
+    ${INCROOT}/IStorage.hpp
+    ${INCROOT}/MapStorage.hpp
     PARENT_SCOPE
 )

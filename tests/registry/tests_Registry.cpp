@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/resource/Resource.hpp"
+#include "ecstasy/storage/MapStorage.hpp"
 #include "ecstasy/system/ISystem.hpp"
 
 class A : public ecstasy::ISystem {
@@ -35,6 +36,14 @@ struct Counter : public ecstasy::Resource {
     }
 };
 
+namespace test
+{
+    struct Comp {
+    };
+} // namespace test
+
+SET_COMPONENT_STORAGE(test::Comp, ecstasy::MapStorage)
+
 TEST(Registry, systems)
 {
     testing::internal::CaptureStdout();
@@ -67,4 +76,19 @@ TEST(Registry, resources)
 
     /// Try to add resource already present
     EXPECT_THROW(registry.addResource<Counter>(), std::logic_error);
+}
+
+TEST(Registry, storages)
+{
+    ecstasy::Registry registry;
+
+    /// Resource not present
+    EXPECT_THROW(registry.getStorage<Counter>(), std::logic_error);
+    EXPECT_THROW(registry.getStorage<A>(), std::logic_error);
+    EXPECT_EQ(registry.getStorageSafe<A>().size(), 0);
+    EXPECT_EQ(registry.getStorageSafe<A>().size(), 0);
+
+    /// Add resource with an initial value of 5 and add one
+    registry.addStorage<Counter>();
+    EXPECT_EQ(registry.getStorage<Counter>().size(), 0);
 }

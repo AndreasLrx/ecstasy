@@ -12,6 +12,7 @@
 #ifndef ECSTASY_REGISTRY_REGISTRY_HPP_
 #define ECSTASY_REGISTRY_REGISTRY_HPP_
 
+#include "ecstasy/storage/IStorage.hpp"
 #include "ecstasy/storage/Instances.hpp"
 #include "ecstasy/system/ISystem.hpp"
 
@@ -78,6 +79,27 @@ namespace ecstasy
         }
 
         ///
+        /// @brief Add a new component storage in the registry.
+        ///
+        /// @tparam C Component type to register.
+        /// @tparam Args The type of arguments to pass to the constructor of the storage.
+        ///
+        /// @param[in] args The arguments to pass to the constructor of the storage.
+        ///
+        /// @return getStorageType<C>& newly created Storage.
+        ///
+        /// @throw std::logic_error If a storage for component @b C was already present in the registry.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-18)
+        ///
+        template <typename C, typename... Args>
+        getStorageType<C> &addStorage(Args &&...args)
+        {
+            return _storages.emplace<getStorageType<C>>(std::forward<Args>(args)...);
+        }
+
+        ///
         /// @brief Get the Resource of type @b R.
         ///
         /// @tparam R Type of the resource to fetch.
@@ -93,6 +115,42 @@ namespace ecstasy
         R &getResource()
         {
             return _resources.get<R>();
+        }
+
+        ///
+        /// @brief Get the Storage for the component type @b C.
+        ///
+        /// @tparam C Type of the component for which we want the storage.
+        ///
+        /// @return getStorageType<C>& Reference to the storage of the component type @b C.
+        ///
+        /// @throw std::logic_error If no storage for component @b C was found in the registry.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-18)
+        ///
+        template <typename C>
+        getStorageType<C> &getStorage()
+        {
+            return _storages.get<getStorageType<C>>();
+        }
+
+        ///
+        /// @brief Get the Storage of a component and create it if not found.
+        ///
+        /// @tparam C Type of the comonent for which we want the storage.
+        ///
+        /// @return getStorageType<C>& Reference to the storage of the component type @b C.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-19)
+        ///
+        template <typename C>
+        getStorageType<C> &getStorageSafe() noexcept
+        {
+            if (!_storages.contains<getStorageType<C>>())
+                addStorage<C>();
+            return _storages.get<getStorageType<C>>();
         }
 
         ///
@@ -122,6 +180,7 @@ namespace ecstasy
       private:
         Instances<ISystem> _systems;
         Instances<Resource> _resources;
+        Instances<IStorage> _storages;
     };
 } // namespace ecstasy
 
