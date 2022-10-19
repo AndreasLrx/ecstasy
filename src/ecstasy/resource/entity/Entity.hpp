@@ -144,7 +144,7 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-19)
         ///
         template <IsStorage S>
-        const S::Component &operator[](S &storage) const
+        const typename S::Component &operator[](S &storage) const
         {
             return storage[_index];
         }
@@ -164,7 +164,7 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-19)
         ///
         template <IsStorage S>
-        const S::Component &get(S &storage) const
+        const typename S::Component &get(S &storage) const
         {
             return storage[_index];
         }
