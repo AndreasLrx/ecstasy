@@ -146,7 +146,7 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-19)
         ///
         template <typename C>
-        getStorageType<C> &getStorageSafe()
+        getStorageType<C> &getStorageSafe() noexcept
         {
             if (!_storages.contains<getStorageType<C>>())
                 addStorage<C>();

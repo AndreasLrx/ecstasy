@@ -86,6 +86,7 @@ TEST(Registry, storages)
     EXPECT_THROW(registry.getStorage<Counter>(), std::logic_error);
     EXPECT_THROW(registry.getStorage<A>(), std::logic_error);
     EXPECT_EQ(registry.getStorageSafe<A>().size(), 0);
+    EXPECT_EQ(registry.getStorageSafe<A>().size(), 0);
 
     /// Add resource with an initial value of 5 and add one
     registry.addStorage<Counter>();
