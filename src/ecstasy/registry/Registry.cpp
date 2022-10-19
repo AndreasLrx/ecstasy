@@ -14,10 +14,25 @@
 
 namespace ecstasy
 {
+    Registry::EntityBuilder::EntityBuilder(Registry &registry)
+        : _registry(registry), _builder(registry.getResource<Entities>().builder())
+    {
+    }
+
+    Entity Registry::EntityBuilder::build()
+    {
+        return _builder.build();
+    }
+
     Registry::Registry(bool addEntities)
     {
         if (addEntities)
             addResource<Entities>();
+    }
+
+    Registry::EntityBuilder Registry::entityBuilder()
+    {
+        return EntityBuilder(*this);
     }
 
     void Registry::runSystems()

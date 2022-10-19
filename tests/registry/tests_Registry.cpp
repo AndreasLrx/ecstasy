@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/resource/Resource.hpp"
+#include "ecstasy/resource/entity/RegistryEntity.hpp"
 #include "ecstasy/storage/MapStorage.hpp"
 #include "ecstasy/system/ISystem.hpp"
 
@@ -91,4 +92,58 @@ TEST(Registry, storages)
     /// Add resource with an initial value of 5 and add one
     registry.addStorage<Counter>();
     EXPECT_EQ(registry.getStorage<Counter>().size(), 0);
+}
+
+struct Vector2i {
+    int x;
+    int y;
+
+    Vector2i(int px, int py) : x(px), y(py)
+    {
+    }
+};
+
+struct Position {
+    Vector2i v;
+
+    Position(int x, int y) : v(x, y)
+    {
+    }
+};
+
+struct Velocity {
+    Vector2i v;
+
+    Velocity(int x, int y) : v(x, y)
+    {
+    }
+};
+
+struct Size {
+    Vector2i v;
+
+    Size(int x, int y) : v(x, y)
+    {
+    }
+};
+
+TEST(Registry, EntityBuilder)
+{
+    ecstasy::Registry registry;
+
+    /// Build the entity
+    ecstasy::Registry::EntityBuilder builder = registry.entityBuilder();
+    builder.with<Position>(1, 2).with<Velocity>(3, 4).with<Size>(4, 5);
+    EXPECT_THROW(builder.with<Position>(42, 84), std::logic_error);
+    ecstasy::RegistryEntity e(builder.build(), registry);
+
+    /// Mess with the builder after build done
+    EXPECT_THROW(builder.with<Vector2i>(5, 2), std::logic_error);
+    EXPECT_THROW(builder.build(), std::logic_error);
+
+    /// Test if entity has all attached components
+    EXPECT_TRUE(e.has<Position>());
+    EXPECT_TRUE(e.has<Velocity>());
+    EXPECT_TRUE(e.has<Size>());
+    EXPECT_FALSE(e.has<Vector2i>());
 }
