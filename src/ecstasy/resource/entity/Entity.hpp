@@ -207,7 +207,7 @@ namespace ecstasy
             return storage.contains(_index);
         }
 
-      private:
+      protected:
         Index _index;
         Generation _generation;
 
