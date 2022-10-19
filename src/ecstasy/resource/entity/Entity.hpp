@@ -14,6 +14,8 @@
 
 #include <compare>
 #include <stddef.h>
+#include <stdexcept>
+
 #include "ecstasy/storage/IStorage.hpp"
 #include "ecstasy/storage/StorageConcepts.hpp"
 
@@ -81,8 +83,6 @@ namespace ecstasy
         ///
         /// @brief Add a component to the entity.
         ///
-        /// @note No check is done to see if the entity already has the component.
-        ///
         /// @tparam C Component type.
         /// @tparam Args Type of the arguments to forward to the component constructor.
         ///
@@ -91,12 +91,17 @@ namespace ecstasy
         ///
         /// @return C& Reference to the newly created component.
         ///
+        /// @throw std::logic_error If the component was already present.
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-19)
         ///
         template <IsStorage S, typename... Args>
         S::Component &add(S &storage, Args &&...args)
         {
+            if (storage.contains(_index))
+                throw std::logic_error(std::string("Trying to add twice the component ")
+                    + typeid(typename S::Component).name() + " on the same entity.");
             return storage.emplace(_index, std::forward<Args>(args)...);
         }
 
