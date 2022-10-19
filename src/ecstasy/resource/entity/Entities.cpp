@@ -13,6 +13,25 @@
 
 namespace ecstasy
 {
+    Entities::Builder::Builder(Entities &parent, Entity entity) : _parent(parent), _entity(entity), _built(false)
+    {
+    }
+
+    void Entities::Builder::assertNotBuilt() const
+    {
+        if (_built)
+            throw std::logic_error(
+                "Try to change entity using an Entities::Builder already consumed (build() has been called)");
+    }
+
+    Entity Entities::Builder::build()
+    {
+        assertNotBuilt();
+        _built = true;
+        _parent._alive[_entity.getIndex()] = true;
+        return _entity;
+    }
+
     Entities::Entities()
     {
         /// Add sentinel to allow use of firstUnset
@@ -37,6 +56,11 @@ namespace ecstasy
         _alive[firstDead] = alive;
 
         return Entity(firstDead, _generations[firstDead]);
+    }
+
+    Entities::Builder Entities::builder()
+    {
+        return Builder(*this, create(false));
     }
 
     Entity Entities::get(Entity::Index id) const

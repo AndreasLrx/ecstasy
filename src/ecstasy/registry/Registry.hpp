@@ -12,8 +12,10 @@
 #ifndef ECSTASY_REGISTRY_REGISTRY_HPP_
 #define ECSTASY_REGISTRY_REGISTRY_HPP_
 
+#include "ecstasy/resource/entity/Entities.hpp"
 #include "ecstasy/storage/IStorage.hpp"
 #include "ecstasy/storage/Instances.hpp"
+#include "ecstasy/storage/StorageConcepts.hpp"
 #include "ecstasy/system/ISystem.hpp"
 
 namespace ecstasy
@@ -22,6 +24,78 @@ namespace ecstasy
 
     class Registry {
       public:
+        ///
+        /// @brief Entity Builder using the registry storages.
+        ///
+        /// @note Use Registry::entityBuilder() to create an instance.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-19)
+        ///
+        class EntityBuilder {
+          public:
+            ///
+            /// @brief Copy constructor is deleted.
+            ///
+            /// @param[in] other Builder to copy.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-19)
+            ///
+            EntityBuilder(const EntityBuilder &other) = delete;
+
+            ///
+            /// @brief Add a component to the builder target entity.
+            ///
+            /// @tparam C Component type.
+            /// @tparam Args Type of the Component constructor parameters
+            ///
+            /// @param[in] args Arguments to forward to the component constructor.
+            ///
+            /// @return EntityBuilder& @b this.
+            ///
+            /// @throw std::logic_error If the builder was already consumed or if the entity already has the
+            /// component.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-19)
+            ///
+            template <typename C, typename... Args>
+            EntityBuilder &with(Args &&...args)
+            {
+                _builder.with(_registry.getStorageSafe<C>(), std::forward<Args>(args)...);
+                return *this;
+            }
+
+            ///
+            /// @brief Finalize the entity, making it alive.
+            ///
+            /// @return Entity Newly created entity.
+            ///
+            /// @throw std::logic_error If the builder was already consumed.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-19)
+            ///
+            Entity build();
+
+          private:
+            Registry &_registry;
+            Entities::Builder _builder;
+
+            ///
+            /// @brief Construct a new EntityBuilder, this method can only be called by an @ref Registry.
+            ///
+            /// @param[in] builder Internal Entities builder.
+            /// @param[in] entity Entity target (modified by the builder).
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-19)
+            ///
+            EntityBuilder(Registry &registry);
+
+            friend Registry;
+        };
         ///
         /// @brief Construct a new Registry.
         ///
@@ -35,6 +109,16 @@ namespace ecstasy
 
         /// @brief Default destructor.
         ~Registry() = default;
+
+        ///
+        /// @brief Create a new entity builder.
+        ///
+        /// @return EntityBuilder Newly created builder.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-19)
+        ///
+        [[nodiscard]] EntityBuilder entityBuilder();
 
         ///
         /// @brief Add a new system in the registry.
@@ -82,9 +166,6 @@ namespace ecstasy
         /// @brief Add a new component storage in the registry.
         ///
         /// @tparam C Component type to register.
-        /// @tparam Args The type of arguments to pass to the constructor of the storage.
-        ///
-        /// @param[in] args The arguments to pass to the constructor of the storage.
         ///
         /// @return getStorageType<C>& newly created Storage.
         ///
@@ -93,10 +174,10 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-18)
         ///
-        template <typename C, typename... Args>
-        getStorageType<C> &addStorage(Args &&...args)
+        template <typename C>
+        getStorageType<C> &addStorage()
         {
-            return _storages.emplace<getStorageType<C>>(std::forward<Args>(args)...);
+            return _storages.emplace<getStorageType<C>>();
         }
 
         ///

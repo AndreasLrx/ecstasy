@@ -22,14 +22,17 @@ namespace ecstasy
     ///
     /// @brief Associative Map to store entity components
     ///
-    /// @tparam Component Component type.
+    /// @tparam C Component type.
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-10-19)
     ///
-    template <typename Component>
+    template <typename C>
     class MapStorage : public IStorage {
       public:
+        /// @brief IsStorage constraint
+        using Component = C;
+
         ///
         /// @brief Construct a new Map Storage for a given Component type.
         ///
