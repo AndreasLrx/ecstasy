@@ -81,22 +81,22 @@ namespace ecstasy
         ///
         /// @brief Add a new component storage in the registry.
         ///
-        /// @tparam S Storage to add.
-        /// @tparam Args The type of arguments to pass to the constructor of @b S.
+        /// @tparam C Component type to register.
+        /// @tparam Args The type of arguments to pass to the constructor of the storage.
         ///
-        /// @param[in] args The arguments to pass to the constructor of @b S.
+        /// @param[in] args The arguments to pass to the constructor of the storage.
         ///
-        /// @return S& newly created Storage.
+        /// @return getStorageType<C>& newly created Storage.
         ///
-        /// @throw std::logic_error If the storage @b S was already present in the registry.
+        /// @throw std::logic_error If a storage for component @b C was already present in the registry.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-18)
         ///
-        template <std::derived_from<IStorage> S, typename... Args>
-        S &addStorage(Args &&...args)
+        template <typename C, typename... Args>
+        getStorageType<C> &addStorage(Args &&...args)
         {
-            return _storages.emplace<S>(std::forward<Args>(args)...);
+            return _storages.emplace<getStorageType<C>>(std::forward<Args>(args)...);
         }
 
         ///
@@ -118,21 +118,21 @@ namespace ecstasy
         }
 
         ///
-        /// @brief Get the Storage of type @b S.
+        /// @brief Get the Storage for the component type @b C.
         ///
-        /// @tparam S Type of the storage to fetch.
+        /// @tparam C Type of the component for which we want the storage.
         ///
-        /// @return S& Reference to an instance of type @b S.
+        /// @return getStorageType<C>& Reference to the storage of the component type @b C.
         ///
-        /// @throw std::logic_error If the storage @b S was not present in the registry.
+        /// @throw std::logic_error If no storage for component @b C was found in the registry.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-18)
         ///
-        template <std::derived_from<IStorage> S>
-        S &getStorage()
+        template <typename C>
+        getStorageType<C> &getStorage()
         {
-            return _storages.get<S>();
+            return _storages.get<getStorageType<C>>();
         }
 
         ///

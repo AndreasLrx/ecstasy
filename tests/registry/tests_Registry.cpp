@@ -36,6 +36,14 @@ struct Counter : public ecstasy::Resource {
     }
 };
 
+namespace test
+{
+    struct Comp {
+    };
+} // namespace test
+
+SET_COMPONENT_STORAGE(test::Comp, ecstasy::MapStorage)
+
 TEST(Registry, systems)
 {
     testing::internal::CaptureStdout();
@@ -75,9 +83,9 @@ TEST(Registry, sotrages)
     ecstasy::Registry registry;
 
     /// Resource not present
-    EXPECT_THROW(registry.getStorage<ecstasy::MapStorage<Counter>>(), std::logic_error);
+    EXPECT_THROW(registry.getStorage<Counter>(), std::logic_error);
 
     /// Add resource with an initial value of 5 and add one
-    registry.addStorage<ecstasy::MapStorage<Counter>>();
-    EXPECT_EQ(registry.getStorage<ecstasy::MapStorage<Counter>>().size(), 0);
+    registry.addStorage<Counter>();
+    EXPECT_EQ(registry.getStorage<Counter>().size(), 0);
 }
