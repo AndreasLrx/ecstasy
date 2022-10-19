@@ -2,6 +2,7 @@ set(SRCROOT ${SRCROOT}/storage)
 
 set(SRC
     ${SRCROOT}/tests_Instances.cpp
+    ${SRCROOT}/tests_MapStorage.cpp
 )
 
 add_ecstasy_test(
