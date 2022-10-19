@@ -83,9 +83,6 @@ namespace ecstasy
         /// @brief Add a new component storage in the registry.
         ///
         /// @tparam C Component type to register.
-        /// @tparam Args The type of arguments to pass to the constructor of the storage.
-        ///
-        /// @param[in] args The arguments to pass to the constructor of the storage.
         ///
         /// @return getStorageType<C>& newly created Storage.
         ///
@@ -94,10 +91,10 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-18)
         ///
-        template <typename C, typename... Args>
-        getStorageType<C> &addStorage(Args &&...args)
+        template <typename C>
+        getStorageType<C> &addStorage()
         {
-            return _storages.emplace<getStorageType<C>>(std::forward<Args>(args)...);
+            return _storages.emplace<getStorageType<C>>();
         }
 
         ///
