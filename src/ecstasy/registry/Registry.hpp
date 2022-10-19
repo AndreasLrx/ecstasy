@@ -12,6 +12,7 @@
 #ifndef ECSTASY_REGISTRY_REGISTRY_HPP_
 #define ECSTASY_REGISTRY_REGISTRY_HPP_
 
+#include "ecstasy/storage/IStorage.hpp"
 #include "ecstasy/storage/Instances.hpp"
 #include "ecstasy/system/ISystem.hpp"
 
@@ -78,6 +79,27 @@ namespace ecstasy
         }
 
         ///
+        /// @brief Add a new component storage in the registry.
+        ///
+        /// @tparam S Storage to add.
+        /// @tparam Args The type of arguments to pass to the constructor of @b S.
+        ///
+        /// @param[in] args The arguments to pass to the constructor of @b S.
+        ///
+        /// @return S& newly created Storage.
+        ///
+        /// @throw std::logic_error If the storage @b S was already present in the registry.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-18)
+        ///
+        template <std::derived_from<IStorage> S, typename... Args>
+        S &addStorage(Args &&...args)
+        {
+            return _storages.emplace<S>(std::forward<Args>(args)...);
+        }
+
+        ///
         /// @brief Get the Resource of type @b R.
         ///
         /// @tparam R Type of the resource to fetch.
@@ -93,6 +115,24 @@ namespace ecstasy
         R &getResource()
         {
             return _resources.get<R>();
+        }
+
+        ///
+        /// @brief Get the Storage of type @b S.
+        ///
+        /// @tparam S Type of the storage to fetch.
+        ///
+        /// @return S& Reference to an instance of type @b S.
+        ///
+        /// @throw std::logic_error If the storage @b S was not present in the registry.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-18)
+        ///
+        template <std::derived_from<IStorage> S>
+        S &getStorage()
+        {
+            return _storages.get<S>();
         }
 
         ///
@@ -122,6 +162,7 @@ namespace ecstasy
       private:
         Instances<ISystem> _systems;
         Instances<Resource> _resources;
+        Instances<IStorage> _storages;
     };
 } // namespace ecstasy
 

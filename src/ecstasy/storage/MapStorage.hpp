@@ -14,6 +14,7 @@
 
 #include <unordered_map>
 
+#include "IStorage.hpp"
 #include "ecstasy/resource/entity/Entity.hpp"
 
 namespace ecstasy
@@ -21,13 +22,13 @@ namespace ecstasy
     ///
     /// @brief Associative Map to store entity components
     ///
-    /// @tparam Component
+    /// @tparam Component Component type.
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-10-19)
     ///
     template <typename Component>
-    class MapStorage {
+    class MapStorage : public IStorage {
       public:
         ///
         /// @brief Construct a new Map Storage for a given Component type.
@@ -129,6 +130,19 @@ namespace ecstasy
         bool contains(Entity::Index index) const
         {
             return _components.find(index) != _components.end();
+        }
+
+        ///
+        /// @brief Get the number of @b Component instances.
+        ///
+        /// @return size_t number of @b Component instances.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-19)
+        ///
+        size_t size() const noexcept
+        {
+            return _components.size();
         }
 
       private:
