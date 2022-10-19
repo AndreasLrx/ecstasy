@@ -2,6 +2,7 @@ set(SRCROOT ${SRCROOT}/entity)
 
 set(SRC
     ${SRCROOT}/tests_Entities.cpp
+    ${SRCROOT}/tests_Entity.cpp
 )
 
 add_ecstasy_test(

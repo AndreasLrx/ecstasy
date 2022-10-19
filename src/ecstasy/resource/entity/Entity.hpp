@@ -14,6 +14,8 @@
 
 #include <compare>
 #include <stddef.h>
+#include "ecstasy/storage/IStorage.hpp"
+#include "ecstasy/storage/StorageConcepts.hpp"
 
 namespace ecstasy
 {
@@ -74,6 +76,130 @@ namespace ecstasy
         constexpr auto operator<=>(Entity const &other) const
         {
             return this->_index <=> other._index;
+        }
+
+        ///
+        /// @brief Add a component to the entity.
+        ///
+        /// @note No check is done to see if the entity already has the component.
+        ///
+        /// @tparam C Component type.
+        /// @tparam Args Type of the arguments to forward to the component constructor.
+        ///
+        /// @param[in] storage Storage for type @b C.
+        /// @param[in] args Arguments to forward to the component constructor.
+        ///
+        /// @return C& Reference to the newly created component.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-19)
+        ///
+        template <IsStorage S, typename... Args>
+        S::Component &add(S &storage, Args &&...args)
+        {
+            return storage.emplace(_index, std::forward<Args>(args)...);
+        }
+
+        ///
+        /// @brief If the entity already has an instance of component @b C, returns it. If it doesn't, create a new
+        /// instance of @b C for this entity and return it.
+        ///
+        /// @note You should use @ref add to create new components with constructor parameters and @ref get to retrieve
+        /// them.
+        ///
+        /// @tparam C Type of the component to retrieve.
+        ///
+        /// @param[in] storage Storage for type @b C.
+        ///
+        /// @return C& Reference to the entity instance of @b C associated to the entity. May be a new component.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-19)
+        ///
+        template <IsStorage S>
+        S::Component &operator[](S &storage)
+        {
+            if (!storage.contains(_index))
+                return storage.emplace(_index);
+            return storage[_index];
+        }
+
+        ///
+        /// @brief Try to fetch the instance of component @b C associated to the current entity.
+        ///
+        /// @tparam C Type of the component to retrieve.
+        ///
+        /// @param[in] storage Storage for type @b C.
+        ///
+        /// @return const C& Reference to the entity instance of @b C associated to the entity.
+        ///
+        /// @throw std::out_of_range If no associated instance found.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-19)
+        ///
+        template <IsStorage S>
+        const S::Component &operator[](S &storage) const
+        {
+            return storage[_index];
+        }
+
+        ///
+        /// @brief Try to fetch the instance of component @b C associated to the current entity.
+        ///
+        /// @tparam C Type of the component to retrieve.
+        ///
+        /// @param[in] storage Storage for type @b C.
+        ///
+        /// @return const C& Const reference to the entity instance of @b C associated to the entity.
+        ///
+        /// @throw std::out_of_range If no associated instance found.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-19)
+        ///
+        template <IsStorage S>
+        const S::Component &get(S &storage) const
+        {
+            return storage[_index];
+        }
+
+        ///
+        /// @brief Try to fetch the instance of component @b C associated to the current entity.
+        ///
+        /// @tparam C Type of the component to retrieve.
+        ///
+        /// @param[in] storage Storage for type @b C.
+        ///
+        /// @return C& Reference to the entity instance of @b C associated to the entity.
+        ///
+        /// @throw std::out_of_range If no associated instance found.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-19)
+        ///
+        template <IsStorage S>
+        S::Component &get(S &storage)
+        {
+            return storage[_index];
+        }
+
+        ///
+        /// @brief Test if the entity has an associated component in the storage @b S.
+        ///
+        /// @tparam S Storage of a component.
+        ///
+        /// @param[in] storage Storage for the component type searched.
+        ///
+        /// @return bool True if the entity has an associated entry in the storage.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-19)
+        ///
+        template <IsStorage S>
+        bool has(S &storage) const
+        {
+            return storage.contains(_index);
         }
 
       private:

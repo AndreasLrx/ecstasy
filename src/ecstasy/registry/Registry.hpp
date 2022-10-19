@@ -14,6 +14,7 @@
 
 #include "ecstasy/storage/IStorage.hpp"
 #include "ecstasy/storage/Instances.hpp"
+#include "ecstasy/storage/StorageConcepts.hpp"
 #include "ecstasy/system/ISystem.hpp"
 
 namespace ecstasy

@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include "ecstasy/resource/entity/Entities.hpp"
 
-TEST(Registry, systems)
+TEST(Entities, all)
 {
     ecstasy::Entities entities;
 
