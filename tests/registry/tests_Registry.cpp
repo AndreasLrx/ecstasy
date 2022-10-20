@@ -184,11 +184,11 @@ TEST(Registry, functionnal)
     ecstasy::RegistryEntity e1 =
         ecstasy::RegistryEntity(registry.entityBuilder().with<Position>(0, 0).build(), registry);
     ecstasy::RegistryEntity e2 =
-        ecstasy::RegistryEntity(registry.entityBuilder().with<Position>(0, 0).with<Density>(3.f).build(), registry);
-    ecstasy::RegistryEntity e3 = ecstasy::RegistryEntity(
-        registry.entityBuilder().with<Position>(0, 0).with<Velocity>(2.f, 4.f).build(), registry);
+        ecstasy::RegistryEntity(registry.entityBuilder().with<Position>(0, 0).with<Density>(3).build(), registry);
+    ecstasy::RegistryEntity e3 =
+        ecstasy::RegistryEntity(registry.entityBuilder().with<Position>(0, 0).with<Velocity>(2, 4).build(), registry);
     ecstasy::RegistryEntity e4 = ecstasy::RegistryEntity(
-        registry.entityBuilder().with<Position>(0, 0).with<Velocity>(1.f, 2.f).with<Density>(2).build(), registry);
+        registry.entityBuilder().with<Position>(0, 0).with<Velocity>(1, 2).with<Density>(2).build(), registry);
 
     /// Systems
     for (int i = 0; i < 10; i++) {
