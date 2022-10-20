@@ -3,7 +3,7 @@ set(SRCROOT ${SRCROOT}/query)
 
 set(SRC
     ${SRC}
-    ${INCROOT}/Query.cpp
-    ${SRCROOT}/Query.hpp
+    ${INCROOT}/Query.hpp
+    ${INCROOT}/QueryConcepts.hpp
     PARENT_SCOPE
 )

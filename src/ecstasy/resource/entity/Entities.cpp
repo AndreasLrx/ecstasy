@@ -84,4 +84,10 @@ namespace ecstasy
     {
         return entity.getGeneration() != 0 && entity.getIndex() < _generations.size() && _alive[entity.getIndex()];
     }
+
+    Entity Entities::getQueryData(Entity::Index index) const
+    {
+        return get(index);
+    }
+
 } // namespace ecstasy

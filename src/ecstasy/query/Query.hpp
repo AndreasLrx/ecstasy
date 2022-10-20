@@ -17,17 +17,9 @@ namespace ecstasy
     class Entities;
     class IStorage;
 
+    template <Queryable First, Queryable... Others>
     class Query {
       public:
-        ///
-        /// @brief
-        ///
-        /// @tparam First
-        /// @tparam Others
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-20)
-        ///
-        template <Queryable First, Queryable... Others>
         class Iterator {
           public:
             using iterator_category = std::input_iterator_tag;
@@ -47,17 +39,17 @@ namespace ecstasy
             {
             }
 
-            Iterator(Iterator<First, Others...> const &) = default;
+            Iterator(Iterator const &) = default;
 
-            Iterator<First, Others...> &operator=(Iterator<First, Others...> const &) = default;
+            Iterator &operator=(Iterator const &) = default;
 
-            Iterator(Iterator<First, Others...> &&) = default;
-            Iterator<First, Others...> &operator=(Iterator<First, Others...> &&other) = default;
+            Iterator(Iterator &&) = default;
+            Iterator &operator=(Iterator &&other) = default;
 
             /// @note It is Undefined Behavior to compare two iterators that do not belong to the same query.
             ///
             /// @returns Whether the two iterators are equal.
-            constexpr bool operator==(Iterator<First, Others...> const &other) const
+            constexpr bool operator==(Iterator const &other) const
             {
                 return this->_pos == other._pos;
             }
@@ -65,7 +57,7 @@ namespace ecstasy
             /// @note It is Undefined Behavior to compare two iterators that do not belong to the same container.
             ///
             /// @returns Whether the two iterators are not equal.
-            constexpr bool operator!=(Iterator<First, Others...> const &other) const
+            constexpr bool operator!=(Iterator const &other) const
             {
                 return this->_pos != other._pos;
             }
@@ -87,7 +79,7 @@ namespace ecstasy
             /// @note It is Undefined Behavior to increment the iterator past the end sentinel.
             ///
             /// @returns A reference to this iterator.
-            Iterator<First, Others...> &operator++()
+            Iterator &operator++()
             {
                 this->_pos = this->_mask.get().firstSet(this->_pos + 1);
                 return *this;
@@ -99,9 +91,9 @@ namespace ecstasy
             /// @note This creates a copy of the iterator!
             ///
             /// @returns The incremented copy.
-            Iterator<First, Others...> operator++(int)
+            Iterator operator++(int)
             {
-                Iterator<First, Others...> result = *this;
+                Iterator result = *this;
 
                 ++result->_pos;
                 return result;
@@ -119,37 +111,26 @@ namespace ecstasy
             }
         };
 
-        ///
-        /// @brief Construct a new Query initialized with the entities alive.
-        ///
-        /// @param[in] entities Entities manager.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-20)
-        ///
-        Query(Entities &entities);
-
-        ///
-        /// @brief Perform a AND request using the given component storage.
-        ///
-        /// @param[in] storage Component storage.
-        ///
-        /// @return Query& @b this.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-20)
-        ///
-        Query &where(IStorage &storage);
-
-        template <Queryable First, Queryable... Others>
-        Iterator<First, Others...> fetch(First &first, Others &...others)
+        Query(First &first, Others &...others) : _storages(first, others...)
         {
-            util::BitSet mask = _mask;
+            this->_mask = (util::BitSet(first.getMask()) &= ... &= others.getMask());
 
             // push a sentinel bit at the end.
-            mask.push(true);
-            return Iterator<First, Others...>(
-                mask, std::tuple<First &, Others &...>(first, others...), mask.firstSet());
+            this->_mask.push(true);
+            this->_begin = this->_mask.firstSet();
+        }
+
+        /// @returns A @ref std::forward_iterator to the first available entity, or a value that is equal to @ref end()
+        /// if not found.
+        Iterator begin() const noexcept
+        {
+            return Iterator(this->_mask, this->_storages, this->_begin);
+        }
+
+        /// @returns An iterator sentinel value, do not deference it.
+        Iterator end() const noexcept
+        {
+            return Iterator(this->_mask, this->_storages, this->_mask.size() - 1);
         }
 
         ///
@@ -167,6 +148,8 @@ namespace ecstasy
 
       private:
         util::BitSet _mask;
+        std::tuple<First &, Others &...> _storages;
+        size_t _begin;
     };
 } // namespace ecstasy
 

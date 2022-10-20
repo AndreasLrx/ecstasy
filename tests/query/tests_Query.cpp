@@ -30,29 +30,24 @@ TEST(Query, where)
             sizes.emplace(i, i * 10, i * 2);
     }
 
-    ecstasy::Query query(entities);
-    GTEST_ASSERT_EQ(query.getMask(), entities.getMask());
-    query.where(positions);
-    GTEST_ASSERT_NE(query.getMask(), entities.getMask());
-    GTEST_ASSERT_EQ(query.getMask(), util::BitSet("0101010101"));
-    query.where(sizes);
-    GTEST_ASSERT_EQ(query.getMask(), util::BitSet("0101000001"));
+    auto query3 = ecstasy::Query(entities, positions, sizes);
+    GTEST_ASSERT_EQ(query3.getMask(), util::BitSet("1101000001"));
 
-    auto it = query.fetch(positions, sizes);
+    auto it = query3.begin();
     /// 0
-    // auto [pos, size] = *it;
-    // GTEST_ASSERT_EQ(pos.y, 0);
-    // GTEST_ASSERT_EQ(size.y, 0);
+    auto [e, pos, size] = *it;
+    GTEST_ASSERT_EQ(pos.y, 0);
+    GTEST_ASSERT_EQ(size.y, 0);
 
-    // /// 6
-    // ++it;
-    // auto [pos6, size6] = *it;
-    // GTEST_ASSERT_EQ(pos6.y, 60);
-    // GTEST_ASSERT_EQ(size6.y, 12);
+    /// 6
+    ++it;
+    auto [e2, pos6, size6] = *it;
+    GTEST_ASSERT_EQ(pos6.y, 60);
+    GTEST_ASSERT_EQ(size6.y, 12);
 
-    // /// 8
-    // ++it;
-    // auto [pos8, size8] = *it;
-    // GTEST_ASSERT_EQ(pos8.y, 80);
-    // GTEST_ASSERT_EQ(size8.y, 16);
+    /// 8
+    ++it;
+    auto [e3, pos8, size8] = *it;
+    GTEST_ASSERT_EQ(pos8.y, 80);
+    GTEST_ASSERT_EQ(size8.y, 16);
 }
