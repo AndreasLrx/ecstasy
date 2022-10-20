@@ -9,6 +9,10 @@
 ///
 ///
 
+#include "QueryConcepts.hpp"
+#include "ecstasy/storage/IStorage.hpp"
+#include "ecstasy/storage/StorageConcepts.hpp"
+
 #include "Query.hpp"
 #include "ecstasy/resource/entity/Entities.hpp"
 
