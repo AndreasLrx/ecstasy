@@ -1,4 +1,5 @@
 #include <gtest/gtest.h>
+#include <math.h>
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/resource/Resource.hpp"
 #include "ecstasy/resource/entity/RegistryEntity.hpp"
@@ -101,6 +102,11 @@ struct Vector2i {
     Vector2i(int px, int py) : x(px), y(py)
     {
     }
+
+    bool operator==(const Vector2i &other) const
+    {
+        return x == other.x && y == other.y;
+    }
 };
 
 struct Position {
@@ -146,4 +152,60 @@ TEST(Registry, EntityBuilder)
     EXPECT_TRUE(e.has<Velocity>());
     EXPECT_TRUE(e.has<Size>());
     EXPECT_FALSE(e.has<Vector2i>());
+}
+
+using Density = float;
+
+struct Gravity : public ecstasy::ISystem {
+    void run(ecstasy::Registry &registry) override final
+    {
+        for (auto [entity, velocity, density] : registry.query<ecstasy::Entities, Velocity, Density>()) {
+            velocity.v.y += 2 * density;
+            std::cerr << "GRAVITYYYY" << std::endl;
+        }
+    }
+};
+
+struct Movement : public ecstasy::ISystem {
+    void run(ecstasy::Registry &registry) override final
+    {
+        for (auto [position, velocity] : registry.query<Position, Velocity>()) {
+            position.v.x += velocity.v.x;
+            position.v.y += velocity.v.y;
+        }
+    }
+};
+
+TEST(Registry, functionnal)
+{
+    ecstasy::Registry registry;
+
+    registry.addSystem<Gravity>();
+    registry.addSystem<Movement>();
+
+    ecstasy::RegistryEntity e1 =
+        ecstasy::RegistryEntity(registry.entityBuilder().with<Position>(0, 0).build(), registry);
+    ecstasy::RegistryEntity e2 =
+        ecstasy::RegistryEntity(registry.entityBuilder().with<Position>(0, 0).with<Density>(3.f).build(), registry);
+    ecstasy::RegistryEntity e3 = ecstasy::RegistryEntity(
+        registry.entityBuilder().with<Position>(0, 0).with<Velocity>(2.f, 4.f).build(), registry);
+    ecstasy::RegistryEntity e4 = ecstasy::RegistryEntity(
+        registry.entityBuilder().with<Position>(0, 0).with<Velocity>(1.f, 2.f).with<Density>(2).build(), registry);
+
+    /// Systems
+    for (int i = 0; i < 10; i++) {
+        /// E1
+        GTEST_ASSERT_EQ(e1.get<Position>().v, Vector2i(0, 0));
+        /// E2
+        GTEST_ASSERT_EQ(e2.get<Position>().v, Vector2i(0, 0));
+        /// E3
+        GTEST_ASSERT_EQ(e3.get<Position>().v, Vector2i(2 * i, 4 * i));
+        GTEST_ASSERT_EQ(e3.get<Velocity>().v, Vector2i(2, 4));
+        /// E4
+        GTEST_ASSERT_EQ(e4.get<Position>().v, Vector2i(1 * i, 2 * i + 4 * ((i * (i + 1)) / 2)));
+        GTEST_ASSERT_EQ(e4.get<Velocity>().v, Vector2i(1, 2 + 4 * i));
+
+        registry.runSystem<Gravity>();
+        registry.runSystem<Movement>();
+    }
 }
