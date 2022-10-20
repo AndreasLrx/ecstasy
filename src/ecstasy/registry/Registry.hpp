@@ -253,11 +253,12 @@ namespace ecstasy
         }
 
         ///
-        /// @brief Construct a query for the given components joined with the entities.
+        /// @brief Construct a query for the given components and a Queryable Resource (made for Entities).
         ///
+        /// @tparam R Queryable Resource, it will often be Entities.
         /// @tparam Cs Component types.
         ///
-        /// @return Query<Entities, getStorageType<Cs>...> New query which can be iterated.
+        /// @return Query<R, getStorageType<Cs>...> New query which can be iterated.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-20)

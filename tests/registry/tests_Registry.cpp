@@ -154,15 +154,13 @@ TEST(Registry, EntityBuilder)
     EXPECT_FALSE(e.has<Vector2i>());
 }
 
-using Density = float;
+using Density = int;
 
 struct Gravity : public ecstasy::ISystem {
     void run(ecstasy::Registry &registry) override final
     {
-        for (auto [entity, velocity, density] : registry.query<ecstasy::Entities, Velocity, Density>()) {
+        for (auto [entity, velocity, density] : registry.query<ecstasy::Entities, Velocity, Density>())
             velocity.v.y += 2 * density;
-            std::cerr << "GRAVITYYYY" << std::endl;
-        }
     }
 };
 
