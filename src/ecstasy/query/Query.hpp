@@ -17,9 +17,27 @@ namespace ecstasy
     class Entities;
     class IStorage;
 
+    ///
+    /// @brief Query components from multiple storage following logical rules.
+    ///
+    /// @note At the moment, it only supports and clauses (CompA && CompB). It will have to be reworked to support
+    /// logical conditions.
+    ///
+    /// @tparam First First storage class.
+    /// @tparam Others All other storage classes.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2022-10-20)
+    ///
     template <Queryable First, Queryable... Others>
     class Query {
       public:
+        ///
+        /// @brief Query Iterator.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-20)
+        ///
         class Iterator {
           public:
             using iterator_category = std::input_iterator_tag;
@@ -28,69 +46,159 @@ namespace ecstasy
             using pointer = value_type *;
             using reference = value_type &;
 
-            // All iterators must be constructible, copy-constructible, copy-assignable, destructible and swappable.
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+            // All iterators must be constructible, copy-constructible, copy-assignable, destructible and swappable.///
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            ///
+            /// @brief Construct a new uniitialized Iterator.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-20)
+            ///
             explicit Iterator()
             {
             }
 
+            ///
+            /// @brief Construct a new Iterator.
+            ///
+            /// @param[in] mask query mask, all bit set to true correspond to an entity matching the requirements.
+            /// @param[in] storages components storages, used to retrieve iterator content.
+            /// @param[in] pos Current position, must be on a bit set to true in the @p mask.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-20)
+            ///
             explicit Iterator(
                 util::BitSet const &mask, std::tuple<First &, Others &...> const &storages, std::size_t pos)
                 : _mask(std::cref(mask)), _storages(std::cref(storages)), _pos(pos)
             {
             }
 
+            ///
+            /// @brief Default copy operator.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-20)
+            ///
             Iterator(Iterator const &) = default;
 
+            ///
+            /// @brief Default assignment operator.
+            ///
+            /// @return Iterator& @b this.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-20)
+            ///
             Iterator &operator=(Iterator const &) = default;
 
-            Iterator(Iterator &&) = default;
-            Iterator &operator=(Iterator &&other) = default;
-
-            /// @note It is Undefined Behavior to compare two iterators that do not belong to the same query.
             ///
-            /// @returns Whether the two iterators are equal.
+            /// @brief Default move constructor.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-20)
+            ///
+            Iterator(Iterator &&) = default;
+
+            ///
+            /// @brief Default move assignment operator.
+            ///
+            /// @return Iterator& @b this.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-20)
+            ///
+            Iterator &operator=(Iterator &&) = default;
+
+            ///
+            /// @brief Compare two iterators from the same @ref Query.
+            ///
+            /// @warning It is undefined behavior to compare two iterators that do not belong to the same query.
+            ///
+            /// @param[in] other iterator to compare.
+            ///
+            /// @return bool Whether the two iterators are equals.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-20)
+            ///
             constexpr bool operator==(Iterator const &other) const
             {
                 return this->_pos == other._pos;
             }
 
-            /// @note It is Undefined Behavior to compare two iterators that do not belong to the same container.
             ///
-            /// @returns Whether the two iterators are not equal.
+            /// @brief Compare two iterators from the same @ref Query.
+            ///
+            /// @warning It is undefined behavior to compare two iterators that do not belong to the same query.
+            ///
+            /// @param[in] other iterator to compare.
+            ///
+            /// @return bool Whether the two iterators are different.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-20)
+            ///
             constexpr bool operator!=(Iterator const &other) const
             {
                 return this->_pos != other._pos;
             }
 
-            /// @returns The components and/or resources corresponding the entity at the current position.
+            ///
+            /// @brief Fetch the components corresponding to the entity at the current position.
+            ///
+            /// @return value_type tuple containing component references.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-20)
+            ///
             value_type operator*() const
             {
                 return this->get_components(std::make_index_sequence<(sizeof...(Others)) + 1>());
             }
 
-            /// @returns The components and/or resources corresponding the entity at the current position.
+            ///
+            /// @brief Fetch the components corresponding to the entity at the current position.
+            ///
+            /// @return value_type tuple containing component references.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-20)
+            ///
             value_type operator->() const
             {
                 return *this;
             }
 
-            /// Increments the iterator.
             ///
-            /// @note It is Undefined Behavior to increment the iterator past the end sentinel.
+            /// @brief Increments the iterator in place.
             ///
-            /// @returns A reference to this iterator.
+            /// @warning It is undefined behavior to increment the iterator past the end sentinel ( @ref Query::end() ).
+            ///
+            /// @return Iterator& @b this.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-20)
+            ///
             Iterator &operator++()
             {
                 this->_pos = this->_mask.get().firstSet(this->_pos + 1);
                 return *this;
             }
 
-            /// Copies the iterator and increments the copy, please use pre-incrementation instead.
             ///
-            /// @note It is Undefined Behavior to increment the iterator past the end sentinel.
-            /// @note This creates a copy of the iterator!
+            /// @brief Copies the iterator and increments the copy, please use pre-incrementation instead.
             ///
-            /// @returns The incremented copy.
+            /// @warning It is undefined behavior to increment the iterator past the end sentinel ( @ref Query::end() ).
+            /// @warning This creates a copy of the iterator!
+            ///
+            /// @return Iterator The incremented copy.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-20)
+            ///
             Iterator operator++(int)
             {
                 Iterator result = *this;
@@ -104,6 +212,16 @@ namespace ecstasy
             std::reference_wrapper<const std::tuple<First &, Others &...>> _storages;
             std::size_t _pos;
 
+            ///
+            /// @brief Get the components from the storages tuple.
+            ///
+            /// @tparam Indices Represent all the indices to fetch in the @p _storages attribute.
+            ///
+            /// @return value_type tuple containing component references.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-20)
+            ///
             template <size_t... Indices>
             value_type get_components(std::index_sequence<Indices...>) const
             {
@@ -111,6 +229,15 @@ namespace ecstasy
             }
         };
 
+        ///
+        /// @brief Construct a new Query trying to match multiple storages on one entity.
+        ///
+        /// @param[in] first First storage.
+        /// @param[in] others All other storages.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-20)
+        ///
         Query(First &first, Others &...others) : _storages(first, others...)
         {
             this->_mask = (util::BitSet(first.getMask()) &= ... &= others.getMask());
@@ -120,14 +247,28 @@ namespace ecstasy
             this->_begin = this->_mask.firstSet();
         }
 
-        /// @returns A @ref std::forward_iterator to the first available entity, or a value that is equal to @ref end()
-        /// if not found.
+        ///
+        /// @brief Get the start operator of the valid entities.
+        ///
+        /// @return Iterator A @ref std::forward_iterator to the first available entity, or a value that is equal to
+        /// @ref end() if not found.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-20)
+        ///
         Iterator begin() const noexcept
         {
             return Iterator(this->_mask, this->_storages, this->_begin);
         }
 
-        /// @returns An iterator sentinel value, do not deference it.
+        ///
+        /// @brief Get the end operator of the valid entities.
+        ///
+        /// @return Iterator An iterator sentinel value, do not deference it.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-20)
+        ///
         Iterator end() const noexcept
         {
             return Iterator(this->_mask, this->_storages, this->_mask.size() - 1);
