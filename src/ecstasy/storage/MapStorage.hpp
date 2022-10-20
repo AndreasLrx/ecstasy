@@ -16,6 +16,7 @@
 
 #include "IStorage.hpp"
 #include "ecstasy/resource/entity/Entity.hpp"
+#include "util/BitSet.hpp"
 
 namespace ecstasy
 {
@@ -69,6 +70,8 @@ namespace ecstasy
         template <typename... Args>
         Component &emplace(Entity::Index index, Args &&...args)
         {
+            _mask.resize(std::max(_mask.size(), index + 1));
+            _mask[index] = true;
             return _components.emplace(std::make_pair(index, Component(std::forward<Args>(args)...))).first->second;
         }
 
@@ -85,7 +88,12 @@ namespace ecstasy
         ///
         void erase(Entity::Index index)
         {
-            _components.erase(index);
+            auto it = _components.find(index);
+
+            if (it != _components.end()) {
+                _components.erase(index);
+                _mask[index] = false;
+            }
         }
 
         ///
@@ -148,8 +156,25 @@ namespace ecstasy
             return _components.size();
         }
 
+        ///
+        /// @brief Get the Component Mask.
+        ///
+        /// @note Each bit set to true mean the entity at the bit index has a component @b C.
+        /// @warning The mask might be smaller than the entity count.
+        ///
+        /// @return const util::BitSet& Component mask.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-20)
+        ///
+        const util::BitSet &getMask() const
+        {
+            return _mask;
+        }
+
       private:
         std::unordered_map<Entity::Index, Component> _components;
+        util::BitSet _mask;
     };
 } // namespace ecstasy
 
