@@ -3,6 +3,6 @@ set(SRCROOT ${SRCROOT}/system)
 
 set(SRC
     ${SRC}
-    ${SRCROOT}/ISystem.hpp
+    ${INCROOT}/ISystem.hpp
     PARENT_SCOPE
 )

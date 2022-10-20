@@ -45,6 +45,7 @@ set(INCROOT ${PROJECT_SOURCE_DIR}/tests)
 set(SRCROOT ${PROJECT_SOURCE_DIR}/tests)
 
 add_subdirectory(entity)
+add_subdirectory(query)
 add_subdirectory(storage)
 add_subdirectory(registry)
 add_subdirectory(util)

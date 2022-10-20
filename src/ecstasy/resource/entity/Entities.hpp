@@ -180,6 +180,19 @@ namespace ecstasy
         ///
         bool isAlive(Entity entity) const;
 
+        ///
+        /// @brief Get the Alive entities mask.
+        ///
+        /// @return constexpr const util::BitSet& alive entities mask.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-20)
+        ///
+        constexpr const util::BitSet &getMask() const
+        {
+            return _alive;
+        }
+
       private:
         std::vector<Entity::Generation> _generations;
         util::BitSet _alive;

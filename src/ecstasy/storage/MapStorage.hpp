@@ -167,7 +167,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-20)
         ///
-        const util::BitSet &getMask() const
+        constexpr const util::BitSet &getMask() const override
         {
             return _mask;
         }
