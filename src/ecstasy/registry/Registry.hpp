@@ -12,6 +12,7 @@
 #ifndef ECSTASY_REGISTRY_REGISTRY_HPP_
 #define ECSTASY_REGISTRY_REGISTRY_HPP_
 
+#include "ecstasy/query/Query.hpp"
 #include "ecstasy/resource/entity/Entities.hpp"
 #include "ecstasy/storage/IStorage.hpp"
 #include "ecstasy/storage/Instances.hpp"
@@ -232,6 +233,40 @@ namespace ecstasy
             if (!_storages.contains<getStorageType<C>>())
                 addStorage<C>();
             return _storages.get<getStorageType<C>>();
+        }
+
+        ///
+        /// @brief Construct a query for the given components.
+        ///
+        /// @tparam C First component type.
+        /// @tparam Cs Other component types.
+        ///
+        /// @return Query<getStorageType<C>, getStorageType<Cs>...> New query which can be iterated.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-20)
+        ///
+        template <typename C, typename... Cs>
+        Query<getStorageType<C>, getStorageType<Cs>...> query()
+        {
+            return Query(getStorageSafe<C>(), getStorageSafe<Cs>()...);
+        }
+
+        ///
+        /// @brief Construct a query for the given components and a Queryable Resource (made for Entities).
+        ///
+        /// @tparam R Queryable Resource, it will often be Entities.
+        /// @tparam Cs Component types.
+        ///
+        /// @return Query<R, getStorageType<Cs>...> New query which can be iterated.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-20)
+        ///
+        template <std::derived_from<Resource> R, typename... Cs>
+        Query<R, getStorageType<Cs>...> query()
+        {
+            return Query(getResource<R>(), getStorageSafe<Cs>()...);
         }
 
         ///

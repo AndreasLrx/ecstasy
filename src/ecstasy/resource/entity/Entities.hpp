@@ -112,6 +112,9 @@ namespace ecstasy
             friend Entities;
         };
 
+        /// @brief @ref Queryable constraint
+        using QueryData = Entity;
+
         ///
         /// @brief Construct a new Entities resource without any entity.
         ///
@@ -179,6 +182,31 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-18)
         ///
         bool isAlive(Entity entity) const;
+
+        ///
+        /// @brief Get the Alive entities mask.
+        ///
+        /// @return constexpr const util::BitSet& alive entities mask.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-20)
+        ///
+        constexpr const util::BitSet &getMask() const
+        {
+            return _alive;
+        }
+
+        ///
+        /// @brief Get the entity from its index.
+        ///
+        /// @note @ref Queryable constraints.
+        ///
+        /// @return const Entity Entity at index @p index.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-20)
+        ///
+        Entity getQueryData(Entity::Index index) const;
 
       private:
         std::vector<Entity::Generation> _generations;
