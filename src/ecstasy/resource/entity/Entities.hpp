@@ -155,21 +155,35 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-18)
         ///
-        Entity get(Entity::Index id) const;
+        Entity get(Entity::Index id) const noexcept;
 
         ///
-        /// @brief Killing the entity when called.
+        /// @brief Erase (delete) the entity when called.
         ///
-        /// @note Entity is considered kill if it was alive.
+        /// @note Entity is considered erased if it was alive.
         ///
-        /// @param[in] entity Entity to kill.
+        /// @param[in] entity Entity to erase.
         ///
-        /// @return bool Whether the entity was killed or not.
+        /// @return bool Whether the entity was erased or not.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-18)
         ///
-        bool kill(Entity entity);
+        bool erase(Entity entity);
+
+        ///
+        /// @brief Erase (delete) the entity with index @p index when called.
+        ///
+        /// @note Entity is considered erased if it was alive.
+        ///
+        /// @param[in] index entity index.
+        ///
+        /// @return bool Whether the entity was erased or not.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-21)
+        ///
+        bool erase(Entity::Index index);
 
         ///
         /// @brief Tests if an entity is alive.

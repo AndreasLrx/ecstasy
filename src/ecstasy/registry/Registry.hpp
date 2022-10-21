@@ -236,6 +236,20 @@ namespace ecstasy
         }
 
         ///
+        /// @brief Get the Entity at the index @p index.
+        ///
+        /// @note The entity returned may not exists.
+        ///
+        /// @param[in] index Entity index.
+        ///
+        /// @return Entity matching entity.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-21)
+        ///
+        Entity getEntity(Entity::Index index) noexcept;
+
+        ///
         /// @brief Construct a query for the given components.
         ///
         /// @tparam C First component type.
@@ -268,6 +282,18 @@ namespace ecstasy
         {
             return Query(getResource<R>(), getStorageSafe<Cs>()...);
         }
+
+        ///
+        /// @brief Instanly erase an entity and its components from the registry.
+        ///
+        /// @param[in] index index of the entity to erase.
+        ///
+        /// @return bool Whether or not the entity was erased.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-21)
+        ///
+        bool eraseEntity(Entity::Index index);
 
         ///
         /// @brief Run a specific system from the registry.

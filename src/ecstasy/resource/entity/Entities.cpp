@@ -63,17 +63,20 @@ namespace ecstasy
         return Builder(*this, create(false));
     }
 
-    Entity Entities::get(Entity::Index id) const
+    Entity Entities::get(Entity::Index id) const noexcept
     {
         if (id > _generations.size())
             return Entity(id, 0);
         return Entity(id, _generations[id]);
     }
 
-    bool Entities::kill(Entity entity)
+    bool Entities::erase(Entity entity)
     {
-        Entity::Index id = entity.getIndex();
+        return erase(entity.getIndex());
+    }
 
+    bool Entities::erase(Entity::Index id)
+    {
         if (id > _generations.size() || !_alive[id])
             return false;
         _alive[id] = false;

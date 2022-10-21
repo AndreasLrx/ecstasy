@@ -41,6 +41,18 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-20)
         ///
         virtual constexpr const util::BitSet &getMask() const = 0;
+
+        ///
+        /// @brief Erase the component attached to @b entity.
+        ///
+        /// @param[in] entity Entity owning the component.
+        ///
+        /// @return bool Whether a component was deleted or not.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-21)
+        ///
+        virtual bool erase(size_t entity) = 0;
     };
 
 } // namespace ecstasy

@@ -46,6 +46,64 @@ namespace test
 
 SET_COMPONENT_STORAGE(test::Comp, ecstasy::MapStorage)
 
+struct Vector2i {
+    int x;
+    int y;
+
+    Vector2i(int px, int py) : x(px), y(py)
+    {
+    }
+
+    bool operator==(const Vector2i &other) const
+    {
+        return x == other.x && y == other.y;
+    }
+};
+
+struct Position {
+    Vector2i v;
+
+    Position(int x, int y) : v(x, y)
+    {
+    }
+};
+
+struct Velocity {
+    Vector2i v;
+
+    Velocity(int x, int y) : v(x, y)
+    {
+    }
+};
+
+struct Size {
+    Vector2i v;
+
+    Size(int x, int y) : v(x, y)
+    {
+    }
+};
+
+using Density = int;
+
+struct Gravity : public ecstasy::ISystem {
+    void run(ecstasy::Registry &registry) override final
+    {
+        for (auto [entity, velocity, density] : registry.query<ecstasy::Entities, Velocity, Density>())
+            velocity.v.y += 2 * density;
+    }
+};
+
+struct Movement : public ecstasy::ISystem {
+    void run(ecstasy::Registry &registry) override final
+    {
+        for (auto [position, velocity] : registry.query<Position, Velocity>()) {
+            position.v.x += velocity.v.x;
+            position.v.y += velocity.v.y;
+        }
+    }
+};
+
 TEST(Registry, systems)
 {
     testing::internal::CaptureStdout();
@@ -95,43 +153,25 @@ TEST(Registry, storages)
     EXPECT_EQ(registry.getStorage<Counter>().size(), 0);
 }
 
-struct Vector2i {
-    int x;
-    int y;
+TEST(Registry, erase_entities)
+{
+    ecstasy::Registry registry;
 
-    Vector2i(int px, int py) : x(px), y(py)
-    {
-    }
+    for (int i = 0; i < 10; i++)
+        registry.entityBuilder().with<Position>(1, 2).with<Size>(3, 4).build();
+    GTEST_ASSERT_EQ(registry.getResource<ecstasy::Entities>().getMask(), util::BitSet("1111111111"));
+    GTEST_ASSERT_EQ(registry.getStorage<Position>().getMask(), util::BitSet("1111111111"));
+    GTEST_ASSERT_EQ(registry.getStorage<Size>().getMask(), util::BitSet("1111111111"));
+    registry.eraseEntity(1);
+    registry.eraseEntity(5);
+    GTEST_ASSERT_EQ(registry.getResource<ecstasy::Entities>().getMask(), util::BitSet("1111011101"));
+    GTEST_ASSERT_EQ(registry.getStorage<Position>().getMask(), util::BitSet("1111011101"));
+    GTEST_ASSERT_EQ(registry.getStorage<Size>().getMask(), util::BitSet("1111011101"));
 
-    bool operator==(const Vector2i &other) const
-    {
-        return x == other.x && y == other.y;
-    }
-};
-
-struct Position {
-    Vector2i v;
-
-    Position(int x, int y) : v(x, y)
-    {
-    }
-};
-
-struct Velocity {
-    Vector2i v;
-
-    Velocity(int x, int y) : v(x, y)
-    {
-    }
-};
-
-struct Size {
-    Vector2i v;
-
-    Size(int x, int y) : v(x, y)
-    {
-    }
-};
+    GTEST_ASSERT_TRUE(registry.getResource<ecstasy::Entities>().isAlive(registry.getEntity(0)));
+    GTEST_ASSERT_FALSE(registry.getResource<ecstasy::Entities>().isAlive(registry.getEntity(1)));
+    GTEST_ASSERT_FALSE(registry.getResource<ecstasy::Entities>().isAlive(registry.getEntity(5)));
+}
 
 TEST(Registry, EntityBuilder)
 {
@@ -153,26 +193,6 @@ TEST(Registry, EntityBuilder)
     EXPECT_TRUE(e.has<Size>());
     EXPECT_FALSE(e.has<Vector2i>());
 }
-
-using Density = int;
-
-struct Gravity : public ecstasy::ISystem {
-    void run(ecstasy::Registry &registry) override final
-    {
-        for (auto [entity, velocity, density] : registry.query<ecstasy::Entities, Velocity, Density>())
-            velocity.v.y += 2 * density;
-    }
-};
-
-struct Movement : public ecstasy::ISystem {
-    void run(ecstasy::Registry &registry) override final
-    {
-        for (auto [position, velocity] : registry.query<Position, Velocity>()) {
-            position.v.x += velocity.v.x;
-            position.v.y += velocity.v.y;
-        }
-    }
-};
 
 TEST(Registry, functionnal)
 {
