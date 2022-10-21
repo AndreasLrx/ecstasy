@@ -186,6 +186,24 @@ namespace ecstasy
         ///
         /// @tparam R Type of the resource to fetch.
         ///
+        /// @return const R& Const reference to an instance of type @b R.
+        ///
+        /// @throw std::logic_error If the resource @b R was not present in the registry.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-18)
+        ///
+        template <std::derived_from<Resource> R>
+        const R &getResource() const
+        {
+            return _resources.get<R>();
+        }
+
+        ///
+        /// @brief Get the Resource of type @b R.
+        ///
+        /// @tparam R Type of the resource to fetch.
+        ///
         /// @return R& Reference to an instance of type @b R.
         ///
         /// @throw std::logic_error If the resource @b R was not present in the registry.
@@ -197,6 +215,24 @@ namespace ecstasy
         R &getResource()
         {
             return _resources.get<R>();
+        }
+
+        ///
+        /// @brief Get the Storage for the component type @b C.
+        ///
+        /// @tparam C Type of the component for which we want the storage.
+        ///
+        /// @return getStorageType<C>& Const reference to the storage of the component type @b C.
+        ///
+        /// @throw std::logic_error If no storage for component @b C was found in the registry.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-18)
+        ///
+        template <typename C>
+        const getStorageType<C> &getStorage() const
+        {
+            return _storages.get<getStorageType<C>>();
         }
 
         ///
@@ -234,6 +270,30 @@ namespace ecstasy
                 addStorage<C>();
             return _storages.get<getStorageType<C>>();
         }
+
+        ///
+        /// @brief Get the Entities resource.
+        ///
+        /// @return const Entities& Const reference to the @ref Entities resource.
+        ///
+        /// @throw std::logic_error If the resource is not found.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-21)
+        ///
+        const Entities &getEntities() const;
+
+        ///
+        /// @brief Get the Entities resource.
+        ///
+        /// @return Entities& Reference to the @ref Entities resource.
+        ///
+        /// @throw std::logic_error If the resource is not found.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-21)
+        ///
+        Entities &getEntities();
 
         ///
         /// @brief Get the Entity at the index @p index.

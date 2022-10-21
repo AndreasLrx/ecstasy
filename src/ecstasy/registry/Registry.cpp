@@ -35,6 +35,16 @@ namespace ecstasy
         return EntityBuilder(*this);
     }
 
+    const Entities &Registry::getEntities() const
+    {
+        return getResource<Entities>();
+    }
+
+    Entities &Registry::getEntities()
+    {
+        return getResource<Entities>();
+    }
+
     Entity Registry::getEntity(Entity::Index index) noexcept
     {
         return getResource<Entities>().get(index);

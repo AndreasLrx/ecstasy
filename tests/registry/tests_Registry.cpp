@@ -126,13 +126,16 @@ TEST(Registry, systems)
 TEST(Registry, resources)
 {
     ecstasy::Registry registry;
+    const ecstasy::Registry &cregistry = registry;
 
     /// Resource not present
     EXPECT_THROW(registry.getResource<Counter>(), std::logic_error);
+    EXPECT_THROW(cregistry.getResource<Counter>(), std::logic_error);
 
     /// Add resource with an initial value of 5 and add one
     registry.addResource<Counter>(5).count();
     EXPECT_EQ(registry.getResource<Counter>().value, 6);
+    EXPECT_EQ(cregistry.getResource<Counter>().value, 6);
 
     /// Try to add resource already present
     EXPECT_THROW(registry.addResource<Counter>(), std::logic_error);
@@ -141,12 +144,15 @@ TEST(Registry, resources)
 TEST(Registry, storages)
 {
     ecstasy::Registry registry;
+    const ecstasy::Registry &cregistry = registry;
 
-    /// Resource not present
-    EXPECT_THROW(registry.getStorage<Counter>(), std::logic_error);
+    /// Storage not present
     EXPECT_THROW(registry.getStorage<A>(), std::logic_error);
+    EXPECT_THROW(cregistry.getStorage<A>(), std::logic_error);
+    /// First call instantiate the storage and the second only fetch it.
     EXPECT_EQ(registry.getStorageSafe<A>().size(), 0);
     EXPECT_EQ(registry.getStorageSafe<A>().size(), 0);
+    EXPECT_EQ(cregistry.getStorage<A>().size(), 0);
 
     /// Add resource with an initial value of 5 and add one
     registry.addStorage<Counter>();
@@ -156,21 +162,22 @@ TEST(Registry, storages)
 TEST(Registry, erase_entities)
 {
     ecstasy::Registry registry;
+    const ecstasy::Registry &cregistry = registry;
 
     for (int i = 0; i < 10; i++)
         registry.entityBuilder().with<Position>(1, 2).with<Size>(3, 4).build();
-    GTEST_ASSERT_EQ(registry.getResource<ecstasy::Entities>().getMask(), util::BitSet("1111111111"));
+    GTEST_ASSERT_EQ(cregistry.getEntities().getMask(), util::BitSet("1111111111"));
     GTEST_ASSERT_EQ(registry.getStorage<Position>().getMask(), util::BitSet("1111111111"));
     GTEST_ASSERT_EQ(registry.getStorage<Size>().getMask(), util::BitSet("1111111111"));
     registry.eraseEntity(1);
     registry.eraseEntity(5);
-    GTEST_ASSERT_EQ(registry.getResource<ecstasy::Entities>().getMask(), util::BitSet("1111011101"));
+    GTEST_ASSERT_EQ(registry.getEntities().getMask(), util::BitSet("1111011101"));
     GTEST_ASSERT_EQ(registry.getStorage<Position>().getMask(), util::BitSet("1111011101"));
     GTEST_ASSERT_EQ(registry.getStorage<Size>().getMask(), util::BitSet("1111011101"));
 
-    GTEST_ASSERT_TRUE(registry.getResource<ecstasy::Entities>().isAlive(registry.getEntity(0)));
-    GTEST_ASSERT_FALSE(registry.getResource<ecstasy::Entities>().isAlive(registry.getEntity(1)));
-    GTEST_ASSERT_FALSE(registry.getResource<ecstasy::Entities>().isAlive(registry.getEntity(5)));
+    GTEST_ASSERT_TRUE(cregistry.getEntities().isAlive(registry.getEntity(0)));
+    GTEST_ASSERT_FALSE(registry.getEntities().isAlive(registry.getEntity(1)));
+    GTEST_ASSERT_FALSE(registry.getEntities().isAlive(registry.getEntity(5)));
 }
 
 TEST(Registry, EntityBuilder)
