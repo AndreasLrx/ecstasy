@@ -34,8 +34,9 @@ namespace ecstasy
 
     Entities::Entities()
     {
-        /// Add sentinel to allow use of firstUnset
+        /// Add sentinel to allow use of firstUnset/firstSet
         _alive.push(false);
+        _killed.push(true);
     }
 
     Entity Entities::create(bool alive)
@@ -54,7 +55,9 @@ namespace ecstasy
         /// One index available, use it
         _generations[firstDead]++;
         _alive[firstDead] = alive;
-
+        /// Remove deletion marker
+        if (firstDead < _killed.size() - 1)
+            _killed[firstDead] = false;
         return Entity(firstDead, _generations[firstDead]);
     }
 
@@ -72,7 +75,12 @@ namespace ecstasy
 
     bool Entities::erase(Entity entity)
     {
-        return erase(entity.getIndex());
+        Entity::Index id = entity.getIndex();
+
+        if (id > _generations.size() || entity.getGeneration() != _generations[id] || !_alive[id])
+            return false;
+        _alive[id] = false;
+        return true;
     }
 
     bool Entities::erase(Entity::Index id)
@@ -80,6 +88,28 @@ namespace ecstasy
         if (id > _generations.size() || !_alive[id])
             return false;
         _alive[id] = false;
+        return true;
+    }
+
+    bool Entities::kill(Entity entity)
+    {
+        Entity::Index id = entity.getIndex();
+
+        if (id > _generations.size() || !_alive[id] || entity.getGeneration() != _generations[id])
+            return false;
+        if (id > _killed.size() - 1)
+            _killed.resizeSentinel(id + 1, true);
+        _killed[id] = true;
+        return true;
+    }
+
+    bool Entities::kill(Entity::Index id)
+    {
+        if (id > _generations.size() || !_alive[id])
+            return false;
+        if (id > _killed.size() - 1)
+            _killed.resizeSentinel(id + 1, true);
+        _killed[id] = true;
         return true;
     }
 
@@ -91,6 +121,20 @@ namespace ecstasy
     Entity Entities::getQueryData(Entity::Index index) const
     {
         return get(index);
+    }
+
+    std::vector<Entity::Index> Entities::maintain()
+    {
+        std::vector<Entity::Index> indexes;
+        size_t firstKilled = _killed.firstSet();
+
+        while (firstKilled != _killed.size() - 1) {
+            _alive[firstKilled] = false;
+            _killed[firstKilled] = false;
+            indexes.push_back(firstKilled);
+            firstKilled = _killed.firstSet(firstKilled);
+        }
+        return indexes;
     }
 
 } // namespace ecstasy

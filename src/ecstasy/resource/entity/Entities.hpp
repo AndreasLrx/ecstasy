@@ -186,6 +186,30 @@ namespace ecstasy
         bool erase(Entity::Index index);
 
         ///
+        /// @brief Mark en entity for deletion. The entity is alive until a call to @ref maintain() is made.
+        ///
+        /// @param[in] entity @ref Entity to kill.
+        ///
+        /// @return bool Whether or not the entity is marked for deletion.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-21)
+        ///
+        bool kill(Entity index);
+
+        ///
+        /// @brief Mark en entity for deletion. The entity is alive until a call to @ref maintain() is made.
+        ///
+        /// @param[in] index index of the @ref Entity to kill.
+        ///
+        /// @return bool Whether or not the entity is marked for deletion.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-21)
+        ///
+        bool kill(Entity::Index index);
+
+        ///
         /// @brief Tests if an entity is alive.
         ///
         /// @param[in] entity entity to test.
@@ -222,9 +246,23 @@ namespace ecstasy
         ///
         Entity getQueryData(Entity::Index index) const;
 
+        ///
+        /// @brief Effectively erase the entities marked for deletion (using @ref kill()).
+        ///
+        /// @note Invalidate iterators.
+        /// @warning This function doesn't delete the entities components, see @ref Registry::maintain() instead.
+        ///
+        /// @return std::vector<Entity::Index> List of deleted entities indexes.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-21)
+        ///
+        std::vector<Entity::Index> maintain();
+
       private:
         std::vector<Entity::Generation> _generations;
         util::BitSet _alive;
+        util::BitSet _killed;
     };
 } // namespace ecstasy
 
