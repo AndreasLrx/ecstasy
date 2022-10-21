@@ -20,7 +20,8 @@ namespace ecstasy
 
     DeletionStack::~DeletionStack()
     {
-        _registry.eraseEntities(_killed);
+        if (_killed.size() > 0)
+            _registry.eraseEntities(_killed);
     }
 
     void DeletionStack::push(Entity entity)
