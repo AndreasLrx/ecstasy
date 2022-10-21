@@ -1,6 +1,7 @@
 set(SRCROOT ${SRCROOT}/registry)
 
 set(SRC
+    ${SRCROOT}/tests_DeletionStack.cpp
     ${SRCROOT}/tests_Registry.cpp
 )
 
