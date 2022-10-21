@@ -35,14 +35,19 @@ namespace ecstasy
         return EntityBuilder(*this);
     }
 
-    bool Registry::erase(Entity entity)
+    Entity Registry::getEntity(Entity::Index index) noexcept
     {
-        bool erased = getResource<Entities>().erase(entity);
+        return getResource<Entities>().get(index);
+    }
+
+    bool Registry::erase(Entity::Index index)
+    {
+        bool erased = getResource<Entities>().erase(index);
 
         if (!erased)
             return false;
         for (auto &storage : _storages.getInner())
-            storage.second->erase(entity.getIndex());
+            storage.second->erase(index);
         return true;
     }
 
