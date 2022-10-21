@@ -83,12 +83,13 @@ namespace ecstasy
         return true;
     }
 
-    bool Entities::erase(Entity::Index id)
+    size_t Entities::erase(std::span<Entity> entities)
     {
-        if (id > _generations.size() || !_alive[id])
-            return false;
-        _alive[id] = false;
-        return true;
+        size_t res = 0;
+
+        for (Entity entity : entities)
+            res += erase(entity);
+        return res;
     }
 
     bool Entities::kill(Entity entity)
@@ -96,16 +97,6 @@ namespace ecstasy
         Entity::Index id = entity.getIndex();
 
         if (id > _generations.size() || !_alive[id] || entity.getGeneration() != _generations[id])
-            return false;
-        if (id > _killed.size() - 1)
-            _killed.resizeSentinel(id + 1, true);
-        _killed[id] = true;
-        return true;
-    }
-
-    bool Entities::kill(Entity::Index id)
-    {
-        if (id > _generations.size() || !_alive[id])
             return false;
         if (id > _killed.size() - 1)
             _killed.resizeSentinel(id + 1, true);
@@ -123,18 +114,19 @@ namespace ecstasy
         return get(index);
     }
 
-    std::vector<Entity::Index> Entities::maintain()
+    std::vector<Entity> Entities::maintain()
     {
-        std::vector<Entity::Index> indexes;
+        std::vector<Entity> deleted;
         size_t firstKilled = _killed.firstSet();
 
         while (firstKilled != _killed.size() - 1) {
             _alive[firstKilled] = false;
             _killed[firstKilled] = false;
-            indexes.push_back(firstKilled);
+            /// Cannot emplace_back because constructor is private in the vector context :/
+            deleted.push_back(Entity(firstKilled, _generations[firstKilled]));
             firstKilled = _killed.firstSet(firstKilled);
         }
-        return indexes;
+        return deleted;
     }
 
 } // namespace ecstasy

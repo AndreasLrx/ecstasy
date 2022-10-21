@@ -50,15 +50,36 @@ namespace ecstasy
         return getResource<Entities>().get(index);
     }
 
-    bool Registry::eraseEntity(Entity::Index index)
+    bool Registry::eraseEntity(Entity entity)
     {
-        bool erased = getResource<Entities>().erase(index);
+        bool erased = getResource<Entities>().erase(entity);
 
         if (!erased)
             return false;
-        for (auto &storage : _storages.getInner())
-            storage.second->erase(index);
+        eraseEntityComponents(entity);
         return true;
+    }
+
+    size_t Registry::eraseEntities(std::span<Entity> entities)
+    {
+        size_t erased = getResource<Entities>().erase(entities);
+
+        if (!erased)
+            return 0;
+        eraseEntitiesComponents(entities);
+        return erased;
+    }
+
+    void Registry::eraseEntityComponents(Entity entity)
+    {
+        for (auto &storage : _storages.getInner())
+            storage.second->erase(std::span{&entity, 1});
+    }
+
+    void Registry::eraseEntitiesComponents(std::span<Entity> entities)
+    {
+        for (auto &storage : _storages.getInner())
+            storage.second->erase(entities);
     }
 
     void Registry::runSystems()

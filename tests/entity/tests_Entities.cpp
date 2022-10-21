@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include "ecstasy/resource/entity/Entities.hpp"
+#include "ecstasy/resource/entity/Entity.hpp"
 #include "ecstasy/storage/MapStorage.hpp"
 
 TEST(Entities, all)
@@ -85,18 +86,16 @@ TEST(Entities, deletion)
 
     /// Invalid entities (not existing)
     GTEST_ASSERT_FALSE(entities.erase(entities.get(50)));
-    GTEST_ASSERT_FALSE(entities.erase(50));
     GTEST_ASSERT_FALSE(entities.kill(entities.get(50)));
-    GTEST_ASSERT_FALSE(entities.kill(50));
 
     /// Still 10 entities
     GTEST_ASSERT_EQ(entities.getMask(), util::BitSet("1111111111"));
     /// Erase the first and mark 2 for deletion
     GTEST_ASSERT_TRUE(entities.erase(entities.get(0)));
-    GTEST_ASSERT_TRUE(entities.erase(8));
+    GTEST_ASSERT_TRUE(entities.erase(entities.get(8)));
     /// 5 then 2 to have first case resize killed bitset and 2nd doesn't (max coverage)
     GTEST_ASSERT_TRUE(entities.kill(entities.get(5)));
-    GTEST_ASSERT_TRUE(entities.kill(2));
+    GTEST_ASSERT_TRUE(entities.kill(entities.get(2)));
     GTEST_ASSERT_EQ(entities.getMask(), util::BitSet("1011111110"));
 
     GTEST_ASSERT_FALSE(entities.isAlive(e0));
@@ -105,14 +104,12 @@ TEST(Entities, deletion)
     /// Entities marked for deletion are removed
     auto deleted = entities.maintain();
     GTEST_ASSERT_EQ(entities.getMask(), util::BitSet("1011011010"));
-    GTEST_ASSERT_EQ(deleted, std::vector<ecstasy::Entity::Index>({2, 5}));
+    GTEST_ASSERT_EQ(deleted, std::vector<ecstasy::Entity>({entities.get(2), entities.get(5)}));
 
     /// Messing again with the deletions
     /// Invalid: not alive
     GTEST_ASSERT_FALSE(entities.erase(entities.get(0)));
-    GTEST_ASSERT_FALSE(entities.erase(0));
     GTEST_ASSERT_FALSE(entities.kill(entities.get(0)));
-    GTEST_ASSERT_FALSE(entities.kill(0));
 
     /// Create a new entity which will take index 0 to test generation conditions
     entities.create();

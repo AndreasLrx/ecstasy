@@ -169,8 +169,8 @@ TEST(Registry, erase_entities)
     GTEST_ASSERT_EQ(cregistry.getEntities().getMask(), util::BitSet("1111111111"));
     GTEST_ASSERT_EQ(registry.getStorage<Position>().getMask(), util::BitSet("1111111111"));
     GTEST_ASSERT_EQ(registry.getStorage<Size>().getMask(), util::BitSet("1111111111"));
-    registry.eraseEntity(1);
-    registry.eraseEntity(5);
+    registry.eraseEntity(registry.getEntity(1));
+    registry.eraseEntity(registry.getEntity(5));
     GTEST_ASSERT_EQ(registry.getEntities().getMask(), util::BitSet("1111011101"));
     GTEST_ASSERT_EQ(registry.getStorage<Position>().getMask(), util::BitSet("1111011101"));
     GTEST_ASSERT_EQ(registry.getStorage<Size>().getMask(), util::BitSet("1111011101"));

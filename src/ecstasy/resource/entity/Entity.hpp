@@ -81,6 +81,17 @@ namespace ecstasy
         }
 
         ///
+        /// @brief Compare two entities using only their identifier.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-18)
+        ///
+        constexpr bool operator==(Entity const &other) const
+        {
+            return this->_index == other._index;
+        }
+
+        ///
         /// @brief Add a component to the entity.
         ///
         /// @tparam C Component type.

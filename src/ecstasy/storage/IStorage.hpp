@@ -12,6 +12,8 @@
 #ifndef ECSTASY_STORAGE_ISTORAGE_HPP_
 #define ECSTASY_STORAGE_ISTORAGE_HPP_
 
+#include <span>
+
 namespace util
 {
     class BitSet;
@@ -19,6 +21,8 @@ namespace util
 
 namespace ecstasy
 {
+    class Entity;
+
     ///
     /// @brief Base class of all components storage.
     ///
@@ -43,16 +47,14 @@ namespace ecstasy
         virtual constexpr const util::BitSet &getMask() const = 0;
 
         ///
-        /// @brief Erase the component attached to @b entity.
+        /// @brief Erase the components attached to the given entities.
         ///
-        /// @param[in] entity Entity owning the component.
-        ///
-        /// @return bool Whether a component was deleted or not.
+        /// @param[in] entities Target entities.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-21)
         ///
-        virtual bool erase(size_t entity) = 0;
+        virtual void erase(std::span<Entity> entities) = 0;
     };
 
 } // namespace ecstasy

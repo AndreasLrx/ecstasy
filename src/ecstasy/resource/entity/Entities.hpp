@@ -12,6 +12,7 @@
 #ifndef ECSTASY_RESOURCE_ENTITY_ENTITIES_HPP_
 #define ECSTASY_RESOURCE_ENTITY_ENTITIES_HPP_
 
+#include <span>
 #include <vector>
 
 #include "Entity.hpp"
@@ -172,18 +173,18 @@ namespace ecstasy
         bool erase(Entity entity);
 
         ///
-        /// @brief Erase (delete) the entity with index @p index when called.
+        /// @brief Erase multiple entities when called.
         ///
-        /// @note Entity is considered erased if it was alive.
+        /// @note An entity is considered erased if it was alive before.
         ///
-        /// @param[in] index entity index.
+        /// @param[in] entities entities to erase.
         ///
-        /// @return bool Whether the entity was erased or not.
+        /// @return size_t Number of entities erased.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-21)
         ///
-        bool erase(Entity::Index index);
+        size_t erase(std::span<Entity> entities);
 
         ///
         /// @brief Mark en entity for deletion. The entity is alive until a call to @ref maintain() is made.
@@ -196,18 +197,6 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-21)
         ///
         bool kill(Entity index);
-
-        ///
-        /// @brief Mark en entity for deletion. The entity is alive until a call to @ref maintain() is made.
-        ///
-        /// @param[in] index index of the @ref Entity to kill.
-        ///
-        /// @return bool Whether or not the entity is marked for deletion.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-21)
-        ///
-        bool kill(Entity::Index index);
 
         ///
         /// @brief Tests if an entity is alive.
@@ -252,12 +241,12 @@ namespace ecstasy
         /// @note Invalidate iterators.
         /// @warning This function doesn't delete the entities components, see @ref Registry::maintain() instead.
         ///
-        /// @return std::vector<Entity::Index> List of deleted entities indexes.
+        /// @return std::vector<Entity> List of deleted entities.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-21)
         ///
-        std::vector<Entity::Index> maintain();
+        std::vector<Entity> maintain();
 
       private:
         std::vector<Entity::Generation> _generations;
