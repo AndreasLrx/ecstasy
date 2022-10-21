@@ -19,8 +19,8 @@ TEST(Entities, all)
     EXPECT_FALSE(entities.isAlive(e2));
 
     /// Kill our first entity
-    EXPECT_TRUE(entities.kill(e));
-    EXPECT_FALSE(entities.kill(e));
+    EXPECT_TRUE(entities.erase(e));
+    EXPECT_FALSE(entities.erase(e));
 
     /// Create a new entity, it should use the empty slot from our previous entity kill
     ecstasy::Entity e3 = entities.create();
@@ -31,7 +31,7 @@ TEST(Entities, all)
 
     /// Unexisting entity
     EXPECT_FALSE(entities.isAlive(entities.get(42)));
-    EXPECT_FALSE(entities.kill(entities.get(42)));
+    EXPECT_FALSE(entities.erase(entities.get(42)));
 }
 
 struct Vector2i {

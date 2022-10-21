@@ -70,7 +70,7 @@ namespace ecstasy
         return Entity(id, _generations[id]);
     }
 
-    bool Entities::kill(Entity entity)
+    bool Entities::erase(Entity entity)
     {
         Entity::Index id = entity.getIndex();
 

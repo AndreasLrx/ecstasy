@@ -270,6 +270,18 @@ namespace ecstasy
         }
 
         ///
+        /// @brief Instanly erase an entity and its components from the registry.
+        ///
+        /// @param[in] entity entity to erase
+        ///
+        /// @return bool Whether or not the entity was erased.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-21)
+        ///
+        bool erase(Entity entity);
+
+        ///
         /// @brief Run a specific system from the registry.
         ///
         /// @tparam S System class to run.

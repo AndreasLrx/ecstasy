@@ -89,14 +89,16 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-19)
         ///
-        void erase(Entity::Index index)
+        bool erase(Entity::Index index) override final
         {
             auto it = _components.find(index);
 
             if (it != _components.end()) {
                 _components.erase(index);
                 _mask[index] = false;
+                return true;
             }
+            return false;
         }
 
         ///

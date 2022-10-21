@@ -158,18 +158,18 @@ namespace ecstasy
         Entity get(Entity::Index id) const;
 
         ///
-        /// @brief Killing the entity when called.
+        /// @brief Erase (delete) the entity when called.
         ///
-        /// @note Entity is considered kill if it was alive.
+        /// @note Entity is considered erased if it was alive.
         ///
-        /// @param[in] entity Entity to kill.
+        /// @param[in] entity Entity to erase.
         ///
-        /// @return bool Whether the entity was killed or not.
+        /// @return bool Whether the entity was erased or not.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-18)
         ///
-        bool kill(Entity entity);
+        bool erase(Entity entity);
 
         ///
         /// @brief Tests if an entity is alive.
