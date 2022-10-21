@@ -19,6 +19,8 @@
 #include "ecstasy/storage/StorageConcepts.hpp"
 #include "ecstasy/system/ISystem.hpp"
 
+#include <span>
+
 namespace ecstasy
 {
     class Resource;
@@ -344,16 +346,26 @@ namespace ecstasy
         }
 
         ///
-        /// @brief Instanly erase an entity and its components from the registry.
+        /// @brief Instantly erase an entity and its components from the registry.
         ///
-        /// @param[in] index index of the entity to erase.
+        /// @param[in] entity @ref Entity to erase.
         ///
         /// @return bool Whether or not the entity was erased.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-21)
         ///
-        bool eraseEntity(Entity::Index index);
+        bool eraseEntity(Entity entity);
+
+        ///
+        /// @brief Instantly erase multiple entities and their components from the registry.
+        ///
+        /// @param[in] entities entities to erase.
+        /// @return size_t
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-21)
+        ///
+        size_t eraseEntities(std::span<Entity> entities);
 
         ///
         /// @brief Run a specific system from the registry.
@@ -383,6 +395,28 @@ namespace ecstasy
         Instances<ISystem> _systems;
         Instances<Resource> _resources;
         Instances<IStorage> _storages;
+
+        /// @internal
+        /// @brief Erase all the @p entity components.
+        ///
+        /// @note Prefer use of @ref eraseEntitiesComponents when possible.
+        ///
+        /// @param[in] entity Target entity.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-21)
+        ///
+        void eraseEntityComponents(Entity entity);
+
+        /// @internal
+        /// @brief Erase all the @p entities components.
+        ///
+        /// @param[in] entities Target entities.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-21)
+        ///
+        void eraseEntitiesComponents(std::span<Entity> entities);
     };
 } // namespace ecstasy
 

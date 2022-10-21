@@ -89,7 +89,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-19)
         ///
-        bool erase(Entity::Index index) override final
+        bool erase(Entity::Index index)
         {
             auto it = _components.find(index);
 
@@ -99,6 +99,23 @@ namespace ecstasy
                 return true;
             }
             return false;
+        }
+
+        ///
+        /// @brief Erase multiple @b Component instances associated to the given @p entities.
+        ///
+        /// @note Does nothing for entity without attached component (ie if the entity doesn't have a component
+        /// @b Component)
+        ///
+        /// @param[in] entities target entities.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-21)
+        ///
+        void erase(std::span<Entity> entities) override final
+        {
+            for (Entity entity : entities)
+                erase(entity.getIndex());
         }
 
         ///
