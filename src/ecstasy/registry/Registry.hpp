@@ -293,7 +293,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-21)
         ///
-        bool erase(Entity::Index index);
+        bool eraseEntity(Entity::Index index);
 
         ///
         /// @brief Run a specific system from the registry.

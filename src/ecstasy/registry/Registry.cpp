@@ -40,7 +40,7 @@ namespace ecstasy
         return getResource<Entities>().get(index);
     }
 
-    bool Registry::erase(Entity::Index index)
+    bool Registry::eraseEntity(Entity::Index index)
     {
         bool erased = getResource<Entities>().erase(index);
 

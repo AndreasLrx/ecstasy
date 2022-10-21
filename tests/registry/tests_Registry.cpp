@@ -162,8 +162,8 @@ TEST(Registry, erase_entities)
     GTEST_ASSERT_EQ(registry.getResource<ecstasy::Entities>().getMask(), util::BitSet("1111111111"));
     GTEST_ASSERT_EQ(registry.getStorage<Position>().getMask(), util::BitSet("1111111111"));
     GTEST_ASSERT_EQ(registry.getStorage<Size>().getMask(), util::BitSet("1111111111"));
-    registry.erase(1);
-    registry.erase(5);
+    registry.eraseEntity(1);
+    registry.eraseEntity(5);
     GTEST_ASSERT_EQ(registry.getResource<ecstasy::Entities>().getMask(), util::BitSet("1111011101"));
     GTEST_ASSERT_EQ(registry.getStorage<Position>().getMask(), util::BitSet("1111011101"));
     GTEST_ASSERT_EQ(registry.getStorage<Size>().getMask(), util::BitSet("1111011101"));
