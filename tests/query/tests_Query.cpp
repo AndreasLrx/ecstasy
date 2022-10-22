@@ -3,6 +3,8 @@
 #include "ecstasy/resource/entity/Entities.hpp"
 #include "ecstasy/storage/MapStorage.hpp"
 
+#include "ecstasy/query/ComplexQuery.hpp"
+
 struct Position {
     int x;
     int y;
@@ -16,6 +18,10 @@ struct Position {
 };
 
 using Size = Position;
+
+struct Pos2 {
+    Position p;
+};
 
 TEST(Query, where)
 {
@@ -50,4 +56,13 @@ TEST(Query, where)
     auto [e3, pos8, size8] = *it;
     GTEST_ASSERT_EQ(pos8.y, 80);
     GTEST_ASSERT_EQ(size8.y, 16);
+}
+
+TEST(ComplexQuery, test)
+{
+    ecstasy::MapStorage<Position> positions;
+    ecstasy::MapStorage<Pos2> sizes;
+    ecstasy::Entities entities;
+
+    auto query = ecstasy::Select<decltype(entities), decltype(positions)>::where(entities, sizes, positions);
 }

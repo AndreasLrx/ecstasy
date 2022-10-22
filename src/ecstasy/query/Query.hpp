@@ -230,6 +230,22 @@ namespace ecstasy
         };
 
         ///
+        /// @brief Construct a new Query from a bitmask already computed and a storages list.
+        ///
+        /// @param[in] mask mask matching a predefined query.
+        /// @param[in] storages storages containing requested data.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-22)
+        ///
+        Query(util::BitSet &mask, const std::tuple<First &, Others &...> &storages) : _mask(mask), _storages(storages)
+        {
+            // push a sentinel bit at the end.
+            this->_mask.push(true);
+            this->_begin = this->_mask.firstSet();
+        }
+
+        ///
         /// @brief Construct a new Query trying to match multiple storages on one entity.
         ///
         /// @param[in] first First storage.

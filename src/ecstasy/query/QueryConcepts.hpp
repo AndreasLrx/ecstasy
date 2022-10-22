@@ -9,6 +9,7 @@
 #define ECSTASY_QUERY_QUERYCONCEPTS_HPP_
 
 #include <concepts>
+#include <type_traits>
 
 namespace util
 {
@@ -28,5 +29,11 @@ namespace ecstasy
         { queryable.getQueryData(index) } -> std::same_as<typename Q::QueryData>;
         // clang-format on
     };
+
+    template <typename T, typename... Ts>
+    constexpr bool contains()
+    {
+        return std::disjunction_v<std::is_same<T, Ts>...>;
+    }
 } // namespace ecstasy
 #endif /* !ECSTASY_QUERY_QUERYCONCEPTS_HPP_ */
