@@ -4,6 +4,7 @@
 #include "ecstasy/storage/MapStorage.hpp"
 
 #include "ecstasy/query/ComplexQuery.hpp"
+#include "ecstasy/query/NotModifier.hpp"
 
 struct Vector2i {
     int x;
@@ -143,6 +144,55 @@ TEST(ComplexQuery, omitStorages)
     ++it;
     {
         size_t index = 24;
+        auto [pos, velocity] = *it;
+        GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
+        GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
+    }
+}
+
+TEST(Query, NotModifier)
+{
+    ecstasy::MapStorage<Position> positions;
+    ecstasy::MapStorage<Velocity> velocities;
+    ecstasy::MapStorage<MovableMarker> statics;
+    ecstasy::Entities entities;
+    auto notStatics = ecstasy::Not(statics);
+
+    for (int i = 0; i < 25; i++) {
+        entities.create();
+        if (i % 2 == 0)
+            positions.emplace(i, i * 2, i * 10);
+        if (i % 3 == 0 || i == 8)
+            velocities.emplace(i, i * 10, i * 2);
+        if (i % 4 == 0)
+            statics.emplace(i);
+    }
+
+    // Simple queries
+    /// without looking at static marker (0, 6, 8, 12, 18, 24 (and 25 is sentinel bit))
+    GTEST_ASSERT_EQ(
+        ecstasy::Query(entities, positions, velocities).getMask(), util::BitSet("11000001000001000101000001"));
+    notStatics.reloadMask();
+    /// without static marker (6, 18(and 25 is sentinel bit))
+    GTEST_ASSERT_EQ(ecstasy::Query(entities, positions, velocities, notStatics).getMask(),
+        util::BitSet("10000001000000000001000000"));
+
+    /// Complex query for all entities with position, velocities and without the statics component
+    auto query =
+        ecstasy::Select<decltype(positions), decltype(velocities)>::where(entities, positions, velocities, notStatics);
+    auto it = query.begin();
+    /// 6
+    {
+        size_t index = 6;
+        auto [pos, velocity] = *it;
+        GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
+        GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
+    }
+
+    /// 18
+    ++it;
+    {
+        size_t index = 18;
         auto [pos, velocity] = *it;
         GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
         GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
