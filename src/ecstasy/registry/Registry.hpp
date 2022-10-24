@@ -12,6 +12,7 @@
 #ifndef ECSTASY_REGISTRY_REGISTRY_HPP_
 #define ECSTASY_REGISTRY_REGISTRY_HPP_
 
+#include "ecstasy/query/ComplexQuery.hpp"
 #include "ecstasy/query/Query.hpp"
 #include "ecstasy/resource/entity/Entities.hpp"
 #include "ecstasy/storage/IStorage.hpp"
@@ -99,6 +100,70 @@ namespace ecstasy
 
             friend Registry;
         };
+
+        ///
+        /// @brief Proxy class to use where static method.
+        ///
+        /// @tparam Selects type of selected queryables.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-22)
+        ///
+        template <Queryable... Selects>
+        class Select {
+          public:
+            ///
+            /// @brief Construct a new Select object.
+            ///
+            /// @param[in] registry registry owning the searched components.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-22)
+            ///
+            Select(Registry &registry) : _registry(registry)
+            {
+            }
+
+            ///
+            /// @brief Query all entities which have all the given components.
+            ///
+            /// @tparam C First component Type.
+            /// @tparam Cs Other component Types.
+            ///
+            /// @return Query<Selects...> Resulting query.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-22)
+            ///
+            template <typename C, typename... Cs>
+            Query<Selects...> where()
+            {
+                return ecstasy::Select<Selects...>::where(
+                    _registry.getStorageSafe<C>(), _registry.getStorageSafe<Cs>()...);
+            }
+
+            ///
+            /// @brief Query all entities which have all the given components.
+            ///
+            /// @tparam R Queryable Resource (this overload is made for the @ref Entities resource).
+            /// @tparam Cs Other component Types.
+            ///
+            /// @return Query<Selects...> Resulting query.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-22)
+            ///
+            template <std::derived_from<Resource> R, typename... Cs>
+            Query<Selects...> where()
+            {
+                return ecstasy::Select<Selects...>::where(
+                    _registry.getResource<R>(), _registry.getStorageSafe<Cs>()...);
+            }
+
+          private:
+            Registry &_registry;
+        };
+
         ///
         /// @brief Construct a new Registry.
         ///
@@ -343,6 +408,44 @@ namespace ecstasy
         Query<R, getStorageType<Cs>...> query()
         {
             return Query(getResource<R>(), getStorageSafe<Cs>()...);
+        }
+
+        ///
+        /// @brief Starts the creation of a complex query in the registry.
+        ///
+        /// @note It does nothing until the @ref Select::where() method is called.
+        ///
+        /// @tparam C First component to query.
+        /// @tparam Cs Other components to query.
+        ///
+        /// @return Select<getStorageType<C>, getStorageType<Cs>...> placeholder templated Select object.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-24)
+        ///
+        template <typename C, typename... Cs>
+        Select<getStorageType<C>, getStorageType<Cs>...> select()
+        {
+            return Select<getStorageType<C>, getStorageType<Cs>...>(*this);
+        }
+
+        ///
+        /// @brief Starts the creation of a complex query in the registry.
+        ///
+        /// @note It does nothing until the @ref Select::where() method is called.
+        ///
+        /// @tparam R Queryable resource, it will often be @ref Entities.
+        /// @tparam Cs Other components to query.
+        ///
+        /// @return Select<R, getStorageType<Cs>...> placeholder templated Select object.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-24)
+        ///
+        template <std::derived_from<Resource> R, typename... Cs>
+        Select<R, getStorageType<Cs>...> select()
+        {
+            return Select<R, getStorageType<Cs>...>(*this);
         }
 
         ///

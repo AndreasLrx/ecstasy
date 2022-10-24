@@ -20,6 +20,7 @@ set(ECSTASY_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/lib/")
 file(MAKE_DIRECTORY ${ECSTASY_OUTPUT_DIRECTORY})
 
 
+set(BUILDING_TESTS 0)
 add_subdirectory(src)
 
 # Unit testing
@@ -35,5 +36,6 @@ if(BUILD_TEST_SUITE)
 
     enable_testing()
 
+    set(BUILDING_TESTS 1)
     add_subdirectory(tests)
 endif()
