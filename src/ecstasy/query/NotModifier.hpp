@@ -12,7 +12,9 @@
 #ifndef ECSTASY_QUERY_NOTMODIFIER_HPP_
 #define ECSTASY_QUERY_NOTMODIFIER_HPP_
 
+#include "Modifier.hpp"
 #include "QueryConcepts.hpp"
+#include "util/BitSet.hpp"
 
 namespace ecstasy
 {
@@ -28,9 +30,11 @@ namespace ecstasy
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-10-24)
     ///
-    template <Queryable Internal>
-    class Not {
+    template <Queryable Q>
+    class Not : public Modifier {
       public:
+        /// @brief Wrapped queryable.
+        using Internal = Q;
         /// @brief @ref Queryable constaint.
         using QueryData = Internal::QueryData;
 

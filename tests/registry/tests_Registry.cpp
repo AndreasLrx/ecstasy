@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include <math.h>
+#include "ecstasy/registry/Modifiers.hpp"
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/resource/Resource.hpp"
 #include "ecstasy/resource/entity/RegistryEntity.hpp"
@@ -89,6 +90,8 @@ using Density = int;
 /// Movable marker to test complex queries
 struct Movable {
 };
+struct Static {
+};
 
 struct Gravity : public ecstasy::ISystem {
     void run(ecstasy::Registry &registry) override final
@@ -101,7 +104,8 @@ struct Gravity : public ecstasy::ISystem {
 struct Movement : public ecstasy::ISystem {
     void run(ecstasy::Registry &registry) override final
     {
-        for (auto [position, velocity] : registry.select<Position, Velocity>().where<Position, Movable, Velocity>()) {
+        for (auto [position, velocity] :
+            registry.select<Position, Velocity>().where<Position, Movable, Velocity, ecstasy::RegistryNot<Static>>()) {
             position.v.x += velocity.v.x;
             position.v.y += velocity.v.y;
         }
@@ -223,7 +227,14 @@ TEST(Registry, functionnal)
         registry);
     ecstasy::RegistryEntity e5 = ecstasy::RegistryEntity(
         registry.entityBuilder().with<Position>(0, 0).with<Velocity>(1, 2).with<Density>(2).build(), registry);
-
+    ecstasy::RegistryEntity e6 = ecstasy::RegistryEntity(registry.entityBuilder()
+                                                             .with<Position>(0, 0)
+                                                             .with<Velocity>(1, 2)
+                                                             .with<Density>(2)
+                                                             .with<Movable>()
+                                                             .with<Static>()
+                                                             .build(),
+        registry);
     /// Systems
     for (int i = 0; i < 10; i++) {
         /// E1
@@ -239,6 +250,9 @@ TEST(Registry, functionnal)
         /// E5 -> doesn't have the Movable marker which blocks the Movement System
         GTEST_ASSERT_EQ(e5.get<Position>().v, Vector2i(0, 0));
         GTEST_ASSERT_EQ(e5.get<Velocity>().v, Vector2i(1, 2 + 4 * i));
+        /// E5 -> Have the Static marker which blocks the Movement System
+        GTEST_ASSERT_EQ(e6.get<Position>().v, Vector2i(0, 0));
+        GTEST_ASSERT_EQ(e6.get<Velocity>().v, Vector2i(1, 2 + 4 * i));
 
         registry.runSystem<Gravity>();
         registry.runSystem<Movement>();
