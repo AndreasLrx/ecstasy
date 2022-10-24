@@ -45,7 +45,7 @@ namespace ecstasy
     using type_at_index_t = typename type_at_index<Index, Types...>::type;
 
     template <typename... Types>
-    using first_type_t = typename type_at_index_t<0, Types...>;
+    using first_type_t = type_at_index_t<0, Types...>;
 
 } // namespace ecstasy
 #endif /* !ECSTASY_QUERY_QUERYCONCEPTS_HPP_ */
