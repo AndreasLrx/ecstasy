@@ -8,7 +8,9 @@
 #ifndef ECSTASY_QUERY_QUERY_HPP_
 #define ECSTASY_QUERY_QUERY_HPP_
 
+#include <algorithm>
 #include <functional>
+
 #include "QueryConcepts.hpp"
 #include "util/BitSet.hpp"
 

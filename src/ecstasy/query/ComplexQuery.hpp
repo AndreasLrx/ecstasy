@@ -12,6 +12,7 @@
 #ifndef ECSTASY_QUERY_COMPLEXQUERY_HPP_
 #define ECSTASY_QUERY_COMPLEXQUERY_HPP_
 
+#include <algorithm>
 #include <stddef.h>
 #include <tuple>
 
