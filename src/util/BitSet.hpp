@@ -172,6 +172,27 @@ namespace util
         /// @returns this
         BitSet &operator^=(BitSet const &other) noexcept;
 
+        /// Performs a bitwise AND with this set and @b other in place without resizing this.
+        ///
+        /// @note this method is not named @b and because it is restricted.
+        ///
+        /// @returns this
+        BitSet &inplaceAnd(BitSet const &other) noexcept;
+
+        /// Performs a bitwise OR with this set and @b other in place without resizing this.
+        ///
+        /// @note this method is not named @b or because it is restricted.
+        ///
+        /// @returns this
+        BitSet &inplaceOr(BitSet const &other) noexcept;
+
+        /// Performs a bitwise XOR with this set and @b other in place without resizing this.
+        ///
+        /// @note this method is not named @b xor because it is restricted.
+        ///
+        /// @returns this
+        BitSet &inplaceXor(BitSet const &other) noexcept;
+
         /// Changes the number of bits stored in this set.
         ///
         /// @param size The new number of bits, may be smaller or greater than the current size, or zero.

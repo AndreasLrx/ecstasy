@@ -12,6 +12,7 @@
 #ifndef ECSTASY_QUERY_COMPLEXQUERY_HPP_
 #define ECSTASY_QUERY_COMPLEXQUERY_HPP_
 
+#include <algorithm>
 #include <stddef.h>
 #include <tuple>
 
@@ -181,6 +182,11 @@ namespace ecstasy
         template <Queryable FirstWhere, Queryable... Wheres>
         static Query<Selects...> where(FirstWhere &firstWhere, Wheres &...wheres)
         {
+            size_t maxSize = std::max({firstWhere.getMask().size(), wheres.getMask().size()...});
+
+            adjustMask(firstWhere, maxSize);
+            (adjustMask(wheres, maxSize), ...);
+
             util::BitSet mask = (util::BitSet(firstWhere.getMask()) &= ... &= wheres.getMask());
 
             return Query<Selects...>(mask, isolateStorages(firstWhere, wheres...));

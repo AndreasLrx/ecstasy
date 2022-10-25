@@ -164,16 +164,27 @@ TEST(Query, NotModifier)
             positions.emplace(i, i * 2, i * 10);
         if (i % 3 == 0 || i == 8)
             velocities.emplace(i, i * 10, i * 2);
-        if (i % 4 == 0)
-            statics.emplace(i);
     }
 
-    // Simple queries
+    /// -- No static in the storage --
     /// without looking at static marker (0, 6, 8, 12, 18, 24 (and 25 is sentinel bit))
     GTEST_ASSERT_EQ(
         ecstasy::Query(entities, positions, velocities).getMask(), util::BitSet("11000001000001000101000001"));
+    /// without any statics in the storage (since it is a not it shoudln't change the query result because no entity has
+    /// it)
+    GTEST_ASSERT_EQ(ecstasy::Query(entities, positions, velocities, notStatics).getMask(),
+        util::BitSet("11000001000001000101000001"));
+
+    /// -- Statics in the storage --
+    for (int i = 0; i < 25; i++) {
+        if (i % 4 == 0)
+            statics.emplace(i);
+    }
     notStatics.reloadMask();
-    /// without static marker (6, 18(and 25 is sentinel bit))
+    /// It doesn't change anything since static isn't in the query
+    GTEST_ASSERT_EQ(
+        ecstasy::Query(entities, positions, velocities).getMask(), util::BitSet("11000001000001000101000001"));
+    /// Returns the same result as before with the statics removed (6, 18 (and 25 is sentinel bit))
     GTEST_ASSERT_EQ(ecstasy::Query(entities, positions, velocities, notStatics).getMask(),
         util::BitSet("10000001000000000001000000"));
 
