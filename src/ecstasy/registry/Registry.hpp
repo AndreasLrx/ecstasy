@@ -13,6 +13,7 @@
 #define ECSTASY_REGISTRY_REGISTRY_HPP_
 
 #include "concepts/ComponentType.hpp"
+#include "concepts/QueryableType.hpp"
 #include "concepts/RegistryModifier.hpp"
 #include "ecstasy/query/Query.hpp"
 #include "ecstasy/query/Select.hpp"
@@ -30,6 +31,40 @@ namespace ecstasy
     class Resource;
 
     class Registry {
+      private:
+        ///
+        /// @brief Get a queryable from a registry variable (component stoage, resource, queryable storage...)
+        ///
+        /// @tparam C Type of the variable to fetch.
+        ///
+        /// @return constexpr getStorageType<C>& Associated queryable (if no specific case the storage for C is
+        /// returned).
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-25)
+        ///
+        template <typename C>
+        constexpr getStorageType<C> &getQueryable()
+        {
+            return getStorageSafe<C>();
+        }
+
+        /// @copydoc getQueryable()
+        template <std::derived_from<Resource> R>
+        requires query::Queryable<R>
+        constexpr R &getQueryable()
+        {
+            return getResource<R>();
+        }
+
+        /// @copydoc getQueryable()
+        template <IsStorage S>
+        requires query::Queryable<S>
+        constexpr S &getQueryable()
+        {
+            return _storages.get<S>();
+        }
+
       public:
         ///
         /// @brief Entity Builder using the registry storages.
@@ -144,28 +179,8 @@ namespace ecstasy
                 query::modifier::ModifiersList allocator;
 
                 return ecstasy::query::Select<Selects...>::where(
-                    applyUnaryModifier<C>(_registry.getStorageSafe<component_type_t<C>>(), allocator),
-                    applyUnaryModifier<Cs>(_registry.getStorageSafe<component_type_t<Cs>>(), allocator)...);
-            }
-
-            ///
-            /// @brief Query all entities which have all the given components.
-            ///
-            /// @tparam R Queryable Resource (this overload is made for the @ref Entities resource).
-            /// @tparam Cs Other component Types.
-            ///
-            /// @return Query<Selects...> Resulting query.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-10-22)
-            ///
-            template <std::derived_from<Resource> R, typename... Cs>
-            query::Query<Selects...> where()
-            {
-                query::modifier::ModifiersList allocator;
-
-                return ecstasy::query::Select<Selects...>::where(_registry.getResource<R>(),
-                    applyUnaryModifier<Cs>(_registry.getStorageSafe<component_type_t<Cs>>(), allocator)...);
+                    applyUnaryModifier<C>(_registry.getQueryable<component_type_t<C>>(), allocator),
+                    applyUnaryModifier<Cs>(_registry.getQueryable<component_type_t<Cs>>(), allocator)...);
             }
 
           private:
@@ -390,32 +405,15 @@ namespace ecstasy
         /// @tparam C First component type.
         /// @tparam Cs Other component types.
         ///
-        /// @return Query<getStorageType<C>, getStorageType<Cs>...> New query which can be iterated.
+        /// @return Query<queryable_type_t<C>, queryable_type_t<Cs>...> New query which can be iterated.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-20)
         ///
         template <typename C, typename... Cs>
-        query::Query<getStorageType<C>, getStorageType<Cs>...> query()
+        query::Query<queryable_type_t<C>, queryable_type_t<Cs>...> query()
         {
-            return query::Query(getStorageSafe<C>(), getStorageSafe<Cs>()...);
-        }
-
-        ///
-        /// @brief Construct a query for the given components and a Queryable Resource (made for Entities).
-        ///
-        /// @tparam R Queryable Resource, it will often be Entities.
-        /// @tparam Cs Component types.
-        ///
-        /// @return Query<R, getStorageType<Cs>...> New query which can be iterated.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-20)
-        ///
-        template <std::derived_from<Resource> R, typename... Cs>
-        query::Query<R, getStorageType<Cs>...> query()
-        {
-            return query::Query(getResource<R>(), getStorageSafe<Cs>()...);
+            return query::Query(getQueryable<C>(), getQueryable<Cs>()...);
         }
 
         ///
@@ -426,34 +424,15 @@ namespace ecstasy
         /// @tparam C First component to query.
         /// @tparam Cs Other components to query.
         ///
-        /// @return Select<getStorageType<C>, getStorageType<Cs>...> placeholder templated Select object.
+        /// @return Select<queryable_type_t<C>, queryable_type_t<Cs>...> placeholder templated Select object.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-24)
         ///
         template <typename C, typename... Cs>
-        Select<getStorageType<C>, getStorageType<Cs>...> select()
+        Select<queryable_type_t<C>, queryable_type_t<Cs>...> select()
         {
-            return Select<getStorageType<C>, getStorageType<Cs>...>(*this);
-        }
-
-        ///
-        /// @brief Starts the creation of a complex query in the registry.
-        ///
-        /// @note It does nothing until the @ref Select::where() method is called.
-        ///
-        /// @tparam R Queryable resource, it will often be @ref Entities.
-        /// @tparam Cs Other components to query.
-        ///
-        /// @return Select<R, getStorageType<Cs>...> placeholder templated Select object.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-24)
-        ///
-        template <std::derived_from<Resource> R, typename... Cs>
-        Select<R, getStorageType<Cs>...> select()
-        {
-            return Select<R, getStorageType<Cs>...>(*this);
+            return Select<queryable_type_t<C>, queryable_type_t<Cs>...>(*this);
         }
 
         ///

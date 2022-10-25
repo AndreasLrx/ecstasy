@@ -12,7 +12,9 @@
 #ifndef ECSTASY_REGISTRY_CONCEPTS_GETCOMPONENTTYPE_HPP_
 #define ECSTASY_REGISTRY_CONCEPTS_GETCOMPONENTTYPE_HPP_
 
-#include "ecstasy/query/concepts/QueryDataHolder.hpp"
+#include "RegistryModifier.hpp"
+#include "ecstasy/storage/IStorage.hpp"
+#include "ecstasy/storage/StorageConcepts.hpp"
 
 namespace ecstasy
 {
@@ -35,9 +37,15 @@ namespace ecstasy
     };
 
     /// @copydoc component_type
-    template <query::QueryDataHolder Q>
+    template <RegistryModifier Q>
     struct component_type<Q> {
         using type = typename Q::QueryData;
+    };
+
+    /// @copydoc component_type
+    template <IsStorage S>
+    struct component_type<S> {
+        using type = typename S::Component;
     };
 
     ///
