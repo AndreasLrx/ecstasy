@@ -11,7 +11,8 @@
 #include <algorithm>
 #include <functional>
 
-#include "QueryConcepts.hpp"
+#include "concepts/Queryable.hpp"
+#include "concepts/QueryableNeedAdjust.hpp"
 #include "util/BitSet.hpp"
 
 namespace ecstasy

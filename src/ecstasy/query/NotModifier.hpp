@@ -13,7 +13,7 @@
 #define ECSTASY_QUERY_NOTMODIFIER_HPP_
 
 #include "Modifier.hpp"
-#include "QueryConcepts.hpp"
+#include "concepts/Queryable.hpp"
 #include "util/BitSet.hpp"
 
 namespace ecstasy

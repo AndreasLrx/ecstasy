@@ -12,7 +12,6 @@
 #include <vector>
 
 #include "Modifier.hpp"
-#include "QueryConcepts.hpp"
 
 namespace ecstasy
 {

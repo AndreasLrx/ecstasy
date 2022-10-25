@@ -14,7 +14,6 @@
 
 #include "ecstasy/query/ModifiersList.hpp"
 #include "ecstasy/query/NotModifier.hpp"
-#include "ecstasy/query/QueryConcepts.hpp"
 #include "ecstasy/storage/IStorage.hpp"
 #include "ecstasy/storage/StorageConcepts.hpp"
 

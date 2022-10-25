@@ -17,7 +17,7 @@
 #include <tuple>
 
 #include "Query.hpp"
-#include "QueryConcepts.hpp"
+#include "concepts/util.hpp"
 
 namespace ecstasy
 {
