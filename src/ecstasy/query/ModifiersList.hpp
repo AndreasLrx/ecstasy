@@ -13,7 +13,7 @@
 
 #include "Modifier.hpp"
 
-namespace ecstasy
+namespace ecstasy::query
 {
     /// @internal
     /// @brief Wrapper of a @ref Modifier vector to manage lifetime of multiple modifiers.
@@ -45,6 +45,6 @@ namespace ecstasy
       private:
         std::vector<std::unique_ptr<Modifier>> _modifiers;
     };
-} // namespace ecstasy
+} // namespace ecstasy::query
 
 #endif /* !ECSTASY_QUERY_MODIFIERSLIST_HPP_ */

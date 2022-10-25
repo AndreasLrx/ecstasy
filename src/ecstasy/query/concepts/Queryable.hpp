@@ -20,7 +20,7 @@ namespace util
     class BitSet;
 }
 
-namespace ecstasy
+namespace ecstasy::query
 {
     ///
     /// @brief Defines a type that can be queried.
@@ -44,6 +44,6 @@ namespace ecstasy
         { queryable.getQueryData(index) } -> std::same_as<typename Q::QueryData>;
         // clang-format on
     };
-} // namespace ecstasy
+} // namespace ecstasy::query
 
 #endif /* !ECSTASY_QUERY_CONCEPTS_QUERYABLE_HPP_ */

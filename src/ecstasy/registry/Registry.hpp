@@ -111,7 +111,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-22)
         ///
-        template <Queryable... Selects>
+        template <query::Queryable... Selects>
         class Select {
           public:
             ///
@@ -138,11 +138,11 @@ namespace ecstasy
             /// @since 1.0.0 (2022-10-22)
             ///
             template <typename C, typename... Cs>
-            Query<Selects...> where()
+            query::Query<Selects...> where()
             {
-                ModifiersList allocator;
+                query::ModifiersList allocator;
 
-                return ecstasy::Select<Selects...>::where(
+                return ecstasy::query::Select<Selects...>::where(
                     applyUnaryModifier<C>(_registry.getStorageSafe<component_type_t<C>>(), allocator),
                     applyUnaryModifier<Cs>(_registry.getStorageSafe<component_type_t<Cs>>(), allocator)...);
             }
@@ -159,11 +159,11 @@ namespace ecstasy
             /// @since 1.0.0 (2022-10-22)
             ///
             template <std::derived_from<Resource> R, typename... Cs>
-            Query<Selects...> where()
+            query::Query<Selects...> where()
             {
-                ModifiersList allocator;
+                query::ModifiersList allocator;
 
-                return ecstasy::Select<Selects...>::where(_registry.getResource<R>(),
+                return ecstasy::query::Select<Selects...>::where(_registry.getResource<R>(),
                     applyUnaryModifier<Cs>(_registry.getStorageSafe<component_type_t<Cs>>(), allocator)...);
             }
 
@@ -395,9 +395,9 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-20)
         ///
         template <typename C, typename... Cs>
-        Query<getStorageType<C>, getStorageType<Cs>...> query()
+        query::Query<getStorageType<C>, getStorageType<Cs>...> query()
         {
-            return Query(getStorageSafe<C>(), getStorageSafe<Cs>()...);
+            return query::Query(getStorageSafe<C>(), getStorageSafe<Cs>()...);
         }
 
         ///
@@ -412,9 +412,9 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-20)
         ///
         template <std::derived_from<Resource> R, typename... Cs>
-        Query<R, getStorageType<Cs>...> query()
+        query::Query<R, getStorageType<Cs>...> query()
         {
-            return Query(getResource<R>(), getStorageSafe<Cs>()...);
+            return query::Query(getResource<R>(), getStorageSafe<Cs>()...);
         }
 
         ///

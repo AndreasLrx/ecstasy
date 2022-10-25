@@ -19,7 +19,7 @@
 #include "Query.hpp"
 #include "concepts/util.hpp"
 
-namespace ecstasy
+namespace ecstasy::query
 {
     ///
     /// @brief Complex query functions using templates at its maximum. Most of them are constexpr and needs a lot of
@@ -193,6 +193,6 @@ namespace ecstasy
         }
     };
 
-} // namespace ecstasy
+} // namespace ecstasy::query
 
 #endif /* !ECSTASY_QUERY_COMPLEXQUERY_HPP_ */

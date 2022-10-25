@@ -12,7 +12,7 @@
 #ifndef ECSTASY_QUERY_MODIFIER_HPP_
 #define ECSTASY_QUERY_MODIFIER_HPP_
 
-namespace ecstasy
+namespace ecstasy::query
 {
     ///
     /// @brief Base class for all query modifiers.
@@ -24,6 +24,6 @@ namespace ecstasy
       public:
         virtual ~Modifier() = default;
     };
-} // namespace ecstasy
+} // namespace ecstasy::query
 
 #endif /* !ECSTASY_QUERY_MODIFIER_HPP_ */

@@ -15,7 +15,7 @@
 #include <concepts>
 #include <cstddef>
 
-namespace ecstasy
+namespace ecstasy::query
 {
     ///
     /// @brief Tests if the type @p T exists in the types @p Ts.
@@ -74,6 +74,6 @@ namespace ecstasy
     ///
     template <typename... Types>
     using first_type_t = type_at_index_t<0, Types...>;
-} // namespace ecstasy
+} // namespace ecstasy::query
 
 #endif /* !ECSTASY_QUERY_CONCEPTS_UTIL_HPP_ */

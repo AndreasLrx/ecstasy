@@ -14,7 +14,7 @@
 
 #include "Queryable.hpp"
 
-namespace ecstasy
+namespace ecstasy::query
 {
     ///
     /// @brief Defines a Queryable type which has the @ref adjustMask() implemented.
@@ -62,6 +62,6 @@ namespace ecstasy
     {
         queryable.adjustMask(maxSize);
     }
-} // namespace ecstasy
+} // namespace ecstasy::query
 
 #endif /* !ECSTASY_QUERY_CONCEPTS_QUERYABLENEEDADJUST_HPP_ */

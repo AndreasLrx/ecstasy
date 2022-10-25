@@ -16,7 +16,7 @@
 #include "concepts/Queryable.hpp"
 #include "util/BitSet.hpp"
 
-namespace ecstasy
+namespace ecstasy::query
 {
     ///
     /// @brief Query modifier which simply inverts the bits.
@@ -120,6 +120,6 @@ namespace ecstasy
         Internal &_internal;
         util::BitSet _mask;
     };
-} // namespace ecstasy
+} // namespace ecstasy::query
 
 #endif /* !ECSTASY_QUERY_NOTMODIFIER_HPP_ */
