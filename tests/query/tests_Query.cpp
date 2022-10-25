@@ -3,8 +3,8 @@
 #include "ecstasy/resource/entity/Entities.hpp"
 #include "ecstasy/storage/MapStorage.hpp"
 
-#include "ecstasy/query/ComplexQuery.hpp"
 #include "ecstasy/query/NotModifier.hpp"
+#include "ecstasy/query/Select.hpp"
 
 struct Vector2i {
     int x;
@@ -85,7 +85,7 @@ TEST(Query, where)
     GTEST_ASSERT_EQ(size8.y, 16);
 }
 
-TEST(ComplexQuery, omitStorages)
+TEST(Select, omitStorages)
 {
     ecstasy::MapStorage<Position> positions;
     ecstasy::MapStorage<Velocity> velocities;
@@ -110,7 +110,7 @@ TEST(ComplexQuery, omitStorages)
     GTEST_ASSERT_EQ(ecstasy::query::Query(entities, positions, velocities, movables).getMask(),
         util::BitSet("11000000000001000100000001"));
 
-    /// Complex Query: select only position and velocity data but query for positions, entities, velocities and movables
+    /// Select Query: select only position and velocity data but query for positions, entities, velocities and movables
     auto query = ecstasy::query::Select<decltype(positions), decltype(velocities)>::where(
         positions, entities, velocities, movables);
 
@@ -188,7 +188,7 @@ TEST(Query, NotModifier)
     GTEST_ASSERT_EQ(ecstasy::query::Query(entities, positions, velocities, notStatics).getMask(),
         util::BitSet("10000001000000000001000000"));
 
-    /// Complex query for all entities with position, velocities and without the statics component
+    /// Select query for all entities with position, velocities and without the statics component
     auto query = ecstasy::query::Select<decltype(positions), decltype(velocities)>::where(
         entities, positions, velocities, notStatics);
     auto it = query.begin();

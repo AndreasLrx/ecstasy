@@ -12,9 +12,9 @@
 #ifndef ECSTASY_REGISTRY_REGISTRY_HPP_
 #define ECSTASY_REGISTRY_REGISTRY_HPP_
 
-#include "ecstasy/query/ComplexQuery.hpp"
 #include "ecstasy/query/ModifiersList.hpp"
 #include "ecstasy/query/Query.hpp"
+#include "ecstasy/query/Select.hpp"
 #include "ecstasy/registry/Modifiers.hpp"
 #include "ecstasy/resource/entity/Entities.hpp"
 #include "ecstasy/storage/IStorage.hpp"

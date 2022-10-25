@@ -1,5 +1,5 @@
 ///
-/// @file ComplexQuery.hpp
+/// @file Select.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
 /// @brief
 /// @version 1.0.0
@@ -9,8 +9,8 @@
 ///
 ///
 
-#ifndef ECSTASY_QUERY_COMPLEXQUERY_HPP_
-#define ECSTASY_QUERY_COMPLEXQUERY_HPP_
+#ifndef ECSTASY_QUERY_SELECT_HPP_
+#define ECSTASY_QUERY_SELECT_HPP_
 
 #include <algorithm>
 #include <stddef.h>
@@ -22,23 +22,39 @@
 namespace ecstasy::query
 {
     ///
-    /// @brief Complex query functions using templates at its maximum. Most of them are constexpr and needs a lot of
+    /// @brief Select functions using templates at its maximum. Most of them are constexpr and needs a lot of
     /// compile time but are really fast at run time.
     ///
-    /// @tparam Selects Queryables to keep in the resulting query.
+    /// @tparam SelectedQueryables Queryables to keep in the resulting query.
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-10-22)
     ///
-    template <Queryable... Selects>
+    template <Queryable... SelectedQueryables>
     struct Select {
       public:
         /// @brief Resulting selected @ref Queryables tuple
-        using SelectedTuple = std::tuple<Selects &...>;
+        using SelectedTuple = std::tuple<SelectedQueryables &...>;
 
       private:
         /// @internal
-        /// @brief Primary template to isolate required storages (the one in Selects) from the queried ones (where).
+        /// @brief Test if the @ref Queryable type Q is in the @ref SelectedQueryables types.
+        ///
+        /// @tparam Q Evaluated type.
+        ///
+        /// @return constexpr bool Whether the type Q is in the @ref SelectedQueryables types.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-25)
+        ///
+        template <Queryable Q>
+        constexpr static bool isQueryableSelected()
+        {
+            return contains<Q, SelectedQueryables...>();
+        }
+
+        /// @internal
+        /// @brief Primary template to filter the queryables keeping only the one in SelectedQueryables.
         ///
         /// @tparam ContainsPivot Whether or not the current Queryable (called pivot) must be selected.
         /// @tparam Pivot Current Queryable Type.
@@ -48,7 +64,7 @@ namespace ecstasy::query
         /// @since 1.0.0 (2022-10-22)
         ///
         template <bool ContainsPivot, Queryable Pivot, Queryable... Lefts>
-        struct IsolateStorages {
+        struct FilterQueryables {
             ///
             /// @brief Primary template to finalize the queryables selection.
             ///
@@ -64,7 +80,7 @@ namespace ecstasy::query
 
             ///
             /// @brief Primary template recursively called until there is no @p nextPivot. It calls itself with:
-            /// - @p ContainsPivot to to true if @p nextPivot is in the @ref Selects types.
+            /// - @p ContainsPivot to to true if @p nextPivot is in the @ref SelectedQueryables types.
             /// - @p lefts to the current @p lefts with @p pivot (only if @p ContainsPivot is currently true).
             /// - @p pivot to current @p nextPivot.
             /// - @p nextPivot and @p rights are set or not depending on the queryable lefts in the current @p rights.
@@ -89,7 +105,7 @@ namespace ecstasy::query
         };
 
         /// @internal
-        /// @brief Specialization of @ref IsolateStorage with @p ContainsPivot true, ie the pivot is selected in the
+        /// @brief Specialization of @ref FilterQueryables with @p ContainsPivot true, ie the pivot is selected in the
         /// resulting tuple.
         ///
         /// @tparam Pivot Current Queryable Type.
@@ -99,7 +115,24 @@ namespace ecstasy::query
         /// @since 1.0.0 (2022-10-22)
         ///
         template <Queryable Pivot, Queryable... Lefts>
-        struct IsolateStorages<true, Pivot, Lefts...> {
+        struct FilterQueryables<true, Pivot, Lefts...> {
+            ///
+            /// @brief Test if the @ref Queryable type Q must be kept in the resulting queryables.
+            ///
+            /// @tparam Q Evaluated type.
+            ///
+            /// @return constexpr bool Whether the type Q is in the @ref SelectedQueryables types and not already
+            /// selected (in the Lefts types).
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-25)
+            ///
+            template <Queryable Q>
+            constexpr static bool isQueryableRequired()
+            {
+                return isQueryableSelected<Q>() && !contains<Q, Lefts...>();
+            }
+
             constexpr static SelectedTuple value(Lefts &...lefts, Pivot &pivot)
             {
                 return std::tie(std::forward<Lefts &>(lefts)..., pivot);
@@ -108,13 +141,13 @@ namespace ecstasy::query
             template <Queryable NextPivot, Queryable... Rights>
             constexpr static SelectedTuple value(Lefts &...lefts, Pivot &pivot, NextPivot &nextPivot, Rights &...rights)
             {
-                return IsolateStorages<contains<NextPivot, Selects...>(), NextPivot, Lefts..., Pivot>::value(
+                return FilterQueryables<isQueryableRequired<NextPivot>(), NextPivot, Lefts..., Pivot>::value(
                     std::forward<Lefts &>(lefts)..., pivot, nextPivot, std::forward<Rights &>(rights)...);
             }
         };
 
         /// @internal
-        /// @brief Specialization of @ref IsolateStorage with @p ContainsPivot false, ie the pivot is not selected in
+        /// @brief Specialization of @ref FilterQueryables with @p ContainsPivot false, ie the pivot is not selected in
         /// the resulting tuple.
         ///
         /// @tparam Pivot Current Queryable Type.
@@ -124,7 +157,24 @@ namespace ecstasy::query
         /// @since 1.0.0 (2022-10-22)
         ///
         template <Queryable Pivot, Queryable... Lefts>
-        struct IsolateStorages<false, Pivot, Lefts...> {
+        struct FilterQueryables<false, Pivot, Lefts...> {
+            ///
+            /// @brief Test if the @ref Queryable type Q must be kept in the resulting queryables.
+            ///
+            /// @tparam Q Evaluated type.
+            ///
+            /// @return constexpr bool Whether the type Q is in the @ref SelectedQueryables types and not already
+            /// selected (in the Lefts types).
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-25)
+            ///
+            template <Queryable Q>
+            constexpr static bool isQueryableRequired()
+            {
+                return isQueryableSelected<Q>() && !contains<Q, Lefts...>();
+            }
+
             constexpr static SelectedTuple value(Lefts &...lefts, Pivot &pivot)
             {
                 (void)pivot;
@@ -135,7 +185,7 @@ namespace ecstasy::query
             constexpr static SelectedTuple value(Lefts &...lefts, Pivot &pivot, NextPivot &nextPivot, Rights &...rights)
             {
                 (void)pivot;
-                return IsolateStorages<contains<NextPivot, Selects...>(), NextPivot, Lefts...>::value(
+                return FilterQueryables<isQueryableSelected<NextPivot>(), NextPivot, Lefts...>::value(
                     std::forward<Lefts &>(lefts)..., nextPivot, std::forward<Rights &>(rights)...);
             }
         };
@@ -143,20 +193,20 @@ namespace ecstasy::query
         ///
         /// @brief Isolate the given queryables to keep only the @ref Selected ones.
         ///
-        /// @tparam Storages given queryables types.
+        /// @tparam Queryables given queryables types.
         ///
-        /// @param[in] storages given queryables.
+        /// @param[in] queryables given queryables.
         ///
         /// @return constexpr SelectedTuple selected queryables.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-22)
         ///
-        template <Queryable... Storages>
-        constexpr static SelectedTuple isolateStorages(Storages &...storages)
+        template <Queryable... Queryables>
+        constexpr static SelectedTuple filterQueryables(Queryables &...queryables)
         {
-            return IsolateStorages<contains<first_type_t<Storages...>, Selects...>(), first_type_t<Storages...>>::value(
-                std::forward<Storages &>(storages)...);
+            return FilterQueryables<isQueryableSelected<first_type_t<Queryables...>>(),
+                first_type_t<Queryables...>>::value(std::forward<Queryables &>(queryables)...);
         }
 
       public:
@@ -174,13 +224,13 @@ namespace ecstasy::query
         /// @param[in] firstWhere first @ref Queryable instance.
         /// @param[in] wheres others @ref Queryable instances.
         ///
-        /// @return Query<Selects...> Resulting query that can be iterated.
+        /// @return Query<SelectedQueryables...> Resulting query that can be iterated.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-22)
         ///
         template <Queryable FirstWhere, Queryable... Wheres>
-        static Query<Selects...> where(FirstWhere &firstWhere, Wheres &...wheres)
+        static Query<SelectedQueryables...> where(FirstWhere &firstWhere, Wheres &...wheres)
         {
             size_t maxSize = std::max({firstWhere.getMask().size(), wheres.getMask().size()...});
 
@@ -189,10 +239,10 @@ namespace ecstasy::query
 
             util::BitSet mask = (util::BitSet(firstWhere.getMask()) &= ... &= wheres.getMask());
 
-            return Query<Selects...>(mask, isolateStorages(firstWhere, wheres...));
+            return Query<SelectedQueryables...>(mask, filterQueryables(firstWhere, wheres...));
         }
     };
 
 } // namespace ecstasy::query
 
-#endif /* !ECSTASY_QUERY_COMPLEXQUERY_HPP_ */
+#endif /* !ECSTASY_QUERY_SELECT_HPP_ */
