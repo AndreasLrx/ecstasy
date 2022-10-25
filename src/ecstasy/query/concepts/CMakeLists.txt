@@ -5,7 +5,6 @@ set(SRC
     ${SRC}
     ${INCROOT}/Queryable.hpp
     ${INCROOT}/QueryableNeedAdjust.hpp
-    ${INCROOT}/QueryDataHolder.hpp
     ${INCROOT}/util.hpp
     PARENT_SCOPE
 )
