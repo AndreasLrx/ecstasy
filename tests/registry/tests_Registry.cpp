@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include <math.h>
-#include "ecstasy/registry/Modifiers.hpp"
 #include "ecstasy/registry/Registry.hpp"
+#include "ecstasy/registry/modifiers/Not.hpp"
 #include "ecstasy/resource/Resource.hpp"
 #include "ecstasy/resource/entity/RegistryEntity.hpp"
 #include "ecstasy/storage/MapStorage.hpp"
@@ -105,7 +105,7 @@ struct Movement : public ecstasy::ISystem {
     void run(ecstasy::Registry &registry) override final
     {
         for (auto [position, velocity] :
-            registry.select<Position, Velocity>().where<Position, Movable, Velocity, ecstasy::RegistryNot<Static>>()) {
+            registry.select<Position, Velocity>().where<Position, Movable, Velocity, ecstasy::Not<Static>>()) {
             position.v.x += velocity.v.x;
             position.v.y += velocity.v.y;
         }

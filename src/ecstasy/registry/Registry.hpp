@@ -12,10 +12,11 @@
 #ifndef ECSTASY_REGISTRY_REGISTRY_HPP_
 #define ECSTASY_REGISTRY_REGISTRY_HPP_
 
+#include "concepts/ComponentType.hpp"
+#include "concepts/RegistryModifier.hpp"
 #include "ecstasy/query/Query.hpp"
 #include "ecstasy/query/Select.hpp"
 #include "ecstasy/query/modifiers/ModifiersList.hpp"
-#include "ecstasy/registry/Modifiers.hpp"
 #include "ecstasy/resource/entity/Entities.hpp"
 #include "ecstasy/storage/IStorage.hpp"
 #include "ecstasy/storage/Instances.hpp"

@@ -9,86 +9,14 @@
 ///
 ///
 
-#ifndef ECSTASY_REGISTRY_MODIFIERS_HPP_
-#define ECSTASY_REGISTRY_MODIFIERS_HPP_
+#ifndef ECSTASY_REGISTRY_CONCEPTS_REGISTRYMODIFIER_HPP_
+#define ECSTASY_REGISTRY_CONCEPTS_REGISTRYMODIFIER_HPP_
 
+#include "ecstasy/query/concepts/Queryable.hpp"
 #include "ecstasy/query/modifiers/ModifiersList.hpp"
-#include "ecstasy/query/modifiers/Not.hpp"
-#include "ecstasy/storage/IStorage.hpp"
-#include "ecstasy/storage/StorageConcepts.hpp"
-
-namespace util
-{
-    class BitSet;
-}
 
 namespace ecstasy
 {
-    class ModifiersList;
-
-    ///
-    /// @brief Placeholder for @ref Not query modifier.
-    ///
-    /// @tparam C Component type.
-    ///
-    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-    /// @since 1.0.0 (2022-10-24)
-    ///
-    template <typename C>
-    struct RegistryNot {
-        using QueryData = C;
-        using Modifier = query::modifier::Not<getStorageType<C>>;
-    };
-
-    ///
-    /// @brief Concept matching all type defining a @b QueryData type.
-    ///
-    /// @tparam T Type of the element evaluated.
-    ///
-    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-    /// @since 1.0.0 (2022-10-24)
-    ///
-    template <typename T>
-    concept QueryDataHolder = requires()
-    {
-        typename T::QueryData;
-    };
-
-    ///
-    /// @brief Primary get the component type of the given type. For a component it return the component itself, for a
-    /// @ref QueryDataHolder it returns the internal @b QueryData type.
-    ///
-    /// @tparam T Evaluated type.
-    ///
-    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-    /// @since 1.0.0 (2022-10-24)
-    ///
-    template <typename T>
-    struct component_type;
-
-    /// @copydoc component_type
-    template <typename T>
-    struct component_type {
-        using type = T;
-    };
-
-    /// @copydoc component_type
-    template <QueryDataHolder Q>
-    struct component_type<Q> {
-        using type = typename Q::QueryData;
-    };
-
-    ///
-    /// @brief Helper for component_type<T>::type.
-    ///
-    /// @tparam T Evaluated type.
-    ///
-    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-    /// @since 1.0.0 (2022-10-24)
-    ///
-    template <typename T>
-    using component_type_t = typename component_type<T>::type;
-
     ///
     /// @brief Registry Modifier concept, which are placeholders for the actual query modifiers.
     ///
@@ -149,4 +77,4 @@ namespace ecstasy
 
 } // namespace ecstasy
 
-#endif /* !MODIFIERS_HPP_ */
+#endif /* !ECSTASY_REGISTRY_CONCEPTS_REGISTRYMODIFIER_HPP_ */
