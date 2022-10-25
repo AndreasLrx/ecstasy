@@ -11,10 +11,11 @@
 #include <algorithm>
 #include <functional>
 
-#include "QueryConcepts.hpp"
+#include "concepts/Queryable.hpp"
+#include "concepts/QueryableNeedAdjust.hpp"
 #include "util/BitSet.hpp"
 
-namespace ecstasy
+namespace ecstasy::query
 {
     class Entities;
     class IStorage;
@@ -314,6 +315,6 @@ namespace ecstasy
         std::tuple<First &, Others &...> _storages;
         size_t _begin;
     };
-} // namespace ecstasy
+} // namespace ecstasy::query
 
 #endif /* !QUERY_HPP_ */

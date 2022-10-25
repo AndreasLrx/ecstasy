@@ -1,6 +1,9 @@
 set(INCROOT ${INCROOT}/registry)
 set(SRCROOT ${SRCROOT}/registry)
 
+add_subdirectory(concepts)
+add_subdirectory(modifiers)
+
 set(SRC
     ${SRC}
     ${SRCROOT}/DeletionStack.cpp
