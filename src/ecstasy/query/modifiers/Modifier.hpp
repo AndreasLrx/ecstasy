@@ -9,10 +9,10 @@
 ///
 ///
 
-#ifndef ECSTASY_QUERY_MODIFIER_HPP_
-#define ECSTASY_QUERY_MODIFIER_HPP_
+#ifndef ECSTASY_QUERY_MODIFIER_MODIFIER_HPP_
+#define ECSTASY_QUERY_MODIFIER_MODIFIER_HPP_
 
-namespace ecstasy::query
+namespace ecstasy::query::modifier
 {
     ///
     /// @brief Base class for all query modifiers.
@@ -24,6 +24,6 @@ namespace ecstasy::query
       public:
         virtual ~Modifier() = default;
     };
-} // namespace ecstasy::query
+} // namespace ecstasy::query::modifier
 
 #endif /* !ECSTASY_QUERY_MODIFIER_HPP_ */

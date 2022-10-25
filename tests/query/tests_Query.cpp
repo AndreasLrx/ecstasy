@@ -3,8 +3,8 @@
 #include "ecstasy/resource/entity/Entities.hpp"
 #include "ecstasy/storage/MapStorage.hpp"
 
-#include "ecstasy/query/NotModifier.hpp"
 #include "ecstasy/query/Select.hpp"
+#include "ecstasy/query/modifiers/Not.hpp"
 
 struct Vector2i {
     int x;
@@ -156,7 +156,7 @@ TEST(Query, NotModifier)
     ecstasy::MapStorage<Velocity> velocities;
     ecstasy::MapStorage<MovableMarker> statics;
     ecstasy::Entities entities;
-    auto notStatics = ecstasy::query::Not(statics);
+    auto notStatics = ecstasy::query::modifier::Not(statics);
 
     for (int i = 0; i < 25; i++) {
         entities.create();

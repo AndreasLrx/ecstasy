@@ -12,8 +12,8 @@
 #ifndef ECSTASY_REGISTRY_MODIFIERS_HPP_
 #define ECSTASY_REGISTRY_MODIFIERS_HPP_
 
-#include "ecstasy/query/ModifiersList.hpp"
-#include "ecstasy/query/NotModifier.hpp"
+#include "ecstasy/query/modifiers/ModifiersList.hpp"
+#include "ecstasy/query/modifiers/Not.hpp"
 #include "ecstasy/storage/IStorage.hpp"
 #include "ecstasy/storage/StorageConcepts.hpp"
 
@@ -37,7 +37,7 @@ namespace ecstasy
     template <typename C>
     struct RegistryNot {
         using QueryData = C;
-        using Modifier = query::Not<getStorageType<C>>;
+        using Modifier = query::modifier::Not<getStorageType<C>>;
     };
 
     ///
@@ -121,7 +121,7 @@ namespace ecstasy
     /// @since 1.0.0 (2022-10-24)
     ///
     template <typename C, query::Queryable Q>
-    Q &applyUnaryModifier(Q &queryable, query::ModifiersList &allocator)
+    Q &applyUnaryModifier(Q &queryable, query::modifier::ModifiersList &allocator)
     {
         (void)allocator;
         return queryable;
@@ -142,7 +142,7 @@ namespace ecstasy
     /// @since 1.0.0 (2022-10-24)
     ///
     template <RegistryModifier M, query::Queryable Q>
-    M::Modifier &applyUnaryModifier(Q &queryable, query::ModifiersList &allocator)
+    M::Modifier &applyUnaryModifier(Q &queryable, query::modifier::ModifiersList &allocator)
     {
         return allocator.instanciateModifier<typename M::Modifier>(queryable);
     }

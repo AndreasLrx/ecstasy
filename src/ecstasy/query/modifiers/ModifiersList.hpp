@@ -1,19 +1,23 @@
-/*
-** EPITECH PROJECT, 2022
-** ecstasy
-** File description:
-** ModifiersList
-*/
+///
+/// @file ModifiersList.hpp
+/// @author Andréas Leroux (andreas.leroux@epitech.eu)
+/// @brief
+/// @version 1.0.0
+/// @date 2022-10-25
+///
+/// @copyright Copyright (c) ECSTASY 2022
+///
+///
 
-#ifndef ECSTASY_QUERY_MODIFIERSLIST_HPP_
-#define ECSTASY_QUERY_MODIFIERSLIST_HPP_
+#ifndef ECSTASY_QUERY_MODIFIERS_MODIFIERSLIST_HPP_
+#define ECSTASY_QUERY_MODIFIERS_MODIFIERSLIST_HPP_
 
 #include <memory>
 #include <vector>
 
 #include "Modifier.hpp"
 
-namespace ecstasy::query
+namespace ecstasy::query::modifier
 {
     /// @internal
     /// @brief Wrapper of a @ref Modifier vector to manage lifetime of multiple modifiers.
@@ -45,6 +49,6 @@ namespace ecstasy::query
       private:
         std::vector<std::unique_ptr<Modifier>> _modifiers;
     };
-} // namespace ecstasy::query
+} // namespace ecstasy::query::modifier
 
-#endif /* !ECSTASY_QUERY_MODIFIERSLIST_HPP_ */
+#endif /* !ECSTASY_QUERY_MODIFIERS_MODIFIERSLIST_HPP_ */

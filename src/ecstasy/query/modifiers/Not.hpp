@@ -9,14 +9,14 @@
 ///
 ///
 
-#ifndef ECSTASY_QUERY_NOTMODIFIER_HPP_
-#define ECSTASY_QUERY_NOTMODIFIER_HPP_
+#ifndef ECSTASY_QUERY_MODIFIER_NOT_HPP_
+#define ECSTASY_QUERY_MODIFIER_NOT_HPP_
 
 #include "Modifier.hpp"
-#include "concepts/Queryable.hpp"
+#include "ecstasy/query/concepts/Queryable.hpp"
 #include "util/BitSet.hpp"
 
-namespace ecstasy::query
+namespace ecstasy::query::modifier
 {
     ///
     /// @brief Query modifier which simply inverts the bits.
@@ -120,6 +120,6 @@ namespace ecstasy::query
         Internal &_internal;
         util::BitSet _mask;
     };
-} // namespace ecstasy::query
+} // namespace ecstasy::query::modifier
 
-#endif /* !ECSTASY_QUERY_NOTMODIFIER_HPP_ */
+#endif /* !ECSTASY_QUERY_MODIFIER_NOT_HPP_ */
