@@ -61,7 +61,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-24)
         ///
-        const util::BitSet &getMask() const
+        constexpr const util::BitSet &getMask() const
         {
             return _mask;
         }
@@ -95,6 +95,25 @@ namespace ecstasy
         void reloadMask()
         {
             _mask = ~_internal.getMask();
+        }
+
+        ///
+        /// @brief Adjust the mask to be at least the @p maxSize.
+        ///
+        /// @note All bits exceeding the internal queryable mask size are set to 1.
+        ///
+        /// @param[in] maxSize maximum size of the masks compared with it.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-25)
+        ///
+        constexpr void adjustMask(size_t maxSize)
+        {
+            if (maxSize > _mask.size()) {
+                _mask.resize(maxSize);
+                _mask.setAll();
+                _mask.inplaceXor(_internal.getMask());
+            }
         }
 
       private:

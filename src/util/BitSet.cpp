@@ -14,6 +14,7 @@
 #include <algorithm>
 #include <cstddef>
 #include <cstdint>
+#include <math.h>
 #include <ostream>
 #include <vector>
 #include <string_view>
@@ -116,6 +117,34 @@ namespace util
     {
         this->_resize(std::min(this->_size, other._size));
         for (std::size_t i = 0, s = this->_store.size(); i < s; ++i)
+            this->_store[i] ^= other._store[i];
+        this->normalize();
+        return *this;
+    }
+
+    BitSet &BitSet::inplaceAnd(BitSet const &other) noexcept
+    {
+        std::size_t s = std::min(this->_store.size(), other._store.size());
+
+        for (std::size_t i = 0; i + 1 < s; ++i)
+            this->_store[i] &= other._store[i];
+        if (s != 0)
+            this->_store[s - 1] &= other._store[s - 1] | (~std::uint64_t(0) << (other.size() & 0b111111));
+        this->normalize();
+        return *this;
+    }
+
+    BitSet &BitSet::inplaceOr(BitSet const &other) noexcept
+    {
+        for (std::size_t i = 0, s = std::min(this->_store.size(), other._store.size()); i < s; ++i)
+            this->_store[i] |= other._store[i];
+        this->normalize();
+        return *this;
+    }
+
+    BitSet &BitSet::inplaceXor(BitSet const &other) noexcept
+    {
+        for (std::size_t i = 0, s = std::min(this->_store.size(), other._store.size()); i < s; ++i)
             this->_store[i] ^= other._store[i];
         this->normalize();
         return *this;

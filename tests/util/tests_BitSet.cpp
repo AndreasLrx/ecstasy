@@ -120,6 +120,22 @@ TEST(BitSet, operations)
     EXPECT_EQ(set3, util::BitSet("011"));
 }
 
+TEST(BitSet, inplace_operations)
+{
+    util::BitSet set1("11011100");
+    util::BitSet set2("11011100");
+    util::BitSet set3("11011100");
+
+    set1.inplaceAnd(util::BitSet("111"));
+    set2.inplaceOr(util::BitSet("111"));
+    set3.inplaceXor(util::BitSet("111"));
+
+    /// Bitset keep same sizes, only the matching bits are changed (3 less significant bits)
+    EXPECT_EQ(set1, util::BitSet("11011100"));
+    EXPECT_EQ(set2, util::BitSet("11011111"));
+    EXPECT_EQ(set3, util::BitSet("11011011"));
+}
+
 TEST(BitSet, resize)
 {
     util::BitSet set("101110");
