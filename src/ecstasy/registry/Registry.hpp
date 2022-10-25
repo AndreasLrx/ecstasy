@@ -13,7 +13,9 @@
 #define ECSTASY_REGISTRY_REGISTRY_HPP_
 
 #include "ecstasy/query/ComplexQuery.hpp"
+#include "ecstasy/query/ModifiersList.hpp"
 #include "ecstasy/query/Query.hpp"
+#include "ecstasy/registry/Modifiers.hpp"
 #include "ecstasy/resource/entity/Entities.hpp"
 #include "ecstasy/storage/IStorage.hpp"
 #include "ecstasy/storage/Instances.hpp"
@@ -138,8 +140,11 @@ namespace ecstasy
             template <typename C, typename... Cs>
             Query<Selects...> where()
             {
+                ModifiersList allocator;
+
                 return ecstasy::Select<Selects...>::where(
-                    _registry.getStorageSafe<C>(), _registry.getStorageSafe<Cs>()...);
+                    applyUnaryModifier<C>(_registry.getStorageSafe<component_type_t<C>>(), allocator),
+                    applyUnaryModifier<Cs>(_registry.getStorageSafe<component_type_t<Cs>>(), allocator)...);
             }
 
             ///
@@ -156,8 +161,10 @@ namespace ecstasy
             template <std::derived_from<Resource> R, typename... Cs>
             Query<Selects...> where()
             {
-                return ecstasy::Select<Selects...>::where(
-                    _registry.getResource<R>(), _registry.getStorageSafe<Cs>()...);
+                ModifiersList allocator;
+
+                return ecstasy::Select<Selects...>::where(_registry.getResource<R>(),
+                    applyUnaryModifier<Cs>(_registry.getStorageSafe<component_type_t<Cs>>(), allocator)...);
             }
 
           private:
