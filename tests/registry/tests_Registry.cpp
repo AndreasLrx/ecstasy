@@ -9,6 +9,30 @@
 #include "ecstasy/storage/MapStorage.hpp"
 #include "ecstasy/system/ISystem.hpp"
 
+#ifdef __GNUG__
+    #include <cstdlib>
+    #include <cxxabi.h>
+    #include <memory>
+
+std::string demangle(const char *name)
+{
+    int status = -4; // some arbitrary value to eliminate the compiler warning
+
+    // enable c++11 by passing the flag -std=c++11 to g++
+    std::unique_ptr<char, void (*)(void *)> res{abi::__cxa_demangle(name, NULL, NULL, &status), std::free};
+
+    return (status == 0) ? res.get() : name;
+}
+
+#else
+
+// does nothing if not g++
+std::string demangle(const char *name)
+{
+    return name;
+}
+#endif
+
 class A : public ecstasy::ISystem {
   public:
     void run(ecstasy::Registry &registry) override
@@ -348,12 +372,70 @@ TEST(Registry, MaybeSelect)
             allocator);
     GTEST_ASSERT_EQ(query.getMask(), select.getMask());
     GTEST_ASSERT_EQ(query.getMask(), util::BitSet("11000101000001"));
+}
 
+TEST(Registry, get_missing_types)
+{
     /// Get Missing Types basic test
-    using expected = std::tuple<int>;
-    using got = ecstasy::query::available_types<char, float, double>::get_missings_t<float, int>;
-    GTEST_ASSERT_EQ(typeid(expected), typeid(got));
+    {
+        using expected = std::tuple<int>;
+        using got = ecstasy::query::available_types<char, float, double>::get_missings_t<float, int>;
+        GTEST_ASSERT_EQ(typeid(expected), typeid(got));
+    }
+
+    // clang-format off
+    {
+        using got = ecstasy::query::available_types<
+            ecstasy::queryable_type_t<Position>,
+            ecstasy::queryable_type_t<Velocity>>::
+            get_missings_t<
+                ecstasy::queryable_type_t<Position>, 
+                ecstasy::queryable_type_t<ecstasy::Maybe<Density>>>;
+        using expected = std::tuple<ecstasy::query::modifier::Maybe<ecstasy::getStorageType<Density>>>;
+        GTEST_ASSERT_EQ(typeid(expected), typeid(got));
+    }
+    // clang-format on
+
+    // clang-format off
+    {
+        using got = ecstasy::query::available_types<ecstasy::queryable_type_t<Velocity>>::
+            get_missings_t<ecstasy::queryable_type_t<Position>>;
+        using expected = std::tuple<ecstasy::getStorageType<Position>>;
+        GTEST_ASSERT_EQ(typeid(expected), typeid(got));
+    }
+    // clang-format on
+}
+
+TEST(Registry, ImplicitWhere)
+{
+    ecstasy::Registry registry;
+    ecstasy::ModifiersAllocator allocator;
+
+    for (int i = 0; i < 13; i++) {
+        auto builder = registry.entityBuilder();
+        if (i % 2 == 0)
+            builder.with<Position>(i * 2, i * 10);
+        if (i % 3 == 0 || i == 8)
+            builder.with<Velocity>(i * 10, i * 2);
+        if (i % 4 == 0)
+            builder.with<Density>(i * 4);
+        builder.build();
+    }
+
+    /// With allocator
+    {
+        auto explicitQuery = registry.select<Position>().where<Position, Velocity>(allocator);
+        auto implicitQuery = registry.select<Position>().where<Velocity>(allocator);
+        GTEST_ASSERT_EQ(explicitQuery.getMask(), implicitQuery.getMask());
+    }
+
+    /// Wihtout allocator
+    {
+        auto explicitQuery = registry.select<Position>().where<Position, Velocity>();
+        auto implicitQuery = registry.select<Position>().where<Velocity>();
+        GTEST_ASSERT_EQ(explicitQuery.getMask(), implicitQuery.getMask());
+    }
+
     // Next steps are: (same result expected)
-    // auto query2 = registry.select<Position, ecstasy::Maybe<Density>>().where<Position, Velocity>(allocator);
     // auto query3 = registry.select<Position, ecstasy::Maybe<Density>>().where<Velocity>(allocator);
 }

@@ -130,8 +130,13 @@ namespace ecstasy::query
         ///
         template <typename... Required>
         struct get_missings {
-            using type = typename missing<contains<first_type_t<Required...>, Availables...>(),
-                first_type_t<Required...>>::missings_tuple_t<Required...>;
+            using type = std::tuple<void>;
+        };
+
+        template <typename FirstRequired, typename... Required>
+        struct get_missings<FirstRequired, Required...> {
+            using type = typename missing<contains<FirstRequired, Availables...>(),
+                FirstRequired>::missings_tuple_t<Required...>;
         };
 
         ///

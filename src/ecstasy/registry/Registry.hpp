@@ -17,6 +17,7 @@
 #include "concepts/RegistryModifier.hpp"
 #include "ecstasy/query/Query.hpp"
 #include "ecstasy/query/Select.hpp"
+#include "ecstasy/query/concepts/GetMissingTypes.hpp"
 #include "ecstasy/query/modifiers/Modifier.hpp"
 #include "ecstasy/resource/entity/Entities.hpp"
 #include "ecstasy/storage/IStorage.hpp"
@@ -151,6 +152,57 @@ namespace ecstasy
         ///
         template <query::Queryable... Selects>
         class Select {
+          private:
+            ///
+            /// @brief Internal structure allowing to add implicitly required queryables (from the selected types).
+            ///
+            /// @tparam MissingsTuple Tuple type wrapping all the missing queryable types in the request. (they will be
+            /// implicitly added).
+            /// @tparam Cs Queryables already in the where clause.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-26)
+            ///
+            template <typename MissingsTuple, typename... Cs>
+            struct Internal;
+
+            /// @copydoc
+            ///
+            /// @note This template is used when there is no missing queryables.
+            template <typename... Cs>
+            struct Internal<std::tuple<void>, Cs...> {
+                constexpr static query::Query<Selects...> where(Registry &registry, ModifiersAllocator &allocator)
+                {
+                    return ecstasy::query::Select<Selects...>::where(
+                        applyUnaryModifier<Cs>(registry.getQueryable<component_type_t<Cs>>(), allocator)...);
+                }
+
+                constexpr static query::Query<Selects...> where(Registry &registry)
+                {
+                    return ecstasy::query::Select<Selects...>::where(registry.getQueryable<component_type_t<Cs>>()...);
+                }
+            };
+
+            /// @copydoc
+            ///
+            /// @note This template is used when there are missing queryables whoses types are @p Missings.
+            template <typename... Missings, typename... Cs>
+            struct Internal<std::tuple<Missings...>, Cs...> {
+                constexpr static query::Query<Selects...> where(Registry &registry, ModifiersAllocator &allocator)
+                {
+                    return ecstasy::query::Select<Selects...>::where(
+                        applyUnaryModifier<Missings>(registry.getQueryable<component_type_t<Missings>>(), allocator)...,
+                        applyUnaryModifier<Cs>(registry.getQueryable<component_type_t<Cs>>(), allocator)...);
+                }
+
+                constexpr static query::Query<Selects...> where(Registry &registry)
+                {
+                    return ecstasy::query::Select<Selects...>::where(
+                        registry.getQueryable<component_type_t<Missings>>()...,
+                        registry.getQueryable<component_type_t<Cs>>()...);
+                }
+            };
+
           public:
             ///
             /// @brief Construct a new Select object.
@@ -182,9 +234,9 @@ namespace ecstasy
             template <typename C, typename... Cs>
             query::Query<Selects...> where(ModifiersAllocator &allocator)
             {
-                return ecstasy::query::Select<Selects...>::where(
-                    applyUnaryModifier<C>(_registry.getQueryable<component_type_t<C>>(), allocator),
-                    applyUnaryModifier<Cs>(_registry.getQueryable<component_type_t<Cs>>(), allocator)...);
+                return Internal<typename ecstasy::query::available_types<queryable_type_t<C>,
+                                    queryable_type_t<Cs>...>::get_missings_t<Selects...>,
+                    C, Cs...>::where(_registry, allocator);
             }
 
             ///
@@ -203,8 +255,9 @@ namespace ecstasy
             template <typename C, typename... Cs>
             query::Query<Selects...> where()
             {
-                return ecstasy::query::Select<Selects...>::where(
-                    _registry.getQueryable<C>(), _registry.getQueryable<Cs>()...);
+                return Internal<typename ecstasy::query::available_types<queryable_type_t<C>,
+                                    queryable_type_t<Cs>...>::get_missings_t<Selects...>,
+                    C, Cs...>::where(_registry);
             }
 
           private:
