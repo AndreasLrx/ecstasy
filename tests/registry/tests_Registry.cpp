@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include <math.h>
+#include "ecstasy/query/concepts/GetMissingTypes.hpp"
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/registry/modifiers/Maybe.hpp"
 #include "ecstasy/registry/modifiers/Not.hpp"
@@ -323,4 +324,36 @@ TEST(Registry, MaybeQuery)
         GTEST_ASSERT_NE(density, nullptr);
         GTEST_ASSERT_EQ(*density, index * 4);
     }
+}
+
+TEST(Registry, MaybeSelect)
+{
+    ecstasy::Registry registry;
+    ecstasy::ModifiersAllocator allocator;
+
+    for (int i = 0; i < 13; i++) {
+        auto builder = registry.entityBuilder();
+        if (i % 2 == 0)
+            builder.with<Position>(i * 2, i * 10);
+        if (i % 3 == 0 || i == 8)
+            builder.with<Velocity>(i * 10, i * 2);
+        if (i % 4 == 0)
+            builder.with<Density>(i * 4);
+        builder.build();
+    }
+
+    auto query = registry.query<Position, Velocity, ecstasy::Maybe<Density>>(allocator);
+    auto select =
+        registry.select<Position, ecstasy::Maybe<Density>>().where<Position, Velocity, ecstasy::Maybe<Density>>(
+            allocator);
+    GTEST_ASSERT_EQ(query.getMask(), select.getMask());
+    GTEST_ASSERT_EQ(query.getMask(), util::BitSet("11000101000001"));
+
+    /// Get Missing Types basic test
+    using expected = std::tuple<int>;
+    using got = ecstasy::query::available_types<char, float, double>::get_missings_t<float, int>;
+    GTEST_ASSERT_EQ(typeid(expected), typeid(got));
+    // Next steps are: (same result expected)
+    // auto query2 = registry.select<Position, ecstasy::Maybe<Density>>().where<Position, Velocity>(allocator);
+    // auto query3 = registry.select<Position, ecstasy::Maybe<Density>>().where<Velocity>(allocator);
 }

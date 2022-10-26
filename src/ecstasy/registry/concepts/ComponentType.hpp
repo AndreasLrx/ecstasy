@@ -19,7 +19,7 @@
 namespace ecstasy
 {
     ///
-    /// @brief Primary get the component type of the given type. For a component it return the component itself, for a
+    /// @brief Get the component type of the given type. For a component it return the component itself, for a
     /// @ref QueryDataHolder it returns the internal @b QueryData type.
     ///
     /// @tparam T Evaluated type.
