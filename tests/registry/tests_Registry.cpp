@@ -384,6 +384,7 @@ TEST(Registry, get_missing_types)
     }
 
     // clang-format off
+    /// Missing one modifier
     {
         using got = ecstasy::query::available_types<
             ecstasy::queryable_type_t<Position>,
@@ -394,13 +395,20 @@ TEST(Registry, get_missing_types)
         using expected = std::tuple<ecstasy::query::modifier::Maybe<ecstasy::getStorageType<Density>>>;
         GTEST_ASSERT_EQ(typeid(expected), typeid(got));
     }
-    // clang-format on
 
-    // clang-format off
+    /// Missing one queryable
     {
         using got = ecstasy::query::available_types<ecstasy::queryable_type_t<Velocity>>::
             get_missings_t<ecstasy::queryable_type_t<Position>>;
         using expected = std::tuple<ecstasy::getStorageType<Position>>;
+        GTEST_ASSERT_EQ(typeid(expected), typeid(got));
+    }
+
+    /// missing one queryable and one modifier
+    {
+        using got = ecstasy::query::available_types<ecstasy::queryable_type_t<Velocity>>::
+            get_missings_t<ecstasy::queryable_type_t<Position>, ecstasy::queryable_type_t<ecstasy::Maybe<Density>>>;
+        using expected = std::tuple<ecstasy::getStorageType<Position>, ecstasy::query::modifier::Maybe<ecstasy::getStorageType<Density>>>;
         GTEST_ASSERT_EQ(typeid(expected), typeid(got));
     }
     // clang-format on
@@ -422,20 +430,35 @@ TEST(Registry, ImplicitWhere)
         builder.build();
     }
 
-    /// With allocator
+    /// Missing standard component, With allocator
     {
         auto explicitQuery = registry.select<Position>().where<Position, Velocity>(allocator);
         auto implicitQuery = registry.select<Position>().where<Velocity>(allocator);
         GTEST_ASSERT_EQ(explicitQuery.getMask(), implicitQuery.getMask());
     }
 
-    /// Wihtout allocator
+    /// Missing standard component, Wihtout allocator
     {
         auto explicitQuery = registry.select<Position>().where<Position, Velocity>();
         auto implicitQuery = registry.select<Position>().where<Velocity>();
         GTEST_ASSERT_EQ(explicitQuery.getMask(), implicitQuery.getMask());
     }
 
-    // Next steps are: (same result expected)
-    // auto query3 = registry.select<Position, ecstasy::Maybe<Density>>().where<Velocity>(allocator);
+    /// Missing modifier, With allocator (required)
+    {
+        auto explicitQuery =
+            registry.select<Position, ecstasy::Maybe<Density>>().where<Position, Velocity, ecstasy::Maybe<Density>>(
+                allocator);
+        auto implicitQuery = registry.select<ecstasy::Maybe<Density>, Position>().where<Position, Velocity>(allocator);
+        GTEST_ASSERT_EQ(explicitQuery.getMask(), implicitQuery.getMask());
+    }
+
+    /// Missing modifier and component, With allocator (required)
+    {
+        auto explicitQuery =
+            registry.select<Position, ecstasy::Maybe<Density>>().where<Position, Velocity, ecstasy::Maybe<Density>>(
+                allocator);
+        auto implicitQuery = registry.select<Position, ecstasy::Maybe<Density>>().where<Velocity>(allocator);
+        GTEST_ASSERT_EQ(explicitQuery.getMask(), implicitQuery.getMask());
+    }
 }

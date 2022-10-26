@@ -38,6 +38,9 @@ namespace ecstasy
         ///
         /// @brief Get a queryable from a registry variable (component stoage, resource, queryable storage...)
         ///
+        /// @warning If the type is (or might be) a modifier that will have to be allocated, you must send a @ref
+        /// ModifiersAllocator as parameter.
+        ///
         /// @tparam C Type of the variable to fetch.
         ///
         /// @return constexpr getStorageType<C>& Associated queryable (if no specific case the storage for C is
@@ -66,6 +69,30 @@ namespace ecstasy
         constexpr S &getQueryable()
         {
             return _storages.get<S>();
+        }
+
+        /// @copydoc getQueryable()
+        template <typename C>
+        constexpr queryable_type_t<C> &getQueryable(ModifiersAllocator &allocator)
+        {
+            (void)allocator;
+            return getQueryable<C>();
+        }
+
+        /// @copydoc getQueryable()
+        template <std::derived_from<query::modifier::Modifier> M>
+        requires query::Queryable<M>
+        constexpr M &getQueryable(ModifiersAllocator &allocator)
+        {
+            return allocator.instanciate<M>(getQueryable<typename M::Internal>());
+        }
+
+        /// @copydoc getQueryable()
+        template <RegistryModifier M>
+        requires query::Queryable<typename M::Modifier>
+        constexpr M::Modifier &getQueryable(ModifiersAllocator &allocator)
+        {
+            return getQueryable<typename M::Modifier>(allocator);
         }
 
       public:
@@ -173,13 +200,12 @@ namespace ecstasy
             struct Internal<std::tuple<void>, Cs...> {
                 constexpr static query::Query<Selects...> where(Registry &registry, ModifiersAllocator &allocator)
                 {
-                    return ecstasy::query::Select<Selects...>::where(
-                        applyUnaryModifier<Cs>(registry.getQueryable<component_type_t<Cs>>(), allocator)...);
+                    return ecstasy::query::Select<Selects...>::where(registry.getQueryable<Cs>(allocator)...);
                 }
 
                 constexpr static query::Query<Selects...> where(Registry &registry)
                 {
-                    return ecstasy::query::Select<Selects...>::where(registry.getQueryable<component_type_t<Cs>>()...);
+                    return ecstasy::query::Select<Selects...>::where(registry.getQueryable<Cs>()...);
                 }
             };
 
@@ -191,15 +217,13 @@ namespace ecstasy
                 constexpr static query::Query<Selects...> where(Registry &registry, ModifiersAllocator &allocator)
                 {
                     return ecstasy::query::Select<Selects...>::where(
-                        applyUnaryModifier<Missings>(registry.getQueryable<component_type_t<Missings>>(), allocator)...,
-                        applyUnaryModifier<Cs>(registry.getQueryable<component_type_t<Cs>>(), allocator)...);
+                        registry.getQueryable<Missings>(allocator)..., registry.getQueryable<Cs>(allocator)...);
                 }
 
                 constexpr static query::Query<Selects...> where(Registry &registry)
                 {
                     return ecstasy::query::Select<Selects...>::where(
-                        registry.getQueryable<component_type_t<Missings>>()...,
-                        registry.getQueryable<component_type_t<Cs>>()...);
+                        registry.getQueryable<Missings>()..., registry.getQueryable<Cs>()...);
                 }
             };
 
@@ -511,8 +535,7 @@ namespace ecstasy
         template <typename C, typename... Cs>
         query::Query<queryable_type_t<C>, queryable_type_t<Cs>...> query(ModifiersAllocator &allocator)
         {
-            return query::Query(applyUnaryModifier<C>(getQueryable<component_type_t<C>>(), allocator),
-                applyUnaryModifier<Cs>(getQueryable<component_type_t<Cs>>(), allocator)...);
+            return query::Query(getQueryable<C>(allocator), getQueryable<Cs>(allocator)...);
         }
 
         ///
