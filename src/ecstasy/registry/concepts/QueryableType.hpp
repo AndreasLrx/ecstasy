@@ -46,6 +46,12 @@ namespace ecstasy
         using type = S;
     };
 
+    /// @copydoc queryable type
+    template <RegistryModifier M>
+    struct queryable_type<M> {
+        using type = M::Modifier;
+    };
+
     ///
     /// @brief Helper to @ref queryable_type<C>::type.
     ///

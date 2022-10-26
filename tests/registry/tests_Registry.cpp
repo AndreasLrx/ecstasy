@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include <math.h>
 #include "ecstasy/registry/Registry.hpp"
+#include "ecstasy/registry/modifiers/Maybe.hpp"
 #include "ecstasy/registry/modifiers/Not.hpp"
 #include "ecstasy/resource/Resource.hpp"
 #include "ecstasy/resource/entity/RegistryEntity.hpp"
@@ -258,5 +259,68 @@ TEST(Registry, functionnal)
 
         registry.runSystem<Gravity>();
         registry.runSystem<Movement>();
+    }
+}
+
+TEST(Registry, MaybeQuery)
+{
+    ecstasy::Registry registry;
+    ecstasy::ModifiersAllocator allocator;
+
+    for (int i = 0; i < 13; i++) {
+        auto builder = registry.entityBuilder();
+        if (i % 2 == 0)
+            builder.with<Position>(i * 2, i * 10);
+        if (i % 3 == 0 || i == 8)
+            builder.with<Velocity>(i * 10, i * 2);
+        if (i % 4 == 0)
+            builder.with<Density>(i * 4);
+        builder.build();
+    }
+
+    auto query = registry.query<Position, Velocity, ecstasy::Maybe<Density>>(allocator);
+    auto query2 = registry.query<Position, Velocity>();
+    GTEST_ASSERT_EQ(query.getMask(), util::BitSet("11000101000001"));
+    GTEST_ASSERT_EQ(query.getMask(), query2.getMask());
+
+    auto it = query.begin();
+    /// 0
+    {
+        size_t index = 0;
+        auto [pos, velocity, density] = *it;
+        GTEST_ASSERT_EQ(pos.v, Vector2i(index * 2, index * 10));
+        GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
+        GTEST_ASSERT_NE(density, nullptr);
+        GTEST_ASSERT_EQ(*density, index * 4);
+    }
+
+    /// 6
+    ++it;
+    {
+        size_t index = 6;
+        auto [pos, velocity, density] = *it;
+        GTEST_ASSERT_EQ(pos.v, Vector2i(index * 2, index * 10));
+        GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
+        GTEST_ASSERT_EQ(density, nullptr);
+    }
+    /// 8
+    ++it;
+    {
+        size_t index = 8;
+        auto [pos, velocity, density] = *it;
+        GTEST_ASSERT_EQ(pos.v, Vector2i(index * 2, index * 10));
+        GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
+        GTEST_ASSERT_NE(density, nullptr);
+        GTEST_ASSERT_EQ(*density, index * 4);
+    }
+    /// 12
+    ++it;
+    {
+        size_t index = 12;
+        auto [pos, velocity, density] = *it;
+        GTEST_ASSERT_EQ(pos.v, Vector2i(index * 2, index * 10));
+        GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
+        GTEST_ASSERT_NE(density, nullptr);
+        GTEST_ASSERT_EQ(*density, index * 4);
     }
 }

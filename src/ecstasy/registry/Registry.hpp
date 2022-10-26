@@ -441,6 +441,28 @@ namespace ecstasy
         }
 
         ///
+        /// @brief Construct a query for the given components.
+        ///
+        /// @note If your query doesn't use any modifier, you should omit the allocator parameter.
+        ///
+        /// @tparam C First component type.
+        /// @tparam Cs Other component types.
+        ///
+        /// @param[in] allocator Allocator for the required modifiers (Maybe...).
+        ///
+        /// @return Query<queryable_type_t<C>, queryable_type_t<Cs>...> New query which can be iterated.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-20)
+        ///
+        template <typename C, typename... Cs>
+        query::Query<queryable_type_t<C>, queryable_type_t<Cs>...> query(ModifiersAllocator &allocator)
+        {
+            return query::Query(applyUnaryModifier<C>(getQueryable<component_type_t<C>>(), allocator),
+                applyUnaryModifier<Cs>(getQueryable<component_type_t<Cs>>(), allocator)...);
+        }
+
+        ///
         /// @brief Starts the creation of a complex query in the registry.
         ///
         /// @note It does nothing until the @ref Select::where() method is called.
