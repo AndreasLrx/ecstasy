@@ -17,17 +17,19 @@
 #include "concepts/RegistryModifier.hpp"
 #include "ecstasy/query/Query.hpp"
 #include "ecstasy/query/Select.hpp"
-#include "ecstasy/query/modifiers/ModifiersList.hpp"
+#include "ecstasy/query/modifiers/Modifier.hpp"
 #include "ecstasy/resource/entity/Entities.hpp"
 #include "ecstasy/storage/IStorage.hpp"
 #include "ecstasy/storage/Instances.hpp"
 #include "ecstasy/storage/StorageConcepts.hpp"
 #include "ecstasy/system/ISystem.hpp"
+#include "util/Allocator.hpp"
 
 #include <span>
 
 namespace ecstasy
 {
+    using ModifiersAllocator = util::Allocator<ecstasy::query::modifier::Modifier>;
     class Resource;
 
     class Registry {
@@ -165,6 +167,31 @@ namespace ecstasy
             ///
             /// @brief Query all entities which have all the given components.
             ///
+            /// @note If you don't use any modifiers, don't send the allocator.
+            ///
+            /// @tparam C First component Type.
+            /// @tparam Cs Other component Types.
+            ///
+            /// @param[in] allocator Allocator for the modifiers.
+            ///
+            /// @return Query<Selects...> Resulting query.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-22)
+            ///
+            template <typename C, typename... Cs>
+            query::Query<Selects...> where(ModifiersAllocator &allocator)
+            {
+                return ecstasy::query::Select<Selects...>::where(
+                    applyUnaryModifier<C>(_registry.getQueryable<component_type_t<C>>(), allocator),
+                    applyUnaryModifier<Cs>(_registry.getQueryable<component_type_t<Cs>>(), allocator)...);
+            }
+
+            ///
+            /// @brief Query all entities which have all the given components.
+            ///
+            /// @note If you need to use modifiers you must send a @ref ModifiersAllocator reference.
+            ///
             /// @tparam C First component Type.
             /// @tparam Cs Other component Types.
             ///
@@ -176,11 +203,8 @@ namespace ecstasy
             template <typename C, typename... Cs>
             query::Query<Selects...> where()
             {
-                query::modifier::ModifiersList allocator;
-
                 return ecstasy::query::Select<Selects...>::where(
-                    applyUnaryModifier<C>(_registry.getQueryable<component_type_t<C>>(), allocator),
-                    applyUnaryModifier<Cs>(_registry.getQueryable<component_type_t<Cs>>(), allocator)...);
+                    _registry.getQueryable<C>(), _registry.getQueryable<Cs>()...);
             }
 
           private:

@@ -104,8 +104,10 @@ struct Gravity : public ecstasy::ISystem {
 struct Movement : public ecstasy::ISystem {
     void run(ecstasy::Registry &registry) override final
     {
+        ecstasy::ModifiersAllocator allocator;
+
         for (auto [position, velocity] :
-            registry.select<Position, Velocity>().where<Position, Movable, Velocity, ecstasy::Not<Static>>()) {
+            registry.select<Position, Velocity>().where<Position, Movable, Velocity, ecstasy::Not<Static>>(allocator)) {
             position.v.x += velocity.v.x;
             position.v.y += velocity.v.y;
         }

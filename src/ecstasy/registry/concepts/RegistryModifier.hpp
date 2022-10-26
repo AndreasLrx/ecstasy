@@ -13,7 +13,8 @@
 #define ECSTASY_REGISTRY_CONCEPTS_REGISTRYMODIFIER_HPP_
 
 #include "ecstasy/query/concepts/Queryable.hpp"
-#include "ecstasy/query/modifiers/ModifiersList.hpp"
+#include "ecstasy/query/modifiers/Modifier.hpp"
+#include "util/Allocator.hpp"
 
 namespace ecstasy
 {
@@ -49,7 +50,7 @@ namespace ecstasy
     /// @since 1.0.0 (2022-10-24)
     ///
     template <typename C, query::Queryable Q>
-    Q &applyUnaryModifier(Q &queryable, query::modifier::ModifiersList &allocator)
+    Q &applyUnaryModifier(Q &queryable, util::Allocator<query::modifier::Modifier> &allocator)
     {
         (void)allocator;
         return queryable;
@@ -70,9 +71,9 @@ namespace ecstasy
     /// @since 1.0.0 (2022-10-24)
     ///
     template <RegistryModifier M, query::Queryable Q>
-    M::Modifier &applyUnaryModifier(Q &queryable, query::modifier::ModifiersList &allocator)
+    M::Modifier &applyUnaryModifier(Q &queryable, util::Allocator<query::modifier::Modifier> &allocator)
     {
-        return allocator.instanciateModifier<typename M::Modifier>(queryable);
+        return allocator.instanciate<typename M::Modifier>(queryable);
     }
 
 } // namespace ecstasy
