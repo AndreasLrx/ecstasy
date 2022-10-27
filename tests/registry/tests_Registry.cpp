@@ -315,8 +315,8 @@ TEST(Registry, MaybeQuery)
         auto [pos, velocity, density] = *it;
         GTEST_ASSERT_EQ(pos.v, Vector2i(index * 2, index * 10));
         GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
-        GTEST_ASSERT_NE(density, nullptr);
-        GTEST_ASSERT_EQ(*density, index * 4);
+        GTEST_ASSERT_TRUE(density);
+        GTEST_ASSERT_EQ(density->get(), index * 4);
     }
 
     /// 6
@@ -326,7 +326,7 @@ TEST(Registry, MaybeQuery)
         auto [pos, velocity, density] = *it;
         GTEST_ASSERT_EQ(pos.v, Vector2i(index * 2, index * 10));
         GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
-        GTEST_ASSERT_EQ(density, nullptr);
+        GTEST_ASSERT_FALSE(density);
     }
     /// 8
     ++it;
@@ -335,8 +335,8 @@ TEST(Registry, MaybeQuery)
         auto [pos, velocity, density] = *it;
         GTEST_ASSERT_EQ(pos.v, Vector2i(index * 2, index * 10));
         GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
-        GTEST_ASSERT_NE(density, nullptr);
-        GTEST_ASSERT_EQ(*density, index * 4);
+        GTEST_ASSERT_TRUE(density);
+        GTEST_ASSERT_EQ(density->get(), index * 4);
     }
     /// 12
     ++it;
@@ -345,8 +345,8 @@ TEST(Registry, MaybeQuery)
         auto [pos, velocity, density] = *it;
         GTEST_ASSERT_EQ(pos.v, Vector2i(index * 2, index * 10));
         GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
-        GTEST_ASSERT_NE(density, nullptr);
-        GTEST_ASSERT_EQ(*density, index * 4);
+        GTEST_ASSERT_TRUE(density);
+        GTEST_ASSERT_EQ(density->get(), index * 4);
     }
 }
 
@@ -461,4 +461,7 @@ TEST(Registry, ImplicitWhere)
         auto implicitQuery = registry.select<Position, ecstasy::Maybe<Density>>().where<Velocity>(allocator);
         GTEST_ASSERT_EQ(explicitQuery.getMask(), implicitQuery.getMask());
     }
+
+    /// registry.select<Position, Maybe<Velocity>>().where<Position, Or<Density, Velocity>>()
+    /// Select<Position, Maybe<Velocity>>::where(positions, DensityOrVelocity)
 }
