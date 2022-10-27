@@ -24,31 +24,65 @@ namespace ecstasy::query::modifier
     /// @tparam Internal Type of the wrapped queryable.
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-    /// @since 1.0.0 (2022-10-24)
+    /// @since 1.0.0 (2022-10-27)
     ///
     template <Queryable Q1, Queryable Q2>
     class Or : public BinaryModifier {
       public:
-        /// @brief Wrapped queryables.
         using LeftOperand = Q1;
+        using LeftQueryData = add_optional_t<typename LeftOperand::QueryData>;
         using RightOperand = Q2;
+        using RightQueryData = add_optional_t<typename RightOperand::QueryData>;
+
+        /// @brief Wrapped queryables.
         using Operands = std::tuple<Q1, Q2>;
         /// @brief @ref Queryable constaint.
-        using LeftQueryData = add_optional_t<typename LeftOperand::QueryData>;
-        using RightQueryData = add_optional_t<typename RightOperand::QueryData>;
         using QueryData = std::tuple<LeftQueryData, RightQueryData>;
 
+        ///
+        /// @brief Construct a new Or Queryable modifier.
+        ///
+        /// @param[in] leftOperand left queryable operand.
+        /// @param[in] rightOperand right queryable operand.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-27)
+        ///
         Or(LeftOperand &leftOperand, RightOperand &rightOperand)
             : _leftOperand(leftOperand), _rightOperand(rightOperand)
         {
             reloadMask();
         }
 
+        ///
+        /// @brief Get the Mask of the internal queryable.
+        /// The result is a binary Or between the two operands bitset.
+        ///
+        /// @note @ref Queryable constraint.
+        /// @warning Use reload masks if the operand masks have changed since the construction.
+        ///
+        /// @return constexpr const util::BitSet& resulting mask.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-27)
+        ///
         constexpr const util::BitSet &getMask() const
         {
             return _mask;
         }
 
+        ///
+        /// @brief Get a std::optional filled with the data of the left operand at index @p index if existing.
+        ///
+        /// @warning May throw exceptions, look at the @b LeftOperand type equivalent function documentation.
+        ///
+        /// @param[in] index Index of the entity.
+        ///
+        /// @return LeftQueryData A std::optional filled with the left operand data at index @p index if existing.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-27)
+        ///
         LeftQueryData getLeftQueryData(size_t index)
         {
             if (index < _leftOperand.getMask().size() && _leftOperand.getMask()[index])
@@ -56,6 +90,18 @@ namespace ecstasy::query::modifier
             return std::nullopt;
         }
 
+        ///
+        /// @brief Get a std::optional filled with the data of the right operand at index @p index if existing.
+        ///
+        /// @warning May throw exceptions, look at the @b RightOperand type equivalent function documentation.
+        ///
+        /// @param[in] index Index of the entity.
+        ///
+        /// @return RightQueryData A std::optional filled with the right operand data at index @p index if existing.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-27)
+        ///
         RightQueryData getRightQueryData(size_t index)
         {
             if (index < _rightOperand.getMask().size() && _rightOperand.getMask()[index])
@@ -63,11 +109,30 @@ namespace ecstasy::query::modifier
             return std::nullopt;
         }
 
+        ///
+        /// @brief Get the operands data at the given index. The data are merged in a tuple containing the result of
+        /// @ref getLeftQueryData() and @ref getRightQueryData().
+        ///
+        /// @note @ref Queryable constraint.
+        ///
+        /// @param[in] index Index of the entity.
+        ///
+        /// @return QueryData A tuple of std::optional containing the operands data if existing.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-27)
+        ///
         QueryData getQueryData(size_t index)
         {
             return std::make_tuple(getLeftQueryData(index), getRightQueryData(index));
         }
 
+        ///
+        /// @brief Update the mask to be up to date with the operands bitmasks.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-27)
+        ///
         void reloadMask()
         {
             if (_leftOperand.getMask().size() > _rightOperand.getMask().size()) {
