@@ -6,5 +6,6 @@ set(SRC
     ${INCROOT}/Maybe.hpp
     ${INCROOT}/Modifier.hpp
     ${INCROOT}/Not.hpp
+    ${INCROOT}/Or.hpp
     PARENT_SCOPE
 )

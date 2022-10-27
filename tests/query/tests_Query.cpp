@@ -6,6 +6,7 @@
 #include "ecstasy/query/Select.hpp"
 #include "ecstasy/query/modifiers/Maybe.hpp"
 #include "ecstasy/query/modifiers/Not.hpp"
+#include "ecstasy/query/modifiers/Or.hpp"
 
 struct Vector2i {
     int x;
@@ -303,5 +304,48 @@ TEST(Query, Maybe)
         GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
         GTEST_ASSERT_TRUE(vec);
         GTEST_ASSERT_EQ(vec->get(), Vector2i(index * 4, index * 6));
+    }
+}
+
+TEST(Query, Or)
+{
+    ecstasy::MapStorage<Position> positions;
+    ecstasy::MapStorage<Velocity> velocities;
+    ecstasy::MapStorage<Vector2i> vectors;
+    ecstasy::Entities entities;
+    auto velocityOrVector = ecstasy::query::modifier::Or(velocities, vectors);
+
+    for (int i = 0; i < 13; i++) {
+        entities.create();
+        if (i % 2 == 0)
+            positions.emplace(i, i * 2, i * 10);
+        if (i % 3 == 0 || i == 8)
+            velocities.emplace(i, i * 10, i * 2);
+        if (i % 4 == 0)
+            vectors.emplace(i, i * 4, i * 6);
+    }
+
+    // clang-format off
+    /// velocityOrVector mask has not been reloaded yet
+    auto query = ecstasy::query::Select<decltype(positions)>::where(positions, velocityOrVector);
+    GTEST_ASSERT_EQ(query.getMask(), util::BitSet("1"));
+
+    velocityOrVector.reloadMask();
+    auto query2 = ecstasy::query::Select<decltype(positions), decltype(velocityOrVector)>::where(positions, velocityOrVector);
+    GTEST_ASSERT_EQ(ecstasy::query::Query(positions, velocities).getMask(), util::BitSet("11000101000001"));
+    GTEST_ASSERT_EQ(ecstasy::query::Query(positions, vectors).getMask(),    util::BitSet("11000100010001"));
+    GTEST_ASSERT_EQ(query2.getMask(),                                       util::BitSet("11000101010001")); /// Or of the two precedent masks
+    // clang-format on
+
+    auto it = query2.begin();
+    /// 0
+    {
+        size_t index = 0;
+        auto [pos, velOrVec] = *it;
+        GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
+        GTEST_ASSERT_TRUE(std::get<0>(velOrVec));
+        GTEST_ASSERT_EQ(std::get<0>(velOrVec)->get().v, Vector2i(index * 10, index * 2));
+        GTEST_ASSERT_TRUE(std::get<1>(velOrVec));
+        GTEST_ASSERT_EQ(std::get<1>(velOrVec)->get(), Vector2i(index * 4, index * 6));
     }
 }

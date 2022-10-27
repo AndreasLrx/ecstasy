@@ -466,7 +466,4 @@ TEST(Registry, ImplicitWhere)
         auto implicitQuery = registry.select<Position, ecstasy::Maybe<Density>>().where<Velocity>(allocator);
         GTEST_ASSERT_EQ(explicitQuery.getMask(), implicitQuery.getMask());
     }
-
-    /// registry.select<Position, Maybe<Velocity>>().where<Position, Or<Density, Velocity>>()
-    /// Select<Position, Maybe<Velocity>>::where(positions, DensityOrVelocity)
 }
