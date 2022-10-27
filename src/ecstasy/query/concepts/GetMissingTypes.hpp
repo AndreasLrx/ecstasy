@@ -85,7 +85,7 @@ namespace ecstasy::query
             template <typename NextRequired, typename... RequiredTypes>
             struct missings_tuple<NextRequired, RequiredTypes...> {
                 using type = typename missing<contains<NextRequired, Availables...>(), NextRequired, Missings...,
-                    Required>::missings_tuple<RequiredTypes...>::type;
+                    Required>::template missings_tuple<RequiredTypes...>::type;
             };
 
             template <typename... Qs>
@@ -112,7 +112,7 @@ namespace ecstasy::query
             template <typename NextRequired, typename... RequiredTypes>
             struct missings_tuple<NextRequired, RequiredTypes...> {
                 using type = typename missing<contains<NextRequired, Availables...>(), NextRequired,
-                    Missings...>::missings_tuple<RequiredTypes...>::type;
+                    Missings...>::template missings_tuple<RequiredTypes...>::type;
             };
 
             template <typename... Qs>
@@ -136,7 +136,7 @@ namespace ecstasy::query
         template <typename FirstRequired, typename... Required>
         struct get_missings<FirstRequired, Required...> {
             using type = typename missing<contains<FirstRequired, Availables...>(),
-                FirstRequired>::missings_tuple_t<Required...>;
+                FirstRequired>::template missings_tuple_t<Required...>;
         };
 
         ///
