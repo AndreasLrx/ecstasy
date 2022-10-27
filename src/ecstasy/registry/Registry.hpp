@@ -12,6 +12,9 @@
 #ifndef ECSTASY_REGISTRY_REGISTRY_HPP_
 #define ECSTASY_REGISTRY_REGISTRY_HPP_
 
+#include <optional>
+#include <span>
+
 #include "concepts/ComponentType.hpp"
 #include "concepts/QueryableType.hpp"
 #include "concepts/RegistryModifier.hpp"
@@ -26,11 +29,10 @@
 #include "ecstasy/system/ISystem.hpp"
 #include "util/Allocator.hpp"
 
-#include <span>
-
 namespace ecstasy
 {
     using ModifiersAllocator = util::Allocator<ecstasy::query::modifier::Modifier>;
+    using OptionalModifiersAllocator = std::optional<std::reference_wrapper<ModifiersAllocator>>;
     class Resource;
 
     class Registry {
@@ -50,47 +52,44 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-25)
         ///
         template <typename C>
-        constexpr getStorageType<C> &getQueryable()
+        constexpr getStorageType<C> &getQueryable(OptionalModifiersAllocator &allocator)
         {
+            (void)allocator;
             return getStorageSafe<C>();
         }
 
         /// @copydoc getQueryable()
         template <std::derived_from<Resource> R>
         requires query::Queryable<R>
-        constexpr R &getQueryable()
+        constexpr R &getQueryable(OptionalModifiersAllocator &allocator)
         {
+            (void)allocator;
             return getResource<R>();
         }
 
         /// @copydoc getQueryable()
         template <IsStorage S>
         requires query::Queryable<S>
-        constexpr S &getQueryable()
-        {
-            return _storages.get<S>();
-        }
-
-        /// @copydoc getQueryable()
-        template <typename C>
-        constexpr queryable_type_t<C> &getQueryable(ModifiersAllocator &allocator)
+        constexpr S &getQueryable(OptionalModifiersAllocator &allocator)
         {
             (void)allocator;
-            return getQueryable<C>();
+            return _storages.get<S>();
         }
 
         /// @copydoc getQueryable()
         template <std::derived_from<query::modifier::Modifier> M>
         requires query::Queryable<M>
-        constexpr M &getQueryable(ModifiersAllocator &allocator)
+        constexpr M &getQueryable(OptionalModifiersAllocator &allocator)
         {
-            return allocator.instanciate<M>(getQueryable<typename M::Internal>());
+            if (!allocator)
+                throw std::logic_error("Missing modifier allocator");
+            return allocator->get().instanciate<M>(getQueryable<typename M::Internal>(allocator));
         }
 
         /// @copydoc getQueryable()
         template <RegistryModifier M>
         requires query::Queryable<typename M::Modifier>
-        constexpr M::Modifier &getQueryable(ModifiersAllocator &allocator)
+        constexpr M::Modifier &getQueryable(OptionalModifiersAllocator &allocator)
         {
             return getQueryable<typename M::Modifier>(allocator);
         }
@@ -198,14 +197,10 @@ namespace ecstasy
             /// @note This template is used when there is no missing queryables.
             template <typename... Cs>
             struct Internal<std::tuple<void>, Cs...> {
-                constexpr static query::Query<Selects...> where(Registry &registry, ModifiersAllocator &allocator)
+                constexpr static query::Query<Selects...> where(
+                    Registry &registry, OptionalModifiersAllocator &allocator)
                 {
                     return ecstasy::query::Select<Selects...>::where(registry.getQueryable<Cs>(allocator)...);
-                }
-
-                constexpr static query::Query<Selects...> where(Registry &registry)
-                {
-                    return ecstasy::query::Select<Selects...>::where(registry.getQueryable<Cs>()...);
                 }
             };
 
@@ -214,16 +209,11 @@ namespace ecstasy
             /// @note This template is used when there are missing queryables whoses types are @p Missings.
             template <typename... Missings, typename... Cs>
             struct Internal<std::tuple<Missings...>, Cs...> {
-                constexpr static query::Query<Selects...> where(Registry &registry, ModifiersAllocator &allocator)
+                constexpr static query::Query<Selects...> where(
+                    Registry &registry, OptionalModifiersAllocator &allocator)
                 {
                     return ecstasy::query::Select<Selects...>::where(
                         registry.getQueryable<Missings>(allocator)..., registry.getQueryable<Cs>(allocator)...);
-                }
-
-                constexpr static query::Query<Selects...> where(Registry &registry)
-                {
-                    return ecstasy::query::Select<Selects...>::where(
-                        registry.getQueryable<Missings>()..., registry.getQueryable<Cs>()...);
                 }
             };
 
@@ -243,7 +233,7 @@ namespace ecstasy
             ///
             /// @brief Query all entities which have all the given components.
             ///
-            /// @note If you don't use any modifiers, don't send the allocator.
+            /// @note If you need to use modifiers you must send a @ref ModifiersAllocator reference.
             ///
             /// @tparam C First component Type.
             /// @tparam Cs Other component Types.
@@ -256,32 +246,11 @@ namespace ecstasy
             /// @since 1.0.0 (2022-10-22)
             ///
             template <typename C, typename... Cs>
-            query::Query<Selects...> where(ModifiersAllocator &allocator)
+            query::Query<Selects...> where(OptionalModifiersAllocator allocator = std::nullopt)
             {
                 return Internal<typename ecstasy::query::available_types<queryable_type_t<C>,
                                     queryable_type_t<Cs>...>::template get_missings_t<Selects...>,
                     C, Cs...>::where(_registry, allocator);
-            }
-
-            ///
-            /// @brief Query all entities which have all the given components.
-            ///
-            /// @note If you need to use modifiers you must send a @ref ModifiersAllocator reference.
-            ///
-            /// @tparam C First component Type.
-            /// @tparam Cs Other component Types.
-            ///
-            /// @return Query<Selects...> Resulting query.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-10-22)
-            ///
-            template <typename C, typename... Cs>
-            query::Query<Selects...> where()
-            {
-                return Internal<typename ecstasy::query::available_types<queryable_type_t<C>,
-                                    queryable_type_t<Cs>...>::template get_missings_t<Selects...>,
-                    C, Cs...>::where(_registry);
             }
 
           private:
@@ -503,24 +472,7 @@ namespace ecstasy
         ///
         /// @brief Construct a query for the given components.
         ///
-        /// @tparam C First component type.
-        /// @tparam Cs Other component types.
-        ///
-        /// @return Query<queryable_type_t<C>, queryable_type_t<Cs>...> New query which can be iterated.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-20)
-        ///
-        template <typename C, typename... Cs>
-        query::Query<queryable_type_t<C>, queryable_type_t<Cs>...> query()
-        {
-            return query::Query(getQueryable<C>(), getQueryable<Cs>()...);
-        }
-
-        ///
-        /// @brief Construct a query for the given components.
-        ///
-        /// @note If your query doesn't use any modifier, you should omit the allocator parameter.
+        /// @note @p allocator is required when you use modifiers.
         ///
         /// @tparam C First component type.
         /// @tparam Cs Other component types.
@@ -533,7 +485,8 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-20)
         ///
         template <typename C, typename... Cs>
-        query::Query<queryable_type_t<C>, queryable_type_t<Cs>...> query(ModifiersAllocator &allocator)
+        query::Query<queryable_type_t<C>, queryable_type_t<Cs>...> query(
+            OptionalModifiersAllocator allocator = std::nullopt)
         {
             return query::Query(getQueryable<C>(allocator), getQueryable<Cs>(allocator)...);
         }
