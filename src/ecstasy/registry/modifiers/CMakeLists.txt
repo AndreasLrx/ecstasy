@@ -3,7 +3,10 @@ set(SRCROOT ${SRCROOT}/modifiers)
 
 set(SRC
     ${SRC}
+    ${INCROOT}/And.hpp
     ${INCROOT}/Maybe.hpp
     ${INCROOT}/Not.hpp
+    ${INCROOT}/Or.hpp
+    ${INCROOT}/Xor.hpp
     PARENT_SCOPE
 )

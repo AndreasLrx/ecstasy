@@ -57,7 +57,7 @@ namespace ecstasy::query::modifier
 
         ///
         /// @brief Get the Mask of the internal queryable.
-        /// The result is a binary Or between the two operands bitset.
+        /// The result is a binary Xor between the two operands bitset.
         ///
         /// @note @ref Queryable constraint.
         /// @warning Use reload masks if the operand masks have changed since the construction.
