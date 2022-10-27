@@ -370,6 +370,11 @@ TEST(Registry, MaybeSelect)
     auto select =
         registry.select<Position, ecstasy::Maybe<Density>>().where<Position, Velocity, ecstasy::Maybe<Density>>(
             allocator);
+    /// Need to create a lambda because the EXPECT_THROW macro interprets the template parameters as macro parameters
+    auto execMissingAllocator = [&registry]() {
+        registry.select<Position, ecstasy::Maybe<Density>>().where<Position, Velocity, ecstasy::Maybe<Density>>();
+    };
+    EXPECT_THROW(execMissingAllocator(), std::logic_error);
     GTEST_ASSERT_EQ(query.getMask(), select.getMask());
     GTEST_ASSERT_EQ(query.getMask(), util::BitSet("11000101000001"));
 }
