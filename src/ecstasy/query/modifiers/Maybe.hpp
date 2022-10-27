@@ -33,7 +33,7 @@ namespace ecstasy::query::modifier
     /// @since 1.0.0 (2022-10-24)
     ///
     template <Queryable Q>
-    class Maybe : public Modifier {
+    class Maybe : public UnaryModifier {
       public:
         /// @brief Wrapped queryable.
         using Internal = Q;

@@ -77,13 +77,24 @@ namespace ecstasy
         }
 
         /// @copydoc getQueryable()
-        template <std::derived_from<query::modifier::Modifier> M>
+        template <std::derived_from<query::modifier::UnaryModifier> M>
         requires query::Queryable<M>
         constexpr M &getQueryable(OptionalModifiersAllocator &allocator)
         {
             if (!allocator)
                 throw std::logic_error("Missing modifier allocator");
             return allocator->get().instanciate<M>(getQueryable<typename M::Internal>(allocator));
+        }
+
+        /// @copydoc getQueryable()
+        template <std::derived_from<query::modifier::BinaryModifier> M>
+        requires query::Queryable<M>
+        constexpr M &getQueryable(OptionalModifiersAllocator &allocator)
+        {
+            if (!allocator)
+                throw std::logic_error("Missing modifier allocator");
+            return allocator->get().instanciate<M>(
+                getQueryable<typename M::LeftOperand>(allocator), getQueryable<typename M::RightOperand>(allocator));
         }
 
         /// @copydoc getQueryable()

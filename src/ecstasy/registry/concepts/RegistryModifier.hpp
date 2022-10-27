@@ -29,9 +29,7 @@ namespace ecstasy
     template <typename M>
     concept RegistryModifier = requires()
     {
-        typename M::QueryData;
         typename M::Modifier;
-        typename M::Modifier::Internal;
         query::Queryable<typename M::Modifier>;
     };
 
