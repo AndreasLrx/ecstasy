@@ -26,7 +26,6 @@ namespace ecstasy
     ///
     template <typename C>
     struct Maybe {
-        using QueryData = C;
         using Modifier = query::modifier::Maybe<getStorageType<C>>;
     };
 } // namespace ecstasy

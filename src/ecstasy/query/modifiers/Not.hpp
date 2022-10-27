@@ -31,7 +31,7 @@ namespace ecstasy::query::modifier
     /// @since 1.0.0 (2022-10-24)
     ///
     template <Queryable Q>
-    class Not : public Modifier {
+    class Not : public UnaryModifier {
       public:
         /// @brief Wrapped queryable.
         using Internal = Q;

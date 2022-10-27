@@ -4,6 +4,7 @@
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/registry/modifiers/Maybe.hpp"
 #include "ecstasy/registry/modifiers/Not.hpp"
+#include "ecstasy/registry/modifiers/Or.hpp"
 #include "ecstasy/resource/Resource.hpp"
 #include "ecstasy/resource/entity/RegistryEntity.hpp"
 #include "ecstasy/storage/MapStorage.hpp"
@@ -466,7 +467,91 @@ TEST(Registry, ImplicitWhere)
         auto implicitQuery = registry.select<Position, ecstasy::Maybe<Density>>().where<Velocity>(allocator);
         GTEST_ASSERT_EQ(explicitQuery.getMask(), implicitQuery.getMask());
     }
+}
 
-    /// registry.select<Position, Maybe<Velocity>>().where<Position, Or<Density, Velocity>>()
-    /// Select<Position, Maybe<Velocity>>::where(positions, DensityOrVelocity)
+TEST(Registry, OrSelect)
+{
+    ecstasy::Registry registry;
+    ecstasy::ModifiersAllocator allocator;
+
+    for (int i = 0; i < 13; i++) {
+        auto builder = registry.entityBuilder();
+        if (i % 2 == 0)
+            builder.with<Position>(i * 2, i * 10);
+        if (i % 3 == 0 || i == 8)
+            builder.with<Velocity>(i * 10, i * 2);
+        if (i % 4 == 0)
+            builder.with<Density>(i * 4);
+        builder.build();
+    }
+
+    // clang-format off
+    auto query = registry.select<Position>().where<ecstasy::Or<Velocity, Density>>(allocator);
+    auto query2 = registry.select<Position, ecstasy::Maybe<Velocity>, ecstasy::Maybe<Density>>().where<ecstasy::Or<Velocity, Density>>(allocator);
+    auto posAndVel = registry.query<Position, Velocity>();
+    auto posAndDensity = registry.query<Position, Density>();
+
+    GTEST_ASSERT_EQ(posAndVel.getMask(),     util::BitSet("11000101000001"));
+    GTEST_ASSERT_EQ(posAndDensity.getMask(), util::BitSet("11000100010001"));
+    GTEST_ASSERT_EQ(query.getMask(),         util::BitSet("11000101010001")); /// Or of the two precedent masks
+    GTEST_ASSERT_EQ(query.getMask(), query2.getMask());
+    // clang-format on
+
+    auto it = query2.begin();
+    /// 0 (vel and vec)
+    {
+        size_t index = 0;
+        auto [pos, vel, vec] = *it;
+        GTEST_ASSERT_EQ(pos.v, Vector2i(index * 2, index * 10));
+        GTEST_ASSERT_TRUE(vel);
+        GTEST_ASSERT_EQ(vel->get().v, Vector2i(index * 10, index * 2));
+        GTEST_ASSERT_TRUE(vec);
+        GTEST_ASSERT_EQ(vec->get(), index * 4);
+    }
+
+    /// 4 (!vel and vec)
+    ++it;
+    {
+        size_t index = 4;
+        auto [pos, vel, vec] = *it;
+        GTEST_ASSERT_EQ(pos.v, Vector2i(index * 2, index * 10));
+        GTEST_ASSERT_FALSE(vel);
+        GTEST_ASSERT_TRUE(vec);
+        GTEST_ASSERT_EQ(vec->get(), index * 4);
+    }
+
+    /// 6 (vel and !vec)
+    ++it;
+    {
+        size_t index = 6;
+        auto [pos, vel, vec] = *it;
+        GTEST_ASSERT_EQ(pos.v, Vector2i(index * 2, index * 10));
+        GTEST_ASSERT_TRUE(vel);
+        GTEST_ASSERT_EQ(vel->get().v, Vector2i(index * 10, index * 2));
+        GTEST_ASSERT_FALSE(vec);
+    }
+
+    /// 8 (vel and vec)
+    ++it;
+    {
+        size_t index = 8;
+        auto [pos, vel, vec] = *it;
+        GTEST_ASSERT_EQ(pos.v, Vector2i(index * 2, index * 10));
+        GTEST_ASSERT_TRUE(vel);
+        GTEST_ASSERT_EQ(vel->get().v, Vector2i(index * 10, index * 2));
+        GTEST_ASSERT_TRUE(vec);
+        GTEST_ASSERT_EQ(vec->get(), index * 4);
+    }
+
+    /// 12 (vel and vec)
+    ++it;
+    {
+        size_t index = 12;
+        auto [pos, vel, vec] = *it;
+        GTEST_ASSERT_EQ(pos.v, Vector2i(index * 2, index * 10));
+        GTEST_ASSERT_TRUE(vel);
+        GTEST_ASSERT_EQ(vel->get().v, Vector2i(index * 10, index * 2));
+        GTEST_ASSERT_TRUE(vec);
+        GTEST_ASSERT_EQ(vec->get(), index * 4);
+    }
 }

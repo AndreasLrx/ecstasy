@@ -24,6 +24,28 @@ namespace ecstasy::query::modifier
       public:
         virtual ~Modifier() = default;
     };
+
+    ///
+    /// @brief Base class for all query binary modifiers.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2022-10-24)
+    ///
+    class UnaryModifier : public Modifier {
+      public:
+        virtual ~UnaryModifier() = default;
+    };
+
+    ///
+    /// @brief Base class for all query binary modifiers.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2022-10-24)
+    ///
+    class BinaryModifier : public Modifier {
+      public:
+        virtual ~BinaryModifier() = default;
+    };
 } // namespace ecstasy::query::modifier
 
 #endif /* !ECSTASY_QUERY_MODIFIER_HPP_ */
