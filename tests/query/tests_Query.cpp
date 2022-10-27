@@ -250,8 +250,8 @@ TEST(Query, Maybe)
         auto [pos, velocity, vec] = *it;
         GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
         GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
-        GTEST_ASSERT_NE(vec, nullptr);
-        GTEST_ASSERT_EQ(*vec, Vector2i(index * 4, index * 6));
+        GTEST_ASSERT_TRUE(vec);
+        GTEST_ASSERT_EQ(vec->get(), Vector2i(index * 4, index * 6));
     }
 
     /// 6
@@ -261,7 +261,7 @@ TEST(Query, Maybe)
         auto [pos, velocity, vec] = *it;
         GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
         GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
-        GTEST_ASSERT_EQ(vec, nullptr);
+        GTEST_ASSERT_FALSE(vec);
     }
     /// 8
     ++it;
@@ -270,8 +270,8 @@ TEST(Query, Maybe)
         auto [pos, velocity, vec] = *it;
         GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
         GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
-        GTEST_ASSERT_NE(vec, nullptr);
-        GTEST_ASSERT_EQ(*vec, Vector2i(index * 4, index * 6));
+        GTEST_ASSERT_TRUE(vec);
+        GTEST_ASSERT_EQ(vec->get(), Vector2i(index * 4, index * 6));
     }
     /// 12
     ++it;
@@ -280,8 +280,8 @@ TEST(Query, Maybe)
         auto [pos, velocity, vec] = *it;
         GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
         GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
-        GTEST_ASSERT_NE(vec, nullptr);
-        GTEST_ASSERT_EQ(*vec, Vector2i(index * 4, index * 6));
+        GTEST_ASSERT_TRUE(vec);
+        GTEST_ASSERT_EQ(vec->get(), Vector2i(index * 4, index * 6));
     }
 
     /// 18
@@ -291,7 +291,7 @@ TEST(Query, Maybe)
         auto [pos, velocity, vec] = *it;
         GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
         GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
-        GTEST_ASSERT_EQ(vec, nullptr);
+        GTEST_ASSERT_FALSE(vec);
     }
 
     /// 24
@@ -301,7 +301,7 @@ TEST(Query, Maybe)
         auto [pos, velocity, vec] = *it;
         GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
         GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
-        GTEST_ASSERT_NE(vec, nullptr);
-        GTEST_ASSERT_EQ(*vec, Vector2i(index * 4, index * 6));
+        GTEST_ASSERT_TRUE(vec);
+        GTEST_ASSERT_EQ(vec->get(), Vector2i(index * 4, index * 6));
     }
 }

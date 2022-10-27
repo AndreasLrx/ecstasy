@@ -12,6 +12,7 @@
 #ifndef ECSTASY_QUERY_MODIFIER_MAYBE_HPP_
 #define ECSTASY_QUERY_MODIFIER_MAYBE_HPP_
 
+#include <optional>
 #include <type_traits>
 
 #include "Modifier.hpp"
@@ -21,7 +22,7 @@
 namespace ecstasy::query::modifier
 {
     ///
-    /// @brief Query modifier which returns a pointer to the data if existing or a nullptr.
+    /// @brief Query modifier which returns a std::optional filled when the data is existing.
     ///
     /// @note All bits are set to true.
     ///
@@ -32,11 +33,25 @@ namespace ecstasy::query::modifier
     ///
     template <Queryable Q>
     class Maybe : public Modifier {
+      private:
+        template <typename T>
+        struct optional_content {
+            using type = T;
+        };
+
+        template <typename T>
+        struct optional_content<T &> {
+            using type = std::reference_wrapper<T>;
+        };
+
+        template <typename T>
+        using optional_content_t = optional_content<T>::type;
+
       public:
         /// @brief Wrapped queryable.
         using Internal = Q;
         /// @brief @ref Queryable constaint.
-        using QueryData = std::add_pointer_t<typename Internal::QueryData>;
+        using QueryData = std::optional<optional_content_t<typename Internal::QueryData>>;
 
         ///
         /// @brief Construct a new Not Queryable modifier.
@@ -67,14 +82,14 @@ namespace ecstasy::query::modifier
         }
 
         ///
-        /// @brief Get a pointer to the internal query data at the given index if existing, or @p nullptr otherwise.
+        /// @brief Get a std::optional filled with the data at index @p index if existing.
         ///
         /// @note @ref Queryable constraint.
         /// @warning May throw exceptions, look at the @b Internal type equivalent function documentation.
         ///
         /// @param[in] index Index of the entity.
         ///
-        /// @return QueryData A pointer to the data at index @p index if existing, or @p nullptr otherwise.
+        /// @return QueryData A std::optional filled with the data at index @p index if existing.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-24)
@@ -82,8 +97,8 @@ namespace ecstasy::query::modifier
         constexpr QueryData getQueryData(size_t index)
         {
             if (index < _internal.getMask().size() && _internal.getMask()[index])
-                return &_internal.getQueryData(index);
-            return nullptr;
+                return QueryData{_internal.getQueryData(index)};
+            return std::nullopt;
         }
 
         ///
