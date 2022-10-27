@@ -259,7 +259,7 @@ namespace ecstasy
             query::Query<Selects...> where(ModifiersAllocator &allocator)
             {
                 return Internal<typename ecstasy::query::available_types<queryable_type_t<C>,
-                                    queryable_type_t<Cs>...>::get_missings_t<Selects...>,
+                                    queryable_type_t<Cs>...>::template get_missings_t<Selects...>,
                     C, Cs...>::where(_registry, allocator);
             }
 
@@ -280,7 +280,7 @@ namespace ecstasy
             query::Query<Selects...> where()
             {
                 return Internal<typename ecstasy::query::available_types<queryable_type_t<C>,
-                                    queryable_type_t<Cs>...>::get_missings_t<Selects...>,
+                                    queryable_type_t<Cs>...>::template get_missings_t<Selects...>,
                     C, Cs...>::where(_registry);
             }
 
