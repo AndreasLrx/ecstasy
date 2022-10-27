@@ -331,21 +331,72 @@ TEST(Query, Or)
     GTEST_ASSERT_EQ(query.getMask(), util::BitSet("1"));
 
     velocityOrVector.reloadMask();
-    auto query2 = ecstasy::query::Select<decltype(positions), decltype(velocityOrVector)>::where(positions, velocityOrVector);
+    auto maybeVelocity = ecstasy::query::modifier::Maybe(velocities);
+    auto maybeVec = ecstasy::query::modifier::Maybe(vectors);
+    auto query2 = ecstasy::query::Select<decltype(positions), 
+        ecstasy::query::modifier::Maybe<decltype(velocities)>,
+        ecstasy::query::modifier::Maybe<decltype(vectors)>>::
+        where(positions, maybeVelocity, maybeVec, velocityOrVector);
     GTEST_ASSERT_EQ(ecstasy::query::Query(positions, velocities).getMask(), util::BitSet("11000101000001"));
     GTEST_ASSERT_EQ(ecstasy::query::Query(positions, vectors).getMask(),    util::BitSet("11000100010001"));
     GTEST_ASSERT_EQ(query2.getMask(),                                       util::BitSet("11000101010001")); /// Or of the two precedent masks
     // clang-format on
 
     auto it = query2.begin();
-    /// 0
+    /// 0 (vel and vec)
     {
         size_t index = 0;
-        auto [pos, velOrVec] = *it;
+        auto [pos, vel, vec] = *it;
         GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
-        GTEST_ASSERT_TRUE(std::get<0>(velOrVec));
-        GTEST_ASSERT_EQ(std::get<0>(velOrVec)->get().v, Vector2i(index * 10, index * 2));
-        GTEST_ASSERT_TRUE(std::get<1>(velOrVec));
-        GTEST_ASSERT_EQ(std::get<1>(velOrVec)->get(), Vector2i(index * 4, index * 6));
+        GTEST_ASSERT_TRUE(vel);
+        GTEST_ASSERT_EQ(vel->get().v, Vector2i(index * 10, index * 2));
+        GTEST_ASSERT_TRUE(vec);
+        GTEST_ASSERT_EQ(vec->get(), Vector2i(index * 4, index * 6));
+    }
+
+    /// 4 (!vel and vec)
+    ++it;
+    {
+        size_t index = 4;
+        auto [pos, vel, vec] = *it;
+        GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
+        GTEST_ASSERT_FALSE(vel);
+        GTEST_ASSERT_TRUE(vec);
+        GTEST_ASSERT_EQ(vec->get(), Vector2i(index * 4, index * 6));
+    }
+
+    /// 6 (vel and !vec)
+    ++it;
+    {
+        size_t index = 6;
+        auto [pos, vel, vec] = *it;
+        GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
+        GTEST_ASSERT_TRUE(vel);
+        GTEST_ASSERT_EQ(vel->get().v, Vector2i(index * 10, index * 2));
+        GTEST_ASSERT_FALSE(vec);
+    }
+
+    /// 8 (vel and vec)
+    ++it;
+    {
+        size_t index = 8;
+        auto [pos, vel, vec] = *it;
+        GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
+        GTEST_ASSERT_TRUE(vel);
+        GTEST_ASSERT_EQ(vel->get().v, Vector2i(index * 10, index * 2));
+        GTEST_ASSERT_TRUE(vec);
+        GTEST_ASSERT_EQ(vec->get(), Vector2i(index * 4, index * 6));
+    }
+
+    /// 12 (vel and vec)
+    ++it;
+    {
+        size_t index = 12;
+        auto [pos, vel, vec] = *it;
+        GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
+        GTEST_ASSERT_TRUE(vel);
+        GTEST_ASSERT_EQ(vel->get().v, Vector2i(index * 10, index * 2));
+        GTEST_ASSERT_TRUE(vec);
+        GTEST_ASSERT_EQ(vec->get(), Vector2i(index * 4, index * 6));
     }
 }
