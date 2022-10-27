@@ -18,6 +18,7 @@
 #include "Modifier.hpp"
 #include "ecstasy/query/concepts/Queryable.hpp"
 #include "util/BitSet.hpp"
+#include "ecstasy/query/concepts/add_optional.hpp"
 
 namespace ecstasy::query::modifier
 {
@@ -33,25 +34,11 @@ namespace ecstasy::query::modifier
     ///
     template <Queryable Q>
     class Maybe : public Modifier {
-      private:
-        template <typename T>
-        struct optional_content {
-            using type = T;
-        };
-
-        template <typename T>
-        struct optional_content<T &> {
-            using type = std::reference_wrapper<T>;
-        };
-
-        template <typename T>
-        using optional_content_t = optional_content<T>::type;
-
       public:
         /// @brief Wrapped queryable.
         using Internal = Q;
         /// @brief @ref Queryable constaint.
-        using QueryData = std::optional<optional_content_t<typename Internal::QueryData>>;
+        using QueryData = add_optional_t<typename Internal::QueryData>;
 
         ///
         /// @brief Construct a new Not Queryable modifier.
