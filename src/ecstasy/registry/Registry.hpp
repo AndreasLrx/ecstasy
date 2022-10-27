@@ -17,23 +17,29 @@
 #include "concepts/RegistryModifier.hpp"
 #include "ecstasy/query/Query.hpp"
 #include "ecstasy/query/Select.hpp"
-#include "ecstasy/query/modifiers/ModifiersList.hpp"
+#include "ecstasy/query/concepts/GetMissingTypes.hpp"
+#include "ecstasy/query/modifiers/Modifier.hpp"
 #include "ecstasy/resource/entity/Entities.hpp"
 #include "ecstasy/storage/IStorage.hpp"
 #include "ecstasy/storage/Instances.hpp"
 #include "ecstasy/storage/StorageConcepts.hpp"
 #include "ecstasy/system/ISystem.hpp"
+#include "util/Allocator.hpp"
 
 #include <span>
 
 namespace ecstasy
 {
+    using ModifiersAllocator = util::Allocator<ecstasy::query::modifier::Modifier>;
     class Resource;
 
     class Registry {
       private:
         ///
         /// @brief Get a queryable from a registry variable (component stoage, resource, queryable storage...)
+        ///
+        /// @warning If the type is (or might be) a modifier that will have to be allocated, you must send a @ref
+        /// ModifiersAllocator as parameter.
         ///
         /// @tparam C Type of the variable to fetch.
         ///
@@ -63,6 +69,30 @@ namespace ecstasy
         constexpr S &getQueryable()
         {
             return _storages.get<S>();
+        }
+
+        /// @copydoc getQueryable()
+        template <typename C>
+        constexpr queryable_type_t<C> &getQueryable(ModifiersAllocator &allocator)
+        {
+            (void)allocator;
+            return getQueryable<C>();
+        }
+
+        /// @copydoc getQueryable()
+        template <std::derived_from<query::modifier::Modifier> M>
+        requires query::Queryable<M>
+        constexpr M &getQueryable(ModifiersAllocator &allocator)
+        {
+            return allocator.instanciate<M>(getQueryable<typename M::Internal>());
+        }
+
+        /// @copydoc getQueryable()
+        template <RegistryModifier M>
+        requires query::Queryable<typename M::Modifier>
+        constexpr M::Modifier &getQueryable(ModifiersAllocator &allocator)
+        {
+            return getQueryable<typename M::Modifier>(allocator);
         }
 
       public:
@@ -149,6 +179,54 @@ namespace ecstasy
         ///
         template <query::Queryable... Selects>
         class Select {
+          private:
+            ///
+            /// @brief Internal structure allowing to add implicitly required queryables (from the selected types).
+            ///
+            /// @tparam MissingsTuple Tuple type wrapping all the missing queryable types in the request. (they will be
+            /// implicitly added).
+            /// @tparam Cs Queryables already in the where clause.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-26)
+            ///
+            template <typename MissingsTuple, typename... Cs>
+            struct Internal;
+
+            /// @copydoc
+            ///
+            /// @note This template is used when there is no missing queryables.
+            template <typename... Cs>
+            struct Internal<std::tuple<void>, Cs...> {
+                constexpr static query::Query<Selects...> where(Registry &registry, ModifiersAllocator &allocator)
+                {
+                    return ecstasy::query::Select<Selects...>::where(registry.getQueryable<Cs>(allocator)...);
+                }
+
+                constexpr static query::Query<Selects...> where(Registry &registry)
+                {
+                    return ecstasy::query::Select<Selects...>::where(registry.getQueryable<Cs>()...);
+                }
+            };
+
+            /// @copydoc
+            ///
+            /// @note This template is used when there are missing queryables whoses types are @p Missings.
+            template <typename... Missings, typename... Cs>
+            struct Internal<std::tuple<Missings...>, Cs...> {
+                constexpr static query::Query<Selects...> where(Registry &registry, ModifiersAllocator &allocator)
+                {
+                    return ecstasy::query::Select<Selects...>::where(
+                        registry.getQueryable<Missings>(allocator)..., registry.getQueryable<Cs>(allocator)...);
+                }
+
+                constexpr static query::Query<Selects...> where(Registry &registry)
+                {
+                    return ecstasy::query::Select<Selects...>::where(
+                        registry.getQueryable<Missings>()..., registry.getQueryable<Cs>()...);
+                }
+            };
+
           public:
             ///
             /// @brief Construct a new Select object.
@@ -165,6 +243,31 @@ namespace ecstasy
             ///
             /// @brief Query all entities which have all the given components.
             ///
+            /// @note If you don't use any modifiers, don't send the allocator.
+            ///
+            /// @tparam C First component Type.
+            /// @tparam Cs Other component Types.
+            ///
+            /// @param[in] allocator Allocator for the modifiers.
+            ///
+            /// @return Query<Selects...> Resulting query.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-22)
+            ///
+            template <typename C, typename... Cs>
+            query::Query<Selects...> where(ModifiersAllocator &allocator)
+            {
+                return Internal<typename ecstasy::query::available_types<queryable_type_t<C>,
+                                    queryable_type_t<Cs>...>::template get_missings_t<Selects...>,
+                    C, Cs...>::where(_registry, allocator);
+            }
+
+            ///
+            /// @brief Query all entities which have all the given components.
+            ///
+            /// @note If you need to use modifiers you must send a @ref ModifiersAllocator reference.
+            ///
             /// @tparam C First component Type.
             /// @tparam Cs Other component Types.
             ///
@@ -176,11 +279,9 @@ namespace ecstasy
             template <typename C, typename... Cs>
             query::Query<Selects...> where()
             {
-                query::modifier::ModifiersList allocator;
-
-                return ecstasy::query::Select<Selects...>::where(
-                    applyUnaryModifier<C>(_registry.getQueryable<component_type_t<C>>(), allocator),
-                    applyUnaryModifier<Cs>(_registry.getQueryable<component_type_t<Cs>>(), allocator)...);
+                return Internal<typename ecstasy::query::available_types<queryable_type_t<C>,
+                                    queryable_type_t<Cs>...>::template get_missings_t<Selects...>,
+                    C, Cs...>::where(_registry);
             }
 
           private:
@@ -414,6 +515,27 @@ namespace ecstasy
         query::Query<queryable_type_t<C>, queryable_type_t<Cs>...> query()
         {
             return query::Query(getQueryable<C>(), getQueryable<Cs>()...);
+        }
+
+        ///
+        /// @brief Construct a query for the given components.
+        ///
+        /// @note If your query doesn't use any modifier, you should omit the allocator parameter.
+        ///
+        /// @tparam C First component type.
+        /// @tparam Cs Other component types.
+        ///
+        /// @param[in] allocator Allocator for the required modifiers (Maybe...).
+        ///
+        /// @return Query<queryable_type_t<C>, queryable_type_t<Cs>...> New query which can be iterated.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-20)
+        ///
+        template <typename C, typename... Cs>
+        query::Query<queryable_type_t<C>, queryable_type_t<Cs>...> query(ModifiersAllocator &allocator)
+        {
+            return query::Query(getQueryable<C>(allocator), getQueryable<Cs>(allocator)...);
         }
 
         ///

@@ -1,11 +1,37 @@
 #include <gtest/gtest.h>
 #include <math.h>
+#include "ecstasy/query/concepts/GetMissingTypes.hpp"
 #include "ecstasy/registry/Registry.hpp"
+#include "ecstasy/registry/modifiers/Maybe.hpp"
 #include "ecstasy/registry/modifiers/Not.hpp"
 #include "ecstasy/resource/Resource.hpp"
 #include "ecstasy/resource/entity/RegistryEntity.hpp"
 #include "ecstasy/storage/MapStorage.hpp"
 #include "ecstasy/system/ISystem.hpp"
+
+#ifdef __GNUG__
+    #include <cstdlib>
+    #include <cxxabi.h>
+    #include <memory>
+
+std::string demangle(const char *name)
+{
+    int status = -4; // some arbitrary value to eliminate the compiler warning
+
+    // enable c++11 by passing the flag -std=c++11 to g++
+    std::unique_ptr<char, void (*)(void *)> res{abi::__cxa_demangle(name, NULL, NULL, &status), std::free};
+
+    return (status == 0) ? res.get() : name;
+}
+
+#else
+
+// does nothing if not g++
+std::string demangle(const char *name)
+{
+    return name;
+}
+#endif
 
 class A : public ecstasy::ISystem {
   public:
@@ -104,8 +130,10 @@ struct Gravity : public ecstasy::ISystem {
 struct Movement : public ecstasy::ISystem {
     void run(ecstasy::Registry &registry) override final
     {
+        ecstasy::ModifiersAllocator allocator;
+
         for (auto [position, velocity] :
-            registry.select<Position, Velocity>().where<Position, Movable, Velocity, ecstasy::Not<Static>>()) {
+            registry.select<Position, Velocity>().where<Position, Movable, Velocity, ecstasy::Not<Static>>(allocator)) {
             position.v.x += velocity.v.x;
             position.v.y += velocity.v.y;
         }
@@ -256,5 +284,181 @@ TEST(Registry, functionnal)
 
         registry.runSystem<Gravity>();
         registry.runSystem<Movement>();
+    }
+}
+
+TEST(Registry, MaybeQuery)
+{
+    ecstasy::Registry registry;
+    ecstasy::ModifiersAllocator allocator;
+
+    for (int i = 0; i < 13; i++) {
+        auto builder = registry.entityBuilder();
+        if (i % 2 == 0)
+            builder.with<Position>(i * 2, i * 10);
+        if (i % 3 == 0 || i == 8)
+            builder.with<Velocity>(i * 10, i * 2);
+        if (i % 4 == 0)
+            builder.with<Density>(i * 4);
+        builder.build();
+    }
+
+    auto query = registry.query<Position, Velocity, ecstasy::Maybe<Density>>(allocator);
+    auto query2 = registry.query<Position, Velocity>();
+    GTEST_ASSERT_EQ(query.getMask(), util::BitSet("11000101000001"));
+    GTEST_ASSERT_EQ(query.getMask(), query2.getMask());
+
+    auto it = query.begin();
+    /// 0
+    {
+        size_t index = 0;
+        auto [pos, velocity, density] = *it;
+        GTEST_ASSERT_EQ(pos.v, Vector2i(index * 2, index * 10));
+        GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
+        GTEST_ASSERT_NE(density, nullptr);
+        GTEST_ASSERT_EQ(*density, index * 4);
+    }
+
+    /// 6
+    ++it;
+    {
+        size_t index = 6;
+        auto [pos, velocity, density] = *it;
+        GTEST_ASSERT_EQ(pos.v, Vector2i(index * 2, index * 10));
+        GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
+        GTEST_ASSERT_EQ(density, nullptr);
+    }
+    /// 8
+    ++it;
+    {
+        size_t index = 8;
+        auto [pos, velocity, density] = *it;
+        GTEST_ASSERT_EQ(pos.v, Vector2i(index * 2, index * 10));
+        GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
+        GTEST_ASSERT_NE(density, nullptr);
+        GTEST_ASSERT_EQ(*density, index * 4);
+    }
+    /// 12
+    ++it;
+    {
+        size_t index = 12;
+        auto [pos, velocity, density] = *it;
+        GTEST_ASSERT_EQ(pos.v, Vector2i(index * 2, index * 10));
+        GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
+        GTEST_ASSERT_NE(density, nullptr);
+        GTEST_ASSERT_EQ(*density, index * 4);
+    }
+}
+
+TEST(Registry, MaybeSelect)
+{
+    ecstasy::Registry registry;
+    ecstasy::ModifiersAllocator allocator;
+
+    for (int i = 0; i < 13; i++) {
+        auto builder = registry.entityBuilder();
+        if (i % 2 == 0)
+            builder.with<Position>(i * 2, i * 10);
+        if (i % 3 == 0 || i == 8)
+            builder.with<Velocity>(i * 10, i * 2);
+        if (i % 4 == 0)
+            builder.with<Density>(i * 4);
+        builder.build();
+    }
+
+    auto query = registry.query<Position, Velocity, ecstasy::Maybe<Density>>(allocator);
+    auto select =
+        registry.select<Position, ecstasy::Maybe<Density>>().where<Position, Velocity, ecstasy::Maybe<Density>>(
+            allocator);
+    GTEST_ASSERT_EQ(query.getMask(), select.getMask());
+    GTEST_ASSERT_EQ(query.getMask(), util::BitSet("11000101000001"));
+}
+
+TEST(Registry, get_missing_types)
+{
+    /// Get Missing Types basic test
+    {
+        using expected = std::tuple<int>;
+        using got = ecstasy::query::available_types<char, float, double>::get_missings_t<float, int>;
+        GTEST_ASSERT_EQ(typeid(expected), typeid(got));
+    }
+
+    // clang-format off
+    /// Missing one modifier
+    {
+        using got = ecstasy::query::available_types<
+            ecstasy::queryable_type_t<Position>,
+            ecstasy::queryable_type_t<Velocity>>::
+            get_missings_t<
+                ecstasy::queryable_type_t<Position>, 
+                ecstasy::queryable_type_t<ecstasy::Maybe<Density>>>;
+        using expected = std::tuple<ecstasy::query::modifier::Maybe<ecstasy::getStorageType<Density>>>;
+        GTEST_ASSERT_EQ(typeid(expected), typeid(got));
+    }
+
+    /// Missing one queryable
+    {
+        using got = ecstasy::query::available_types<ecstasy::queryable_type_t<Velocity>>::
+            get_missings_t<ecstasy::queryable_type_t<Position>>;
+        using expected = std::tuple<ecstasy::getStorageType<Position>>;
+        GTEST_ASSERT_EQ(typeid(expected), typeid(got));
+    }
+
+    /// missing one queryable and one modifier
+    {
+        using got = ecstasy::query::available_types<ecstasy::queryable_type_t<Velocity>>::
+            get_missings_t<ecstasy::queryable_type_t<Position>, ecstasy::queryable_type_t<ecstasy::Maybe<Density>>>;
+        using expected = std::tuple<ecstasy::getStorageType<Position>, ecstasy::query::modifier::Maybe<ecstasy::getStorageType<Density>>>;
+        GTEST_ASSERT_EQ(typeid(expected), typeid(got));
+    }
+    // clang-format on
+}
+
+TEST(Registry, ImplicitWhere)
+{
+    ecstasy::Registry registry;
+    ecstasy::ModifiersAllocator allocator;
+
+    for (int i = 0; i < 13; i++) {
+        auto builder = registry.entityBuilder();
+        if (i % 2 == 0)
+            builder.with<Position>(i * 2, i * 10);
+        if (i % 3 == 0 || i == 8)
+            builder.with<Velocity>(i * 10, i * 2);
+        if (i % 4 == 0)
+            builder.with<Density>(i * 4);
+        builder.build();
+    }
+
+    /// Missing standard component, With allocator
+    {
+        auto explicitQuery = registry.select<Position>().where<Position, Velocity>(allocator);
+        auto implicitQuery = registry.select<Position>().where<Velocity>(allocator);
+        GTEST_ASSERT_EQ(explicitQuery.getMask(), implicitQuery.getMask());
+    }
+
+    /// Missing standard component, Wihtout allocator
+    {
+        auto explicitQuery = registry.select<Position>().where<Position, Velocity>();
+        auto implicitQuery = registry.select<Position>().where<Velocity>();
+        GTEST_ASSERT_EQ(explicitQuery.getMask(), implicitQuery.getMask());
+    }
+
+    /// Missing modifier, With allocator (required)
+    {
+        auto explicitQuery =
+            registry.select<Position, ecstasy::Maybe<Density>>().where<Position, Velocity, ecstasy::Maybe<Density>>(
+                allocator);
+        auto implicitQuery = registry.select<ecstasy::Maybe<Density>, Position>().where<Position, Velocity>(allocator);
+        GTEST_ASSERT_EQ(explicitQuery.getMask(), implicitQuery.getMask());
+    }
+
+    /// Missing modifier and component, With allocator (required)
+    {
+        auto explicitQuery =
+            registry.select<Position, ecstasy::Maybe<Density>>().where<Position, Velocity, ecstasy::Maybe<Density>>(
+                allocator);
+        auto implicitQuery = registry.select<Position, ecstasy::Maybe<Density>>().where<Velocity>(allocator);
+        GTEST_ASSERT_EQ(explicitQuery.getMask(), implicitQuery.getMask());
     }
 }

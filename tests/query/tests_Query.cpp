@@ -4,6 +4,7 @@
 #include "ecstasy/storage/MapStorage.hpp"
 
 #include "ecstasy/query/Select.hpp"
+#include "ecstasy/query/modifiers/Maybe.hpp"
 #include "ecstasy/query/modifiers/Not.hpp"
 
 struct Vector2i {
@@ -207,5 +208,100 @@ TEST(Query, NotModifier)
         auto [pos, velocity] = *it;
         GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
         GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
+    }
+}
+
+TEST(Query, Maybe)
+{
+    ecstasy::MapStorage<Position> positions;
+    ecstasy::MapStorage<Velocity> velocities;
+    ecstasy::MapStorage<Vector2i> vectors;
+    ecstasy::Entities entities;
+    auto maybeVector = ecstasy::query::modifier::Maybe(vectors);
+
+    for (int i = 0; i < 25; i++) {
+        entities.create();
+        if (i % 2 == 0)
+            positions.emplace(i, i * 2, i * 10);
+        if (i % 3 == 0 || i == 8)
+            velocities.emplace(i, i * 10, i * 2);
+        if (i % 4 == 0)
+            vectors.emplace(i, i * 4, i * 6);
+    }
+
+    /// Without looking at the vectors return (0, 6, 8, 12, 18, 24 (and 25 is sentinel bit))
+    GTEST_ASSERT_EQ(
+        ecstasy::query::Query(entities, positions, velocities).getMask(), util::BitSet("11000001000001000101000001"));
+    /// Keeping entities with vectors (0, 8, 12, 24 (and 25 is the sentinel bit))
+    GTEST_ASSERT_EQ(ecstasy::query::Query(entities, positions, velocities, vectors).getMask(),
+        util::BitSet("11000000000001000100000001"));
+    /// Getting vectors if existing, must be the same result as the first one
+    GTEST_ASSERT_EQ(ecstasy::query::Query(entities, positions, velocities, maybeVector).getMask(),
+        util::BitSet("11000001000001000101000001"));
+
+    /// Select query for all entities with position, velocities and without the statics component
+    auto query = ecstasy::query::Select<decltype(positions), decltype(velocities), decltype(maybeVector)>::where(
+        entities, positions, velocities, maybeVector);
+
+    auto it = query.begin();
+    /// 0
+    {
+        size_t index = 0;
+        auto [pos, velocity, vec] = *it;
+        GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
+        GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
+        GTEST_ASSERT_NE(vec, nullptr);
+        GTEST_ASSERT_EQ(*vec, Vector2i(index * 4, index * 6));
+    }
+
+    /// 6
+    ++it;
+    {
+        size_t index = 6;
+        auto [pos, velocity, vec] = *it;
+        GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
+        GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
+        GTEST_ASSERT_EQ(vec, nullptr);
+    }
+    /// 8
+    ++it;
+    {
+        size_t index = 8;
+        auto [pos, velocity, vec] = *it;
+        GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
+        GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
+        GTEST_ASSERT_NE(vec, nullptr);
+        GTEST_ASSERT_EQ(*vec, Vector2i(index * 4, index * 6));
+    }
+    /// 12
+    ++it;
+    {
+        size_t index = 12;
+        auto [pos, velocity, vec] = *it;
+        GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
+        GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
+        GTEST_ASSERT_NE(vec, nullptr);
+        GTEST_ASSERT_EQ(*vec, Vector2i(index * 4, index * 6));
+    }
+
+    /// 18
+    ++it;
+    {
+        size_t index = 18;
+        auto [pos, velocity, vec] = *it;
+        GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
+        GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
+        GTEST_ASSERT_EQ(vec, nullptr);
+    }
+
+    /// 24
+    ++it;
+    {
+        size_t index = 24;
+        auto [pos, velocity, vec] = *it;
+        GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
+        GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
+        GTEST_ASSERT_NE(vec, nullptr);
+        GTEST_ASSERT_EQ(*vec, Vector2i(index * 4, index * 6));
     }
 }

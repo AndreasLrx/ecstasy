@@ -1,5 +1,5 @@
 ///
-/// @file Not.hpp
+/// @file Maybe.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
 /// @brief
 /// @version 1.0.0
@@ -9,8 +9,10 @@
 ///
 ///
 
-#ifndef ECSTASY_QUERY_MODIFIER_NOT_HPP_
-#define ECSTASY_QUERY_MODIFIER_NOT_HPP_
+#ifndef ECSTASY_QUERY_MODIFIER_MAYBE_HPP_
+#define ECSTASY_QUERY_MODIFIER_MAYBE_HPP_
+
+#include <type_traits>
 
 #include "Modifier.hpp"
 #include "ecstasy/query/concepts/Queryable.hpp"
@@ -19,11 +21,9 @@
 namespace ecstasy::query::modifier
 {
     ///
-    /// @brief Query modifier which simply inverts the bits.
+    /// @brief Query modifier which returns a pointer to the data if existing or a nullptr.
     ///
-    /// @warning Since it returns all entities that @b haven't the requested data, a call to @ref getQueryData() is
-    /// undefined behavior and will cause errors or exceptions depending on the Queryable implementation. Therefore you
-    /// should @b never select this queryable.
+    /// @note All bits are set to true.
     ///
     /// @tparam Internal Type of the wrapped queryable.
     ///
@@ -31,12 +31,12 @@ namespace ecstasy::query::modifier
     /// @since 1.0.0 (2022-10-24)
     ///
     template <Queryable Q>
-    class Not : public Modifier {
+    class Maybe : public Modifier {
       public:
         /// @brief Wrapped queryable.
         using Internal = Q;
         /// @brief @ref Queryable constaint.
-        using QueryData = Internal::QueryData;
+        using QueryData = std::add_pointer_t<typename Internal::QueryData>;
 
         ///
         /// @brief Construct a new Not Queryable modifier.
@@ -46,9 +46,9 @@ namespace ecstasy::query::modifier
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-24)
         ///
-        Not(Internal &internal) : _internal(internal), _mask(internal.getMask())
+        Maybe(Internal &internal) : _internal(internal)
         {
-            _mask.flip();
+            adjustMask(internal.getMask().size());
         }
 
         ///
@@ -67,40 +67,27 @@ namespace ecstasy::query::modifier
         }
 
         ///
-        /// @brief Get the internal query data at the given index.
+        /// @brief Get a pointer to the internal query data at the given index if existing, or @p nullptr otherwise.
         ///
         /// @note @ref Queryable constraint.
         /// @warning May throw exceptions, look at the @b Internal type equivalent function documentation.
-        /// @warning Since this is a not modifier, all bit set to true in the masks means there @b isn't data at the
-        /// associated index. Therefore you @b must @b not call this function for bits set to true in the mask.
         ///
         /// @param[in] index Index of the entity.
         ///
-        /// @return QueryData internal queryable data.
+        /// @return QueryData A pointer to the data at index @p index if existing, or @p nullptr otherwise.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-24)
         ///
-        QueryData getQueryData(size_t index)
+        constexpr QueryData getQueryData(size_t index)
         {
-            return _internal.getQueryData(index);
-        }
-
-        ///
-        /// @brief Update the mask to be up to date with the internal bitmask.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-24)
-        ///
-        void reloadMask()
-        {
-            _mask = ~_internal.getMask();
+            if (index < _internal.getMask().size() && _internal.getMask()[index])
+                return &_internal.getQueryData(index);
+            return nullptr;
         }
 
         ///
         /// @brief Adjust the mask to be at least the @p maxSize.
-        ///
-        /// @note All bits exceeding the internal queryable mask size are set to 1.
         ///
         /// @param[in] maxSize maximum size of the masks compared with it.
         ///
@@ -112,7 +99,6 @@ namespace ecstasy::query::modifier
             if (maxSize > _mask.size()) {
                 _mask.resize(maxSize);
                 _mask.setAll();
-                _mask.inplaceXor(_internal.getMask());
             }
         }
 
@@ -122,4 +108,4 @@ namespace ecstasy::query::modifier
     };
 } // namespace ecstasy::query::modifier
 
-#endif /* !ECSTASY_QUERY_MODIFIER_NOT_HPP_ */
+#endif /* !ECSTASY_QUERY_MODIFIER_MAYBE_HPP_ */
