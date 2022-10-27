@@ -1,5 +1,5 @@
 ///
-/// @file Or.hpp
+/// @file Xor.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
 /// @brief
 /// @version 1.0.0
@@ -9,8 +9,8 @@
 ///
 ///
 
-#ifndef ECSTASY_QUERY_MODIFIERS_OR_HPP_
-#define ECSTASY_QUERY_MODIFIERS_OR_HPP_
+#ifndef ECSTASY_QUERY_MODIFIERS_XOR_HPP_
+#define ECSTASY_QUERY_MODIFIERS_XOR_HPP_
 
 #include "Modifier.hpp"
 #include "ecstasy/query/concepts/Queryable.hpp"
@@ -19,7 +19,7 @@
 namespace ecstasy::query::modifier
 {
     ///
-    /// @brief Binary query modifier which performs a or between two queryables.
+    /// @brief Binary query modifier which performs a xor between two queryables.
     ///
     /// @tparam Q1 Left operand queryable type.
     /// @tparam Q2 Right operand queryable type.
@@ -28,7 +28,7 @@ namespace ecstasy::query::modifier
     /// @since 1.0.0 (2022-10-27)
     ///
     template <Queryable Q1, Queryable Q2>
-    class Or : public BinaryModifier {
+    class Xor : public BinaryModifier {
       public:
         using LeftOperand = Q1;
         using LeftQueryData = add_optional_t<typename LeftOperand::QueryData>;
@@ -41,7 +41,7 @@ namespace ecstasy::query::modifier
         using QueryData = std::tuple<LeftQueryData, RightQueryData>;
 
         ///
-        /// @brief Construct a new Or Queryable modifier.
+        /// @brief Construct a new Xor Queryable modifier.
         ///
         /// @param[in] leftOperand left queryable operand.
         /// @param[in] rightOperand right queryable operand.
@@ -49,7 +49,7 @@ namespace ecstasy::query::modifier
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-27)
         ///
-        Or(LeftOperand &leftOperand, RightOperand &rightOperand)
+        Xor(LeftOperand &leftOperand, RightOperand &rightOperand)
             : _leftOperand(leftOperand), _rightOperand(rightOperand)
         {
             reloadMask();
@@ -138,10 +138,10 @@ namespace ecstasy::query::modifier
         {
             if (_leftOperand.getMask().size() > _rightOperand.getMask().size()) {
                 _mask = _leftOperand.getMask();
-                _mask.inplaceOr(_rightOperand.getMask());
+                _mask.inplaceXor(_rightOperand.getMask());
             } else {
                 _mask = _rightOperand.getMask();
-                _mask.inplaceOr(_leftOperand.getMask());
+                _mask.inplaceXor(_leftOperand.getMask());
             }
         }
 
@@ -152,4 +152,4 @@ namespace ecstasy::query::modifier
     };
 } // namespace ecstasy::query::modifier
 
-#endif /* !ECSTASY_QUERY_MODIFIERS_OR_HPP_ */
+#endif /* !ECSTASY_QUERY_MODIFIERS_XOR_HPP_ */
