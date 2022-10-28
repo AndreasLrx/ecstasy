@@ -1,6 +1,5 @@
 #include <gtest/gtest.h>
 #include <math.h>
-#include "ecstasy/query/concepts/GetMissingTypes.hpp"
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/registry/modifiers/Maybe.hpp"
 #include "ecstasy/registry/modifiers/Not.hpp"
@@ -9,6 +8,7 @@
 #include "ecstasy/resource/entity/RegistryEntity.hpp"
 #include "ecstasy/storage/MapStorage.hpp"
 #include "ecstasy/system/ISystem.hpp"
+#include "util/meta/left_outer_join.hpp"
 
 #ifdef __GNUG__
     #include <cstdlib>
@@ -382,39 +382,74 @@ TEST(Registry, MaybeSelect)
 
 TEST(Registry, get_missing_types)
 {
+    using namespace util::meta;
+    // clang-format off
     /// Get Missing Types basic test
     {
-        using expected = std::tuple<int>;
-        using got = ecstasy::query::available_types<char, float, double>::get_missings_t<float, int>;
+        using got = left_outer_join_t<
+            Traits<
+                float, 
+                int
+            >, 
+            Traits<
+                char, 
+                float,
+                double
+            >
+        >;
+        using expected = Traits<int>;
+
+        std::cout<<demangle(typeid(got).name())<<" <-> "<<demangle(typeid(expected).name())<<std::endl; 
         GTEST_ASSERT_EQ(typeid(expected), typeid(got));
     }
 
-    // clang-format off
     /// Missing one modifier
     {
-        using got = ecstasy::query::available_types<
-            ecstasy::queryable_type_t<Position>,
-            ecstasy::queryable_type_t<Velocity>>::
-            get_missings_t<
+        using got = left_outer_join_t<
+            Traits<
                 ecstasy::queryable_type_t<Position>, 
-                ecstasy::queryable_type_t<ecstasy::Maybe<Density>>>;
-        using expected = std::tuple<ecstasy::query::modifier::Maybe<ecstasy::getStorageType<Density>>>;
+                ecstasy::queryable_type_t<ecstasy::Maybe<Density>>
+            >,
+            Traits<
+                ecstasy::queryable_type_t<Position>, 
+                ecstasy::queryable_type_t<Velocity>
+            >
+        >;
+        using expected = Traits<
+            ecstasy::query::modifier::Maybe<ecstasy::getStorageType<Density>>
+        >;
         GTEST_ASSERT_EQ(typeid(expected), typeid(got));
     }
 
     /// Missing one queryable
     {
-        using got = ecstasy::query::available_types<ecstasy::queryable_type_t<Velocity>>::
-            get_missings_t<ecstasy::queryable_type_t<Position>>;
-        using expected = std::tuple<ecstasy::getStorageType<Position>>;
+        using got = left_outer_join_t<
+            Traits<
+                ecstasy::queryable_type_t<Velocity>
+            >,
+            Traits<
+                ecstasy::queryable_type_t<Position>
+            >
+        >;
+        using expected = Traits<ecstasy::getStorageType<Velocity>>;
         GTEST_ASSERT_EQ(typeid(expected), typeid(got));
     }
 
     /// missing one queryable and one modifier
     {
-        using got = ecstasy::query::available_types<ecstasy::queryable_type_t<Velocity>>::
-            get_missings_t<ecstasy::queryable_type_t<Position>, ecstasy::queryable_type_t<ecstasy::Maybe<Density>>>;
-        using expected = std::tuple<ecstasy::getStorageType<Position>, ecstasy::query::modifier::Maybe<ecstasy::getStorageType<Density>>>;
+        using got = left_outer_join_t<
+            Traits<
+                ecstasy::queryable_type_t<Position>, 
+                ecstasy::queryable_type_t<ecstasy::Maybe<Density>>
+            >,
+            Traits<
+                ecstasy::queryable_type_t<Velocity>
+            >
+        >;
+        using expected = Traits<
+            ecstasy::getStorageType<Position>, 
+            ecstasy::query::modifier::Maybe<ecstasy::getStorageType<Density>>
+        >;
         GTEST_ASSERT_EQ(typeid(expected), typeid(got));
     }
     // clang-format on
