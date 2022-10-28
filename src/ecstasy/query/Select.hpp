@@ -18,6 +18,7 @@
 
 #include "Query.hpp"
 #include "concepts/util.hpp"
+#include "util/meta/contains.hpp"
 
 namespace ecstasy::query
 {
@@ -50,7 +51,7 @@ namespace ecstasy::query
         template <Queryable Q>
         constexpr static bool isQueryableSelected()
         {
-            return contains<Q, SelectedQueryables...>();
+            return util::meta::contains<Q, SelectedQueryables...>;
         }
 
         /// @internal
@@ -209,7 +210,7 @@ namespace ecstasy::query
             template <Queryable Q>
             constexpr static bool isQueryableRequired()
             {
-                return isQueryableSelected<Q>() && !contains<Q, Lefts...>();
+                return isQueryableSelected<Q>() && !util::meta::contains<Q, Lefts...>;
             }
 
             constexpr static SelectedTuple value(Lefts &...lefts, Pivot &pivot)
@@ -251,7 +252,7 @@ namespace ecstasy::query
             template <Queryable Q>
             constexpr static bool isQueryableRequired()
             {
-                return isQueryableSelected<Q>() && !contains<Q, Lefts...>();
+                return isQueryableSelected<Q>() && !util::meta::contains<Q, Lefts...>;
             }
 
             constexpr static SelectedTuple value(Lefts &...lefts, Pivot &pivot)

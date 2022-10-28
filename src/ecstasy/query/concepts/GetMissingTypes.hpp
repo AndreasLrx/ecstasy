@@ -13,6 +13,7 @@
 #define ECSTASY_QUERY_CONCEPTS_GETMISSINGTYPES_HPP_
 
 #include "util.hpp"
+#include "util/meta/contains.hpp"
 
 namespace ecstasy::query
 {
@@ -75,12 +76,12 @@ namespace ecstasy::query
                 // clang-format off
                 using type = std::conditional_t<IsPresent, 
                     /// Type already present, dont include it
-                    typename missing<contains<NextRequired, Availables...>(),   // IsPresent
+                    typename missing<util::meta::contains<NextRequired, Availables...>,   // IsPresent
                                     NextRequired,                               // Required
                                     Missings...>::                              // Missings
                                         template missings_tuple<RequiredTypes...>::type,
                     /// Type missing, include it
-                    typename missing<contains<NextRequired, Availables...>(),   // IsPresent
+                    typename missing<util::meta::contains<NextRequired, Availables...>,   // IsPresent
                                     NextRequired,                               // Required
                                     Missings..., Required>::                    // Missings
                                         template missings_tuple<RequiredTypes...>::type>;
@@ -107,7 +108,7 @@ namespace ecstasy::query
 
         template <typename FirstRequired, typename... Required>
         struct get_missings<FirstRequired, Required...> {
-            using type = typename missing<contains<FirstRequired, Availables...>(),
+            using type = typename missing<util::meta::contains<FirstRequired, Availables...>,
                 FirstRequired>::template missings_tuple_t<Required...>;
         };
 

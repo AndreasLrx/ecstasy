@@ -15,24 +15,10 @@
 #include <concepts>
 #include <cstddef>
 
+#include "util/meta/contains.hpp"
+
 namespace ecstasy::query
 {
-    ///
-    /// @brief Tests if the type @p T exists in the types @p Ts.
-    ///
-    /// @tparam T Searched type.
-    /// @tparam Ts @a Valid types.
-    ///
-    /// @return constexpr bool Whether the type @p T is contained in the types @p Ts.
-    ///
-    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-    /// @since 1.0.0 (2022-10-25)
-    ///
-    template <typename T, typename... Ts>
-    constexpr bool contains()
-    {
-        return std::disjunction_v<std::is_same<T, Ts>...>;
-    }
 
     ///
     /// @brief Fetch the type of a parameter pack types from its index.
@@ -107,7 +93,7 @@ namespace ecstasy::query
         struct type_set_eq_helper < std::tuple<T1, Ts1...>,
         std::tuple<Ts2...>,
         typename std::enable_if<
-            !contains<T1, Ts2...>() || 
+            !util::meta::contains<T1, Ts2...> || 
             !type_set_eq_helper<std::tuple<Ts1...>, std::tuple<Ts2...>>::value
             >::type> : public std::false_type {
     };
