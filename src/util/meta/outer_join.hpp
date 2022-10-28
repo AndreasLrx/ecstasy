@@ -1,5 +1,5 @@
 ///
-/// @file left_outer_join.hpp
+/// @file outer_join.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
 /// @brief
 /// @version 1.0.0
@@ -9,8 +9,8 @@
 ///
 ///
 
-#ifndef UTIL_META_LEFT_OUTER_JOIN_HPP_
-#define UTIL_META_LEFT_OUTER_JOIN_HPP_
+#ifndef UTIL_META_OUTER_JOIN_HPP_
+#define UTIL_META_OUTER_JOIN_HPP_
 
 #include "Traits.hpp"
 
@@ -40,7 +40,7 @@ namespace util::meta
         template <typename NextLeft, typename... LeftsUntreated>
         struct result<NextLeft, LeftsUntreated...> {
             // clang-format off
-                using type = std::conditional<
+                using type = std::conditional_t<
                     IsInner, 
                     /// Left element is in inner part, skip it.
                     typename _left_outer_join<
@@ -56,7 +56,7 @@ namespace util::meta
                         NextLeft,                                   // Left
                         OuterLefts..., Left                         // OuterLefts
                     >::template result<LeftsUntreated...>::type
-                >::type;
+                >;
             // clang-format on
         };
     };
@@ -85,6 +85,12 @@ namespace util::meta
 
     template <typename Lefts, typename Rights>
     using left_outer_join_t = left_outer_join<Lefts, Rights>::type;
+
+    template <typename Lefts, typename Rights>
+    using right_outer_join = left_outer_join<Rights, Lefts>;
+
+    template <typename Lefts, typename Rights>
+    using right_outer_join_t = right_outer_join<Lefts, Rights>::type;
 } // namespace util::meta
 
-#endif /* !UTIL_META_LEFT_OUTER_JOIN_HPP_ */
+#endif /* !UTIL_META_OUTER_JOIN_HPP_ */

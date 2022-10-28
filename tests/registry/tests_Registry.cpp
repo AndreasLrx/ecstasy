@@ -8,7 +8,7 @@
 #include "ecstasy/resource/entity/RegistryEntity.hpp"
 #include "ecstasy/storage/MapStorage.hpp"
 #include "ecstasy/system/ISystem.hpp"
-#include "util/meta/left_outer_join.hpp"
+#include "util/meta/outer_join.hpp"
 
 #ifdef __GNUG__
     #include <cstdlib>
