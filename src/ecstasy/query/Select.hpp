@@ -19,6 +19,7 @@
 #include "Query.hpp"
 #include "concepts/util.hpp"
 #include "util/meta/contains.hpp"
+#include "util/meta/type_set_eq.hpp"
 
 namespace ecstasy::query
 {
@@ -121,7 +122,7 @@ namespace ecstasy::query
         template <Queryable... Qs>
         constexpr static SelectedTuple tieQueryables(Qs &...queryables)
         {
-            static_assert(type_set_eq_v<std::tuple<SelectedQueryables...>, std::tuple<Qs...>>,
+            static_assert(util::meta::type_set_eq_v<std::tuple<SelectedQueryables...>, std::tuple<Qs...>>,
                 "Missing queryables in where clause");
             if constexpr (std::is_same_v<std::tuple<SelectedQueryables...>, std::tuple<Qs...>>)
                 return std::tie(std::forward<Qs &>(queryables)...);
