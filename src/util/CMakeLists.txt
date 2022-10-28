@@ -1,6 +1,8 @@
 set(INCROOT ${INCROOT}/util)
 set(SRCROOT ${SRCROOT}/util)
 
+add_subdirectory(meta)
+
 set(SRC 
     ${SRC}
     ${INCROOT}/Allocator.hpp

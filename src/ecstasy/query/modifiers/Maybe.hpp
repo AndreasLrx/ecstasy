@@ -18,7 +18,7 @@
 #include "Modifier.hpp"
 #include "ecstasy/query/concepts/Queryable.hpp"
 #include "util/BitSet.hpp"
-#include "ecstasy/query/concepts/add_optional.hpp"
+#include "util/meta/add_optional.hpp"
 
 namespace ecstasy::query::modifier
 {
@@ -38,7 +38,7 @@ namespace ecstasy::query::modifier
         /// @brief Wrapped queryable.
         using Internal = Q;
         /// @brief @ref Queryable constaint.
-        using QueryData = add_optional_t<typename Internal::QueryData>;
+        using QueryData = util::meta::add_optional_t<typename Internal::QueryData>;
 
         ///
         /// @brief Construct a new Not Queryable modifier.
