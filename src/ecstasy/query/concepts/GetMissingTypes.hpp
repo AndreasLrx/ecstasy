@@ -59,60 +59,32 @@ namespace ecstasy::query
             /// @since 1.0.0 (2022-10-26)
             ///
             template <typename... RequiredTypes>
-            struct missings_tuple;
-
-            template <typename... Qs>
-            using missings_tuple_t = std::tuple<void>;
-        };
-
-        /// @internal
-        /// @brief Specialization of @ref missing with @p IsPresent false, ie the evaluated type is missing in the @p
-        /// Availables types.
-        ///
-        /// @tparam Required Current evaluated Type.
-        /// @tparam Missings All missing types (which belongs to the required types but not to the Availables types).
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-22)
-        ///
-        template <typename Required, typename... Missings>
-        struct missing<false, Required, Missings...> {
-            template <typename... Empty>
             struct missings_tuple {
-                using type = std::tuple<Missings..., Required>;
+                // clang-format off
+                using type = std::conditional<IsPresent,
+                    /// Type already present, dont include it
+                    std::tuple<Missings...>,
+                    /// Type missing, include it
+                    std::tuple<Missings..., Required>>::type;
+                // clang-format on
             };
 
+            /// @copydoc missings_tuple
             template <typename NextRequired, typename... RequiredTypes>
             struct missings_tuple<NextRequired, RequiredTypes...> {
-                using type = typename missing<contains<NextRequired, Availables...>(), NextRequired, Missings...,
-                    Required>::template missings_tuple<RequiredTypes...>::type;
-            };
-
-            template <typename... Qs>
-            using missings_tuple_t = missings_tuple<Qs...>::type;
-        };
-
-        /// @internal
-        /// @brief Specialization of @ref missing with @p IsPresent true, ie the evaluated type is already present in
-        /// the @p Availables types.
-        ///
-        /// @tparam Required Current evaluated Type.
-        /// @tparam Missings All missing types (which belongs to the required types but not to the Availables types).
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-22)
-        ///
-        template <typename Required, typename... Missings>
-        struct missing<true, Required, Missings...> {
-            template <typename... Empty>
-            struct missings_tuple {
-                using type = std::tuple<Missings...>;
-            };
-
-            template <typename NextRequired, typename... RequiredTypes>
-            struct missings_tuple<NextRequired, RequiredTypes...> {
-                using type = typename missing<contains<NextRequired, Availables...>(), NextRequired,
-                    Missings...>::template missings_tuple<RequiredTypes...>::type;
+                // clang-format off
+                using type = std::conditional_t<IsPresent, 
+                    /// Type already present, dont include it
+                    typename missing<contains<NextRequired, Availables...>(),   // IsPresent
+                                    NextRequired,                               // Required
+                                    Missings...>::                              // Missings
+                                        template missings_tuple<RequiredTypes...>::type,
+                    /// Type missing, include it
+                    typename missing<contains<NextRequired, Availables...>(),   // IsPresent
+                                    NextRequired,                               // Required
+                                    Missings..., Required>::                    // Missings
+                                        template missings_tuple<RequiredTypes...>::type>;
+                // clang-format on
             };
 
             template <typename... Qs>
