@@ -400,3 +400,42 @@ TEST(Query, Or)
         GTEST_ASSERT_EQ(vec->get(), Vector2i(index * 4, index * 6));
     }
 }
+
+TEST(Query, parameter_orders)
+{
+    ecstasy::MapStorage<Position> positions;
+    ecstasy::MapStorage<Velocity> velocities;
+    ecstasy::MapStorage<Vector2i> vectors;
+
+    for (int i = 0; i < 13; i++) {
+        if (i % 2 == 0)
+            positions.emplace(i, i * 2, i * 10);
+        if (i % 3 == 0 || i == 8)
+            velocities.emplace(i, i * 10, i * 2);
+        if (i % 4 == 0)
+            vectors.emplace(i, i * 4, i * 6);
+    }
+
+    {
+        bool test = ecstasy::query::type_set_eq_v<std::tuple<Position, Velocity>, std::tuple<Position, Velocity>>;
+        GTEST_ASSERT_TRUE(test);
+    }
+    {
+        bool test = ecstasy::query::type_set_eq_v<std::tuple<Position, Velocity>, std::tuple<Velocity, Position>>;
+        GTEST_ASSERT_TRUE(test);
+    }
+
+    {
+        bool test = ecstasy::query::type_set_eq_v<std::tuple<Position>, std::tuple<Velocity, Position>>;
+        GTEST_ASSERT_FALSE(test);
+    }
+    {
+        bool test = ecstasy::query::type_set_eq_v<std::tuple<Position, Velocity>, std::tuple<Velocity>>;
+        GTEST_ASSERT_FALSE(test);
+    }
+
+    /// If it compiles then it works
+    auto query = ecstasy::query::Select<decltype(positions), decltype(velocities)>::where(velocities, positions);
+    auto query2 = ecstasy::query::Select<decltype(positions), decltype(velocities), decltype(vectors)>::where(
+        vectors, velocities, positions);
+}
