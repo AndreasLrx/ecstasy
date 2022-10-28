@@ -434,14 +434,8 @@ TEST(Query, parameter_orders)
         GTEST_ASSERT_FALSE(test);
     }
 
-    // auto query = ecstasy::query::Select<decltype(positions), decltype(velocities)>::where(velocities, positions);
-
-    /// 1
-    /// Search types one by one instead of left to right
-    ///
-    /// 2
-    /// Forward them at right place when found
-    ///
-    /// 3
-    /// Place them after the filter (before tie)
+    /// If it compiles then it works
+    auto query = ecstasy::query::Select<decltype(positions), decltype(velocities)>::where(velocities, positions);
+    auto query2 = ecstasy::query::Select<decltype(positions), decltype(velocities), decltype(vectors)>::where(
+        vectors, velocities, positions);
 }

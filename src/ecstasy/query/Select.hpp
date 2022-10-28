@@ -54,6 +54,58 @@ namespace ecstasy::query
         }
 
         /// @internal
+        /// @brief Sort the queryable following the @ref SelectedTuple types order and tie them.
+        ///
+        /// @tparam Valids Selected queryable types.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-28)
+        ///
+        template <Queryable... Valids>
+        struct SorteredTie {
+            ///
+            /// @brief Final condition: all queryables are in the good order so tie them and return the tuple.
+            ///
+            /// @param[in] valids valid sorted queryables.
+            ///
+            /// @return constexpr SelectedTuple selected queryables.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-28)
+            ///
+            static constexpr SelectedTuple sort(Valids &...valids)
+            {
+                return std::tie(std::forward<Valids &>(valids)...);
+            }
+
+            ///
+            /// @brief Recursively sort the queryables.
+            ///
+            /// @tparam Q Current evaluated queryable type.
+            /// @tparam Qs Queryable types to sort after.
+            ///
+            /// @param[in] valids already sorted queryables.
+            /// @param[in] current evaluated queryable.
+            /// @param[in] lefts queryable to sort after @p current.
+            ///
+            /// @return constexpr SelectedTuple selected queryables.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-28)
+            ///
+            template <Queryable Q, Queryable... Qs>
+            static constexpr SelectedTuple sort(Valids &...valids, Q &current, Qs &...lefts)
+            {
+                if constexpr (std::is_same_v<type_at_index_t<sizeof...(Valids), SelectedQueryables...>, Q>)
+                    return SorteredTie<Valids..., Q>::sort(
+                        std::forward<Valids &>(valids)..., current, std::forward<Qs &>(lefts)...);
+                else
+                    return SorteredTie<Valids...>::sort(
+                        std::forward<Valids &>(valids)..., std::forward<Qs &>(lefts)..., current);
+            }
+        };
+
+        /// @internal
         /// @brief Finalize the queryables selection.
         ///
         /// @tparam Qs Selected queryables types found in the where clause.
@@ -66,13 +118,18 @@ namespace ecstasy::query
         /// @since 1.0.0 (2022-10-28)
         ///
         template <Queryable... Qs>
-        constexpr SelectedTuple tieQueryables(Qs... queryables)
+        constexpr static SelectedTuple tieQueryables(Qs &...queryables)
         {
             static_assert(type_set_eq_v<std::tuple<SelectedQueryables...>, std::tuple<Qs...>>,
                 "Missing queryables in where clause");
-            static_assert(std::is_same_v<std::tuple<SelectedQueryables...>, std::tuple<Qs...>>,
-                "Queryables have not the same order in the select and the where clauses");
-            return std::tie(std::forward<Qs &>(queryables)...);
+            if constexpr (std::is_same_v<std::tuple<SelectedQueryables...>, std::tuple<Qs...>>)
+                return std::tie(std::forward<Qs &>(queryables)...);
+            else
+                return SorteredTie<>::sort(std::forward<Qs &>(queryables)...);
+
+            // static_assert(std::is_same_v<std::tuple<SelectedQueryables...>, std::tuple<Qs...>>,
+            //     "Queryables have not the same order in the select and the where clauses");
+            // return std::tie(std::forward<Qs &>(queryables)...);
         }
 
         /// @internal
