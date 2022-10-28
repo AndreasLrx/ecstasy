@@ -17,7 +17,7 @@
 #include <tuple>
 
 #include "Query.hpp"
-#include "concepts/util.hpp"
+#include "util/meta/Traits.hpp"
 #include "util/meta/contains.hpp"
 #include "util/meta/type_set_eq.hpp"
 
@@ -98,7 +98,8 @@ namespace ecstasy::query
             template <Queryable Q, Queryable... Qs>
             static constexpr SelectedTuple sort(Valids &...valids, Q &current, Qs &...lefts)
             {
-                if constexpr (std::is_same_v<type_at_index_t<sizeof...(Valids), SelectedQueryables...>, Q>)
+                if constexpr (std::is_same_v<typename util::meta::Traits<SelectedQueryables...>::Nth<sizeof...(Valids)>,
+                                  Q>)
                     return SorteredTie<Valids..., Q>::sort(
                         std::forward<Valids &>(valids)..., current, std::forward<Qs &>(lefts)...);
                 else
@@ -286,8 +287,8 @@ namespace ecstasy::query
         template <Queryable... Queryables>
         constexpr static SelectedTuple filterQueryables(Queryables &...queryables)
         {
-            return FilterQueryables<isQueryableSelected<first_type_t<Queryables...>>(),
-                first_type_t<Queryables...>>::value(std::forward<Queryables &>(queryables)...);
+            return FilterQueryables<isQueryableSelected<typename util::meta::Traits<Queryables...>::First>(),
+                typename util::meta::Traits<Queryables...>::First>::value(std::forward<Queryables &>(queryables)...);
         }
 
       public:

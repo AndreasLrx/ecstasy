@@ -12,7 +12,6 @@
 #ifndef ECSTASY_QUERY_CONCEPTS_GETMISSINGTYPES_HPP_
 #define ECSTASY_QUERY_CONCEPTS_GETMISSINGTYPES_HPP_
 
-#include "util.hpp"
 #include "util/meta/contains.hpp"
 
 namespace ecstasy::query
