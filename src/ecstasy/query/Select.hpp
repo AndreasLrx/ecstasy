@@ -54,6 +54,28 @@ namespace ecstasy::query
         }
 
         /// @internal
+        /// @brief Finalize the queryables selection.
+        ///
+        /// @tparam Qs Selected queryables types found in the where clause.
+        ///
+        /// @param[in] queryables selected queryables found in the where clause.
+        ///
+        /// @return constexpr SelectedTuple selected queryables tuple.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-28)
+        ///
+        template <Queryable... Qs>
+        constexpr SelectedTuple tieQueryables(Qs... queryables)
+        {
+            static_assert(type_set_eq_v<std::tuple<SelectedQueryables...>, std::tuple<Qs...>>,
+                "Missing queryables in where clause");
+            static_assert(std::is_same_v<std::tuple<SelectedQueryables...>, std::tuple<Qs...>>,
+                "Queryables have not the same order in the select and the where clauses");
+            return std::tie(std::forward<Qs &>(queryables)...);
+        }
+
+        /// @internal
         /// @brief Primary template to filter the queryables keeping only the one in SelectedQueryables.
         ///
         /// @tparam ContainsPivot Whether or not the current Queryable (called pivot) must be selected.
@@ -135,7 +157,7 @@ namespace ecstasy::query
 
             constexpr static SelectedTuple value(Lefts &...lefts, Pivot &pivot)
             {
-                return std::tie(std::forward<Lefts &>(lefts)..., pivot);
+                return tieQueryables(std::forward<Lefts &>(lefts)..., pivot);
             }
 
             template <Queryable NextPivot, Queryable... Rights>
@@ -178,7 +200,7 @@ namespace ecstasy::query
             constexpr static SelectedTuple value(Lefts &...lefts, Pivot &pivot)
             {
                 (void)pivot;
-                return std::tie(std::forward<Lefts &>(lefts)...);
+                return tieQueryables(std::forward<Lefts &>(lefts)...);
             }
 
             template <Queryable NextPivot, Queryable... Rights>
