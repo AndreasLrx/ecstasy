@@ -44,6 +44,35 @@ namespace ecstasy::query
         { queryable.getQueryData(index) } -> std::same_as<typename Q::QueryData>;
         // clang-format on
     };
+
+    ///
+    /// @brief Checks if the given type match the @ref Queryable concept.
+    ///
+    /// @tparam T Evaluated type.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2022-10-30)
+    ///
+    template <typename T>
+    struct is_queryable : public std::false_type {
+    };
+
+    /// @copydoc is_queryable
+    template <Queryable T>
+    struct is_queryable<T> : public std::true_type {
+    };
+
+    ///
+    /// @brief Helper for @ref is_queryable<T>::value.
+    ///
+    /// @tparam T Evaluated type.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2022-10-30)
+    ///
+    template <typename T>
+    static constexpr inline bool is_queryable_v = is_queryable<T>::value;
+
 } // namespace ecstasy::query
 
 #endif /* !ECSTASY_QUERY_CONCEPTS_QUERYABLE_HPP_ */

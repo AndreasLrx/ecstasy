@@ -259,10 +259,14 @@ namespace ecstasy::query
         ///
         Query(First &first, Others &...others) : _storages(first, others...)
         {
-            size_t maxSize = std::max({first.getMask().size(), others.getMask().size()...});
+            /// Adjusts the masks only if required
+            if constexpr (is_queryable_with_adjust_v<
+                              First> || std::disjunction_v<is_queryable_with_adjust<Others>...>) {
+                size_t maxSize = std::max({first.getMask().size(), others.getMask().size()...});
 
-            adjustMask(first, maxSize);
-            (adjustMask(others, maxSize), ...);
+                adjustMask(first, maxSize);
+                (adjustMask(others, maxSize), ...);
+            }
             this->_mask = (util::BitSet(first.getMask()) &= ... &= others.getMask());
 
             // push a sentinel bit at the end.
