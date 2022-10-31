@@ -98,7 +98,8 @@ namespace ecstasy::query
             template <Queryable Q, Queryable... Qs>
             static constexpr SelectedTuple sort(Valids &...valids, Q &current, Qs &...lefts)
             {
-                if constexpr (std::is_same_v<typename util::meta::Traits<SelectedQueryables...>::Nth<sizeof...(Valids)>,
+                if constexpr (std::is_same_v<
+                                  typename util::meta::Traits<SelectedQueryables...>::template Nth<sizeof...(Valids)>,
                                   Q>)
                     return SorteredTie<Valids..., Q>::sort(
                         std::forward<Valids &>(valids)..., current, std::forward<Qs &>(lefts)...);
