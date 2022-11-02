@@ -9,12 +9,12 @@
 ///
 ///
 
-#ifndef ECSTASY_QUERY_CONCEPTS_ADD_OPTIONAL_HPP_
-#define ECSTASY_QUERY_CONCEPTS_ADD_OPTIONAL_HPP_
+#ifndef UTIL_META_ADD_OPTIONAL_HPP_
+#define UTIL_META_ADD_OPTIONAL_HPP_
 
 #include <optional>
 
-namespace ecstasy::query
+namespace util::meta
 {
     ///
     /// @brief Add optional to a type if required.
@@ -54,6 +54,6 @@ namespace ecstasy::query
     ///
     template <typename T>
     using add_optional_t = add_optional<T>::type;
-} // namespace ecstasy::query
+} // namespace util::meta
 
-#endif /* !ECSTASY_QUERY_CONCEPTS_ADD_OPTIONAL_HPP_ */
+#endif /* !UTIL_META_ADD_OPTIONAL_HPP_ */

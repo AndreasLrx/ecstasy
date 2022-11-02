@@ -14,7 +14,7 @@
 
 #include "Modifier.hpp"
 #include "ecstasy/query/concepts/Queryable.hpp"
-#include "ecstasy/query/concepts/add_optional.hpp"
+#include "util/meta/add_optional.hpp"
 
 namespace ecstasy::query::modifier
 {
@@ -31,9 +31,9 @@ namespace ecstasy::query::modifier
     class Xor : public BinaryModifier {
       public:
         using LeftOperand = Q1;
-        using LeftQueryData = add_optional_t<typename LeftOperand::QueryData>;
+        using LeftQueryData = util::add_optional_t<typename LeftOperand::QueryData>;
         using RightOperand = Q2;
-        using RightQueryData = add_optional_t<typename RightOperand::QueryData>;
+        using RightQueryData = util::add_optional_t<typename RightOperand::QueryData>;
 
         /// @brief Wrapped queryables.
         using Operands = std::tuple<Q1, Q2>;

@@ -62,6 +62,34 @@ namespace ecstasy::query
     {
         queryable.adjustMask(maxSize);
     }
+
+    ///
+    /// @brief Checks if the given type match the @ref QueryableNeedAdjust concept.
+    ///
+    /// @tparam T Evaluated type.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2022-10-30)
+    ///
+    template <typename T>
+    struct is_queryable_with_adjust : public std::false_type {
+    };
+
+    /// @copydoc is_queryable_with_adjust
+    template <QueryableNeedAdjust T>
+    struct is_queryable_with_adjust<T> : public std::true_type {
+    };
+
+    ///
+    /// @brief Helper for @ref is_queryable_with_adjust<T>::value.
+    ///
+    /// @tparam T Evaluated type.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2022-10-30)
+    ///
+    template <typename T>
+    static constexpr inline bool is_queryable_with_adjust_v = is_queryable_with_adjust<T>::value;
 } // namespace ecstasy::query
 
 #endif /* !ECSTASY_QUERY_CONCEPTS_QUERYABLENEEDADJUST_HPP_ */

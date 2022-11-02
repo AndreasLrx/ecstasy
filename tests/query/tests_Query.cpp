@@ -417,20 +417,20 @@ TEST(Query, parameter_orders)
     }
 
     {
-        bool test = ecstasy::query::type_set_eq_v<std::tuple<Position, Velocity>, std::tuple<Position, Velocity>>;
+        bool test = util::meta::type_set_eq_v<std::tuple<Position, Velocity>, std::tuple<Position, Velocity>>;
         GTEST_ASSERT_TRUE(test);
     }
     {
-        bool test = ecstasy::query::type_set_eq_v<std::tuple<Position, Velocity>, std::tuple<Velocity, Position>>;
+        bool test = util::meta::type_set_eq_v<std::tuple<Position, Velocity>, std::tuple<Velocity, Position>>;
         GTEST_ASSERT_TRUE(test);
     }
 
     {
-        bool test = ecstasy::query::type_set_eq_v<std::tuple<Position>, std::tuple<Velocity, Position>>;
+        bool test = util::meta::type_set_eq_v<std::tuple<Position>, std::tuple<Velocity, Position>>;
         GTEST_ASSERT_FALSE(test);
     }
     {
-        bool test = ecstasy::query::type_set_eq_v<std::tuple<Position, Velocity>, std::tuple<Velocity>>;
+        bool test = util::meta::type_set_eq_v<std::tuple<Position, Velocity>, std::tuple<Velocity>>;
         GTEST_ASSERT_FALSE(test);
     }
 

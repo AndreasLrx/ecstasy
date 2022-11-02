@@ -17,7 +17,9 @@
 #include <tuple>
 
 #include "Query.hpp"
-#include "concepts/util.hpp"
+#include "util/meta/Traits.hpp"
+#include "util/meta/contains.hpp"
+#include "util/meta/type_set_eq.hpp"
 
 namespace ecstasy::query
 {
@@ -50,7 +52,7 @@ namespace ecstasy::query
         template <Queryable Q>
         constexpr static bool isQueryableSelected()
         {
-            return contains<Q, SelectedQueryables...>();
+            return util::meta::contains<Q, SelectedQueryables...>;
         }
 
         /// @internal
@@ -96,7 +98,9 @@ namespace ecstasy::query
             template <Queryable Q, Queryable... Qs>
             static constexpr SelectedTuple sort(Valids &...valids, Q &current, Qs &...lefts)
             {
-                if constexpr (std::is_same_v<type_at_index_t<sizeof...(Valids), SelectedQueryables...>, Q>)
+                if constexpr (std::is_same_v<
+                                  typename util::meta::Traits<SelectedQueryables...>::template Nth<sizeof...(Valids)>,
+                                  Q>)
                     return SorteredTie<Valids..., Q>::sort(
                         std::forward<Valids &>(valids)..., current, std::forward<Qs &>(lefts)...);
                 else
@@ -120,16 +124,12 @@ namespace ecstasy::query
         template <Queryable... Qs>
         constexpr static SelectedTuple tieQueryables(Qs &...queryables)
         {
-            static_assert(type_set_eq_v<std::tuple<SelectedQueryables...>, std::tuple<Qs...>>,
+            static_assert(util::meta::type_set_eq_v<std::tuple<SelectedQueryables...>, std::tuple<Qs...>>,
                 "Missing queryables in where clause");
             if constexpr (std::is_same_v<std::tuple<SelectedQueryables...>, std::tuple<Qs...>>)
                 return std::tie(std::forward<Qs &>(queryables)...);
             else
                 return SorteredTie<>::sort(std::forward<Qs &>(queryables)...);
-
-            // static_assert(std::is_same_v<std::tuple<SelectedQueryables...>, std::tuple<Qs...>>,
-            //     "Queryables have not the same order in the select and the where clauses");
-            // return std::tie(std::forward<Qs &>(queryables)...);
         }
 
         /// @internal
@@ -145,6 +145,23 @@ namespace ecstasy::query
         template <bool ContainsPivot, Queryable Pivot, Queryable... Lefts>
         struct FilterQueryables {
             ///
+            /// @brief Test if the @ref Queryable type Q must be kept in the resulting queryables.
+            ///
+            /// @tparam Q Evaluated type.
+            ///
+            /// @return constexpr bool Whether the type Q is in the @ref SelectedQueryables types and not already
+            /// selected (in the Lefts types).
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-25)
+            ///
+            template <Queryable Q>
+            constexpr static bool isQueryableRequired()
+            {
+                return isQueryableSelected<Q>() && !util::meta::contains<Q, Lefts...>;
+            }
+
+            ///
             /// @brief Primary template to finalize the queryables selection.
             ///
             /// @param[in] lefts Already accepted queryables.
@@ -155,7 +172,15 @@ namespace ecstasy::query
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-22)
             ///
-            constexpr static SelectedTuple value(Lefts &...lefts, Pivot &pivot);
+            constexpr static SelectedTuple value(Lefts &...lefts, Pivot &pivot)
+            {
+                if constexpr (ContainsPivot)
+                    return tieQueryables(std::forward<Lefts &>(lefts)..., pivot);
+                else {
+                    (void)pivot;
+                    return tieQueryables(std::forward<Lefts &>(lefts)...);
+                }
+            }
 
             ///
             /// @brief Primary template recursively called until there is no @p nextPivot. It calls itself with:
@@ -179,93 +204,16 @@ namespace ecstasy::query
             /// @since 1.0.0 (2022-10-22)
             ///
             template <Queryable NextPivot, Queryable... Rights>
-            constexpr static SelectedTuple value(
-                Lefts &...lefts, Pivot &pivot, NextPivot &nextPivot, Rights &...rights);
-        };
-
-        /// @internal
-        /// @brief Specialization of @ref FilterQueryables with @p ContainsPivot true, ie the pivot is selected in the
-        /// resulting tuple.
-        ///
-        /// @tparam Pivot Current Queryable Type.
-        /// @tparam Lefts All 'accepted' Queryables Types (they all belongs to @ref SelectedTuple types).
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-22)
-        ///
-        template <Queryable Pivot, Queryable... Lefts>
-        struct FilterQueryables<true, Pivot, Lefts...> {
-            ///
-            /// @brief Test if the @ref Queryable type Q must be kept in the resulting queryables.
-            ///
-            /// @tparam Q Evaluated type.
-            ///
-            /// @return constexpr bool Whether the type Q is in the @ref SelectedQueryables types and not already
-            /// selected (in the Lefts types).
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-10-25)
-            ///
-            template <Queryable Q>
-            constexpr static bool isQueryableRequired()
-            {
-                return isQueryableSelected<Q>() && !contains<Q, Lefts...>();
-            }
-
-            constexpr static SelectedTuple value(Lefts &...lefts, Pivot &pivot)
-            {
-                return tieQueryables(std::forward<Lefts &>(lefts)..., pivot);
-            }
-
-            template <Queryable NextPivot, Queryable... Rights>
             constexpr static SelectedTuple value(Lefts &...lefts, Pivot &pivot, NextPivot &nextPivot, Rights &...rights)
             {
-                return FilterQueryables<isQueryableRequired<NextPivot>(), NextPivot, Lefts..., Pivot>::value(
-                    std::forward<Lefts &>(lefts)..., pivot, nextPivot, std::forward<Rights &>(rights)...);
-            }
-        };
-
-        /// @internal
-        /// @brief Specialization of @ref FilterQueryables with @p ContainsPivot false, ie the pivot is not selected in
-        /// the resulting tuple.
-        ///
-        /// @tparam Pivot Current Queryable Type.
-        /// @tparam Lefts All 'accepted' Queryables Types (they all belongs to @ref SelectedTuple types).
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-22)
-        ///
-        template <Queryable Pivot, Queryable... Lefts>
-        struct FilterQueryables<false, Pivot, Lefts...> {
-            ///
-            /// @brief Test if the @ref Queryable type Q must be kept in the resulting queryables.
-            ///
-            /// @tparam Q Evaluated type.
-            ///
-            /// @return constexpr bool Whether the type Q is in the @ref SelectedQueryables types and not already
-            /// selected (in the Lefts types).
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-10-25)
-            ///
-            template <Queryable Q>
-            constexpr static bool isQueryableRequired()
-            {
-                return isQueryableSelected<Q>() && !contains<Q, Lefts...>();
-            }
-
-            constexpr static SelectedTuple value(Lefts &...lefts, Pivot &pivot)
-            {
-                (void)pivot;
-                return tieQueryables(std::forward<Lefts &>(lefts)...);
-            }
-
-            template <Queryable NextPivot, Queryable... Rights>
-            constexpr static SelectedTuple value(Lefts &...lefts, Pivot &pivot, NextPivot &nextPivot, Rights &...rights)
-            {
-                (void)pivot;
-                return FilterQueryables<isQueryableSelected<NextPivot>(), NextPivot, Lefts...>::value(
-                    std::forward<Lefts &>(lefts)..., nextPivot, std::forward<Rights &>(rights)...);
+                if constexpr (ContainsPivot)
+                    return FilterQueryables<isQueryableRequired<NextPivot>(), NextPivot, Lefts..., Pivot>::value(
+                        std::forward<Lefts &>(lefts)..., pivot, nextPivot, std::forward<Rights &>(rights)...);
+                else {
+                    (void)pivot;
+                    return FilterQueryables<isQueryableSelected<NextPivot>(), NextPivot, Lefts...>::value(
+                        std::forward<Lefts &>(lefts)..., nextPivot, std::forward<Rights &>(rights)...);
+                }
             }
         };
 
@@ -284,8 +232,8 @@ namespace ecstasy::query
         template <Queryable... Queryables>
         constexpr static SelectedTuple filterQueryables(Queryables &...queryables)
         {
-            return FilterQueryables<isQueryableSelected<first_type_t<Queryables...>>(),
-                first_type_t<Queryables...>>::value(std::forward<Queryables &>(queryables)...);
+            return FilterQueryables<isQueryableSelected<typename util::meta::Traits<Queryables...>::First>(),
+                typename util::meta::Traits<Queryables...>::First>::value(std::forward<Queryables &>(queryables)...);
         }
 
       public:
@@ -311,10 +259,14 @@ namespace ecstasy::query
         template <Queryable FirstWhere, Queryable... Wheres>
         static Query<SelectedQueryables...> where(FirstWhere &firstWhere, Wheres &...wheres)
         {
-            size_t maxSize = std::max({firstWhere.getMask().size(), wheres.getMask().size()...});
+            /// Adjusts the masks only if required
+            if constexpr (is_queryable_with_adjust_v<
+                              FirstWhere> || std::disjunction_v<is_queryable_with_adjust<Wheres>...>) {
+                size_t maxSize = std::max({firstWhere.getMask().size(), wheres.getMask().size()...});
 
-            adjustMask(firstWhere, maxSize);
-            (adjustMask(wheres, maxSize), ...);
+                adjustMask(firstWhere, maxSize);
+                (adjustMask(wheres, maxSize), ...);
+            }
 
             util::BitSet mask = (util::BitSet(firstWhere.getMask()) &= ... &= wheres.getMask());
 

@@ -20,7 +20,6 @@
 #include "concepts/RegistryModifier.hpp"
 #include "ecstasy/query/Query.hpp"
 #include "ecstasy/query/Select.hpp"
-#include "ecstasy/query/concepts/GetMissingTypes.hpp"
 #include "ecstasy/query/modifiers/Modifier.hpp"
 #include "ecstasy/resource/entity/Entities.hpp"
 #include "ecstasy/storage/IStorage.hpp"
@@ -28,6 +27,7 @@
 #include "ecstasy/storage/StorageConcepts.hpp"
 #include "ecstasy/system/ISystem.hpp"
 #include "util/Allocator.hpp"
+#include "util/meta/outer_join.hpp"
 
 namespace ecstasy
 {
@@ -203,28 +203,16 @@ namespace ecstasy
             template <typename MissingsTuple, typename... Cs>
             struct Internal;
 
-            /// @copydoc
-            ///
-            /// @note This template is used when there is no missing queryables.
-            template <typename... Cs>
-            struct Internal<std::tuple<void>, Cs...> {
-                constexpr static query::Query<Selects...> where(
-                    Registry &registry, OptionalModifiersAllocator &allocator)
-                {
-                    return ecstasy::query::Select<Selects...>::where(registry.getQueryable<Cs>(allocator)...);
-                }
-            };
-
-            /// @copydoc
-            ///
-            /// @note This template is used when there are missing queryables whoses types are @p Missings.
             template <typename... Missings, typename... Cs>
             struct Internal<std::tuple<Missings...>, Cs...> {
                 constexpr static query::Query<Selects...> where(
                     Registry &registry, OptionalModifiersAllocator &allocator)
                 {
-                    return ecstasy::query::Select<Selects...>::where(
-                        registry.getQueryable<Missings>(allocator)..., registry.getQueryable<Cs>(allocator)...);
+                    if constexpr (sizeof...(Missings) > 0)
+                        return ecstasy::query::Select<Selects...>::where(
+                            registry.getQueryable<Missings>(allocator)..., registry.getQueryable<Cs>(allocator)...);
+                    else
+                        return ecstasy::query::Select<Selects...>::where(registry.getQueryable<Cs>(allocator)...);
                 }
             };
 
@@ -259,9 +247,19 @@ namespace ecstasy
             template <typename C, typename... Cs>
             query::Query<Selects...> where(OptionalModifiersAllocator allocator = std::nullopt)
             {
-                return Internal<typename ecstasy::query::available_types<queryable_type_t<C>,
-                                    queryable_type_t<Cs>...>::template get_missings_t<Selects...>,
+                // clang-format off
+                return Internal<
+                    typename util::meta::right_outer_join_t<
+                        util::meta::Traits<
+                            queryable_type_t<C>,
+                            queryable_type_t<Cs>...
+                        >,
+                        util::meta::Traits<
+                            Selects...
+                        >
+                    >::Tuple,
                     C, Cs...>::where(_registry, allocator);
+                // clang-format on
             }
 
           private:

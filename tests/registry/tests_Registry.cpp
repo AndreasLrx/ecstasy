@@ -1,6 +1,5 @@
 #include <gtest/gtest.h>
 #include <math.h>
-#include "ecstasy/query/concepts/GetMissingTypes.hpp"
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/registry/modifiers/Maybe.hpp"
 #include "ecstasy/registry/modifiers/Not.hpp"
@@ -9,6 +8,7 @@
 #include "ecstasy/resource/entity/RegistryEntity.hpp"
 #include "ecstasy/storage/MapStorage.hpp"
 #include "ecstasy/system/ISystem.hpp"
+#include "util/meta/outer_join.hpp"
 
 #ifdef __GNUG__
     #include <cstdlib>
@@ -378,46 +378,6 @@ TEST(Registry, MaybeSelect)
     EXPECT_THROW(execMissingAllocator(), std::logic_error);
     GTEST_ASSERT_EQ(query.getMask(), select.getMask());
     GTEST_ASSERT_EQ(query.getMask(), util::BitSet("11000101000001"));
-}
-
-TEST(Registry, get_missing_types)
-{
-    /// Get Missing Types basic test
-    {
-        using expected = std::tuple<int>;
-        using got = ecstasy::query::available_types<char, float, double>::get_missings_t<float, int>;
-        GTEST_ASSERT_EQ(typeid(expected), typeid(got));
-    }
-
-    // clang-format off
-    /// Missing one modifier
-    {
-        using got = ecstasy::query::available_types<
-            ecstasy::queryable_type_t<Position>,
-            ecstasy::queryable_type_t<Velocity>>::
-            get_missings_t<
-                ecstasy::queryable_type_t<Position>, 
-                ecstasy::queryable_type_t<ecstasy::Maybe<Density>>>;
-        using expected = std::tuple<ecstasy::query::modifier::Maybe<ecstasy::getStorageType<Density>>>;
-        GTEST_ASSERT_EQ(typeid(expected), typeid(got));
-    }
-
-    /// Missing one queryable
-    {
-        using got = ecstasy::query::available_types<ecstasy::queryable_type_t<Velocity>>::
-            get_missings_t<ecstasy::queryable_type_t<Position>>;
-        using expected = std::tuple<ecstasy::getStorageType<Position>>;
-        GTEST_ASSERT_EQ(typeid(expected), typeid(got));
-    }
-
-    /// missing one queryable and one modifier
-    {
-        using got = ecstasy::query::available_types<ecstasy::queryable_type_t<Velocity>>::
-            get_missings_t<ecstasy::queryable_type_t<Position>, ecstasy::queryable_type_t<ecstasy::Maybe<Density>>>;
-        using expected = std::tuple<ecstasy::getStorageType<Position>, ecstasy::query::modifier::Maybe<ecstasy::getStorageType<Density>>>;
-        GTEST_ASSERT_EQ(typeid(expected), typeid(got));
-    }
-    // clang-format on
 }
 
 TEST(Registry, ImplicitWhere)
