@@ -49,7 +49,7 @@ namespace ecstasy
     /// @copydoc queryable type
     template <RegistryModifier M>
     struct queryable_type<M> {
-        using type = M::Modifier;
+        using type = typename M::Modifier;
     };
 
     ///
@@ -61,7 +61,7 @@ namespace ecstasy
     /// @since 1.0.0 (2022-10-25)
     ///
     template <typename C>
-    using queryable_type_t = queryable_type<C>::type;
+    using queryable_type_t = typename queryable_type<C>::type;
 } // namespace ecstasy
 
 #endif /* !ECSTASY_REGISTRY_CONCEPTS_QUERYABLETYPE_HPP_ */

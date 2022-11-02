@@ -53,7 +53,7 @@ namespace util::meta
     /// @since 1.0.0 (2022-10-27)
     ///
     template <typename T>
-    using add_optional_t = add_optional<T>::type;
+    using add_optional_t = typename add_optional<T>::type;
 } // namespace util::meta
 
 #endif /* !UTIL_META_ADD_OPTIONAL_HPP_ */

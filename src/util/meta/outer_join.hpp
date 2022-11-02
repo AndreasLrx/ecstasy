@@ -128,7 +128,7 @@ namespace util::meta
     template <typename Left, typename... Lefts, typename... Rights>
     struct left_outer_join<Traits<Left, Lefts...>, Traits<Rights...>> {
         // clang-format off
-        using type = 
+        using type = typename
             _left_outer_join<
                 Traits<Rights...>,              // Rights
                 contains<Left, Rights...>,      // IsInner
@@ -162,7 +162,7 @@ namespace util::meta
     /// @since 1.0.0 (2022-10-29)
     ///
     template <typename Lefts, typename Rights>
-    using left_outer_join_t = left_outer_join<Lefts, Rights>::type;
+    using left_outer_join_t = typename left_outer_join<Lefts, Rights>::type;
 
     ///
     /// @brief Performs a right outer join on two parameter pack types wrapped in tuple types (return types in rights
@@ -187,7 +187,7 @@ namespace util::meta
     /// @since 1.0.0 (2022-10-29)
     ///
     template <typename Lefts, typename Rights>
-    using right_outer_join_t = right_outer_join<Lefts, Rights>::type;
+    using right_outer_join_t = typename right_outer_join<Lefts, Rights>::type;
 } // namespace util::meta
 
 #endif /* !UTIL_META_OUTER_JOIN_HPP_ */

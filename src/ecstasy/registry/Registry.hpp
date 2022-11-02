@@ -100,7 +100,7 @@ namespace ecstasy
         /// @copydoc getQueryable()
         template <RegistryModifier M>
         requires query::Queryable<typename M::Modifier>
-        constexpr M::Modifier &getQueryable(OptionalModifiersAllocator &allocator)
+        constexpr typename M::Modifier &getQueryable(OptionalModifiersAllocator &allocator)
         {
             return getQueryable<typename M::Modifier>(allocator);
         }

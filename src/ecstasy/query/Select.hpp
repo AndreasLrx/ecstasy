@@ -63,7 +63,7 @@ namespace ecstasy::query
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-28)
         ///
-        template <Queryable... Valids>
+        template <typename... Valids>
         struct SorteredTie {
             ///
             /// @brief Final condition: all queryables are in the good order so tie them and return the tuple.
@@ -129,7 +129,7 @@ namespace ecstasy::query
             if constexpr (std::is_same_v<std::tuple<SelectedQueryables...>, std::tuple<Qs...>>)
                 return std::tie(std::forward<Qs &>(queryables)...);
             else
-                return SorteredTie<>::sort(std::forward<Qs &>(queryables)...);
+                return SorteredTie<>::template sort(std::forward<Qs &>(queryables)...);
         }
 
         /// @internal
