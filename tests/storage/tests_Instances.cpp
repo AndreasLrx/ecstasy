@@ -7,6 +7,8 @@ class A {
     {
         return "A";
     }
+
+    virtual ~A() = default;
 };
 
 class B : public A {
@@ -15,6 +17,8 @@ class B : public A {
     {
         return "B";
     }
+
+    virtual ~B() = default;
 };
 
 TEST(Instances, all)

@@ -38,6 +38,10 @@ TEST(Entities, all)
 struct Vector2i {
     int x;
     int y;
+
+    Vector2i(int px, int py) : x(px), y(py)
+    {
+    }
 };
 
 using Position = Vector2i;

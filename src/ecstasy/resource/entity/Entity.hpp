@@ -108,7 +108,7 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-19)
         ///
         template <IsStorage S, typename... Args>
-        S::Component &add(S &storage, Args &&...args)
+        typename S::Component &add(S &storage, Args &&...args)
         {
             if (storage.contains(_index))
                 throw std::logic_error(std::string("Trying to add twice the component ")
@@ -133,7 +133,7 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-19)
         ///
         template <IsStorage S>
-        S::Component &operator[](S &storage)
+        typename S::Component &operator[](S &storage)
         {
             if (!storage.contains(_index))
                 return storage.emplace(_index);
@@ -195,7 +195,7 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-19)
         ///
         template <IsStorage S>
-        S::Component &get(S &storage)
+        typename S::Component &get(S &storage)
         {
             return storage[_index];
         }

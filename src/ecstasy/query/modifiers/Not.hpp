@@ -36,7 +36,7 @@ namespace ecstasy::query::modifier
         /// @brief Wrapped queryable.
         using Internal = Q;
         /// @brief @ref Queryable constaint.
-        using QueryData = Internal::QueryData;
+        using QueryData = typename Internal::QueryData;
 
         ///
         /// @brief Construct a new Not Queryable modifier.
