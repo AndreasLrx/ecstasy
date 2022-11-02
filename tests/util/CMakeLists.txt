@@ -4,6 +4,8 @@ set(SRC
     ${SRCROOT}/tests_BitSet.cpp
 )
 
+add_subdirectory(meta)
+
 add_ecstasy_test(
     NAME ecstasy_test_util
     DISPLAY_NAME "Ecstasy-Util-Tests"
