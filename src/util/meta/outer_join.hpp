@@ -13,6 +13,7 @@
 #define UTIL_META_OUTER_JOIN_HPP_
 
 #include "Traits.hpp"
+#include "contains.hpp"
 
 namespace util::meta
 {
