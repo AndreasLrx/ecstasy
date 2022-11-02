@@ -56,6 +56,18 @@ namespace util::meta
             std::false_type
         > {
     };
+
+    /// @internal
+    /// @brief Helper for @ref type_set_eq.
+    /// Specialization for comparison between empty types set
+    /// 
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2022-11-02)
+    ///
+    template <>
+    struct _type_set_eq<std::tuple<>, std::tuple<>> : public std::true_type {
+    };
+
     // clang-format on
 
     ///
