@@ -1,10 +1,12 @@
-# ECSTASY (Entity Component System ? ? Serialization ?)
+# ECSTASY (Entity Component System Toward Architecture Saving Years)
 
 [![Build](https://github.com/AndreasLrx/ecstasy/actions/workflows/build-tests.yml/badge.svg)](https://github.com/AndreasLrx/ecstasy/actions/workflows/build-tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![codecov](https://codecov.io/gh/AndreasLrx/ecstasy/branch/main/graph/badge.svg?token=9TIAMB7WTF)](https://codecov.io/gh/AndreasLrx/ecstasy)
 
-ECSTASY is an ECS made in modern C++ with serialization included.
+ECSTASY is an ECS made in modern C++.
+
+###### If you're wondering if the name of the project has any real significance, it doesn't.
 
 ## Authors
 
