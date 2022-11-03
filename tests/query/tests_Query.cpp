@@ -4,6 +4,7 @@
 #include "ecstasy/storage/MapStorage.hpp"
 
 #include "ecstasy/query/Select.hpp"
+#include "ecstasy/query/modifiers/And.hpp"
 #include "ecstasy/query/modifiers/Maybe.hpp"
 #include "ecstasy/query/modifiers/Not.hpp"
 #include "ecstasy/query/modifiers/Or.hpp"
@@ -438,4 +439,45 @@ TEST(Query, parameter_orders)
     auto query = ecstasy::query::Select<decltype(positions), decltype(velocities)>::where(velocities, positions);
     auto query2 = ecstasy::query::Select<decltype(positions), decltype(velocities), decltype(vectors)>::where(
         vectors, velocities, positions);
+}
+
+TEST(Query, SubQuery)
+{
+    ecstasy::MapStorage<Position> positions;
+    ecstasy::MapStorage<Velocity> velocities;
+    ecstasy::MapStorage<Vector2i> vectors;
+    ecstasy::Entities entities;
+    auto positionAndVelocity = ecstasy::query::modifier::And(positions, velocities);
+    auto vectorOrVelocityAndPosition = ecstasy::query::modifier::Or(vectors, positionAndVelocity);
+
+    for (int i = 0; i < 13; i++) {
+        entities.create();
+        if (i % 2 == 0)
+            positions.emplace(i, i * 2, i * 10);
+        if (i % 3 == 0 || i == 8)
+            velocities.emplace(i, i * 10, i * 2);
+        if (i % 4 == 0)
+            vectors.emplace(i, i * 4, i * 6);
+    }
+
+    // clang-format off
+    auto maybePos = ecstasy::query::modifier::Maybe(positions);
+    auto query = ecstasy::query::Select<decltype(maybePos)>::where(maybePos, vectorOrVelocityAndPosition);
+    GTEST_ASSERT_EQ(query.getMask(), util::BitSet("1"));
+
+    positionAndVelocity.reloadMask();
+    vectorOrVelocityAndPosition.reloadMask();
+    auto maybeVelocity = ecstasy::query::modifier::Maybe(velocities);
+    auto maybeVec = ecstasy::query::modifier::Maybe(vectors);
+    auto query2 = ecstasy::query::Select<decltype(maybePos), decltype(maybeVec),decltype(maybeVelocity)>::
+        where(maybePos, maybeVec, maybeVelocity, vectorOrVelocityAndPosition);
+
+    GTEST_ASSERT_EQ(ecstasy::query::Query(positions).getMask(),                     util::BitSet("11010101010101"));
+    GTEST_ASSERT_EQ(ecstasy::query::Query(velocities).getMask(),                    util::BitSet("11001101001001"));
+    GTEST_ASSERT_EQ(ecstasy::query::Query(vectors).getMask(),                       util::BitSet("11000100010001"));
+
+    GTEST_ASSERT_EQ(ecstasy::query::Query(positionAndVelocity).getMask(),           util::BitSet("11000101000001"));
+    GTEST_ASSERT_EQ(ecstasy::query::Query(vectorOrVelocityAndPosition).getMask(),   util::BitSet("11000101010001"));
+    GTEST_ASSERT_EQ(query2.getMask(),                                               util::BitSet("11000101010001"));
+    // clang-format on
 }

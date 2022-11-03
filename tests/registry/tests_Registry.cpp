@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include <math.h>
 #include "ecstasy/registry/Registry.hpp"
+#include "ecstasy/registry/modifiers/And.hpp"
 #include "ecstasy/registry/modifiers/Maybe.hpp"
 #include "ecstasy/registry/modifiers/Not.hpp"
 #include "ecstasy/registry/modifiers/Or.hpp"
@@ -514,4 +515,33 @@ TEST(Registry, OrSelect)
         GTEST_ASSERT_TRUE(vec);
         GTEST_ASSERT_EQ(vec->get(), index * 4);
     }
+}
+
+TEST(Registry, subQuery)
+{
+    ecstasy::Registry registry;
+    ecstasy::ModifiersAllocator allocator;
+
+    for (int i = 0; i < 13; i++) {
+        auto builder = registry.entityBuilder();
+        if (i % 2 == 0)
+            builder.with<Position>(i * 2, i * 10);
+        if (i % 3 == 0 || i == 8)
+            builder.with<Velocity>(i * 10, i * 2);
+        if (i % 4 == 0)
+            builder.with<Density>(i * 4);
+        builder.build();
+    }
+
+    // clang-format off
+    auto query = registry.select<ecstasy::Maybe<Position>>().where<ecstasy::Or<Position, ecstasy::And<Velocity, Density>>>(allocator);
+    auto query2 = registry.select<ecstasy::Maybe<Position>, ecstasy::Maybe<Velocity>, ecstasy::Maybe<Density>>().where<ecstasy::Or<Position, ecstasy::And<Velocity, Density>>>(allocator);
+    auto pos = registry.query<Position>();
+    auto velAndDensity = registry.query<Velocity, Density>();
+
+    GTEST_ASSERT_EQ(pos.getMask(),           util::BitSet("11010101010101"));
+    GTEST_ASSERT_EQ(velAndDensity.getMask(), util::BitSet("11000100000001"));
+    GTEST_ASSERT_EQ(query.getMask(),         util::BitSet("11010101010101")); /// Or of the two precedent masks
+    GTEST_ASSERT_EQ(query.getMask(), query2.getMask());
+    // clang-format on
 }

@@ -13,6 +13,7 @@
 #define ECSTASY_REGISTRY_MODIFIERS_XOR_HPP_
 
 #include "ecstasy/query/modifiers/Xor.hpp"
+#include "ecstasy/registry/concepts/QueryableType.hpp"
 
 namespace ecstasy
 {
@@ -27,7 +28,7 @@ namespace ecstasy
     ///
     template <typename C1, typename C2>
     struct Xor {
-        using Modifier = query::modifier::Xor<getStorageType<C1>, getStorageType<C2>>;
+        using Modifier = query::modifier::Xor<queryable_type_t<C1>, queryable_type_t<C2>>;
     };
 } // namespace ecstasy
 

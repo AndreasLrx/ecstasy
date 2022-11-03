@@ -13,6 +13,7 @@
 #define ECSTASY_REGISTRY_MODIFIERS_NOT_HPP_
 
 #include "ecstasy/query/modifiers/Not.hpp"
+#include "ecstasy/registry/concepts/QueryableType.hpp"
 
 namespace ecstasy
 {
@@ -26,7 +27,7 @@ namespace ecstasy
     ///
     template <typename C>
     struct Not {
-        using Modifier = query::modifier::Not<getStorageType<C>>;
+        using Modifier = query::modifier::Not<queryable_type_t<C>>;
     };
 } // namespace ecstasy
 
