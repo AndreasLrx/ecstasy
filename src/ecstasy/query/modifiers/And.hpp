@@ -30,9 +30,9 @@ namespace ecstasy::query::modifier
     class And : public BinaryModifier {
       public:
         using LeftOperand = Q1;
-        using LeftQueryData = LeftOperand::QueryData;
+        using LeftQueryData = typename LeftOperand::QueryData;
         using RightOperand = Q2;
-        using RightQueryData = RightOperand::QueryData;
+        using RightQueryData = typename RightOperand::QueryData;
 
         /// @brief Wrapped queryables.
         using Operands = std::tuple<Q1, Q2>;
