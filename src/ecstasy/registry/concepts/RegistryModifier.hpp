@@ -30,7 +30,7 @@ namespace ecstasy
     concept RegistryModifier = requires()
     {
         typename M::Modifier;
-        query::Queryable<typename M::Modifier>;
+        requires query::Queryable<typename M::Modifier>;
     };
 
 } // namespace ecstasy
