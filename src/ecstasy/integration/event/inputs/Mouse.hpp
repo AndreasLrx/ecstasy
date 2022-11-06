@@ -9,8 +9,8 @@
 ///
 ///
 
-#ifndef ECSTASY_INTEGRATION_EVENT_RESOURCE_MOUSE_HPP_
-#define ECSTASY_INTEGRATION_EVENT_RESOURCE_MOUSE_HPP_
+#ifndef ECSTASY_INTEGRATION_EVENT_INPUTS_MOUSE_HPP_
+#define ECSTASY_INTEGRATION_EVENT_INPUTS_MOUSE_HPP_
 
 #include "ecstasy/resource/Resource.hpp"
 
@@ -26,22 +26,22 @@ namespace ecstasy::integration::event
       public:
         /// @brief Mouse buttons
         enum class Button {
-            Left,   // The left mouse button
-            Right,  // The right mouse button
-            Middle, // The middle (wheel) mouse button
-            Extra1, // The first extra mouse button
-            Extra2, // The second extra mouse button
-            Extra3, // The third extra mouse button
+            Left,   ///< The left mouse button
+            Right,  ///< The right mouse button
+            Middle, ///< The middle (wheel) mouse button
+            Extra1, ///< The first extra mouse button
+            Extra2, ///< The second extra mouse button
+            Extra3, ///< The third extra mouse button
 
-            Count // Keep last -- the total number of mouse buttons
+            Count ///< Keep last -- the total number of mouse buttons
         };
 
         /// @brief Mouse wheels
         enum class Wheel {
-            Horizontal, // Horizontal mouse wheel (common)
-            Vertical,   // Vertical mouse wheel
+            Horizontal, ///< Horizontal mouse wheel (common)
+            Vertical,   ///< Vertical mouse wheel
 
-            Count // Keep last -- the total number of mouse wheels
+            Count ///< Keep last -- the total number of mouse wheels
         };
 
         ///
@@ -199,4 +199,4 @@ namespace ecstasy::integration::event
     };
 } // namespace ecstasy::integration::event
 
-#endif /* !ECSTASY_INTEGRATION_EVENT_RESOURCE_MOUSE_HPP_ */
+#endif /* !ECSTASY_INTEGRATION_EVENT_INPUTS_MOUSE_HPP_ */
