@@ -12,6 +12,9 @@
 #ifndef ECSTASY_INTEGRATION_EVENT_INPUTS_MOUSE_HPP_
 #define ECSTASY_INTEGRATION_EVENT_INPUTS_MOUSE_HPP_
 
+#include <array>
+#include <utility>
+
 #include "ecstasy/resource/Resource.hpp"
 
 namespace ecstasy::integration::event

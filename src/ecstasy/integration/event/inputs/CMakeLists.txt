@@ -3,5 +3,5 @@ set(SRCROOT ${SRCROOT}/inputs)
 
 set(SRC 
     ${SRC}
-    ${SRCROOT}/Mouse.hpp
+    ${INCROOT}/Mouse.hpp
     PARENT_SCOPE)
