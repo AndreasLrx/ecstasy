@@ -68,8 +68,7 @@ struct Counter : public ecstasy::Resource {
 
 namespace test
 {
-    struct Comp {
-    };
+    struct Comp {};
 } // namespace test
 
 SET_COMPONENT_STORAGE(test::Comp, ecstasy::MapStorage)
@@ -115,10 +114,8 @@ struct Size {
 using Density = int;
 
 /// Movable marker to test complex queries
-struct Movable {
-};
-struct Static {
-};
+struct Movable {};
+struct Static {};
 
 struct Gravity : public ecstasy::ISystem {
     void run(ecstasy::Registry &registry) override final
@@ -166,11 +163,13 @@ TEST(Registry, resources)
     const ecstasy::Registry &cregistry = registry;
 
     /// Resource not present
+    ASSERT_FALSE(registry.hasResource<Counter>());
     EXPECT_THROW(registry.getResource<Counter>(), std::logic_error);
     EXPECT_THROW(cregistry.getResource<Counter>(), std::logic_error);
 
     /// Add resource with an initial value of 5 and add one
     registry.addResource<Counter>(5).count();
+    ASSERT_TRUE(registry.hasResource<Counter>());
     EXPECT_EQ(registry.getResource<Counter>().value, 6);
     EXPECT_EQ(cregistry.getResource<Counter>().value, 6);
 
