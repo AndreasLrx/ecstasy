@@ -24,6 +24,8 @@ TEST(RegistryEntity, add_has)
     GTEST_ASSERT_FALSE(e1.has<Position>());
     e1.add<Position>(5, 3);
     GTEST_ASSERT_TRUE(e1.has<Position>());
+
+    GTEST_ASSERT_EQ(&registry, &e1.getRegistry());
 }
 
 TEST(RegistryEntity, get)
