@@ -19,7 +19,7 @@ namespace ecstasy
 
 namespace ecstasy::integration::event
 {
-    class Event;
+    struct Event;
 
     ///
     /// @brief Static helper class to handle ecstasy events.
