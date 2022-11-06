@@ -351,6 +351,22 @@ namespace ecstasy
         }
 
         ///
+        /// @brief Check whether the registry has the resource of type @b R.
+        ///
+        /// @tparam R Type of the resource.
+        ///
+        /// @return bool Whether the registry contains a resource instance of type @b R.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-06)
+        ///
+        template <std::derived_from<Resource> R>
+        bool hasResource() const
+        {
+            return _resources.contains<R>();
+        }
+
+        ///
         /// @brief Get the Resource of type @b R.
         ///
         /// @tparam R Type of the resource to fetch.

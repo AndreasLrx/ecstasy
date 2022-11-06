@@ -28,7 +28,7 @@ namespace ecstasy::query
     concept QueryableNeedAdjust = requires(Q &queryable, std::size_t maxSize)
     {
         /// Ensure the type is a queryable
-        Queryable<Q>;
+        requires Queryable<Q>;
 
         // clang-format off
         { queryable.adjustMask(maxSize) } -> std::same_as<void>;
