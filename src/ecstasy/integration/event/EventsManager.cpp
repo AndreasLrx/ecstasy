@@ -14,31 +14,27 @@
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/resource/entity/Entities.hpp"
 #include "ecstasy/storage/MapStorage.hpp"
+#include "events/Event.hpp"
 
 // clang-format off
 #define CALL_LISTENERS(listenerType, e)                                                        \
     for (auto [entity, listener] : registry.query<Entities, listenerType>())                   \
-    {                                                                                          \
-        if (listener(registry, entity, e))                                                     \
-            return true;                                                                       \
-    }
+        listener(registry, entity, e);
+
 // clang-format on
 
 namespace ecstasy::integration::event
 {
-    bool EventsManager::handleEvent(Registry &registry, const Event &event)
+    void EventsManager::handleEvent(Registry &registry, const Event &event)
     {
         switch (event.type) {
             case Event::Type::MouseButtonPressed:
-                try {
+                if (registry.hasResource<Mouse>())
                     registry.getResource<Mouse>().setButtonState(event.mouseButtonPressed.button, true);
-                } catch (std::logic_error &) {
-                }
 
                 CALL_LISTENERS(MouseButtonPressedListener, event.mouseButtonPressed)
                 break;
             default: break;
         }
-        return false;
     }
 } // namespace ecstasy::integration::event

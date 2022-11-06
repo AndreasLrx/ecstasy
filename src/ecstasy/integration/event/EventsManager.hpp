@@ -12,8 +12,6 @@
 #ifndef ECSTASY_INTEGRATION_EVENT_EVENTSMANAGER_HPP_
 #define ECSTASY_INTEGRATION_EVENT_EVENTSMANAGER_HPP_
 
-#include "events/Event.hpp"
-
 namespace ecstasy
 {
     class Registry;
@@ -21,6 +19,8 @@ namespace ecstasy
 
 namespace ecstasy::integration::event
 {
+    class Event;
+
     ///
     /// @brief Static helper class to handle ecstasy events.
     ///
@@ -36,12 +36,10 @@ namespace ecstasy::integration::event
         /// @param[in] registry Reference to the registry owning the input resources/event listeners components.
         /// @param[in] event Event to handle.
         ///
-        /// @return bool Whether the event has been consumed or not.
-        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
         ///
-        static bool handleEvent(Registry &registry, const Event &event);
+        static void handleEvent(Registry &registry, const Event &event);
 
       private:
         EventsManager();

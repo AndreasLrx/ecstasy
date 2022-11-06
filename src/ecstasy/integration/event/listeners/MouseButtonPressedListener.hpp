@@ -14,16 +14,16 @@
 
 #include <functional>
 #include "ecstasy/integration/event/events/MouseButtonPressedEvent.hpp"
+#include "ecstasy/resource/entity/Entity.hpp"
 
 namespace ecstasy
 {
     class Registry;
-    class Entity;
 } // namespace ecstasy
 
 namespace ecstasy::integration::event
 {
-    using MouseButtonPressedListener = std::function<bool(Registry &, Entity &, const MouseButtonPressedEvent &)>;
+    using MouseButtonPressedListener = std::function<void(Registry &, Entity, const MouseButtonPressedEvent &)>;
 } // namespace ecstasy::integration::event
 
 #endif /* !ECSTASY_INTEGRATION_EVENTS_LISTENERS_MOUSEBUTTONPRESSEDLISTENER_HPP_ */
