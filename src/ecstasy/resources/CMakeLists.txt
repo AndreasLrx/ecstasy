@@ -1,5 +1,5 @@
-set(INCROOT ${INCROOT}/resource)
-set(SRCROOT ${SRCROOT}/resource)
+set(INCROOT ${INCROOT}/resources)
+set(SRCROOT ${SRCROOT}/resources)
 
 add_subdirectory(entity)
 

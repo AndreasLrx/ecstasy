@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "ecstasy/storage/MapStorage.hpp"
+#include "ecstasy/storages/MapStorage.hpp"
 
 struct Position {
     int x;

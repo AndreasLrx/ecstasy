@@ -12,7 +12,7 @@
 #ifndef ECSTASY_INTEGRATION_EVENT_EVENTS_MOUSEBUTTONPRESSEDEVENT_HPP_
 #define ECSTASY_INTEGRATION_EVENT_EVENTS_MOUSEBUTTONPRESSEDEVENT_HPP_
 
-#include "ecstasy/integration/event/inputs/Mouse.hpp"
+#include "ecstasy/integrations/event/inputs/Mouse.hpp"
 
 namespace ecstasy::integration::event
 {

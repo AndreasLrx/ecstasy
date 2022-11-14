@@ -1,5 +1,5 @@
-set(INCROOT ${INCROOT}/storage)
-set(SRCROOT ${SRCROOT}/storage)
+set(INCROOT ${INCROOT}/storages)
+set(SRCROOT ${SRCROOT}/storages)
 
 set(SRC
     ${SRC}

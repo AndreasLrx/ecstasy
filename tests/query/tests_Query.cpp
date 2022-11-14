@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include "ecstasy/query/Query.hpp"
-#include "ecstasy/resource/entity/Entities.hpp"
-#include "ecstasy/storage/MapStorage.hpp"
+#include "ecstasy/resources/entity/Entities.hpp"
+#include "ecstasy/storages/MapStorage.hpp"
 
 #include "ecstasy/query/Select.hpp"
 #include "ecstasy/query/modifiers/Maybe.hpp"
@@ -49,8 +49,7 @@ struct Velocity {
     }
 };
 
-struct MovableMarker {
-};
+struct MovableMarker {};
 
 TEST(Query, where)
 {

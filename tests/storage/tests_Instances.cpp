@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "ecstasy/storage/Instances.hpp"
+#include "ecstasy/storages/Instances.hpp"
 
 class A {
   public:

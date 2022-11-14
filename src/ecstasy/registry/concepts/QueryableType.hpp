@@ -13,8 +13,8 @@
 #define ECSTASY_REGISTRY_CONCEPTS_QUERYABLETYPE_HPP_
 
 #include "ecstasy/query/concepts/Queryable.hpp"
-#include "ecstasy/resource/Resource.hpp"
-#include "ecstasy/storage/StorageConcepts.hpp"
+#include "ecstasy/resources/Resource.hpp"
+#include "ecstasy/storages/StorageConcepts.hpp"
 
 namespace ecstasy
 {
