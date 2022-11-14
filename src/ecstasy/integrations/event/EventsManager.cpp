@@ -11,6 +11,7 @@
 
 #include "EventsManager.hpp"
 #include "ecstasy/integrations/event/listeners/MouseButtonPressedListener.hpp"
+#include "ecstasy/integrations/event/listeners/MouseButtonReleasedListener.hpp"
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/resources/entity/Entities.hpp"
 #include "ecstasy/storages/MapStorage.hpp"
@@ -33,6 +34,12 @@ namespace ecstasy::integration::event
                     registry.getResource<Mouse>().setButtonState(event.mouseButtonPressed.button, true);
 
                 CALL_LISTENERS(MouseButtonPressedListener, event.mouseButtonPressed)
+                break;
+            case Event::Type::MouseButtonReleased:
+                if (registry.hasResource<Mouse>())
+                    registry.getResource<Mouse>().setButtonState(event.mouseButtonReleased.button, false);
+
+                CALL_LISTENERS(MouseButtonReleasedListener, event.mouseButtonReleased)
                 break;
             default: break;
         }

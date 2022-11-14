@@ -13,6 +13,7 @@
 #define ECSTASY_INTEGRATION_EVENT_EVENTS_EVENT_HPP_
 
 #include "MouseButtonPressedEvent.hpp"
+#include "MouseButtonReleasedEvent.hpp"
 
 namespace ecstasy::integration::event
 {
@@ -26,7 +27,8 @@ namespace ecstasy::integration::event
     struct Event {
         /// @brief Event types.
         enum class Type {
-            MouseButtonPressed, ///< One of the mouse button has been pressed.
+            MouseButtonPressed,  ///< One of the mouse button has been pressed.
+            MouseButtonReleased, ///< One of the mouse button has been released.
 
             Count ///< Keep last -- the total number of events
         };
@@ -46,6 +48,16 @@ namespace ecstasy::integration::event
         /// @since 1.0.0 (2022-11-06)
         ///
         constexpr Event(MouseButtonPressedEvent &&event) : type(Type::MouseButtonPressed), mouseButtonPressed(event)
+        {
+        }
+
+        ///
+        /// @brief Construct a mouse button released event wrapper.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-06)
+        ///
+        constexpr Event(MouseButtonReleasedEvent &&event) : type(Type::MouseButtonReleased), mouseButtonReleased(event)
         {
         }
 
@@ -74,7 +86,8 @@ namespace ecstasy::integration::event
         /// @since 1.0.0 (2022-11-06)
         ///
         union {
-            MouseButtonPressedEvent mouseButtonPressed; ///< @ref Type::MouseButtonPressed associated event
+            MouseButtonPressedEvent mouseButtonPressed;   ///< @ref Type::MouseButtonPressed associated event
+            MouseButtonReleasedEvent mouseButtonReleased; ///< @ref Type::MouseButtonReleasedEvent associated event
         };
     };
 } // namespace ecstasy::integration::event
