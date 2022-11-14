@@ -12,7 +12,9 @@
 #ifndef ECSTASY_INTEGRATION_EVENT_EVENTS_EVENT_HPP_
 #define ECSTASY_INTEGRATION_EVENT_EVENTS_EVENT_HPP_
 
-#include "MouseButtonPressedEvent.hpp"
+#include "MouseButtonEvent.hpp"
+#include "MouseMoveEvent.hpp"
+#include "MouseWheelScrollEvent.hpp"
 
 namespace ecstasy::integration::event
 {
@@ -26,7 +28,10 @@ namespace ecstasy::integration::event
     struct Event {
         /// @brief Event types.
         enum class Type {
-            MouseButtonPressed, ///< One of the mouse button has been pressed.
+            MouseButtonPressed,  ///< One of the mouse button has been pressed.
+            MouseButtonReleased, ///< One of the mouse button has been released.
+            MouseWheelScrolled,  ///< The mouse wheel was scrolled.
+            MouseMoved,          ///< The mouse cursor moved.
 
             Count ///< Keep last -- the total number of events
         };
@@ -40,12 +45,33 @@ namespace ecstasy::integration::event
         constexpr Event() : type(Type::Count){};
 
         ///
-        /// @brief Construct a mouse button pressed event wrapper.
+        /// @brief Construct a mouse button event wrapper.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
         ///
-        constexpr Event(MouseButtonPressedEvent &&event) : type(Type::MouseButtonPressed), mouseButtonPressed(event)
+        constexpr Event(MouseButtonEvent &&event)
+            : type(event.pressed ? Type::MouseButtonPressed : Type::MouseButtonReleased), mouseButton(event)
+        {
+        }
+
+        ///
+        /// @brief Construct a mouse wheel scroll event wrapper.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-06)
+        ///
+        constexpr Event(MouseWheelScrollEvent &&event) : type(Type::MouseWheelScrolled), mouseWheel(event)
+        {
+        }
+
+        ///
+        /// @brief Construct a mouse move event wrapper.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-06)
+        ///
+        constexpr Event(MouseMoveEvent &&event) : type(Type::MouseMoved), mouseMove(event)
         {
         }
 
@@ -74,7 +100,10 @@ namespace ecstasy::integration::event
         /// @since 1.0.0 (2022-11-06)
         ///
         union {
-            MouseButtonPressedEvent mouseButtonPressed; ///< @ref Type::MouseButtonPressed associated event
+            MouseButtonEvent
+                mouseButton; ///< @ref Type::MouseButtonPressed && @ref Type::MouseButtonReleased associated event.
+            MouseWheelScrollEvent mouseWheel; ///< @ref Type::MouseWheelScrolled associated event.
+            MouseMoveEvent mouseMove;         ///< @ref Type::MouseMoved associated event.
         };
     };
 } // namespace ecstasy::integration::event

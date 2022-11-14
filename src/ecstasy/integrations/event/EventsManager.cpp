@@ -10,7 +10,9 @@
 ///
 
 #include "EventsManager.hpp"
-#include "ecstasy/integrations/event/listeners/MouseButtonPressedListener.hpp"
+#include "ecstasy/integrations/event/listeners/MouseButtonListener.hpp"
+#include "ecstasy/integrations/event/listeners/MouseMoveListener.hpp"
+#include "ecstasy/integrations/event/listeners/MouseWheelScrollListener.hpp"
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/resources/entity/Entities.hpp"
 #include "ecstasy/storages/MapStorage.hpp"
@@ -29,11 +31,19 @@ namespace ecstasy::integration::event
     {
         switch (event.type) {
             case Event::Type::MouseButtonPressed:
+            case Event::Type::MouseButtonReleased:
                 if (registry.hasResource<Mouse>())
-                    registry.getResource<Mouse>().setButtonState(event.mouseButtonPressed.button, true);
+                    registry.getResource<Mouse>().setButtonState(event.mouseButton.button, event.mouseButton.pressed);
 
-                CALL_LISTENERS(MouseButtonPressedListener, event.mouseButtonPressed)
-                break;
+                CALL_LISTENERS(MouseButtonListener, event.mouseButton) break;
+            case Event::Type::MouseWheelScrolled: CALL_LISTENERS(MouseWheelScrollListener, event.mouseWheel) break;
+            case Event::Type::MouseMoved:
+                if (registry.hasResource<Mouse>()) {
+                    Mouse &mouse = registry.getResource<Mouse>();
+                    mouse.setPosition(event.mouseMove.x + mouse.getX(), event.mouseMove.y + mouse.getY());
+                }
+
+                CALL_LISTENERS(MouseMoveListener, event.mouseMove) break;
             default: break;
         }
     }
