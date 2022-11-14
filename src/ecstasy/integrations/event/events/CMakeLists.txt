@@ -4,6 +4,5 @@ set(SRCROOT ${SRCROOT}/events)
 set(SRC 
     ${SRC}
     ${INCROOT}/Event.hpp
-    ${INCROOT}/MouseButtonPressedEvent.hpp
-    ${INCROOT}/MouseButtonReleasedEvent.hpp
+    ${INCROOT}/MouseButtonEvent.hpp
     PARENT_SCOPE)

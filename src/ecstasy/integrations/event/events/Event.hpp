@@ -12,8 +12,7 @@
 #ifndef ECSTASY_INTEGRATION_EVENT_EVENTS_EVENT_HPP_
 #define ECSTASY_INTEGRATION_EVENT_EVENTS_EVENT_HPP_
 
-#include "MouseButtonPressedEvent.hpp"
-#include "MouseButtonReleasedEvent.hpp"
+#include "MouseButtonEvent.hpp"
 
 namespace ecstasy::integration::event
 {
@@ -42,22 +41,13 @@ namespace ecstasy::integration::event
         constexpr Event() : type(Type::Count){};
 
         ///
-        /// @brief Construct a mouse button pressed event wrapper.
+        /// @brief Construct a mouse button event wrapper.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
         ///
-        constexpr Event(MouseButtonPressedEvent &&event) : type(Type::MouseButtonPressed), mouseButtonPressed(event)
-        {
-        }
-
-        ///
-        /// @brief Construct a mouse button released event wrapper.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-11-06)
-        ///
-        constexpr Event(MouseButtonReleasedEvent &&event) : type(Type::MouseButtonReleased), mouseButtonReleased(event)
+        constexpr Event(MouseButtonEvent &&event)
+            : type(event.pressed ? Type::MouseButtonPressed : Type::MouseButtonReleased), mouseButton(event)
         {
         }
 
@@ -86,8 +76,8 @@ namespace ecstasy::integration::event
         /// @since 1.0.0 (2022-11-06)
         ///
         union {
-            MouseButtonPressedEvent mouseButtonPressed;   ///< @ref Type::MouseButtonPressed associated event
-            MouseButtonReleasedEvent mouseButtonReleased; ///< @ref Type::MouseButtonReleasedEvent associated event
+            MouseButtonEvent
+                mouseButton; ///< @ref Type::MouseButtonPressed && @ref Type::MouseButtonReleased associated event
         };
     };
 } // namespace ecstasy::integration::event

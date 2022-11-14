@@ -1,5 +1,5 @@
 ///
-/// @file MouseButtonPressedEvent.hpp
+/// @file MouseButtonEvent.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
 /// @brief
 /// @version 1.0.0
@@ -9,36 +9,39 @@
 ///
 ///
 
-#ifndef ECSTASY_INTEGRATION_EVENT_EVENTS_MOUSEBUTTONPRESSEDEVENT_HPP_
-#define ECSTASY_INTEGRATION_EVENT_EVENTS_MOUSEBUTTONPRESSEDEVENT_HPP_
+#ifndef ECSTASY_INTEGRATION_EVENT_EVENTS_MOUSEBUTTONEVENT_HPP_
+#define ECSTASY_INTEGRATION_EVENT_EVENTS_MOUSEBUTTONEVENT_HPP_
 
 #include "ecstasy/integrations/event/inputs/Mouse.hpp"
 
 namespace ecstasy::integration::event
 {
     ///
-    /// @brief Event describing when a mouse button is pressed.
+    /// @brief Event describing when a mouse button is pressed or released.
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-11-06)
     ///
-    struct MouseButtonPressedEvent {
-        /// @brief button pressed.
+    struct MouseButtonEvent {
+        /// @brief target button.
         Mouse::Button button;
+        /// @brief Whether it was pressed or released.
+        bool pressed;
 
         ///
-        /// @brief Construct a new MouseButtonPressedEvent object.
+        /// @brief Construct a new MouseButtonEvent object.
         ///
         /// @param[in] pButton button pressed.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
         ///
-        constexpr MouseButtonPressedEvent(Mouse::Button pButton = Mouse::Button::Count) : button(pButton)
+        constexpr MouseButtonEvent(Mouse::Button pButton = Mouse::Button::Count, bool pPressed = true)
+            : button(pButton), pressed(pPressed)
         {
         }
     };
 
 } // namespace ecstasy::integration::event
 
-#endif /* !ECSTASY_INTEGRATION_EVENT_EVENTS_MOUSEBUTTONPRESSEDEVENT_HPP_ */
+#endif /* !ECSTASY_INTEGRATION_EVENT_EVENTS_MOUSEBUTTONEVENT_HPP_ */

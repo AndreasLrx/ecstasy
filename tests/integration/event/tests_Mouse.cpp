@@ -2,8 +2,7 @@
 #include "ecstasy/integrations/event/EventsManager.hpp"
 #include "ecstasy/integrations/event/events/Event.hpp"
 #include "ecstasy/integrations/event/inputs/Mouse.hpp"
-#include "ecstasy/integrations/event/listeners/MouseButtonPressedListener.hpp"
-#include "ecstasy/integrations/event/listeners/MouseButtonReleasedListener.hpp"
+#include "ecstasy/integrations/event/listeners/MouseButtonListener.hpp"
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/storages/MapStorage.hpp"
 
@@ -18,29 +17,29 @@ TEST(Event, MouseButtonPressed)
     int val2 = 0;
 
     GTEST_ASSERT_TRUE(mouseState.isButtonUp(event::Mouse::Button::Left));
-    event::EventsManager::handleEvent(registry, event::MouseButtonPressedEvent(event::Mouse::Button::Left));
+    event::EventsManager::handleEvent(registry, event::MouseButtonEvent(event::Mouse::Button::Left, true));
     GTEST_ASSERT_TRUE(mouseState.isButtonDown(event::Mouse::Button::Left));
 
     registry.entityBuilder()
-        .with<event::MouseButtonPressedListener>(
-            [&val1](Registry &r, Entity e, const event::MouseButtonPressedEvent &event) {
-                (void)r;
-                (void)e;
-                (void)event;
+        .with<event::MouseButtonListener>([&val1](Registry &r, Entity e, const event::MouseButtonEvent &event) {
+            (void)r;
+            (void)e;
+            (void)event;
+            if (event.pressed)
                 val1++;
-            })
+        })
         .build();
     registry.entityBuilder()
-        .with<event::MouseButtonPressedListener>(
-            [&val2](Registry &r, Entity e, const event::MouseButtonPressedEvent &event) {
-                (void)r;
-                (void)e;
-                (void)event;
+        .with<event::MouseButtonListener>([&val2](Registry &r, Entity e, const event::MouseButtonEvent &event) {
+            (void)r;
+            (void)e;
+            (void)event;
+            if (event.pressed)
                 val2--;
-            })
+        })
         .build();
 
-    event::EventsManager::handleEvent(registry, event::MouseButtonPressedEvent(event::Mouse::Button::Left));
+    event::EventsManager::handleEvent(registry, event::MouseButtonEvent(event::Mouse::Button::Left, true));
     GTEST_ASSERT_EQ(val1, 1);
     GTEST_ASSERT_EQ(val2, -1);
 }
@@ -53,29 +52,29 @@ TEST(Event, MouseButtonReleased)
     int val2 = 0;
 
     GTEST_ASSERT_TRUE(mouseState.isButtonUp(event::Mouse::Button::Left));
-    event::EventsManager::handleEvent(registry, event::MouseButtonPressedEvent(event::Mouse::Button::Left));
+    event::EventsManager::handleEvent(registry, event::MouseButtonEvent(event::Mouse::Button::Left, true));
     GTEST_ASSERT_TRUE(mouseState.isButtonDown(event::Mouse::Button::Left));
 
     registry.entityBuilder()
-        .with<event::MouseButtonReleasedListener>(
-            [&val1](Registry &r, Entity e, const event::MouseButtonReleasedEvent &event) {
-                (void)r;
-                (void)e;
-                (void)event;
+        .with<event::MouseButtonListener>([&val1](Registry &r, Entity e, const event::MouseButtonEvent &event) {
+            (void)r;
+            (void)e;
+            (void)event;
+            if (!event.pressed)
                 val1++;
-            })
+        })
         .build();
     registry.entityBuilder()
-        .with<event::MouseButtonReleasedListener>(
-            [&val2](Registry &r, Entity e, const event::MouseButtonReleasedEvent &event) {
-                (void)r;
-                (void)e;
-                (void)event;
+        .with<event::MouseButtonListener>([&val2](Registry &r, Entity e, const event::MouseButtonEvent &event) {
+            (void)r;
+            (void)e;
+            (void)event;
+            if (!event.pressed)
                 val2--;
-            })
+        })
         .build();
 
-    event::EventsManager::handleEvent(registry, event::MouseButtonReleasedEvent(event::Mouse::Button::Left));
+    event::EventsManager::handleEvent(registry, event::MouseButtonEvent(event::Mouse::Button::Left, false));
     GTEST_ASSERT_TRUE(mouseState.isButtonUp(event::Mouse::Button::Left));
     GTEST_ASSERT_EQ(val1, 1);
     GTEST_ASSERT_EQ(val2, -1);
