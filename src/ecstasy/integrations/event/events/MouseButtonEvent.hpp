@@ -31,7 +31,8 @@ namespace ecstasy::integration::event
         ///
         /// @brief Construct a new MouseButtonEvent object.
         ///
-        /// @param[in] pButton button pressed.
+        /// @param[in] pButton Targeted button.
+        /// @param[in] pPressed Whether the button is pressed or not.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)

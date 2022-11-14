@@ -13,6 +13,7 @@
 #define ECSTASY_INTEGRATION_EVENT_EVENTS_EVENT_HPP_
 
 #include "MouseButtonEvent.hpp"
+#include "MouseWheelScrollEvent.hpp"
 
 namespace ecstasy::integration::event
 {
@@ -28,6 +29,7 @@ namespace ecstasy::integration::event
         enum class Type {
             MouseButtonPressed,  ///< One of the mouse button has been pressed.
             MouseButtonReleased, ///< One of the mouse button has been released.
+            MouseWheelScrolled,  ///< The mouse wheel was scrolled.
 
             Count ///< Keep last -- the total number of events
         };
@@ -48,6 +50,16 @@ namespace ecstasy::integration::event
         ///
         constexpr Event(MouseButtonEvent &&event)
             : type(event.pressed ? Type::MouseButtonPressed : Type::MouseButtonReleased), mouseButton(event)
+        {
+        }
+
+        ///
+        /// @brief Construct a mouse wheel scroll event wrapper.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-06)
+        ///
+        constexpr Event(MouseWheelScrollEvent &&event) : type(Type::MouseWheelScrolled), mouseWheel(event)
         {
         }
 
@@ -78,6 +90,7 @@ namespace ecstasy::integration::event
         union {
             MouseButtonEvent
                 mouseButton; ///< @ref Type::MouseButtonPressed && @ref Type::MouseButtonReleased associated event
+            MouseWheelScrollEvent mouseWheel; ///< @ref Type::MouseWheelScrolled associated event.
         };
     };
 } // namespace ecstasy::integration::event

@@ -5,4 +5,5 @@ set(SRC
     ${SRC}
     ${INCROOT}/Event.hpp
     ${INCROOT}/MouseButtonEvent.hpp
+    ${INCROOT}/MouseWheelScrollEvent.hpp
     PARENT_SCOPE)

@@ -11,6 +11,7 @@
 
 #include "EventsManager.hpp"
 #include "ecstasy/integrations/event/listeners/MouseButtonListener.hpp"
+#include "ecstasy/integrations/event/listeners/MouseWheelScrollListener.hpp"
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/resources/entity/Entities.hpp"
 #include "ecstasy/storages/MapStorage.hpp"
@@ -34,6 +35,7 @@ namespace ecstasy::integration::event
                     registry.getResource<Mouse>().setButtonState(event.mouseButton.button, event.mouseButton.pressed);
 
                 CALL_LISTENERS(MouseButtonListener, event.mouseButton) break;
+            case Event::Type::MouseWheelScrolled: CALL_LISTENERS(MouseWheelScrollListener, event.mouseWheel) break;
             default: break;
         }
     }
