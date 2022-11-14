@@ -13,6 +13,7 @@
 #define ECSTASY_INTEGRATION_EVENT_EVENTS_EVENT_HPP_
 
 #include "MouseButtonEvent.hpp"
+#include "MouseMoveEvent.hpp"
 #include "MouseWheelScrollEvent.hpp"
 
 namespace ecstasy::integration::event
@@ -30,6 +31,7 @@ namespace ecstasy::integration::event
             MouseButtonPressed,  ///< One of the mouse button has been pressed.
             MouseButtonReleased, ///< One of the mouse button has been released.
             MouseWheelScrolled,  ///< The mouse wheel was scrolled.
+            MouseMoved,          ///< The mouse cursor moved.
 
             Count ///< Keep last -- the total number of events
         };
@@ -64,6 +66,16 @@ namespace ecstasy::integration::event
         }
 
         ///
+        /// @brief Construct a mouse move event wrapper.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-06)
+        ///
+        constexpr Event(MouseMoveEvent &&event) : type(Type::MouseMoved), mouseMove(event)
+        {
+        }
+
+        ///
         /// @brief Default desctructor.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
@@ -89,8 +101,9 @@ namespace ecstasy::integration::event
         ///
         union {
             MouseButtonEvent
-                mouseButton; ///< @ref Type::MouseButtonPressed && @ref Type::MouseButtonReleased associated event
+                mouseButton; ///< @ref Type::MouseButtonPressed && @ref Type::MouseButtonReleased associated event.
             MouseWheelScrollEvent mouseWheel; ///< @ref Type::MouseWheelScrolled associated event.
+            MouseMoveEvent mouseMove;         ///< @ref Type::MouseMoved associated event.
         };
     };
 } // namespace ecstasy::integration::event

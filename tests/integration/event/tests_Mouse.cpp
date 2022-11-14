@@ -3,6 +3,7 @@
 #include "ecstasy/integrations/event/events/Event.hpp"
 #include "ecstasy/integrations/event/inputs/Mouse.hpp"
 #include "ecstasy/integrations/event/listeners/MouseButtonListener.hpp"
+#include "ecstasy/integrations/event/listeners/MouseMoveListener.hpp"
 #include "ecstasy/integrations/event/listeners/MouseWheelScrollListener.hpp"
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/storages/MapStorage.hpp"
@@ -115,4 +116,38 @@ TEST(Event, MouseWheelScroll)
     event::EventsManager::handleEvent(registry, event::MouseWheelScrollEvent(-2));
     GTEST_ASSERT_EQ(val1, 3);
     GTEST_ASSERT_EQ(val2, -3);
+}
+
+TEST(Event, MouseMoved)
+{
+    Registry registry;
+    event::Mouse &mouseState = registry.addResource<event::Mouse>();
+    int val1 = 0;
+    int val2 = 0;
+
+    GTEST_ASSERT_EQ(mouseState.getPosition(), std::make_pair(0, 0));
+    event::EventsManager::handleEvent(registry, event::MouseMoveEvent(42, 84));
+    GTEST_ASSERT_EQ(mouseState.getPosition(), std::make_pair(42, 84));
+
+    registry.entityBuilder()
+        .with<event::MouseMoveListener>([&val1](Registry &r, Entity e, const event::MouseMoveEvent &event) {
+            (void)r;
+            (void)e;
+            val1 += event.x;
+        })
+        .build();
+    registry.entityBuilder()
+        .with<event::MouseMoveListener>([&val2](Registry &r, Entity e, const event::MouseMoveEvent &event) {
+            (void)r;
+            (void)e;
+            (void)event;
+            val2 -= event.y;
+        })
+        .build();
+
+    event::EventsManager::handleEvent(registry, event::MouseMoveEvent(10, -20));
+    GTEST_ASSERT_TRUE(mouseState.isButtonUp(event::Mouse::Button::Left));
+    GTEST_ASSERT_EQ(mouseState.getPosition(), std::make_pair(52, 64));
+    GTEST_ASSERT_EQ(val1, 10);
+    GTEST_ASSERT_EQ(val2, 20);
 }
