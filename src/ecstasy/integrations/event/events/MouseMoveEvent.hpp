@@ -37,7 +37,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
         ///
-        constexpr MouseMoveEvent(float pX = 0, float pY = 0) : x(pX), y(pY)
+        constexpr MouseMoveEvent(int pX = 0, int pY = 0) : x(pX), y(pY)
         {
         }
     };
