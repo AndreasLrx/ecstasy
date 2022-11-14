@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
-#include "ecstasy/resource/entity/Entities.hpp"
-#include "ecstasy/resource/entity/Entity.hpp"
-#include "ecstasy/storage/MapStorage.hpp"
+#include "ecstasy/resources/entity/Entities.hpp"
+#include "ecstasy/resources/entity/Entity.hpp"
+#include "ecstasy/storages/MapStorage.hpp"
 
 TEST(Entities, all)
 {

@@ -10,7 +10,7 @@
 ///
 
 #include "Registry.hpp"
-#include "ecstasy/resource/entity/Entities.hpp"
+#include "ecstasy/resources/entity/Entities.hpp"
 
 namespace ecstasy
 {

@@ -14,7 +14,7 @@
 
 #include <vector>
 
-#include "ecstasy/resource/entity/Entity.hpp"
+#include "ecstasy/resources/entity/Entity.hpp"
 
 namespace ecstasy
 {

@@ -1,12 +1,12 @@
 set(INCROOT ${INCROOT}/ecstasy)
 set(SRCROOT ${SRCROOT}/ecstasy)
 
-add_subdirectory(integration)
+add_subdirectory(integrations)
 
 add_subdirectory(query)
 add_subdirectory(registry)
-add_subdirectory(resource)
-add_subdirectory(storage)
+add_subdirectory(resources)
+add_subdirectory(storages)
 add_subdirectory(system)
 
 set(SRC 

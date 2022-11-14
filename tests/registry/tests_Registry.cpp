@@ -4,9 +4,9 @@
 #include "ecstasy/registry/modifiers/Maybe.hpp"
 #include "ecstasy/registry/modifiers/Not.hpp"
 #include "ecstasy/registry/modifiers/Or.hpp"
-#include "ecstasy/resource/Resource.hpp"
-#include "ecstasy/resource/entity/RegistryEntity.hpp"
-#include "ecstasy/storage/MapStorage.hpp"
+#include "ecstasy/resources/Resource.hpp"
+#include "ecstasy/resources/entity/RegistryEntity.hpp"
+#include "ecstasy/storages/MapStorage.hpp"
 #include "ecstasy/system/ISystem.hpp"
 #include "util/meta/outer_join.hpp"
 

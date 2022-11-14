@@ -15,7 +15,7 @@
 #include <array>
 #include <utility>
 
-#include "ecstasy/resource/Resource.hpp"
+#include "ecstasy/resources/Resource.hpp"
 
 namespace ecstasy::integration::event
 {

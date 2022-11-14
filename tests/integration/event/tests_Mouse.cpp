@@ -1,10 +1,10 @@
 #include <gtest/gtest.h>
-#include "ecstasy/integration/event/EventsManager.hpp"
-#include "ecstasy/integration/event/events/Event.hpp"
-#include "ecstasy/integration/event/inputs/Mouse.hpp"
-#include "ecstasy/integration/event/listeners/MouseButtonPressedListener.hpp"
+#include "ecstasy/integrations/event/EventsManager.hpp"
+#include "ecstasy/integrations/event/events/Event.hpp"
+#include "ecstasy/integrations/event/inputs/Mouse.hpp"
+#include "ecstasy/integrations/event/listeners/MouseButtonPressedListener.hpp"
 #include "ecstasy/registry/Registry.hpp"
-#include "ecstasy/storage/MapStorage.hpp"
+#include "ecstasy/storages/MapStorage.hpp"
 
 using namespace ecstasy;
 namespace event = ecstasy::integration::event;

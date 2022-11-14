@@ -13,8 +13,8 @@
 #define ECSTASY_INTEGRATION_EVENTS_LISTENERS_MOUSEBUTTONPRESSEDLISTENER_HPP_
 
 #include <functional>
-#include "ecstasy/integration/event/events/MouseButtonPressedEvent.hpp"
-#include "ecstasy/resource/entity/Entity.hpp"
+#include "ecstasy/integrations/event/events/MouseButtonPressedEvent.hpp"
+#include "ecstasy/resources/entity/Entity.hpp"
 
 namespace ecstasy
 {

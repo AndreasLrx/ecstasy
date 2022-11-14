@@ -13,8 +13,8 @@
 #define ECSTASY_REGISTRY_CONCEPTS_GETCOMPONENTTYPE_HPP_
 
 #include "RegistryModifier.hpp"
-#include "ecstasy/storage/IStorage.hpp"
-#include "ecstasy/storage/StorageConcepts.hpp"
+#include "ecstasy/storages/IStorage.hpp"
+#include "ecstasy/storages/StorageConcepts.hpp"
 
 namespace ecstasy
 {

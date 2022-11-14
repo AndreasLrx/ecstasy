@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
-#include "ecstasy/resource/entity/Entities.hpp"
-#include "ecstasy/storage/MapStorage.hpp"
+#include "ecstasy/resources/entity/Entities.hpp"
+#include "ecstasy/storages/MapStorage.hpp"
 
 struct Position {
     int x;

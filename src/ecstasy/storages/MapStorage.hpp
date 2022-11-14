@@ -15,7 +15,7 @@
 #include <unordered_map>
 
 #include "IStorage.hpp"
-#include "ecstasy/resource/entity/Entity.hpp"
+#include "ecstasy/resources/entity/Entity.hpp"
 #include "util/BitSet.hpp"
 
 namespace ecstasy

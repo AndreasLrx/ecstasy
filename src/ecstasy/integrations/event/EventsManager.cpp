@@ -10,10 +10,10 @@
 ///
 
 #include "EventsManager.hpp"
-#include "ecstasy/integration/event/listeners/MouseButtonPressedListener.hpp"
+#include "ecstasy/integrations/event/listeners/MouseButtonPressedListener.hpp"
 #include "ecstasy/registry/Registry.hpp"
-#include "ecstasy/resource/entity/Entities.hpp"
-#include "ecstasy/storage/MapStorage.hpp"
+#include "ecstasy/resources/entity/Entities.hpp"
+#include "ecstasy/storages/MapStorage.hpp"
 #include "events/Event.hpp"
 
 // clang-format off

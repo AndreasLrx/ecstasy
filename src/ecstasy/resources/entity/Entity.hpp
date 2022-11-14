@@ -16,8 +16,8 @@
 #include <stddef.h>
 #include <stdexcept>
 
-#include "ecstasy/storage/IStorage.hpp"
-#include "ecstasy/storage/StorageConcepts.hpp"
+#include "ecstasy/storages/IStorage.hpp"
+#include "ecstasy/storages/StorageConcepts.hpp"
 
 namespace ecstasy
 {
