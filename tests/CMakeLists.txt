@@ -25,17 +25,18 @@ function(add_ecstasy_test)
         set(DISPLAY_NAME ${TARGET_NAME})
     endif()
 
-    # Add compiler flags
-    include(CompilerFlags)
-
     # Create the test executable
     add_executable(${TARGET_NAME} ${SRC})
     target_include_directories(${TARGET_NAME} PRIVATE ${INCROOT})
 
+    # Add compiler flags
+    ecstasy_set_compiler_flags(${TARGET_NAME})
+
     source_group(${TARGET_NAME} FILES ${SRC})
     set_target_properties(${TARGET_NAME} PROPERTIES FOLDER "tests")
 
-    target_link_libraries(${TARGET_NAME} PRIVATE ecstasy gmock_main)
+    target_link_libraries(${TARGET_NAME} PRIVATE ecstasy)
+    target_link_libraries_system(${TARGET_NAME} PRIVATE gmock_main)
 
     # Register the test
     add_test(NAME "${DISPLAY_NAME}" COMMAND ${TARGET_NAME} WORKING_DIRECTORY ${WORKING_DIRECTORY})

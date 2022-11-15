@@ -85,8 +85,8 @@ TEST(Event, MouseButtonReleased)
 TEST(Event, MouseWheelScroll)
 {
     Registry registry;
-    int val1 = 0;
-    int val2 = 0;
+    float val1 = 0;
+    float val2 = 0;
 
     event::EventsManager::handleEvent(registry, event::MouseWheelScrollEvent(5));
     GTEST_ASSERT_EQ(val1, val2);

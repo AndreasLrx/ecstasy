@@ -1,0 +1,2 @@
+include(ecstasy_set_compiler_flags)
+include(target_link_libraries_system)
