@@ -5,3 +5,4 @@ option(ENABLE_CODE_COVERAGE "Whether the code coverage must be enabled" OFF)
 
 ## Integration libraries
 option(ECSTASY_INTEGRATIONS_EVENT "Events managing integration. Include event listeners and input states (mouse, keyboard, gamepad)." OFF)
+option(ECSTASY_INTEGRATIONS_SFML "SFML library integration." OFF)
