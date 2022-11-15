@@ -9,14 +9,26 @@
 ///
 ///
 
+#include <SFML/Graphics.hpp>
 #include <iostream>
+
 #include "ecstasy/registry/Registry.hpp"
 
 int main(int argc, char **argv)
 {
+    sf::RenderWindow window(sf::VideoMode(1280, 720), "ECSTASY SFML integration");
     ecstasy::Registry registry;
-
     (void)argv;
-    std::cout << argc << " arguments" << std::endl;
+
+    sf::Event e;
+    while (window.isOpen()) {
+        window.clear(sf::Color::White);
+        while (window.pollEvent(e))
+            if (e.type == sf::Event::Closed) {
+                window.close();
+                break;
+            }
+        window.display();
+    }
     return argc;
 }

@@ -29,7 +29,7 @@ elseif(COMPILER_TYPE MATCHES "clang")
     add_compile_options(
         "-Wall" "-Wextra" "-Wshadow"
         "-Wno-unknown-pragmas"
-        "$<$<CONFIG:RELEASE>:-O3;-Werror>"
+        "$<$<AND:$<CONFIG:RELEASE>,$<NOT:${BUILDING_TESTS}>>:-O3;-Werror>"
         "$<$<CONFIG:DEBUG>:-O0;-g3;-ggdb>"
     )
 endif()
