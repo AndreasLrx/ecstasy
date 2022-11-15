@@ -1,7 +1,9 @@
 set(INCROOT ${INCROOT}/integrations)
 set(SRCROOT ${SRCROOT}/integrations)
 
-add_subdirectory(event)
+if (${ECSTASY_INTEGRATIONS_EVENT})
+    add_subdirectory(event)
+endif()
 
 set(SRC 
     ${SRC}

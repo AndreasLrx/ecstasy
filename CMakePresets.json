@@ -1,157 +1,149 @@
 {
-    "version": 3,
-    "configurePresets": [
-        {
-            "name": "common",
-            "hidden": true,
-            "binaryDir": "${sourceDir}/build/${presetName}",
-            "cacheVariables": {
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
-            }
-        },
-        {
-            "name": "unix_makefiles",
-            "hidden": true,
-            "generator": "Unix Makefiles",
-            "condition": {
-                "type": "notEquals",
-                "lhs": "${hostSystemName}",
-                "rhs": "Windows"
-            },
-            "inherits": "common"
-        },
-        {
-            "name": "msvc_2022",
-            "hidden": true,
-            "generator": "Visual Studio 17 2022",
-            "condition": {
-                "type": "equals",
-                "lhs": "${hostSystemName}",
-                "rhs": "Windows"
-            },
-            "inherits": "common"
-        },
-        {
-            "name": "debug_common",
-            "hidden": true,
-            "displayName": "Debug Config",
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
-                "BUILD_TEST_SUITE": {
-                    "type": "BOOL",
-                    "value": "TRUE"
-                },
-                "ENABLE_TEST_COVERAGE": {
-                    "type": "BOOL",
-                    "value": "TRUE"
-                }
-            }
-        },
-        {
-            "name": "debug_unix",
-            "displayName": "Debug Unix",
-            "description": "Debug configuration using Unix Makefiles",
-            "inherits": [
-                "debug_common",
-                "unix_makefiles"
-            ]
-        },
-        {
-            "name": "debug_msvc",
-            "displayName": "Debug MSVC",
-            "description": "Debug configuration using MSVC 2022",
-            "inherits": [
-                "debug_common",
-                "msvc_2022"
-            ]
-        },
-        {
-            "name": "release_common",
-            "hidden": true,
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Release",
-                "BUILD_TEST_SUITE": {
-                    "type": "BOOL",
-                    "value": "TRUE"
-                }
-            }
-        },
-        {
-            "name": "release_unix",
-            "displayName": "Release Unix",
-            "description": "Release configuration using Unix Makefiles",
-            "inherits": [
-                "release_common",
-                "unix_makefiles"
-            ]
-        },
-        {
-            "name": "release_msvc",
-            "displayName": "Release MSVC",
-            "description": "Release configuration using MSVC 2022",
-            "inherits": [
-                "release_common",
-                "msvc_2022"
-            ]
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "common",
+      "hidden": true,
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "ECSTASY_INTEGRATIONS_EVENT": {
+          "type": "BOOL",
+          "value": "TRUE"
         }
-    ],
-    "buildPresets": [
-        {
-            "name": "common",
-            "hidden": true,
-            "jobs": 12
+      }
+    },
+    {
+      "name": "unix_makefiles",
+      "hidden": true,
+      "generator": "Unix Makefiles",
+      "condition": {
+        "type": "notEquals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      },
+      "inherits": "common"
+    },
+    {
+      "name": "msvc_2022",
+      "hidden": true,
+      "generator": "Visual Studio 17 2022",
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      },
+      "inherits": "common"
+    },
+    {
+      "name": "debug_common",
+      "hidden": true,
+      "displayName": "Debug Config",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BUILD_TEST_SUITE": {
+          "type": "BOOL",
+          "value": "TRUE"
         },
-        {
-            "name": "debug_msvc",
-            "displayName": "Build (Debug MSVC)",
-            "description": "Debug build using MSVC",
-            "inherits": "common",
-            "configurePreset": "debug_msvc"
-        },
-        {
-            "name": "release_msvc",
-            "displayName": "Build (Release MSVC)",
-            "description": "Release build using MSVC",
-            "inherits": "common",
-            "configurePreset": "release_msvc"
+        "ENABLE_TEST_COVERAGE": {
+          "type": "BOOL",
+          "value": "TRUE"
         }
-    ],
-    "testPresets": [
-        {
-            "name": "common",
-            "hidden": true,
-            "output": {
-                "outputOnFailure": true,
-                "outputLogFile": "test.log"
-            }
-        },
-        {
-            "name": "debug_unix",
-            "displayName": "Build (Debug Unix)",
-            "description": "Debug build using Unix Makefiles",
-            "inherits": "common",
-            "configurePreset": "debug_unix"
-        },
-        {
-            "name": "debug_msvc",
-            "configuration": "Debug",
-            "displayName": "Test (Debug MSVC)",
-            "inherits": "common",
-            "configurePreset": "debug_msvc"
-        },
-        {
-            "name": "release_unix",
-            "displayName": "Build (Release Unix)",
-            "description": "Release build using Unix Makefiles",
-            "inherits": "common",
-            "configurePreset": "release_unix"
-        },
-        {
-            "name": "release_msvc",
-            "configuration": "Release",
-            "displayName": "Test (Release MSVC)",
-            "inherits": "common",
-            "configurePreset": "release_msvc"
+      }
+    },
+    {
+      "name": "debug_unix",
+      "displayName": "Debug Unix",
+      "description": "Debug configuration using Unix Makefiles",
+      "inherits": ["debug_common", "unix_makefiles"]
+    },
+    {
+      "name": "debug_msvc",
+      "displayName": "Debug MSVC",
+      "description": "Debug configuration using MSVC 2022",
+      "inherits": ["debug_common", "msvc_2022"]
+    },
+    {
+      "name": "release_common",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "BUILD_TEST_SUITE": {
+          "type": "BOOL",
+          "value": "TRUE"
         }
-    ]
+      }
+    },
+    {
+      "name": "release_unix",
+      "displayName": "Release Unix",
+      "description": "Release configuration using Unix Makefiles",
+      "inherits": ["release_common", "unix_makefiles"]
+    },
+    {
+      "name": "release_msvc",
+      "displayName": "Release MSVC",
+      "description": "Release configuration using MSVC 2022",
+      "inherits": ["release_common", "msvc_2022"]
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "common",
+      "hidden": true,
+      "jobs": 12
+    },
+    {
+      "name": "debug_msvc",
+      "displayName": "Build (Debug MSVC)",
+      "description": "Debug build using MSVC",
+      "inherits": "common",
+      "configurePreset": "debug_msvc"
+    },
+    {
+      "name": "release_msvc",
+      "displayName": "Build (Release MSVC)",
+      "description": "Release build using MSVC",
+      "inherits": "common",
+      "configurePreset": "release_msvc"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "common",
+      "hidden": true,
+      "output": {
+        "outputOnFailure": true,
+        "outputLogFile": "test.log"
+      }
+    },
+    {
+      "name": "debug_unix",
+      "displayName": "Build (Debug Unix)",
+      "description": "Debug build using Unix Makefiles",
+      "inherits": "common",
+      "configurePreset": "debug_unix"
+    },
+    {
+      "name": "debug_msvc",
+      "configuration": "Debug",
+      "displayName": "Test (Debug MSVC)",
+      "inherits": "common",
+      "configurePreset": "debug_msvc"
+    },
+    {
+      "name": "release_unix",
+      "displayName": "Build (Release Unix)",
+      "description": "Release build using Unix Makefiles",
+      "inherits": "common",
+      "configurePreset": "release_unix"
+    },
+    {
+      "name": "release_msvc",
+      "configuration": "Release",
+      "displayName": "Test (Release MSVC)",
+      "inherits": "common",
+      "configurePreset": "release_msvc"
+    }
+  ]
 }
