@@ -8,6 +8,7 @@
 *.lib
 *.dll
 /build
+/demo/sfml
 /doc/build/
 *.gcno
 *.gcda

@@ -126,7 +126,7 @@ TEST(Select, omitStorages)
     /// 8
     ++it;
     {
-        size_t index = 8;
+        int index = 8;
         auto [pos, velocity] = *it;
         GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
         GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
@@ -135,7 +135,7 @@ TEST(Select, omitStorages)
     /// 12
     ++it;
     {
-        size_t index = 12;
+        int index = 12;
         auto [pos, velocity] = *it;
         GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
         GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
@@ -144,7 +144,7 @@ TEST(Select, omitStorages)
     /// 24
     ++it;
     {
-        size_t index = 24;
+        int index = 24;
         auto [pos, velocity] = *it;
         GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
         GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
@@ -195,7 +195,7 @@ TEST(Query, NotModifier)
     auto it = query.begin();
     /// 6
     {
-        size_t index = 6;
+        int index = 6;
         auto [pos, velocity] = *it;
         GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
         GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
@@ -204,7 +204,7 @@ TEST(Query, NotModifier)
     /// 18
     ++it;
     {
-        size_t index = 18;
+        int index = 18;
         auto [pos, velocity] = *it;
         GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
         GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
@@ -246,7 +246,7 @@ TEST(Query, Maybe)
     auto it = query.begin();
     /// 0
     {
-        size_t index = 0;
+        int index = 0;
         auto [pos, velocity, vec] = *it;
         GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
         GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
@@ -257,7 +257,7 @@ TEST(Query, Maybe)
     /// 6
     ++it;
     {
-        size_t index = 6;
+        int index = 6;
         auto [pos, velocity, vec] = *it;
         GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
         GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
@@ -266,7 +266,7 @@ TEST(Query, Maybe)
     /// 8
     ++it;
     {
-        size_t index = 8;
+        int index = 8;
         auto [pos, velocity, vec] = *it;
         GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
         GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
@@ -276,7 +276,7 @@ TEST(Query, Maybe)
     /// 12
     ++it;
     {
-        size_t index = 12;
+        int index = 12;
         auto [pos, velocity, vec] = *it;
         GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
         GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
@@ -287,7 +287,7 @@ TEST(Query, Maybe)
     /// 18
     ++it;
     {
-        size_t index = 18;
+        int index = 18;
         auto [pos, velocity, vec] = *it;
         GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
         GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
@@ -297,7 +297,7 @@ TEST(Query, Maybe)
     /// 24
     ++it;
     {
-        size_t index = 24;
+        int index = 24;
         auto [pos, velocity, vec] = *it;
         GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
         GTEST_ASSERT_EQ(velocity.v, Vector2i(index * 10, index * 2));
@@ -344,7 +344,7 @@ TEST(Query, Or)
     auto it = query2.begin();
     /// 0 (vel and vec)
     {
-        size_t index = 0;
+        int index = 0;
         auto [pos, vel, vec] = *it;
         GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
         GTEST_ASSERT_TRUE(vel);
@@ -356,7 +356,7 @@ TEST(Query, Or)
     /// 4 (!vel and vec)
     ++it;
     {
-        size_t index = 4;
+        int index = 4;
         auto [pos, vel, vec] = *it;
         GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
         GTEST_ASSERT_FALSE(vel);
@@ -367,7 +367,7 @@ TEST(Query, Or)
     /// 6 (vel and !vec)
     ++it;
     {
-        size_t index = 6;
+        int index = 6;
         auto [pos, vel, vec] = *it;
         GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
         GTEST_ASSERT_TRUE(vel);
@@ -378,7 +378,7 @@ TEST(Query, Or)
     /// 8 (vel and vec)
     ++it;
     {
-        size_t index = 8;
+        int index = 8;
         auto [pos, vel, vec] = *it;
         GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
         GTEST_ASSERT_TRUE(vel);
@@ -390,7 +390,7 @@ TEST(Query, Or)
     /// 12 (vel and vec)
     ++it;
     {
-        size_t index = 12;
+        int index = 12;
         auto [pos, vel, vec] = *it;
         GTEST_ASSERT_EQ(Vector2i(index * 2, index * 10), pos);
         GTEST_ASSERT_TRUE(vel);

@@ -10,6 +10,14 @@
         "ECSTASY_INTEGRATIONS_EVENT": {
           "type": "BOOL",
           "value": "TRUE"
+        },
+        "ECSTASY_INTEGRATIONS_SFML": {
+          "type": "BOOL",
+          "value": "TRUE"
+        },
+        "ECSTASY_INTEGRATIONS_SFML_BUILD_DEMO": {
+          "type": "BOOL",
+          "value": "TRUE"
         }
       }
     },
