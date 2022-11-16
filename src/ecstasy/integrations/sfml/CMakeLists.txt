@@ -6,6 +6,7 @@ find_package(SFML 2.5.1 COMPONENTS graphics window system REQUIRED)
 
 add_subdirectory(demo)
 add_subdirectory(resources)
+add_subdirectory(systems)
 
 set(SRC 
     ${SRC}
