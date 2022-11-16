@@ -18,6 +18,8 @@
 #include "ecstasy/storages/MapStorage.hpp"
 
 #include "ecstasy/integrations/event/listeners/MouseButtonListener.hpp"
+#include "ecstasy/integrations/event/listeners/MouseMoveListener.hpp"
+#include "ecstasy/integrations/event/listeners/MouseWheelScrollListener.hpp"
 
 namespace esf = ecstasy::integration::sfml;
 namespace event = ecstasy::integration::event;
@@ -31,6 +33,18 @@ static void addEventListeners(ecstasy::Registry &registry)
                 (void)entity;
                 std::cout << "Mouse button " << static_cast<int>(e.button) << " event, pressed = " << e.pressed
                           << std::endl;
+            })
+        .with<event::MouseWheelScrollListener>(
+            [](ecstasy::Registry &r, ecstasy::Entity entity, const event::MouseWheelScrollEvent &e) {
+                (void)r;
+                (void)entity;
+                std::cout << "Mouse wheel " << static_cast<int>(e.wheel) << " event, delta = " << e.delta << std::endl;
+            })
+        .with<event::MouseMoveListener>(
+            [](ecstasy::Registry &r, ecstasy::Entity entity, const event::MouseMoveEvent &e) {
+                (void)r;
+                (void)entity;
+                std::cout << "Mouse move to (" << e.x << ", " << e.y << ")" << std::endl;
             })
         .build();
 }

@@ -16,6 +16,8 @@
 #include "ecstasy/integrations/event/EventsManager.hpp"
 #include "ecstasy/integrations/event/events/Event.hpp"
 #include "ecstasy/integrations/event/events/MouseButtonEvent.hpp"
+#include "ecstasy/integrations/event/events/MouseMoveEvent.hpp"
+#include "ecstasy/integrations/event/events/MouseWheelScrollEvent.hpp"
 #include "ecstasy/integrations/sfml/resources/RenderWindow.hpp"
 #include "ecstasy/registry/Registry.hpp"
 
@@ -36,6 +38,20 @@ namespace ecstasy::integration::sfml
                     event::EventsManager::handleEvent(registry,
                         event::MouseButtonEvent(static_cast<event::Mouse::Button>(event.mouseButton.button), true));
                     break;
+                case sf::Event::MouseButtonReleased:
+                    event::EventsManager::handleEvent(registry,
+                        event::MouseButtonEvent(static_cast<event::Mouse::Button>(event.mouseButton.button), false));
+                    break;
+                case sf::Event::MouseWheelScrolled:
+                    event::EventsManager::handleEvent(registry,
+                        event::MouseWheelScrollEvent(event.mouseWheelScroll.delta,
+                            static_cast<event::Mouse::Wheel>(event.mouseWheelScroll.wheel)));
+                    break;
+                case sf::Event::MouseMoved:
+                    event::EventsManager::handleEvent(
+                        registry, event::MouseMoveEvent(event.mouseMove.x, event.mouseMove.y));
+                    break;
+
                 case sf::Event::Closed: windowWrapper.get().close(); break;
                 default: break;
             }
