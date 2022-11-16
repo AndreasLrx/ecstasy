@@ -13,7 +13,6 @@
 #define ECSTASY_INTEGRATION_EVENTS_LISTENERS_MOUSEMOVELISTENER_HPP_
 
 #include <functional>
-#include "ecstasy/integrations/event/events/MouseMoveEvent.hpp"
 #include "ecstasy/resources/entity/Entity.hpp"
 
 namespace ecstasy
@@ -23,6 +22,8 @@ namespace ecstasy
 
 namespace ecstasy::integration::event
 {
+    class MouseMoveEvent;
+
     using MouseMoveListener = std::function<void(Registry &, Entity, const MouseMoveEvent &)>;
 } // namespace ecstasy::integration::event
 

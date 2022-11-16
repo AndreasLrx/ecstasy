@@ -27,7 +27,7 @@ namespace ecstasy::integration::event
     class Keyboard : public Resource {
       public:
         /// @brief Keyboard keys.
-        enum Key {
+        enum class Key {
             Unknown = -1, ///< Unhandled key
             A = 0,        ///< The A key
             B,            ///< The B key

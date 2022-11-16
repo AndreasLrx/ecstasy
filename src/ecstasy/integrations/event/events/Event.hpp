@@ -12,6 +12,7 @@
 #ifndef ECSTASY_INTEGRATION_EVENT_EVENTS_EVENT_HPP_
 #define ECSTASY_INTEGRATION_EVENT_EVENTS_EVENT_HPP_
 
+#include "KeyEvent.hpp"
 #include "MouseButtonEvent.hpp"
 #include "MouseMoveEvent.hpp"
 #include "MouseWheelScrollEvent.hpp"
@@ -32,6 +33,8 @@ namespace ecstasy::integration::event
             MouseButtonReleased, ///< One of the mouse button has been released.
             MouseWheelScrolled,  ///< The mouse wheel was scrolled.
             MouseMoved,          ///< The mouse cursor moved.
+            KeyPressed,          ///< One of the keyboard key has been pressed.
+            KeyReleased,         ///< One of the keyboard key has been released.
 
             Count ///< Keep last -- the total number of events
         };
@@ -76,6 +79,16 @@ namespace ecstasy::integration::event
         }
 
         ///
+        /// @brief Construct a key event wrapper.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-06)
+        ///
+        constexpr Event(KeyEvent &&event) : type(event.pressed ? Type::KeyPressed : Type::KeyReleased), key(event)
+        {
+        }
+
+        ///
         /// @brief Default desctructor.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
@@ -101,9 +114,10 @@ namespace ecstasy::integration::event
         ///
         union {
             MouseButtonEvent
-                mouseButton; ///< @ref Type::MouseButtonPressed && @ref Type::MouseButtonReleased associated event.
+                mouseButton; ///< @ref Type::MouseButtonPressed && @ref Type::MouseButtonReleased associated events.
             MouseWheelScrollEvent mouseWheel; ///< @ref Type::MouseWheelScrolled associated event.
             MouseMoveEvent mouseMove;         ///< @ref Type::MouseMoved associated event.
+            KeyEvent key;                     ///< @ref Type::KeyPressed && @ref Type::KeyReleased associated events.
         };
     };
 } // namespace ecstasy::integration::event
