@@ -3,6 +3,7 @@ set(INCROOT ${PROJECT_SOURCE_DIR}/src)
 
 set(SRC)
 set(INCDIRS ${INCROOT})
+set(SYSTEM_INCDIRS)
 
 add_subdirectory(ecstasy)
 add_subdirectory(util)
@@ -30,6 +31,7 @@ set_target_properties(${LIB_NAME} PROPERTIES VERSION ${VERSION_MAJOR}.${VERSION_
 
 
 target_include_directories(${LIB_NAME} PRIVATE ${INCDIRS})
+target_include_directories(${LIB_NAME} SYSTEM PRIVATE ${SYSTEM_INCDIRS})
 target_include_directories(${LIB_NAME} PUBLIC ${INCROOT})
 
 add_custom_command(TARGET ${LIB_NAME}

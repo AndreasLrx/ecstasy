@@ -13,7 +13,7 @@ macro(ecstasy_set_compiler_flags target)
 
         target_compile_options(${target} PRIVATE 
             "-Wall" "-Wextra" "-Wshadow" "-pedantic" "-Wpointer-arith"
-            "-Wsuggest-override" "-Wsuggest-final-methods" "-Wconversion"
+            "-Wsuggest-override" "-Wconversion"
             "-Wno-unknown-pragmas"
             "$<$<AND:$<CONFIG:RELEASE>,$<NOT:${BUILDING_TESTS}>>:-O3;-Werror>"
             "$<$<CONFIG:DEBUG>:-O0;-g3;-ggdb>"
@@ -28,7 +28,7 @@ macro(ecstasy_set_compiler_flags target)
 
         target_compile_options(${target} PRIVATE 
             "-Wall" "-Wextra" "-Wshadow" "-pedantic" "-Wpointer-arith"
-            "-Wsuggest-override" "-Wsuggest-final-methods" "-Wconversion"
+            "-Wsuggest-override" "-Wconversion"
             "-Wno-unknown-pragmas"
             "$<$<AND:$<CONFIG:RELEASE>,$<NOT:${BUILDING_TESTS}>>:-O3;-Werror>"
             "$<$<CONFIG:DEBUG>:-O0;-g3;-ggdb>"

@@ -11,3 +11,8 @@ add_subdirectory(systems)
 set(SRC 
     ${SRC}
     PARENT_SCOPE)
+
+set(SYSTEM_INCDIRS 
+    ${SYSTEM_INCDIRS} 
+    ${sfml_SOURCE_DIR}/include
+    PARENT_SCOPE)
