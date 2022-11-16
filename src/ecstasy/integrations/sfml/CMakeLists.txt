@@ -5,6 +5,7 @@ set(SFML_STATIC_LIBRARIES TRUE)
 find_package(SFML 2.5.1 COMPONENTS graphics window system REQUIRED)
 
 add_subdirectory(demo)
+add_subdirectory(resources)
 
 set(SRC 
     ${SRC}
