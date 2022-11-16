@@ -7,3 +7,4 @@ option(BUILD_SHARED_LIBS "Whether ecstasy must be built as a shared library or n
 ## Integration libraries
 option(ECSTASY_INTEGRATIONS_EVENT "Events managing integration. Include event listeners and input states (mouse, keyboard, gamepad)." OFF)
 option(ECSTASY_INTEGRATIONS_SFML "SFML library integration." OFF)
+option(ECSTASY_INTEGRATIONS_SFML_BUILD_DEMO "Build SFML integration demo projects." OFF)
