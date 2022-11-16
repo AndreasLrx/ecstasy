@@ -75,7 +75,7 @@ namespace ecstasy::integration::event
         ///
         constexpr bool isButtonDown(Button button) const
         {
-            return _buttons[static_cast<int>(button)];
+            return _buttons[static_cast<size_t>(button)];
         }
 
         ///
@@ -106,7 +106,7 @@ namespace ecstasy::integration::event
         ///
         constexpr void setButtonState(Button button, bool down)
         {
-            _buttons[static_cast<int>(button)] = down;
+            _buttons[static_cast<size_t>(button)] = down;
         }
 
         ///

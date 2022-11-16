@@ -236,7 +236,7 @@ namespace util
                 ++word_pos;
                 word = this->_store[word_pos];
             }
-            return (word_pos << 6) + std::countr_zero(word);
+            return (word_pos << 6) + static_cast<std::size_t>(std::countr_zero(word));
         }
 
         /// Finds the first unset bit in the set, starting from (and including) @b start.
@@ -256,7 +256,7 @@ namespace util
                 ++word_pos;
                 word = this->_store[word_pos];
             }
-            return (word_pos << 6) + std::countr_one(word);
+            return (word_pos << 6) + static_cast<std::size_t>(std::countr_one(word));
         }
 
       private:
@@ -272,7 +272,7 @@ namespace util
         /// @returns The number of 64-bit words needed to store @b bitCount amount of bits.
         static constexpr std::size_t getStoreWordCount(std::size_t bitCount)
         {
-            if ((bitCount & (~0b111111)) == bitCount)
+            if ((bitCount & (~static_cast<std::size_t>(0b111111))) == bitCount)
                 return bitCount >> 6; // if bitCount is a multiple of 64, return bitCount / 64
             else
                 return (bitCount >> 6) + 1; // or else, add one word to contain the extra bits
