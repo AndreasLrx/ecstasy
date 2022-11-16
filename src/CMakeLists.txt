@@ -3,7 +3,6 @@ set(INCROOT ${PROJECT_SOURCE_DIR}/src)
 
 set(SRC)
 set(INCDIRS ${INCROOT})
-set(SYSTEM_INCDIRS)
 
 add_subdirectory(ecstasy)
 add_subdirectory(util)
@@ -29,9 +28,12 @@ set_target_properties(${LIB_NAME} PROPERTIES DEBUG_POSTFIX -d)
 set_target_properties(${LIB_NAME} PROPERTIES SOVERSION ${VERSION_MAJOR}.${VERSION_MINOR})
 set_target_properties(${LIB_NAME} PROPERTIES VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH})
 
+# Integration links
+if (${ECSTASY_INTEGRATIONS_SFML})
+    target_link_libraries_system(${LIB_NAME} PRIVATE sfml-graphics sfml-window sfml-system)
+endif()
 
 target_include_directories(${LIB_NAME} PRIVATE ${INCDIRS})
-target_include_directories(${LIB_NAME} SYSTEM PRIVATE ${SYSTEM_INCDIRS})
 target_include_directories(${LIB_NAME} PUBLIC ${INCROOT})
 
 add_custom_command(TARGET ${LIB_NAME}

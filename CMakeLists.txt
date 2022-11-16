@@ -1,5 +1,18 @@
 cmake_minimum_required(VERSION 3.19.0)
 
+# Add ./cmake to the module path
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake ${CMAKE_CURRENT_SOURCE_DIR}/cmake/macros)
+
+include(Options)
+include(DetectCompiler)
+include(macros)
+
+# Resolve dependencies before applying C++20 standards to avoid incompatibility
+if (${ECSTASY_INTEGRATIONS_SFML})
+    set(SFML_STATIC_LIBRARIES TRUE)
+    find_package(SFML 2.5.1 COMPONENTS graphics window system REQUIRED)
+endif()
+
 project(ecstasy LANGUAGES CXX)
 set(VERSION_MAJOR 1)
 set(VERSION_MINOR 0)
@@ -8,16 +21,8 @@ set(VERSION "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}")
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 
-# Add ./cmake to the module path
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake ${CMAKE_CURRENT_SOURCE_DIR}/cmake/macros)
-
-include(Options)
-include(DetectCompiler)
-include(macros)
-
 set(ECSTASY_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/lib/")
 file(MAKE_DIRECTORY ${ECSTASY_OUTPUT_DIRECTORY})
-
 
 set(BUILDING_TESTS 0)
 add_subdirectory(src)

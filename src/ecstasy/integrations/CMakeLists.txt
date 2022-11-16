@@ -12,7 +12,3 @@ endif()
 set(SRC 
     ${SRC}
     PARENT_SCOPE)
-
-set(SYSTEM_INCDIRS 
-    ${SYSTEM_INCDIRS} 
-    PARENT_SCOPE)
