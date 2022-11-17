@@ -10,9 +10,11 @@
 ///
 
 #include "EventsManager.hpp"
+#include "ecstasy/integrations/event/listeners/KeyListener.hpp"
 #include "ecstasy/integrations/event/listeners/MouseButtonListener.hpp"
 #include "ecstasy/integrations/event/listeners/MouseMoveListener.hpp"
 #include "ecstasy/integrations/event/listeners/MouseWheelScrollListener.hpp"
+#include "ecstasy/integrations/event/listeners/TextEnteredListener.hpp"
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/resources/entity/Entities.hpp"
 #include "ecstasy/storages/MapStorage.hpp"
@@ -32,18 +34,28 @@ namespace ecstasy::integration::event
         switch (event.type) {
             case Event::Type::MouseButtonPressed:
             case Event::Type::MouseButtonReleased:
+                CALL_LISTENERS(MouseButtonListener, event.mouseButton)
+
                 if (registry.hasResource<Mouse>())
                     registry.getResource<Mouse>().setButtonState(event.mouseButton.button, event.mouseButton.pressed);
-
-                CALL_LISTENERS(MouseButtonListener, event.mouseButton) break;
+                break;
             case Event::Type::MouseWheelScrolled: CALL_LISTENERS(MouseWheelScrollListener, event.mouseWheel) break;
             case Event::Type::MouseMoved:
+                CALL_LISTENERS(MouseMoveListener, event.mouseMove)
+
                 if (registry.hasResource<Mouse>()) {
                     Mouse &mouse = registry.getResource<Mouse>();
                     mouse.setPosition(event.mouseMove.x + mouse.getX(), event.mouseMove.y + mouse.getY());
                 }
+                break;
+            case Event::Type::KeyPressed:
+            case Event::Type::KeyReleased:
+                CALL_LISTENERS(KeyListener, event.key)
 
-                CALL_LISTENERS(MouseMoveListener, event.mouseMove) break;
+                if (registry.hasResource<Keyboard>())
+                    registry.getResource<Keyboard>().setKeyState(event.key.key, event.key.pressed);
+                break;
+            case Event::Type::TextEntered: CALL_LISTENERS(TextEnteredListener, event.text) break;
             default: break;
         }
     }

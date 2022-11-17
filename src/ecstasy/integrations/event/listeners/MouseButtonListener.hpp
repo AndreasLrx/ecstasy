@@ -13,7 +13,6 @@
 #define ECSTASY_INTEGRATION_EVENTS_LISTENERS_MOUSEBUTTONLISTENER_HPP_
 
 #include <functional>
-#include "ecstasy/integrations/event/events/MouseButtonEvent.hpp"
 #include "ecstasy/resources/entity/Entity.hpp"
 
 namespace ecstasy
@@ -23,6 +22,8 @@ namespace ecstasy
 
 namespace ecstasy::integration::event
 {
+    struct MouseButtonEvent;
+
     using MouseButtonListener = std::function<void(Registry &, Entity, const MouseButtonEvent &)>;
 } // namespace ecstasy::integration::event
 

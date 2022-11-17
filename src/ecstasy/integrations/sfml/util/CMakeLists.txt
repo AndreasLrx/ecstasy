@@ -1,0 +1,9 @@
+set(INCROOT ${INCROOT}/util)
+set(SRCROOT ${SRCROOT}/util)
+
+
+set(SRC 
+    ${SRC}
+    ${SRCROOT}/Encoding.cpp
+    ${INCROOT}/Encoding.hpp
+    PARENT_SCOPE)

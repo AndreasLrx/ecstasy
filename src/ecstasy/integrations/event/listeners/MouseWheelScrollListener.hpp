@@ -13,7 +13,6 @@
 #define ECSTASY_INTEGRATION_EVENTS_LISTENERS_MOUSEWHEELSCROLLLISTENER_HPP_
 
 #include <functional>
-#include "ecstasy/integrations/event/events/MouseWheelScrollEvent.hpp"
 #include "ecstasy/resources/entity/Entity.hpp"
 
 namespace ecstasy
@@ -23,6 +22,8 @@ namespace ecstasy
 
 namespace ecstasy::integration::event
 {
+    struct MouseWheelScrollEvent;
+
     using MouseWheelScrollListener = std::function<void(Registry &, Entity, const MouseWheelScrollEvent &)>;
 } // namespace ecstasy::integration::event
 
