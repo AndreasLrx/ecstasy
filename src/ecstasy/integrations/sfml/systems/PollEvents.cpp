@@ -34,6 +34,7 @@ namespace ecstasy::integration::sfml
         sf::Event event;
         while (windowWrapper.get().pollEvent(event)) {
             switch (event.type) {
+                /// Mouse events
                 case sf::Event::MouseButtonPressed:
                     event::EventsManager::handleEvent(registry,
                         event::MouseButtonEvent(static_cast<event::Mouse::Button>(event.mouseButton.button), true));
@@ -50,6 +51,16 @@ namespace ecstasy::integration::sfml
                 case sf::Event::MouseMoved:
                     event::EventsManager::handleEvent(
                         registry, event::MouseMoveEvent(event.mouseMove.x, event.mouseMove.y));
+                    break;
+
+                /// Keyboard events
+                case sf::Event::KeyPressed:
+                    event::EventsManager::handleEvent(
+                        registry, event::KeyEvent(static_cast<event::Keyboard::Key>(event.key.code), true));
+                    break;
+                case sf::Event::KeyReleased:
+                    event::EventsManager::handleEvent(
+                        registry, event::KeyEvent(static_cast<event::Keyboard::Key>(event.key.code), false));
                     break;
 
                 case sf::Event::Closed: windowWrapper.get().close(); break;

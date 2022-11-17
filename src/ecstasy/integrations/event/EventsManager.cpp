@@ -10,6 +10,7 @@
 ///
 
 #include "EventsManager.hpp"
+#include "ecstasy/integrations/event/listeners/KeyListener.hpp"
 #include "ecstasy/integrations/event/listeners/MouseButtonListener.hpp"
 #include "ecstasy/integrations/event/listeners/MouseMoveListener.hpp"
 #include "ecstasy/integrations/event/listeners/MouseWheelScrollListener.hpp"
@@ -44,6 +45,13 @@ namespace ecstasy::integration::event
                 }
 
                 CALL_LISTENERS(MouseMoveListener, event.mouseMove) break;
+
+            case Event::Type::KeyPressed:
+            case Event::Type::KeyReleased:
+                if (registry.hasResource<Keyboard>())
+                    registry.getResource<Keyboard>().setKeyState(event.key.key, event.key.pressed);
+
+                CALL_LISTENERS(KeyListener, event.key) break;
             default: break;
         }
     }

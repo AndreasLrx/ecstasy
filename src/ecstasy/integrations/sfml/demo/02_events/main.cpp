@@ -17,9 +17,11 @@
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/storages/MapStorage.hpp"
 
+#include "ecstasy/integrations/event/events/KeyEvent.hpp"
 #include "ecstasy/integrations/event/events/MouseButtonEvent.hpp"
 #include "ecstasy/integrations/event/events/MouseMoveEvent.hpp"
 #include "ecstasy/integrations/event/events/MouseWheelScrollEvent.hpp"
+#include "ecstasy/integrations/event/listeners/KeyListener.hpp"
 #include "ecstasy/integrations/event/listeners/MouseButtonListener.hpp"
 #include "ecstasy/integrations/event/listeners/MouseMoveListener.hpp"
 #include "ecstasy/integrations/event/listeners/MouseWheelScrollListener.hpp"
@@ -49,6 +51,11 @@ static void addEventListeners(ecstasy::Registry &registry)
                 (void)entity;
                 std::cout << "Mouse move to (" << e.x << ", " << e.y << ")" << std::endl;
             })
+        .with<event::KeyListener>([](ecstasy::Registry &r, ecstasy::Entity entity, const event::KeyEvent &e) {
+            (void)r;
+            (void)entity;
+            std::cout << "Keyboard key " << static_cast<int>(e.key) << " event, pressed = " << e.pressed << std::endl;
+        })
         .build();
 }
 
