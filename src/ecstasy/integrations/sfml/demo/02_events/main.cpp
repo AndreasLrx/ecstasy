@@ -54,7 +54,8 @@ static void addEventListeners(ecstasy::Registry &registry)
         .with<event::KeyListener>([](ecstasy::Registry &r, ecstasy::Entity entity, const event::KeyEvent &e) {
             (void)r;
             (void)entity;
-            std::cout << "Keyboard key " << static_cast<int>(e.key) << " event, pressed = " << e.pressed << std::endl;
+            std::cout << "Keyboard key " << event::Keyboard::getKeyName(e.key) << " event, pressed = " << e.pressed
+                      << std::endl;
         })
         .build();
 }
