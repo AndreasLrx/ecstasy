@@ -17,6 +17,9 @@
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/storages/MapStorage.hpp"
 
+#include "ecstasy/integrations/event/events/MouseButtonEvent.hpp"
+#include "ecstasy/integrations/event/events/MouseMoveEvent.hpp"
+#include "ecstasy/integrations/event/events/MouseWheelScrollEvent.hpp"
 #include "ecstasy/integrations/event/listeners/MouseButtonListener.hpp"
 #include "ecstasy/integrations/event/listeners/MouseMoveListener.hpp"
 #include "ecstasy/integrations/event/listeners/MouseWheelScrollListener.hpp"
