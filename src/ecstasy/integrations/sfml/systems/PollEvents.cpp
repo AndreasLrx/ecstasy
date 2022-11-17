@@ -15,9 +15,10 @@
 #include "PollEvents.hpp"
 #include "ecstasy/integrations/event/EventsManager.hpp"
 #include "ecstasy/integrations/event/events/Event.hpp"
-#include "ecstasy/integrations/event/events/MouseButtonEvent.hpp"
-#include "ecstasy/integrations/event/events/MouseMoveEvent.hpp"
-#include "ecstasy/integrations/event/events/MouseWheelScrollEvent.hpp"
+#include "ecstasy/integrations/event/events/KeyPressedEvent.hpp"
+#include "ecstasy/integrations/event/events/KeyReleasedEvent.hpp"
+#include "ecstasy/integrations/event/events/MouseButtonPressedEvent.hpp"
+#include "ecstasy/integrations/event/events/MouseButtonReleasedEvent.hpp"
 #include "ecstasy/integrations/sfml/resources/RenderWindow.hpp"
 #include "ecstasy/registry/Registry.hpp"
 
@@ -37,11 +38,11 @@ namespace ecstasy::integration::sfml
                 /// Mouse events
                 case sf::Event::MouseButtonPressed:
                     event::EventsManager::handleEvent(registry,
-                        event::MouseButtonEvent(static_cast<event::Mouse::Button>(event.mouseButton.button), true));
+                        event::MouseButtonPressedEvent(static_cast<event::Mouse::Button>(event.mouseButton.button)));
                     break;
                 case sf::Event::MouseButtonReleased:
                     event::EventsManager::handleEvent(registry,
-                        event::MouseButtonEvent(static_cast<event::Mouse::Button>(event.mouseButton.button), false));
+                        event::MouseButtonReleasedEvent(static_cast<event::Mouse::Button>(event.mouseButton.button)));
                     break;
                 case sf::Event::MouseWheelScrolled:
                     event::EventsManager::handleEvent(registry,
@@ -56,11 +57,11 @@ namespace ecstasy::integration::sfml
                 /// Keyboard events
                 case sf::Event::KeyPressed:
                     event::EventsManager::handleEvent(
-                        registry, event::KeyEvent(static_cast<event::Keyboard::Key>(event.key.code), true));
+                        registry, event::KeyPressedEvent(static_cast<event::Keyboard::Key>(event.key.code)));
                     break;
                 case sf::Event::KeyReleased:
                     event::EventsManager::handleEvent(
-                        registry, event::KeyEvent(static_cast<event::Keyboard::Key>(event.key.code), false));
+                        registry, event::KeyReleasedEvent(static_cast<event::Keyboard::Key>(event.key.code)));
                     break;
 
                 case sf::Event::Closed: windowWrapper.get().close(); break;

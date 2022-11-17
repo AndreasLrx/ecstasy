@@ -2,6 +2,8 @@
 #include "ecstasy/integrations/event/EventsManager.hpp"
 #include "ecstasy/integrations/event/events/Event.hpp"
 #include "ecstasy/integrations/event/events/KeyEvent.hpp"
+#include "ecstasy/integrations/event/events/KeyPressedEvent.hpp"
+#include "ecstasy/integrations/event/events/KeyReleasedEvent.hpp"
 #include "ecstasy/integrations/event/inputs/Keyboard.hpp"
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/storages/MapStorage.hpp"
@@ -17,7 +19,7 @@ TEST(Event, KeyPressed)
     int val2 = 0;
 
     GTEST_ASSERT_TRUE(keyboardState.isKeyUp(event::Keyboard::Key::A));
-    event::EventsManager::handleEvent(registry, event::KeyEvent(event::Keyboard::Key::A, true));
+    event::EventsManager::handleEvent(registry, event::KeyPressedEvent(event::Keyboard::Key::A));
     GTEST_ASSERT_TRUE(keyboardState.isKeyDown(event::Keyboard::Key::A));
 
     registry.entityBuilder()
@@ -39,7 +41,7 @@ TEST(Event, KeyPressed)
         })
         .build();
 
-    event::EventsManager::handleEvent(registry, event::KeyEvent(event::Mouse::Key::B, true));
+    event::EventsManager::handleEvent(registry, event::KeyPressedEvent(event::Mouse::Key::B));
     GTEST_ASSERT_EQ(val1, 1);
     GTEST_ASSERT_EQ(val2, -1);
 }
@@ -52,7 +54,7 @@ TEST(Event, KeyReleased)
     int val2 = 0;
 
     GTEST_ASSERT_TRUE(keyboardState.isKeyUp(event::Keyboard::Key::A));
-    event::EventsManager::handleEvent(registry, event::KeyEvent(event::Keyboard::Key::A, true));
+    event::EventsManager::handleEvent(registry, event::KeyPressedEvent(event::Keyboard::Key::A));
     GTEST_ASSERT_TRUE(keyboardState.isKeyDown(event::Keyboard::Key::A));
 
     registry.entityBuilder()
@@ -74,7 +76,7 @@ TEST(Event, KeyReleased)
         })
         .build();
 
-    event::EventsManager::handleEvent(registry, event::KeyEvent(event::Mouse::Key::A, false));
+    event::EventsManager::handleEvent(registry, event::KeyReleasedEvent(event::Mouse::Key::A));
     GTEST_ASSERT_TRUE(keyboardState.isKeyUp(event::Keyboard::Key::A));
     GTEST_ASSERT_EQ(val1, 1);
     GTEST_ASSERT_EQ(val2, -1);
