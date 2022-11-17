@@ -22,7 +22,7 @@ namespace ecstasy
 
 namespace ecstasy::integration::event
 {
-    class MouseWheelScrollEvent;
+    struct MouseWheelScrollEvent;
 
     using MouseWheelScrollListener = std::function<void(Registry &, Entity, const MouseWheelScrollEvent &)>;
 } // namespace ecstasy::integration::event

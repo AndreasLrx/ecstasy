@@ -22,7 +22,7 @@ namespace ecstasy
 
 namespace ecstasy::integration::event
 {
-    class TextEnteredEvent;
+    struct TextEnteredEvent;
 
     using TextEnteredListener = std::function<void(Registry &, Entity, const TextEnteredEvent &)>;
 } // namespace ecstasy::integration::event

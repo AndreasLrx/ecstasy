@@ -22,7 +22,7 @@ namespace ecstasy
 
 namespace ecstasy::integration::event
 {
-    class MouseMoveEvent;
+    struct MouseMoveEvent;
 
     using MouseMoveListener = std::function<void(Registry &, Entity, const MouseMoveEvent &)>;
 } // namespace ecstasy::integration::event

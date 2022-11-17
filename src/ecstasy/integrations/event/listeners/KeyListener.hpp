@@ -22,7 +22,7 @@ namespace ecstasy
 
 namespace ecstasy::integration::event
 {
-    class KeyEvent;
+    struct KeyEvent;
 
     using KeyListener = std::function<void(Registry &, Entity, const KeyEvent &)>;
 } // namespace ecstasy::integration::event

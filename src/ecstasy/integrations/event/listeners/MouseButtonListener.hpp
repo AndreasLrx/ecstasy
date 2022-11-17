@@ -22,7 +22,7 @@ namespace ecstasy
 
 namespace ecstasy::integration::event
 {
-    class MouseButtonEvent;
+    struct MouseButtonEvent;
 
     using MouseButtonListener = std::function<void(Registry &, Entity, const MouseButtonEvent &)>;
 } // namespace ecstasy::integration::event
