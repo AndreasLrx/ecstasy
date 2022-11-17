@@ -12,4 +12,5 @@ set(SRC
     ${INCROOT}/MouseButtonReleasedEvent.hpp
     ${INCROOT}/MouseMoveEvent.hpp
     ${INCROOT}/MouseWheelScrollEvent.hpp
+    ${INCROOT}/TextEnteredEvent.hpp
     PARENT_SCOPE)

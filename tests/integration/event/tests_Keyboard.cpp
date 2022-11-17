@@ -5,6 +5,8 @@
 #include "ecstasy/integrations/event/events/KeyPressedEvent.hpp"
 #include "ecstasy/integrations/event/events/KeyReleasedEvent.hpp"
 #include "ecstasy/integrations/event/inputs/Keyboard.hpp"
+#include "ecstasy/integrations/event/listeners/KeyListener.hpp"
+#include "ecstasy/integrations/event/listeners/TextEnteredListener.hpp"
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/storages/MapStorage.hpp"
 
@@ -41,7 +43,7 @@ TEST(Event, KeyPressed)
         })
         .build();
 
-    event::EventsManager::handleEvent(registry, event::KeyPressedEvent(event::Mouse::Key::B));
+    event::EventsManager::handleEvent(registry, event::KeyPressedEvent(event::Keyboard::Key::B));
     GTEST_ASSERT_EQ(val1, 1);
     GTEST_ASSERT_EQ(val2, -1);
 }
@@ -76,8 +78,38 @@ TEST(Event, KeyReleased)
         })
         .build();
 
-    event::EventsManager::handleEvent(registry, event::KeyReleasedEvent(event::Mouse::Key::A));
+    event::EventsManager::handleEvent(registry, event::KeyReleasedEvent(event::Keyboard::Key::A));
     GTEST_ASSERT_TRUE(keyboardState.isKeyUp(event::Keyboard::Key::A));
     GTEST_ASSERT_EQ(val1, 1);
     GTEST_ASSERT_EQ(val2, -1);
+}
+
+TEST(Event, TextEntered)
+{
+    Registry registry;
+    std::uint32_t val = 0;
+    int count = 0;
+
+    registry.entityBuilder()
+        .with<event::TextEnteredListener>([&val](Registry &r, Entity e, const event::TextEnteredEvent &event) {
+            (void)r;
+            (void)e;
+            GTEST_ASSERT_EQ(event.unicode, val);
+        })
+        .build();
+    registry.entityBuilder()
+        .with<event::TextEnteredListener>([&count](Registry &r, Entity e, const event::TextEnteredEvent &event) {
+            (void)r;
+            (void)e;
+            (void)event;
+            count++;
+        })
+        .build();
+
+    int iterations = 50;
+    for (int i = 0; i < iterations; i++) {
+        event::EventsManager::handleEvent(registry, event::TextEnteredEvent(val));
+        val += 12;
+    }
+    GTEST_ASSERT_EQ(count, iterations);
 }

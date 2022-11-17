@@ -16,6 +16,7 @@
 #include "MouseButtonEvent.hpp"
 #include "MouseMoveEvent.hpp"
 #include "MouseWheelScrollEvent.hpp"
+#include "TextEnteredEvent.hpp"
 
 namespace ecstasy::integration::event
 {
@@ -35,6 +36,7 @@ namespace ecstasy::integration::event
             MouseMoved,          ///< The mouse cursor moved.
             KeyPressed,          ///< One of the keyboard key has been pressed.
             KeyReleased,         ///< One of the keyboard key has been released.
+            TextEntered,         ///< A character has been entered.
 
             Count ///< Keep last -- the total number of events
         };
@@ -89,6 +91,16 @@ namespace ecstasy::integration::event
         }
 
         ///
+        /// @brief Construct a text entered event wrapper.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-06)
+        ///
+        constexpr Event(TextEnteredEvent &&event) : type(Type::TextEntered), text(event)
+        {
+        }
+
+        ///
         /// @brief Default desctructor.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
@@ -118,6 +130,7 @@ namespace ecstasy::integration::event
             MouseWheelScrollEvent mouseWheel; ///< @ref Type::MouseWheelScrolled associated event.
             MouseMoveEvent mouseMove;         ///< @ref Type::MouseMoved associated event.
             KeyEvent key;                     ///< @ref Type::KeyPressed && @ref Type::KeyReleased associated events.
+            TextEnteredEvent text;            ///< @ref Type::TextEntered associated event.
         };
     };
 } // namespace ecstasy::integration::event

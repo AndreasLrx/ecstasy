@@ -14,6 +14,7 @@
 #include "ecstasy/integrations/event/listeners/MouseButtonListener.hpp"
 #include "ecstasy/integrations/event/listeners/MouseMoveListener.hpp"
 #include "ecstasy/integrations/event/listeners/MouseWheelScrollListener.hpp"
+#include "ecstasy/integrations/event/listeners/TextEnteredListener.hpp"
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/resources/entity/Entities.hpp"
 #include "ecstasy/storages/MapStorage.hpp"
@@ -54,6 +55,7 @@ namespace ecstasy::integration::event
                 if (registry.hasResource<Keyboard>())
                     registry.getResource<Keyboard>().setKeyState(event.key.key, event.key.pressed);
                 break;
+            case Event::Type::TextEntered: CALL_LISTENERS(TextEnteredListener, event.text) break;
             default: break;
         }
     }

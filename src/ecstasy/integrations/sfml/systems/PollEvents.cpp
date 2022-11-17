@@ -63,6 +63,9 @@ namespace ecstasy::integration::sfml
                     event::EventsManager::handleEvent(
                         registry, event::KeyReleasedEvent(static_cast<event::Keyboard::Key>(event.key.code)));
                     break;
+                case sf::Event::TextEntered:
+                    event::EventsManager::handleEvent(registry, event::TextEnteredEvent(event.text.unicode));
+                    break;
 
                 case sf::Event::Closed: windowWrapper.get().close(); break;
                 default: break;

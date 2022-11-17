@@ -3,6 +3,7 @@ set(SRCROOT ${SRCROOT}/sfml)
 
 add_subdirectory(resources)
 add_subdirectory(systems)
+add_subdirectory(util)
 
 set(SRC 
     ${SRC}

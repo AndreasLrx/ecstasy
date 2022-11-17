@@ -14,6 +14,7 @@
 
 #include "ecstasy/integrations/sfml/resources/RenderWindow.hpp"
 #include "ecstasy/integrations/sfml/systems/PollEvents.hpp"
+#include "ecstasy/integrations/sfml/util/Encoding.hpp"
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/storages/MapStorage.hpp"
 
@@ -21,10 +22,12 @@
 #include "ecstasy/integrations/event/events/MouseButtonEvent.hpp"
 #include "ecstasy/integrations/event/events/MouseMoveEvent.hpp"
 #include "ecstasy/integrations/event/events/MouseWheelScrollEvent.hpp"
+#include "ecstasy/integrations/event/events/TextEnteredEvent.hpp"
 #include "ecstasy/integrations/event/listeners/KeyListener.hpp"
 #include "ecstasy/integrations/event/listeners/MouseButtonListener.hpp"
 #include "ecstasy/integrations/event/listeners/MouseMoveListener.hpp"
 #include "ecstasy/integrations/event/listeners/MouseWheelScrollListener.hpp"
+#include "ecstasy/integrations/event/listeners/TextEnteredListener.hpp"
 
 namespace esf = ecstasy::integration::sfml;
 namespace event = ecstasy::integration::event;
@@ -57,6 +60,12 @@ static void addEventListeners(ecstasy::Registry &registry)
             std::cout << "Keyboard key " << event::Keyboard::getKeyName(e.key) << " event, pressed = " << e.pressed
                       << std::endl;
         })
+        .with<event::TextEnteredListener>(
+            [](ecstasy::Registry &r, ecstasy::Entity entity, const event::TextEnteredEvent &e) {
+                (void)r;
+                (void)entity;
+                std::cout << "Text entered: " << esf::Encoding::utf32CharToUtf8String(e.unicode) << std::endl;
+            })
         .build();
 }
 
