@@ -13,6 +13,7 @@
 #define ECSTASY_INTEGRATIONS_EVENT_INPUTS_KEYBOARD_HPP_
 
 #include <array>
+#include <ostream>
 
 #include "ecstasy/resources/Resource.hpp"
 
@@ -327,5 +328,18 @@ namespace ecstasy::integration::event
 } // namespace ecstasy::integration::event
 
 #undef ECSTASY_KEY_NAME_CASE
+
+///
+/// @brief Output stream operator overload to have human readable name for each key.
+///
+/// @param[in] stream output stream.
+/// @param[in] key Key to write.
+///
+/// @return std::ostream& @p stream.
+///
+/// @author Andréas Leroux (andreas.leroux@epitech.eu)
+/// @since 1.0.0 (2022-11-17)
+///
+std::ostream &operator<<(std::ostream &stream, const ecstasy::integration::event::Keyboard::Key &key);
 
 #endif /* !ECSTASY_INTEGRATIONS_EVENT_INPUTS_KEYBOARD_HPP_ */
