@@ -33,25 +33,27 @@ namespace ecstasy::integration::event
         switch (event.type) {
             case Event::Type::MouseButtonPressed:
             case Event::Type::MouseButtonReleased:
+                CALL_LISTENERS(MouseButtonListener, event.mouseButton)
+
                 if (registry.hasResource<Mouse>())
                     registry.getResource<Mouse>().setButtonState(event.mouseButton.button, event.mouseButton.pressed);
-
-                CALL_LISTENERS(MouseButtonListener, event.mouseButton) break;
+                break;
             case Event::Type::MouseWheelScrolled: CALL_LISTENERS(MouseWheelScrollListener, event.mouseWheel) break;
             case Event::Type::MouseMoved:
+                CALL_LISTENERS(MouseMoveListener, event.mouseMove)
+
                 if (registry.hasResource<Mouse>()) {
                     Mouse &mouse = registry.getResource<Mouse>();
                     mouse.setPosition(event.mouseMove.x + mouse.getX(), event.mouseMove.y + mouse.getY());
                 }
-
-                CALL_LISTENERS(MouseMoveListener, event.mouseMove) break;
-
+                break;
             case Event::Type::KeyPressed:
             case Event::Type::KeyReleased:
+                CALL_LISTENERS(KeyListener, event.key)
+
                 if (registry.hasResource<Keyboard>())
                     registry.getResource<Keyboard>().setKeyState(event.key.key, event.key.pressed);
-
-                CALL_LISTENERS(KeyListener, event.key) break;
+                break;
             default: break;
         }
     }
