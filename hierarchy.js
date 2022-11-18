@@ -34,6 +34,13 @@ var hierarchy =
       [ "util::meta::type_set_eq< typename, typename >", "structutil_1_1meta_1_1type__set__eq.html", null ]
     ] ],
     [ "ecstasy::query::Select< SelectedQueryables >::FilterQueryables< ContainsPivot, Pivot, Lefts >", "structecstasy_1_1query_1_1_select_1_1_filter_queryables.html", null ],
+    [ "ecstasy::integration::event::Gamepad", "classecstasy_1_1integration_1_1event_1_1_gamepad.html", null ],
+    [ "ecstasy::integration::event::GamepadAxisEvent", "structecstasy_1_1integration_1_1event_1_1_gamepad_axis_event.html", null ],
+    [ "ecstasy::integration::event::GamepadButtonEvent", "structecstasy_1_1integration_1_1event_1_1_gamepad_button_event.html", [
+      [ "ecstasy::integration::event::GamepadButtonPressedEvent", "structecstasy_1_1integration_1_1event_1_1_gamepad_button_pressed_event.html", null ],
+      [ "ecstasy::integration::event::GamepadButtonReleasedEvent", "structecstasy_1_1integration_1_1event_1_1_gamepad_button_released_event.html", null ]
+    ] ],
+    [ "ecstasy::integration::event::GamepadConnectedEvent", "structecstasy_1_1integration_1_1event_1_1_gamepad_connected_event.html", null ],
     [ "GetComponentStorageType< C >", "struct_get_component_storage_type.html", null ],
     [ "ecstasy::Instances< Base >", "classecstasy_1_1_instances.html", null ],
     [ "ecstasy::Instances< ecstasy::IStorage >", "classecstasy_1_1_instances.html", null ],
@@ -84,14 +91,15 @@ var hierarchy =
     [ "ecstasy::Registry", "classecstasy_1_1_registry.html", null ],
     [ "ecstasy::Resource", "classecstasy_1_1_resource.html", [
       [ "ecstasy::Entities", "classecstasy_1_1_entities.html", null ],
+      [ "ecstasy::integration::event::Gamepads", "classecstasy_1_1integration_1_1event_1_1_gamepads.html", null ],
       [ "ecstasy::integration::event::Keyboard", "classecstasy_1_1integration_1_1event_1_1_keyboard.html", null ],
       [ "ecstasy::integration::event::Mouse", "classecstasy_1_1integration_1_1event_1_1_mouse.html", null ],
       [ "ecstasy::ObjectWrapper< T >", "classecstasy_1_1_object_wrapper.html", null ]
     ] ],
     [ "util::meta::_left_outer_join< Traits< Rights... >, IsInner, Left, OuterLefts... >::result< LeftsUntreated >", "structutil_1_1meta_1_1__left__outer__join_3_01_traits_3_01_rights_8_8_8_01_4_00_01_is_inner_00_0976b977fc3db4c0d2dc93c5d53c35a08.html", null ],
     [ "util::meta::_left_outer_join< Traits< Rights... >, IsInner, Left, OuterLefts... >::result< NextLeft, LeftsUntreated... >", "structutil_1_1meta_1_1__left__outer__join_3_01_traits_3_01_rights_8_8_8_01_4_00_01_is_inner_00_0e4c618fb3b7be1c193ef63fbe4938be5.html", null ],
-    [ "ecstasy::query::Select< SelectedQueryables >", "structecstasy_1_1query_1_1_select.html", null ],
     [ "ecstasy::Registry::Select< Selects >", "classecstasy_1_1_registry_1_1_select.html", null ],
+    [ "ecstasy::query::Select< SelectedQueryables >", "structecstasy_1_1query_1_1_select.html", null ],
     [ "ecstasy::query::Select< SelectedQueryables >::SorteredTie< Valids >", "structecstasy_1_1query_1_1_select_1_1_sortered_tie.html", null ],
     [ "ecstasy::integration::event::TextEnteredEvent", "structecstasy_1_1integration_1_1event_1_1_text_entered_event.html", null ],
     [ "util::meta::Traits< Args >", "structutil_1_1meta_1_1_traits.html", null ],

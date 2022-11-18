@@ -1,14 +1,8 @@
 var searchData=
 [
-  ['random_3957',['random',['http://en.cppreference.com/w/cpp/header/random.html',1,'']]],
-  ['ranges_3958',['ranges',['http://en.cppreference.com/w/cpp/header/ranges.html',1,'']]],
-  ['ratio_3959',['ratio',['http://en.cppreference.com/w/cpp/header/ratio.html',1,'']]],
-  ['readme_2emd_3960',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['regex_3961',['regex',['http://en.cppreference.com/w/cpp/header/regex.html',1,'']]],
-  ['registry_2ecpp_3962',['Registry.cpp',['../_registry_8cpp.html',1,'']]],
-  ['registry_2ehpp_3963',['Registry.hpp',['../_registry_8hpp.html',1,'']]],
-  ['registryentity_2ehpp_3964',['RegistryEntity.hpp',['../_registry_entity_8hpp.html',1,'']]],
-  ['registrymodifier_2ehpp_3965',['RegistryModifier.hpp',['../_registry_modifier_8hpp.html',1,'']]],
-  ['renderwindow_2ehpp_3966',['RenderWindow.hpp',['../_render_window_8hpp.html',1,'']]],
-  ['resource_2ehpp_3967',['Resource.hpp',['../_resource_8hpp.html',1,'']]]
+  ['query_2ehpp_4039',['Query.hpp',['../_query_8hpp.html',1,'']]],
+  ['queryable_2ehpp_4040',['Queryable.hpp',['../_queryable_8hpp.html',1,'']]],
+  ['queryableneedadjust_2ehpp_4041',['QueryableNeedAdjust.hpp',['../_queryable_need_adjust_8hpp.html',1,'']]],
+  ['queryabletype_2ehpp_4042',['QueryableType.hpp',['../_queryable_type_8hpp.html',1,'']]],
+  ['queue_4043',['queue',['http://en.cppreference.com/w/cpp/header/queue.html',1,'']]]
 ];

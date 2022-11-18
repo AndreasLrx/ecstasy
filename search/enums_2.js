@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['type_6179',['Type',['../structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719a',1,'ecstasy::integration::event::Event']]]
+  ['joystick_6299',['Joystick',['../classecstasy_1_1integration_1_1event_1_1_gamepad.html#adafea92d40762f46cd73b1900ac008c1',1,'ecstasy::integration::event::Gamepad']]]
 ];

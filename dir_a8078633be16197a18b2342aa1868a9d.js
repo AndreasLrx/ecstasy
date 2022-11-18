@@ -3,6 +3,21 @@ var dir_a8078633be16197a18b2342aa1868a9d =
     [ "Event.hpp", "_event_8hpp.html", [
       [ "Event", "structecstasy_1_1integration_1_1event_1_1_event.html", "structecstasy_1_1integration_1_1event_1_1_event" ]
     ] ],
+    [ "GamepadAxisEvent.hpp", "_gamepad_axis_event_8hpp.html", [
+      [ "GamepadAxisEvent", "structecstasy_1_1integration_1_1event_1_1_gamepad_axis_event.html", "structecstasy_1_1integration_1_1event_1_1_gamepad_axis_event" ]
+    ] ],
+    [ "GamepadButtonEvent.hpp", "_gamepad_button_event_8hpp.html", [
+      [ "GamepadButtonEvent", "structecstasy_1_1integration_1_1event_1_1_gamepad_button_event.html", "structecstasy_1_1integration_1_1event_1_1_gamepad_button_event" ]
+    ] ],
+    [ "GamepadButtonPressedEvent.hpp", "_gamepad_button_pressed_event_8hpp.html", [
+      [ "GamepadButtonPressedEvent", "structecstasy_1_1integration_1_1event_1_1_gamepad_button_pressed_event.html", "structecstasy_1_1integration_1_1event_1_1_gamepad_button_pressed_event" ]
+    ] ],
+    [ "GamepadButtonReleasedEvent.hpp", "_gamepad_button_released_event_8hpp.html", [
+      [ "GamepadButtonReleasedEvent", "structecstasy_1_1integration_1_1event_1_1_gamepad_button_released_event.html", "structecstasy_1_1integration_1_1event_1_1_gamepad_button_released_event" ]
+    ] ],
+    [ "GamepadConnectedEvent.hpp", "_gamepad_connected_event_8hpp.html", [
+      [ "GamepadConnectedEvent", "structecstasy_1_1integration_1_1event_1_1_gamepad_connected_event.html", "structecstasy_1_1integration_1_1event_1_1_gamepad_connected_event" ]
+    ] ],
     [ "include.hpp", "integrations_2event_2events_2include_8hpp.html", null ],
     [ "KeyEvent.hpp", "_key_event_8hpp.html", [
       [ "KeyEvent", "structecstasy_1_1integration_1_1event_1_1_key_event.html", "structecstasy_1_1integration_1_1event_1_1_key_event" ]

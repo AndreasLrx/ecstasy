@@ -92,28 +92,38 @@ $(document).ready(function(){initNavTree('integrations_2event_2events_2include_8
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define ECSTASY_INTEGRATIONS_EVENT_EVENTS_HPP_</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_event_8hpp.html">Event.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_key_event_8hpp.html">KeyEvent.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_key_pressed_event_8hpp.html">KeyPressedEvent.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_key_released_event_8hpp.html">KeyReleasedEvent.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_mouse_button_event_8hpp.html">MouseButtonEvent.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_mouse_button_pressed_event_8hpp.html">MouseButtonPressedEvent.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_mouse_button_released_event_8hpp.html">MouseButtonReleasedEvent.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_mouse_move_event_8hpp.html">MouseMoveEvent.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_mouse_wheel_scroll_event_8hpp.html">MouseWheelScrollEvent.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_text_entered_event_8hpp.html">TextEnteredEvent.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !ECSTASY_INTEGRATIONS_EVENT_EVENTS_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_gamepad_axis_event_8hpp.html">GamepadAxisEvent.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_gamepad_button_event_8hpp.html">GamepadButtonEvent.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_gamepad_button_pressed_event_8hpp.html">GamepadButtonPressedEvent.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_gamepad_button_released_event_8hpp.html">GamepadButtonReleasedEvent.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_gamepad_connected_event_8hpp.html">GamepadConnectedEvent.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_key_event_8hpp.html">KeyEvent.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_key_pressed_event_8hpp.html">KeyPressedEvent.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_key_released_event_8hpp.html">KeyReleasedEvent.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_mouse_button_event_8hpp.html">MouseButtonEvent.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_mouse_button_pressed_event_8hpp.html">MouseButtonPressedEvent.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_mouse_button_released_event_8hpp.html">MouseButtonReleasedEvent.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_mouse_move_event_8hpp.html">MouseMoveEvent.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_mouse_wheel_scroll_event_8hpp.html">MouseWheelScrollEvent.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_text_entered_event_8hpp.html">TextEnteredEvent.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !ECSTASY_INTEGRATIONS_EVENT_EVENTS_HPP_ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_key_event_8hpp_html"><div class="ttname"><a href="_key_event_8hpp.html">KeyEvent.hpp</a></div></div>
+<div class="ttc" id="a_gamepad_button_released_event_8hpp_html"><div class="ttname"><a href="_gamepad_button_released_event_8hpp.html">GamepadButtonReleasedEvent.hpp</a></div></div>
+<div class="ttc" id="a_gamepad_button_event_8hpp_html"><div class="ttname"><a href="_gamepad_button_event_8hpp.html">GamepadButtonEvent.hpp</a></div></div>
+<div class="ttc" id="a_gamepad_connected_event_8hpp_html"><div class="ttname"><a href="_gamepad_connected_event_8hpp.html">GamepadConnectedEvent.hpp</a></div></div>
 <div class="ttc" id="a_mouse_wheel_scroll_event_8hpp_html"><div class="ttname"><a href="_mouse_wheel_scroll_event_8hpp.html">MouseWheelScrollEvent.hpp</a></div></div>
 <div class="ttc" id="a_key_pressed_event_8hpp_html"><div class="ttname"><a href="_key_pressed_event_8hpp.html">KeyPressedEvent.hpp</a></div></div>
 <div class="ttc" id="a_event_8hpp_html"><div class="ttname"><a href="_event_8hpp.html">Event.hpp</a></div></div>
 <div class="ttc" id="a_text_entered_event_8hpp_html"><div class="ttname"><a href="_text_entered_event_8hpp.html">TextEnteredEvent.hpp</a></div></div>
 <div class="ttc" id="a_mouse_button_released_event_8hpp_html"><div class="ttname"><a href="_mouse_button_released_event_8hpp.html">MouseButtonReleasedEvent.hpp</a></div></div>
 <div class="ttc" id="a_mouse_move_event_8hpp_html"><div class="ttname"><a href="_mouse_move_event_8hpp.html">MouseMoveEvent.hpp</a></div></div>
+<div class="ttc" id="a_gamepad_axis_event_8hpp_html"><div class="ttname"><a href="_gamepad_axis_event_8hpp.html">GamepadAxisEvent.hpp</a></div></div>
 <div class="ttc" id="a_mouse_button_pressed_event_8hpp_html"><div class="ttname"><a href="_mouse_button_pressed_event_8hpp.html">MouseButtonPressedEvent.hpp</a></div></div>
 <div class="ttc" id="a_mouse_button_event_8hpp_html"><div class="ttname"><a href="_mouse_button_event_8hpp.html">MouseButtonEvent.hpp</a></div></div>
+<div class="ttc" id="a_gamepad_button_pressed_event_8hpp_html"><div class="ttname"><a href="_gamepad_button_pressed_event_8hpp.html">GamepadButtonPressedEvent.hpp</a></div></div>
 <div class="ttc" id="a_key_released_event_8hpp_html"><div class="ttname"><a href="_key_released_event_8hpp.html">KeyReleasedEvent.hpp</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

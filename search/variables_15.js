@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_6136',['x',['../structecstasy_1_1integration_1_1event_1_1_mouse_move_event.html#acec6d3701a87907a46ec40b1477cf922',1,'ecstasy::integration::event::MouseMoveEvent']]]
+  ['wheel_6252',['wheel',['../structecstasy_1_1integration_1_1event_1_1_mouse_wheel_scroll_event.html#a210d76d9185b0015063be46610719cc3',1,'ecstasy::integration::event::MouseWheelScrollEvent']]]
 ];

@@ -23,7 +23,7 @@ digraph "src/ecstasy/integrations/sfml" {
   dir_c01fc4cc10e0d58939200194d46ba02e->dir_4a1419ba0e8125a1fc6aeccf1492e850 [headlabel="2", labeldistance=1.5 headhref="dir_000020_000019.html"];
   dir_c01fc4cc10e0d58939200194d46ba02e->dir_30970fbe9de3918f98e58b7106d748f8 [headlabel="2", labeldistance=1.5 headhref="dir_000020_000009.html"];
   dir_c01fc4cc10e0d58939200194d46ba02e->dir_27d9dd95bf0309eb27f3bb61fbabadeb [headlabel="2", labeldistance=1.5 headhref="dir_000020_000014.html"];
-  dir_c01fc4cc10e0d58939200194d46ba02e->dir_183c73d974247df0fabaedf6b9eb94ef [headlabel="10", labeldistance=1.5 headhref="dir_000020_000003.html"];
+  dir_c01fc4cc10e0d58939200194d46ba02e->dir_183c73d974247df0fabaedf6b9eb94ef [headlabel="2", labeldistance=1.5 headhref="dir_000020_000003.html"];
   dir_c01fc4cc10e0d58939200194d46ba02e->dir_2de34326986a779f9fff4c0e99b551f8 [headlabel="1", labeldistance=1.5 headhref="dir_000020_000010.html"];
   dir_4a1419ba0e8125a1fc6aeccf1492e850->dir_8c1a170fbd0a5283d7ed264cf6df56b3 [headlabel="1", labeldistance=1.5 headhref="dir_000019_000017.html"];
   dir_30970fbe9de3918f98e58b7106d748f8->dir_d39b5e3b98d710191729c82e4f1d60c9 [headlabel="1", labeldistance=1.5 headhref="dir_000009_000008.html"];
@@ -36,6 +36,6 @@ digraph "src/ecstasy/integrations/sfml" {
   dir_27d9dd95bf0309eb27f3bb61fbabadeb->dir_4a1419ba0e8125a1fc6aeccf1492e850 [headlabel="6", labeldistance=1.5 headhref="dir_000014_000019.html"];
   dir_27d9dd95bf0309eb27f3bb61fbabadeb->dir_8c1a170fbd0a5283d7ed264cf6df56b3 [headlabel="4", labeldistance=1.5 headhref="dir_000014_000017.html"];
   dir_183c73d974247df0fabaedf6b9eb94ef->dir_4a1419ba0e8125a1fc6aeccf1492e850 [headlabel="1", labeldistance=1.5 headhref="dir_000003_000019.html"];
-  dir_183c73d974247df0fabaedf6b9eb94ef->dir_8c1a170fbd0a5283d7ed264cf6df56b3 [headlabel="4", labeldistance=1.5 headhref="dir_000003_000017.html"];
+  dir_183c73d974247df0fabaedf6b9eb94ef->dir_8c1a170fbd0a5283d7ed264cf6df56b3 [headlabel="5", labeldistance=1.5 headhref="dir_000003_000017.html"];
   dir_183c73d974247df0fabaedf6b9eb94ef->dir_27d9dd95bf0309eb27f3bb61fbabadeb [headlabel="2", labeldistance=1.5 headhref="dir_000003_000014.html"];
 }

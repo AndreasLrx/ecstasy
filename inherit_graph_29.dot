@@ -4,5 +4,19 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="ecstasy::query::Select\l\< SelectedQueryables \>\l::FilterQueryables\< ContainsPivot,\l Pivot, Lefts \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1query_1_1_select_1_1_filter_queryables.html",tooltip=" "];
+  Node0 [label="ecstasy::query::modifier\l::Modifier",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1query_1_1modifier_1_1_modifier.html",tooltip="Base class for all query modifiers."];
+  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="ecstasy::query::modifier\l::BinaryModifier",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html",tooltip="Base class for all query binary modifiers."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ecstasy::query::modifier\l::And\< Q1, Q2 \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1query_1_1modifier_1_1_and.html",tooltip="Binary query modifier which performs a and between two queryables."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ecstasy::query::modifier\l::Or\< Q1, Q2 \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1query_1_1modifier_1_1_or.html",tooltip="Binary query modifier which performs a or between two queryables."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ecstasy::query::modifier\l::Xor\< Q1, Q2 \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1query_1_1modifier_1_1_xor.html",tooltip="Binary query modifier which performs a xor between two queryables."];
+  Node0 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ecstasy::query::modifier\l::UnaryModifier",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1query_1_1modifier_1_1_unary_modifier.html",tooltip="Base class for all query unary modifiers."];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="ecstasy::query::modifier\l::Maybe\< Q \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1query_1_1modifier_1_1_maybe.html",tooltip="Query modifier which returns a std::optional filled when the data if existing."];
+  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="ecstasy::query::modifier\l::Not\< Q \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1query_1_1modifier_1_1_not.html",tooltip="Query modifier which simply inverts the bits."];
 }

@@ -114,7 +114,14 @@ Public Types</h2></td></tr>
 &#160;&#160;<a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aac17e6984c1e5a887a49831beadee6bca">Type::KeyPressed</a>, 
 <a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa4a77f07c8ad223b71ab4ce78a63841ab">Type::KeyReleased</a>, 
 <a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa8ed4d3c0783d6f909907e1592ffe47ac">Type::TextEntered</a>, 
-<a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aae93f994f01c537c4e2f7d8528c3eb5e9">Type::Count</a>
+<a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aae2a9941e644616b8853693e7b3b22c96">Type::GamepadButtonPressed</a>, 
+<br />
+&#160;&#160;<a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aaf4590195d79da4a322ee9beb6b44ef66">Type::GamepadButtonReleased</a>, 
+<a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aaa34eee0c70fa74cf765b8a650d4497f7">Type::GamepadAxis</a>, 
+<a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aad5909d240c46150dc002123ef8abcc2f">Type::GamepadConnected</a>, 
+<a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aac1c12a889ebdc886dc3738b5a146def0">Type::GamepadDisconnected</a>, 
+<br />
+&#160;&#160;<a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aae93f994f01c537c4e2f7d8528c3eb5e9">Type::Count</a>
 <br />
  }</td></tr>
 <tr class="memdesc:a428f3f906bf2f40cf2dcec224662719a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html" title="Event class.">Event</a> types.  <a href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719a">More...</a><br /></td></tr>
@@ -140,6 +147,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab852552f463933fcdccc6349c17d111b"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#ab852552f463933fcdccc6349c17d111b">Event</a> (<a class="el" href="structecstasy_1_1integration_1_1event_1_1_text_entered_event.html">TextEnteredEvent</a> &amp;&amp;event)</td></tr>
 <tr class="memdesc:ab852552f463933fcdccc6349c17d111b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a text entered event wrapper.  <a href="structecstasy_1_1integration_1_1event_1_1_event.html#ab852552f463933fcdccc6349c17d111b">More...</a><br /></td></tr>
 <tr class="separator:ab852552f463933fcdccc6349c17d111b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96d83855bfda12b4671a9ec35599987a"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a96d83855bfda12b4671a9ec35599987a">Event</a> (<a class="el" href="structecstasy_1_1integration_1_1event_1_1_gamepad_button_event.html">GamepadButtonEvent</a> &amp;&amp;event)</td></tr>
+<tr class="memdesc:a96d83855bfda12b4671a9ec35599987a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a gamepad button event wrapper.  <a href="structecstasy_1_1integration_1_1event_1_1_event.html#a96d83855bfda12b4671a9ec35599987a">More...</a><br /></td></tr>
+<tr class="separator:a96d83855bfda12b4671a9ec35599987a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fcad6812a99bdadc9288a539869b34e"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a9fcad6812a99bdadc9288a539869b34e">Event</a> (<a class="el" href="structecstasy_1_1integration_1_1event_1_1_gamepad_connected_event.html">GamepadConnectedEvent</a> &amp;&amp;event)</td></tr>
+<tr class="memdesc:a9fcad6812a99bdadc9288a539869b34e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a gamepad connected event wrapper.  <a href="structecstasy_1_1integration_1_1event_1_1_event.html#a9fcad6812a99bdadc9288a539869b34e">More...</a><br /></td></tr>
+<tr class="separator:a9fcad6812a99bdadc9288a539869b34e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a552698af46783c3bc637ce410aa7d473"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a552698af46783c3bc637ce410aa7d473">Event</a> (<a class="el" href="structecstasy_1_1integration_1_1event_1_1_gamepad_axis_event.html">GamepadAxisEvent</a> &amp;&amp;event)</td></tr>
+<tr class="memdesc:a552698af46783c3bc637ce410aa7d473"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a gamepad axis event wrapper.  <a href="structecstasy_1_1integration_1_1event_1_1_event.html#a552698af46783c3bc637ce410aa7d473">More...</a><br /></td></tr>
+<tr class="separator:a552698af46783c3bc637ce410aa7d473"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2b9db380f93af879c5b2b610802109a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#ab2b9db380f93af879c5b2b610802109a">~Event</a> ()=default</td></tr>
 <tr class="memdesc:ab2b9db380f93af879c5b2b610802109a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default desctructor.  <a href="structecstasy_1_1integration_1_1event_1_1_event.html#ab2b9db380f93af879c5b2b610802109a">More...</a><br /></td></tr>
 <tr class="separator:ab2b9db380f93af879c5b2b610802109a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -165,6 +181,15 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:af569bad393392dd3fa4f88142a2e81eb"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structecstasy_1_1integration_1_1event_1_1_text_entered_event.html">TextEnteredEvent</a>&#160;&#160;&#160;<a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a5332f8dd213c0130fcb46522160b3a91">text</a></td></tr>
 <tr class="memdesc:af569bad393392dd3fa4f88142a2e81eb"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa8ed4d3c0783d6f909907e1592ffe47ac">Type::TextEntered</a> associated event.  <a href="unionecstasy_1_1integration_1_1event_1_1_event_1_1_0d0.html#af569bad393392dd3fa4f88142a2e81eb">More...</a><br /></td></tr>
 <tr class="separator:af569bad393392dd3fa4f88142a2e81eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2c1f093f5a9cd7cd2e6e409c1995a5b"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structecstasy_1_1integration_1_1event_1_1_gamepad_button_event.html">GamepadButtonEvent</a>&#160;&#160;&#160;<a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a4cb329b4aad0740343e1dce052b94b0a">gamepadButton</a></td></tr>
+<tr class="memdesc:ae2c1f093f5a9cd7cd2e6e409c1995a5b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aae2a9941e644616b8853693e7b3b22c96">Type::GamepadButtonPressed</a> &amp;&amp; <a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aaf4590195d79da4a322ee9beb6b44ef66">Type::GamepadButtonReleased</a>  <a href="unionecstasy_1_1integration_1_1event_1_1_event_1_1_0d0.html#ae2c1f093f5a9cd7cd2e6e409c1995a5b">More...</a><br /></td></tr>
+<tr class="separator:ae2c1f093f5a9cd7cd2e6e409c1995a5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27ebce144b497d14da2096e817f9539e"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structecstasy_1_1integration_1_1event_1_1_gamepad_axis_event.html">GamepadAxisEvent</a>&#160;&#160;&#160;<a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a16b8da1b1d8caed145e209098dde5541">gamepadAxis</a></td></tr>
+<tr class="memdesc:a27ebce144b497d14da2096e817f9539e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aaa34eee0c70fa74cf765b8a650d4497f7">Type::GamepadAxis</a> associated event.  <a href="unionecstasy_1_1integration_1_1event_1_1_event_1_1_0d0.html#a27ebce144b497d14da2096e817f9539e">More...</a><br /></td></tr>
+<tr class="separator:a27ebce144b497d14da2096e817f9539e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2b504ad959423b6a97d371a61fbfa87"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structecstasy_1_1integration_1_1event_1_1_gamepad_connected_event.html">GamepadConnectedEvent</a>&#160;&#160;&#160;<a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#adfdde96dce20a4739424418fd2106204">gamepadConnected</a></td></tr>
+<tr class="memdesc:ac2b504ad959423b6a97d371a61fbfa87"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aad5909d240c46150dc002123ef8abcc2f">Type::GamepadConnected</a> &amp;&amp; <a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aac1c12a889ebdc886dc3738b5a146def0">Type::GamepadDisconnected</a> associated events.  <a href="unionecstasy_1_1integration_1_1event_1_1_event_1_1_0d0.html#ac2b504ad959423b6a97d371a61fbfa87">More...</a><br /></td></tr>
+<tr class="separator:ac2b504ad959423b6a97d371a61fbfa87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5bfeba916eff3df7a6f0b7a3ca8180a2"><td class="memItemLeft" valign="top">};&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
 <tr class="memdesc:a5bfeba916eff3df7a6f0b7a3ca8180a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Anonymous union to ease facilitate the wrapped event access.  <a href="structecstasy_1_1integration_1_1event_1_1_event.html#a5bfeba916eff3df7a6f0b7a3ca8180a2">More...</a><br /></td></tr>
 <tr class="separator:a5bfeba916eff3df7a6f0b7a3ca8180a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -175,7 +200,7 @@ Public Attributes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-06) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00030">30</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00033">33</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a428f3f906bf2f40cf2dcec224662719a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a428f3f906bf2f40cf2dcec224662719a">&#9670;&nbsp;</a></span>Type</h2>
@@ -213,28 +238,43 @@ Public Attributes</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="a428f3f906bf2f40cf2dcec224662719aa8ed4d3c0783d6f909907e1592ffe47ac"></a>TextEntered&#160;</td><td class="fielddoc"><p>A character has been entered. </p>
 </td></tr>
+<tr><td class="fieldname"><a id="a428f3f906bf2f40cf2dcec224662719aae2a9941e644616b8853693e7b3b22c96"></a>GamepadButtonPressed&#160;</td><td class="fielddoc"><p>One of the gamepads button has been pressed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a428f3f906bf2f40cf2dcec224662719aaf4590195d79da4a322ee9beb6b44ef66"></a>GamepadButtonReleased&#160;</td><td class="fielddoc"><p>One of the gamepads button has been released. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a428f3f906bf2f40cf2dcec224662719aaa34eee0c70fa74cf765b8a650d4497f7"></a>GamepadAxis&#160;</td><td class="fielddoc"><p>One of the gamepads axis value changed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a428f3f906bf2f40cf2dcec224662719aad5909d240c46150dc002123ef8abcc2f"></a>GamepadConnected&#160;</td><td class="fielddoc"><p>One gamepad has been connected. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a428f3f906bf2f40cf2dcec224662719aac1c12a889ebdc886dc3738b5a146def0"></a>GamepadDisconnected&#160;</td><td class="fielddoc"><p>One gamepad has been disconnected. </p>
+</td></tr>
 <tr><td class="fieldname"><a id="a428f3f906bf2f40cf2dcec224662719aae93f994f01c537c4e2f7d8528c3eb5e9"></a>Count&#160;</td><td class="fielddoc"><p>Keep last &ndash; the total number of events. </p>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00032">32</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                        {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            MouseButtonPressed,  </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            MouseButtonReleased, </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            MouseWheelScrolled,  </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            MouseMoved,          </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            KeyPressed,          </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            KeyReleased,         </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            TextEntered,         </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            Count </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        };</div>
+<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00035">35</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                        {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            MouseButtonPressed,    </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            MouseButtonReleased,   </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            MouseWheelScrolled,    </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            MouseMoved,            </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            KeyPressed,            </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            KeyReleased,           </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            TextEntered,           </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            GamepadButtonPressed,  </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            GamepadButtonReleased, </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            GamepadAxis,           </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            GamepadConnected,      </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            GamepadDisconnected,   </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            Count </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        };</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a4e25e1551ba00380be2491c408ebf795"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e25e1551ba00380be2491c408ebf795">&#9670;&nbsp;</a></span>Event() <span class="overload">[1/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e25e1551ba00380be2491c408ebf795">&#9670;&nbsp;</a></span>Event() <span class="overload">[1/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -260,13 +300,13 @@ Public Attributes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-06) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00050">50</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;: <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a6d46b0b0f2a97d183b856a64251b63e5">type</a>(<a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aae93f994f01c537c4e2f7d8528c3eb5e9">Type::Count</a>){};</div>
+<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00058">58</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;: <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a6d46b0b0f2a97d183b856a64251b63e5">type</a>(<a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aae93f994f01c537c4e2f7d8528c3eb5e9">Type::Count</a>){};</div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="a41b604989ca1644a56ced598c5e437d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41b604989ca1644a56ced598c5e437d3">&#9670;&nbsp;</a></span>Event() <span class="overload">[2/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a41b604989ca1644a56ced598c5e437d3">&#9670;&nbsp;</a></span>Event() <span class="overload">[2/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -299,15 +339,15 @@ Public Attributes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-06) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00060">60</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            : <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a6d46b0b0f2a97d183b856a64251b63e5">type</a>(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>.pressed ? <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa7349f643d689997b7c54bf93e4095f5c">Type::MouseButtonPressed</a> : <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa7584c169de594c27f00084b93186fd7c">Type::MouseButtonReleased</a>), <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a6a1f070fea4e9ebc841980aba424ccf5">mouseButton</a>(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00068">68</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            : <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a6d46b0b0f2a97d183b856a64251b63e5">type</a>(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>.pressed ? <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa7349f643d689997b7c54bf93e4095f5c">Type::MouseButtonPressed</a> : <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa7584c169de594c27f00084b93186fd7c">Type::MouseButtonReleased</a>), <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a6a1f070fea4e9ebc841980aba424ccf5">mouseButton</a>(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="ae0933ceb142b2269f81d0d3ce304377b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0933ceb142b2269f81d0d3ce304377b">&#9670;&nbsp;</a></span>Event() <span class="overload">[3/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0933ceb142b2269f81d0d3ce304377b">&#9670;&nbsp;</a></span>Event() <span class="overload">[3/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -340,15 +380,15 @@ Public Attributes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-06) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00073">73</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                                       : <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a6d46b0b0f2a97d183b856a64251b63e5">type</a>(<a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa9787e93d7821ce61637e6f9f19ef955b">Type::MouseWheelScrolled</a>), <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#acf010bb50e8628c216c4fd39baac5f1f">mouseWheel</a>(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>)</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00081">81</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                                       : <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a6d46b0b0f2a97d183b856a64251b63e5">type</a>(<a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa9787e93d7821ce61637e6f9f19ef955b">Type::MouseWheelScrolled</a>), <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#acf010bb50e8628c216c4fd39baac5f1f">mouseWheel</a>(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="a67eb608aee9f52e7f037497705a0581d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67eb608aee9f52e7f037497705a0581d">&#9670;&nbsp;</a></span>Event() <span class="overload">[4/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a67eb608aee9f52e7f037497705a0581d">&#9670;&nbsp;</a></span>Event() <span class="overload">[4/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -381,15 +421,15 @@ Public Attributes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-06) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00085">85</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                                : <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a6d46b0b0f2a97d183b856a64251b63e5">type</a>(<a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aac2770ad109c8063ce69a3608a9a16c08">Type::MouseMoved</a>), <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a8e70999029df37f3b8ddc4b0dc0de432">mouseMove</a>(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>)</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00093">93</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                                : <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a6d46b0b0f2a97d183b856a64251b63e5">type</a>(<a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aac2770ad109c8063ce69a3608a9a16c08">Type::MouseMoved</a>), <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a8e70999029df37f3b8ddc4b0dc0de432">mouseMove</a>(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="a0e15561e4c8cfd15ef322128d8192bbd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e15561e4c8cfd15ef322128d8192bbd">&#9670;&nbsp;</a></span>Event() <span class="overload">[5/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e15561e4c8cfd15ef322128d8192bbd">&#9670;&nbsp;</a></span>Event() <span class="overload">[5/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -422,15 +462,15 @@ Public Attributes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-06) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00097">97</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                          : <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a6d46b0b0f2a97d183b856a64251b63e5">type</a>(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>.pressed ? <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aac17e6984c1e5a887a49831beadee6bca">Type::KeyPressed</a> : <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa4a77f07c8ad223b71ab4ce78a63841ab">Type::KeyReleased</a>), <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a3af2c11a33b7176b25e009a2964d8abc">key</a>(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>)</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00105">105</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                          : <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a6d46b0b0f2a97d183b856a64251b63e5">type</a>(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>.pressed ? <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aac17e6984c1e5a887a49831beadee6bca">Type::KeyPressed</a> : <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa4a77f07c8ad223b71ab4ce78a63841ab">Type::KeyReleased</a>), <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a3af2c11a33b7176b25e009a2964d8abc">key</a>(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="ab852552f463933fcdccc6349c17d111b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab852552f463933fcdccc6349c17d111b">&#9670;&nbsp;</a></span>Event() <span class="overload">[6/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab852552f463933fcdccc6349c17d111b">&#9670;&nbsp;</a></span>Event() <span class="overload">[6/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -463,10 +503,133 @@ Public Attributes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-06) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00109">109</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                                                  : <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a6d46b0b0f2a97d183b856a64251b63e5">type</a>(<a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa8ed4d3c0783d6f909907e1592ffe47ac">Type::TextEntered</a>), <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a5332f8dd213c0130fcb46522160b3a91">text</a>(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>)</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00117">117</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                                                  : <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a6d46b0b0f2a97d183b856a64251b63e5">type</a>(<a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa8ed4d3c0783d6f909907e1592ffe47ac">Type::TextEntered</a>), <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a5332f8dd213c0130fcb46522160b3a91">text</a>(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>)</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a96d83855bfda12b4671a9ec35599987a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96d83855bfda12b4671a9ec35599987a">&#9670;&nbsp;</a></span>Event() <span class="overload">[7/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr ecstasy::integration::event::Event::Event </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structecstasy_1_1integration_1_1event_1_1_gamepad_button_event.html">GamepadButtonEvent</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a gamepad button event wrapper. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Source event.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-06) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00129">129</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            : <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a6d46b0b0f2a97d183b856a64251b63e5">type</a>(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>.pressed ? <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aae2a9941e644616b8853693e7b3b22c96">Type::GamepadButtonPressed</a> : <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aaf4590195d79da4a322ee9beb6b44ef66">Type::GamepadButtonReleased</a>), <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a4cb329b4aad0740343e1dce052b94b0a">gamepadButton</a>(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>)</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9fcad6812a99bdadc9288a539869b34e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fcad6812a99bdadc9288a539869b34e">&#9670;&nbsp;</a></span>Event() <span class="overload">[8/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr ecstasy::integration::event::Event::Event </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structecstasy_1_1integration_1_1event_1_1_gamepad_connected_event.html">GamepadConnectedEvent</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a gamepad connected event wrapper. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Source event.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-06) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00142">142</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            : <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a6d46b0b0f2a97d183b856a64251b63e5">type</a>(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>.connected ? <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aad5909d240c46150dc002123ef8abcc2f">Type::GamepadConnected</a> : <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aac1c12a889ebdc886dc3738b5a146def0">Type::GamepadDisconnected</a>), <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#adfdde96dce20a4739424418fd2106204">gamepadConnected</a>(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>)</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a552698af46783c3bc637ce410aa7d473"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a552698af46783c3bc637ce410aa7d473">&#9670;&nbsp;</a></span>Event() <span class="overload">[9/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr ecstasy::integration::event::Event::Event </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structecstasy_1_1integration_1_1event_1_1_gamepad_axis_event.html">GamepadAxisEvent</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a gamepad axis event wrapper. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Source event.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-06) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00155">155</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                                                  : <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a6d46b0b0f2a97d183b856a64251b63e5">type</a>(<a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aaa34eee0c70fa74cf765b8a650d4497f7">Type::GamepadAxis</a>), <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a16b8da1b1d8caed145e209098dde5541">gamepadAxis</a>(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>)</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -518,6 +681,61 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a16b8da1b1d8caed145e209098dde5541"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16b8da1b1d8caed145e209098dde5541">&#9670;&nbsp;</a></span>gamepadAxis</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structecstasy_1_1integration_1_1event_1_1_gamepad_axis_event.html">GamepadAxisEvent</a> ecstasy::integration::event::Event::gamepadAxis</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aaa34eee0c70fa74cf765b8a650d4497f7">Type::GamepadAxis</a> associated event. </p>
+
+<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00192">192</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a4cb329b4aad0740343e1dce052b94b0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cb329b4aad0740343e1dce052b94b0a">&#9670;&nbsp;</a></span>gamepadButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structecstasy_1_1integration_1_1event_1_1_gamepad_button_event.html">GamepadButtonEvent</a> ecstasy::integration::event::Event::gamepadButton</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aae2a9941e644616b8853693e7b3b22c96">Type::GamepadButtonPressed</a> &amp;&amp; <a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aaf4590195d79da4a322ee9beb6b44ef66">Type::GamepadButtonReleased</a> </p>
+<p>associated events. </p>
+
+<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00190">190</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
+
+</div>
+</div>
+<a id="adfdde96dce20a4739424418fd2106204"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfdde96dce20a4739424418fd2106204">&#9670;&nbsp;</a></span>gamepadConnected</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structecstasy_1_1integration_1_1event_1_1_gamepad_connected_event.html">GamepadConnectedEvent</a> ecstasy::integration::event::Event::gamepadConnected</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aad5909d240c46150dc002123ef8abcc2f">Type::GamepadConnected</a> &amp;&amp; <a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aac1c12a889ebdc886dc3738b5a146def0">Type::GamepadDisconnected</a> associated events. </p>
+
+<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00194">194</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a3af2c11a33b7176b25e009a2964d8abc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3af2c11a33b7176b25e009a2964d8abc">&#9670;&nbsp;</a></span>key</h2>
 
@@ -532,7 +750,7 @@ Public Attributes</h2></td></tr>
 
 <p><a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aac17e6984c1e5a887a49831beadee6bca">Type::KeyPressed</a> &amp;&amp; <a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa4a77f07c8ad223b71ab4ce78a63841ab">Type::KeyReleased</a> associated events. </p>
 
-<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00142">142</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00188">188</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
 
 </div>
 </div>
@@ -550,7 +768,7 @@ Public Attributes</h2></td></tr>
 
 <p><a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa7349f643d689997b7c54bf93e4095f5c">Type::MouseButtonPressed</a> &amp;&amp; <a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa7584c169de594c27f00084b93186fd7c">Type::MouseButtonReleased</a> associated events. </p>
 
-<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00139">139</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00185">185</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
 
 </div>
 </div>
@@ -568,7 +786,7 @@ Public Attributes</h2></td></tr>
 
 <p><a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aac2770ad109c8063ce69a3608a9a16c08">Type::MouseMoved</a> associated event. </p>
 
-<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00141">141</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00187">187</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
 
 </div>
 </div>
@@ -586,7 +804,7 @@ Public Attributes</h2></td></tr>
 
 <p><a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa9787e93d7821ce61637e6f9f19ef955b">Type::MouseWheelScrolled</a> associated event. </p>
 
-<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00140">140</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00186">186</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
 
 </div>
 </div>
@@ -604,7 +822,7 @@ Public Attributes</h2></td></tr>
 
 <p><a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa8ed4d3c0783d6f909907e1592ffe47ac">Type::TextEntered</a> associated event. </p>
 
-<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00143">143</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00189">189</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
 
 </div>
 </div>
@@ -625,7 +843,7 @@ Public Attributes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-06) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00129">129</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_event_8hpp_source.html#l00175">175</a> of file <a class="el" href="_event_8hpp_source.html">Event.hpp</a>.</p>
 
 </div>
 </div>
@@ -636,18 +854,26 @@ Public Attributes</h2></td></tr>
 </div><!-- doc-content -->
 <div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a428f3f906bf2f40cf2dcec224662719aa8ed4d3c0783d6f909907e1592ffe47ac"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa8ed4d3c0783d6f909907e1592ffe47ac">ecstasy::integration::event::Event::Type::TextEntered</a></div><div class="ttdeci">@ TextEntered</div><div class="ttdoc">A character has been entered.</div></div>
 <div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a428f3f906bf2f40cf2dcec224662719aae93f994f01c537c4e2f7d8528c3eb5e9"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aae93f994f01c537c4e2f7d8528c3eb5e9">ecstasy::integration::event::Event::Type::Count</a></div><div class="ttdeci">@ Count</div><div class="ttdoc">Keep last – the total number of events.</div></div>
-<div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_acf010bb50e8628c216c4fd39baac5f1f"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#acf010bb50e8628c216c4fd39baac5f1f">ecstasy::integration::event::Event::mouseWheel</a></div><div class="ttdeci">MouseWheelScrollEvent mouseWheel</div><div class="ttdoc">Type::MouseWheelScrolled associated event.</div><div class="ttdef"><b>Definition:</b> <a href="_event_8hpp_source.html#l00140">Event.hpp:140</a></div></div>
+<div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_acf010bb50e8628c216c4fd39baac5f1f"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#acf010bb50e8628c216c4fd39baac5f1f">ecstasy::integration::event::Event::mouseWheel</a></div><div class="ttdeci">MouseWheelScrollEvent mouseWheel</div><div class="ttdoc">Type::MouseWheelScrolled associated event.</div><div class="ttdef"><b>Definition:</b> <a href="_event_8hpp_source.html#l00186">Event.hpp:186</a></div></div>
 <div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a428f3f906bf2f40cf2dcec224662719aa9787e93d7821ce61637e6f9f19ef955b"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa9787e93d7821ce61637e6f9f19ef955b">ecstasy::integration::event::Event::Type::MouseWheelScrolled</a></div><div class="ttdeci">@ MouseWheelScrolled</div><div class="ttdoc">The mouse wheel was scrolled.</div></div>
+<div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a428f3f906bf2f40cf2dcec224662719aaa34eee0c70fa74cf765b8a650d4497f7"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aaa34eee0c70fa74cf765b8a650d4497f7">ecstasy::integration::event::Event::Type::GamepadAxis</a></div><div class="ttdeci">@ GamepadAxis</div><div class="ttdoc">One of the gamepads axis value changed.</div></div>
 <div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a428f3f906bf2f40cf2dcec224662719aa7584c169de594c27f00084b93186fd7c"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa7584c169de594c27f00084b93186fd7c">ecstasy::integration::event::Event::Type::MouseButtonReleased</a></div><div class="ttdeci">@ MouseButtonReleased</div><div class="ttdoc">One of the mouse button has been released.</div></div>
 <div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a428f3f906bf2f40cf2dcec224662719aac17e6984c1e5a887a49831beadee6bca"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aac17e6984c1e5a887a49831beadee6bca">ecstasy::integration::event::Event::Type::KeyPressed</a></div><div class="ttdeci">@ KeyPressed</div><div class="ttdoc">One of the keyboard key has been pressed.</div></div>
+<div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a16b8da1b1d8caed145e209098dde5541"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a16b8da1b1d8caed145e209098dde5541">ecstasy::integration::event::Event::gamepadAxis</a></div><div class="ttdeci">GamepadAxisEvent gamepadAxis</div><div class="ttdoc">Type::GamepadAxis associated event.</div><div class="ttdef"><b>Definition:</b> <a href="_event_8hpp_source.html#l00192">Event.hpp:192</a></div></div>
 <div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a428f3f906bf2f40cf2dcec224662719aa7349f643d689997b7c54bf93e4095f5c"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa7349f643d689997b7c54bf93e4095f5c">ecstasy::integration::event::Event::Type::MouseButtonPressed</a></div><div class="ttdeci">@ MouseButtonPressed</div><div class="ttdoc">One of the mouse button has been pressed.</div></div>
-<div class="ttc" id="anamespaceecstasy_1_1integration_1_1event_html"><div class="ttname"><a href="namespaceecstasy_1_1integration_1_1event.html">ecstasy::integration::event</a></div><div class="ttdoc">Event integration.</div><div class="ttdef"><b>Definition:</b> <a href="_event_8hpp_source.html#l00021">Event.hpp:21</a></div></div>
-<div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a6d46b0b0f2a97d183b856a64251b63e5"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a6d46b0b0f2a97d183b856a64251b63e5">ecstasy::integration::event::Event::type</a></div><div class="ttdeci">Type type</div><div class="ttdoc">Type of the event stored.</div><div class="ttdef"><b>Definition:</b> <a href="_event_8hpp_source.html#l00129">Event.hpp:129</a></div></div>
-<div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a5332f8dd213c0130fcb46522160b3a91"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a5332f8dd213c0130fcb46522160b3a91">ecstasy::integration::event::Event::text</a></div><div class="ttdeci">TextEnteredEvent text</div><div class="ttdoc">Type::TextEntered associated event.</div><div class="ttdef"><b>Definition:</b> <a href="_event_8hpp_source.html#l00143">Event.hpp:143</a></div></div>
-<div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a3af2c11a33b7176b25e009a2964d8abc"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a3af2c11a33b7176b25e009a2964d8abc">ecstasy::integration::event::Event::key</a></div><div class="ttdeci">KeyEvent key</div><div class="ttdoc">Type::KeyPressed &amp;&amp; Type::KeyReleased associated events.</div><div class="ttdef"><b>Definition:</b> <a href="_event_8hpp_source.html#l00142">Event.hpp:142</a></div></div>
-<div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a8e70999029df37f3b8ddc4b0dc0de432"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a8e70999029df37f3b8ddc4b0dc0de432">ecstasy::integration::event::Event::mouseMove</a></div><div class="ttdeci">MouseMoveEvent mouseMove</div><div class="ttdoc">Type::MouseMoved associated event.</div><div class="ttdef"><b>Definition:</b> <a href="_event_8hpp_source.html#l00141">Event.hpp:141</a></div></div>
+<div class="ttc" id="anamespaceecstasy_1_1integration_1_1event_html"><div class="ttname"><a href="namespaceecstasy_1_1integration_1_1event.html">ecstasy::integration::event</a></div><div class="ttdoc">Event integration.</div><div class="ttdef"><b>Definition:</b> <a href="_event_8hpp_source.html#l00024">Event.hpp:24</a></div></div>
+<div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a428f3f906bf2f40cf2dcec224662719aae2a9941e644616b8853693e7b3b22c96"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aae2a9941e644616b8853693e7b3b22c96">ecstasy::integration::event::Event::Type::GamepadButtonPressed</a></div><div class="ttdeci">@ GamepadButtonPressed</div><div class="ttdoc">One of the gamepads button has been pressed.</div></div>
+<div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a6d46b0b0f2a97d183b856a64251b63e5"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a6d46b0b0f2a97d183b856a64251b63e5">ecstasy::integration::event::Event::type</a></div><div class="ttdeci">Type type</div><div class="ttdoc">Type of the event stored.</div><div class="ttdef"><b>Definition:</b> <a href="_event_8hpp_source.html#l00175">Event.hpp:175</a></div></div>
+<div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a5332f8dd213c0130fcb46522160b3a91"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a5332f8dd213c0130fcb46522160b3a91">ecstasy::integration::event::Event::text</a></div><div class="ttdeci">TextEnteredEvent text</div><div class="ttdoc">Type::TextEntered associated event.</div><div class="ttdef"><b>Definition:</b> <a href="_event_8hpp_source.html#l00189">Event.hpp:189</a></div></div>
+<div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_adfdde96dce20a4739424418fd2106204"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#adfdde96dce20a4739424418fd2106204">ecstasy::integration::event::Event::gamepadConnected</a></div><div class="ttdeci">GamepadConnectedEvent gamepadConnected</div><div class="ttdoc">Type::GamepadConnected &amp;&amp; Type::GamepadDisconnected associated events.</div><div class="ttdef"><b>Definition:</b> <a href="_event_8hpp_source.html#l00194">Event.hpp:194</a></div></div>
+<div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a428f3f906bf2f40cf2dcec224662719aaf4590195d79da4a322ee9beb6b44ef66"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aaf4590195d79da4a322ee9beb6b44ef66">ecstasy::integration::event::Event::Type::GamepadButtonReleased</a></div><div class="ttdeci">@ GamepadButtonReleased</div><div class="ttdoc">One of the gamepads button has been released.</div></div>
+<div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a3af2c11a33b7176b25e009a2964d8abc"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a3af2c11a33b7176b25e009a2964d8abc">ecstasy::integration::event::Event::key</a></div><div class="ttdeci">KeyEvent key</div><div class="ttdoc">Type::KeyPressed &amp;&amp; Type::KeyReleased associated events.</div><div class="ttdef"><b>Definition:</b> <a href="_event_8hpp_source.html#l00188">Event.hpp:188</a></div></div>
+<div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a8e70999029df37f3b8ddc4b0dc0de432"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a8e70999029df37f3b8ddc4b0dc0de432">ecstasy::integration::event::Event::mouseMove</a></div><div class="ttdeci">MouseMoveEvent mouseMove</div><div class="ttdoc">Type::MouseMoved associated event.</div><div class="ttdef"><b>Definition:</b> <a href="_event_8hpp_source.html#l00187">Event.hpp:187</a></div></div>
+<div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a428f3f906bf2f40cf2dcec224662719aad5909d240c46150dc002123ef8abcc2f"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aad5909d240c46150dc002123ef8abcc2f">ecstasy::integration::event::Event::Type::GamepadConnected</a></div><div class="ttdeci">@ GamepadConnected</div><div class="ttdoc">One gamepad has been connected.</div></div>
 <div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a428f3f906bf2f40cf2dcec224662719aac2770ad109c8063ce69a3608a9a16c08"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aac2770ad109c8063ce69a3608a9a16c08">ecstasy::integration::event::Event::Type::MouseMoved</a></div><div class="ttdeci">@ MouseMoved</div><div class="ttdoc">The mouse cursor moved.</div></div>
-<div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a6a1f070fea4e9ebc841980aba424ccf5"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a6a1f070fea4e9ebc841980aba424ccf5">ecstasy::integration::event::Event::mouseButton</a></div><div class="ttdeci">MouseButtonEvent mouseButton</div><div class="ttdoc">Type::MouseButtonPressed &amp;&amp; Type::MouseButtonReleased associated events.</div><div class="ttdef"><b>Definition:</b> <a href="_event_8hpp_source.html#l00139">Event.hpp:139</a></div></div>
+<div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a428f3f906bf2f40cf2dcec224662719aac1c12a889ebdc886dc3738b5a146def0"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aac1c12a889ebdc886dc3738b5a146def0">ecstasy::integration::event::Event::Type::GamepadDisconnected</a></div><div class="ttdeci">@ GamepadDisconnected</div><div class="ttdoc">One gamepad has been disconnected.</div></div>
+<div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a6a1f070fea4e9ebc841980aba424ccf5"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a6a1f070fea4e9ebc841980aba424ccf5">ecstasy::integration::event::Event::mouseButton</a></div><div class="ttdeci">MouseButtonEvent mouseButton</div><div class="ttdoc">Type::MouseButtonPressed &amp;&amp; Type::MouseButtonReleased associated events.</div><div class="ttdef"><b>Definition:</b> <a href="_event_8hpp_source.html#l00185">Event.hpp:185</a></div></div>
+<div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a4cb329b4aad0740343e1dce052b94b0a"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a4cb329b4aad0740343e1dce052b94b0a">ecstasy::integration::event::Event::gamepadButton</a></div><div class="ttdeci">GamepadButtonEvent gamepadButton</div><div class="ttdoc">Type::GamepadButtonPressed &amp;&amp; Type::GamepadButtonReleased</div><div class="ttdef"><b>Definition:</b> <a href="_event_8hpp_source.html#l00190">Event.hpp:190</a></div></div>
 <div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a428f3f906bf2f40cf2dcec224662719aa4a77f07c8ad223b71ab4ce78a63841ab"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa4a77f07c8ad223b71ab4ce78a63841ab">ecstasy::integration::event::Event::Type::KeyReleased</a></div><div class="ttdeci">@ KeyReleased</div><div class="ttdoc">One of the keyboard key has been released.</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

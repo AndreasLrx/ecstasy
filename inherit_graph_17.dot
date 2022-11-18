@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="ecstasy::integration\l::event::MouseWheelScrollEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1integration_1_1event_1_1_mouse_wheel_scroll_event.html",tooltip="Event describing when a mouse wheel is scrolled."];
+  Node0 [label="ecstasy::integration\l::event::GamepadConnectedEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1integration_1_1event_1_1_gamepad_connected_event.html",tooltip="Event describing a gamepad connection or disconnection."];
 }

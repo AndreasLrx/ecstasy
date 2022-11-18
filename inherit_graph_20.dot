@@ -4,7 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="ecstasy::IStorage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_i_storage.html",tooltip="Base class of all components storage."];
-  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node1 [label="ecstasy::MapStorage\< C \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_map_storage.html",tooltip="Associative Map to store entity components."];
+  Node0 [label="ecstasy::integration\l::event::MouseMoveEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1integration_1_1event_1_1_mouse_move_event.html",tooltip="Event describing when the mouse move."];
 }

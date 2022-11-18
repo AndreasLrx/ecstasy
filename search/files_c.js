@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['pollevents_2ecpp_3950',['PollEvents.cpp',['../_poll_events_8cpp.html',1,'']]],
-  ['pollevents_2ehpp_3951',['PollEvents.hpp',['../_poll_events_8hpp.html',1,'']]]
+  ['objectwrapper_2ehpp_4032',['ObjectWrapper.hpp',['../_object_wrapper_8hpp.html',1,'']]],
+  ['optional_4033',['optional',['http://en.cppreference.com/w/cpp/header/optional.html',1,'']]],
+  ['or_2ehpp_4034',['Or.hpp',['../query_2modifiers_2_or_8hpp.html',1,'(Global Namespace)'],['../registry_2modifiers_2_or_8hpp.html',1,'(Global Namespace)']]],
+  ['ostream_4035',['ostream',['http://en.cppreference.com/w/cpp/header/ostream.html',1,'']]],
+  ['outer_5fjoin_2ehpp_4036',['outer_join.hpp',['../outer__join_8hpp.html',1,'']]]
 ];

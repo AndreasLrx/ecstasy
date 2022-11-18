@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['button_6177',['Button',['../classecstasy_1_1integration_1_1event_1_1_mouse.html#ae02624c1f85027219f4f594abe1c0d8e',1,'ecstasy::integration::event::Mouse']]]
+  ['axis_6297',['Axis',['../classecstasy_1_1integration_1_1event_1_1_gamepad.html#a3889e689614987816a56b70ee93cabcc',1,'ecstasy::integration::event::Gamepad']]]
 ];
