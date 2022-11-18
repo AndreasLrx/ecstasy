@@ -3,6 +3,7 @@ set(SRCROOT ${SRCROOT}/listeners)
 
 set(SRC 
     ${SRC}
+    ${INCROOT}/EventListeners.hpp
     ${INCROOT}/KeyListener.hpp
     ${INCROOT}/MouseButtonListener.hpp
     ${INCROOT}/MouseMoveListener.hpp

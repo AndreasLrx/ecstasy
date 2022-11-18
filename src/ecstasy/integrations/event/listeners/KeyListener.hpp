@@ -12,19 +12,13 @@
 #ifndef ECSTASY_INTEGRATIONS_EVENT_EVENTS_KEYLISTENER_HPP_
 #define ECSTASY_INTEGRATIONS_EVENT_EVENTS_KEYLISTENER_HPP_
 
-#include <functional>
-#include "ecstasy/resources/entity/Entity.hpp"
-
-namespace ecstasy
-{
-    class Registry;
-} // namespace ecstasy
+#include "EventListeners.hpp"
 
 namespace ecstasy::integration::event
 {
     struct KeyEvent;
 
-    using KeyListener = std::function<void(Registry &, Entity, const KeyEvent &)>;
+    using KeyListener = EventListener<KeyEvent>;
 } // namespace ecstasy::integration::event
 
 #endif /* !ECSTASY_INTEGRATIONS_EVENT_EVENTS_KEYLISTENER_HPP_ */

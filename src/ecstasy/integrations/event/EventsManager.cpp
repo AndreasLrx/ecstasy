@@ -10,38 +10,47 @@
 ///
 
 #include "EventsManager.hpp"
-#include "ecstasy/integrations/event/listeners/KeyListener.hpp"
-#include "ecstasy/integrations/event/listeners/MouseButtonListener.hpp"
-#include "ecstasy/integrations/event/listeners/MouseMoveListener.hpp"
-#include "ecstasy/integrations/event/listeners/MouseWheelScrollListener.hpp"
-#include "ecstasy/integrations/event/listeners/TextEnteredListener.hpp"
+#include "ecstasy/integrations/event/listeners/EventListeners.hpp"
+#include "ecstasy/query/Query.hpp"
 #include "ecstasy/registry/Registry.hpp"
+#include "ecstasy/registry/modifiers/Maybe.hpp"
 #include "ecstasy/resources/entity/Entities.hpp"
 #include "ecstasy/storages/MapStorage.hpp"
 #include "events/Event.hpp"
 
-// clang-format off
-#define CALL_LISTENERS(listenerType, e)                                                        \
-    for (auto [entity, listener] : registry.query<Entities, listenerType>())                   \
-        listener(registry, entity, e);
-
-// clang-format on
-
 namespace ecstasy::integration::event
 {
+    template <typename E>
+    constexpr void callListeners(Registry &registry, const E &event)
+    {
+        /// Stack allocation instead of dynamic using allocator
+        auto &entities = registry.getEntities();
+        auto maybeListener =
+            typename ecstasy::Maybe<EventListener<E>>::Modifier(registry.getStorageSafe<EventListener<E>>());
+        auto maybeListeners =
+            typename ecstasy::Maybe<EventListeners<E>>::Modifier(registry.getStorageSafe<EventListeners<E>>());
+
+        for (auto [entity, listener, listeners] : ecstasy::query::Query(entities, maybeListener, maybeListeners)) {
+            if (listener)
+                listener.value()(registry, entity, event);
+            if (listeners)
+                listeners.value()(registry, entity, event);
+        }
+    }
+
     void EventsManager::handleEvent(Registry &registry, const Event &event)
     {
         switch (event.type) {
             case Event::Type::MouseButtonPressed:
             case Event::Type::MouseButtonReleased:
-                CALL_LISTENERS(MouseButtonListener, event.mouseButton)
+                callListeners(registry, event.mouseButton);
 
                 if (registry.hasResource<Mouse>())
                     registry.getResource<Mouse>().setButtonState(event.mouseButton.button, event.mouseButton.pressed);
                 break;
-            case Event::Type::MouseWheelScrolled: CALL_LISTENERS(MouseWheelScrollListener, event.mouseWheel) break;
+            case Event::Type::MouseWheelScrolled: callListeners(registry, event.mouseWheel); break;
             case Event::Type::MouseMoved:
-                CALL_LISTENERS(MouseMoveListener, event.mouseMove)
+                callListeners(registry, event.mouseMove);
 
                 if (registry.hasResource<Mouse>()) {
                     Mouse &mouse = registry.getResource<Mouse>();
@@ -50,12 +59,12 @@ namespace ecstasy::integration::event
                 break;
             case Event::Type::KeyPressed:
             case Event::Type::KeyReleased:
-                CALL_LISTENERS(KeyListener, event.key)
+                callListeners(registry, event.key);
 
                 if (registry.hasResource<Keyboard>())
                     registry.getResource<Keyboard>().setKeyState(event.key.key, event.key.pressed);
                 break;
-            case Event::Type::TextEntered: CALL_LISTENERS(TextEnteredListener, event.text) break;
+            case Event::Type::TextEntered: callListeners(registry, event.text); break;
             default: break;
         }
     }
