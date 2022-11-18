@@ -22,7 +22,7 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "ECSTASY(EntityComponentSystem??Serialization/Serialized?)", "index.html", [
+  [ "ECSTASY(EntityComponentSystemTowardArchitectureSavingYears)", "index.html", [
     [ "ECSTASY (Entity Component System Toward Architecture Saving Years)", "index.html", [
       [ "Authors", "index.html#autotoc_md1", null ],
       [ "Download", "index.html#autotoc_md2", null ],
