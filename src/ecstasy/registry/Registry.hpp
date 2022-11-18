@@ -45,7 +45,7 @@ namespace ecstasy
         ///
         /// @tparam C Type of the variable to fetch.
         ///
-        /// @return constexpr getStorageType<C>& Associated queryable (if no specific case the storage for C is
+        /// @return getStorageType<C>& Associated queryable (if no specific case the storage for C is
         /// returned).
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)

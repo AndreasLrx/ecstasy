@@ -160,7 +160,7 @@ namespace ecstasy::integration::event
         ///
         /// @param[in] key evaluated key.
         ///
-        /// @return constexpr bool Whether the key is down.
+        /// @return bool Whether the key is down.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-16)
@@ -175,7 +175,7 @@ namespace ecstasy::integration::event
         ///
         /// @param[in] key evaluated key.
         ///
-        /// @return constexpr bool Whether the key is up.
+        /// @return bool Whether the key is up.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-16)
@@ -208,7 +208,7 @@ namespace ecstasy::integration::event
         ///
         /// @param[in] key Evaluated key.
         ///
-        /// @return constexpr const char* Key name if valid, nullptr otherwise.
+        /// @return const char* Key name if valid, nullptr otherwise.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-17)

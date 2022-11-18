@@ -213,7 +213,7 @@ namespace ecstasy
         ///
         /// @brief Get the Alive entities mask.
         ///
-        /// @return constexpr const util::BitSet& alive entities mask.
+        /// @return const util::BitSet& alive entities mask.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-20)

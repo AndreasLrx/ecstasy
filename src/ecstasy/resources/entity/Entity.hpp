@@ -42,7 +42,7 @@ namespace ecstasy
         ///
         /// @brief Get the entity identifier,
         ///
-        /// @return constexpr Index entity index (identifier)
+        /// @return Index entity index (identifier)
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-18)
@@ -59,7 +59,7 @@ namespace ecstasy
         ///
         /// @note A generation greater than 0 doesn't mean the entity is always alive.
         ///
-        /// @return constexpr Generation The generation of this entity.
+        /// @return Generation The generation of this entity.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-18)

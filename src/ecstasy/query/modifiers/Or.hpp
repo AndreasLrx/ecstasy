@@ -62,7 +62,7 @@ namespace ecstasy::query::modifier
         /// @note @ref Queryable constraint.
         /// @warning Use reload masks if the operand masks have changed since the construction.
         ///
-        /// @return constexpr const util::BitSet& resulting mask.
+        /// @return const util::BitSet& resulting mask.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-27)

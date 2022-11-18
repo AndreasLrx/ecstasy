@@ -4,6 +4,7 @@ set(SRCROOT ${SRCROOT}/events)
 set(SRC 
     ${SRC}
     ${INCROOT}/Event.hpp
+    ${INCROOT}/events.hpp
     ${INCROOT}/KeyEvent.hpp
     ${INCROOT}/KeyPressedEvent.hpp
     ${INCROOT}/KeyReleasedEvent.hpp

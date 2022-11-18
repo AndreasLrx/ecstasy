@@ -44,7 +44,7 @@ namespace ecstasy::query
         ///
         /// @tparam Q Evaluated type.
         ///
-        /// @return constexpr bool Whether the type Q is in the @ref SelectedQueryables types.
+        /// @return bool Whether the type Q is in the @ref SelectedQueryables types.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-25)
@@ -70,7 +70,7 @@ namespace ecstasy::query
             ///
             /// @param[in] valids valid sorted queryables.
             ///
-            /// @return constexpr SelectedTuple selected queryables.
+            /// @return SelectedTuple selected queryables.
             ///
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-28)
@@ -90,7 +90,7 @@ namespace ecstasy::query
             /// @param[in] current evaluated queryable.
             /// @param[in] lefts queryable to sort after @p current.
             ///
-            /// @return constexpr SelectedTuple selected queryables.
+            /// @return SelectedTuple selected queryables.
             ///
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-28)
@@ -116,7 +116,7 @@ namespace ecstasy::query
         ///
         /// @param[in] queryables selected queryables found in the where clause.
         ///
-        /// @return constexpr SelectedTuple selected queryables tuple.
+        /// @return SelectedTuple selected queryables tuple.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-28)
@@ -149,7 +149,7 @@ namespace ecstasy::query
             ///
             /// @tparam Q Evaluated type.
             ///
-            /// @return constexpr bool Whether the type Q is in the @ref SelectedQueryables types and not already
+            /// @return bool Whether the type Q is in the @ref SelectedQueryables types and not already
             /// selected (in the Lefts types).
             ///
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
@@ -167,7 +167,7 @@ namespace ecstasy::query
             /// @param[in] lefts Already accepted queryables.
             /// @param[in] pivot Last queryable, will be accepted if @p ContainsPivot is true.
             ///
-            /// @return constexpr SelectedTuple selected queryables.
+            /// @return SelectedTuple selected queryables.
             ///
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-22)
@@ -198,7 +198,7 @@ namespace ecstasy::query
             /// @param[in] nextPivot Following queryable, will be use to set the recursive @p ContainsPivot value.
             /// @param[in] rights Remaining queryables, first one will become the @p nextPivot of the recursive call.
             ///
-            /// @return constexpr SelectedTuple selected queryables.
+            /// @return SelectedTuple selected queryables.
             ///
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-22)
@@ -224,7 +224,7 @@ namespace ecstasy::query
         ///
         /// @param[in] queryables given queryables.
         ///
-        /// @return constexpr SelectedTuple selected queryables.
+        /// @return SelectedTuple selected queryables.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-22)
