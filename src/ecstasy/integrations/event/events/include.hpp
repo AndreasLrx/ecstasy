@@ -13,6 +13,11 @@
 #define ECSTASY_INTEGRATIONS_EVENT_EVENTS_HPP_
 
 #include "Event.hpp"
+#include "GamepadAxisEvent.hpp"
+#include "GamepadButtonEvent.hpp"
+#include "GamepadButtonPressedEvent.hpp"
+#include "GamepadButtonReleasedEvent.hpp"
+#include "GamepadConnectedEvent.hpp"
 #include "KeyEvent.hpp"
 #include "KeyPressedEvent.hpp"
 #include "KeyReleasedEvent.hpp"

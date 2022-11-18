@@ -1,9 +1,11 @@
 #include <gtest/gtest.h>
 #include "ecstasy/integrations/event/EventsManager.hpp"
 #include "ecstasy/integrations/event/events/Event.hpp"
+#include "ecstasy/integrations/event/events/GamepadAxisEvent.hpp"
 #include "ecstasy/integrations/event/events/GamepadButtonPressedEvent.hpp"
 #include "ecstasy/integrations/event/events/GamepadButtonReleasedEvent.hpp"
 #include "ecstasy/integrations/event/inputs/Gamepads.hpp"
+#include "ecstasy/integrations/event/listeners/GamepadAxisListener.hpp"
 #include "ecstasy/integrations/event/listeners/GamepadButtonListener.hpp"
 #include "ecstasy/integrations/event/listeners/GamepadConnectedListener.hpp"
 #include "ecstasy/registry/Registry.hpp"
@@ -104,4 +106,26 @@ TEST(Event, GamepadConnected)
     GTEST_ASSERT_FALSE(gamepadsState.get(0).isConnected());
     event::EventsManager::handleEvent(registry, event::GamepadConnectedEvent(0, true));
     GTEST_ASSERT_TRUE(gamepadsState.get(0).isConnected());
+}
+
+TEST(Event, GamepadAxis)
+{
+    Registry registry;
+    float value = 0.f;
+
+    registry.entityBuilder()
+        .with<event::GamepadAxisListener>([&value](Registry &r, Entity e, const event::GamepadAxisEvent &event) {
+            (void)r;
+            (void)e;
+            value = event.value;
+        })
+        .build();
+    GTEST_ASSERT_EQ(value, 0.f);
+    event::EventsManager::handleEvent(registry, event::GamepadAxisEvent(0, event::Gamepad::Axis::LeftX, 0.6f));
+    GTEST_ASSERT_EQ(value, 0.6f);
+
+    event::Gamepads &gamepadsState = registry.addResource<event::Gamepads>();
+    GTEST_ASSERT_EQ(gamepadsState.get(0).getAxisValue(event::Gamepad::Axis::TriggerLeft), -1.f);
+    event::EventsManager::handleEvent(registry, event::GamepadAxisEvent(0, event::Gamepad::Axis::TriggerLeft, 0.3f));
+    GTEST_ASSERT_EQ(gamepadsState.get(0).getAxisValue(event::Gamepad::Axis::TriggerLeft), 0.3f);
 }

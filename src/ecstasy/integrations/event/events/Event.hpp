@@ -12,6 +12,7 @@
 #ifndef ECSTASY_INTEGRATION_EVENT_EVENTS_EVENT_HPP_
 #define ECSTASY_INTEGRATION_EVENT_EVENTS_EVENT_HPP_
 
+#include "GamepadAxisEvent.hpp"
 #include "GamepadButtonEvent.hpp"
 #include "GamepadConnectedEvent.hpp"
 #include "KeyEvent.hpp"
@@ -41,6 +42,7 @@ namespace ecstasy::integration::event
             TextEntered,           ///< A character has been entered.
             GamepadButtonPressed,  ///< One of the gamepads button has been pressed.
             GamepadButtonReleased, ///< One of the gamepads button has been released.
+            GamepadAxis,           ///< One of the gamepads axis value changed.
             GamepadConnected,      ///< One gamepad has been connected.
             GamepadDisconnected,   ///< One gamepad has been disconnected.
 
@@ -143,6 +145,18 @@ namespace ecstasy::integration::event
         }
 
         ///
+        /// @brief Construct a gamepad axis event wrapper.
+        ///
+        /// @param[in] event Source event.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-06)
+        ///
+        constexpr Event(GamepadAxisEvent &&event) : type(Type::GamepadAxis), gamepadAxis(event)
+        {
+        }
+
+        ///
         /// @brief Default desctructor.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
@@ -174,7 +188,8 @@ namespace ecstasy::integration::event
             KeyEvent key;                     ///< @ref Type::KeyPressed && @ref Type::KeyReleased associated events.
             TextEnteredEvent text;            ///< @ref Type::TextEntered associated event.
             GamepadButtonEvent gamepadButton; ///< @ref Type::GamepadButtonPressed && @ref Type::GamepadButtonReleased
-                                              ///< associated events.
+            ///< associated events.
+            GamepadAxisEvent gamepadAxis; ///< @ref Type::GamepadAxis associated event.
             GamepadConnectedEvent
                 gamepadConnected; ///< @ref Type::GamepadConnected && @ref Type::GamepadDisconnected associated events.
         };

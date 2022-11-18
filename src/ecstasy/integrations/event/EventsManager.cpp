@@ -84,6 +84,14 @@ namespace ecstasy::integration::event
                         .get(event.gamepadConnected.id)
                         .setConnected(event.gamepadConnected.connected);
                 break;
+            case Event::Type::GamepadAxis:
+                callListeners(registry, event.gamepadAxis);
+
+                if (registry.hasResource<Gamepads>())
+                    registry.getResource<Gamepads>()
+                        .get(event.gamepadAxis.id)
+                        .setAxisValue(event.gamepadAxis.axis, event.gamepadAxis.value);
+                break;
             default: break;
         }
     }

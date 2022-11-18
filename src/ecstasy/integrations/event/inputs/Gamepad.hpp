@@ -36,21 +36,14 @@ namespace ecstasy::integration::event
         /// @brief Gamepad buttons
         enum class Button {
             Unknown = -1, ///< Unhandled button
-            /// D-Pad
-            DPadFaceUp = 0, ///< DPAD up button
-            DPadFaceRight,  ///< DPAD right button
-            DPadFaceDown,   ///< DPAD down button
-            DPadFaceLeft,   ///< DPAD left button
             /// Face Buttons
-            FaceUp,    ///< Face button up (i.e. PS: Triangle, Xbox: Y)
-            FaceRight, ///< Face button right (i.e. PS: Square, Xbox: X)
-            FaceDown,  ///< Face button down (i.e. PS: Cross, Xbox: A)
-            FaceLeft,  ///< Face button left (i.e. PS: Circle, Xbox: B)
+            FaceUp = 0, ///< Face button up (i.e. PS: Triangle, Xbox: Y)
+            FaceRight,  ///< Face button right (i.e. PS: Square, Xbox: X)
+            FaceDown,   ///< Face button down (i.e. PS: Cross, Xbox: A)
+            FaceLeft,   ///< Face button left (i.e. PS: Circle, Xbox: B)
             /// Backward buttons
-            BumperLeft, ///< Left bumper (LB / L1)
-            // LEFT_TRIGGER,  ///< Left trigger (LT / L2)
+            BumperLeft,  ///< Left bumper (LB / L1)
             BumperRight, ///< Right bumper (RB / R1)
-            // RIGHT_TRIGGER, ///< Right trigger (RT / R2)
             /// Middle buttons
             MiddleLeft,  ///< Left center button (i.e. PS: Select, Xbox: back)
             Middle,      ///< Center buttons (i.e. PS: PS, Xbox: XBOX)
@@ -64,12 +57,15 @@ namespace ecstasy::integration::event
 
         /// @brief Gamepad axis, associated value must be in range [-1, 1]
         enum class Axis {
-            LeftX,        ///< Left joystick X axis (default: 0)
+            Unknown = -1, ///< Unhandled axis
+            LeftX = 0,    ///< Left joystick X axis (default: 0)
             LeftY,        ///< Left joystick Y axis (default: 0)
             RightX,       ///< Right joystick X axis (default: 0)
             RightY,       ///< Right joystick Y axis (default: 0)
             TriggerLeft,  ///< Left trigger (default: -1)
             TriggerRight, ///< Right trigger (default: -1)
+            DPadX,        ///< DPad X axis (default: 0)
+            DPadY,        ///< DPad Y Axis (default: 0)
 
             Count ///< Keep last -- the total number of gamepad axis
 
@@ -77,8 +73,9 @@ namespace ecstasy::integration::event
 
         /// @brief Gamepad joysticks (a joystick has 2 combined axis)
         enum class Joystick {
-            Left,  ///< Left joystick
-            Right, ///< Right joystick
+            Unknown = -1, ///< Unhandled joystick
+            Left = 0,     ///< Left joystick
+            Right,        ///< Right joystick
 
             Count ///< Keep last -- the total number of gamepad joysticks
         };
@@ -91,6 +88,8 @@ namespace ecstasy::integration::event
         ///
         constexpr Gamepad(std::size_t id = 0) : _id(id), _connected(false), _buttons({false}), _axis({0.f})
         {
+            setAxisValue(Axis::TriggerLeft, -1.f);
+            setAxisValue(Axis::TriggerRight, -1.f);
         }
 
         ///
@@ -249,10 +248,6 @@ namespace ecstasy::integration::event
         {
             switch (button) {
                 ECSTASY_BUTTON_NAME_CASE(Unknown);
-                ECSTASY_BUTTON_NAME_CASE(DPadFaceUp);
-                ECSTASY_BUTTON_NAME_CASE(DPadFaceRight);
-                ECSTASY_BUTTON_NAME_CASE(DPadFaceDown);
-                ECSTASY_BUTTON_NAME_CASE(DPadFaceLeft);
                 ECSTASY_BUTTON_NAME_CASE(FaceUp);
                 ECSTASY_BUTTON_NAME_CASE(FaceRight);
                 ECSTASY_BUTTON_NAME_CASE(FaceDown);
@@ -283,12 +278,15 @@ namespace ecstasy::integration::event
         constexpr static const char *getAxisName(Axis axis)
         {
             switch (axis) {
+                ECSTASY_AXIS_NAME_CASE(Unknown);
                 ECSTASY_AXIS_NAME_CASE(LeftX);
                 ECSTASY_AXIS_NAME_CASE(LeftY);
                 ECSTASY_AXIS_NAME_CASE(RightX);
                 ECSTASY_AXIS_NAME_CASE(RightY);
                 ECSTASY_AXIS_NAME_CASE(TriggerLeft);
                 ECSTASY_AXIS_NAME_CASE(TriggerRight);
+                ECSTASY_AXIS_NAME_CASE(DPadX);
+                ECSTASY_AXIS_NAME_CASE(DPadY);
                 default: return nullptr;
             }
         }

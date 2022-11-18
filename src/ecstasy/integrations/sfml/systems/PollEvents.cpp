@@ -10,7 +10,6 @@
 ///
 
 #include <SFML/Graphics.hpp>
-#include <iostream>
 
 #include "PollEvents.hpp"
 #include "ecstasy/integrations/event/EventsManager.hpp"
@@ -42,6 +41,22 @@ namespace ecstasy::integration::sfml
             case 10: return event::Gamepad::Button::ThumbRight;
 
             default: return event::Gamepad::Button::Unknown;
+        }
+    }
+
+    static event::Gamepad::Axis getGamepadAxis(int sfmlAxis)
+    {
+        switch (sfmlAxis) {
+            case 0: return event::Gamepad::Axis::LeftX;
+            case 1: return event::Gamepad::Axis::LeftY;
+            case 2: return event::Gamepad::Axis::TriggerLeft;
+            case 3: return event::Gamepad::Axis::TriggerRight;
+            case 4: return event::Gamepad::Axis::RightX;
+            case 5: return event::Gamepad::Axis::RightY;
+            case 6: return event::Gamepad::Axis::DPadX;
+            case 7: return event::Gamepad::Axis::DPadY;
+
+            default: return event::Gamepad::Axis::Unknown;
         }
     }
 
@@ -95,6 +110,11 @@ namespace ecstasy::integration::sfml
                     event::EventsManager::handleEvent(registry,
                         event::GamepadConnectedEvent(
                             event.joystickConnect.joystickId, event.type == sf::Event::JoystickConnected));
+                    break;
+                case sf::Event::JoystickMoved:
+                    event::EventsManager::handleEvent(registry,
+                        event::GamepadAxisEvent(event.joystickMove.joystickId, getGamepadAxis(event.joystickMove.axis),
+                            event.joystickMove.position / 100.f));
                     break;
 
                 case sf::Event::Closed: windowWrapper.get().close(); break;

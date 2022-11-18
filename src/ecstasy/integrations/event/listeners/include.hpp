@@ -13,6 +13,9 @@
 #define ECSTASY_INTEGRATIONS_EVENT_LISTENERS_HPP_
 
 #include "EventListeners.hpp"
+#include "GamepadAxisListener.hpp"
+#include "GamepadButtonListener.hpp"
+#include "GamepadConnectedListener.hpp"
 #include "KeyListener.hpp"
 #include "MouseButtonListener.hpp"
 #include "MouseMoveListener.hpp"

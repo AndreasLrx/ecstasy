@@ -4,6 +4,7 @@ set(SRCROOT ${SRCROOT}/events)
 set(SRC 
     ${SRC}
     ${INCROOT}/Event.hpp
+    ${INCROOT}/GamepadAxisEvent.hpp
     ${INCROOT}/GamepadButtonEvent.hpp
     ${INCROOT}/GamepadButtonPressedEvent.hpp
     ${INCROOT}/GamepadButtonReleasedEvent.hpp
