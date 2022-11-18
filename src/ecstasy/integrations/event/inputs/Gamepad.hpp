@@ -14,6 +14,14 @@
 
 #include <array>
 #include <cstdint>
+#include <ostream>
+
+/// @internal
+#define ECSTASY_BUTTON_NAME_CASE(button) \
+    case Button::button: return #button
+/// @internal
+#define ECSTASY_AXIS_NAME_CASE(axis) \
+    case Axis::axis: return #axis
 
 namespace ecstasy::integration::event
 {
@@ -27,41 +35,41 @@ namespace ecstasy::integration::event
       public:
         /// @brief Gamepad buttons
         enum class Button {
-            UNKNOWN = -1, ///< Unhandled button
+            Unknown = -1, ///< Unhandled button
             /// D-Pad
-            DPAD_FACE_UP = 0, ///< DPAD up button
-            DPAD_FACE_RIGHT,  ///< DPAD right button
-            DPAD_FACE_DOWN,   ///< DPAD down button
-            DPAD_FACE_LEFT,   ///< DPAD left button
+            DPadFaceUp = 0, ///< DPAD up button
+            DPadFaceRight,  ///< DPAD right button
+            DPadFaceDown,   ///< DPAD down button
+            DPadFaceLeft,   ///< DPAD left button
             /// Face Buttons
-            FACE_UP,    ///< Face button up (i.e. PS: Triangle, Xbox: Y)
-            FACE_RIGHT, ///< Face button right (i.e. PS: Square, Xbox: X)
-            FACE_DOWN,  ///< Face button down (i.e. PS: Cross, Xbox: A)
-            FACE_LEFT,  ///< Face button left (i.e. PS: Circle, Xbox: B)
+            FaceUp,    ///< Face button up (i.e. PS: Triangle, Xbox: Y)
+            FaceRight, ///< Face button right (i.e. PS: Square, Xbox: X)
+            FaceDown,  ///< Face button down (i.e. PS: Cross, Xbox: A)
+            FaceLeft,  ///< Face button left (i.e. PS: Circle, Xbox: B)
             /// Backward buttons
-            LEFT_BUMPER, ///< Left bumper (LB / L1)
+            BumperLeft, ///< Left bumper (LB / L1)
             // LEFT_TRIGGER,  ///< Left trigger (LT / L2)
-            RIGHT_BUMPER, ///< Right bumper (RB / R1)
+            BumperRight, ///< Right bumper (RB / R1)
             // RIGHT_TRIGGER, ///< Right trigger (RT / R2)
             /// Middle buttons
-            MIDDLE_LEFT,  ///< Left center button (i.e. PS: Select, Xbox: back)
-            MIDDLE,       ///< Center buttons (i.e. PS: PS, Xbox: XBOX)
-            MIDDLE_RIGHT, ///< Right center button (i.e. PS: Start, Xbox: Start)
+            MiddleLeft,  ///< Left center button (i.e. PS: Select, Xbox: back)
+            Middle,      ///< Center buttons (i.e. PS: PS, Xbox: XBOX)
+            MiddleRight, ///< Right center button (i.e. PS: Start, Xbox: Start)
             /// Joystick buttons
-            LEFT_THUMB,  ///< Left joystick button
-            RIGHT_THUMB, ///< Right joystick button
+            ThumbLeft,  ///< Left joystick button
+            ThumbRight, ///< Right joystick button
 
             Count ///< Keep last -- the total number of gamepad buttons
         };
 
         /// @brief Gamepad axis, associated value must be in range [-1, 1]
         enum class Axis {
-            LEFT_X,        ///< Left joystick X axis (default: 0)
-            LEFT_Y,        ///< Left joystick Y axis (default: 0)
-            RIGHT_X,       ///< Right joystick X axis (default: 0)
-            RIGHT_Y,       ///< Right joystick Y axis (default: 0)
-            LEFT_TRIGGER,  ///< Left trigger (default: -1)
-            RIGHT_TRIGGER, ///< Right trigger (default: -1)
+            LeftX,        ///< Left joystick X axis (default: 0)
+            LeftY,        ///< Left joystick Y axis (default: 0)
+            RightX,       ///< Right joystick X axis (default: 0)
+            RightY,       ///< Right joystick Y axis (default: 0)
+            TriggerLeft,  ///< Left trigger (default: -1)
+            TriggerRight, ///< Right trigger (default: -1)
 
             Count ///< Keep last -- the total number of gamepad axis
 
@@ -69,8 +77,8 @@ namespace ecstasy::integration::event
 
         /// @brief Gamepad joysticks (a joystick has 2 combined axis)
         enum class Joystick {
-            LEFT,  ///< Left joystick
-            RIGHT, ///< Right joystick
+            Left,  ///< Left joystick
+            Right, ///< Right joystick
 
             Count ///< Keep last -- the total number of gamepad joysticks
         };
@@ -225,6 +233,66 @@ namespace ecstasy::integration::event
             _axis[static_cast<std::size_t>(axis)] = value;
         }
 
+        ///
+        /// @brief Get the name of a button.
+        ///
+        /// @warning If the button is Button::Count or isn't a valid button, @ref nullptr is returned.
+        ///
+        /// @param[in] button Evaluated button.
+        ///
+        /// @return const char* Button name if valid, nullptr otherwise.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-17)
+        ///
+        constexpr static const char *getButtonName(Button button)
+        {
+            switch (button) {
+                ECSTASY_BUTTON_NAME_CASE(Unknown);
+                ECSTASY_BUTTON_NAME_CASE(DPadFaceUp);
+                ECSTASY_BUTTON_NAME_CASE(DPadFaceRight);
+                ECSTASY_BUTTON_NAME_CASE(DPadFaceDown);
+                ECSTASY_BUTTON_NAME_CASE(DPadFaceLeft);
+                ECSTASY_BUTTON_NAME_CASE(FaceUp);
+                ECSTASY_BUTTON_NAME_CASE(FaceRight);
+                ECSTASY_BUTTON_NAME_CASE(FaceDown);
+                ECSTASY_BUTTON_NAME_CASE(FaceLeft);
+                ECSTASY_BUTTON_NAME_CASE(BumperLeft);
+                ECSTASY_BUTTON_NAME_CASE(BumperRight);
+                ECSTASY_BUTTON_NAME_CASE(MiddleLeft);
+                ECSTASY_BUTTON_NAME_CASE(Middle);
+                ECSTASY_BUTTON_NAME_CASE(MiddleRight);
+                ECSTASY_BUTTON_NAME_CASE(ThumbLeft);
+                ECSTASY_BUTTON_NAME_CASE(ThumbRight);
+                default: return nullptr;
+            }
+        }
+
+        ///
+        /// @brief Get the name of an axis.
+        ///
+        /// @warning If the axis is Axis::Count or isn't a valid axis, @ref nullptr is returned.
+        ///
+        /// @param[in] axis Evaluated axis.
+        ///
+        /// @return const char* Axis name if valid, nullptr otherwise.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-17)
+        ///
+        constexpr static const char *getAxisName(Axis axis)
+        {
+            switch (axis) {
+                ECSTASY_AXIS_NAME_CASE(LeftX);
+                ECSTASY_AXIS_NAME_CASE(LeftY);
+                ECSTASY_AXIS_NAME_CASE(RightX);
+                ECSTASY_AXIS_NAME_CASE(RightY);
+                ECSTASY_AXIS_NAME_CASE(TriggerLeft);
+                ECSTASY_AXIS_NAME_CASE(TriggerRight);
+                default: return nullptr;
+            }
+        }
+
       private:
         std::size_t _id;
         bool _connected;
@@ -232,5 +300,11 @@ namespace ecstasy::integration::event
         std::array<float, static_cast<std::size_t>(Axis::Count)> _axis;
     };
 } // namespace ecstasy::integration::event
+
+#undef ECSTASY_BUTTON_NAME_CASE
+#undef ECSTASY_AXIS_NAME_CASE
+
+std::ostream &operator<<(std::ostream &stream, const ecstasy::integration::event::Gamepad::Button &button);
+std::ostream &operator<<(std::ostream &stream, const ecstasy::integration::event::Gamepad::Axis &axis);
 
 #endif /* !ECSTASY_INTEGRATIONS_EVENT_INPUTS_GAMEPAD_HPP_ */

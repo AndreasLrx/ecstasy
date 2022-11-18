@@ -4,6 +4,7 @@ set(SRCROOT ${SRCROOT}/listeners)
 set(SRC 
     ${SRC}
     ${INCROOT}/EventListeners.hpp
+    ${INCROOT}/GamepadButtonListener.hpp
     ${INCROOT}/include.hpp
     ${INCROOT}/KeyListener.hpp
     ${INCROOT}/MouseButtonListener.hpp

@@ -10,6 +10,7 @@
 ///
 
 #include <SFML/Graphics.hpp>
+#include <iostream>
 
 #include "PollEvents.hpp"
 #include "ecstasy/integrations/event/EventsManager.hpp"
@@ -25,6 +26,25 @@ namespace event = ecstasy::integration::event;
 
 namespace ecstasy::integration::sfml
 {
+    static event::Gamepad::Button getGamepadButton(int sfmlButton)
+    {
+        switch (sfmlButton) {
+            case 0: return event::Gamepad::Button::FaceDown;
+            case 1: return event::Gamepad::Button::FaceRight;
+            case 2: return event::Gamepad::Button::FaceLeft;
+            case 3: return event::Gamepad::Button::FaceUp;
+            case 4: return event::Gamepad::Button::BumperLeft;
+            case 5: return event::Gamepad::Button::BumperRight;
+            case 6: return event::Gamepad::Button::MiddleLeft;
+            case 7: return event::Gamepad::Button::MiddleRight;
+            case 8: return event::Gamepad::Button::Middle;
+            case 9: return event::Gamepad::Button::ThumbLeft;
+            case 10: return event::Gamepad::Button::ThumbRight;
+
+            default: return event::Gamepad::Button::Unknown;
+        }
+    }
+
     void PollEvents::run(ecstasy::Registry &registry)
     {
         if (!registry.hasResource<RenderWindow>())
@@ -36,12 +56,10 @@ namespace ecstasy::integration::sfml
             switch (event.type) {
                 /// Mouse events
                 case sf::Event::MouseButtonPressed:
-                    event::EventsManager::handleEvent(registry,
-                        event::MouseButtonPressedEvent(static_cast<event::Mouse::Button>(event.mouseButton.button)));
-                    break;
                 case sf::Event::MouseButtonReleased:
                     event::EventsManager::handleEvent(registry,
-                        event::MouseButtonReleasedEvent(static_cast<event::Mouse::Button>(event.mouseButton.button)));
+                        event::MouseButtonEvent(static_cast<event::Mouse::Button>(event.mouseButton.button),
+                            event.type == sf::Event::MouseButtonPressed));
                     break;
                 case sf::Event::MouseWheelScrolled:
                     event::EventsManager::handleEvent(registry,
@@ -55,15 +73,22 @@ namespace ecstasy::integration::sfml
 
                 /// Keyboard events
                 case sf::Event::KeyPressed:
-                    event::EventsManager::handleEvent(
-                        registry, event::KeyPressedEvent(static_cast<event::Keyboard::Key>(event.key.code)));
-                    break;
                 case sf::Event::KeyReleased:
-                    event::EventsManager::handleEvent(
-                        registry, event::KeyReleasedEvent(static_cast<event::Keyboard::Key>(event.key.code)));
+                    event::EventsManager::handleEvent(registry,
+                        event::KeyEvent(
+                            static_cast<event::Keyboard::Key>(event.key.code), event.type == sf::Event::KeyPressed));
                     break;
                 case sf::Event::TextEntered:
                     event::EventsManager::handleEvent(registry, event::TextEnteredEvent(event.text.unicode));
+                    break;
+
+                /// Gamepad events
+                case sf::Event::JoystickButtonPressed:
+                case sf::Event::JoystickButtonReleased:
+                    event::EventsManager::handleEvent(registry,
+                        event::GamepadButtonEvent(event.joystickButton.joystickId,
+                            getGamepadButton(event.joystickButton.button),
+                            event.type == sf::Event::JoystickButtonPressed));
                     break;
 
                 case sf::Event::Closed: windowWrapper.get().close(); break;

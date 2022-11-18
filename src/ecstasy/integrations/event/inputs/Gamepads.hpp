@@ -20,14 +20,14 @@ namespace ecstasy::integration::event
     ///
     /// @brief Current Gamepads states. Hold informations about all the gamepads.
     ///
-    /// @tparam N Number of gamepads supported.
-    ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-11-18)
     ///
-    template <std::size_t N>
     class Gamepads : public ecstasy::Resource {
       public:
+        /// @brief Number of supported gamepads.
+        static const size_t GamepadCount = 4;
+
         ///
         /// @brief Construct a new Gamepads Resource.
         ///
@@ -36,7 +36,7 @@ namespace ecstasy::integration::event
         ///
         constexpr Gamepads()
         {
-            for (size_t i = 0; i < N; i++)
+            for (size_t i = 0; i < GamepadCount; i++)
                 _gamepads[i] = Gamepad(i);
         }
 
@@ -83,7 +83,7 @@ namespace ecstasy::integration::event
         }
 
       private:
-        std::array<Gamepad, N> _gamepads;
+        std::array<Gamepad, GamepadCount> _gamepads;
     };
 } // namespace ecstasy::integration::event
 

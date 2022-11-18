@@ -18,11 +18,13 @@
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/storages/MapStorage.hpp"
 
+#include "ecstasy/integrations/event/events/GamepadButtonEvent.hpp"
 #include "ecstasy/integrations/event/events/KeyEvent.hpp"
 #include "ecstasy/integrations/event/events/MouseButtonEvent.hpp"
 #include "ecstasy/integrations/event/events/MouseMoveEvent.hpp"
 #include "ecstasy/integrations/event/events/MouseWheelScrollEvent.hpp"
 #include "ecstasy/integrations/event/events/TextEnteredEvent.hpp"
+#include "ecstasy/integrations/event/listeners/GamepadButtonListener.hpp"
 #include "ecstasy/integrations/event/listeners/KeyListener.hpp"
 #include "ecstasy/integrations/event/listeners/MouseButtonListener.hpp"
 #include "ecstasy/integrations/event/listeners/MouseMoveListener.hpp"
@@ -65,6 +67,12 @@ static void addEventListeners(ecstasy::Registry &registry)
                 (void)entity;
                 std::cout << "Text entered: " << esf::Encoding::utf32CharToUtf8String(e.unicode) << std::endl;
             })
+        .with<event::GamepadButtonListener>([](ecstasy::Registry &r, ecstasy::Entity entity,
+                                                const event::GamepadButtonEvent &e) {
+            (void)r;
+            (void)entity;
+            std::cout << "Gamepad " << e.id << " button " << e.button << " event, pressed = " << e.pressed << std::endl;
+        })
         .build();
 }
 

@@ -17,6 +17,7 @@
 #include "ecstasy/resources/entity/Entities.hpp"
 #include "ecstasy/storages/MapStorage.hpp"
 #include "events/Event.hpp"
+#include "inputs/Gamepads.hpp"
 
 namespace ecstasy::integration::event
 {
@@ -65,6 +66,15 @@ namespace ecstasy::integration::event
                     registry.getResource<Keyboard>().setKeyState(event.key.key, event.key.pressed);
                 break;
             case Event::Type::TextEntered: callListeners(registry, event.text); break;
+            case Event::Type::GamepadButtonPressed:
+            case Event::Type::GamepadButtonReleased:
+                callListeners(registry, event.gamepadButton);
+
+                if (registry.hasResource<Gamepads>())
+                    registry.getResource<Gamepads>()
+                        .get(event.gamepadButton.id)
+                        .setButtonState(event.gamepadButton.button, event.gamepadButton.pressed);
+                break;
             default: break;
         }
     }
