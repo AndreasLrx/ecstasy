@@ -40,6 +40,10 @@ The library may also be built with any IDE that has `CMakePresets.json` support,
 
 ## Documentation
 
+You can see the documentation [online](https://andreaslrx.github.io/ecstasy/).
+
+You can also build it locally:
+
 Required tools:
 
 - Doxygen
@@ -50,7 +54,7 @@ on Linux:
 # Run at the root of the project
 doxygen
 
-# Open the genrated pages
+# Open the generated pages
 xdg-open doc/build/html/index.html
 ```
 
