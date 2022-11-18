@@ -18,6 +18,7 @@ namespace ecstasy::integration::event
 {
     struct MouseWheelScrollEvent;
 
+    /// @brief @ref MouseWheelScrollEvent listener.
     using MouseWheelScrollListener = EventListener<MouseWheelScrollEvent>;
 } // namespace ecstasy::integration::event
 

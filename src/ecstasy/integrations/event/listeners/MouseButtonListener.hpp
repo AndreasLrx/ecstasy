@@ -18,6 +18,7 @@ namespace ecstasy::integration::event
 {
     struct MouseButtonEvent;
 
+    /// @brief @ref MouseButtonEvent listener.
     using MouseButtonListener = EventListener<MouseButtonEvent>;
 } // namespace ecstasy::integration::event
 

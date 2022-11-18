@@ -18,6 +18,7 @@ namespace ecstasy::integration::event
 {
     struct KeyEvent;
 
+    /// @brief @ref KeyEvent listener.
     using KeyListener = EventListener<KeyEvent>;
 } // namespace ecstasy::integration::event
 

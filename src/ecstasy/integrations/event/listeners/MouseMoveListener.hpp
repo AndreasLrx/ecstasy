@@ -18,6 +18,7 @@ namespace ecstasy::integration::event
 {
     struct MouseMoveEvent;
 
+    /// @brief @ref MouseMoveEvent listener.
     using MouseMoveListener = EventListener<MouseMoveEvent>;
 } // namespace ecstasy::integration::event
 

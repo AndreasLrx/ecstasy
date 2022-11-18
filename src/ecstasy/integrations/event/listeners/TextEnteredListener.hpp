@@ -18,6 +18,7 @@ namespace ecstasy::integration::event
 {
     struct TextEnteredEvent;
 
+    /// @brief @ref TextEnteredEvent listener.
     using TextEnteredListener = EventListener<TextEnteredEvent>;
 } // namespace ecstasy::integration::event
 
