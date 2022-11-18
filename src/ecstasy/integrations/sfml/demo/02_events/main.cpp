@@ -19,12 +19,14 @@
 #include "ecstasy/storages/MapStorage.hpp"
 
 #include "ecstasy/integrations/event/events/GamepadButtonEvent.hpp"
+#include "ecstasy/integrations/event/events/GamepadConnectedEvent.hpp"
 #include "ecstasy/integrations/event/events/KeyEvent.hpp"
 #include "ecstasy/integrations/event/events/MouseButtonEvent.hpp"
 #include "ecstasy/integrations/event/events/MouseMoveEvent.hpp"
 #include "ecstasy/integrations/event/events/MouseWheelScrollEvent.hpp"
 #include "ecstasy/integrations/event/events/TextEnteredEvent.hpp"
 #include "ecstasy/integrations/event/listeners/GamepadButtonListener.hpp"
+#include "ecstasy/integrations/event/listeners/GamepadConnectedListener.hpp"
 #include "ecstasy/integrations/event/listeners/KeyListener.hpp"
 #include "ecstasy/integrations/event/listeners/MouseButtonListener.hpp"
 #include "ecstasy/integrations/event/listeners/MouseMoveListener.hpp"
@@ -73,6 +75,12 @@ static void addEventListeners(ecstasy::Registry &registry)
             (void)entity;
             std::cout << "Gamepad " << e.id << " button " << e.button << " event, pressed = " << e.pressed << std::endl;
         })
+        .with<event::GamepadConnectedListener>(
+            [](ecstasy::Registry &r, ecstasy::Entity entity, const event::GamepadConnectedEvent &e) {
+                (void)r;
+                (void)entity;
+                std::cout << "Gamepad " << e.id << " " << ((e.connected) ? "connected" : "disconnected") << std::endl;
+            })
         .build();
 }
 

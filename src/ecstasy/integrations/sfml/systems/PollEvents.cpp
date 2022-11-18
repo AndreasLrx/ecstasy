@@ -90,6 +90,12 @@ namespace ecstasy::integration::sfml
                             getGamepadButton(event.joystickButton.button),
                             event.type == sf::Event::JoystickButtonPressed));
                     break;
+                case sf::Event::JoystickConnected:
+                case sf::Event::JoystickDisconnected:
+                    event::EventsManager::handleEvent(registry,
+                        event::GamepadConnectedEvent(
+                            event.joystickConnect.joystickId, event.type == sf::Event::JoystickConnected));
+                    break;
 
                 case sf::Event::Closed: windowWrapper.get().close(); break;
                 default: break;

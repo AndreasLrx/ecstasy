@@ -5,6 +5,7 @@
 #include "ecstasy/integrations/event/events/GamepadButtonReleasedEvent.hpp"
 #include "ecstasy/integrations/event/inputs/Gamepads.hpp"
 #include "ecstasy/integrations/event/listeners/GamepadButtonListener.hpp"
+#include "ecstasy/integrations/event/listeners/GamepadConnectedListener.hpp"
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/storages/MapStorage.hpp"
 
@@ -80,4 +81,27 @@ TEST(Event, GamepadButtonReleased)
     GTEST_ASSERT_TRUE(gamepadsState.get(0).isButtonUp(event::Gamepad::Button::FaceDown));
     GTEST_ASSERT_EQ(val1, 1);
     GTEST_ASSERT_EQ(val2, -1);
+}
+
+TEST(Event, GamepadConnected)
+{
+    Registry registry;
+    bool connected = false;
+
+    registry.entityBuilder()
+        .with<event::GamepadConnectedListener>(
+            [&connected](Registry &r, Entity e, const event::GamepadConnectedEvent &event) {
+                (void)r;
+                (void)e;
+                connected = event.connected;
+            })
+        .build();
+    GTEST_ASSERT_FALSE(connected);
+    event::EventsManager::handleEvent(registry, event::GamepadConnectedEvent(0, true));
+    GTEST_ASSERT_TRUE(connected);
+
+    event::Gamepads &gamepadsState = registry.addResource<event::Gamepads>();
+    GTEST_ASSERT_FALSE(gamepadsState.get(0).isConnected());
+    event::EventsManager::handleEvent(registry, event::GamepadConnectedEvent(0, true));
+    GTEST_ASSERT_TRUE(gamepadsState.get(0).isConnected());
 }

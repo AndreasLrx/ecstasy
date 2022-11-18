@@ -75,6 +75,15 @@ namespace ecstasy::integration::event
                         .get(event.gamepadButton.id)
                         .setButtonState(event.gamepadButton.button, event.gamepadButton.pressed);
                 break;
+            case Event::Type::GamepadConnected:
+            case Event::Type::GamepadDisconnected:
+                callListeners(registry, event.gamepadConnected);
+
+                if (registry.hasResource<Gamepads>())
+                    registry.getResource<Gamepads>()
+                        .get(event.gamepadConnected.id)
+                        .setConnected(event.gamepadConnected.connected);
+                break;
             default: break;
         }
     }

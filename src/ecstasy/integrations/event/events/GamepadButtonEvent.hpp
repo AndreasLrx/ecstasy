@@ -16,6 +16,12 @@
 
 namespace ecstasy::integration::event
 {
+    ///
+    /// @brief Event describing a gamepad button pressed or released.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2022-11-17)
+    ///
     struct GamepadButtonEvent {
         /// @brief Target gamepad id.
         size_t id;

@@ -7,6 +7,7 @@ set(SRC
     ${INCROOT}/GamepadButtonEvent.hpp
     ${INCROOT}/GamepadButtonPressedEvent.hpp
     ${INCROOT}/GamepadButtonReleasedEvent.hpp
+    ${INCROOT}/GamepadConnectedEvent.hpp
     ${INCROOT}/include.hpp
     ${INCROOT}/KeyEvent.hpp
     ${INCROOT}/KeyPressedEvent.hpp

@@ -13,6 +13,7 @@
 #define ECSTASY_INTEGRATION_EVENT_EVENTS_EVENT_HPP_
 
 #include "GamepadButtonEvent.hpp"
+#include "GamepadConnectedEvent.hpp"
 #include "KeyEvent.hpp"
 #include "MouseButtonEvent.hpp"
 #include "MouseMoveEvent.hpp"
@@ -40,6 +41,8 @@ namespace ecstasy::integration::event
             TextEntered,           ///< A character has been entered.
             GamepadButtonPressed,  ///< One of the gamepads button has been pressed.
             GamepadButtonReleased, ///< One of the gamepads button has been released.
+            GamepadConnected,      ///< One gamepad has been connected.
+            GamepadDisconnected,   ///< One gamepad has been disconnected.
 
             Count ///< Keep last -- the total number of events
         };
@@ -127,6 +130,19 @@ namespace ecstasy::integration::event
         }
 
         ///
+        /// @brief Construct a gamepad connected event wrapper.
+        ///
+        /// @param[in] event Source event.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-06)
+        ///
+        constexpr Event(GamepadConnectedEvent &&event)
+            : type(event.connected ? Type::GamepadConnected : Type::GamepadDisconnected), gamepadConnected(event)
+        {
+        }
+
+        ///
         /// @brief Default desctructor.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
@@ -159,6 +175,8 @@ namespace ecstasy::integration::event
             TextEnteredEvent text;            ///< @ref Type::TextEntered associated event.
             GamepadButtonEvent gamepadButton; ///< @ref Type::GamepadButtonPressed && @ref Type::GamepadButtonReleased
                                               ///< associated events.
+            GamepadConnectedEvent
+                gamepadConnected; ///< @ref Type::GamepadConnected && @ref Type::GamepadDisconnected associated events.
         };
     };
 } // namespace ecstasy::integration::event
