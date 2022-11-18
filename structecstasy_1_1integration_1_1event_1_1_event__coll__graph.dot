@@ -1,0 +1,20 @@
+digraph "ecstasy::integration::event::Event"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ecstasy::integration\l::event::Event",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Event class."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" mouseButton" ,fontname="Helvetica"];
+  Node2 [label="ecstasy::integration\l::event::MouseButtonEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1integration_1_1event_1_1_mouse_button_event.html",tooltip="Event describing when a mouse button is pressed or released."];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" text" ,fontname="Helvetica"];
+  Node3 [label="ecstasy::integration\l::event::TextEnteredEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1integration_1_1event_1_1_text_entered_event.html",tooltip="Event describing a text (character) entered."];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" unicode" ,fontname="Helvetica"];
+  Node4 [label="std::uint32_t",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/integer.html",tooltip=" "];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" mouseMove" ,fontname="Helvetica"];
+  Node5 [label="ecstasy::integration\l::event::MouseMoveEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1integration_1_1event_1_1_mouse_move_event.html",tooltip="Event describing when the mouse move."];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" key" ,fontname="Helvetica"];
+  Node6 [label="ecstasy::integration\l::event::KeyEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1integration_1_1event_1_1_key_event.html",tooltip="Event describing a key pressed or released."];
+  Node7 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" mouseWheel" ,fontname="Helvetica"];
+  Node7 [label="ecstasy::integration\l::event::MouseWheelScrollEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1integration_1_1event_1_1_mouse_wheel_scroll_event.html",tooltip="Event describing when a mouse wheel is scrolled."];
+}

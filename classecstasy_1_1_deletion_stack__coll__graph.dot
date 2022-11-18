@@ -1,0 +1,24 @@
+digraph "ecstasy::DeletionStack"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ecstasy::DeletionStack",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Helper to manage entity deletion safely within an iteration."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _killed" ,fontname="Helvetica"];
+  Node2 [label="std::vector\< ecstasy\l::Entity \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _registry" ,fontname="Helvetica"];
+  Node3 [label="ecstasy::Registry",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_registry.html",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _storages" ,fontname="Helvetica"];
+  Node4 [label="ecstasy::Instances\l\< ecstasy::IStorage \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_instances.html",tooltip=" "];
+  Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _instances" ,fontname="Helvetica"];
+  Node5 [label="std::unordered_map\l\< std::type_index, std\l::unique_ptr\< ecstasy\l::IStorage \> \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/unordered_map.html",tooltip=" "];
+  Node6 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _resources" ,fontname="Helvetica"];
+  Node6 [label="ecstasy::Instances\l\< ecstasy::Resource \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_instances.html",tooltip=" "];
+  Node7 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _instances" ,fontname="Helvetica"];
+  Node7 [label="std::unordered_map\l\< std::type_index, std\l::unique_ptr\< ecstasy\l::Resource \> \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/unordered_map.html",tooltip=" "];
+  Node8 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _systems" ,fontname="Helvetica"];
+  Node8 [label="ecstasy::Instances\l\< ecstasy::ISystem \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_instances.html",tooltip=" "];
+  Node9 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _instances" ,fontname="Helvetica"];
+  Node9 [label="std::unordered_map\l\< std::type_index, std\l::unique_ptr\< ecstasy\l::ISystem \> \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/unordered_map.html",tooltip=" "];
+}

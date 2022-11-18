@@ -1,0 +1,38 @@
+digraph "ecstasy::Registry::EntityBuilder"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ecstasy::Registry::\lEntityBuilder",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Entity Builder using the registry storages."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _registry" ,fontname="Helvetica"];
+  Node2 [label="ecstasy::Registry",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_registry.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _storages" ,fontname="Helvetica"];
+  Node3 [label="ecstasy::Instances\l\< ecstasy::IStorage \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_instances.html",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _instances" ,fontname="Helvetica"];
+  Node4 [label="std::unordered_map\l\< std::type_index, std\l::unique_ptr\< ecstasy\l::IStorage \> \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/unordered_map.html",tooltip=" "];
+  Node5 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _resources" ,fontname="Helvetica"];
+  Node5 [label="ecstasy::Instances\l\< ecstasy::Resource \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_instances.html",tooltip=" "];
+  Node6 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _instances" ,fontname="Helvetica"];
+  Node6 [label="std::unordered_map\l\< std::type_index, std\l::unique_ptr\< ecstasy\l::Resource \> \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/unordered_map.html",tooltip=" "];
+  Node7 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _systems" ,fontname="Helvetica"];
+  Node7 [label="ecstasy::Instances\l\< ecstasy::ISystem \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_instances.html",tooltip=" "];
+  Node8 -> Node7 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _instances" ,fontname="Helvetica"];
+  Node8 [label="std::unordered_map\l\< std::type_index, std\l::unique_ptr\< ecstasy\l::ISystem \> \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/unordered_map.html",tooltip=" "];
+  Node9 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _builder" ,fontname="Helvetica"];
+  Node9 [label="ecstasy::Entities::\lBuilder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_entities_1_1_builder.html",tooltip="Entities builder to add multiple component to an entity on creation."];
+  Node10 -> Node9 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _parent" ,fontname="Helvetica"];
+  Node10 [label="ecstasy::Entities",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_entities.html",tooltip="Entities Resource."];
+  Node11 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="ecstasy::Resource",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_resource.html",tooltip="Base class of all registry resources."];
+  Node12 -> Node10 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _killed\n_alive" ,fontname="Helvetica"];
+  Node12 [label="util::BitSet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classutil_1_1_bit_set.html",tooltip="Mimics the API of std::bitset but with the dynamic properties of std::vector<bool>"];
+  Node13 -> Node12 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _store" ,fontname="Helvetica"];
+  Node13 [label="std::vector\< std::uint64_t \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html",tooltip=" "];
+  Node14 -> Node12 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _size" ,fontname="Helvetica"];
+  Node14 [label="std::size_t",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/size_t.html",tooltip=" "];
+  Node15 -> Node10 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _generations" ,fontname="Helvetica"];
+  Node15 [label="std::vector\< Entity\l::Generation \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html",tooltip=" "];
+  Node16 -> Node9 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _entity" ,fontname="Helvetica"];
+  Node16 [label="ecstasy::Entity",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_entity.html",tooltip="Encapsulate an index to an entity."];
+}

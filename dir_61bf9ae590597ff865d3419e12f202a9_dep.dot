@@ -1,0 +1,13 @@
+digraph "src/ecstasy/query/modifiers" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_5392b01d02c3d4d0985a94f633790057 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="query" fontname="Helvetica", fontsize="10", URL="dir_5392b01d02c3d4d0985a94f633790057.html"]
+  dir_61bf9ae590597ff865d3419e12f202a9 [shape=box, label="modifiers", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_61bf9ae590597ff865d3419e12f202a9.html"];
+  }
+  dir_b7878ad5ecbf2506f4125b9d34c97e45 [shape=box label="util" fillcolor="white" style="filled" color="red" URL="dir_b7878ad5ecbf2506f4125b9d34c97e45.html"];
+  dir_13af086a2b4f3f42e1124b964311462f [shape=box label="concepts" URL="dir_13af086a2b4f3f42e1124b964311462f.html"];
+  dir_61bf9ae590597ff865d3419e12f202a9->dir_b7878ad5ecbf2506f4125b9d34c97e45 [headlabel="5", labeldistance=1.5 headhref="dir_000016_000024.html"];
+  dir_61bf9ae590597ff865d3419e12f202a9->dir_13af086a2b4f3f42e1124b964311462f [headlabel="5", labeldistance=1.5 headhref="dir_000016_000015.html"];
+}

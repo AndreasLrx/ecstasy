@@ -1,0 +1,10 @@
+digraph "util::meta::_type_set_eq&lt; std::tuple&lt; T1, Ts1... &gt;, std::tuple&lt; Ts2... &gt; &gt;"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="util::meta::_type_set\l_eq\< std::tuple\< T1,\l Ts1... \>, std::tuple\l\< Ts2... \> \>",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="std::conditional_t\l\< util::meta::contains\l\< T1, Ts2... \> &&((sizeof...\l(Ts1)==0)\|\|_type_set_eq\< std\l::tuple\< Ts1... \>, std::tuple\l\< Ts2... \> \>::value), std::true\l_type, std::false_type \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/conditional.html",tooltip=" "];
+}
