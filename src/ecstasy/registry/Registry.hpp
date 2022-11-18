@@ -32,7 +32,8 @@
 namespace ecstasy
 {
     using ModifiersAllocator = util::Allocator<ecstasy::query::modifier::Modifier>;
-    using OptionalModifiersAllocator = std::optional<std::reference_wrapper<ModifiersAllocator>>;
+    template <typename A = ModifiersAllocator>
+    using OptionalModifiersAllocator = std::optional<std::reference_wrapper<A>>;
     class Resource;
 
     class Registry {
@@ -51,56 +52,56 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-25)
         ///
-        template <typename C>
-        constexpr getStorageType<C> &getQueryable(OptionalModifiersAllocator &allocator)
+        template <typename C, typename A = ModifiersAllocator>
+        constexpr getStorageType<C> &getQueryable(OptionalModifiersAllocator<A> &allocator)
         {
             (void)allocator;
             return getStorageSafe<C>();
         }
 
         /// @copydoc getQueryable()
-        template <std::derived_from<Resource> R>
+        template <std::derived_from<Resource> R, typename A = ModifiersAllocator>
         requires query::Queryable<R>
-        constexpr R &getQueryable(OptionalModifiersAllocator &allocator)
+        constexpr R &getQueryable(OptionalModifiersAllocator<A> &allocator)
         {
             (void)allocator;
             return getResource<R>();
         }
 
         /// @copydoc getQueryable()
-        template <IsStorage S>
+        template <IsStorage S, typename A = ModifiersAllocator>
         requires query::Queryable<S>
-        constexpr S &getQueryable(OptionalModifiersAllocator &allocator)
+        constexpr S &getQueryable(OptionalModifiersAllocator<A> &allocator)
         {
             (void)allocator;
             return _storages.get<S>();
         }
 
         /// @copydoc getQueryable()
-        template <std::derived_from<query::modifier::UnaryModifier> M>
+        template <std::derived_from<query::modifier::UnaryModifier> M, typename A = ModifiersAllocator>
         requires query::Queryable<M>
-        constexpr M &getQueryable(OptionalModifiersAllocator &allocator)
+        constexpr M &getQueryable(OptionalModifiersAllocator<A> &allocator)
         {
             if (!allocator)
                 throw std::logic_error("Missing modifier allocator");
-            return allocator->get().instanciate<M>(getQueryable<typename M::Internal>(allocator));
+            return allocator->get().template instanciate<M>(getQueryable<typename M::Internal>(allocator));
         }
 
         /// @copydoc getQueryable()
-        template <std::derived_from<query::modifier::BinaryModifier> M>
+        template <std::derived_from<query::modifier::BinaryModifier> M, typename A = ModifiersAllocator>
         requires query::Queryable<M>
-        constexpr M &getQueryable(OptionalModifiersAllocator &allocator)
+        constexpr M &getQueryable(OptionalModifiersAllocator<A> &allocator)
         {
             if (!allocator)
                 throw std::logic_error("Missing modifier allocator");
-            return allocator->get().instanciate<M>(
+            return allocator->get().template instanciate<M>(
                 getQueryable<typename M::LeftOperand>(allocator), getQueryable<typename M::RightOperand>(allocator));
         }
 
         /// @copydoc getQueryable()
-        template <RegistryModifier M>
+        template <RegistryModifier M, typename A = ModifiersAllocator>
         requires query::Queryable<typename M::Modifier>
-        constexpr typename M::Modifier &getQueryable(OptionalModifiersAllocator &allocator)
+        constexpr typename M::Modifier &getQueryable(OptionalModifiersAllocator<A> &allocator)
         {
             return getQueryable<typename M::Modifier>(allocator);
         }
@@ -200,13 +201,13 @@ namespace ecstasy
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-26)
             ///
-            template <typename MissingsTuple, typename... Cs>
+            template <typename MissingsTuple, typename A, typename... Cs>
             struct Internal;
 
-            template <typename... Missings, typename... Cs>
-            struct Internal<std::tuple<Missings...>, Cs...> {
+            template <typename... Missings, typename A, typename... Cs>
+            struct Internal<std::tuple<Missings...>, A, Cs...> {
                 constexpr static query::Query<Selects...> where(
-                    Registry &registry, OptionalModifiersAllocator &allocator)
+                    Registry &registry, OptionalModifiersAllocator<A> &allocator)
                 {
                     if constexpr (sizeof...(Missings) > 0)
                         return ecstasy::query::Select<Selects...>::where(
@@ -244,8 +245,8 @@ namespace ecstasy
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-22)
             ///
-            template <typename C, typename... Cs>
-            query::Query<Selects...> where(OptionalModifiersAllocator allocator = std::nullopt)
+            template <typename C, typename... Cs, typename A = ModifiersAllocator>
+            query::Query<Selects...> where(OptionalModifiersAllocator<A> allocator = std::nullopt)
             {
                 // clang-format off
                 return Internal<
@@ -258,8 +259,16 @@ namespace ecstasy
                             Selects...
                         >
                     >::Tuple,
+                    A,
                     C, Cs...>::where(_registry, allocator);
                 // clang-format on
+            }
+
+            /// @copydoc where
+            template <typename C, typename... Cs, typename A = ModifiersAllocator>
+            constexpr query::Query<Selects...> where(A &allocator)
+            {
+                return where<C, Cs...>(std::optional(std::reference_wrapper(allocator)));
             }
 
           private:
@@ -509,11 +518,18 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-20)
         ///
-        template <typename C, typename... Cs>
+        template <typename C, typename... Cs, typename A = ModifiersAllocator>
         query::Query<queryable_type_t<C>, queryable_type_t<Cs>...> query(
-            OptionalModifiersAllocator allocator = std::nullopt)
+            OptionalModifiersAllocator<A> allocator = std::nullopt)
         {
             return query::Query(getQueryable<C>(allocator), getQueryable<Cs>(allocator)...);
+        }
+
+        /// @copydoc query
+        template <typename C, typename... Cs, typename A = ModifiersAllocator>
+        constexpr query::Query<queryable_type_t<C>, queryable_type_t<Cs>...> query(A &allocator)
+        {
+            return query<C, Cs...>(std::optional(std::reference_wrapper(allocator)));
         }
 
         ///
