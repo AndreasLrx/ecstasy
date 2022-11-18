@@ -25,7 +25,7 @@ namespace event = ecstasy::integration::event;
 
 namespace ecstasy::integration::sfml
 {
-    static event::Gamepad::Button getGamepadButton(int sfmlButton)
+    static event::Gamepad::Button getGamepadButton(unsigned int sfmlButton)
     {
         switch (sfmlButton) {
             case 0: return event::Gamepad::Button::FaceDown;
