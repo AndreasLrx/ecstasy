@@ -7,5 +7,6 @@ set(SRC
     ${SRC}
     ${INCROOT}/ObjectWrapper.hpp
     ${INCROOT}/Resource.hpp
+    ${INCROOT}/resources.hpp
     PARENT_SCOPE
 )
