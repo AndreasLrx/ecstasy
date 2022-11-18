@@ -7,7 +7,7 @@ add_subdirectory(listeners)
 
 set(SRC 
     ${SRC}
-    ${INCROOT}/event.hpp
     ${SRCROOT}/EventsManager.cpp
     ${INCROOT}/EventsManager.hpp
+    ${INCROOT}/include.hpp
     PARENT_SCOPE)

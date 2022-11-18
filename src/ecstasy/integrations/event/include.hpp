@@ -1,5 +1,5 @@
 ///
-/// @file event.hpp
+/// @file include.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
 /// @brief
 /// @version 1.0.0
@@ -13,9 +13,9 @@
 #define ECSTASY_INTEGRATIONS_EVENT_HPP_
 
 #include "EventsManager.hpp"
-#include "events/events.hpp"
-#include "inputs/inputs.hpp"
-#include "listeners/listeners.hpp"
+#include "events/include.hpp"
+#include "inputs/include.hpp"
+#include "listeners/include.hpp"
 
 ///
 /// @brief Event integration.

@@ -12,11 +12,11 @@
 #ifndef ECSTASY_HPP_
 #define ECSTASY_HPP_
 
-#include "integrations/integrations.hpp"
-#include "query/query.hpp"
-#include "registry/registry.hpp"
-#include "resources/resources.hpp"
-#include "storages/storages.hpp"
+#include "integrations/include.hpp"
+#include "query/include.hpp"
+#include "registry/include.hpp"
+#include "resources/include.hpp"
+#include "storages/include.hpp"
 
 ///
 /// @brief Namespace containing all symbols specific to ecstasy.

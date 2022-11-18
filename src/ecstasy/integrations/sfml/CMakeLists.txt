@@ -7,7 +7,7 @@ add_subdirectory(util)
 
 set(SRC 
     ${SRC}
-    ${INCROOT}/sfml.hpp
+    ${INCROOT}/include.hpp
     PARENT_SCOPE)
 
 # Build demo projects

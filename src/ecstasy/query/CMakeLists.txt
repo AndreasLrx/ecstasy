@@ -6,7 +6,7 @@ add_subdirectory(modifiers)
 
 set(SRC
     ${SRC}
-    ${INCROOT}/query.hpp
+    ${INCROOT}/include.hpp
     ${INCROOT}/Query.hpp
     ${INCROOT}/Select.hpp
     PARENT_SCOPE

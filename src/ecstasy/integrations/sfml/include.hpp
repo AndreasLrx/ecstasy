@@ -1,5 +1,5 @@
 ///
-/// @file sfml.hpp
+/// @file include.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
 /// @brief
 /// @version 1.0.0
@@ -12,9 +12,9 @@
 #ifndef ECSTASY_INTEGRATIONS_SFML_HPP_
 #define ECSTASY_INTEGRATIONS_SFML_HPP_
 
-#include "resources/resources.hpp"
-#include "systems/systems.hpp"
-#include "util/util.hpp"
+#include "resources/include.hpp"
+#include "systems/include.hpp"
+#include "util/include.hpp"
 
 ///
 /// @brief SFML integration. Includes events forward to the event integration.

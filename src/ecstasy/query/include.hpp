@@ -1,5 +1,5 @@
 ///
-/// @file query.hpp
+/// @file include.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
 /// @brief
 /// @version 1.0.0
@@ -14,8 +14,8 @@
 
 #include "Query.hpp"
 #include "Select.hpp"
-#include "concepts/concepts.hpp"
-#include "modifiers/modifiers.hpp"
+#include "concepts/include.hpp"
+#include "modifiers/include.hpp"
 
 ///
 /// @brief Namespace regrouping the internal ecstasy query system.

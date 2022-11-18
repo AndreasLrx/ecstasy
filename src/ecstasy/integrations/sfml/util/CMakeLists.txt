@@ -6,5 +6,5 @@ set(SRC
     ${SRC}
     ${SRCROOT}/Encoding.cpp
     ${INCROOT}/Encoding.hpp
-    ${INCROOT}/util.hpp
+    ${INCROOT}/include.hpp
     PARENT_SCOPE)

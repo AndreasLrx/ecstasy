@@ -8,6 +8,7 @@ set(SRC
     ${SRC}
     ${SRCROOT}/DeletionStack.cpp
     ${INCROOT}/DeletionStack.hpp
+    ${INCROOT}/include.hpp
     ${SRCROOT}/Registry.cpp
     ${INCROOT}/Registry.hpp
     PARENT_SCOPE
