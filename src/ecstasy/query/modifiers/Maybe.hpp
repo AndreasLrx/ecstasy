@@ -23,7 +23,7 @@
 namespace ecstasy::query::modifier
 {
     ///
-    /// @brief Query modifier which returns a std::optional filled when the data is existing.
+    /// @brief Query modifier which returns a std::optional filled when the data if existing.
     ///
     /// @note All bits are set to true.
     ///
@@ -37,6 +37,7 @@ namespace ecstasy::query::modifier
       public:
         /// @brief Wrapped queryable.
         using Internal = Q;
+
         /// @brief @ref Queryable constaint.
         using QueryData = util::meta::add_optional_t<typename Internal::QueryData>;
 
@@ -72,11 +73,11 @@ namespace ecstasy::query::modifier
         /// @brief Get a std::optional filled with the data at index @p index if existing.
         ///
         /// @note @ref Queryable constraint.
-        /// @warning May throw exceptions, look at the @b Internal type equivalent function documentation.
+        /// @warning May throw exceptions, look at the @b Internal type equivalent method documentation.
         ///
         /// @param[in] index Index of the entity.
         ///
-        /// @return QueryData A std::optional filled with the data at index @p index if existing.
+        /// @return @ref QueryData A std::optional filled with the data at index @p index if existing.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-24)

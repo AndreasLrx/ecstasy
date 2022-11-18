@@ -35,6 +35,7 @@ namespace ecstasy::query::modifier
       public:
         /// @brief Wrapped queryable.
         using Internal = Q;
+
         /// @brief @ref Queryable constaint.
         using QueryData = typename Internal::QueryData;
 
@@ -70,13 +71,13 @@ namespace ecstasy::query::modifier
         /// @brief Get the internal query data at the given index.
         ///
         /// @note @ref Queryable constraint.
-        /// @warning May throw exceptions, look at the @b Internal type equivalent function documentation.
+        /// @warning May throw exceptions, look at the @b Internal type equivalent method documentation.
         /// @warning Since this is a not modifier, all bit set to true in the masks means there @b isn't data at the
-        /// associated index. Therefore you @b must @b not call this function for bits set to true in the mask.
+        /// associated index. Therefore you @b must @b not call this method for bits set to true in the mask.
         ///
         /// @param[in] index Index of the entity.
         ///
-        /// @return QueryData internal queryable data.
+        /// @return @ref QueryData internal queryable data.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-24)

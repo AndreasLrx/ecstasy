@@ -9,8 +9,8 @@
 ///
 ///
 
-#ifndef ECSTASY_INTEGRATIONS_EVENT_LISTENERS_LISTENERS_HPP_
-#define ECSTASY_INTEGRATIONS_EVENT_LISTENERS_LISTENERS_HPP_
+#ifndef ECSTASY_INTEGRATIONS_EVENT_LISTENERS_HPP_
+#define ECSTASY_INTEGRATIONS_EVENT_LISTENERS_HPP_
 
 #include "EventListeners.hpp"
 #include "KeyListener.hpp"
@@ -19,4 +19,4 @@
 #include "MouseWheelScrollListener.hpp"
 #include "TextEnteredListener.hpp"
 
-#endif /* !ECSTASY_INTEGRATIONS_EVENT_LISTENERS_LISTENERS_HPP_ */
+#endif /* !ECSTASY_INTEGRATIONS_EVENT_LISTENERS_HPP_ */

@@ -26,7 +26,7 @@ namespace ecstasy::query::modifier
     };
 
     ///
-    /// @brief Base class for all query binary modifiers.
+    /// @brief Base class for all query unary modifiers.
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-10-24)

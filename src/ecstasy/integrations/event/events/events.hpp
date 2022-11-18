@@ -9,8 +9,8 @@
 ///
 ///
 
-#ifndef ECSTASY_INTEGRATIONS_EVENT_EVENTS_EVENTS_HPP_
-#define ECSTASY_INTEGRATIONS_EVENT_EVENTS_EVENTS_HPP_
+#ifndef ECSTASY_INTEGRATIONS_EVENT_EVENTS_HPP_
+#define ECSTASY_INTEGRATIONS_EVENT_EVENTS_HPP_
 
 #include "Event.hpp"
 #include "KeyEvent.hpp"
@@ -23,4 +23,4 @@
 #include "MouseWheelScrollEvent.hpp"
 #include "TextEnteredEvent.hpp"
 
-#endif /* !ECSTASY_INTEGRATIONS_EVENT_EVENTS_EVENTS_HPP_ */
+#endif /* !ECSTASY_INTEGRATIONS_EVENT_EVENTS_HPP_ */

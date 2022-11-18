@@ -9,8 +9,8 @@
 ///
 ///
 
-#ifndef ECSTASY_INTEGRATIONS_SFML_SFML_HPP_
-#define ECSTASY_INTEGRATIONS_SFML_SFML_HPP_
+#ifndef ECSTASY_INTEGRATIONS_SFML_HPP_
+#define ECSTASY_INTEGRATIONS_SFML_HPP_
 
 #include "resources/resources.hpp"
 #include "systems/systems.hpp"
@@ -28,4 +28,4 @@ namespace ecstasy::integration::sfml
 {
 }
 
-#endif /* !ECSTASY_INTEGRATIONS_SFML_SFML_HPP_ */
+#endif /* !ECSTASY_INTEGRATIONS_SFML_HPP_ */

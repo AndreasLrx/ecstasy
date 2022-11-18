@@ -6,6 +6,7 @@ set(SRC
     ${INCROOT}/And.hpp
     ${INCROOT}/Maybe.hpp
     ${INCROOT}/Modifier.hpp
+    ${INCROOT}/modifiers.hpp
     ${INCROOT}/Not.hpp
     ${INCROOT}/Or.hpp
     ${INCROOT}/Xor.hpp

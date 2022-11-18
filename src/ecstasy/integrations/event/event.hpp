@@ -9,8 +9,8 @@
 ///
 ///
 
-#ifndef ECSTASY_INTEGRATIONS_EVENT_EVENT_HPP_
-#define ECSTASY_INTEGRATIONS_EVENT_EVENT_HPP_
+#ifndef ECSTASY_INTEGRATIONS_EVENT_HPP_
+#define ECSTASY_INTEGRATIONS_EVENT_HPP_
 
 #include "EventsManager.hpp"
 #include "events/events.hpp"
@@ -31,4 +31,4 @@ namespace ecstasy::integration::event
 {
 }
 
-#endif /* !ECSTASY_INTEGRATIONS_EVENT_EVENT_HPP_ */
+#endif /* !ECSTASY_INTEGRATIONS_EVENT_HPP_ */

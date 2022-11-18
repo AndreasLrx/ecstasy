@@ -9,8 +9,8 @@
 ///
 ///
 
-#ifndef ECSTASY_INTEGRATIONS_INTEGRATIONS_HPP_
-#define ECSTASY_INTEGRATIONS_INTEGRATIONS_HPP_
+#ifndef ECSTASY_INTEGRATIONS_HPP_
+#define ECSTASY_INTEGRATIONS_HPP_
 
 ///
 /// @brief Parent namespace of all ecstasy integrations.
@@ -23,4 +23,4 @@ namespace ecstasy::integration
 {
 }
 
-#endif /* !ECSTASY_INTEGRATIONS_INTEGRATIONS_HPP_ */
+#endif /* !ECSTASY_INTEGRATIONS_HPP_ */

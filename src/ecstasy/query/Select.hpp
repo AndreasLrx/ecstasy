@@ -24,8 +24,7 @@
 namespace ecstasy::query
 {
     ///
-    /// @brief Select functions using templates at its maximum. Most of them are constexpr and needs a lot of
-    /// compile time but are really fast at run time.
+    /// @brief Advanced @ref Query. It allows to select which data must be kept from a query request.
     ///
     /// @tparam SelectedQueryables Queryables to keep in the resulting query.
     ///
@@ -240,10 +239,7 @@ namespace ecstasy::query
         ///
         /// @brief Execute a AND query with all the given Queryables but returns only the one in @ref Selected.
         ///
-        /// @warning All queryables specified in @ref Selected @b must be passed as parameters in the same order
-        /// (independing from the one non selected). For example: Selected<A, B, C> must have at least an instance of
-        /// type A, B and C in the parameters in the same order: where<A, U, V, B, C, X, Z> (which leads to where<A, B,
-        /// C> if we omit non selected queryables)
+        /// @warning All queryables specified in @ref Selected @b must be passed as parameters.
         ///
         /// @tparam FirstWhere First @ref Queryable type.
         /// @tparam Wheres Others @ref Queryable types.
