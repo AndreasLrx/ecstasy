@@ -35,6 +35,12 @@ namespace ecstasy
     using OptionalModifiersAllocator = std::optional<std::reference_wrapper<ModifiersAllocator>>;
     class Resource;
 
+    ///
+    /// @brief Base of an ECS architecture. It stores the entities, components and systems.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2022-11-18)
+    ///
     class Registry {
       private:
         ///
@@ -45,7 +51,7 @@ namespace ecstasy
         ///
         /// @tparam C Type of the variable to fetch.
         ///
-        /// @return getStorageType<C>& Associated queryable (if no specific case the storage for C is
+        /// @return @ref getStorageType<C>& Associated queryable (if no specific case the storage for C is
         /// returned).
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
@@ -166,7 +172,7 @@ namespace ecstasy
             Entities::Builder _builder;
 
             ///
-            /// @brief Construct a new EntityBuilder, this method can only be called by an @ref Registry.
+            /// @brief Construct a new EntityBuilder, this method can only be called by a @ref Registry.
             ///
             /// @param[in] builder Internal Entities builder.
             /// @param[in] entity Entity target (modified by the builder).
@@ -180,7 +186,9 @@ namespace ecstasy
         };
 
         ///
-        /// @brief Proxy class to use where static method.
+        /// @brief Proxy class to use @ref where method.
+        ///
+        /// @note This is a registry helper for the @ref ecstasy::query::Select implementation.
         ///
         /// @tparam Selects type of selected queryables.
         ///
@@ -239,7 +247,7 @@ namespace ecstasy
             ///
             /// @param[in] allocator Allocator for the modifiers.
             ///
-            /// @return Query<Selects...> Resulting query.
+            /// @return @ref query::Query<Selects...> Resulting query.
             ///
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-22)
@@ -337,7 +345,7 @@ namespace ecstasy
         ///
         /// @tparam C Component type to register.
         ///
-        /// @return getStorageType<C>& newly created Storage.
+        /// @return @ref getStorageType<C>& newly created Storage.
         ///
         /// @throw std::logic_error If a storage for component @b C was already present in the registry.
         ///
@@ -407,7 +415,7 @@ namespace ecstasy
         ///
         /// @tparam C Type of the component for which we want the storage.
         ///
-        /// @return getStorageType<C>& Const reference to the storage of the component type @b C.
+        /// @return @ref getStorageType<C>& Const reference to the storage of the component type @b C.
         ///
         /// @throw std::logic_error If no storage for component @b C was found in the registry.
         ///
@@ -425,7 +433,7 @@ namespace ecstasy
         ///
         /// @tparam C Type of the component for which we want the storage.
         ///
-        /// @return getStorageType<C>& Reference to the storage of the component type @b C.
+        /// @return @ref getStorageType<C>& Reference to the storage of the component type @b C.
         ///
         /// @throw std::logic_error If no storage for component @b C was found in the registry.
         ///
@@ -443,7 +451,7 @@ namespace ecstasy
         ///
         /// @tparam C Type of the comonent for which we want the storage.
         ///
-        /// @return getStorageType<C>& Reference to the storage of the component type @b C.
+        /// @return @ref getStorageType<C>& Reference to the storage of the component type @b C.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-19)
@@ -504,7 +512,8 @@ namespace ecstasy
         ///
         /// @param[in] allocator Allocator for the required modifiers (Maybe...).
         ///
-        /// @return Query<queryable_type_t<C>, queryable_type_t<Cs>...> New query which can be iterated.
+        /// @return @ref query::Query<@ref queryable_type_t<C>, @ref queryable_type_t<Cs>...> New query which can be
+        /// iterated.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-20)
@@ -524,7 +533,8 @@ namespace ecstasy
         /// @tparam C First component to query.
         /// @tparam Cs Other components to query.
         ///
-        /// @return Select<queryable_type_t<C>, queryable_type_t<Cs>...> placeholder templated Select object.
+        /// @return @ref Select<@ref queryable_type_t<C>, @ref queryable_type_t<Cs>...> placeholder templated Select
+        /// object.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-24)
@@ -551,7 +561,9 @@ namespace ecstasy
         /// @brief Instantly erase multiple entities and their components from the registry.
         ///
         /// @param[in] entities entities to erase.
-        /// @return size_t
+        ///
+        /// @return size_t number of erased entities.
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-21)
         ///

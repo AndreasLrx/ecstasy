@@ -20,7 +20,10 @@ namespace ecstasy
 {
     ///
     /// @brief Try to get the type of a queryable associated to a type stored in the registry (component, storage,
-    /// resource...)
+    /// resource...).
+    /// Returns C if C is derived from the @ref Resource class, if C match the @ref IsStorage concept.
+    /// Returns C::Modifier if C match the @ref RegistryModifier concept.
+    /// For all other cases, returns @ref getStorageType<C>.
     ///
     /// @tparam C Evaluated type.
     ///
