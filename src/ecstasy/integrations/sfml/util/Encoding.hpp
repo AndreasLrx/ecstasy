@@ -13,7 +13,6 @@
 #define ECSTASY_INTEGRATIONS_SFML_ENCODING_HPP_
 
 #include <SFML/System/Utf.hpp>
-#include <iostream>
 
 namespace ecstasy::integration::sfml
 {

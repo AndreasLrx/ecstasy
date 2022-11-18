@@ -10,7 +10,6 @@
 ///
 
 #include <SFML/Graphics.hpp>
-#include <iostream>
 
 #include "PollEvents.hpp"
 #include "ecstasy/integrations/event/EventsManager.hpp"
