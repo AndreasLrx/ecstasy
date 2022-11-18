@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.17)
 include(CMakeDependentOption)
 
 option(BUILD_TEST_SUITE "Whether the test suite must be built." OFF)
-option(ENABLE_CODE_COVERAGE "Whether the code coverage must be enabled" OFF)
+option(ENABLE_TEST_COVERAGE "Whether the tests code coverage must be enabled" OFF)
 option(BUILD_SHARED_LIBS "Whether ecstasy must be built as a shared library or not" OFF)
 
 ## Integration libraries
@@ -16,7 +16,7 @@ CMAKE_DEPENDENT_OPTION(ECSTASY_INTEGRATIONS_SFML_BUILD_DEMO "Build SFML integrat
 message(STATUS "ECSTASY Options:")
 list(APPEND CMAKE_MESSAGE_INDENT "  ")
     message(STATUS "Build Tests: ${BUILD_TEST_SUITE}")
-    message(STATUS "Enable code Coverage: ${ENABLE_CODE_COVERAGE}")
+    message(STATUS "Enable test coverage: ${ENABLE_TEST_COVERAGE}")
     message(STATUS "Build shared libraries: ${BUILD_SHARED_LIBS}")
     ## Integrations
     message(STATUS "Build integrations")
