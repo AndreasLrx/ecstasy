@@ -27,7 +27,7 @@ namespace util
     class Allocator {
       public:
         ///
-        /// @brief Instanciate a new modifier with lifetime attached to @b this lifetime.
+        /// @brief Instanciate a new instance of type T with lifetime attached to @b this lifetime.
         ///
         /// @tparam T Type of the new object.
         /// @tparam Args Arguments Types of the object constructor.
