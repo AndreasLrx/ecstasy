@@ -12,19 +12,14 @@
 #ifndef ECSTASY_INTEGRATION_EVENTS_LISTENERS_MOUSEWHEELSCROLLLISTENER_HPP_
 #define ECSTASY_INTEGRATION_EVENTS_LISTENERS_MOUSEWHEELSCROLLLISTENER_HPP_
 
-#include <functional>
-#include "ecstasy/resources/entity/Entity.hpp"
-
-namespace ecstasy
-{
-    class Registry;
-} // namespace ecstasy
+#include "EventListeners.hpp"
 
 namespace ecstasy::integration::event
 {
     struct MouseWheelScrollEvent;
 
-    using MouseWheelScrollListener = std::function<void(Registry &, Entity, const MouseWheelScrollEvent &)>;
+    /// @brief @ref MouseWheelScrollEvent listener.
+    using MouseWheelScrollListener = EventListener<MouseWheelScrollEvent>;
 } // namespace ecstasy::integration::event
 
 #endif /* !ECSTASY_INTEGRATION_EVENTS_LISTENERS_MOUSEWHEELSCROLLLISTENER_HPP_ */

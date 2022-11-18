@@ -12,19 +12,14 @@
 #ifndef ECSTASY_INTEGRATIONS_EVENTS_LISTENERS_TEXTENTEREDLISTENER_HPP_
 #define ECSTASY_INTEGRATIONS_EVENTS_LISTENERS_TEXTENTEREDLISTENER_HPP_
 
-#include <functional>
-#include "ecstasy/resources/entity/Entity.hpp"
-
-namespace ecstasy
-{
-    class Registry;
-} // namespace ecstasy
+#include "EventListeners.hpp"
 
 namespace ecstasy::integration::event
 {
     struct TextEnteredEvent;
 
-    using TextEnteredListener = std::function<void(Registry &, Entity, const TextEnteredEvent &)>;
+    /// @brief @ref TextEnteredEvent listener.
+    using TextEnteredListener = EventListener<TextEnteredEvent>;
 } // namespace ecstasy::integration::event
 
 #endif /* !ECSTASY_INTEGRATIONS_EVENTS_LISTENERS_TEXTENTEREDLISTENER_HPP_ */

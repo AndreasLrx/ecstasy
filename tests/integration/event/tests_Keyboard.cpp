@@ -19,6 +19,7 @@ TEST(Event, KeyPressed)
     event::Keyboard &keyboardState = registry.addResource<event::Keyboard>();
     int val1 = 0;
     int val2 = 0;
+    int multiEvents = 0;
 
     GTEST_ASSERT_TRUE(keyboardState.isKeyUp(event::Keyboard::Key::A));
     event::EventsManager::handleEvent(registry, event::KeyPressedEvent(event::Keyboard::Key::A));
@@ -32,6 +33,21 @@ TEST(Event, KeyPressed)
             if (event.pressed)
                 val1++;
         })
+        .with<event::EventListeners<event::KeyEvent>>(std::initializer_list<event::EventListener<event::KeyEvent>>{
+            [&multiEvents](Registry &r, Entity e, const event::KeyEvent &event) {
+                (void)r;
+                (void)e;
+                (void)event;
+                if (event.pressed)
+                    multiEvents++;
+            },
+            [&multiEvents](Registry &r, Entity e, const event::KeyEvent &event) {
+                (void)r;
+                (void)e;
+                (void)event;
+                if (event.pressed)
+                    multiEvents += 3;
+            }})
         .build();
     registry.entityBuilder()
         .with<event::KeyListener>([&val2](Registry &r, Entity e, const event::KeyEvent &event) {
@@ -46,6 +62,7 @@ TEST(Event, KeyPressed)
     event::EventsManager::handleEvent(registry, event::KeyPressedEvent(event::Keyboard::Key::B));
     GTEST_ASSERT_EQ(val1, 1);
     GTEST_ASSERT_EQ(val2, -1);
+    GTEST_ASSERT_EQ(multiEvents, 4); /// 1 + 3
 }
 
 TEST(Event, KeyReleased)

@@ -12,19 +12,14 @@
 #ifndef ECSTASY_INTEGRATION_EVENTS_LISTENERS_MOUSEMOVELISTENER_HPP_
 #define ECSTASY_INTEGRATION_EVENTS_LISTENERS_MOUSEMOVELISTENER_HPP_
 
-#include <functional>
-#include "ecstasy/resources/entity/Entity.hpp"
-
-namespace ecstasy
-{
-    class Registry;
-} // namespace ecstasy
+#include "EventListeners.hpp"
 
 namespace ecstasy::integration::event
 {
     struct MouseMoveEvent;
 
-    using MouseMoveListener = std::function<void(Registry &, Entity, const MouseMoveEvent &)>;
+    /// @brief @ref MouseMoveEvent listener.
+    using MouseMoveListener = EventListener<MouseMoveEvent>;
 } // namespace ecstasy::integration::event
 
 #endif /* !ECSTASY_INTEGRATION_EVENTS_LISTENERS_MOUSEMOVELISTENER_HPP_ */
