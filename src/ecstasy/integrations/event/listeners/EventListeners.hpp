@@ -119,7 +119,7 @@ namespace ecstasy::integration::event
         ///
         /// @brief Get the Inner listeners container.
         ///
-        /// @return constexpr std::vector<EventListener<E>>& A reference to the inner container.
+        /// @return std::vector<EventListener<E>>& A reference to the inner container.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-18)
@@ -132,7 +132,7 @@ namespace ecstasy::integration::event
         ///
         /// @brief Get the Inner listeners container.
         ///
-        /// @return constexpr const std::vector<EventListener<E>>& A const reference to the inner container.
+        /// @return const std::vector<EventListener<E>>& A const reference to the inner container.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-18)

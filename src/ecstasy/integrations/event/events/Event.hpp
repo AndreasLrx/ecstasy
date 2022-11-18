@@ -52,6 +52,8 @@ namespace ecstasy::integration::event
         ///
         /// @brief Construct a mouse button event wrapper.
         ///
+        /// @param[in] event Source event.
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
         ///
@@ -63,6 +65,8 @@ namespace ecstasy::integration::event
         ///
         /// @brief Construct a mouse wheel scroll event wrapper.
         ///
+        /// @param[in] event Source event.
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
         ///
@@ -72,6 +76,8 @@ namespace ecstasy::integration::event
 
         ///
         /// @brief Construct a mouse move event wrapper.
+        ///
+        /// @param[in] event Source event.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
@@ -83,6 +89,8 @@ namespace ecstasy::integration::event
         ///
         /// @brief Construct a key event wrapper.
         ///
+        /// @param[in] event Source event.
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
         ///
@@ -92,6 +100,8 @@ namespace ecstasy::integration::event
 
         ///
         /// @brief Construct a text entered event wrapper.
+        ///
+        /// @param[in] event Source event.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)

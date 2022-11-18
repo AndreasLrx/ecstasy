@@ -9,4 +9,5 @@ set(SRC
     ${SRC}
     ${SRCROOT}/EventsManager.cpp
     ${INCROOT}/EventsManager.hpp
+    ${INCROOT}/include.hpp
     PARENT_SCOPE)

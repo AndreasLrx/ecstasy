@@ -121,7 +121,7 @@ namespace ecstasy
         ///
         /// @brief Get the entity owning registry.
         ///
-        /// @return constexpr Registry& Reference to the entity owning registry.
+        /// @return Registry& Reference to the entity owning registry.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)

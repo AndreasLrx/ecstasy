@@ -68,7 +68,7 @@ namespace ecstasy::integration::event
         ///
         /// @param[in] button evaluated button.
         ///
-        /// @return constexpr bool Whether the button is down or not.
+        /// @return bool Whether the button is down or not.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-05)
@@ -83,7 +83,7 @@ namespace ecstasy::integration::event
         ///
         /// @param[in] button evaluated button.
         ///
-        /// @return constexpr bool Whether the button is up or not.
+        /// @return bool Whether the button is up or not.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-05)
@@ -112,7 +112,7 @@ namespace ecstasy::integration::event
         ///
         /// @brief Get the X position of the mouse on the window.
         ///
-        /// @return constexpr int x position.
+        /// @return int x position.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-05)
@@ -140,7 +140,7 @@ namespace ecstasy::integration::event
         ///
         /// @brief Get the y position of the mouse on the window.
         ///
-        /// @return constexpr int y position.
+        /// @return int y position.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-05)
@@ -168,7 +168,7 @@ namespace ecstasy::integration::event
         ///
         /// @brief Get the mouse position on the window.
         ///
-        /// @return constexpr std::pair<int, int> mouse position.
+        /// @return @ref std::pair<int, int> mouse position.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-05)

@@ -239,7 +239,7 @@ namespace ecstasy
         ///
         /// @brief Get the backing container.
         ///
-        /// @return constexpr const std::unordered_map<std::type_index, std::unique_ptr<Base>>& backing container.
+        /// @return const std::unordered_map<std::type_index, std::unique_ptr<Base>>& backing container.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-17)

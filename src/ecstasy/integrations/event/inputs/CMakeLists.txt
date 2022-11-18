@@ -3,6 +3,7 @@ set(SRCROOT ${SRCROOT}/inputs)
 
 set(SRC 
     ${SRC}
+    ${INCROOT}/include.hpp
     ${SRCROOT}/Keyboard.cpp
     ${INCROOT}/Keyboard.hpp
     ${INCROOT}/Mouse.hpp

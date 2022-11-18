@@ -53,7 +53,7 @@ namespace ecstasy
         ///
         /// @brief Get a reference to the object.
         ///
-        /// @return constexpr T& Reference to the object.
+        /// @return T& Reference to the object.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-16)
@@ -66,7 +66,7 @@ namespace ecstasy
         ///
         /// @brief Get a const reference to the object.
         ///
-        /// @return constexpr const T& Const reference to the object.
+        /// @return const T& Const reference to the object.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-16)

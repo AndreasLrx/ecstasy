@@ -5,6 +5,7 @@ add_subdirectory(entity)
 
 set(SRC
     ${SRC}
+    ${INCROOT}/include.hpp
     ${INCROOT}/ObjectWrapper.hpp
     ${INCROOT}/Resource.hpp
     PARENT_SCOPE

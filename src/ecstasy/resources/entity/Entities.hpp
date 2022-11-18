@@ -22,7 +22,7 @@
 namespace ecstasy
 {
     ///
-    /// @brief Entities Resource.
+    /// @brief Resource holding all the Registry entities.
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-10-18)
@@ -213,7 +213,7 @@ namespace ecstasy
         ///
         /// @brief Get the Alive entities mask.
         ///
-        /// @return constexpr const util::BitSet& alive entities mask.
+        /// @return const util::BitSet& alive entities mask.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-20)
@@ -241,7 +241,7 @@ namespace ecstasy
         /// @note Invalidate iterators.
         /// @warning This function doesn't delete the entities components, see @ref Registry::maintain() instead.
         ///
-        /// @return std::vector<Entity> List of deleted entities.
+        /// @return @ref std::vector<Entity> List of deleted entities.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-21)

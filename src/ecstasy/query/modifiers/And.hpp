@@ -29,13 +29,21 @@ namespace ecstasy::query::modifier
     template <Queryable Q1, Queryable Q2>
     class And : public BinaryModifier {
       public:
+        /// @brief Left operand type (queryable)
         using LeftOperand = Q1;
+
+        /// @brief Left operand data type
         using LeftQueryData = LeftOperand::QueryData;
+
+        /// @brief Right operand type (queryable)
         using RightOperand = Q2;
+
+        /// @brief Right operand data type
         using RightQueryData = RightOperand::QueryData;
 
         /// @brief Wrapped queryables.
         using Operands = std::tuple<Q1, Q2>;
+
         /// @brief @ref Queryable constaint.
         using QueryData = std::tuple<LeftQueryData, RightQueryData>;
 
@@ -59,9 +67,9 @@ namespace ecstasy::query::modifier
         /// The result is a binary And between the two operands bitset.
         ///
         /// @note @ref Queryable constraint.
-        /// @warning Use reload masks if the operand masks have changed since the construction.
+        /// @warning Use @ref reloadMask() if the operand masks have changed since the construction.
         ///
-        /// @return constexpr const util::BitSet& resulting mask.
+        /// @return const util::BitSet& resulting mask.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-27)
@@ -79,7 +87,7 @@ namespace ecstasy::query::modifier
         ///
         /// @param[in] index Index of the entity.
         ///
-        /// @return QueryData A tuple containing the operands data.
+        /// @return @ref QueryData A tuple containing the operands data.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-27)

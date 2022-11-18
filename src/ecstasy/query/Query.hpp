@@ -21,10 +21,9 @@ namespace ecstasy::query
     class IStorage;
 
     ///
-    /// @brief Query components from multiple storage following logical rules.
+    /// @brief Query components presents in all given queryables.
     ///
-    /// @note At the moment, it only supports and clauses (CompA && CompB). It will have to be reworked to support
-    /// logical conditions.
+    /// @note See @ref ecstasy::query::modifier for advanced queries using queryable modifiers.
     ///
     /// @tparam First First storage class.
     /// @tparam Others All other storage classes.
@@ -36,7 +35,7 @@ namespace ecstasy::query
     class Query {
       public:
         ///
-        /// @brief Query Iterator.
+        /// @brief Query iterator.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-20)
@@ -54,7 +53,7 @@ namespace ecstasy::query
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             ///
-            /// @brief Construct a new uniitialized Iterator.
+            /// @brief Construct a new uninitialized Iterator.
             ///
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-20)
@@ -152,7 +151,7 @@ namespace ecstasy::query
             ///
             /// @brief Fetch the components corresponding to the entity at the current position.
             ///
-            /// @return value_type tuple containing component references.
+            /// @return @ref value_type tuple containing component references.
             ///
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-20)
@@ -165,7 +164,7 @@ namespace ecstasy::query
             ///
             /// @brief Fetch the components corresponding to the entity at the current position.
             ///
-            /// @return value_type tuple containing component references.
+            /// @return @ref value_type tuple containing component references.
             ///
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-20)
@@ -220,7 +219,7 @@ namespace ecstasy::query
             ///
             /// @tparam Indices Represent all the indices to fetch in the @p _storages attribute.
             ///
-            /// @return value_type tuple containing component references.
+            /// @return @ref value_type tuple containing component references.
             ///
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-20)
@@ -235,7 +234,7 @@ namespace ecstasy::query
         ///
         /// @brief Construct a new Query from a bitmask already computed and a storages list.
         ///
-        /// @param[in] mask mask matching a predefined query.
+        /// @param[in] mask mask matching a precomputed query.
         /// @param[in] storages storages containing requested data.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)

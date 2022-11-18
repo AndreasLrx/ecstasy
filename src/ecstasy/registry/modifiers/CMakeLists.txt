@@ -4,6 +4,7 @@ set(SRCROOT ${SRCROOT}/modifiers)
 set(SRC
     ${SRC}
     ${INCROOT}/And.hpp
+    ${INCROOT}/include.hpp
     ${INCROOT}/Maybe.hpp
     ${INCROOT}/Not.hpp
     ${INCROOT}/Or.hpp

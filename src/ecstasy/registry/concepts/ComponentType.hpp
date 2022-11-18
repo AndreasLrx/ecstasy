@@ -19,8 +19,9 @@
 namespace ecstasy
 {
     ///
-    /// @brief Get the component type of the given type. For a component it return the component itself, for a
-    /// @ref QueryDataHolder it returns the internal @b QueryData type.
+    /// @brief Get the component type of the given type. For a component it return the component itself, for a @ref
+    /// RegistryModifier it returns the modifier query data, and for a @ref IsStorage it returns the storage
+    /// data.
     ///
     /// @tparam T Evaluated type.
     ///
@@ -30,7 +31,6 @@ namespace ecstasy
     template <typename T>
     struct component_type;
 
-    /// @copydoc component_type
     template <typename T>
     struct component_type {
         using type = T;

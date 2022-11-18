@@ -11,4 +11,5 @@ endif()
 
 set(SRC 
     ${SRC}
+    ${INCROOT}/include.hpp
     PARENT_SCOPE)

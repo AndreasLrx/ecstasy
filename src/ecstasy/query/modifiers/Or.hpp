@@ -30,13 +30,21 @@ namespace ecstasy::query::modifier
     template <Queryable Q1, Queryable Q2>
     class Or : public BinaryModifier {
       public:
+        /// @brief Left operand type (queryable)
         using LeftOperand = Q1;
+
+        /// @brief Left operand data type
         using LeftQueryData = util::meta::add_optional_t<typename LeftOperand::QueryData>;
+
+        /// @brief Right operand type (queryable)
         using RightOperand = Q2;
+
+        /// @brief Right operand data type
         using RightQueryData = util::meta::add_optional_t<typename RightOperand::QueryData>;
 
         /// @brief Wrapped queryables.
         using Operands = std::tuple<Q1, Q2>;
+
         /// @brief @ref Queryable constaint.
         using QueryData = std::tuple<LeftQueryData, RightQueryData>;
 
@@ -62,7 +70,7 @@ namespace ecstasy::query::modifier
         /// @note @ref Queryable constraint.
         /// @warning Use reload masks if the operand masks have changed since the construction.
         ///
-        /// @return constexpr const util::BitSet& resulting mask.
+        /// @return const util::BitSet& resulting mask.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-27)
@@ -75,11 +83,11 @@ namespace ecstasy::query::modifier
         ///
         /// @brief Get a std::optional filled with the data of the left operand at index @p index if existing.
         ///
-        /// @warning May throw exceptions, look at the @b LeftOperand type equivalent function documentation.
+        /// @warning May throw exceptions, look at the @b LeftOperand type equivalent method documentation.
         ///
         /// @param[in] index Index of the entity.
         ///
-        /// @return LeftQueryData A std::optional filled with the left operand data at index @p index if existing.
+        /// @return @ref LeftQueryData A std::optional filled with the left operand data at index @p index if existing.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-27)
@@ -94,11 +102,12 @@ namespace ecstasy::query::modifier
         ///
         /// @brief Get a std::optional filled with the data of the right operand at index @p index if existing.
         ///
-        /// @warning May throw exceptions, look at the @b RightOperand type equivalent function documentation.
+        /// @warning May throw exceptions, look at the @b RightOperand type equivalent method documentation.
         ///
         /// @param[in] index Index of the entity.
         ///
-        /// @return RightQueryData A std::optional filled with the right operand data at index @p index if existing.
+        /// @return @ref RightQueryData A std::optional filled with the right operand data at index @p index if
+        /// existing.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-27)
@@ -118,7 +127,7 @@ namespace ecstasy::query::modifier
         ///
         /// @param[in] index Index of the entity.
         ///
-        /// @return QueryData A tuple of std::optional containing the operands data if existing.
+        /// @return @ref QueryData A tuple of std::optional containing the operands data if existing.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-27)
