@@ -6,7 +6,7 @@ digraph "ecstasy::Resource"
   rankdir="LR";
   Node1 [label="ecstasy::Resource",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Base class of all registry resources."];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="ecstasy::Entities",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_entities.html",tooltip="Entities Resource."];
+  Node2 [label="ecstasy::Entities",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_entities.html",tooltip="Resource holding all the Registry entities."];
   Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="ecstasy::integration\l::event::Keyboard",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1integration_1_1event_1_1_keyboard.html",tooltip="Current Keyboard state."];
   Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ECSTASY(EntityComponentSystemTowardArchitectureSavingYears): ecstasy::query::modifier::And&lt; Q1, Q2 &gt; Class Template Reference</title>
+<title>ECSTASY: ecstasy::query::modifier::And&lt; Q1, Q2 &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">ECSTASY(EntityComponentSystemTowardArchitectureSavingYears)
+   <div id="projectname">ECSTASY
    </div>
    <div id="projectbrief">All in the name</div>
   </td>
@@ -111,12 +111,16 @@ Collaboration diagram for ecstasy::query::modifier::And&lt; Q1, Q2 &gt;:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a5d4ee55809d7bc8cd24b08ce93401c44"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_and.html#a5d4ee55809d7bc8cd24b08ce93401c44">LeftOperand</a> = Q1</td></tr>
+<tr class="memdesc:a5d4ee55809d7bc8cd24b08ce93401c44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Left operand type (queryable)  <a href="classecstasy_1_1query_1_1modifier_1_1_and.html#a5d4ee55809d7bc8cd24b08ce93401c44">More...</a><br /></td></tr>
 <tr class="separator:a5d4ee55809d7bc8cd24b08ce93401c44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7e59396deafa84d0e49a41634f042d3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_and.html#af7e59396deafa84d0e49a41634f042d3">LeftQueryData</a> = LeftOperand::QueryData</td></tr>
+<tr class="memdesc:af7e59396deafa84d0e49a41634f042d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Left operand data type.  <a href="classecstasy_1_1query_1_1modifier_1_1_and.html#af7e59396deafa84d0e49a41634f042d3">More...</a><br /></td></tr>
 <tr class="separator:af7e59396deafa84d0e49a41634f042d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa55770d7653ab57a6e5107a8daa48a72"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_and.html#aa55770d7653ab57a6e5107a8daa48a72">RightOperand</a> = Q2</td></tr>
+<tr class="memdesc:aa55770d7653ab57a6e5107a8daa48a72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right operand type (queryable)  <a href="classecstasy_1_1query_1_1modifier_1_1_and.html#aa55770d7653ab57a6e5107a8daa48a72">More...</a><br /></td></tr>
 <tr class="separator:aa55770d7653ab57a6e5107a8daa48a72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb1cbd366bae90ca746a936ce7df7c10"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_and.html#afb1cbd366bae90ca746a936ce7df7c10">RightQueryData</a> = RightOperand::QueryData</td></tr>
+<tr class="memdesc:afb1cbd366bae90ca746a936ce7df7c10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right operand data type.  <a href="classecstasy_1_1query_1_1modifier_1_1_and.html#afb1cbd366bae90ca746a936ce7df7c10">More...</a><br /></td></tr>
 <tr class="separator:afb1cbd366bae90ca746a936ce7df7c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1db5a2960b7905316a786aedf7dbfd3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_and.html#ab1db5a2960b7905316a786aedf7dbfd3">Operands</a> = <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt; Q1, Q2 &gt;</td></tr>
 <tr class="memdesc:ab1db5a2960b7905316a786aedf7dbfd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapped queryables.  <a href="classecstasy_1_1query_1_1modifier_1_1_and.html#ab1db5a2960b7905316a786aedf7dbfd3">More...</a><br /></td></tr>
@@ -186,7 +190,9 @@ template&lt;Queryable Q1, Queryable Q2&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00032">32</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
+<p>Left operand type (queryable) </p>
+
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00033">33</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
 
 </div>
 </div>
@@ -204,7 +210,9 @@ template&lt;Queryable Q1, Queryable Q2&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00033">33</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
+<p>Left operand data type. </p>
+
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00036">36</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
 
 </div>
 </div>
@@ -224,7 +232,7 @@ template&lt;Queryable Q1, Queryable Q2&gt; </div>
 
 <p>Wrapped queryables. </p>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00038">38</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00045">45</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
 
 </div>
 </div>
@@ -244,7 +252,7 @@ template&lt;Queryable Q1, Queryable Q2&gt; </div>
 
 <p><a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">Queryable</a> constaint. </p>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00040">40</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00048">48</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
 
 </div>
 </div>
@@ -262,7 +270,9 @@ template&lt;Queryable Q1, Queryable Q2&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00034">34</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
+<p>Right operand type (queryable) </p>
+
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00039">39</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
 
 </div>
 </div>
@@ -280,7 +290,9 @@ template&lt;Queryable Q1, Queryable Q2&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00035">35</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
+<p>Right operand data type. </p>
+
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00042">42</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
 
 </div>
 </div>
@@ -332,11 +344,11 @@ template&lt;Queryable Q1, Queryable Q2&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-27) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00051">51</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            : <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_and.html#a66c7d91b8e5cd790aa7195c42fe1b27d">_leftOperand</a>(leftOperand), <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_and.html#ac9cd35d48d3da85687c026351e8445a0">_rightOperand</a>(rightOperand)</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_and.html#a159535d4e2c6f37d49a3ff2fd75d44b2">reloadMask</a>();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00059">59</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            : <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_and.html#a66c7d91b8e5cd790aa7195c42fe1b27d">_leftOperand</a>(leftOperand), <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_and.html#ac9cd35d48d3da85687c026351e8445a0">_rightOperand</a>(rightOperand)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_and.html#a159535d4e2c6f37d49a3ff2fd75d44b2">reloadMask</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -369,15 +381,15 @@ template&lt;Queryable Q1, Queryable Q2&gt; </div>
 <p>Get the Mask of the internal queryable. </p>
 <p>The result is a binary <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_and.html" title="Binary query modifier which performs a and between two queryables.">And</a> between the two operands bitset.</p>
 <dl class="section note"><dt>Note</dt><dd><a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">Queryable</a> constraint. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Use reload masks if the operand masks have changed since the construction.</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>constexpr const <a class="el" href="classutil_1_1_bit_set.html" title="Mimics the API of std::bitset but with the dynamic properties of std::vector&lt;bool&gt;">util::BitSet</a>&amp; resulting mask.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Use <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_and.html#a159535d4e2c6f37d49a3ff2fd75d44b2">reloadMask()</a> if the operand masks have changed since the construction.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>const <a class="el" href="classutil_1_1_bit_set.html" title="Mimics the API of std::bitset but with the dynamic properties of std::vector&lt;bool&gt;">util::BitSet</a>&amp; resulting mask.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-27) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00069">69</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_and.html#a39aa7c63fe433ea807658235b0459907">_mask</a>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00077">77</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_and.html#a39aa7c63fe433ea807658235b0459907">_mask</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -416,14 +428,14 @@ template&lt;Queryable Q1, Queryable Q2&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>QueryData A tuple containing the operands data.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_and.html#ac721e1fcabe6c995ea5f5361ad1a1eef">QueryData</a> A tuple containing the operands data.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-27) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00087">87</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">return</span> <a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/tuple/make_tuple.html">std::make_tuple</a>(<a class="code" href="classecstasy_1_1query_1_1modifier_1_1_and.html#a66c7d91b8e5cd790aa7195c42fe1b27d">_leftOperand</a>.getQueryData(index), <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_and.html#ac9cd35d48d3da85687c026351e8445a0">_rightOperand</a>.getQueryData(index));</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00095">95</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">return</span> <a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/tuple/make_tuple.html">std::make_tuple</a>(<a class="code" href="classecstasy_1_1query_1_1modifier_1_1_and.html#a66c7d91b8e5cd790aa7195c42fe1b27d">_leftOperand</a>.getQueryData(index), <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_and.html#ac9cd35d48d3da85687c026351e8445a0">_rightOperand</a>.getQueryData(index));</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -456,10 +468,10 @@ template&lt;Queryable Q1, Queryable Q2&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-27) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00098">98</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_and.html#a39aa7c63fe433ea807658235b0459907">_mask</a> = <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_and.html#a66c7d91b8e5cd790aa7195c42fe1b27d">_leftOperand</a>.getMask() &amp; <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_and.html#ac9cd35d48d3da85687c026351e8445a0">_rightOperand</a>.getMask();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00106">106</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_and.html#a39aa7c63fe433ea807658235b0459907">_mask</a> = <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_and.html#a66c7d91b8e5cd790aa7195c42fe1b27d">_leftOperand</a>.getMask() &amp; <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_and.html#ac9cd35d48d3da85687c026351e8445a0">_rightOperand</a>.getMask();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -486,7 +498,7 @@ template&lt;Queryable Q1, Queryable Q2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00104">104</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00112">112</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
 
 </div>
 </div>
@@ -512,7 +524,7 @@ template&lt;Queryable Q1, Queryable Q2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00106">106</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00114">114</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
 
 </div>
 </div>
@@ -538,7 +550,7 @@ template&lt;Queryable Q1, Queryable Q2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00105">105</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00113">113</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
 
 </div>
 </div>
@@ -548,10 +560,10 @@ template&lt;Queryable Q1, Queryable Q2&gt; </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="amake_tuple_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/utility/tuple/make_tuple.html">std::make_tuple</a></div><div class="ttdeci">T make_tuple(T... args)</div></div>
-<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_and_html_ac9cd35d48d3da85687c026351e8445a0"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_and.html#ac9cd35d48d3da85687c026351e8445a0">ecstasy::query::modifier::And::_rightOperand</a></div><div class="ttdeci">RightOperand &amp; _rightOperand</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_and_8hpp_source.html#l00105">And.hpp:105</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_and_html_a159535d4e2c6f37d49a3ff2fd75d44b2"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_and.html#a159535d4e2c6f37d49a3ff2fd75d44b2">ecstasy::query::modifier::And::reloadMask</a></div><div class="ttdeci">void reloadMask()</div><div class="ttdoc">Update the mask to be up to date with the operands bitmasks.</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_and_8hpp_source.html#l00098">And.hpp:98</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_and_html_a66c7d91b8e5cd790aa7195c42fe1b27d"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_and.html#a66c7d91b8e5cd790aa7195c42fe1b27d">ecstasy::query::modifier::And::_leftOperand</a></div><div class="ttdeci">LeftOperand &amp; _leftOperand</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_and_8hpp_source.html#l00104">And.hpp:104</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_and_html_a39aa7c63fe433ea807658235b0459907"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_and.html#a39aa7c63fe433ea807658235b0459907">ecstasy::query::modifier::And::_mask</a></div><div class="ttdeci">util::BitSet _mask</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_and_8hpp_source.html#l00106">And.hpp:106</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_and_html_ac9cd35d48d3da85687c026351e8445a0"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_and.html#ac9cd35d48d3da85687c026351e8445a0">ecstasy::query::modifier::And::_rightOperand</a></div><div class="ttdeci">RightOperand &amp; _rightOperand</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_and_8hpp_source.html#l00113">And.hpp:113</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_and_html_a159535d4e2c6f37d49a3ff2fd75d44b2"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_and.html#a159535d4e2c6f37d49a3ff2fd75d44b2">ecstasy::query::modifier::And::reloadMask</a></div><div class="ttdeci">void reloadMask()</div><div class="ttdoc">Update the mask to be up to date with the operands bitmasks.</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_and_8hpp_source.html#l00106">And.hpp:106</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_and_html_a66c7d91b8e5cd790aa7195c42fe1b27d"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_and.html#a66c7d91b8e5cd790aa7195c42fe1b27d">ecstasy::query::modifier::And::_leftOperand</a></div><div class="ttdeci">LeftOperand &amp; _leftOperand</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_and_8hpp_source.html#l00112">And.hpp:112</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_and_html_a39aa7c63fe433ea807658235b0459907"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_and.html#a39aa7c63fe433ea807658235b0459907">ecstasy::query::modifier::And::_mask</a></div><div class="ttdeci">util::BitSet _mask</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_and_8hpp_source.html#l00114">And.hpp:114</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

@@ -3,6 +3,7 @@ var dir_61bf9ae590597ff865d3419e12f202a9 =
     [ "And.hpp", "query_2modifiers_2_and_8hpp.html", [
       [ "And", "classecstasy_1_1query_1_1modifier_1_1_and.html", "classecstasy_1_1query_1_1modifier_1_1_and" ]
     ] ],
+    [ "include.hpp", "query_2modifiers_2include_8hpp.html", null ],
     [ "Maybe.hpp", "query_2modifiers_2_maybe_8hpp.html", [
       [ "Maybe", "classecstasy_1_1query_1_1modifier_1_1_maybe.html", "classecstasy_1_1query_1_1modifier_1_1_maybe" ]
     ] ],

@@ -6,7 +6,7 @@ digraph "Graphical Class Hierarchy"
   rankdir="LR";
   Node0 [label="ecstasy::Resource",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_resource.html",tooltip="Base class of all registry resources."];
   Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node1 [label="ecstasy::Entities",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_entities.html",tooltip="Entities Resource."];
+  Node1 [label="ecstasy::Entities",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_entities.html",tooltip="Resource holding all the Registry entities."];
   Node0 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="ecstasy::integration\l::event::Keyboard",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1integration_1_1event_1_1_keyboard.html",tooltip="Current Keyboard state."];
   Node0 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

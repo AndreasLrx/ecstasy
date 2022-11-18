@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ECSTASY(EntityComponentSystemTowardArchitectureSavingYears): ecstasy::Entity Class Reference</title>
+<title>ECSTASY: ecstasy::Entity Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">ECSTASY(EntityComponentSystemTowardArchitectureSavingYears)
+   <div id="projectname">ECSTASY
    </div>
    <div id="projectbrief">All in the name</div>
   </td>
@@ -169,7 +169,7 @@ Protected Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:a85df3e90420f0ea0311cd3d1040bb8a0"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_entity.html#a85df3e90420f0ea0311cd3d1040bb8a0">::ecstasy::Entities</a></td></tr>
-<tr class="memdesc:a85df3e90420f0ea0311cd3d1040bb8a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The '<a class="el" href="classecstasy_1_1_entities.html" title="Entities Resource.">Entities</a>' <a class="el" href="classecstasy_1_1_resource.html" title="Base class of all registry resources.">Resource</a> is the only class able to create entities.  <a href="classecstasy_1_1_entity.html#a85df3e90420f0ea0311cd3d1040bb8a0">More...</a><br /></td></tr>
+<tr class="memdesc:a85df3e90420f0ea0311cd3d1040bb8a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The '<a class="el" href="classecstasy_1_1_entities.html" title="Resource holding all the Registry entities.">Entities</a>' <a class="el" href="classecstasy_1_1_resource.html" title="Base class of all registry resources.">Resource</a> is the only class able to create entities.  <a href="classecstasy_1_1_entity.html#a85df3e90420f0ea0311cd3d1040bb8a0">More...</a><br /></td></tr>
 <tr class="separator:a85df3e90420f0ea0311cd3d1040bb8a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -479,7 +479,7 @@ template&lt;IsStorage S&gt; </div>
 <p>Get the Generation of the entity. </p>
 <p>Alive entities always have a generation number strictly positive. If two entities have the same id, it mean the one with the lowest generation is outdated and no longer exists.</p>
 <dl class="section note"><dt>Note</dt><dd>A generation greater than 0 doesn't mean the entity is always alive.</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>constexpr Generation The generation of this entity.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Generation The generation of this entity.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-18) </dd></dl>
 
@@ -514,7 +514,7 @@ template&lt;IsStorage S&gt; </div>
 </div><div class="memdoc">
 
 <p>Get the entity identifier,. </p>
-<dl class="section return"><dt>Returns</dt><dd>constexpr Index entity index (identifier)</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Index entity index (identifier)</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-18) </dd></dl>
 
@@ -777,7 +777,7 @@ template&lt;IsStorage S&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>The '<a class="el" href="classecstasy_1_1_entities.html" title="Entities Resource.">Entities</a>' <a class="el" href="classecstasy_1_1_resource.html" title="Base class of all registry resources.">Resource</a> is the only class able to create entities. </p>
+<p>The '<a class="el" href="classecstasy_1_1_entities.html" title="Resource holding all the Registry entities.">Entities</a>' <a class="el" href="classecstasy_1_1_resource.html" title="Base class of all registry resources.">Resource</a> is the only class able to create entities. </p>
 
 <p class="definition">Definition at line <a class="el" href="_entity_8hpp_source.html#l00234">234</a> of file <a class="el" href="_entity_8hpp_source.html">Entity.hpp</a>.</p>
 

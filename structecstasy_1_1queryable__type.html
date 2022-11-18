@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ECSTASY(EntityComponentSystemTowardArchitectureSavingYears): ecstasy::queryable_type&lt; C &gt; Struct Template Reference</title>
+<title>ECSTASY: ecstasy::queryable_type&lt; C &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">ECSTASY(EntityComponentSystemTowardArchitectureSavingYears)
+   <div id="projectname">ECSTASY
    </div>
    <div id="projectbrief">All in the name</div>
   </td>
@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('structecstasy_1_1queryable__type.html'
 </div><!--header-->
 <div class="contents">
 
-<p>Try to get the type of a queryable associated to a type stored in the registry (component, storage, resource...)  
+<p>Try to get the type of a queryable associated to a type stored in the registry (component, storage, resource...).  
  <a href="structecstasy_1_1queryable__type.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_queryable_type_8hpp_source.html">QueryableType.hpp</a>&gt;</code></p>
@@ -105,7 +105,8 @@ Public Types</h2></td></tr>
 <div class="textblock"><h3>template&lt;typename C&gt;<br />
 struct ecstasy::queryable_type&lt; C &gt;</h3>
 
-<p>Try to get the type of a queryable associated to a type stored in the registry (component, storage, resource...) </p>
+<p>Try to get the type of a queryable associated to a type stored in the registry (component, storage, resource...). </p>
+<p>Returns C if C is derived from the <a class="el" href="classecstasy_1_1_resource.html">Resource</a> class, if C match the <a class="el" href="namespaceecstasy.html#a73201157de93701763bb9dda9f0201a7">IsStorage</a> concept. Returns C::Modifier if C match the <a class="el" href="namespaceecstasy.html#a6791f76b228760ff4513f357ad3fa0d0">RegistryModifier</a> concept. For all other cases, returns <a class="el" href="namespaceecstasy.html#ae219e3d50efdd81eb87d2a220e030193">getStorageType&lt;C&gt;</a>.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">C</td><td>Evaluated type.</td></tr>
@@ -115,7 +116,7 @@ struct ecstasy::queryable_type&lt; C &gt;</h3>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-25) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_queryable_type_8hpp_source.html#l00031">31</a> of file <a class="el" href="_queryable_type_8hpp_source.html">QueryableType.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_queryable_type_8hpp_source.html#l00034">34</a> of file <a class="el" href="_queryable_type_8hpp_source.html">QueryableType.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a88cababc113f9c749d33546c3565a326"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a88cababc113f9c749d33546c3565a326">&#9670;&nbsp;</a></span>type</h2>
@@ -131,7 +132,7 @@ template&lt;typename C &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_queryable_type_8hpp_source.html#l00032">32</a> of file <a class="el" href="_queryable_type_8hpp_source.html">QueryableType.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_queryable_type_8hpp_source.html#l00035">35</a> of file <a class="el" href="_queryable_type_8hpp_source.html">QueryableType.hpp</a>.</p>
 
 </div>
 </div>

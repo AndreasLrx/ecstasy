@@ -6,6 +6,7 @@ var dir_27d9dd95bf0309eb27f3bb61fbabadeb =
     [ "DeletionStack.hpp", "_deletion_stack_8hpp.html", [
       [ "DeletionStack", "classecstasy_1_1_deletion_stack.html", "classecstasy_1_1_deletion_stack" ]
     ] ],
+    [ "include.hpp", "registry_2include_8hpp.html", null ],
     [ "Registry.cpp", "_registry_8cpp.html", null ],
     [ "Registry.hpp", "_registry_8hpp.html", "_registry_8hpp" ]
 ];

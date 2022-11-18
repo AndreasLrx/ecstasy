@@ -3,6 +3,7 @@ var dir_111081be33024a2569ed30c090db96c5 =
     [ "And.hpp", "registry_2modifiers_2_and_8hpp.html", [
       [ "And", "structecstasy_1_1_and.html", "structecstasy_1_1_and" ]
     ] ],
+    [ "include.hpp", "registry_2modifiers_2include_8hpp.html", null ],
     [ "Maybe.hpp", "registry_2modifiers_2_maybe_8hpp.html", [
       [ "Maybe", "structecstasy_1_1_maybe.html", "structecstasy_1_1_maybe" ]
     ] ],

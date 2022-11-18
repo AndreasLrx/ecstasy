@@ -8,6 +8,7 @@ var dir_9c4985e03a334e11ec441bcb2c34f55b =
     [ "Entity.hpp", "_entity_8hpp.html", [
       [ "Entity", "classecstasy_1_1_entity.html", "classecstasy_1_1_entity" ]
     ] ],
+    [ "include.hpp", "resources_2entity_2include_8hpp.html", null ],
     [ "RegistryEntity.hpp", "_registry_entity_8hpp.html", [
       [ "RegistryEntity", "classecstasy_1_1_registry_entity.html", "classecstasy_1_1_registry_entity" ]
     ] ]

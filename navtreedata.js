@@ -22,7 +22,7 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "ECSTASY(EntityComponentSystemTowardArchitectureSavingYears)", "index.html", [
+  [ "ECSTASY", "index.html", [
     [ "ECSTASY (Entity Component System Toward Architecture Saving Years)", "index.html", [
       [ "Authors", "index.html#autotoc_md1", null ],
       [ "Download", "index.html#autotoc_md2", null ],
@@ -72,7 +72,7 @@ var NAVTREEINDEX =
 "01__basic__window_2main_8cpp.html",
 "classecstasy_1_1_registry.html#a47b4f8718083b99319ff342011e9b110",
 "classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#acf72fb1eb7deee7eff4df8ff2e9196a5",
-"registry_2modifiers_2_or_8hpp_source.html"
+"outer__join_8hpp.html#a1275a7e7a8046b1a8df6916960efe97f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

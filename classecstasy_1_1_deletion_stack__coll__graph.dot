@@ -8,7 +8,7 @@ digraph "ecstasy::DeletionStack"
   Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _killed" ,fontname="Helvetica"];
   Node2 [label="std::vector\< ecstasy\l::Entity \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html",tooltip=" "];
   Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _registry" ,fontname="Helvetica"];
-  Node3 [label="ecstasy::Registry",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_registry.html",tooltip=" "];
+  Node3 [label="ecstasy::Registry",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_registry.html",tooltip="Base of an ECS architecture."];
   Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _storages" ,fontname="Helvetica"];
   Node4 [label="ecstasy::Instances\l\< ecstasy::IStorage \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_instances.html",tooltip=" "];
   Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _instances" ,fontname="Helvetica"];

@@ -6,7 +6,7 @@ digraph "ecstasy::Registry::EntityBuilder"
   rankdir="LR";
   Node1 [label="ecstasy::Registry::\lEntityBuilder",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Entity Builder using the registry storages."];
   Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _registry" ,fontname="Helvetica"];
-  Node2 [label="ecstasy::Registry",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_registry.html",tooltip=" "];
+  Node2 [label="ecstasy::Registry",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_registry.html",tooltip="Base of an ECS architecture."];
   Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _storages" ,fontname="Helvetica"];
   Node3 [label="ecstasy::Instances\l\< ecstasy::IStorage \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_instances.html",tooltip=" "];
   Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _instances" ,fontname="Helvetica"];
@@ -22,7 +22,7 @@ digraph "ecstasy::Registry::EntityBuilder"
   Node9 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _builder" ,fontname="Helvetica"];
   Node9 [label="ecstasy::Entities::\lBuilder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_entities_1_1_builder.html",tooltip="Entities builder to add multiple component to an entity on creation."];
   Node10 -> Node9 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _parent" ,fontname="Helvetica"];
-  Node10 [label="ecstasy::Entities",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_entities.html",tooltip="Entities Resource."];
+  Node10 [label="ecstasy::Entities",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_entities.html",tooltip="Resource holding all the Registry entities."];
   Node11 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node11 [label="ecstasy::Resource",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_resource.html",tooltip="Base class of all registry resources."];
   Node12 -> Node10 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _killed\n_alive" ,fontname="Helvetica"];

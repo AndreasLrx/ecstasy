@@ -1,5 +1,6 @@
 var dir_4a1419ba0e8125a1fc6aeccf1492e850 =
 [
+    [ "include.hpp", "storages_2include_8hpp.html", null ],
     [ "Instances.hpp", "_instances_8hpp.html", [
       [ "Instances", "classecstasy_1_1_instances.html", "classecstasy_1_1_instances" ]
     ] ],

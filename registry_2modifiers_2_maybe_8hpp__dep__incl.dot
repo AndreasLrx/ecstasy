@@ -6,4 +6,6 @@ digraph "src/ecstasy/registry/modifiers/Maybe.hpp"
   Node1 [label="src/ecstasy/registry\l/modifiers/Maybe.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="src/ecstasy/integrations\l/event/EventsManager.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_events_manager_8cpp.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="src/ecstasy/registry\l/modifiers/include.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$registry_2modifiers_2include_8hpp.html",tooltip=" "];
 }

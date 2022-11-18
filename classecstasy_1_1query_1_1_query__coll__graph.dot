@@ -3,7 +3,7 @@ digraph "ecstasy::query::Query&lt; First, Others &gt;"
  // LATEX_PDF_SIZE
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
-  Node1 [label="ecstasy::query::Query\l\< First, Others \>",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Query components from multiple storage following logical rules."];
+  Node1 [label="ecstasy::query::Query\l\< First, Others \>",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Query components presents in all given queryables."];
   Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _mask" ,fontname="Helvetica"];
   Node2 [label="util::BitSet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classutil_1_1_bit_set.html",tooltip="Mimics the API of std::bitset but with the dynamic properties of std::vector<bool>"];
   Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _store" ,fontname="Helvetica"];

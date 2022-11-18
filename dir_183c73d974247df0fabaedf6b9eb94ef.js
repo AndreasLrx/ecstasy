@@ -6,5 +6,6 @@ var dir_183c73d974247df0fabaedf6b9eb94ef =
     [ "EventsManager.cpp", "_events_manager_8cpp.html", "_events_manager_8cpp" ],
     [ "EventsManager.hpp", "_events_manager_8hpp.html", [
       [ "EventsManager", "classecstasy_1_1integration_1_1event_1_1_events_manager.html", "classecstasy_1_1integration_1_1event_1_1_events_manager" ]
-    ] ]
+    ] ],
+    [ "include.hpp", "integrations_2event_2include_8hpp.html", null ]
 ];

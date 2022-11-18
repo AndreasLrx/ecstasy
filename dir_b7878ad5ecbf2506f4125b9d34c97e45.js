@@ -5,5 +5,6 @@ var dir_b7878ad5ecbf2506f4125b9d34c97e45 =
       [ "Allocator", "classutil_1_1_allocator.html", "classutil_1_1_allocator" ]
     ] ],
     [ "BitSet.cpp", "_bit_set_8cpp.html", "_bit_set_8cpp" ],
-    [ "BitSet.hpp", "_bit_set_8hpp.html", "_bit_set_8hpp" ]
+    [ "BitSet.hpp", "_bit_set_8hpp.html", "_bit_set_8hpp" ],
+    [ "util.hpp", "util_8hpp.html", null ]
 ];

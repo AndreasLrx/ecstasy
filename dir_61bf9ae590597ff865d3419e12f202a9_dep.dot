@@ -8,6 +8,6 @@ digraph "src/ecstasy/query/modifiers" {
   }
   dir_b7878ad5ecbf2506f4125b9d34c97e45 [shape=box label="util" fillcolor="white" style="filled" color="red" URL="dir_b7878ad5ecbf2506f4125b9d34c97e45.html"];
   dir_13af086a2b4f3f42e1124b964311462f [shape=box label="concepts" URL="dir_13af086a2b4f3f42e1124b964311462f.html"];
-  dir_61bf9ae590597ff865d3419e12f202a9->dir_b7878ad5ecbf2506f4125b9d34c97e45 [headlabel="5", labeldistance=1.5 headhref="dir_000016_000024.html"];
-  dir_61bf9ae590597ff865d3419e12f202a9->dir_13af086a2b4f3f42e1124b964311462f [headlabel="5", labeldistance=1.5 headhref="dir_000016_000015.html"];
+  dir_61bf9ae590597ff865d3419e12f202a9->dir_b7878ad5ecbf2506f4125b9d34c97e45 [headlabel="5", labeldistance=1.5 headhref="dir_000013_000024.html"];
+  dir_61bf9ae590597ff865d3419e12f202a9->dir_13af086a2b4f3f42e1124b964311462f [headlabel="5", labeldistance=1.5 headhref="dir_000013_000012.html"];
 }

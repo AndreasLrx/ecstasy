@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ECSTASY(EntityComponentSystemTowardArchitectureSavingYears): ecstasy::query::modifier::Not&lt; Q &gt; Class Template Reference</title>
+<title>ECSTASY: ecstasy::query::modifier::Not&lt; Q &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">ECSTASY(EntityComponentSystemTowardArchitectureSavingYears)
+   <div id="projectname">ECSTASY
    </div>
    <div id="projectbrief">All in the name</div>
   </td>
@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('classecstasy_1_1query_1_1modifier_1_1_
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="classecstasy_1_1query_1_1_query.html" title="Query components from multiple storage following logical rules.">Query</a> modifier which simply inverts the bits.  
+<p><a class="el" href="classecstasy_1_1query_1_1_query.html" title="Query components presents in all given queryables.">Query</a> modifier which simply inverts the bits.  
  <a href="classecstasy_1_1query_1_1modifier_1_1_not.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>&gt;</code></p>
@@ -152,7 +152,7 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><h3>template&lt;Queryable Q&gt;<br />
 class ecstasy::query::modifier::Not&lt; Q &gt;</h3>
 
-<p><a class="el" href="classecstasy_1_1query_1_1_query.html" title="Query components from multiple storage following logical rules.">Query</a> modifier which simply inverts the bits. </p>
+<p><a class="el" href="classecstasy_1_1query_1_1_query.html" title="Query components presents in all given queryables.">Query</a> modifier which simply inverts the bits. </p>
 <dl class="section warning"><dt>Warning</dt><dd>Since it returns all entities that <b>haven't</b> the requested data, a call to <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#afc870962ace6a41d8dc07efb7251fa78">getQueryData()</a> is undefined behavior and will cause errors or exceptions depending on the Queryable implementation. Therefore you should <b>never</b> select this queryable.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -201,7 +201,7 @@ template&lt;Queryable Q&gt; </div>
 
 <p><a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">Queryable</a> constaint. </p>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00039">39</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00040">40</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
 
 </div>
 </div>
@@ -242,11 +242,11 @@ template&lt;Queryable Q&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-24) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00049">49</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                : <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a1336868a0ca81769b2194990094f53b6">_internal</a>(<span class="keyword">internal</span>), <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">_mask</a>(<span class="keyword">internal</span>.<a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a898ca3f47bb1de5e9a20e1f7bcdfeda6">getMask</a>())</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#affeb7b19f28f56c803f223d1dc96b85c">flip</a>();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00050">50</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                : <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a1336868a0ca81769b2194990094f53b6">_internal</a>(<span class="keyword">internal</span>), <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">_mask</a>(<span class="keyword">internal</span>.<a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a898ca3f47bb1de5e9a20e1f7bcdfeda6">getMask</a>())</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#affeb7b19f28f56c803f223d1dc96b85c">flip</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -288,14 +288,14 @@ template&lt;Queryable Q&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-25) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00110">110</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">if</span> (maxSize &gt; <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#a1b7940aa2d91fd658b573692239866c0">size</a>()) {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918">resize</a>(maxSize);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#a1e15c54e82b2c4dcd15bd2d4a2af31a5">setAll</a>();</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#a47b259104f03b72450e56ce451e7aab1">inplaceXor</a>(<a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a1336868a0ca81769b2194990094f53b6">_internal</a>.getMask());</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00111">111</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordflow">if</span> (maxSize &gt; <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#a1b7940aa2d91fd658b573692239866c0">size</a>()) {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918">resize</a>(maxSize);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#a1e15c54e82b2c4dcd15bd2d4a2af31a5">setAll</a>();</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#a47b259104f03b72450e56ce451e7aab1">inplaceXor</a>(<a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a1336868a0ca81769b2194990094f53b6">_internal</a>.getMask());</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -330,10 +330,10 @@ template&lt;Queryable Q&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-24) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00064">64</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">_mask</a>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00065">65</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">_mask</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -365,23 +365,23 @@ template&lt;Queryable Q&gt; </div>
 
 <p>Get the internal query data at the given index. </p>
 <dl class="section note"><dt>Note</dt><dd><a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">Queryable</a> constraint. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>May throw exceptions, look at the <b>Internal</b> type equivalent function documentation. </dd>
+<dl class="section warning"><dt>Warning</dt><dd>May throw exceptions, look at the <b>Internal</b> type equivalent method documentation. </dd>
 <dd>
-Since this is a not modifier, all bit set to true in the masks means there <b>isn't</b> data at the associated index. Therefore you <b>must</b> <b>not</b> call this function for bits set to true in the mask.</dd></dl>
+Since this is a not modifier, all bit set to true in the masks means there <b>isn't</b> data at the associated index. Therefore you <b>must</b> <b>not</b> call this method for bits set to true in the mask.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Index of the entity.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>QueryData internal queryable data.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a60e0fd4aa1e233ecf2e9d34526cfe0d2">QueryData</a> internal queryable data.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-24) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00084">84</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a1336868a0ca81769b2194990094f53b6">_internal</a>.getQueryData(index);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00085">85</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a1336868a0ca81769b2194990094f53b6">_internal</a>.getQueryData(index);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -414,10 +414,10 @@ template&lt;Queryable Q&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-24) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00095">95</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">_mask</a> = ~<a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a1336868a0ca81769b2194990094f53b6">_internal</a>.getMask();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00096">96</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">_mask</a> = ~<a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a1336868a0ca81769b2194990094f53b6">_internal</a>.getMask();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -444,7 +444,7 @@ template&lt;Queryable Q&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00120">120</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00121">121</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
 
 </div>
 </div>
@@ -470,7 +470,7 @@ template&lt;Queryable Q&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00121">121</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00122">122</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
 
 </div>
 </div>
@@ -479,14 +479,14 @@ template&lt;Queryable Q&gt; </div>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_not_html_a4e57e4f90e4dc67b27fd303389e68c41"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">ecstasy::query::modifier::Not::_mask</a></div><div class="ttdeci">util::BitSet _mask</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_not_8hpp_source.html#l00121">Not.hpp:121</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_not_html_a4e57e4f90e4dc67b27fd303389e68c41"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">ecstasy::query::modifier::Not::_mask</a></div><div class="ttdeci">util::BitSet _mask</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_not_8hpp_source.html#l00122">Not.hpp:122</a></div></div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_a1e15c54e82b2c4dcd15bd2d4a2af31a5"><div class="ttname"><a href="classutil_1_1_bit_set.html#a1e15c54e82b2c4dcd15bd2d4a2af31a5">util::BitSet::setAll</a></div><div class="ttdeci">BitSet &amp; setAll(bool value=true) noexcept</div><div class="ttdoc">Sets all bits to the given value.</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8cpp_source.html#l00034">BitSet.cpp:34</a></div></div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_a1b7940aa2d91fd658b573692239866c0"><div class="ttname"><a href="classutil_1_1_bit_set.html#a1b7940aa2d91fd658b573692239866c0">util::BitSet::size</a></div><div class="ttdeci">constexpr std::size_t size() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8hpp_source.html#l00087">BitSet.hpp:87</a></div></div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_a47b259104f03b72450e56ce451e7aab1"><div class="ttname"><a href="classutil_1_1_bit_set.html#a47b259104f03b72450e56ce451e7aab1">util::BitSet::inplaceXor</a></div><div class="ttdeci">BitSet &amp; inplaceXor(BitSet const &amp;other) noexcept</div><div class="ttdoc">Performs a bitwise XOR with this set and other in place without resizing this.</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8cpp_source.html#l00145">BitSet.cpp:145</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_not_html_a1336868a0ca81769b2194990094f53b6"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_not.html#a1336868a0ca81769b2194990094f53b6">ecstasy::query::modifier::Not::_internal</a></div><div class="ttdeci">Internal &amp; _internal</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_not_8hpp_source.html#l00120">Not.hpp:120</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_not_html_a1336868a0ca81769b2194990094f53b6"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_not.html#a1336868a0ca81769b2194990094f53b6">ecstasy::query::modifier::Not::_internal</a></div><div class="ttdeci">Internal &amp; _internal</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_not_8hpp_source.html#l00121">Not.hpp:121</a></div></div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_affeb7b19f28f56c803f223d1dc96b85c"><div class="ttname"><a href="classutil_1_1_bit_set.html#affeb7b19f28f56c803f223d1dc96b85c">util::BitSet::flip</a></div><div class="ttdeci">BitSet &amp; flip() noexcept</div><div class="ttdoc">Flips all the bits in the set.</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8cpp_source.html#l00052">BitSet.cpp:52</a></div></div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_a0a1be7ead3223ab02838a9e95b761918"><div class="ttname"><a href="classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918">util::BitSet::resize</a></div><div class="ttdeci">void resize(std::size_t size)</div><div class="ttdoc">Changes the number of bits stored in this set.</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8hpp_source.html#l00199">BitSet.hpp:199</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_not_html_a898ca3f47bb1de5e9a20e1f7bcdfeda6"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_not.html#a898ca3f47bb1de5e9a20e1f7bcdfeda6">ecstasy::query::modifier::Not::getMask</a></div><div class="ttdeci">constexpr const util::BitSet &amp; getMask() const</div><div class="ttdoc">Get the flipped mask of the internal queryable.</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_not_8hpp_source.html#l00064">Not.hpp:64</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_not_html_a898ca3f47bb1de5e9a20e1f7bcdfeda6"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_not.html#a898ca3f47bb1de5e9a20e1f7bcdfeda6">ecstasy::query::modifier::Not::getMask</a></div><div class="ttdeci">constexpr const util::BitSet &amp; getMask() const</div><div class="ttdoc">Get the flipped mask of the internal queryable.</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_not_8hpp_source.html#l00065">Not.hpp:65</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
