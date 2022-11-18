@@ -12,6 +12,8 @@
 #ifndef ECSTASY_INTEGRATIONS_EVENT_INPUTS_HPP_
 #define ECSTASY_INTEGRATIONS_EVENT_INPUTS_HPP_
 
+#include "Gamepad.hpp"
+#include "Gamepads.hpp"
 #include "Keyboard.hpp"
 #include "Mouse.hpp"
 

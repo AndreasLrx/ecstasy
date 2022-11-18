@@ -12,6 +12,9 @@
 #ifndef ECSTASY_INTEGRATION_EVENT_EVENTS_EVENT_HPP_
 #define ECSTASY_INTEGRATION_EVENT_EVENTS_EVENT_HPP_
 
+#include "GamepadAxisEvent.hpp"
+#include "GamepadButtonEvent.hpp"
+#include "GamepadConnectedEvent.hpp"
 #include "KeyEvent.hpp"
 #include "MouseButtonEvent.hpp"
 #include "MouseMoveEvent.hpp"
@@ -30,13 +33,18 @@ namespace ecstasy::integration::event
     struct Event {
         /// @brief Event types.
         enum class Type {
-            MouseButtonPressed,  ///< One of the mouse button has been pressed.
-            MouseButtonReleased, ///< One of the mouse button has been released.
-            MouseWheelScrolled,  ///< The mouse wheel was scrolled.
-            MouseMoved,          ///< The mouse cursor moved.
-            KeyPressed,          ///< One of the keyboard key has been pressed.
-            KeyReleased,         ///< One of the keyboard key has been released.
-            TextEntered,         ///< A character has been entered.
+            MouseButtonPressed,    ///< One of the mouse button has been pressed.
+            MouseButtonReleased,   ///< One of the mouse button has been released.
+            MouseWheelScrolled,    ///< The mouse wheel was scrolled.
+            MouseMoved,            ///< The mouse cursor moved.
+            KeyPressed,            ///< One of the keyboard key has been pressed.
+            KeyReleased,           ///< One of the keyboard key has been released.
+            TextEntered,           ///< A character has been entered.
+            GamepadButtonPressed,  ///< One of the gamepads button has been pressed.
+            GamepadButtonReleased, ///< One of the gamepads button has been released.
+            GamepadAxis,           ///< One of the gamepads axis value changed.
+            GamepadConnected,      ///< One gamepad has been connected.
+            GamepadDisconnected,   ///< One gamepad has been disconnected.
 
             Count ///< Keep last -- the total number of events
         };
@@ -111,6 +119,44 @@ namespace ecstasy::integration::event
         }
 
         ///
+        /// @brief Construct a gamepad button event wrapper.
+        ///
+        /// @param[in] event Source event.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-06)
+        ///
+        constexpr Event(GamepadButtonEvent &&event)
+            : type(event.pressed ? Type::GamepadButtonPressed : Type::GamepadButtonReleased), gamepadButton(event)
+        {
+        }
+
+        ///
+        /// @brief Construct a gamepad connected event wrapper.
+        ///
+        /// @param[in] event Source event.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-06)
+        ///
+        constexpr Event(GamepadConnectedEvent &&event)
+            : type(event.connected ? Type::GamepadConnected : Type::GamepadDisconnected), gamepadConnected(event)
+        {
+        }
+
+        ///
+        /// @brief Construct a gamepad axis event wrapper.
+        ///
+        /// @param[in] event Source event.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-06)
+        ///
+        constexpr Event(GamepadAxisEvent &&event) : type(Type::GamepadAxis), gamepadAxis(event)
+        {
+        }
+
+        ///
         /// @brief Default desctructor.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
@@ -141,6 +187,11 @@ namespace ecstasy::integration::event
             MouseMoveEvent mouseMove;         ///< @ref Type::MouseMoved associated event.
             KeyEvent key;                     ///< @ref Type::KeyPressed && @ref Type::KeyReleased associated events.
             TextEnteredEvent text;            ///< @ref Type::TextEntered associated event.
+            GamepadButtonEvent gamepadButton; ///< @ref Type::GamepadButtonPressed && @ref Type::GamepadButtonReleased
+            ///< associated events.
+            GamepadAxisEvent gamepadAxis; ///< @ref Type::GamepadAxis associated event.
+            GamepadConnectedEvent
+                gamepadConnected; ///< @ref Type::GamepadConnected && @ref Type::GamepadDisconnected associated events.
         };
     };
 } // namespace ecstasy::integration::event
