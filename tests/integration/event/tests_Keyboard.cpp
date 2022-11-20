@@ -23,6 +23,9 @@ TEST(Event, KeyPressed)
     int val2 = 0;
     int multiEvents = 0;
 
+    /// COVERAGE FOR DEFAULT EVENT, DOES NOTHING
+    event::EventsManager::handleEvent(registry, event::Event());
+
     GTEST_ASSERT_TRUE(keyboardState.isKeyUp(event::Keyboard::Key::A));
     event::EventsManager::handleEvent(registry, event::KeyPressedEvent(event::Keyboard::Key::A));
     GTEST_ASSERT_TRUE(keyboardState.isKeyDown(event::Keyboard::Key::A));
@@ -153,6 +156,7 @@ TEST(Event, KeySequence)
                         })
                     .build()
                     .getIndex()];
+    sequenceListener.setSequence({event::Keyboard::Key::A, event::Keyboard::Key::B, event::Keyboard::Key::C});
 
     /// Initial state
     GTEST_ASSERT_FALSE(sequenceListener.isComplete());
@@ -197,16 +201,8 @@ TEST(Event, KeySequence)
     GTEST_ASSERT_FALSE(sequenceListener.isComplete());
     GTEST_ASSERT_EQ(static_cast<size_t>(sequenceListener.getHeldKey()), static_cast<size_t>(event::Keyboard::Key::C));
     GTEST_ASSERT_EQ(sequenceListener.getValidatedKeys().size(), 2);
-    /// Sequence completed
-    GTEST_ASSERT_TRUE(sequenceListener.update(event::KeyReleasedEvent(event::Keyboard::Key::C)));
-    GTEST_ASSERT_TRUE(sequenceListener.isComplete());
-    GTEST_ASSERT_EQ(
-        static_cast<size_t>(sequenceListener.getHeldKey()), static_cast<size_t>(event::Keyboard::Key::Unknown));
-    GTEST_ASSERT_EQ(
-        static_cast<size_t>(sequenceListener.getValidatedKeys()[2]), static_cast<size_t>(event::Keyboard::Key::C));
-
-    /// Call is accessible and reset the sequence
-    sequenceListener(registry, registry.getEntity(0));
+    /// Sequence completed and called
+    event::EventsManager::handleEvent(registry, event::KeyReleasedEvent(event::Keyboard::Key::C));
     GTEST_ASSERT_EQ(sequenceCount, 2);
     GTEST_ASSERT_FALSE(sequenceListener.isComplete());
     GTEST_ASSERT_EQ(
@@ -286,6 +282,7 @@ TEST(Event, KeyCombination)
                         })
                     .build()
                     .getIndex()];
+    combinationListener.setCombination({event::Keyboard::Key::A, event::Keyboard::Key::B, event::Keyboard::Key::C});
 
     /// Initial state
     GTEST_ASSERT_FALSE(combinationListener.isComplete());
@@ -301,6 +298,9 @@ TEST(Event, KeyCombination)
     event::EventsManager::handleEvent(registry, event::KeyPressedEvent(event::Keyboard::Key::B));
     GTEST_ASSERT_FALSE(combinationListener.isComplete());
     GTEST_ASSERT_EQ(combinationListener.getValidatedKeys(), 1);
+
+    /// Unhandled key, no changes
+    GTEST_ASSERT_FALSE(combinationListener.update(event::KeyPressedEvent(event::Keyboard::Key::Z)));
 
     /// Same key is pressed again, no changes
     GTEST_ASSERT_FALSE(combinationListener.update(event::KeyPressedEvent(event::Keyboard::Key::B)));
@@ -319,13 +319,20 @@ TEST(Event, KeyCombination)
 
     /// Missing keys are pressed
     GTEST_ASSERT_FALSE(combinationListener.update(event::KeyPressedEvent(event::Keyboard::Key::A)));
-    GTEST_ASSERT_TRUE(combinationListener.update(event::KeyPressedEvent(event::Keyboard::Key::C)));
-    GTEST_ASSERT_TRUE(combinationListener.isComplete());
-    GTEST_ASSERT_EQ(combinationListener.getValidatedKeys(), 3);
-
-    /// Callback
-    combinationListener(registry, registry.getEntity(0));
+    event::EventsManager::handleEvent(registry, event::KeyPressedEvent(event::Keyboard::Key::C));
     GTEST_ASSERT_EQ(combinationCount, 2);
     GTEST_ASSERT_FALSE(combinationListener.isComplete());
     GTEST_ASSERT_EQ(combinationListener.getValidatedKeys(), 0);
+}
+
+TEST(Keyboard, outputStreamOperators)
+{
+    for (int i = static_cast<int>(event::Keyboard::Key::Unknown); i < static_cast<int>(event::Keyboard::Key::Count);
+         i++) {
+        std::stringstream ss;
+
+        ss << static_cast<event::Keyboard::Key>(i);
+        GTEST_ASSERT_EQ(ss.str(), event::Keyboard::getKeyName(static_cast<event::Keyboard::Key>(i)));
+    }
+    GTEST_ASSERT_EQ(event::Keyboard::getKeyName(event::Keyboard::Key::Count), nullptr);
 }

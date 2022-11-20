@@ -128,8 +128,7 @@ namespace util
 
         for (std::size_t i = 0; i + 1 < s; ++i)
             this->_store[i] &= other._store[i];
-        if (s != 0)
-            this->_store[s - 1] &= other._store[s - 1] | (~std::uint64_t(0) << (other.size() & 0b111111));
+        this->_store[s - 1] &= other._store[s - 1] | (~std::uint64_t(0) << (other.size() & 0b111111));
         this->normalize();
         return *this;
     }

@@ -32,6 +32,8 @@ TEST(MapStorage, emplace)
     EXPECT_EQ(storage.getMask(), util::BitSet("11"));
     storage.erase(0);
     EXPECT_EQ(storage.getMask(), util::BitSet("10"));
+    storage.emplace(0, 5, 3);
+    EXPECT_EQ(storage.getMask(), util::BitSet("11"));
 }
 
 TEST(MapStorage, contains)
@@ -62,12 +64,15 @@ TEST(MapStorage, erase)
 
     EXPECT_EQ(storage.getMask(), util::BitSet(""));
     EXPECT_THROW(storage[0], std::out_of_range);
+    EXPECT_THROW(const_cast<const ecstasy::MapStorage<Position> &>(storage)[0], std::out_of_range);
+
     storage.erase(0);
     EXPECT_THROW(storage[0], std::out_of_range);
 
     storage.emplace(0, 5, 3);
     EXPECT_EQ(storage.getMask(), util::BitSet("1"));
     EXPECT_EQ(storage[0].x, 5);
+    EXPECT_EQ(const_cast<const ecstasy::MapStorage<Position> &>(storage)[0].x, 5);
     storage.erase(0);
     EXPECT_THROW(storage[0], std::out_of_range);
     EXPECT_EQ(storage.getMask(), util::BitSet("0"));

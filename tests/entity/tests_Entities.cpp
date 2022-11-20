@@ -6,12 +6,19 @@
 TEST(Entities, all)
 {
     ecstasy::Entities entities;
+    ecstasy::Entities entities2;
+
+    /// Entity has not been created
+    EXPECT_FALSE(entities.isAlive(entities.get(0)));
 
     /// Create an entity alive
     ecstasy::Entity e = entities.create();
     EXPECT_EQ(e.getIndex(), 0);
     EXPECT_EQ(e.getGeneration(), 1);
     EXPECT_TRUE(entities.isAlive(e));
+
+    /// There is no entity alive in the entities2 storage
+    EXPECT_FALSE(entities2.isAlive(e));
 
     /// Create a second entity dead
     ecstasy::Entity e2 = entities.create(false);
