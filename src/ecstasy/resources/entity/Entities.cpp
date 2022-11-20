@@ -68,7 +68,7 @@ namespace ecstasy
 
     Entity Entities::get(Entity::Index id) const noexcept
     {
-        if (id > _generations.size())
+        if (id >= _generations.size())
             return Entity(id, 0);
         return Entity(id, _generations[id]);
     }
@@ -77,7 +77,7 @@ namespace ecstasy
     {
         Entity::Index id = entity.getIndex();
 
-        if (id > _generations.size() || entity.getGeneration() != _generations[id] || !_alive[id])
+        if (id >= _generations.size() || entity.getGeneration() != _generations[id] || !_alive[id])
             return false;
         _alive[id] = false;
         return true;
@@ -96,7 +96,7 @@ namespace ecstasy
     {
         Entity::Index id = entity.getIndex();
 
-        if (id > _generations.size() || !_alive[id] || entity.getGeneration() != _generations[id])
+        if (id >= _generations.size() || !_alive[id] || entity.getGeneration() != _generations[id])
             return false;
         if (id > _killed.size() - 1)
             _killed.resizeSentinel(id + 1, true);
