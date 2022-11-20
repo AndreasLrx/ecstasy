@@ -23,6 +23,13 @@ TEST(DeletionStack, basic_cases)
     for (int i = 0; i < 10; i++)
         registry.entityBuilder().build();
 
+    /// No deletion
+    {
+        GTEST_ASSERT_EQ(registry.getEntities().getMask(), util::BitSet("1111111111"));
+        ecstasy::DeletionStack delStack(registry);
+    }
+    GTEST_ASSERT_EQ(registry.getEntities().getMask(), util::BitSet("1111111111"));
+
     {
         ecstasy::DeletionStack delStack(registry);
         int i = 0;
@@ -34,6 +41,7 @@ TEST(DeletionStack, basic_cases)
             GTEST_ASSERT_TRUE(registry.getEntities().isAlive(entity));
         }
         GTEST_ASSERT_EQ(registry.getEntities().getMask(), util::BitSet("1111111111"));
+        GTEST_ASSERT_EQ(delStack.size(), 5);
     }
     /// delStack deleted and so are the entities
     GTEST_ASSERT_EQ(registry.getEntities().getMask(), util::BitSet("0101010101"));

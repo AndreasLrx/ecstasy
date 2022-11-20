@@ -195,7 +195,7 @@ TEST(Registry, storages)
     EXPECT_EQ(registry.getStorage<Counter>().size(), 0);
 }
 
-TEST(Registry, erase_entities)
+TEST(Registry, eraseEntity)
 {
     ecstasy::Registry registry;
     const ecstasy::Registry &cregistry = registry;
@@ -205,8 +205,31 @@ TEST(Registry, erase_entities)
     GTEST_ASSERT_EQ(cregistry.getEntities().getMask(), util::BitSet("1111111111"));
     GTEST_ASSERT_EQ(registry.getStorage<Position>().getMask(), util::BitSet("1111111111"));
     GTEST_ASSERT_EQ(registry.getStorage<Size>().getMask(), util::BitSet("1111111111"));
-    registry.eraseEntity(registry.getEntity(1));
-    registry.eraseEntity(registry.getEntity(5));
+    GTEST_ASSERT_TRUE(registry.eraseEntity(registry.getEntity(1)));
+    GTEST_ASSERT_FALSE(registry.eraseEntity(registry.getEntity(1)));
+    GTEST_ASSERT_TRUE(registry.eraseEntity(registry.getEntity(5)));
+    GTEST_ASSERT_EQ(registry.getEntities().getMask(), util::BitSet("1111011101"));
+    GTEST_ASSERT_EQ(registry.getStorage<Position>().getMask(), util::BitSet("1111011101"));
+    GTEST_ASSERT_EQ(registry.getStorage<Size>().getMask(), util::BitSet("1111011101"));
+
+    GTEST_ASSERT_TRUE(cregistry.getEntities().isAlive(registry.getEntity(0)));
+    GTEST_ASSERT_FALSE(registry.getEntities().isAlive(registry.getEntity(1)));
+    GTEST_ASSERT_FALSE(registry.getEntities().isAlive(registry.getEntity(5)));
+}
+
+TEST(Registry, eraseEntities)
+{
+    ecstasy::Registry registry;
+    const ecstasy::Registry &cregistry = registry;
+
+    for (int i = 0; i < 10; i++)
+        registry.entityBuilder().with<Position>(1, 2).with<Size>(3, 4).build();
+    GTEST_ASSERT_EQ(cregistry.getEntities().getMask(), util::BitSet("1111111111"));
+    GTEST_ASSERT_EQ(registry.getStorage<Position>().getMask(), util::BitSet("1111111111"));
+    GTEST_ASSERT_EQ(registry.getStorage<Size>().getMask(), util::BitSet("1111111111"));
+    ecstasy::Entity toDelete[] = {registry.getEntity(1), registry.getEntity(5)};
+    GTEST_ASSERT_EQ(registry.eraseEntities(std::span(toDelete)), 2);
+    GTEST_ASSERT_EQ(registry.eraseEntities(std::span(toDelete)), 0);
     GTEST_ASSERT_EQ(registry.getEntities().getMask(), util::BitSet("1111011101"));
     GTEST_ASSERT_EQ(registry.getStorage<Position>().getMask(), util::BitSet("1111011101"));
     GTEST_ASSERT_EQ(registry.getStorage<Size>().getMask(), util::BitSet("1111011101"));
@@ -371,10 +394,15 @@ TEST(Registry, MaybeSelect)
         registry.select<Position, ecstasy::Maybe<Density>>().where<Position, Velocity, ecstasy::Maybe<Density>>(
             allocator);
     /// Need to create a lambda because the EXPECT_THROW macro interprets the template parameters as macro parameters
-    auto execMissingAllocator = [&registry]() {
+    auto execMissingUnaryAllocator = [&registry]() {
         registry.select<Position, ecstasy::Maybe<Density>>().where<Position, Velocity, ecstasy::Maybe<Density>>();
     };
-    EXPECT_THROW(execMissingAllocator(), std::logic_error);
+    auto execMissingBinaryAllocator = [&registry]() {
+        registry.select<Position, ecstasy::Maybe<Density>>().where<Position, ecstasy::Or<Density, Velocity>>();
+    };
+    EXPECT_THROW(execMissingUnaryAllocator(), std::logic_error);
+    EXPECT_THROW(execMissingBinaryAllocator(), std::logic_error);
+
     GTEST_ASSERT_EQ(query.getMask(), select.getMask());
     GTEST_ASSERT_EQ(query.getMask(), util::BitSet("11000101000001"));
 }
@@ -513,4 +541,11 @@ TEST(Registry, OrSelect)
         GTEST_ASSERT_TRUE(vec);
         GTEST_ASSERT_EQ(vec->get(), index * 4);
     }
+}
+
+TEST(Registry, withoutEntities)
+{
+    ecstasy::Registry registry(false);
+
+    GTEST_ASSERT_FALSE(registry.hasResource<ecstasy::Entities>());
 }
