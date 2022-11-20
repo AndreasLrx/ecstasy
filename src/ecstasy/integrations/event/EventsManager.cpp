@@ -25,7 +25,7 @@
 namespace ecstasy::integration::event
 {
     template <typename E>
-    constexpr void callListeners(Registry &registry, const E &event)
+    static void callListeners(Registry &registry, const E &event)
     {
         ecstasy::ModifiersAllocator allocator;
 

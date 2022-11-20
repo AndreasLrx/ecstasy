@@ -25,7 +25,10 @@ namespace ecstasy::integration::event
         auto it = _keyStates.find(event.key);
 
         if (it != _keyStates.end() && it->second != event.pressed) {
-            _validatedKeys += (event.pressed) ? 1 : -1;
+            if (event.pressed)
+                _validatedKeys++;
+            else
+                _validatedKeys--;
             it->second = event.pressed;
             return isComplete();
         }
