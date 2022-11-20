@@ -13,5 +13,7 @@ digraph "src/ecstasy/query/modifiers/Or.hpp"
   Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="src/ecstasy/registry\l/modifiers/Or.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$registry_2modifiers_2_or_8hpp.html",tooltip=" "];
   Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="src/ecstasy/registry\l/modifiers/include.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$registry_2modifiers_2include_8hpp.html",tooltip=" "];
+  Node6 [label="src/ecstasy/integrations\l/event/EventsManager.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_events_manager_8cpp.html",tooltip=" "];
+  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="src/ecstasy/registry\l/modifiers/include.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$registry_2modifiers_2include_8hpp.html",tooltip=" "];
 }

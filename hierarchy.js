@@ -55,10 +55,12 @@ var hierarchy =
       [ "ecstasy::integration::sfml::PollEvents", "classecstasy_1_1integration_1_1sfml_1_1_poll_events.html", null ]
     ] ],
     [ "ecstasy::query::Query< First, Others >::Iterator", "classecstasy_1_1query_1_1_query_1_1_iterator.html", null ],
+    [ "ecstasy::integration::event::KeyCombinationListener", "classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html", null ],
     [ "ecstasy::integration::event::KeyEvent", "structecstasy_1_1integration_1_1event_1_1_key_event.html", [
       [ "ecstasy::integration::event::KeyPressedEvent", "structecstasy_1_1integration_1_1event_1_1_key_pressed_event.html", null ],
       [ "ecstasy::integration::event::KeyReleasedEvent", "structecstasy_1_1integration_1_1event_1_1_key_released_event.html", null ]
     ] ],
+    [ "ecstasy::integration::event::KeySequenceListener", "classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html", null ],
     [ "util::meta::left_outer_join< typename, typename >", "structutil_1_1meta_1_1left__outer__join.html", null ],
     [ "util::meta::left_outer_join< std::tuple< Lefts... >, std::tuple< Rights... > >", "structutil_1_1meta_1_1left__outer__join_3_01std_1_1tuple_3_01_lefts_8_8_8_01_4_00_01std_1_1tuple_3_01_rights_8_8_8_01_4_01_4.html", null ],
     [ "util::meta::left_outer_join< Traits< Left, Lefts... >, Traits< Rights... > >", "structutil_1_1meta_1_1left__outer__join_3_01_traits_3_01_left_00_01_lefts_8_8_8_01_4_00_01_traits_3_01_rights_8_8_8_01_4_01_4.html", null ],
@@ -98,8 +100,8 @@ var hierarchy =
     ] ],
     [ "util::meta::_left_outer_join< Traits< Rights... >, IsInner, Left, OuterLefts... >::result< LeftsUntreated >", "structutil_1_1meta_1_1__left__outer__join_3_01_traits_3_01_rights_8_8_8_01_4_00_01_is_inner_00_0976b977fc3db4c0d2dc93c5d53c35a08.html", null ],
     [ "util::meta::_left_outer_join< Traits< Rights... >, IsInner, Left, OuterLefts... >::result< NextLeft, LeftsUntreated... >", "structutil_1_1meta_1_1__left__outer__join_3_01_traits_3_01_rights_8_8_8_01_4_00_01_is_inner_00_0e4c618fb3b7be1c193ef63fbe4938be5.html", null ],
-    [ "ecstasy::Registry::Select< Selects >", "classecstasy_1_1_registry_1_1_select.html", null ],
     [ "ecstasy::query::Select< SelectedQueryables >", "structecstasy_1_1query_1_1_select.html", null ],
+    [ "ecstasy::Registry::Select< Selects >", "classecstasy_1_1_registry_1_1_select.html", null ],
     [ "ecstasy::query::Select< SelectedQueryables >::SorteredTie< Valids >", "structecstasy_1_1query_1_1_select_1_1_sortered_tie.html", null ],
     [ "ecstasy::integration::event::TextEnteredEvent", "structecstasy_1_1integration_1_1event_1_1_text_entered_event.html", null ],
     [ "util::meta::Traits< Args >", "structutil_1_1meta_1_1_traits.html", null ],

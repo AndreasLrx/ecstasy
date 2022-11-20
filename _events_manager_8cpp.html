@@ -95,10 +95,13 @@ $(document).ready(function(){initNavTree('_events_manager_8cpp.html',''); initRe
 <code>#include &quot;<a class="el" href="_query_8hpp_source.html">ecstasy/query/Query.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_registry_8hpp_source.html">ecstasy/registry/Registry.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="registry_2modifiers_2_maybe_8hpp_source.html">ecstasy/registry/modifiers/Maybe.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="registry_2modifiers_2_or_8hpp_source.html">ecstasy/registry/modifiers/Or.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_entities_8hpp_source.html">ecstasy/resources/entity/Entities.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_map_storage_8hpp_source.html">ecstasy/storages/MapStorage.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_event_8hpp_source.html">events/Event.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_gamepads_8hpp_source.html">inputs/Gamepads.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_key_combination_listener_8hpp_source.html">listeners/KeyCombinationListener.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_key_sequence_listener_8hpp_source.html">listeners/KeySequenceListener.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for EventsManager.cpp:</div>
 <div class="dyncontent">
@@ -121,9 +124,11 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8bfabfb95ff33c57c9a7e21682f2daea"><td class="memTemplParams" colspan="2">template&lt;typename E &gt; </td></tr>
-<tr class="memitem:a8bfabfb95ff33c57c9a7e21682f2daea"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1integration_1_1event.html#a8bfabfb95ff33c57c9a7e21682f2daea">ecstasy::integration::event::callListeners</a> (Registry &amp;registry, const E &amp;event)</td></tr>
-<tr class="separator:a8bfabfb95ff33c57c9a7e21682f2daea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad57af5a8996d387878f4b373e61c4266"><td class="memTemplParams" colspan="2">template&lt;typename E &gt; </td></tr>
+<tr class="memitem:ad57af5a8996d387878f4b373e61c4266"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1integration_1_1event.html#ad57af5a8996d387878f4b373e61c4266">ecstasy::integration::event::callListeners</a> (Registry &amp;registry, const E &amp;event)</td></tr>
+<tr class="separator:ad57af5a8996d387878f4b373e61c4266"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe354348c09805ab5984709074db3404"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1integration_1_1event.html#afe354348c09805ab5984709074db3404">ecstasy::integration::event::callKeyListeners</a> (Registry &amp;registry, const KeyEvent &amp;event)</td></tr>
+<tr class="separator:afe354348c09805ab5984709074db3404"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>

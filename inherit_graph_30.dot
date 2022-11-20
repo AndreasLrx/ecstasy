@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="ecstasy::query::Query\l\< First, Others \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1query_1_1_query.html",tooltip="Query components presents in all given queryables."];
+  Node0 [label="ecstasy::Or\< C1, C2 \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1_or.html",tooltip="Placeholder for ecstasy::query::modifier::Or."];
 }

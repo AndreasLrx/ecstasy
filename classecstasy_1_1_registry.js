@@ -17,7 +17,7 @@ var classecstasy_1_1_registry =
     [ "getEntity", "classecstasy_1_1_registry.html#a5d982d00370574aec1946df44d3484d0", null ],
     [ "getQueryable", "classecstasy_1_1_registry.html#a4fdc7f2916182310a183bb4170c13a0d", null ],
     [ "getQueryable", "classecstasy_1_1_registry.html#a5f30946b88ec115aea39438678094fc1", null ],
-    [ "getQueryable", "classecstasy_1_1_registry.html#a0e0891c25270066dee974a2644f88a80", null ],
+    [ "getQueryable", "classecstasy_1_1_registry.html#af831f08bbfbb5c1bc21b02646d1be67e", null ],
     [ "getQueryable", "classecstasy_1_1_registry.html#aeedb826d2129db4584df577f7c803ca1", null ],
     [ "getQueryable", "classecstasy_1_1_registry.html#aeedb826d2129db4584df577f7c803ca1", null ],
     [ "getQueryable", "classecstasy_1_1_registry.html#a8c75b88e6a7cd0f02cfe13485f24fd61", null ],

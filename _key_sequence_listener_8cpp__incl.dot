@@ -1,0 +1,40 @@
+digraph "src/ecstasy/integrations/event/listeners/KeySequenceListener.cpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="src/ecstasy/integrations\l/event/listeners/KeySequenceListener.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="KeySequenceListener.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_key_sequence_listener_8hpp.html",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="functional",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/functional.html",tooltip=" "];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="vector",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/vector.html",tooltip=" "];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ecstasy/integrations\l/event/inputs/Keyboard.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_keyboard_8hpp.html",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="array",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/array.html",tooltip=" "];
+  Node5 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="ostream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/ostream.html",tooltip=" "];
+  Node5 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="ecstasy/resources/Resource.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_resource_8hpp.html",tooltip=" "];
+  Node2 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="ecstasy/resources/entity\l/Entity.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_entity_8hpp.html",tooltip=" "];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="compare",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/compare.html",tooltip=" "];
+  Node9 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="stddef.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node9 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="stdexcept",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/stdexcept.html",tooltip=" "];
+  Node9 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="ecstasy/storages/IStorage.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_i_storage_8hpp.html",tooltip=" "];
+  Node13 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="span",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/span.html",tooltip=" "];
+  Node9 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="ecstasy/storages/Storage\lConcepts.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_storage_concepts_8hpp.html",tooltip=" "];
+  Node15 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="concepts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/concepts.html",tooltip=" "];
+  Node1 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="ecstasy/integrations\l/event/events/KeyEvent.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_key_event_8hpp.html",tooltip=" "];
+  Node17 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

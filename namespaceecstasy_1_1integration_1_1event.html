@@ -130,6 +130,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html">Keyboard</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current <a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html" title="Current Keyboard state.">Keyboard</a> state.  <a href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html">KeyCombinationListener</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Listener of a key combination.  <a href="classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1integration_1_1event_1_1_key_event.html">KeyEvent</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html" title="Event class.">Event</a> describing a key pressed or released.  <a href="structecstasy_1_1integration_1_1event_1_1_key_event.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,6 +141,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1integration_1_1event_1_1_key_released_event.html">KeyReleasedEvent</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html" title="Event class.">Event</a> describing a key released.  <a href="structecstasy_1_1integration_1_1event_1_1_key_released_event.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html">KeySequenceListener</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Listener of a key sequence.  <a href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html">Mouse</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current mouse state.  <a href="classecstasy_1_1integration_1_1event_1_1_mouse.html#details">More...</a><br /></td></tr>
@@ -194,9 +200,11 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8bfabfb95ff33c57c9a7e21682f2daea"><td class="memTemplParams" colspan="2">template&lt;typename E &gt; </td></tr>
-<tr class="memitem:a8bfabfb95ff33c57c9a7e21682f2daea"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1integration_1_1event.html#a8bfabfb95ff33c57c9a7e21682f2daea">callListeners</a> (<a class="el" href="classecstasy_1_1_registry.html">Registry</a> &amp;registry, const E &amp;event)</td></tr>
-<tr class="separator:a8bfabfb95ff33c57c9a7e21682f2daea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad57af5a8996d387878f4b373e61c4266"><td class="memTemplParams" colspan="2">template&lt;typename E &gt; </td></tr>
+<tr class="memitem:ad57af5a8996d387878f4b373e61c4266"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1integration_1_1event.html#ad57af5a8996d387878f4b373e61c4266">callListeners</a> (<a class="el" href="classecstasy_1_1_registry.html">Registry</a> &amp;registry, const E &amp;event)</td></tr>
+<tr class="separator:ad57af5a8996d387878f4b373e61c4266"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe354348c09805ab5984709074db3404"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1integration_1_1event.html#afe354348c09805ab5984709074db3404">callKeyListeners</a> (<a class="el" href="classecstasy_1_1_registry.html">Registry</a> &amp;registry, const <a class="el" href="structecstasy_1_1integration_1_1event_1_1_key_event.html">KeyEvent</a> &amp;event)</td></tr>
+<tr class="separator:afe354348c09805ab5984709074db3404"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html" title="Event class.">Event</a> integration. </p>
@@ -380,8 +388,65 @@ template&lt;typename E &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a8bfabfb95ff33c57c9a7e21682f2daea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8bfabfb95ff33c57c9a7e21682f2daea">&#9670;&nbsp;</a></span>callListeners()</h2>
+<a id="afe354348c09805ab5984709074db3404"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe354348c09805ab5984709074db3404">&#9670;&nbsp;</a></span>callKeyListeners()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ecstasy::integration::event::callKeyListeners </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classecstasy_1_1_registry.html">Registry</a> &amp;&#160;</td>
+          <td class="paramname"><em>registry</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structecstasy_1_1integration_1_1event_1_1_key_event.html">KeyEvent</a> &amp;&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_events_manager_8cpp_source.html#l00042">42</a> of file <a class="el" href="_events_manager_8cpp_source.html">EventsManager.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="classutil_1_1_allocator.html">ecstasy::ModifiersAllocator</a> allocator;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> [entity, listener, listeners, sequence, combination] :</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            registry</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                .select&lt;Entities, Maybe&lt;EventListener&lt;KeyEvent&gt;&gt;, Maybe&lt;EventListeners&lt;KeyEvent&gt;&gt;,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    Maybe&lt;KeySequenceListener&gt;, Maybe&lt;KeyCombinationListener&gt;&gt;()</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                .where&lt;Or&lt;EventListener&lt;KeyEvent&gt;,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                    Or&lt;EventListeners&lt;KeyEvent&gt;, Or&lt;KeySequenceListener, KeyCombinationListener&gt;&gt;&gt;&gt;(allocator)) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">if</span> (listener)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                listener.value()(registry, entity, <a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">if</span> (listeners)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                listeners.value()(registry, entity, <a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">if</span> (sequence &amp;&amp; sequence.value().get().update(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>))</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                sequence.value()(registry, entity);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">if</span> (combination &amp;&amp; combination.value().get().update(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>))</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                combination.value()(registry, entity);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad57af5a8996d387878f4b373e61c4266"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad57af5a8996d387878f4b373e61c4266">&#9670;&nbsp;</a></span>callListeners()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -392,7 +457,7 @@ template&lt;typename E &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr void ecstasy::integration::event::callListeners </td>
+          <td class="memname">static void ecstasy::integration::event::callListeners </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classecstasy_1_1_registry.html">Registry</a> &amp;&#160;</td>
           <td class="paramname"><em>registry</em>, </td>
@@ -411,21 +476,18 @@ template&lt;typename E &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Stack allocation instead of dynamic using allocator</p>
 
-<p class="definition">Definition at line <a class="el" href="_events_manager_8cpp_source.html#l00025">25</a> of file <a class="el" href="_events_manager_8cpp_source.html">EventsManager.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">auto</span> &amp;entities = registry.getEntities();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">auto</span> maybeListener =</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keyword">typename</span> <a class="code" href="structecstasy_1_1_maybe.html">ecstasy::Maybe&lt;EventListener&lt;E&gt;</a>&gt;::Modifier(registry.getStorageSafe&lt;EventListener&lt;E&gt;&gt;());</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">auto</span> maybeListeners =</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keyword">typename</span> <a class="code" href="structecstasy_1_1_maybe.html">ecstasy::Maybe&lt;EventListeners&lt;E&gt;</a>&gt;::Modifier(registry.getStorageSafe&lt;EventListeners&lt;E&gt;&gt;());</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> [entity, listener, listeners] : <a class="code" href="classecstasy_1_1query_1_1_query.html">ecstasy::query::Query</a>(entities, maybeListener, maybeListeners)) {</div>
+<p class="definition">Definition at line <a class="el" href="_events_manager_8cpp_source.html#l00028">28</a> of file <a class="el" href="_events_manager_8cpp_source.html">EventsManager.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="classutil_1_1_allocator.html">ecstasy::ModifiersAllocator</a> allocator;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> [entity, listener, listeners] :</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            registry.select&lt;Entities, Maybe&lt;EventListener&lt;E&gt;&gt;, Maybe&lt;EventListeners&lt;E&gt;&gt;&gt;()</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                .template where&lt;Or&lt;EventListener&lt;E&gt;, EventListeners&lt;E&gt;&gt;&gt;(allocator)) {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordflow">if</span> (listener)</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                listener.value()(registry, entity, <a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">if</span> (listeners)</div>
@@ -437,9 +499,8 @@ template&lt;typename E &gt; </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassecstasy_1_1query_1_1_query_html"><div class="ttname"><a href="classecstasy_1_1query_1_1_query.html">ecstasy::query::Query</a></div><div class="ttdoc">Query components presents in all given queryables.</div><div class="ttdef"><b>Definition:</b> <a href="_query_8hpp_source.html#l00035">Query.hpp:35</a></div></div>
-<div class="ttc" id="astructecstasy_1_1_maybe_html"><div class="ttname"><a href="structecstasy_1_1_maybe.html">ecstasy::Maybe</a></div><div class="ttdoc">Placeholder for ecstasy::query::modifier::Maybe.</div><div class="ttdef"><b>Definition:</b> <a href="registry_2modifiers_2_maybe_8hpp_source.html#l00028">Maybe.hpp:28</a></div></div>
 <div class="ttc" id="anamespaceecstasy_1_1integration_1_1event_html"><div class="ttname"><a href="namespaceecstasy_1_1integration_1_1event.html">ecstasy::integration::event</a></div><div class="ttdoc">Event integration.</div><div class="ttdef"><b>Definition:</b> <a href="_event_8hpp_source.html#l00024">Event.hpp:24</a></div></div>
+<div class="ttc" id="aclassutil_1_1_allocator_html"><div class="ttname"><a href="classutil_1_1_allocator.html">util::Allocator</a></div><div class="ttdef"><b>Definition:</b> <a href="_allocator_8hpp_source.html#l00027">Allocator.hpp:27</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
