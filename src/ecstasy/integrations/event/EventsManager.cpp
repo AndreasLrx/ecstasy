@@ -18,6 +18,7 @@
 #include "ecstasy/storages/MapStorage.hpp"
 #include "events/Event.hpp"
 #include "inputs/Gamepads.hpp"
+#include "listeners/KeyCombinationListener.hpp"
 #include "listeners/KeySequenceListener.hpp"
 
 namespace ecstasy::integration::event
@@ -68,6 +69,10 @@ namespace ecstasy::integration::event
 
                 /// Update key sequences
                 for (auto [entity, listener] : registry.query<Entities, KeySequenceListener>())
+                    if (listener.update(event.key))
+                        listener(registry, entity);
+                /// Update key combinations
+                for (auto [entity, listener] : registry.query<Entities, KeyCombinationListener>())
                     if (listener.update(event.key))
                         listener(registry, entity);
 

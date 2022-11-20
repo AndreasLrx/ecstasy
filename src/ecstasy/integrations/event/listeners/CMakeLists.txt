@@ -8,6 +8,8 @@ set(SRC
     ${INCROOT}/GamepadButtonListener.hpp
     ${INCROOT}/GamepadConnectedListener.hpp
     ${INCROOT}/include.hpp
+    ${SRCROOT}/KeyCombinationListener.cpp
+    ${INCROOT}/KeyCombinationListener.hpp
     ${INCROOT}/KeyListener.hpp
     ${SRCROOT}/KeySequenceListener.cpp
     ${INCROOT}/KeySequenceListener.hpp
