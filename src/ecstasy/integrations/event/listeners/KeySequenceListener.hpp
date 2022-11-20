@@ -114,11 +114,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
         ///
-        constexpr void setSequence(const std::vector<Keyboard::Key> &newSequence)
-        {
-            _sequence = newSequence;
-            reset();
-        }
+        void setSequence(const std::vector<Keyboard::Key> &newSequence);
 
         ///
         /// @brief Get the expected sequence.

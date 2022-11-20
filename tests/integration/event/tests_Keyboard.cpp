@@ -6,6 +6,7 @@
 #include "ecstasy/integrations/event/events/KeyReleasedEvent.hpp"
 #include "ecstasy/integrations/event/inputs/Keyboard.hpp"
 #include "ecstasy/integrations/event/listeners/KeyListener.hpp"
+#include "ecstasy/integrations/event/listeners/KeySequenceListener.hpp"
 #include "ecstasy/integrations/event/listeners/TextEnteredListener.hpp"
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/storages/MapStorage.hpp"
@@ -129,4 +130,124 @@ TEST(Event, TextEntered)
         val += 12;
     }
     GTEST_ASSERT_EQ(count, iterations);
+}
+
+TEST(Event, KeySequence)
+{
+    Registry registry;
+    int sequenceCount = 0;
+
+    /// Sequence ABC listener
+    auto &sequenceListener =
+        registry.getStorageSafe<event::KeySequenceListener>()
+            [registry.entityBuilder()
+                    .with<event::KeySequenceListener>(
+                        std::initializer_list<event::Keyboard::Key>{
+                            event::Keyboard::Key::A, event::Keyboard::Key::B, event::Keyboard::Key::C},
+                        [&sequenceCount](Registry &r, Entity e, const event::KeySequenceListener &event) {
+                            (void)r;
+                            (void)e;
+                            (void)event;
+                            sequenceCount++;
+                        })
+                    .build()
+                    .getIndex()];
+
+    /// Initial state
+    GTEST_ASSERT_FALSE(sequenceListener.isComplete());
+    GTEST_ASSERT_EQ(sequenceListener.getHeldKey(), event::Keyboard::Key::Unknown);
+    GTEST_ASSERT_TRUE(sequenceListener.getValidatedKeys().empty());
+
+    /// Call without force innaccessible
+    sequenceListener(registry, registry.getEntity(0));
+    GTEST_ASSERT_EQ(sequenceCount, 0);
+    sequenceListener(registry, registry.getEntity(0), true);
+    GTEST_ASSERT_EQ(sequenceCount, 1);
+
+    /// First sequence key pressed
+    event::EventsManager::handleEvent(registry, event::KeyPressedEvent(event::Keyboard::Key::A));
+    GTEST_ASSERT_FALSE(sequenceListener.isComplete());
+    GTEST_ASSERT_EQ(sequenceListener.getHeldKey(), event::Keyboard::Key::A);
+    GTEST_ASSERT_TRUE(sequenceListener.getValidatedKeys().empty());
+    /// First sequence key released -> key is validated
+    event::EventsManager::handleEvent(registry, event::KeyReleasedEvent(event::Keyboard::Key::A));
+    GTEST_ASSERT_FALSE(sequenceListener.isComplete());
+    GTEST_ASSERT_EQ(sequenceListener.getHeldKey(), event::Keyboard::Key::Unknown);
+    GTEST_ASSERT_EQ(sequenceListener.getValidatedKeys()[0], event::Keyboard::Key::A);
+
+    /// Following key without the handleEvent
+    GTEST_ASSERT_FALSE(sequenceListener.update(event::KeyPressedEvent(event::Keyboard::Key::B)));
+    GTEST_ASSERT_FALSE(sequenceListener.isComplete());
+    GTEST_ASSERT_EQ(sequenceListener.getHeldKey(), event::Keyboard::Key::B);
+    GTEST_ASSERT_EQ(sequenceListener.getValidatedKeys().size(), 1);
+
+    GTEST_ASSERT_FALSE(sequenceListener.update(event::KeyReleasedEvent(event::Keyboard::Key::B)));
+    GTEST_ASSERT_FALSE(sequenceListener.isComplete());
+    GTEST_ASSERT_EQ(sequenceListener.getHeldKey(), event::Keyboard::Key::Unknown);
+    GTEST_ASSERT_EQ(sequenceListener.getValidatedKeys()[1], event::Keyboard::Key::B);
+
+    /// Final key
+    GTEST_ASSERT_FALSE(sequenceListener.update(event::KeyPressedEvent(event::Keyboard::Key::C)));
+    GTEST_ASSERT_FALSE(sequenceListener.isComplete());
+    GTEST_ASSERT_EQ(sequenceListener.getHeldKey(), event::Keyboard::Key::C);
+    GTEST_ASSERT_EQ(sequenceListener.getValidatedKeys().size(), 2);
+    /// Sequence completed
+    GTEST_ASSERT_TRUE(sequenceListener.update(event::KeyReleasedEvent(event::Keyboard::Key::C)));
+    GTEST_ASSERT_TRUE(sequenceListener.isComplete());
+    GTEST_ASSERT_EQ(sequenceListener.getHeldKey(), event::Keyboard::Key::Unknown);
+    GTEST_ASSERT_EQ(sequenceListener.getValidatedKeys()[2], event::Keyboard::Key::C);
+
+    /// Call is accessible and reset the sequence
+    sequenceListener(registry, registry.getEntity(0));
+    GTEST_ASSERT_EQ(sequenceCount, 2);
+    GTEST_ASSERT_FALSE(sequenceListener.isComplete());
+    GTEST_ASSERT_EQ(sequenceListener.getHeldKey(), event::Keyboard::Key::Unknown);
+    GTEST_ASSERT_TRUE(sequenceListener.getValidatedKeys().empty());
+
+    /// Invalid first key pressed
+    event::EventsManager::handleEvent(registry, event::KeyPressedEvent(event::Keyboard::Key::Z));
+    GTEST_ASSERT_FALSE(sequenceListener.isComplete());
+    GTEST_ASSERT_EQ(sequenceListener.getHeldKey(), event::Keyboard::Key::Unknown);
+    GTEST_ASSERT_TRUE(sequenceListener.getValidatedKeys().empty());
+
+    /// First sequence key pressed
+    event::EventsManager::handleEvent(registry, event::KeyPressedEvent(event::Keyboard::Key::A));
+    GTEST_ASSERT_FALSE(sequenceListener.isComplete());
+    GTEST_ASSERT_EQ(sequenceListener.getHeldKey(), event::Keyboard::Key::A);
+    GTEST_ASSERT_TRUE(sequenceListener.getValidatedKeys().empty());
+
+    /// Key pressed while waiting release
+    event::EventsManager::handleEvent(registry, event::KeyPressedEvent(event::Keyboard::Key::Z));
+    GTEST_ASSERT_FALSE(sequenceListener.isComplete());
+    GTEST_ASSERT_EQ(sequenceListener.getHeldKey(), event::Keyboard::Key::Unknown);
+    GTEST_ASSERT_TRUE(sequenceListener.getValidatedKeys().empty());
+
+    /// First sequence key pressed and released
+    event::EventsManager::handleEvent(registry, event::KeyPressedEvent(event::Keyboard::Key::A));
+    event::EventsManager::handleEvent(registry, event::KeyReleasedEvent(event::Keyboard::Key::A));
+    GTEST_ASSERT_FALSE(sequenceListener.isComplete());
+    GTEST_ASSERT_EQ(sequenceListener.getHeldKey(), event::Keyboard::Key::Unknown);
+    GTEST_ASSERT_FALSE(sequenceListener.getValidatedKeys().empty());
+
+    /// Invalid Key pressed in the sequence
+    event::EventsManager::handleEvent(registry, event::KeyPressedEvent(event::Keyboard::Key::Z));
+    GTEST_ASSERT_FALSE(sequenceListener.isComplete());
+    GTEST_ASSERT_EQ(sequenceListener.getHeldKey(), event::Keyboard::Key::Unknown);
+    GTEST_ASSERT_TRUE(sequenceListener.getValidatedKeys().empty());
+
+    /// Unhandled release: no held key -> no change
+    event::EventsManager::handleEvent(registry, event::KeyReleasedEvent(event::Keyboard::Key::A));
+    GTEST_ASSERT_FALSE(sequenceListener.isComplete());
+    GTEST_ASSERT_EQ(sequenceListener.getHeldKey(), event::Keyboard::Key::Unknown);
+    GTEST_ASSERT_TRUE(sequenceListener.getValidatedKeys().empty());
+
+    /// Unhandled release: key doesn't match the held key -> no change
+    event::EventsManager::handleEvent(registry, event::KeyPressedEvent(event::Keyboard::Key::A));
+    GTEST_ASSERT_FALSE(sequenceListener.isComplete());
+    GTEST_ASSERT_EQ(sequenceListener.getHeldKey(), event::Keyboard::Key::A);
+    GTEST_ASSERT_TRUE(sequenceListener.getValidatedKeys().empty());
+    event::EventsManager::handleEvent(registry, event::KeyReleasedEvent(event::Keyboard::Key::Z));
+    GTEST_ASSERT_FALSE(sequenceListener.isComplete());
+    GTEST_ASSERT_EQ(sequenceListener.getHeldKey(), event::Keyboard::Key::A);
+    GTEST_ASSERT_TRUE(sequenceListener.getValidatedKeys().empty());
 }

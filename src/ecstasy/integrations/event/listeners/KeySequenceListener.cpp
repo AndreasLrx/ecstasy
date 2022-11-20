@@ -25,8 +25,11 @@ namespace ecstasy::integration::event
         if (event.pressed) {
             if (_heldKey == Keyboard::Key::Unknown && event.key == _sequence.at(_validatedKeys.size()))
                 _heldKey = event.key;
-            else if (_heldKey != Keyboard::Key::Unknown || !_validatedKeys.empty())
+            else if (_heldKey != Keyboard::Key::Unknown || !_validatedKeys.empty()) {
                 reset();
+                /// In case the failing key is the first key of the sequence we must start again the sequence.
+                return update(event);
+            }
         } else {
             if (_heldKey != Keyboard::Key::Unknown && _heldKey == event.key) {
                 _validatedKeys.push_back(_heldKey);
@@ -48,6 +51,12 @@ namespace ecstasy::integration::event
             _callback(registry, e, *this);
             reset();
         }
+    }
+
+    void KeySequenceListener::setSequence(const std::vector<Keyboard::Key> &newSequence)
+    {
+        _sequence = newSequence;
+        reset();
     }
 
     void KeySequenceListener::reset()

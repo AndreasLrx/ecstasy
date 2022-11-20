@@ -80,6 +80,7 @@ static void addEventListeners(ecstasy::Registry &registry)
             [](ecstasy::Registry &r, ecstasy::Entity entity, const event::KeySequenceListener &e) {
                 (void)r;
                 (void)entity;
+                (void)e;
                 std::cout << "Key Sequence AZE completed" << std::endl;
             })
         .build();
