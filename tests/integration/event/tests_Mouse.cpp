@@ -16,22 +16,26 @@ namespace event = ecstasy::integration::event;
 TEST(Event, MouseButtonPressed)
 {
     Registry registry;
-    event::Mouse &mouseState = registry.addResource<event::Mouse>();
-    int val1 = 0;
     int val2 = 0;
-
-    GTEST_ASSERT_TRUE(mouseState.isButtonUp(event::Mouse::Button::Left));
-    event::EventsManager::handleEvent(registry, event::MouseButtonPressedEvent(event::Mouse::Button::Left));
-    GTEST_ASSERT_TRUE(mouseState.isButtonDown(event::Mouse::Button::Left));
+    int multiEvents = 0;
 
     registry.entityBuilder()
-        .with<event::MouseButtonListener>([&val1](Registry &r, Entity e, const event::MouseButtonEvent &event) {
-            (void)r;
-            (void)e;
-            (void)event;
-            if (event.pressed)
-                val1++;
-        })
+        .with<event::EventListeners<event::MouseButtonEvent>>(
+            std::initializer_list<event::EventListener<event::MouseButtonEvent>>{
+                [&multiEvents](Registry &r, Entity e, const event::MouseButtonEvent &event) {
+                    (void)r;
+                    (void)e;
+                    (void)event;
+                    if (event.pressed)
+                        multiEvents++;
+                },
+                [&multiEvents](Registry &r, Entity e, const event::MouseButtonEvent &event) {
+                    (void)r;
+                    (void)e;
+                    (void)event;
+                    if (event.pressed)
+                        multiEvents += 3;
+                }})
         .build();
     registry.entityBuilder()
         .with<event::MouseButtonListener>([&val2](Registry &r, Entity e, const event::MouseButtonEvent &event) {
@@ -44,20 +48,21 @@ TEST(Event, MouseButtonPressed)
         .build();
 
     event::EventsManager::handleEvent(registry, event::MouseButtonPressedEvent(event::Mouse::Button::Left));
-    GTEST_ASSERT_EQ(val1, 1);
-    GTEST_ASSERT_EQ(val2, -1);
+
+    event::Mouse &mouseState = registry.addResource<event::Mouse>();
+    GTEST_ASSERT_TRUE(mouseState.isButtonUp(event::Mouse::Button::Left));
+    event::EventsManager::handleEvent(registry, event::MouseButtonPressedEvent(event::Mouse::Button::Left));
+    GTEST_ASSERT_TRUE(mouseState.isButtonDown(event::Mouse::Button::Left));
+
+    GTEST_ASSERT_EQ(val2, -2);
+    GTEST_ASSERT_EQ(multiEvents, 8); /// 1 + 3
 }
 
 TEST(Event, MouseButtonReleased)
 {
     Registry registry;
-    event::Mouse &mouseState = registry.addResource<event::Mouse>();
     int val1 = 0;
     int val2 = 0;
-
-    GTEST_ASSERT_TRUE(mouseState.isButtonUp(event::Mouse::Button::Left));
-    event::EventsManager::handleEvent(registry, event::MouseButtonPressedEvent(event::Mouse::Button::Left));
-    GTEST_ASSERT_TRUE(mouseState.isButtonDown(event::Mouse::Button::Left));
 
     registry.entityBuilder()
         .with<event::MouseButtonListener>([&val1](Registry &r, Entity e, const event::MouseButtonEvent &event) {
@@ -79,9 +84,16 @@ TEST(Event, MouseButtonReleased)
         .build();
 
     event::EventsManager::handleEvent(registry, event::MouseButtonReleasedEvent(event::Mouse::Button::Left));
+
+    event::Mouse &mouseState = registry.addResource<event::Mouse>();
     GTEST_ASSERT_TRUE(mouseState.isButtonUp(event::Mouse::Button::Left));
-    GTEST_ASSERT_EQ(val1, 1);
-    GTEST_ASSERT_EQ(val2, -1);
+    event::EventsManager::handleEvent(registry, event::MouseButtonPressedEvent(event::Mouse::Button::Left));
+    GTEST_ASSERT_TRUE(mouseState.isButtonDown(event::Mouse::Button::Left));
+    event::EventsManager::handleEvent(registry, event::MouseButtonReleasedEvent(event::Mouse::Button::Left));
+    GTEST_ASSERT_TRUE(mouseState.isButtonUp(event::Mouse::Button::Left));
+
+    GTEST_ASSERT_EQ(val1, 2);
+    GTEST_ASSERT_EQ(val2, -2);
 }
 
 TEST(Event, MouseWheelScroll)
@@ -123,13 +135,8 @@ TEST(Event, MouseWheelScroll)
 TEST(Event, MouseMoved)
 {
     Registry registry;
-    event::Mouse &mouseState = registry.addResource<event::Mouse>();
     int val1 = 0;
     int val2 = 0;
-
-    GTEST_ASSERT_EQ(mouseState.getPosition(), std::make_pair(0, 0));
-    event::EventsManager::handleEvent(registry, event::MouseMoveEvent(42, 84));
-    GTEST_ASSERT_EQ(mouseState.getPosition(), std::make_pair(42, 84));
 
     registry.entityBuilder()
         .with<event::MouseMoveListener>([&val1](Registry &r, Entity e, const event::MouseMoveEvent &event) {
@@ -148,8 +155,11 @@ TEST(Event, MouseMoved)
         .build();
 
     event::EventsManager::handleEvent(registry, event::MouseMoveEvent(10, -20));
-    GTEST_ASSERT_TRUE(mouseState.isButtonUp(event::Mouse::Button::Left));
-    GTEST_ASSERT_EQ(mouseState.getPosition(), std::make_pair(52, 64));
-    GTEST_ASSERT_EQ(val1, 10);
-    GTEST_ASSERT_EQ(val2, 20);
+
+    event::Mouse &mouseState = registry.addResource<event::Mouse>();
+    GTEST_ASSERT_EQ(mouseState.getPosition(), std::make_pair(0, 0));
+    event::EventsManager::handleEvent(registry, event::MouseMoveEvent(42, 84));
+    GTEST_ASSERT_EQ(mouseState.getPosition(), std::make_pair(42, 84));
+    GTEST_ASSERT_EQ(val1, 52);
+    GTEST_ASSERT_EQ(val2, -64);
 }
