@@ -26,7 +26,7 @@ namespace ecstasy
     ///
     template <typename C>
     struct Not {
-        using Modifier = query::modifier::Not<getStorageType<C>>;
+        using Modifier = query::modifier::Not<queryable_type_t<C>>;
     };
 } // namespace ecstasy
 
