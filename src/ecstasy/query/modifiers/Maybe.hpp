@@ -42,7 +42,7 @@ namespace ecstasy::query::modifier
         using QueryData = util::meta::add_optional_t<typename Internal::QueryData>;
 
         ///
-        /// @brief Construct a new Not Queryable modifier.
+        /// @brief Construct a new Maybe Queryable modifier.
         ///
         /// @param[in] internal wrapped queryable.
         ///

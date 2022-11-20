@@ -75,10 +75,11 @@ namespace ecstasy
 
         /// @copydoc getQueryable()
         template <IsStorage S>
-        requires query::Queryable<S>
-        constexpr S &getQueryable(OptionalModifiersAllocator &allocator)
+        requires query::Queryable<S> S &getQueryable(OptionalModifiersAllocator &allocator)
         {
             (void)allocator;
+            if (!_storages.contains<S>())
+                return _storages.emplace<S>();
             return _storages.get<S>();
         }
 

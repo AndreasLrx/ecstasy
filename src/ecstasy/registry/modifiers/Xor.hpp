@@ -27,7 +27,7 @@ namespace ecstasy
     ///
     template <typename C1, typename C2>
     struct Xor {
-        using Modifier = query::modifier::Xor<getStorageType<C1>, getStorageType<C2>>;
+        using Modifier = query::modifier::Xor<queryable_type_t<C1>, queryable_type_t<C2>>;
     };
 } // namespace ecstasy
 

@@ -14,6 +14,7 @@
 #include "ecstasy/query/Query.hpp"
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/registry/modifiers/Maybe.hpp"
+#include "ecstasy/registry/modifiers/Or.hpp"
 #include "ecstasy/resources/entity/Entities.hpp"
 #include "ecstasy/storages/MapStorage.hpp"
 #include "events/Event.hpp"
@@ -26,18 +27,36 @@ namespace ecstasy::integration::event
     template <typename E>
     constexpr void callListeners(Registry &registry, const E &event)
     {
-        /// Stack allocation instead of dynamic using allocator
-        auto &entities = registry.getEntities();
-        auto maybeListener =
-            typename ecstasy::Maybe<EventListener<E>>::Modifier(registry.getStorageSafe<EventListener<E>>());
-        auto maybeListeners =
-            typename ecstasy::Maybe<EventListeners<E>>::Modifier(registry.getStorageSafe<EventListeners<E>>());
+        ecstasy::ModifiersAllocator allocator;
 
-        for (auto [entity, listener, listeners] : ecstasy::query::Query(entities, maybeListener, maybeListeners)) {
+        for (auto [entity, listener, listeners] :
+            registry.select<Entities, Maybe<EventListener<E>>, Maybe<EventListeners<E>>>()
+                .template where<Or<EventListener<E>, EventListeners<E>>>(allocator)) {
             if (listener)
                 listener.value()(registry, entity, event);
             if (listeners)
                 listeners.value()(registry, entity, event);
+        }
+    }
+
+    static void callKeyListeners(Registry &registry, const KeyEvent &event)
+    {
+        ecstasy::ModifiersAllocator allocator;
+
+        for (auto [entity, listener, listeners, sequence, combination] :
+            registry
+                .select<Entities, Maybe<EventListener<KeyEvent>>, Maybe<EventListeners<KeyEvent>>,
+                    Maybe<KeySequenceListener>, Maybe<KeyCombinationListener>>()
+                .where<Or<EventListener<KeyEvent>,
+                    Or<EventListeners<KeyEvent>, Or<KeySequenceListener, KeyCombinationListener>>>>(allocator)) {
+            if (listener)
+                listener.value()(registry, entity, event);
+            if (listeners)
+                listeners.value()(registry, entity, event);
+            if (sequence && sequence.value().get().update(event))
+                sequence.value()(registry, entity);
+            if (combination && combination.value().get().update(event))
+                combination.value()(registry, entity);
         }
     }
 
@@ -62,20 +81,10 @@ namespace ecstasy::integration::event
                 break;
             case Event::Type::KeyPressed:
             case Event::Type::KeyReleased:
-                callListeners(registry, event.key);
+                callKeyListeners(registry, event.key);
 
                 if (registry.hasResource<Keyboard>())
                     registry.getResource<Keyboard>().setKeyState(event.key.key, event.key.pressed);
-
-                /// Update key sequences
-                for (auto [entity, listener] : registry.query<Entities, KeySequenceListener>())
-                    if (listener.update(event.key))
-                        listener(registry, entity);
-                /// Update key combinations
-                for (auto [entity, listener] : registry.query<Entities, KeyCombinationListener>())
-                    if (listener.update(event.key))
-                        listener(registry, entity);
-
                 break;
             case Event::Type::TextEntered: callListeners(registry, event.text); break;
             case Event::Type::GamepadButtonPressed:

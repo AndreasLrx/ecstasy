@@ -13,6 +13,7 @@
 #define ECSTASY_REGISTRY_MODIFIERS_AND_HPP_
 
 #include "ecstasy/query/modifiers/And.hpp"
+#include "ecstasy/registry/concepts/QueryableType.hpp"
 
 namespace ecstasy
 {
@@ -27,7 +28,7 @@ namespace ecstasy
     ///
     template <typename C1, typename C2>
     struct And {
-        using Modifier = query::modifier::And<getStorageType<C1>, getStorageType<C2>>;
+        using Modifier = query::modifier::And<queryable_type_t<C1>, queryable_type_t<C2>>;
     };
 } // namespace ecstasy
 
