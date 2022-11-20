@@ -17,6 +17,7 @@
 #include "GamepadButtonListener.hpp"
 #include "GamepadConnectedListener.hpp"
 #include "KeyListener.hpp"
+#include "KeySequenceListener.hpp"
 #include "MouseButtonListener.hpp"
 #include "MouseMoveListener.hpp"
 #include "MouseWheelScrollListener.hpp"

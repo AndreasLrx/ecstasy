@@ -9,6 +9,8 @@ set(SRC
     ${INCROOT}/GamepadConnectedListener.hpp
     ${INCROOT}/include.hpp
     ${INCROOT}/KeyListener.hpp
+    ${SRCROOT}/KeySequenceListener.cpp
+    ${INCROOT}/KeySequenceListener.hpp
     ${INCROOT}/MouseButtonListener.hpp
     ${INCROOT}/MouseMoveListener.hpp
     ${INCROOT}/MouseWheelScrollListener.hpp

@@ -75,6 +75,13 @@ static void addEventListeners(ecstasy::Registry &registry)
                 (void)entity;
                 std::cout << "Gamepad " << e.id << " axis " << e.axis << " changed to " << e.value << std::endl;
             })
+        .with<event::KeySequenceListener>(std::initializer_list<event::Keyboard::Key>{event::Keyboard::Key::A,
+                                              event::Keyboard::Key::Z, event::Keyboard::Key::E},
+            [](ecstasy::Registry &r, ecstasy::Entity entity, const event::KeySequenceListener &e) {
+                (void)r;
+                (void)entity;
+                std::cout << "Key Sequence AZE completed" << std::endl;
+            })
         .build();
 }
 

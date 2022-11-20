@@ -18,6 +18,7 @@
 #include "ecstasy/storages/MapStorage.hpp"
 #include "events/Event.hpp"
 #include "inputs/Gamepads.hpp"
+#include "listeners/KeySequenceListener.hpp"
 
 namespace ecstasy::integration::event
 {
@@ -64,6 +65,12 @@ namespace ecstasy::integration::event
 
                 if (registry.hasResource<Keyboard>())
                     registry.getResource<Keyboard>().setKeyState(event.key.key, event.key.pressed);
+
+                /// Update key sequences
+                for (auto [entity, listener] : registry.query<Entities, KeySequenceListener>())
+                    if (listener.update(event.key))
+                        listener(registry, entity);
+
                 break;
             case Event::Type::TextEntered: callListeners(registry, event.text); break;
             case Event::Type::GamepadButtonPressed:
