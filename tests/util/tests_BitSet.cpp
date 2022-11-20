@@ -55,6 +55,12 @@ TEST(BitSet, init)
     EXPECT_TRUE(fromStr[6]);
 }
 
+TEST(BitSet, comparisons)
+{
+    GTEST_ASSERT_EQ(util::BitSet("1111111111"), util::BitSet("1111111111"));
+    GTEST_ASSERT_NE(util::BitSet("1111111111"), util::BitSet("0000000000"));
+}
+
 TEST(BitSet, set)
 {
     util::BitSet set("0111001000");
@@ -103,21 +109,56 @@ TEST(BitSet, flippinBits)
 
 TEST(BitSet, operations)
 {
-    EXPECT_EQ(util::BitSet("111") & util::BitSet("11011100"), util::BitSet("100"));
-    EXPECT_EQ(util::BitSet("111") | util::BitSet("11011100"), util::BitSet("111"));
-    EXPECT_EQ(util::BitSet("111") ^ util::BitSet("11011100"), util::BitSet("011"));
+    util::BitSet setShort("111");
+    util::BitSet setLong("11011100");
 
-    util::BitSet set1("11011100");
-    util::BitSet set2("11011100");
-    util::BitSet set3("11011100");
+    /// And
+    {
+        util::BitSet result("100");
+        EXPECT_EQ(setShort & setLong, result);
+        EXPECT_EQ(setLong & setShort, result);
 
-    set1 &= util::BitSet("111");
-    set2 |= util::BitSet("111");
-    set3 ^= util::BitSet("111");
+        util::BitSet andShort(setShort);
+        util::BitSet andLong(setLong);
 
-    EXPECT_EQ(set1, util::BitSet("100"));
-    EXPECT_EQ(set2, util::BitSet("111"));
-    EXPECT_EQ(set3, util::BitSet("011"));
+        andShort &= setLong;
+        andLong &= setShort;
+
+        EXPECT_EQ(andShort, result);
+        EXPECT_EQ(andLong, result);
+    }
+
+    /// Or
+    {
+        util::BitSet result("111");
+        EXPECT_EQ(setShort | setLong, result);
+        EXPECT_EQ(setLong | setShort, result);
+
+        util::BitSet orShort(setShort);
+        util::BitSet orLong(setLong);
+
+        orShort |= setLong;
+        orLong |= setShort;
+
+        EXPECT_EQ(orShort, result);
+        EXPECT_EQ(orLong, result);
+    }
+
+    /// Xor
+    {
+        util::BitSet result("011");
+        EXPECT_EQ(setShort ^ setLong, result);
+        EXPECT_EQ(setLong ^ setShort, result);
+
+        util::BitSet xorShort(setShort);
+        util::BitSet xorLong(setLong);
+
+        xorShort ^= setLong;
+        xorLong ^= setShort;
+
+        EXPECT_EQ(xorShort, result);
+        EXPECT_EQ(xorLong, result);
+    }
 }
 
 TEST(BitSet, inplace_operations)
@@ -134,6 +175,12 @@ TEST(BitSet, inplace_operations)
     EXPECT_EQ(set1, util::BitSet("11011100"));
     EXPECT_EQ(set2, util::BitSet("11011111"));
     EXPECT_EQ(set3, util::BitSet("11011011"));
+
+    util::BitSet hugeSet(400);
+    util::BitSet hugeSet2(300);
+    hugeSet.inplaceAnd(hugeSet2);
+    EXPECT_EQ(hugeSet.size(), 400);
+    EXPECT_EQ(hugeSet2.size(), 300);
 }
 
 TEST(BitSet, resize)
@@ -231,4 +278,23 @@ TEST(BitSet, firstUnset)
     EXPECT_EQ(big.firstUnset(), 681);
     EXPECT_EQ(big.firstUnset(600), 681);
     EXPECT_EQ(big.firstUnset(681), 681);
+}
+
+TEST(BitSet, outputStream)
+{
+    {
+        std::stringstream ss;
+
+        util::BitSet set(3);
+        ss << set;
+        EXPECT_EQ(ss.str(), std::string("000"));
+    }
+
+    {
+        std::stringstream ss;
+
+        util::BitSet set("1010");
+        ss << set;
+        EXPECT_EQ(ss.str(), std::string("1010"));
+    }
 }
