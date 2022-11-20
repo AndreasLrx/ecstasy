@@ -307,11 +307,11 @@ Friends</h2></td></tr>
 
 <p>Resize without normalizing. </p>
 
-<p class="definition">Definition at line <a class="el" href="_bit_set_8cpp_source.html#l00162">162</a> of file <a class="el" href="_bit_set_8cpp_source.html">BitSet.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    {</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a9509e8497148ab22f834f27c68aa09d3">_store</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/resize.html">resize</a>(<a class="code" href="classutil_1_1_bit_set.html#a0a05c4dcfaafa79d3b6ee10a1f9b5dba">getStoreWordCount</a>(size));</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">_size</a> = <a class="code" href="classutil_1_1_bit_set.html#a1b7940aa2d91fd658b573692239866c0">size</a>;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_bit_set_8cpp_source.html#l00161">161</a> of file <a class="el" href="_bit_set_8cpp_source.html">BitSet.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a9509e8497148ab22f834f27c68aa09d3">_store</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/resize.html">resize</a>(<a class="code" href="classutil_1_1_bit_set.html#a0a05c4dcfaafa79d3b6ee10a1f9b5dba">getStoreWordCount</a>(size));</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">_size</a> = <a class="code" href="classutil_1_1_bit_set.html#a1b7940aa2d91fd658b573692239866c0">size</a>;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -518,11 +518,10 @@ Friends</h2></td></tr>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">for</span> (<a class="codeRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> i = 0; i + 1 &lt; s; ++i)</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a9509e8497148ab22f834f27c68aa09d3">_store</a>[i] &amp;= other._store[i];</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        if (s != 0)</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a9509e8497148ab22f834f27c68aa09d3">_store</a>[s - 1] &amp;= other._store[s - 1] | (~<a class="codeRef" href="http://en.cppreference.com/w/namespacestd.html">std</a>::uint64_t(0) &lt;&lt; (other.size() &amp; 0b111111));</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a6466c5d085f082a8877062ec74039672">normalize</a>();</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        this-&gt;_store[s - 1] &amp;= other._store[s - 1] | (~<a class="codeRef" href="http://en.cppreference.com/w/cpp/types/integer.html">std::uint64_t</a>(0) &lt;&lt; (other.size() &amp; 0b111111));</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a6466c5d085f082a8877062ec74039672">normalize</a>();</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -554,13 +553,13 @@ Friends</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>this method is not named <b>or</b> because it is restricted.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>this </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_bit_set_8cpp_source.html#l00137">137</a> of file <a class="el" href="_bit_set_8cpp_source.html">BitSet.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    {</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keywordflow">for</span> (<a class="codeRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> i = 0, s = <a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/min.html">std::min</a>(this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a9509e8497148ab22f834f27c68aa09d3">_store</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/size.html">size</a>(), other._store.size()); i &lt; s; ++i)</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a9509e8497148ab22f834f27c68aa09d3">_store</a>[i] |= other._store[i];</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a6466c5d085f082a8877062ec74039672">normalize</a>();</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_bit_set_8cpp_source.html#l00136">136</a> of file <a class="el" href="_bit_set_8cpp_source.html">BitSet.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">for</span> (<a class="codeRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> i = 0, s = <a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/min.html">std::min</a>(this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a9509e8497148ab22f834f27c68aa09d3">_store</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/size.html">size</a>(), other._store.size()); i &lt; s; ++i)</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a9509e8497148ab22f834f27c68aa09d3">_store</a>[i] |= other._store[i];</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a6466c5d085f082a8877062ec74039672">normalize</a>();</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -592,13 +591,13 @@ Friends</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>this method is not named <b>xor</b> because it is restricted.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>this </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_bit_set_8cpp_source.html#l00145">145</a> of file <a class="el" href="_bit_set_8cpp_source.html">BitSet.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    {</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordflow">for</span> (<a class="codeRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> i = 0, s = <a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/min.html">std::min</a>(this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a9509e8497148ab22f834f27c68aa09d3">_store</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/size.html">size</a>(), other._store.size()); i &lt; s; ++i)</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a9509e8497148ab22f834f27c68aa09d3">_store</a>[i] ^= other._store[i];</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a6466c5d085f082a8877062ec74039672">normalize</a>();</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_bit_set_8cpp_source.html#l00144">144</a> of file <a class="el" href="_bit_set_8cpp_source.html">BitSet.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordflow">for</span> (<a class="codeRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> i = 0, s = <a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/min.html">std::min</a>(this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a9509e8497148ab22f834f27c68aa09d3">_store</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/size.html">size</a>(), other._store.size()); i &lt; s; ++i)</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a9509e8497148ab22f834f27c68aa09d3">_store</a>[i] ^= other._store[i];</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a6466c5d085f082a8877062ec74039672">normalize</a>();</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -659,14 +658,14 @@ Friends</h2></td></tr>
 
 <p>Unset the trailing bits. </p>
 
-<p class="definition">Definition at line <a class="el" href="_bit_set_8cpp_source.html#l00153">153</a> of file <a class="el" href="_bit_set_8cpp_source.html">BitSet.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    {</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keywordflow">if</span> ((this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">_size</a> &amp; 0b111111) != 0) {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/integer.html">std::uint64_t</a> &amp;last = *this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a9509e8497148ab22f834f27c68aa09d3">_store</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/rbegin.html">rbegin</a>();</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            uint64_t <a class="code" href="classutil_1_1_bit_set.html#a349731228e9b8c79618360b357be3735">mask</a> = ~((~<a class="codeRef" href="http://en.cppreference.com/w/namespacestd.html">std</a>::uint64_t(0)) &lt;&lt; (this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">_size</a> &amp; 0b111111));</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            last &amp;= <a class="code" href="classutil_1_1_bit_set.html#a349731228e9b8c79618360b357be3735">mask</a>;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        }</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_bit_set_8cpp_source.html#l00152">152</a> of file <a class="el" href="_bit_set_8cpp_source.html">BitSet.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">if</span> ((this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">_size</a> &amp; 0b111111) != 0) {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/integer.html">std::uint64_t</a> &amp;last = *this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a9509e8497148ab22f834f27c68aa09d3">_store</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/rbegin.html">rbegin</a>();</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            uint64_t <a class="code" href="classutil_1_1_bit_set.html#a349731228e9b8c79618360b357be3735">mask</a> = ~((~<a class="codeRef" href="http://en.cppreference.com/w/namespacestd.html">std</a>::uint64_t(0)) &lt;&lt; (this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">_size</a> &amp; 0b111111));</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            last &amp;= <a class="code" href="classutil_1_1_bit_set.html#a349731228e9b8c79618360b357be3735">mask</a>;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        }</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1052,12 +1051,12 @@ Friends</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>This function does not perform bounds-checking.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>The value of the removed bit. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_bit_set_8cpp_source.html#l00183">183</a> of file <a class="el" href="_bit_set_8cpp_source.html">BitSet.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    {</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordtype">bool</span> value = this-&gt;<a class="code" href="classutil_1_1_bit_set.html#aeb07990de5dad7aa9bf595d8ada49113">test</a>(this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">_size</a> - 1);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918">resize</a>(this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">_size</a> - 1);</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordflow">return</span> value;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_bit_set_8cpp_source.html#l00182">182</a> of file <a class="el" href="_bit_set_8cpp_source.html">BitSet.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    {</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keywordtype">bool</span> value = this-&gt;<a class="code" href="classutil_1_1_bit_set.html#aeb07990de5dad7aa9bf595d8ada49113">test</a>(this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">_size</a> - 1);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918">resize</a>(this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">_size</a> - 1);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keywordflow">return</span> value;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1079,12 +1078,12 @@ Friends</h2></td></tr>
 
 <p>Adds the given bit to the end of the set. </p>
 
-<p class="definition">Definition at line <a class="el" href="_bit_set_8cpp_source.html#l00176">176</a> of file <a class="el" href="_bit_set_8cpp_source.html">BitSet.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    {</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918">resize</a>(this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">_size</a> + 1);</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a88fc73210c1c4c642e2511285428a340">set</a>(this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">_size</a> - 1, value);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_bit_set_8cpp_source.html#l00175">175</a> of file <a class="el" href="_bit_set_8cpp_source.html">BitSet.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    {</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918">resize</a>(this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">_size</a> + 1);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a88fc73210c1c4c642e2511285428a340">set</a>(this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">_size</a> - 1, value);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1163,13 +1162,13 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_bit_set_8cpp_source.html#l00168">168</a> of file <a class="el" href="_bit_set_8cpp_source.html">BitSet.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    {</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">_size</a> &gt; 0)</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a88fc73210c1c4c642e2511285428a340">set</a>(this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">_size</a> - 1, !sentinelValue);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918">resize</a>(size + 1);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a88fc73210c1c4c642e2511285428a340">set</a>(this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">_size</a> - 1, sentinelValue);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_bit_set_8cpp_source.html#l00167">167</a> of file <a class="el" href="_bit_set_8cpp_source.html">BitSet.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">_size</a> &gt; 0)</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a88fc73210c1c4c642e2511285428a340">set</a>(this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">_size</a> - 1, !sentinelValue);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918">resize</a>(size + 1);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a88fc73210c1c4c642e2511285428a340">set</a>(this-&gt;<a class="code" href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">_size</a> - 1, sentinelValue);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1431,7 +1430,7 @@ Friends</h2></td></tr>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_a245462458522570585a95bdc61fe2039"><div class="ttname"><a href="classutil_1_1_bit_set.html#a245462458522570585a95bdc61fe2039">util::BitSet::BitSet</a></div><div class="ttdeci">BitSet(std::size_t initialSize=0)</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8cpp_source.html#l00024">BitSet.cpp:24</a></div></div>
 <div class="ttc" id="asize_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string_view/size.html">std::string_view::size</a></div><div class="ttdeci">T size(T... args)</div></div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_a525fd88fa272c30f62ad21df180493d3"><div class="ttname"><a href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">util::BitSet::_size</a></div><div class="ttdeci">std::size_t _size</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8hpp_source.html#l00263">BitSet.hpp:263</a></div></div>
-<div class="ttc" id="aclassutil_1_1_bit_set_html_a6466c5d085f082a8877062ec74039672"><div class="ttname"><a href="classutil_1_1_bit_set.html#a6466c5d085f082a8877062ec74039672">util::BitSet::normalize</a></div><div class="ttdeci">void normalize() noexcept</div><div class="ttdoc">Unset the trailing bits.</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8cpp_source.html#l00153">BitSet.cpp:153</a></div></div>
+<div class="ttc" id="aclassutil_1_1_bit_set_html_a6466c5d085f082a8877062ec74039672"><div class="ttname"><a href="classutil_1_1_bit_set.html#a6466c5d085f082a8877062ec74039672">util::BitSet::normalize</a></div><div class="ttdeci">void normalize() noexcept</div><div class="ttdoc">Unset the trailing bits.</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8cpp_source.html#l00152">BitSet.cpp:152</a></div></div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_a0a05c4dcfaafa79d3b6ee10a1f9b5dba"><div class="ttname"><a href="classutil_1_1_bit_set.html#a0a05c4dcfaafa79d3b6ee10a1f9b5dba">util::BitSet::getStoreWordCount</a></div><div class="ttdeci">static constexpr std::size_t getStoreWordCount(std::size_t bitCount)</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8hpp_source.html#l00273">BitSet.hpp:273</a></div></div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_a1b7940aa2d91fd658b573692239866c0"><div class="ttname"><a href="classutil_1_1_bit_set.html#a1b7940aa2d91fd658b573692239866c0">util::BitSet::size</a></div><div class="ttdeci">constexpr std::size_t size() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8hpp_source.html#l00087">BitSet.hpp:87</a></div></div>
 <div class="ttc" id="acopy_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/algorithm/copy.html">std::copy</a></div><div class="ttdeci">T copy(T... args)</div></div>
@@ -1445,7 +1444,7 @@ Friends</h2></td></tr>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_aeb07990de5dad7aa9bf595d8ada49113"><div class="ttname"><a href="classutil_1_1_bit_set.html#aeb07990de5dad7aa9bf595d8ada49113">util::BitSet::test</a></div><div class="ttdeci">BIT_SET_CONSTEXPR bool test(std::size_t pos) const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8hpp_source.html#l00095">BitSet.hpp:95</a></div></div>
 <div class="ttc" id="asize_t_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a></div></div>
 <div class="ttc" id="acountr_zero_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/numeric/countr_zero.html">std::countr_zero</a></div><div class="ttdeci">T countr_zero(T... args)</div></div>
-<div class="ttc" id="aclassutil_1_1_bit_set_html_aa316ef8b94084b11c22856c0981c0e03"><div class="ttname"><a href="classutil_1_1_bit_set.html#aa316ef8b94084b11c22856c0981c0e03">util::BitSet::_resize</a></div><div class="ttdeci">void _resize(std::size_t size)</div><div class="ttdoc">Resize without normalizing.</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8cpp_source.html#l00162">BitSet.cpp:162</a></div></div>
+<div class="ttc" id="aclassutil_1_1_bit_set_html_aa316ef8b94084b11c22856c0981c0e03"><div class="ttname"><a href="classutil_1_1_bit_set.html#aa316ef8b94084b11c22856c0981c0e03">util::BitSet::_resize</a></div><div class="ttdeci">void _resize(std::size_t size)</div><div class="ttdoc">Resize without normalizing.</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8cpp_source.html#l00161">BitSet.cpp:161</a></div></div>
 <div class="ttc" id="acountr_one_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/numeric/countr_one.html">std::countr_one</a></div><div class="ttdeci">T countr_one(T... args)</div></div>
 <div class="ttc" id="arbegin_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/vector/rbegin.html">std::vector::rbegin</a></div><div class="ttdeci">T rbegin(T... args)</div></div>
 <!-- start footer part -->
