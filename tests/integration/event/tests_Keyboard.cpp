@@ -5,6 +5,7 @@
 #include "ecstasy/integrations/event/events/KeyPressedEvent.hpp"
 #include "ecstasy/integrations/event/events/KeyReleasedEvent.hpp"
 #include "ecstasy/integrations/event/inputs/Keyboard.hpp"
+#include "ecstasy/integrations/event/listeners/KeyCombinationListener.hpp"
 #include "ecstasy/integrations/event/listeners/KeyListener.hpp"
 #include "ecstasy/integrations/event/listeners/KeySequenceListener.hpp"
 #include "ecstasy/integrations/event/listeners/TextEnteredListener.hpp"
@@ -250,4 +251,68 @@ TEST(Event, KeySequence)
     GTEST_ASSERT_FALSE(sequenceListener.isComplete());
     GTEST_ASSERT_EQ(sequenceListener.getHeldKey(), event::Keyboard::Key::A);
     GTEST_ASSERT_TRUE(sequenceListener.getValidatedKeys().empty());
+}
+
+TEST(Event, KeyCombination)
+{
+    Registry registry;
+    int combinationCount = 0;
+
+    /// Sequence ABC listener
+    auto &combinationListener =
+        registry.getStorageSafe<event::KeyCombinationListener>()
+            [registry.entityBuilder()
+                    .with<event::KeyCombinationListener>(
+                        std::initializer_list<event::Keyboard::Key>{
+                            event::Keyboard::Key::A, event::Keyboard::Key::B, event::Keyboard::Key::C},
+                        [&combinationCount](Registry &r, Entity e, const event::KeyCombinationListener &event) {
+                            (void)r;
+                            (void)e;
+                            (void)event;
+                            combinationCount++;
+                        })
+                    .build()
+                    .getIndex()];
+
+    /// Initial state
+    GTEST_ASSERT_FALSE(combinationListener.isComplete());
+    GTEST_ASSERT_EQ(combinationListener.getValidatedKeys(), 0);
+
+    /// Call without force innaccessible
+    combinationListener(registry, registry.getEntity(0));
+    GTEST_ASSERT_EQ(combinationCount, 0);
+    combinationListener(registry, registry.getEntity(0), true);
+    GTEST_ASSERT_EQ(combinationCount, 1);
+
+    /// Combination key pressed
+    event::EventsManager::handleEvent(registry, event::KeyPressedEvent(event::Keyboard::Key::B));
+    GTEST_ASSERT_FALSE(combinationListener.isComplete());
+    GTEST_ASSERT_EQ(combinationListener.getValidatedKeys(), 1);
+
+    /// Same key is pressed again, no changes
+    GTEST_ASSERT_FALSE(combinationListener.update(event::KeyPressedEvent(event::Keyboard::Key::B)));
+    GTEST_ASSERT_FALSE(combinationListener.isComplete());
+    GTEST_ASSERT_EQ(combinationListener.getValidatedKeys(), 1);
+
+    /// Another combination key pressed
+    GTEST_ASSERT_FALSE(combinationListener.update(event::KeyPressedEvent(event::Keyboard::Key::A)));
+    GTEST_ASSERT_FALSE(combinationListener.isComplete());
+    GTEST_ASSERT_EQ(combinationListener.getValidatedKeys(), 2);
+
+    /// A combination key is released
+    GTEST_ASSERT_FALSE(combinationListener.update(event::KeyReleasedEvent(event::Keyboard::Key::A)));
+    GTEST_ASSERT_FALSE(combinationListener.isComplete());
+    GTEST_ASSERT_EQ(combinationListener.getValidatedKeys(), 1);
+
+    /// Missing keys are pressed
+    GTEST_ASSERT_FALSE(combinationListener.update(event::KeyPressedEvent(event::Keyboard::Key::A)));
+    GTEST_ASSERT_TRUE(combinationListener.update(event::KeyPressedEvent(event::Keyboard::Key::C)));
+    GTEST_ASSERT_TRUE(combinationListener.isComplete());
+    GTEST_ASSERT_EQ(combinationListener.getValidatedKeys(), 3);
+
+    /// Callback
+    combinationListener(registry, registry.getEntity(0));
+    GTEST_ASSERT_EQ(combinationCount, 2);
+    GTEST_ASSERT_FALSE(combinationListener.isComplete());
+    GTEST_ASSERT_EQ(combinationListener.getValidatedKeys(), 0);
 }
