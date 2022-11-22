@@ -88,16 +88,6 @@ namespace ecstasy
             return _storages.get<S>();
         }
 
-        /// @copydoc getQueryable()
-        template <std::derived_from<query::modifier::UnaryModifier> M>
-        requires query::Queryable<M>
-        constexpr M &getQueryable(OptionalModifiersAllocator &allocator)
-        {
-            if (!allocator)
-                throw std::logic_error("Missing modifier allocator");
-            return allocator->get().instanciate<M>(getQueryable<typename M::Internal>(allocator));
-        }
-
         ///
         /// @brief Proxy structure to extract the operand types using template partial specialization
         ///
@@ -136,8 +126,7 @@ namespace ecstasy
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-11-22)
             ///
-            template <std::derived_from<query::modifier::BinaryModifier> M>
-            requires query::Queryable<M>
+            template <query::Modifier M>
             static constexpr M &get(Registry &registry, OptionalModifiersAllocator &allocator)
             {
                 if (!allocator)
@@ -147,8 +136,7 @@ namespace ecstasy
         };
 
         /// @copydoc getQueryable()
-        template <std::derived_from<query::modifier::BinaryModifier> M>
-        requires query::Queryable<M>
+        template <query::Modifier M>
         constexpr M &getQueryable(OptionalModifiersAllocator &allocator)
         {
             return GetModifierProxy<typename M::Operands>::template get<M>(*this, allocator);
@@ -156,7 +144,6 @@ namespace ecstasy
 
         /// @copydoc getQueryable()
         template <RegistryModifier M>
-        requires query::Queryable<typename M::Modifier>
         constexpr typename M::Modifier &getQueryable(OptionalModifiersAllocator &allocator)
         {
             return getQueryable<typename M::Modifier>(allocator);

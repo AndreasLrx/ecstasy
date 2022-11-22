@@ -33,10 +33,13 @@ namespace ecstasy::query::modifier
     /// @since 1.0.0 (2022-10-24)
     ///
     template <Queryable Q>
-    class Maybe : public UnaryModifier {
+    class Maybe : public Modifier {
       public:
         /// @brief Wrapped queryable.
         using Internal = Q;
+
+        /// @brief @ref Modifier constraint.
+        using Operands = std::tuple<Q>;
 
         /// @brief @ref Queryable constaint.
         using QueryData = util::meta::add_optional_t<typename Internal::QueryData>;

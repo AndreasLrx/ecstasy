@@ -31,7 +31,7 @@ namespace ecstasy::query::modifier
     /// @since 1.0.0 (2022-10-27)
     ///
     template <Queryable Q1, Queryable Q2, Queryable... Qs>
-    class Or : public BinaryModifier {
+    class Or : public Modifier {
       public:
         /// @brief @ref Modifier constraint.
         using Operands = std::tuple<Q1, Q2, Qs...>;
