@@ -65,7 +65,7 @@ namespace ecstasy::query::modifier
         /// The result is a binary Or between all the operands bitset's.
         ///
         /// @note @ref Queryable constraint.
-        /// @warning Use reload masks if the operand masks have changed since the construction.
+        /// @warning Use @ref reloadMask() if the operand masks have changed since the construction.
         ///
         /// @return const util::BitSet& resulting mask.
         ///
@@ -193,7 +193,7 @@ namespace ecstasy::query::modifier
         {
             (void)int_seq;
             _mask = std::get<0>(_operands).getMask();
-            combineMask(std::get<0>(_operands).getMask());
+            combineMask(std::get<1>(_operands).getMask());
             std::make_tuple((combineMask(std::get<ints + 2>(_operands).getMask()), 0)...);
         }
 

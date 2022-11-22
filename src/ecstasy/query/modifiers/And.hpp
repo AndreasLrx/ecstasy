@@ -18,53 +18,50 @@
 namespace ecstasy::query::modifier
 {
     ///
-    /// @brief Binary query modifier which performs a and between two queryables.
+    /// @brief Binary query modifier which performs a and between at least two queryables.
+    ///
+    /// @note The mask is the result of the operation: Q1 & Q2 & Qs...
     ///
     /// @tparam Q1 Left operand queryable type.
     /// @tparam Q2 Right operand queryable type.
+    /// @tparam Qs Additional operand queryable types.
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-10-27)
     ///
-    template <Queryable Q1, Queryable Q2>
+    template <Queryable Q1, Queryable Q2, Queryable... Qs>
     class And : public BinaryModifier {
       public:
-        /// @brief Left operand type (queryable)
-        using LeftOperand = Q1;
-
-        /// @brief Left operand data type
-        using LeftQueryData = LeftOperand::QueryData;
-
-        /// @brief Right operand type (queryable)
-        using RightOperand = Q2;
-
-        /// @brief Right operand data type
-        using RightQueryData = RightOperand::QueryData;
-
-        /// @brief Wrapped queryables.
-        using Operands = std::tuple<Q1, Q2>;
+        /// @brief @ref Modifier constraint.
+        using Operands = std::tuple<Q1, Q2, Qs...>;
 
         /// @brief @ref Queryable constaint.
-        using QueryData = std::tuple<LeftQueryData, RightQueryData>;
+        // clang-format off
+        using QueryData = std::tuple<
+            typename Q1::QueryData,
+            typename Q2::QueryData,
+            typename Qs::QueryData...>;
+        // clang-format on
 
         ///
         /// @brief Construct a new And Queryable modifier.
         ///
         /// @param[in] leftOperand left queryable operand.
         /// @param[in] rightOperand right queryable operand.
+        /// @param[in] otherOperands additional operands (optional).
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-27)
         ///
-        And(LeftOperand &leftOperand, RightOperand &rightOperand)
-            : _leftOperand(leftOperand), _rightOperand(rightOperand)
+        And(Q1 &firstOperand, Q2 &secondOperand, Qs &...otherOperands)
+            : _operands({firstOperand, secondOperand, otherOperands...})
         {
             reloadMask();
         }
 
         ///
-        /// @brief Get the Mask of the internal queryable.
-        /// The result is a binary And between the two operands bitset.
+        /// @brief Get the Mask of the internal queryables.
+        /// The result is a binary And between all the operands bitset's.
         ///
         /// @note @ref Queryable constraint.
         /// @warning Use @ref reloadMask() if the operand masks have changed since the construction.
@@ -80,8 +77,29 @@ namespace ecstasy::query::modifier
         }
 
         ///
-        /// @brief Get the operands data at the given index. The data are merged in a tuple containing the result of
-        /// two operands data at the given index.
+        /// @brief Get the specified operand data at the given index.
+        ///
+        /// @warning May throw exceptions, look at the specified operand type equivalent method documentation.
+        ///
+        /// @param[in] operandId Id of the operand (where 0 is Q1, 1 is Q2...).
+        /// @param[in] index Index of the entity.
+        ///
+        /// @return auto The operand data at index @p index.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-27)
+        ///
+        auto getOperandData(size_t operandId, size_t index)
+        {
+            auto &operand = std::get<operandId>(_operands);
+
+            if (index < operand.getMask().size() && operand.getMask()[index])
+                return operand.getQueryData(index);
+            return std::nullopt;
+        }
+
+        ///
+        /// @brief Get the operands data at the given index.
         ///
         /// @note @ref Queryable constraint.
         ///
@@ -94,7 +112,7 @@ namespace ecstasy::query::modifier
         ///
         QueryData getQueryData(size_t index)
         {
-            return std::make_tuple(_leftOperand.getQueryData(index), _rightOperand.getQueryData(index));
+            return getQueryData(index, std::make_index_sequence<(sizeof...(Qs))>());
         }
 
         ///
@@ -105,12 +123,53 @@ namespace ecstasy::query::modifier
         ///
         void reloadMask()
         {
-            _mask = _leftOperand.getMask() & _rightOperand.getMask();
+            if constexpr (sizeof...(Qs) > 0)
+                combineOperandMasks(std::make_index_sequence<(sizeof...(Qs))>());
+            else
+                _mask = std::get<0>(_operands).getMask() & std::get<1>(_operands).getMask();
         }
 
       private:
-        LeftOperand &_leftOperand;
-        RightOperand &_rightOperand;
+        ///
+        /// @brief Get the the query data.
+        ///
+        /// @tparam ints Sequence values.
+        ///
+        /// @param[in] index Id of the query data to fetch.
+        /// @param[in] int_seq Sequence containing the queryables ids.
+        ///
+        /// @return @ref QueryData A tuple of std::optional containing the operands data if existing.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-21)
+        ///
+        template <size_t... ints>
+        QueryData getQueryData(size_t index, std::integer_sequence<size_t, ints...> int_seq)
+        {
+            (void)int_seq;
+            return std::make_tuple(
+                getOperandData(0, index), getOperandData(1, index), getOperandData(ints + 2, index)...);
+        }
+
+        ///
+        /// @brief Combine all the operands' bitmasks
+        ///
+        /// @tparam ints Sequence values.
+        ///
+        /// @param[in] int_seq Sequence containing the queryable ids.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-21)
+        ///
+        template <size_t... ints>
+        void combineOperandMasks(std::integer_sequence<size_t, ints...> int_seq)
+        {
+            (void)int_seq;
+            _mask = ((util::BitSet(std::get<0>(_operands).getMask()) & std::get<1>(_operands).getMask()) &= ... &=
+                std::get<ints + 2>(_operands).getMask());
+        }
+
+        std::tuple<Q1 &, Q2 &, Qs &...> _operands;
         util::BitSet _mask;
     };
 } // namespace ecstasy::query::modifier

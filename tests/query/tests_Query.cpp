@@ -4,9 +4,11 @@
 #include "ecstasy/storages/MapStorage.hpp"
 
 #include "ecstasy/query/Select.hpp"
+#include "ecstasy/query/modifiers/And.hpp"
 #include "ecstasy/query/modifiers/Maybe.hpp"
 #include "ecstasy/query/modifiers/Not.hpp"
 #include "ecstasy/query/modifiers/Or.hpp"
+#include "ecstasy/query/modifiers/Xor.hpp"
 
 struct Vector2i {
     int x;
@@ -461,4 +463,54 @@ TEST(Query, OrVariadic)
     velocityOrVector.reloadMask();
     auto query = ecstasy::query::Select<decltype(maybeVector)>::where(maybeVector, velocityOrVector);
     GTEST_ASSERT_EQ(query.getMask(), util::BitSet("11011101011101"));
+}
+
+TEST(Query, AndVariadic)
+{
+    ecstasy::MapStorage<Position> positions;
+    ecstasy::MapStorage<Velocity> velocities;
+    ecstasy::MapStorage<Vector2i> vectors;
+    ecstasy::Entities entities;
+    auto velocityOrVector = ecstasy::query::modifier::And(positions, velocities, vectors);
+    auto maybeVector = ecstasy::query::modifier::Maybe(vectors);
+
+    for (int i = 0; i < 13; i++) {
+        entities.create();
+        if (i % 2 == 0)
+            positions.emplace(i, i * 2, i * 10);
+        if (i % 3 == 0 || i == 8)
+            velocities.emplace(i, i * 10, i * 2);
+        if (i % 4 == 0)
+            vectors.emplace(i, i * 4, i * 6);
+    }
+
+    velocityOrVector.reloadMask();
+    auto query = ecstasy::query::Select<decltype(vectors)>::where(vectors, velocityOrVector);
+    GTEST_ASSERT_EQ(query.getMask(), util::BitSet("11000100000001"));
+}
+
+TEST(Query, XorVariadic)
+{
+    ecstasy::MapStorage<Position> positions;
+    ecstasy::MapStorage<Velocity> velocities;
+    ecstasy::MapStorage<Vector2i> vectors;
+    ecstasy::Entities entities;
+    auto velocityOrVector = ecstasy::query::modifier::Xor(positions, velocities, vectors);
+    auto maybeVector = ecstasy::query::modifier::Maybe(vectors);
+
+    for (int i = 0; i < 13; i++) {
+        entities.create();
+        if (i % 2 == 0)
+            positions.emplace(i, i * 2, i * 10);
+        if (i % 3 == 0 || i == 8)
+            velocities.emplace(i, i * 10, i * 2);
+        if (i % 4 == 0)
+            vectors.emplace(i, i * 4, i * 6);
+    }
+
+    velocityOrVector.reloadMask();
+    auto query = ecstasy::query::Select<decltype(maybeVector)>::where(maybeVector, velocityOrVector);
+
+    /// Xor of three inputs return true if an odd number of its input are true
+    GTEST_ASSERT_EQ(query.getMask(), util::BitSet("11011100001101"));
 }
