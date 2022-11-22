@@ -21,13 +21,14 @@ namespace ecstasy
     ///
     /// @tparam C1 left operand type.
     /// @tparam C2 right operand type.
+    /// @tparam Cs additional operand types.
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-10-24)
     ///
-    template <typename C1, typename C2>
+    template <typename C1, typename C2, typename... Cs>
     struct Or {
-        using Modifier = query::modifier::Or<queryable_type_t<C1>, queryable_type_t<C2>>;
+        using Modifier = query::modifier::Or<queryable_type_t<C1>, queryable_type_t<C2>, queryable_type_t<Cs>...>;
     };
 } // namespace ecstasy
 

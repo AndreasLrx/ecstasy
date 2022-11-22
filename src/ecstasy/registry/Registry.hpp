@@ -51,8 +51,13 @@ namespace ecstasy
         ///
         /// @tparam C Type of the variable to fetch.
         ///
+        /// @param[in] allocator Allocator to instanciate query modifier. Can be empty if no modifier needs to be
+        /// instanciated.
+        ///
         /// @return @ref getStorageType<C>& Associated queryable (if no specific case the storage for C is
         /// returned).
+        ///
+        /// @throw std::logic_error When @p allocator is empty and the queryable needs to be allocated.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-25)
@@ -93,15 +98,60 @@ namespace ecstasy
             return allocator->get().instanciate<M>(getQueryable<typename M::Internal>(allocator));
         }
 
+        ///
+        /// @brief Proxy structure to extract the operand types using template partial specialization
+        ///
+        /// @tparam Operands Must be a tuple of @ref Queryable types.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-22)
+        ///
+        template <typename Operands>
+        struct GetModifierProxy {
+        };
+
+        ///
+        /// @brief Proxy structure to extract the operand types using template partial specialization
+        ///
+        /// @tparam Qs Operands types of the modifier.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-22)
+        ///
+        template <query::Queryable... Qs>
+        struct GetModifierProxy<std::tuple<Qs...>> {
+            ///
+            /// @brief Specialization of @ref Registry::getQueryable(). Returns the required modifier with the operands
+            /// queried from the registry.
+            ///
+            /// @tparam M Modifier type.
+            ///
+            /// @param[in] registry Owning registry.
+            /// @param[in] allocator Allocator to instanciate the modifier. Must not be empty.
+            ///
+            /// @return M& Required modifier.
+            ///
+            /// @throw std::logic_error When @p allocator is empty.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-11-22)
+            ///
+            template <std::derived_from<query::modifier::BinaryModifier> M>
+            requires query::Queryable<M>
+            static constexpr M &get(Registry &registry, OptionalModifiersAllocator &allocator)
+            {
+                if (!allocator)
+                    throw std::logic_error("Missing modifier allocator");
+                return allocator->get().instanciate<M>(registry.getQueryable<Qs>(allocator)...);
+            }
+        };
+
         /// @copydoc getQueryable()
         template <std::derived_from<query::modifier::BinaryModifier> M>
         requires query::Queryable<M>
         constexpr M &getQueryable(OptionalModifiersAllocator &allocator)
         {
-            if (!allocator)
-                throw std::logic_error("Missing modifier allocator");
-            return allocator->get().instanciate<M>(
-                getQueryable<typename M::LeftOperand>(allocator), getQueryable<typename M::RightOperand>(allocator));
+            return GetModifierProxy<typename M::Operands>::template get<M>(*this, allocator);
         }
 
         /// @copydoc getQueryable()

@@ -47,8 +47,9 @@ namespace ecstasy::integration::event
             registry
                 .select<Entities, Maybe<EventListener<KeyEvent>>, Maybe<EventListeners<KeyEvent>>,
                     Maybe<KeySequenceListener>, Maybe<KeyCombinationListener>>()
-                .where<Or<EventListener<KeyEvent>,
-                    Or<EventListeners<KeyEvent>, Or<KeySequenceListener, KeyCombinationListener>>>>(allocator)) {
+                .where<
+                    Or<EventListener<KeyEvent>, EventListeners<KeyEvent>, KeySequenceListener, KeyCombinationListener>>(
+                    allocator)) {
             if (listener)
                 listener.value()(registry, entity, event);
             if (listeners)

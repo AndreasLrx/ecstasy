@@ -19,7 +19,9 @@
 namespace ecstasy::query::modifier
 {
     ///
-    /// @brief Binary query modifier which performs a or between two queryables.
+    /// @brief Binary query modifier which performs a or between at least two queryables.
+    ///
+    /// @note The mask is the result of the operation: Q1 | Q2 | Qs...
     ///
     /// @tparam Q1 Left operand queryable type.
     /// @tparam Q2 Right operand queryable type.
@@ -31,14 +33,8 @@ namespace ecstasy::query::modifier
     template <Queryable Q1, Queryable Q2, Queryable... Qs>
     class Or : public BinaryModifier {
       public:
-        /// @brief Left operand type (queryable)
-        using LeftOperand = Q1;
-
-        /// @brief Right operand type (queryable)
-        using RightOperand = Q2;
-
-        /// @brief Operand types (queryable)
-        using Operands = std::tuple<Q1 &, Q2 &, Qs &...>;
+        /// @brief @ref Modifier constraint.
+        using Operands = std::tuple<Q1, Q2, Qs...>;
 
         /// @brief @ref Queryable constaint.
         // clang-format off
@@ -53,6 +49,7 @@ namespace ecstasy::query::modifier
         ///
         /// @param[in] leftOperand left queryable operand.
         /// @param[in] rightOperand right queryable operand.
+        /// @param[in] otherOperands additional operands (optional).
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-27)
@@ -64,8 +61,8 @@ namespace ecstasy::query::modifier
         }
 
         ///
-        /// @brief Get the Mask of the internal queryable.
-        /// The result is a binary Or between the two operands bitset.
+        /// @brief Get the Mask of the internal queryables.
+        /// The result is a binary Or between all the operands bitset's.
         ///
         /// @note @ref Queryable constraint.
         /// @warning Use reload masks if the operand masks have changed since the construction.
@@ -81,13 +78,14 @@ namespace ecstasy::query::modifier
         }
 
         ///
-        /// @brief Get a std::optional filled with the data of the left operand at index @p index if existing.
+        /// @brief Get a std::optional filled with the data of the specified operand at index @p index if existing.
         ///
-        /// @warning May throw exceptions, look at the @b LeftOperand type equivalent method documentation.
+        /// @warning May throw exceptions, look at the specified operand type equivalent method documentation.
         ///
+        /// @param[in] operandId Id of the operand (where 0 is Q1, 1 is Q2...).
         /// @param[in] index Index of the entity.
         ///
-        /// @return @ref LeftQueryData A std::optional filled with the left operand data at index @p index if existing.
+        /// @return auto A std::optional filled with the resulting operand data at index @p index if existing.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-27)
@@ -102,8 +100,7 @@ namespace ecstasy::query::modifier
         }
 
         ///
-        /// @brief Get the operands data at the given index. The data are merged in a tuple containing the result of
-        /// @ref getLeftQueryData() and @ref getRightQueryData().
+        /// @brief Get the operands data at the given index.
         ///
         /// @note @ref Queryable constraint.
         ///
@@ -176,7 +173,7 @@ namespace ecstasy::query::modifier
         void combineMask(const util::BitSet &mask)
         {
             if (_mask.size() < mask.size())
-                _mask = util::BitSet(mask).inplaceAnd(_mask);
+                _mask = util::BitSet(mask).inplaceOr(_mask);
             else
                 _mask.inplaceOr(mask);
         }
@@ -196,11 +193,11 @@ namespace ecstasy::query::modifier
         {
             (void)int_seq;
             _mask = std::get<0>(_operands).getMask();
-            combineMask(getRight().getMask());
-            combineMask(std::get<ints + 2>(_operands).getMask()...);
+            combineMask(std::get<0>(_operands).getMask());
+            std::make_tuple((combineMask(std::get<ints + 2>(_operands).getMask()), 0)...);
         }
 
-        Operands _operands;
+        std::tuple<Q1 &, Q2 &, Qs &...> _operands;
         util::BitSet _mask;
     };
 } // namespace ecstasy::query::modifier
