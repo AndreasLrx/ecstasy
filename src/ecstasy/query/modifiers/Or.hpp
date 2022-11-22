@@ -194,7 +194,7 @@ namespace ecstasy::query::modifier
             (void)int_seq;
             _mask = std::get<0>(_operands).getMask();
             combineMask(std::get<1>(_operands).getMask());
-            std::make_tuple((combineMask(std::get<ints + 2>(_operands).getMask()), 0)...);
+            std::ignore = std::make_tuple((combineMask(std::get<ints + 2>(_operands).getMask()), 0)...);
         }
 
         std::tuple<Q1 &, Q2 &, Qs &...> _operands;
