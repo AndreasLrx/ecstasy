@@ -31,10 +31,13 @@ namespace ecstasy::query::modifier
     /// @since 1.0.0 (2022-10-24)
     ///
     template <Queryable Q>
-    class Not : public UnaryModifier {
+    class Not : public Modifier {
       public:
         /// @brief Wrapped queryable.
         using Internal = Q;
+
+        /// @brief @ref Modifier constraint.
+        using Operands = std::tuple<Q>;
 
         /// @brief @ref Queryable constaint.
         using QueryData = typename Internal::QueryData;

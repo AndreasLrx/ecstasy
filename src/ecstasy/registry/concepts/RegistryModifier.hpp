@@ -12,8 +12,7 @@
 #ifndef ECSTASY_REGISTRY_CONCEPTS_REGISTRYMODIFIER_HPP_
 #define ECSTASY_REGISTRY_CONCEPTS_REGISTRYMODIFIER_HPP_
 
-#include "ecstasy/query/concepts/Queryable.hpp"
-#include "ecstasy/query/modifiers/Modifier.hpp"
+#include "ecstasy/query/concepts/Modifier.hpp"
 #include "util/Allocator.hpp"
 
 namespace ecstasy
@@ -30,7 +29,7 @@ namespace ecstasy
     concept RegistryModifier = requires()
     {
         typename M::Modifier;
-        requires query::Queryable<typename M::Modifier>;
+        requires query::Modifier<typename M::Modifier>;
     };
 
 } // namespace ecstasy
