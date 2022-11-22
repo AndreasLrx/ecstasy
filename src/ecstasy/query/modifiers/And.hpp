@@ -91,11 +91,7 @@ namespace ecstasy::query::modifier
         ///
         auto getOperandData(size_t operandId, size_t index)
         {
-            auto &operand = std::get<operandId>(_operands);
-
-            if (index < operand.getMask().size() && operand.getMask()[index])
-                return operand.getQueryData(index);
-            return std::nullopt;
+            return std::get<operandId>(_operands).getQueryData(index);
         }
 
         ///
