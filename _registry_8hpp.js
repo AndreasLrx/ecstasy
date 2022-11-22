@@ -1,6 +1,8 @@
 var _registry_8hpp =
 [
     [ "Registry", "classecstasy_1_1_registry.html", "classecstasy_1_1_registry" ],
+    [ "GetModifierProxy", "structecstasy_1_1_registry_1_1_get_modifier_proxy.html", null ],
+    [ "GetModifierProxy< std::tuple< Qs... > >", "structecstasy_1_1_registry_1_1_get_modifier_proxy_3_01std_1_1tuple_3_01_qs_8_8_8_01_4_01_4.html", "structecstasy_1_1_registry_1_1_get_modifier_proxy_3_01std_1_1tuple_3_01_qs_8_8_8_01_4_01_4" ],
     [ "EntityBuilder", "classecstasy_1_1_registry_1_1_entity_builder.html", "classecstasy_1_1_registry_1_1_entity_builder" ],
     [ "Select", "classecstasy_1_1_registry_1_1_select.html", "classecstasy_1_1_registry_1_1_select" ],
     [ "Internal", "structecstasy_1_1_registry_1_1_select_1_1_internal.html", null ],

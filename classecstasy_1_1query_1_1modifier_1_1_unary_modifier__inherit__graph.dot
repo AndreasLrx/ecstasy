@@ -6,8 +6,4 @@ digraph "ecstasy::query::modifier::UnaryModifier"
   Node1 [label="ecstasy::query::modifier\l::UnaryModifier",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Base class for all query unary modifiers."];
   Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="ecstasy::query::modifier\l::Modifier",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1query_1_1modifier_1_1_modifier.html",tooltip="Base class for all query modifiers."];
-  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="ecstasy::query::modifier\l::Maybe\< Q \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1query_1_1modifier_1_1_maybe.html",tooltip="Query modifier which returns a std::optional filled when the data if existing."];
-  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="ecstasy::query::modifier\l::Not\< Q \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1query_1_1modifier_1_1_not.html",tooltip="Query modifier which simply inverts the bits."];
 }

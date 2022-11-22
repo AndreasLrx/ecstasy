@@ -6,7 +6,7 @@ var hierarchy =
     [ "util::meta::add_optional< std::optional< T > >", "structutil_1_1meta_1_1add__optional_3_01std_1_1optional_3_01_t_01_4_01_4.html", null ],
     [ "util::meta::add_optional< T & >", "structutil_1_1meta_1_1add__optional_3_01_t_01_6_01_4.html", null ],
     [ "util::Allocator< Base >", "classutil_1_1_allocator.html", null ],
-    [ "ecstasy::And< C1, C2 >", "structecstasy_1_1_and.html", null ],
+    [ "ecstasy::And< C1, C2, Cs >", "structecstasy_1_1_and.html", null ],
     [ "util::BitSet", "classutil_1_1_bit_set.html", null ],
     [ "ecstasy::Entities::Builder", "classecstasy_1_1_entities_1_1_builder.html", null ],
     [ "ecstasy::component_type< T >", "structecstasy_1_1component__type.html", null ],
@@ -42,6 +42,8 @@ var hierarchy =
     ] ],
     [ "ecstasy::integration::event::GamepadConnectedEvent", "structecstasy_1_1integration_1_1event_1_1_gamepad_connected_event.html", null ],
     [ "GetComponentStorageType< C >", "struct_get_component_storage_type.html", null ],
+    [ "ecstasy::Registry::GetModifierProxy< Operands >", "structecstasy_1_1_registry_1_1_get_modifier_proxy.html", null ],
+    [ "ecstasy::Registry::GetModifierProxy< std::tuple< Qs... > >", "structecstasy_1_1_registry_1_1_get_modifier_proxy_3_01std_1_1tuple_3_01_qs_8_8_8_01_4_01_4.html", null ],
     [ "ecstasy::Instances< Base >", "classecstasy_1_1_instances.html", null ],
     [ "ecstasy::Instances< ecstasy::IStorage >", "classecstasy_1_1_instances.html", null ],
     [ "ecstasy::Instances< ecstasy::ISystem >", "classecstasy_1_1_instances.html", null ],
@@ -66,15 +68,13 @@ var hierarchy =
     [ "util::meta::left_outer_join< Traits< Left, Lefts... >, Traits< Rights... > >", "structutil_1_1meta_1_1left__outer__join_3_01_traits_3_01_left_00_01_lefts_8_8_8_01_4_00_01_traits_3_01_rights_8_8_8_01_4_01_4.html", null ],
     [ "ecstasy::Maybe< C >", "structecstasy_1_1_maybe.html", null ],
     [ "ecstasy::query::modifier::Modifier", "classecstasy_1_1query_1_1modifier_1_1_modifier.html", [
-      [ "ecstasy::query::modifier::BinaryModifier", "classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html", [
-        [ "ecstasy::query::modifier::And< Q1, Q2 >", "classecstasy_1_1query_1_1modifier_1_1_and.html", null ],
-        [ "ecstasy::query::modifier::Or< Q1, Q2 >", "classecstasy_1_1query_1_1modifier_1_1_or.html", null ],
-        [ "ecstasy::query::modifier::Xor< Q1, Q2 >", "classecstasy_1_1query_1_1modifier_1_1_xor.html", null ]
-      ] ],
-      [ "ecstasy::query::modifier::UnaryModifier", "classecstasy_1_1query_1_1modifier_1_1_unary_modifier.html", [
-        [ "ecstasy::query::modifier::Maybe< Q >", "classecstasy_1_1query_1_1modifier_1_1_maybe.html", null ],
-        [ "ecstasy::query::modifier::Not< Q >", "classecstasy_1_1query_1_1modifier_1_1_not.html", null ]
-      ] ]
+      [ "ecstasy::query::modifier::And< Q1, Q2, Qs >", "classecstasy_1_1query_1_1modifier_1_1_and.html", null ],
+      [ "ecstasy::query::modifier::BinaryModifier", "classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html", null ],
+      [ "ecstasy::query::modifier::Maybe< Q >", "classecstasy_1_1query_1_1modifier_1_1_maybe.html", null ],
+      [ "ecstasy::query::modifier::Not< Q >", "classecstasy_1_1query_1_1modifier_1_1_not.html", null ],
+      [ "ecstasy::query::modifier::Or< Q1, Q2, Qs >", "classecstasy_1_1query_1_1modifier_1_1_or.html", null ],
+      [ "ecstasy::query::modifier::UnaryModifier", "classecstasy_1_1query_1_1modifier_1_1_unary_modifier.html", null ],
+      [ "ecstasy::query::modifier::Xor< Q1, Q2, Qs >", "classecstasy_1_1query_1_1modifier_1_1_xor.html", null ]
     ] ],
     [ "ecstasy::integration::event::MouseButtonEvent", "structecstasy_1_1integration_1_1event_1_1_mouse_button_event.html", [
       [ "ecstasy::integration::event::MouseButtonPressedEvent", "structecstasy_1_1integration_1_1event_1_1_mouse_button_pressed_event.html", null ],
@@ -83,7 +83,7 @@ var hierarchy =
     [ "ecstasy::integration::event::MouseMoveEvent", "structecstasy_1_1integration_1_1event_1_1_mouse_move_event.html", null ],
     [ "ecstasy::integration::event::MouseWheelScrollEvent", "structecstasy_1_1integration_1_1event_1_1_mouse_wheel_scroll_event.html", null ],
     [ "ecstasy::Not< C >", "structecstasy_1_1_not.html", null ],
-    [ "ecstasy::Or< C1, C2 >", "structecstasy_1_1_or.html", null ],
+    [ "ecstasy::Or< C1, C2, Cs >", "structecstasy_1_1_or.html", null ],
     [ "ecstasy::query::Query< First, Others >", "classecstasy_1_1query_1_1_query.html", null ],
     [ "ecstasy::queryable_type< C >", "structecstasy_1_1queryable__type.html", null ],
     [ "ecstasy::queryable_type< M >", "structecstasy_1_1queryable__type_3_01_m_01_4.html", null ],
@@ -111,5 +111,5 @@ var hierarchy =
       [ "ecstasy::query::is_queryable_with_adjust< T >", "structecstasy_1_1query_1_1is__queryable__with__adjust_3_01_t_01_4.html", null ],
       [ "util::meta::_type_set_eq< std::tuple<>, std::tuple<> >", "structutil_1_1meta_1_1__type__set__eq_3_01std_1_1tuple_3_4_00_01std_1_1tuple_3_4_01_4.html", null ]
     ] ],
-    [ "ecstasy::Xor< C1, C2 >", "structecstasy_1_1_xor.html", null ]
+    [ "ecstasy::Xor< C1, C2, Cs >", "structecstasy_1_1_xor.html", null ]
 ];

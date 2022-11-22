@@ -1,0 +1,42 @@
+digraph "src/ecstasy/query/concepts/Modifier.hpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="src/ecstasy/query/concepts\l/Modifier.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="src/ecstasy/query/concepts\l/include.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$query_2concepts_2include_8hpp.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="src/ecstasy/query/include.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$query_2include_8hpp.html",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="src/ecstasy/ecstasy.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ecstasy_8hpp.html",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="src/ecstasy/registry\l/concepts/RegistryModifier.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_registry_modifier_8hpp.html",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="src/ecstasy/registry\l/concepts/ComponentType.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_component_type_8hpp.html",tooltip=" "];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="src/ecstasy/registry\l/Registry.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_registry_8hpp.html",tooltip=" "];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="src/ecstasy/registry\l/include.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$registry_2include_8hpp.html",tooltip=" "];
+  Node8 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="src/ecstasy/integrations\l/event/EventsManager.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_events_manager_8cpp.html",tooltip=" "];
+  Node7 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="src/ecstasy/integrations\l/sfml/demo/01_basic_window\l/main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$01__basic__window_2main_8cpp.html",tooltip=" "];
+  Node7 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="src/ecstasy/integrations\l/sfml/demo/02_events/main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$02__events_2main_8cpp.html",tooltip=" "];
+  Node7 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="src/ecstasy/integrations\l/sfml/systems/PollEvents.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_poll_events_8cpp.html",tooltip=" "];
+  Node7 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="src/ecstasy/registry\l/DeletionStack.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_deletion_stack_8cpp.html",tooltip=" "];
+  Node7 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="src/ecstasy/registry\l/Registry.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_registry_8cpp.html",tooltip=" "];
+  Node7 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="src/ecstasy/resources\l/entity/RegistryEntity.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_registry_entity_8hpp.html",tooltip=" "];
+  Node15 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="src/ecstasy/resources\l/entity/include.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$resources_2entity_2include_8hpp.html",tooltip=" "];
+  Node6 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="src/ecstasy/registry\l/concepts/include.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$registry_2concepts_2include_8hpp.html",tooltip=" "];
+  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

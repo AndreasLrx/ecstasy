@@ -1,6 +1,8 @@
 var classecstasy_1_1_registry =
 [
     [ "EntityBuilder", "classecstasy_1_1_registry_1_1_entity_builder.html", "classecstasy_1_1_registry_1_1_entity_builder" ],
+    [ "GetModifierProxy", "structecstasy_1_1_registry_1_1_get_modifier_proxy.html", null ],
+    [ "GetModifierProxy< std::tuple< Qs... > >", "structecstasy_1_1_registry_1_1_get_modifier_proxy_3_01std_1_1tuple_3_01_qs_8_8_8_01_4_01_4.html", "structecstasy_1_1_registry_1_1_get_modifier_proxy_3_01std_1_1tuple_3_01_qs_8_8_8_01_4_01_4" ],
     [ "Select", "classecstasy_1_1_registry_1_1_select.html", "classecstasy_1_1_registry_1_1_select" ],
     [ "Registry", "classecstasy_1_1_registry.html#a404b8b6daf7e3d50b49def5b8543ad1f", null ],
     [ "~Registry", "classecstasy_1_1_registry.html#af6042dc4276270728a9ff2866fb247c8", null ],
@@ -18,9 +20,8 @@ var classecstasy_1_1_registry =
     [ "getQueryable", "classecstasy_1_1_registry.html#a4fdc7f2916182310a183bb4170c13a0d", null ],
     [ "getQueryable", "classecstasy_1_1_registry.html#a5f30946b88ec115aea39438678094fc1", null ],
     [ "getQueryable", "classecstasy_1_1_registry.html#af831f08bbfbb5c1bc21b02646d1be67e", null ],
-    [ "getQueryable", "classecstasy_1_1_registry.html#aeedb826d2129db4584df577f7c803ca1", null ],
-    [ "getQueryable", "classecstasy_1_1_registry.html#aeedb826d2129db4584df577f7c803ca1", null ],
-    [ "getQueryable", "classecstasy_1_1_registry.html#a8c75b88e6a7cd0f02cfe13485f24fd61", null ],
+    [ "getQueryable", "classecstasy_1_1_registry.html#a2f59517b11f14398b9ab0ceb8cbb3862", null ],
+    [ "getQueryable", "classecstasy_1_1_registry.html#a23e3a3339472c39c49c6c51707d3fa7d", null ],
     [ "getResource", "classecstasy_1_1_registry.html#a93aa552ed397aa763abe42bb7d0f9cb3", null ],
     [ "getResource", "classecstasy_1_1_registry.html#ad566ed29ec900fa80e4f908265f82de6", null ],
     [ "getStorage", "classecstasy_1_1_registry.html#a617df9886a0e036fe8ef858fafc79c8c", null ],

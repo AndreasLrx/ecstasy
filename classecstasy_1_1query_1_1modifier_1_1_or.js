@@ -1,18 +1,15 @@
 var classecstasy_1_1query_1_1modifier_1_1_or =
 [
-    [ "LeftOperand", "classecstasy_1_1query_1_1modifier_1_1_or.html#ae124c96cda69ed263d27561c62578c4d", null ],
-    [ "LeftQueryData", "classecstasy_1_1query_1_1modifier_1_1_or.html#aaf310c4d2b1836c9a88785512f981e32", null ],
-    [ "Operands", "classecstasy_1_1query_1_1modifier_1_1_or.html#a2d9abcb900addb7d2027ab37691bb165", null ],
-    [ "QueryData", "classecstasy_1_1query_1_1modifier_1_1_or.html#aba4b645f9e705fa86c2b98b6aaef7bfc", null ],
-    [ "RightOperand", "classecstasy_1_1query_1_1modifier_1_1_or.html#aafdb75b3339b27376c3bbea62ea88337", null ],
-    [ "RightQueryData", "classecstasy_1_1query_1_1modifier_1_1_or.html#aa1f107f98dc01af16b1f7a6f9efb02c8", null ],
-    [ "Or", "classecstasy_1_1query_1_1modifier_1_1_or.html#a0c3ef59c3501d2dd1898751d0da9e96e", null ],
-    [ "getLeftQueryData", "classecstasy_1_1query_1_1modifier_1_1_or.html#a4bee80f122ca7af4b7d2c4aeaf8eb629", null ],
-    [ "getMask", "classecstasy_1_1query_1_1modifier_1_1_or.html#a1a694c3574cd0bba9d9c627c19470737", null ],
-    [ "getQueryData", "classecstasy_1_1query_1_1modifier_1_1_or.html#a5c1336aae3f5fd0be04939372902d92a", null ],
-    [ "getRightQueryData", "classecstasy_1_1query_1_1modifier_1_1_or.html#a6751bc5bd54062bbc6efc4cd4650d0db", null ],
-    [ "reloadMask", "classecstasy_1_1query_1_1modifier_1_1_or.html#a077afa121429a9efb5fa64ca06785952", null ],
-    [ "_leftOperand", "classecstasy_1_1query_1_1modifier_1_1_or.html#a7d653b9ac6b2f2df740d066d8c935cbd", null ],
-    [ "_mask", "classecstasy_1_1query_1_1modifier_1_1_or.html#ad81f4df92069f95abb78ff0a451c7be6", null ],
-    [ "_rightOperand", "classecstasy_1_1query_1_1modifier_1_1_or.html#a0855833f49e3d123a30b3ec55009a734", null ]
+    [ "Operands", "classecstasy_1_1query_1_1modifier_1_1_or.html#a9aefc2e8bdea6731255278fd19636ef5", null ],
+    [ "QueryData", "classecstasy_1_1query_1_1modifier_1_1_or.html#af97d050aea5226835f212fdf41973625", null ],
+    [ "Or", "classecstasy_1_1query_1_1modifier_1_1_or.html#a70568deb99d6a5c23909f0eee0df8ad0", null ],
+    [ "combineMask", "classecstasy_1_1query_1_1modifier_1_1_or.html#a9436dbf02834011d5baba519738ca1e1", null ],
+    [ "combineOperandMasks", "classecstasy_1_1query_1_1modifier_1_1_or.html#affafac30dc180f6d3ab5519774943e8a", null ],
+    [ "getMask", "classecstasy_1_1query_1_1modifier_1_1_or.html#a412c1efad1d8f5ad70c75be44faac4f6", null ],
+    [ "getOperandData", "classecstasy_1_1query_1_1modifier_1_1_or.html#ac0ff62c649c1f545b412bff1854d2584", null ],
+    [ "getQueryData", "classecstasy_1_1query_1_1modifier_1_1_or.html#a800ec208e1f2081a59383ebfc82b616b", null ],
+    [ "getQueryData", "classecstasy_1_1query_1_1modifier_1_1_or.html#a20c258ae52a3f940d76b8e7527085ad1", null ],
+    [ "reloadMask", "classecstasy_1_1query_1_1modifier_1_1_or.html#afc2c3ef45735ac15b70ba35df2f2bd6b", null ],
+    [ "_mask", "classecstasy_1_1query_1_1modifier_1_1_or.html#a0ac702a186fb01762be7e3d8f8b19132", null ],
+    [ "_operands", "classecstasy_1_1query_1_1modifier_1_1_or.html#a7b641897950a70a3f7d4ff25270d54f2", null ]
 ];

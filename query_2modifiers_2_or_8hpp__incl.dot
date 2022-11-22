@@ -5,7 +5,7 @@ digraph "src/ecstasy/query/modifiers/Or.hpp"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node1 [label="src/ecstasy/query/modifiers\l/Or.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="Modifier.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_modifier_8hpp.html",tooltip=" "];
+  Node2 [label="Modifier.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$modifiers_2_modifier_8hpp.html",tooltip=" "];
   Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="ecstasy/query/concepts\l/Queryable.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_queryable_8hpp.html",tooltip=" "];
   Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

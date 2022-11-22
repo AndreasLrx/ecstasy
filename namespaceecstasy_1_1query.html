@@ -136,6 +136,10 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a761ae07d0a2b58e9277539d7a3722d3a"><td class="memTemplParams" colspan="2">template&lt;typename M &gt; </td></tr>
+<tr class="memitem:a761ae07d0a2b58e9277539d7a3722d3a"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a761ae07d0a2b58e9277539d7a3722d3a">Modifier</a></td></tr>
+<tr class="memdesc:a761ae07d0a2b58e9277539d7a3722d3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a query modifier type.  <a href="namespaceecstasy_1_1query.html#a761ae07d0a2b58e9277539d7a3722d3a">More...</a><br /></td></tr>
+<tr class="separator:a761ae07d0a2b58e9277539d7a3722d3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef33b329c1a412eb7f7403b90881d468"><td class="memTemplParams" colspan="2">template&lt;typename Q &gt; </td></tr>
 <tr class="memitem:aef33b329c1a412eb7f7403b90881d468"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">Queryable</a></td></tr>
 <tr class="memdesc:aef33b329c1a412eb7f7403b90881d468"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a type that can be queried.  <a href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">More...</a><br /></td></tr>
@@ -355,6 +359,45 @@ template&lt;typename T &gt; </div>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-30) </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_queryable_need_adjust_8hpp_source.html#l00092">92</a> of file <a class="el" href="_queryable_need_adjust_8hpp_source.html">QueryableNeedAdjust.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a761ae07d0a2b58e9277539d7a3722d3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a761ae07d0a2b58e9277539d7a3722d3a">&#9670;&nbsp;</a></span>Modifier</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename M &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">concept ecstasy::query::Modifier</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= requires(M &amp;modifier)</div>
+<div class="line">    {</div>
+<div class="line">        </div>
+<div class="line">        requires Queryable&lt;M&gt;;</div>
+<div class="line"> </div>
+<div class="line">        </div>
+<div class="line">        requires std::derived_from&lt;M, ecstasy::query::modifier::Modifier&gt;;</div>
+<div class="line"> </div>
+<div class="line">        </div>
+<div class="line">        <span class="keyword">typename</span> M::Operands;</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p>Defines a query modifier type. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">M</td><td>Evaluated type.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-22) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="concepts_2_modifier_8hpp_source.html#l00029">29</a> of file <a class="el" href="concepts_2_modifier_8hpp_source.html">Modifier.hpp</a>.</p>
 
 </div>
 </div>

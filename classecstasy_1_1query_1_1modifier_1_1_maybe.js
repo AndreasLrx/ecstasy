@@ -1,6 +1,7 @@
 var classecstasy_1_1query_1_1modifier_1_1_maybe =
 [
     [ "Internal", "classecstasy_1_1query_1_1modifier_1_1_maybe.html#a4c037dcc696cddf56a3b1addab62f778", null ],
+    [ "Operands", "classecstasy_1_1query_1_1modifier_1_1_maybe.html#a206b8a252b9589ceb8af3eebb504c6f7", null ],
     [ "QueryData", "classecstasy_1_1query_1_1modifier_1_1_maybe.html#a3fd03fe8771ebc36aae29e605a44d982", null ],
     [ "Maybe", "classecstasy_1_1query_1_1modifier_1_1_maybe.html#a4a39344c9afee0ec8afb771f543f51bb", null ],
     [ "adjustMask", "classecstasy_1_1query_1_1modifier_1_1_maybe.html#a426c2bf3282945d8676f21fa640995f8", null ],

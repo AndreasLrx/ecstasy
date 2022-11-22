@@ -141,7 +141,7 @@ class ecstasy::Registry::Select&lt; Selects &gt;</h3>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-22) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00200">200</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00237">237</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8adca10c89261c2395fdeac4ead01a55"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8adca10c89261c2395fdeac4ead01a55">&#9670;&nbsp;</a></span>Select()</h2>
@@ -179,10 +179,10 @@ template&lt;query::Queryable... Selects&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-22) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00237">237</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                                       : <a class="code" href="classecstasy_1_1_registry_1_1_select.html#ada9249a4d1a6efea9f7c6a33f30e9ada">_registry</a>(registry)</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            {</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00274">274</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                                       : <a class="code" href="classecstasy_1_1_registry_1_1_select.html#ada9249a4d1a6efea9f7c6a33f30e9ada">_registry</a>(registry)</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            {</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -234,22 +234,22 @@ template&lt;typename C , typename... Cs&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-22) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00257">257</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            {</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                <span class="comment">// clang-format off</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                <span class="keywordflow">return</span> Internal&lt;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                    <span class="keyword">typename</span> <a class="code" href="namespaceutil_1_1meta.html#ac8fd27617569b55777291d7020a4de60">util::meta::right_outer_join_t</a>&lt;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                        <a class="code" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                            queryable_type_t&lt;C&gt;,</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                            queryable_type_t&lt;Cs&gt;...</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                        &gt;,</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                        <a class="code" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                            Selects...</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                        &gt;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                    &gt;::Tuple,</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                    C, Cs...&gt;<a class="code" href="classecstasy_1_1_registry_1_1_select.html#afd3ef6801861b0332c09a2ff54616a2f">::where</a>(<a class="code" href="classecstasy_1_1_registry_1_1_select.html#ada9249a4d1a6efea9f7c6a33f30e9ada">_registry</a>, allocator);</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                <span class="comment">// clang-format on</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00294">294</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            {</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                <span class="comment">// clang-format off</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                <span class="keywordflow">return</span> Internal&lt;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                    <span class="keyword">typename</span> <a class="code" href="namespaceutil_1_1meta.html#ac8fd27617569b55777291d7020a4de60">util::meta::right_outer_join_t</a>&lt;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                        <a class="code" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                            queryable_type_t&lt;C&gt;,</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                            queryable_type_t&lt;Cs&gt;...</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                        &gt;,</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                        <a class="code" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                            Selects...</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                        &gt;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                    &gt;::Tuple,</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                    C, Cs...&gt;<a class="code" href="classecstasy_1_1_registry_1_1_select.html#afd3ef6801861b0332c09a2ff54616a2f">::where</a>(<a class="code" href="classecstasy_1_1_registry_1_1_select.html#ada9249a4d1a6efea9f7c6a33f30e9ada">_registry</a>, allocator);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                <span class="comment">// clang-format on</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -276,7 +276,7 @@ template&lt;query::Queryable... Selects&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00275">275</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00312">312</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
@@ -287,8 +287,8 @@ template&lt;query::Queryable... Selects&gt; </div>
 </div><!-- doc-content -->
 <div class="ttc" id="astructutil_1_1meta_1_1_traits_html"><div class="ttname"><a href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a></div><div class="ttdoc">Empty parameter pack helper type.</div><div class="ttdef"><b>Definition:</b> <a href="_traits_8hpp_source.html#l00028">Traits.hpp:28</a></div></div>
 <div class="ttc" id="anamespaceutil_1_1meta_html_ac8fd27617569b55777291d7020a4de60"><div class="ttname"><a href="namespaceutil_1_1meta.html#ac8fd27617569b55777291d7020a4de60">util::meta::right_outer_join_t</a></div><div class="ttdeci">typename right_outer_join&lt; Lefts, Rights &gt;::type right_outer_join_t</div><div class="ttdoc">Helper for right_outer_join&lt;...&gt;::type.</div><div class="ttdef"><b>Definition:</b> <a href="outer__join_8hpp_source.html#l00190">outer_join.hpp:190</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_registry_1_1_select_html_ada9249a4d1a6efea9f7c6a33f30e9ada"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_select.html#ada9249a4d1a6efea9f7c6a33f30e9ada">ecstasy::Registry::Select::_registry</a></div><div class="ttdeci">Registry &amp; _registry</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00275">Registry.hpp:275</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_registry_1_1_select_html_afd3ef6801861b0332c09a2ff54616a2f"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_select.html#afd3ef6801861b0332c09a2ff54616a2f">ecstasy::Registry::Select::where</a></div><div class="ttdeci">query::Query&lt; Selects... &gt; where(OptionalModifiersAllocator allocator=std::nullopt)</div><div class="ttdoc">Query all entities which have all the given components.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00257">Registry.hpp:257</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_1_1_select_html_ada9249a4d1a6efea9f7c6a33f30e9ada"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_select.html#ada9249a4d1a6efea9f7c6a33f30e9ada">ecstasy::Registry::Select::_registry</a></div><div class="ttdeci">Registry &amp; _registry</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00312">Registry.hpp:312</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_1_1_select_html_afd3ef6801861b0332c09a2ff54616a2f"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_select.html#afd3ef6801861b0332c09a2ff54616a2f">ecstasy::Registry::Select::where</a></div><div class="ttdeci">query::Query&lt; Selects... &gt; where(OptionalModifiersAllocator allocator=std::nullopt)</div><div class="ttdoc">Query all entities which have all the given components.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00294">Registry.hpp:294</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
