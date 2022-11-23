@@ -119,8 +119,8 @@ namespace ecstasy::query::modifier
         inline QueryData getQueryData(size_t index, std::integer_sequence<size_t, ints...> int_seq)
         {
             (void)int_seq;
-            return std::tie(getDerivedOperandData<0>(index), getDerivedOperandData<1>(index),
-                getDerivedOperandData<ints + 2>(index)...);
+            return {getDerivedOperandData<0>(index), getDerivedOperandData<1>(index),
+                getDerivedOperandData<ints + 2>(index)...};
         }
 
         std::tuple<Q1 &, Q2 &, Qs &...> _operands;
