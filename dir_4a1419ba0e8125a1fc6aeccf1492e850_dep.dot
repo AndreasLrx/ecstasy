@@ -4,11 +4,11 @@ digraph "src/ecstasy/storages" {
   edge [ labelfontsize="10", labelfontname="Helvetica"];
   subgraph clusterdir_6b0b9537e2784bce85aaa1605580a3a0 {
     graph [ bgcolor="#ddddee", pencolor="black", label="ecstasy" fontname="Helvetica", fontsize="10", URL="dir_6b0b9537e2784bce85aaa1605580a3a0.html"]
+  dir_8c1a170fbd0a5283d7ed264cf6df56b3 [shape=box label="resources" fillcolor="white" style="filled" color="red" URL="dir_8c1a170fbd0a5283d7ed264cf6df56b3.html"];
   dir_4a1419ba0e8125a1fc6aeccf1492e850 [shape=box, label="storages", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_4a1419ba0e8125a1fc6aeccf1492e850.html"];
   }
   dir_b7878ad5ecbf2506f4125b9d34c97e45 [shape=box label="util" fillcolor="white" style="filled" color="red" URL="dir_b7878ad5ecbf2506f4125b9d34c97e45.html"];
-  dir_8c1a170fbd0a5283d7ed264cf6df56b3 [shape=box label="resources" fillcolor="white" style="filled" color="red" URL="dir_8c1a170fbd0a5283d7ed264cf6df56b3.html"];
-  dir_4a1419ba0e8125a1fc6aeccf1492e850->dir_b7878ad5ecbf2506f4125b9d34c97e45 [headlabel="1", labeldistance=1.5 headhref="dir_000019_000024.html"];
   dir_4a1419ba0e8125a1fc6aeccf1492e850->dir_8c1a170fbd0a5283d7ed264cf6df56b3 [headlabel="1", labeldistance=1.5 headhref="dir_000019_000017.html"];
+  dir_4a1419ba0e8125a1fc6aeccf1492e850->dir_b7878ad5ecbf2506f4125b9d34c97e45 [headlabel="1", labeldistance=1.5 headhref="dir_000019_000024.html"];
   dir_8c1a170fbd0a5283d7ed264cf6df56b3->dir_b7878ad5ecbf2506f4125b9d34c97e45 [headlabel="1", labeldistance=1.5 headhref="dir_000017_000024.html"];
 }

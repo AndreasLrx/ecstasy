@@ -68,13 +68,18 @@ var hierarchy =
     [ "util::meta::left_outer_join< Traits< Left, Lefts... >, Traits< Rights... > >", "structutil_1_1meta_1_1left__outer__join_3_01_traits_3_01_left_00_01_lefts_8_8_8_01_4_00_01_traits_3_01_rights_8_8_8_01_4_01_4.html", null ],
     [ "ecstasy::Maybe< C >", "structecstasy_1_1_maybe.html", null ],
     [ "ecstasy::query::modifier::Modifier", "classecstasy_1_1query_1_1modifier_1_1_modifier.html", [
-      [ "ecstasy::query::modifier::And< Q1, Q2, Qs >", "classecstasy_1_1query_1_1modifier_1_1_and.html", null ],
-      [ "ecstasy::query::modifier::BinaryModifier", "classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html", null ],
+      [ "ecstasy::query::modifier::BinaryModifier< And< Q1, Q2, Qs... >, std::type_identity, Q1, Q2, Qs... >", "classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html", [
+        [ "ecstasy::query::modifier::And< Q1, Q2, Qs >", "classecstasy_1_1query_1_1modifier_1_1_and.html", null ]
+      ] ],
+      [ "ecstasy::query::modifier::BinaryModifier< Xor< Q1, Q2, Qs... >, util::meta::add_optional, Q1, Q2, Qs... >", "classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html", [
+        [ "ecstasy::query::modifier::Xor< Q1, Q2, Qs >", "classecstasy_1_1query_1_1modifier_1_1_xor.html", null ]
+      ] ],
+      [ "ecstasy::query::modifier::BinaryModifier< Or< Q1, Q2, Qs... >, util::meta::add_optional, Q1, Q2, Qs... >", "classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html", [
+        [ "ecstasy::query::modifier::Or< Q1, Q2, Qs >", "classecstasy_1_1query_1_1modifier_1_1_or.html", null ]
+      ] ],
+      [ "ecstasy::query::modifier::BinaryModifier< Derived, DataModifier, Q1, Q2, Qs >", "classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html", null ],
       [ "ecstasy::query::modifier::Maybe< Q >", "classecstasy_1_1query_1_1modifier_1_1_maybe.html", null ],
-      [ "ecstasy::query::modifier::Not< Q >", "classecstasy_1_1query_1_1modifier_1_1_not.html", null ],
-      [ "ecstasy::query::modifier::Or< Q1, Q2, Qs >", "classecstasy_1_1query_1_1modifier_1_1_or.html", null ],
-      [ "ecstasy::query::modifier::UnaryModifier", "classecstasy_1_1query_1_1modifier_1_1_unary_modifier.html", null ],
-      [ "ecstasy::query::modifier::Xor< Q1, Q2, Qs >", "classecstasy_1_1query_1_1modifier_1_1_xor.html", null ]
+      [ "ecstasy::query::modifier::Not< Q >", "classecstasy_1_1query_1_1modifier_1_1_not.html", null ]
     ] ],
     [ "ecstasy::integration::event::MouseButtonEvent", "structecstasy_1_1integration_1_1event_1_1_mouse_button_event.html", [
       [ "ecstasy::integration::event::MouseButtonPressedEvent", "structecstasy_1_1integration_1_1event_1_1_mouse_button_pressed_event.html", null ],
@@ -93,10 +98,10 @@ var hierarchy =
     [ "ecstasy::Registry", "classecstasy_1_1_registry.html", null ],
     [ "ecstasy::Resource", "classecstasy_1_1_resource.html", [
       [ "ecstasy::Entities", "classecstasy_1_1_entities.html", null ],
+      [ "ecstasy::ObjectWrapper< T >", "classecstasy_1_1_object_wrapper.html", null ],
       [ "ecstasy::integration::event::Gamepads", "classecstasy_1_1integration_1_1event_1_1_gamepads.html", null ],
       [ "ecstasy::integration::event::Keyboard", "classecstasy_1_1integration_1_1event_1_1_keyboard.html", null ],
-      [ "ecstasy::integration::event::Mouse", "classecstasy_1_1integration_1_1event_1_1_mouse.html", null ],
-      [ "ecstasy::ObjectWrapper< T >", "classecstasy_1_1_object_wrapper.html", null ]
+      [ "ecstasy::integration::event::Mouse", "classecstasy_1_1integration_1_1event_1_1_mouse.html", null ]
     ] ],
     [ "util::meta::_left_outer_join< Traits< Rights... >, IsInner, Left, OuterLefts... >::result< LeftsUntreated >", "structutil_1_1meta_1_1__left__outer__join_3_01_traits_3_01_rights_8_8_8_01_4_00_01_is_inner_00_0976b977fc3db4c0d2dc93c5d53c35a08.html", null ],
     [ "util::meta::_left_outer_join< Traits< Rights... >, IsInner, Left, OuterLefts... >::result< NextLeft, LeftsUntreated... >", "structutil_1_1meta_1_1__left__outer__join_3_01_traits_3_01_rights_8_8_8_01_4_00_01_is_inner_00_0e4c618fb3b7be1c193ef63fbe4938be5.html", null ],

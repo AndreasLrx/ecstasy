@@ -1,24 +1,26 @@
 /*
-@licstart  The following is the entire license notice for the
-JavaScript code in this file.
+ @licstart  The following is the entire license notice for the JavaScript code in this file.
 
-Copyright (C) 1997-2019 by Dimitri van Heesch
+ The MIT License (MIT)
 
-This program is free software; you can redistribute it and/or modify
-it under the terms of version 2 of the GNU General Public License as published by
-the Free Software Foundation
+ Copyright (C) 1997-2020 by Dimitri van Heesch
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ and associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute,
+ sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
 
-You should have received a copy of the GNU General Public License along
-with this program; if not, write to the Free Software Foundation, Inc.,
-51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ The above copyright notice and this permission notice shall be included in all copies or
+ substantial portions of the Software.
 
-@licend  The above is the entire license notice
-for the JavaScript code in this file
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+ @licend  The above is the entire license notice for the JavaScript code in this file
 */
 var NAVTREE =
 [
@@ -69,11 +71,16 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"01__basic__window_2main_8cpp.html",
-"classecstasy_1_1_instances.html#a57f970536765be1bc261abb4d092705f",
-"classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a8cf04a9734132302f96da8e113e80ce5",
-"dir_8c1a170fbd0a5283d7ed264cf6df56b3.html",
-"structecstasy_1_1integration_1_1event_1_1_key_event.html#abb12c4bae5c77a38afa86e1833b750a0"
+"",
+"classecstasy_1_1_entity.html#aeaeca29801581556bd36e04e6325b567",
+"classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a643b0662422d1d0dffa3fca2e2bf28a8",
+"cpp/algorithm/copy_backward.html",
+"cpp/error/get_terminate.html",
+"cpp/io/c/fwprintf.html",
+"cpp/numeric/math/isnormal.html",
+"cpp/thread/sleep_until.html",
+"globals.html",
+"structecstasy_1_1queryable__type_3_01_m_01_4.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

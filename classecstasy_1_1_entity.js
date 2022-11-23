@@ -9,7 +9,7 @@ var classecstasy_1_1_entity =
     [ "getGeneration", "classecstasy_1_1_entity.html#a469ab8ad4f9df84799d255bf9219b1b7", null ],
     [ "getIndex", "classecstasy_1_1_entity.html#a303893300b586b78e7b47f2c67a0a3de", null ],
     [ "has", "classecstasy_1_1_entity.html#a5a5862e6df35e748daff901104c43085", null ],
-    [ "operator", "classecstasy_1_1_entity.html#a26230c9a20dea69791d892fe39ce1a2d", null ],
+    [ "operator<=>", "classecstasy_1_1_entity.html#a13ea3f09bf322d632caa9d87982dc4cb", null ],
     [ "operator==", "classecstasy_1_1_entity.html#a6612cfc1590f07fce15558f66f62683f", null ],
     [ "operator[]", "classecstasy_1_1_entity.html#a577f155671e51027e2f3e60940df752a", null ],
     [ "operator[]", "classecstasy_1_1_entity.html#a363df6bbde782131e461159406cd8473", null ],

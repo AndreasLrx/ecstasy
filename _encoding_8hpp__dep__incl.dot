@@ -7,9 +7,9 @@ digraph "src/ecstasy/integrations/sfml/util/Encoding.hpp"
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="src/ecstasy/integrations\l/sfml/demo/02_events/main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$02__events_2main_8cpp.html",tooltip=" "];
   Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="src/ecstasy/integrations\l/sfml/util/include.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$integrations_2sfml_2util_2include_8hpp.html",tooltip=" "];
-  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="src/ecstasy/integrations\l/sfml/include.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$integrations_2sfml_2include_8hpp.html",tooltip=" "];
-  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="src/ecstasy/integrations\l/sfml/util/Encoding.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_encoding_8cpp.html",tooltip=" "];
+  Node3 [label="src/ecstasy/integrations\l/sfml/util/Encoding.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_encoding_8cpp.html",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="src/ecstasy/integrations\l/sfml/util/include.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$integrations_2sfml_2util_2include_8hpp.html",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="src/ecstasy/integrations\l/sfml/include.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$integrations_2sfml_2include_8hpp.html",tooltip=" "];
 }
