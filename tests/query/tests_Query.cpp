@@ -485,6 +485,7 @@ TEST(Query, AndVariadic)
     }
 
     velocityOrVector.reloadMask();
+    velocityOrVector.getQueryData(0);
     auto query = ecstasy::query::Select<decltype(vectors)>::where(vectors, velocityOrVector);
     GTEST_ASSERT_EQ(query.getMask(), util::BitSet("11000100000001"));
 }
