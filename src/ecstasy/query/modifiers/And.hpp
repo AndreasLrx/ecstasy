@@ -65,7 +65,7 @@ namespace ecstasy::query::modifier
         /// @since 1.0.0 (2022-10-27)
         ///
         template <size_t operandId>
-        inline typename ModifierClass::OperandData<operandId> getOperandData(size_t index)
+        inline typename ModifierClass::template OperandData<operandId> getOperandData(size_t index)
         {
             return std::get<operandId>(this->_operands).getQueryData(index);
         }
