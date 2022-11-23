@@ -12,7 +12,7 @@
 #ifndef ECSTASY_QUERY_MODIFIERS_XOR_HPP_
 #define ECSTASY_QUERY_MODIFIERS_XOR_HPP_
 
-#include "Modifier.hpp"
+#include "BinaryModifier.hpp"
 #include "ecstasy/query/concepts/Queryable.hpp"
 #include "util/meta/add_optional.hpp"
 
@@ -33,19 +33,11 @@ namespace ecstasy::query::modifier
     /// @since 1.0.0 (2022-10-27)
     ///
     template <Queryable Q1, Queryable Q2, Queryable... Qs>
-    class Xor : public Modifier {
+    class Xor : public BinaryModifier<Xor<Q1, Q2, Qs...>, util::meta::add_optional, Q1, Q2, Qs...> {
+        /// @brief Helper type for the base class.
+        using ModifierClass = BinaryModifier<Xor<Q1, Q2, Qs...>, util::meta::add_optional, Q1, Q2, Qs...>;
+
       public:
-        /// @brief @ref Modifier constraint.
-        using Operands = std::tuple<Q1, Q2, Qs...>;
-
-        /// @brief @ref Queryable constaint.
-        // clang-format off
-        using QueryData = std::tuple<
-            util::meta::add_optional_t<typename Q1::QueryData>,
-            util::meta::add_optional_t<typename Q2::QueryData>,
-            util::meta::add_optional_t<typename Qs::QueryData>...>;
-        // clang-format on
-
         ///
         /// @brief Construct a new Xor Queryable modifier.
         ///
@@ -57,26 +49,8 @@ namespace ecstasy::query::modifier
         /// @since 1.0.0 (2022-10-27)
         ///
         Xor(Q1 &firstOperand, Q2 &secondOperand, Qs &...otherOperands)
-            : _operands({firstOperand, secondOperand, otherOperands...})
+            : ModifierClass(firstOperand, secondOperand, otherOperands...)
         {
-            reloadMask();
-        }
-
-        ///
-        /// @brief Get the Mask of the internal queryables.
-        /// The result is a binary Or between all the operands bitset's.
-        ///
-        /// @note @ref Queryable constraint.
-        /// @warning Use @ref reloadMask() if the operand masks have changed since the construction.
-        ///
-        /// @return const util::BitSet& resulting mask.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-27)
-        ///
-        constexpr const util::BitSet &getMask() const
-        {
-            return _mask;
         }
 
         ///
@@ -92,30 +66,14 @@ namespace ecstasy::query::modifier
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-27)
         ///
-        auto getOperandData(size_t operandId, size_t index)
+        template <size_t operandId>
+        inline typename ModifierClass::template OperandData<operandId> getOperandData(size_t index)
         {
-            auto &operand = std::get<operandId>(_operands);
+            auto &operand = std::get<operandId>(this->_operands);
 
             if (index < operand.getMask().size() && operand.getMask()[index])
                 return operand.getQueryData(index);
             return std::nullopt;
-        }
-
-        ///
-        /// @brief Get the operands data at the given index.
-        ///
-        /// @note @ref Queryable constraint.
-        ///
-        /// @param[in] index Index of the entity.
-        ///
-        /// @return @ref QueryData A tuple of std::optional containing the operands data if existing.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-27)
-        ///
-        QueryData getQueryData(size_t index)
-        {
-            return getQueryData(index, std::make_index_sequence<(sizeof...(Qs))>());
         }
 
         ///
@@ -124,46 +82,25 @@ namespace ecstasy::query::modifier
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-27)
         ///
-        void reloadMask()
+        inline void reloadMask()
         {
             if constexpr (sizeof...(Qs) > 0)
                 combineOperandMasks(std::make_index_sequence<(sizeof...(Qs))>());
             else {
-                auto &leftOperand = std::get<0>(_operands);
-                auto &rightOperand = std::get<1>(_operands);
+                auto &leftOperand = std::get<0>(this->_operands);
+                auto &rightOperand = std::get<1>(this->_operands);
 
                 if (leftOperand.getMask().size() > rightOperand.getMask().size()) {
-                    _mask = leftOperand.getMask();
-                    _mask.inplaceXor(rightOperand.getMask());
+                    this->_mask = leftOperand.getMask();
+                    this->_mask.inplaceXor(rightOperand.getMask());
                 } else {
-                    _mask = rightOperand.getMask();
-                    _mask.inplaceXor(leftOperand.getMask());
+                    this->_mask = rightOperand.getMask();
+                    this->_mask.inplaceXor(leftOperand.getMask());
                 }
             }
         }
 
       private:
-        ///
-        /// @brief Get the the query data.
-        ///
-        /// @tparam ints Sequence values.
-        ///
-        /// @param[in] index Id of the query data to fetch.
-        /// @param[in] int_seq Sequence containing the queryables ids.
-        ///
-        /// @return @ref QueryData A tuple of std::optional containing the operands data if existing.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-11-21)
-        ///
-        template <size_t... ints>
-        QueryData getQueryData(size_t index, std::integer_sequence<size_t, ints...> int_seq)
-        {
-            (void)int_seq;
-            return std::make_tuple(
-                getOperandData(0, index), getOperandData(1, index), getOperandData(ints + 2, index)...);
-        }
-
         ///
         /// @brief Combine the current bitmask with the given one.
         ///
@@ -172,12 +109,12 @@ namespace ecstasy::query::modifier
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-21)
         ///
-        void combineMask(const util::BitSet &mask)
+        inline void combineMask(const util::BitSet &mask)
         {
-            if (_mask.size() < mask.size())
-                _mask = util::BitSet(mask).inplaceXor(_mask);
+            if (this->_mask.size() < mask.size())
+                this->_mask = util::BitSet(mask).inplaceXor(this->_mask);
             else
-                _mask.inplaceXor(mask);
+                this->_mask.inplaceXor(mask);
         }
 
         ///
@@ -191,16 +128,13 @@ namespace ecstasy::query::modifier
         /// @since 1.0.0 (2022-11-21)
         ///
         template <size_t... ints>
-        void combineOperandMasks(std::integer_sequence<size_t, ints...> int_seq)
+        inline void combineOperandMasks(std::integer_sequence<size_t, ints...> int_seq)
         {
             (void)int_seq;
-            _mask = std::get<0>(_operands).getMask();
-            combineMask(std::get<1>(_operands).getMask());
-            std::make_tuple((combineMask(std::get<ints + 2>(_operands).getMask()), 0)...);
+            this->_mask = std::get<0>(this->_operands).getMask();
+            combineMask(std::get<1>(this->_operands).getMask());
+            std::ignore = std::make_tuple((combineMask(std::get<ints + 2>(this->_operands).getMask()), 0)...);
         }
-
-        std::tuple<Q1 &, Q2 &, Qs &...> _operands;
-        util::BitSet _mask;
     };
 } // namespace ecstasy::query::modifier
 

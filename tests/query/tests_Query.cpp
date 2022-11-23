@@ -461,6 +461,7 @@ TEST(Query, OrVariadic)
     }
 
     velocityOrVector.reloadMask();
+    velocityOrVector.getQueryData(0);
     auto query = ecstasy::query::Select<decltype(maybeVector)>::where(maybeVector, velocityOrVector);
     GTEST_ASSERT_EQ(query.getMask(), util::BitSet("11011101011101"));
 }
@@ -485,6 +486,7 @@ TEST(Query, AndVariadic)
     }
 
     velocityOrVector.reloadMask();
+    velocityOrVector.getQueryData(0);
     auto query = ecstasy::query::Select<decltype(vectors)>::where(vectors, velocityOrVector);
     GTEST_ASSERT_EQ(query.getMask(), util::BitSet("11000100000001"));
 }
@@ -509,6 +511,7 @@ TEST(Query, XorVariadic)
     }
 
     velocityOrVector.reloadMask();
+    velocityOrVector.getQueryData(0);
     auto query = ecstasy::query::Select<decltype(maybeVector)>::where(maybeVector, velocityOrVector);
 
     /// Xor of three inputs return true if an odd number of its input are true
