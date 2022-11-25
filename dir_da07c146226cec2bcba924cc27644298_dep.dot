@@ -1,0 +1,11 @@
+digraph "src/ecstasy/integrations/user_action" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_f15917d6366dfa96c32563b53409824a {
+    graph [ bgcolor="#ddddee", pencolor="black", label="integrations" fontname="Helvetica", fontsize="10", URL="dir_f15917d6366dfa96c32563b53409824a.html"]
+  dir_183c73d974247df0fabaedf6b9eb94ef [shape=box label="event" fillcolor="white" style="filled" color="red" URL="dir_183c73d974247df0fabaedf6b9eb94ef.html"];
+  dir_da07c146226cec2bcba924cc27644298 [shape=box, label="user_action", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_da07c146226cec2bcba924cc27644298.html"];
+  }
+  dir_da07c146226cec2bcba924cc27644298->dir_183c73d974247df0fabaedf6b9eb94ef [headlabel="3", labeldistance=1.5 headhref="dir_000023_000003.html"];
+}

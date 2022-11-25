@@ -1,14 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a643b0662422d1d0dffa3fca2e2bf28a8":[2,0,0,0,0,18,0,96],
-"classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a667d08af6165c1cb6e72970036a9f7d7":[2,0,0,0,0,18,0,39],
-"classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a69691c7bdcc3ce6d5d8a1361f22d04ac":[2,0,0,0,0,18,0,13],
-"classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a726add2b4d11304a74bc0360f8338984":[2,0,0,0,0,18,0,57],
-"classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a72bd76d6e2b68a539c8d1a77b564ed72":[2,0,0,0,0,18,0,29],
-"classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a77a804418d76dc407383a618b60853ab":[2,0,0,0,0,18,0,55],
-"classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a7e89a79bbb017bfcaff80ff820a15d8a":[2,0,0,0,0,18,0,32],
-"classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a7fc56270e7a70fa81a5935b72eacbe29":[2,0,0,0,0,18,0,1],
-"classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a800618943025315f869e4e1f09471012":[2,0,0,0,0,18,0,6],
 "classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a845787798a45b48e825e9b99a338537a":[2,0,0,0,0,18,0,27],
 "classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a87557f11575c0ad78e4e28abedc13b6e":[2,0,0,0,0,18,0,64],
 "classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a88183b946cc5f0e8c96b2e66e1c74a7e":[2,0,0,0,0,18,0,0],
@@ -248,6 +239,15 @@ var NAVTREEINDEX2 =
 "cpp/algorithm/binary_search.html":[1,0,1,90],
 "cpp/algorithm/bsearch.html":[1,0,1,100],
 "cpp/algorithm/clamp.html":[1,0,1,111],
+"cpp/algorithm/copy.html":[1,0,1,125],
 "cpp/algorithm/copy.html":[1,0,1,127],
-"cpp/algorithm/copy.html":[1,0,1,125]
+"cpp/algorithm/copy_backward.html":[1,0,1,126],
+"cpp/algorithm/copy_n.html":[1,0,1,128],
+"cpp/algorithm/count.html":[1,0,1,132],
+"cpp/algorithm/count.html":[1,0,1,133],
+"cpp/algorithm/equal.html":[1,0,1,182],
+"cpp/algorithm/equal_range.html":[1,0,1,183],
+"cpp/algorithm/exclusive_scan.html":[1,0,1,187],
+"cpp/algorithm/fill.html":[1,0,1,217],
+"cpp/algorithm/fill_n.html":[1,0,1,218]
 };

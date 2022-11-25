@@ -2,6 +2,8 @@ var hierarchy =
 [
     [ "util::meta::_left_outer_join< Rights, IsInner, Left, OuterLefts >", "structutil_1_1meta_1_1__left__outer__join.html", null ],
     [ "util::meta::_left_outer_join< Traits< Rights... >, IsInner, Left, OuterLefts... >", "structutil_1_1meta_1_1__left__outer__join_3_01_traits_3_01_rights_8_8_8_01_4_00_01_is_inner_00_0e1c6c75ebd27a9e3cd5f35357e042e62.html", null ],
+    [ "ecstasy::integration::user_action::Action", "structecstasy_1_1integration_1_1user__action_1_1_action.html", null ],
+    [ "ecstasy::integration::user_action::ActionBinding", "structecstasy_1_1integration_1_1user__action_1_1_action_binding.html", null ],
     [ "util::meta::add_optional< T >", "structutil_1_1meta_1_1add__optional.html", null ],
     [ "util::meta::add_optional< std::optional< T > >", "structutil_1_1meta_1_1add__optional_3_01std_1_1optional_3_01_t_01_4_01_4.html", null ],
     [ "util::meta::add_optional< T & >", "structutil_1_1meta_1_1add__optional_3_01_t_01_6_01_4.html", null ],

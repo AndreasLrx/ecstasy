@@ -1,14 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"classecstasy_1_1_entity.html#aeaeca29801581556bd36e04e6325b567":[2,0,0,17,14],
-"classecstasy_1_1_i_storage.html":[2,0,0,22],
-"classecstasy_1_1_i_storage.html#a4188b8316c1ee722db5a8a2c9c1de34b":[2,0,0,22,1],
-"classecstasy_1_1_i_storage.html#aa8f594bbee0e3d777affb26390677671":[2,0,0,22,0],
-"classecstasy_1_1_i_storage.html#ae5087e768a78c911483ad34af8297b38":[2,0,0,22,2],
-"classecstasy_1_1_i_system.html":[2,0,0,24],
-"classecstasy_1_1_i_system.html#a2dc5c878cf6e31c7102d613f7a2651d1":[2,0,0,24,0],
-"classecstasy_1_1_i_system.html#aa9cf50e42a827f26e5d7e2c5d7fe9c46":[2,0,0,24,1],
-"classecstasy_1_1_instances.html":[2,0,0,21],
 "classecstasy_1_1_instances.html#a0c87504fd5578fa884633307beb9cef5":[2,0,0,21,10],
 "classecstasy_1_1_instances.html#a1c8bb1c646e54c1c9dbc74f461494f51":[2,0,0,21,0],
 "classecstasy_1_1_instances.html#a1ea11116c2da702f388dffe5dfe51558":[2,0,0,21,2],
@@ -249,5 +240,14 @@ var NAVTREEINDEX1 =
 "classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a5dbc98dcc983a70728bd082d1a47546e":[2,0,0,0,0,18,0,19],
 "classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a5e23a433a108a85788894b705ec11cdd":[2,0,0,0,0,18,0,79],
 "classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a61e9c06ea9a85a5088a499df6458d276":[2,0,0,0,0,18,0,23],
-"classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a6252c5b171a2982612e31042b953f558":[2,0,0,0,0,18,0,81]
+"classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a6252c5b171a2982612e31042b953f558":[2,0,0,0,0,18,0,81],
+"classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a643b0662422d1d0dffa3fca2e2bf28a8":[2,0,0,0,0,18,0,96],
+"classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a667d08af6165c1cb6e72970036a9f7d7":[2,0,0,0,0,18,0,39],
+"classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a69691c7bdcc3ce6d5d8a1361f22d04ac":[2,0,0,0,0,18,0,13],
+"classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a726add2b4d11304a74bc0360f8338984":[2,0,0,0,0,18,0,57],
+"classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a72bd76d6e2b68a539c8d1a77b564ed72":[2,0,0,0,0,18,0,29],
+"classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a77a804418d76dc407383a618b60853ab":[2,0,0,0,0,18,0,55],
+"classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a7e89a79bbb017bfcaff80ff820a15d8a":[2,0,0,0,0,18,0,32],
+"classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a7fc56270e7a70fa81a5935b72eacbe29":[2,0,0,0,0,18,0,1],
+"classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a800618943025315f869e4e1f09471012":[2,0,0,0,0,18,0,6]
 };

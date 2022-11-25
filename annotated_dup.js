@@ -30,6 +30,10 @@ var annotated_dup =
         [ "sfml", "namespaceecstasy_1_1integration_1_1sfml.html", [
           [ "PollEvents", "classecstasy_1_1integration_1_1sfml_1_1_poll_events.html", "classecstasy_1_1integration_1_1sfml_1_1_poll_events" ],
           [ "Encoding", "classecstasy_1_1integration_1_1sfml_1_1_encoding.html", "classecstasy_1_1integration_1_1sfml_1_1_encoding" ]
+        ] ],
+        [ "user_action", "namespaceecstasy_1_1integration_1_1user__action.html", [
+          [ "Action", "structecstasy_1_1integration_1_1user__action_1_1_action.html", "structecstasy_1_1integration_1_1user__action_1_1_action" ],
+          [ "ActionBinding", "structecstasy_1_1integration_1_1user__action_1_1_action_binding.html", "structecstasy_1_1integration_1_1user__action_1_1_action_binding" ]
         ] ]
       ] ],
       [ "query", "namespaceecstasy_1_1query.html", [
