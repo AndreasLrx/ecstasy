@@ -5,4 +5,5 @@ set(SRC
     ${SRC}
     ${INCROOT}/Action.hpp
     ${INCROOT}/ActionBinding.hpp
+    ${INCROOT}/ActionBindings.hpp
     PARENT_SCOPE)

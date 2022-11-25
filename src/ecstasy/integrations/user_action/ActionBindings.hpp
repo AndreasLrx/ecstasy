@@ -1,0 +1,69 @@
+///
+/// @file ActionBindings.hpp
+/// @author Andréas Leroux (andreas.leroux@epitech.eu)
+/// @brief
+/// @version 1.0.0
+/// @date 2022-11-25
+///
+/// @copyright Copyright (c) ECSTASY 2022
+///
+///
+
+#ifndef ECSTASY_INTEGRATIONS_USER_ACTION_ACTIONBINDINGS_HPP_
+#define ECSTASY_INTEGRATIONS_USER_ACTION_ACTIONBINDINGS_HPP_
+
+#include <vector>
+#include "ActionBinding.hpp"
+
+namespace ecstasy::integration::user_action
+{
+    ///
+    /// @brief Wrapper of a @ref std::vector of ActionBinding.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2022-11-25)
+    ///
+    class ActionBindings {
+      public:
+        ///
+        /// @brief Construct a new empty action binding container.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-25)
+        ///
+        constexpr ActionBindings()
+        {
+        }
+
+        ///
+        /// @brief Get the Bindings.
+        ///
+        /// @return std::vector<ActionBinding>& A reference to the internal container.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-25)
+        ///
+        constexpr std::vector<ActionBinding> &getBindings()
+        {
+            return _bindings;
+        }
+
+        ///
+        /// @brief Get the Bindings.
+        ///
+        /// @return const std::vector<ActionBinding>& A const reference to the internal container.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-25)
+        ///
+        constexpr const std::vector<ActionBinding> &getBindings() const
+        {
+            return _bindings;
+        }
+
+      private:
+        std::vector<ActionBinding> _bindings;
+    };
+} // namespace ecstasy::integration::user_action
+
+#endif /* !ECSTASY_INTEGRATIONS_USER_ACTION_ACTIONBINDINGS_HPP_ */
