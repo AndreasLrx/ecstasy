@@ -9,6 +9,10 @@ if (${ECSTASY_INTEGRATIONS_SFML})
     add_subdirectory(sfml)
 endif()
 
+if (${ECSTASY_INTEGRATIONS_USER_ACTION})
+    add_subdirectory(user_action)
+endif()
+
 set(SRC 
     ${SRC}
     ${INCROOT}/include.hpp

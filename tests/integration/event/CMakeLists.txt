@@ -7,7 +7,7 @@ set(SRC
 )
 
 add_ecstasy_test(
-    NAME ecstasy_test_event
-    DISPLAY_NAME "Ecstasy-Event-Tests"
+    NAME ecstasy_test_integration_event
+    DISPLAY_NAME "Ecstasy-Integration-Event-Tests"
     SOURCES ${SRC}
 )

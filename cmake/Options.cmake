@@ -10,6 +10,7 @@ option(BUILD_SHARED_LIBS "Whether ecstasy must be built as a shared library or n
 option(ECSTASY_INTEGRATIONS_EVENT "Events managing integration. Include event listeners and input states (mouse, keyboard, gamepad)." OFF)
 CMAKE_DEPENDENT_OPTION(ECSTASY_INTEGRATIONS_SFML "SFML library integration." OFF ECSTASY_INTEGRATIONS_EVENT OFF)
 CMAKE_DEPENDENT_OPTION(ECSTASY_INTEGRATIONS_SFML_BUILD_DEMO "Build SFML integration demo projects." OFF ECSTASY_INTEGRATIONS_SFML OFF)
+CMAKE_DEPENDENT_OPTION(ECSTASY_INTEGRATIONS_USER_ACTION "User Action integration." OFF ECSTASY_INTEGRATIONS_EVENT OFF)
 
 
 ## Display configuration
@@ -19,12 +20,13 @@ list(APPEND CMAKE_MESSAGE_INDENT "  ")
     message(STATUS "Enable test coverage: ${ENABLE_TEST_COVERAGE}")
     message(STATUS "Build shared libraries: ${BUILD_SHARED_LIBS}")
     ## Integrations
-    message(STATUS "Build integrations")
+    message(STATUS "Integrations:")
     list(APPEND CMAKE_MESSAGE_INDENT "  ")
         message(STATUS "Event: ${ECSTASY_INTEGRATIONS_EVENT}")
         message(STATUS "SFML: ${ECSTASY_INTEGRATIONS_SFML}")
         list(APPEND CMAKE_MESSAGE_INDENT "  ")
             message(STATUS "Build demos: ${ECSTASY_INTEGRATIONS_SFML_BUILD_DEMO}")
         list(POP_BACK CMAKE_MESSAGE_INDENT)
+        message(STATUS "User Action: ${ECSTASY_INTEGRATIONS_USER_ACTION}")
     list(POP_BACK CMAKE_MESSAGE_INDENT)
 list(POP_BACK CMAKE_MESSAGE_INDENT)
