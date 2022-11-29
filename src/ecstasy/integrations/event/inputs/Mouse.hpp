@@ -13,6 +13,7 @@
 #define ECSTASY_INTEGRATION_EVENT_INPUTS_MOUSE_HPP_
 
 #include <array>
+#include <ostream>
 #include <utility>
 
 #include "ecstasy/resources/Resource.hpp"
@@ -201,5 +202,7 @@ namespace ecstasy::integration::event
         int _y;
     };
 } // namespace ecstasy::integration::event
+
+std::ostream &operator<<(std::ostream &stream, const ecstasy::integration::event::Mouse::Button &key);
 
 #endif /* !ECSTASY_INTEGRATION_EVENT_INPUTS_MOUSE_HPP_ */

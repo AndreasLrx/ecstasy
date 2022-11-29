@@ -140,16 +140,24 @@ TEST(Gamepad, outputStreamOperators)
         std::stringstream ss;
 
         ss << static_cast<event::Gamepad::Button>(i);
-        GTEST_ASSERT_EQ(ss.str(), event::Gamepad::getButtonName(static_cast<event::Gamepad::Button>(i)));
+        GTEST_ASSERT_NE(ss.str(), "");
     }
-    GTEST_ASSERT_EQ(event::Gamepad::getButtonName(event::Gamepad::Button::Count), nullptr);
+    {
+        std::stringstream ss;
+        ss << event::Gamepad::Button::Count;
+        GTEST_ASSERT_EQ(ss.str(), "");
+    }
 
     for (int i = static_cast<int>(event::Gamepad::Axis::Unknown); i < static_cast<int>(event::Gamepad::Axis::Count);
          i++) {
         std::stringstream ss;
 
         ss << static_cast<event::Gamepad::Axis>(i);
-        GTEST_ASSERT_EQ(ss.str(), event::Gamepad::getAxisName(static_cast<event::Gamepad::Axis>(i)));
+        GTEST_ASSERT_NE(ss.str(), "");
     }
-    GTEST_ASSERT_EQ(event::Gamepad::getAxisName(event::Gamepad::Axis::Count), nullptr);
+    {
+        std::stringstream ss;
+        ss << event::Gamepad::Axis::Count;
+        GTEST_ASSERT_EQ(ss.str(), "");
+    }
 }

@@ -16,13 +16,6 @@
 #include <cstdint>
 #include <ostream>
 
-/// @internal
-#define ECSTASY_BUTTON_NAME_CASE(button) \
-    case Button::button: return #button
-/// @internal
-#define ECSTASY_AXIS_NAME_CASE(axis) \
-    case Axis::axis: return #axis
-
 namespace ecstasy::integration::event
 {
     ///
@@ -232,65 +225,6 @@ namespace ecstasy::integration::event
             _axis[static_cast<std::size_t>(axis)] = value;
         }
 
-        ///
-        /// @brief Get the name of a button.
-        ///
-        /// @warning If the button is Button::Count or isn't a valid button, @ref nullptr is returned.
-        ///
-        /// @param[in] button Evaluated button.
-        ///
-        /// @return const char* Button name if valid, nullptr otherwise.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-11-17)
-        ///
-        constexpr static const char *getButtonName(Button button)
-        {
-            switch (button) {
-                ECSTASY_BUTTON_NAME_CASE(Unknown);
-                ECSTASY_BUTTON_NAME_CASE(FaceUp);
-                ECSTASY_BUTTON_NAME_CASE(FaceRight);
-                ECSTASY_BUTTON_NAME_CASE(FaceDown);
-                ECSTASY_BUTTON_NAME_CASE(FaceLeft);
-                ECSTASY_BUTTON_NAME_CASE(BumperLeft);
-                ECSTASY_BUTTON_NAME_CASE(BumperRight);
-                ECSTASY_BUTTON_NAME_CASE(MiddleLeft);
-                ECSTASY_BUTTON_NAME_CASE(Middle);
-                ECSTASY_BUTTON_NAME_CASE(MiddleRight);
-                ECSTASY_BUTTON_NAME_CASE(ThumbLeft);
-                ECSTASY_BUTTON_NAME_CASE(ThumbRight);
-                default: return nullptr;
-            }
-        }
-
-        ///
-        /// @brief Get the name of an axis.
-        ///
-        /// @warning If the axis is Axis::Count or isn't a valid axis, @ref nullptr is returned.
-        ///
-        /// @param[in] axis Evaluated axis.
-        ///
-        /// @return const char* Axis name if valid, nullptr otherwise.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-11-17)
-        ///
-        constexpr static const char *getAxisName(Axis axis)
-        {
-            switch (axis) {
-                ECSTASY_AXIS_NAME_CASE(Unknown);
-                ECSTASY_AXIS_NAME_CASE(LeftX);
-                ECSTASY_AXIS_NAME_CASE(LeftY);
-                ECSTASY_AXIS_NAME_CASE(RightX);
-                ECSTASY_AXIS_NAME_CASE(RightY);
-                ECSTASY_AXIS_NAME_CASE(TriggerLeft);
-                ECSTASY_AXIS_NAME_CASE(TriggerRight);
-                ECSTASY_AXIS_NAME_CASE(DPadX);
-                ECSTASY_AXIS_NAME_CASE(DPadY);
-                default: return nullptr;
-            }
-        }
-
       private:
         std::size_t _id;
         bool _connected;
@@ -298,9 +232,6 @@ namespace ecstasy::integration::event
         std::array<float, static_cast<std::size_t>(Axis::Count)> _axis;
     };
 } // namespace ecstasy::integration::event
-
-#undef ECSTASY_BUTTON_NAME_CASE
-#undef ECSTASY_AXIS_NAME_CASE
 
 std::ostream &operator<<(std::ostream &stream, const ecstasy::integration::event::Gamepad::Button &button);
 std::ostream &operator<<(std::ostream &stream, const ecstasy::integration::event::Gamepad::Axis &axis);

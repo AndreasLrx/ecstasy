@@ -12,6 +12,9 @@
 #ifndef ECSTASY_INTEGRATIONS_USER_ACTION_ACTIONBINDING_HPP_
 #define ECSTASY_INTEGRATIONS_USER_ACTION_ACTIONBINDING_HPP_
 
+#include <ostream>
+#include <toml++/toml.h>
+
 #include "Action.hpp"
 #include "ecstasy/integrations/event/inputs/Gamepad.hpp"
 #include "ecstasy/integrations/event/inputs/Keyboard.hpp"
@@ -144,5 +147,7 @@ namespace ecstasy::integration::user_action
         };
     };
 } // namespace ecstasy::integration::user_action
+
+std::ostream &operator<<(std::ostream &stream, const ecstasy::integration::user_action::ActionBinding::Type &type);
 
 #endif /* !ECSTASY_INTEGRATIONS_USER_ACTION_ACTIONBINDING_HPP_ */
