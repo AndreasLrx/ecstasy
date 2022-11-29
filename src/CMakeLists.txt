@@ -33,6 +33,11 @@ if (${ECSTASY_INTEGRATIONS_SFML})
     target_link_libraries_system(${LIB_NAME} PRIVATE sfml-graphics sfml-window sfml-system)
 endif()
 
+# Integration links
+if (${ECSTASY_INTEGRATIONS_USER_ACTION})
+    target_link_libraries_system(${LIB_NAME} PRIVATE tomlplusplus::tomlplusplus)
+endif()
+
 target_include_directories(${LIB_NAME} PRIVATE ${INCDIRS})
 target_include_directories(${LIB_NAME} PUBLIC ${INCROOT})
 

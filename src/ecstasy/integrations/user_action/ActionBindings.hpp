@@ -14,6 +14,7 @@
 
 #include <vector>
 #include "ActionBinding.hpp"
+#include <toml++/toml.h>
 
 namespace ecstasy::integration::user_action
 {
@@ -60,6 +61,16 @@ namespace ecstasy::integration::user_action
         {
             return _bindings;
         }
+
+        ///
+        /// @brief Dump the bindings as a toml table.
+        ///
+        /// @return toml::table Toml representation of the bindings.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-29)
+        ///
+        toml::table dump() const;
 
       private:
         std::vector<ActionBinding> _bindings;

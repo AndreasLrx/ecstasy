@@ -9,5 +9,6 @@ set(SRC
     ${INCROOT}/include.hpp
     ${SRCROOT}/Keyboard.cpp
     ${INCROOT}/Keyboard.hpp
+    ${SRCROOT}/Mouse.cpp
     ${INCROOT}/Mouse.hpp
     PARENT_SCOPE)
