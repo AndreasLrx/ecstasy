@@ -3,6 +3,7 @@ set(SRCROOT ${SRCROOT}/user_action)
 set(SRC
     ${SRCROOT}/tests_ActionBinding.cpp
     ${SRCROOT}/tests_ActionBindings.cpp
+    ${SRCROOT}/tests_UserProfile.cpp
 )
 
 add_ecstasy_test(

@@ -9,8 +9,10 @@
 ///
 ///
 
-#ifndef USERPROFILE_HPP_
-#define USERPROFILE_HPP_
+#ifndef ECSTASY_INTEGRATIONS_USER_ACTION_USERPROFILE_HPP_
+#define ECSTASY_INTEGRATIONS_USER_ACTION_USERPROFILE_HPP_
+
+#include <toml++/toml.h>
 
 #include "ActionBindings.hpp"
 
@@ -65,10 +67,20 @@ namespace ecstasy::integration::user_action
             return _actionBindings;
         }
 
+        ///
+        /// @brief Dump the user profile informations as a toml table.
+        ///
+        /// @return toml::table Toml representation of the user profile.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-29)
+        ///
+        toml::table dump() const;
+
       private:
         Id _id;
         ActionBindings _actionBindings;
     };
 } // namespace ecstasy::integration::user_action
 
-#endif /* !USERPROFILE_HPP_ */
+#endif /* !ECSTASY_INTEGRATIONS_USER_ACTION_USERPROFILE_HPP_ */
