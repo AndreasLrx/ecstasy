@@ -21,4 +21,19 @@ namespace ecstasy::integration::user_action
         table.emplace("bindings", _actionBindings.dump());
         return table;
     }
+
+    bool UserProfile::load(const toml::table &infos)
+    {
+        /// User Id
+        auto id = infos.get("id");
+        if (id && id->is_integer())
+            _id = id->as_integer()->get();
+
+        /// User bindings
+        auto bindings = infos.get("bindings");
+        if (bindings && bindings->is_table())
+            _actionBindings.load(*bindings->as_table());
+        return true;
+    }
+
 } // namespace ecstasy::integration::user_action

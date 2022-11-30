@@ -13,7 +13,7 @@
 #define ECSTASY_INTEGRATIONS_EVENT_INPUTS_KEYBOARD_HPP_
 
 #include <array>
-#include <ostream>
+#include <iostream>
 
 #include "ecstasy/resources/Resource.hpp"
 
@@ -214,5 +214,6 @@ namespace ecstasy::integration::event
 /// @since 1.0.0 (2022-11-17)
 ///
 std::ostream &operator<<(std::ostream &stream, const ecstasy::integration::event::Keyboard::Key &key);
+std::istream &operator>>(std::istream &stream, ecstasy::integration::event::Keyboard::Key &key);
 
 #endif /* !ECSTASY_INTEGRATIONS_EVENT_INPUTS_KEYBOARD_HPP_ */

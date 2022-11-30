@@ -79,7 +79,7 @@ namespace ecstasy::integration::user_action
         ///
         /// @param[in] bindings Input bindings.
         ///
-        /// @return bool Whether the load succed or not.
+        /// @return bool Whether the load succeed or not.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-30)

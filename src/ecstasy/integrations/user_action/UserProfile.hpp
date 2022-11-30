@@ -77,6 +77,20 @@ namespace ecstasy::integration::user_action
         ///
         toml::table dump() const;
 
+        ///
+        /// @brief Load a given toml table representing a user profile. See the format of @ref dump().
+        ///
+        /// @warning This method clear the internal data.
+        ///
+        /// @param[in] infos User profile dump.
+        ///
+        /// @return bool Whether the load succeed or not.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-30)
+        ///
+        bool load(const toml::table &infos);
+
       private:
         Id _id;
         ActionBindings _actionBindings;

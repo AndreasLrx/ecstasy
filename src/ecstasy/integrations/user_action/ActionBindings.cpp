@@ -96,9 +96,15 @@ namespace ecstasy::integration::user_action
                         case ActionBinding::Type::MouseButton:
                             _bindings.emplace_back(actionId, readElement<event::Mouse::Button>(ss));
                             break;
-                        case ActionBinding::Type::Key: break;
-                        case ActionBinding::Type::GamepadButton: break;
-                        case ActionBinding::Type::GamepadAxis: break;
+                        case ActionBinding::Type::Key:
+                            _bindings.emplace_back(actionId, readElement<event::Keyboard::Key>(ss));
+                            break;
+                        case ActionBinding::Type::GamepadButton:
+                            _bindings.emplace_back(actionId, readElement<event::Gamepad::Button>(ss));
+                            break;
+                        case ActionBinding::Type::GamepadAxis:
+                            _bindings.emplace_back(actionId, readElement<event::Gamepad::Axis>(ss));
+                            break;
                         default: break;
                     }
                 }

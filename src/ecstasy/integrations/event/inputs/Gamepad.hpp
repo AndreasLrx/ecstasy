@@ -236,4 +236,7 @@ namespace ecstasy::integration::event
 std::ostream &operator<<(std::ostream &stream, const ecstasy::integration::event::Gamepad::Button &button);
 std::ostream &operator<<(std::ostream &stream, const ecstasy::integration::event::Gamepad::Axis &axis);
 
+std::istream &operator>>(std::istream &stream, ecstasy::integration::event::Gamepad::Button &button);
+std::istream &operator>>(std::istream &stream, ecstasy::integration::event::Gamepad::Axis &axis);
+
 #endif /* !ECSTASY_INTEGRATIONS_EVENT_INPUTS_GAMEPAD_HPP_ */

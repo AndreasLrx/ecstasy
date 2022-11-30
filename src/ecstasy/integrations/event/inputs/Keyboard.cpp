@@ -10,7 +10,12 @@
 ///
 
 #include "Keyboard.hpp"
-#include <ostream>
+#include <unordered_map>
+
+#define MAP_INPUT(type)                                         \
+    {                                                           \
+        #type, ecstasy::integration::event::Keyboard::Key::type \
+    }
 
 /// @internal
 #define ECSTASY_KEY_NAME_CASE(key) \
@@ -123,4 +128,31 @@ std::ostream &operator<<(std::ostream &stream, const ecstasy::integration::event
         ECSTASY_KEY_NAME_CASE(Pause);
         default: return stream;
     }
+}
+
+std::istream &operator>>(std::istream &stream, ecstasy::integration::event::Keyboard::Key &key)
+{
+    static const std::unordered_map<std::string_view, ecstasy::integration::event::Keyboard::Key> map = {
+        MAP_INPUT(Unknown), MAP_INPUT(A), MAP_INPUT(B), MAP_INPUT(C), MAP_INPUT(D), MAP_INPUT(E), MAP_INPUT(F),
+        MAP_INPUT(G), MAP_INPUT(H), MAP_INPUT(I), MAP_INPUT(J), MAP_INPUT(K), MAP_INPUT(L), MAP_INPUT(M), MAP_INPUT(N),
+        MAP_INPUT(O), MAP_INPUT(P), MAP_INPUT(Q), MAP_INPUT(R), MAP_INPUT(S), MAP_INPUT(T), MAP_INPUT(U), MAP_INPUT(V),
+        MAP_INPUT(W), MAP_INPUT(X), MAP_INPUT(Y), MAP_INPUT(Z), MAP_INPUT(Num0), MAP_INPUT(Num1), MAP_INPUT(Num2),
+        MAP_INPUT(Num3), MAP_INPUT(Num4), MAP_INPUT(Num5), MAP_INPUT(Num6), MAP_INPUT(Num7), MAP_INPUT(Num8),
+        MAP_INPUT(Num9), MAP_INPUT(Escape), MAP_INPUT(LControl), MAP_INPUT(LShift), MAP_INPUT(LAlt), MAP_INPUT(LSystem),
+        MAP_INPUT(RControl), MAP_INPUT(RShift), MAP_INPUT(RAlt), MAP_INPUT(RSystem), MAP_INPUT(Menu),
+        MAP_INPUT(LBracket), MAP_INPUT(RBracket), MAP_INPUT(Semicolon), MAP_INPUT(Comma), MAP_INPUT(Period),
+        MAP_INPUT(Quote), MAP_INPUT(Slash), MAP_INPUT(Backslash), MAP_INPUT(Tilde), MAP_INPUT(Equal), MAP_INPUT(Hyphen),
+        MAP_INPUT(Space), MAP_INPUT(Enter), MAP_INPUT(Backspace), MAP_INPUT(Tab), MAP_INPUT(PageUp),
+        MAP_INPUT(PageDown), MAP_INPUT(End), MAP_INPUT(Home), MAP_INPUT(Insert), MAP_INPUT(Delete), MAP_INPUT(Add),
+        MAP_INPUT(Subtract), MAP_INPUT(Multiply), MAP_INPUT(Divide), MAP_INPUT(Left), MAP_INPUT(Right), MAP_INPUT(Up),
+        MAP_INPUT(Down), MAP_INPUT(Numpad0), MAP_INPUT(Numpad1), MAP_INPUT(Numpad2), MAP_INPUT(Numpad3),
+        MAP_INPUT(Numpad4), MAP_INPUT(Numpad5), MAP_INPUT(Numpad6), MAP_INPUT(Numpad7), MAP_INPUT(Numpad8),
+        MAP_INPUT(Numpad9), MAP_INPUT(F1), MAP_INPUT(F2), MAP_INPUT(F3), MAP_INPUT(F4), MAP_INPUT(F5), MAP_INPUT(F6),
+        MAP_INPUT(F7), MAP_INPUT(F8), MAP_INPUT(F9), MAP_INPUT(F10), MAP_INPUT(F11), MAP_INPUT(F12), MAP_INPUT(F13),
+        MAP_INPUT(F14), MAP_INPUT(F15), MAP_INPUT(Pause)};
+
+    std::string buffer;
+    stream >> buffer;
+    key = map.at(buffer);
+    return stream;
 }
