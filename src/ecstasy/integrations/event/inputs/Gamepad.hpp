@@ -15,6 +15,9 @@
 #include <array>
 #include <cstdint>
 #include <ostream>
+#include <unordered_map>
+
+#include "util/serialization/SerializableEnum.hpp"
 
 namespace ecstasy::integration::event
 {
@@ -26,14 +29,18 @@ namespace ecstasy::integration::event
     ///
     class Gamepad {
       public:
+        SERIALIZABLE_ENUM(Button, Unknown, FaceUp, FaceRight, FaceDown, FaceLeft, BumperLeft, BumperRight, MiddleLeft,
+            Middle, MiddleRight, ThumbLeft, ThumbRight, Count)
+        SERIALIZABLE_ENUM(Axis, Unknown, LeftX, LeftY, RightX, RightY, TriggerLeft, TriggerRight, DPadX, DPadY, Count)
+#ifdef _DOXYGEN_
         /// @brief Gamepad buttons
         enum class Button {
-            Unknown = -1, ///< Unhandled button
+            Unknown, ///< Unhandled button
             /// Face Buttons
-            FaceUp = 0, ///< Face button up (i.e. PS: Triangle, Xbox: Y)
-            FaceRight,  ///< Face button right (i.e. PS: Square, Xbox: X)
-            FaceDown,   ///< Face button down (i.e. PS: Cross, Xbox: A)
-            FaceLeft,   ///< Face button left (i.e. PS: Circle, Xbox: B)
+            FaceUp,    ///< Face button up (i.e. PS: Triangle, Xbox: Y)
+            FaceRight, ///< Face button right (i.e. PS: Square, Xbox: X)
+            FaceDown,  ///< Face button down (i.e. PS: Cross, Xbox: A)
+            FaceLeft,  ///< Face button left (i.e. PS: Circle, Xbox: B)
             /// Backward buttons
             BumperLeft,  ///< Left bumper (LB / L1)
             BumperRight, ///< Right bumper (RB / R1)
@@ -50,8 +57,8 @@ namespace ecstasy::integration::event
 
         /// @brief Gamepad axis, associated value must be in range [-1, 1]
         enum class Axis {
-            Unknown = -1, ///< Unhandled axis
-            LeftX = 0,    ///< Left joystick X axis (default: 0)
+            Unknown,      ///< Unhandled axis
+            LeftX,        ///< Left joystick X axis (default: 0)
             LeftY,        ///< Left joystick Y axis (default: 0)
             RightX,       ///< Right joystick X axis (default: 0)
             RightY,       ///< Right joystick Y axis (default: 0)
@@ -63,6 +70,7 @@ namespace ecstasy::integration::event
             Count ///< Keep last -- the total number of gamepad axis
 
         };
+#endif
 
         /// @brief Gamepad joysticks (a joystick has 2 combined axis)
         enum class Joystick {
@@ -232,11 +240,5 @@ namespace ecstasy::integration::event
         std::array<float, static_cast<std::size_t>(Axis::Count)> _axis;
     };
 } // namespace ecstasy::integration::event
-
-std::ostream &operator<<(std::ostream &stream, const ecstasy::integration::event::Gamepad::Button &button);
-std::ostream &operator<<(std::ostream &stream, const ecstasy::integration::event::Gamepad::Axis &axis);
-
-std::istream &operator>>(std::istream &stream, ecstasy::integration::event::Gamepad::Button &button);
-std::istream &operator>>(std::istream &stream, ecstasy::integration::event::Gamepad::Axis &axis);
 
 #endif /* !ECSTASY_INTEGRATIONS_EVENT_INPUTS_GAMEPAD_HPP_ */
