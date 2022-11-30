@@ -10,6 +10,10 @@
 ///
 
 #include "ActionBindings.hpp"
+#include <iostream>
+#include <regex>
+
+namespace event = ecstasy::integration::event;
 
 namespace ecstasy::integration::user_action
 {
@@ -41,5 +45,65 @@ namespace ecstasy::integration::user_action
         }
 
         return table;
+    }
+
+    template <typename T>
+    static T readElement(std::stringstream &ss)
+    {
+        T a;
+
+        ss >> a;
+        return a;
+    }
+
+    template <typename T>
+    static T readElement(std::string_view str)
+    {
+        std::stringstream ss(str);
+
+        return readElement<T>(ss);
+    }
+
+    bool ActionBindings::load(const toml::table &bindings)
+    {
+        _bindings.clear();
+        const std::regex reActionName("^Action-([0-9]+)$");
+        const std::regex reActionValue("^(\\w+)->(\\w+)$");
+        std::cmatch match;
+
+        for (auto &&[key, value] : bindings) {
+            if (!std::regex_match(key.data(), match, reActionName)) {
+                std::cerr << "Invalid action name." << std::endl;
+                break;
+            }
+
+            Action::Id actionId = std::stoul(match[1].str());
+            if (!value.is_array())
+                return false;
+
+            value.as_array()->for_each([this, &match, &reActionValue, &actionId](auto &&input) {
+                if constexpr (toml::is_string<decltype(input)>) {
+                    if (!std::regex_match(input.as_string()->get().data(), match, reActionValue))
+                        return;
+                    ActionBinding::Type type;
+
+                    std::stringstream ss(match[1].str());
+                    ss >> type;
+                    ss.clear();
+                    ss.str(match[2].str());
+
+                    switch (type) {
+                        case ActionBinding::Type::MouseButton:
+                            _bindings.emplace_back(actionId, readElement<event::Mouse::Button>(ss));
+                            break;
+                        case ActionBinding::Type::Key: break;
+                        case ActionBinding::Type::GamepadButton: break;
+                        case ActionBinding::Type::GamepadAxis: break;
+                        default: break;
+                    }
+                }
+            });
+        }
+        return true;
     }
 } // namespace ecstasy::integration::user_action

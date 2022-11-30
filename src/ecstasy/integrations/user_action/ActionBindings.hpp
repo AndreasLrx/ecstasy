@@ -72,6 +72,20 @@ namespace ecstasy::integration::user_action
         ///
         toml::table dump() const;
 
+        ///
+        /// @brief Load a given toml table representing a list of bindings. See the format of @ref dump().
+        ///
+        /// @warning This method clear the internal bindings.
+        ///
+        /// @param[in] bindings Input bindings.
+        ///
+        /// @return bool Whether the load succed or not.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-30)
+        ///
+        bool load(const toml::table &bindings);
+
       private:
         std::vector<ActionBinding> _bindings;
     };

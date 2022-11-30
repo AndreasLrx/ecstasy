@@ -23,3 +23,25 @@ Action-1 = [ 'GamepadAxis->TriggerLeft' ]";
         GTEST_ASSERT_EQ(ss.str(), expected);
     }
 }
+
+TEST(ActionBinding, load)
+{
+    {
+        user_action::ActionBindings bindings;
+        // clang-format off
+        toml::table in = toml::parse("\
+Action-0 = [ 'MouseButton->Left', 'Key->A', 'GamepadButton->FaceLeft' ]\n\
+Action-1 = [ 'GamepadAxis->TriggerLeft' ]");
+        // clang-format on
+
+        bindings.load(in);
+        toml::table out = bindings.dump();
+
+        std::stringstream expected;
+        std::stringstream got;
+
+        expected << in;
+        got << out;
+        GTEST_ASSERT_EQ(got.str(), expected.str());
+    }
+}

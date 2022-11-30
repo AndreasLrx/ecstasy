@@ -13,7 +13,7 @@
 #define ECSTASY_INTEGRATION_EVENT_INPUTS_MOUSE_HPP_
 
 #include <array>
-#include <ostream>
+#include <iostream>
 #include <utility>
 
 #include "ecstasy/resources/Resource.hpp"
@@ -204,5 +204,6 @@ namespace ecstasy::integration::event
 } // namespace ecstasy::integration::event
 
 std::ostream &operator<<(std::ostream &stream, const ecstasy::integration::event::Mouse::Button &key);
+std::istream &operator>>(std::istream &stream, ecstasy::integration::event::Mouse::Button &key);
 
 #endif /* !ECSTASY_INTEGRATION_EVENT_INPUTS_MOUSE_HPP_ */
