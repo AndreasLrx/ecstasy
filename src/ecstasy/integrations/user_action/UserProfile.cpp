@@ -27,7 +27,7 @@ namespace ecstasy::integration::user_action
         /// User Id
         auto id = infos.get("id");
         if (id && id->is_integer())
-            _id = id->as_integer()->get();
+            _id = static_cast<UserProfile::Id>(id->as_integer()->get());
 
         /// User bindings
         auto bindings = infos.get("bindings");

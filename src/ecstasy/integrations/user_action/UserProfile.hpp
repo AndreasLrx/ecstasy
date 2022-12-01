@@ -37,7 +37,7 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-25)
         ///
-        constexpr UserProfile(Id id = 0) : _id(id)
+        UserProfile(Id id = 0) : _id(id)
         {
         }
 

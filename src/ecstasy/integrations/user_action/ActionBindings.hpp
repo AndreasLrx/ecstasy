@@ -32,7 +32,7 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-25)
         ///
-        constexpr ActionBindings()
+        ActionBindings()
         {
         }
 
