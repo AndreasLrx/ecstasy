@@ -71,7 +71,7 @@ namespace ecstasy::integration::user_action
                         return;
                     ActionBinding::Type type;
 
-                    std::stringstream ss(match[1].str());
+                    std::istringstream ss(match[1].str());
                     ss >> type;
                     ss.clear();
                     ss.str(match[2].str());

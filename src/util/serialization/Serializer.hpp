@@ -13,6 +13,7 @@
 #define UTIL_SERIALIZATION_SERIALIZER_HPP_
 
 #include <iostream>
+#include <sstream>
 
 namespace util::serialization
 {
@@ -101,7 +102,7 @@ namespace util::serialization
         template <typename Object>
         static inline Object deserialize(std::string_view bytes)
         {
-            std::istream ss(bytes);
+            std::istringstream ss(std::string(bytes), std::ios_base::in);
 
             return deserialize<Object>(ss);
         }
