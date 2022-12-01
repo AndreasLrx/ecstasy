@@ -12,3 +12,9 @@
 /doc/build/
 *.gcno
 *.gcda
+
+# Coverage data
+/coverage
+/coverage.html
+/coverage.xml
+/generate_coverage.sh

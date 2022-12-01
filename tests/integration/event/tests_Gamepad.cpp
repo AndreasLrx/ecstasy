@@ -132,21 +132,3 @@ TEST(Event, GamepadAxis)
     event::EventsManager::handleEvent(registry, event::GamepadAxisEvent(0, event::Gamepad::Axis::TriggerLeft, 0.3f));
     GTEST_ASSERT_EQ(gamepadsState.get(0).getAxisValue(event::Gamepad::Axis::TriggerLeft), 0.3f);
 }
-
-TEST(Gamepad, outputStreamOperators)
-{
-    for (int i = static_cast<int>(event::Gamepad::Button::Unknown);
-         i <= static_cast<int>(event::Gamepad::Button::Count); i++) {
-        std::stringstream ss;
-
-        ss << static_cast<event::Gamepad::Button>(i);
-        GTEST_ASSERT_NE(ss.str(), "");
-    }
-    for (int i = static_cast<int>(event::Gamepad::Axis::Unknown); i <= static_cast<int>(event::Gamepad::Axis::Count);
-         i++) {
-        std::stringstream ss;
-
-        ss << static_cast<event::Gamepad::Axis>(i);
-        GTEST_ASSERT_NE(ss.str(), "");
-    }
-}

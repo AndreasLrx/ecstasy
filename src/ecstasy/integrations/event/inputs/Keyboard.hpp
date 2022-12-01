@@ -29,6 +29,8 @@ namespace ecstasy::integration::event
     ///
     class Keyboard : public Resource {
       public:
+        // LCOV_EXCL_START
+
         SERIALIZABLE_ENUM(Key, Unknown, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z,
             Num0, Num1, Num2, Num3, Num4, Num5, Num6, Num7, Num8, Num9, Escape, LControl, LShift, LAlt, LSystem,
             RControl, RShift, RAlt, RSystem, Menu, LBracket, RBracket, Semicolon, Comma, Period, Quote, Slash,
@@ -37,6 +39,7 @@ namespace ecstasy::integration::event
             Numpad5, Numpad6, Numpad7, Numpad8, Numpad9, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12, F13, F14,
             F15, Pause, Count)
 
+        // LCOV_EXCL_STOP
 #ifdef _DOXYGEN
         /// @brief Keyboard keys.
         enum class Key {

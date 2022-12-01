@@ -37,8 +37,8 @@ jobs:
     - name: Collect Coverage Files
       run: |
         find build -iname "*.gcda" -or -iname "*.gcno" -exec cp {} . \;
-        gcovr . --exclude-unreachable-branches --exclude-throw-branches --xml --output ./coverage.xml -e tests/ -e src/ecstasy/integrations/sfml  --exclude-directories ".*/demo/"
-      
+        gcovr -r . -f "src/" --exclude-unreachable-branches --exclude-throw-branches --xml --output ./coverage.xml -e "src/ecstasy/integrations/sfml/*"
+
     - name: Upload Coverage Data
       uses: codecov/codecov-action@v3
       with:

@@ -29,7 +29,11 @@ namespace ecstasy::integration::event
     ///
     class Mouse : public Resource {
       public:
+        // LCOV_EXCL_START
+
         SERIALIZABLE_ENUM(Button, Left, Right, Middle, Extra1, Extra2, Extra3, Count)
+
+        // LCOV_EXCL_STOP
 #ifdef _DOXYGEN_
         /// @brief Mouse buttons
         enum class Button {

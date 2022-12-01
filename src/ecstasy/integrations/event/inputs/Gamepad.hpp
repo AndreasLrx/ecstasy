@@ -29,9 +29,13 @@ namespace ecstasy::integration::event
     ///
     class Gamepad {
       public:
+        // LCOV_EXCL_START
+
         SERIALIZABLE_ENUM(Button, Unknown, FaceUp, FaceRight, FaceDown, FaceLeft, BumperLeft, BumperRight, MiddleLeft,
             Middle, MiddleRight, ThumbLeft, ThumbRight, Count)
         SERIALIZABLE_ENUM(Axis, Unknown, LeftX, LeftY, RightX, RightY, TriggerLeft, TriggerRight, DPadX, DPadY, Count)
+
+        // LCOV_EXCL_STOP
 #ifdef _DOXYGEN_
         /// @brief Gamepad buttons
         enum class Button {

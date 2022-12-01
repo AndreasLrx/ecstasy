@@ -39,7 +39,11 @@ namespace ecstasy::integration::user_action
     ///
     struct ActionBinding {
       public:
+        // LCOV_EXCL_START
+
         SERIALIZABLE_ENUM(Type, MouseButton, Key, GamepadButton, GamepadAxis, Count)
+
+        // LCOV_EXCL_STOP
 #ifdef _DOXYGEN_
         /// @brief Binding types.
         enum class Type {
