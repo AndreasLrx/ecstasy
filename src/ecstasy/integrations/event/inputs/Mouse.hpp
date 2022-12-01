@@ -17,6 +17,7 @@
 #include <utility>
 
 #include "ecstasy/resources/Resource.hpp"
+#include "util/serialization/SerializableEnum.hpp"
 
 namespace ecstasy::integration::event
 {
@@ -28,6 +29,8 @@ namespace ecstasy::integration::event
     ///
     class Mouse : public Resource {
       public:
+        SERIALIZABLE_ENUM(Button, Left, Right, Middle, Extra1, Extra2, Extra3, Count)
+#ifdef _DOXYGEN_
         /// @brief Mouse buttons
         enum class Button {
             Left,   ///< The left mouse button
@@ -39,6 +42,7 @@ namespace ecstasy::integration::event
 
             Count ///< Keep last -- the total number of mouse buttons
         };
+#endif
 
         /// @brief Mouse wheels
         enum class Wheel {
@@ -202,8 +206,5 @@ namespace ecstasy::integration::event
         int _y;
     };
 } // namespace ecstasy::integration::event
-
-std::ostream &operator<<(std::ostream &stream, const ecstasy::integration::event::Mouse::Button &key);
-std::istream &operator>>(std::istream &stream, ecstasy::integration::event::Mouse::Button &key);
 
 #endif /* !ECSTASY_INTEGRATION_EVENT_INPUTS_MOUSE_HPP_ */
