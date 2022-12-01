@@ -2,6 +2,7 @@ set(INCROOT ${INCROOT}/util)
 set(SRCROOT ${SRCROOT}/util)
 
 add_subdirectory(meta)
+add_subdirectory(serialization)
 
 set(SRC 
     ${SRC}

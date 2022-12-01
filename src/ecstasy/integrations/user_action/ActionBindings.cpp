@@ -12,6 +12,7 @@
 #include "ActionBindings.hpp"
 #include <iostream>
 #include <regex>
+#include "util/serialization/Serializer.hpp"
 
 namespace event = ecstasy::integration::event;
 
@@ -47,23 +48,6 @@ namespace ecstasy::integration::user_action
         return table;
     }
 
-    template <typename T>
-    static T readElement(std::stringstream &ss)
-    {
-        T a;
-
-        ss >> a;
-        return a;
-    }
-
-    template <typename T>
-    static T readElement(std::string_view str)
-    {
-        std::stringstream ss(str);
-
-        return readElement<T>(ss);
-    }
-
     bool ActionBindings::load(const toml::table &bindings)
     {
         _bindings.clear();
@@ -94,16 +78,20 @@ namespace ecstasy::integration::user_action
 
                     switch (type) {
                         case ActionBinding::Type::MouseButton:
-                            _bindings.emplace_back(actionId, readElement<event::Mouse::Button>(ss));
+                            _bindings.emplace_back(
+                                actionId, util::serialization::Serializer::deserialize<event::Mouse::Button>(ss));
                             break;
                         case ActionBinding::Type::Key:
-                            _bindings.emplace_back(actionId, readElement<event::Keyboard::Key>(ss));
+                            _bindings.emplace_back(
+                                actionId, util::serialization::Serializer::deserialize<event::Keyboard::Key>(ss));
                             break;
                         case ActionBinding::Type::GamepadButton:
-                            _bindings.emplace_back(actionId, readElement<event::Gamepad::Button>(ss));
+                            _bindings.emplace_back(
+                                actionId, util::serialization::Serializer::deserialize<event::Gamepad::Button>(ss));
                             break;
                         case ActionBinding::Type::GamepadAxis:
-                            _bindings.emplace_back(actionId, readElement<event::Gamepad::Axis>(ss));
+                            _bindings.emplace_back(
+                                actionId, util::serialization::Serializer::deserialize<event::Gamepad::Axis>(ss));
                             break;
                         default: break;
                     }
