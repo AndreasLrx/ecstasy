@@ -40,7 +40,7 @@ namespace ecstasy::integration::user_action
                 case ActionBinding::Type::Key: value << action.key; break;
                 case ActionBinding::Type::GamepadButton: value << action.gamepadButton; break;
                 case ActionBinding::Type::GamepadAxis: value << action.gamepadAxis; break;
-                default: break;
+                default: continue;
             }
             node.as_array()->emplace_back(value.str());
         }
@@ -62,8 +62,10 @@ namespace ecstasy::integration::user_action
             }
 
             Action::Id actionId = std::stoul(match[1].str());
-            if (!value.is_array())
-                return false;
+            if (!value.is_array()) {
+                std::cerr << "Action '" << key.data() << "' is not a valid toml array." << std::endl;
+                continue;
+            }
 
             value.as_array()->for_each([this, &match, &reActionValue, &actionId](auto &&input) {
                 if constexpr (toml::is_string<decltype(input)>) {
@@ -95,8 +97,9 @@ namespace ecstasy::integration::user_action
                             break;
                         default: break;
                     }
-                }
-            });
+                    // clang-format off
+                }});
+            // clang-format on
         }
         return true;
     }

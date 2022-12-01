@@ -53,3 +53,101 @@ Action-1 = [ 'GamepadAxis->TriggerLeft' ]");
         GTEST_ASSERT_EQ(got.str(), expected.str());
     }
 }
+
+TEST(UserProfile, loadInvalidId)
+{
+    user_action::UserProfile user;
+    std::stringstream ss;
+    // clang-format off
+        toml::table in = toml::parse("\
+id = 'a'\n\
+\n\
+[bindings]\n\
+Action-0 = [ 'MouseButton->Left', 'Key->A', 'GamepadButton->FaceLeft' ]\n\
+Action-1 = [ 'GamepadAxis->TriggerLeft' ]");
+    // clang-format on
+
+    user.load(in);
+    toml::table out = user.dump();
+
+    std::string expected = "\
+id = 0\n\
+\n\
+[bindings]\n\
+Action-0 = [ 'MouseButton->Left', 'Key->A', 'GamepadButton->FaceLeft' ]\n\
+Action-1 = [ 'GamepadAxis->TriggerLeft' ]";
+    std::stringstream got;
+
+    got << out;
+    GTEST_ASSERT_EQ(got.str(), expected);
+}
+
+TEST(UserProfile, loadNoID)
+{
+    user_action::UserProfile user;
+    std::stringstream ss;
+    // clang-format off
+    toml::table in = toml::parse("");
+    // clang-format on
+
+    user.load(in);
+    toml::table out = user.dump();
+
+    std::string expected = "\
+id = 0\n\
+\n\
+[bindings]";
+    std::stringstream got;
+
+    got << out;
+    GTEST_ASSERT_EQ(got.str(), expected);
+}
+
+TEST(UserProfile, loadNoBindings)
+{
+    user_action::UserProfile user;
+    std::stringstream ss;
+    // clang-format off
+        toml::table in = toml::parse("\
+id = 2\n\
+\n\
+Action-0 = [ 'MouseButton->Left', 'Key->A', 'GamepadButton->FaceLeft' ]\n\
+Action-1 = [ 'GamepadAxis->TriggerLeft' ]");
+    // clang-format on
+
+    user.load(in);
+    toml::table out = user.dump();
+
+    std::string expected = "\
+id = 2\n\
+\n\
+[bindings]";
+    std::stringstream got;
+
+    got << out;
+    GTEST_ASSERT_EQ(got.str(), expected);
+}
+
+TEST(UserProfile, loadInvalidBindingsObject)
+{
+    user_action::UserProfile user;
+    std::stringstream ss;
+    // clang-format off
+        toml::table in = toml::parse("\
+id = 2\n\
+\n\
+bindings = 'toto'");
+    // clang-format on
+
+    user.load(in);
+    toml::table out = user.dump();
+
+    std::string expected = "\
+id = 2\n\
+\n\
+[bindings]";
+    std::stringstream got;
+
+    got << out;
+    GTEST_ASSERT_EQ(got.str(), expected);
+}
