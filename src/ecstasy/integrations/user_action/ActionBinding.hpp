@@ -12,10 +12,15 @@
 #ifndef ECSTASY_INTEGRATIONS_USER_ACTION_ACTIONBINDING_HPP_
 #define ECSTASY_INTEGRATIONS_USER_ACTION_ACTIONBINDING_HPP_
 
+#include <iostream>
+#include <toml++/toml.h>
+#include <unordered_map>
+
 #include "Action.hpp"
 #include "ecstasy/integrations/event/inputs/Gamepad.hpp"
 #include "ecstasy/integrations/event/inputs/Keyboard.hpp"
 #include "ecstasy/integrations/event/inputs/Mouse.hpp"
+#include "util/serialization/SerializableEnum.hpp"
 
 namespace ecstasy::integration::user_action
 {
@@ -33,8 +38,13 @@ namespace ecstasy::integration::user_action
     /// @since 1.0.0 (2022-11-25)
     ///
     struct ActionBinding {
-      private:
       public:
+        // LCOV_EXCL_START
+
+        SERIALIZABLE_ENUM(Type, MouseButton, Key, GamepadButton, GamepadAxis, Count)
+
+        // LCOV_EXCL_STOP
+#ifdef _DOXYGEN_
         /// @brief Binding types.
         enum class Type {
             MouseButton,   ///< The action is bound to a mouse button state.
@@ -44,6 +54,7 @@ namespace ecstasy::integration::user_action
 
             Count ///< Keep last - the total number of bindings.
         };
+#endif
 
         ///
         /// @brief Construct an empty action binding.

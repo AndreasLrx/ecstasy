@@ -106,11 +106,25 @@
       "jobs": 12
     },
     {
+      "name": "debug_unix",
+      "displayName": "Build (Debug Unix)",
+      "description": "Debug build using Unix Makefiles",
+      "inherits": "common",
+      "configurePreset": "debug_unix"
+    },
+    {
       "name": "debug_msvc",
       "displayName": "Build (Debug MSVC)",
       "description": "Debug build using MSVC",
       "inherits": "common",
       "configurePreset": "debug_msvc"
+    },
+    {
+      "name": "release_unix",
+      "displayName": "Build (Release Unix)",
+      "description": "Release build using Unix Makefiles",
+      "inherits": "common",
+      "configurePreset": "release_unix"
     },
     {
       "name": "release_msvc",

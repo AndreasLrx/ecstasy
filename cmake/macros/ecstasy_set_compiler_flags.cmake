@@ -6,6 +6,7 @@ macro(ecstasy_set_compiler_flags target)
 
         target_compile_options(${target} PRIVATE 
             "/W4"
+            "/Zc:preprocessor"
             "$<$<AND:$<CONFIG:RELEASE>,$<NOT:${BUILDING_TESTS}>>:/WX>"
         )
     elseif(COMPILER_TYPE MATCHES "gcc")

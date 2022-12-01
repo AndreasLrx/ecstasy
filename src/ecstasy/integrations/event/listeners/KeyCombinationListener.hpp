@@ -117,7 +117,7 @@ namespace ecstasy::integration::event
         ///
         /// @brief Get the expected combination.
         ///
-        /// @return constexpr const std::vector<Keyboard::Key>& A const reference to the expected combination.
+        /// @return const std::vector<Keyboard::Key>& A const reference to the expected combination.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
@@ -173,7 +173,7 @@ namespace ecstasy::integration::event
         ///
         /// @note The map key correspond to a combination key and the value is whether it is pressed or not.
         ///
-        /// @return constexpr const std::unordered_map<Keyboard::Key, bool>& A const reference to the KeyStates map.
+        /// @return const std::unordered_map<Keyboard::Key, bool>& A const reference to the KeyStates map.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)

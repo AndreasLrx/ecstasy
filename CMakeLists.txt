@@ -3,6 +3,12 @@ cmake_minimum_required(VERSION 3.19.0)
 # Add ./cmake to the module path
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake ${CMAKE_CURRENT_SOURCE_DIR}/cmake/macros)
 
+# Avoid warning about DOWNLOAD_EXTRACT_TIMESTAMP
+if(POLICY CMP0135)
+	cmake_policy(SET CMP0135 NEW)
+	set(CMAKE_POLICY_DEFAULT_CMP0135 NEW)
+endif()
+
 include(Options)
 include(macros)
 
@@ -10,6 +16,11 @@ include(macros)
 if (${ECSTASY_INTEGRATIONS_SFML})
     set(SFML_STATIC_LIBRARIES TRUE)
     find_package(SFML 2.5.1 COMPONENTS graphics window system REQUIRED)
+endif()
+
+if (${ECSTASY_INTEGRATIONS_USER_ACTION})
+    find_package(Toml++)
+    set(TomlPlusPlus_IncDir ${tomlplusplus_SOURCE_DIR}/include)
 endif()
 
 project(ecstasy LANGUAGES CXX)

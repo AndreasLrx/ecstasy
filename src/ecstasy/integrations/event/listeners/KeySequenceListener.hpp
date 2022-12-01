@@ -119,7 +119,7 @@ namespace ecstasy::integration::event
         ///
         /// @brief Get the expected sequence.
         ///
-        /// @return constexpr const std::vector<Keyboard::Key>& A const reference to the expected sequence.
+        /// @return const std::vector<Keyboard::Key>& A const reference to the expected sequence.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
@@ -134,7 +134,7 @@ namespace ecstasy::integration::event
         ///
         /// @warning If the sequence is updated, you should call @ref reset().
         ///
-        /// @return constexpr std::vector<Keyboard::Key>& A reference to the expected sequence.
+        /// @return std::vector<Keyboard::Key>& A reference to the expected sequence.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
@@ -147,7 +147,7 @@ namespace ecstasy::integration::event
         ///
         /// @brief Get the sequence completion callback.
         ///
-        /// @return constexpr const Callback& A reference to the sequence completion callback.
+        /// @return const Callback& A reference to the sequence completion callback.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
@@ -163,7 +163,7 @@ namespace ecstasy::integration::event
         /// @note The key held is the current sequence key pressed but not yet released (it will be pushed in the
         /// validated keys on release)
         ///
-        /// @return constexpr Keyboard::Key Key held if any, @ref Keyboard::Key::Unknown otherwise.
+        /// @return Keyboard::Key Key held if any, @ref Keyboard::Key::Unknown otherwise.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
@@ -178,7 +178,7 @@ namespace ecstasy::integration::event
         ///
         /// @note Use this function to see the progress of the sequence.
         ///
-        /// @return constexpr const std::vector<Keyboard::Key>& A const reference to the validated keys vector.
+        /// @return const std::vector<Keyboard::Key>& A const reference to the validated keys vector.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)

@@ -324,15 +324,3 @@ TEST(Event, KeyCombination)
     GTEST_ASSERT_FALSE(combinationListener.isComplete());
     GTEST_ASSERT_EQ(combinationListener.getValidatedKeys(), 0);
 }
-
-TEST(Keyboard, outputStreamOperators)
-{
-    for (int i = static_cast<int>(event::Keyboard::Key::Unknown); i < static_cast<int>(event::Keyboard::Key::Count);
-         i++) {
-        std::stringstream ss;
-
-        ss << static_cast<event::Keyboard::Key>(i);
-        GTEST_ASSERT_EQ(ss.str(), event::Keyboard::getKeyName(static_cast<event::Keyboard::Key>(i)));
-    }
-    GTEST_ASSERT_EQ(event::Keyboard::getKeyName(event::Keyboard::Key::Count), nullptr);
-}

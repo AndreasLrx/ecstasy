@@ -27,7 +27,7 @@ function(add_ecstasy_test)
 
     # Create the test executable
     add_executable(${TARGET_NAME} ${SRC})
-    target_include_directories(${TARGET_NAME} PRIVATE ${INCROOT})
+    target_include_directories(${TARGET_NAME} PRIVATE ${INCROOT} ${INCDIRS})
 
     # Add compiler flags
     ecstasy_set_compiler_flags(${TARGET_NAME})
