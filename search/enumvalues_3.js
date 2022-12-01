@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['d_6475',['D',['../classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3af623e75af30e62bbd73d6df5b50bb7b5',1,'ecstasy::integration::event::Keyboard']]],
-  ['delete_6476',['Delete',['../classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3af2a6c498fb90ee345d997f888fce3b18',1,'ecstasy::integration::event::Keyboard']]],
-  ['divide_6477',['Divide',['../classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a0b914e196182d02615487e9793ecff3d',1,'ecstasy::integration::event::Keyboard']]],
-  ['down_6478',['Down',['../classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a08a38277b0309070706f6652eeae9a53',1,'ecstasy::integration::event::Keyboard']]],
-  ['dpadx_6479',['DPadX',['../classecstasy_1_1integration_1_1event_1_1_gamepad.html#a3889e689614987816a56b70ee93cabcca4fb1d49e9519e92185e00e0ed3d1e86c',1,'ecstasy::integration::event::Gamepad']]],
-  ['dpady_6480',['DPadY',['../classecstasy_1_1integration_1_1event_1_1_gamepad.html#a3889e689614987816a56b70ee93cabccad3021a6b02d47cff51b581fdaf46c15d',1,'ecstasy::integration::event::Gamepad']]]
+  ['gamepadaxis_6398',['GamepadAxis',['../structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aaa34eee0c70fa74cf765b8a650d4497f7',1,'ecstasy::integration::event::Event::GamepadAxis()'],['../structecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a61ae233154a98f65414a9e4fc94eecfeaa34eee0c70fa74cf765b8a650d4497f7',1,'ecstasy::integration::user_action::ActionBinding::GamepadAxis()']]],
+  ['gamepadbutton_6399',['GamepadButton',['../structecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a61ae233154a98f65414a9e4fc94eecfea4763e000c5c9b3689e9ed5d797eae210',1,'ecstasy::integration::user_action::ActionBinding']]],
+  ['gamepadbuttonpressed_6400',['GamepadButtonPressed',['../structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aae2a9941e644616b8853693e7b3b22c96',1,'ecstasy::integration::event::Event']]],
+  ['gamepadbuttonreleased_6401',['GamepadButtonReleased',['../structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aaf4590195d79da4a322ee9beb6b44ef66',1,'ecstasy::integration::event::Event']]],
+  ['gamepadconnected_6402',['GamepadConnected',['../structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aad5909d240c46150dc002123ef8abcc2f',1,'ecstasy::integration::event::Event']]],
+  ['gamepaddisconnected_6403',['GamepadDisconnected',['../structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aac1c12a889ebdc886dc3738b5a146def0',1,'ecstasy::integration::event::Event']]]
 ];

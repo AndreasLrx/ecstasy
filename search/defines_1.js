@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['ecstasy_5faxis_5fname_5fcase_6610',['ECSTASY_AXIS_NAME_CASE',['../_gamepad_8hpp.html#a525758bf6f1ba2be3240a76141bedb5f',1,'Gamepad.hpp']]],
-  ['ecstasy_5fbutton_5fname_5fcase_6611',['ECSTASY_BUTTON_NAME_CASE',['../_gamepad_8hpp.html#a9ba5a3b0b88fd1d76cc4f205d33d9423',1,'Gamepad.hpp']]],
-  ['ecstasy_5fkey_5fname_5fcase_6612',['ECSTASY_KEY_NAME_CASE',['../_keyboard_8hpp.html#a2941bca733dcde20459deb17ab8b322f',1,'Keyboard.hpp']]]
+  ['bit_5fset_5fconstexpr_6429',['BIT_SET_CONSTEXPR',['../_bit_set_8hpp.html#a80a8d26d1dc1a492f730825a5cec4031',1,'BitSet.hpp']]]
 ];

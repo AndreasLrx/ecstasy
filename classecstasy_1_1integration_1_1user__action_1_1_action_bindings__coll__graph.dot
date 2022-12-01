@@ -1,0 +1,9 @@
+digraph "ecstasy::integration::user_action::ActionBindings"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="ecstasy::integration\l::user_action::ActionBindings",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Wrapper of a std::vector of ActionBinding."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _bindings" ,fontname="Helvetica"];
+  Node2 [label="std::vector\< ecstasy\l::integration::user_action\l::ActionBinding \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html",tooltip=" "];
+}

@@ -6,4 +6,12 @@ digraph "src/ecstasy/integrations/user_action/Action.hpp"
   Node1 [label="src/ecstasy/integrations\l/user_action/Action.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="src/ecstasy/integrations\l/user_action/ActionBinding.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_action_binding_8hpp.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="src/ecstasy/integrations\l/user_action/ActionBindings.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_action_bindings_8hpp.html",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="src/ecstasy/integrations\l/user_action/ActionBindings.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_action_bindings_8cpp.html",tooltip=" "];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="src/ecstasy/integrations\l/user_action/UserProfile.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_user_profile_8hpp.html",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="src/ecstasy/integrations\l/user_action/UserProfile.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_user_profile_8cpp.html",tooltip=" "];
 }

@@ -33,7 +33,9 @@ var annotated_dup =
         ] ],
         [ "user_action", "namespaceecstasy_1_1integration_1_1user__action.html", [
           [ "Action", "structecstasy_1_1integration_1_1user__action_1_1_action.html", "structecstasy_1_1integration_1_1user__action_1_1_action" ],
-          [ "ActionBinding", "structecstasy_1_1integration_1_1user__action_1_1_action_binding.html", "structecstasy_1_1integration_1_1user__action_1_1_action_binding" ]
+          [ "ActionBinding", "structecstasy_1_1integration_1_1user__action_1_1_action_binding.html", "structecstasy_1_1integration_1_1user__action_1_1_action_binding" ],
+          [ "ActionBindings", "classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html", "classecstasy_1_1integration_1_1user__action_1_1_action_bindings" ],
+          [ "UserProfile", "classecstasy_1_1integration_1_1user__action_1_1_user_profile.html", "classecstasy_1_1integration_1_1user__action_1_1_user_profile" ]
         ] ]
       ] ],
       [ "query", "namespaceecstasy_1_1query.html", [
@@ -97,6 +99,9 @@ var annotated_dup =
         [ "_type_set_eq< std::tuple<>, std::tuple<> >", "structutil_1_1meta_1_1__type__set__eq_3_01std_1_1tuple_3_4_00_01std_1_1tuple_3_4_01_4.html", null ],
         [ "type_set_eq", "structutil_1_1meta_1_1type__set__eq.html", null ],
         [ "type_set_eq< std::tuple< Ts1... >, std::tuple< Ts2... > >", "structutil_1_1meta_1_1type__set__eq_3_01std_1_1tuple_3_01_ts1_8_8_8_01_4_00_01std_1_1tuple_3_01_ts2_8_8_8_01_4_01_4.html", null ]
+      ] ],
+      [ "serialization", "namespaceutil_1_1serialization.html", [
+        [ "Serializer", "classutil_1_1serialization_1_1_serializer.html", "classutil_1_1serialization_1_1_serializer" ]
       ] ],
       [ "Allocator", "classutil_1_1_allocator.html", "classutil_1_1_allocator" ],
       [ "BitSet", "classutil_1_1_bit_set.html", "classutil_1_1_bit_set" ]

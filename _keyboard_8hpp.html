@@ -85,16 +85,16 @@ $(document).ready(function(){initNavTree('_keyboard_8hpp.html',''); initResizabl
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
 <div class="title">Keyboard.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/array.html">array</a>&gt;</code><br />
-<code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/ostream.html">ostream</a>&gt;</code><br />
+<code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/iostream.html">iostream</a>&gt;</code><br />
+<code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/unordered_map.html">unordered_map</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="_resource_8hpp_source.html">ecstasy/resources/Resource.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_serializable_enum_8hpp_source.html">util/serialization/SerializableEnum.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Keyboard.hpp:</div>
 <div class="dyncontent">
@@ -125,17 +125,6 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespaceecstasy_1_1integration_1_1event"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1integration_1_1event.html">ecstasy::integration::event</a></td></tr>
 <tr class="memdesc:namespaceecstasy_1_1integration_1_1event"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html" title="Event class.">Event</a> integration. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a2941bca733dcde20459deb17ab8b322f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_keyboard_8hpp.html#a2941bca733dcde20459deb17ab8b322f">ECSTASY_KEY_NAME_CASE</a>(key)&#160;&#160;&#160;    case Key::key: return #key</td></tr>
-<tr class="separator:a2941bca733dcde20459deb17ab8b322f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ad5bb178eb7f594b33ac2d7c67a466c54"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_keyboard_8hpp.html#ad5bb178eb7f594b33ac2d7c67a466c54">operator&lt;&lt;</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;stream, const <a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3">ecstasy::integration::event::Keyboard::Key</a> &amp;key)</td></tr>
-<tr class="memdesc:ad5bb178eb7f594b33ac2d7c67a466c54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output stream operator overload to have human readable name for each key.  <a href="_keyboard_8hpp.html#ad5bb178eb7f594b33ac2d7c67a466c54">More...</a><br /></td></tr>
-<tr class="separator:ad5bb178eb7f594b33ac2d7c67a466c54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
@@ -144,75 +133,7 @@ Functions</h2></td></tr>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) ECSTASY 2022 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="_keyboard_8hpp_source.html">Keyboard.hpp</a>.</p>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a2941bca733dcde20459deb17ab8b322f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2941bca733dcde20459deb17ab8b322f">&#9670;&nbsp;</a></span>ECSTASY_KEY_NAME_CASE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ECSTASY_KEY_NAME_CASE</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">key</td><td>)</td>
-          <td>&#160;&#160;&#160;    case Key::key: return #key</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_keyboard_8hpp_source.html#l00021">21</a> of file <a class="el" href="_keyboard_8hpp_source.html">Keyboard.hpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="ad5bb178eb7f594b33ac2d7c67a466c54"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5bb178eb7f594b33ac2d7c67a466c54">&#9670;&nbsp;</a></span>operator&lt;&lt;()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a>&amp; operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;&#160;</td>
-          <td class="paramname"><em>stream</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3">ecstasy::integration::event::Keyboard::Key</a> &amp;&#160;</td>
-          <td class="paramname"><em>key</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Output stream operator overload to have human readable name for each key. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">stream</td><td>output stream. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>Key to write.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a>&amp; <code>stream</code>.</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-17) </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_keyboard_8cpp_source.html#l00014">14</a> of file <a class="el" href="_keyboard_8cpp_source.html">Keyboard.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">return</span> stream &lt;&lt; <a class="code" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#a62652171c6d21413780a281a5aefeda6">ecstasy::integration::event::Keyboard::getKeyName</a>(key);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
-<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_keyboard_html_a62652171c6d21413780a281a5aefeda6"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#a62652171c6d21413780a281a5aefeda6">ecstasy::integration::event::Keyboard::getKeyName</a></div><div class="ttdeci">constexpr static const char * getKeyName(Key key)</div><div class="ttdoc">Get the name of a key.</div><div class="ttdef"><b>Definition:</b> <a href="_keyboard_8hpp_source.html#l00216">Keyboard.hpp:216</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

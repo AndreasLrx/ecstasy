@@ -7,5 +7,8 @@ digraph "src/ecstasy/integrations/user_action" {
   dir_183c73d974247df0fabaedf6b9eb94ef [shape=box label="event" fillcolor="white" style="filled" color="red" URL="dir_183c73d974247df0fabaedf6b9eb94ef.html"];
   dir_da07c146226cec2bcba924cc27644298 [shape=box, label="user_action", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_da07c146226cec2bcba924cc27644298.html"];
   }
+  dir_b7878ad5ecbf2506f4125b9d34c97e45 [shape=box label="util" fillcolor="white" style="filled" color="red" URL="dir_b7878ad5ecbf2506f4125b9d34c97e45.html"];
+  dir_183c73d974247df0fabaedf6b9eb94ef->dir_b7878ad5ecbf2506f4125b9d34c97e45 [headlabel="3", labeldistance=1.5 headhref="dir_000003_000025.html"];
   dir_da07c146226cec2bcba924cc27644298->dir_183c73d974247df0fabaedf6b9eb94ef [headlabel="3", labeldistance=1.5 headhref="dir_000023_000003.html"];
+  dir_da07c146226cec2bcba924cc27644298->dir_b7878ad5ecbf2506f4125b9d34c97e45 [headlabel="2", labeldistance=1.5 headhref="dir_000023_000025.html"];
 }

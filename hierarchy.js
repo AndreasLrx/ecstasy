@@ -4,6 +4,7 @@ var hierarchy =
     [ "util::meta::_left_outer_join< Traits< Rights... >, IsInner, Left, OuterLefts... >", "structutil_1_1meta_1_1__left__outer__join_3_01_traits_3_01_rights_8_8_8_01_4_00_01_is_inner_00_0e1c6c75ebd27a9e3cd5f35357e042e62.html", null ],
     [ "ecstasy::integration::user_action::Action", "structecstasy_1_1integration_1_1user__action_1_1_action.html", null ],
     [ "ecstasy::integration::user_action::ActionBinding", "structecstasy_1_1integration_1_1user__action_1_1_action_binding.html", null ],
+    [ "ecstasy::integration::user_action::ActionBindings", "classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html", null ],
     [ "util::meta::add_optional< T >", "structutil_1_1meta_1_1add__optional.html", null ],
     [ "util::meta::add_optional< std::optional< T > >", "structutil_1_1meta_1_1add__optional_3_01std_1_1optional_3_01_t_01_4_01_4.html", null ],
     [ "util::meta::add_optional< T & >", "structutil_1_1meta_1_1add__optional_3_01_t_01_6_01_4.html", null ],
@@ -109,6 +110,7 @@ var hierarchy =
     [ "util::meta::_left_outer_join< Traits< Rights... >, IsInner, Left, OuterLefts... >::result< NextLeft, LeftsUntreated... >", "structutil_1_1meta_1_1__left__outer__join_3_01_traits_3_01_rights_8_8_8_01_4_00_01_is_inner_00_0e4c618fb3b7be1c193ef63fbe4938be5.html", null ],
     [ "ecstasy::query::Select< SelectedQueryables >", "structecstasy_1_1query_1_1_select.html", null ],
     [ "ecstasy::Registry::Select< Selects >", "classecstasy_1_1_registry_1_1_select.html", null ],
+    [ "util::serialization::Serializer", "classutil_1_1serialization_1_1_serializer.html", null ],
     [ "ecstasy::query::Select< SelectedQueryables >::SorteredTie< Valids >", "structecstasy_1_1query_1_1_select_1_1_sortered_tie.html", null ],
     [ "ecstasy::integration::event::TextEnteredEvent", "structecstasy_1_1integration_1_1event_1_1_text_entered_event.html", null ],
     [ "util::meta::Traits< Args >", "structutil_1_1meta_1_1_traits.html", null ],
@@ -118,5 +120,6 @@ var hierarchy =
       [ "ecstasy::query::is_queryable_with_adjust< T >", "structecstasy_1_1query_1_1is__queryable__with__adjust_3_01_t_01_4.html", null ],
       [ "util::meta::_type_set_eq< std::tuple<>, std::tuple<> >", "structutil_1_1meta_1_1__type__set__eq_3_01std_1_1tuple_3_4_00_01std_1_1tuple_3_4_01_4.html", null ]
     ] ],
+    [ "ecstasy::integration::user_action::UserProfile", "classecstasy_1_1integration_1_1user__action_1_1_user_profile.html", null ],
     [ "ecstasy::Xor< C1, C2, Cs >", "structecstasy_1_1_xor.html", null ]
 ];
