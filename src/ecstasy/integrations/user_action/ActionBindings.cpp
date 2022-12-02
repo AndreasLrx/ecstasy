@@ -103,4 +103,9 @@ namespace ecstasy::integration::user_action
         }
         return true;
     }
+
+    bool ActionBindings::contains(ActionBinding binding) const
+    {
+        return std::find(_bindings.cbegin(), _bindings.cend(), binding) != _bindings.cend();
+    }
 } // namespace ecstasy::integration::user_action

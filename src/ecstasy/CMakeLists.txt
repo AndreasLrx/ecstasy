@@ -9,6 +9,8 @@ add_subdirectory(resources)
 add_subdirectory(storages)
 add_subdirectory(system)
 
+configure_file(${SRCROOT}/config.hpp.in ${SRCROOT}/config.hpp)
+
 set(SRC 
     ${SRC}
     PARENT_SCOPE)

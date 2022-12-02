@@ -86,6 +86,18 @@ namespace ecstasy::integration::user_action
         ///
         bool load(const toml::table &bindings);
 
+        ///
+        /// @brief Check whether @p action is contained in the internal @ref ActionBinding vector.
+        ///
+        /// @param[in] action action to search.
+        ///
+        /// @return bool Whether the action is contained or not.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-02)
+        ///
+        bool contains(ActionBinding action) const;
+
       private:
         std::vector<ActionBinding> _bindings;
     };
