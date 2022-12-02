@@ -10,67 +10,72 @@ env:
   BUILD_TYPE: Release
 
 jobs:
-  build-gcc:
-    name: Linux GCC
-    runs-on: ubuntu-22.04
+  build:
+    name: "Build on ${{matrix.os}} using ${{matrix.compiler}}"
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        include:
+          ## Add GCC compiler to ubuntu 
+          - os: ubuntu-22.04
+            compiler: GCC 12
+            CC: gcc-12
+            CXX: g++-12
+            GCOV: gcov-12
+            generator: "Unix Makefiles"
+
+          ## Add Clang compiler to ubuntu
+          - os: ubuntu-latest
+            compiler: Clang 14
+            CC: clang-14
+            CXX: clang++-14
+            CXXFLAGS: -stdlib=libstdc++
+            generator: "Unix Makefiles"
+
+          - os: windows-latest
+            compiler: MSVC 2022
+            generator: "Visual Studio 17 2022"
 
     steps:
-    - name: Install Dependencies
+    - name: Install common unix dependencies
       run: |
         sudo apt-get update
         sudo apt-get install -y cmake
-        sudo apt-get install -y gcovr
         sudo apt-get install -y libxrandr-dev libxcursor-dev libudev-dev libopenal-dev libflac-dev libvorbis-dev libgl1-mesa-dev libegl1-mesa-dev libdrm-dev libgbm-dev
+        echo "CC=${{matrix.CC}}" >> $GITHUB_ENV
+        echo "CXX=${{matrix.CXX}}" >> $GITHUB_ENV
+      if: startsWith(matrix.os, 'ubuntu')
 
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Configure CMake
-      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBUILD_TEST_SUITE=TRUE -DENABLE_TEST_COVERAGE=TRUE -DECSTASY_INTEGRATIONS_EVENT=TRUE -DECSTASY_INTEGRATIONS_SFML=TRUE -DECSTASY_INTEGRATIONS_SFML_BUILD_DEMO=TRUE -DECSTASY_INTEGRATIONS_USER_ACTION=TRUE
-
-    - name: Build
-      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} -j
-
-    - name: Run Unit Tests
-      run: cd ${{github.workspace}}/build && ctest -C ${{env.BUILD_TYPE}} --output-on-failure
-
-    - name: Collect Coverage Files
+    ## Install gcovr for gnu
+    - name: Install Gcovr
       run: |
-        find build -iname "*.gcda" -or -iname "*.gcno" -exec cp {} . \;
-        gcovr -r . -f "src/" --exclude-unreachable-branches --exclude-throw-branches --xml --output ./coverage.xml -e "src/ecstasy/integrations/sfml/*"
-
-    - name: Upload Coverage Data
-      uses: codecov/codecov-action@v3
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        files: coverage.xml
-        verbose: true
-        fail_ci_if_error: true
-
-  build-clang:
-    name: Linux Clang (libstdc++)
-    runs-on: ubuntu-22.04
-    env:
-      CC: clang-14
-      CXX: clang++-14
-      CXXFLAGS: -stdlib=libstdc++
-
-    steps:
-    - name: Install Dependencies
+        sudo apt-get install -y gcovr
+      if: matrix.GCOV
+    
+    ## Install clang
+    - name: Install clang
       run: |
-        sudo apt-get update
         sudo apt-get install -y software-properties-common apt-transport-https
         curl -s https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
         sudo apt-add-repository -y 'deb http://apt.llvm.org/focal/ llvm-toolchain-focal-14 main'
         sudo apt-get update
         sudo apt-get install -y ninja-build clang-14 libc++-14-dev libc++abi-14-dev libstdc++-11-dev
-        sudo apt-get install -y libxrandr-dev libxcursor-dev libudev-dev libopenal-dev libflac-dev libvorbis-dev libgl1-mesa-dev libegl1-mesa-dev libdrm-dev libgbm-dev
-
+        echo "CXXFLAGS=${{matrix.compiler.CXXFLAGS}}" >> $GITHUB_ENV
+      if: startsWith(matrix.os, 'ubuntu') && startsWith(matrix.compiler, 'Clang')
+  
     - name: Checkout repository
       uses: actions/checkout@v2
 
     - name: Configure CMake
-      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBUILD_TEST_SUITE=TRUE -DENABLE_TEST_COVERAGE=TRUE -DECSTASY_INTEGRATIONS_EVENT=TRUE -DECSTASY_INTEGRATIONS_SFML=TRUE -DECSTASY_INTEGRATIONS_SFML_BUILD_DEMO=TRUE -DECSTASY_INTEGRATIONS_USER_ACTION=TRUE
+      run: cmake -B ${{github.workspace}}/build 
+        -G "${{matrix.generator}}"
+        -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} 
+        -DBUILD_TEST_SUITE=TRUE 
+        -DENABLE_TEST_COVERAGE=TRUE 
+        -DECSTASY_INTEGRATIONS_EVENT=TRUE 
+        -DECSTASY_INTEGRATIONS_SFML=TRUE 
+        -DECSTASY_INTEGRATIONS_SFML_BUILD_DEMO=TRUE 
+        -DECSTASY_INTEGRATIONS_USER_ACTION=TRUE
 
     - name: Build
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} -j
@@ -78,18 +83,17 @@ jobs:
     - name: Run Unit Tests
       run: cd ${{github.workspace}}/build && ctest -C ${{env.BUILD_TYPE}} --output-on-failure
 
-  build-windows:
-    runs-on: windows-latest
+    
+    - name: Collect Coverage Files
+      if: matrix.GCOV
+      run: |
+        find build -iname "*.gcda" -or -iname "*.gcno" -exec cp {} . \;
+        gcovr -r . -f "src/" --exclude-unreachable-branches --exclude-throw-branches --xml --output ./coverage.xml -e "src/ecstasy/integrations/sfml/*"
 
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Configure CMake
-      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBUILD_TEST_SUITE=TRUE -DECSTASY_INTEGRATIONS_EVENT=TRUE -DECSTASY_INTEGRATIONS_SFML=TRUE -DECSTASY_INTEGRATIONS_SFML_BUILD_DEMO=TRUE -DECSTASY_INTEGRATIONS_USER_ACTION=TRUE
-
-    - name: Build
-      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} -j
-
-    - name: Run Unit Tests
-      run: cd ${{github.workspace}}/build && ctest -C ${{env.BUILD_TYPE}} --output-on-failure
+    - name: Upload Coverage Data
+      if: matrix.GCOV
+      uses: codecov/codecov-action@v3
+      with:
+        files: coverage.xml
+        verbose: true
+        fail_ci_if_error: true
