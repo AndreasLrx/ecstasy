@@ -127,6 +127,12 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <li>_entity
 : <a class="el" href="classecstasy_1_1_entities_1_1_builder.html#a5a868e4d6da1e0968490c35cce06ec1e">ecstasy::Entities::Builder</a>
 </li>
+<li>_gamepadAxisToAction
+: <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a4c2e6b4c9f7e7c45c92564627495ea62">ecstasy::integration::user_action::Users</a>
+</li>
+<li>_gamepadButtonToAction
+: <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a04c96869686565acb654c951e8c1f3a5">ecstasy::integration::user_action::Users</a>
+</li>
 <li>_gamepads
 : <a class="el" href="classecstasy_1_1integration_1_1event_1_1_gamepads.html#a8e8e7c4db66745a6a8428d683377d95d">ecstasy::integration::event::Gamepads</a>
 </li>
@@ -160,6 +166,9 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <li>_keyStates
 : <a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html#a318054397e9a81fed1fa9d2741f313a2">ecstasy::integration::event::KeyCombinationListener</a>
 </li>
+<li>_keyToAction
+: <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a72564f1cc6e32471078b5be69fc58935">ecstasy::integration::user_action::Users</a>
+</li>
 <li>_killed
 : <a class="el" href="classecstasy_1_1_deletion_stack.html#aece50ac2494f697e2095a74a2f357906">ecstasy::DeletionStack</a>
 , <a class="el" href="classecstasy_1_1_entities.html#a9af4e053129d644cdc1f906ffc1f2f9a">ecstasy::Entities</a>
@@ -174,6 +183,9 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 , <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">ecstasy::query::modifier::Not&lt; Q &gt;</a>
 , <a class="el" href="classecstasy_1_1query_1_1_query.html#af254a57262c2a428e4173760c4f211df">ecstasy::query::Query&lt; First, Others &gt;</a>
 , <a class="el" href="classecstasy_1_1query_1_1_query_1_1_iterator.html#a122ef56a16f66624231df1348d061e49">ecstasy::query::Query&lt; First, Others &gt;::Iterator</a>
+</li>
+<li>_mouseButtonToAction
+: <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a03fdc884141cdaa5f5237521cc5d0692">ecstasy::integration::user_action::Users</a>
 </li>
 <li>_object
 : <a class="el" href="classecstasy_1_1_object_wrapper.html#a706240681a76ae6f2cc4942264c1ed5a">ecstasy::ObjectWrapper&lt; T &gt;</a>
@@ -217,6 +229,9 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <li>_systems
 : <a class="el" href="classecstasy_1_1_registry.html#a30221a4bba6858b3b5b19d088a98a6df">ecstasy::Registry</a>
 </li>
+<li>_users
+: <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#acb00b11b12b61a1c2abe802383886216">ecstasy::integration::user_action::Users</a>
+</li>
 <li>_validatedKeys
 : <a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html#a67ea8bc9fa8e0e7df3be0d42efcb3e6f">ecstasy::integration::event::KeyCombinationListener</a>
 , <a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#af25572501e883a1e9a7dfb276338f5ed">ecstasy::integration::event::KeySequenceListener</a>
@@ -232,7 +247,12 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 
 <h3><a id="index_a"></a>- a -</h3><ul>
 <li>actionId
-: <a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a0167827664161fe13b5bb0d9d69f4a6a">ecstasy::integration::user_action::ActionBinding</a>
+: <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a0167827664161fe13b5bb0d9d69f4a6a">ecstasy::integration::user_action::ActionBinding</a>
+, <a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_action_listener.html#af7b3015f33bb2f5feb191157b68a6594">ecstasy::integration::user_action::ActionListener</a>
+, <a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_users_1_1_user_action_link.html#ac89c7c4faad36afaf1fe0928ffd71067">ecstasy::integration::user_action::Users::UserActionLink</a>
+</li>
+<li>All
+: <a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_action.html#abfc74bb7c7919963a9658153588e33db">ecstasy::integration::user_action::Action</a>
 </li>
 <li>axis
 : <a class="el" href="structecstasy_1_1integration_1_1event_1_1_gamepad_axis_event.html#a9c7e77be848605c82a0b6715ad4e9dd7">ecstasy::integration::event::GamepadAxisEvent</a>
@@ -275,11 +295,11 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <h3><a id="index_g"></a>- g -</h3><ul>
 <li>gamepadAxis
 : <a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a16b8da1b1d8caed145e209098dde5541">ecstasy::integration::event::Event</a>
-, <a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a1a36b3127613cd11b8a18f734c2706ed">ecstasy::integration::user_action::ActionBinding</a>
+, <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a1a36b3127613cd11b8a18f734c2706ed">ecstasy::integration::user_action::ActionBinding</a>
 </li>
 <li>gamepadButton
 : <a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a4cb329b4aad0740343e1dce052b94b0a">ecstasy::integration::event::Event</a>
-, <a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a5c5c0ba50ad322f3167c7b3c7eae5bf0">ecstasy::integration::user_action::ActionBinding</a>
+, <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a5c5c0ba50ad322f3167c7b3c7eae5bf0">ecstasy::integration::user_action::ActionBinding</a>
 </li>
 <li>gamepadConnected
 : <a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#adfdde96dce20a4739424418fd2106204">ecstasy::integration::event::Event</a>
@@ -304,7 +324,14 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <li>key
 : <a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a3af2c11a33b7176b25e009a2964d8abc">ecstasy::integration::event::Event</a>
 , <a class="el" href="structecstasy_1_1integration_1_1event_1_1_key_event.html#ae8aa4c351688232ad0579c646fe9d940">ecstasy::integration::event::KeyEvent</a>
-, <a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a84fa5b2deb161cefa7d8f1746f23c938">ecstasy::integration::user_action::ActionBinding</a>
+, <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a84fa5b2deb161cefa7d8f1746f23c938">ecstasy::integration::user_action::ActionBinding</a>
+</li>
+</ul>
+
+
+<h3><a id="index_l"></a>- l -</h3><ul>
+<li>listener
+: <a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_action_listener.html#a340efa74795f713e6d400f908f30dd92">ecstasy::integration::user_action::ActionListener</a>
 </li>
 </ul>
 
@@ -312,7 +339,7 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <h3><a id="index_m"></a>- m -</h3><ul>
 <li>mouseButton
 : <a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a6a1f070fea4e9ebc841980aba424ccf5">ecstasy::integration::event::Event</a>
-, <a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a0aef6144f03d7d76bfa57362aab067a1">ecstasy::integration::user_action::ActionBinding</a>
+, <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a0aef6144f03d7d76bfa57362aab067a1">ecstasy::integration::user_action::ActionBinding</a>
 </li>
 <li>mouseMove
 : <a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a8e70999029df37f3b8ddc4b0dc0de432">ecstasy::integration::event::Event</a>
@@ -343,6 +370,9 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 
 
 <h3><a id="index_s"></a>- s -</h3><ul>
+<li>senderId
+: <a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_action.html#a96cf6863d0e93429acc25f92be5a61d1">ecstasy::integration::user_action::Action</a>
+</li>
 <li>Size
 : <a class="el" href="structutil_1_1meta_1_1_traits.html#abcfa9d8ad9b0d45733e86c7e050e252c">util::meta::Traits&lt; Args &gt;</a>
 , <a class="el" href="structutil_1_1meta_1_1_traits_3_01_arg_00_01_args_8_8_8_01_4.html#a1a39512979de0507bada4c76fb2ed248">util::meta::Traits&lt; Arg, Args... &gt;</a>
@@ -356,7 +386,7 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 </li>
 <li>type
 : <a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html#a6d46b0b0f2a97d183b856a64251b63e5">ecstasy::integration::event::Event</a>
-, <a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a9a7439130f0ea756f5e8850043bc78b9">ecstasy::integration::user_action::ActionBinding</a>
+, <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a9a7439130f0ea756f5e8850043bc78b9">ecstasy::integration::user_action::ActionBinding</a>
 </li>
 </ul>
 
@@ -365,12 +395,16 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <li>unicode
 : <a class="el" href="structecstasy_1_1integration_1_1event_1_1_text_entered_event.html#ac5c374bf243aeaf0b3c0e89afa32ea3f">ecstasy::integration::event::TextEnteredEvent</a>
 </li>
+<li>userId
+: <a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_users_1_1_user_action_link.html#a2e9920ece638c9ce56e207e1e4345da4">ecstasy::integration::user_action::Users::UserActionLink</a>
+</li>
 </ul>
 
 
 <h3><a id="index_v"></a>- v -</h3><ul>
 <li>value
 : <a class="el" href="structecstasy_1_1integration_1_1event_1_1_gamepad_axis_event.html#a1e449f3c385a28f3033fa94b203ef3da">ecstasy::integration::event::GamepadAxisEvent</a>
+, <a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_action.html#a838363f8f84be078ba936c679bfe9fea">ecstasy::integration::user_action::Action</a>
 </li>
 </ul>
 

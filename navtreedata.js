@@ -72,14 +72,15 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "",
-"classecstasy_1_1_entity.html#a6612cfc1590f07fce15558f66f62683f",
-"classecstasy_1_1integration_1_1user__action_1_1_user_profile.html#afb60c7c3bba9c7e5024866e35e8b0aa6",
-"cpp/algorithm/ranges/lexicographical_compare.html",
-"cpp/experimental/type_trait_variable_templates.html",
-"cpp/iterator/next.html",
-"cpp/numeric/special_functions/hermite.html",
-"cpp/utility/compare/named_comparison_functions.html",
-"namespaceutil_1_1meta.html"
+"classecstasy_1_1_entity.html#a303893300b586b78e7b47f2c67a0a3de",
+"classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a61ae233154a98f65414a9e4fc94eecfe",
+"cpp/algorithm/partial_sort.html",
+"cpp/experimental/fs/is_socket.html",
+"cpp/io/manip/flush.html",
+"cpp/numeric/rotr.html",
+"cpp/types/is_invocable.html",
+"meta_8hpp_source.html",
+"structutil_1_1meta_1_1_traits.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

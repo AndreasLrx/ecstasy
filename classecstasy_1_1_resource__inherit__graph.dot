@@ -15,4 +15,6 @@ digraph "ecstasy::Resource"
   Node5 [label="ecstasy::integration\l::event::Keyboard",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1integration_1_1event_1_1_keyboard.html",tooltip="Current Keyboard state."];
   Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 [label="ecstasy::integration\l::event::Mouse",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1integration_1_1event_1_1_mouse.html",tooltip="Current mouse state."];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="ecstasy::integration\l::user_action::Users",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1integration_1_1user__action_1_1_users.html",tooltip="UserProfile container resource."];
 }
