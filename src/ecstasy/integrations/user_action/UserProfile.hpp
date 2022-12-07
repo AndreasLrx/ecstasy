@@ -29,6 +29,9 @@ namespace ecstasy::integration::user_action
         /// @brief User identifier type
         using Id = size_t;
 
+        /// @brief Constant id matching any user ID.
+        static constexpr Id All = static_cast<Id>(-1);
+
         ///
         /// @brief Construct a new user profile with an associated id.
         ///

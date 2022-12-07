@@ -8,6 +8,8 @@ set(SRC
     ${SRCROOT}/ActionBindings.cpp
     ${INCROOT}/ActionBindings.hpp
     ${INCROOT}/ActionListener.hpp
+    ${INCROOT}/PendingActions.hpp
+    ${INCROOT}/PollActions.hpp
     ${SRCROOT}/UserProfile.cpp
     ${INCROOT}/UserProfile.hpp
     ${SRCROOT}/Users.cpp

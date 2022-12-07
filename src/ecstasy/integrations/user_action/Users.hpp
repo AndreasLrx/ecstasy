@@ -144,8 +144,9 @@ namespace ecstasy::integration::user_action
             std::unordered_multimap<T, UserActionLink> &map)
         {
             bool add = true;
+            auto range = map.equal_range(input);
 
-            for (auto it = map.find(input); it != map.end(); ++it) {
+            for (auto it = range.first; it != range.second; ++it) {
                 if (it->second.userId == user.getId() && it->second.actionId == binding.actionId) {
                     add = false;
                     break;
@@ -153,6 +154,20 @@ namespace ecstasy::integration::user_action
             }
             if (add)
                 map.insert({input, UserActionLink{binding.actionId, user.getId()}});
+        }
+
+        /// @internal Call the action listeners matching the given @p action.
+        static void callActionListeners(Registry &registry, Action action);
+
+        /// @internal
+        /// @brief Call the Action listeners matching an update on the input @p key searching in the map @p map.
+        template <typename T>
+        static void callListenersFromMap(
+            Registry &registry, const std::unordered_multimap<T, Users::UserActionLink> &map, T key, float value)
+        {
+            auto range = map.equal_range(key);
+            for (auto it = range.first; it != range.second; ++it)
+                callActionListeners(registry, Action{it->second.actionId, it->second.userId, value});
         }
 
         std::unordered_multimap<event::Mouse::Button, UserActionLink> _mouseButtonToAction;
