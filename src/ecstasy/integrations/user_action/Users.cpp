@@ -55,12 +55,13 @@ namespace ecstasy::integration::user_action
         }
     }
 
-    static void callActionListeners(Registry &registry, Action action)
+    void Users::callActionListeners(Registry &registry, Action action)
     {
         ecstasy::ModifiersAllocator allocator;
 
         for (auto [entity, listener] : registry.query<Entities, ActionListener>()) {
-            if (listener.actionId == Action::All || listener.actionId == action.id)
+            if ((listener.actionId == Action::All || listener.actionId == action.id)
+                && (listener.senderId == UserProfile::All || listener.senderId == action.senderId))
                 listener.listener(registry, entity, action);
         }
     }
@@ -70,30 +71,26 @@ namespace ecstasy::integration::user_action
         switch (e.type) {
             case event::Event::Type::MouseButtonPressed:
             case event::Event::Type::MouseButtonReleased:
-                for (auto it = _mouseButtonToAction.find(e.mouseButton.button); it != _mouseButtonToAction.end(); ++it)
-                    callActionListeners(registry,
-                        Action{it->second.actionId, it->second.userId, static_cast<float>(e.mouseButton.pressed)});
+                callListenersFromMap(
+                    registry, _mouseButtonToAction, e.mouseButton.button, static_cast<float>(e.mouseButton.pressed));
                 break;
 
             case event::Event::Type::KeyPressed:
             case event::Event::Type::KeyReleased:
-                for (auto it = _keyToAction.find(e.key.key); it != _keyToAction.end(); ++it)
-                    callActionListeners(
-                        registry, Action{it->second.actionId, it->second.userId, static_cast<float>(e.key.pressed)});
+                callListenersFromMap(registry, _keyToAction, e.key.key, static_cast<float>(e.key.pressed));
                 break;
 
+            /// @todo Associate @ref UserProfile::Id to gamepad id.
             case event::Event::Type::GamepadButtonPressed:
             case event::Event::Type::GamepadButtonReleased:
-                for (auto it = _gamepadButtonToAction.find(e.gamepadButton.button); it != _gamepadButtonToAction.end();
-                     ++it)
-                    callActionListeners(registry,
-                        Action{it->second.actionId, it->second.userId, static_cast<float>(e.gamepadButton.pressed)});
+                callListenersFromMap(registry, _gamepadButtonToAction, e.gamepadButton.button,
+                    static_cast<float>(e.gamepadButton.pressed));
                 break;
 
+            /// @todo Associate @ref UserProfile::Id to gamepad id.
             case event::Event::Type::GamepadAxis:
-                for (auto it = _gamepadAxisToAction.find(e.gamepadAxis.axis); it != _gamepadAxisToAction.end(); ++it)
-                    callActionListeners(registry,
-                        Action{it->second.actionId, it->second.userId, static_cast<float>(e.gamepadAxis.value)});
+                callListenersFromMap(
+                    registry, _gamepadAxisToAction, e.gamepadAxis.axis, static_cast<float>(e.gamepadAxis.value));
                 break;
             default: break;
         }
