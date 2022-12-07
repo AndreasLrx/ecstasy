@@ -4,6 +4,8 @@ var classecstasy_1_1integration_1_1user__action_1_1_users =
     [ "Users", "classecstasy_1_1integration_1_1user__action_1_1_users.html#a5c2fa08887e1cec5809a0f5ed5d34b5b", null ],
     [ "~Users", "classecstasy_1_1integration_1_1user__action_1_1_users.html#a6aa276a08803c2c23e35e76877684715", null ],
     [ "addBindingIfMissing", "classecstasy_1_1integration_1_1user__action_1_1_users.html#a3594ec9e0c4cda26b5cb7b086f3d0f80", null ],
+    [ "callActionListeners", "classecstasy_1_1integration_1_1user__action_1_1_users.html#aa2d26c3e7e3e50769fce30fb17311536", null ],
+    [ "callListenersFromMap", "classecstasy_1_1integration_1_1user__action_1_1_users.html#a76646d8c8eca97bfb031e687ed34208d", null ],
     [ "getUserProfile", "classecstasy_1_1integration_1_1user__action_1_1_users.html#a50113434251455b44436f432b201bd90", null ],
     [ "getUserProfile", "classecstasy_1_1integration_1_1user__action_1_1_users.html#a58f7828e08abe8d59a1280fde7f8cc05", null ],
     [ "handleEvent", "classecstasy_1_1integration_1_1user__action_1_1_users.html#a77d8da2843f29f1aa0b7692e1f65ed19", null ],

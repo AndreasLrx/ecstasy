@@ -88,6 +88,7 @@ $(document).ready(function(){initNavTree('classecstasy_1_1integration_1_1user__a
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classecstasy_1_1integration_1_1user__action_1_1_users-members.html">List of all members</a>  </div>
@@ -157,6 +158,14 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a3594ec9e0c4cda26b5cb7b086f3d0f80"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a3594ec9e0c4cda26b5cb7b086f3d0f80">addBindingIfMissing</a> (const <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_user_profile.html">UserProfile</a> &amp;user, const <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html">ActionBinding</a> &amp;binding, T input, <a class="elRef" href="http://en.cppreference.com/w/cpp/container/unordered_multimap.html">std::unordered_multimap</a>&lt; T, <a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_users_1_1_user_action_link.html">UserActionLink</a> &gt; &amp;map)</td></tr>
 <tr class="separator:a3594ec9e0c4cda26b5cb7b086f3d0f80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:aa2d26c3e7e3e50769fce30fb17311536"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#aa2d26c3e7e3e50769fce30fb17311536">callActionListeners</a> (<a class="el" href="classecstasy_1_1_registry.html">Registry</a> &amp;registry, <a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_action.html">Action</a> action)</td></tr>
+<tr class="separator:aa2d26c3e7e3e50769fce30fb17311536"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76646d8c8eca97bfb031e687ed34208d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a76646d8c8eca97bfb031e687ed34208d"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a76646d8c8eca97bfb031e687ed34208d">callListenersFromMap</a> (<a class="el" href="classecstasy_1_1_registry.html">Registry</a> &amp;registry, const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/unordered_multimap.html">std::unordered_multimap</a>&lt; T, <a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_users_1_1_user_action_link.html">Users::UserActionLink</a> &gt; &amp;map, T key, float value)</td></tr>
+<tr class="separator:a76646d8c8eca97bfb031e687ed34208d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a03fdc884141cdaa5f5237521cc5d0692"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/unordered_multimap.html">std::unordered_multimap</a>&lt; <a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#ae02624c1f85027219f4f594abe1c0d8e">event::Mouse::Button</a>, <a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_users_1_1_user_action_link.html">UserActionLink</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a03fdc884141cdaa5f5237521cc5d0692">_mouseButtonToAction</a></td></tr>
@@ -209,13 +218,13 @@ Friends</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-02) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_users_8cpp_source.html#l00017">17</a> of file <a class="el" href="_users_8cpp_source.html">Users.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                             : <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#acb00b11b12b61a1c2abe802383886216">_users</a>(count)</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; i &lt; <a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/count.html">count</a>; i++)</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#acb00b11b12b61a1c2abe802383886216">_users</a>[i].setId(i);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
-<div class="ttc" id="aclassecstasy_1_1integration_1_1user__action_1_1_users_html_acb00b11b12b61a1c2abe802383886216"><div class="ttname"><a href="classecstasy_1_1integration_1_1user__action_1_1_users.html#acb00b11b12b61a1c2abe802383886216">ecstasy::integration::user_action::Users::_users</a></div><div class="ttdeci">std::vector&lt; UserProfile &gt; _users</div><div class="ttdef"><b>Definition:</b> <a href="_users_8hpp_source.html#l00163">Users.hpp:163</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_users_8cpp_source.html#l00018">18</a> of file <a class="el" href="_users_8cpp_source.html">Users.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                             : <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#acb00b11b12b61a1c2abe802383886216">_users</a>(count)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; i &lt; <a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/count.html">count</a>; i++)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#acb00b11b12b61a1c2abe802383886216">_users</a>[i].setId(i);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
+<div class="ttc" id="aclassecstasy_1_1integration_1_1user__action_1_1_users_html_acb00b11b12b61a1c2abe802383886216"><div class="ttname"><a href="classecstasy_1_1integration_1_1user__action_1_1_users.html#acb00b11b12b61a1c2abe802383886216">ecstasy::integration::user_action::Users::_users</a></div><div class="ttdeci">std::vector&lt; UserProfile &gt; _users</div><div class="ttdef"><b>Definition:</b> <a href="_users_8hpp_source.html#l00178">Users.hpp:178</a></div></div>
 <div class="ttc" id="acount_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/algorithm/count.html">std::count</a></div><div class="ttdeci">T count(T... args)</div></div>
 </div><!-- fragment -->
 </div>
@@ -301,19 +310,128 @@ template&lt;typename T &gt; </div>
 <p class="definition">Definition at line <a class="el" href="_users_8hpp_source.html#l00143">143</a> of file <a class="el" href="_users_8hpp_source.html">Users.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        {</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <span class="keywordtype">bool</span> add = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = map.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/unordered_multimap/find.html">find</a>(input); it != map.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/unordered_multimap/end.html">end</a>(); ++it) {</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                <span class="keywordflow">if</span> (it-&gt;second.userId == user.getId() &amp;&amp; it-&gt;second.actionId == binding.actionId) {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                    add = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                }</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            }</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="keywordflow">if</span> (add)</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                map.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/unordered_multimap/insert.html">insert</a>({input, UserActionLink{binding.actionId, user.getId()}});</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        }</div>
-<div class="ttc" id="aend_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/unordered_multimap/end.html">std::unordered_multimap::end</a></div><div class="ttdeci">T end(T... args)</div></div>
-<div class="ttc" id="afind_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/unordered_multimap/find.html">std::unordered_multimap::find</a></div><div class="ttdeci">T find(T... args)</div></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="keyword">auto</span> range = map.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/unordered_multimap/equal_range.html">equal_range</a>(input);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = range.first; it != range.second; ++it) {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                <span class="keywordflow">if</span> (it-&gt;second.userId == user.getId() &amp;&amp; it-&gt;second.actionId == binding.actionId) {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                    add = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                }</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            }</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <span class="keywordflow">if</span> (add)</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                map.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/unordered_multimap/insert.html">insert</a>({input, UserActionLink{binding.actionId, user.getId()}});</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        }</div>
+<div class="ttc" id="aequal_range_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/unordered_multimap/equal_range.html">std::unordered_multimap::equal_range</a></div><div class="ttdeci">T equal_range(T... args)</div></div>
 <div class="ttc" id="ainsert_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/unordered_multimap/insert.html">std::unordered_multimap::insert</a></div><div class="ttdeci">T insert(T... args)</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa2d26c3e7e3e50769fce30fb17311536"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2d26c3e7e3e50769fce30fb17311536">&#9670;&nbsp;</a></span>callActionListeners()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ecstasy::integration::user_action::Users::callActionListeners </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classecstasy_1_1_registry.html">Registry</a> &amp;&#160;</td>
+          <td class="paramname"><em>registry</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_action.html">Action</a>&#160;</td>
+          <td class="paramname"><em>action</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_users_8cpp_source.html#l00059">59</a> of file <a class="el" href="_users_8cpp_source.html">Users.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">if</span> (registry.hasResource&lt;<a class="code" href="namespaceecstasy_1_1integration_1_1user__action.html#a9b4f873eff13ede42a8a53839aea12b0">PendingActions</a>&gt;())</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            registry.getResource&lt;<a class="code" href="namespaceecstasy_1_1integration_1_1user__action.html#a9b4f873eff13ede42a8a53839aea12b0">PendingActions</a>&gt;().get().push(action);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="classutil_1_1_allocator.html">ecstasy::ModifiersAllocator</a> allocator;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> [entity, listener] : registry.query&lt;Entities, ActionListener&gt;()) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">if</span> (listener.actionId == <a class="code" href="structecstasy_1_1integration_1_1user__action_1_1_action.html#abfc74bb7c7919963a9658153588e33db">Action::All</a> || listener.actionId == action.id)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                listener.listener(registry, entity, action);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="ttc" id="aclassutil_1_1_allocator_html"><div class="ttname"><a href="classutil_1_1_allocator.html">util::Allocator</a></div><div class="ttdef"><b>Definition:</b> <a href="_allocator_8hpp_source.html#l00027">Allocator.hpp:27</a></div></div>
+<div class="ttc" id="anamespaceecstasy_1_1integration_1_1user__action_html_a9b4f873eff13ede42a8a53839aea12b0"><div class="ttname"><a href="namespaceecstasy_1_1integration_1_1user__action.html#a9b4f873eff13ede42a8a53839aea12b0">ecstasy::integration::user_action::PendingActions</a></div><div class="ttdeci">ecstasy::ObjectWrapper&lt; std::queue&lt; Action &gt; &gt; PendingActions</div><div class="ttdoc">Queue of Action.</div><div class="ttdef"><b>Definition:</b> <a href="_pending_actions_8hpp_source.html#l00022">PendingActions.hpp:22</a></div></div>
+<div class="ttc" id="astructecstasy_1_1integration_1_1user__action_1_1_action_html_abfc74bb7c7919963a9658153588e33db"><div class="ttname"><a href="structecstasy_1_1integration_1_1user__action_1_1_action.html#abfc74bb7c7919963a9658153588e33db">ecstasy::integration::user_action::Action::All</a></div><div class="ttdeci">static constexpr Id All</div><div class="ttdoc">Constant id matching any action ID.</div><div class="ttdef"><b>Definition:</b> <a href="_action_8hpp_source.html#l00030">Action.hpp:30</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a76646d8c8eca97bfb031e687ed34208d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76646d8c8eca97bfb031e687ed34208d">&#9670;&nbsp;</a></span>callListenersFromMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ecstasy::integration::user_action::Users::callListenersFromMap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classecstasy_1_1_registry.html">Registry</a> &amp;&#160;</td>
+          <td class="paramname"><em>registry</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/unordered_multimap.html">std::unordered_multimap</a>&lt; T, <a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_users_1_1_user_action_link.html">Users::UserActionLink</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>map</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_users_8hpp_source.html#l00165">165</a> of file <a class="el" href="_users_8hpp_source.html">Users.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        {</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <span class="keyword">auto</span> range = map.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/unordered_multimap/equal_range.html">equal_range</a>(key);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = range.first; it != range.second; ++it)</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#aa2d26c3e7e3e50769fce30fb17311536">callActionListeners</a>(registry, Action{it-&gt;second.actionId, it-&gt;second.userId, value});</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        }</div>
+<div class="ttc" id="aclassecstasy_1_1integration_1_1user__action_1_1_users_html_aa2d26c3e7e3e50769fce30fb17311536"><div class="ttname"><a href="classecstasy_1_1integration_1_1user__action_1_1_users.html#aa2d26c3e7e3e50769fce30fb17311536">ecstasy::integration::user_action::Users::callActionListeners</a></div><div class="ttdeci">static void callActionListeners(Registry &amp;registry, Action action)</div><div class="ttdef"><b>Definition:</b> <a href="_users_8cpp_source.html#l00059">Users.cpp:59</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -440,44 +558,38 @@ template&lt;typename T &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-02) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_users_8cpp_source.html#l00068">68</a> of file <a class="el" href="_users_8cpp_source.html">Users.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">switch</span> (e.type) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa7349f643d689997b7c54bf93e4095f5c">event::Event::Type::MouseButtonPressed</a>:</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa7584c169de594c27f00084b93186fd7c">event::Event::Type::MouseButtonReleased</a>:</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a03fdc884141cdaa5f5237521cc5d0692">_mouseButtonToAction</a>.find(e.mouseButton.button); it != <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a03fdc884141cdaa5f5237521cc5d0692">_mouseButtonToAction</a>.end(); ++it)</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    <a class="code" href="namespaceecstasy_1_1integration_1_1user__action.html#aabdbb7b1988c49efb22ce114413760d3">callActionListeners</a>(registry,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        Action{it-&gt;second.actionId, it-&gt;second.userId, <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(e.mouseButton.pressed)});</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aac17e6984c1e5a887a49831beadee6bca">event::Event::Type::KeyPressed</a>:</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa4a77f07c8ad223b71ab4ce78a63841ab">event::Event::Type::KeyReleased</a>:</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a72564f1cc6e32471078b5be69fc58935">_keyToAction</a>.find(e.key.key); it != <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a72564f1cc6e32471078b5be69fc58935">_keyToAction</a>.end(); ++it)</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    <a class="code" href="namespaceecstasy_1_1integration_1_1user__action.html#aabdbb7b1988c49efb22ce114413760d3">callActionListeners</a>(</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                        registry, Action{it-&gt;second.actionId, it-&gt;second.userId, <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(e.key.pressed)});</div>
+<p class="definition">Definition at line <a class="el" href="_users_8cpp_source.html#l00071">71</a> of file <a class="el" href="_users_8cpp_source.html">Users.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">switch</span> (e.type) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa7349f643d689997b7c54bf93e4095f5c">event::Event::Type::MouseButtonPressed</a>:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa7584c169de594c27f00084b93186fd7c">event::Event::Type::MouseButtonReleased</a>:</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a76646d8c8eca97bfb031e687ed34208d">callListenersFromMap</a>(</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                    registry, <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a03fdc884141cdaa5f5237521cc5d0692">_mouseButtonToAction</a>, e.mouseButton.button, <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(e.mouseButton.pressed));</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aac17e6984c1e5a887a49831beadee6bca">event::Event::Type::KeyPressed</a>:</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa4a77f07c8ad223b71ab4ce78a63841ab">event::Event::Type::KeyReleased</a>:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a76646d8c8eca97bfb031e687ed34208d">callListenersFromMap</a>(registry, <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a72564f1cc6e32471078b5be69fc58935">_keyToAction</a>, e.key.key, <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(e.key.pressed));</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aae2a9941e644616b8853693e7b3b22c96">event::Event::Type::GamepadButtonPressed</a>:</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aaf4590195d79da4a322ee9beb6b44ef66">event::Event::Type::GamepadButtonReleased</a>:</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a04c96869686565acb654c951e8c1f3a5">_gamepadButtonToAction</a>.find(e.gamepadButton.button); it != <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a04c96869686565acb654c951e8c1f3a5">_gamepadButtonToAction</a>.end();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                     ++it)</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                    <a class="code" href="namespaceecstasy_1_1integration_1_1user__action.html#aabdbb7b1988c49efb22ce114413760d3">callActionListeners</a>(registry,</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                        Action{it-&gt;second.actionId, it-&gt;second.userId, <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(e.gamepadButton.pressed)});</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aae2a9941e644616b8853693e7b3b22c96">event::Event::Type::GamepadButtonPressed</a>:</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aaf4590195d79da4a322ee9beb6b44ef66">event::Event::Type::GamepadButtonReleased</a>:</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a76646d8c8eca97bfb031e687ed34208d">callListenersFromMap</a>(registry, <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a04c96869686565acb654c951e8c1f3a5">_gamepadButtonToAction</a>, e.gamepadButton.button,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                    <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(e.gamepadButton.pressed));</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aaa34eee0c70fa74cf765b8a650d4497f7">event::Event::Type::GamepadAxis</a>:</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a4c2e6b4c9f7e7c45c92564627495ea62">_gamepadAxisToAction</a>.find(e.gamepadAxis.axis); it != <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a4c2e6b4c9f7e7c45c92564627495ea62">_gamepadAxisToAction</a>.end(); ++it)</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                    <a class="code" href="namespaceecstasy_1_1integration_1_1user__action.html#aabdbb7b1988c49efb22ce114413760d3">callActionListeners</a>(registry,</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                        Action{it-&gt;second.actionId, it-&gt;second.userId, <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(e.gamepadAxis.value)});</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordflow">default</span>: <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
-<div class="ttc" id="aclassecstasy_1_1integration_1_1user__action_1_1_users_html_a03fdc884141cdaa5f5237521cc5d0692"><div class="ttname"><a href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a03fdc884141cdaa5f5237521cc5d0692">ecstasy::integration::user_action::Users::_mouseButtonToAction</a></div><div class="ttdeci">std::unordered_multimap&lt; event::Mouse::Button, UserActionLink &gt; _mouseButtonToAction</div><div class="ttdef"><b>Definition:</b> <a href="_users_8hpp_source.html#l00158">Users.hpp:158</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1integration_1_1user__action_1_1_users_html_a04c96869686565acb654c951e8c1f3a5"><div class="ttname"><a href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a04c96869686565acb654c951e8c1f3a5">ecstasy::integration::user_action::Users::_gamepadButtonToAction</a></div><div class="ttdeci">std::unordered_multimap&lt; event::Gamepad::Button, UserActionLink &gt; _gamepadButtonToAction</div><div class="ttdef"><b>Definition:</b> <a href="_users_8hpp_source.html#l00160">Users.hpp:160</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1integration_1_1user__action_1_1_users_html_a4c2e6b4c9f7e7c45c92564627495ea62"><div class="ttname"><a href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a4c2e6b4c9f7e7c45c92564627495ea62">ecstasy::integration::user_action::Users::_gamepadAxisToAction</a></div><div class="ttdeci">std::unordered_multimap&lt; event::Gamepad::Axis, UserActionLink &gt; _gamepadAxisToAction</div><div class="ttdef"><b>Definition:</b> <a href="_users_8hpp_source.html#l00161">Users.hpp:161</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1integration_1_1user__action_1_1_users_html_a72564f1cc6e32471078b5be69fc58935"><div class="ttname"><a href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a72564f1cc6e32471078b5be69fc58935">ecstasy::integration::user_action::Users::_keyToAction</a></div><div class="ttdeci">std::unordered_multimap&lt; event::Keyboard::Key, UserActionLink &gt; _keyToAction</div><div class="ttdef"><b>Definition:</b> <a href="_users_8hpp_source.html#l00159">Users.hpp:159</a></div></div>
-<div class="ttc" id="anamespaceecstasy_1_1integration_1_1user__action_html_aabdbb7b1988c49efb22ce114413760d3"><div class="ttname"><a href="namespaceecstasy_1_1integration_1_1user__action.html#aabdbb7b1988c49efb22ce114413760d3">ecstasy::integration::user_action::callActionListeners</a></div><div class="ttdeci">static void callActionListeners(Registry &amp;registry, Action action)</div><div class="ttdef"><b>Definition:</b> <a href="_users_8cpp_source.html#l00058">Users.cpp:58</a></div></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a76646d8c8eca97bfb031e687ed34208d">callListenersFromMap</a>(</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                    registry, <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a4c2e6b4c9f7e7c45c92564627495ea62">_gamepadAxisToAction</a>, e.gamepadAxis.axis, <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(e.gamepadAxis.value));</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">default</span>: <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
+<div class="ttc" id="aclassecstasy_1_1integration_1_1user__action_1_1_users_html_a03fdc884141cdaa5f5237521cc5d0692"><div class="ttname"><a href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a03fdc884141cdaa5f5237521cc5d0692">ecstasy::integration::user_action::Users::_mouseButtonToAction</a></div><div class="ttdeci">std::unordered_multimap&lt; event::Mouse::Button, UserActionLink &gt; _mouseButtonToAction</div><div class="ttdef"><b>Definition:</b> <a href="_users_8hpp_source.html#l00173">Users.hpp:173</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1integration_1_1user__action_1_1_users_html_a04c96869686565acb654c951e8c1f3a5"><div class="ttname"><a href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a04c96869686565acb654c951e8c1f3a5">ecstasy::integration::user_action::Users::_gamepadButtonToAction</a></div><div class="ttdeci">std::unordered_multimap&lt; event::Gamepad::Button, UserActionLink &gt; _gamepadButtonToAction</div><div class="ttdef"><b>Definition:</b> <a href="_users_8hpp_source.html#l00175">Users.hpp:175</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1integration_1_1user__action_1_1_users_html_a4c2e6b4c9f7e7c45c92564627495ea62"><div class="ttname"><a href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a4c2e6b4c9f7e7c45c92564627495ea62">ecstasy::integration::user_action::Users::_gamepadAxisToAction</a></div><div class="ttdeci">std::unordered_multimap&lt; event::Gamepad::Axis, UserActionLink &gt; _gamepadAxisToAction</div><div class="ttdef"><b>Definition:</b> <a href="_users_8hpp_source.html#l00176">Users.hpp:176</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1integration_1_1user__action_1_1_users_html_a72564f1cc6e32471078b5be69fc58935"><div class="ttname"><a href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a72564f1cc6e32471078b5be69fc58935">ecstasy::integration::user_action::Users::_keyToAction</a></div><div class="ttdeci">std::unordered_multimap&lt; event::Keyboard::Key, UserActionLink &gt; _keyToAction</div><div class="ttdef"><b>Definition:</b> <a href="_users_8hpp_source.html#l00174">Users.hpp:174</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1integration_1_1user__action_1_1_users_html_a76646d8c8eca97bfb031e687ed34208d"><div class="ttname"><a href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a76646d8c8eca97bfb031e687ed34208d">ecstasy::integration::user_action::Users::callListenersFromMap</a></div><div class="ttdeci">static void callListenersFromMap(Registry &amp;registry, const std::unordered_multimap&lt; T, Users::UserActionLink &gt; &amp;map, T key, float value)</div><div class="ttdef"><b>Definition:</b> <a href="_users_8hpp_source.html#l00165">Users.hpp:165</a></div></div>
 <div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a428f3f906bf2f40cf2dcec224662719aa4a77f07c8ad223b71ab4ce78a63841ab"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa4a77f07c8ad223b71ab4ce78a63841ab">ecstasy::integration::event::Event::Type::KeyReleased</a></div><div class="ttdeci">@ KeyReleased</div><div class="ttdoc">One of the keyboard key has been released.</div></div>
 <div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a428f3f906bf2f40cf2dcec224662719aa7349f643d689997b7c54bf93e4095f5c"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa7349f643d689997b7c54bf93e4095f5c">ecstasy::integration::event::Event::Type::MouseButtonPressed</a></div><div class="ttdeci">@ MouseButtonPressed</div><div class="ttdoc">One of the mouse button has been pressed.</div></div>
 <div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_event_html_a428f3f906bf2f40cf2dcec224662719aa7584c169de594c27f00084b93186fd7c"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa7584c169de594c27f00084b93186fd7c">ecstasy::integration::event::Event::Type::MouseButtonReleased</a></div><div class="ttdeci">@ MouseButtonReleased</div><div class="ttdoc">One of the mouse button has been released.</div></div>
@@ -526,6 +638,7 @@ template&lt;typename T &gt; </div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            }</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        }</div>
 <div class="ttc" id="abegin_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/unordered_multimap/begin.html">std::unordered_multimap::begin</a></div><div class="ttdeci">T begin(T... args)</div></div>
+<div class="ttc" id="aend_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/unordered_multimap/end.html">std::unordered_multimap::end</a></div><div class="ttdeci">T end(T... args)</div></div>
 <div class="ttc" id="aerase_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/unordered_multimap/erase.html">std::unordered_multimap::erase</a></div><div class="ttdeci">T erase(T... args)</div></div>
 </div><!-- fragment -->
 </div>
@@ -550,33 +663,33 @@ template&lt;typename T &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-02) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_users_8cpp_source.html#l00030">30</a> of file <a class="el" href="_users_8cpp_source.html">Users.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#ac7c3ffe1d1821bcb39bc480e04b81d0a">removeOutdatedBindings</a>(<a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a03fdc884141cdaa5f5237521cc5d0692">_mouseButtonToAction</a>);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#ac7c3ffe1d1821bcb39bc480e04b81d0a">removeOutdatedBindings</a>(<a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a72564f1cc6e32471078b5be69fc58935">_keyToAction</a>);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#ac7c3ffe1d1821bcb39bc480e04b81d0a">removeOutdatedBindings</a>(<a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a04c96869686565acb654c951e8c1f3a5">_gamepadButtonToAction</a>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#ac7c3ffe1d1821bcb39bc480e04b81d0a">removeOutdatedBindings</a>(<a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a4c2e6b4c9f7e7c45c92564627495ea62">_gamepadAxisToAction</a>);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">for</span> (UserProfile &amp;user : <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#acb00b11b12b61a1c2abe802383886216">_users</a>) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keyword">auto</span> &amp;bindings = user.getActionBindings().getBindings();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">for</span> (ActionBinding binding : bindings) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">switch</span> (binding.type) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    <span class="keywordflow">case</span> <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a61ae233154a98f65414a9e4fc94eecfea49dabe49d62a3521f7c10400138c38d5">ActionBinding::Type::MouseButton</a>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                        <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a3594ec9e0c4cda26b5cb7b086f3d0f80">addBindingIfMissing</a>(user, binding, binding.mouseButton, <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a03fdc884141cdaa5f5237521cc5d0692">_mouseButtonToAction</a>);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    <span class="keywordflow">case</span> <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a61ae233154a98f65414a9e4fc94eecfea897356954c2cd3d41b221e3f24f99bba">ActionBinding::Type::Key</a>: <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a3594ec9e0c4cda26b5cb7b086f3d0f80">addBindingIfMissing</a>(user, binding, binding.key, <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a72564f1cc6e32471078b5be69fc58935">_keyToAction</a>); <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                    <span class="keywordflow">case</span> <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a61ae233154a98f65414a9e4fc94eecfea4763e000c5c9b3689e9ed5d797eae210">ActionBinding::Type::GamepadButton</a>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                        <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a3594ec9e0c4cda26b5cb7b086f3d0f80">addBindingIfMissing</a>(user, binding, binding.gamepadButton, <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a04c96869686565acb654c951e8c1f3a5">_gamepadButtonToAction</a>);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    <span class="keywordflow">case</span> <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a61ae233154a98f65414a9e4fc94eecfeaa34eee0c70fa74cf765b8a650d4497f7">ActionBinding::Type::GamepadAxis</a>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                        <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a3594ec9e0c4cda26b5cb7b086f3d0f80">addBindingIfMissing</a>(user, binding, binding.gamepadAxis, <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a4c2e6b4c9f7e7c45c92564627495ea62">_gamepadAxisToAction</a>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    <span class="keywordflow">default</span>: <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_users_8cpp_source.html#l00031">31</a> of file <a class="el" href="_users_8cpp_source.html">Users.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#ac7c3ffe1d1821bcb39bc480e04b81d0a">removeOutdatedBindings</a>(<a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a03fdc884141cdaa5f5237521cc5d0692">_mouseButtonToAction</a>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#ac7c3ffe1d1821bcb39bc480e04b81d0a">removeOutdatedBindings</a>(<a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a72564f1cc6e32471078b5be69fc58935">_keyToAction</a>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#ac7c3ffe1d1821bcb39bc480e04b81d0a">removeOutdatedBindings</a>(<a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a04c96869686565acb654c951e8c1f3a5">_gamepadButtonToAction</a>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#ac7c3ffe1d1821bcb39bc480e04b81d0a">removeOutdatedBindings</a>(<a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a4c2e6b4c9f7e7c45c92564627495ea62">_gamepadAxisToAction</a>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">for</span> (UserProfile &amp;user : <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#acb00b11b12b61a1c2abe802383886216">_users</a>) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keyword">auto</span> &amp;bindings = user.getActionBindings().getBindings();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">for</span> (ActionBinding binding : bindings) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordflow">switch</span> (binding.type) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    <span class="keywordflow">case</span> <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a61ae233154a98f65414a9e4fc94eecfea49dabe49d62a3521f7c10400138c38d5">ActionBinding::Type::MouseButton</a>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                        <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a3594ec9e0c4cda26b5cb7b086f3d0f80">addBindingIfMissing</a>(user, binding, binding.mouseButton, <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a03fdc884141cdaa5f5237521cc5d0692">_mouseButtonToAction</a>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                    <span class="keywordflow">case</span> <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a61ae233154a98f65414a9e4fc94eecfea897356954c2cd3d41b221e3f24f99bba">ActionBinding::Type::Key</a>: <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a3594ec9e0c4cda26b5cb7b086f3d0f80">addBindingIfMissing</a>(user, binding, binding.key, <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a72564f1cc6e32471078b5be69fc58935">_keyToAction</a>); <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                    <span class="keywordflow">case</span> <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a61ae233154a98f65414a9e4fc94eecfea4763e000c5c9b3689e9ed5d797eae210">ActionBinding::Type::GamepadButton</a>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a3594ec9e0c4cda26b5cb7b086f3d0f80">addBindingIfMissing</a>(user, binding, binding.gamepadButton, <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a04c96869686565acb654c951e8c1f3a5">_gamepadButtonToAction</a>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    <span class="keywordflow">case</span> <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a61ae233154a98f65414a9e4fc94eecfeaa34eee0c70fa74cf765b8a650d4497f7">ActionBinding::Type::GamepadAxis</a>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                        <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a3594ec9e0c4cda26b5cb7b086f3d0f80">addBindingIfMissing</a>(user, binding, binding.gamepadAxis, <a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a4c2e6b4c9f7e7c45c92564627495ea62">_gamepadAxisToAction</a>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    <span class="keywordflow">default</span>: <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
 <div class="ttc" id="aclassecstasy_1_1integration_1_1user__action_1_1_action_binding_html_a61ae233154a98f65414a9e4fc94eecfea4763e000c5c9b3689e9ed5d797eae210"><div class="ttname"><a href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a61ae233154a98f65414a9e4fc94eecfea4763e000c5c9b3689e9ed5d797eae210">ecstasy::integration::user_action::ActionBinding::Type::GamepadButton</a></div><div class="ttdeci">@ GamepadButton</div><div class="ttdoc">The action is bound to a gamepad button state.</div></div>
 <div class="ttc" id="aclassecstasy_1_1integration_1_1user__action_1_1_action_binding_html_a61ae233154a98f65414a9e4fc94eecfea49dabe49d62a3521f7c10400138c38d5"><div class="ttname"><a href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a61ae233154a98f65414a9e4fc94eecfea49dabe49d62a3521f7c10400138c38d5">ecstasy::integration::user_action::ActionBinding::Type::MouseButton</a></div><div class="ttdeci">@ MouseButton</div><div class="ttdoc">The action is bound to a mouse button state.</div></div>
 <div class="ttc" id="aclassecstasy_1_1integration_1_1user__action_1_1_action_binding_html_a61ae233154a98f65414a9e4fc94eecfea897356954c2cd3d41b221e3f24f99bba"><div class="ttname"><a href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a61ae233154a98f65414a9e4fc94eecfea897356954c2cd3d41b221e3f24f99bba">ecstasy::integration::user_action::ActionBinding::Type::Key</a></div><div class="ttdeci">@ Key</div><div class="ttdoc">The action is bound to a keyboard key state.</div></div>
@@ -620,14 +733,14 @@ template&lt;typename T &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-02) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_users_8cpp_source.html#l00023">23</a> of file <a class="el" href="_users_8cpp_source.html">Users.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">if</span> (!registry.hasResource&lt;<a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a5c2fa08887e1cec5809a0f5ed5d34b5b">Users</a>&gt;())</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        registry.getResource&lt;<a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a5c2fa08887e1cec5809a0f5ed5d34b5b">Users</a>&gt;().<a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a2df2e9ce11214678814efb5e114ab2b5">updateBindings</a>();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
-<div class="ttc" id="aclassecstasy_1_1integration_1_1user__action_1_1_users_html_a2df2e9ce11214678814efb5e114ab2b5"><div class="ttname"><a href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a2df2e9ce11214678814efb5e114ab2b5">ecstasy::integration::user_action::Users::updateBindings</a></div><div class="ttdeci">void updateBindings()</div><div class="ttdoc">Update the internal bindings associative maps.</div><div class="ttdef"><b>Definition:</b> <a href="_users_8cpp_source.html#l00030">Users.cpp:30</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1integration_1_1user__action_1_1_users_html_a5c2fa08887e1cec5809a0f5ed5d34b5b"><div class="ttname"><a href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a5c2fa08887e1cec5809a0f5ed5d34b5b">ecstasy::integration::user_action::Users::Users</a></div><div class="ttdeci">Users(size_t count=1)</div><div class="ttdoc">Construct a new Users resource.</div><div class="ttdef"><b>Definition:</b> <a href="_users_8cpp_source.html#l00017">Users.cpp:17</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_users_8cpp_source.html#l00024">24</a> of file <a class="el" href="_users_8cpp_source.html">Users.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">if</span> (!registry.hasResource&lt;<a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a5c2fa08887e1cec5809a0f5ed5d34b5b">Users</a>&gt;())</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        registry.getResource&lt;<a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a5c2fa08887e1cec5809a0f5ed5d34b5b">Users</a>&gt;().<a class="code" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a2df2e9ce11214678814efb5e114ab2b5">updateBindings</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="ttc" id="aclassecstasy_1_1integration_1_1user__action_1_1_users_html_a2df2e9ce11214678814efb5e114ab2b5"><div class="ttname"><a href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a2df2e9ce11214678814efb5e114ab2b5">ecstasy::integration::user_action::Users::updateBindings</a></div><div class="ttdeci">void updateBindings()</div><div class="ttdoc">Update the internal bindings associative maps.</div><div class="ttdef"><b>Definition:</b> <a href="_users_8cpp_source.html#l00031">Users.cpp:31</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1integration_1_1user__action_1_1_users_html_a5c2fa08887e1cec5809a0f5ed5d34b5b"><div class="ttname"><a href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a5c2fa08887e1cec5809a0f5ed5d34b5b">ecstasy::integration::user_action::Users::Users</a></div><div class="ttdeci">Users(size_t count=1)</div><div class="ttdoc">Construct a new Users resource.</div><div class="ttdef"><b>Definition:</b> <a href="_users_8cpp_source.html#l00018">Users.cpp:18</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -652,7 +765,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_users_8hpp_source.html#l00165">165</a> of file <a class="el" href="_users_8hpp_source.html">Users.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_users_8hpp_source.html#l00180">180</a> of file <a class="el" href="_users_8hpp_source.html">Users.hpp</a>.</p>
 
 </div>
 </div>
@@ -677,7 +790,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_users_8hpp_source.html#l00161">161</a> of file <a class="el" href="_users_8hpp_source.html">Users.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_users_8hpp_source.html#l00176">176</a> of file <a class="el" href="_users_8hpp_source.html">Users.hpp</a>.</p>
 
 </div>
 </div>
@@ -701,7 +814,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_users_8hpp_source.html#l00160">160</a> of file <a class="el" href="_users_8hpp_source.html">Users.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_users_8hpp_source.html#l00175">175</a> of file <a class="el" href="_users_8hpp_source.html">Users.hpp</a>.</p>
 
 </div>
 </div>
@@ -725,7 +838,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_users_8hpp_source.html#l00159">159</a> of file <a class="el" href="_users_8hpp_source.html">Users.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_users_8hpp_source.html#l00174">174</a> of file <a class="el" href="_users_8hpp_source.html">Users.hpp</a>.</p>
 
 </div>
 </div>
@@ -749,7 +862,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_users_8hpp_source.html#l00158">158</a> of file <a class="el" href="_users_8hpp_source.html">Users.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_users_8hpp_source.html#l00173">173</a> of file <a class="el" href="_users_8hpp_source.html">Users.hpp</a>.</p>
 
 </div>
 </div>
@@ -773,7 +886,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_users_8hpp_source.html#l00163">163</a> of file <a class="el" href="_users_8hpp_source.html">Users.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_users_8hpp_source.html#l00178">178</a> of file <a class="el" href="_users_8hpp_source.html">Users.hpp</a>.</p>
 
 </div>
 </div>

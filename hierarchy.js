@@ -5,7 +5,9 @@ var hierarchy =
     [ "ecstasy::integration::user_action::Action", "structecstasy_1_1integration_1_1user__action_1_1_action.html", null ],
     [ "ecstasy::integration::user_action::ActionBinding", "classecstasy_1_1integration_1_1user__action_1_1_action_binding.html", null ],
     [ "ecstasy::integration::user_action::ActionBindings", "classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html", null ],
-    [ "ecstasy::integration::user_action::ActionListener", "structecstasy_1_1integration_1_1user__action_1_1_action_listener.html", null ],
+    [ "ecstasy::integration::user_action::ActionListener", "structecstasy_1_1integration_1_1user__action_1_1_action_listener.html", [
+      [ "ecstasy::integration::user_action::ActionIdListener< Target >", "structecstasy_1_1integration_1_1user__action_1_1_action_id_listener.html", null ]
+    ] ],
     [ "util::meta::add_optional< T >", "structutil_1_1meta_1_1add__optional.html", null ],
     [ "util::meta::add_optional< std::optional< T > >", "structutil_1_1meta_1_1add__optional_3_01std_1_1optional_3_01_t_01_4_01_4.html", null ],
     [ "util::meta::add_optional< T & >", "structutil_1_1meta_1_1add__optional_3_01_t_01_6_01_4.html", null ],
@@ -58,7 +60,8 @@ var hierarchy =
       [ "ecstasy::MapStorage< C >", "classecstasy_1_1_map_storage.html", null ]
     ] ],
     [ "ecstasy::ISystem", "classecstasy_1_1_i_system.html", [
-      [ "ecstasy::integration::sfml::PollEvents", "classecstasy_1_1integration_1_1sfml_1_1_poll_events.html", null ]
+      [ "ecstasy::integration::sfml::PollEvents", "classecstasy_1_1integration_1_1sfml_1_1_poll_events.html", null ],
+      [ "ecstasy::integration::user_action::PollActions< std::integer_sequence< Action::Id, Actions... > >", "classecstasy_1_1integration_1_1user__action_1_1_poll_actions_3_01std_1_1integer__sequence_3_01_a67921aad8fc30a11f205db4b0bf5827d.html", null ]
     ] ],
     [ "ecstasy::query::Query< First, Others >::Iterator", "classecstasy_1_1query_1_1_query_1_1_iterator.html", null ],
     [ "ecstasy::integration::event::KeyCombinationListener", "classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html", null ],
@@ -93,6 +96,7 @@ var hierarchy =
     [ "ecstasy::integration::event::MouseWheelScrollEvent", "structecstasy_1_1integration_1_1event_1_1_mouse_wheel_scroll_event.html", null ],
     [ "ecstasy::Not< C >", "structecstasy_1_1_not.html", null ],
     [ "ecstasy::Or< C1, C2, Cs >", "structecstasy_1_1_or.html", null ],
+    [ "ecstasy::integration::user_action::PollActions< Actions >", "classecstasy_1_1integration_1_1user__action_1_1_poll_actions.html", null ],
     [ "ecstasy::query::Query< First, Others >", "classecstasy_1_1query_1_1_query.html", null ],
     [ "ecstasy::queryable_type< C >", "structecstasy_1_1queryable__type.html", null ],
     [ "ecstasy::queryable_type< M >", "structecstasy_1_1queryable__type_3_01_m_01_4.html", null ],

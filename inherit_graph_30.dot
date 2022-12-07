@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="ecstasy::integration\l::user_action::UserProfile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1integration_1_1user__action_1_1_user_profile.html",tooltip="Represent an application user profile, allowing to configure basic informations like the action bindi..."];
+  Node0 [label="ecstasy::integration\l::user_action::PollActions\l\< Actions \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1integration_1_1user__action_1_1_poll_actions.html",tooltip="Primary template of PollActions to unpack the action parameter pack."];
 }
