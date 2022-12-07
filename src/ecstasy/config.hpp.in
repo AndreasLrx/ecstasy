@@ -1,0 +1,22 @@
+///
+/// @file config.hpp
+/// @author Andréas Leroux (andreas.leroux@epitech.eu)
+/// @brief
+/// @version 1.0.0
+/// @date 2022-12-02
+///
+/// @copyright Copyright (c) ECSTASY 2022
+///
+///
+
+#ifndef ECSTASY_CONFIG_HPP_
+#define ECSTASY_CONFIG_HPP_
+
+// Event integration is available
+#cmakedefine ECSTASY_INTEGRATIONS_EVENT
+// SFML integration is available
+#cmakedefine ECSTASY_INTEGRATIONS_SFML
+// User Action integration is available
+#cmakedefine ECSTASY_INTEGRATIONS_USER_ACTION
+
+#endif

@@ -68,6 +68,31 @@ namespace ecstasy::integration::user_action
         }
 
         ///
+        /// @brief Get the Id of the profile.
+        ///
+        /// @note Starts at 0.
+        ///
+        /// @return Id Profile id.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-02)
+        ///
+        constexpr Id getId() const
+        {
+            return _id;
+        }
+
+        ///
+        /// @brief Change the user ID.
+        ///
+        /// @param[in] id new id.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-05)
+        ///
+        void setId(Id id);
+
+        ///
         /// @brief Dump the user profile informations as a toml table.
         ///
         /// @return toml::table Toml representation of the user profile.

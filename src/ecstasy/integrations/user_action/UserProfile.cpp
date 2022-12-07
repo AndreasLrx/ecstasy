@@ -13,6 +13,11 @@
 
 namespace ecstasy::integration::user_action
 {
+    void UserProfile::setId(Id id)
+    {
+        _id = id;
+    }
+
     toml::table UserProfile::dump() const
     {
         toml::table table;

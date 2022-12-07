@@ -10,6 +10,7 @@
 ///
 
 #include "EventsManager.hpp"
+#include "ecstasy/config.hpp"
 #include "ecstasy/integrations/event/listeners/EventListeners.hpp"
 #include "ecstasy/query/Query.hpp"
 #include "ecstasy/registry/Registry.hpp"
@@ -21,6 +22,10 @@
 #include "inputs/Gamepads.hpp"
 #include "listeners/KeyCombinationListener.hpp"
 #include "listeners/KeySequenceListener.hpp"
+
+#ifdef ECSTASY_INTEGRATIONS_USER_ACTION
+    #include "ecstasy/integrations/user_action/Users.hpp"
+#endif
 
 namespace ecstasy::integration::event
 {
@@ -116,5 +121,10 @@ namespace ecstasy::integration::event
                 break;
             default: break;
         }
+
+#ifdef ECSTASY_INTEGRATIONS_USER_ACTION
+        if (registry.hasResource<user_action::Users>())
+            registry.getResource<user_action::Users>().handleEvent(registry, event);
+#endif
     }
 } // namespace ecstasy::integration::event

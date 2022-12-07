@@ -121,3 +121,16 @@ Action-1 = ['GamepadAxis->', '->TriggerLeft', 'GamepadAxis-TriggerLeft', 'Count-
     got << out;
     GTEST_ASSERT_EQ(got.str(), expected);
 }
+
+TEST(ActionBinding, contains)
+{
+    user_action::ActionBindings bindings;
+    user_action::ActionBinding searched(0, event::Mouse::Button::Left);
+    user_action::ActionBinding notPresent(0, event::Mouse::Button::Right);
+
+    GTEST_ASSERT_FALSE(bindings.contains(searched));
+    /// Not created by copy to test equality constructor
+    bindings.getBindings().push_back(user_action::ActionBinding(0, event::Mouse::Button::Left));
+    GTEST_ASSERT_TRUE(bindings.contains(searched));
+    GTEST_ASSERT_FALSE(bindings.contains(notPresent));
+}

@@ -12,6 +12,7 @@
 /doc/build/
 *.gcno
 *.gcda
+/src/ecstasy/config.hpp
 
 # Coverage data
 /coverage

@@ -37,7 +37,7 @@ namespace ecstasy::integration::user_action
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-11-25)
     ///
-    struct ActionBinding {
+    class ActionBinding {
       public:
         // LCOV_EXCL_START
 
@@ -119,6 +119,30 @@ namespace ecstasy::integration::user_action
         constexpr ActionBinding(Action::Id id, event::Gamepad::Axis input)
             : type(Type::GamepadAxis), actionId(id), gamepadAxis(input)
         {
+        }
+
+        ///
+        /// @brief Equality operator overload.
+        ///
+        /// @param[in] other Other binding.
+        ///
+        /// @return bool Whether the two bindings are equal.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-02)
+        ///
+        constexpr bool operator==(const ActionBinding &other) const
+        {
+            if (type != other.type || actionId != other.actionId)
+                return false;
+
+            switch (type) {
+                case Type::MouseButton: return mouseButton == other.mouseButton;
+                case Type::Key: return key == other.key;
+                case Type::GamepadButton: return gamepadButton == other.gamepadButton;
+                case Type::GamepadAxis: return gamepadAxis == other.gamepadAxis;
+                default: return true;
+            }
         }
 
         ///

@@ -1,0 +1,101 @@
+///
+/// @file Users.cpp
+/// @author Andréas Leroux (andreas.leroux@epitech.eu)
+/// @brief
+/// @version 1.0.0
+/// @date 2022-12-02
+///
+/// @copyright Copyright (c) ECSTASY 2022
+///
+///
+
+#include "Users.hpp"
+#include "ActionListener.hpp"
+
+namespace ecstasy::integration::user_action
+{
+    Users::Users(size_t count) : _users(count)
+    {
+        for (size_t i = 1; i < count; i++)
+            _users[i].setId(i);
+    }
+
+    void Users::updateBindings(Registry &registry)
+    {
+        if (!registry.hasResource<Users>())
+            return;
+        registry.getResource<Users>().updateBindings();
+    }
+
+    void Users::updateBindings()
+    {
+        removeOutdatedBindings(_mouseButtonToAction);
+        removeOutdatedBindings(_keyToAction);
+        removeOutdatedBindings(_gamepadButtonToAction);
+        removeOutdatedBindings(_gamepadAxisToAction);
+
+        for (UserProfile &user : _users) {
+            auto &bindings = user.getActionBindings().getBindings();
+
+            for (ActionBinding binding : bindings) {
+                switch (binding.type) {
+                    case ActionBinding::Type::MouseButton:
+                        addBindingIfMissing(user, binding, binding.mouseButton, _mouseButtonToAction);
+                        break;
+                    case ActionBinding::Type::Key: addBindingIfMissing(user, binding, binding.key, _keyToAction); break;
+                    case ActionBinding::Type::GamepadButton:
+                        addBindingIfMissing(user, binding, binding.gamepadButton, _gamepadButtonToAction);
+                        break;
+                    case ActionBinding::Type::GamepadAxis:
+                        addBindingIfMissing(user, binding, binding.gamepadAxis, _gamepadAxisToAction);
+                        break;
+                    default: break;
+                }
+            }
+        }
+    }
+
+    static void callActionListeners(Registry &registry, Action action)
+    {
+        ecstasy::ModifiersAllocator allocator;
+
+        for (auto [entity, listener] : registry.query<Entities, ActionListener>()) {
+            if (listener.actionId == Action::All || listener.actionId == action.id)
+                listener.listener(registry, entity, action);
+        }
+    }
+
+    void Users::handleEvent(Registry &registry, const event::Event &e) const
+    {
+        switch (e.type) {
+            case event::Event::Type::MouseButtonPressed:
+            case event::Event::Type::MouseButtonReleased:
+                for (auto it = _mouseButtonToAction.find(e.mouseButton.button); it != _mouseButtonToAction.end(); ++it)
+                    callActionListeners(registry,
+                        Action{it->second.actionId, it->second.userId, static_cast<float>(e.mouseButton.pressed)});
+                break;
+
+            case event::Event::Type::KeyPressed:
+            case event::Event::Type::KeyReleased:
+                for (auto it = _keyToAction.find(e.key.key); it != _keyToAction.end(); ++it)
+                    callActionListeners(
+                        registry, Action{it->second.actionId, it->second.userId, static_cast<float>(e.key.pressed)});
+                break;
+
+            case event::Event::Type::GamepadButtonPressed:
+            case event::Event::Type::GamepadButtonReleased:
+                for (auto it = _gamepadButtonToAction.find(e.gamepadButton.button); it != _gamepadButtonToAction.end();
+                     ++it)
+                    callActionListeners(registry,
+                        Action{it->second.actionId, it->second.userId, static_cast<float>(e.gamepadButton.pressed)});
+                break;
+
+            case event::Event::Type::GamepadAxis:
+                for (auto it = _gamepadAxisToAction.find(e.gamepadAxis.axis); it != _gamepadAxisToAction.end(); ++it)
+                    callActionListeners(registry,
+                        Action{it->second.actionId, it->second.userId, static_cast<float>(e.gamepadAxis.value)});
+                break;
+            default: break;
+        }
+    }
+} // namespace ecstasy::integration::user_action
