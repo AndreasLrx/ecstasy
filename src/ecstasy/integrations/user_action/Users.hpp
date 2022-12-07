@@ -98,6 +98,29 @@ namespace ecstasy::integration::user_action
         ///
         void handleEvent(Registry &registry, const event::Event &event) const;
 
+        ///
+        /// @brief Get the User Profile corresponding to the given @p index.
+        ///
+        /// @warning This method does not perfom bounds checking.
+        ///
+        /// @param[in] index User index.
+        ///
+        /// @return UserProfile& A reference to the requested user.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-05)
+        ///
+        constexpr UserProfile &getUserProfile(size_t index = 0)
+        {
+            return _users[index];
+        }
+
+        /// @copydoc getUserProfile
+        constexpr const UserProfile &getUserProfile(size_t index = 0) const
+        {
+            return _users[index];
+        }
+
       private:
         /// @internal
         /// @brief Remove the bindings present in @p map and not in the @p _users bindings.
@@ -122,7 +145,7 @@ namespace ecstasy::integration::user_action
         {
             bool add = true;
 
-            for (auto it = map.find(input); it != map.end();) {
+            for (auto it = map.find(input); it != map.end(); ++it) {
                 if (it->second.userId == user.getId() && it->second.actionId == binding.actionId) {
                     add = false;
                     break;
@@ -138,6 +161,8 @@ namespace ecstasy::integration::user_action
         std::unordered_multimap<event::Gamepad::Axis, UserActionLink> _gamepadAxisToAction;
 
         std::vector<UserProfile> _users;
+
+        friend class UsersTester;
     };
 } // namespace ecstasy::integration::user_action
 

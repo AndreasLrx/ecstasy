@@ -83,6 +83,16 @@ namespace ecstasy::integration::user_action
         }
 
         ///
+        /// @brief Change the user ID.
+        ///
+        /// @param[in] id new id.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-05)
+        ///
+        void setId(Id id);
+
+        ///
         /// @brief Dump the user profile informations as a toml table.
         ///
         /// @return toml::table Toml representation of the user profile.

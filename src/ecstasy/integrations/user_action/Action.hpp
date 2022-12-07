@@ -26,6 +26,9 @@ namespace ecstasy::integration::user_action
         /// @brief Action identifier type.
         using Id = size_t;
 
+        /// @brief Constant id matching any action ID.
+        static constexpr Id All = static_cast<size_t>(-1);
+
         /// @brief Action identifier.
         Id id;
         /// @brief Sender identifier.

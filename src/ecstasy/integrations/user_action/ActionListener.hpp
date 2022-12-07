@@ -29,7 +29,7 @@ namespace ecstasy::integration::user_action
 
         /// @brief Id of the target action.
         ///
-        /// @note -1 will match all actions.
+        /// @note @ref Action::All will match all actions.
         Action::Id actionId;
         /// @brief Listener called on action detection.
         Listener listener;
@@ -43,7 +43,7 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-02)
         ///
-        ActionListener(Listener pListener, Action::Id pActionId = static_cast<size_t>(-1))
+        ActionListener(Listener pListener, Action::Id pActionId = Action::All)
             : actionId(pActionId), listener(pListener)
         {
         }
