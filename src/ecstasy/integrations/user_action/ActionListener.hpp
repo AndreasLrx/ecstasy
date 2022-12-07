@@ -48,6 +48,29 @@ namespace ecstasy::integration::user_action
         {
         }
     };
+
+    ///
+    /// @brief Action listener component templated with the target action id.
+    ///
+    /// @tparam Target Target action id.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2022-12-07)
+    ///
+    template <Action::Id Target = Action::All>
+    struct ActionIdListener : public ActionListener {
+        ///
+        /// @brief Construct a new Action Id Listener.
+        ///
+        /// @param[in] pListener Listener.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-07)
+        ///
+        ActionIdListener(Listener pListener) : ActionListener(pListener, Target)
+        {
+        }
+    };
 } // namespace ecstasy::integration::user_action
 
 #endif /* !ECSTASY_INTEGRATIONS_USER_ACTION_ACTIONLISTENER_HPP_ */

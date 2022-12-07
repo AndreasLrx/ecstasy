@@ -11,6 +11,7 @@
 
 #include "Users.hpp"
 #include "ActionListener.hpp"
+#include "PendingActions.hpp"
 
 namespace ecstasy::integration::user_action
 {
@@ -57,11 +58,12 @@ namespace ecstasy::integration::user_action
 
     void Users::callActionListeners(Registry &registry, Action action)
     {
+        if (registry.hasResource<PendingActions>())
+            registry.getResource<PendingActions>().get().push(action);
         ecstasy::ModifiersAllocator allocator;
 
         for (auto [entity, listener] : registry.query<Entities, ActionListener>()) {
-            if ((listener.actionId == Action::All || listener.actionId == action.id)
-                && (listener.senderId == UserProfile::All || listener.senderId == action.senderId))
+            if (listener.actionId == Action::All || listener.actionId == action.id)
                 listener.listener(registry, entity, action);
         }
     }
