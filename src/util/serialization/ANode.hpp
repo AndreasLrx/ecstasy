@@ -95,6 +95,27 @@ namespace util::serialization
         /// @copydoc INode::tryAsArray()
         std::optional<std::reference_wrapper<IArrayNode>> tryAsArray() override final;
 
+        /// @copydoc INode::asString()
+        std::string_view asString() const override final;
+
+        /// @copydoc INode::asInteger()
+        int asInteger() const override final;
+
+        /// @copydoc INode::asFloat()
+        float asFloat() const override final;
+
+        /// @copydoc INode::asBoolean()
+        bool asBoolean() const override final;
+
+        /// @copydoc INode::asDate()
+        Date asDate() const override final;
+
+        /// @copydoc INode::asTime()
+        Time asTime() const override final;
+
+        /// @copydoc INode::asDateTime()
+        DateTime asDateTime() const override final;
+
       protected:
         Type _type;
     };

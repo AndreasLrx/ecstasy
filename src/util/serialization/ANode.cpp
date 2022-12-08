@@ -94,14 +94,14 @@ namespace util::serialization
     std::optional<std::reference_wrapper<const IObjectNode>> ANode::tryAsObject() const
     {
         if (isObject())
-            return std::optional(std::reference_wrapper(dynamic_cast<const IObjectNode &>(*this)));
+            return dynamic_cast<const IObjectNode &>(*this);
         return std::optional<std::reference_wrapper<const IObjectNode>>();
     }
 
     std::optional<std::reference_wrapper<IObjectNode>> ANode::tryAsObject()
     {
         if (isObject())
-            return std::optional(std::reference_wrapper(dynamic_cast<IObjectNode &>(*this)));
+            return dynamic_cast<IObjectNode &>(*this);
         return std::optional<std::reference_wrapper<IObjectNode>>();
     }
 
@@ -120,15 +120,50 @@ namespace util::serialization
     std::optional<std::reference_wrapper<const IArrayNode>> ANode::tryAsArray() const
     {
         if (isArray())
-            return std::optional(std::reference_wrapper(dynamic_cast<const IArrayNode &>(*this)));
+            return dynamic_cast<const IArrayNode &>(*this);
         return std::optional<std::reference_wrapper<const IArrayNode>>();
     }
 
     std::optional<std::reference_wrapper<IArrayNode>> ANode::tryAsArray()
     {
         if (isArray())
-            return std::optional(std::reference_wrapper(dynamic_cast<IArrayNode &>(*this)));
+            return dynamic_cast<IArrayNode &>(*this);
         return std::optional<std::reference_wrapper<IArrayNode>>();
+    }
+
+    std::string_view ANode::asString() const
+    {
+        return tryAsString().value();
+    }
+
+    int ANode::asInteger() const
+    {
+        return tryAsInteger().value();
+    }
+
+    float ANode::asFloat() const
+    {
+        return tryAsFloat().value();
+    }
+
+    bool ANode::asBoolean() const
+    {
+        return tryAsBoolean().value();
+    }
+
+    INode::Date ANode::asDate() const
+    {
+        return tryAsDate().value();
+    }
+
+    INode::Time ANode::asTime() const
+    {
+        return tryAsTime().value();
+    }
+
+    INode::DateTime ANode::asDateTime() const
+    {
+        return tryAsDateTime().value();
     }
 
 } // namespace util::serialization

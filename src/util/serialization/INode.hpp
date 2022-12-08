@@ -57,7 +57,7 @@ namespace util::serialization
         using Date = std::chrono::year_month_day;
 
         /// @brief @ref Type::Time type.
-        using Time = std::chrono::duration<std::chrono::seconds>;
+        using Time = std::chrono::nanoseconds;
 
         /// @brief @ref Type::DateTime type.
         using DateTime = std::time_t;
