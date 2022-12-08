@@ -19,6 +19,14 @@
 
 namespace util::serialization
 {
+    class IObjectNode;
+
+    ///
+    /// @brief Serialization node. Can be any type of @ref INode::Type.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2022-12-08)
+    ///
     class INode {
       public:
         ///
@@ -184,9 +192,53 @@ namespace util::serialization
         ///  Value getter  ///
         //////////////////////
 
-        /// @todo Create IObjectNode && IArrayNode
-        // virtual const INode &asObject() const = 0;
-        // virtual INode &asObject() = 0;
+        ///
+        /// @brief Get the object node value.
+        ///
+        /// @return const IObjectNode& node value.
+        ///
+        /// @throw std::runtime_error If the node is the node type is not @ref Type::Object.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-08)
+        ///
+        virtual const IObjectNode &asObject() const = 0;
+
+        ///
+        /// @brief Get the object node value.
+        ///
+        /// @return IObjectNode& node value.
+        ///
+        /// @throw std::runtime_error If the node is the node type is not @ref Type::Object.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-08)
+        ///
+        virtual IObjectNode &asObject() = 0;
+
+        ///
+        /// @brief Try to get the node object value.
+        ///
+        /// @return std::optional<const IObjectNode &> Filled with the node string if the type is @ref Type::Object,
+        /// empty otherwise.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-08)
+        ///
+        virtual std::optional<const IObjectNode &> tryAsObject() const = 0;
+
+        ///
+        /// @brief Try to get the node object value.
+        ///
+        /// @return std::optional<IObjectNode &> Filled with the node string if the type is @ref Type::Object,
+        /// empty otherwise.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-08)
+        ///
+        virtual std::optional<IObjectNode &> tryAsObject() = 0;
+
+        /// @todo Create IArrayNode
         // virtual const INode &asArray() const = 0;
         // virtual INode &asArray() = 0;
 
