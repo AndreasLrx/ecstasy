@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['textentered_6491',['TextEntered',['../structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa8ed4d3c0783d6f909907e1592ffe47ac',1,'ecstasy::integration::event::Event']]],
-  ['triggerleft_6492',['TriggerLeft',['../classecstasy_1_1integration_1_1event_1_1_gamepad.html#a3889e689614987816a56b70ee93cabcca482d1c1190728d3c4be1ffcbcce2dd49',1,'ecstasy::integration::event::Gamepad']]],
-  ['triggerright_6493',['TriggerRight',['../classecstasy_1_1integration_1_1event_1_1_gamepad.html#a3889e689614987816a56b70ee93cabcca82dbfad1d5cd42e420ca679ff68bd0a0',1,'ecstasy::integration::event::Gamepad']]]
+  ['key_6599',['Key',['../classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a61ae233154a98f65414a9e4fc94eecfea897356954c2cd3d41b221e3f24f99bba',1,'ecstasy::integration::user_action::ActionBinding']]],
+  ['keypressed_6600',['KeyPressed',['../structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aac17e6984c1e5a887a49831beadee6bca',1,'ecstasy::integration::event::Event']]],
+  ['keyreleased_6601',['KeyReleased',['../structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa4a77f07c8ad223b71ab4ce78a63841ab',1,'ecstasy::integration::event::Event']]]
 ];

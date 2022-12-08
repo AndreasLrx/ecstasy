@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['join_5068',['join',['http://en.cppreference.com/w/cpp/thread/jthread/join.html',1,'std::jthread::join()'],['http://en.cppreference.com/w/cpp/thread/thread/join.html',1,'std::thread::join()']]],
-  ['joinable_5069',['joinable',['http://en.cppreference.com/w/cpp/thread/jthread/joinable.html',1,'std::jthread::joinable()'],['http://en.cppreference.com/w/cpp/thread/thread/joinable.html',1,'std::thread::joinable()']]],
-  ['jthread_5070',['jthread',['http://en.cppreference.com/w/cpp/thread/jthread/jthread.html',1,'std::jthread']]]
+  ['join_5164',['join',['http://en.cppreference.com/w/cpp/thread/jthread/join.html',1,'std::jthread::join()'],['http://en.cppreference.com/w/cpp/thread/thread/join.html',1,'std::thread::join()']]],
+  ['joinable_5165',['joinable',['http://en.cppreference.com/w/cpp/thread/jthread/joinable.html',1,'std::jthread::joinable()'],['http://en.cppreference.com/w/cpp/thread/thread/joinable.html',1,'std::thread::joinable()']]],
+  ['jthread_5166',['jthread',['http://en.cppreference.com/w/cpp/thread/jthread/jthread.html',1,'std::jthread']]]
 ];

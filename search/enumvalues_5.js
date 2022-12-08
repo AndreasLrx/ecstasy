@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['key_6476',['Key',['../classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a61ae233154a98f65414a9e4fc94eecfea897356954c2cd3d41b221e3f24f99bba',1,'ecstasy::integration::user_action::ActionBinding']]],
-  ['keypressed_6477',['KeyPressed',['../structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aac17e6984c1e5a887a49831beadee6bca',1,'ecstasy::integration::event::Event']]],
-  ['keyreleased_6478',['KeyReleased',['../structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa4a77f07c8ad223b71ab4ce78a63841ab',1,'ecstasy::integration::event::Event']]]
+  ['float_6590',['Float',['../classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a22ae0e2b89e5e3d477f988cc36d3272b',1,'util::serialization::INode']]]
 ];

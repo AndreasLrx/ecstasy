@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['dpadx_6464',['DPadX',['../classecstasy_1_1integration_1_1event_1_1_gamepad.html#a3889e689614987816a56b70ee93cabcca4fb1d49e9519e92185e00e0ed3d1e86c',1,'ecstasy::integration::event::Gamepad']]],
-  ['dpady_6465',['DPadY',['../classecstasy_1_1integration_1_1event_1_1_gamepad.html#a3889e689614987816a56b70ee93cabccad3021a6b02d47cff51b581fdaf46c15d',1,'ecstasy::integration::event::Gamepad']]]
+  ['boolean_6581',['Boolean',['../classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a27226c864bac7454a8504f8edb15d95b',1,'util::serialization::INode']]]
 ];

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['horizontal_6475',['Horizontal',['../classecstasy_1_1integration_1_1event_1_1_mouse.html#a3c1e7b5b3d6fa0fc7a4abd900363a2c6ac1b5fa03ecdb95d4a45dd1c40b02527f',1,'ecstasy::integration::event::Mouse']]]
+  ['extra1_6587',['Extra1',['../classecstasy_1_1integration_1_1event_1_1_mouse.html#ae02624c1f85027219f4f594abe1c0d8ea113f84d105af2b8016b3896117c9deab',1,'ecstasy::integration::event::Mouse']]],
+  ['extra2_6588',['Extra2',['../classecstasy_1_1integration_1_1event_1_1_mouse.html#ae02624c1f85027219f4f594abe1c0d8ea83dca46dd08ad782e968d586375715e1',1,'ecstasy::integration::event::Mouse']]],
+  ['extra3_6589',['Extra3',['../classecstasy_1_1integration_1_1event_1_1_mouse.html#ae02624c1f85027219f4f594abe1c0d8eab7f54183dc84b2982ebe161b9c59f2d9',1,'ecstasy::integration::event::Mouse']]]
 ];

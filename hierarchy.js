@@ -13,6 +13,7 @@ var hierarchy =
     [ "util::meta::add_optional< T & >", "structutil_1_1meta_1_1add__optional_3_01_t_01_6_01_4.html", null ],
     [ "util::Allocator< Base >", "classutil_1_1_allocator.html", null ],
     [ "ecstasy::And< C1, C2, Cs >", "structecstasy_1_1_and.html", null ],
+    [ "util::serialization::IArrayNode::ArrayIterator< isConst >", "classutil_1_1serialization_1_1_i_array_node_1_1_array_iterator.html", null ],
     [ "util::BitSet", "classutil_1_1_bit_set.html", null ],
     [ "ecstasy::Entities::Builder", "classecstasy_1_1_entities_1_1_builder.html", null ],
     [ "ecstasy::component_type< T >", "structecstasy_1_1component__type.html", null ],
@@ -50,6 +51,10 @@ var hierarchy =
     [ "GetComponentStorageType< C >", "struct_get_component_storage_type.html", null ],
     [ "ecstasy::Registry::GetModifierProxy< Operands >", "structecstasy_1_1_registry_1_1_get_modifier_proxy.html", null ],
     [ "ecstasy::Registry::GetModifierProxy< std::tuple< Qs... > >", "structecstasy_1_1_registry_1_1_get_modifier_proxy_3_01std_1_1tuple_3_01_qs_8_8_8_01_4_01_4.html", null ],
+    [ "util::serialization::INode", "classutil_1_1serialization_1_1_i_node.html", [
+      [ "util::serialization::IArrayNode", "classutil_1_1serialization_1_1_i_array_node.html", null ],
+      [ "util::serialization::IObjectNode", "classutil_1_1serialization_1_1_i_object_node.html", null ]
+    ] ],
     [ "ecstasy::Instances< Base >", "classecstasy_1_1_instances.html", null ],
     [ "ecstasy::Instances< ecstasy::IStorage >", "classecstasy_1_1_instances.html", null ],
     [ "ecstasy::Instances< ecstasy::ISystem >", "classecstasy_1_1_instances.html", null ],
@@ -95,6 +100,7 @@ var hierarchy =
     [ "ecstasy::integration::event::MouseMoveEvent", "structecstasy_1_1integration_1_1event_1_1_mouse_move_event.html", null ],
     [ "ecstasy::integration::event::MouseWheelScrollEvent", "structecstasy_1_1integration_1_1event_1_1_mouse_wheel_scroll_event.html", null ],
     [ "ecstasy::Not< C >", "structecstasy_1_1_not.html", null ],
+    [ "util::serialization::IObjectNode::ObjectIterator< isConst >", "classutil_1_1serialization_1_1_i_object_node_1_1_object_iterator.html", null ],
     [ "ecstasy::Or< C1, C2, Cs >", "structecstasy_1_1_or.html", null ],
     [ "ecstasy::integration::user_action::PollActions< Actions >", "classecstasy_1_1integration_1_1user__action_1_1_poll_actions.html", null ],
     [ "ecstasy::query::Query< First, Others >", "classecstasy_1_1query_1_1_query.html", null ],

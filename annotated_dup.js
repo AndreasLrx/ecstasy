@@ -106,6 +106,9 @@ var annotated_dup =
         [ "type_set_eq< std::tuple< Ts1... >, std::tuple< Ts2... > >", "structutil_1_1meta_1_1type__set__eq_3_01std_1_1tuple_3_01_ts1_8_8_8_01_4_00_01std_1_1tuple_3_01_ts2_8_8_8_01_4_01_4.html", null ]
       ] ],
       [ "serialization", "namespaceutil_1_1serialization.html", [
+        [ "IArrayNode", "classutil_1_1serialization_1_1_i_array_node.html", "classutil_1_1serialization_1_1_i_array_node" ],
+        [ "INode", "classutil_1_1serialization_1_1_i_node.html", "classutil_1_1serialization_1_1_i_node" ],
+        [ "IObjectNode", "classutil_1_1serialization_1_1_i_object_node.html", "classutil_1_1serialization_1_1_i_object_node" ],
         [ "Serializer", "classutil_1_1serialization_1_1_serializer.html", "classutil_1_1serialization_1_1_serializer" ]
       ] ],
       [ "Allocator", "classutil_1_1_allocator.html", "classutil_1_1_allocator" ],
