@@ -18,7 +18,7 @@ if (${ECSTASY_INTEGRATIONS_SFML})
     find_package(SFML 2.5.1 COMPONENTS graphics window system REQUIRED)
 endif()
 
-if (${ECSTASY_INTEGRATIONS_USER_ACTION})
+if (${ECSTASY_SERIALIZER_TOML})
     find_package(Toml++)
     set(TomlPlusPlus_IncDir ${tomlplusplus_SOURCE_DIR}/include)
 endif()

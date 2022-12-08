@@ -1,5 +1,5 @@
 ///
-/// @file ISerializer.hpp
+/// @file INode.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
 /// @brief
 /// @version 1.0.0
@@ -9,8 +9,8 @@
 ///
 ///
 
-#ifndef UTIL_SERIALIZATION_ISERIALIZER_HPP_
-#define UTIL_SERIALIZATION_ISERIALIZER_HPP_
+#ifndef UTIL_SERIALIZATION_INODE_HPP_
+#define UTIL_SERIALIZATION_INODE_HPP_
 
 #include <chrono>
 #include <optional>
@@ -226,7 +226,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<const IObjectNode &> tryAsObject() const = 0;
+        virtual std::optional<std::reference_wrapper<const IObjectNode>> tryAsObject() const = 0;
 
         ///
         /// @brief Try to get the node object value.
@@ -237,7 +237,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<IObjectNode &> tryAsObject() = 0;
+        virtual std::optional<std::reference_wrapper<IObjectNode>> tryAsObject() = 0;
 
         ///
         /// @brief Get the array node value.
@@ -272,7 +272,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<const IArrayNode &> tryAsArray() const = 0;
+        virtual std::optional<std::reference_wrapper<const IArrayNode>> tryAsArray() const = 0;
 
         ///
         /// @brief Try to get the node array value.
@@ -283,7 +283,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<IArrayNode &> tryAsArray() = 0;
+        virtual std::optional<std::reference_wrapper<IArrayNode>> tryAsArray() = 0;
 
         ///
         /// @brief Get the string node value.
@@ -448,4 +448,4 @@ namespace util::serialization
     };
 } // namespace util::serialization
 
-#endif /* !UTIL_SERIALIZATION_ISERIALIZER_HPP_ */
+#endif /* !UTIL_SERIALIZATION_INODE_HPP_ */

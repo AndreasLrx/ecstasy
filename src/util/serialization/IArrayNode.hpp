@@ -22,7 +22,7 @@ namespace util::serialization
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-12-08)
     ///
-    class IArrayNode : public INode {
+    class IArrayNode {
       protected:
         ///
         /// @brief Abstract Array Iterator.
