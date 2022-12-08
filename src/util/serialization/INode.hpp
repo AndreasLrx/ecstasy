@@ -20,6 +20,7 @@
 namespace util::serialization
 {
     class IObjectNode;
+    class IArrayNode;
 
     ///
     /// @brief Serialization node. Can be any type of @ref INode::Type.
@@ -238,9 +239,51 @@ namespace util::serialization
         ///
         virtual std::optional<IObjectNode &> tryAsObject() = 0;
 
-        /// @todo Create IArrayNode
-        // virtual const INode &asArray() const = 0;
-        // virtual INode &asArray() = 0;
+        ///
+        /// @brief Get the array node value.
+        ///
+        /// @return const IArrayNode& node value.
+        ///
+        /// @throw std::runtime_error If the node is the node type is not @ref Type::Array.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-08)
+        ///
+        virtual const IArrayNode &asArray() const = 0;
+
+        ///
+        /// @brief Get the array node value.
+        ///
+        /// @return IArrayNode& node value.
+        ///
+        /// @throw std::runtime_error If the node is the node type is not @ref Type::Array.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-08)
+        ///
+        virtual IArrayNode &asArray() = 0;
+
+        ///
+        /// @brief Try to get the node array value.
+        ///
+        /// @return std::optional<const IArrayNode &> Filled with the node string if the type is @ref Type::Array,
+        /// empty otherwise.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-08)
+        ///
+        virtual std::optional<const IArrayNode &> tryAsArray() const = 0;
+
+        ///
+        /// @brief Try to get the node array value.
+        ///
+        /// @return std::optional<IArrayNode &> Filled with the node string if the type is @ref Type::Array,
+        /// empty otherwise.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-08)
+        ///
+        virtual std::optional<IArrayNode &> tryAsArray() = 0;
 
         ///
         /// @brief Get the string node value.
