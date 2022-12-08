@@ -23,9 +23,160 @@ namespace util::serialization
     /// @since 1.0.0 (2022-12-08)
     ///
     class IArrayNode : public INode {
+      protected:
+        ///
+        /// @brief Abstract Array Iterator.
+        ///
+        /// @tparam isConst Whether the iterator is a const iterator or not.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-08)
+        ///
+        template <bool isConst>
+        class ArrayIterator {
+          public:
+            using value_type = std::conditional_t<isConst, const INode &, INode &>;
+            using reference = value_type &;
+            using pointer = value_type *;
+            using difference_type = std::ptrdiff_t;
+            using iterator_category = std::random_access_iterator_tag;
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+            // All iterators must be constructible, copy-constructible, copy-assignable, destructible and swappable.///
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            ///
+            /// @brief Construct a new uninitialized ArrayIterator.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-12-08)
+            ///
+            explicit ArrayIterator()
+            {
+            }
+
+            ///
+            /// @brief Default copy operator.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-12-08)
+            ///
+            ArrayIterator(ArrayIterator const &) = default;
+
+            ///
+            /// @brief Default assignment operator.
+            ///
+            /// @return ArrayIterator& @b this.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-12-08)
+            ///
+            ArrayIterator &operator=(ArrayIterator const &) = default;
+
+            ///
+            /// @brief Default move constructor.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-12-08)
+            ///
+            ArrayIterator(ArrayIterator &&) = default;
+
+            ///
+            /// @brief Default move assignment operator.
+            ///
+            /// @return ArrayIterator& @b this.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-12-08)
+            ///
+            ArrayIterator &operator=(ArrayIterator &&) = default;
+
+            ///
+            /// @brief Compare two iterators from the same @ref IArrayNode.
+            ///
+            /// @warning It is undefined behavior to compare two iterators that do not belong to the same array.
+            ///
+            /// @param[in] other iterator to compare.
+            ///
+            /// @return bool Whether the two iterators are equals.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-12-08)
+            ///
+            virtual bool operator==(ArrayIterator const &other) const = 0;
+
+            ///
+            /// @brief Compare two iterators from the same @ref IArrayNode.
+            ///
+            /// @warning It is undefined behavior to compare two iterators that do not belong to the same array.
+            ///
+            /// @param[in] other iterator to compare.
+            ///
+            /// @return bool Whether the two iterators are different.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-12-08)
+            ///
+            virtual bool operator!=(ArrayIterator const &other) const = 0;
+
+            ///
+            /// @brief Fetch the node at the current position.
+            ///
+            /// @return @ref value_type Node.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-12-08)
+            ///
+            virtual value_type operator*() const = 0;
+
+            ///
+            /// @brief Increments the iterator in place.
+            ///
+            /// @warning It is undefined behavior to increment the iterator past the end sentinel ( @ref
+            /// IArrayNode::end() ).
+            ///
+            /// @return ArrayIterator& @b this.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-12-08)
+            ///
+            virtual ArrayIterator &operator++() = 0;
+
+            ///
+            /// @brief Copies the iterator and increments the copy, please use pre-incrementation instead.
+            ///
+            /// @warning It is undefined behavior to increment the iterator past the end sentinel ( @ref
+            /// IArrayNode::end() ).
+            /// @warning This creates a copy of the iterator!
+            ///
+            /// @return ArrayIterator The incremented copy.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-12-08)
+            ///
+            virtual ArrayIterator operator++(int) = 0;
+
+            ///
+            /// @brief Fetch the node at the current position.
+            ///
+            /// @return @ref value_type Node.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-12-08)
+            ///
+            value_type operator->() const
+            {
+                return *this;
+            }
+        };
+
       public:
         /// @brief Array index type.
         using Index = size_t;
+        /// @brief Array iterator type.
+        using iterator = ArrayIterator<false>;
+        /// @brief Array const iterator type.
+        using const_iterator = ArrayIterator<true>;
 
         /// @brief Default destructor
         virtual ~IArrayNode() = default;
@@ -174,7 +325,49 @@ namespace util::serialization
         ///
         virtual size_t size() const = 0;
 
-        /// @todo Iterators
+        ///
+        /// @brief Get the start iterator of the internal nodes.
+        ///
+        /// @return const_iterator Iterator to the first node.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-08)
+        ///
+        virtual const_iterator cbegin() const = 0;
+
+        ///
+        /// @brief Get the start iterator of the internal nodes.
+        ///
+        /// @return iterator Iterator to the first node.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-08)
+        ///
+        virtual iterator begin() = 0;
+
+        ///
+        /// @brief Get the end iterator of the internal nodes.
+        ///
+        /// @warning This iterator is @b never valid.
+        ///
+        /// @return const_iterator Iterator to the last node + 1.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-08)
+        ///
+        virtual const_iterator cend() const = 0;
+
+        ///
+        /// @brief Get the end iterator of the internal nodes.
+        ///
+        /// @warning This iterator is @b never valid.
+        ///
+        /// @return iterator Iterator to the last node + 1.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-08)
+        ///
+        virtual iterator end() = 0;
     };
 } // namespace util::serialization
 

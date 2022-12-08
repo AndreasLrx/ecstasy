@@ -205,8 +205,7 @@ namespace ecstasy::query
             {
                 Iterator result = *this;
 
-                ++result->_pos;
-                return result;
+                return ++result;
             }
 
           private:
