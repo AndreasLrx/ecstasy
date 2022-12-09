@@ -12,6 +12,7 @@
 #ifndef UTIL_SERIALIZATION_IARRAYNODE_HPP_
 #define UTIL_SERIALIZATION_IARRAYNODE_HPP_
 
+#include <memory>
 #include "INode.hpp"
 
 namespace util::serialization
@@ -35,7 +36,7 @@ namespace util::serialization
         template <bool isConst>
         class ArrayIterator {
           public:
-            using value_type = std::conditional_t<isConst, const INode &, INode &>;
+            using value_type = std::conditional_t<isConst, std::shared_ptr<const INode>, std::shared_ptr<INode>>;
             using reference = value_type &;
             using pointer = value_type *;
             using difference_type = std::ptrdiff_t;
@@ -103,7 +104,11 @@ namespace util::serialization
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-12-08)
             ///
-            virtual bool operator==(ArrayIterator const &other) const = 0;
+            virtual bool operator==(ArrayIterator const &other) const
+            {
+                (void)other;
+                return false;
+            }
 
             ///
             /// @brief Compare two iterators from the same @ref IArrayNode.
@@ -117,7 +122,11 @@ namespace util::serialization
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-12-08)
             ///
-            virtual bool operator!=(ArrayIterator const &other) const = 0;
+            virtual bool operator!=(ArrayIterator const &other) const
+            {
+                (void)other;
+                return true;
+            }
 
             ///
             /// @brief Fetch the node at the current position.
@@ -127,7 +136,10 @@ namespace util::serialization
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-12-08)
             ///
-            virtual value_type operator*() const = 0;
+            virtual value_type operator*() const
+            {
+                return nullptr;
+            }
 
             ///
             /// @brief Increments the iterator in place.
@@ -140,7 +152,10 @@ namespace util::serialization
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-12-08)
             ///
-            virtual ArrayIterator &operator++() = 0;
+            virtual ArrayIterator &operator++()
+            {
+                return *this;
+            }
 
             ///
             /// @brief Copies the iterator and increments the copy, please use pre-incrementation instead.
@@ -154,7 +169,10 @@ namespace util::serialization
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-12-08)
             ///
-            virtual ArrayIterator operator++(int) = 0;
+            // virtual ArrayIterator operator++(int)
+            // {
+            //     return *this;
+            // }
 
             ///
             /// @brief Fetch the node at the current position.
@@ -193,7 +211,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual const INode &get(Index index) const = 0;
+        virtual std::shared_ptr<const INode> get(Index index) const = 0;
 
         ///
         /// @brief Get the node at @p index if existing.
@@ -207,33 +225,33 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual INode &get(Index index) = 0;
+        virtual std::shared_ptr<INode> get(Index index) = 0;
 
         ///
         /// @brief Get the node at @p index.
         ///
         /// @param[in] index The node's index.
         ///
-        /// @return std::optional<const INode&> A const reference to the requested node if it exists, an empty @ref
+        /// @return std::shared_ptr<const INode> A const reference to the requested node if it exists, an empty @ref
         /// std::optional otherwise.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<const INode &> tryGet(Index index) const = 0;
+        virtual std::shared_ptr<const INode> tryGet(Index index) const = 0;
 
         ///
         /// @brief Get the node at @p index.
         ///
         /// @param[in] index The node's index.
         ///
-        /// @return std::optional<INode&> A reference to the requested node if it exists, an empty @ref
+        /// @return std::shared_ptr<INode> A reference to the requested node if it exists, an empty @ref
         /// std::optional otherwise.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<INode &> tryGet(Index index) = 0;
+        virtual std::shared_ptr<INode> tryGet(Index index) = 0;
 
         ///
         /// @brief Push a new node at the end of the array.
@@ -243,7 +261,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual void pushBack(INode &node) = 0;
+        virtual void pushBack(const INode &node) = 0;
 
         ///
         /// @brief Insert a node at the given index.
@@ -258,7 +276,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual void insert(Index index, INode &node) = 0;
+        virtual void insert(Index index, const INode &node) = 0;
 
         ///
         /// @brief Replace a node at the given index.
@@ -273,7 +291,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual void replace(Index index, INode &node) = 0;
+        virtual void replace(Index index, const INode &node) = 0;
 
         ///
         /// @brief Delete the last array node.
