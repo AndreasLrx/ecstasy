@@ -5,6 +5,7 @@ set(SRC
     ${SRC}
     ${SRCROOT}/TomlArrayNode.cpp
     ${INCROOT}/TomlArrayNode.hpp
-    ${SRCROOT}/TomlNode.cpp
+    ${SRCROOT}/TomlConversion.cpp
+    ${INCROOT}/TomlConversion.hpp
     ${INCROOT}/TomlNode.hpp
     PARENT_SCOPE)

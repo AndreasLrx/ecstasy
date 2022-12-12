@@ -10,6 +10,7 @@
 ///
 
 #include "TomlArrayNode.hpp"
+#include "TomlConversion.hpp"
 
 namespace util::serialization
 {
@@ -17,30 +18,36 @@ namespace util::serialization
     {
     }
 
-    std::shared_ptr<INode> TomlArrayNode::get(Index index)
+    NodeView TomlArrayNode::get(Index index)
     {
         if (index >= size())
             throw std::out_of_range("Index out of bounds.");
 
-        return std::make_shared<TomlNode>(*_node.as_array()->get(index));
+        return std::make_shared<TomlNode>(_node.get(index));
     }
 
-    std::shared_ptr<const INode> TomlArrayNode::get(Index index) const
-    {
-        return std::const_pointer_cast<const INode>((const_cast<TomlArrayNode &>(*this)).get(index));
-    }
-
-    std::shared_ptr<INode> TomlArrayNode::tryGet(Index index)
+    NodeCView TomlArrayNode::get(Index index) const
     {
         if (index >= size())
-            return nullptr;
+            throw std::out_of_range("Index out of bounds.");
 
-        return std::make_shared<TomlNode>(*_node.as_array()->get(index));
+        return std::make_shared<const TomlNode>(_node.get(index));
     }
 
-    std::shared_ptr<const INode> TomlArrayNode::tryGet(Index index) const
+    NodeView TomlArrayNode::tryGet(Index index)
     {
-        return std::const_pointer_cast<const INode>((const_cast<TomlArrayNode &>(*this)).tryGet(index));
+        if (index >= size())
+            return NodeView();
+
+        return std::make_shared<TomlNode>(getTomlNode().get(index));
+    }
+
+    NodeCView TomlArrayNode::tryGet(Index index) const
+    {
+        if (index >= size())
+            return NodeCView();
+
+        return std::make_shared<const TomlNode>(getTomlNode().get(index));
     }
 
     void TomlArrayNode::pushBack(const INode &node)
@@ -54,22 +61,22 @@ namespace util::serialization
             throw std::out_of_range("Index out of bounds.");
 
         const TomlNode *tomlNode = dynamic_cast<const TomlNode *>(&node);
-        auto it = asTomlArray().cbegin() + index;
+        auto it = _node.cbegin() + index;
         if (tomlNode)
-            asTomlArray().insert(it, tomlNode->getTomlNode());
+            _node.insert(it, tomlNode->getTomlNode());
         else {
             switch (node.getType()) {
                 /// @todo
                 case INode::Type::Object: break;
                 /// @todo
                 case INode::Type::Array: break;
-                case INode::Type::String: asTomlArray().insert(it, node.asString()); break;
-                case INode::Type::Integer: asTomlArray().insert(it, node.asInteger()); break;
-                case INode::Type::Float: asTomlArray().insert(it, node.asFloat()); break;
-                case INode::Type::Boolean: asTomlArray().insert(it, node.asBoolean()); break;
-                case INode::Type::Date: asTomlArray().insert(it, toToml(node.asDate())); break;
-                case INode::Type::Time: asTomlArray().insert(it, toToml(node.asTime())); break;
-                case INode::Type::DateTime: asTomlArray().insert(it, toToml(node.asDateTime())); break;
+                case INode::Type::String: _node.insert(it, node.asString()); break;
+                case INode::Type::Integer: _node.insert(it, node.asInteger()); break;
+                case INode::Type::Float: _node.insert(it, node.asFloat()); break;
+                case INode::Type::Boolean: _node.insert(it, node.asBoolean()); break;
+                case INode::Type::Date: _node.insert(it, TomlConversion::toToml(node.asDate())); break;
+                case INode::Type::Time: _node.insert(it, TomlConversion::toToml(node.asTime())); break;
+                case INode::Type::DateTime: _node.insert(it, TomlConversion::toToml(node.asDateTime())); break;
                 default: throw std::runtime_error("Type not supported in Toml format."); break;
             }
         }
@@ -81,22 +88,22 @@ namespace util::serialization
             throw std::out_of_range("Index out of bounds.");
 
         const TomlNode *tomlNode = dynamic_cast<const TomlNode *>(&node);
-        auto it = asTomlArray().cbegin() + index;
+        auto it = _node.cbegin() + index;
         if (tomlNode)
-            asTomlArray().replace(it, tomlNode->getTomlNode());
+            _node.replace(it, tomlNode->getTomlNode());
         else {
             switch (node.getType()) {
                 /// @todo
                 case INode::Type::Object: break;
                 /// @todo
                 case INode::Type::Array: break;
-                case INode::Type::String: asTomlArray().replace(it, node.asString()); break;
-                case INode::Type::Integer: asTomlArray().replace(it, node.asInteger()); break;
-                case INode::Type::Float: asTomlArray().replace(it, node.asFloat()); break;
-                case INode::Type::Boolean: asTomlArray().replace(it, node.asBoolean()); break;
-                case INode::Type::Date: asTomlArray().replace(it, toToml(node.asDate())); break;
-                case INode::Type::Time: asTomlArray().replace(it, toToml(node.asTime())); break;
-                case INode::Type::DateTime: asTomlArray().replace(it, toToml(node.asDateTime())); break;
+                case INode::Type::String: _node.replace(it, node.asString()); break;
+                case INode::Type::Integer: _node.replace(it, node.asInteger()); break;
+                case INode::Type::Float: _node.replace(it, node.asFloat()); break;
+                case INode::Type::Boolean: _node.replace(it, node.asBoolean()); break;
+                case INode::Type::Date: _node.replace(it, TomlConversion::toToml(node.asDate())); break;
+                case INode::Type::Time: _node.replace(it, TomlConversion::toToml(node.asTime())); break;
+                case INode::Type::DateTime: _node.replace(it, TomlConversion::toToml(node.asDateTime())); break;
                 default: throw std::runtime_error("Type not supported in Toml format."); break;
             }
         }
@@ -104,39 +111,29 @@ namespace util::serialization
 
     void TomlArrayNode::popBack()
     {
-        asTomlArray().pop_back();
+        _node.pop_back();
     }
 
     void TomlArrayNode::erase(Index index)
     {
         if (index >= size())
             throw std::out_of_range("Index out of bounds.");
-        asTomlArray().erase(asTomlArray().cbegin() + index);
+        _node.erase(_node.cbegin() + index);
     }
 
     void TomlArrayNode::clear()
     {
-        asTomlArray().clear();
+        _node.clear();
     }
 
     bool TomlArrayNode::empty() const
     {
-        return asTomlArray().empty();
+        return _node.empty();
     }
 
     size_t TomlArrayNode::size() const
     {
-        return asTomlArray().size();
-    }
-
-    toml::array &TomlArrayNode::asTomlArray()
-    {
-        return *_node.as_array();
-    }
-
-    const toml::array &TomlArrayNode::asTomlArray() const
-    {
-        return *_node.as_array();
+        return _node.size();
     }
 
     TomlArrayNode::const_iterator TomlArrayNode::cbegin() const

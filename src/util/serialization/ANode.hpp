@@ -24,19 +24,8 @@ namespace util::serialization
     ///
     class ANode : public INode {
       public:
-        ///
-        /// @brief Construct a new Abstract Node with a specified type.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-12-08)
-        ///
-        ANode(Type type = Type::Unknown);
-
         /// @brief Default destructor.
         virtual ~ANode() = default;
-
-        /// @copydoc INode::getType()
-        Type getType() const override final;
 
         /// @copydoc INode::isType()
         bool isType(Type type) const override final;
@@ -115,9 +104,6 @@ namespace util::serialization
 
         /// @copydoc INode::asDateTime()
         DateTime asDateTime() const override final;
-
-      protected:
-        Type _type;
     };
 } // namespace util::serialization
 

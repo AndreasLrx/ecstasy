@@ -15,18 +15,10 @@
 
 namespace util::serialization
 {
-    ANode::ANode(Type type) : _type(type)
-    {
-    }
-
-    ANode::Type ANode::getType() const
-    {
-        return _type;
-    }
 
     bool ANode::isType(Type type) const
     {
-        return _type == type;
+        return getType() == type;
     }
 
     bool ANode::isNull() const

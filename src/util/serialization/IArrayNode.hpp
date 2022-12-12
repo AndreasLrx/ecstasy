@@ -36,7 +36,7 @@ namespace util::serialization
         template <bool isConst>
         class ArrayIterator {
           public:
-            using value_type = std::conditional_t<isConst, std::shared_ptr<const INode>, std::shared_ptr<INode>>;
+            using value_type = std::conditional_t<isConst, NodeCView, NodeView>;
             using reference = value_type &;
             using pointer = value_type *;
             using difference_type = std::ptrdiff_t;
@@ -211,7 +211,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::shared_ptr<const INode> get(Index index) const = 0;
+        virtual NodeCView get(Index index) const = 0;
 
         ///
         /// @brief Get the node at @p index if existing.
@@ -225,7 +225,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::shared_ptr<INode> get(Index index) = 0;
+        virtual NodeView get(Index index) = 0;
 
         ///
         /// @brief Get the node at @p index.
@@ -238,7 +238,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::shared_ptr<const INode> tryGet(Index index) const = 0;
+        virtual NodeCView tryGet(Index index) const = 0;
 
         ///
         /// @brief Get the node at @p index.
@@ -251,7 +251,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::shared_ptr<INode> tryGet(Index index) = 0;
+        virtual NodeView tryGet(Index index) = 0;
 
         ///
         /// @brief Push a new node at the end of the array.

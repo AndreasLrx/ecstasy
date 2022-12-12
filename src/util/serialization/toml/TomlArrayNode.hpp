@@ -23,7 +23,7 @@ namespace util::serialization
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-12-08)
     ///
-    class TomlArrayNode : public TomlNode, IArrayNode {
+    class TomlArrayNode : public TomlNode<toml::array>, IArrayNode {
       protected:
         ///
         /// @brief Abstract Array Iterator.
@@ -58,14 +58,14 @@ namespace util::serialization
             }
 
             /// @copydoc IArrayNode::ArrayIterator::operator*()
-            IArrayNode::ArrayIterator<isConst>::value_type operator*() const override final
-            {
-                if constexpr (isConst)
-                    return std::const_pointer_cast<const TomlNode>(
-                        std::make_shared<TomlNode>(*(const_cast<TomlArrayNode &>(_array)).asTomlArray().get(_pos)));
-                else
-                    return std::make_shared<TomlNode>(*_array.asTomlArray().get(_pos));
-            }
+            // IArrayNode::ArrayIterator<isConst>::value_type operator*() const override final
+            // {
+            //     if constexpr (isConst)
+            //         return std::const_pointer_cast<const TomlNode>(
+            //             std::make_shared<TomlNode>(*(const_cast<TomlArrayNode &>(_array))._node.get(_pos)));
+            //     else
+            //         return std::make_shared<TomlNode>(*_array._node.get(_pos));
+            // }
 
             /// @copydoc IArrayNode::ArrayIterator::&operator++()
             TomlArrayIterator &operator++() override final
@@ -91,16 +91,16 @@ namespace util::serialization
         TomlArrayNode(toml::array &array);
 
         /// @copydoc IArrayNode::&get()
-        std::shared_ptr<const INode> get(Index index) const override final;
+        NodeCView get(Index index) const override final;
 
         /// @copydoc IArrayNode::&get()
-        std::shared_ptr<INode> get(Index index) override final;
+        NodeView get(Index index) override final;
 
         /// @copydoc IArrayNode::tryGet()
-        std::shared_ptr<const INode> tryGet(Index index) const override final;
+        NodeCView tryGet(Index index) const override final;
 
         /// @copydoc IArrayNode::tryGet()
-        std::shared_ptr<INode> tryGet(Index index) override final;
+        NodeView tryGet(Index index) override final;
 
         /// @copydoc IArrayNode::pushBack()
         void pushBack(const INode &node) override final;
@@ -137,10 +137,6 @@ namespace util::serialization
 
         /// @copydoc IArrayNode::end()
         iterator end() override final;
-
-      private:
-        toml::array &asTomlArray();
-        const toml::array &asTomlArray() const;
     };
 } // namespace util::serialization
 

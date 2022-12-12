@@ -13,6 +13,7 @@
 #define UTIL_SERIALIZATION_INODE_HPP_
 
 #include <chrono>
+#include <memory>
 #include <optional>
 #include <string>
 #include <string_view>
@@ -446,6 +447,12 @@ namespace util::serialization
         ///
         virtual std::optional<DateTime> tryAsDateTime() const = 0;
     };
+
+    using NodePtr = std::shared_ptr<INode>;
+    using NodeCPtr = std::shared_ptr<const INode>;
+
+    using NodeView = std::weak_ptr<INode>;
+    using NodeCView = std::weak_ptr<const INode>;
 } // namespace util::serialization
 
 #endif /* !UTIL_SERIALIZATION_INODE_HPP_ */
