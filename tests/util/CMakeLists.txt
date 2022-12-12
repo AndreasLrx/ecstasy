@@ -5,6 +5,7 @@ set(SRC
 )
 
 add_subdirectory(meta)
+add_subdirectory(serialization)
 
 add_ecstasy_test(
     NAME ecstasy_test_util
