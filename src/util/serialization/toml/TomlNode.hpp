@@ -28,26 +28,64 @@ namespace util::serialization
     requires std::derived_from<N, toml::node> && std::copy_constructible<N>
     class TomlNode : public ANode {
       public:
+        ///
+        /// @brief Default constructor.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-12)
+        ///
+        TomlNode() = default;
+
+        ///
+        /// @brief Construct a new Toml Node from a @ref toml::node derived class object.
+        ///
+        /// @param[in] node Inner node.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-12)
+        ///
         TomlNode(const N &node) : _node(node)
         {
-            switch (_node.type()) {
-                case toml::node_type::table: _type = INode::Type::Object; break;
-                case toml::node_type::array: _type = INode::Type::Array; break;
-                case toml::node_type::string: _type = INode::Type::String; break;
-                case toml::node_type::integer: _type = INode::Type::Integer; break;
-                case toml::node_type::floating_point: _type = INode::Type::Float; break;
-                case toml::node_type::boolean: _type = INode::Type::Boolean; break;
-                case toml::node_type::date: _type = INode::Type::Date; break;
-                case toml::node_type::time: _type = INode::Type::Time; break;
-                case toml::node_type::date_time: _type = INode::Type::DateTime; break;
-                default: _type = INode::Type::Unknown; break;
-            }
+        }
+
+        ///
+        /// @brief Construct a new Toml Node from a node data.
+        ///
+        /// @tparam T Type of the data.
+        ///
+        /// @param[in] data Date to forward to the node constructor.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-12)
+        ///
+        template <typename T>
+        TomlNode(T data) : _node(data)
+        {
         }
 
         /// @copydoc INode::getType()
         constexpr INode::Type getType() const override final
         {
-            return _type;
+            if constexpr (std::same_as<toml::table, N>)
+                return INode::Type::Object;
+            else if constexpr (std::same_as<toml::array, N>)
+                return INode::Type::Array;
+            else if constexpr (std::same_as<toml::value<std::string>, N>)
+                return INode::Type::String;
+            else if constexpr (std::same_as<toml::value<int64_t>, N>)
+                return INode::Type::Integer;
+            else if constexpr (std::same_as<toml::value<double>, N>)
+                return INode::Type::Float;
+            else if constexpr (std::same_as<toml::value<bool>, N>)
+                return INode::Type::Boolean;
+            else if constexpr (std::same_as<toml::value<toml::date>, N>)
+                return INode::Type::Date;
+            else if constexpr (std::same_as<toml::value<toml::time>, N>)
+                return INode::Type::Time;
+            else if constexpr (std::same_as<toml::value<toml::date_time>, N>)
+                return INode::Type::DateTime;
+            else
+                return INode::Type::Unknown;
         }
 
         /// @copydoc INode::tryAsString()
@@ -140,7 +178,6 @@ namespace util::serialization
         }
 
       protected:
-        INode::Type _type;
         N _node;
     };
 
