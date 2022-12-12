@@ -138,7 +138,7 @@ namespace util::serialization
             ///
             virtual value_type operator*() const
             {
-                return nullptr;
+                return value_type();
             }
 
             ///

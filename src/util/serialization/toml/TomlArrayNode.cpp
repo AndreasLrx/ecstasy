@@ -11,6 +11,7 @@
 
 #include "TomlArrayNode.hpp"
 #include "TomlConversion.hpp"
+#include "TomlNodeFactory.hpp"
 
 namespace util::serialization
 {
@@ -23,7 +24,7 @@ namespace util::serialization
         if (index >= size())
             throw std::out_of_range("Index out of bounds.");
 
-        return std::make_shared<TomlNode>(_node.get(index));
+        return TomlNodeFactory::createFromToml(*_node.get(index));
     }
 
     NodeCView TomlArrayNode::get(Index index) const
@@ -31,7 +32,7 @@ namespace util::serialization
         if (index >= size())
             throw std::out_of_range("Index out of bounds.");
 
-        return std::make_shared<const TomlNode>(_node.get(index));
+        return TomlNodeFactory::createFromToml(*_node.get(index));
     }
 
     NodeView TomlArrayNode::tryGet(Index index)
@@ -39,7 +40,7 @@ namespace util::serialization
         if (index >= size())
             return NodeView();
 
-        return std::make_shared<TomlNode>(getTomlNode().get(index));
+        return TomlNodeFactory::createFromToml(*_node.get(index));
     }
 
     NodeCView TomlArrayNode::tryGet(Index index) const
@@ -47,7 +48,7 @@ namespace util::serialization
         if (index >= size())
             return NodeCView();
 
-        return std::make_shared<const TomlNode>(getTomlNode().get(index));
+        return TomlNodeFactory::createFromToml(*_node.get(index));
     }
 
     void TomlArrayNode::pushBack(const INode &node)

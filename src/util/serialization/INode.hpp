@@ -319,41 +319,41 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual int asInteger() const = 0;
+        virtual int64_t asInteger() const = 0;
 
         ///
         /// @brief Try to get the node integer value.
         ///
-        /// @return std::optional<int> Filled with the node integer if the type is @ref Type::Integer, empty
+        /// @return std::optional<int64_t> Filled with the node integer if the type is @ref Type::Integer, empty
         /// otherwise.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<int> tryAsInteger() const = 0;
+        virtual std::optional<int64_t> tryAsInteger() const = 0;
 
         ///
         /// @brief Get the float node value.
         ///
-        /// @return float node value.
+        /// @return double node value.
         ///
         /// @throw std::runtime_error If the node is the node type is not @ref Type::Float.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual float asFloat() const = 0;
+        virtual double asFloat() const = 0;
 
         ///
         /// @brief Try to get the node float value.
         ///
-        /// @return std::optional<float> Filled with the node float if the type is @ref Type::Float, empty
+        /// @return std::optional<double> Filled with the node float if the type is @ref Type::Float, empty
         /// otherwise.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<float> tryAsFloat() const = 0;
+        virtual std::optional<double> tryAsFloat() const = 0;
 
         ///
         /// @brief Get the boolean node value.

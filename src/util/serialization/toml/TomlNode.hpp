@@ -53,56 +53,64 @@ namespace util::serialization
         /// @copydoc INode::tryAsString()
         std::optional<std::string_view> tryAsString() const override final
         {
-            return _node.template value<std::string_view>();
+            if constexpr (std::same_as<toml::value<std::string>, N>)
+                return _node.get();
+            else
+                return std::optional<std::string_view>();
         }
 
         /// @copydoc INode::tryAsInteger()
-        std::optional<int> tryAsInteger() const override final
+        std::optional<int64_t> tryAsInteger() const override final
         {
-            return _node.template value<int>();
+            if constexpr (std::same_as<toml::value<int64_t>, N>)
+                return _node.get();
+            else
+                return std::optional<int64_t>();
         }
 
         /// @copydoc INode::tryAsFloat()
-        std::optional<float> tryAsFloat() const override final
+        std::optional<double> tryAsFloat() const override final
         {
-            return _node.template value<float>();
+            if constexpr (std::same_as<toml::value<double>, N>)
+                return _node.get();
+            else
+                return std::optional<double>();
         }
 
         /// @copydoc INode::tryAsBoolean()
         std::optional<bool> tryAsBoolean() const override final
         {
-            return _node.template value<bool>();
+            if constexpr (std::same_as<toml::value<bool>, N>)
+                return _node.get();
+            else
+                return std::optional<bool>();
         }
 
         /// @copydoc INode::tryAsDate()
         std::optional<Date> tryAsDate() const override final
         {
-            auto date = _node.template value<toml::date>();
-
-            if (!date)
+            if constexpr (std::same_as<toml::value<toml::date>, N>)
+                return TomlConversion::fromToml(_node.get());
+            else
                 return std::optional<Date>();
-
-            return TomlConversion::fromToml(*date);
         }
 
         /// @copydoc INode::tryAsTime()
         std::optional<Time> tryAsTime() const override final
         {
-            auto time = _node.template value<toml::time>();
-
-            if (!time)
+            if constexpr (std::same_as<toml::value<toml::time>, N>)
+                return TomlConversion::fromToml(_node.get());
+            else
                 return std::optional<Time>();
-            return TomlConversion::fromToml(*time);
         }
 
         /// @copydoc INode::tryAsDateTime()
         std::optional<DateTime> tryAsDateTime() const override final
         {
-            auto dateTime = _node.template value<toml::date_time>();
-
-            if (!dateTime)
+            if constexpr (std::same_as<toml::value<toml::date_time>, N>)
+                return TomlConversion::fromToml(_node.get());
+            else
                 return std::optional<DateTime>();
-            return TomlConversion::fromToml(*dateTime);
         }
 
         ///
@@ -135,6 +143,7 @@ namespace util::serialization
         INode::Type _type;
         N _node;
     };
+
 } // namespace util::serialization
 
 #endif /* !UTIL_SERIALIZATION_TOML_TOMLNODE_HPP_ */

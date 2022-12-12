@@ -88,10 +88,10 @@ namespace util::serialization
         std::string_view asString() const override final;
 
         /// @copydoc INode::asInteger()
-        int asInteger() const override final;
+        int64_t asInteger() const override final;
 
         /// @copydoc INode::asFloat()
-        float asFloat() const override final;
+        double asFloat() const override final;
 
         /// @copydoc INode::asBoolean()
         bool asBoolean() const override final;

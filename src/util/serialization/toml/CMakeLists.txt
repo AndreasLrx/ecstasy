@@ -8,4 +8,6 @@ set(SRC
     ${SRCROOT}/TomlConversion.cpp
     ${INCROOT}/TomlConversion.hpp
     ${INCROOT}/TomlNode.hpp
+    ${SRCROOT}/TomlNodeFactory.cpp
+    ${INCROOT}/TomlNodeFactory.hpp
     PARENT_SCOPE)

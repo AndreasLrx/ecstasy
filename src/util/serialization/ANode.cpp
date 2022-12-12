@@ -128,12 +128,12 @@ namespace util::serialization
         return tryAsString().value();
     }
 
-    int ANode::asInteger() const
+    int64_t ANode::asInteger() const
     {
         return tryAsInteger().value();
     }
 
-    float ANode::asFloat() const
+    double ANode::asFloat() const
     {
         return tryAsFloat().value();
     }
