@@ -52,7 +52,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-12)
         ///
-        virtual NodePtr create(INode &node) = 0;
+        virtual NodePtr create(const INode &node) = 0;
 
         ///
         /// @brief Construct a @ref INode::Type::String node.

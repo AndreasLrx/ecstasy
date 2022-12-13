@@ -14,6 +14,7 @@
 
 #include <memory>
 #include "INode.hpp"
+#include "PolymorphicIterator.hpp"
 
 namespace util::serialization
 {
@@ -34,159 +35,7 @@ namespace util::serialization
         /// @since 1.0.0 (2022-12-08)
         ///
         template <bool isConst>
-        class ArrayIterator {
-          public:
-            using value_type = std::conditional_t<isConst, NodeCView, NodeView>;
-            using reference = value_type &;
-            using pointer = value_type *;
-            using difference_type = std::ptrdiff_t;
-            using iterator_category = std::random_access_iterator_tag;
-
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-            // All iterators must be constructible, copy-constructible, copy-assignable, destructible and swappable.///
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-            ///
-            /// @brief Construct a new uninitialized ArrayIterator.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-12-08)
-            ///
-            explicit ArrayIterator()
-            {
-            }
-
-            ///
-            /// @brief Default copy operator.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-12-08)
-            ///
-            ArrayIterator(ArrayIterator const &) = default;
-
-            ///
-            /// @brief Default assignment operator.
-            ///
-            /// @return ArrayIterator& @b this.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-12-08)
-            ///
-            ArrayIterator &operator=(ArrayIterator const &) = default;
-
-            ///
-            /// @brief Default move constructor.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-12-08)
-            ///
-            ArrayIterator(ArrayIterator &&) = default;
-
-            ///
-            /// @brief Default move assignment operator.
-            ///
-            /// @return ArrayIterator& @b this.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-12-08)
-            ///
-            ArrayIterator &operator=(ArrayIterator &&) = default;
-
-            ///
-            /// @brief Compare two iterators from the same @ref IArrayNode.
-            ///
-            /// @warning It is undefined behavior to compare two iterators that do not belong to the same array.
-            ///
-            /// @param[in] other iterator to compare.
-            ///
-            /// @return bool Whether the two iterators are equals.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-12-08)
-            ///
-            virtual bool operator==(ArrayIterator const &other) const
-            {
-                (void)other;
-                return false;
-            }
-
-            ///
-            /// @brief Compare two iterators from the same @ref IArrayNode.
-            ///
-            /// @warning It is undefined behavior to compare two iterators that do not belong to the same array.
-            ///
-            /// @param[in] other iterator to compare.
-            ///
-            /// @return bool Whether the two iterators are different.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-12-08)
-            ///
-            virtual bool operator!=(ArrayIterator const &other) const
-            {
-                (void)other;
-                return true;
-            }
-
-            ///
-            /// @brief Fetch the node at the current position.
-            ///
-            /// @return @ref value_type Node.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-12-08)
-            ///
-            virtual value_type operator*() const
-            {
-                return value_type();
-            }
-
-            ///
-            /// @brief Increments the iterator in place.
-            ///
-            /// @warning It is undefined behavior to increment the iterator past the end sentinel ( @ref
-            /// IArrayNode::end() ).
-            ///
-            /// @return ArrayIterator& @b this.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-12-08)
-            ///
-            virtual ArrayIterator &operator++()
-            {
-                return *this;
-            }
-
-            ///
-            /// @brief Copies the iterator and increments the copy, please use pre-incrementation instead.
-            ///
-            /// @warning It is undefined behavior to increment the iterator past the end sentinel ( @ref
-            /// IArrayNode::end() ).
-            /// @warning This creates a copy of the iterator!
-            ///
-            /// @return ArrayIterator The incremented copy.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-12-08)
-            ///
-            // virtual ArrayIterator operator++(int)
-            // {
-            //     return *this;
-            // }
-
-            ///
-            /// @brief Fetch the node at the current position.
-            ///
-            /// @return @ref value_type Node.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-12-08)
-            ///
-            value_type operator->() const
-            {
-                return *this;
-            }
-        };
+        using ArrayIterator = PolymorphicIterator<std::conditional_t<isConst, NodeCView, NodeView>>;
 
       public:
         /// @brief Array index type.
@@ -353,6 +202,9 @@ namespace util::serialization
         ///
         virtual const_iterator cbegin() const = 0;
 
+        /// @copydoc cbegin().
+        virtual const_iterator begin() const = 0;
+
         ///
         /// @brief Get the start iterator of the internal nodes.
         ///
@@ -374,6 +226,9 @@ namespace util::serialization
         /// @since 1.0.0 (2022-12-08)
         ///
         virtual const_iterator cend() const = 0;
+
+        /// @copydoc cend().
+        virtual const_iterator end() const = 0;
 
         ///
         /// @brief Get the end iterator of the internal nodes.

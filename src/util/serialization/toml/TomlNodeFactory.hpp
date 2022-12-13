@@ -64,7 +64,7 @@ namespace util::serialization
         NodePtr create(INode::Type type) override final;
 
         /// @copydoc INodeFactory::create().
-        NodePtr create(INode &node) override final;
+        NodePtr create(const INode &node) override final;
 
         /// @copydoc INodeFactory::create().
         NodePtr create(std::string_view string) override final;

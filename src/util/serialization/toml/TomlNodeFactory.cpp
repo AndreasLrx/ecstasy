@@ -80,7 +80,7 @@ namespace util::serialization
         }
     }
 
-    NodePtr TomlNodeFactory::create(INode &node)
+    NodePtr TomlNodeFactory::create(const INode &node)
     {
         switch (node.getType()) {
             // case INode::Type::Object: return std::make_shared<TomlObjectNode>();

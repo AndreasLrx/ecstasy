@@ -33,61 +33,163 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        template <bool isConst>
-        class TomlArrayIterator : public IArrayNode::ArrayIterator<isConst> {
+        template <bool isConst = false>
+        class Iterator {
           public:
+            using value_type = std::conditional_t<isConst, NodeCView, NodeView>;
+            using reference = value_type &;
+            using pointer = value_type *;
+            using difference_type = std::ptrdiff_t;
+            using iterator_category = std::random_access_iterator_tag;
             using array_type = std::conditional_t<isConst, const TomlArrayNode, TomlArrayNode>;
-            explicit TomlArrayIterator()
+
+            /// @brief Default constructor.
+            Iterator() = default;
+
+            ///
+            /// @brief Construct a new Iterator.
+            ///
+            /// @param[in] array Owning array.
+            /// @param[in] pos Current position.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-12-13)
+            ///
+            Iterator(array_type &array, Index pos = 0) : _pos(pos), _array(&array)
             {
             }
 
-            TomlArrayIterator(array_type &array, Index pos = 0) : _pos(pos), _array(array)
-            {
-            }
+            ///
+            /// @brief Default copy operator.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-12-08)
+            ///
+            Iterator(Iterator const &) = default;
 
-            /// @copydoc IArrayNode::ArrayIterator::operator==()
-            bool operator==(TomlArrayIterator const &other) const
+            ///
+            /// @brief Default assignment operator.
+            ///
+            /// @return Iterator& @b this.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-12-08)
+            ///
+            Iterator &operator=(Iterator const &) = default;
+
+            ///
+            /// @brief Default move constructor.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-12-08)
+            ///
+            Iterator(Iterator &&) = default;
+
+            ///
+            /// @brief Default move assignment operator.
+            ///
+            /// @return Iterator& @b this.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-12-08)
+            ///
+            Iterator &operator=(Iterator &&) = default;
+
+            ///
+            /// @brief Equality operator.
+            ///
+            /// @warning It is undefined behavior to compare two iterators which doesn't belong to the same container.
+            ///
+            /// @param[in] other Other iterator.
+            ///
+            /// @return bool Whether the two iterators are equal.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-12-13)
+            ///
+            bool operator==(Iterator const &other) const
             {
                 return _pos == other._pos;
             }
 
-            /// @copydoc IArrayNode::ArrayIterator::operator!=()
-            bool operator!=(TomlArrayIterator const &other) const
+            ///
+            /// @brief Inequality operator.
+            ///
+            /// @warning It is undefined behavior to compare two iterators which doesn't belong to the same container.
+            ///
+            /// @param[in] other Other iterator.
+            ///
+            /// @return bool Whether the two iterators are inequal.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-12-13)
+            ///
+            bool operator!=(Iterator const &other) const
             {
                 return !(*this == other);
             }
 
-            /// @copydoc IArrayNode::ArrayIterator::operator*()
-            // IArrayNode::ArrayIterator<isConst>::value_type operator*() const override final
-            // {
-            //     if constexpr (isConst)
-            //         return std::const_pointer_cast<const TomlNode>(
-            //             std::make_shared<TomlNode>(*(const_cast<TomlArrayNode &>(_array))._node.get(_pos)));
-            //     else
-            //         return std::make_shared<TomlNode>(*_array._node.get(_pos));
-            // }
+            ///
+            /// @brief Fetch the iterator value.
+            ///
+            /// @return value_type iterator value.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-12-13)
+            ///
+            value_type operator*() const
+            {
+                return _array->get(_pos);
+            }
 
-            /// @copydoc IArrayNode::ArrayIterator::&operator++()
-            TomlArrayIterator &operator++() override final
+            ///
+            /// @brief Prefix increment operator.
+            ///
+            /// @return Iterator& @b this.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-12-13)
+            ///
+            Iterator &operator++()
             {
                 ++_pos;
                 return *this;
             }
 
-            /// @copydoc IArrayNode::ArrayIterator::operator++()
-            TomlArrayIterator operator++(int)
+            ///
+            /// @brief Suffix increment operator.
+            ///
+            /// @warning This create a copy of the iterator.
+            ///
+            /// @return Iterator Incremented copy of @b this.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-12-13)
+            ///
+            Iterator operator++(int)
             {
-                TomlArrayIterator it = *this;
+                Iterator it = *this;
 
                 return ++it;
             }
 
           private:
             Index _pos;
-            array_type &_array;
+            array_type *_array;
         };
 
       public:
+        /// @brief Default constructor.
+        TomlArrayNode() = default;
+
+        ///
+        /// @brief Construct a new Toml Array Node.
+        ///
+        /// @param[in] array Toml array.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-13)
+        ///
         TomlArrayNode(toml::array &array);
 
         /// @copydoc IArrayNode::&get()
@@ -130,13 +232,22 @@ namespace util::serialization
         const_iterator cbegin() const override final;
 
         /// @copydoc IArrayNode::begin()
+        const_iterator begin() const override final;
+
+        /// @copydoc IArrayNode::begin()
         iterator begin() override final;
 
         /// @copydoc IArrayNode::cend()
         const_iterator cend() const override final;
 
         /// @copydoc IArrayNode::end()
+        const_iterator end() const override final;
+
+        /// @copydoc IArrayNode::end()
         iterator end() override final;
+
+      private:
+        std::vector<NodePtr> _nodes;
     };
 } // namespace util::serialization
 
