@@ -15,8 +15,10 @@
 
 namespace util::serialization
 {
-    TomlArrayNode::TomlArrayNode(toml::array &array) : TomlNode(array)
+    TomlArrayNode::TomlArrayNode(const toml::array &array)
     {
+        for (auto &node : array)
+            _nodes.push_back(TomlNodeFactory::get().createFromToml(node));
     }
 
     NodeView TomlArrayNode::get(Index index)

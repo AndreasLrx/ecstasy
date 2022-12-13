@@ -45,14 +45,6 @@ namespace util::serialization
             virtual ~Concept() = default;
 
             ///
-            /// @brief Copy and increment the iterator by one.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-12-13)
-            ///
-            virtual void next() = 0;
-
-            ///
             /// @brief Increment the iterator by one.
             ///
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
@@ -136,12 +128,6 @@ namespace util::serialization
             ///
             Model(Iter iter) : _iter(iter)
             {
-            }
-
-            /// @copydoc Concept::next()
-            void next() override final
-            {
-                _iter = _iter++;
             }
 
             /// @copydoc Concept::nextInplace()
@@ -240,7 +226,7 @@ namespace util::serialization
         }
 
         ///
-        /// @brief Increment the internal iterator by making a copy.
+        /// @brief Copy @b this and increment it.
         ///
         /// @warning You should use the inplace increment instead.
         ///

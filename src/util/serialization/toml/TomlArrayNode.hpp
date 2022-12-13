@@ -23,7 +23,7 @@ namespace util::serialization
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-12-08)
     ///
-    class TomlArrayNode : public TomlNode<toml::array>, IArrayNode {
+    class TomlArrayNode : public TomlNode<toml::array>, public IArrayNode {
       protected:
         ///
         /// @brief Abstract Array Iterator.
@@ -156,23 +156,6 @@ namespace util::serialization
                 return *this;
             }
 
-            ///
-            /// @brief Suffix increment operator.
-            ///
-            /// @warning This create a copy of the iterator.
-            ///
-            /// @return Iterator Incremented copy of @b this.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-12-13)
-            ///
-            Iterator operator++(int)
-            {
-                Iterator it = *this;
-
-                return ++it;
-            }
-
           private:
             Index _pos;
             array_type *_array;
@@ -190,7 +173,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-13)
         ///
-        TomlArrayNode(toml::array &array);
+        TomlArrayNode(const toml::array &array);
 
         /// @copydoc IArrayNode::&get()
         NodeCView get(Index index) const override final;

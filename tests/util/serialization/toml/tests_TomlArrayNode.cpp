@@ -12,6 +12,21 @@ TEST(TomlArrayNode, InitialState)
     GTEST_ASSERT_EQ(node.getType(), INode::Type::Array);
 }
 
+TEST(TomlArrayNode, tomlArrayInitialisation)
+{
+    using namespace std::string_view_literals;
+
+    toml::table table = toml::parse(R"(array = [1, 2, 3, 5, 9])"sv);
+    TomlArrayNode node(*table.get_as<toml::array>("array"));
+
+    GTEST_ASSERT_EQ(node.size(), 5);
+    GTEST_ASSERT_EQ(node.get(0).lock()->asInteger(), 1);
+    GTEST_ASSERT_EQ(node.get(1).lock()->asInteger(), 2);
+    GTEST_ASSERT_EQ(node.get(2).lock()->asInteger(), 3);
+    GTEST_ASSERT_EQ(node.get(3).lock()->asInteger(), 5);
+    GTEST_ASSERT_EQ(node.get(4).lock()->asInteger(), 9);
+}
+
 TEST(TomlArrayNode, EmptyGet)
 {
     TomlArrayNode node;

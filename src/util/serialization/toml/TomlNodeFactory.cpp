@@ -21,7 +21,7 @@ namespace util::serialization
         return instance;
     }
 
-    NodePtr TomlNodeFactory::createFromToml(toml::node &node)
+    NodePtr TomlNodeFactory::createFromToml(const toml::node &node)
     {
         switch (node.type()) {
             // case toml::node_type::table: return std::make_shared<TomlObjectNode>(node);
@@ -40,31 +40,11 @@ namespace util::serialization
         }
     }
 
-    NodeCPtr TomlNodeFactory::createFromToml(const toml::node &node)
-    {
-        switch (node.type()) {
-            // case toml::node_type::table: return std::make_shared<TomlObjectNode>(node);
-            case toml::node_type::array:
-                return std::make_shared<TomlArrayNode>(const_cast<toml::array &>(*node.as_array()));
-            case toml::node_type::string:
-                return std::make_shared<TomlNode<toml::value<std::string>>>(*node.as_string());
-            case toml::node_type::integer: return std::make_shared<TomlNode<toml::value<int64_t>>>(*node.as_integer());
-            case toml::node_type::floating_point:
-                return std::make_shared<TomlNode<toml::value<double>>>(*node.as_floating_point());
-            case toml::node_type::boolean: return std::make_shared<TomlNode<toml::value<bool>>>(*node.as_boolean());
-            case toml::node_type::date: return std::make_shared<TomlNode<toml::value<toml::date>>>(*node.as_date());
-            case toml::node_type::time: return std::make_shared<TomlNode<toml::value<toml::time>>>(*node.as_time());
-            case toml::node_type::date_time:
-                return std::make_shared<TomlNode<toml::value<toml::date_time>>>(*node.as_date_time());
-            default: return nullptr;
-        }
-    }
-
     NodePtr TomlNodeFactory::create(INode::Type type)
     {
         switch (type) {
             // case INode::Type::Object: return std::make_shared<TomlObjectNode>();
-            // case INode::Type::Array: return std::make_shared<TomlArrayNode>();
+            case INode::Type::Array: return std::make_shared<TomlArrayNode>();
             case INode::Type::String: return std::make_shared<TomlNode<toml::value<std::string>>>();
             case INode::Type::Integer: return std::make_shared<TomlNode<toml::value<int64_t>>>();
             case INode::Type::Float: return std::make_shared<TomlNode<toml::value<double>>>();
@@ -84,7 +64,7 @@ namespace util::serialization
     {
         switch (node.getType()) {
             // case INode::Type::Object: return std::make_shared<TomlObjectNode>();
-            // case INode::Type::Array: return std::make_shared<TomlArrayNode>(node);
+            case INode::Type::Array: return createArray(node.asArray());
             case INode::Type::String: return create(node.asString());
             case INode::Type::Integer: return create(node.asInteger());
             case INode::Type::Float: return create(node.asFloat());
@@ -129,5 +109,14 @@ namespace util::serialization
     NodePtr TomlNodeFactory::create(INode::DateTime dateTime)
     {
         return std::make_shared<TomlNode<toml::value<toml::date_time>>>(TomlConversion::toToml(dateTime));
+    }
+
+    NodePtr TomlNodeFactory::createArray(const IArrayNode &array)
+    {
+        NodePtr res = std::make_shared<TomlArrayNode>();
+
+        for (auto it : array)
+            res->asArray().pushBack(*it.lock());
+        return res;
     }
 } // namespace util::serialization

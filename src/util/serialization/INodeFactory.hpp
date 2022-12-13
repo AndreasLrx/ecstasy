@@ -55,6 +55,18 @@ namespace util::serialization
         virtual NodePtr create(const INode &node) = 0;
 
         ///
+        /// @brief Construct a @ref INode::Type::Array node.
+        ///
+        /// @param[in] array node data.
+        ///
+        /// @return NodePtr New node instance, or nullptr if the type/copy is not supported.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-12)
+        ///
+        virtual NodePtr createArray(const IArrayNode &array) = 0;
+
+        ///
         /// @brief Construct a @ref INode::Type::String node.
         ///
         /// @param[in] string node data.

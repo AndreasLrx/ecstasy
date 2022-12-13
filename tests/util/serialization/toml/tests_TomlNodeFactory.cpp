@@ -1,4 +1,6 @@
 #include <gtest/gtest.h>
+#include "util/serialization/IArrayNode.hpp"
+#include "util/serialization/toml/TomlArrayNode.hpp"
 #include "util/serialization/toml/TomlConversion.hpp"
 #include "util/serialization/toml/TomlNode.hpp"
 #include "util/serialization/toml/TomlNodeFactory.hpp"
@@ -8,6 +10,23 @@ using namespace util::serialization;
 struct TestTomlValue : public toml::value<std::string> {
     TestTomlValue() = default;
 };
+
+TEST(TomlNodeFactory, ArrayFromToml)
+{
+    using namespace std::string_view_literals;
+    toml::table table = toml::parse(R"(array = [1, 2, 3, 5, 9])"sv);
+
+    NodePtr node = TomlNodeFactory::get().createFromToml(*table.get_as<toml::array>("array"));
+
+    std::cerr << static_cast<int>(node->getType()) << std::endl;
+
+    GTEST_ASSERT_EQ(node->asArray().size(), 5);
+    GTEST_ASSERT_EQ(node->asArray().get(0).lock()->asInteger(), 1);
+    GTEST_ASSERT_EQ(node->asArray().get(1).lock()->asInteger(), 2);
+    GTEST_ASSERT_EQ(node->asArray().get(2).lock()->asInteger(), 3);
+    GTEST_ASSERT_EQ(node->asArray().get(3).lock()->asInteger(), 5);
+    GTEST_ASSERT_EQ(node->asArray().get(4).lock()->asInteger(), 9);
+}
 
 TEST(TomlNodeFactory, StringFromToml)
 {
@@ -90,6 +109,18 @@ TEST(TomlNodeFactory, NullFromNode)
     GTEST_ASSERT_FALSE(node);
 }
 
+TEST(TomlNodeFactory, ArrayFromNode)
+{
+    TomlArrayNode array;
+
+    for (int i = 0; i < 10; i++)
+        array.pushBack(TomlNode<toml::value<int64_t>>(i));
+    NodePtr node = TomlNodeFactory::get().create(array);
+
+    for (int i = 0; i < 10; i++)
+        GTEST_ASSERT_EQ(node->asArray().get(i).lock()->asInteger(), i);
+}
+
 TEST(TomlNodeFactory, StringFromNode)
 {
     TomlNode<toml::value<std::string>> in("hello");
@@ -161,6 +192,14 @@ TEST(TomlNodeFactory, DefaultNull)
     NodePtr node = TomlNodeFactory::get().create(INode::Type::Null);
 
     GTEST_ASSERT_FALSE(node);
+}
+
+TEST(TomlNodeFactory, DefaultArray)
+{
+    NodePtr node = TomlNodeFactory::get().create(INode::Type::Array);
+
+    GTEST_ASSERT_EQ(node->getType(), INode::Type::Array);
+    GTEST_ASSERT_EQ(node->asArray().size(), 0);
 }
 
 TEST(TomlNodeFactory, DefaultString)

@@ -46,25 +46,16 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-12)
         ///
-        NodePtr createFromToml(toml::node &node);
-
-        ///
-        /// @brief Create a node from a @ref toml::node object.
-        ///
-        /// @param[in] node Toml node.
-        ///
-        /// @return NodePtr @ref TomlNode const  pointer.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-12-12)
-        ///
-        NodeCPtr createFromToml(const toml::node &node);
+        NodePtr createFromToml(const toml::node &node);
 
         /// @copydoc INodeFactory::create().
         NodePtr create(INode::Type type) override final;
 
         /// @copydoc INodeFactory::create().
         NodePtr create(const INode &node) override final;
+
+        /// @copydoc INodeFactory::createArray().
+        NodePtr createArray(const IArrayNode &array) override final;
 
         /// @copydoc INodeFactory::create().
         NodePtr create(std::string_view string) override final;
