@@ -69,9 +69,13 @@ namespace util::serialization
             case INode::Type::Integer: return std::make_shared<TomlNode<toml::value<int64_t>>>();
             case INode::Type::Float: return std::make_shared<TomlNode<toml::value<double>>>();
             case INode::Type::Boolean: return std::make_shared<TomlNode<toml::value<bool>>>();
-            case INode::Type::Date: return std::make_shared<TomlNode<toml::value<toml::date>>>();
-            case INode::Type::Time: return std::make_shared<TomlNode<toml::value<toml::time>>>();
-            case INode::Type::DateTime: return std::make_shared<TomlNode<toml::value<toml::date_time>>>();
+            /// Need to initialize the date/time/datetime values to avoid uninitialized values.
+            case INode::Type::Date: return std::make_shared<TomlNode<toml::value<toml::date>>>(0, 0, 0);
+            case INode::Type::Time: return std::make_shared<TomlNode<toml::value<toml::time>>>(0, 0, 0, 0);
+            case INode::Type::DateTime:
+                /// Default @ref std::chrono::time_point is at the epoch (1st january 1970)
+                return std::make_shared<TomlNode<toml::value<toml::date_time>>>(
+                    toml::date(1970, 1, 1), toml::time(0, 0, 0, 0));
             default: return nullptr;
         }
     }

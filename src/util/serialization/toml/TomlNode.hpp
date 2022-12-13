@@ -51,15 +51,15 @@ namespace util::serialization
         ///
         /// @brief Construct a new Toml Node from a node data.
         ///
-        /// @tparam T Type of the data.
+        /// @tparam Args Types of the internal node constructor.
         ///
-        /// @param[in] data Date to forward to the node constructor.
+        /// @param[in] args Arguments to forward to the internal node constructor.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-12)
         ///
-        template <typename T>
-        TomlNode(T data) : _node(data)
+        template <typename... Args>
+        TomlNode(Args &&...args) : _node(std::forward<Args &&>(args)...)
         {
         }
 
