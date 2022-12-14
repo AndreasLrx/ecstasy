@@ -96,7 +96,7 @@ namespace util::serialization
 
     TomlArrayNode::const_iterator TomlArrayNode::cbegin() const
     {
-        return Iterator<true>(*this, 0);
+        return _nodes.cbegin();
     }
 
     TomlArrayNode::const_iterator TomlArrayNode::begin() const
@@ -106,12 +106,12 @@ namespace util::serialization
 
     TomlArrayNode::iterator TomlArrayNode::begin()
     {
-        return Iterator<false>(*this, 0);
+        return _nodes.begin();
     }
 
     TomlArrayNode::const_iterator TomlArrayNode::cend() const
     {
-        return Iterator<true>(*this, size());
+        return _nodes.cend();
     }
 
     TomlArrayNode::const_iterator TomlArrayNode::end() const
@@ -121,7 +121,7 @@ namespace util::serialization
 
     TomlArrayNode::iterator TomlArrayNode::end()
     {
-        return Iterator<false>(*this, size());
+        return _nodes.end();
     }
 
 } // namespace util::serialization

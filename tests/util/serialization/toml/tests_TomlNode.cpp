@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 
+#include "util/serialization/toml/TomlArrayNode.hpp"
 #include "util/serialization/toml/TomlNode.hpp"
 
 using namespace util::serialization;
@@ -8,6 +9,7 @@ TEST(TomlNode, Empty)
 {
     TomlNode<toml::value<int64_t>> a;
 
+    GTEST_ASSERT_FALSE(a.isNull());
     GTEST_ASSERT_TRUE(a.isInteger());
     GTEST_ASSERT_TRUE(a.tryAsInteger());
     GTEST_ASSERT_EQ(a.asInteger(), 0);
@@ -26,6 +28,17 @@ TEST(TomlNode, Copy)
     GTEST_ASSERT_EQ(a.asString(), "Hello world!");
     GTEST_ASSERT_FALSE(a.tryAsInteger());
     EXPECT_THROW(a.asInteger(), std::bad_optional_access);
+}
+
+TEST(TomlNode, ArrayNode)
+{
+    TomlArrayNode a(toml::array(1, 2, 3));
+
+    GTEST_ASSERT_TRUE(a.isArray());
+    GTEST_ASSERT_TRUE(a.tryAsArray());
+    GTEST_ASSERT_TRUE(const_cast<const TomlArrayNode &>(a).tryAsArray());
+    GTEST_ASSERT_FALSE(a.tryAsString());
+    EXPECT_THROW(a.asString(), std::bad_optional_access);
 }
 
 TEST(TomlNode, StringView)
@@ -116,10 +129,13 @@ TEST(TomlNode, DateTime)
 {
     INode::DateTime tp = std::chrono::system_clock::now();
     TomlNode<toml::value<toml::date_time>> a(TomlConversion::toToml(tp));
+    auto &ca = const_cast<const TomlNode<toml::value<toml::date_time>> &>(a);
 
     GTEST_ASSERT_TRUE(a.isDateTime());
     GTEST_ASSERT_TRUE(a.tryAsDateTime());
     GTEST_ASSERT_EQ(a.asDateTime(), tp);
-    GTEST_ASSERT_FALSE(a.tryAsString());
-    EXPECT_THROW(a.asString(), std::bad_optional_access);
+    GTEST_ASSERT_FALSE(a.tryAsArray());
+    EXPECT_THROW(a.asArray(), std::runtime_error);
+    GTEST_ASSERT_FALSE(ca.tryAsArray());
+    EXPECT_THROW(ca.asArray(), std::runtime_error);
 }
