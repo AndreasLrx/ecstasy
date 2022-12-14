@@ -61,7 +61,7 @@ namespace util::serialization
         using Time = std::chrono::nanoseconds;
 
         /// @brief @ref Type::DateTime type.
-        using DateTime = std::chrono::system_clock::time_point;
+        using DateTime = std::chrono::high_resolution_clock::time_point;
 
         /// @brief Default destructor.
         virtual ~INode() = default;

@@ -108,7 +108,7 @@ TEST(TomlNodeFactory, TimeFromToml)
 
 TEST(TomlNodeFactory, DateTimeFromToml)
 {
-    INode::DateTime dateTime(std::chrono::system_clock::now());
+    INode::DateTime dateTime(std::chrono::high_resolution_clock::now());
     toml::value<toml::date_time> toml(TomlConversion::toToml(dateTime));
     NodePtr node = TomlNodeFactory::get().createFromToml(toml);
     NodeCPtr cnode = TomlNodeFactory::get().createFromToml(const_cast<const toml::value<toml::date_time> &>(toml));
@@ -209,9 +209,11 @@ TEST(TomlNodeFactory, DateTimeFromNode)
     NodePtr node = TomlNodeFactory::get().create(in);
 
     GTEST_ASSERT_EQ(node->asDateTime(),
-        static_cast<std::chrono::sys_days>(
-            INode::Date(std::chrono::year(1), std::chrono::month(2), std::chrono::day(3)))
-            + INode::Time(420));
+        INode::DateTime(static_cast<std::chrono::sys_days>(
+                            INode::Date(std::chrono::year(1), std::chrono::month(2), std::chrono::day(3)))
+                            .time_since_epoch()
+            + INode::Time(420)));
+
     GTEST_ASSERT_EQ(node->asDateTime(), in.asDateTime());
 }
 
@@ -304,7 +306,7 @@ TEST(TomlNodeFactory, CreateString)
 
 TEST(TomlNodeFactory, CreateInteger)
 {
-    NodePtr node = TomlNodeFactory::get().create(42l);
+    NodePtr node = TomlNodeFactory::get().create(static_cast<int64_t>(42));
 
     GTEST_ASSERT_EQ(node->getType(), INode::Type::Integer);
     GTEST_ASSERT_EQ(node->asInteger(), 42);
@@ -345,7 +347,7 @@ TEST(TomlNodeFactory, CreateTime)
 
 TEST(TomlNodeFactory, CreateDateTime)
 {
-    auto tp = std::chrono::system_clock::now();
+    auto tp = std::chrono::high_resolution_clock::now();
     NodePtr node = TomlNodeFactory::get().create(tp);
 
     GTEST_ASSERT_EQ(node->getType(), INode::Type::DateTime);

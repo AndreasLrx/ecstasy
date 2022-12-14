@@ -139,7 +139,7 @@ TEST(TomlNode, Time)
 
 TEST(TomlNode, DateTime)
 {
-    INode::DateTime tp = std::chrono::system_clock::now();
+    INode::DateTime tp = std::chrono::high_resolution_clock::now();
     TomlNode<toml::value<toml::date_time>> a(TomlConversion::toToml(tp));
     auto &ca = const_cast<const TomlNode<toml::value<toml::date_time>> &>(a);
 

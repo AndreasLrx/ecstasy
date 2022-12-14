@@ -30,9 +30,17 @@ namespace util::serialization
 
     toml::date_time TomlConversion::toToml(INode::DateTime dateTime)
     {
-        auto dp = floor<std::chrono::days>(dateTime);
+#ifdef _MSC_VER
+        std::chrono::system_clock::time_point t2(
+            std::chrono::duration_cast<std::chrono::microseconds>(dateTime.time_since_epoch()));
+        auto dp = floor<std::chrono::days>(t2);
 
+        return toml::date_time(toToml(INode::Date(dp)), toToml(t2 - dp));
+
+#else
+        auto dp = floor<std::chrono::days>(dateTime);
         return toml::date_time(toToml(INode::Date(dp)), toToml(dateTime - dp));
+#endif
     }
 
     INode::Date TomlConversion::fromToml(toml::date date)
@@ -50,6 +58,7 @@ namespace util::serialization
 
     INode::DateTime TomlConversion::fromToml(toml::date_time dateTime)
     {
-        return INode::DateTime(static_cast<std::chrono::sys_days>(fromToml(dateTime.date)) + fromToml(dateTime.time));
+        return INode::DateTime(
+            static_cast<std::chrono::sys_days>(fromToml(dateTime.date)).time_since_epoch() + fromToml(dateTime.time));
     }
 } // namespace util::serialization
