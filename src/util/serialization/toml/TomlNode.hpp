@@ -151,32 +151,6 @@ namespace util::serialization
                 return std::optional<DateTime>();
         }
 
-        ///
-        /// @brief Get the internal toml node.
-        ///
-        /// @return toml::node& internal node.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-12-09)
-        ///
-        constexpr N &getTomlNode()
-        {
-            return _node;
-        }
-
-        ///
-        /// @brief Get the internal toml node.
-        ///
-        /// @return toml::node& internal node.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-12-09)
-        ///
-        constexpr const N &getTomlNode() const
-        {
-            return _node;
-        }
-
       protected:
         N _node;
     };

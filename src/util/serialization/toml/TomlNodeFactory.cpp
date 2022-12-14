@@ -11,6 +11,7 @@
 
 #include "TomlNodeFactory.hpp"
 #include "TomlArrayNode.hpp"
+#include "TomlObjectNode.hpp"
 
 namespace util::serialization
 {
@@ -24,7 +25,7 @@ namespace util::serialization
     NodePtr TomlNodeFactory::createFromToml(const toml::node &node)
     {
         switch (node.type()) {
-            // case toml::node_type::table: return std::make_shared<TomlObjectNode>(node);
+            case toml::node_type::table: return std::make_shared<TomlObjectNode>(*node.as_table());
             case toml::node_type::array: return std::make_shared<TomlArrayNode>(*node.as_array());
             case toml::node_type::string:
                 return std::make_shared<TomlNode<toml::value<std::string>>>(*node.as_string());
@@ -43,7 +44,7 @@ namespace util::serialization
     NodePtr TomlNodeFactory::create(INode::Type type)
     {
         switch (type) {
-            // case INode::Type::Object: return std::make_shared<TomlObjectNode>();
+            case INode::Type::Object: return std::make_shared<TomlObjectNode>();
             case INode::Type::Array: return std::make_shared<TomlArrayNode>();
             case INode::Type::String: return std::make_shared<TomlNode<toml::value<std::string>>>();
             case INode::Type::Integer: return std::make_shared<TomlNode<toml::value<int64_t>>>();
@@ -63,7 +64,7 @@ namespace util::serialization
     NodePtr TomlNodeFactory::create(const INode &node)
     {
         switch (node.getType()) {
-            // case INode::Type::Object: return std::make_shared<TomlObjectNode>();
+            case INode::Type::Object: return createObject(node.asObject());
             case INode::Type::Array: return createArray(node.asArray());
             case INode::Type::String: return create(node.asString());
             case INode::Type::Integer: return create(node.asInteger());
@@ -117,6 +118,15 @@ namespace util::serialization
 
         for (auto it : array)
             res->asArray().pushBack(*it.lock());
+        return res;
+    }
+
+    NodePtr TomlNodeFactory::createObject(const IObjectNode &object)
+    {
+        NodePtr res = std::make_shared<TomlObjectNode>();
+
+        for (auto it : object)
+            res->asObject().insert(it.first, *it.second.lock());
         return res;
     }
 } // namespace util::serialization

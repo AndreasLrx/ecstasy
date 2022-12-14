@@ -4,6 +4,7 @@
 #include "util/serialization/toml/TomlConversion.hpp"
 #include "util/serialization/toml/TomlNode.hpp"
 #include "util/serialization/toml/TomlNodeFactory.hpp"
+#include "util/serialization/toml/TomlObjectNode.hpp"
 
 using namespace util::serialization;
 
@@ -11,14 +12,29 @@ struct TestTomlValue : public toml::value<std::string> {
     TestTomlValue() = default;
 };
 
+TEST(TomlNodeFactory, ObjectFromToml)
+{
+    using namespace std::string_view_literals;
+
+    toml::table table = toml::parse(R"(
+        name = "toml++"
+        authors = ["Mark Gillard <mark.gillard@outlook.com.au>"]
+        cpp = 17
+    )"sv);
+    NodePtr node = TomlNodeFactory::get().createFromToml(table);
+
+    GTEST_ASSERT_EQ(node->asObject().size(), 3);
+    GTEST_ASSERT_EQ(node->asObject().get("name").lock()->getType(), INode::Type::String);
+    GTEST_ASSERT_EQ(node->asObject().get("authors").lock()->getType(), INode::Type::Array);
+    GTEST_ASSERT_EQ(node->asObject().get("cpp").lock()->getType(), INode::Type::Integer);
+}
+
 TEST(TomlNodeFactory, ArrayFromToml)
 {
     using namespace std::string_view_literals;
     toml::table table = toml::parse(R"(array = [1, 2, 3, 5, 9])"sv);
 
     NodePtr node = TomlNodeFactory::get().createFromToml(*table.get_as<toml::array>("array"));
-
-    std::cerr << static_cast<int>(node->getType()) << std::endl;
 
     GTEST_ASSERT_EQ(node->asArray().size(), 5);
     GTEST_ASSERT_EQ(node->asArray().get(0).lock()->asInteger(), 1);
@@ -109,6 +125,18 @@ TEST(TomlNodeFactory, NullFromNode)
     GTEST_ASSERT_FALSE(node);
 }
 
+TEST(TomlNodeFactory, ObjectFromNode)
+{
+    TomlObjectNode object;
+
+    for (int i = 0; i < 10; i++)
+        object.insert(std::to_string(i), TomlNode<toml::value<int64_t>>(i * 2));
+    NodePtr node = TomlNodeFactory::get().create(object);
+
+    for (int i = 0; i < 10; i++)
+        GTEST_ASSERT_EQ(node->asObject().get(std::to_string(i)).lock()->asInteger(), i * 2);
+}
+
 TEST(TomlNodeFactory, ArrayFromNode)
 {
     TomlArrayNode array;
@@ -192,6 +220,14 @@ TEST(TomlNodeFactory, DefaultNull)
     NodePtr node = TomlNodeFactory::get().create(INode::Type::Null);
 
     GTEST_ASSERT_FALSE(node);
+}
+
+TEST(TomlNodeFactory, DefaultObject)
+{
+    NodePtr node = TomlNodeFactory::get().create(INode::Type::Object);
+
+    GTEST_ASSERT_EQ(node->getType(), INode::Type::Object);
+    GTEST_ASSERT_EQ(node->asObject().size(), 0);
 }
 
 TEST(TomlNodeFactory, DefaultArray)

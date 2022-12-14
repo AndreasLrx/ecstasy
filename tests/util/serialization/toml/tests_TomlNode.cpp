@@ -2,6 +2,7 @@
 
 #include "util/serialization/toml/TomlArrayNode.hpp"
 #include "util/serialization/toml/TomlNode.hpp"
+#include "util/serialization/toml/TomlObjectNode.hpp"
 
 using namespace util::serialization;
 
@@ -13,10 +14,6 @@ TEST(TomlNode, Empty)
     GTEST_ASSERT_TRUE(a.isInteger());
     GTEST_ASSERT_TRUE(a.tryAsInteger());
     GTEST_ASSERT_EQ(a.asInteger(), 0);
-
-    /// For coverage
-    a.getTomlNode();
-    const_cast<const TomlNode<toml::value<int64_t>> &>(a).getTomlNode();
 }
 
 TEST(TomlNode, Copy)
@@ -28,6 +25,21 @@ TEST(TomlNode, Copy)
     GTEST_ASSERT_EQ(a.asString(), "Hello world!");
     GTEST_ASSERT_FALSE(a.tryAsInteger());
     EXPECT_THROW(a.asInteger(), std::bad_optional_access);
+}
+
+TEST(TomlNode, ObjectNode)
+{
+    TomlObjectNode a{toml::table()};
+    const auto &ca = const_cast<const TomlObjectNode &>(a);
+
+    GTEST_ASSERT_TRUE(a.isObject());
+    GTEST_ASSERT_TRUE(a.tryAsObject());
+    GTEST_ASSERT_TRUE(const_cast<const TomlObjectNode &>(a).tryAsObject());
+
+    GTEST_ASSERT_FALSE(a.tryAsArray());
+    EXPECT_THROW(a.asArray(), std::runtime_error);
+    GTEST_ASSERT_FALSE(ca.tryAsArray());
+    EXPECT_THROW(ca.asArray(), std::runtime_error);
 }
 
 TEST(TomlNode, ArrayNode)
@@ -134,8 +146,8 @@ TEST(TomlNode, DateTime)
     GTEST_ASSERT_TRUE(a.isDateTime());
     GTEST_ASSERT_TRUE(a.tryAsDateTime());
     GTEST_ASSERT_EQ(a.asDateTime(), tp);
-    GTEST_ASSERT_FALSE(a.tryAsArray());
-    EXPECT_THROW(a.asArray(), std::runtime_error);
-    GTEST_ASSERT_FALSE(ca.tryAsArray());
-    EXPECT_THROW(ca.asArray(), std::runtime_error);
+    GTEST_ASSERT_FALSE(a.tryAsObject());
+    EXPECT_THROW(a.asObject(), std::runtime_error);
+    GTEST_ASSERT_FALSE(ca.tryAsObject());
+    EXPECT_THROW(ca.asObject(), std::runtime_error);
 }

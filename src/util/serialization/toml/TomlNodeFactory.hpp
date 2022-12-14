@@ -54,6 +54,9 @@ namespace util::serialization
         /// @copydoc INodeFactory::create().
         NodePtr create(const INode &node) override final;
 
+        /// @copydoc INodeFactory::createObject().
+        NodePtr createObject(const IObjectNode &object) override final;
+
         /// @copydoc INodeFactory::createArray().
         NodePtr createArray(const IArrayNode &array) override final;
 
