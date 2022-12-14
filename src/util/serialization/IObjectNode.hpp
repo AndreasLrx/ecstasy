@@ -51,7 +51,7 @@ namespace util::serialization
         ///
         /// @param[in] key The node's key.
         ///
-        /// @return const INode& A const reference to the requested node.
+        /// @return NodeCView A weak pointer to the requested node.
         ///
         /// @throw std::out_of_range If the key doesn't exists.
         ///
@@ -65,7 +65,7 @@ namespace util::serialization
         ///
         /// @param[in] key The node's key.
         ///
-        /// @return INode& A reference to the requested node.
+        /// @return NodeView A weak pointer to the requested node.
         ///
         /// @throw std::out_of_range If the key doesn't exists.
         ///
@@ -79,8 +79,7 @@ namespace util::serialization
         ///
         /// @param[in] key The node's key.
         ///
-        /// @return std::optional<const INode&> A const reference to the requested node if it exists, an empty @ref
-        /// std::optional otherwise.
+        /// @return NodeCView A weak pointer to the requested node if it exists.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
@@ -92,8 +91,7 @@ namespace util::serialization
         ///
         /// @param[in] key The node's key.
         ///
-        /// @return std::optional<INode&> A reference to the requested node if it exists, an empty @ref
-        /// std::optional otherwise.
+        /// @return NodeView A weak pointer to the requested node if it exists.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)

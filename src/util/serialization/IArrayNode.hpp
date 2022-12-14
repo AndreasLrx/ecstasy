@@ -27,7 +27,7 @@ namespace util::serialization
     class IArrayNode {
       protected:
         ///
-        /// @brief Abstract Array Iterator.
+        /// @brief Array Iterator.
         ///
         /// @tparam isConst Whether the iterator is a const iterator or not.
         ///
@@ -53,7 +53,7 @@ namespace util::serialization
         ///
         /// @param[in] index The node's index.
         ///
-        /// @return const INode& A const reference to the requested node.
+        /// @return NodeCView A weak pointer to the requested node.
         ///
         /// @throw std::out_of_range If the index is out of bounds.
         ///
@@ -67,7 +67,7 @@ namespace util::serialization
         ///
         /// @param[in] index The node's index.
         ///
-        /// @return INode& A reference to the requested node.
+        /// @return NodeView A weak pointer to the requested node.
         ///
         /// @throw std::out_of_range If the index is out of bounds.
         ///
@@ -81,8 +81,7 @@ namespace util::serialization
         ///
         /// @param[in] index The node's index.
         ///
-        /// @return std::shared_ptr<const INode> A const reference to the requested node if it exists, an empty @ref
-        /// std::optional otherwise.
+        /// @return NodeCView A weak pointer to the requested node if it exists.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
@@ -94,8 +93,7 @@ namespace util::serialization
         ///
         /// @param[in] index The node's index.
         ///
-        /// @return std::shared_ptr<INode> A reference to the requested node if it exists, an empty @ref
-        /// std::optional otherwise.
+        /// @return NodeCView A weak pointer to the requested node if it exists.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
@@ -156,8 +154,6 @@ namespace util::serialization
         /// @brief Delete the node at @p index.
         ///
         /// @param[in] index Index of the node to erase.
-        ///
-        /// @throw std::out_of_range If @p index is @b greater than or @b equal the current @ref size().
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)

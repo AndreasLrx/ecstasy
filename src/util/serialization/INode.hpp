@@ -291,7 +291,7 @@ namespace util::serialization
         ///
         /// @return std::string_view node value.
         ///
-        /// @throw std::runtime_error If the node is the node type is not @ref Type::String.
+        /// @throw std::bad_optional_cast If the node is the node type is not @ref Type::String.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
@@ -314,7 +314,7 @@ namespace util::serialization
         ///
         /// @return int node value.
         ///
-        /// @throw std::runtime_error If the node is the node type is not @ref Type::Integer.
+        /// @throw std::bad_optional_cast If the node is the node type is not @ref Type::Integer.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
@@ -337,7 +337,7 @@ namespace util::serialization
         ///
         /// @return double node value.
         ///
-        /// @throw std::runtime_error If the node is the node type is not @ref Type::Float.
+        /// @throw std::bad_optional_cast If the node is the node type is not @ref Type::Float.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
@@ -360,7 +360,7 @@ namespace util::serialization
         ///
         /// @return bool node value.
         ///
-        /// @throw std::runtime_error If the node is the node type is not @ref Type::Boolean.
+        /// @throw std::bad_optional_cast If the node is the node type is not @ref Type::Boolean.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
@@ -383,7 +383,7 @@ namespace util::serialization
         ///
         /// @return Date node value.
         ///
-        /// @throw std::runtime_error If the node is the node type is not @ref Type::Date.
+        /// @throw std::bad_optional_cast If the node is the node type is not @ref Type::Date.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
@@ -406,7 +406,7 @@ namespace util::serialization
         ///
         /// @return Time node value.
         ///
-        /// @throw std::runtime_error If the node is the node type is not @ref Type::Time.
+        /// @throw std::bad_optional_cast If the node is the node type is not @ref Type::Time.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
@@ -429,7 +429,7 @@ namespace util::serialization
         ///
         /// @return DateTime node value.
         ///
-        /// @throw std::runtime_error If the node is the node type is not @ref Type::DateTime.
+        /// @throw std::bad_optional_cast If the node is the node type is not @ref Type::DateTime.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
