@@ -13,7 +13,10 @@
 
 #include "concepts/Queryable.hpp"
 #include "concepts/QueryableNeedAdjust.hpp"
+#include "conditions/Condition.hpp"
 #include "util/BitSet.hpp"
+#include "util/meta/Traits.hpp"
+#include "util/meta/index.hpp"
 
 namespace ecstasy::query
 {
@@ -31,8 +34,12 @@ namespace ecstasy::query
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-10-20)
     ///
-    template <Queryable First, Queryable... Others>
-    class Query {
+    template <typename Storages, typename Conditions = void>
+    class QueryImplementation {
+    };
+
+    template <Queryable First, Queryable... Others, typename... Conditions>
+    class QueryImplementation<util::meta::Traits<First, Others...>, util::meta::Traits<Conditions...>> {
       public:
         ///
         /// @brief Query iterator.
@@ -76,6 +83,8 @@ namespace ecstasy::query
                 util::BitSet const &mask, std::tuple<First &, Others &...> const &storages, std::size_t pos)
                 : _mask(std::cref(mask)), _storages(std::cref(storages)), _pos(pos)
             {
+                if constexpr (sizeof...(Conditions) != 0)
+                    applyConditions();
             }
 
             ///
@@ -187,6 +196,8 @@ namespace ecstasy::query
             Iterator &operator++()
             {
                 this->_pos = this->_mask.get().firstSet(this->_pos + 1);
+                if constexpr (sizeof...(Conditions) != 0)
+                    applyConditions();
                 return *this;
             }
 
@@ -209,6 +220,27 @@ namespace ecstasy::query
             }
 
           private:
+            template <typename Condition>
+            bool checkCondition() const
+            {
+                static_assert(std::disjunction_v<
+                    std::is_same<typename Condition::Left, std::remove_reference_t<typename Others::QueryData>>...,
+                    std::is_same<typename Condition::Left, std::remove_reference_t<typename First::QueryData>>>);
+                auto &storage = std::get<
+                    util::meta::index_v<typename Condition::Left, std::remove_reference_t<typename First::QueryData>,
+                        std::remove_reference_t<typename Others::QueryData>...>>(_storages.get());
+
+                return Condition::test(storage.getQueryData(_pos));
+            }
+
+            inline void applyConditions()
+            {
+                if constexpr (sizeof...(Conditions) != 0) {
+                    while (this->_pos != this->_mask.get().size() - 1 && !(true & ... & checkCondition<Conditions>()))
+                        ++*this;
+                }
+            }
+
             std::reference_wrapper<const util::BitSet> _mask;
             std::reference_wrapper<const std::tuple<First &, Others &...>> _storages;
             std::size_t _pos;
@@ -239,7 +271,8 @@ namespace ecstasy::query
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-22)
         ///
-        Query(util::BitSet &mask, const std::tuple<First &, Others &...> &storages) : _mask(mask), _storages(storages)
+        QueryImplementation(util::BitSet &mask, const std::tuple<First &, Others &...> &storages)
+            : _mask(mask), _storages(storages)
         {
             // push a sentinel bit at the end.
             this->_mask.push(true);
@@ -255,7 +288,7 @@ namespace ecstasy::query
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-20)
         ///
-        Query(First &first, Others &...others) : _storages(first, others...)
+        QueryImplementation(First &first, Others &...others) : _storages(first, others...)
         {
             /// Adjusts the masks only if required
             if constexpr (is_queryable_with_adjust_v<
@@ -317,6 +350,22 @@ namespace ecstasy::query
         std::tuple<First &, Others &...> _storages;
         size_t _begin;
     };
+
+    template <Queryable First, Queryable... Others>
+    class Query : public QueryImplementation<util::meta::Traits<First, Others...>, util::meta::Traits<>> {
+      public:
+        Query(util::BitSet &mask, const std::tuple<First &, Others &...> &storages)
+            : QueryImplementation<util::meta::Traits<First, Others...>, util::meta::Traits<>>(mask, storages)
+        {
+        }
+
+        Query(First &first, Others &...others)
+            : QueryImplementation<util::meta::Traits<First, Others...>, util::meta::Traits<>>(
+                first, std::forward<Others &>(others)...)
+        {
+        }
+    };
+
 } // namespace ecstasy::query
 
 #endif /* !QUERY_HPP_ */

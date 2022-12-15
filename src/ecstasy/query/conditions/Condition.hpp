@@ -20,25 +20,23 @@ namespace ecstasy::query
     struct Condition {
     };
 
-    template <typename LeftType, typename LeftValueType, LeftValueType LeftType::*Left, typename RightType,
+    template <typename LeftType, typename LeftValueType, LeftValueType LeftType::*ptr, typename RightType,
         RightType Right, typename Comparer>
-    requires(!std::is_function_v<LeftValueType>) struct Condition<Left, Right, Comparer> {
-        Condition() = default;
+    requires(!std::is_function_v<LeftValueType>) struct Condition<ptr, Right, Comparer> {
+        using Left = LeftType;
 
-        bool operator()(const LeftType &left)
+        static bool test(const LeftType &left)
         {
-            return Comparer{}(left.*Left, Right);
+            return Comparer{}(left.*ptr, Right);
         }
     };
 
-    template <typename LeftType, typename LeftValueType, LeftValueType (LeftType::*Left)(void) const,
-        typename RightType, RightType Right, typename Comparer>
-    struct Condition<Left, Right, Comparer> {
-        Condition() = default;
-
-        bool operator()(const LeftType &left)
+    template <typename LeftType, typename LeftValueType, LeftValueType (LeftType::*ptr)(void) const, typename RightType,
+        RightType Right, typename Comparer>
+    struct Condition<ptr, Right, Comparer> {
+        static bool test(const LeftType &left)
         {
-            return Comparer{}((left.*Left)(), Right);
+            return Comparer{}((left.*ptr)(), Right);
         }
     };
 } // namespace ecstasy::query

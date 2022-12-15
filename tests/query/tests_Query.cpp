@@ -542,10 +542,24 @@ TEST(Condition, MemberToConst)
     Life life{42};
     Life death{-42};
 
-    auto memberCondition = ecstasy::query::Condition<&Life::value, 0, std::less<>>();
-    auto methodCondition = ecstasy::query::Condition<&Life::getValue, 0, std::less<>>();
+    using memberCondition = ecstasy::query::Condition<&Life::value, 0, std::less<>>;
+    using methodCondition = ecstasy::query::Condition<&Life::getValue, 0, std::less<>>;
 
-    GTEST_ASSERT_FALSE(memberCondition(life));
-    GTEST_ASSERT_FALSE(methodCondition(life));
-    GTEST_ASSERT_TRUE(memberCondition(death));
+    GTEST_ASSERT_FALSE(memberCondition::test(life));
+    GTEST_ASSERT_FALSE(methodCondition::test(life));
+    GTEST_ASSERT_TRUE(memberCondition::test(death));
+}
+
+TEST(QueryImplementation, Conditional)
+{
+    ecstasy::MapStorage<Life> lifes;
+
+    for (int i = 0; i < 13; i++)
+        lifes.emplace(i, (i % 2 == 0) ? 42 : -42);
+
+    auto query = ecstasy::query::QueryImplementation<util::meta::Traits<decltype(lifes)>,
+        util::meta::Traits<ecstasy::query::Condition<&Life::value, 0, std::less<>>>>(lifes);
+
+    for (auto [life] : query)
+        GTEST_ASSERT_TRUE(life.value < 0);
 }
