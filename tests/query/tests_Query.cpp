@@ -4,6 +4,7 @@
 #include "ecstasy/storages/MapStorage.hpp"
 
 #include "ecstasy/query/Select.hpp"
+#include "ecstasy/query/conditions/Condition.hpp"
 #include "ecstasy/query/modifiers/And.hpp"
 #include "ecstasy/query/modifiers/Maybe.hpp"
 #include "ecstasy/query/modifiers/Not.hpp"
@@ -516,4 +517,35 @@ TEST(Query, XorVariadic)
 
     /// Xor of three inputs return true if an odd number of its input are true
     GTEST_ASSERT_EQ(query.getMask(), util::BitSet("11011100001101"));
+}
+
+/// Constant - Constant
+/// Constant - Value Member
+/// Constant - Member function
+/// Value Member - Constant
+/// Value Member - Value Member
+/// Value Member - Member function
+/// Member function - Constant
+/// Member function - Value Member
+/// Member function - Member function
+
+struct Life {
+    int getValue() const
+    {
+        return value;
+    }
+    int value;
+};
+
+TEST(Condition, MemberToConst)
+{
+    Life life{42};
+    Life death{-42};
+
+    auto memberCondition = ecstasy::query::Condition<&Life::value, 0, std::less<>>();
+    auto methodCondition = ecstasy::query::Condition<&Life::getValue, 0, std::less<>>();
+
+    GTEST_ASSERT_FALSE(memberCondition(life));
+    GTEST_ASSERT_FALSE(methodCondition(life));
+    GTEST_ASSERT_TRUE(memberCondition(death));
 }
