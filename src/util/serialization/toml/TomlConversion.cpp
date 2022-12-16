@@ -35,7 +35,7 @@ namespace util::serialization
             std::chrono::duration_cast<std::chrono::microseconds>(dateTime.time_since_epoch()));
         auto dp = floor<std::chrono::days>(t2);
 
-        return toml::date_time(toToml(INode::Date(dp)), toToml(t2 - dp));
+        return toml::date_time(toToml(INode::Date(dp)), toToml(dateTime - floor<std::chrono::days>(dateTime)));
 
 #else
         auto dp = floor<std::chrono::days>(dateTime);
