@@ -50,7 +50,7 @@ namespace util::meta
     /// @since 1.0.0 (2022-10-29)
     ///
     template <template <typename> typename Functor, typename... Ts>
-    using apply_t = apply<Functor, Ts...>::type;
+    using apply_t = typename apply<Functor, Ts...>::type;
 } // namespace util::meta
 
 #endif /* !UTIL_META_APPLY_HPP_ */

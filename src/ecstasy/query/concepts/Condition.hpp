@@ -33,7 +33,7 @@ namespace ecstasy::query
     };
 
     template <typename C>
-    concept QConditionLeft = requires(C &condition, const C::Left &left)
+    concept QConditionLeft = requires(C &condition, const typename C::Left &left)
     {
         requires QCondition<C>;
 
@@ -45,7 +45,7 @@ namespace ecstasy::query
     };
 
     template <typename C>
-    concept QConditionRight = requires(C &condition, const C::Right &right)
+    concept QConditionRight = requires(C &condition, const typename C::Right &right)
     {
         requires QCondition<C>;
 
@@ -57,7 +57,7 @@ namespace ecstasy::query
     };
 
     template <typename C>
-    concept QConditionLeftRight = requires(C &condition, const C::Left &left, const C::Right &right)
+    concept QConditionLeftRight = requires(C &condition, const typename C::Left &left, const typename C::Right &right)
     {
         requires QCondition<C>;
 

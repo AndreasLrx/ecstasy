@@ -46,9 +46,9 @@ namespace util::meta
     /// @note Loop condition, treat type @p Current.
     template <typename... Treated, template <typename> typename Filter, typename Current, typename... Untreated>
     struct _filter<Traits<Treated...>, Filter, Current, Untreated...> {
-        using type =
-            _filter<std::conditional_t<Filter<Current>::value, Traits<Treated..., Current>, Traits<Treated...>>, Filter,
-                Untreated...>::type;
+        using type = typename _filter<
+            std::conditional_t<Filter<Current>::value, Traits<Treated..., Current>, Traits<Treated...>>, Filter,
+            Untreated...>::type;
     };
 
     ///
@@ -66,7 +66,7 @@ namespace util::meta
     ///
     template <template <typename> typename Filter, typename... Ts>
     struct filter {
-        using type = _filter<Traits<>, Filter, Ts...>::type;
+        using type = typename _filter<Traits<>, Filter, Ts...>::type;
     };
 
     ///
@@ -79,7 +79,7 @@ namespace util::meta
     /// @since 1.0.0 (2022-10-29)
     ///
     template <template <typename> typename Filter, typename... Ts>
-    using filter_t = filter<Filter, Ts...>::type;
+    using filter_t = typename filter<Filter, Ts...>::type;
 
 } // namespace util::meta
 

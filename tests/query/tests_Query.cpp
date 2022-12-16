@@ -535,6 +535,10 @@ struct Life {
         return value;
     }
     int value;
+
+    Life(int v) : value(v)
+    {
+    }
 };
 
 TEST(Condition, MemberToConst)

@@ -557,6 +557,9 @@ struct Life {
     {
         return value;
     }
+    Life(int v) : value(v)
+    {
+    }
 };
 
 struct Shield {
@@ -564,6 +567,9 @@ struct Shield {
     int getValue() const
     {
         return value;
+    }
+    Shield(int v) : value(v)
+    {
     }
 };
 
