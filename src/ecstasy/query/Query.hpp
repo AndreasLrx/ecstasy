@@ -11,6 +11,7 @@
 #include <algorithm>
 #include <functional>
 
+#include "concepts/Condition.hpp"
 #include "concepts/Queryable.hpp"
 #include "concepts/QueryableNeedAdjust.hpp"
 #include "conditions/Condition.hpp"
@@ -220,7 +221,13 @@ namespace ecstasy::query
             }
 
           private:
-            template <typename Condition>
+            template <QConditionConst Condition>
+            bool checkCondition() const
+            {
+                return Condition::test();
+            }
+
+            template <QConditionLeft Condition>
             bool checkCondition() const
             {
                 static_assert(std::disjunction_v<
@@ -231,6 +238,38 @@ namespace ecstasy::query
                         std::remove_reference_t<typename Others::QueryData>...>>(_storages.get());
 
                 return Condition::test(storage.getQueryData(_pos));
+            }
+
+            template <QConditionRight Condition>
+            bool checkCondition() const
+            {
+                static_assert(std::disjunction_v<
+                    std::is_same<typename Condition::Right, std::remove_reference_t<typename Others::QueryData>>...,
+                    std::is_same<typename Condition::Right, std::remove_reference_t<typename First::QueryData>>>);
+                auto &storage = std::get<
+                    util::meta::index_v<typename Condition::Right, std::remove_reference_t<typename First::QueryData>,
+                        std::remove_reference_t<typename Others::QueryData>...>>(_storages.get());
+
+                return Condition::test(storage.getQueryData(_pos));
+            }
+
+            template <QConditionLeftRight Condition>
+            bool checkCondition() const
+            {
+                static_assert(std::disjunction_v<
+                    std::is_same<typename Condition::Left, std::remove_reference_t<typename Others::QueryData>>...,
+                    std::is_same<typename Condition::Left, std::remove_reference_t<typename First::QueryData>>>);
+                static_assert(std::disjunction_v<
+                    std::is_same<typename Condition::Right, std::remove_reference_t<typename Others::QueryData>>...,
+                    std::is_same<typename Condition::Right, std::remove_reference_t<typename First::QueryData>>>);
+                auto &storageLeft = std::get<
+                    util::meta::index_v<typename Condition::Left, std::remove_reference_t<typename First::QueryData>,
+                        std::remove_reference_t<typename Others::QueryData>...>>(_storages.get());
+                auto &storageRight = std::get<
+                    util::meta::index_v<typename Condition::Right, std::remove_reference_t<typename First::QueryData>,
+                        std::remove_reference_t<typename Others::QueryData>...>>(_storages.get());
+
+                return Condition::test(storageLeft.getQueryData(_pos), storageRight.getQueryData(_pos));
             }
 
             inline void applyConditions()
