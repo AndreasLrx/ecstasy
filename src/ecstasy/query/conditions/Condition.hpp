@@ -16,13 +16,15 @@
 
 namespace ecstasy::query
 {
+    struct ConditionBase {};
+
     template <auto Left, auto Right, typename Comparer>
-    struct Condition {
+    struct Condition : public ConditionBase {
     };
 
     template <typename LeftType, typename LeftValueType, LeftValueType LeftType::*ptr, typename RightType,
         RightType Right, typename Comparer>
-    requires(!std::is_function_v<LeftValueType>) struct Condition<ptr, Right, Comparer> {
+    requires(!std::is_function_v<LeftValueType>) struct Condition<ptr, Right, Comparer> : public ConditionBase {
         using Left = LeftType;
 
         static bool test(const LeftType &left)
@@ -33,7 +35,7 @@ namespace ecstasy::query
 
     template <typename LeftType, typename LeftValueType, LeftValueType (LeftType::*ptr)(void) const, typename RightType,
         RightType Right, typename Comparer>
-    struct Condition<ptr, Right, Comparer> {
+    struct Condition<ptr, Right, Comparer> : public ConditionBase {
         static bool test(const LeftType &left)
         {
             return Comparer{}((left.*ptr)(), Right);

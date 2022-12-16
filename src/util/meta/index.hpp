@@ -41,7 +41,7 @@ namespace util::meta
     };
 
     ///
-    /// @brief Helper for right_outer_join<...>::type.
+    /// @brief Helper for index<...>::type.
     ///
     /// @tparam T Searched type.
     /// @tparam Ts Types containing @p T.

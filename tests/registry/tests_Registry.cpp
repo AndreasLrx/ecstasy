@@ -549,3 +549,19 @@ TEST(Registry, withoutEntities)
 
     GTEST_ASSERT_FALSE(registry.hasResource<ecstasy::Entities>());
 }
+
+struct Life {
+    int value;
+};
+
+TEST(Registry, ConditionnalQuery)
+{
+    ecstasy::Registry registry;
+
+    for (int i = 0; i < 13; i++)
+        registry.entityBuilder().with<Life>((i % 2 == 0) ? 42 : -42).build();
+
+    for (auto [life] : registry.select<Life>().where<ecstasy::query::Condition<&Life::value, 0, std::less<>>>()) {
+        GTEST_ASSERT_TRUE(life.value < 0);
+    }
+}
