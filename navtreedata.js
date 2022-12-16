@@ -71,17 +71,17 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"01__basic__window_2main_8cpp.html",
-"_users_8cpp.html",
-"classecstasy_1_1integration_1_1event_1_1_keyboard.html",
-"classutil_1_1serialization_1_1_a_node.html#a3193bba29f3f8ee456d44c498dd63570",
-"concepts_2_modifier_8hpp_source.html",
-"cpp/atomic/atomic_notify_all.html",
-"cpp/filesystem/remove.html",
-"cpp/numeric/math/acos.html",
-"cpp/string/wide/towlower.html",
-"foreach_8hpp_source.html",
-"structecstasy_1_1_registry_1_1_get_modifier_proxy_3_01std_1_1tuple_3_01_qs_8_8_8_01_4_01_4.html#ad38465d9899b2b920e96207e82c496b1"
+"",
+"_toml_node_factory_8cpp_source.html",
+"classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4370e80208bd66e5e695592c41c9c0ea",
+"classutil_1_1_bit_set_1_1_reference.html#a3f342d94b6af68a7c88f140265ca0cc6",
+"classutil_1_1serialization_1_1_toml_object_node.html#aa7ca4a60df77871ff6243079c6d1ae59",
+"cpp/atomic/atomic_flag_clear.html",
+"cpp/filesystem/is_directory.html",
+"cpp/numeric/fenv/feraiseexcept.html",
+"cpp/string/wide/iswalpha.html",
+"filter_8hpp.html",
+"storages_2include_8hpp_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
