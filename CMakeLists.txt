@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.19.0)
 
 # Add ./cmake to the module path
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake ${CMAKE_CURRENT_SOURCE_DIR}/cmake/macros)
+set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake ${CMAKE_CURRENT_SOURCE_DIR}/cmake/macros)
 
 # Avoid warning about DOWNLOAD_EXTRACT_TIMESTAMP
 if(POLICY CMP0135)
