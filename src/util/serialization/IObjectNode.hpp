@@ -13,6 +13,7 @@
 #define UTIL_SERIALIZATION_IOBJECTNODE_HPP_
 
 #include "INode.hpp"
+#include "PolymorphicIterator.hpp"
 
 namespace util::serialization
 {
@@ -22,10 +23,10 @@ namespace util::serialization
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-12-08)
     ///
-    class IObjectNode : public INode {
+    class IObjectNode {
       protected:
         ///
-        /// @brief Abstract Object Iterator.
+        /// @brief Abstract Array Iterator.
         ///
         /// @tparam isConst Whether the iterator is a const iterator or not.
         ///
@@ -33,147 +34,13 @@ namespace util::serialization
         /// @since 1.0.0 (2022-12-08)
         ///
         template <bool isConst>
-        class ObjectIterator {
-          public:
-            using value_type = std::conditional_t<isConst, const INode &, INode &>;
-            using reference = value_type &;
-            using pointer = value_type *;
-            using difference_type = std::ptrdiff_t;
-            using iterator_category = std::random_access_iterator_tag;
-
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-            // All iterators must be constructible, copy-constructible, copy-assignable, destructible and swappable.///
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-            ///
-            /// @brief Construct a new uninitialized ObjectIterator.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-12-08)
-            ///
-            explicit ObjectIterator()
-            {
-            }
-
-            ///
-            /// @brief Default copy operator.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-12-08)
-            ///
-            ObjectIterator(ObjectIterator const &) = default;
-
-            ///
-            /// @brief Default assignment operator.
-            ///
-            /// @return ObjectIterator& @b this.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-12-08)
-            ///
-            ObjectIterator &operator=(ObjectIterator const &) = default;
-
-            ///
-            /// @brief Default move constructor.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-12-08)
-            ///
-            ObjectIterator(ObjectIterator &&) = default;
-
-            ///
-            /// @brief Default move assignment operator.
-            ///
-            /// @return ObjectIterator& @b this.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-12-08)
-            ///
-            ObjectIterator &operator=(ObjectIterator &&) = default;
-
-            ///
-            /// @brief Compare two iterators from the same @ref IObjectNode.
-            ///
-            /// @warning It is undefined behavior to compare two iterators that do not belong to the same object.
-            ///
-            /// @param[in] other iterator to compare.
-            ///
-            /// @return bool Whether the two iterators are equals.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-12-08)
-            ///
-            virtual bool operator==(ObjectIterator const &other) const = 0;
-
-            ///
-            /// @brief Compare two iterators from the same @ref IObjectNode.
-            ///
-            /// @warning It is undefined behavior to compare two iterators that do not belong to the same object.
-            ///
-            /// @param[in] other iterator to compare.
-            ///
-            /// @return bool Whether the two iterators are different.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-12-08)
-            ///
-            virtual bool operator!=(ObjectIterator const &other) const = 0;
-
-            ///
-            /// @brief Fetch the node at the current position.
-            ///
-            /// @return @ref value_type Node.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-12-08)
-            ///
-            virtual value_type operator*() const = 0;
-
-            ///
-            /// @brief Increments the iterator in place.
-            ///
-            /// @warning It is undefined behavior to increment the iterator past the end sentinel ( @ref
-            /// IObjectNode::end() ).
-            ///
-            /// @return ObjectIterator& @b this.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-12-08)
-            ///
-            virtual ObjectIterator &operator++() = 0;
-
-            ///
-            /// @brief Copies the iterator and increments the copy, please use pre-incrementation instead.
-            ///
-            /// @warning It is undefined behavior to increment the iterator past the end sentinel ( @ref
-            /// IObjectNode::end() ).
-            /// @warning This creates a copy of the iterator!
-            ///
-            /// @return ObjectIterator The incremented copy.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-12-08)
-            ///
-            virtual ObjectIterator operator++(int) = 0;
-
-            ///
-            /// @brief Fetch the node at the current position.
-            ///
-            /// @return @ref value_type Node.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-12-08)
-            ///
-            value_type operator->() const
-            {
-                return *this;
-            }
-        };
+        using ObjectIterator =
+            PolymorphicIterator<std::pair<std::string, std::conditional_t<isConst, NodeCView, NodeView>>>;
 
       public:
-        /// @brief Array iterator type.
+        /// @brief Object iterator type.
         using iterator = ObjectIterator<false>;
-        /// @brief Array const iterator type.
+        /// @brief Object const iterator type.
         using const_iterator = ObjectIterator<true>;
 
         /// @brief Default destructor.
@@ -184,54 +51,52 @@ namespace util::serialization
         ///
         /// @param[in] key The node's key.
         ///
-        /// @return const INode& A const reference to the requested node.
+        /// @return NodeCView A weak pointer to the requested node.
         ///
         /// @throw std::out_of_range If the key doesn't exists.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual const INode &get(std::string_view key) const = 0;
+        virtual NodeCView get(std::string_view key) const = 0;
 
         ///
         /// @brief Get the node matching @p key if existing.
         ///
         /// @param[in] key The node's key.
         ///
-        /// @return INode& A reference to the requested node.
+        /// @return NodeView A weak pointer to the requested node.
         ///
         /// @throw std::out_of_range If the key doesn't exists.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual INode &get(std::string_view key) = 0;
+        virtual NodeView get(std::string_view key) = 0;
 
         ///
         /// @brief Get the node matching @p key.
         ///
         /// @param[in] key The node's key.
         ///
-        /// @return std::optional<const INode&> A const reference to the requested node if it exists, an empty @ref
-        /// std::optional otherwise.
+        /// @return NodeCView A weak pointer to the requested node if it exists.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<const INode &> tryGet(std::string_view key) const = 0;
+        virtual NodeCView tryGet(std::string_view key) const = 0;
 
         ///
         /// @brief Get the node matching @p key.
         ///
         /// @param[in] key The node's key.
         ///
-        /// @return std::optional<INode&> A reference to the requested node if it exists, an empty @ref
-        /// std::optional otherwise.
+        /// @return NodeView A weak pointer to the requested node if it exists.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<INode &> tryGet(std::string_view key) = 0;
+        virtual NodeView tryGet(std::string_view key) = 0;
 
         ///
         /// @brief Try to insert a new node at @p key.
@@ -271,7 +136,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual bool erase(std::string_view key) = 0;
+        virtual void erase(std::string_view key) = 0;
 
         ///
         /// @brief Remove all the internal nodes.
@@ -323,6 +188,9 @@ namespace util::serialization
         ///
         virtual const_iterator cbegin() const = 0;
 
+        /// @copydoc cbegin().
+        virtual const_iterator begin() const = 0;
+
         ///
         /// @brief Get the start iterator of the internal nodes.
         ///
@@ -344,6 +212,9 @@ namespace util::serialization
         /// @since 1.0.0 (2022-12-08)
         ///
         virtual const_iterator cend() const = 0;
+
+        /// @copydoc cend().
+        virtual const_iterator end() const = 0;
 
         ///
         /// @brief Get the end iterator of the internal nodes.

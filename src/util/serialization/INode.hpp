@@ -1,5 +1,5 @@
 ///
-/// @file ISerializer.hpp
+/// @file INode.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
 /// @brief
 /// @version 1.0.0
@@ -9,10 +9,11 @@
 ///
 ///
 
-#ifndef UTIL_SERIALIZATION_ISERIALIZER_HPP_
-#define UTIL_SERIALIZATION_ISERIALIZER_HPP_
+#ifndef UTIL_SERIALIZATION_INODE_HPP_
+#define UTIL_SERIALIZATION_INODE_HPP_
 
 #include <chrono>
+#include <memory>
 #include <optional>
 #include <string>
 #include <string_view>
@@ -57,10 +58,10 @@ namespace util::serialization
         using Date = std::chrono::year_month_day;
 
         /// @brief @ref Type::Time type.
-        using Time = std::chrono::duration<std::chrono::seconds>;
+        using Time = std::chrono::nanoseconds;
 
         /// @brief @ref Type::DateTime type.
-        using DateTime = std::time_t;
+        using DateTime = std::chrono::high_resolution_clock::time_point;
 
         /// @brief Default destructor.
         virtual ~INode() = default;
@@ -226,7 +227,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<const IObjectNode &> tryAsObject() const = 0;
+        virtual std::optional<std::reference_wrapper<const IObjectNode>> tryAsObject() const = 0;
 
         ///
         /// @brief Try to get the node object value.
@@ -237,7 +238,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<IObjectNode &> tryAsObject() = 0;
+        virtual std::optional<std::reference_wrapper<IObjectNode>> tryAsObject() = 0;
 
         ///
         /// @brief Get the array node value.
@@ -272,7 +273,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<const IArrayNode &> tryAsArray() const = 0;
+        virtual std::optional<std::reference_wrapper<const IArrayNode>> tryAsArray() const = 0;
 
         ///
         /// @brief Try to get the node array value.
@@ -283,14 +284,14 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<IArrayNode &> tryAsArray() = 0;
+        virtual std::optional<std::reference_wrapper<IArrayNode>> tryAsArray() = 0;
 
         ///
         /// @brief Get the string node value.
         ///
         /// @return std::string_view node value.
         ///
-        /// @throw std::runtime_error If the node is the node type is not @ref Type::String.
+        /// @throw std::bad_optional_cast If the node is the node type is not @ref Type::String.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
@@ -313,53 +314,53 @@ namespace util::serialization
         ///
         /// @return int node value.
         ///
-        /// @throw std::runtime_error If the node is the node type is not @ref Type::Integer.
+        /// @throw std::bad_optional_cast If the node is the node type is not @ref Type::Integer.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual int asInteger() const = 0;
+        virtual int64_t asInteger() const = 0;
 
         ///
         /// @brief Try to get the node integer value.
         ///
-        /// @return std::optional<int> Filled with the node integer if the type is @ref Type::Integer, empty
+        /// @return std::optional<int64_t> Filled with the node integer if the type is @ref Type::Integer, empty
         /// otherwise.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<int> tryAsInteger() const = 0;
+        virtual std::optional<int64_t> tryAsInteger() const = 0;
 
         ///
         /// @brief Get the float node value.
         ///
-        /// @return float node value.
+        /// @return double node value.
         ///
-        /// @throw std::runtime_error If the node is the node type is not @ref Type::Float.
+        /// @throw std::bad_optional_cast If the node is the node type is not @ref Type::Float.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual float asFloat() const = 0;
+        virtual double asFloat() const = 0;
 
         ///
         /// @brief Try to get the node float value.
         ///
-        /// @return std::optional<float> Filled with the node float if the type is @ref Type::Float, empty
+        /// @return std::optional<double> Filled with the node float if the type is @ref Type::Float, empty
         /// otherwise.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<float> tryAsFloat() const = 0;
+        virtual std::optional<double> tryAsFloat() const = 0;
 
         ///
         /// @brief Get the boolean node value.
         ///
         /// @return bool node value.
         ///
-        /// @throw std::runtime_error If the node is the node type is not @ref Type::Boolean.
+        /// @throw std::bad_optional_cast If the node is the node type is not @ref Type::Boolean.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
@@ -382,7 +383,7 @@ namespace util::serialization
         ///
         /// @return Date node value.
         ///
-        /// @throw std::runtime_error If the node is the node type is not @ref Type::Date.
+        /// @throw std::bad_optional_cast If the node is the node type is not @ref Type::Date.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
@@ -405,7 +406,7 @@ namespace util::serialization
         ///
         /// @return Time node value.
         ///
-        /// @throw std::runtime_error If the node is the node type is not @ref Type::Time.
+        /// @throw std::bad_optional_cast If the node is the node type is not @ref Type::Time.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
@@ -428,7 +429,7 @@ namespace util::serialization
         ///
         /// @return DateTime node value.
         ///
-        /// @throw std::runtime_error If the node is the node type is not @ref Type::DateTime.
+        /// @throw std::bad_optional_cast If the node is the node type is not @ref Type::DateTime.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
@@ -446,6 +447,12 @@ namespace util::serialization
         ///
         virtual std::optional<DateTime> tryAsDateTime() const = 0;
     };
+
+    using NodePtr = std::shared_ptr<INode>;
+    using NodeCPtr = std::shared_ptr<const INode>;
+
+    using NodeView = std::weak_ptr<INode>;
+    using NodeCView = std::weak_ptr<const INode>;
 } // namespace util::serialization
 
-#endif /* !UTIL_SERIALIZATION_ISERIALIZER_HPP_ */
+#endif /* !UTIL_SERIALIZATION_INODE_HPP_ */

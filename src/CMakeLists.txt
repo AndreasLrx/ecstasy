@@ -34,7 +34,7 @@ if (${ECSTASY_INTEGRATIONS_SFML})
 endif()
 
 # Integration links
-if (${ECSTASY_INTEGRATIONS_USER_ACTION})
+if (${ECSTASY_SERIALIZER_TOML})
     target_link_libraries_system(${LIB_NAME} PRIVATE tomlplusplus::tomlplusplus)
 endif()
 
