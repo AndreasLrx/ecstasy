@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include <math.h>
+#include "ecstasy/query/conditions/include.hpp"
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/registry/modifiers/Maybe.hpp"
 #include "ecstasy/registry/modifiers/Not.hpp"
@@ -548,4 +549,259 @@ TEST(Registry, withoutEntities)
     ecstasy::Registry registry(false);
 
     GTEST_ASSERT_FALSE(registry.hasResource<ecstasy::Entities>());
+}
+
+struct Life {
+    int value;
+    int getValue() const
+    {
+        return value;
+    }
+    Life(int v) : value(v)
+    {
+    }
+};
+
+struct Shield {
+    int value;
+    int getValue() const
+    {
+        return value;
+    }
+    Shield(int v) : value(v)
+    {
+    }
+};
+
+TEST(Registry, ConditionnalQueryConstConst)
+{
+    ecstasy::Registry registry;
+
+    for (int i = 0; i < 13; i++)
+        registry.entityBuilder().with<Life>((i % 2 == 0) ? 42 : -42).build();
+
+    size_t i = 0;
+    for (auto [life] : registry.select<Life>().where<ecstasy::query::Condition<15, 0, std::less<>>>()) {
+        /// Must be false for some but no iterations should be done because 15 is never lower than 0.
+        GTEST_ASSERT_TRUE(life.value < 0);
+        ++i;
+    }
+    GTEST_ASSERT_EQ(i, 0);
+}
+
+TEST(Registry, ConditionnalQueryConstMember)
+{
+    ecstasy::Registry registry;
+
+    for (int i = 0; i < 13; i++)
+        registry.entityBuilder().with<Life>((i % 2 == 0) ? 42 : -42).build();
+
+    size_t i = 0;
+    for (auto [life] : registry.select<Life>().where<ecstasy::query::Condition<0, &Life::value, std::less<>>>()) {
+        GTEST_ASSERT_TRUE(life.value > 0);
+        ++i;
+    }
+    GTEST_ASSERT_EQ(i, 7);
+}
+
+TEST(Registry, ConditionnalQueryConstGetter)
+{
+    ecstasy::Registry registry;
+
+    for (int i = 0; i < 13; i++)
+        registry.entityBuilder().with<Life>((i % 2 == 0) ? 42 : -42).build();
+
+    size_t i = 0;
+    for (auto [life] : registry.select<Life>().where<ecstasy::query::Condition<0, &Life::getValue, std::less<>>>()) {
+        GTEST_ASSERT_TRUE(life.value > 0);
+        ++i;
+    }
+    GTEST_ASSERT_EQ(i, 7);
+}
+
+TEST(Registry, ConditionnalQueryMemberConst)
+{
+    ecstasy::Registry registry;
+
+    for (int i = 0; i < 13; i++)
+        registry.entityBuilder().with<Life>((i % 2 == 0) ? 42 : -42).build();
+
+    size_t i = 0;
+    for (auto [life] : registry.select<Life>().where<ecstasy::query::Condition<&Life::value, 0, std::less<>>>()) {
+        GTEST_ASSERT_TRUE(life.value < 0);
+        ++i;
+    }
+    GTEST_ASSERT_EQ(i, 6);
+}
+
+TEST(Registry, ConditionnalQueryMemberMember)
+{
+    ecstasy::Registry registry;
+
+    for (int i = 0; i < 13; i++) {
+        registry.entityBuilder().with<Life>((i % 2 == 0) ? 42 : -42).with<Shield>((i % 3 == 0) ? -100 : 40).build();
+    }
+
+    size_t i = 0;
+    for (auto [life, shield] :
+        registry.select<Life, Shield>().where<ecstasy::query::Condition<&Life::value, &Shield::value, std::less<>>>()) {
+        GTEST_ASSERT_TRUE(life.value < shield.value);
+        ++i;
+    }
+    GTEST_ASSERT_EQ(i, 4);
+}
+
+TEST(Registry, ConditionnalQueryMemberGetter)
+{
+    ecstasy::Registry registry;
+
+    for (int i = 0; i < 13; i++) {
+        registry.entityBuilder().with<Life>((i % 2 == 0) ? 42 : -42).with<Shield>((i % 3 == 0) ? -100 : 40).build();
+    }
+
+    size_t i = 0;
+    for (auto [life, shield] : registry.select<Life, Shield>()
+                                   .where<ecstasy::query::Condition<&Life::value, &Shield::getValue, std::less<>>>()) {
+        GTEST_ASSERT_TRUE(life.value < shield.value);
+        ++i;
+    }
+    GTEST_ASSERT_EQ(i, 4);
+}
+
+TEST(Registry, ConditionnalQueryGetterConst)
+{
+    ecstasy::Registry registry;
+
+    for (int i = 0; i < 13; i++)
+        registry.entityBuilder().with<Life>((i % 2 == 0) ? 42 : -42).build();
+
+    size_t i = 0;
+    for (auto [life] : registry.select<Life>().where<ecstasy::query::Condition<&Life::getValue, 0, std::less<>>>()) {
+        GTEST_ASSERT_TRUE(life.value < 0);
+        ++i;
+    }
+    GTEST_ASSERT_EQ(i, 6);
+}
+
+TEST(Registry, ConditionnalQueryGetterMember)
+{
+    ecstasy::Registry registry;
+
+    for (int i = 0; i < 13; i++)
+        registry.entityBuilder().with<Life>((i % 2 == 0) ? 42 : -42).with<Shield>((i % 3 == 0) ? -100 : 40).build();
+
+    size_t i = 0;
+    for (auto [life, shield] : registry.select<Life, Shield>()
+                                   .where<ecstasy::query::Condition<&Life::getValue, &Shield::value, std::less<>>>()) {
+        GTEST_ASSERT_TRUE(life.value < shield.value);
+        ++i;
+    }
+    GTEST_ASSERT_EQ(i, 4);
+}
+
+TEST(Registry, ConditionnalQueryGetterGetter)
+{
+    ecstasy::Registry registry;
+
+    for (int i = 0; i < 13; i++)
+        registry.entityBuilder().with<Life>((i % 2 == 0) ? 42 : -42).with<Shield>((i % 3 == 0) ? -100 : 40).build();
+
+    size_t i = 0;
+    for (auto [life, shield] :
+        registry.select<Life, Shield>()
+            .where<ecstasy::query::Condition<&Life::getValue, &Shield::getValue, std::less<>>>()) {
+        GTEST_ASSERT_TRUE(life.value < shield.value);
+        ++i;
+    }
+    GTEST_ASSERT_EQ(i, 4);
+}
+
+TEST(Registry, Less)
+{
+    ecstasy::Registry registry;
+
+    for (int i = 0; i < 13; i++)
+        registry.entityBuilder().with<Life>((i % 2 == 0) ? 0 : -42).build();
+
+    size_t i = 0;
+    for (auto [life] : registry.select<Life>().where<ecstasy::Less<&Life::value, 0>>()) {
+        GTEST_ASSERT_TRUE(life.value < 0);
+        ++i;
+    }
+    GTEST_ASSERT_EQ(i, 6);
+}
+
+TEST(Registry, LessEqual)
+{
+    ecstasy::Registry registry;
+
+    for (int i = 0; i < 13; i++)
+        registry.entityBuilder().with<Life>((i % 2 == 0) ? 0 : -42).build();
+
+    size_t i = 0;
+    for (auto [life] : registry.select<Life>().where<ecstasy::LessEqual<&Life::value, 0>>()) {
+        GTEST_ASSERT_TRUE(life.value <= 0);
+        ++i;
+    }
+    GTEST_ASSERT_EQ(i, 13);
+}
+
+TEST(Registry, Greater)
+{
+    ecstasy::Registry registry;
+
+    for (int i = 0; i < 13; i++)
+        registry.entityBuilder().with<Life>((i % 2 == 0) ? 0 : 42).build();
+
+    size_t i = 0;
+    for (auto [life] : registry.select<Life>().where<ecstasy::Greater<&Life::value, 0>>()) {
+        GTEST_ASSERT_TRUE(life.value > 0);
+        ++i;
+    }
+    GTEST_ASSERT_EQ(i, 6);
+}
+
+TEST(Registry, GreaterEqual)
+{
+    ecstasy::Registry registry;
+
+    for (int i = 0; i < 13; i++)
+        registry.entityBuilder().with<Life>((i % 2 == 0) ? 0 : 42).build();
+
+    size_t i = 0;
+    for (auto [life] : registry.select<Life>().where<ecstasy::GreaterEqual<&Life::value, 0>>()) {
+        GTEST_ASSERT_TRUE(life.value >= 0);
+        ++i;
+    }
+    GTEST_ASSERT_EQ(i, 13);
+}
+
+TEST(Registry, EqualTo)
+{
+    ecstasy::Registry registry;
+
+    for (int i = 0; i < 13; i++)
+        registry.entityBuilder().with<Life>((i % 2 == 0) ? 0 : 42).build();
+
+    size_t i = 0;
+    for (auto [life] : registry.select<Life>().where<ecstasy::EqualTo<&Life::value, 0>>()) {
+        GTEST_ASSERT_TRUE(life.value == 0);
+        ++i;
+    }
+    GTEST_ASSERT_EQ(i, 7);
+}
+
+TEST(Registry, NotEqualTo)
+{
+    ecstasy::Registry registry;
+
+    for (int i = 0; i < 13; i++)
+        registry.entityBuilder().with<Life>((i % 2 == 0) ? 0 : 42).build();
+
+    size_t i = 0;
+    for (auto [life] : registry.select<Life>().where<ecstasy::NotEqualTo<&Life::value, 0>>()) {
+        GTEST_ASSERT_TRUE(life.value != 0);
+        ++i;
+    }
+    GTEST_ASSERT_EQ(i, 6);
 }

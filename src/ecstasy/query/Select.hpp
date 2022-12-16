@@ -241,19 +241,22 @@ namespace ecstasy::query
         ///
         /// @warning All queryables specified in @ref Selected @b must be passed as parameters.
         ///
+        /// @tparam Conditions @ref util::meta::Traits of multiple @ref ecstasy::query::Condition.
         /// @tparam FirstWhere First @ref Queryable type.
         /// @tparam Wheres Others @ref Queryable types.
         ///
         /// @param[in] firstWhere first @ref Queryable instance.
         /// @param[in] wheres others @ref Queryable instances.
         ///
-        /// @return Query<SelectedQueryables...> Resulting query that can be iterated.
+        /// @return QueryImplementation<util::meta::Traits<SelectedQueryables...>, Conditions> Resulting query that can
+        /// be iterated.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-22)
         ///
-        template <Queryable FirstWhere, Queryable... Wheres>
-        static Query<SelectedQueryables...> where(FirstWhere &firstWhere, Wheres &...wheres)
+        template <typename Conditions = util::meta::Traits<>, Queryable FirstWhere, Queryable... Wheres>
+        static QueryImplementation<util::meta::Traits<SelectedQueryables...>, Conditions> where(
+            FirstWhere &firstWhere, Wheres &...wheres)
         {
             /// Adjusts the masks only if required
             if constexpr (is_queryable_with_adjust_v<
@@ -266,7 +269,8 @@ namespace ecstasy::query
 
             util::BitSet mask = (util::BitSet(firstWhere.getMask()) &= ... &= wheres.getMask());
 
-            return Query<SelectedQueryables...>(mask, filterQueryables(firstWhere, wheres...));
+            return QueryImplementation<util::meta::Traits<SelectedQueryables...>, Conditions>(
+                mask, filterQueryables(firstWhere, wheres...));
         }
     };
 

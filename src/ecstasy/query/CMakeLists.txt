@@ -2,6 +2,7 @@ set(INCROOT ${INCROOT}/query)
 set(SRCROOT ${SRCROOT}/query)
 
 add_subdirectory(concepts)
+add_subdirectory(conditions)
 add_subdirectory(modifiers)
 
 set(SRC
