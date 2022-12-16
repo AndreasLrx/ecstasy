@@ -4,6 +4,7 @@
 #include "ecstasy/storages/MapStorage.hpp"
 
 #include "ecstasy/query/Select.hpp"
+#include "ecstasy/query/conditions/Condition.hpp"
 #include "ecstasy/query/modifiers/And.hpp"
 #include "ecstasy/query/modifiers/Maybe.hpp"
 #include "ecstasy/query/modifiers/Not.hpp"
@@ -516,4 +517,53 @@ TEST(Query, XorVariadic)
 
     /// Xor of three inputs return true if an odd number of its input are true
     GTEST_ASSERT_EQ(query.getMask(), util::BitSet("11011100001101"));
+}
+
+/// Constant - Constant
+/// Constant - Value Member
+/// Constant - Member function
+/// Value Member - Constant
+/// Value Member - Value Member
+/// Value Member - Member function
+/// Member function - Constant
+/// Member function - Value Member
+/// Member function - Member function
+
+struct Life {
+    int getValue() const
+    {
+        return value;
+    }
+    int value;
+
+    Life(int v) : value(v)
+    {
+    }
+};
+
+TEST(Condition, MemberToConst)
+{
+    Life life{42};
+    Life death{-42};
+
+    using memberCondition = ecstasy::query::Condition<&Life::value, 0, std::less<>>;
+    using methodCondition = ecstasy::query::Condition<&Life::getValue, 0, std::less<>>;
+
+    GTEST_ASSERT_FALSE(memberCondition::test(life));
+    GTEST_ASSERT_FALSE(methodCondition::test(life));
+    GTEST_ASSERT_TRUE(memberCondition::test(death));
+}
+
+TEST(QueryImplementation, Conditional)
+{
+    ecstasy::MapStorage<Life> lifes;
+
+    for (int i = 0; i < 13; i++)
+        lifes.emplace(i, (i % 2 == 0) ? 42 : -42);
+
+    auto query = ecstasy::query::QueryImplementation<util::meta::Traits<decltype(lifes)>,
+        util::meta::Traits<ecstasy::query::Condition<&Life::value, 0, std::less<>>>>(lifes);
+
+    for (auto [life] : query)
+        GTEST_ASSERT_TRUE(life.value < 0);
 }

@@ -12,6 +12,7 @@
 #ifndef ECSTASY_QUERY_CONCEPTS_HPP_
 #define ECSTASY_QUERY_CONCEPTS_HPP_
 
+#include "Condition.hpp"
 #include "Modifier.hpp"
 #include "Queryable.hpp"
 #include "QueryableNeedAdjust.hpp"
