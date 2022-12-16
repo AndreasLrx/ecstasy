@@ -114,10 +114,10 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a10bca82d44009002d7e78c12ede0ba6d"><td class="memTemplParams" colspan="2">template&lt;Queryable FirstWhere, Queryable... Wheres&gt; </td></tr>
-<tr class="memitem:a10bca82d44009002d7e78c12ede0ba6d"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classecstasy_1_1query_1_1_query.html">Query</a>&lt; SelectedQueryables... &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1_select.html#a10bca82d44009002d7e78c12ede0ba6d">where</a> (FirstWhere &amp;firstWhere, Wheres &amp;...wheres)</td></tr>
-<tr class="memdesc:a10bca82d44009002d7e78c12ede0ba6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute a AND query with all the given Queryables but returns only the one in Selected.  <a href="structecstasy_1_1query_1_1_select.html#a10bca82d44009002d7e78c12ede0ba6d">More...</a><br /></td></tr>
-<tr class="separator:a10bca82d44009002d7e78c12ede0ba6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a058d1315dfca6014e11c8ee6fdea6aff"><td class="memTemplParams" colspan="2">template&lt;typename Conditions  = util::meta::Traits&lt;&gt;, Queryable FirstWhere, Queryable... Wheres&gt; </td></tr>
+<tr class="memitem:a058d1315dfca6014e11c8ee6fdea6aff"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classecstasy_1_1query_1_1_query_implementation.html">QueryImplementation</a>&lt; <a class="el" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt; SelectedQueryables... &gt;, Conditions &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1_select.html#a058d1315dfca6014e11c8ee6fdea6aff">where</a> (FirstWhere &amp;firstWhere, Wheres &amp;...wheres)</td></tr>
+<tr class="memdesc:a058d1315dfca6014e11c8ee6fdea6aff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute a AND query with all the given Queryables but returns only the one in Selected.  <a href="structecstasy_1_1query_1_1_select.html#a058d1315dfca6014e11c8ee6fdea6aff">More...</a><br /></td></tr>
+<tr class="separator:a058d1315dfca6014e11c8ee6fdea6aff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
@@ -304,21 +304,21 @@ template&lt;Queryable... Qs&gt; </div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a10bca82d44009002d7e78c12ede0ba6d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10bca82d44009002d7e78c12ede0ba6d">&#9670;&nbsp;</a></span>where()</h2>
+<a id="a058d1315dfca6014e11c8ee6fdea6aff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a058d1315dfca6014e11c8ee6fdea6aff">&#9670;&nbsp;</a></span>where()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;Queryable... SelectedQueryables&gt; </div>
 <div class="memtemplate">
-template&lt;Queryable FirstWhere, Queryable... Wheres&gt; </div>
+template&lt;typename Conditions  = util::meta::Traits&lt;&gt;, Queryable FirstWhere, Queryable... Wheres&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classecstasy_1_1query_1_1_query.html">Query</a>&lt;SelectedQueryables...&gt; <a class="el" href="structecstasy_1_1query_1_1_select.html">ecstasy::query::Select</a>&lt; SelectedQueryables &gt;::where </td>
+          <td class="memname">static <a class="el" href="classecstasy_1_1query_1_1_query_implementation.html">QueryImplementation</a>&lt;<a class="el" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt;SelectedQueryables...&gt;, Conditions&gt; <a class="el" href="structecstasy_1_1query_1_1_select.html">ecstasy::query::Select</a>&lt; SelectedQueryables &gt;::where </td>
           <td>(</td>
           <td class="paramtype">FirstWhere &amp;&#160;</td>
           <td class="paramname"><em>firstWhere</em>, </td>
@@ -346,6 +346,7 @@ template&lt;Queryable FirstWhere, Queryable... Wheres&gt; </div>
 <dl class="section warning"><dt>Warning</dt><dd>All queryables specified in Selected <b>must</b> be passed as parameters.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
+    <tr><td class="paramname">Conditions</td><td><a class="el" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a> of multiple <a class="el" href="structecstasy_1_1query_1_1_condition.html">ecstasy::query::Condition</a>. </td></tr>
     <tr><td class="paramname">FirstWhere</td><td>First <a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">Queryable</a> type. </td></tr>
     <tr><td class="paramname">Wheres</td><td>Others <a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">Queryable</a> types.</td></tr>
   </table>
@@ -358,25 +359,26 @@ template&lt;Queryable FirstWhere, Queryable... Wheres&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Query&lt;SelectedQueryables...&gt; Resulting query that can be iterated.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classecstasy_1_1query_1_1_query_implementation.html" title="Query components presents in all given queryables.">QueryImplementation</a>&lt;util::meta::Traits&lt;SelectedQueryables...&gt;, Conditions&gt; Resulting query that can be iterated.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-22) </dd></dl>
 <p>Adjusts the masks only if required</p>
 
-<p class="definition">Definition at line <a class="el" href="_select_8hpp_source.html#l00256">256</a> of file <a class="el" href="_select_8hpp_source.html">Select.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        {</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <span class="keywordflow">if</span> constexpr (<a class="code" href="namespaceecstasy_1_1query.html#a3d41373b2db15c07621fbe36544701f5">is_queryable_with_adjust_v</a>&lt;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                              FirstWhere&gt; || <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/disjunction.html">std::disjunction_v</a>&lt;is_queryable_with_adjust&lt;Wheres&gt;...&gt;) {</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                <span class="keywordtype">size_t</span> maxSize = <a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/max.html">std::max</a>({firstWhere.getMask().<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/size.html">size</a>(), wheres.getMask().size()...});</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                <a class="code" href="namespaceecstasy_1_1query.html#a4c703ad1e1c3899f179ed7702a365254">adjustMask</a>(firstWhere, maxSize);</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                (<a class="code" href="namespaceecstasy_1_1query.html#a4c703ad1e1c3899f179ed7702a365254">adjustMask</a>(wheres, maxSize), ...);</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            }</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            <a class="code" href="classutil_1_1_bit_set.html">util::BitSet</a> mask = (<a class="code" href="classutil_1_1_bit_set.html">util::BitSet</a>(firstWhere.getMask()) &amp;= ... &amp;= wheres.getMask());</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <span class="keywordflow">return</span> Query&lt;SelectedQueryables...&gt;(mask, <a class="code" href="structecstasy_1_1query_1_1_select.html#ad252ec843261fc91e1f065b8f843e1db">filterQueryables</a>(firstWhere, wheres...));</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_select_8hpp_source.html#l00258">258</a> of file <a class="el" href="_select_8hpp_source.html">Select.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        {</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            <span class="keywordflow">if</span> constexpr (<a class="code" href="namespaceecstasy_1_1query.html#a3d41373b2db15c07621fbe36544701f5">is_queryable_with_adjust_v</a>&lt;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                              FirstWhere&gt; || <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/disjunction.html">std::disjunction_v</a>&lt;is_queryable_with_adjust&lt;Wheres&gt;...&gt;) {</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                <span class="keywordtype">size_t</span> maxSize = <a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/max.html">std::max</a>({firstWhere.getMask().<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/size.html">size</a>(), wheres.getMask().size()...});</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                <a class="code" href="namespaceecstasy_1_1query.html#a4c703ad1e1c3899f179ed7702a365254">adjustMask</a>(firstWhere, maxSize);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                (<a class="code" href="namespaceecstasy_1_1query.html#a4c703ad1e1c3899f179ed7702a365254">adjustMask</a>(wheres, maxSize), ...);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            }</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            <a class="code" href="classutil_1_1_bit_set.html">util::BitSet</a> mask = (<a class="code" href="classutil_1_1_bit_set.html">util::BitSet</a>(firstWhere.getMask()) &amp;= ... &amp;= wheres.getMask());</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            <span class="keywordflow">return</span> QueryImplementation&lt;<a class="code" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt;SelectedQueryables...&gt;, Conditions&gt;(</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                mask, <a class="code" href="structecstasy_1_1query_1_1_select.html#ad252ec843261fc91e1f065b8f843e1db">filterQueryables</a>(firstWhere, wheres...));</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        }</div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html"><div class="ttname"><a href="classutil_1_1_bit_set.html">util::BitSet</a></div><div class="ttdoc">Mimics the API of std::bitset but with the dynamic properties of std::vector&lt;bool&gt;</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8hpp_source.html#l00035">BitSet.hpp:35</a></div></div>
 <div class="ttc" id="adisjunction_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/types/disjunction.html">std::disjunction_v</a></div><div class="ttdeci">T disjunction_v</div></div>
 <div class="ttc" id="amax_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/algorithm/max.html">std::max</a></div><div class="ttdeci">T max(T... args)</div></div>

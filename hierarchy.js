@@ -1,5 +1,8 @@
 var hierarchy =
 [
+    [ "util::meta::_filter< Treated, Filter, Untreated >", "structutil_1_1meta_1_1__filter.html", null ],
+    [ "util::meta::_filter< Traits< Treated... >, Filter >", "structutil_1_1meta_1_1__filter_3_01_traits_3_01_treated_8_8_8_01_4_00_01_filter_01_4.html", null ],
+    [ "util::meta::_filter< Traits< Treated... >, Filter, Current, Untreated... >", "structutil_1_1meta_1_1__filter_3_01_traits_3_01_treated_8_8_8_01_4_00_01_filter_00_01_current_00_01_untreated_8_8_8_01_4.html", null ],
     [ "util::meta::_left_outer_join< Rights, IsInner, Left, OuterLefts >", "structutil_1_1meta_1_1__left__outer__join.html", null ],
     [ "util::meta::_left_outer_join< Traits< Rights... >, IsInner, Left, OuterLefts... >", "structutil_1_1meta_1_1__left__outer__join_3_01_traits_3_01_rights_8_8_8_01_4_00_01_is_inner_00_0e1c6c75ebd27a9e3cd5f35357e042e62.html", null ],
     [ "ecstasy::integration::user_action::Action", "structecstasy_1_1integration_1_1user__action_1_1_action.html", null ],
@@ -13,6 +16,8 @@ var hierarchy =
     [ "util::meta::add_optional< T & >", "structutil_1_1meta_1_1add__optional_3_01_t_01_6_01_4.html", null ],
     [ "util::Allocator< Base >", "classutil_1_1_allocator.html", null ],
     [ "ecstasy::And< C1, C2, Cs >", "structecstasy_1_1_and.html", null ],
+    [ "util::meta::apply< Functor, Ts >", "structutil_1_1meta_1_1apply.html", null ],
+    [ "util::meta::apply< Functor, Traits< Ts... > >", "structutil_1_1meta_1_1apply_3_01_functor_00_01_traits_3_01_ts_8_8_8_01_4_01_4.html", null ],
     [ "util::serialization::IArrayNode::ArrayIterator< isConst >", "classutil_1_1serialization_1_1_i_array_node_1_1_array_iterator.html", null ],
     [ "util::BitSet", "classutil_1_1_bit_set.html", null ],
     [ "ecstasy::Entities::Builder", "classecstasy_1_1_entities_1_1_builder.html", null ],
@@ -24,6 +29,9 @@ var hierarchy =
     ] ],
     [ "std::conditional_t<(sizeof...(Ts1)==sizeof...(Ts2)) &&_type_set_eq< std::tuple< Ts1... >, std::tuple< Ts2... > >::value, std::true_type, std::false_type >", "http://en.cppreference.com/w/cpp/types/conditional.html", [
       [ "util::meta::type_set_eq< std::tuple< Ts1... >, std::tuple< Ts2... > >", "structutil_1_1meta_1_1type__set__eq_3_01std_1_1tuple_3_01_ts1_8_8_8_01_4_00_01std_1_1tuple_3_01_ts2_8_8_8_01_4_01_4.html", null ]
+    ] ],
+    [ "ecstasy::query::ConditionBase", "structecstasy_1_1query_1_1_condition_base.html", [
+      [ "ecstasy::query::Condition< Left, Right, Comparer >", "structecstasy_1_1query_1_1_condition.html", null ]
     ] ],
     [ "ecstasy::DeletionStack", "classecstasy_1_1_deletion_stack.html", null ],
     [ "ecstasy::integration::sfml::Encoding", "classecstasy_1_1integration_1_1sfml_1_1_encoding.html", null ],
@@ -40,6 +48,7 @@ var hierarchy =
       [ "util::meta::_type_set_eq< typename, typename >", "structutil_1_1meta_1_1__type__set__eq.html", null ],
       [ "util::meta::type_set_eq< typename, typename >", "structutil_1_1meta_1_1type__set__eq.html", null ]
     ] ],
+    [ "util::meta::filter< Filter, Ts >", "structutil_1_1meta_1_1filter.html", null ],
     [ "ecstasy::query::Select< SelectedQueryables >::FilterQueryables< ContainsPivot, Pivot, Lefts >", "structecstasy_1_1query_1_1_select_1_1_filter_queryables.html", null ],
     [ "ecstasy::integration::event::Gamepad", "classecstasy_1_1integration_1_1event_1_1_gamepad.html", null ],
     [ "ecstasy::integration::event::GamepadAxisEvent", "structecstasy_1_1integration_1_1event_1_1_gamepad_axis_event.html", null ],
@@ -51,6 +60,7 @@ var hierarchy =
     [ "GetComponentStorageType< C >", "struct_get_component_storage_type.html", null ],
     [ "ecstasy::Registry::GetModifierProxy< Operands >", "structecstasy_1_1_registry_1_1_get_modifier_proxy.html", null ],
     [ "ecstasy::Registry::GetModifierProxy< std::tuple< Qs... > >", "structecstasy_1_1_registry_1_1_get_modifier_proxy_3_01std_1_1tuple_3_01_qs_8_8_8_01_4_01_4.html", null ],
+    [ "util::meta::index< T, Ts >", "structutil_1_1meta_1_1index.html", null ],
     [ "util::serialization::INode", "classutil_1_1serialization_1_1_i_node.html", [
       [ "util::serialization::IArrayNode", "classutil_1_1serialization_1_1_i_array_node.html", null ],
       [ "util::serialization::IObjectNode", "classutil_1_1serialization_1_1_i_object_node.html", null ]
@@ -59,8 +69,20 @@ var hierarchy =
     [ "ecstasy::Instances< ecstasy::IStorage >", "classecstasy_1_1_instances.html", null ],
     [ "ecstasy::Instances< ecstasy::ISystem >", "classecstasy_1_1_instances.html", null ],
     [ "ecstasy::Instances< ecstasy::Resource >", "classecstasy_1_1_instances.html", null ],
-    [ "ecstasy::Registry::Select< Selects >::Internal< MissingsTuple, Cs >", "structecstasy_1_1_registry_1_1_select_1_1_internal.html", null ],
-    [ "ecstasy::Registry::Select< Selects >::Internal< std::tuple< Missings... >, Cs... >", "structecstasy_1_1_registry_1_1_select_1_1_internal_3_01std_1_1tuple_3_01_missings_8_8_8_01_4_00_01_cs_8_8_8_01_4.html", null ],
+    [ "std::integral_constant< bool, !IsCondition< T >::value >", "http://en.cppreference.com/w/cpp/types/integral_constant.html", [
+      [ "ecstasy::Registry::Select< Selects >::IsNotCondition< T >", "structecstasy_1_1_registry_1_1_select_1_1_is_not_condition.html", null ]
+    ] ],
+    [ "std::integral_constant< std::size_t, 0 >", "http://en.cppreference.com/w/cpp/types/integral_constant.html", [
+      [ "util::meta::index< T, T, Ts... >", "structutil_1_1meta_1_1index_3_01_t_00_01_t_00_01_ts_8_8_8_01_4.html", null ]
+    ] ],
+    [ "std::integral_constant< std::size_t, 1+index< T, Ts... >::value >", "http://en.cppreference.com/w/cpp/types/integral_constant.html", [
+      [ "util::meta::index< T, U, Ts... >", "structutil_1_1meta_1_1index_3_01_t_00_01_u_00_01_ts_8_8_8_01_4.html", null ]
+    ] ],
+    [ "ecstasy::Registry::Select< Selects >::Internal< MissingsTuple, ComponentsTuple, ConditionsTuple >", "structecstasy_1_1_registry_1_1_select_1_1_internal.html", null ],
+    [ "ecstasy::Registry::Select< Selects >::Internal< std::tuple< Missings... >, std::tuple< Cs... >, std::tuple< Conditions... > >", "structecstasy_1_1_registry_1_1_select_1_1_internal_3_01std_1_1tuple_3_01_missings_8_8_8_01_4_00_46ce1ad1b26bbe162d7408965afd23ff.html", null ],
+    [ "std::is_base_of< ecstasy::query::ConditionBase, T >", "http://en.cppreference.com/w/cpp/types/is_base_of.html", [
+      [ "ecstasy::Registry::Select< Selects >::IsCondition< T >", "structecstasy_1_1_registry_1_1_select_1_1_is_condition.html", null ]
+    ] ],
     [ "ecstasy::IStorage", "classecstasy_1_1_i_storage.html", [
       [ "ecstasy::MapStorage< C >", "classecstasy_1_1_map_storage.html", null ]
     ] ],
@@ -68,7 +90,7 @@ var hierarchy =
       [ "ecstasy::integration::sfml::PollEvents", "classecstasy_1_1integration_1_1sfml_1_1_poll_events.html", null ],
       [ "ecstasy::integration::user_action::PollActions< std::integer_sequence< Action::Id, Actions... > >", "classecstasy_1_1integration_1_1user__action_1_1_poll_actions_3_01std_1_1integer__sequence_3_01_a67921aad8fc30a11f205db4b0bf5827d.html", null ]
     ] ],
-    [ "ecstasy::query::Query< First, Others >::Iterator", "classecstasy_1_1query_1_1_query_1_1_iterator.html", null ],
+    [ "ecstasy::query::QueryImplementation< util::meta::Traits< First, Others... >, util::meta::Traits< Conditions... > >::Iterator", "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html", null ],
     [ "ecstasy::integration::event::KeyCombinationListener", "classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html", null ],
     [ "ecstasy::integration::event::KeyEvent", "structecstasy_1_1integration_1_1event_1_1_key_event.html", [
       [ "ecstasy::integration::event::KeyPressedEvent", "structecstasy_1_1integration_1_1event_1_1_key_pressed_event.html", null ],
@@ -103,11 +125,15 @@ var hierarchy =
     [ "util::serialization::IObjectNode::ObjectIterator< isConst >", "classutil_1_1serialization_1_1_i_object_node_1_1_object_iterator.html", null ],
     [ "ecstasy::Or< C1, C2, Cs >", "structecstasy_1_1_or.html", null ],
     [ "ecstasy::integration::user_action::PollActions< Actions >", "classecstasy_1_1integration_1_1user__action_1_1_poll_actions.html", null ],
-    [ "ecstasy::query::Query< First, Others >", "classecstasy_1_1query_1_1_query.html", null ],
     [ "ecstasy::queryable_type< C >", "structecstasy_1_1queryable__type.html", null ],
     [ "ecstasy::queryable_type< M >", "structecstasy_1_1queryable__type_3_01_m_01_4.html", null ],
     [ "ecstasy::queryable_type< R >", "structecstasy_1_1queryable__type_3_01_r_01_4.html", null ],
     [ "ecstasy::queryable_type< S >", "structecstasy_1_1queryable__type_3_01_s_01_4.html", null ],
+    [ "ecstasy::query::QueryImplementation< Storages, Conditions >", "classecstasy_1_1query_1_1_query_implementation.html", null ],
+    [ "ecstasy::query::QueryImplementation< util::meta::Traits< First, Others... >, util::meta::Traits< Conditions... > >", "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html", null ],
+    [ "ecstasy::query::QueryImplementation< util::meta::Traits< First, Others... >, util::meta::Traits<> >", "classecstasy_1_1query_1_1_query_implementation.html", [
+      [ "ecstasy::query::Query< First, Others >", "classecstasy_1_1query_1_1_query.html", null ]
+    ] ],
     [ "util::BitSet::Reference", "classutil_1_1_bit_set_1_1_reference.html", null ],
     [ "ecstasy::Registry", "classecstasy_1_1_registry.html", null ],
     [ "ecstasy::Resource", "classecstasy_1_1_resource.html", [

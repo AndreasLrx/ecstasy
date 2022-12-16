@@ -7,5 +7,5 @@ digraph "src/ecstasy/integrations/sfml/resources" {
   dir_d39b5e3b98d710191729c82e4f1d60c9 [shape=box, label="resources", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_d39b5e3b98d710191729c82e4f1d60c9.html"];
   }
   dir_8c1a170fbd0a5283d7ed264cf6df56b3 [shape=box label="resources" fillcolor="white" style="filled" color="red" URL="dir_8c1a170fbd0a5283d7ed264cf6df56b3.html"];
-  dir_d39b5e3b98d710191729c82e4f1d60c9->dir_8c1a170fbd0a5283d7ed264cf6df56b3 [headlabel="1", labeldistance=1.5 headhref="dir_000008_000017.html"];
+  dir_d39b5e3b98d710191729c82e4f1d60c9->dir_8c1a170fbd0a5283d7ed264cf6df56b3 [headlabel="1", labeldistance=1.5 headhref="dir_000008_000018.html"];
 }

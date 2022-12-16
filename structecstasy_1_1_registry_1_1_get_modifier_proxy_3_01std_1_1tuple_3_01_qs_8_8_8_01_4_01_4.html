@@ -115,7 +115,7 @@ struct ecstasy::Registry::GetModifierProxy&lt; std::tuple&lt; Qs... &gt; &gt;</h
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-22) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00112">112</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00115">115</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ad38465d9899b2b920e96207e82c496b1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad38465d9899b2b920e96207e82c496b1">&#9670;&nbsp;</a></span>get()</h2>
@@ -180,12 +180,12 @@ template&lt;query::Modifier M&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-22) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00130">130</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            {</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                <span class="keywordflow">if</span> (!allocator)</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                    <span class="keywordflow">throw</span> <a class="codeRef" href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a>(<span class="stringliteral">&quot;Missing modifier allocator&quot;</span>);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                <span class="keywordflow">return</span> allocator-&gt;get().instanciate&lt;M&gt;(registry.getQueryable&lt;Qs&gt;(allocator)...);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00133">133</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                <span class="keywordflow">if</span> (!allocator)</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                    <span class="keywordflow">throw</span> <a class="codeRef" href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a>(<span class="stringliteral">&quot;Missing modifier allocator&quot;</span>);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                <span class="keywordflow">return</span> allocator-&gt;get().instanciate&lt;M&gt;(registry.getQueryable&lt;Qs&gt;(allocator)...);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            }</div>
 <div class="ttc" id="alogic_error_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a></div></div>
 </div><!-- fragment -->
 </div>

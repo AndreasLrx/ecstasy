@@ -1,0 +1,4 @@
+var structutil_1_1meta_1_1__filter_3_01_traits_3_01_treated_8_8_8_01_4_00_01_filter_00_01_current_00_01_untreated_8_8_8_01_4 =
+[
+    [ "type", "structutil_1_1meta_1_1__filter_3_01_traits_3_01_treated_8_8_8_01_4_00_01_filter_00_01_current_00_01_untreated_8_8_8_01_4.html#ae41f1856b65c9705e096abf4943b3939", null ]
+];

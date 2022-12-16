@@ -11,9 +11,9 @@ digraph "src/ecstasy/integrations/sfml/systems" {
   dir_27d9dd95bf0309eb27f3bb61fbabadeb [shape=box label="registry" fillcolor="white" style="filled" color="red" URL="dir_27d9dd95bf0309eb27f3bb61fbabadeb.html"];
   dir_bb1f71bfffde0d1688dd5f7686f27ec6 [shape=box label="system" URL="dir_bb1f71bfffde0d1688dd5f7686f27ec6.html"];
   dir_30970fbe9de3918f98e58b7106d748f8->dir_183c73d974247df0fabaedf6b9eb94ef [headlabel="6", labeldistance=1.5 headhref="dir_000009_000003.html"];
-  dir_30970fbe9de3918f98e58b7106d748f8->dir_27d9dd95bf0309eb27f3bb61fbabadeb [headlabel="1", labeldistance=1.5 headhref="dir_000009_000014.html"];
-  dir_30970fbe9de3918f98e58b7106d748f8->dir_bb1f71bfffde0d1688dd5f7686f27ec6 [headlabel="1", labeldistance=1.5 headhref="dir_000009_000024.html"];
+  dir_30970fbe9de3918f98e58b7106d748f8->dir_27d9dd95bf0309eb27f3bb61fbabadeb [headlabel="1", labeldistance=1.5 headhref="dir_000009_000015.html"];
+  dir_30970fbe9de3918f98e58b7106d748f8->dir_bb1f71bfffde0d1688dd5f7686f27ec6 [headlabel="1", labeldistance=1.5 headhref="dir_000009_000025.html"];
   dir_30970fbe9de3918f98e58b7106d748f8->dir_d39b5e3b98d710191729c82e4f1d60c9 [headlabel="1", labeldistance=1.5 headhref="dir_000009_000008.html"];
-  dir_27d9dd95bf0309eb27f3bb61fbabadeb->dir_bb1f71bfffde0d1688dd5f7686f27ec6 [headlabel="1", labeldistance=1.5 headhref="dir_000014_000024.html"];
-  dir_183c73d974247df0fabaedf6b9eb94ef->dir_27d9dd95bf0309eb27f3bb61fbabadeb [headlabel="3", labeldistance=1.5 headhref="dir_000003_000014.html"];
+  dir_27d9dd95bf0309eb27f3bb61fbabadeb->dir_bb1f71bfffde0d1688dd5f7686f27ec6 [headlabel="1", labeldistance=1.5 headhref="dir_000015_000025.html"];
+  dir_183c73d974247df0fabaedf6b9eb94ef->dir_27d9dd95bf0309eb27f3bb61fbabadeb [headlabel="3", labeldistance=1.5 headhref="dir_000003_000015.html"];
 }

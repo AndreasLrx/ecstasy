@@ -92,9 +92,13 @@ $(document).ready(function(){initNavTree('_query_8hpp.html',''); initResizable()
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/algorithm.html">algorithm</a>&gt;</code><br />
 <code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/functional.html">functional</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="concepts_2_condition_8hpp_source.html">concepts/Condition.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_queryable_8hpp_source.html">concepts/Queryable.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_queryable_need_adjust_8hpp_source.html">concepts/QueryableNeedAdjust.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="conditions_2_condition_8hpp_source.html">conditions/Condition.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_bit_set_8hpp_source.html">util/BitSet.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_traits_8hpp_source.html">util/meta/Traits.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="index_8hpp_source.html">util/meta/index.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Query.hpp:</div>
 <div class="dyncontent">
@@ -110,11 +114,15 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1_query.html">ecstasy::query::Query&lt; First, Others &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1query_1_1_query.html" title="Query components presents in all given queryables.">Query</a> components presents in all given queryables.  <a href="classecstasy_1_1query_1_1_query.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1_query_implementation.html">ecstasy::query::QueryImplementation&lt; Storages, Conditions &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1query_1_1_query.html">Query</a> components presents in all given queryables.  <a href="classecstasy_1_1query_1_1_query_implementation.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1_query_1_1_iterator.html">ecstasy::query::Query&lt; First, Others &gt;::Iterator</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1query_1_1_query.html" title="Query components presents in all given queryables.">Query</a> iterator.  <a href="classecstasy_1_1query_1_1_query_1_1_iterator.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html">ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html">ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt; &gt;::Iterator</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1query_1_1_query.html">Query</a> iterator.  <a href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1_query.html">ecstasy::query::Query&lt; First, Others &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>

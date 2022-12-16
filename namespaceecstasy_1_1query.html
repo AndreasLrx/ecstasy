@@ -86,6 +86,7 @@ $(document).ready(function(){initNavTree('namespaceecstasy_1_1query.html',''); i
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -116,12 +117,25 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1is__queryable__with__adjust_3_01_t_01_4.html">is_queryable_with_adjust&lt; T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given type match the <a class="el" href="namespaceecstasy_1_1query.html#a16b3ada3b141811dccbeee2e8fb65122">QueryableNeedAdjust</a> concept.  <a href="structecstasy_1_1query_1_1is__queryable__with__adjust_3_01_t_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1_condition_base.html">ConditionBase</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1_condition.html">Condition</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1_query_implementation.html">QueryImplementation</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1query_1_1_query.html">Query</a> components presents in all given queryables.  <a href="classecstasy_1_1query_1_1_query_implementation.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html">QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1_query.html">Query</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1query_1_1_query.html" title="Query components presents in all given queryables.">Query</a> components presents in all given queryables.  <a href="classecstasy_1_1query_1_1_query.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1_select.html">Select</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advanced <a class="el" href="classecstasy_1_1query_1_1_query.html">Query</a>.  <a href="structecstasy_1_1query_1_1_select.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ad9a8105fef6995f460996cf0ee301ea7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#ad9a8105fef6995f460996cf0ee301ea7">Right</a> = RightType</td></tr>
+<tr class="separator:ad9a8105fef6995f460996cf0ee301ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -133,9 +147,57 @@ Functions</h2></td></tr>
 <tr class="memitem:abcdf71489379b2578159fe2551a60b34"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#abcdf71489379b2578159fe2551a60b34">adjustMask</a> (Q &amp;queryable, size_t maxSize)</td></tr>
 <tr class="memdesc:abcdf71489379b2578159fe2551a60b34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust the queryable mask if needed.  <a href="namespaceecstasy_1_1query.html#abcdf71489379b2578159fe2551a60b34">More...</a><br /></td></tr>
 <tr class="separator:abcdf71489379b2578159fe2551a60b34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae5d7b89c92ec00ebea0cf94b09d8087"><td class="memTemplParams" colspan="2">template&lt;typename LeftType , LeftType Left, typename RightType , RightType Right, typename Comparer &gt; </td></tr>
+<tr class="memitem:aae5d7b89c92ec00ebea0cf94b09d8087"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a> (!<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_pointer.html">std::is_member_pointer_v</a>&lt; LeftType &gt; &amp;&amp;!<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_pointer.html">std::is_member_pointer_v</a>&lt; RightType &gt;) struct <a class="el" href="structecstasy_1_1query_1_1_condition.html">Condition</a>&lt; Left</td></tr>
+<tr class="separator:aae5d7b89c92ec00ebea0cf94b09d8087"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0090ffe92d5bda43acde18f864aa2165"><td class="memTemplParams" colspan="2">template&lt;typename LeftType , LeftType Left, typename RightType , typename RightValueType , RightValueType RightType::* ptr, typename Comparer &gt; </td></tr>
+<tr class="memitem:a0090ffe92d5bda43acde18f864aa2165"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a0090ffe92d5bda43acde18f864aa2165">requires</a> (!<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_pointer.html">std::is_member_pointer_v</a>&lt; LeftType &gt; &amp;&amp;<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_object_pointer.html">std::is_member_object_pointer_v</a>&lt; decltype(<a class="el" href="namespaceecstasy_1_1query.html#a49092a2e221825548a9fbb006b454b64">ptr</a>)&gt;) struct <a class="el" href="structecstasy_1_1query_1_1_condition.html">Condition</a>&lt; Left</td></tr>
+<tr class="separator:a0090ffe92d5bda43acde18f864aa2165"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26221fded93f162fcfd16e50130505bb"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a26221fded93f162fcfd16e50130505bb">test</a> (const RightType &amp;right)</td></tr>
+<tr class="separator:a26221fded93f162fcfd16e50130505bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4adb839a91520e457bc2910f4437b69e"><td class="memTemplParams" colspan="2">template&lt;typename LeftType , LeftType Left, typename RightType , typename RightValueType , RightValueType(RightType::*)(void) const ptr, typename Comparer &gt; </td></tr>
+<tr class="memitem:a4adb839a91520e457bc2910f4437b69e"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a4adb839a91520e457bc2910f4437b69e">requires</a> (!<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_pointer.html">std::is_member_pointer_v</a>&lt; LeftType &gt; &amp;&amp;<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_function_pointer.html">std::is_member_function_pointer_v</a>&lt; decltype(<a class="el" href="namespaceecstasy_1_1query.html#a49092a2e221825548a9fbb006b454b64">ptr</a>)&gt;) struct <a class="el" href="structecstasy_1_1query_1_1_condition.html">Condition</a>&lt; Left</td></tr>
+<tr class="separator:a4adb839a91520e457bc2910f4437b69e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae75429c1445361542266c089fea49ec5"><td class="memTemplParams" colspan="2">template&lt;typename LeftType , typename LeftValueType , LeftValueType LeftType::* ptr, typename RightType , RightType Right, typename Comparer &gt; </td></tr>
+<tr class="memitem:ae75429c1445361542266c089fea49ec5"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#ae75429c1445361542266c089fea49ec5">requires</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_object_pointer.html">std::is_member_object_pointer_v</a>&lt; decltype(<a class="el" href="namespaceecstasy_1_1query.html#a49092a2e221825548a9fbb006b454b64">ptr</a>)&gt; &amp;&amp;!<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_pointer.html">std::is_member_pointer_v</a>&lt; RightType &gt;) struct <a class="el" href="structecstasy_1_1query_1_1_condition.html">Condition</a>&lt; <a class="el" href="namespaceecstasy_1_1query.html#a49092a2e221825548a9fbb006b454b64">ptr</a></td></tr>
+<tr class="separator:ae75429c1445361542266c089fea49ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdfad070bb0720a255f12ba06c392723"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#abdfad070bb0720a255f12ba06c392723">test</a> (const LeftType &amp;left)</td></tr>
+<tr class="separator:abdfad070bb0720a255f12ba06c392723"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a221413ad86402a43f6c80c972a9086c3"><td class="memTemplParams" colspan="2">template&lt;typename LeftType , typename LeftValueType , LeftValueType LeftType::* ptrLeft, typename RightType , typename RightValueType , RightValueType RightType::* ptrRight, typename Comparer &gt; </td></tr>
+<tr class="memitem:a221413ad86402a43f6c80c972a9086c3"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a221413ad86402a43f6c80c972a9086c3">requires</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_object_pointer.html">std::is_member_object_pointer_v</a>&lt; decltype(ptrLeft)&gt; &amp;&amp;<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_object_pointer.html">std::is_member_object_pointer_v</a>&lt; decltype(<a class="el" href="namespaceecstasy_1_1query.html#a5d920c5c964c31c58dd89b01394f78c7">ptrRight</a>)&gt;) struct <a class="el" href="structecstasy_1_1query_1_1_condition.html">Condition</a>&lt; ptrLeft</td></tr>
+<tr class="separator:a221413ad86402a43f6c80c972a9086c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa87603f1ad1a8d5715a5354ac9255192"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#aa87603f1ad1a8d5715a5354ac9255192">test</a> (const LeftType &amp;left, const RightType &amp;right)</td></tr>
+<tr class="separator:aa87603f1ad1a8d5715a5354ac9255192"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affe1dab5193928ac61cc1f5da001dc34"><td class="memTemplParams" colspan="2">template&lt;typename LeftType , typename LeftValueType , LeftValueType LeftType::* ptrLeft, typename RightType , typename RightValueType , RightValueType(RightType::*)(void) const ptrRight, typename Comparer &gt; </td></tr>
+<tr class="memitem:affe1dab5193928ac61cc1f5da001dc34"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#affe1dab5193928ac61cc1f5da001dc34">requires</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_object_pointer.html">std::is_member_object_pointer_v</a>&lt; decltype(ptrLeft)&gt; &amp;&amp;<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_function_pointer.html">std::is_member_function_pointer_v</a>&lt; decltype(<a class="el" href="namespaceecstasy_1_1query.html#a5d920c5c964c31c58dd89b01394f78c7">ptrRight</a>)&gt;) struct <a class="el" href="structecstasy_1_1query_1_1_condition.html">Condition</a>&lt; ptrLeft</td></tr>
+<tr class="separator:affe1dab5193928ac61cc1f5da001dc34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9a72a43d9737d490fe253134913097c"><td class="memTemplParams" colspan="2">template&lt;typename LeftType , typename LeftValueType , LeftValueType(LeftType::*)(void) const ptr, typename RightType , RightType Right, typename Comparer &gt; </td></tr>
+<tr class="memitem:af9a72a43d9737d490fe253134913097c"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#af9a72a43d9737d490fe253134913097c">requires</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_function_pointer.html">std::is_member_function_pointer_v</a>&lt; decltype(<a class="el" href="namespaceecstasy_1_1query.html#a49092a2e221825548a9fbb006b454b64">ptr</a>)&gt; &amp;&amp;!<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_pointer.html">std::is_member_pointer_v</a>&lt; RightType &gt;) struct <a class="el" href="structecstasy_1_1query_1_1_condition.html">Condition</a>&lt; <a class="el" href="namespaceecstasy_1_1query.html#a49092a2e221825548a9fbb006b454b64">ptr</a></td></tr>
+<tr class="separator:af9a72a43d9737d490fe253134913097c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9d65f1a74cdb76cd858e0e8e600a5d5"><td class="memTemplParams" colspan="2">template&lt;typename LeftType , typename LeftValueType , LeftValueType(LeftType::*)(void) const ptrLeft, typename RightType , typename RightValueType , RightValueType RightType::* ptrRight, typename Comparer &gt; </td></tr>
+<tr class="memitem:ac9d65f1a74cdb76cd858e0e8e600a5d5"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#ac9d65f1a74cdb76cd858e0e8e600a5d5">requires</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_function_pointer.html">std::is_member_function_pointer_v</a>&lt; decltype(ptrLeft)&gt; &amp;&amp;<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_object_pointer.html">std::is_member_object_pointer_v</a>&lt; decltype(<a class="el" href="namespaceecstasy_1_1query.html#a5d920c5c964c31c58dd89b01394f78c7">ptrRight</a>)&gt;) struct <a class="el" href="structecstasy_1_1query_1_1_condition.html">Condition</a>&lt; ptrLeft</td></tr>
+<tr class="separator:ac9d65f1a74cdb76cd858e0e8e600a5d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca542f83c79330c15ccd3cde73bae4a0"><td class="memTemplParams" colspan="2">template&lt;typename LeftType , typename LeftValueType , LeftValueType(LeftType::*)(void) const ptrLeft, typename RightType , typename RightValueType , RightValueType(RightType::*)(void) const ptrRight, typename Comparer &gt; </td></tr>
+<tr class="memitem:aca542f83c79330c15ccd3cde73bae4a0"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">requires</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_function_pointer.html">std::is_member_function_pointer_v</a>&lt; decltype(ptrLeft)&gt; &amp;&amp;<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_function_pointer.html">std::is_member_function_pointer_v</a>&lt; decltype(<a class="el" href="namespaceecstasy_1_1query.html#a5d920c5c964c31c58dd89b01394f78c7">ptrRight</a>)&gt;) struct <a class="el" href="structecstasy_1_1query_1_1_condition.html">Condition</a>&lt; ptrLeft</td></tr>
+<tr class="separator:aca542f83c79330c15ccd3cde73bae4a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:aad13a1796398ea39bac6325be81d7276"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
+<tr class="memitem:aad13a1796398ea39bac6325be81d7276"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#aad13a1796398ea39bac6325be81d7276">QCondition</a></td></tr>
+<tr class="separator:aad13a1796398ea39bac6325be81d7276"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bed1a1d0a0ff0c74efb8cfaabf89123"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
+<tr class="memitem:a7bed1a1d0a0ff0c74efb8cfaabf89123"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a7bed1a1d0a0ff0c74efb8cfaabf89123">QConditionConst</a></td></tr>
+<tr class="separator:a7bed1a1d0a0ff0c74efb8cfaabf89123"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa430a89cff816a48a6961d4bc150b150"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
+<tr class="memitem:aa430a89cff816a48a6961d4bc150b150"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#aa430a89cff816a48a6961d4bc150b150">QConditionLeft</a></td></tr>
+<tr class="separator:aa430a89cff816a48a6961d4bc150b150"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae43a1d4192b9a84fd0a58207bae8e1ef"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
+<tr class="memitem:ae43a1d4192b9a84fd0a58207bae8e1ef"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#ae43a1d4192b9a84fd0a58207bae8e1ef">QConditionRight</a></td></tr>
+<tr class="separator:ae43a1d4192b9a84fd0a58207bae8e1ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5af9fbe691bade08239e7e6483a391f9"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
+<tr class="memitem:a5af9fbe691bade08239e7e6483a391f9"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a5af9fbe691bade08239e7e6483a391f9">QConditionLeftRight</a></td></tr>
+<tr class="separator:a5af9fbe691bade08239e7e6483a391f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a761ae07d0a2b58e9277539d7a3722d3a"><td class="memTemplParams" colspan="2">template&lt;typename M &gt; </td></tr>
 <tr class="memitem:a761ae07d0a2b58e9277539d7a3722d3a"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a761ae07d0a2b58e9277539d7a3722d3a">Modifier</a></td></tr>
 <tr class="memdesc:a761ae07d0a2b58e9277539d7a3722d3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a query modifier type.  <a href="namespaceecstasy_1_1query.html#a761ae07d0a2b58e9277539d7a3722d3a">More...</a><br /></td></tr>
@@ -156,12 +218,51 @@ Variables</h2></td></tr>
 <tr class="memitem:a3d41373b2db15c07621fbe36544701f5"><td class="memTemplItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a3d41373b2db15c07621fbe36544701f5">is_queryable_with_adjust_v</a> = <a class="el" href="structecstasy_1_1query_1_1is__queryable__with__adjust.html">is_queryable_with_adjust</a>&lt;T&gt;::value</td></tr>
 <tr class="memdesc:a3d41373b2db15c07621fbe36544701f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper for is_queryable_with_adjust&lt;T&gt;::value.  <a href="namespaceecstasy_1_1query.html#a3d41373b2db15c07621fbe36544701f5">More...</a><br /></td></tr>
 <tr class="separator:a3d41373b2db15c07621fbe36544701f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30c5c59238aa891d0e856b97d8e5e429"><td class="memItemLeft" align="right" valign="top">Comparer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a30c5c59238aa891d0e856b97d8e5e429">__pad0__</a></td></tr>
+<tr class="separator:a30c5c59238aa891d0e856b97d8e5e429"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49092a2e221825548a9fbb006b454b64"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a49092a2e221825548a9fbb006b454b64">ptr</a></td></tr>
+<tr class="separator:a49092a2e221825548a9fbb006b454b64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af732dec05040e4cc0db50c5f73cd148d"><td class="memItemLeft" align="right" valign="top">Comparer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#af732dec05040e4cc0db50c5f73cd148d">__pad1__</a></td></tr>
+<tr class="separator:af732dec05040e4cc0db50c5f73cd148d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1db9c93fada869a5ee69526e8b243d0a"><td class="memItemLeft" align="right" valign="top">Comparer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a1db9c93fada869a5ee69526e8b243d0a">__pad2__</a></td></tr>
+<tr class="separator:a1db9c93fada869a5ee69526e8b243d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75bb6b8ec1220f4bebecec8bf0721ec6"><td class="memItemLeft" align="right" valign="top">Comparer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a75bb6b8ec1220f4bebecec8bf0721ec6">__pad3__</a></td></tr>
+<tr class="separator:a75bb6b8ec1220f4bebecec8bf0721ec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d920c5c964c31c58dd89b01394f78c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a5d920c5c964c31c58dd89b01394f78c7">ptrRight</a></td></tr>
+<tr class="separator:a5d920c5c964c31c58dd89b01394f78c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a720dc1c48ca20289a8d059f2982d6d"><td class="memItemLeft" align="right" valign="top">Comparer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a4a720dc1c48ca20289a8d059f2982d6d">__pad4__</a></td></tr>
+<tr class="separator:a4a720dc1c48ca20289a8d059f2982d6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78bfb53c0857e2081c449d7f4aabc6ab"><td class="memItemLeft" align="right" valign="top">Comparer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a78bfb53c0857e2081c449d7f4aabc6ab">__pad5__</a></td></tr>
+<tr class="separator:a78bfb53c0857e2081c449d7f4aabc6ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33c8812dd35b787740389a5c7184da5c"><td class="memItemLeft" align="right" valign="top">Comparer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a33c8812dd35b787740389a5c7184da5c">__pad6__</a></td></tr>
+<tr class="separator:a33c8812dd35b787740389a5c7184da5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a467cf06d8aab9a1251e7840cbf6d169a"><td class="memItemLeft" align="right" valign="top">Comparer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a467cf06d8aab9a1251e7840cbf6d169a">__pad7__</a></td></tr>
+<tr class="separator:a467cf06d8aab9a1251e7840cbf6d169a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabb61d3f264a15cf6750bfbd26964843"><td class="memItemLeft" align="right" valign="top">Comparer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#aabb61d3f264a15cf6750bfbd26964843">__pad8__</a></td></tr>
+<tr class="separator:aabb61d3f264a15cf6750bfbd26964843"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Namespace regrouping the internal ecstasy query system. </p>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-18) </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="ad9a8105fef6995f460996cf0ee301ea7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9a8105fef6995f460996cf0ee301ea7">&#9670;&nbsp;</a></span>Right</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef RightType <a class="el" href="namespaceecstasy_1_1query.html#ad9a8105fef6995f460996cf0ee301ea7">ecstasy::query::Right</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00101">101</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="abcdf71489379b2578159fe2551a60b34"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abcdf71489379b2578159fe2551a60b34">&#9670;&nbsp;</a></span>adjustMask() <span class="overload">[1/2]</span></h2>
 
@@ -289,7 +390,447 @@ This will call <a class="el" href="namespaceecstasy_1_1query.html#a4c703ad1e1c38
 </div><!-- fragment -->
 </div>
 </div>
+<a id="aae5d7b89c92ec00ebea0cf94b09d8087"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae5d7b89c92ec00ebea0cf94b09d8087">&#9670;&nbsp;</a></span>requires() <span class="overload">[1/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename LeftType , LeftType Left, typename RightType , RightType Right, typename Comparer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ecstasy::query::requires </td>
+          <td>(</td>
+          <td class="paramtype">!<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_pointer.html">std::is_member_pointer_v</a>&lt; LeftType &gt; &amp;&amp;!<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_pointer.html">std::is_member_pointer_v</a>&lt; RightType &gt;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>Note</dt><dd>Const - Const, Will therefore always output the same result </dd></dl>
+
+</div>
+</div>
+<a id="a4adb839a91520e457bc2910f4437b69e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4adb839a91520e457bc2910f4437b69e">&#9670;&nbsp;</a></span>requires() <span class="overload">[2/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename LeftType , LeftType Left, typename RightType , typename RightValueType , RightValueType(RightType::*)(void) const ptr, typename Comparer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ecstasy::query::requires </td>
+          <td>(</td>
+          <td class="paramtype">!<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_pointer.html">std::is_member_pointer_v</a>&lt; LeftType &gt; &amp;&amp;<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_function_pointer.html">std::is_member_function_pointer_v</a>&lt; decltype(<a class="el" href="namespaceecstasy_1_1query.html#a49092a2e221825548a9fbb006b454b64">ptr</a>)&gt;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>Note</dt><dd>Const - Getter </dd></dl>
+
+</div>
+</div>
+<a id="a0090ffe92d5bda43acde18f864aa2165"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0090ffe92d5bda43acde18f864aa2165">&#9670;&nbsp;</a></span>requires() <span class="overload">[3/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename LeftType , LeftType Left, typename RightType , typename RightValueType , RightValueType RightType::* ptr, typename Comparer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ecstasy::query::requires </td>
+          <td>(</td>
+          <td class="paramtype">!<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_pointer.html">std::is_member_pointer_v</a>&lt; LeftType &gt; &amp;&amp;<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_object_pointer.html">std::is_member_object_pointer_v</a>&lt; decltype(<a class="el" href="namespaceecstasy_1_1query.html#a49092a2e221825548a9fbb006b454b64">ptr</a>)&gt;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>Note</dt><dd>Const - Member </dd></dl>
+
+</div>
+</div>
+<a id="af9a72a43d9737d490fe253134913097c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9a72a43d9737d490fe253134913097c">&#9670;&nbsp;</a></span>requires() <span class="overload">[4/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename LeftType , typename LeftValueType , LeftValueType(LeftType::*)(void) const ptr, typename RightType , RightType Right, typename Comparer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ecstasy::query::requires </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_function_pointer.html">std::is_member_function_pointer_v</a>&lt; decltype(<a class="el" href="namespaceecstasy_1_1query.html#a49092a2e221825548a9fbb006b454b64">ptr</a>)&gt; &amp;&amp;!<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_pointer.html">std::is_member_pointer_v</a>&lt; RightType &gt;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>Note</dt><dd>Getter - Const </dd></dl>
+
+</div>
+</div>
+<a id="aca542f83c79330c15ccd3cde73bae4a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca542f83c79330c15ccd3cde73bae4a0">&#9670;&nbsp;</a></span>requires() <span class="overload">[5/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename LeftType , typename LeftValueType , LeftValueType(LeftType::*)(void) const ptrLeft, typename RightType , typename RightValueType , RightValueType(RightType::*)(void) const ptrRight, typename Comparer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ecstasy::query::requires </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_function_pointer.html">std::is_member_function_pointer_v</a>&lt; decltype(ptrLeft)&gt; &amp;&amp;<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_function_pointer.html">std::is_member_function_pointer_v</a>&lt; decltype(<a class="el" href="namespaceecstasy_1_1query.html#a5d920c5c964c31c58dd89b01394f78c7">ptrRight</a>)&gt;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>Note</dt><dd>Getter - Getter </dd></dl>
+
+</div>
+</div>
+<a id="ac9d65f1a74cdb76cd858e0e8e600a5d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9d65f1a74cdb76cd858e0e8e600a5d5">&#9670;&nbsp;</a></span>requires() <span class="overload">[6/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename LeftType , typename LeftValueType , LeftValueType(LeftType::*)(void) const ptrLeft, typename RightType , typename RightValueType , RightValueType RightType::* ptrRight, typename Comparer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ecstasy::query::requires </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_function_pointer.html">std::is_member_function_pointer_v</a>&lt; decltype(ptrLeft)&gt; &amp;&amp;<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_object_pointer.html">std::is_member_object_pointer_v</a>&lt; decltype(<a class="el" href="namespaceecstasy_1_1query.html#a5d920c5c964c31c58dd89b01394f78c7">ptrRight</a>)&gt;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>Note</dt><dd>Getter - Member </dd></dl>
+
+</div>
+</div>
+<a id="ae75429c1445361542266c089fea49ec5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae75429c1445361542266c089fea49ec5">&#9670;&nbsp;</a></span>requires() <span class="overload">[7/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename LeftType , typename LeftValueType , LeftValueType LeftType::* ptr, typename RightType , RightType Right, typename Comparer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ecstasy::query::requires </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_object_pointer.html">std::is_member_object_pointer_v</a>&lt; decltype(<a class="el" href="namespaceecstasy_1_1query.html#a49092a2e221825548a9fbb006b454b64">ptr</a>)&gt; &amp;&amp;!<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_pointer.html">std::is_member_pointer_v</a>&lt; RightType &gt;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>Note</dt><dd>Member - Const </dd></dl>
+
+</div>
+</div>
+<a id="affe1dab5193928ac61cc1f5da001dc34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affe1dab5193928ac61cc1f5da001dc34">&#9670;&nbsp;</a></span>requires() <span class="overload">[8/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename LeftType , typename LeftValueType , LeftValueType LeftType::* ptrLeft, typename RightType , typename RightValueType , RightValueType(RightType::*)(void) const ptrRight, typename Comparer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ecstasy::query::requires </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_object_pointer.html">std::is_member_object_pointer_v</a>&lt; decltype(ptrLeft)&gt; &amp;&amp;<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_function_pointer.html">std::is_member_function_pointer_v</a>&lt; decltype(<a class="el" href="namespaceecstasy_1_1query.html#a5d920c5c964c31c58dd89b01394f78c7">ptrRight</a>)&gt;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>Note</dt><dd>Member - Getter </dd></dl>
+
+</div>
+</div>
+<a id="a221413ad86402a43f6c80c972a9086c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a221413ad86402a43f6c80c972a9086c3">&#9670;&nbsp;</a></span>requires() <span class="overload">[9/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename LeftType , typename LeftValueType , LeftValueType LeftType::* ptrLeft, typename RightType , typename RightValueType , RightValueType RightType::* ptrRight, typename Comparer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ecstasy::query::requires </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_object_pointer.html">std::is_member_object_pointer_v</a>&lt; decltype(ptrLeft)&gt; &amp;&amp;<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_object_pointer.html">std::is_member_object_pointer_v</a>&lt; decltype(<a class="el" href="namespaceecstasy_1_1query.html#a5d920c5c964c31c58dd89b01394f78c7">ptrRight</a>)&gt;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>Note</dt><dd>Member - Member </dd></dl>
+
+</div>
+</div>
+<a id="abdfad070bb0720a255f12ba06c392723"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdfad070bb0720a255f12ba06c392723">&#9670;&nbsp;</a></span>test() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ecstasy::query::test </td>
+          <td>(</td>
+          <td class="paramtype">const LeftType &amp;&#160;</td>
+          <td class="paramname"><em>left</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00085">85</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">return</span> Comparer{}(<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/manip/left.html">left</a>.*<a class="code" href="namespaceecstasy_1_1query.html#a49092a2e221825548a9fbb006b454b64">ptr</a>, <a class="code" href="namespaceecstasy_1_1query.html#ad9a8105fef6995f460996cf0ee301ea7">Right</a>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
+<div class="ttc" id="aleft_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/manip/left.html">std::left</a></div><div class="ttdeci">T left(T... args)</div></div>
+<div class="ttc" id="anamespaceecstasy_1_1query_html_a49092a2e221825548a9fbb006b454b64"><div class="ttname"><a href="namespaceecstasy_1_1query.html#a49092a2e221825548a9fbb006b454b64">ecstasy::query::ptr</a></div><div class="ttdeci">ptr</div><div class="ttdef"><b>Definition:</b> <a href="conditions_2_condition_8hpp_source.html#l00047">Condition.hpp:47</a></div></div>
+<div class="ttc" id="anamespaceecstasy_1_1query_html_ad9a8105fef6995f460996cf0ee301ea7"><div class="ttname"><a href="namespaceecstasy_1_1query.html#ad9a8105fef6995f460996cf0ee301ea7">ecstasy::query::Right</a></div><div class="ttdeci">RightType Right</div><div class="ttdef"><b>Definition:</b> <a href="conditions_2_condition_8hpp_source.html#l00101">Condition.hpp:101</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa87603f1ad1a8d5715a5354ac9255192"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa87603f1ad1a8d5715a5354ac9255192">&#9670;&nbsp;</a></span>test() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ecstasy::query::test </td>
+          <td>(</td>
+          <td class="paramtype">const LeftType &amp;&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const RightType &amp;&#160;</td>
+          <td class="paramname"><em>right</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00103">103</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">return</span> Comparer{}(<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/manip/left.html">left</a>.*ptrLeft, <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/manip/left.html">right</a>.*<a class="code" href="namespaceecstasy_1_1query.html#a5d920c5c964c31c58dd89b01394f78c7">ptrRight</a>);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
+<div class="ttc" id="anamespaceecstasy_1_1query_html_a5d920c5c964c31c58dd89b01394f78c7"><div class="ttname"><a href="namespaceecstasy_1_1query.html#a5d920c5c964c31c58dd89b01394f78c7">ecstasy::query::ptrRight</a></div><div class="ttdeci">ptrRight</div><div class="ttdef"><b>Definition:</b> <a href="conditions_2_condition_8hpp_source.html#l00098">Condition.hpp:98</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a26221fded93f162fcfd16e50130505bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26221fded93f162fcfd16e50130505bb">&#9670;&nbsp;</a></span>test() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ecstasy::query::test </td>
+          <td>(</td>
+          <td class="paramtype">const RightType &amp;&#160;</td>
+          <td class="paramname"><em>right</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00051">51</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">return</span> Comparer{}(Left, <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/manip/left.html">right</a>.*<a class="code" href="namespaceecstasy_1_1query.html#a49092a2e221825548a9fbb006b454b64">ptr</a>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="a30c5c59238aa891d0e856b97d8e5e429"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30c5c59238aa891d0e856b97d8e5e429">&#9670;&nbsp;</a></span>__pad0__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Comparer ecstasy::query::__pad0__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00032">32</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af732dec05040e4cc0db50c5f73cd148d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af732dec05040e4cc0db50c5f73cd148d">&#9670;&nbsp;</a></span>__pad1__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Comparer ecstasy::query::__pad1__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00047">47</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a1db9c93fada869a5ee69526e8b243d0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1db9c93fada869a5ee69526e8b243d0a">&#9670;&nbsp;</a></span>__pad2__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Comparer ecstasy::query::__pad2__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00064">64</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a75bb6b8ec1220f4bebecec8bf0721ec6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75bb6b8ec1220f4bebecec8bf0721ec6">&#9670;&nbsp;</a></span>__pad3__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Comparer ecstasy::query::__pad3__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00081">81</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a4a720dc1c48ca20289a8d059f2982d6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a720dc1c48ca20289a8d059f2982d6d">&#9670;&nbsp;</a></span>__pad4__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Comparer ecstasy::query::__pad4__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00098">98</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a78bfb53c0857e2081c449d7f4aabc6ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78bfb53c0857e2081c449d7f4aabc6ab">&#9670;&nbsp;</a></span>__pad5__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Comparer ecstasy::query::__pad5__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00116">116</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a33c8812dd35b787740389a5c7184da5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33c8812dd35b787740389a5c7184da5c">&#9670;&nbsp;</a></span>__pad6__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Comparer ecstasy::query::__pad6__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00134">134</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a467cf06d8aab9a1251e7840cbf6d169a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a467cf06d8aab9a1251e7840cbf6d169a">&#9670;&nbsp;</a></span>__pad7__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Comparer ecstasy::query::__pad7__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00151">151</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aabb61d3f264a15cf6750bfbd26964843"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabb61d3f264a15cf6750bfbd26964843">&#9670;&nbsp;</a></span>__pad8__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Comparer ecstasy::query::__pad8__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00169">169</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a2d0049da7e7d280f28107dae27b92003"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2d0049da7e7d280f28107dae27b92003">&#9670;&nbsp;</a></span>is_queryable_v</h2>
 
@@ -375,17 +916,18 @@ template&lt;typename M &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= requires(M &amp;modifier)</div>
+<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a>(M &amp;modifier)</div>
 <div class="line">    {</div>
 <div class="line">        </div>
-<div class="line">        requires Queryable&lt;M&gt;;</div>
+<div class="line">        <a class="code" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a> Queryable&lt;M&gt;;</div>
 <div class="line"> </div>
 <div class="line">        </div>
-<div class="line">        requires std::derived_from&lt;M, ecstasy::query::modifier::Modifier&gt;;</div>
+<div class="line">        <a class="code" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a> std::derived_from&lt;M, ecstasy::query::modifier::Modifier&gt;;</div>
 <div class="line"> </div>
 <div class="line">        </div>
 <div class="line">        <span class="keyword">typename</span> M::Operands;</div>
 <div class="line">    }</div>
+<div class="ttc" id="anamespaceecstasy_1_1query_html_aae5d7b89c92ec00ebea0cf94b09d8087"><div class="ttname"><a href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">ecstasy::query::requires</a></div><div class="ttdeci">requires(!std::is_member_pointer_v&lt; LeftType &gt; &amp;&amp;!std::is_member_pointer_v&lt; RightType &gt;) struct Condition&lt; Left</div></div>
 </div><!-- fragment -->
 <p>Defines a query modifier type. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
@@ -398,6 +940,173 @@ template&lt;typename M &gt; </div>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-22) </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="concepts_2_modifier_8hpp_source.html#l00029">29</a> of file <a class="el" href="concepts_2_modifier_8hpp_source.html">Modifier.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a49092a2e221825548a9fbb006b454b64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49092a2e221825548a9fbb006b454b64">&#9670;&nbsp;</a></span>ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ecstasy::query::ptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00047">47</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a5d920c5c964c31c58dd89b01394f78c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d920c5c964c31c58dd89b01394f78c7">&#9670;&nbsp;</a></span>ptrRight</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ecstasy::query::ptrRight</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00098">98</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aad13a1796398ea39bac6325be81d7276"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad13a1796398ea39bac6325be81d7276">&#9670;&nbsp;</a></span>QCondition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename C &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">concept ecstasy::query::QCondition</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">requires</a>(C &amp;condition)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">requires</a> std::derived_from&lt;C, ecstasy::query::ConditionBase&gt;;</div>
+<div class="line">    }</div>
+<div class="ttc" id="anamespaceecstasy_1_1query_html_aca542f83c79330c15ccd3cde73bae4a0"><div class="ttname"><a href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">ecstasy::query::requires</a></div><div class="ttdeci">requires(std::is_member_function_pointer_v&lt; decltype(ptrLeft)&gt; &amp;&amp;std::is_member_function_pointer_v&lt; decltype(ptrRight)&gt;) struct Condition&lt; ptrLeft</div></div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="concepts_2_condition_8hpp_source.html#l00020">20</a> of file <a class="el" href="concepts_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a7bed1a1d0a0ff0c74efb8cfaabf89123"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bed1a1d0a0ff0c74efb8cfaabf89123">&#9670;&nbsp;</a></span>QConditionConst</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename C &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">concept ecstasy::query::QConditionConst</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">requires</a>(C &amp;condition)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">requires</a> QCondition&lt;C&gt;;</div>
+<div class="line"> </div>
+<div class="line">        </div>
+<div class="line">        { <a class="code" href="namespaceecstasy_1_1query.html#aa87603f1ad1a8d5715a5354ac9255192">C::test</a>() } -&gt; std::same_as&lt;bool&gt;;</div>
+<div class="line">        </div>
+<div class="line">    }</div>
+<div class="ttc" id="anamespaceecstasy_1_1query_html_aa87603f1ad1a8d5715a5354ac9255192"><div class="ttname"><a href="namespaceecstasy_1_1query.html#aa87603f1ad1a8d5715a5354ac9255192">ecstasy::query::test</a></div><div class="ttdeci">static bool test(const LeftType &amp;left, const RightType &amp;right)</div><div class="ttdef"><b>Definition:</b> <a href="conditions_2_condition_8hpp_source.html#l00103">Condition.hpp:103</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="concepts_2_condition_8hpp_source.html#l00026">26</a> of file <a class="el" href="concepts_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa430a89cff816a48a6961d4bc150b150"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa430a89cff816a48a6961d4bc150b150">&#9670;&nbsp;</a></span>QConditionLeft</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename C &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">concept ecstasy::query::QConditionLeft</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">requires</a>(C &amp;condition, <span class="keyword">const</span> <span class="keyword">typename</span> C::Left &amp;left)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">requires</a> QCondition&lt;C&gt;;</div>
+<div class="line"> </div>
+<div class="line">        <span class="keyword">typename</span> C::Left;</div>
+<div class="line"> </div>
+<div class="line">        </div>
+<div class="line">        { <a class="code" href="namespaceecstasy_1_1query.html#aa87603f1ad1a8d5715a5354ac9255192">C::test</a>(left) } -&gt; std::same_as&lt;bool&gt;;</div>
+<div class="line">        </div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="concepts_2_condition_8hpp_source.html#l00036">36</a> of file <a class="el" href="concepts_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a5af9fbe691bade08239e7e6483a391f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5af9fbe691bade08239e7e6483a391f9">&#9670;&nbsp;</a></span>QConditionLeftRight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename C &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">concept ecstasy::query::QConditionLeftRight</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">requires</a>(C &amp;condition, <span class="keyword">const</span> <span class="keyword">typename</span> C::Left &amp;left, <span class="keyword">const</span> <span class="keyword">typename</span> <a class="code" href="namespaceecstasy_1_1query.html#ad9a8105fef6995f460996cf0ee301ea7">C::Right</a> &amp;right)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">requires</a> QCondition&lt;C&gt;;</div>
+<div class="line"> </div>
+<div class="line">        <span class="keyword">typename</span> C::Left;</div>
+<div class="line">        <span class="keyword">typename</span> <a class="code" href="namespaceecstasy_1_1query.html#ad9a8105fef6995f460996cf0ee301ea7">C::Right</a>;</div>
+<div class="line"> </div>
+<div class="line">        </div>
+<div class="line">        { <a class="code" href="namespaceecstasy_1_1query.html#aa87603f1ad1a8d5715a5354ac9255192">C::test</a>(left, right) } -&gt; std::same_as&lt;bool&gt;;</div>
+<div class="line">        </div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="concepts_2_condition_8hpp_source.html#l00060">60</a> of file <a class="el" href="concepts_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ae43a1d4192b9a84fd0a58207bae8e1ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae43a1d4192b9a84fd0a58207bae8e1ef">&#9670;&nbsp;</a></span>QConditionRight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename C &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">concept ecstasy::query::QConditionRight</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">requires</a>(C &amp;condition, <span class="keyword">const</span> <span class="keyword">typename</span> <a class="code" href="namespaceecstasy_1_1query.html#ad9a8105fef6995f460996cf0ee301ea7">C::Right</a> &amp;right)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">requires</a> QCondition&lt;C&gt;;</div>
+<div class="line"> </div>
+<div class="line">        <span class="keyword">typename</span> <a class="code" href="namespaceecstasy_1_1query.html#ad9a8105fef6995f460996cf0ee301ea7">C::Right</a>;</div>
+<div class="line"> </div>
+<div class="line">        </div>
+<div class="line">        { <a class="code" href="namespaceecstasy_1_1query.html#aa87603f1ad1a8d5715a5354ac9255192">C::test</a>(right) } -&gt; std::same_as&lt;bool&gt;;</div>
+<div class="line">        </div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="concepts_2_condition_8hpp_source.html#l00048">48</a> of file <a class="el" href="concepts_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
 
 </div>
 </div>
@@ -414,7 +1123,7 @@ template&lt;typename Q &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= requires(Q &amp;queryable, Q <span class="keyword">const</span> &amp;cqueryable, <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> index)</div>
+<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a>(Q &amp;queryable, Q <span class="keyword">const</span> &amp;cqueryable, <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> index)</div>
 <div class="line">    {</div>
 <div class="line">        </div>
 <div class="line">        <span class="keyword">typename</span> Q::QueryData;</div>
@@ -456,10 +1165,10 @@ template&lt;typename Q &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= requires(Q &amp;queryable, <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> maxSize)</div>
+<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a>(Q &amp;queryable, <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> maxSize)</div>
 <div class="line">    {</div>
 <div class="line">        </div>
-<div class="line">        requires Queryable&lt;Q&gt;;</div>
+<div class="line">        <a class="code" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a> Queryable&lt;Q&gt;;</div>
 <div class="line"> </div>
 <div class="line">        </div>
 <div class="line">        { queryable.adjustMask(maxSize) } -&gt; std::same_as&lt;void&gt;;</div>

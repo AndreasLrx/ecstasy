@@ -98,6 +98,7 @@ $(document).ready(function(){initNavTree('_registry_8hpp.html',''); initResizabl
 <code>#include &quot;<a class="el" href="_registry_modifier_8hpp_source.html">concepts/RegistryModifier.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_query_8hpp_source.html">ecstasy/query/Query.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_select_8hpp_source.html">ecstasy/query/Select.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="conditions_2_condition_8hpp_source.html">ecstasy/query/conditions/Condition.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="modifiers_2_modifier_8hpp_source.html">ecstasy/query/modifiers/Modifier.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_entities_8hpp_source.html">ecstasy/resources/entity/Entities.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_i_storage_8hpp_source.html">ecstasy/storages/IStorage.hpp</a>&quot;</code><br />
@@ -105,6 +106,8 @@ $(document).ready(function(){initNavTree('_registry_8hpp.html',''); initResizabl
 <code>#include &quot;<a class="el" href="_storage_concepts_8hpp_source.html">ecstasy/storages/StorageConcepts.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_i_system_8hpp_source.html">ecstasy/system/ISystem.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_allocator_8hpp_source.html">util/Allocator.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="apply_8hpp_source.html">util/meta/apply.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="filter_8hpp_source.html">util/meta/filter.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="outer__join_8hpp_source.html">util/meta/outer_join.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Registry.hpp:</div>
@@ -134,9 +137,13 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1_entity.html" title="Encapsulate an index to an entity.">Entity</a> Builder using the registry storages.  <a href="classecstasy_1_1_registry_1_1_entity_builder.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry_1_1_select.html">ecstasy::Registry::Select&lt; Selects &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proxy class to use <a class="el" href="classecstasy_1_1_registry_1_1_select.html#afd3ef6801861b0332c09a2ff54616a2f">where</a> method.  <a href="classecstasy_1_1_registry_1_1_select.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proxy class to use <a class="el" href="classecstasy_1_1_registry_1_1_select.html#af45b2cdb92c7e77f00ddef810b53cd7d">where</a> method.  <a href="classecstasy_1_1_registry_1_1_select.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1_registry_1_1_select_1_1_internal_3_01std_1_1tuple_3_01_missings_8_8_8_01_4_00_01_cs_8_8_8_01_4.html">ecstasy::Registry::Select&lt; Selects &gt;::Internal&lt; std::tuple&lt; Missings... &gt;, Cs... &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1_registry_1_1_select_1_1_internal_3_01std_1_1tuple_3_01_missings_8_8_8_01_4_00_46ce1ad1b26bbe162d7408965afd23ff.html">ecstasy::Registry::Select&lt; Selects &gt;::Internal&lt; std::tuple&lt; Missings... &gt;, std::tuple&lt; Cs... &gt;, std::tuple&lt; Conditions... &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1_registry_1_1_select_1_1_is_condition.html">ecstasy::Registry::Select&lt; Selects &gt;::IsCondition&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1_registry_1_1_select_1_1_is_not_condition.html">ecstasy::Registry::Select&lt; Selects &gt;::IsNotCondition&lt; T &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
