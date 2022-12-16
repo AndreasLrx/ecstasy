@@ -71,17 +71,17 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"",
-"classecstasy_1_1_deletion_stack.html#ae4226732cce609e6fdacfc88f680d549",
-"classecstasy_1_1integration_1_1event_1_1_mouse.html#a94a6015fff2d708002c9d4dfafe0d9af",
-"classutil_1_1serialization_1_1_i_array_node_1_1_array_iterator.html#a122a5723cd1a7f8655a968f3e2bb5631",
-"cpp/algorithm/ranges/is_sorted_until.html",
-"cpp/experimental/transform_reduce.html",
-"cpp/iterator/make_reverse_iterator.html",
-"cpp/numeric/special_functions/hermite.html",
-"cpp/utility/compare/named_comparison_functions.html",
-"namespaceecstasy_1_1query.html#a0090ffe92d5bda43acde18f864aa2165",
-"structutil_1_1meta_1_1__filter.html#acbe49fe994b488cd79e6263713261333"
+"01__basic__window_2main_8cpp.html",
+"_users_8cpp.html",
+"classecstasy_1_1integration_1_1event_1_1_keyboard.html",
+"classutil_1_1serialization_1_1_a_node.html#a3193bba29f3f8ee456d44c498dd63570",
+"concepts_2_modifier_8hpp_source.html",
+"cpp/atomic/atomic_notify_all.html",
+"cpp/filesystem/remove.html",
+"cpp/numeric/math/acos.html",
+"cpp/string/wide/towlower.html",
+"foreach_8hpp_source.html",
+"structecstasy_1_1_registry_1_1_get_modifier_proxy_3_01std_1_1tuple_3_01_qs_8_8_8_01_4_01_4.html#ad38465d9899b2b920e96207e82c496b1"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

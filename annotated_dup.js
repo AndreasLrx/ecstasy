@@ -119,10 +119,18 @@ var annotated_dup =
         [ "type_set_eq< std::tuple< Ts1... >, std::tuple< Ts2... > >", "structutil_1_1meta_1_1type__set__eq_3_01std_1_1tuple_3_01_ts1_8_8_8_01_4_00_01std_1_1tuple_3_01_ts2_8_8_8_01_4_01_4.html", null ]
       ] ],
       [ "serialization", "namespaceutil_1_1serialization.html", [
+        [ "ANode", "classutil_1_1serialization_1_1_a_node.html", "classutil_1_1serialization_1_1_a_node" ],
         [ "IArrayNode", "classutil_1_1serialization_1_1_i_array_node.html", "classutil_1_1serialization_1_1_i_array_node" ],
         [ "INode", "classutil_1_1serialization_1_1_i_node.html", "classutil_1_1serialization_1_1_i_node" ],
+        [ "INodeFactory", "classutil_1_1serialization_1_1_i_node_factory.html", "classutil_1_1serialization_1_1_i_node_factory" ],
         [ "IObjectNode", "classutil_1_1serialization_1_1_i_object_node.html", "classutil_1_1serialization_1_1_i_object_node" ],
-        [ "Serializer", "classutil_1_1serialization_1_1_serializer.html", "classutil_1_1serialization_1_1_serializer" ]
+        [ "PolymorphicIterator", "classutil_1_1serialization_1_1_polymorphic_iterator.html", "classutil_1_1serialization_1_1_polymorphic_iterator" ],
+        [ "Serializer", "classutil_1_1serialization_1_1_serializer.html", "classutil_1_1serialization_1_1_serializer" ],
+        [ "TomlArrayNode", "classutil_1_1serialization_1_1_toml_array_node.html", "classutil_1_1serialization_1_1_toml_array_node" ],
+        [ "TomlConversion", "classutil_1_1serialization_1_1_toml_conversion.html", "classutil_1_1serialization_1_1_toml_conversion" ],
+        [ "TomlNode", "classutil_1_1serialization_1_1_toml_node.html", "classutil_1_1serialization_1_1_toml_node" ],
+        [ "TomlNodeFactory", "classutil_1_1serialization_1_1_toml_node_factory.html", "classutil_1_1serialization_1_1_toml_node_factory" ],
+        [ "TomlObjectNode", "classutil_1_1serialization_1_1_toml_object_node.html", "classutil_1_1serialization_1_1_toml_object_node" ]
       ] ],
       [ "Allocator", "classutil_1_1_allocator.html", "classutil_1_1_allocator" ],
       [ "BitSet", "classutil_1_1_bit_set.html", "classutil_1_1_bit_set" ]

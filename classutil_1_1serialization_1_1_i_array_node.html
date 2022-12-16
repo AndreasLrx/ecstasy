@@ -84,9 +84,9 @@ $(document).ready(function(){initNavTree('classutil_1_1serialization_1_1_i_array
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-types">Protected Types</a> &#124;
 <a href="classutil_1_1serialization_1_1_i_array_node-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">util::serialization::IArrayNode Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -102,85 +102,45 @@ Inheritance diagram for util::serialization::IArrayNode:</div>
 <div class="dyncontent">
 <div class="center"><img src="classutil_1_1serialization_1_1_i_array_node__inherit__graph.png" border="0" usemap="#autil_1_1serialization_1_1_i_array_node_inherit__map" alt="Inheritance graph"/></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for util::serialization::IArrayNode:</div>
-<div class="dyncontent">
-<div class="center"><img src="classutil_1_1serialization_1_1_i_array_node__coll__graph.png" border="0" usemap="#autil_1_1serialization_1_1_i_array_node_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node_1_1_array_iterator.html">ArrayIterator</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract Array Iterator.  <a href="classutil_1_1serialization_1_1_i_array_node_1_1_array_iterator.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a4e98adda8e4cfa0f33b1549ac76122c5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a4e98adda8e4cfa0f33b1549ac76122c5">Index</a> = size_t</td></tr>
 <tr class="memdesc:a4e98adda8e4cfa0f33b1549ac76122c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array index type.  <a href="classutil_1_1serialization_1_1_i_array_node.html#a4e98adda8e4cfa0f33b1549ac76122c5">More...</a><br /></td></tr>
 <tr class="separator:a4e98adda8e4cfa0f33b1549ac76122c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd08530bb8674f3fb554586c39b09219"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#acd08530bb8674f3fb554586c39b09219">iterator</a> = <a class="el" href="classutil_1_1serialization_1_1_i_array_node_1_1_array_iterator.html">ArrayIterator</a>&lt; false &gt;</td></tr>
+<tr class="memitem:acd08530bb8674f3fb554586c39b09219"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#acd08530bb8674f3fb554586c39b09219">iterator</a> = <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a87504cfa9ab86419da6937051475b14d">ArrayIterator</a>&lt; false &gt;</td></tr>
 <tr class="memdesc:acd08530bb8674f3fb554586c39b09219"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array iterator type.  <a href="classutil_1_1serialization_1_1_i_array_node.html#acd08530bb8674f3fb554586c39b09219">More...</a><br /></td></tr>
 <tr class="separator:acd08530bb8674f3fb554586c39b09219"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20b86f7c348caf559624e5baaf724782"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a20b86f7c348caf559624e5baaf724782">const_iterator</a> = <a class="el" href="classutil_1_1serialization_1_1_i_array_node_1_1_array_iterator.html">ArrayIterator</a>&lt; true &gt;</td></tr>
+<tr class="memitem:a20b86f7c348caf559624e5baaf724782"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a20b86f7c348caf559624e5baaf724782">const_iterator</a> = <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a87504cfa9ab86419da6937051475b14d">ArrayIterator</a>&lt; true &gt;</td></tr>
 <tr class="memdesc:a20b86f7c348caf559624e5baaf724782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array const iterator type.  <a href="classutil_1_1serialization_1_1_i_array_node.html#a20b86f7c348caf559624e5baaf724782">More...</a><br /></td></tr>
 <tr class="separator:a20b86f7c348caf559624e5baaf724782"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_types_classutil_1_1serialization_1_1_i_node"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classutil_1_1serialization_1_1_i_node')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classutil_1_1serialization_1_1_i_node.html">util::serialization::INode</a></td></tr>
-<tr class="memitem:aa3abfc99c8041058ee34b5abf150b7a3 inherit pub_types_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3">Type</a> { <br />
-&#160;&#160;<a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a88183b946cc5f0e8c96b2e66e1c74a7e">Unknown</a> = -1
-, <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3abbb93ef26e3c101ff11cdd21cab08a94">Null</a>
-, <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a497031794414a552435f90151ac3b54b">Object</a>
-, <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a4410ec34d9e6c1a68100ca0ce033fb17">Array</a>
-, <br />
-&#160;&#160;<a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a27118326006d3829667a400ad23d5d98">String</a>
-, <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3aa0faef0851b4294c06f2b94bb1cb2044">Integer</a>
-, <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a22ae0e2b89e5e3d477f988cc36d3272b">Float</a>
-, <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a27226c864bac7454a8504f8edb15d95b">Boolean</a>
-, <br />
-&#160;&#160;<a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a44749712dbec183e983dcd78a7736c41">Date</a>
-, <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3aa76d4ef5f3f6a672bbfab2865563e530">Time</a>
-, <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a8cf10d2341ed01492506085688270c1e">DateTime</a>
-, <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3ae93f994f01c537c4e2f7d8528c3eb5e9">Count</a>
-<br />
- }</td></tr>
-<tr class="memdesc:aa3abfc99c8041058ee34b5abf150b7a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Available node types.  <a href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3">More...</a><br /></td></tr>
-<tr class="separator:aa3abfc99c8041058ee34b5abf150b7a3 inherit pub_types_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e14dfafcb14e1093e981894be66b4f1 inherit pub_types_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a0e14dfafcb14e1093e981894be66b4f1">Date</a> = <a class="elRef" href="http://en.cppreference.com/w/cpp/chrono/year_month_day.html">std::chrono::year_month_day</a></td></tr>
-<tr class="memdesc:a0e14dfafcb14e1093e981894be66b4f1 inherit pub_types_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a44749712dbec183e983dcd78a7736c41">Type::Date</a> type.  <a href="classutil_1_1serialization_1_1_i_node.html#a0e14dfafcb14e1093e981894be66b4f1">More...</a><br /></td></tr>
-<tr class="separator:a0e14dfafcb14e1093e981894be66b4f1 inherit pub_types_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a082f3c1aa420c3c78b3123140bf07f54 inherit pub_types_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a082f3c1aa420c3c78b3123140bf07f54">Time</a> = <a class="elRef" href="http://en.cppreference.com/w/cpp/chrono/duration.html">std::chrono::duration</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/chrono/duration.html">std::chrono::seconds</a> &gt;</td></tr>
-<tr class="memdesc:a082f3c1aa420c3c78b3123140bf07f54 inherit pub_types_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3aa76d4ef5f3f6a672bbfab2865563e530">Type::Time</a> type.  <a href="classutil_1_1serialization_1_1_i_node.html#a082f3c1aa420c3c78b3123140bf07f54">More...</a><br /></td></tr>
-<tr class="separator:a082f3c1aa420c3c78b3123140bf07f54 inherit pub_types_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a750d54d4d3978ea77a0f6c8cfbdb2d39 inherit pub_types_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a750d54d4d3978ea77a0f6c8cfbdb2d39">DateTime</a> = <a class="elRef" href="http://en.cppreference.com/w/cpp/chrono/c/time_t.html">std::time_t</a></td></tr>
-<tr class="memdesc:a750d54d4d3978ea77a0f6c8cfbdb2d39 inherit pub_types_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a8cf10d2341ed01492506085688270c1e">Type::DateTime</a> type.  <a href="classutil_1_1serialization_1_1_i_node.html#a750d54d4d3978ea77a0f6c8cfbdb2d39">More...</a><br /></td></tr>
-<tr class="separator:a750d54d4d3978ea77a0f6c8cfbdb2d39 inherit pub_types_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8bc20ee4c4a8d62d0b106323976b4b37"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a8bc20ee4c4a8d62d0b106323976b4b37">~IArrayNode</a> ()=default</td></tr>
 <tr class="memdesc:a8bc20ee4c4a8d62d0b106323976b4b37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="classutil_1_1serialization_1_1_i_array_node.html#a8bc20ee4c4a8d62d0b106323976b4b37">More...</a><br /></td></tr>
 <tr class="separator:a8bc20ee4c4a8d62d0b106323976b4b37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff2f5719f420445da56dc6ac1a994f62"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classutil_1_1serialization_1_1_i_node.html">INode</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#aff2f5719f420445da56dc6ac1a994f62">get</a> (<a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a4e98adda8e4cfa0f33b1549ac76122c5">Index</a> index) const =0</td></tr>
-<tr class="memdesc:aff2f5719f420445da56dc6ac1a994f62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the node at <code>index</code> if existing.  <a href="classutil_1_1serialization_1_1_i_array_node.html#aff2f5719f420445da56dc6ac1a994f62">More...</a><br /></td></tr>
-<tr class="separator:aff2f5719f420445da56dc6ac1a994f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a098ce2af6e436adc018ac72644d7ab6e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classutil_1_1serialization_1_1_i_node.html">INode</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a098ce2af6e436adc018ac72644d7ab6e">get</a> (<a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a4e98adda8e4cfa0f33b1549ac76122c5">Index</a> index)=0</td></tr>
-<tr class="memdesc:a098ce2af6e436adc018ac72644d7ab6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the node at <code>index</code> if existing.  <a href="classutil_1_1serialization_1_1_i_array_node.html#a098ce2af6e436adc018ac72644d7ab6e">More...</a><br /></td></tr>
-<tr class="separator:a098ce2af6e436adc018ac72644d7ab6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47717f0f332c11119d4bda9b78566281"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; const <a class="el" href="classutil_1_1serialization_1_1_i_node.html">INode</a> &amp; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a47717f0f332c11119d4bda9b78566281">tryGet</a> (<a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a4e98adda8e4cfa0f33b1549ac76122c5">Index</a> index) const =0</td></tr>
-<tr class="memdesc:a47717f0f332c11119d4bda9b78566281"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the node at <code>index</code>.  <a href="classutil_1_1serialization_1_1_i_array_node.html#a47717f0f332c11119d4bda9b78566281">More...</a><br /></td></tr>
-<tr class="separator:a47717f0f332c11119d4bda9b78566281"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab59e1ddb1d8a65ae5ad406754c218137"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; <a class="el" href="classutil_1_1serialization_1_1_i_node.html">INode</a> &amp; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#ab59e1ddb1d8a65ae5ad406754c218137">tryGet</a> (<a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a4e98adda8e4cfa0f33b1549ac76122c5">Index</a> index)=0</td></tr>
-<tr class="memdesc:ab59e1ddb1d8a65ae5ad406754c218137"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the node at <code>index</code>.  <a href="classutil_1_1serialization_1_1_i_array_node.html#ab59e1ddb1d8a65ae5ad406754c218137">More...</a><br /></td></tr>
-<tr class="separator:ab59e1ddb1d8a65ae5ad406754c218137"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24e6619cd5dbc4648b0c879d14013556"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a24e6619cd5dbc4648b0c879d14013556">pushBack</a> (<a class="el" href="classutil_1_1serialization_1_1_i_node.html">INode</a> &amp;node)=0</td></tr>
-<tr class="memdesc:a24e6619cd5dbc4648b0c879d14013556"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push a new node at the end of the array.  <a href="classutil_1_1serialization_1_1_i_array_node.html#a24e6619cd5dbc4648b0c879d14013556">More...</a><br /></td></tr>
-<tr class="separator:a24e6619cd5dbc4648b0c879d14013556"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad85600ff23d108d1a0ee42e2ff151d00"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#ad85600ff23d108d1a0ee42e2ff151d00">insert</a> (<a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a4e98adda8e4cfa0f33b1549ac76122c5">Index</a> index, <a class="el" href="classutil_1_1serialization_1_1_i_node.html">INode</a> &amp;node)=0</td></tr>
-<tr class="memdesc:ad85600ff23d108d1a0ee42e2ff151d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a node at the given index.  <a href="classutil_1_1serialization_1_1_i_array_node.html#ad85600ff23d108d1a0ee42e2ff151d00">More...</a><br /></td></tr>
-<tr class="separator:ad85600ff23d108d1a0ee42e2ff151d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93c5c508f04e9f7cebb30770ccdcdb7e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a93c5c508f04e9f7cebb30770ccdcdb7e">replace</a> (<a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a4e98adda8e4cfa0f33b1549ac76122c5">Index</a> index, <a class="el" href="classutil_1_1serialization_1_1_i_node.html">INode</a> &amp;node)=0</td></tr>
-<tr class="memdesc:a93c5c508f04e9f7cebb30770ccdcdb7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace a node at the given index.  <a href="classutil_1_1serialization_1_1_i_array_node.html#a93c5c508f04e9f7cebb30770ccdcdb7e">More...</a><br /></td></tr>
-<tr class="separator:a93c5c508f04e9f7cebb30770ccdcdb7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2087863e992ce1fb398ffbedd1d8498"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceutil_1_1serialization.html#a0205346f475e840cdce95f716689825c">NodeCView</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#ab2087863e992ce1fb398ffbedd1d8498">get</a> (<a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a4e98adda8e4cfa0f33b1549ac76122c5">Index</a> index) const =0</td></tr>
+<tr class="memdesc:ab2087863e992ce1fb398ffbedd1d8498"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the node at <code>index</code> if existing.  <a href="classutil_1_1serialization_1_1_i_array_node.html#ab2087863e992ce1fb398ffbedd1d8498">More...</a><br /></td></tr>
+<tr class="separator:ab2087863e992ce1fb398ffbedd1d8498"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88bc53b797b4435b721c17cb95cbf7cc"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceutil_1_1serialization.html#a3235dfc13252d0b7eacdb86bc1e09a2c">NodeView</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a88bc53b797b4435b721c17cb95cbf7cc">get</a> (<a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a4e98adda8e4cfa0f33b1549ac76122c5">Index</a> index)=0</td></tr>
+<tr class="memdesc:a88bc53b797b4435b721c17cb95cbf7cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the node at <code>index</code> if existing.  <a href="classutil_1_1serialization_1_1_i_array_node.html#a88bc53b797b4435b721c17cb95cbf7cc">More...</a><br /></td></tr>
+<tr class="separator:a88bc53b797b4435b721c17cb95cbf7cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a308f144ed863fdd5d4c08e89c4b99e6d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceutil_1_1serialization.html#a0205346f475e840cdce95f716689825c">NodeCView</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a308f144ed863fdd5d4c08e89c4b99e6d">tryGet</a> (<a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a4e98adda8e4cfa0f33b1549ac76122c5">Index</a> index) const =0</td></tr>
+<tr class="memdesc:a308f144ed863fdd5d4c08e89c4b99e6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the node at <code>index</code>.  <a href="classutil_1_1serialization_1_1_i_array_node.html#a308f144ed863fdd5d4c08e89c4b99e6d">More...</a><br /></td></tr>
+<tr class="separator:a308f144ed863fdd5d4c08e89c4b99e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac93d835b12cea255f0d8f8004b577d10"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceutil_1_1serialization.html#a3235dfc13252d0b7eacdb86bc1e09a2c">NodeView</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#ac93d835b12cea255f0d8f8004b577d10">tryGet</a> (<a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a4e98adda8e4cfa0f33b1549ac76122c5">Index</a> index)=0</td></tr>
+<tr class="memdesc:ac93d835b12cea255f0d8f8004b577d10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the node at <code>index</code>.  <a href="classutil_1_1serialization_1_1_i_array_node.html#ac93d835b12cea255f0d8f8004b577d10">More...</a><br /></td></tr>
+<tr class="separator:ac93d835b12cea255f0d8f8004b577d10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0fb3559ab01a5e52319bfe4f828eac7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#af0fb3559ab01a5e52319bfe4f828eac7">pushBack</a> (const <a class="el" href="classutil_1_1serialization_1_1_i_node.html">INode</a> &amp;node)=0</td></tr>
+<tr class="memdesc:af0fb3559ab01a5e52319bfe4f828eac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push a new node at the end of the array.  <a href="classutil_1_1serialization_1_1_i_array_node.html#af0fb3559ab01a5e52319bfe4f828eac7">More...</a><br /></td></tr>
+<tr class="separator:af0fb3559ab01a5e52319bfe4f828eac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1c42060abc62e81a5e561466e60f242"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#af1c42060abc62e81a5e561466e60f242">insert</a> (<a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a4e98adda8e4cfa0f33b1549ac76122c5">Index</a> index, const <a class="el" href="classutil_1_1serialization_1_1_i_node.html">INode</a> &amp;node)=0</td></tr>
+<tr class="memdesc:af1c42060abc62e81a5e561466e60f242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a node at the given index.  <a href="classutil_1_1serialization_1_1_i_array_node.html#af1c42060abc62e81a5e561466e60f242">More...</a><br /></td></tr>
+<tr class="separator:af1c42060abc62e81a5e561466e60f242"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a951a97ddbdbea49284a746c6af088b58"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a951a97ddbdbea49284a746c6af088b58">replace</a> (<a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a4e98adda8e4cfa0f33b1549ac76122c5">Index</a> index, const <a class="el" href="classutil_1_1serialization_1_1_i_node.html">INode</a> &amp;node)=0</td></tr>
+<tr class="memdesc:a951a97ddbdbea49284a746c6af088b58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace a node at the given index.  <a href="classutil_1_1serialization_1_1_i_array_node.html#a951a97ddbdbea49284a746c6af088b58">More...</a><br /></td></tr>
+<tr class="separator:a951a97ddbdbea49284a746c6af088b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae61aa8de59dd67169f13607db1460450"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#ae61aa8de59dd67169f13607db1460450">popBack</a> ()=0</td></tr>
 <tr class="memdesc:ae61aa8de59dd67169f13607db1460450"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the last array node.  <a href="classutil_1_1serialization_1_1_i_array_node.html#ae61aa8de59dd67169f13607db1460450">More...</a><br /></td></tr>
 <tr class="separator:ae61aa8de59dd67169f13607db1460450"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -199,121 +159,26 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1952a69bbd1915c226c9763befdd91b4"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a20b86f7c348caf559624e5baaf724782">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a1952a69bbd1915c226c9763befdd91b4">cbegin</a> () const =0</td></tr>
 <tr class="memdesc:a1952a69bbd1915c226c9763befdd91b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the start iterator of the internal nodes.  <a href="classutil_1_1serialization_1_1_i_array_node.html#a1952a69bbd1915c226c9763befdd91b4">More...</a><br /></td></tr>
 <tr class="separator:a1952a69bbd1915c226c9763befdd91b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7efdfc4d79737b411ec697d4436ea01"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a20b86f7c348caf559624e5baaf724782">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#af7efdfc4d79737b411ec697d4436ea01">begin</a> () const =0</td></tr>
+<tr class="separator:af7efdfc4d79737b411ec697d4436ea01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafa54c0356401129cdc1df30dbc52c33"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#acd08530bb8674f3fb554586c39b09219">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#aafa54c0356401129cdc1df30dbc52c33">begin</a> ()=0</td></tr>
 <tr class="memdesc:aafa54c0356401129cdc1df30dbc52c33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the start iterator of the internal nodes.  <a href="classutil_1_1serialization_1_1_i_array_node.html#aafa54c0356401129cdc1df30dbc52c33">More...</a><br /></td></tr>
 <tr class="separator:aafa54c0356401129cdc1df30dbc52c33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82f8faa0c81cf860ecfbeb0f970575d3"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a20b86f7c348caf559624e5baaf724782">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a82f8faa0c81cf860ecfbeb0f970575d3">cend</a> () const =0</td></tr>
 <tr class="memdesc:a82f8faa0c81cf860ecfbeb0f970575d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the end iterator of the internal nodes.  <a href="classutil_1_1serialization_1_1_i_array_node.html#a82f8faa0c81cf860ecfbeb0f970575d3">More...</a><br /></td></tr>
 <tr class="separator:a82f8faa0c81cf860ecfbeb0f970575d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2aabf958c30fb605e595314351452fa6"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a20b86f7c348caf559624e5baaf724782">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a2aabf958c30fb605e595314351452fa6">end</a> () const =0</td></tr>
+<tr class="separator:a2aabf958c30fb605e595314351452fa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4093531313ae0c8f58835da8f88579a2"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#acd08530bb8674f3fb554586c39b09219">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a4093531313ae0c8f58835da8f88579a2">end</a> ()=0</td></tr>
 <tr class="memdesc:a4093531313ae0c8f58835da8f88579a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the end iterator of the internal nodes.  <a href="classutil_1_1serialization_1_1_i_array_node.html#a4093531313ae0c8f58835da8f88579a2">More...</a><br /></td></tr>
 <tr class="separator:a4093531313ae0c8f58835da8f88579a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classutil_1_1serialization_1_1_i_node"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classutil_1_1serialization_1_1_i_node')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classutil_1_1serialization_1_1_i_node.html">util::serialization::INode</a></td></tr>
-<tr class="memitem:a691c4111104adef2f1ae74b7b80340e0 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a691c4111104adef2f1ae74b7b80340e0">~INode</a> ()=default</td></tr>
-<tr class="memdesc:a691c4111104adef2f1ae74b7b80340e0 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="classutil_1_1serialization_1_1_i_node.html#a691c4111104adef2f1ae74b7b80340e0">More...</a><br /></td></tr>
-<tr class="separator:a691c4111104adef2f1ae74b7b80340e0 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83925281d03a717753d9e9b284fbc49e inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a83925281d03a717753d9e9b284fbc49e">getType</a> () const =0</td></tr>
-<tr class="memdesc:a83925281d03a717753d9e9b284fbc49e inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Types check ///.  <a href="classutil_1_1serialization_1_1_i_node.html#a83925281d03a717753d9e9b284fbc49e">More...</a><br /></td></tr>
-<tr class="separator:a83925281d03a717753d9e9b284fbc49e inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ea36a93412eef7618ae5d32be93b32b inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a4ea36a93412eef7618ae5d32be93b32b">isType</a> (<a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3">Type</a> type) const =0</td></tr>
-<tr class="memdesc:a4ea36a93412eef7618ae5d32be93b32b inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the node type is <code>type</code>.  <a href="classutil_1_1serialization_1_1_i_node.html#a4ea36a93412eef7618ae5d32be93b32b">More...</a><br /></td></tr>
-<tr class="separator:a4ea36a93412eef7618ae5d32be93b32b inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f5b86357785fb0d3053d9c4a63fb9c9 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a3f5b86357785fb0d3053d9c4a63fb9c9">isNull</a> () const =0</td></tr>
-<tr class="memdesc:a3f5b86357785fb0d3053d9c4a63fb9c9 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the node type is <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3abbb93ef26e3c101ff11cdd21cab08a94">Type::Null</a>.  <a href="classutil_1_1serialization_1_1_i_node.html#a3f5b86357785fb0d3053d9c4a63fb9c9">More...</a><br /></td></tr>
-<tr class="separator:a3f5b86357785fb0d3053d9c4a63fb9c9 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5aacc6ab3780f29f528237316342043 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#ae5aacc6ab3780f29f528237316342043">isObject</a> () const =0</td></tr>
-<tr class="memdesc:ae5aacc6ab3780f29f528237316342043 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the node type is <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a497031794414a552435f90151ac3b54b">Type::Object</a>.  <a href="classutil_1_1serialization_1_1_i_node.html#ae5aacc6ab3780f29f528237316342043">More...</a><br /></td></tr>
-<tr class="separator:ae5aacc6ab3780f29f528237316342043 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3dfc72643b1f0175d98f409477d752ef inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a3dfc72643b1f0175d98f409477d752ef">isArray</a> () const =0</td></tr>
-<tr class="memdesc:a3dfc72643b1f0175d98f409477d752ef inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the node type is <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a4410ec34d9e6c1a68100ca0ce033fb17">Type::Array</a>.  <a href="classutil_1_1serialization_1_1_i_node.html#a3dfc72643b1f0175d98f409477d752ef">More...</a><br /></td></tr>
-<tr class="separator:a3dfc72643b1f0175d98f409477d752ef inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a272c041bebfc91d03f5ba67a29763b88 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a272c041bebfc91d03f5ba67a29763b88">isString</a> () const =0</td></tr>
-<tr class="memdesc:a272c041bebfc91d03f5ba67a29763b88 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the node type is <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a27118326006d3829667a400ad23d5d98">Type::String</a>.  <a href="classutil_1_1serialization_1_1_i_node.html#a272c041bebfc91d03f5ba67a29763b88">More...</a><br /></td></tr>
-<tr class="separator:a272c041bebfc91d03f5ba67a29763b88 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac55835caff9e8dc966004537f1621541 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#ac55835caff9e8dc966004537f1621541">isInteger</a> () const =0</td></tr>
-<tr class="memdesc:ac55835caff9e8dc966004537f1621541 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the node type is <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3aa0faef0851b4294c06f2b94bb1cb2044">Type::Integer</a>.  <a href="classutil_1_1serialization_1_1_i_node.html#ac55835caff9e8dc966004537f1621541">More...</a><br /></td></tr>
-<tr class="separator:ac55835caff9e8dc966004537f1621541 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9288f03b4e313ddca22d5536b64513a inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#ad9288f03b4e313ddca22d5536b64513a">isFloat</a> () const =0</td></tr>
-<tr class="memdesc:ad9288f03b4e313ddca22d5536b64513a inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the node type is <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a22ae0e2b89e5e3d477f988cc36d3272b">Type::Float</a>.  <a href="classutil_1_1serialization_1_1_i_node.html#ad9288f03b4e313ddca22d5536b64513a">More...</a><br /></td></tr>
-<tr class="separator:ad9288f03b4e313ddca22d5536b64513a inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e716caae3d577406bcc16e802e6911c inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a8e716caae3d577406bcc16e802e6911c">isBoolean</a> () const =0</td></tr>
-<tr class="memdesc:a8e716caae3d577406bcc16e802e6911c inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the node type is <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a27226c864bac7454a8504f8edb15d95b">Type::Boolean</a>.  <a href="classutil_1_1serialization_1_1_i_node.html#a8e716caae3d577406bcc16e802e6911c">More...</a><br /></td></tr>
-<tr class="separator:a8e716caae3d577406bcc16e802e6911c inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a270f00d4f932133af3da80e7bd1937c2 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a270f00d4f932133af3da80e7bd1937c2">isDate</a> () const =0</td></tr>
-<tr class="memdesc:a270f00d4f932133af3da80e7bd1937c2 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the node type is <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a44749712dbec183e983dcd78a7736c41">Type::Date</a>.  <a href="classutil_1_1serialization_1_1_i_node.html#a270f00d4f932133af3da80e7bd1937c2">More...</a><br /></td></tr>
-<tr class="separator:a270f00d4f932133af3da80e7bd1937c2 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e4e6dd0d1930f011edd3720d1c124ef inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a9e4e6dd0d1930f011edd3720d1c124ef">isTime</a> () const =0</td></tr>
-<tr class="memdesc:a9e4e6dd0d1930f011edd3720d1c124ef inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the node type is <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3aa76d4ef5f3f6a672bbfab2865563e530">Type::Time</a>.  <a href="classutil_1_1serialization_1_1_i_node.html#a9e4e6dd0d1930f011edd3720d1c124ef">More...</a><br /></td></tr>
-<tr class="separator:a9e4e6dd0d1930f011edd3720d1c124ef inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46d7233b97a9ca8115dd630a477a45e0 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a46d7233b97a9ca8115dd630a477a45e0">isDateTime</a> () const =0</td></tr>
-<tr class="memdesc:a46d7233b97a9ca8115dd630a477a45e0 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the node type is <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a8cf10d2341ed01492506085688270c1e">Type::DateTime</a>.  <a href="classutil_1_1serialization_1_1_i_node.html#a46d7233b97a9ca8115dd630a477a45e0">More...</a><br /></td></tr>
-<tr class="separator:a46d7233b97a9ca8115dd630a477a45e0 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07e8367ececf4785e24a9b1301104236 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classutil_1_1serialization_1_1_i_object_node.html">IObjectNode</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a07e8367ececf4785e24a9b1301104236">asObject</a> () const =0</td></tr>
-<tr class="memdesc:a07e8367ececf4785e24a9b1301104236 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value getter ///.  <a href="classutil_1_1serialization_1_1_i_node.html#a07e8367ececf4785e24a9b1301104236">More...</a><br /></td></tr>
-<tr class="separator:a07e8367ececf4785e24a9b1301104236 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6430d8190f7963731a073328765839fa inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classutil_1_1serialization_1_1_i_object_node.html">IObjectNode</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a6430d8190f7963731a073328765839fa">asObject</a> ()=0</td></tr>
-<tr class="memdesc:a6430d8190f7963731a073328765839fa inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the object node value.  <a href="classutil_1_1serialization_1_1_i_node.html#a6430d8190f7963731a073328765839fa">More...</a><br /></td></tr>
-<tr class="separator:a6430d8190f7963731a073328765839fa inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b9462ae988d9e41faf7316b6283a146 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; const <a class="el" href="classutil_1_1serialization_1_1_i_object_node.html">IObjectNode</a> &amp; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a0b9462ae988d9e41faf7316b6283a146">tryAsObject</a> () const =0</td></tr>
-<tr class="memdesc:a0b9462ae988d9e41faf7316b6283a146 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to get the node object value.  <a href="classutil_1_1serialization_1_1_i_node.html#a0b9462ae988d9e41faf7316b6283a146">More...</a><br /></td></tr>
-<tr class="separator:a0b9462ae988d9e41faf7316b6283a146 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25b72bfa8ac2417d9ea898d2b43bd03a inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; <a class="el" href="classutil_1_1serialization_1_1_i_object_node.html">IObjectNode</a> &amp; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a25b72bfa8ac2417d9ea898d2b43bd03a">tryAsObject</a> ()=0</td></tr>
-<tr class="memdesc:a25b72bfa8ac2417d9ea898d2b43bd03a inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to get the node object value.  <a href="classutil_1_1serialization_1_1_i_node.html#a25b72bfa8ac2417d9ea898d2b43bd03a">More...</a><br /></td></tr>
-<tr class="separator:a25b72bfa8ac2417d9ea898d2b43bd03a inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdbf1e08ef1651017a6720b504833fe2 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html">IArrayNode</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#abdbf1e08ef1651017a6720b504833fe2">asArray</a> () const =0</td></tr>
-<tr class="memdesc:abdbf1e08ef1651017a6720b504833fe2 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the array node value.  <a href="classutil_1_1serialization_1_1_i_node.html#abdbf1e08ef1651017a6720b504833fe2">More...</a><br /></td></tr>
-<tr class="separator:abdbf1e08ef1651017a6720b504833fe2 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5732021dbf7a8b3adfa248fa26d06a04 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html">IArrayNode</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a5732021dbf7a8b3adfa248fa26d06a04">asArray</a> ()=0</td></tr>
-<tr class="memdesc:a5732021dbf7a8b3adfa248fa26d06a04 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the array node value.  <a href="classutil_1_1serialization_1_1_i_node.html#a5732021dbf7a8b3adfa248fa26d06a04">More...</a><br /></td></tr>
-<tr class="separator:a5732021dbf7a8b3adfa248fa26d06a04 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f0c2be8f8aa2fc9d240cacc7696a87c inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; const <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html">IArrayNode</a> &amp; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a1f0c2be8f8aa2fc9d240cacc7696a87c">tryAsArray</a> () const =0</td></tr>
-<tr class="memdesc:a1f0c2be8f8aa2fc9d240cacc7696a87c inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to get the node array value.  <a href="classutil_1_1serialization_1_1_i_node.html#a1f0c2be8f8aa2fc9d240cacc7696a87c">More...</a><br /></td></tr>
-<tr class="separator:a1f0c2be8f8aa2fc9d240cacc7696a87c inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e84a6fbe2d1c21784530959467cd47d inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html">IArrayNode</a> &amp; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a1e84a6fbe2d1c21784530959467cd47d">tryAsArray</a> ()=0</td></tr>
-<tr class="memdesc:a1e84a6fbe2d1c21784530959467cd47d inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to get the node array value.  <a href="classutil_1_1serialization_1_1_i_node.html#a1e84a6fbe2d1c21784530959467cd47d">More...</a><br /></td></tr>
-<tr class="separator:a1e84a6fbe2d1c21784530959467cd47d inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a419483d24c2915b2d68ab5cc6a4fb1c2 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a419483d24c2915b2d68ab5cc6a4fb1c2">asString</a> () const =0</td></tr>
-<tr class="memdesc:a419483d24c2915b2d68ab5cc6a4fb1c2 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the string node value.  <a href="classutil_1_1serialization_1_1_i_node.html#a419483d24c2915b2d68ab5cc6a4fb1c2">More...</a><br /></td></tr>
-<tr class="separator:a419483d24c2915b2d68ab5cc6a4fb1c2 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc3b0956cf5e99b420162e9f3cca8794 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#adc3b0956cf5e99b420162e9f3cca8794">tryAsString</a> () const =0</td></tr>
-<tr class="memdesc:adc3b0956cf5e99b420162e9f3cca8794 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to get the node string value.  <a href="classutil_1_1serialization_1_1_i_node.html#adc3b0956cf5e99b420162e9f3cca8794">More...</a><br /></td></tr>
-<tr class="separator:adc3b0956cf5e99b420162e9f3cca8794 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09895c2b4844c97ebfed48d02852a439 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a09895c2b4844c97ebfed48d02852a439">asInteger</a> () const =0</td></tr>
-<tr class="memdesc:a09895c2b4844c97ebfed48d02852a439 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the integer node value.  <a href="classutil_1_1serialization_1_1_i_node.html#a09895c2b4844c97ebfed48d02852a439">More...</a><br /></td></tr>
-<tr class="separator:a09895c2b4844c97ebfed48d02852a439 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc6bf8f7d3259ba1fecd1537c720e824 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#abc6bf8f7d3259ba1fecd1537c720e824">tryAsInteger</a> () const =0</td></tr>
-<tr class="memdesc:abc6bf8f7d3259ba1fecd1537c720e824 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to get the node integer value.  <a href="classutil_1_1serialization_1_1_i_node.html#abc6bf8f7d3259ba1fecd1537c720e824">More...</a><br /></td></tr>
-<tr class="separator:abc6bf8f7d3259ba1fecd1537c720e824 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab09159d27807c776bef14bfd48bbe842 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#ab09159d27807c776bef14bfd48bbe842">asFloat</a> () const =0</td></tr>
-<tr class="memdesc:ab09159d27807c776bef14bfd48bbe842 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the float node value.  <a href="classutil_1_1serialization_1_1_i_node.html#ab09159d27807c776bef14bfd48bbe842">More...</a><br /></td></tr>
-<tr class="separator:ab09159d27807c776bef14bfd48bbe842 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0194511cc5155258a70c6d9d025b4f94 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a0194511cc5155258a70c6d9d025b4f94">tryAsFloat</a> () const =0</td></tr>
-<tr class="memdesc:a0194511cc5155258a70c6d9d025b4f94 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to get the node float value.  <a href="classutil_1_1serialization_1_1_i_node.html#a0194511cc5155258a70c6d9d025b4f94">More...</a><br /></td></tr>
-<tr class="separator:a0194511cc5155258a70c6d9d025b4f94 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc0c9e5c214ca78944274410196ca185 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#adc0c9e5c214ca78944274410196ca185">asBoolean</a> () const =0</td></tr>
-<tr class="memdesc:adc0c9e5c214ca78944274410196ca185 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the boolean node value.  <a href="classutil_1_1serialization_1_1_i_node.html#adc0c9e5c214ca78944274410196ca185">More...</a><br /></td></tr>
-<tr class="separator:adc0c9e5c214ca78944274410196ca185 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa52c3c2f70de1a58d9ed9ada079a51b8 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa52c3c2f70de1a58d9ed9ada079a51b8">tryAsBoolean</a> () const =0</td></tr>
-<tr class="memdesc:aa52c3c2f70de1a58d9ed9ada079a51b8 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to get the node boolean value.  <a href="classutil_1_1serialization_1_1_i_node.html#aa52c3c2f70de1a58d9ed9ada079a51b8">More...</a><br /></td></tr>
-<tr class="separator:aa52c3c2f70de1a58d9ed9ada079a51b8 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc2ec6e2e68d5b4f5426e4292b82b8c7 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classutil_1_1serialization_1_1_i_node.html#a0e14dfafcb14e1093e981894be66b4f1">Date</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#abc2ec6e2e68d5b4f5426e4292b82b8c7">asDate</a> () const =0</td></tr>
-<tr class="memdesc:abc2ec6e2e68d5b4f5426e4292b82b8c7 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the date node value.  <a href="classutil_1_1serialization_1_1_i_node.html#abc2ec6e2e68d5b4f5426e4292b82b8c7">More...</a><br /></td></tr>
-<tr class="separator:abc2ec6e2e68d5b4f5426e4292b82b8c7 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb6a0af9304fcac5341ce729c2acf311 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; <a class="el" href="classutil_1_1serialization_1_1_i_node.html#a0e14dfafcb14e1093e981894be66b4f1">Date</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#aeb6a0af9304fcac5341ce729c2acf311">tryAsDate</a> () const =0</td></tr>
-<tr class="memdesc:aeb6a0af9304fcac5341ce729c2acf311 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to get the node date value.  <a href="classutil_1_1serialization_1_1_i_node.html#aeb6a0af9304fcac5341ce729c2acf311">More...</a><br /></td></tr>
-<tr class="separator:aeb6a0af9304fcac5341ce729c2acf311 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ddbcbf3cba089e0bfd943f06e87a9f7 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classutil_1_1serialization_1_1_i_node.html#a082f3c1aa420c3c78b3123140bf07f54">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a1ddbcbf3cba089e0bfd943f06e87a9f7">asTime</a> () const =0</td></tr>
-<tr class="memdesc:a1ddbcbf3cba089e0bfd943f06e87a9f7 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the time node value.  <a href="classutil_1_1serialization_1_1_i_node.html#a1ddbcbf3cba089e0bfd943f06e87a9f7">More...</a><br /></td></tr>
-<tr class="separator:a1ddbcbf3cba089e0bfd943f06e87a9f7 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a219ce40b5f1457ae9b588f93c356e35c inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; <a class="el" href="classutil_1_1serialization_1_1_i_node.html#a082f3c1aa420c3c78b3123140bf07f54">Time</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a219ce40b5f1457ae9b588f93c356e35c">tryAsTime</a> () const =0</td></tr>
-<tr class="memdesc:a219ce40b5f1457ae9b588f93c356e35c inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to get the node time value.  <a href="classutil_1_1serialization_1_1_i_node.html#a219ce40b5f1457ae9b588f93c356e35c">More...</a><br /></td></tr>
-<tr class="separator:a219ce40b5f1457ae9b588f93c356e35c inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f9b19746a53560856328a45aee84884 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classutil_1_1serialization_1_1_i_node.html#a750d54d4d3978ea77a0f6c8cfbdb2d39">DateTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a6f9b19746a53560856328a45aee84884">asDateTime</a> () const =0</td></tr>
-<tr class="memdesc:a6f9b19746a53560856328a45aee84884 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the datetime node value.  <a href="classutil_1_1serialization_1_1_i_node.html#a6f9b19746a53560856328a45aee84884">More...</a><br /></td></tr>
-<tr class="separator:a6f9b19746a53560856328a45aee84884 inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76bedbd1434cd5c4c8a310621863178d inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; <a class="el" href="classutil_1_1serialization_1_1_i_node.html#a750d54d4d3978ea77a0f6c8cfbdb2d39">DateTime</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node.html#a76bedbd1434cd5c4c8a310621863178d">tryAsDateTime</a> () const =0</td></tr>
-<tr class="memdesc:a76bedbd1434cd5c4c8a310621863178d inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to get the node datetime value.  <a href="classutil_1_1serialization_1_1_i_node.html#a76bedbd1434cd5c4c8a310621863178d">More...</a><br /></td></tr>
-<tr class="separator:a76bedbd1434cd5c4c8a310621863178d inherit pub_methods_classutil_1_1serialization_1_1_i_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr class="memitem:a87504cfa9ab86419da6937051475b14d"><td class="memTemplParams" colspan="2">template&lt;bool isConst&gt; </td></tr>
+<tr class="memitem:a87504cfa9ab86419da6937051475b14d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a87504cfa9ab86419da6937051475b14d">ArrayIterator</a> = <a class="el" href="classutil_1_1serialization_1_1_polymorphic_iterator.html">PolymorphicIterator</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/types/conditional.html">std::conditional_t</a>&lt; isConst, <a class="el" href="namespaceutil_1_1serialization.html#a0205346f475e840cdce95f716689825c">NodeCView</a>, <a class="el" href="namespaceutil_1_1serialization.html#a3235dfc13252d0b7eacdb86bc1e09a2c">NodeView</a> &gt; &gt;</td></tr>
+<tr class="memdesc:a87504cfa9ab86419da6937051475b14d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array Iterator.  <a href="classutil_1_1serialization_1_1_i_array_node.html#a87504cfa9ab86419da6937051475b14d">More...</a><br /></td></tr>
+<tr class="separator:a87504cfa9ab86419da6937051475b14d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Array node. </p>
@@ -321,8 +186,44 @@ Public Member Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_array_node_8hpp_source.html#l00025">25</a> of file <a class="el" href="_i_array_node_8hpp_source.html">IArrayNode.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_array_node_8hpp_source.html#l00027">27</a> of file <a class="el" href="_i_array_node_8hpp_source.html">IArrayNode.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a87504cfa9ab86419da6937051475b14d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87504cfa9ab86419da6937051475b14d">&#9670;&nbsp;</a></span>ArrayIterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool isConst&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a87504cfa9ab86419da6937051475b14d">util::serialization::IArrayNode::ArrayIterator</a> =  <a class="el" href="classutil_1_1serialization_1_1_polymorphic_iterator.html">PolymorphicIterator</a>&lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/types/conditional.html">std::conditional_t</a>&lt;isConst, <a class="el" href="namespaceutil_1_1serialization.html#a0205346f475e840cdce95f716689825c">NodeCView</a>, <a class="el" href="namespaceutil_1_1serialization.html#a3235dfc13252d0b7eacdb86bc1e09a2c">NodeView</a>&gt; &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Array Iterator. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">isConst</td><td>Whether the iterator is a const iterator or not.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_i_array_node_8hpp_source.html#l00038">38</a> of file <a class="el" href="_i_array_node_8hpp_source.html">IArrayNode.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a20b86f7c348caf559624e5baaf724782"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a20b86f7c348caf559624e5baaf724782">&#9670;&nbsp;</a></span>const_iterator</h2>
 
@@ -330,14 +231,14 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a20b86f7c348caf559624e5baaf724782">util::serialization::IArrayNode::const_iterator</a> =  <a class="el" href="classutil_1_1serialization_1_1_i_array_node_1_1_array_iterator.html">ArrayIterator</a>&lt;true&gt;</td>
+          <td class="memname">using <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a20b86f7c348caf559624e5baaf724782">util::serialization::IArrayNode::const_iterator</a> =  <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a87504cfa9ab86419da6937051475b14d">ArrayIterator</a>&lt;true&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Array const iterator type. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_array_node_8hpp_source.html#l00179">179</a> of file <a class="el" href="_i_array_node_8hpp_source.html">IArrayNode.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_array_node_8hpp_source.html#l00046">46</a> of file <a class="el" href="_i_array_node_8hpp_source.html">IArrayNode.hpp</a>.</p>
 
 </div>
 </div>
@@ -355,7 +256,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Array index type. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_array_node_8hpp_source.html#l00175">175</a> of file <a class="el" href="_i_array_node_8hpp_source.html">IArrayNode.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_array_node_8hpp_source.html#l00042">42</a> of file <a class="el" href="_i_array_node_8hpp_source.html">IArrayNode.hpp</a>.</p>
 
 </div>
 </div>
@@ -366,14 +267,14 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#acd08530bb8674f3fb554586c39b09219">util::serialization::IArrayNode::iterator</a> =  <a class="el" href="classutil_1_1serialization_1_1_i_array_node_1_1_array_iterator.html">ArrayIterator</a>&lt;false&gt;</td>
+          <td class="memname">using <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#acd08530bb8674f3fb554586c39b09219">util::serialization::IArrayNode::iterator</a> =  <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a87504cfa9ab86419da6937051475b14d">ArrayIterator</a>&lt;false&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Array iterator type. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_array_node_8hpp_source.html#l00177">177</a> of file <a class="el" href="_i_array_node_8hpp_source.html">IArrayNode.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_array_node_8hpp_source.html#l00044">44</a> of file <a class="el" href="_i_array_node_8hpp_source.html">IArrayNode.hpp</a>.</p>
 
 </div>
 </div>
@@ -406,8 +307,37 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="af7efdfc4d79737b411ec697d4436ea01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7efdfc4d79737b411ec697d4436ea01">&#9670;&nbsp;</a></span>begin() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a20b86f7c348caf559624e5baaf724782">const_iterator</a> util::serialization::IArrayNode::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_array_node.html#a496aa53e5fb5db1cbd0267ae49dfafe1">util::serialization::TomlArrayNode</a>.</p>
+
+</div>
+</div>
 <a id="aafa54c0356401129cdc1df30dbc52c33"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aafa54c0356401129cdc1df30dbc52c33">&#9670;&nbsp;</a></span>begin()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aafa54c0356401129cdc1df30dbc52c33">&#9670;&nbsp;</a></span>begin() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -433,6 +363,8 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>iterator Iterator to the first node.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
+
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_array_node.html#a6dc772d09a0d29fd5baa176e63addb38">util::serialization::TomlArrayNode</a>.</p>
 
 </div>
 </div>
@@ -463,6 +395,8 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>const_iterator Iterator to the first node.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
+
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_array_node.html#adb91e20c27b0a6d26c5543f72d71ed09">util::serialization::TomlArrayNode</a>.</p>
 
 </div>
 </div>
@@ -495,6 +429,8 @@ Public Member Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
 
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_array_node.html#a9cdda69aa5763eb1e70cc96b43ea9b62">util::serialization::TomlArrayNode</a>.</p>
+
 </div>
 </div>
 <a id="af1c994730db6dd64c84fc903ca49f081"></a>
@@ -523,6 +459,8 @@ Public Member Functions</h2></td></tr>
 <p>Remove all the internal nodes. </p>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
+
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_array_node.html#a65ec0ed26fa1250a1277df9dc45e7ac2">util::serialization::TomlArrayNode</a>.</p>
 
 </div>
 </div>
@@ -554,10 +492,41 @@ Public Member Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
 
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_array_node.html#a49dcd3bf1ec296fa82e54286ba03660f">util::serialization::TomlArrayNode</a>.</p>
+
+</div>
+</div>
+<a id="a2aabf958c30fb605e595314351452fa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2aabf958c30fb605e595314351452fa6">&#9670;&nbsp;</a></span>end() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a20b86f7c348caf559624e5baaf724782">const_iterator</a> util::serialization::IArrayNode::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_array_node.html#a167491d1fa5c752f69ef1289c6697951">util::serialization::TomlArrayNode</a>.</p>
+
 </div>
 </div>
 <a id="a4093531313ae0c8f58835da8f88579a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4093531313ae0c8f58835da8f88579a2">&#9670;&nbsp;</a></span>end()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4093531313ae0c8f58835da8f88579a2">&#9670;&nbsp;</a></span>end() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -584,6 +553,8 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>iterator Iterator to the last node + 1.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
+
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_array_node.html#aa9eda790784c3e1d713812f309d4bf0e">util::serialization::TomlArrayNode</a>.</p>
 
 </div>
 </div>
@@ -618,19 +589,15 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="elRef" href="http://en.cppreference.com/w/cpp/error/out_of_range.html">std::out_of_range</a></td><td>If <code>index</code> is <b>greater</b> than or <b>equal</b> the current <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a53d7475d43a1bca6f30a163bcd0bfc25">size()</a>.</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
 
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_array_node.html#ab7bc9154176c746a38db2ea20dd6327b">util::serialization::TomlArrayNode</a>.</p>
+
 </div>
 </div>
-<a id="aff2f5719f420445da56dc6ac1a994f62"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff2f5719f420445da56dc6ac1a994f62">&#9670;&nbsp;</a></span>get() <span class="overload">[1/2]</span></h2>
+<a id="ab2087863e992ce1fb398ffbedd1d8498"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2087863e992ce1fb398ffbedd1d8498">&#9670;&nbsp;</a></span>get() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -639,7 +606,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual const <a class="el" href="classutil_1_1serialization_1_1_i_node.html">INode</a>&amp; util::serialization::IArrayNode::get </td>
+          <td class="memname">virtual <a class="el" href="namespaceutil_1_1serialization.html#a0205346f475e840cdce95f716689825c">NodeCView</a> util::serialization::IArrayNode::get </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a4e98adda8e4cfa0f33b1549ac76122c5">Index</a>&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -660,7 +627,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>const <a class="el" href="classutil_1_1serialization_1_1_i_node.html" title="Serialization node.">INode</a>&amp; A const reference to the requested node.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>NodeCView A weak pointer to the requested node.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="elRef" href="http://en.cppreference.com/w/cpp/error/out_of_range.html">std::out_of_range</a></td><td>If the index is out of bounds.</td></tr>
@@ -670,10 +637,12 @@ Public Member Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
 
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_array_node.html#a623e79b69f5f68f381580c608ba58330">util::serialization::TomlArrayNode</a>.</p>
+
 </div>
 </div>
-<a id="a098ce2af6e436adc018ac72644d7ab6e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a098ce2af6e436adc018ac72644d7ab6e">&#9670;&nbsp;</a></span>get() <span class="overload">[2/2]</span></h2>
+<a id="a88bc53b797b4435b721c17cb95cbf7cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88bc53b797b4435b721c17cb95cbf7cc">&#9670;&nbsp;</a></span>get() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -682,7 +651,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="classutil_1_1serialization_1_1_i_node.html">INode</a>&amp; util::serialization::IArrayNode::get </td>
+          <td class="memname">virtual <a class="el" href="namespaceutil_1_1serialization.html#a3235dfc13252d0b7eacdb86bc1e09a2c">NodeView</a> util::serialization::IArrayNode::get </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a4e98adda8e4cfa0f33b1549ac76122c5">Index</a>&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -703,7 +672,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classutil_1_1serialization_1_1_i_node.html" title="Serialization node.">INode</a>&amp; A reference to the requested node.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>NodeView A weak pointer to the requested node.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="elRef" href="http://en.cppreference.com/w/cpp/error/out_of_range.html">std::out_of_range</a></td><td>If the index is out of bounds.</td></tr>
@@ -713,10 +682,12 @@ Public Member Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
 
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_array_node.html#af9f017080c702ff37ba9b663d1379964">util::serialization::TomlArrayNode</a>.</p>
+
 </div>
 </div>
-<a id="ad85600ff23d108d1a0ee42e2ff151d00"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad85600ff23d108d1a0ee42e2ff151d00">&#9670;&nbsp;</a></span>insert()</h2>
+<a id="af1c42060abc62e81a5e561466e60f242"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1c42060abc62e81a5e561466e60f242">&#9670;&nbsp;</a></span>insert()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -733,7 +704,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classutil_1_1serialization_1_1_i_node.html">INode</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classutil_1_1serialization_1_1_i_node.html">INode</a> &amp;&#160;</td>
           <td class="paramname"><em>node</em>&#160;</td>
         </tr>
         <tr>
@@ -767,6 +738,8 @@ Public Member Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
 
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_array_node.html#af89a6335f5ccce12c7826a5328522193">util::serialization::TomlArrayNode</a>.</p>
+
 </div>
 </div>
 <a id="ae61aa8de59dd67169f13607db1460450"></a>
@@ -797,10 +770,12 @@ Public Member Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
 
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_array_node.html#a22529af4a200284002a81c1617d04678">util::serialization::TomlArrayNode</a>.</p>
+
 </div>
 </div>
-<a id="a24e6619cd5dbc4648b0c879d14013556"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24e6619cd5dbc4648b0c879d14013556">&#9670;&nbsp;</a></span>pushBack()</h2>
+<a id="af0fb3559ab01a5e52319bfe4f828eac7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0fb3559ab01a5e52319bfe4f828eac7">&#9670;&nbsp;</a></span>pushBack()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -811,7 +786,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual void util::serialization::IArrayNode::pushBack </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classutil_1_1serialization_1_1_i_node.html">INode</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classutil_1_1serialization_1_1_i_node.html">INode</a> &amp;&#160;</td>
           <td class="paramname"><em>node</em></td><td>)</td>
           <td></td>
         </tr>
@@ -833,10 +808,12 @@ Public Member Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
 
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_array_node.html#ace77593f7fda67ac0931c2c12a9e8aa6">util::serialization::TomlArrayNode</a>.</p>
+
 </div>
 </div>
-<a id="a93c5c508f04e9f7cebb30770ccdcdb7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93c5c508f04e9f7cebb30770ccdcdb7e">&#9670;&nbsp;</a></span>replace()</h2>
+<a id="a951a97ddbdbea49284a746c6af088b58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a951a97ddbdbea49284a746c6af088b58">&#9670;&nbsp;</a></span>replace()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -853,7 +830,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classutil_1_1serialization_1_1_i_node.html">INode</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classutil_1_1serialization_1_1_i_node.html">INode</a> &amp;&#160;</td>
           <td class="paramname"><em>node</em>&#160;</td>
         </tr>
         <tr>
@@ -887,6 +864,8 @@ Public Member Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
 
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_array_node.html#ac6f36e6d0cfe90f6f50a6f9d12b5416c">util::serialization::TomlArrayNode</a>.</p>
+
 </div>
 </div>
 <a id="a53d7475d43a1bca6f30a163bcd0bfc25"></a>
@@ -917,10 +896,12 @@ Public Member Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
 
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_array_node.html#a3e36fc31e442647416469a6ff5a57c3e">util::serialization::TomlArrayNode</a>.</p>
+
 </div>
 </div>
-<a id="a47717f0f332c11119d4bda9b78566281"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47717f0f332c11119d4bda9b78566281">&#9670;&nbsp;</a></span>tryGet() <span class="overload">[1/2]</span></h2>
+<a id="a308f144ed863fdd5d4c08e89c4b99e6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a308f144ed863fdd5d4c08e89c4b99e6d">&#9670;&nbsp;</a></span>tryGet() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -929,7 +910,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt;const <a class="el" href="classutil_1_1serialization_1_1_i_node.html">INode</a> &amp;&gt; util::serialization::IArrayNode::tryGet </td>
+          <td class="memname">virtual <a class="el" href="namespaceutil_1_1serialization.html#a0205346f475e840cdce95f716689825c">NodeCView</a> util::serialization::IArrayNode::tryGet </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a4e98adda8e4cfa0f33b1549ac76122c5">Index</a>&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -950,14 +931,16 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;const INode&amp;&gt; A const reference to the requested node if it exists, an empty <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a> otherwise.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>NodeCView A weak pointer to the requested node if it exists.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
 
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_array_node.html#a002d9060029bdf19226843d0e45495f6">util::serialization::TomlArrayNode</a>.</p>
+
 </div>
 </div>
-<a id="ab59e1ddb1d8a65ae5ad406754c218137"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab59e1ddb1d8a65ae5ad406754c218137">&#9670;&nbsp;</a></span>tryGet() <span class="overload">[2/2]</span></h2>
+<a id="ac93d835b12cea255f0d8f8004b577d10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac93d835b12cea255f0d8f8004b577d10">&#9670;&nbsp;</a></span>tryGet() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -966,7 +949,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt;<a class="el" href="classutil_1_1serialization_1_1_i_node.html">INode</a> &amp;&gt; util::serialization::IArrayNode::tryGet </td>
+          <td class="memname">virtual <a class="el" href="namespaceutil_1_1serialization.html#a3235dfc13252d0b7eacdb86bc1e09a2c">NodeView</a> util::serialization::IArrayNode::tryGet </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a4e98adda8e4cfa0f33b1549ac76122c5">Index</a>&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -987,9 +970,11 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;INode&amp;&gt; A reference to the requested node if it exists, an empty <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a> otherwise.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>NodeCView A weak pointer to the requested node if it exists.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
+
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_array_node.html#a4e00632e73cc046037de9544b5a69375">util::serialization::TomlArrayNode</a>.</p>
 
 </div>
 </div>

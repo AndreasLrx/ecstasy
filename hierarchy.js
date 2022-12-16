@@ -18,12 +18,14 @@ var hierarchy =
     [ "ecstasy::And< C1, C2, Cs >", "structecstasy_1_1_and.html", null ],
     [ "util::meta::apply< Functor, Ts >", "structutil_1_1meta_1_1apply.html", null ],
     [ "util::meta::apply< Functor, Traits< Ts... > >", "structutil_1_1meta_1_1apply_3_01_functor_00_01_traits_3_01_ts_8_8_8_01_4_01_4.html", null ],
-    [ "util::serialization::IArrayNode::ArrayIterator< isConst >", "classutil_1_1serialization_1_1_i_array_node_1_1_array_iterator.html", null ],
     [ "util::BitSet", "classutil_1_1_bit_set.html", null ],
     [ "ecstasy::Entities::Builder", "classecstasy_1_1_entities_1_1_builder.html", null ],
     [ "ecstasy::component_type< T >", "structecstasy_1_1component__type.html", null ],
     [ "ecstasy::component_type< Q >", "structecstasy_1_1component__type_3_01_q_01_4.html", null ],
     [ "ecstasy::component_type< S >", "structecstasy_1_1component__type_3_01_s_01_4.html", null ],
+    [ "util::serialization::PolymorphicIterator< T >::Concept", "structutil_1_1serialization_1_1_polymorphic_iterator_1_1_concept.html", [
+      [ "util::serialization::PolymorphicIterator< T >::Model< Iter >", "classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html", null ]
+    ] ],
     [ "std::conditional_t< util::meta::contains< T1, Ts2... > &&((sizeof...(Ts1)==0)||_type_set_eq< std::tuple< Ts1... >, std::tuple< Ts2... > >::value), std::true_type, std::false_type >", "http://en.cppreference.com/w/cpp/types/conditional.html", [
       [ "util::meta::_type_set_eq< std::tuple< T1, Ts1... >, std::tuple< Ts2... > >", "structutil_1_1meta_1_1__type__set__eq_3_01std_1_1tuple_3_01_t1_00_01_ts1_8_8_8_01_4_00_01std_1_1tuple_3_01_ts2_8_8_8_01_4_01_4.html", null ]
     ] ],
@@ -60,10 +62,23 @@ var hierarchy =
     [ "GetComponentStorageType< C >", "struct_get_component_storage_type.html", null ],
     [ "ecstasy::Registry::GetModifierProxy< Operands >", "structecstasy_1_1_registry_1_1_get_modifier_proxy.html", null ],
     [ "ecstasy::Registry::GetModifierProxy< std::tuple< Qs... > >", "structecstasy_1_1_registry_1_1_get_modifier_proxy_3_01std_1_1tuple_3_01_qs_8_8_8_01_4_01_4.html", null ],
+    [ "util::serialization::IArrayNode", "classutil_1_1serialization_1_1_i_array_node.html", [
+      [ "util::serialization::TomlArrayNode", "classutil_1_1serialization_1_1_toml_array_node.html", null ]
+    ] ],
     [ "util::meta::index< T, Ts >", "structutil_1_1meta_1_1index.html", null ],
     [ "util::serialization::INode", "classutil_1_1serialization_1_1_i_node.html", [
-      [ "util::serialization::IArrayNode", "classutil_1_1serialization_1_1_i_array_node.html", null ],
-      [ "util::serialization::IObjectNode", "classutil_1_1serialization_1_1_i_object_node.html", null ]
+      [ "util::serialization::ANode", "classutil_1_1serialization_1_1_a_node.html", [
+        [ "util::serialization::TomlNode< toml::array >", "classutil_1_1serialization_1_1_toml_node.html", [
+          [ "util::serialization::TomlArrayNode", "classutil_1_1serialization_1_1_toml_array_node.html", null ]
+        ] ],
+        [ "util::serialization::TomlNode< toml::table >", "classutil_1_1serialization_1_1_toml_node.html", [
+          [ "util::serialization::TomlObjectNode", "classutil_1_1serialization_1_1_toml_object_node.html", null ]
+        ] ],
+        [ "util::serialization::TomlNode< N >", "classutil_1_1serialization_1_1_toml_node.html", null ]
+      ] ]
+    ] ],
+    [ "util::serialization::INodeFactory", "classutil_1_1serialization_1_1_i_node_factory.html", [
+      [ "util::serialization::TomlNodeFactory", "classutil_1_1serialization_1_1_toml_node_factory.html", null ]
     ] ],
     [ "ecstasy::Instances< Base >", "classecstasy_1_1_instances.html", null ],
     [ "ecstasy::Instances< ecstasy::IStorage >", "classecstasy_1_1_instances.html", null ],
@@ -80,6 +95,9 @@ var hierarchy =
     ] ],
     [ "ecstasy::Registry::Select< Selects >::Internal< MissingsTuple, ComponentsTuple, ConditionsTuple >", "structecstasy_1_1_registry_1_1_select_1_1_internal.html", null ],
     [ "ecstasy::Registry::Select< Selects >::Internal< std::tuple< Missings... >, std::tuple< Cs... >, std::tuple< Conditions... > >", "structecstasy_1_1_registry_1_1_select_1_1_internal_3_01std_1_1tuple_3_01_missings_8_8_8_01_4_00_46ce1ad1b26bbe162d7408965afd23ff.html", null ],
+    [ "util::serialization::IObjectNode", "classutil_1_1serialization_1_1_i_object_node.html", [
+      [ "util::serialization::TomlObjectNode", "classutil_1_1serialization_1_1_toml_object_node.html", null ]
+    ] ],
     [ "std::is_base_of< ecstasy::query::ConditionBase, T >", "http://en.cppreference.com/w/cpp/types/is_base_of.html", [
       [ "ecstasy::Registry::Select< Selects >::IsCondition< T >", "structecstasy_1_1_registry_1_1_select_1_1_is_condition.html", null ]
     ] ],
@@ -122,9 +140,9 @@ var hierarchy =
     [ "ecstasy::integration::event::MouseMoveEvent", "structecstasy_1_1integration_1_1event_1_1_mouse_move_event.html", null ],
     [ "ecstasy::integration::event::MouseWheelScrollEvent", "structecstasy_1_1integration_1_1event_1_1_mouse_wheel_scroll_event.html", null ],
     [ "ecstasy::Not< C >", "structecstasy_1_1_not.html", null ],
-    [ "util::serialization::IObjectNode::ObjectIterator< isConst >", "classutil_1_1serialization_1_1_i_object_node_1_1_object_iterator.html", null ],
     [ "ecstasy::Or< C1, C2, Cs >", "structecstasy_1_1_or.html", null ],
     [ "ecstasy::integration::user_action::PollActions< Actions >", "classecstasy_1_1integration_1_1user__action_1_1_poll_actions.html", null ],
+    [ "util::serialization::PolymorphicIterator< T >", "classutil_1_1serialization_1_1_polymorphic_iterator.html", null ],
     [ "ecstasy::queryable_type< C >", "structecstasy_1_1queryable__type.html", null ],
     [ "ecstasy::queryable_type< M >", "structecstasy_1_1queryable__type_3_01_m_01_4.html", null ],
     [ "ecstasy::queryable_type< R >", "structecstasy_1_1queryable__type_3_01_r_01_4.html", null ],
@@ -151,6 +169,7 @@ var hierarchy =
     [ "util::serialization::Serializer", "classutil_1_1serialization_1_1_serializer.html", null ],
     [ "ecstasy::query::Select< SelectedQueryables >::SorteredTie< Valids >", "structecstasy_1_1query_1_1_select_1_1_sortered_tie.html", null ],
     [ "ecstasy::integration::event::TextEnteredEvent", "structecstasy_1_1integration_1_1event_1_1_text_entered_event.html", null ],
+    [ "util::serialization::TomlConversion", "classutil_1_1serialization_1_1_toml_conversion.html", null ],
     [ "util::meta::Traits< Args >", "structutil_1_1meta_1_1_traits.html", null ],
     [ "util::meta::Traits< Arg, Args... >", "structutil_1_1meta_1_1_traits_3_01_arg_00_01_args_8_8_8_01_4.html", null ],
     [ "std::true_type", "http://en.cppreference.com/w/cpp/types/integral_constant.html", [

@@ -85,12 +85,14 @@ $(document).ready(function(){initNavTree('_i_node_8hpp.html',''); initResizable(
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">INode.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/chrono.html">chrono</a>&gt;</code><br />
+<code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/memory.html">memory</a>&gt;</code><br />
 <code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/optional.html">optional</a>&gt;</code><br />
 <code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/string.html">string</a>&gt;</code><br />
 <code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/string_view.html">string_view</a>&gt;</code><br />
@@ -120,8 +122,26 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceutil_1_1serialization"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutil_1_1serialization.html">util::serialization</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a4ad992ea709272876f708522d11c51be"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutil_1_1serialization.html#a4ad992ea709272876f708522d11c51be">util::serialization::NodePtr</a> = <a class="elRef" href="http://en.cppreference.com/w/cpp/memory/shared_ptr.html">std::shared_ptr</a>&lt; INode &gt;</td></tr>
+<tr class="separator:a4ad992ea709272876f708522d11c51be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8617bac405feaa1b695f0a1b474679f1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutil_1_1serialization.html#a8617bac405feaa1b695f0a1b474679f1">util::serialization::NodeCPtr</a> = <a class="elRef" href="http://en.cppreference.com/w/cpp/memory/shared_ptr.html">std::shared_ptr</a>&lt; const INode &gt;</td></tr>
+<tr class="separator:a8617bac405feaa1b695f0a1b474679f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3235dfc13252d0b7eacdb86bc1e09a2c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutil_1_1serialization.html#a3235dfc13252d0b7eacdb86bc1e09a2c">util::serialization::NodeView</a> = <a class="elRef" href="http://en.cppreference.com/w/cpp/memory/weak_ptr.html">std::weak_ptr</a>&lt; INode &gt;</td></tr>
+<tr class="separator:a3235dfc13252d0b7eacdb86bc1e09a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0205346f475e840cdce95f716689825c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutil_1_1serialization.html#a0205346f475e840cdce95f716689825c">util::serialization::NodeCView</a> = <a class="elRef" href="http://en.cppreference.com/w/cpp/memory/weak_ptr.html">std::weak_ptr</a>&lt; const INode &gt;</td></tr>
+<tr class="separator:a0205346f475e840cdce95f716689825c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2022-12-08</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) ECSTASY 2022 </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="_i_node_8hpp_source.html">INode.hpp</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

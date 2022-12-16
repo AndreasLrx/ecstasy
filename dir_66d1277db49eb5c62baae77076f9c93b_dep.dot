@@ -1,0 +1,13 @@
+digraph "src/util/serialization" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_b7878ad5ecbf2506f4125b9d34c97e45 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="util" fontname="Helvetica", fontsize="10", URL="dir_b7878ad5ecbf2506f4125b9d34c97e45.html"]
+  subgraph clusterdir_66d1277db49eb5c62baae77076f9c93b {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_66d1277db49eb5c62baae77076f9c93b.html"];
+    dir_66d1277db49eb5c62baae77076f9c93b [shape=plaintext label="serialization"];
+  dir_443bdb17d2da7ce96b82b83ffa412b15 [shape=box label="toml" fillcolor="white" style="filled" URL="dir_443bdb17d2da7ce96b82b83ffa412b15.html"];
+  }
+  }
+}

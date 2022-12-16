@@ -1,0 +1,9 @@
+digraph "src/util/serialization/toml" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_66d1277db49eb5c62baae77076f9c93b {
+    graph [ bgcolor="#ddddee", pencolor="black", label="serialization" fontname="Helvetica", fontsize="10", URL="dir_66d1277db49eb5c62baae77076f9c93b.html"]
+  dir_443bdb17d2da7ce96b82b83ffa412b15 [shape=box, label="toml", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_443bdb17d2da7ce96b82b83ffa412b15.html"];
+  }
+}
