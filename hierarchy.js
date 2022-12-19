@@ -20,6 +20,7 @@ var hierarchy =
     [ "util::meta::apply< Functor, Traits< Ts... > >", "structutil_1_1meta_1_1apply_3_01_functor_00_01_traits_3_01_ts_8_8_8_01_4_01_4.html", null ],
     [ "util::BitSet", "classutil_1_1_bit_set.html", null ],
     [ "ecstasy::Entities::Builder", "classecstasy_1_1_entities_1_1_builder.html", null ],
+    [ "ecstasy::SystemInstances::Comparer", "classecstasy_1_1_system_instances_1_1_comparer.html", null ],
     [ "ecstasy::component_type< T >", "structecstasy_1_1component__type.html", null ],
     [ "ecstasy::component_type< Q >", "structecstasy_1_1component__type_3_01_q_01_4.html", null ],
     [ "ecstasy::component_type< S >", "structecstasy_1_1component__type_3_01_s_01_4.html", null ],
@@ -82,7 +83,6 @@ var hierarchy =
     ] ],
     [ "ecstasy::Instances< Base >", "classecstasy_1_1_instances.html", null ],
     [ "ecstasy::Instances< ecstasy::IStorage >", "classecstasy_1_1_instances.html", null ],
-    [ "ecstasy::Instances< ecstasy::ISystem >", "classecstasy_1_1_instances.html", null ],
     [ "ecstasy::Instances< ecstasy::Resource >", "classecstasy_1_1_instances.html", null ],
     [ "std::integral_constant< bool, !IsCondition< T >::value >", "http://en.cppreference.com/w/cpp/types/integral_constant.html", [
       [ "ecstasy::Registry::Select< Selects >::IsNotCondition< T >", "structecstasy_1_1_registry_1_1_select_1_1_is_not_condition.html", null ]
@@ -168,6 +168,7 @@ var hierarchy =
     [ "ecstasy::Registry::Select< Selects >", "classecstasy_1_1_registry_1_1_select.html", null ],
     [ "util::serialization::Serializer", "classutil_1_1serialization_1_1_serializer.html", null ],
     [ "ecstasy::query::Select< SelectedQueryables >::SorteredTie< Valids >", "structecstasy_1_1query_1_1_select_1_1_sortered_tie.html", null ],
+    [ "ecstasy::SystemInstances", "classecstasy_1_1_system_instances.html", null ],
     [ "ecstasy::integration::event::TextEnteredEvent", "structecstasy_1_1integration_1_1event_1_1_text_entered_event.html", null ],
     [ "util::serialization::TomlConversion", "classutil_1_1serialization_1_1_toml_conversion.html", null ],
     [ "util::meta::Traits< Args >", "structutil_1_1meta_1_1_traits.html", null ],

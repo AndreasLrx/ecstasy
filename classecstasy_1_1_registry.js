@@ -8,7 +8,7 @@ var classecstasy_1_1_registry =
     [ "~Registry", "classecstasy_1_1_registry.html#af6042dc4276270728a9ff2866fb247c8", null ],
     [ "addResource", "classecstasy_1_1_registry.html#a32c739cbf9fe54191f1e56dd0cfbb8e1", null ],
     [ "addStorage", "classecstasy_1_1_registry.html#ab8d8a1bd2b85b7aaf893911cc995ab26", null ],
-    [ "addSystem", "classecstasy_1_1_registry.html#ac05751de70adad4c6acd18fca1e93c57", null ],
+    [ "addSystem", "classecstasy_1_1_registry.html#a84e0f98f2b37e6aa17fd320d443127f0", null ],
     [ "entityBuilder", "classecstasy_1_1_registry.html#a47b4f8718083b99319ff342011e9b110", null ],
     [ "eraseEntities", "classecstasy_1_1_registry.html#a933e73597d9d8ec3a5d0aa5f10ec06d7", null ],
     [ "eraseEntitiesComponents", "classecstasy_1_1_registry.html#a7fa946004fd4ba4c61376adcbaeef69f", null ],
@@ -31,8 +31,9 @@ var classecstasy_1_1_registry =
     [ "query", "classecstasy_1_1_registry.html#aadc330c3ab699d709ec1bc07415d0848", null ],
     [ "runSystem", "classecstasy_1_1_registry.html#a59904982ed7490f12c63628951178dd5", null ],
     [ "runSystems", "classecstasy_1_1_registry.html#a5595f1c0811c0d7f658c01f49da8dc37", null ],
+    [ "runSystems", "classecstasy_1_1_registry.html#a4fe1dcf100009620e1a55bb45b1730a0", null ],
     [ "select", "classecstasy_1_1_registry.html#a21903809a52f0b813c940182bc102d02", null ],
     [ "_resources", "classecstasy_1_1_registry.html#a2e6e0617857be6b09b743c42281de478", null ],
     [ "_storages", "classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb", null ],
-    [ "_systems", "classecstasy_1_1_registry.html#a30221a4bba6858b3b5b19d088a98a6df", null ]
+    [ "_systems", "classecstasy_1_1_registry.html#a8f5d5b67bf0be48c342bb96672757a65", null ]
 ];

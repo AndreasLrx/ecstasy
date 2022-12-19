@@ -10,5 +10,9 @@ var dir_4a1419ba0e8125a1fc6aeccf1492e850 =
     [ "MapStorage.hpp", "_map_storage_8hpp.html", [
       [ "MapStorage", "classecstasy_1_1_map_storage.html", "classecstasy_1_1_map_storage" ]
     ] ],
-    [ "StorageConcepts.hpp", "_storage_concepts_8hpp.html", "_storage_concepts_8hpp" ]
+    [ "StorageConcepts.hpp", "_storage_concepts_8hpp.html", "_storage_concepts_8hpp" ],
+    [ "SystemInstances.hpp", "_system_instances_8hpp.html", [
+      [ "SystemInstances", "classecstasy_1_1_system_instances.html", "classecstasy_1_1_system_instances" ],
+      [ "Comparer", "classecstasy_1_1_system_instances_1_1_comparer.html", "classecstasy_1_1_system_instances_1_1_comparer" ]
+    ] ]
 ];

@@ -72,16 +72,16 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "",
-"_toml_node_factory_8cpp_source.html",
-"classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4370e80208bd66e5e695592c41c9c0ea",
-"classutil_1_1_bit_set_1_1_reference.html#a3f342d94b6af68a7c88f140265ca0cc6",
-"classutil_1_1serialization_1_1_toml_object_node.html#aa7ca4a60df77871ff6243079c6d1ae59",
-"cpp/atomic/atomic_flag_clear.html",
-"cpp/filesystem/is_directory.html",
-"cpp/numeric/fenv/feraiseexcept.html",
-"cpp/string/wide/iswalpha.html",
-"filter_8hpp.html",
-"storages_2include_8hpp_source.html"
+"_toml_node_8hpp_source.html",
+"classecstasy_1_1integration_1_1event_1_1_gamepads.html#a576a8ad8f50bef68c64893afbbc45077",
+"classutil_1_1_bit_set.html#a349731228e9b8c79618360b357be3735",
+"classutil_1_1serialization_1_1_toml_node_factory.html#a4a2d0dca75e5d445a0315047a78f3358",
+"cpp/algorithm/swap.html",
+"cpp/experimental/unordered_map/erase_if.html",
+"cpp/memory/uninitialized_default_construct.html",
+"cpp/string/byte/strtol.html",
+"dir_30970fbe9de3918f98e58b7106d748f8.html",
+"query_2modifiers_2_or_8hpp_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

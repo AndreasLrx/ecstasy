@@ -130,10 +130,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a47b4f8718083b99319ff342011e9b110"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1_registry_1_1_entity_builder.html">EntityBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#a47b4f8718083b99319ff342011e9b110">entityBuilder</a> ()</td></tr>
 <tr class="memdesc:a47b4f8718083b99319ff342011e9b110"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new entity builder.  <a href="classecstasy_1_1_registry.html#a47b4f8718083b99319ff342011e9b110">More...</a><br /></td></tr>
 <tr class="separator:a47b4f8718083b99319ff342011e9b110"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac05751de70adad4c6acd18fca1e93c57"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; ISystem &gt; S, typename... Args&gt; </td></tr>
-<tr class="memitem:ac05751de70adad4c6acd18fca1e93c57"><td class="memTemplItemLeft" align="right" valign="top">S &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#ac05751de70adad4c6acd18fca1e93c57">addSystem</a> (Args &amp;&amp;...args)</td></tr>
-<tr class="memdesc:ac05751de70adad4c6acd18fca1e93c57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new system in the registry.  <a href="classecstasy_1_1_registry.html#ac05751de70adad4c6acd18fca1e93c57">More...</a><br /></td></tr>
-<tr class="separator:ac05751de70adad4c6acd18fca1e93c57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84e0f98f2b37e6aa17fd320d443127f0"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; ISystem &gt; S, size_t Priority = 0, typename... Args&gt; </td></tr>
+<tr class="memitem:a84e0f98f2b37e6aa17fd320d443127f0"><td class="memTemplItemLeft" align="right" valign="top">S &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#a84e0f98f2b37e6aa17fd320d443127f0">addSystem</a> (Args &amp;&amp;...args)</td></tr>
+<tr class="memdesc:a84e0f98f2b37e6aa17fd320d443127f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new system in the registry.  <a href="classecstasy_1_1_registry.html#a84e0f98f2b37e6aa17fd320d443127f0">More...</a><br /></td></tr>
+<tr class="separator:a84e0f98f2b37e6aa17fd320d443127f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32c739cbf9fe54191f1e56dd0cfbb8e1"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; Resource &gt; R, typename... Args&gt; </td></tr>
 <tr class="memitem:a32c739cbf9fe54191f1e56dd0cfbb8e1"><td class="memTemplItemLeft" align="right" valign="top">R &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#a32c739cbf9fe54191f1e56dd0cfbb8e1">addResource</a> (Args &amp;&amp;...args)</td></tr>
 <tr class="memdesc:a32c739cbf9fe54191f1e56dd0cfbb8e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new resource in the registry.  <a href="classecstasy_1_1_registry.html#a32c739cbf9fe54191f1e56dd0cfbb8e1">More...</a><br /></td></tr>
@@ -196,6 +196,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5595f1c0811c0d7f658c01f49da8dc37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#a5595f1c0811c0d7f658c01f49da8dc37">runSystems</a> ()</td></tr>
 <tr class="memdesc:a5595f1c0811c0d7f658c01f49da8dc37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run all systems present in the registry.  <a href="classecstasy_1_1_registry.html#a5595f1c0811c0d7f658c01f49da8dc37">More...</a><br /></td></tr>
 <tr class="separator:a5595f1c0811c0d7f658c01f49da8dc37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fe1dcf100009620e1a55bb45b1730a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#a4fe1dcf100009620e1a55bb45b1730a0">runSystems</a> (size_t group, size_t mask)</td></tr>
+<tr class="memdesc:a4fe1dcf100009620e1a55bb45b1730a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run all systems whose priority match the given group.  <a href="classecstasy_1_1_registry.html#a4fe1dcf100009620e1a55bb45b1730a0">More...</a><br /></td></tr>
+<tr class="separator:a4fe1dcf100009620e1a55bb45b1730a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -226,12 +229,12 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a30221a4bba6858b3b5b19d088a98a6df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1_instances.html">Instances</a>&lt; <a class="el" href="classecstasy_1_1_i_system.html">ISystem</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#a30221a4bba6858b3b5b19d088a98a6df">_systems</a></td></tr>
-<tr class="separator:a30221a4bba6858b3b5b19d088a98a6df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e6e0617857be6b09b743c42281de478"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1_instances.html">Instances</a>&lt; <a class="el" href="classecstasy_1_1_resource.html">Resource</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#a2e6e0617857be6b09b743c42281de478">_resources</a></td></tr>
 <tr class="separator:a2e6e0617857be6b09b743c42281de478"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a614c68449908484ab0db56fcf12cdb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1_instances.html">Instances</a>&lt; <a class="el" href="classecstasy_1_1_i_storage.html">IStorage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a></td></tr>
 <tr class="separator:a0a614c68449908484ab0db56fcf12cdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f5d5b67bf0be48c342bb96672757a65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1_system_instances.html">SystemInstances</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#a8f5d5b67bf0be48c342bb96672757a65">_systems</a></td></tr>
+<tr class="separator:a8f5d5b67bf0be48c342bb96672757a65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base of an ECS architecture. </p>
@@ -239,7 +242,7 @@ Private Attributes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-18) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00047">47</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00048">48</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a404b8b6daf7e3d50b49def5b8543ad1f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a404b8b6daf7e3d50b49def5b8543ad1f">&#9670;&nbsp;</a></span>Registry()</h2>
@@ -353,11 +356,11 @@ template&lt;std::derived_from&lt; Resource &gt; R, typename... Args&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-18) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00394">394</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        {</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry.html#a2e6e0617857be6b09b743c42281de478">_resources</a>.emplace&lt;R&gt;(std::forward&lt;Args&gt;(args)...);</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        }</div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_a2e6e0617857be6b09b743c42281de478"><div class="ttname"><a href="classecstasy_1_1_registry.html#a2e6e0617857be6b09b743c42281de478">ecstasy::Registry::_resources</a></div><div class="ttdeci">Instances&lt; Resource &gt; _resources</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00654">Registry.hpp:654</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00396">396</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        {</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry.html#a2e6e0617857be6b09b743c42281de478">_resources</a>.emplace&lt;R&gt;(std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        }</div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_a2e6e0617857be6b09b743c42281de478"><div class="ttname"><a href="classecstasy_1_1_registry.html#a2e6e0617857be6b09b743c42281de478">ecstasy::Registry::_resources</a></div><div class="ttdeci">Instances&lt; Resource &gt; _resources</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00674">Registry.hpp:674</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -403,21 +406,21 @@ template&lt;typename C &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-18) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00412">412</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        {</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.emplace&lt;getStorageType&lt;C&gt;&gt;();</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        }</div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_a0a614c68449908484ab0db56fcf12cdb"><div class="ttname"><a href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">ecstasy::Registry::_storages</a></div><div class="ttdeci">Instances&lt; IStorage &gt; _storages</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00655">Registry.hpp:655</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00414">414</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        {</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.emplace&lt;getStorageType&lt;C&gt;&gt;();</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        }</div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_a0a614c68449908484ab0db56fcf12cdb"><div class="ttname"><a href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">ecstasy::Registry::_storages</a></div><div class="ttdeci">Instances&lt; IStorage &gt; _storages</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00675">Registry.hpp:675</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ac05751de70adad4c6acd18fca1e93c57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac05751de70adad4c6acd18fca1e93c57">&#9670;&nbsp;</a></span>addSystem()</h2>
+<a id="a84e0f98f2b37e6aa17fd320d443127f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84e0f98f2b37e6aa17fd320d443127f0">&#9670;&nbsp;</a></span>addSystem()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;std::derived_from&lt; ISystem &gt; S, typename... Args&gt; </div>
+template&lt;std::derived_from&lt; ISystem &gt; S, size_t Priority = 0, typename... Args&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -441,6 +444,7 @@ template&lt;std::derived_from&lt; ISystem &gt; S, typename... Args&gt; </div>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">S</td><td>System to add. </td></tr>
+    <tr><td class="paramname">Priority</td><td>System priority. See <a class="el" href="classecstasy_1_1_registry.html#a5595f1c0811c0d7f658c01f49da8dc37">Registry::runSystems()</a>. </td></tr>
     <tr><td class="paramname">Args</td><td>The type of arguments to pass to the constructor of <b>S</b>.</td></tr>
   </table>
   </dd>
@@ -461,11 +465,12 @@ template&lt;std::derived_from&lt; ISystem &gt; S, typename... Args&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00373">373</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        {</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry.html#a30221a4bba6858b3b5b19d088a98a6df">_systems</a>.emplace&lt;S&gt;(std::forward&lt;Args&gt;(args)...);</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        }</div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_a30221a4bba6858b3b5b19d088a98a6df"><div class="ttname"><a href="classecstasy_1_1_registry.html#a30221a4bba6858b3b5b19d088a98a6df">ecstasy::Registry::_systems</a></div><div class="ttdeci">Instances&lt; ISystem &gt; _systems</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00653">Registry.hpp:653</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00375">375</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        {</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry.html#a8f5d5b67bf0be48c342bb96672757a65">_systems</a>.<a class="code" href="classecstasy_1_1_system_instances.html#a208c610cab9d02affc43338382cdedde">emplace</a>&lt;S, Priority&gt;(std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        }</div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_a8f5d5b67bf0be48c342bb96672757a65"><div class="ttname"><a href="classecstasy_1_1_registry.html#a8f5d5b67bf0be48c342bb96672757a65">ecstasy::Registry::_systems</a></div><div class="ttdeci">SystemInstances _systems</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00676">Registry.hpp:676</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_system_instances_html_a208c610cab9d02affc43338382cdedde"><div class="ttname"><a href="classecstasy_1_1_system_instances.html#a208c610cab9d02affc43338382cdedde">ecstasy::SystemInstances::emplace</a></div><div class="ttdeci">Derived &amp; emplace(Args &amp;&amp;...args)</div><div class="ttdoc">Emplace a new instance of type Derived in the storage.</div><div class="ttdef"><b>Definition:</b> <a href="_system_instances_8hpp_source.html#l00105">SystemInstances.hpp:105</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -800,11 +805,11 @@ template&lt;typename C &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-25) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00069">69</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            (void)allocator;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">return</span> getStorageSafe&lt;C&gt;();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00070">70</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            (void)allocator;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">return</span> getStorageSafe&lt;C&gt;();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -858,11 +863,11 @@ template&lt;std::derived_from&lt; Resource &gt; R&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-25) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00078">78</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            (void)allocator;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordflow">return</span> getResource&lt;R&gt;();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00079">79</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            (void)allocator;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">return</span> getResource&lt;R&gt;();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -916,13 +921,13 @@ template&lt;IsStorage S&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-25) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00086">86</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            (void)allocator;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.contains&lt;S&gt;())</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.emplace&lt;S&gt;();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.get&lt;S&gt;();</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00087">87</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            (void)allocator;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.contains&lt;S&gt;())</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.emplace&lt;S&gt;();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.get&lt;S&gt;();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -976,10 +981,10 @@ template&lt;query::Modifier M&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-25) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00143">143</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        {</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <span class="keywordflow">return</span> GetModifierProxy&lt;typename M::Operands&gt;::template get&lt;M&gt;(*<span class="keyword">this</span>, allocator);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00144">144</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <span class="keywordflow">return</span> GetModifierProxy&lt;typename M::Operands&gt;::template get&lt;M&gt;(*<span class="keyword">this</span>, allocator);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1033,10 +1038,10 @@ template&lt;RegistryModifier M&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-25) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00150">150</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        {</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            <span class="keywordflow">return</span> getQueryable&lt;typename M::Modifier&gt;(allocator);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00151">151</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <span class="keywordflow">return</span> getQueryable&lt;typename M::Modifier&gt;(allocator);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1082,10 +1087,10 @@ template&lt;std::derived_from&lt; Resource &gt; R&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-18) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00464">464</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;        {</div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry.html#a2e6e0617857be6b09b743c42281de478">_resources</a>.get&lt;R&gt;();</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00466">466</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;        {</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry.html#a2e6e0617857be6b09b743c42281de478">_resources</a>.get&lt;R&gt;();</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1131,10 +1136,10 @@ template&lt;std::derived_from&lt; Resource &gt; R&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-18) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00446">446</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        {</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry.html#a2e6e0617857be6b09b743c42281de478">_resources</a>.get&lt;R&gt;();</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00448">448</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        {</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry.html#a2e6e0617857be6b09b743c42281de478">_resources</a>.get&lt;R&gt;();</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1180,10 +1185,10 @@ template&lt;typename C &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-18) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00500">500</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;        {</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.get&lt;getStorageType&lt;C&gt;&gt;();</div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00502">502</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;        {</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.get&lt;getStorageType&lt;C&gt;&gt;();</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1229,10 +1234,10 @@ template&lt;typename C &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-18) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00482">482</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;        {</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.get&lt;getStorageType&lt;C&gt;&gt;();</div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00484">484</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;        {</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.get&lt;getStorageType&lt;C&gt;&gt;();</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1272,12 +1277,12 @@ template&lt;typename C &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-19) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00516">516</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;        {</div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.contains&lt;getStorageType&lt;C&gt;&gt;())</div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;                addStorage&lt;C&gt;();</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.get&lt;getStorageType&lt;C&gt;&gt;();</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00518">518</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;        {</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.contains&lt;getStorageType&lt;C&gt;&gt;())</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;                addStorage&lt;C&gt;();</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.get&lt;getStorageType&lt;C&gt;&gt;();</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1317,10 +1322,10 @@ template&lt;std::derived_from&lt; Resource &gt; R&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-06) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00428">428</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        {</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry.html#a2e6e0617857be6b09b743c42281de478">_resources</a>.contains&lt;R&gt;();</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00430">430</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        {</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry.html#a2e6e0617857be6b09b743c42281de478">_resources</a>.contains&lt;R&gt;();</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1369,10 +1374,10 @@ template&lt;typename C , typename... Cs&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-20) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00578">578</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;        {</div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;            <span class="keywordflow">return</span> query::Query(getQueryable&lt;C&gt;(allocator), getQueryable&lt;Cs&gt;(allocator)...);</div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00580">580</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;        {</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;            <span class="keywordflow">return</span> query::Query(getQueryable&lt;C&gt;(allocator), getQueryable&lt;Cs&gt;(allocator)...);</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1417,15 +1422,16 @@ template&lt;std::derived_from&lt; ISystem &gt; S&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00639">639</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;        {</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;            <a class="code" href="classecstasy_1_1_registry.html#a30221a4bba6858b3b5b19d088a98a6df">_systems</a>.get&lt;S&gt;().run(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00641">641</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;        {</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;            <a class="code" href="classecstasy_1_1_registry.html#a8f5d5b67bf0be48c342bb96672757a65">_systems</a>.<a class="code" href="classecstasy_1_1_system_instances.html#a220b322cb64db0e278a115f880e78a2b">get</a>&lt;S&gt;().run(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;        }</div>
+<div class="ttc" id="aclassecstasy_1_1_system_instances_html_a220b322cb64db0e278a115f880e78a2b"><div class="ttname"><a href="classecstasy_1_1_system_instances.html#a220b322cb64db0e278a115f880e78a2b">ecstasy::SystemInstances::get</a></div><div class="ttdeci">const ISystem &amp; get(const std::type_index &amp;type) const</div><div class="ttdoc">Get a const reference to the contained instance identified by type.</div><div class="ttdef"><b>Definition:</b> <a href="_system_instances_8hpp_source.html#l00130">SystemInstances.hpp:130</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="a5595f1c0811c0d7f658c01f49da8dc37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5595f1c0811c0d7f658c01f49da8dc37">&#9670;&nbsp;</a></span>runSystems()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5595f1c0811c0d7f658c01f49da8dc37">&#9670;&nbsp;</a></span>runSystems() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1440,15 +1446,76 @@ template&lt;std::derived_from&lt; ISystem &gt; S&gt; </div>
 </div><div class="memdoc">
 
 <p>Run all systems present in the registry. </p>
+<dl class="section note"><dt>Note</dt><dd>Systems are run in ascending priority order. If two systems have the same priority, run order is undefined.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-17) </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_registry_8cpp_source.html#l00085">85</a> of file <a class="el" href="_registry_8cpp_source.html">Registry.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;[type, system] : <a class="code" href="classecstasy_1_1_registry.html#a30221a4bba6858b3b5b19d088a98a6df">_systems</a>.getInner())</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;[type, system] : <a class="code" href="classecstasy_1_1_registry.html#a8f5d5b67bf0be48c342bb96672757a65">_systems</a>.<a class="code" href="classecstasy_1_1_system_instances.html#a97417e193b4143dbced32bfafc8f5b0c">getInner</a>())</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/program/system.html">system</a>-&gt;run(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="ttc" id="aclassecstasy_1_1_system_instances_html_a97417e193b4143dbced32bfafc8f5b0c"><div class="ttname"><a href="classecstasy_1_1_system_instances.html#a97417e193b4143dbced32bfafc8f5b0c">ecstasy::SystemInstances::getInner</a></div><div class="ttdeci">constexpr const std::map&lt; std::pair&lt; std::type_index, size_t &gt;, std::unique_ptr&lt; ISystem &gt;, Comparer &gt; &amp; getInner() const</div><div class="ttdoc">Get the backing container.</div><div class="ttdef"><b>Definition:</b> <a href="_system_instances_8hpp_source.html#l00278">SystemInstances.hpp:278</a></div></div>
 <div class="ttc" id="asystem_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/utility/program/system.html">std::system</a></div><div class="ttdeci">T system(T... args)</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4fe1dcf100009620e1a55bb45b1730a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fe1dcf100009620e1a55bb45b1730a0">&#9670;&nbsp;</a></span>runSystems() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ecstasy::Registry::runSystems </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>mask</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Run all systems whose priority match the given group. </p>
+<dl class="section note"><dt>Note</dt><dd>The system groups can be seen as an internet network: The <code>group</code> 'id' is the network address, the <code>mask</code> is the network mask and each system priority in the group is a host in the network range.</dd>
+<dd>
+Systems in the group are run in ascending priority order. If two systems have the same priority, run order is undefined.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>Group priority 'id'. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mask</td><td>Priority 'id' mask. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-19) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_registry_8cpp_source.html#l00091">91</a> of file <a class="el" href="_registry_8cpp_source.html">Registry.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keyword">auto</span> &amp;systems = <a class="code" href="classecstasy_1_1_registry.html#a8f5d5b67bf0be48c342bb96672757a65">_systems</a>.<a class="code" href="classecstasy_1_1_system_instances.html#a97417e193b4143dbced32bfafc8f5b0c">getInner</a>();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keyword">auto</span> it = <a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/find.html">std::find_if</a>(systems.begin(), systems.end(), [&amp;group, &amp;mask](<span class="keyword">auto</span> &amp;entry) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            return (entry.first.second &amp; mask) == group;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        });</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">while</span> (it != systems.end()) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            it-&gt;second-&gt;run(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            ++it;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">if</span> ((it-&gt;first.second &amp; mask) != group)</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
+<div class="ttc" id="afind_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/algorithm/find.html">std::find_if</a></div><div class="ttdeci">T find_if(T... args)</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1490,10 +1557,10 @@ template&lt;typename C , typename... Cs&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-24) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00599">599</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;        {</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;            <span class="keywordflow">return</span> Select&lt;queryable_type_t&lt;C&gt;, queryable_type_t&lt;Cs&gt;...&gt;(*this);</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00601">601</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;        {</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;            <span class="keywordflow">return</span> Select&lt;queryable_type_t&lt;C&gt;, queryable_type_t&lt;Cs&gt;...&gt;(*this);</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1518,7 +1585,7 @@ template&lt;typename C , typename... Cs&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00654">654</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00674">674</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
@@ -1542,12 +1609,12 @@ template&lt;typename C , typename... Cs&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00655">655</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00675">675</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a30221a4bba6858b3b5b19d088a98a6df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30221a4bba6858b3b5b19d088a98a6df">&#9670;&nbsp;</a></span>_systems</h2>
+<a id="a8f5d5b67bf0be48c342bb96672757a65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f5d5b67bf0be48c342bb96672757a65">&#9670;&nbsp;</a></span>_systems</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1556,7 +1623,7 @@ template&lt;typename C , typename... Cs&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classecstasy_1_1_instances.html">Instances</a>&lt;<a class="el" href="classecstasy_1_1_i_system.html">ISystem</a>&gt; ecstasy::Registry::_systems</td>
+          <td class="memname"><a class="el" href="classecstasy_1_1_system_instances.html">SystemInstances</a> ecstasy::Registry::_systems</td>
         </tr>
       </table>
   </td>
@@ -1566,7 +1633,7 @@ template&lt;typename C , typename... Cs&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00653">653</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00676">676</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>

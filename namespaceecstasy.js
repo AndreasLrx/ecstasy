@@ -24,6 +24,7 @@ var namespaceecstasy =
     [ "Instances", "classecstasy_1_1_instances.html", "classecstasy_1_1_instances" ],
     [ "IStorage", "classecstasy_1_1_i_storage.html", "classecstasy_1_1_i_storage" ],
     [ "MapStorage", "classecstasy_1_1_map_storage.html", "classecstasy_1_1_map_storage" ],
+    [ "SystemInstances", "classecstasy_1_1_system_instances.html", "classecstasy_1_1_system_instances" ],
     [ "ISystem", "classecstasy_1_1_i_system.html", "classecstasy_1_1_i_system" ],
     [ "component_type_t", "namespaceecstasy.html#aafe71fc808322bbda62de47e3c841f35", null ],
     [ "EqualTo", "namespaceecstasy.html#a3636e577cd1e59a7d31089601561cc39", null ],

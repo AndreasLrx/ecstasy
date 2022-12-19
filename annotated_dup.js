@@ -86,6 +86,7 @@ var annotated_dup =
       [ "Instances", "classecstasy_1_1_instances.html", "classecstasy_1_1_instances" ],
       [ "IStorage", "classecstasy_1_1_i_storage.html", "classecstasy_1_1_i_storage" ],
       [ "MapStorage", "classecstasy_1_1_map_storage.html", "classecstasy_1_1_map_storage" ],
+      [ "SystemInstances", "classecstasy_1_1_system_instances.html", "classecstasy_1_1_system_instances" ],
       [ "ISystem", "classecstasy_1_1_i_system.html", "classecstasy_1_1_i_system" ]
     ] ],
     [ "util", "namespaceutil.html", [
