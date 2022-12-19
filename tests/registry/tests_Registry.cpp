@@ -805,3 +805,77 @@ TEST(Registry, NotEqualTo)
     }
     GTEST_ASSERT_EQ(i, 6);
 }
+
+#define PRINT(name)                                    \
+    class name : public ecstasy::ISystem {             \
+      public:                                          \
+        void run(ecstasy::Registry &registry) override \
+        {                                              \
+            (void)registry;                            \
+            std::cout << #name;                        \
+        }                                              \
+    }
+
+PRINT(C);
+PRINT(D);
+PRINT(E);
+PRINT(F);
+
+TEST(Registry, SystemPriorities_Letters_Ascending)
+{
+    ecstasy::Registry registry;
+    testing::internal::CaptureStdout();
+
+    registry.addSystem<A, 0>();
+    registry.addSystem<B, 1>();
+    registry.addSystem<C, 2>();
+    registry.addSystem<D, 3>();
+    registry.addSystem<E, 4>();
+    registry.addSystem<F, 5>();
+
+    registry.runSystems();
+    GTEST_ASSERT_EQ(testing::internal::GetCapturedStdout(), "ABCDEF");
+}
+
+TEST(Registry, SystemPriorities_Letters_Descending)
+{
+    ecstasy::Registry registry;
+    testing::internal::CaptureStdout();
+
+    registry.addSystem<A, 5>();
+    registry.addSystem<B, 4>();
+    registry.addSystem<C, 3>();
+    registry.addSystem<D, 2>();
+    registry.addSystem<E, 1>();
+    registry.addSystem<F, 0>();
+
+    registry.runSystems();
+    GTEST_ASSERT_EQ(testing::internal::GetCapturedStdout(), "FEDCBA");
+}
+
+TEST(Registry, SystemPriorities_Group)
+{
+    size_t mask = 0xff00;
+    const size_t abc = 0x0100;
+    const size_t def = 0x0200;
+
+    ecstasy::Registry registry;
+    testing::internal::CaptureStdout();
+
+    registry.addSystem<A, abc + 1>();
+    registry.addSystem<B, abc + 2>();
+    registry.addSystem<C, abc + 3>();
+    registry.addSystem<D, def + 1>();
+    registry.addSystem<E, def + 2>();
+    registry.addSystem<F, def + 3>();
+
+    registry.runSystems();
+    EXPECT_EQ(testing::internal::GetCapturedStdout(), "ABCDEF");
+
+    testing::internal::CaptureStdout();
+    registry.runSystems(abc, mask);
+    EXPECT_EQ(testing::internal::GetCapturedStdout(), "ABC");
+    testing::internal::CaptureStdout();
+    registry.runSystems(def, mask);
+    EXPECT_EQ(testing::internal::GetCapturedStdout(), "DEF");
+}

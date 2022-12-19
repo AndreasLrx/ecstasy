@@ -87,4 +87,21 @@ namespace ecstasy
         for (auto &[type, system] : _systems.getInner())
             system->run(*this);
     }
+
+    void Registry::runSystems(size_t group, size_t mask)
+    {
+        auto &systems = _systems.getInner();
+
+        auto it = std::find_if(systems.begin(), systems.end(), [&group, &mask](auto &entry) {
+            return (entry.first.second & mask) == group;
+        });
+
+        while (it != systems.end()) {
+            it->second->run(*this);
+            ++it;
+            if ((it->first.second & mask) != group)
+                break;
+        }
+    }
+
 } // namespace ecstasy
