@@ -26,6 +26,7 @@
 #include "ecstasy/storages/IStorage.hpp"
 #include "ecstasy/storages/Instances.hpp"
 #include "ecstasy/storages/StorageConcepts.hpp"
+#include "ecstasy/storages/SystemInstances.hpp"
 #include "ecstasy/system/ISystem.hpp"
 #include "util/Allocator.hpp"
 #include "util/meta/apply.hpp"
@@ -358,6 +359,7 @@ namespace ecstasy
         /// @brief Add a new system in the registry.
         ///
         /// @tparam S System to add.
+        /// @tparam Priority System priority. See @ref Registry::runSystems().
         /// @tparam Args The type of arguments to pass to the constructor of @b S.
         ///
         /// @param[in] args The arguments to pass to the constructor of @b S.
@@ -369,10 +371,10 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-17)
         ///
-        template <std::derived_from<ISystem> S, typename... Args>
+        template <std::derived_from<ISystem> S, size_t Priority = 0, typename... Args>
         S &addSystem(Args &&...args)
         {
-            return _systems.emplace<S>(std::forward<Args>(args)...);
+            return _systems.emplace<S, Priority>(std::forward<Args>(args)...);
         }
 
         ///
@@ -644,15 +646,34 @@ namespace ecstasy
         ///
         /// @brief Run all systems present in the registry.
         ///
+        /// @note Systems are run in ascending priority order. If two systems have the same priority, run order is
+        /// undefined.
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-17)
         ///
         void runSystems();
 
+        ///
+        /// @brief Run all systems whose priority match the given group.
+        ///
+        /// @note The system groups can be seen as an internet network: The @p group 'id' is the network address, the
+        /// @p mask is the network mask and each system priority in the group is a host in the network range.
+        ///
+        /// @note Systems in the group are run in ascending priority order. If two systems have the same priority, run
+        /// order is undefined.
+        ///
+        /// @param[in] group Group priority 'id'.
+        /// @param[in] mask Priority 'id' mask.
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-19)
+        ///
+        void runSystems(size_t group, size_t mask);
+
       private:
-        Instances<ISystem> _systems;
         Instances<Resource> _resources;
         Instances<IStorage> _storages;
+        SystemInstances _systems;
 
         /// @internal
         /// @brief Erase all the @p entity components.
