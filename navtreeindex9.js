@@ -1,5 +1,9 @@
 var NAVTREEINDEX9 =
 {
+"dir_1ee6296ae77f12e2ec152e792b5317de.html":[3,0,0,0,0,0,1],
+"dir_23b6d9a034129b4fdcc47f0f79a02ad4.html":[3,0,0,0,0,1,0,1],
+"dir_27d9dd95bf0309eb27f3bb61fbabadeb.html":[3,0,0,0,2],
+"dir_2de34326986a779f9fff4c0e99b551f8.html":[3,0,0,0,0,1,3],
 "dir_30970fbe9de3918f98e58b7106d748f8.html":[3,0,0,0,0,1,2],
 "dir_38a4743d134f46a02b2ee9856892b872.html":[3,0,0,0,0,1,0,0],
 "dir_443bdb17d2da7ce96b82b83ffa412b15.html":[3,0,0,1,1,0],
@@ -40,8 +44,8 @@ var NAVTREEINDEX9 =
 "foreach_8hpp.html#ad0fc41b2de53d05b7e61b8385adbf31e":[3,0,0,1,1,3,4],
 "foreach_8hpp.html#aef6eaad8ff9d21ee77262e3352f729b9":[3,0,0,1,1,3,1],
 "foreach_8hpp_source.html":[3,0,0,1,1,3],
-"functions.html":[2,3,0,0],
 "functions.html":[2,3,0],
+"functions.html":[2,3,0,0],
 "functions__.html":[2,3,0,1],
 "functions_a.html":[2,3,0,2],
 "functions_b.html":[2,3,0,3],
@@ -245,9 +249,5 @@ var NAVTREEINDEX9 =
 "query_2include_8hpp_source.html":[3,0,0,0,1,3],
 "query_2modifiers_2_and_8hpp.html":[3,0,0,0,1,2,0],
 "query_2modifiers_2_and_8hpp_source.html":[3,0,0,0,1,2,0],
-"query_2modifiers_2_maybe_8hpp.html":[3,0,0,0,1,2,3],
-"query_2modifiers_2_maybe_8hpp_source.html":[3,0,0,0,1,2,3],
-"query_2modifiers_2_not_8hpp.html":[3,0,0,0,1,2,5],
-"query_2modifiers_2_not_8hpp_source.html":[3,0,0,0,1,2,5],
-"query_2modifiers_2_or_8hpp.html":[3,0,0,0,1,2,6]
+"query_2modifiers_2_maybe_8hpp.html":[3,0,0,0,1,2,3]
 };

@@ -15,6 +15,7 @@ var classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3
     [ "checkCondition", "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html#a4f7dc2c89e15b85fa9f2395b76639fdd", null ],
     [ "checkCondition", "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html#a4f7dc2c89e15b85fa9f2395b76639fdd", null ],
     [ "get_components", "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html#a4a1d6956f3174d2b8b3c58dea4ea866b", null ],
+    [ "getPosition", "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html#a4afdbf70589a4abf676631b475c2b2a4", null ],
     [ "operator!=", "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html#a77a063cd5691703a410fecafa735de69", null ],
     [ "operator*", "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html#a4c84ed0b24de2c607f0a6dac3fcf5104", null ],
     [ "operator++", "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html#aa048ed6d20d31a55d3276bdaf45101fe", null ],

@@ -1,5 +1,9 @@
 var NAVTREEINDEX4 =
 {
+"classutil_1_1serialization_1_1_toml_node_factory.html#a1d02a3083321a8c63c374607d6880382":[2,0,1,1,10,4],
+"classutil_1_1serialization_1_1_toml_node_factory.html#a1e19096eaee47deb14c1355143d9cae6":[2,0,1,1,10,10],
+"classutil_1_1serialization_1_1_toml_node_factory.html#a21e35b8f2ff9c10d480ac535ee581ec0":[2,0,1,1,10,6],
+"classutil_1_1serialization_1_1_toml_node_factory.html#a48b7bf9c038ed04e8ce2f6e2a806006e":[2,0,1,1,10,5],
 "classutil_1_1serialization_1_1_toml_node_factory.html#a4a2d0dca75e5d445a0315047a78f3358":[2,0,1,1,10,12],
 "classutil_1_1serialization_1_1_toml_node_factory.html#a6a40ca95aaf3bb361f7b5420cf53347d":[2,0,1,1,10,7],
 "classutil_1_1serialization_1_1_toml_node_factory.html#a6aed256d85112541fd3999ded4640ba4":[2,0,1,1,10,1],
@@ -89,8 +93,8 @@ var NAVTREEINDEX4 =
 "cpp/algorithm/exclusive_scan.html":[1,0,1,187],
 "cpp/algorithm/fill.html":[1,0,1,217],
 "cpp/algorithm/fill_n.html":[1,0,1,218],
-"cpp/algorithm/find.html":[1,0,1,222],
 "cpp/algorithm/find.html":[1,0,1,219],
+"cpp/algorithm/find.html":[1,0,1,222],
 "cpp/algorithm/find.html":[1,0,1,223],
 "cpp/algorithm/find_end.html":[1,0,1,220],
 "cpp/algorithm/find_first_of.html":[1,0,1,221],
@@ -145,12 +149,12 @@ var NAVTREEINDEX4 =
 "cpp/algorithm/ranges/all_any_none_of.html":[1,0,1,4,52],
 "cpp/algorithm/ranges/binary_search.html":[1,0,1,4,4],
 "cpp/algorithm/ranges/clamp.html":[1,0,1,4,6],
-"cpp/algorithm/ranges/copy.html":[1,0,1,4,10],
 "cpp/algorithm/ranges/copy.html":[1,0,1,4,8],
+"cpp/algorithm/ranges/copy.html":[1,0,1,4,10],
 "cpp/algorithm/ranges/copy_backward.html":[1,0,1,4,9],
 "cpp/algorithm/ranges/copy_n.html":[1,0,1,4,11],
-"cpp/algorithm/ranges/count.html":[1,0,1,4,13],
 "cpp/algorithm/ranges/count.html":[1,0,1,4,12],
+"cpp/algorithm/ranges/count.html":[1,0,1,4,13],
 "cpp/algorithm/ranges/equal.html":[1,0,1,4,17],
 "cpp/algorithm/ranges/equal_range.html":[1,0,1,4,18],
 "cpp/algorithm/ranges/fill.html":[1,0,1,4,19],
@@ -245,9 +249,5 @@ var NAVTREEINDEX4 =
 "cpp/algorithm/set_symmetric_difference.html":[1,0,1,549],
 "cpp/algorithm/set_union.html":[1,0,1,552],
 "cpp/algorithm/shift.html":[1,0,1,562],
-"cpp/algorithm/shift.html":[1,0,1,561],
-"cpp/algorithm/sort.html":[1,0,1,574],
-"cpp/algorithm/sort_heap.html":[1,0,1,575],
-"cpp/algorithm/stable_partition.html":[1,0,1,590],
-"cpp/algorithm/stable_sort.html":[1,0,1,591]
+"cpp/algorithm/shift.html":[1,0,1,561]
 };

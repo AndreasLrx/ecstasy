@@ -1,5 +1,9 @@
 var NAVTREEINDEX10 =
 {
+"query_2modifiers_2_maybe_8hpp_source.html":[3,0,0,0,1,2,3],
+"query_2modifiers_2_not_8hpp.html":[3,0,0,0,1,2,5],
+"query_2modifiers_2_not_8hpp_source.html":[3,0,0,0,1,2,5],
+"query_2modifiers_2_or_8hpp.html":[3,0,0,0,1,2,6],
 "query_2modifiers_2_or_8hpp_source.html":[3,0,0,0,1,2,6],
 "query_2modifiers_2_xor_8hpp.html":[3,0,0,0,1,2,7],
 "query_2modifiers_2_xor_8hpp_source.html":[3,0,0,0,1,2,7],
