@@ -42,6 +42,9 @@ namespace ecstasy::query
     template <Queryable First, Queryable... Others, typename... Conditions>
     class QueryImplementation<util::meta::Traits<First, Others...>, util::meta::Traits<Conditions...>> {
       public:
+        /// @brief Queryable constraint.
+        using QueryData = std::tuple<typename First::QueryData, typename Others::QueryData...>;
+
         ///
         /// @brief Query iterator.
         ///
@@ -220,6 +223,19 @@ namespace ecstasy::query
                 return ++result;
             }
 
+            ///
+            /// @brief Get the iterator Position in the query mask.
+            ///
+            /// @return size_t Iterator position.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-12-20)
+            ///
+            constexpr size_t getPosition() const
+            {
+                return _pos;
+            }
+
           private:
             template <QConditionConst Condition>
             bool checkCondition() const
@@ -374,6 +390,8 @@ namespace ecstasy::query
         ///
         /// @brief Get the Query Mask. All bit set means an entity match the chained request.
         ///
+        /// @note @ref Queryable constraint.
+        ///
         /// @return const util::BitSet& Query BitMask.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
@@ -384,10 +402,43 @@ namespace ecstasy::query
             return _mask;
         }
 
+        ///
+        /// @brief Query the components associated to the given entity.
+        ///
+        /// @note @ref Queryable constraint.
+        ///
+        /// @param[in] index Index of the entity.
+        ///
+        /// @return QueryData tuple containing component references.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-12-20)
+        ///
+        QueryData getQueryData(std::size_t index)
+        {
+            return get_components(index, std::make_index_sequence<(sizeof...(Others)) + 1>());
+        }
+
       private:
         util::BitSet _mask;
         std::tuple<First &, Others &...> _storages;
         size_t _begin;
+
+        ///
+        /// @brief Get the components from the storages tuple.
+        ///
+        /// @tparam Indices Represent all the indices to fetch in the @p _storages attribute.
+        ///
+        /// @return @ref QueryData tuple containing component references.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-20)
+        ///
+        template <size_t... Indices>
+        QueryData get_components(std::size_t index, std::index_sequence<Indices...>) const
+        {
+            return {std::get<Indices>(_storages).getQueryData(index)...};
+        }
     };
 
     template <Queryable First, Queryable... Others>
