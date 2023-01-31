@@ -73,6 +73,30 @@ namespace ecstasy
             }
 
             ///
+            /// @brief Add a component to the builder target entity.
+            ///
+            /// @tparam S Component storage type.
+            ///
+            /// @param[in] storage Component storage.
+            /// @param[in] list Initializer list to forward to the component constructor.
+            ///
+            /// @return Builder& @b this.
+            ///
+            /// @throw std::logic_error If the builder was already consumed or if the entity already has the
+            /// component.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2023-01-31)
+            ///
+            template <IsContainerStorage S>
+            Builder &with(S &storage, std::initializer_list<typename S::Component::value_type> list)
+            {
+                assertNotBuilt();
+                _entity.add(storage, list);
+                return *this;
+            }
+
+            ///
             /// @brief Finalize the entity, making it alive.
             ///
             /// @return Entity Newly created entity.

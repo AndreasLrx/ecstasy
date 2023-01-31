@@ -198,6 +198,32 @@ namespace ecstasy
             }
 
             ///
+            /// @brief Add a component to the builder target entity.
+            ///
+            /// @tparam C Component type.
+            ///
+            /// @param[in] list Initializer list to forward to the component constructor.
+            ///
+            /// @return EntityBuilder& @b this.
+            ///
+            /// @throw std::logic_error If the builder was already consumed or if the entity already has the
+            /// component.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2023-01-31)
+            ///
+            template <typename C>
+            requires requires()
+            {
+                typename C::value_type;
+            }
+            EntityBuilder &with(std::initializer_list<typename C::value_type> list)
+            {
+                _builder.with(_registry.getStorageSafe<C>(), list);
+                return *this;
+            }
+
+            ///
             /// @brief Finalize the entity, making it alive.
             ///
             /// @return Entity Newly created entity.

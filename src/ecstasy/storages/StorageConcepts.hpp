@@ -43,5 +43,12 @@ namespace ecstasy
     {
         typename S::Component;
     };
+
+    template <typename S>
+    concept IsContainerStorage = requires()
+    {
+        requires IsStorage<S>;
+        typename S::Component::value_type;
+    };
 } // namespace ecstasy
 #endif /* !ECSTASY_STORAGE_STORAGECONCEPTS_HPP_ */
