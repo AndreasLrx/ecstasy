@@ -61,11 +61,12 @@ TEST(Entities, builder)
     ecstasy::MapStorage<Velocity> velocities;
     ecstasy::MapStorage<Size> sizes;
     ecstasy::MapStorage<Vector2i> vectors;
+    ecstasy::MapStorage<std::vector<int>> intVectors;
     ecstasy::Entities entities;
 
     /// Build the entity
     ecstasy::Entities::Builder builder = entities.builder();
-    builder.with(positions, 1, 2).with(velocities, 3, 4).with(sizes, 4, 5);
+    builder.with(positions, 1, 2).with(velocities, 3, 4).with(sizes, 4, 5).with(intVectors, {1, 2, 3, 4, 5, 6});
     EXPECT_THROW(builder.with(positions, 42, 84), std::logic_error);
     ecstasy::Entity e = builder.build();
 
@@ -77,6 +78,8 @@ TEST(Entities, builder)
     EXPECT_TRUE(e.has(positions));
     EXPECT_TRUE(e.has(velocities));
     EXPECT_TRUE(e.has(sizes));
+    EXPECT_TRUE(e.has(intVectors));
+    EXPECT_EQ(e.get(intVectors).size(), 6);
     EXPECT_FALSE(e.has(vectors));
 }
 

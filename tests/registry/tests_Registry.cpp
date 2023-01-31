@@ -246,7 +246,7 @@ TEST(Registry, EntityBuilder)
 
     /// Build the entity
     ecstasy::Registry::EntityBuilder builder = registry.entityBuilder();
-    builder.with<Position>(1, 2).with<Velocity>(3, 4).with<Size>(4, 5);
+    builder.with<Position>(1, 2).with<Velocity>(3, 4).with<Size>(4, 5).with<std::vector<int>>({1, 2, 3, 4, 5, 6});
     EXPECT_THROW(builder.with<Position>(42, 84), std::logic_error);
     ecstasy::RegistryEntity e(builder.build(), registry);
 
@@ -258,6 +258,8 @@ TEST(Registry, EntityBuilder)
     EXPECT_TRUE(e.has<Position>());
     EXPECT_TRUE(e.has<Velocity>());
     EXPECT_TRUE(e.has<Size>());
+    EXPECT_TRUE(e.has<std::vector<int>>());
+    EXPECT_EQ(e.get<std::vector<int>>().size(), 6);
     EXPECT_FALSE(e.has<Vector2i>());
 }
 
