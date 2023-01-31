@@ -1,5 +1,9 @@
 var NAVTREEINDEX3 =
 {
+"classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918":[2,0,1,3,26],
+"classutil_1_1_bit_set.html#a0acc77fa3f0158956aafb770f5ed7399":[2,0,1,3,25],
+"classutil_1_1_bit_set.html#a0eca7662186e61cda971fbe7fe484aa9":[2,0,1,3,16],
+"classutil_1_1_bit_set.html#a1b7940aa2d91fd658b573692239866c0":[2,0,1,3,30],
 "classutil_1_1_bit_set.html#a1c8657d0208fb4dabf568ebb5d1df138":[2,0,1,3,19],
 "classutil_1_1_bit_set.html#a1e15c54e82b2c4dcd15bd2d4a2af31a5":[2,0,1,3,29],
 "classutil_1_1_bit_set.html#a245462458522570585a95bdc61fe2039":[2,0,1,3,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX3 =
 "classutil_1_1serialization_1_1_toml_node.html#a9e3419f99984a6e0397ef72fbbc52eb6":[2,0,1,1,9,4],
 "classutil_1_1serialization_1_1_toml_node.html#ac663ff0a2305ac12f4e0b54e97484bfb":[2,0,1,1,9,6],
 "classutil_1_1serialization_1_1_toml_node.html#aef779ba4bd41e38941656a6c158fdc43":[2,0,1,1,9,7],
-"classutil_1_1serialization_1_1_toml_node.html#af0177ef437a1d69bb2046e0f32fd206a":[2,0,1,1,9,8],
-"classutil_1_1serialization_1_1_toml_node.html#af2e5e91f8313bd348962997d74edbf15":[2,0,1,1,9,2],
-"classutil_1_1serialization_1_1_toml_node.html#af768a55a2a333ddd3ec486a6a507a890":[2,0,1,1,9,0],
-"classutil_1_1serialization_1_1_toml_node_factory.html":[2,0,1,1,10],
-"classutil_1_1serialization_1_1_toml_node_factory.html#a16960642a92d20105168b67aebe6e0a7":[2,0,1,1,10,11]
+"classutil_1_1serialization_1_1_toml_node.html#af0177ef437a1d69bb2046e0f32fd206a":[2,0,1,1,9,8]
 };

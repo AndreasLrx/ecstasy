@@ -37,6 +37,7 @@ var namespaceecstasy =
     [ "NotEqualTo", "namespaceecstasy.html#a632aba6a51f51ed40b7bdc35331c6821", null ],
     [ "OptionalModifiersAllocator", "namespaceecstasy.html#a5fc0aa1c8b8c583dc2aadf4d89d65eff", null ],
     [ "queryable_type_t", "namespaceecstasy.html#a53c8ca43801107dc959adbdc60810af8", null ],
+    [ "IsContainerStorage", "namespaceecstasy.html#a2286cc039a6a746d313b6978bec7b058", null ],
     [ "IsStorage", "namespaceecstasy.html#a73201157de93701763bb9dda9f0201a7", null ],
     [ "RegistryModifier", "namespaceecstasy.html#a6791f76b228760ff4513f357ad3fa0d0", null ]
 ];

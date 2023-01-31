@@ -4,9 +4,9 @@ var NAVTREEINDEX0 =
 "":[1,0,1,0],
 "":[1,0,1,2],
 "":[1,0,1,3],
-"":[1,0,1,4],
 "":[1,0,1,1,3],
 "":[1,0,1,1,4],
+"":[1,0,1,4],
 "":[1,0,1,1],
 "":[1,0,1,1,0],
 "":[1,0,1,1,1],
@@ -230,8 +230,9 @@ var NAVTREEINDEX0 =
 "_serializer_8hpp.html":[3,0,0,1,1,10],
 "_serializer_8hpp_source.html":[3,0,0,1,1,10],
 "_storage_concepts_8hpp.html":[3,0,0,0,4,4],
+"_storage_concepts_8hpp.html#a2286cc039a6a746d313b6978bec7b058":[3,0,0,0,4,4,3],
 "_storage_concepts_8hpp.html#a5081c2ba8fc64b28d27cdf3d74ffa960":[3,0,0,0,4,4,1],
-"_storage_concepts_8hpp.html#a73201157de93701763bb9dda9f0201a7":[3,0,0,0,4,4,3],
+"_storage_concepts_8hpp.html#a73201157de93701763bb9dda9f0201a7":[3,0,0,0,4,4,4],
 "_storage_concepts_8hpp.html#ae219e3d50efdd81eb87d2a220e030193":[3,0,0,0,4,4,2],
 "_storage_concepts_8hpp_source.html":[3,0,0,0,4,4],
 "_system_instances_8hpp.html":[3,0,0,0,4,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "_toml_conversion_8cpp.html":[3,0,0,1,1,0,2],
 "_toml_conversion_8cpp_source.html":[3,0,0,1,1,0,2],
 "_toml_conversion_8hpp.html":[3,0,0,1,1,0,3],
-"_toml_conversion_8hpp_source.html":[3,0,0,1,1,0,3],
-"_toml_node_8hpp.html":[3,0,0,1,1,0,4]
+"_toml_conversion_8hpp_source.html":[3,0,0,1,1,0,3]
 };
