@@ -10,6 +10,14 @@
 
 - Your branch name should be formatted as `fix/<ISSUENUMBER>-<TITLE>` for bug fixes or `feature/<ISSUENUMBER>-<TITLE>` for features, example: `fix/4221-infinite-loop`.
 
+#### **Rebase or Merge strategy ?**
+
+- Use the rebase strategy instead of the merge.
+
+- PR with merge commits will not be validated.
+
+- The project began using the merge commit, which explains the presence of old merge commits.
+
 #### **Do you want to fix an issue?**
 
 - Create a branch
@@ -18,7 +26,7 @@
 
 - Submit a [pull request](https://github.com/AndreasLrx/ecstasy/pulls).
 
-- Once validated, merge to PR to `master` and remove the source branch (with `git branch -D <branch_name>`.
+- Once validated, rebase and merge to PR to `master` and remove the source branch (with `git branch -D <branch_name>`.
 
 #### **How to title commits?**
 
