@@ -104,4 +104,12 @@ namespace ecstasy
         }
     }
 
+    void Registry::clear()
+    {
+        _resources.clear();
+        _storages.clear();
+        _systems.clear();
+        addResource<Entities>();
+    }
+
 } // namespace ecstasy
