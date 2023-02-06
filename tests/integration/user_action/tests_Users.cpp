@@ -154,35 +154,28 @@ TEST(Users, handleEvent)
             },
             0)
         .build();
-    /// Match action 1 (keyboard)
     registry.entityBuilder()
-        .with<user_action::ActionListener>(
-            [&values](ecstasy::Registry &r, ecstasy::Entity e, user_action::Action a) {
-                (void)r;
-                (void)e;
-                values[2] += a.value + 1.f;
-            },
-            1)
-        .build();
-    /// Match action 2 (gamepad button)
-    registry.entityBuilder()
-        .with<user_action::ActionListener>(
-            [&values](ecstasy::Registry &r, ecstasy::Entity e, user_action::Action a) {
-                (void)r;
-                (void)e;
-                values[3] += a.value + 1.f;
-            },
-            2)
-        .build();
-    /// Match action 3 (gamepad axis)
-    registry.entityBuilder()
-        .with<user_action::ActionListener>(
-            [&values](ecstasy::Registry &r, ecstasy::Entity e, user_action::Action a) {
-                (void)r;
-                (void)e;
-                values[4] += a.value + 1.f;
-            },
-            3)
+        .with<user_action::ActionListeners>({/// Match action 1 (keyboard)
+            {1,
+                [&values](ecstasy::Registry &r, ecstasy::Entity e, user_action::Action a) {
+                    (void)r;
+                    (void)e;
+                    values[2] += a.value + 1.f;
+                }},
+            /// Match action 2 (gamepad button)
+            {2,
+                [&values](ecstasy::Registry &r, ecstasy::Entity e, user_action::Action a) {
+                    (void)r;
+                    (void)e;
+                    values[3] += a.value + 1.f;
+                }},
+            /// Match action 3 (gamepad axis)
+            {3,
+                [&values](ecstasy::Registry &r, ecstasy::Entity e, user_action::Action a) {
+                    (void)r;
+                    (void)e;
+                    values[4] += a.value + 1.f;
+                }}})
         .build();
 
     /// Event not handled by the Users::handleEvent
