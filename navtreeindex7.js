@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"cpp/memory/shared_ptr/make_shared.html":[1,0,1,409],
 "cpp/memory/shared_ptr/pointer_cast.html":[1,0,1,167],
 "cpp/memory/shared_ptr/pointer_cast.html":[1,0,1,123],
 "cpp/memory/shared_ptr/pointer_cast.html":[1,0,1,592],
@@ -173,8 +174,8 @@ var NAVTREEINDEX7 =
 "cpp/numeric/special_functions/ellint_2.html":[1,0,1,172],
 "cpp/numeric/special_functions/ellint_2.html":[1,0,1,173],
 "cpp/numeric/special_functions/ellint_3.html":[1,0,1,175],
-"cpp/numeric/special_functions/ellint_3.html":[1,0,1,176],
 "cpp/numeric/special_functions/ellint_3.html":[1,0,1,174],
+"cpp/numeric/special_functions/ellint_3.html":[1,0,1,176],
 "cpp/numeric/special_functions/expint.html":[1,0,1,191],
 "cpp/numeric/special_functions/expint.html":[1,0,1,192],
 "cpp/numeric/special_functions/expint.html":[1,0,1,193],
@@ -199,8 +200,8 @@ var NAVTREEINDEX7 =
 "cpp/numeric/special_functions/sph_neumann.html":[1,0,1,583],
 "cpp/numeric/special_functions/sph_neumann.html":[1,0,1,582],
 "cpp/numeric/special_functions/sph_neumann.html":[1,0,1,584],
-"cpp/ranges/begin.html":[1,0,1,4,3],
 "cpp/ranges/begin.html":[1,0,1,4,5],
+"cpp/ranges/begin.html":[1,0,1,4,3],
 "cpp/regex/regex_match.html":[1,0,1,505],
 "cpp/regex/regex_replace.html":[1,0,1,506],
 "cpp/regex/regex_search.html":[1,0,1,507],
@@ -211,8 +212,8 @@ var NAVTREEINDEX7 =
 "cpp/string/basic_string/stol.html":[1,0,1,598],
 "cpp/string/basic_string/stol.html":[1,0,1,596],
 "cpp/string/basic_string/stol.html":[1,0,1,595],
-"cpp/string/basic_string/stoul.html":[1,0,1,599],
 "cpp/string/basic_string/stoul.html":[1,0,1,600],
+"cpp/string/basic_string/stoul.html":[1,0,1,599],
 "cpp/string/basic_string/to_string.html":[1,0,1,648],
 "cpp/string/basic_string/to_wstring.html":[1,0,1,649],
 "cpp/string/byte/atof.html":[1,0,1,43],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "cpp/string/byte/strncmp.html":[1,0,1,611],
 "cpp/string/byte/strncpy.html":[1,0,1,612],
 "cpp/string/byte/strpbrk.html":[1,0,1,614],
-"cpp/string/byte/strrchr.html":[1,0,1,615],
-"cpp/string/byte/strspn.html":[1,0,1,616]
+"cpp/string/byte/strrchr.html":[1,0,1,615]
 };

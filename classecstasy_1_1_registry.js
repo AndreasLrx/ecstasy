@@ -9,6 +9,7 @@ var classecstasy_1_1_registry =
     [ "addResource", "classecstasy_1_1_registry.html#a32c739cbf9fe54191f1e56dd0cfbb8e1", null ],
     [ "addStorage", "classecstasy_1_1_registry.html#ab8d8a1bd2b85b7aaf893911cc995ab26", null ],
     [ "addSystem", "classecstasy_1_1_registry.html#a84e0f98f2b37e6aa17fd320d443127f0", null ],
+    [ "clear", "classecstasy_1_1_registry.html#a8b69fc21286f8a5ee83d2f5871a927e7", null ],
     [ "entityBuilder", "classecstasy_1_1_registry.html#a47b4f8718083b99319ff342011e9b110", null ],
     [ "eraseEntities", "classecstasy_1_1_registry.html#a933e73597d9d8ec3a5d0aa5f10ec06d7", null ],
     [ "eraseEntitiesComponents", "classecstasy_1_1_registry.html#a7fa946004fd4ba4c61376adcbaeef69f", null ],

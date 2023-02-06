@@ -1,5 +1,6 @@
 var NAVTREEINDEX5 =
 {
+"cpp/algorithm/set_intersection.html":[1,0,1,547],
 "cpp/algorithm/set_symmetric_difference.html":[1,0,1,549],
 "cpp/algorithm/set_union.html":[1,0,1,552],
 "cpp/algorithm/shift.html":[1,0,1,561],
@@ -194,8 +195,8 @@ var NAVTREEINDEX5 =
 "cpp/experimental/type_trait_variable_templates.html":[1,0,1,1,34],
 "cpp/experimental/type_trait_variable_templates.html":[1,0,1,1,97],
 "cpp/experimental/type_trait_variable_templates.html":[1,0,1,1,108],
-"cpp/experimental/type_trait_variable_templates.html":[1,0,1,1,82],
 "cpp/experimental/type_trait_variable_templates.html":[1,0,1,1,106],
+"cpp/experimental/type_trait_variable_templates.html":[1,0,1,1,82],
 "cpp/experimental/type_trait_variable_templates.html":[1,0,1,1,104],
 "cpp/experimental/type_trait_variable_templates.html":[1,0,1,1,105],
 "cpp/experimental/type_trait_variable_templates.html":[1,0,1,1,28],
@@ -248,6 +249,5 @@ var NAVTREEINDEX5 =
 "cpp/experimental/type_trait_variable_templates.html":[1,0,1,1,68],
 "cpp/experimental/type_trait_variable_templates.html":[1,0,1,1,69],
 "cpp/experimental/type_trait_variable_templates.html":[1,0,1,1,70],
-"cpp/experimental/type_trait_variable_templates.html":[1,0,1,1,71],
-"cpp/experimental/type_trait_variable_templates.html":[1,0,1,1,72]
+"cpp/experimental/type_trait_variable_templates.html":[1,0,1,1,71]
 };

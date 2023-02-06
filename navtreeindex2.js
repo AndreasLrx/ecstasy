@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"classecstasy_1_1integration_1_1event_1_1_gamepad.html#afd43e2fd40460467c91130ca1b7d467b":[2,0,0,0,0,16,9],
 "classecstasy_1_1integration_1_1event_1_1_gamepads.html":[2,0,0,0,0,17],
 "classecstasy_1_1integration_1_1event_1_1_gamepads.html#a2ddb9094373ca55a83d3204197ebbd15":[2,0,0,0,0,17,3],
 "classecstasy_1_1integration_1_1event_1_1_gamepads.html#a3c96369ad92cab96519664b55d9eca09":[2,0,0,0,0,17,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "classutil_1_1_allocator.html#a698f788e60bcf5ce659ef0832edeb66c":[2,0,1,2,1],
 "classutil_1_1_bit_set.html":[2,0,1,3],
 "classutil_1_1_bit_set.html#a0314c01283427177909d5977641ec6f1":[2,0,1,3,21],
-"classutil_1_1_bit_set.html#a034726ec31b4e4ad0b2c7a82cbfad3e4":[2,0,1,3,5],
-"classutil_1_1_bit_set.html#a0a05c4dcfaafa79d3b6ee10a1f9b5dba":[2,0,1,3,7]
+"classutil_1_1_bit_set.html#a034726ec31b4e4ad0b2c7a82cbfad3e4":[2,0,1,3,5]
 };

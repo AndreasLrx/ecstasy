@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"classutil_1_1serialization_1_1_toml_node.html#af0177ef437a1d69bb2046e0f32fd206a":[2,0,1,1,9,8],
 "classutil_1_1serialization_1_1_toml_node.html#af2e5e91f8313bd348962997d74edbf15":[2,0,1,1,9,2],
 "classutil_1_1serialization_1_1_toml_node.html#af768a55a2a333ddd3ec486a6a507a890":[2,0,1,1,9,0],
 "classutil_1_1serialization_1_1_toml_node_factory.html":[2,0,1,1,10],
@@ -148,8 +149,8 @@ var NAVTREEINDEX4 =
 "cpp/algorithm/random_shuffle.html":[1,0,1,500],
 "cpp/algorithm/random_shuffle.html":[1,0,1,566],
 "cpp/algorithm/ranges/adjacent_find.html":[1,0,1,4,0],
-"cpp/algorithm/ranges/all_any_none_of.html":[1,0,1,4,2],
 "cpp/algorithm/ranges/all_any_none_of.html":[1,0,1,4,1],
+"cpp/algorithm/ranges/all_any_none_of.html":[1,0,1,4,2],
 "cpp/algorithm/ranges/all_any_none_of.html":[1,0,1,4,52],
 "cpp/algorithm/ranges/binary_search.html":[1,0,1,4,4],
 "cpp/algorithm/ranges/clamp.html":[1,0,1,4,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "cpp/algorithm/sample.html":[1,0,1,539],
 "cpp/algorithm/search.html":[1,0,1,544],
 "cpp/algorithm/search_n.html":[1,0,1,545],
-"cpp/algorithm/set_difference.html":[1,0,1,546],
-"cpp/algorithm/set_intersection.html":[1,0,1,547]
+"cpp/algorithm/set_difference.html":[1,0,1,546]
 };

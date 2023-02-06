@@ -73,15 +73,15 @@ var NAVTREEINDEX =
 [
 "",
 "_toml_node_8hpp.html",
-"classecstasy_1_1integration_1_1event_1_1_gamepads.html",
-"classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918",
-"classutil_1_1serialization_1_1_toml_node.html#af2e5e91f8313bd348962997d74edbf15",
-"cpp/algorithm/set_symmetric_difference.html",
+"classecstasy_1_1integration_1_1event_1_1_gamepad.html#afd43e2fd40460467c91130ca1b7d467b",
+"classutil_1_1_bit_set.html#a0a05c4dcfaafa79d3b6ee10a1f9b5dba",
+"classutil_1_1serialization_1_1_toml_node.html#af0177ef437a1d69bb2046e0f32fd206a",
+"cpp/algorithm/set_intersection.html",
 "cpp/experimental/type_trait_variable_templates.html",
-"cpp/memory/shared_ptr/pointer_cast.html",
-"cpp/string/byte/strstr.html",
-"cpp/utility/variant/visit.html",
-"query_2include_8hpp.html"
+"cpp/memory/shared_ptr/make_shared.html",
+"cpp/string/byte/strspn.html",
+"cpp/utility/variant/variant_size.html",
+"query_2conditions_2include_8hpp_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
