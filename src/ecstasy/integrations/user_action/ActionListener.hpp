@@ -14,6 +14,7 @@
 
 #include "ecstasy/integrations/event/listeners/EventListeners.hpp"
 #include "ecstasy/integrations/user_action/UserProfile.hpp"
+#include <unordered_map>
 
 namespace ecstasy::integration::user_action
 {
@@ -71,6 +72,16 @@ namespace ecstasy::integration::user_action
         {
         }
     };
+
+    ///
+    /// @brief Action listeners map. Used to listen to more than one Action on a single entity.
+    ///
+    /// @note Doesn't handle @ref Action::All .
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2023-01-31)
+    ///
+    using ActionListeners = std::unordered_map<Action::Id, ActionListener::Listener>;
 } // namespace ecstasy::integration::user_action
 
 #endif /* !ECSTASY_INTEGRATIONS_USER_ACTION_ACTIONLISTENER_HPP_ */

@@ -12,6 +12,8 @@
 #include "Users.hpp"
 #include "ActionListener.hpp"
 #include "PendingActions.hpp"
+#include "ecstasy/registry/modifiers/Maybe.hpp"
+#include "ecstasy/registry/modifiers/Or.hpp"
 
 namespace ecstasy::integration::user_action
 {
@@ -62,9 +64,14 @@ namespace ecstasy::integration::user_action
             registry.getResource<PendingActions>().get().push(action);
         ecstasy::ModifiersAllocator allocator;
 
-        for (auto [entity, listener] : registry.query<Entities, ActionListener>()) {
-            if (listener.actionId == Action::All || listener.actionId == action.id)
-                listener.listener(registry, entity, action);
+        for (auto [entity, maybeListener, maybeListeners] :
+            registry.select<Entities, Maybe<ActionListener>, Maybe<ActionListeners>>()
+                .where<Entities, Or<ActionListener, ActionListeners>>(allocator)) {
+            if (maybeListener) {
+                if (maybeListener->get().actionId == Action::All || maybeListener->get().actionId == action.id)
+                    maybeListener->get().listener(registry, entity, action);
+            } else if (maybeListeners->get().contains(action.id))
+                maybeListeners->get()[action.id](registry, entity, action);
         }
     }
 
