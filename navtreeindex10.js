@@ -1,16 +1,5 @@
 var NAVTREEINDEX10 =
 {
-"query_2conditions_2include_8hpp_source.html":[3,0,0,0,1,1,4],
-"query_2include_8hpp.html":[3,0,0,0,1,3],
-"query_2include_8hpp_source.html":[3,0,0,0,1,3],
-"query_2modifiers_2_and_8hpp.html":[3,0,0,0,1,2,0],
-"query_2modifiers_2_and_8hpp_source.html":[3,0,0,0,1,2,0],
-"query_2modifiers_2_maybe_8hpp.html":[3,0,0,0,1,2,3],
-"query_2modifiers_2_maybe_8hpp_source.html":[3,0,0,0,1,2,3],
-"query_2modifiers_2_not_8hpp.html":[3,0,0,0,1,2,5],
-"query_2modifiers_2_not_8hpp_source.html":[3,0,0,0,1,2,5],
-"query_2modifiers_2_or_8hpp.html":[3,0,0,0,1,2,6],
-"query_2modifiers_2_or_8hpp_source.html":[3,0,0,0,1,2,6],
 "query_2modifiers_2_xor_8hpp.html":[3,0,0,0,1,2,7],
 "query_2modifiers_2_xor_8hpp_source.html":[3,0,0,0,1,2,7],
 "query_2modifiers_2include_8hpp.html":[3,0,0,0,1,2,2],
@@ -246,5 +235,18 @@ var NAVTREEINDEX10 =
 "type__set__eq_8hpp.html#a34455662741334860152218aafa749d4":[3,0,0,1,0,8,5],
 "type__set__eq_8hpp_source.html":[3,0,0,1,0,8],
 "util_8hpp.html":[3,0,0,1,5],
-"util_8hpp_source.html":[3,0,0,1,5]
+"util_8hpp_source.html":[3,0,0,1,5],
+"":[1,0,1,1,0],
+"":[1,0,1],
+"":[1,0,1,5],
+"":[1,0,1,3],
+"":[1,0,1,1,1],
+"":[1,0,1,2],
+"":[1,0,1,1,2],
+"":[1,0,1,1,4],
+"":[1,0,1,4],
+"":[1,0,1,6],
+"":[1,0,1,0],
+"":[1,0,1,1],
+"":[1,0,1,1,3]
 };

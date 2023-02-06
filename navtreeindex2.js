@@ -1,17 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"classecstasy_1_1integration_1_1event_1_1_gamepad.html#afd43e2fd40460467c91130ca1b7d467b":[2,0,0,0,0,16,9],
-"classecstasy_1_1integration_1_1event_1_1_gamepads.html":[2,0,0,0,0,17],
-"classecstasy_1_1integration_1_1event_1_1_gamepads.html#a2ddb9094373ca55a83d3204197ebbd15":[2,0,0,0,0,17,3],
-"classecstasy_1_1integration_1_1event_1_1_gamepads.html#a3c96369ad92cab96519664b55d9eca09":[2,0,0,0,0,17,5],
-"classecstasy_1_1integration_1_1event_1_1_gamepads.html#a44ddd4729c9b508d99450f06746f2b4d":[2,0,0,0,0,17,1],
-"classecstasy_1_1integration_1_1event_1_1_gamepads.html#a576a8ad8f50bef68c64893afbbc45077":[2,0,0,0,0,17,0],
-"classecstasy_1_1integration_1_1event_1_1_gamepads.html#a8e8e7c4db66745a6a8428d683377d95d":[2,0,0,0,0,17,4],
-"classecstasy_1_1integration_1_1event_1_1_gamepads.html#aee91e4b8fe238a5921a2c1a0a31e60cc":[2,0,0,0,0,17,2],
-"classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html":[2,0,0,0,0,21],
-"classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html#a14ef078caba07e239b713af48674edda":[2,0,0,0,0,21,6],
-"classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html#a18245a04b2280b09a820c38b225e1d0f":[2,0,0,0,0,21,14],
-"classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html#a214ef3b796f970818b539402e48750d5":[2,0,0,0,0,21,11],
 "classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html#a2c62a8669bf81cc218a6b8aadefb2ad8":[2,0,0,0,0,21,12],
 "classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html#a30c9c33a2022655534375b983d8e941b":[2,0,0,0,0,21,3],
 "classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html#a318054397e9a81fed1fa9d2741f313a2":[2,0,0,0,0,21,15],
@@ -249,5 +237,17 @@ var NAVTREEINDEX2 =
 "classutil_1_1_allocator.html#a698f788e60bcf5ce659ef0832edeb66c":[2,0,1,2,1],
 "classutil_1_1_bit_set.html":[2,0,1,3],
 "classutil_1_1_bit_set.html#a0314c01283427177909d5977641ec6f1":[2,0,1,3,21],
-"classutil_1_1_bit_set.html#a034726ec31b4e4ad0b2c7a82cbfad3e4":[2,0,1,3,5]
+"classutil_1_1_bit_set.html#a034726ec31b4e4ad0b2c7a82cbfad3e4":[2,0,1,3,5],
+"classutil_1_1_bit_set.html#a0a05c4dcfaafa79d3b6ee10a1f9b5dba":[2,0,1,3,7],
+"classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918":[2,0,1,3,26],
+"classutil_1_1_bit_set.html#a0acc77fa3f0158956aafb770f5ed7399":[2,0,1,3,25],
+"classutil_1_1_bit_set.html#a0eca7662186e61cda971fbe7fe484aa9":[2,0,1,3,16],
+"classutil_1_1_bit_set.html#a1b7940aa2d91fd658b573692239866c0":[2,0,1,3,30],
+"classutil_1_1_bit_set.html#a1c8657d0208fb4dabf568ebb5d1df138":[2,0,1,3,19],
+"classutil_1_1_bit_set.html#a1e15c54e82b2c4dcd15bd2d4a2af31a5":[2,0,1,3,29],
+"classutil_1_1_bit_set.html#a245462458522570585a95bdc61fe2039":[2,0,1,3,1],
+"classutil_1_1_bit_set.html#a31955c86d58bf84207c5c5aa412cd892":[2,0,1,3,2],
+"classutil_1_1_bit_set.html#a349731228e9b8c79618360b357be3735":[2,0,1,3,11],
+"classutil_1_1_bit_set.html#a47b259104f03b72450e56ce451e7aab1":[2,0,1,3,10],
+"classutil_1_1_bit_set.html#a50fbe33c02d6b35187ef754650a4eab1":[2,0,1,3,32]
 };

@@ -78,6 +78,7 @@ digraph "src/ecstasy/query/concepts/Queryable.hpp"
   Node30 -> Node31 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node31 [label="src/ecstasy/registry\l/modifiers/Or.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$registry_2modifiers_2_or_8hpp.html",tooltip=" "];
   Node31 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node31 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node31 -> Node28 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node29 -> Node32 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node32 [label="src/ecstasy/query/modifiers\l/Xor.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$query_2modifiers_2_xor_8hpp.html",tooltip=" "];
@@ -91,6 +92,7 @@ digraph "src/ecstasy/query/concepts/Queryable.hpp"
   Node34 -> Node35 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node35 [label="src/ecstasy/registry\l/modifiers/Maybe.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$registry_2modifiers_2_maybe_8hpp.html",tooltip=" "];
   Node35 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node35 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node35 -> Node28 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node36 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node36 [label="src/ecstasy/query/modifiers\l/Not.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$query_2modifiers_2_not_8hpp.html",tooltip=" "];

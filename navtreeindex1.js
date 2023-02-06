@@ -1,17 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"_toml_node_8hpp.html":[3,0,0,1,1,0,4],
-"_toml_node_8hpp_source.html":[3,0,0,1,1,0,4],
-"_toml_node_factory_8cpp.html":[3,0,0,1,1,0,5],
-"_toml_node_factory_8cpp_source.html":[3,0,0,1,1,0,5],
-"_toml_node_factory_8hpp.html":[3,0,0,1,1,0,6],
-"_toml_node_factory_8hpp_source.html":[3,0,0,1,1,0,6],
-"_toml_object_node_8cpp.html":[3,0,0,1,1,0,7],
-"_toml_object_node_8cpp_source.html":[3,0,0,1,1,0,7],
-"_toml_object_node_8hpp.html":[3,0,0,1,1,0,8],
-"_toml_object_node_8hpp_source.html":[3,0,0,1,1,0,8],
-"_traits_8hpp.html":[3,0,0,1,0,7],
-"_traits_8hpp_source.html":[3,0,0,1,0,7],
 "_user_profile_8cpp.html":[3,0,0,0,0,2,7],
 "_user_profile_8cpp_source.html":[3,0,0,0,0,2,7],
 "_user_profile_8hpp.html":[3,0,0,0,0,2,8],
@@ -249,5 +237,17 @@ var NAVTREEINDEX1 =
 "classecstasy_1_1integration_1_1event_1_1_gamepad.html#adafea92d40762f46cd73b1900ac008c1a945d5e233cf7d6240f6b783b36a374ff":[2,0,0,0,0,16,1,1],
 "classecstasy_1_1integration_1_1event_1_1_gamepad.html#adafea92d40762f46cd73b1900ac008c1ae93f994f01c537c4e2f7d8528c3eb5e9":[2,0,0,0,0,16,1,3],
 "classecstasy_1_1integration_1_1event_1_1_gamepad.html#ae3271dceb1317e6af03d0b67bd930696":[2,0,0,0,0,16,13],
-"classecstasy_1_1integration_1_1event_1_1_gamepad.html#aed25ad998426f30acf649190df78565c":[2,0,0,0,0,16,10]
+"classecstasy_1_1integration_1_1event_1_1_gamepad.html#aed25ad998426f30acf649190df78565c":[2,0,0,0,0,16,10],
+"classecstasy_1_1integration_1_1event_1_1_gamepad.html#afd43e2fd40460467c91130ca1b7d467b":[2,0,0,0,0,16,9],
+"classecstasy_1_1integration_1_1event_1_1_gamepads.html":[2,0,0,0,0,17],
+"classecstasy_1_1integration_1_1event_1_1_gamepads.html#a2ddb9094373ca55a83d3204197ebbd15":[2,0,0,0,0,17,3],
+"classecstasy_1_1integration_1_1event_1_1_gamepads.html#a3c96369ad92cab96519664b55d9eca09":[2,0,0,0,0,17,5],
+"classecstasy_1_1integration_1_1event_1_1_gamepads.html#a44ddd4729c9b508d99450f06746f2b4d":[2,0,0,0,0,17,1],
+"classecstasy_1_1integration_1_1event_1_1_gamepads.html#a576a8ad8f50bef68c64893afbbc45077":[2,0,0,0,0,17,0],
+"classecstasy_1_1integration_1_1event_1_1_gamepads.html#a8e8e7c4db66745a6a8428d683377d95d":[2,0,0,0,0,17,4],
+"classecstasy_1_1integration_1_1event_1_1_gamepads.html#aee91e4b8fe238a5921a2c1a0a31e60cc":[2,0,0,0,0,17,2],
+"classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html":[2,0,0,0,0,21],
+"classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html#a14ef078caba07e239b713af48674edda":[2,0,0,0,0,21,6],
+"classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html#a18245a04b2280b09a820c38b225e1d0f":[2,0,0,0,0,21,14],
+"classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html#a214ef3b796f970818b539402e48750d5":[2,0,0,0,0,21,11]
 };

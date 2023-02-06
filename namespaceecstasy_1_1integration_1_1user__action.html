@@ -123,11 +123,36 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:a463f381fdabb7e1e0b9b5ca3a2173fa1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1integration_1_1user__action.html#a463f381fdabb7e1e0b9b5ca3a2173fa1">ActionListeners</a> = <a class="elRef" href="http://en.cppreference.com/w/cpp/container/unordered_map.html">std::unordered_map</a>&lt; <a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_action.html#ae5da598d1270ea60396b4a402bc73e96">Action::Id</a>, <a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_action_listener.html#a65c6a3660b5ce0ceb361aa211640dc3b">ActionListener::Listener</a> &gt;</td></tr>
+<tr class="memdesc:a463f381fdabb7e1e0b9b5ca3a2173fa1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_action.html" title="Describe an action changed event.">Action</a> listeners map.  <a href="namespaceecstasy_1_1integration_1_1user__action.html#a463f381fdabb7e1e0b9b5ca3a2173fa1">More...</a><br /></td></tr>
+<tr class="separator:a463f381fdabb7e1e0b9b5ca3a2173fa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b4f873eff13ede42a8a53839aea12b0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1integration_1_1user__action.html#a9b4f873eff13ede42a8a53839aea12b0">PendingActions</a> = <a class="el" href="classecstasy_1_1_object_wrapper.html">ecstasy::ObjectWrapper</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/container/queue.html">std::queue</a>&lt; <a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_action.html">Action</a> &gt; &gt;</td></tr>
 <tr class="memdesc:a9b4f873eff13ede42a8a53839aea12b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queue of <a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_action.html">Action</a>.  <a href="namespaceecstasy_1_1integration_1_1user__action.html#a9b4f873eff13ede42a8a53839aea12b0">More...</a><br /></td></tr>
 <tr class="separator:a9b4f873eff13ede42a8a53839aea12b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
+<a id="a463f381fdabb7e1e0b9b5ca3a2173fa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a463f381fdabb7e1e0b9b5ca3a2173fa1">&#9670;&nbsp;</a></span>ActionListeners</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceecstasy_1_1integration_1_1user__action.html#a463f381fdabb7e1e0b9b5ca3a2173fa1">ecstasy::integration::user_action::ActionListeners</a> = typedef <a class="elRef" href="http://en.cppreference.com/w/cpp/container/unordered_map.html">std::unordered_map</a>&lt;<a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_action.html#ae5da598d1270ea60396b4a402bc73e96">Action::Id</a>, <a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_action_listener.html#a65c6a3660b5ce0ceb361aa211640dc3b">ActionListener::Listener</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_action.html" title="Describe an action changed event.">Action</a> listeners map. </p>
+<p>Used to listen to more than one <a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_action.html" title="Describe an action changed event.">Action</a> on a single entity.</p>
+<dl class="section note"><dt>Note</dt><dd>Doesn't handle <a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_action.html#abfc74bb7c7919963a9658153588e33db">Action::All</a> .</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2023-01-31) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_action_listener_8hpp_source.html#l00084">84</a> of file <a class="el" href="_action_listener_8hpp_source.html">ActionListener.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a9b4f873eff13ede42a8a53839aea12b0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9b4f873eff13ede42a8a53839aea12b0">&#9670;&nbsp;</a></span>PendingActions</h2>
 

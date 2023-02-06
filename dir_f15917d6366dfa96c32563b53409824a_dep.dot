@@ -40,7 +40,7 @@ digraph "src/ecstasy/integrations" {
   dir_51c06735119cb26e5f04dc30c3de2d57->dir_8c1a170fbd0a5283d7ed264cf6df56b3 [headlabel="1", labeldistance=1.5 headhref="dir_000007_000018.html"];
   dir_51c06735119cb26e5f04dc30c3de2d57->dir_bb1f71bfffde0d1688dd5f7686f27ec6 [headlabel="1", labeldistance=1.5 headhref="dir_000007_000025.html"];
   dir_da07c146226cec2bcba924cc27644298->dir_183c73d974247df0fabaedf6b9eb94ef [headlabel="8", labeldistance=1.5 headhref="dir_000024_000003.html"];
-  dir_da07c146226cec2bcba924cc27644298->dir_27d9dd95bf0309eb27f3bb61fbabadeb [headlabel="2", labeldistance=1.5 headhref="dir_000024_000015.html"];
+  dir_da07c146226cec2bcba924cc27644298->dir_27d9dd95bf0309eb27f3bb61fbabadeb [headlabel="4", labeldistance=1.5 headhref="dir_000024_000015.html"];
   dir_da07c146226cec2bcba924cc27644298->dir_4a1419ba0e8125a1fc6aeccf1492e850 [headlabel="1", labeldistance=1.5 headhref="dir_000024_000020.html"];
   dir_da07c146226cec2bcba924cc27644298->dir_8c1a170fbd0a5283d7ed264cf6df56b3 [headlabel="2", labeldistance=1.5 headhref="dir_000024_000018.html"];
   dir_da07c146226cec2bcba924cc27644298->dir_b7878ad5ecbf2506f4125b9d34c97e45 [headlabel="2", labeldistance=1.5 headhref="dir_000024_000026.html"];
