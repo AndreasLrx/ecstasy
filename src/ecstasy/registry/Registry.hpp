@@ -654,6 +654,16 @@ namespace ecstasy
         size_t eraseEntities(std::span<Entity> entities);
 
         ///
+        /// @brief Erase all resources, systems and storages.
+        ///
+        /// @note Re creates the @ref Entities resource.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2023-02-06)
+        ///
+        void clear();
+
+        ///
         /// @brief Run a specific system from the registry.
         ///
         /// @tparam S System class to run.

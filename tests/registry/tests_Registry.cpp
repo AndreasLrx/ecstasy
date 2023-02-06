@@ -881,3 +881,18 @@ TEST(Registry, SystemPriorities_Group)
     registry.runSystems(def, mask);
     EXPECT_EQ(testing::internal::GetCapturedStdout(), "DEF");
 }
+
+TEST(Registry, clear)
+{
+    ecstasy::Registry registry;
+
+    registry.addSystem<A>();
+    registry.addResource<Counter>();
+    registry.entityBuilder().with<Life>(5).build();
+
+    GTEST_ASSERT_TRUE(registry.hasResource<Counter>());
+    GTEST_ASSERT_EQ(registry.getStorage<Life>().size(), 1);
+    registry.clear();
+    GTEST_ASSERT_FALSE(registry.hasResource<Counter>());
+    EXPECT_THROW(registry.getStorage<Life>(), std::logic_error);
+}
