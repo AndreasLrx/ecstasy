@@ -2,6 +2,7 @@
 #include <math.h>
 #include "ecstasy/query/conditions/include.hpp"
 #include "ecstasy/registry/Registry.hpp"
+#include "ecstasy/registry/modifiers/And.hpp"
 #include "ecstasy/registry/modifiers/Maybe.hpp"
 #include "ecstasy/registry/modifiers/Not.hpp"
 #include "ecstasy/registry/modifiers/Or.hpp"
@@ -9,6 +10,7 @@
 #include "ecstasy/resources/entity/RegistryEntity.hpp"
 #include "ecstasy/storages/MapStorage.hpp"
 #include "ecstasy/system/ISystem.hpp"
+#include "util/StackAllocator.hpp"
 #include "util/meta/outer_join.hpp"
 
 #ifdef __GNUG__
@@ -396,15 +398,6 @@ TEST(Registry, MaybeSelect)
     auto select =
         registry.select<Position, ecstasy::Maybe<Density>>().where<Position, Velocity, ecstasy::Maybe<Density>>(
             allocator);
-    /// Need to create a lambda because the EXPECT_THROW macro interprets the template parameters as macro parameters
-    auto execMissingUnaryAllocator = [&registry]() {
-        registry.select<Position, ecstasy::Maybe<Density>>().where<Position, Velocity, ecstasy::Maybe<Density>>();
-    };
-    auto execMissingBinaryAllocator = [&registry]() {
-        registry.select<Position, ecstasy::Maybe<Density>>().where<Position, ecstasy::Or<Density, Velocity>>();
-    };
-    EXPECT_THROW(execMissingUnaryAllocator(), std::logic_error);
-    EXPECT_THROW(execMissingBinaryAllocator(), std::logic_error);
 
     GTEST_ASSERT_EQ(query.getMask(), select.getMask());
     GTEST_ASSERT_EQ(query.getMask(), util::BitSet("11000101000001"));
@@ -938,3 +931,44 @@ TEST(Registry, queryables_allocator_size)
     GTEST_ASSERT_EQ(computed_size, expected_size);
 }
 
+TEST(Registry, stackAllocator)
+{
+    ecstasy::Registry registry;
+
+    for (int i = 0; i < 13; i++) {
+        auto builder = registry.entityBuilder();
+        if (i % 2 == 0)
+            builder.with<Position>(i * 2, i * 10);
+        if (i % 3 == 0 || i == 8)
+            builder.with<Velocity>(i * 10, i * 2);
+        if (i % 4 == 0)
+            builder.with<Density>(i * 4);
+        builder.build();
+    }
+
+    {
+        ecstasy::StackAllocator<ecstasy::Maybe<Velocity>> allocator;
+        auto query = registry.query<ecstasy::Maybe<Velocity>>(allocator);
+    }
+
+    {
+        ecstasy::StackAllocator<ecstasy::Maybe<Position>, ecstasy::Or<Velocity, Density>> allocator;
+        auto query = registry.select<ecstasy::Maybe<Position>>().where<ecstasy::Or<Velocity, Density>>(allocator);
+    }
+
+    {
+        auto regquery = registry.select<ecstasy::Maybe<Density>>().where<ecstasy::And<Velocity, Position>>();
+
+        size_t i = 0;
+        size_t indexes[] = {0, 6, 8, 12};
+        for (auto [density] : regquery) {
+            size_t real_i = indexes[i];
+            bool expect_density = (real_i == 12) || (real_i == 8) || (real_i == 0);
+            GTEST_ASSERT_EQ(density.has_value(), expect_density);
+            if (expect_density) {
+                GTEST_ASSERT_EQ(density->get(), real_i * 4);
+            }
+            ++i;
+        }
+    }
+}
