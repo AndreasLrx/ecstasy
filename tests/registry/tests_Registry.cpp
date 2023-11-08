@@ -896,3 +896,45 @@ TEST(Registry, clear)
     GTEST_ASSERT_FALSE(registry.hasResource<Counter>());
     EXPECT_THROW(registry.getStorage<Life>(), std::logic_error);
 }
+
+TEST(Registry, queryables_allocator_size)
+{
+    // Non modifiers must have a 0 size (no need for allocation)
+    GTEST_ASSERT_EQ(ecstasy::queryable_allocator_size_v<Velocity>, 0);
+    GTEST_ASSERT_EQ(ecstasy::queryable_allocator_size_v<Position>, 0);
+
+    // Modifiers must have the size of the effective modifier (not the registry modifier helper)
+    GTEST_ASSERT_EQ(
+        ecstasy::queryable_allocator_size_v<ecstasy::Maybe<Velocity>>, sizeof(ecstasy::Maybe<Velocity>::Modifier));
+
+    size_t computed_size, expected_size;
+    computed_size = ecstasy::queryable_allocator_size_v<ecstasy::Or<Velocity, Position>>;
+    expected_size = sizeof(ecstasy::Or<Velocity, Position>::Modifier);
+    GTEST_ASSERT_EQ(computed_size, expected_size);
+
+    // Must handle nested modifiers
+    computed_size = ecstasy::queryable_allocator_size_v<ecstasy::Or<Velocity, ecstasy::Or<Density, Position>>>;
+    expected_size = sizeof(ecstasy::Or<Velocity, ecstasy::Or<Density, Position>>::Modifier)
+        + sizeof(ecstasy::Or<Density, Position>::Modifier);
+    GTEST_ASSERT_EQ(computed_size, expected_size);
+
+    // Same for multiple types
+    computed_size = ecstasy::queryables_allocator_size_v<Velocity, Position, Density>;
+    GTEST_ASSERT_EQ(computed_size, 0);
+
+    computed_size = ecstasy::queryables_allocator_size_v<Density, ecstasy::Or<Velocity, Position>>;
+    expected_size = sizeof(ecstasy::Or<Velocity, Position>::Modifier);
+    GTEST_ASSERT_EQ(computed_size, expected_size);
+
+    computed_size =
+        ecstasy::queryables_allocator_size_v<ecstasy::Maybe<Velocity>, Density, ecstasy::Or<Velocity, Position>>;
+    expected_size = sizeof(ecstasy::Or<Velocity, Position>::Modifier) + sizeof(ecstasy::Maybe<Velocity>::Modifier);
+    GTEST_ASSERT_EQ(computed_size, expected_size);
+
+    computed_size = ecstasy::queryables_allocator_size_v<ecstasy::Maybe<Velocity>, Density,
+        ecstasy::Or<ecstasy::Not<Velocity>, Position>>;
+    expected_size = sizeof(ecstasy::Or<ecstasy::Not<Velocity>, Position>::Modifier)
+        + sizeof(ecstasy::Maybe<Velocity>::Modifier) + sizeof(ecstasy::Not<Velocity>::Modifier);
+    GTEST_ASSERT_EQ(computed_size, expected_size);
+}
+
