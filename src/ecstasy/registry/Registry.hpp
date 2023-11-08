@@ -22,6 +22,7 @@
 #include "ecstasy/query/Select.hpp"
 #include "ecstasy/query/conditions/Condition.hpp"
 #include "ecstasy/query/modifiers/Modifier.hpp"
+#include "ecstasy/registry/concepts/QueryableAllocatorSize.hpp"
 #include "ecstasy/resources/entity/Entities.hpp"
 #include "ecstasy/storages/IStorage.hpp"
 #include "ecstasy/storages/Instances.hpp"
@@ -29,6 +30,7 @@
 #include "ecstasy/storages/SystemInstances.hpp"
 #include "ecstasy/system/ISystem.hpp"
 #include "util/Allocator.hpp"
+#include "util/StackAllocator.hpp"
 #include "util/meta/apply.hpp"
 #include "util/meta/filter.hpp"
 #include "util/meta/outer_join.hpp"
@@ -36,7 +38,10 @@
 namespace ecstasy
 {
     using ModifiersAllocator = util::Allocator<ecstasy::query::modifier::Modifier>;
-    using OptionalModifiersAllocator = std::optional<std::reference_wrapper<ModifiersAllocator>>;
+    template <typename... Qs>
+    using StackAllocator = util::StackAllocator<queryables_allocator_size_v<Qs...>, query::modifier::Modifier>;
+    template <typename A = ModifiersAllocator>
+    using OptionalModifiersAllocator = std::optional<std::reference_wrapper<A>>;
     class Resource;
 
     ///
@@ -46,6 +51,140 @@ namespace ecstasy
     /// @since 1.0.0 (2022-11-18)
     ///
     class Registry {
+      private:
+        ///
+        /// @brief Wrapper for the allocator, see @ref RegistryStackQuery for more details. This is almost equivalent as
+        /// just using the Allocator type directly.
+        ///
+        /// @tparam A Allocator type.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2023-11-08)
+        ///
+        template <typename A>
+        class AllocatorWrapper {
+          public:
+            AllocatorWrapper()
+            {
+                _allocRef = _allocator;
+            };
+
+            A _allocator;
+            std::optional<std::reference_wrapper<A>> _allocRef;
+        };
+
+      public:
+        ///
+        /// @brief Registry query allocating everything on the stack (if allocation required). This means longer compile
+        /// time for faster runtime.
+        ///
+        /// @tparam Selects Selected queryables
+        /// @tparam Missings Selected queryables not given in the where clause
+        /// @tparam Condition Query runtime first condition
+        /// @tparam Cs Query runtime remaining conditions after @p Condition
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2023-11-08)
+        ///
+        template <typename Selects, typename Missings, typename Condition, typename Cs>
+        class RegistryStackQuery {
+        };
+
+        ///
+        /// @brief Registry query allocating everything on the stack (if allocation required). This means longer compile
+        /// time for faster runtime.
+        ///
+        /// The goal is to return a single object containing the query object and the modifiers allocator. Thus the
+        /// lifetime of the query and of the modifiers are bound on the stack.
+        ///
+        /// This was quite difficult to achieve since the RegistryStackQuery needs the allocator and the query, but the
+        /// query needs the allocator...
+        /// The solution I found is using multiple inheritance to call a function before the query creation.
+        /// In our case the function is the @ref AllocatorWrapper constructor. This ensure a safe allocator
+        /// initialization just before the query creation and without move operations (meaning memory copy and usually
+        /// pointers invalidation).
+        ///
+        /// @tparam Selects Selected queryables
+        /// @tparam Missings Selected queryables not given in the where clause
+        /// @tparam Condition Query runtime first condition
+        /// @tparam Cs Query runtime remaining conditions after @p Condition
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2023-11-08)
+        ///
+        template <typename... Selects, typename... Missings, typename Condition, typename... Cs>
+        class RegistryStackQuery<util::meta::Traits<Selects...>, util::meta::Traits<Missings...>, Condition,
+            util::meta::Traits<Cs...>> : public AllocatorWrapper<StackAllocator<Selects..., Cs...>>,
+                                         public query::QueryImplementation<util::meta::Traits<Selects...>, Condition> {
+          public:
+            using Allocator = StackAllocator<Selects..., Cs...>;
+            using Base = query::QueryImplementation<util::meta::Traits<Selects...>, Condition>;
+
+            ///
+            /// @brief Construct a new Registry Stack Query.
+            ///
+            /// @param[in] registry owning registry to query the queryables (of course).
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2023-11-08)
+            ///
+            RegistryStackQuery(Registry &registry)
+                : AllocatorWrapper<Allocator>(),
+                  Base(std::move(ecstasy::query::Select<Selects...>::template where<Condition,
+                      std::remove_reference_t<decltype(registry.getQueryable<Missings, Allocator>(this->_allocRef))>...,
+                      std::remove_reference_t<decltype(registry.getQueryable<Cs, Allocator>(this->_allocRef))>...>(
+                      registry.getQueryable<Missings, Allocator>(this->_allocRef)...,
+                      registry.getQueryable<Cs, Allocator>(this->_allocRef)...)))
+            {
+            }
+        };
+
+        ///
+        /// @brief Registry query type from the query selected and missing types. If an allocator is required, return a
+        /// @ref RegistryStackQuery otherwise a @ref query::QueryImplementation.
+        ///
+        /// @tparam Selects Selected queryables
+        /// @tparam Missings Selected queryables not given in the where clause
+        /// @tparam Condition Query runtime first condition
+        /// @tparam Cs Query runtime remaining conditions after @p Condition
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2023-11-08)
+        ///
+        template <typename Selects, typename Missings, typename Condition, typename Cs>
+        struct registry_query {
+        };
+
+        /// @copydoc registry_query
+        template <typename... Selects, typename... Missings, typename Condition, typename... Cs>
+        struct registry_query<util::meta::Traits<Selects...>, util::meta::Traits<Missings...>, Condition,
+            util::meta::Traits<Cs...>> {
+            // clang-format off
+            using type = std::conditional_t<((queryables_allocator_size_v<Selects..., Cs...>) > 0), 
+                RegistryStackQuery<
+                    util::meta::Traits<Selects...>, 
+                    util::meta::Traits<Missings...>,
+                    Condition,
+                    util::meta::Traits<Cs...>
+                >,
+                query::QueryImplementation<util::meta::Traits<Selects...>, Condition>
+            >;
+            // clang-format on
+        };
+
+        ///
+        /// @brief Helper for registry_query_t<Selects, Missings, Conditions, Cs>::type.
+        ///
+        /// @tparam Selects Selected queryables
+        /// @tparam Missings Selected queryables not given in the where clause
+        /// @tparam Condition Query runtime first condition
+        /// @tparam Cs Query runtime remaining conditions after @p Condition
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2023-11-08)
+        ///
+        template <typename Selects, typename Missings, typename Conditions, typename Cs>
+        using registry_query_t = typename registry_query<Selects, Missings, Conditions, Cs>::type;
+
       private:
         ///
         /// @brief Get a queryable from a registry variable (component stoage, resource, queryable storage...)
@@ -66,25 +205,25 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-25)
         ///
-        template <typename C>
-        constexpr getStorageType<C> &getQueryable(OptionalModifiersAllocator &allocator)
+        template <typename C, typename A = ModifiersAllocator>
+        constexpr getStorageType<C> &getQueryable(OptionalModifiersAllocator<A> &allocator)
         {
             (void)allocator;
             return getStorageSafe<C>();
         }
 
         /// @copydoc getQueryable()
-        template <std::derived_from<Resource> R>
+        template <std::derived_from<Resource> R, typename A = ModifiersAllocator>
         requires query::Queryable<R>
-        constexpr R &getQueryable(OptionalModifiersAllocator &allocator)
+        constexpr R &getQueryable(OptionalModifiersAllocator<A> &allocator)
         {
             (void)allocator;
             return getResource<R>();
         }
 
         /// @copydoc getQueryable()
-        template <IsStorage S>
-        requires query::Queryable<S> S &getQueryable(OptionalModifiersAllocator &allocator)
+        template <IsStorage S, typename A = ModifiersAllocator>
+        requires query::Queryable<S> S &getQueryable(OptionalModifiersAllocator<A> &allocator)
         {
             (void)allocator;
             if (!_storages.contains<S>())
@@ -119,6 +258,7 @@ namespace ecstasy
             /// queried from the registry.
             ///
             /// @tparam M Modifier type.
+            /// @tparam A Modifiers allocator type.
             ///
             /// @param[in] registry Owning registry.
             /// @param[in] allocator Allocator to instanciate the modifier. Must not be empty.
@@ -130,25 +270,25 @@ namespace ecstasy
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-11-22)
             ///
-            template <query::Modifier M>
-            static constexpr M &get(Registry &registry, OptionalModifiersAllocator &allocator)
+            template <query::Modifier M, typename A = ModifiersAllocator>
+            static constexpr M &get(Registry &registry, OptionalModifiersAllocator<A> &allocator)
             {
                 if (!allocator)
                     throw std::logic_error("Missing modifier allocator");
-                return allocator->get().instanciate<M>(registry.getQueryable<Qs>(allocator)...);
+                return allocator->get().template instanciate<M>(registry.getQueryable<Qs>(allocator)...);
             }
         };
 
         /// @copydoc getQueryable()
-        template <query::Modifier M>
-        constexpr M &getQueryable(OptionalModifiersAllocator &allocator)
+        template <query::Modifier M, typename A = ModifiersAllocator>
+        constexpr M &getQueryable(OptionalModifiersAllocator<A> &allocator)
         {
             return GetModifierProxy<typename M::Operands>::template get<M>(*this, allocator);
         }
 
         /// @copydoc getQueryable()
-        template <RegistryModifier M>
-        constexpr typename M::Modifier &getQueryable(OptionalModifiersAllocator &allocator)
+        template <RegistryModifier M, typename A = ModifiersAllocator>
+        constexpr typename M::Modifier &getQueryable(OptionalModifiersAllocator<A> &allocator)
         {
             return getQueryable<typename M::Modifier>(allocator);
         }
@@ -267,44 +407,116 @@ namespace ecstasy
         class Select {
           private:
             ///
-            /// @brief Internal structure allowing to add implicitly required queryables (from the selected types).
+            /// @brief Test whether a given type is a condition
             ///
-            /// @tparam MissingsTuple Tuple type wrapping all the missing queryable types in the request. (they will be
-            /// implicitly added).
-            /// @tparam ComponentsTuples Queryables already in the where clause.
-            /// @tparam ConditionsTuple Multiple @ref ecstasy::query::Condition to apply on query iteration.
+            /// @tparam T type to evaluate
             ///
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-10-26)
+            /// @since 1.0.0 (2023-11-08)
             ///
-            template <typename MissingsTuple, typename ComponentsTuple, typename ConditionsTuple>
-            struct Internal;
-
-            template <typename... Missings, typename... Cs, typename... Conditions>
-            struct Internal<std::tuple<Missings...>, std::tuple<Cs...>, std::tuple<Conditions...>> {
-                constexpr static query::QueryImplementation<util::meta::Traits<Selects...>,
-                    util::meta::Traits<Conditions...>>
-                where(Registry &registry, OptionalModifiersAllocator &allocator)
-                {
-                    if constexpr (sizeof...(Missings) > 0)
-                        return ecstasy::query::Select<Selects...>::template where<util::meta::Traits<Conditions...>,
-                            std::remove_reference_t<decltype(registry.getQueryable<Missings>(allocator))>...,
-                            std::remove_reference_t<decltype(registry.getQueryable<Cs>(allocator))>...>(
-                            registry.getQueryable<Missings>(allocator)..., registry.getQueryable<Cs>(allocator)...);
-                    else
-                        return ecstasy::query::Select<Selects...>::template where<util::meta::Traits<Conditions...>,
-                            std::remove_reference_t<decltype(registry.getQueryable<Cs>(allocator))>...>(
-                            registry.getQueryable<Cs>(allocator)...);
-                }
-            };
-
             template <typename T>
             struct IsCondition : public std::is_base_of<ecstasy::query::ConditionBase, T> {
             };
 
+            ///
+            /// @brief Test whether a given type is not a condition
+            ///
+            /// @tparam T type to evaluate
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2023-11-08)
+            ///
             template <typename T>
             struct IsNotCondition : std::integral_constant<bool, !IsCondition<T>::value> {
             };
+
+            // clang-format off
+            /// @brief @ref util::meta::Traits type helper for the Selected queryable template pack
+            using SelectsTraits = util::meta::Traits<Selects...>;
+            /// @brief @ref util::meta::Traits type helper for the missing queryable from a given template pack
+            template <typename... Cs>
+            using MissingsTraits = util::meta::right_outer_join_t<
+                util::meta::apply_t<queryable_type_t, 
+                    util::meta::filter_t<IsNotCondition, Cs...>>,
+                    util::meta::Traits<Selects...>
+                >;
+            /// @brief @ref util::meta::Traits type helper for the components types from a given template pack
+            template <typename... Cs>
+            using ComponentsTraits = util::meta::filter_t<IsNotCondition, Cs...>;
+            /// @brief @ref util::meta::Traits type helper for the conditions types from a given template pack
+            template <typename... Cs>
+            using ConditionsTraits = util::meta::filter_t<IsCondition, Cs...>;
+            /// @brief @ref query::QueryImplementation type for the given where clause
+            template <typename... Cs>
+            using QueryType = query::QueryImplementation<SelectsTraits, ConditionsTraits<Cs...>>;
+            // clang-format on
+
+            ///
+            /// @brief Internal structure allowing to add implicitly required queryables (from the selected types).
+            ///
+            /// @tparam MissingsTuple Tuple type wrapping all the missing queryable types in the request. (they will
+            /// be implicitly added).
+            /// @tparam ComponentsTuples Queryables already in the where clause.
+            /// @tparam ConditionsTuple Multiple @ref ecstasy::query::Condition to apply on query iteration.
+            /// @tparam A Modifiers allocator type.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-10-26)
+            ///
+            template <typename Missings, typename Cs, typename Conditions, typename A = ModifiersAllocator>
+            struct Internal;
+
+            /// @copydoc Internal
+            template <typename... Missings, typename... Cs, typename Conditions, typename A>
+            struct Internal<util::meta::Traits<Missings...>, util::meta::Traits<Cs...>, Conditions, A> {
+                ///
+                /// @brief Return an instance of @ref query::QueryImplementation.
+                ///
+                /// @param[in] registry Registry instance to query all the required queryables.
+                /// @param[in] allocator Modifiers allocator. Can be std::nullopt if no modifiers.
+                ///
+                /// @return constexpr query::QueryImplementation<SelectsTraits, Conditions> resulting query.
+                ///
+                /// @throw std::logic_error When @p allocator is empty and there is a modifier in the query.
+                ///
+                /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+                /// @since 1.0.0 (2023-11-08)
+                ///
+                constexpr static query::QueryImplementation<SelectsTraits, Conditions> where(
+                    Registry &registry, OptionalModifiersAllocator<A> &allocator)
+                {
+                    return ecstasy::query::Select<Selects...>::template where<Conditions,
+                        std::remove_reference_t<decltype(registry.getQueryable<Missings>(allocator))>...,
+                        std::remove_reference_t<decltype(registry.getQueryable<Cs>(allocator))>...>(
+                        registry.getQueryable<Missings, A>(allocator)..., registry.getQueryable<Cs, A>(allocator)...);
+                }
+            };
+
+            ///
+            /// @brief Query all entities which have all the given components.
+            ///
+            /// @note If you need to use modifiers you must send a @ref ModifiersAllocator reference.
+            /// But if there is no allocator and one is required, this method will not be called, a @ref
+            /// RegistryStackQuery will be made instead.
+            ///
+            /// @tparam A Modifiers allocator Type
+            /// @tparam Cs Constraint Types (Queryables or Conditions).
+            ///
+            /// @param[in] allocator Allocator for the modifiers.
+            ///
+            /// @return @ref QueryType<Cs...> Resulting query.
+            ///
+            /// @throw std::logic_error When @p allocator is empty and there is a modifier in the query.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2023-11-08)
+            ///
+            template <typename A = ModifiersAllocator, typename... Cs>
+            QueryType<Cs...> explicitWhere(OptionalModifiersAllocator<A> allocator = std::nullopt)
+            {
+                return Internal<MissingsTraits<Cs...>, ComponentsTraits<Cs...>, ConditionsTraits<Cs...>, A>::where(
+                    _registry, allocator);
+            }
 
           public:
             ///
@@ -322,36 +534,55 @@ namespace ecstasy
             ///
             /// @brief Query all entities which have all the given components.
             ///
-            /// @note If you need to use modifiers you must send a @ref ModifiersAllocator reference.
+            /// @note If no allocator is sent and one is required, the resulting query will be of type @ref
+            /// RegistryStackQuery.
             ///
             /// @tparam C First constraint Type (Queryable or Condition).
             /// @tparam Cs Other constraint Types (Queryables or Conditions).
+            /// @tparam A Modifiers allocator Type.
             ///
             /// @param[in] allocator Allocator for the modifiers.
             ///
-            /// @return @ref query::QueryImplementation<util::meta::Traits<Selects...>,
-            /// util::meta::filter_t<IsCondition, C, Cs...>> Resulting query.
+            /// @return @ref QueryType<C, Cs...> Resulting query.
             ///
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-22)
             ///
-            template <typename C, typename... Cs>
-            query::QueryImplementation<util::meta::Traits<Selects...>, util::meta::filter_t<IsCondition, C, Cs...>>
-            where(OptionalModifiersAllocator allocator = std::nullopt)
+            template <typename C, typename... Cs, typename A = ModifiersAllocator>
+            QueryType<C, Cs...> where(OptionalModifiersAllocator<A> allocator)
             {
-                // clang-format off
-                return Internal<
-                    typename util::meta::right_outer_join_t<
-                        util::meta::apply_t<queryable_type_t, util::meta::filter_t<IsNotCondition, C, Cs...>>,
-                        util::meta::Traits<
-                            Selects...
-                        >
-                    >::Tuple,
-                    typename util::meta::filter_t<IsNotCondition, C, Cs...>::Tuple,
-                    typename util::meta::filter_t<IsCondition, C, Cs...>::Tuple
-                >::where(_registry, allocator);
-                // clang-format on
+                return explicitWhere<A, C, Cs...>(allocator);
             }
+
+            /// @copydoc where
+            template <typename C, typename... Cs, typename A = ModifiersAllocator>
+            constexpr QueryType<C, Cs...> where(A &allocator)
+            {
+                return explicitWhere<A, C, Cs...>(std::optional(std::reference_wrapper(allocator)));
+            }
+
+            // clang-format off
+            /// @copydoc where
+            template <typename C, typename... Cs>
+            registry_query_t<
+                SelectsTraits,
+                MissingsTraits<C, Cs...>,
+                ConditionsTraits<C, Cs...>,
+                ComponentsTraits<C, Cs...>
+            >
+            where()
+            {
+                if constexpr ((queryables_allocator_size_v<Selects..., C, Cs...>) > 0)
+                    return RegistryStackQuery<
+                        SelectsTraits,
+                        MissingsTraits<C, Cs...>,
+                        ConditionsTraits<C, Cs...>,
+                        ComponentsTraits<C, Cs...>
+                    >(_registry);
+                else
+                    return explicitWhere<ModifiersAllocator, C, Cs...>();
+            }
+            // clang-format on
 
           private:
             Registry &_registry;
@@ -589,10 +820,12 @@ namespace ecstasy
         ///
         /// @brief Construct a query for the given components.
         ///
-        /// @note @p allocator is required when you use modifiers.
+        /// @note If you use modifers and don't send a @p allocator it will default to a RegistryStackQuery using a @ref
+        /// StackAllocator.
         ///
         /// @tparam C First component type.
         /// @tparam Cs Other component types.
+        /// @tparam A Modifiers allocator type.
         ///
         /// @param[in] allocator Allocator for the required modifiers (Maybe...).
         ///
@@ -602,11 +835,18 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-20)
         ///
-        template <typename C, typename... Cs>
+        template <typename C, typename... Cs, typename A = ModifiersAllocator>
         query::Query<queryable_type_t<C>, queryable_type_t<Cs>...> query(
-            OptionalModifiersAllocator allocator = std::nullopt)
+            OptionalModifiersAllocator<A> allocator = std::nullopt)
         {
             return query::Query(getQueryable<C>(allocator), getQueryable<Cs>(allocator)...);
+        }
+
+        /// @copydoc query
+        template <typename C, typename... Cs, typename A = ModifiersAllocator>
+        constexpr query::Query<queryable_type_t<C>, queryable_type_t<Cs>...> query(A &allocator)
+        {
+            return query<C, Cs...>(std::optional(std::reference_wrapper(allocator)));
         }
 
         ///
