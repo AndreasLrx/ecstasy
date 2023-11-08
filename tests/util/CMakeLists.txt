@@ -2,6 +2,7 @@ set(SRCROOT ${SRCROOT}/util)
 
 set(SRC
     ${SRCROOT}/tests_BitSet.cpp
+    ${SRCROOT}/tests_StackAllocator.cpp
 )
 
 add_subdirectory(meta)
