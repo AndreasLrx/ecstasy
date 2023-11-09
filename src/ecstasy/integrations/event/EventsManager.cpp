@@ -32,11 +32,9 @@ namespace ecstasy::integration::event
     template <typename E>
     static void callListeners(Registry &registry, const E &event)
     {
-        ecstasy::ModifiersAllocator allocator;
-
         for (auto [entity, listener, listeners] :
             registry.select<Entities, Maybe<EventListener<E>>, Maybe<EventListeners<E>>>()
-                .template where<Or<EventListener<E>, EventListeners<E>>>(allocator)) {
+                .template where<Or<EventListener<E>, EventListeners<E>>>()) {
             if (listener)
                 listener.value()(registry, entity, event);
             if (listeners)
@@ -46,15 +44,12 @@ namespace ecstasy::integration::event
 
     static void callKeyListeners(Registry &registry, const KeyEvent &event)
     {
-        ecstasy::ModifiersAllocator allocator;
-
         for (auto [entity, listener, listeners, sequence, combination] :
             registry
                 .select<Entities, Maybe<EventListener<KeyEvent>>, Maybe<EventListeners<KeyEvent>>,
                     Maybe<KeySequenceListener>, Maybe<KeyCombinationListener>>()
-                .where<
-                    Or<EventListener<KeyEvent>, EventListeners<KeyEvent>, KeySequenceListener, KeyCombinationListener>>(
-                    allocator)) {
+                .where<Or<EventListener<KeyEvent>, EventListeners<KeyEvent>, KeySequenceListener,
+                    KeyCombinationListener>>()) {
             if (listener)
                 listener.value()(registry, entity, event);
             if (listeners)
