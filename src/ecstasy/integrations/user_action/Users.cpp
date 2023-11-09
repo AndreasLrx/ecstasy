@@ -62,11 +62,10 @@ namespace ecstasy::integration::user_action
     {
         if (registry.hasResource<PendingActions>())
             registry.getResource<PendingActions>().get().push(action);
-        ecstasy::ModifiersAllocator allocator;
 
         for (auto [entity, maybeListener, maybeListeners] :
             registry.select<Entities, Maybe<ActionListener>, Maybe<ActionListeners>>()
-                .where<Entities, Or<ActionListener, ActionListeners>>(allocator)) {
+                .where<Entities, Or<ActionListener, ActionListeners>>()) {
             if (maybeListener) {
                 if (maybeListener->get().actionId == Action::All || maybeListener->get().actionId == action.id)
                     maybeListener->get().listener(registry, entity, action);

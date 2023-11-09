@@ -131,10 +131,8 @@ struct Gravity : public ecstasy::ISystem {
 struct Movement : public ecstasy::ISystem {
     void run(ecstasy::Registry &registry) override final
     {
-        ecstasy::ModifiersAllocator allocator;
-
         for (auto [position, velocity] :
-            registry.select<Position, Velocity>().where<Position, Movable, Velocity, ecstasy::Not<Static>>(allocator)) {
+            registry.select<Position, Velocity>().where<Position, Movable, Velocity, ecstasy::Not<Static>>()) {
             position.v.x += velocity.v.x;
             position.v.y += velocity.v.y;
         }
@@ -318,7 +316,6 @@ TEST(Registry, functionnal)
 TEST(Registry, MaybeQuery)
 {
     ecstasy::Registry registry;
-    ecstasy::ModifiersAllocator allocator;
 
     for (int i = 0; i < 13; i++) {
         auto builder = registry.entityBuilder();
@@ -331,7 +328,7 @@ TEST(Registry, MaybeQuery)
         builder.build();
     }
 
-    auto query = registry.query<Position, Velocity, ecstasy::Maybe<Density>>(allocator);
+    auto query = registry.query<Position, Velocity, ecstasy::Maybe<Density>>();
     auto query2 = registry.query<Position, Velocity>();
     GTEST_ASSERT_EQ(query.getMask(), util::BitSet("11000101000001"));
     GTEST_ASSERT_EQ(query.getMask(), query2.getMask());
@@ -381,7 +378,6 @@ TEST(Registry, MaybeQuery)
 TEST(Registry, MaybeSelect)
 {
     ecstasy::Registry registry;
-    ecstasy::ModifiersAllocator allocator;
 
     for (int i = 0; i < 13; i++) {
         auto builder = registry.entityBuilder();
@@ -394,10 +390,9 @@ TEST(Registry, MaybeSelect)
         builder.build();
     }
 
-    auto query = registry.query<Position, Velocity, ecstasy::Maybe<Density>>(allocator);
+    auto query = registry.query<Position, Velocity, ecstasy::Maybe<Density>>();
     auto select =
-        registry.select<Position, ecstasy::Maybe<Density>>().where<Position, Velocity, ecstasy::Maybe<Density>>(
-            allocator);
+        registry.select<Position, ecstasy::Maybe<Density>>().where<Position, Velocity, ecstasy::Maybe<Density>>();
 
     GTEST_ASSERT_EQ(query.getMask(), select.getMask());
     GTEST_ASSERT_EQ(query.getMask(), util::BitSet("11000101000001"));
@@ -406,7 +401,6 @@ TEST(Registry, MaybeSelect)
 TEST(Registry, ImplicitWhere)
 {
     ecstasy::Registry registry;
-    ecstasy::ModifiersAllocator allocator;
 
     for (int i = 0; i < 13; i++) {
         auto builder = registry.entityBuilder();
@@ -417,13 +411,6 @@ TEST(Registry, ImplicitWhere)
         if (i % 4 == 0)
             builder.with<Density>(i * 4);
         builder.build();
-    }
-
-    /// Missing standard component, With allocator
-    {
-        auto explicitQuery = registry.select<Position>().where<Position, Velocity>(allocator);
-        auto implicitQuery = registry.select<Position>().where<Velocity>(allocator);
-        GTEST_ASSERT_EQ(explicitQuery.getMask(), implicitQuery.getMask());
     }
 
     /// Missing standard component, Wihtout allocator
@@ -433,21 +420,19 @@ TEST(Registry, ImplicitWhere)
         GTEST_ASSERT_EQ(explicitQuery.getMask(), implicitQuery.getMask());
     }
 
-    /// Missing modifier, With allocator (required)
+    /// Missing modifier
     {
         auto explicitQuery =
-            registry.select<Position, ecstasy::Maybe<Density>>().where<Position, Velocity, ecstasy::Maybe<Density>>(
-                allocator);
-        auto implicitQuery = registry.select<ecstasy::Maybe<Density>, Position>().where<Position, Velocity>(allocator);
+            registry.select<Position, ecstasy::Maybe<Density>>().where<Position, Velocity, ecstasy::Maybe<Density>>();
+        auto implicitQuery = registry.select<ecstasy::Maybe<Density>, Position>().where<Position, Velocity>();
         GTEST_ASSERT_EQ(explicitQuery.getMask(), implicitQuery.getMask());
     }
 
-    /// Missing modifier and component, With allocator (required)
+    /// Missing modifier and component
     {
         auto explicitQuery =
-            registry.select<Position, ecstasy::Maybe<Density>>().where<Position, Velocity, ecstasy::Maybe<Density>>(
-                allocator);
-        auto implicitQuery = registry.select<Position, ecstasy::Maybe<Density>>().where<Velocity>(allocator);
+            registry.select<Position, ecstasy::Maybe<Density>>().where<Position, Velocity, ecstasy::Maybe<Density>>();
+        auto implicitQuery = registry.select<Position, ecstasy::Maybe<Density>>().where<Velocity>();
         GTEST_ASSERT_EQ(explicitQuery.getMask(), implicitQuery.getMask());
     }
 }
@@ -455,7 +440,6 @@ TEST(Registry, ImplicitWhere)
 TEST(Registry, OrSelect)
 {
     ecstasy::Registry registry;
-    ecstasy::ModifiersAllocator allocator;
 
     for (int i = 0; i < 13; i++) {
         auto builder = registry.entityBuilder();
@@ -469,8 +453,8 @@ TEST(Registry, OrSelect)
     }
 
     // clang-format off
-    auto query = registry.select<Position>().where<ecstasy::Or<Velocity, Density>>(allocator);
-    auto query2 = registry.select<Position, ecstasy::Maybe<Velocity>, ecstasy::Maybe<Density>>().where<ecstasy::Or<Velocity, Density>>(allocator);
+    auto query = registry.select<Position>().where<ecstasy::Or<Velocity, Density>>();
+    auto query2 = registry.select<Position, ecstasy::Maybe<Velocity>, ecstasy::Maybe<Density>>().where<ecstasy::Or<Velocity, Density>>();
     auto posAndVel = registry.query<Position, Velocity>();
     auto posAndDensity = registry.query<Position, Density>();
 
