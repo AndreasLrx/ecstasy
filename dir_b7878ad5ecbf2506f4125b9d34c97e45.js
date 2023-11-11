@@ -7,5 +7,8 @@ var dir_b7878ad5ecbf2506f4125b9d34c97e45 =
     ] ],
     [ "BitSet.cpp", "_bit_set_8cpp.html", "_bit_set_8cpp" ],
     [ "BitSet.hpp", "_bit_set_8hpp.html", "_bit_set_8hpp" ],
+    [ "StackAllocator.hpp", "_stack_allocator_8hpp.html", [
+      [ "StackAllocator", "classutil_1_1_stack_allocator.html", "classutil_1_1_stack_allocator" ]
+    ] ],
     [ "util.hpp", "util_8hpp.html", null ]
 ];

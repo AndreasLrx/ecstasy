@@ -72,16 +72,17 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "01__basic__window_2main_8cpp.html",
-"_user_profile_8cpp.html",
-"classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html#a2c62a8669bf81cc218a6b8aadefb2ad8",
-"classutil_1_1_bit_set.html#a51ec924cd0acaf776c85d008cedb42e1",
-"classutil_1_1serialization_1_1_toml_node_factory.html#a6bfe69dd76403cf50cc5ee0901b00532",
-"cpp/algorithm/transform_exclusive_scan.html",
-"cpp/experimental/unordered_set/erase_if.html",
-"cpp/memory/uninitialized_fill_n.html",
-"cpp/string/byte/strxfrm.html",
-"dir_4a1419ba0e8125a1fc6aeccf1492e850.html",
-"query_2modifiers_2_xor_8hpp.html"
+"_toml_node_factory_8hpp_source.html",
+"classecstasy_1_1integration_1_1event_1_1_gamepad.html#a3889e689614987816a56b70ee93cabccacc8c4dd7729fa8d6a4a56bdb6109b480",
+"classecstasy_1_1query_1_1modifier_1_1_or.html",
+"classutil_1_1serialization_1_1_toml_array_node.html#a623e79b69f5f68f381580c608ba58330",
+"cpp/algorithm/ranges/search_n.html",
+"cpp/experimental/type_trait_variable_templates.html",
+"cpp/memory/destroy_n.html",
+"cpp/string/byte/atoi.html",
+"cpp/utility/in_place.html",
+"namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468",
+"structutil_1_1meta_1_1_traits_3_01_arg_00_01_args_8_8_8_01_4.html#a1a39512979de0507bada4c76fb2ed248"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

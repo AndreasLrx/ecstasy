@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="util::meta::add_optional\l\< T & \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structutil_1_1meta_1_1add__optional_3_01_t_01_6_01_4.html",tooltip="Add optional to a type if required."];
+  Node0 [label="util::meta::_filter\l\< Traits\< Treated...\l \>, Filter \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structutil_1_1meta_1_1__filter_3_01_traits_3_01_treated_8_8_8_01_4_00_01_filter_01_4.html",tooltip=" "];
 }

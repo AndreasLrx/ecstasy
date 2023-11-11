@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="ecstasy::query::Select\l\< SelectedQueryables \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1query_1_1_select.html",tooltip="Advanced Query."];
+  Node0 [label="ecstasy::query::Select\l\< SelectedQueryables \>\l::FilterQueryables\< ContainsPivot,\l Pivot, Lefts \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1query_1_1_select_1_1_filter_queryables.html",tooltip=" "];
 }

@@ -39,8 +39,11 @@ digraph "src/util/Allocator.hpp"
   Node17 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node18 [label="src/ecstasy/resources\l/entity/include.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$resources_2entity_2include_8hpp.html",tooltip=" "];
   Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="src/ecstasy/registry\l/concepts/QueryableAllocator\lSize.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_queryable_allocator_size_8hpp.html",tooltip=" "];
+  Node19 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node1 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node19 [label="src/util/util.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$util_8hpp.html",tooltip=" "];
+  Node1 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="src/util/util.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$util_8hpp.html",tooltip=" "];
 }

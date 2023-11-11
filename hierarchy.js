@@ -15,6 +15,13 @@ var hierarchy =
     [ "util::meta::add_optional< std::optional< T > >", "structutil_1_1meta_1_1add__optional_3_01std_1_1optional_3_01_t_01_4_01_4.html", null ],
     [ "util::meta::add_optional< T & >", "structutil_1_1meta_1_1add__optional_3_01_t_01_6_01_4.html", null ],
     [ "util::Allocator< Base >", "classutil_1_1_allocator.html", null ],
+    [ "ecstasy::Registry::AllocatorWrapper< A >", "classecstasy_1_1_registry_1_1_allocator_wrapper.html", null ],
+    [ "ecstasy::Registry::AllocatorWrapper< StackAllocator< Selects... > >", "classecstasy_1_1_registry_1_1_allocator_wrapper.html", [
+      [ "ecstasy::Registry::RegistryStackQuery< util::meta::Traits< Selects... >, util::meta::Traits< Selects... >, util::meta::Traits<>, util::meta::Traits< Selects... > >", "classecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_cc16d108cf5152bd66132d6b9187f68b.html", null ]
+    ] ],
+    [ "ecstasy::Registry::AllocatorWrapper< StackAllocator< Selects..., Cs... > >", "classecstasy_1_1_registry_1_1_allocator_wrapper.html", [
+      [ "ecstasy::Registry::RegistryStackQuery< util::meta::Traits< Selects... >, util::meta::Traits< Missings... >, Condition, util::meta::Traits< Cs... > >", "classecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_67423517c508eca6c225f0c9a9067d5e.html", null ]
+    ] ],
     [ "ecstasy::And< C1, C2, Cs >", "structecstasy_1_1_and.html", null ],
     [ "util::meta::apply< Functor, Ts >", "structutil_1_1meta_1_1apply.html", null ],
     [ "util::meta::apply< Functor, Traits< Ts... > >", "structutil_1_1meta_1_1apply_3_01_functor_00_01_traits_3_01_ts_8_8_8_01_4_01_4.html", null ],
@@ -87,14 +94,30 @@ var hierarchy =
     [ "std::integral_constant< bool, !IsCondition< T >::value >", "http://en.cppreference.com/w/cpp/types/integral_constant.html", [
       [ "ecstasy::Registry::Select< Selects >::IsNotCondition< T >", "structecstasy_1_1_registry_1_1_select_1_1_is_not_condition.html", null ]
     ] ],
+    [ "std::integral_constant< size_t, 0 >", "http://en.cppreference.com/w/cpp/types/integral_constant.html", [
+      [ "ecstasy::queryable_allocator_size< M::Modifier >", "structecstasy_1_1queryable__allocator__size.html", [
+        [ "ecstasy::queryable_allocator_size< M >", "structecstasy_1_1queryable__allocator__size_3_01_m_01_4.html", null ]
+      ] ],
+      [ "ecstasy::queryable_allocator_size< Q >", "structecstasy_1_1queryable__allocator__size.html", null ],
+      [ "ecstasy::queryables_allocator_size< Qs >", "structecstasy_1_1queryables__allocator__size.html", null ]
+    ] ],
+    [ "std::integral_constant< size_t, queryable_allocator_size_v< Q >+queryables_allocator_size< Qs... >::value >", "http://en.cppreference.com/w/cpp/types/integral_constant.html", [
+      [ "ecstasy::queryables_allocator_size< Q, Qs... >", "structecstasy_1_1queryables__allocator__size_3_01_q_00_01_qs_8_8_8_01_4.html", null ]
+    ] ],
+    [ "std::integral_constant< size_t, queryables_allocator_size< Q, Qs... >::value >", "http://en.cppreference.com/w/cpp/types/integral_constant.html", [
+      [ "ecstasy::queryable_allocator_size< std::tuple< Q, Qs... > >", "structecstasy_1_1queryable__allocator__size_3_01std_1_1tuple_3_01_q_00_01_qs_8_8_8_01_4_01_4.html", null ]
+    ] ],
+    [ "std::integral_constant< size_t, sizeof(M)+queryable_allocator_size< M::Operands >::value >", "http://en.cppreference.com/w/cpp/types/integral_constant.html", [
+      [ "ecstasy::queryable_allocator_size< M >", "structecstasy_1_1queryable__allocator__size_3_01_m_01_4.html", null ]
+    ] ],
     [ "std::integral_constant< std::size_t, 0 >", "http://en.cppreference.com/w/cpp/types/integral_constant.html", [
       [ "util::meta::index< T, T, Ts... >", "structutil_1_1meta_1_1index_3_01_t_00_01_t_00_01_ts_8_8_8_01_4.html", null ]
     ] ],
     [ "std::integral_constant< std::size_t, 1+index< T, Ts... >::value >", "http://en.cppreference.com/w/cpp/types/integral_constant.html", [
       [ "util::meta::index< T, U, Ts... >", "structutil_1_1meta_1_1index_3_01_t_00_01_u_00_01_ts_8_8_8_01_4.html", null ]
     ] ],
-    [ "ecstasy::Registry::Select< Selects >::Internal< MissingsTuple, ComponentsTuple, ConditionsTuple >", "structecstasy_1_1_registry_1_1_select_1_1_internal.html", null ],
-    [ "ecstasy::Registry::Select< Selects >::Internal< std::tuple< Missings... >, std::tuple< Cs... >, std::tuple< Conditions... > >", "structecstasy_1_1_registry_1_1_select_1_1_internal_3_01std_1_1tuple_3_01_missings_8_8_8_01_4_00_46ce1ad1b26bbe162d7408965afd23ff.html", null ],
+    [ "ecstasy::Registry::Select< Selects >::Internal< Missings, Cs, Conditions, A >", "structecstasy_1_1_registry_1_1_select_1_1_internal.html", null ],
+    [ "ecstasy::Registry::Select< Selects >::Internal< util::meta::Traits< Missings... >, util::meta::Traits< Cs... >, Conditions, A >", "structecstasy_1_1_registry_1_1_select_1_1_internal_3_01util_1_1meta_1_1_traits_3_01_missings_8_85adf7fede83b5444fcab9e0bd02c3208.html", null ],
     [ "util::serialization::IObjectNode", "classutil_1_1serialization_1_1_i_object_node.html", [
       [ "util::serialization::TomlObjectNode", "classutil_1_1serialization_1_1_toml_object_node.html", null ]
     ] ],
@@ -150,10 +173,19 @@ var hierarchy =
     [ "ecstasy::query::QueryImplementation< Storages, Conditions >", "classecstasy_1_1query_1_1_query_implementation.html", null ],
     [ "ecstasy::query::QueryImplementation< util::meta::Traits< First, Others... >, util::meta::Traits< Conditions... > >", "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html", null ],
     [ "ecstasy::query::QueryImplementation< util::meta::Traits< First, Others... >, util::meta::Traits<> >", "classecstasy_1_1query_1_1_query_implementation.html", [
+      [ "ecstasy::query::Query< Selects... >", "classecstasy_1_1query_1_1_query.html", [
+        [ "ecstasy::Registry::RegistryStackQuery< util::meta::Traits< Selects... >, util::meta::Traits< Selects... >, util::meta::Traits<>, util::meta::Traits< Selects... > >", "classecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_cc16d108cf5152bd66132d6b9187f68b.html", null ]
+      ] ],
       [ "ecstasy::query::Query< First, Others >", "classecstasy_1_1query_1_1_query.html", null ]
+    ] ],
+    [ "ecstasy::query::QueryImplementation< util::meta::Traits< Selects... >, Condition >", "classecstasy_1_1query_1_1_query_implementation.html", [
+      [ "ecstasy::Registry::RegistryStackQuery< util::meta::Traits< Selects... >, util::meta::Traits< Missings... >, Condition, util::meta::Traits< Cs... > >", "classecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_67423517c508eca6c225f0c9a9067d5e.html", null ]
     ] ],
     [ "util::BitSet::Reference", "classutil_1_1_bit_set_1_1_reference.html", null ],
     [ "ecstasy::Registry", "classecstasy_1_1_registry.html", null ],
+    [ "ecstasy::Registry::registry_query< Selects, Missings, Condition, Cs >", "structecstasy_1_1_registry_1_1registry__query.html", null ],
+    [ "ecstasy::Registry::registry_query< util::meta::Traits< Selects... >, util::meta::Traits< Missings... >, Condition, util::meta::Traits< Cs... > >", "structecstasy_1_1_registry_1_1registry__query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_8_01_be17951311b4e09d699d04c2661dfbf9.html", null ],
+    [ "ecstasy::Registry::RegistryStackQuery< Selects, Missings, Condition, Cs >", "classecstasy_1_1_registry_1_1_registry_stack_query.html", null ],
     [ "ecstasy::Resource", "classecstasy_1_1_resource.html", [
       [ "ecstasy::Entities", "classecstasy_1_1_entities.html", null ],
       [ "ecstasy::ObjectWrapper< T >", "classecstasy_1_1_object_wrapper.html", null ],
@@ -168,6 +200,7 @@ var hierarchy =
     [ "ecstasy::Registry::Select< Selects >", "classecstasy_1_1_registry_1_1_select.html", null ],
     [ "util::serialization::Serializer", "classutil_1_1serialization_1_1_serializer.html", null ],
     [ "ecstasy::query::Select< SelectedQueryables >::SorteredTie< Valids >", "structecstasy_1_1query_1_1_select_1_1_sortered_tie.html", null ],
+    [ "util::StackAllocator< size, Base >", "classutil_1_1_stack_allocator.html", null ],
     [ "ecstasy::SystemInstances", "classecstasy_1_1_system_instances.html", null ],
     [ "ecstasy::integration::event::TextEnteredEvent", "structecstasy_1_1integration_1_1event_1_1_text_entered_event.html", null ],
     [ "util::serialization::TomlConversion", "classutil_1_1serialization_1_1_toml_conversion.html", null ],

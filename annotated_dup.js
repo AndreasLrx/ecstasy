@@ -67,6 +67,11 @@ var annotated_dup =
       [ "component_type", "structecstasy_1_1component__type.html", "structecstasy_1_1component__type" ],
       [ "component_type< Q >", "structecstasy_1_1component__type_3_01_q_01_4.html", "structecstasy_1_1component__type_3_01_q_01_4" ],
       [ "component_type< S >", "structecstasy_1_1component__type_3_01_s_01_4.html", "structecstasy_1_1component__type_3_01_s_01_4" ],
+      [ "queryables_allocator_size", "structecstasy_1_1queryables__allocator__size.html", null ],
+      [ "queryable_allocator_size", "structecstasy_1_1queryable__allocator__size.html", null ],
+      [ "queryable_allocator_size< M >", "structecstasy_1_1queryable__allocator__size_3_01_m_01_4.html", null ],
+      [ "queryable_allocator_size< std::tuple< Q, Qs... > >", "structecstasy_1_1queryable__allocator__size_3_01std_1_1tuple_3_01_q_00_01_qs_8_8_8_01_4_01_4.html", null ],
+      [ "queryables_allocator_size< Q, Qs... >", "structecstasy_1_1queryables__allocator__size_3_01_q_00_01_qs_8_8_8_01_4.html", null ],
       [ "queryable_type", "structecstasy_1_1queryable__type.html", "structecstasy_1_1queryable__type" ],
       [ "queryable_type< R >", "structecstasy_1_1queryable__type_3_01_r_01_4.html", "structecstasy_1_1queryable__type_3_01_r_01_4" ],
       [ "queryable_type< S >", "structecstasy_1_1queryable__type_3_01_s_01_4.html", "structecstasy_1_1queryable__type_3_01_s_01_4" ],
@@ -134,7 +139,8 @@ var annotated_dup =
         [ "TomlObjectNode", "classutil_1_1serialization_1_1_toml_object_node.html", "classutil_1_1serialization_1_1_toml_object_node" ]
       ] ],
       [ "Allocator", "classutil_1_1_allocator.html", "classutil_1_1_allocator" ],
-      [ "BitSet", "classutil_1_1_bit_set.html", "classutil_1_1_bit_set" ]
+      [ "BitSet", "classutil_1_1_bit_set.html", "classutil_1_1_bit_set" ],
+      [ "StackAllocator", "classutil_1_1_stack_allocator.html", "classutil_1_1_stack_allocator" ]
     ] ],
     [ "GetComponentStorageType", "struct_get_component_storage_type.html", "struct_get_component_storage_type" ]
 ];

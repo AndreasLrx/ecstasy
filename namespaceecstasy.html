@@ -116,6 +116,21 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1component__type_3_01_s_01_4.html">component_type&lt; S &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the component type of the given type.  <a href="structecstasy_1_1component__type_3_01_s_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1queryables__allocator__size.html">queryables_allocator_size</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the allocator required size for a list of queryables.  <a href="structecstasy_1_1queryables__allocator__size.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1queryable__allocator__size.html">queryable_allocator_size</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the allocator required size for this queryable.  <a href="structecstasy_1_1queryable__allocator__size.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1queryable__allocator__size_3_01_m_01_4.html">queryable_allocator_size&lt; M &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the allocator required size for this queryable.  <a href="structecstasy_1_1queryable__allocator__size_3_01_m_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1queryable__allocator__size_3_01std_1_1tuple_3_01_q_00_01_qs_8_8_8_01_4_01_4.html">queryable_allocator_size&lt; std::tuple&lt; Q, Qs... &gt; &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the allocator required size for this queryable.  <a href="structecstasy_1_1queryable__allocator__size_3_01std_1_1tuple_3_01_q_00_01_qs_8_8_8_01_4_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1queryables__allocator__size_3_01_q_00_01_qs_8_8_8_01_4.html">queryables_allocator_size&lt; Q, Qs... &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the allocator required size for a list of queryables.  <a href="structecstasy_1_1queryables__allocator__size_3_01_q_00_01_qs_8_8_8_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1queryable__type.html">queryable_type</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to get the type of a queryable associated to a type stored in the registry (component, storage, resource...).  <a href="structecstasy_1_1queryable__type.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -216,8 +231,12 @@ Typedefs</h2></td></tr>
 <tr class="separator:a53c8ca43801107dc959adbdc60810af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2895efc7e86f6aca31285d6985eedf4a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy.html#a2895efc7e86f6aca31285d6985eedf4a">ModifiersAllocator</a> = <a class="el" href="classutil_1_1_allocator.html">util::Allocator</a>&lt; <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier.html">ecstasy::query::modifier::Modifier</a> &gt;</td></tr>
 <tr class="separator:a2895efc7e86f6aca31285d6985eedf4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fc0aa1c8b8c583dc2aadf4d89d65eff"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy.html#a5fc0aa1c8b8c583dc2aadf4d89d65eff">OptionalModifiersAllocator</a> = <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html">std::reference_wrapper</a>&lt; <a class="el" href="namespaceecstasy.html#a2895efc7e86f6aca31285d6985eedf4a">ModifiersAllocator</a> &gt; &gt;</td></tr>
-<tr class="separator:a5fc0aa1c8b8c583dc2aadf4d89d65eff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf97def750636803824f90abd1325198"><td class="memTemplParams" colspan="2">template&lt;typename... Qs&gt; </td></tr>
+<tr class="memitem:abf97def750636803824f90abd1325198"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy.html#abf97def750636803824f90abd1325198">StackAllocator</a> = <a class="el" href="classutil_1_1_stack_allocator.html">util::StackAllocator</a>&lt; <a class="el" href="namespaceecstasy.html#a08cff9d23f68eca51e0ef67bd8592342">queryables_allocator_size_v</a>&lt; Qs... &gt;, <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier.html">query::modifier::Modifier</a> &gt;</td></tr>
+<tr class="separator:abf97def750636803824f90abd1325198"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5640f20f821346bace72e8351acbb01"><td class="memTemplParams" colspan="2">template&lt;typename A  = ModifiersAllocator&gt; </td></tr>
+<tr class="memitem:ae5640f20f821346bace72e8351acbb01"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy.html#ae5640f20f821346bace72e8351acbb01">OptionalModifiersAllocator</a> = <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html">std::reference_wrapper</a>&lt; A &gt; &gt;</td></tr>
+<tr class="separator:ae5640f20f821346bace72e8351acbb01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae219e3d50efdd81eb87d2a220e030193"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
 <tr class="memitem:ae219e3d50efdd81eb87d2a220e030193"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy.html#ae219e3d50efdd81eb87d2a220e030193">getStorageType</a> = typename <a class="el" href="struct_get_component_storage_type.html">GetComponentStorageType</a>&lt; C &gt;::Value</td></tr>
 <tr class="memdesc:ae219e3d50efdd81eb87d2a220e030193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the storage type of a component, returns <a class="el" href="classecstasy_1_1_map_storage.html" title="Associative Map to store entity components.">MapStorage</a> by default.  <a href="namespaceecstasy.html#ae219e3d50efdd81eb87d2a220e030193">More...</a><br /></td></tr>
@@ -225,6 +244,14 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a191abbaf1224324dcf0bf4ac15a3bb32"><td class="memTemplParams" colspan="2">template&lt;typename Q &gt; </td></tr>
+<tr class="memitem:a191abbaf1224324dcf0bf4ac15a3bb32"><td class="memTemplItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy.html#a191abbaf1224324dcf0bf4ac15a3bb32">queryable_allocator_size_v</a> = <a class="el" href="structecstasy_1_1queryable__allocator__size.html">queryable_allocator_size</a>&lt;Q&gt;::value</td></tr>
+<tr class="memdesc:a191abbaf1224324dcf0bf4ac15a3bb32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper for queryable_allocator_size&lt;Q&gt;::value.  <a href="namespaceecstasy.html#a191abbaf1224324dcf0bf4ac15a3bb32">More...</a><br /></td></tr>
+<tr class="separator:a191abbaf1224324dcf0bf4ac15a3bb32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08cff9d23f68eca51e0ef67bd8592342"><td class="memTemplParams" colspan="2">template&lt;typename Q , typename... Qs&gt; </td></tr>
+<tr class="memitem:a08cff9d23f68eca51e0ef67bd8592342"><td class="memTemplItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy.html#a08cff9d23f68eca51e0ef67bd8592342">queryables_allocator_size_v</a> = <a class="el" href="structecstasy_1_1queryables__allocator__size.html">queryables_allocator_size</a>&lt;Q, Qs...&gt;::value</td></tr>
+<tr class="memdesc:a08cff9d23f68eca51e0ef67bd8592342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper for queryables_allocator_size&lt;Q, Qs...&gt;::value.  <a href="namespaceecstasy.html#a08cff9d23f68eca51e0ef67bd8592342">More...</a><br /></td></tr>
+<tr class="separator:a08cff9d23f68eca51e0ef67bd8592342"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6791f76b228760ff4513f357ad3fa0d0"><td class="memTemplParams" colspan="2">template&lt;typename M &gt; </td></tr>
 <tr class="memitem:a6791f76b228760ff4513f357ad3fa0d0"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy.html#a6791f76b228760ff4513f357ad3fa0d0">RegistryModifier</a></td></tr>
 <tr class="memdesc:a6791f76b228760ff4513f357ad3fa0d0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1_registry.html" title="Base of an ECS architecture.">Registry</a> Modifier concept, which are placeholders for the actual query modifiers.  <a href="namespaceecstasy.html#a6791f76b228760ff4513f357ad3fa0d0">More...</a><br /></td></tr>
@@ -402,7 +429,7 @@ template&lt;auto Left, auto Right&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00038">38</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00040">40</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
@@ -426,19 +453,21 @@ template&lt;auto Left, auto Right&gt; </div>
 
 </div>
 </div>
-<a id="a5fc0aa1c8b8c583dc2aadf4d89d65eff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5fc0aa1c8b8c583dc2aadf4d89d65eff">&#9670;&nbsp;</a></span>OptionalModifiersAllocator</h2>
+<a id="ae5640f20f821346bace72e8351acbb01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5640f20f821346bace72e8351acbb01">&#9670;&nbsp;</a></span>OptionalModifiersAllocator</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename A  = ModifiersAllocator&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespaceecstasy.html#a5fc0aa1c8b8c583dc2aadf4d89d65eff">ecstasy::OptionalModifiersAllocator</a> = typedef <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html">std::reference_wrapper</a>&lt;<a class="el" href="namespaceecstasy.html#a2895efc7e86f6aca31285d6985eedf4a">ModifiersAllocator</a>&gt; &gt;</td>
+          <td class="memname">using <a class="el" href="namespaceecstasy.html#ae5640f20f821346bace72e8351acbb01">ecstasy::OptionalModifiersAllocator</a> = typedef <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html">std::reference_wrapper</a>&lt;A&gt; &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00039">39</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00044">44</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
@@ -467,6 +496,24 @@ template&lt;typename C &gt; </div>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-25) </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_queryable_type_8hpp_source.html#l00067">67</a> of file <a class="el" href="_queryable_type_8hpp_source.html">QueryableType.hpp</a>.</p>
+
+</div>
+</div>
+<a id="abf97def750636803824f90abd1325198"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf97def750636803824f90abd1325198">&#9670;&nbsp;</a></span>StackAllocator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Qs&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceecstasy.html#abf97def750636803824f90abd1325198">ecstasy::StackAllocator</a> = typedef <a class="el" href="classutil_1_1_stack_allocator.html">util::StackAllocator</a>&lt;<a class="el" href="namespaceecstasy.html#a08cff9d23f68eca51e0ef67bd8592342">queryables_allocator_size_v</a>&lt;Qs...&gt;, <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier.html">query::modifier::Modifier</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00042">42</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
@@ -515,6 +562,79 @@ template&lt;typename S &gt; </div>
 <div class="line">    }</div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="_storage_concepts_8hpp_source.html#l00041">41</a> of file <a class="el" href="_storage_concepts_8hpp_source.html">StorageConcepts.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a191abbaf1224324dcf0bf4ac15a3bb32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a191abbaf1224324dcf0bf4ac15a3bb32">&#9670;&nbsp;</a></span>queryable_allocator_size_v</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Q &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t ecstasy::queryable_allocator_size_v = <a class="el" href="structecstasy_1_1queryable__allocator__size.html">queryable_allocator_size</a>&lt;Q&gt;::value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Helper for queryable_allocator_size&lt;Q&gt;::value. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Q</td><td>Evaluated type.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2023-11-08) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_queryable_allocator_size_8hpp_source.html#l00073">73</a> of file <a class="el" href="_queryable_allocator_size_8hpp_source.html">QueryableAllocatorSize.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a08cff9d23f68eca51e0ef67bd8592342"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08cff9d23f68eca51e0ef67bd8592342">&#9670;&nbsp;</a></span>queryables_allocator_size_v</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Q , typename... Qs&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t ecstasy::queryables_allocator_size_v = <a class="el" href="structecstasy_1_1queryables__allocator__size.html">queryables_allocator_size</a>&lt;Q, Qs...&gt;::value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Helper for queryables_allocator_size&lt;Q, Qs...&gt;::value. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Q</td><td>Evaluated type. </td></tr>
+    <tr><td class="paramname">Qs</td><td>Next evaluated types.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2023-11-08) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_queryable_allocator_size_8hpp_source.html#l00092">92</a> of file <a class="el" href="_queryable_allocator_size_8hpp_source.html">QueryableAllocatorSize.hpp</a>.</p>
 
 </div>
 </div>

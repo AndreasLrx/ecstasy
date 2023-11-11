@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="ecstasy::Registry::\lSelect\< Selects \>::Internal\l\< MissingsTuple, ComponentsTuple,\l ConditionsTuple \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1_registry_1_1_select_1_1_internal.html",tooltip="Internal structure allowing to add implicitly required queryables (from the selected types)."];
+  Node0 [label="ecstasy::Registry::\lGetModifierProxy\< std\l::tuple\< Qs... \> \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1_registry_1_1_get_modifier_proxy_3_01std_1_1tuple_3_01_qs_8_8_8_01_4_01_4.html",tooltip="Proxy structure to extract the operand types using template partial specialization."];
 }
