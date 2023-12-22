@@ -22,7 +22,7 @@ namespace util::meta
     /// @note Result is a structure with a @b type alias defined to a @ref util::meta::Traits containing the modified
     /// types.
     ///
-    /// @tparam Functor Templated type to apply on @p Ts types. (Ex: @ref std::referece_wrapper, or @ref
+    /// @tparam Functor Templated type to apply on @p Ts types. (Ex: @ref std::reference_wrapper, or @ref
     /// std::remove_reference)
     /// @tparam Ts Types to modify.
     ///
