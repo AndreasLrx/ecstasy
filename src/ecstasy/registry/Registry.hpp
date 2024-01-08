@@ -87,8 +87,7 @@ namespace ecstasy
         /// @since 1.0.0 (2023-11-08)
         ///
         template <typename Selects, typename Missings, typename Condition, typename Cs>
-        class RegistryStackQuery {
-        };
+        class RegistryStackQuery {};
 
         ///
         /// @brief Registry query allocating everything on the stack (if allocation required). This means longer compile
@@ -186,8 +185,7 @@ namespace ecstasy
         /// @since 1.0.0 (2023-11-08)
         ///
         template <typename Selects, typename Missings, typename Condition, typename Cs>
-        struct registry_query {
-        };
+        struct registry_query {};
 
         /// @copydoc registry_query
         template <typename... Selects, typename... Missings, typename Condition, typename... Cs>
@@ -259,7 +257,7 @@ namespace ecstasy
 
         /// @copydoc getQueryable()
         template <std::derived_from<Resource> R, typename A = ModifiersAllocator>
-        requires query::Queryable<R>
+            requires query::Queryable<R>
         constexpr R &getQueryable(OptionalModifiersAllocator<A> &allocator)
         {
             (void)allocator;
@@ -268,7 +266,8 @@ namespace ecstasy
 
         /// @copydoc getQueryable()
         template <IsStorage S, typename A = ModifiersAllocator>
-        requires query::Queryable<S> S &getQueryable(OptionalModifiersAllocator<A> &allocator)
+            requires query::Queryable<S>
+        S &getQueryable(OptionalModifiersAllocator<A> &allocator)
         {
             (void)allocator;
             if (!_storages.contains<S>())
@@ -285,8 +284,7 @@ namespace ecstasy
         /// @since 1.0.0 (2022-11-22)
         ///
         template <typename Operands>
-        struct GetModifierProxy {
-        };
+        struct GetModifierProxy {};
 
         ///
         /// @brief Proxy structure to extract the operand types using template partial specialization
@@ -398,10 +396,7 @@ namespace ecstasy
             /// @since 1.0.0 (2023-01-31)
             ///
             template <typename C>
-            requires requires()
-            {
-                typename C::value_type;
-            }
+                requires requires() { typename C::value_type; }
             EntityBuilder &with(std::initializer_list<typename C::value_type> list)
             {
                 _builder.with(_registry.getStorageSafe<C>(), list);
@@ -460,8 +455,7 @@ namespace ecstasy
             /// @since 1.0.0 (2023-11-08)
             ///
             template <typename T>
-            struct IsCondition : public std::is_base_of<ecstasy::query::ConditionBase, T> {
-            };
+            struct IsCondition : public std::is_base_of<ecstasy::query::ConditionBase, T> {};
 
             ///
             /// @brief Test whether a given type is not a condition
@@ -472,8 +466,7 @@ namespace ecstasy
             /// @since 1.0.0 (2023-11-08)
             ///
             template <typename T>
-            struct IsNotCondition : std::integral_constant<bool, !IsCondition<T>::value> {
-            };
+            struct IsNotCondition : std::integral_constant<bool, !IsCondition<T>::value> {};
 
             // clang-format off
             /// @brief @ref util::meta::Traits type helper for the Selected queryable template pack

@@ -31,8 +31,7 @@ namespace ecstasy::query
     /// @since 1.0.0 (2022-10-25)
     ///
     template <typename Q>
-    concept Queryable = requires(Q &queryable, Q const &cqueryable, std::size_t index)
-    {
+    concept Queryable = requires(Q &queryable, Q const &cqueryable, std::size_t index) {
         /// Data stored in the queryable.
         typename Q::QueryData;
 
@@ -54,13 +53,11 @@ namespace ecstasy::query
     /// @since 1.0.0 (2022-10-30)
     ///
     template <typename T>
-    struct is_queryable : public std::false_type {
-    };
+    struct is_queryable : public std::false_type {};
 
     /// @copydoc is_queryable
     template <Queryable T>
-    struct is_queryable<T> : public std::true_type {
-    };
+    struct is_queryable<T> : public std::true_type {};
 
     ///
     /// @brief Helper for @ref is_queryable<T>::value.

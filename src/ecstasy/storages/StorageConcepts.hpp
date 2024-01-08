@@ -38,15 +38,11 @@ namespace ecstasy
     using getStorageType = typename GetComponentStorageType<C>::Value;
 
     template <typename S>
-    concept IsStorage = std::default_initializable<S> && std::derived_from<S, IStorage> && requires(
-        S &storage, S const &cstorage)
-    {
-        typename S::Component;
-    };
+    concept IsStorage = std::default_initializable<S> && std::derived_from<S, IStorage>
+        && requires(S &storage, S const &cstorage) { typename S::Component; };
 
     template <typename S>
-    concept IsContainerStorage = requires()
-    {
+    concept IsContainerStorage = requires() {
         requires IsStorage<S>;
         typename S::Component::value_type;
     };

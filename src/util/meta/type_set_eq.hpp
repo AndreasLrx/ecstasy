@@ -27,8 +27,7 @@ namespace util::meta
     /// @since 1.0.0 (2022-10-28)
     ///
     template <typename, typename>
-    struct _type_set_eq : public std::false_type {
-    };
+    struct _type_set_eq : public std::false_type {};
 
     // clang-format off
 
@@ -80,8 +79,7 @@ namespace util::meta
     /// @since 1.0.0 (2022-10-28)
     ///
     template <typename, typename>
-    struct type_set_eq : public std::false_type {
-    };
+    struct type_set_eq : public std::false_type {};
 
     // clang-format off
 

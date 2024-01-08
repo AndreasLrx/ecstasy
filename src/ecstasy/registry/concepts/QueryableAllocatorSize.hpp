@@ -28,8 +28,7 @@ namespace ecstasy
     /// @since 1.0.0 (2023-11-08)
     ///
     template <typename... Qs>
-    struct queryables_allocator_size : public std::integral_constant<size_t, 0> {
-    };
+    struct queryables_allocator_size : public std::integral_constant<size_t, 0> {};
 
     ///
     /// @brief Get the allocator required size for this queryable. It is equal to the modifier memory size (if any).
@@ -41,25 +40,21 @@ namespace ecstasy
     /// @since 1.0.0 (2023-11-08)
     ///
     template <typename Q>
-    struct queryable_allocator_size : public std::integral_constant<size_t, 0> {
-    };
+    struct queryable_allocator_size : public std::integral_constant<size_t, 0> {};
 
     /// @copydoc queryable_allocator_size
     template <RegistryModifier M>
-    struct queryable_allocator_size<M> : public queryable_allocator_size<typename M::Modifier> {
-    };
+    struct queryable_allocator_size<M> : public queryable_allocator_size<typename M::Modifier> {};
 
     /// @copydoc queryable_allocator_size
     template <query::Modifier M>
     struct queryable_allocator_size<M>
-        : public std::integral_constant<size_t, sizeof(M) + queryable_allocator_size<typename M::Operands>::value> {
-    };
+        : public std::integral_constant<size_t, sizeof(M) + queryable_allocator_size<typename M::Operands>::value> {};
 
     /// @copydoc queryable_allocator_size
     template <typename Q, typename... Qs>
     struct queryable_allocator_size<std::tuple<Q, Qs...>>
-        : public std::integral_constant<size_t, queryables_allocator_size<Q, Qs...>::value> {
-    };
+        : public std::integral_constant<size_t, queryables_allocator_size<Q, Qs...>::value> {};
 
     ///
     /// @brief Helper for queryable_allocator_size<Q>::value.
@@ -76,8 +71,7 @@ namespace ecstasy
     template <typename Q, typename... Qs>
     struct queryables_allocator_size<Q, Qs...>
         : public std::integral_constant<size_t,
-              queryable_allocator_size_v<Q> + queryables_allocator_size<Qs...>::value> {
-    };
+              queryable_allocator_size_v<Q> + queryables_allocator_size<Qs...>::value> {};
 
     ///
     /// @brief Helper for queryables_allocator_size<Q, Qs...>::value.

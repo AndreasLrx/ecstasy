@@ -25,8 +25,7 @@ namespace ecstasy::query
     /// @since 1.0.0 (2022-10-25)
     ///
     template <typename Q>
-    concept QueryableNeedAdjust = requires(Q &queryable, std::size_t maxSize)
-    {
+    concept QueryableNeedAdjust = requires(Q &queryable, std::size_t maxSize) {
         /// Ensure the type is a queryable
         requires Queryable<Q>;
 
@@ -72,13 +71,11 @@ namespace ecstasy::query
     /// @since 1.0.0 (2022-10-30)
     ///
     template <typename T>
-    struct is_queryable_with_adjust : public std::false_type {
-    };
+    struct is_queryable_with_adjust : public std::false_type {};
 
     /// @copydoc is_queryable_with_adjust
     template <QueryableNeedAdjust T>
-    struct is_queryable_with_adjust<T> : public std::true_type {
-    };
+    struct is_queryable_with_adjust<T> : public std::true_type {};
 
     ///
     /// @brief Helper for @ref is_queryable_with_adjust<T>::value.

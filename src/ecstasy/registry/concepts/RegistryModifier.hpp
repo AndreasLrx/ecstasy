@@ -26,8 +26,7 @@ namespace ecstasy
     /// @since 1.0.0 (2022-10-24)
     ///
     template <typename M>
-    concept RegistryModifier = requires()
-    {
+    concept RegistryModifier = requires() {
         typename M::Modifier;
         requires query::Modifier<typename M::Modifier>;
     };
