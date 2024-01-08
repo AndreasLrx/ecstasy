@@ -110,7 +110,7 @@ var searchData=
   ['utc_5fclock_2911',['utc_clock',['http://en.cppreference.com/w/cpp/chrono/utc_clock.html',1,'std::chrono']]],
   ['utc_5fseconds_2912',['utc_seconds',['http://en.cppreference.com/w/cpp/chrono/utc_clock.html',1,'std::chrono']]],
   ['utc_5ftime_2913',['utc_time',['http://en.cppreference.com/w/cpp/chrono/utc_clock.html',1,'std::chrono']]],
-  ['utf32chartoutf8string_2914',['utf32CharToUtf8String',['../classecstasy_1_1integration_1_1sfml_1_1_encoding.html#aada96b40d607f74a3a8c97949b4785d8',1,'ecstasy::integration::sfml::Encoding']]],
+  ['utf32chartoutf8string_2914',['utf32CharToUtf8String',['../classecstasy_1_1integration_1_1sfml_1_1_encoding.html#a6758be58d6b95066e3b5e5f671b8c74f',1,'ecstasy::integration::sfml::Encoding']]],
   ['util_2915',['util',['../namespaceutil.html',1,'']]],
   ['util_2ehpp_2916',['util.hpp',['../util_8hpp.html',1,'']]],
   ['utility_2917',['utility',['http://en.cppreference.com/w/cpp/header/utility.html',1,'']]]

@@ -60,5 +60,5 @@ var searchData=
   ['userprofile_6302',['UserProfile',['../classecstasy_1_1integration_1_1user__action_1_1_user_profile.html#abc41e86f3c01b4d86f39a45754b551e8',1,'ecstasy::integration::user_action::UserProfile']]],
   ['users_6303',['Users',['../classecstasy_1_1integration_1_1user__action_1_1_users.html#a5c2fa08887e1cec5809a0f5ed5d34b5b',1,'ecstasy::integration::user_action::Users']]],
   ['uses_5fallocator_5fconstruction_5fargs_6304',['uses_allocator_construction_args',['http://en.cppreference.com/w/cpp/memory/uses_allocator_construction_args.html',1,'std']]],
-  ['utf32chartoutf8string_6305',['utf32CharToUtf8String',['../classecstasy_1_1integration_1_1sfml_1_1_encoding.html#aada96b40d607f74a3a8c97949b4785d8',1,'ecstasy::integration::sfml::Encoding']]]
+  ['utf32chartoutf8string_6305',['utf32CharToUtf8String',['../classecstasy_1_1integration_1_1sfml_1_1_encoding.html#a6758be58d6b95066e3b5e5f671b8c74f',1,'ecstasy::integration::sfml::Encoding']]]
 ];
