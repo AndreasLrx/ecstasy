@@ -259,8 +259,8 @@ namespace ecstasy::query
             FirstWhere &firstWhere, Wheres &...wheres)
         {
             /// Adjusts the masks only if required
-            if constexpr (is_queryable_with_adjust_v<
-                              FirstWhere> || std::disjunction_v<is_queryable_with_adjust<Wheres>...>) {
+            if constexpr (is_queryable_with_adjust_v<FirstWhere>
+                || std::disjunction_v<is_queryable_with_adjust<Wheres>...>) {
                 size_t maxSize = std::max({firstWhere.getMask().size(), wheres.getMask().size()...});
 
                 adjustMask(firstWhere, maxSize);

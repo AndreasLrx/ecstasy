@@ -32,13 +32,11 @@ namespace util::meta
 
     /// @copydoc index
     template <typename T, typename... Ts>
-    struct index<T, T, Ts...> : std::integral_constant<std::size_t, 0> {
-    };
+    struct index<T, T, Ts...> : std::integral_constant<std::size_t, 0> {};
 
     /// @copydoc index
     template <typename T, typename U, typename... Ts>
-    struct index<T, U, Ts...> : std::integral_constant<std::size_t, 1 + index<T, Ts...>::value> {
-    };
+    struct index<T, U, Ts...> : std::integral_constant<std::size_t, 1 + index<T, Ts...>::value> {};
 
     ///
     /// @brief Helper for index<...>::type.

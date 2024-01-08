@@ -25,7 +25,7 @@ namespace util::serialization
     /// @since 1.0.0 (2022-12-08)
     ///
     template <typename N>
-    requires std::derived_from<N, toml::node> && std::copy_constructible<N>
+        requires std::derived_from<N, toml::node> && std::copy_constructible<N>
     class TomlNode : public ANode {
       public:
         ///

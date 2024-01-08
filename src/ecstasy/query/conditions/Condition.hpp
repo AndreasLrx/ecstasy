@@ -19,8 +19,7 @@ namespace ecstasy::query
     struct ConditionBase {};
 
     template <auto Left, auto Right, typename Comparer>
-    struct Condition : public ConditionBase {
-    };
+    struct Condition : public ConditionBase {};
 
     /// @note Const - Const, Will therefore always output the same result
     // clang-format off

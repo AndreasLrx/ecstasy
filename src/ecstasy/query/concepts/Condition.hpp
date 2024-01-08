@@ -17,14 +17,10 @@
 namespace ecstasy::query
 {
     template <typename C>
-    concept QCondition = requires(C &condition)
-    {
-        requires std::derived_from<C, ecstasy::query::ConditionBase>;
-    };
+    concept QCondition = requires(C &condition) { requires std::derived_from<C, ecstasy::query::ConditionBase>; };
 
     template <typename C>
-    concept QConditionConst = requires(C &condition)
-    {
+    concept QConditionConst = requires(C &condition) {
         requires QCondition<C>;
 
         // clang-format off
@@ -33,8 +29,7 @@ namespace ecstasy::query
     };
 
     template <typename C>
-    concept QConditionLeft = requires(C &condition, const typename C::Left &left)
-    {
+    concept QConditionLeft = requires(C &condition, const typename C::Left &left) {
         requires QCondition<C>;
 
         typename C::Left;
@@ -45,8 +40,7 @@ namespace ecstasy::query
     };
 
     template <typename C>
-    concept QConditionRight = requires(C &condition, const typename C::Right &right)
-    {
+    concept QConditionRight = requires(C &condition, const typename C::Right &right) {
         requires QCondition<C>;
 
         typename C::Right;
@@ -57,8 +51,7 @@ namespace ecstasy::query
     };
 
     template <typename C>
-    concept QConditionLeftRight = requires(C &condition, const typename C::Left &left, const typename C::Right &right)
-    {
+    concept QConditionLeftRight = requires(C &condition, const typename C::Left &left, const typename C::Right &right) {
         requires QCondition<C>;
 
         typename C::Left;

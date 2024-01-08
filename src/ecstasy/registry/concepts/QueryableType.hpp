@@ -37,14 +37,14 @@ namespace ecstasy
 
     /// @copydoc queryable_type
     template <std::derived_from<Resource> R>
-    requires query::Queryable<R>
+        requires query::Queryable<R>
     struct queryable_type<R> {
         using type = R;
     };
 
     /// @copydoc queryable_type
     template <IsStorage S>
-    requires query::Queryable<S>
+        requires query::Queryable<S>
     struct queryable_type<S> {
         using type = S;
     };

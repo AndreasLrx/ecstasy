@@ -26,8 +26,7 @@ namespace ecstasy::query
     /// @since 1.0.0 (2022-11-22)
     ///
     template <typename M>
-    concept Modifier = requires(M &modifier)
-    {
+    concept Modifier = requires(M &modifier) {
         /// Data stored in the queryable.
         requires Queryable<M>;
 
