@@ -10,6 +10,7 @@
 
 #include <algorithm>
 #include <functional>
+#include <thread>
 
 #include "concepts/Condition.hpp"
 #include "concepts/Queryable.hpp"
@@ -36,8 +37,7 @@ namespace ecstasy::query
     /// @since 1.0.0 (2022-10-20)
     ///
     template <typename Storages, typename Conditions = void>
-    class QueryImplementation {
-    };
+    class QueryImplementation {};
 
     template <Queryable First, Queryable... Others, typename... Conditions>
     class QueryImplementation<util::meta::Traits<First, Others...>, util::meta::Traits<Conditions...>> {
@@ -346,8 +346,8 @@ namespace ecstasy::query
         QueryImplementation(First &first, Others &...others) : _storages(first, others...)
         {
             /// Adjusts the masks only if required
-            if constexpr (is_queryable_with_adjust_v<
-                              First> || std::disjunction_v<is_queryable_with_adjust<Others>...>) {
+            if constexpr (is_queryable_with_adjust_v<First>
+                || std::disjunction_v<is_queryable_with_adjust<Others>...>) {
                 size_t maxSize = std::max({first.getMask().size(), others.getMask().size()...});
 
                 adjustMask(first, maxSize);
@@ -419,10 +419,63 @@ namespace ecstasy::query
             return get_components(index, std::make_index_sequence<(sizeof...(Others)) + 1>());
         }
 
+        ///
+        /// @brief Split the query in multiple batch of @p batchSize matching entities. Each batch is executed in a
+        /// separate thread.
+        ///
+        /// @warning This doesn't ensure thread safety if you modify the same value from different entities (therefore
+        /// different threads).
+        /// @note
+        ///
+        /// @tparam F Type of the function applied on each matching entity.
+        ///
+        /// @param[in] batchSize Max size of each batch.
+        /// @param[in] fct Function applied on each matching entity.
+        /// @param[in] wait Whether this method must be synchronous (wait all threads to terminate) or not.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-01-08)
+        ///
+        template <typename F>
+        void splitThreads(std::size_t batchSize, F &&fct, bool wait = true)
+        {
+            Iterator end = this->end();
+            Iterator current = this->begin();
+            Iterator currentBatchStart = current;
+            size_t currentBatchSize = 0;
+            std::vector<std::thread> threads;
+
+            while (current != end) {
+                ++currentBatchSize;
+                // Find the next element (which may be the end sentinel)
+                ++current;
+                // Batch full, we start a new thread and reset the current batch informations
+                if (currentBatchSize == batchSize) {
+                    threads.emplace_back(processBatch<F>, currentBatchStart, current, fct);
+                    currentBatchSize = 0;
+                    currentBatchStart = current;
+                }
+            }
+
+            if (currentBatchSize > 0)
+                threads.emplace_back(processBatch<F>, currentBatchStart, current, fct);
+
+            if (wait)
+                for (auto &thread : threads)
+                    thread.join();
+        }
+
       private:
         util::BitSet _mask;
         std::tuple<First &, Others &...> _storages;
         size_t _begin;
+
+        template <typename F>
+        static void processBatch(Iterator start, Iterator end, F &&fct)
+        {
+            for (auto i = start; i != end; ++i)
+                fct(*i);
+        }
 
         ///
         /// @brief Get the components from the storages tuple.
