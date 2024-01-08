@@ -26,9 +26,9 @@ jobs:
 
           ## Add Clang compiler to ubuntu
           - os: ubuntu-latest
-            compiler: Clang 14
-            CC: clang-14
-            CXX: clang++-14
+            compiler: Clang 15
+            CC: clang-15
+            CXX: clang++-15
             CXXFLAGS: -stdlib=libstdc++
             generator: "Unix Makefiles"
 
