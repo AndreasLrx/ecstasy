@@ -608,3 +608,49 @@ TEST(QueryImplementation, Conditional)
     for (auto [life] : query)
         GTEST_ASSERT_TRUE(life.value < 0);
 }
+
+TEST(QueryImplementation, BatchQuery)
+{
+    ecstasy::MapStorage<Position> positions;
+    ecstasy::MapStorage<Velocity> velocities;
+    int entities = 200;
+
+    for (int i = 0; i < entities; i++) {
+        positions.emplace(i, i, i * 2);
+        velocities.emplace(i, i * 2, i);
+    }
+
+    auto start = std::chrono::high_resolution_clock::now();
+    for (auto [pos, vel] : ecstasy::query::Query(positions, velocities)) {
+        pos.x += vel.v.x;
+        pos.y += vel.v.y;
+        usleep(10);
+    }
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> duration = end - start;
+    std::cerr << "Took " << duration.count() << "s in single thread" << std::endl;
+
+    for (int i = 0; i < entities; i++) {
+        auto &pos = positions.getQueryData(i);
+        GTEST_ASSERT_EQ(pos.x, i + i * 2);
+        GTEST_ASSERT_EQ(pos.y, i * 2 + i);
+    }
+
+    start = std::chrono::high_resolution_clock::now();
+    ecstasy::query::Query(positions, velocities).splitThreads(20, [](auto components) {
+        auto &[pos, vel] = components;
+        pos.x += vel.v.x;
+        pos.y += vel.v.y;
+        usleep(10);
+    });
+    end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> durationMthreads = end - start;
+    std::cerr << "Took " << durationMthreads.count() << "s in batch query" << std::endl;
+    GTEST_ASSERT_LT(durationMthreads.count(), duration.count());
+
+    for (int i = 0; i < entities; i++) {
+        auto &pos = positions.getQueryData(i);
+        GTEST_ASSERT_EQ(pos.x, i + i * 2 * 2);
+        GTEST_ASSERT_EQ(pos.y, i * 2 + i * 2);
+    }
+}
