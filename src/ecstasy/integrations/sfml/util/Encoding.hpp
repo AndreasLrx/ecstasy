@@ -13,6 +13,7 @@
 #define ECSTASY_INTEGRATIONS_SFML_ENCODING_HPP_
 
 #include <SFML/System/Utf.hpp>
+#include <stdint.h>
 
 namespace ecstasy::integration::sfml
 {
@@ -30,7 +31,7 @@ namespace ecstasy::integration::sfml
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-17)
         ///
-        static std::string utf32CharToUtf8String(std::uint32_t utf);
+        static std::string utf32CharToUtf8String(uint32_t utf);
 
       private:
         Encoding() = default;
