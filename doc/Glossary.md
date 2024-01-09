@@ -160,6 +160,26 @@ concept Queryable = requires(Q &queryable, Q const &cqueryable, std::size_t inde
 
 References: [Queryable](@ref ecstasy::query::Queryable)
 
+### Batch Query
+
+A batch query is a multi threaded query. Instead of iterating over the matching entities yourself in the current thread you can use the splitThreads method. It split the iteration over multiple threads of a custom batch size.
+
+In the following example, if you have 167 entities with a position and velocity components, it will starts 4 threads (4 batches) and execute the function given in parameter:
+
+- Thread 1: 1-50
+- Thread 2: 51-100
+- Thread 3: 101-150
+- Thread 4: 151-167
+
+```cpp
+// Will make one thread for every 50 matching entities
+registry.query<Position, Velocity>().splitThreads(50, [](auto components) {
+    auto [position, velocity] = components;
+    position.x += velocity.x;
+    position.y += velocity.y;
+});
+```
+
 ### Modifier
 
 [Modifiers](@ref ecstasy::query::Modifier) is another ecstasy concept allowing to perform more complex queries in the registry.
