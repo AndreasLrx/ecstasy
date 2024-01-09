@@ -1,5 +1,8 @@
 var NAVTREEINDEX11 =
 {
+"structecstasy_1_1query_1_1_select.html#a052b19450204e529a5c685d4fa346233":[5,0,0,1,10,5],
+"structecstasy_1_1query_1_1_select.html#a058d1315dfca6014e11c8ee6fdea6aff":[5,0,0,1,10,6],
+"structecstasy_1_1query_1_1_select.html#a3f8ec9995a67ff0fb6b7ba75fbbadf6a":[5,0,0,1,10,4],
 "structecstasy_1_1query_1_1_select.html#a534d67a4e74c6bbb765dc7c5c0981629":[5,0,0,1,10,2],
 "structecstasy_1_1query_1_1_select.html#ad252ec843261fc91e1f065b8f843e1db":[5,0,0,1,10,3],
 "structecstasy_1_1query_1_1_select_1_1_filter_queryables.html":[5,0,0,1,10,0],

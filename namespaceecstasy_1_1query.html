@@ -184,7 +184,7 @@ Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:aad13a1796398ea39bac6325be81d7276"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
-<tr class="memitem:aad13a1796398ea39bac6325be81d7276"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#aad13a1796398ea39bac6325be81d7276">QCondition</a></td></tr>
+<tr class="memitem:aad13a1796398ea39bac6325be81d7276"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#aad13a1796398ea39bac6325be81d7276">QCondition</a> = <a class="el" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a>(C &amp;condition) { <a class="el" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a> std::derived_from&lt;C, <a class="el" href="structecstasy_1_1query_1_1_condition_base.html">ecstasy::query::ConditionBase</a>&gt;; }</td></tr>
 <tr class="separator:aad13a1796398ea39bac6325be81d7276"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bed1a1d0a0ff0c74efb8cfaabf89123"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
 <tr class="memitem:a7bed1a1d0a0ff0c74efb8cfaabf89123"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a7bed1a1d0a0ff0c74efb8cfaabf89123">QConditionConst</a></td></tr>
@@ -258,7 +258,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00101">101</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00100">100</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
 
 </div>
 </div>
@@ -319,10 +319,10 @@ This will call <a class="el" href="namespaceecstasy_1_1query.html#a4c703ad1e1c38
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-25) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_queryable_need_adjust_8hpp_source.html#l00061">61</a> of file <a class="el" href="_queryable_need_adjust_8hpp_source.html">QueryableNeedAdjust.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        queryable.adjustMask(maxSize);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_queryable_need_adjust_8hpp_source.html#l00060">60</a> of file <a class="el" href="_queryable_need_adjust_8hpp_source.html">QueryableNeedAdjust.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        queryable.adjustMask(maxSize);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -382,11 +382,11 @@ This will call <a class="el" href="namespaceecstasy_1_1query.html#a4c703ad1e1c38
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-25) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_queryable_need_adjust_8hpp_source.html#l00053">53</a> of file <a class="el" href="_queryable_need_adjust_8hpp_source.html">QueryableNeedAdjust.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        (void)queryable;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        (void)maxSize;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_queryable_need_adjust_8hpp_source.html#l00052">52</a> of file <a class="el" href="_queryable_need_adjust_8hpp_source.html">QueryableNeedAdjust.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        (void)queryable;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        (void)maxSize;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -603,13 +603,13 @@ template&lt;typename LeftType , typename LeftValueType , LeftValueType LeftType:
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00085">85</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">return</span> Comparer{}(<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/manip/left.html">left</a>.*<a class="code" href="namespaceecstasy_1_1query.html#a49092a2e221825548a9fbb006b454b64">ptr</a>, <a class="code" href="namespaceecstasy_1_1query.html#ad9a8105fef6995f460996cf0ee301ea7">Right</a>);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00084">84</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">return</span> Comparer{}(<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/manip/left.html">left</a>.*<a class="code" href="namespaceecstasy_1_1query.html#a49092a2e221825548a9fbb006b454b64">ptr</a>, <a class="code" href="namespaceecstasy_1_1query.html#ad9a8105fef6995f460996cf0ee301ea7">Right</a>);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
 <div class="ttc" id="aleft_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/manip/left.html">std::left</a></div><div class="ttdeci">T left(T... args)</div></div>
-<div class="ttc" id="anamespaceecstasy_1_1query_html_a49092a2e221825548a9fbb006b454b64"><div class="ttname"><a href="namespaceecstasy_1_1query.html#a49092a2e221825548a9fbb006b454b64">ecstasy::query::ptr</a></div><div class="ttdeci">ptr</div><div class="ttdef"><b>Definition:</b> <a href="conditions_2_condition_8hpp_source.html#l00047">Condition.hpp:47</a></div></div>
-<div class="ttc" id="anamespaceecstasy_1_1query_html_ad9a8105fef6995f460996cf0ee301ea7"><div class="ttname"><a href="namespaceecstasy_1_1query.html#ad9a8105fef6995f460996cf0ee301ea7">ecstasy::query::Right</a></div><div class="ttdeci">RightType Right</div><div class="ttdef"><b>Definition:</b> <a href="conditions_2_condition_8hpp_source.html#l00101">Condition.hpp:101</a></div></div>
+<div class="ttc" id="anamespaceecstasy_1_1query_html_a49092a2e221825548a9fbb006b454b64"><div class="ttname"><a href="namespaceecstasy_1_1query.html#a49092a2e221825548a9fbb006b454b64">ecstasy::query::ptr</a></div><div class="ttdeci">ptr</div><div class="ttdef"><b>Definition:</b> <a href="conditions_2_condition_8hpp_source.html#l00046">Condition.hpp:46</a></div></div>
+<div class="ttc" id="anamespaceecstasy_1_1query_html_ad9a8105fef6995f460996cf0ee301ea7"><div class="ttname"><a href="namespaceecstasy_1_1query.html#ad9a8105fef6995f460996cf0ee301ea7">ecstasy::query::Right</a></div><div class="ttdeci">RightType Right</div><div class="ttdef"><b>Definition:</b> <a href="conditions_2_condition_8hpp_source.html#l00100">Condition.hpp:100</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -647,11 +647,11 @@ template&lt;typename LeftType , typename LeftValueType , LeftValueType LeftType:
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00103">103</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">return</span> Comparer{}(<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/manip/left.html">left</a>.*ptrLeft, <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/manip/left.html">right</a>.*<a class="code" href="namespaceecstasy_1_1query.html#a5d920c5c964c31c58dd89b01394f78c7">ptrRight</a>);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
-<div class="ttc" id="anamespaceecstasy_1_1query_html_a5d920c5c964c31c58dd89b01394f78c7"><div class="ttname"><a href="namespaceecstasy_1_1query.html#a5d920c5c964c31c58dd89b01394f78c7">ecstasy::query::ptrRight</a></div><div class="ttdeci">ptrRight</div><div class="ttdef"><b>Definition:</b> <a href="conditions_2_condition_8hpp_source.html#l00098">Condition.hpp:98</a></div></div>
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00102">102</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keywordflow">return</span> Comparer{}(<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/manip/left.html">left</a>.*ptrLeft, <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/manip/left.html">right</a>.*<a class="code" href="namespaceecstasy_1_1query.html#a5d920c5c964c31c58dd89b01394f78c7">ptrRight</a>);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div>
+<div class="ttc" id="anamespaceecstasy_1_1query_html_a5d920c5c964c31c58dd89b01394f78c7"><div class="ttname"><a href="namespaceecstasy_1_1query.html#a5d920c5c964c31c58dd89b01394f78c7">ecstasy::query::ptrRight</a></div><div class="ttdeci">ptrRight</div><div class="ttdef"><b>Definition:</b> <a href="conditions_2_condition_8hpp_source.html#l00097">Condition.hpp:97</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -679,10 +679,10 @@ template&lt;typename LeftType , typename LeftValueType , LeftValueType LeftType:
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00051">51</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">return</span> Comparer{}(Left, <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/manip/left.html">right</a>.*<a class="code" href="namespaceecstasy_1_1query.html#a49092a2e221825548a9fbb006b454b64">ptr</a>);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00050">50</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">return</span> Comparer{}(Left, <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/manip/left.html">right</a>.*<a class="code" href="namespaceecstasy_1_1query.html#a49092a2e221825548a9fbb006b454b64">ptr</a>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -699,7 +699,7 @@ template&lt;typename LeftType , typename LeftValueType , LeftValueType LeftType:
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00032">32</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00031">31</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
 
 </div>
 </div>
@@ -715,7 +715,7 @@ template&lt;typename LeftType , typename LeftValueType , LeftValueType LeftType:
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00047">47</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00046">46</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
 
 </div>
 </div>
@@ -731,7 +731,7 @@ template&lt;typename LeftType , typename LeftValueType , LeftValueType LeftType:
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00064">64</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00063">63</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
 
 </div>
 </div>
@@ -747,7 +747,7 @@ template&lt;typename LeftType , typename LeftValueType , LeftValueType LeftType:
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00081">81</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00080">80</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
 
 </div>
 </div>
@@ -763,7 +763,7 @@ template&lt;typename LeftType , typename LeftValueType , LeftValueType LeftType:
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00098">98</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00097">97</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
 
 </div>
 </div>
@@ -779,7 +779,7 @@ template&lt;typename LeftType , typename LeftValueType , LeftValueType LeftType:
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00116">116</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00115">115</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
 
 </div>
 </div>
@@ -795,7 +795,7 @@ template&lt;typename LeftType , typename LeftValueType , LeftValueType LeftType:
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00134">134</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00133">133</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
 
 </div>
 </div>
@@ -811,7 +811,7 @@ template&lt;typename LeftType , typename LeftValueType , LeftValueType LeftType:
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00151">151</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00150">150</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
 
 </div>
 </div>
@@ -827,7 +827,7 @@ template&lt;typename LeftType , typename LeftValueType , LeftValueType LeftType:
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00169">169</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00168">168</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
 
 </div>
 </div>
@@ -863,7 +863,7 @@ template&lt;typename T &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-30) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_queryable_8hpp_source.html#l00074">74</a> of file <a class="el" href="_queryable_8hpp_source.html">Queryable.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_queryable_8hpp_source.html#l00071">71</a> of file <a class="el" href="_queryable_8hpp_source.html">Queryable.hpp</a>.</p>
 
 </div>
 </div>
@@ -899,7 +899,7 @@ template&lt;typename T &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-30) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_queryable_need_adjust_8hpp_source.html#l00092">92</a> of file <a class="el" href="_queryable_need_adjust_8hpp_source.html">QueryableNeedAdjust.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_queryable_need_adjust_8hpp_source.html#l00089">89</a> of file <a class="el" href="_queryable_need_adjust_8hpp_source.html">QueryableNeedAdjust.hpp</a>.</p>
 
 </div>
 </div>
@@ -916,8 +916,7 @@ template&lt;typename M &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a>(M &amp;modifier)</div>
-<div class="line">    {</div>
+<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a>(M &amp;modifier) {</div>
 <div class="line">        </div>
 <div class="line">        <a class="code" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a> Queryable&lt;M&gt;;</div>
 <div class="line"> </div>
@@ -955,7 +954,7 @@ template&lt;typename M &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00047">47</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00046">46</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
 
 </div>
 </div>
@@ -971,7 +970,7 @@ template&lt;typename M &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00098">98</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00097">97</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
 
 </div>
 </div>
@@ -984,16 +983,11 @@ template&lt;typename M &gt; </div>
 template&lt;typename C &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">concept ecstasy::query::QCondition</td>
+          <td class="memname">concept ecstasy::query::QCondition = <a class="el" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a>(C &amp;condition) { <a class="el" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a> std::derived_from&lt;C, <a class="el" href="structecstasy_1_1query_1_1_condition_base.html">ecstasy::query::ConditionBase</a>&gt;; }</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">requires</a>(C &amp;condition)</div>
-<div class="line">    {</div>
-<div class="line">        <a class="code" href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">requires</a> std::derived_from&lt;C, ecstasy::query::ConditionBase&gt;;</div>
-<div class="line">    }</div>
-<div class="ttc" id="anamespaceecstasy_1_1query_html_aca542f83c79330c15ccd3cde73bae4a0"><div class="ttname"><a href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">ecstasy::query::requires</a></div><div class="ttdeci">requires(std::is_member_function_pointer_v&lt; decltype(ptrLeft)&gt; &amp;&amp;std::is_member_function_pointer_v&lt; decltype(ptrRight)&gt;) struct Condition&lt; ptrLeft</div></div>
-</div><!-- fragment -->
+
 <p class="definition">Definition at line <a class="el" href="concepts_2_condition_8hpp_source.html#l00020">20</a> of file <a class="el" href="concepts_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
 
 </div>
@@ -1011,17 +1005,17 @@ template&lt;typename C &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">requires</a>(C &amp;condition)</div>
-<div class="line">    {</div>
+<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">requires</a>(C &amp;condition) {</div>
 <div class="line">        <a class="code" href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">requires</a> QCondition&lt;C&gt;;</div>
 <div class="line"> </div>
 <div class="line">        </div>
 <div class="line">        { <a class="code" href="namespaceecstasy_1_1query.html#aa87603f1ad1a8d5715a5354ac9255192">C::test</a>() } -&gt; std::same_as&lt;bool&gt;;</div>
 <div class="line">        </div>
 <div class="line">    }</div>
-<div class="ttc" id="anamespaceecstasy_1_1query_html_aa87603f1ad1a8d5715a5354ac9255192"><div class="ttname"><a href="namespaceecstasy_1_1query.html#aa87603f1ad1a8d5715a5354ac9255192">ecstasy::query::test</a></div><div class="ttdeci">static bool test(const LeftType &amp;left, const RightType &amp;right)</div><div class="ttdef"><b>Definition:</b> <a href="conditions_2_condition_8hpp_source.html#l00103">Condition.hpp:103</a></div></div>
+<div class="ttc" id="anamespaceecstasy_1_1query_html_aa87603f1ad1a8d5715a5354ac9255192"><div class="ttname"><a href="namespaceecstasy_1_1query.html#aa87603f1ad1a8d5715a5354ac9255192">ecstasy::query::test</a></div><div class="ttdeci">static bool test(const LeftType &amp;left, const RightType &amp;right)</div><div class="ttdef"><b>Definition:</b> <a href="conditions_2_condition_8hpp_source.html#l00102">Condition.hpp:102</a></div></div>
+<div class="ttc" id="anamespaceecstasy_1_1query_html_aca542f83c79330c15ccd3cde73bae4a0"><div class="ttname"><a href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">ecstasy::query::requires</a></div><div class="ttdeci">requires(std::is_member_function_pointer_v&lt; decltype(ptrLeft)&gt; &amp;&amp;std::is_member_function_pointer_v&lt; decltype(ptrRight)&gt;) struct Condition&lt; ptrLeft</div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="concepts_2_condition_8hpp_source.html#l00026">26</a> of file <a class="el" href="concepts_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="concepts_2_condition_8hpp_source.html#l00023">23</a> of file <a class="el" href="concepts_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
 
 </div>
 </div>
@@ -1038,8 +1032,7 @@ template&lt;typename C &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">requires</a>(C &amp;condition, <span class="keyword">const</span> <span class="keyword">typename</span> C::Left &amp;left)</div>
-<div class="line">    {</div>
+<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">requires</a>(C &amp;condition, <span class="keyword">const</span> <span class="keyword">typename</span> C::Left &amp;left) {</div>
 <div class="line">        <a class="code" href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">requires</a> QCondition&lt;C&gt;;</div>
 <div class="line"> </div>
 <div class="line">        <span class="keyword">typename</span> C::Left;</div>
@@ -1049,7 +1042,7 @@ template&lt;typename C &gt; </div>
 <div class="line">        </div>
 <div class="line">    }</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="concepts_2_condition_8hpp_source.html#l00036">36</a> of file <a class="el" href="concepts_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="concepts_2_condition_8hpp_source.html#l00032">32</a> of file <a class="el" href="concepts_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
 
 </div>
 </div>
@@ -1066,8 +1059,7 @@ template&lt;typename C &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">requires</a>(C &amp;condition, <span class="keyword">const</span> <span class="keyword">typename</span> C::Left &amp;left, <span class="keyword">const</span> <span class="keyword">typename</span> <a class="code" href="namespaceecstasy_1_1query.html#ad9a8105fef6995f460996cf0ee301ea7">C::Right</a> &amp;right)</div>
-<div class="line">    {</div>
+<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">requires</a>(C &amp;condition, <span class="keyword">const</span> <span class="keyword">typename</span> C::Left &amp;left, <span class="keyword">const</span> <span class="keyword">typename</span> <a class="code" href="namespaceecstasy_1_1query.html#ad9a8105fef6995f460996cf0ee301ea7">C::Right</a> &amp;right) {</div>
 <div class="line">        <a class="code" href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">requires</a> QCondition&lt;C&gt;;</div>
 <div class="line"> </div>
 <div class="line">        <span class="keyword">typename</span> C::Left;</div>
@@ -1078,7 +1070,7 @@ template&lt;typename C &gt; </div>
 <div class="line">        </div>
 <div class="line">    }</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="concepts_2_condition_8hpp_source.html#l00060">60</a> of file <a class="el" href="concepts_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="concepts_2_condition_8hpp_source.html#l00054">54</a> of file <a class="el" href="concepts_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
 
 </div>
 </div>
@@ -1095,8 +1087,7 @@ template&lt;typename C &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">requires</a>(C &amp;condition, <span class="keyword">const</span> <span class="keyword">typename</span> <a class="code" href="namespaceecstasy_1_1query.html#ad9a8105fef6995f460996cf0ee301ea7">C::Right</a> &amp;right)</div>
-<div class="line">    {</div>
+<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">requires</a>(C &amp;condition, <span class="keyword">const</span> <span class="keyword">typename</span> <a class="code" href="namespaceecstasy_1_1query.html#ad9a8105fef6995f460996cf0ee301ea7">C::Right</a> &amp;right) {</div>
 <div class="line">        <a class="code" href="namespaceecstasy_1_1query.html#aca542f83c79330c15ccd3cde73bae4a0">requires</a> QCondition&lt;C&gt;;</div>
 <div class="line"> </div>
 <div class="line">        <span class="keyword">typename</span> <a class="code" href="namespaceecstasy_1_1query.html#ad9a8105fef6995f460996cf0ee301ea7">C::Right</a>;</div>
@@ -1106,7 +1097,7 @@ template&lt;typename C &gt; </div>
 <div class="line">        </div>
 <div class="line">    }</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="concepts_2_condition_8hpp_source.html#l00048">48</a> of file <a class="el" href="concepts_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="concepts_2_condition_8hpp_source.html#l00043">43</a> of file <a class="el" href="concepts_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
 
 </div>
 </div>
@@ -1123,8 +1114,7 @@ template&lt;typename Q &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a>(Q &amp;queryable, Q <span class="keyword">const</span> &amp;cqueryable, <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> index)</div>
-<div class="line">    {</div>
+<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a>(Q &amp;queryable, Q <span class="keyword">const</span> &amp;cqueryable, <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> index) {</div>
 <div class="line">        </div>
 <div class="line">        <span class="keyword">typename</span> Q::QueryData;</div>
 <div class="line"> </div>
@@ -1165,8 +1155,7 @@ template&lt;typename Q &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a>(Q &amp;queryable, <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> maxSize)</div>
-<div class="line">    {</div>
+<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a>(Q &amp;queryable, <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> maxSize) {</div>
 <div class="line">        </div>
 <div class="line">        <a class="code" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a> Queryable&lt;Q&gt;;</div>
 <div class="line"> </div>

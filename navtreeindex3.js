@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"classecstasy_1_1query_1_1modifier_1_1_maybe.html#a4c037dcc696cddf56a3b1addab62f778":[5,0,0,1,0,2,0],
+"classecstasy_1_1query_1_1modifier_1_1_maybe.html#a75d9f7e63161bae8d017cf3565b19752":[5,0,0,1,0,2,8],
 "classecstasy_1_1query_1_1modifier_1_1_modifier.html":[5,0,0,1,0,3],
 "classecstasy_1_1query_1_1modifier_1_1_modifier.html#a1c415dc2b13be6bd002322febc0d8fa2":[5,0,0,1,0,3,0],
 "classecstasy_1_1query_1_1modifier_1_1_not.html":[5,0,0,1,0,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html#a76f283ec44bc6e7fbba4f0e34c394e36":[5,0,1,1,5,1,3],
 "classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html#ad1d21bfbfcdd3962f373dfad8a224a9f":[5,0,1,1,5,1,5],
 "classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html#af6d37f2c7108ca88706bcfbed5f28dd7":[5,0,1,1,5,1,4],
-"classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html#aff0a84264df0c931fc6f1ecd4a335540":[5,0,1,1,5,1,7],
-"classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html#aff376c43becb35f6d121df868d55c5f0":[5,0,1,1,5,1,0],
-"classutil_1_1serialization_1_1_serializer.html":[5,0,1,1,6]
+"classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html#aff0a84264df0c931fc6f1ecd4a335540":[5,0,1,1,5,1,7]
 };

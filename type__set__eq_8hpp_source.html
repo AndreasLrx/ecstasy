@@ -96,62 +96,60 @@ $(document).ready(function(){initNavTree('type__set__eq_8hpp_source.html',''); i
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceutil_1_1meta.html">util::meta</a></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span>, <span class="keyword">typename</span>&gt;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structutil_1_1meta_1_1__type__set__eq.html">   30</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structutil_1_1meta_1_1__type__set__eq.html">_type_set_eq</a> : <span class="keyword">public</span> <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/integral_constant.html">std::false_type</a> {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    };</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// clang-format off</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T1, <span class="keyword">typename</span>... Ts1, <span class="keyword">typename</span>... Ts2&gt;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="structutil_1_1meta_1_1__type__set__eq_3_01std_1_1tuple_3_01_t1_00_01_ts1_8_8_8_01_4_00_01std_1_1tuple_3_01_ts2_8_8_8_01_4_01_4.html">   48</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structutil_1_1meta_1_1__type__set__eq.html">_type_set_eq</a>&lt;<a class="codeRef" href="http://en.cppreference.com/w/namespacestd.html">std</a>::tuple&lt;T1, Ts1...&gt;, <a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt;Ts2...&gt;&gt;: <span class="keyword">public</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/conditional.html">std::conditional_t</a>&lt;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="comment">// If</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            util::meta::contains&lt;T1, Ts2...&gt; &amp;&amp;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            ((sizeof...(Ts1) == 0) || _type_set_eq&lt;std::tuple&lt;Ts1...&gt;, std::tuple&lt;Ts2...&gt;&gt;::value),</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="comment">// Then</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            std::true_type,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="comment">// Else</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            std::false_type</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        &gt; {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    };</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="structutil_1_1meta_1_1__type__set__eq_3_01std_1_1tuple_3_4_00_01std_1_1tuple_3_4_01_4.html">   68</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structutil_1_1meta_1_1__type__set__eq.html">_type_set_eq</a>&lt;<a class="codeRef" href="http://en.cppreference.com/w/namespacestd.html">std</a>::tuple&lt;&gt;, <a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt;&gt;&gt; : <span class="keyword">public</span> <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/integral_constant.html">std::true_type</a> {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    };</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// clang-format on</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span>, <span class="keyword">typename</span>&gt;</div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="structutil_1_1meta_1_1type__set__eq.html">   83</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structutil_1_1meta_1_1type__set__eq.html">type_set_eq</a> : <span class="keyword">public</span> <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/integral_constant.html">std::false_type</a> {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    };</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structutil_1_1meta_1_1__type__set__eq.html">   30</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structutil_1_1meta_1_1__type__set__eq.html">_type_set_eq</a> : <span class="keyword">public</span> <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/integral_constant.html">std::false_type</a> {};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// clang-format off</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T1, <span class="keyword">typename</span>... Ts1, <span class="keyword">typename</span>... Ts2&gt;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="structutil_1_1meta_1_1__type__set__eq_3_01std_1_1tuple_3_01_t1_00_01_ts1_8_8_8_01_4_00_01std_1_1tuple_3_01_ts2_8_8_8_01_4_01_4.html">   47</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structutil_1_1meta_1_1__type__set__eq.html">_type_set_eq</a>&lt;<a class="codeRef" href="http://en.cppreference.com/w/namespacestd.html">std</a>::tuple&lt;T1, Ts1...&gt;, <a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt;Ts2...&gt;&gt;: <span class="keyword">public</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/conditional.html">std::conditional_t</a>&lt;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="comment">// If</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            util::meta::contains&lt;T1, Ts2...&gt; &amp;&amp;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            ((sizeof...(Ts1) == 0) || _type_set_eq&lt;std::tuple&lt;Ts1...&gt;, std::tuple&lt;Ts2...&gt;&gt;::value),</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="comment">// Then</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            std::true_type,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="comment">// Else</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            std::false_type</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        &gt; {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    };</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="structutil_1_1meta_1_1__type__set__eq_3_01std_1_1tuple_3_4_00_01std_1_1tuple_3_4_01_4.html">   67</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structutil_1_1meta_1_1__type__set__eq.html">_type_set_eq</a>&lt;<a class="codeRef" href="http://en.cppreference.com/w/namespacestd.html">std</a>::tuple&lt;&gt;, <a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt;&gt;&gt; : <span class="keyword">public</span> <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/integral_constant.html">std::true_type</a> {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    };</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// clang-format on</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span>, <span class="keyword">typename</span>&gt;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="structutil_1_1meta_1_1type__set__eq.html">   82</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structutil_1_1meta_1_1type__set__eq.html">type_set_eq</a> : <span class="keyword">public</span> <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/integral_constant.html">std::false_type</a> {};</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// clang-format off</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// clang-format off</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Ts1, <span class="keyword">typename</span>... Ts2&gt;</div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="structutil_1_1meta_1_1type__set__eq_3_01std_1_1tuple_3_01_ts1_8_8_8_01_4_00_01std_1_1tuple_3_01_ts2_8_8_8_01_4_01_4.html">  100</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structutil_1_1meta_1_1type__set__eq.html">type_set_eq</a>&lt;<a class="codeRef" href="http://en.cppreference.com/w/namespacestd.html">std</a>::tuple&lt;Ts1...&gt;, <a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt;Ts2...&gt;&gt; : <span class="keyword">public</span> </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/conditional.html">std::conditional_t</a>&lt; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="comment">// If</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        (sizeof...(Ts1) == sizeof...(Ts2)) &amp;&amp; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        _type_set_eq&lt;std::tuple&lt;Ts1...&gt;, std::tuple&lt;Ts2...&gt;&gt;::value,</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="comment">// Then</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        std::true_type, </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="comment">// Else</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        std::false_type &gt; {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    };</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">// clang-format on</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Ts1, <span class="keyword">typename</span> Ts2&gt;</div>
-<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="namespaceutil_1_1meta.html#a34455662741334860152218aafa749d4">  122</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> constexpr <a class="code" href="namespaceutil_1_1meta.html#a34455662741334860152218aafa749d4">type_set_eq_v</a> = <a class="code" href="structutil_1_1meta_1_1type__set__eq.html">type_set_eq&lt;Ts1, Ts2&gt;::value</a>;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;} <span class="comment">// namespace util::meta</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !UTIL_META_TYPE_SET_EQ_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Ts1, <span class="keyword">typename</span>... Ts2&gt;</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="structutil_1_1meta_1_1type__set__eq_3_01std_1_1tuple_3_01_ts1_8_8_8_01_4_00_01std_1_1tuple_3_01_ts2_8_8_8_01_4_01_4.html">   98</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structutil_1_1meta_1_1type__set__eq.html">type_set_eq</a>&lt;<a class="codeRef" href="http://en.cppreference.com/w/namespacestd.html">std</a>::tuple&lt;Ts1...&gt;, <a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt;Ts2...&gt;&gt; : <span class="keyword">public</span> </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/conditional.html">std::conditional_t</a>&lt; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="comment">// If</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        (sizeof...(Ts1) == sizeof...(Ts2)) &amp;&amp; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        _type_set_eq&lt;std::tuple&lt;Ts1...&gt;, std::tuple&lt;Ts2...&gt;&gt;::value,</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="comment">// Then</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        std::true_type, </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="comment">// Else</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        std::false_type &gt; {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    };</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// clang-format on</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Ts1, <span class="keyword">typename</span> Ts2&gt;</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="namespaceutil_1_1meta.html#a34455662741334860152218aafa749d4">  120</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> constexpr <a class="code" href="namespaceutil_1_1meta.html#a34455662741334860152218aafa749d4">type_set_eq_v</a> = <a class="code" href="structutil_1_1meta_1_1type__set__eq.html">type_set_eq&lt;Ts1, Ts2&gt;::value</a>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;} <span class="comment">// namespace util::meta</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !UTIL_META_TYPE_SET_EQ_HPP_ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aconditional_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/types/conditional.html">std::conditional_t</a></div></div>
 <div class="ttc" id="acontains_8hpp_html"><div class="ttname"><a href="contains_8hpp.html">contains.hpp</a></div></div>
 <div class="ttc" id="aintegral_constant_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/types/integral_constant.html">std::false_type</a></div></div>
 <div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="http://en.cppreference.com/w/namespacestd.html">std</a></div></div>
 <div class="ttc" id="anamespaceutil_1_1meta_html"><div class="ttname"><a href="namespaceutil_1_1meta.html">util::meta</a></div><div class="ttdoc">Namespace regrouping all meta programmation helper types.</div><div class="ttdef"><b>Definition:</b> <a href="add__optional_8hpp_source.html#l00017">add_optional.hpp:18</a></div></div>
-<div class="ttc" id="anamespaceutil_1_1meta_html_a34455662741334860152218aafa749d4"><div class="ttname"><a href="namespaceutil_1_1meta.html#a34455662741334860152218aafa749d4">util::meta::type_set_eq_v</a></div><div class="ttdeci">constexpr bool type_set_eq_v</div><div class="ttdoc">Helper for type_set_eq.</div><div class="ttdef"><b>Definition:</b> <a href="type__set__eq_8hpp_source.html#l00122">type_set_eq.hpp:122</a></div></div>
+<div class="ttc" id="anamespaceutil_1_1meta_html_a34455662741334860152218aafa749d4"><div class="ttname"><a href="namespaceutil_1_1meta.html#a34455662741334860152218aafa749d4">util::meta::type_set_eq_v</a></div><div class="ttdeci">constexpr bool type_set_eq_v</div><div class="ttdoc">Helper for type_set_eq.</div><div class="ttdef"><b>Definition:</b> <a href="type__set__eq_8hpp_source.html#l00120">type_set_eq.hpp:120</a></div></div>
 <div class="ttc" id="astructutil_1_1meta_1_1__type__set__eq_html"><div class="ttname"><a href="structutil_1_1meta_1_1__type__set__eq.html">util::meta::_type_set_eq</a></div><div class="ttdef"><b>Definition:</b> <a href="type__set__eq_8hpp_source.html#l00030">type_set_eq.hpp:30</a></div></div>
-<div class="ttc" id="astructutil_1_1meta_1_1type__set__eq_html"><div class="ttname"><a href="structutil_1_1meta_1_1type__set__eq.html">util::meta::type_set_eq</a></div><div class="ttdoc">Test if two tuple types contains the exact same type independently of the order.</div><div class="ttdef"><b>Definition:</b> <a href="type__set__eq_8hpp_source.html#l00083">type_set_eq.hpp:83</a></div></div>
+<div class="ttc" id="astructutil_1_1meta_1_1type__set__eq_html"><div class="ttname"><a href="structutil_1_1meta_1_1type__set__eq.html">util::meta::type_set_eq</a></div><div class="ttdoc">Test if two tuple types contains the exact same type independently of the order.</div><div class="ttdef"><b>Definition:</b> <a href="type__set__eq_8hpp_source.html#l00082">type_set_eq.hpp:82</a></div></div>
 <div class="ttc" id="atuple_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

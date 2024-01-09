@@ -210,6 +210,22 @@ Queryable</h2>
 <div class="ttc" id="asize_t_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a></div></div>
 </div><!-- fragment --><p>References: <a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">Queryable</a></p>
 <h2><a class="anchor" id="autotoc_md18"></a>
+Batch Query</h2>
+<p>A batch query is a multi threaded query. Instead of iterating over the matching entities yourself in the current thread you can use the splitThreads method. It split the iteration over multiple threads of a custom batch size.</p>
+<p>In the following example, if you have 167 entities with a position and velocity components, it will starts 4 threads (4 batches) and execute the function given in parameter:</p>
+<ul>
+<li>Thread 1: 1-50</li>
+<li>Thread 2: 51-100</li>
+<li>Thread 3: 101-150</li>
+<li>Thread 4: 151-167</li>
+</ul>
+<div class="fragment"><div class="line"><span class="comment">// Will make one thread for every 50 matching entities</span></div>
+<div class="line">registry.query&lt;Position, Velocity&gt;().splitThreads(50, [](<span class="keyword">auto</span> components) {</div>
+<div class="line">    <span class="keyword">auto</span> [position, velocity] = components;</div>
+<div class="line">    position.x += velocity.x;</div>
+<div class="line">    position.y += velocity.y;</div>
+<div class="line">});</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md19"></a>
 Modifier</h2>
 <p><a class="el" href="namespaceecstasy_1_1query.html#a761ae07d0a2b58e9277539d7a3722d3a">Modifiers</a> is another ecstasy concept allowing to perform more complex queries in the registry. They must also match the <a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">queryable</a> concept but they are in fact queryable wrappers.</p>
 <p>If you are familiar with the decorators concepts in Python, Java, or any other language you can see the modifiers as a Queryable decorator:</p>
@@ -254,7 +270,7 @@ Modifier</h2>
 <div class="line">};</div>
 <div class="ttc" id="anamespaceecstasy_1_1query_html_a761ae07d0a2b58e9277539d7a3722d3a"><div class="ttname"><a href="namespaceecstasy_1_1query.html#a761ae07d0a2b58e9277539d7a3722d3a">ecstasy::query::Modifier</a></div><div class="ttdeci">concept Modifier</div><div class="ttdoc">Defines a query modifier type.</div><div class="ttdef"><b>Definition:</b> <a href="concepts_2_modifier_8hpp_source.html#l00029">Modifier.hpp:29</a></div></div>
 </div><!-- fragment --><p>References: <a class="el" href="namespaceecstasy_1_1query.html#a761ae07d0a2b58e9277539d7a3722d3a">Modifier</a>, <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">Maybe</a> , <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html">Not</a>, <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_or.html">Or</a>, <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_xor.html">Xor</a>, <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_and.html">And</a></p>
-<h2><a class="anchor" id="autotoc_md19"></a>
+<h2><a class="anchor" id="autotoc_md20"></a>
 Condition</h2>
 <p><a class="el" href="namespaceecstasy_1_1query.html#aad13a1796398ea39bac6325be81d7276">Condition</a> is (yet) another ecstasy concept allowing to perform conditions on the fetched data instead of on the presence of data. They are not queryables and are evaluated when iterating on the query.</p>
 <p>When you are using <a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">queryables</a> or <a class="el" href="namespaceecstasy_1_1query.html#a761ae07d0a2b58e9277539d7a3722d3a">modifiers</a> the query performs verification on the presence of the component and not on the component state. The conditions however operates on the component state. This is just syntactic sugar to remove one small line in your code.</p>

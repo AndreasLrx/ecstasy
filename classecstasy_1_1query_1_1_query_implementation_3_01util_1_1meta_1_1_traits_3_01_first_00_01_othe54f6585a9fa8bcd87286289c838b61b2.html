@@ -88,6 +88,7 @@ $(document).ready(function(){initNavTree('classecstasy_1_1query_1_1_query_implem
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othed39677fb8364e5f0798e5f1d6a55f46f.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -134,6 +135,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afff3500e9be1c206afcee82c9bac8763"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#a9618fba3fe0950d41ba2c57199fbba76">QueryData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#afff3500e9be1c206afcee82c9bac8763">getQueryData</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> index)</td></tr>
 <tr class="memdesc:afff3500e9be1c206afcee82c9bac8763"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1query_1_1_query.html">Query</a> the components associated to the given entity.  <a href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#afff3500e9be1c206afcee82c9bac8763">More...</a><br /></td></tr>
 <tr class="separator:afff3500e9be1c206afcee82c9bac8763"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa682f730edc99ed1b7c17c4c8aa1f988"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
+<tr class="memitem:aa682f730edc99ed1b7c17c4c8aa1f988"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#aa682f730edc99ed1b7c17c4c8aa1f988">splitThreads</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> batchSize, F &amp;&amp;fct, bool wait=true)</td></tr>
+<tr class="memdesc:aa682f730edc99ed1b7c17c4c8aa1f988"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split the query in multiple batch of <code>batchSize</code> matching entities.  <a href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#aa682f730edc99ed1b7c17c4c8aa1f988">More...</a><br /></td></tr>
+<tr class="separator:aa682f730edc99ed1b7c17c4c8aa1f988"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -141,6 +146,12 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:ac24327d424c23d1ab0faff4445cf1251"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#a9618fba3fe0950d41ba2c57199fbba76">QueryData</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#ac24327d424c23d1ab0faff4445cf1251">get_components</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> index, <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/integer_sequence.html">std::index_sequence</a>&lt; Indices... &gt;) const</td></tr>
 <tr class="memdesc:ac24327d424c23d1ab0faff4445cf1251"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the components from the storages tuple.  <a href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#ac24327d424c23d1ab0faff4445cf1251">More...</a><br /></td></tr>
 <tr class="separator:ac24327d424c23d1ab0faff4445cf1251"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a6fafc018a294f4594384834f3ee65692"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
+<tr class="memitem:a6fafc018a294f4594384834f3ee65692"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#a6fafc018a294f4594384834f3ee65692">processBatch</a> (Iterator start, Iterator <a class="el" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#ac0688ebb50b374cdc7076a0ecfda6d85">end</a>, F &amp;&amp;fct)</td></tr>
+<tr class="separator:a6fafc018a294f4594384834f3ee65692"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -233,9 +244,9 @@ template&lt;Queryable First, Queryable... Others, typename... Conditions&gt; </d
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            this-&gt;<a class="code" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#a3db2ddd41e6a9d39a8070b2f7136e9ad">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#a0acc77fa3f0158956aafb770f5ed7399">push</a>(<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            this-&gt;<a class="code" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#a13797156e32454904eb6625cf572995d">_begin</a> = this-&gt;<a class="code" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#a3db2ddd41e6a9d39a8070b2f7136e9ad">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#a90f9991829f5f5cb4d24c5213b6ba829">firstSet</a>();</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        }</div>
-<div class="ttc" id="aclassecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2_html_a13797156e32454904eb6625cf572995d"><div class="ttname"><a href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#a13797156e32454904eb6625cf572995d">ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt; &gt;::_begin</a></div><div class="ttdeci">size_t _begin</div><div class="ttdef"><b>Definition:</b> <a href="_query_8hpp_source.html#l00425">Query.hpp:425</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2_html_a3db2ddd41e6a9d39a8070b2f7136e9ad"><div class="ttname"><a href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#a3db2ddd41e6a9d39a8070b2f7136e9ad">ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt; &gt;::_mask</a></div><div class="ttdeci">util::BitSet _mask</div><div class="ttdef"><b>Definition:</b> <a href="_query_8hpp_source.html#l00423">Query.hpp:423</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2_html_accb93797207f963232439109b7a369e1"><div class="ttname"><a href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#accb93797207f963232439109b7a369e1">ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt; &gt;::_storages</a></div><div class="ttdeci">std::tuple&lt; First &amp;, Others &amp;... &gt; _storages</div><div class="ttdef"><b>Definition:</b> <a href="_query_8hpp_source.html#l00424">Query.hpp:424</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2_html_a13797156e32454904eb6625cf572995d"><div class="ttname"><a href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#a13797156e32454904eb6625cf572995d">ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt; &gt;::_begin</a></div><div class="ttdeci">size_t _begin</div><div class="ttdef"><b>Definition:</b> <a href="_query_8hpp_source.html#l00471">Query.hpp:471</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2_html_a3db2ddd41e6a9d39a8070b2f7136e9ad"><div class="ttname"><a href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#a3db2ddd41e6a9d39a8070b2f7136e9ad">ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt; &gt;::_mask</a></div><div class="ttdeci">util::BitSet _mask</div><div class="ttdef"><b>Definition:</b> <a href="_query_8hpp_source.html#l00469">Query.hpp:469</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2_html_accb93797207f963232439109b7a369e1"><div class="ttname"><a href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#accb93797207f963232439109b7a369e1">ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt; &gt;::_storages</a></div><div class="ttdeci">std::tuple&lt; First &amp;, Others &amp;... &gt; _storages</div><div class="ttdef"><b>Definition:</b> <a href="_query_8hpp_source.html#l00470">Query.hpp:470</a></div></div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_a0acc77fa3f0158956aafb770f5ed7399"><div class="ttname"><a href="classutil_1_1_bit_set.html#a0acc77fa3f0158956aafb770f5ed7399">util::BitSet::push</a></div><div class="ttdeci">BitSet &amp; push(bool value)</div><div class="ttdoc">Adds the given bit to the end of the set.</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8cpp_source.html#l00175">BitSet.cpp:175</a></div></div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_a90f9991829f5f5cb4d24c5213b6ba829"><div class="ttname"><a href="classutil_1_1_bit_set.html#a90f9991829f5f5cb4d24c5213b6ba829">util::BitSet::firstSet</a></div><div class="ttdeci">BIT_SET_CONSTEXPR std::size_t firstSet(std::size_t start=0) const</div><div class="ttdoc">Finds the first set bit in the set, starting from (and including) start.</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8hpp_source.html#l00229">BitSet.hpp:229</a></div></div>
 </div><!-- fragment -->
@@ -292,8 +303,8 @@ template&lt;Queryable First, Queryable... Others, typename... Conditions&gt; </d
 <p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00346">346</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                                                             : <a class="code" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#accb93797207f963232439109b7a369e1">_storages</a>(first, others...)</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        {</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            <span class="keywordflow">if</span> constexpr (<a class="code" href="namespaceecstasy_1_1query.html#a3d41373b2db15c07621fbe36544701f5">is_queryable_with_adjust_v</a>&lt;</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                              First&gt; || <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/disjunction.html">std::disjunction_v</a>&lt;is_queryable_with_adjust&lt;Others&gt;...&gt;) {</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            <span class="keywordflow">if</span> constexpr (is_queryable_with_adjust_v&lt;First&gt;</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                || <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/disjunction.html">std::disjunction_v</a>&lt;is_queryable_with_adjust&lt;Others&gt;...&gt;) {</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                <span class="keywordtype">size_t</span> maxSize = <a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/max.html">std::max</a>({first.getMask().<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/size.html">size</a>(), others.getMask().size()...});</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                <a class="code" href="namespaceecstasy_1_1query.html#a4c703ad1e1c3899f179ed7702a365254">adjustMask</a>(first, maxSize);</div>
@@ -308,8 +319,7 @@ template&lt;Queryable First, Queryable... Others, typename... Conditions&gt; </d
 <div class="ttc" id="aclassutil_1_1_bit_set_html"><div class="ttname"><a href="classutil_1_1_bit_set.html">util::BitSet</a></div><div class="ttdoc">Mimics the API of std::bitset but with the dynamic properties of std::vector&lt;bool&gt;</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8hpp_source.html#l00035">BitSet.hpp:35</a></div></div>
 <div class="ttc" id="adisjunction_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/types/disjunction.html">std::disjunction_v</a></div><div class="ttdeci">T disjunction_v</div></div>
 <div class="ttc" id="amax_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/algorithm/max.html">std::max</a></div><div class="ttdeci">T max(T... args)</div></div>
-<div class="ttc" id="anamespaceecstasy_1_1query_html_a3d41373b2db15c07621fbe36544701f5"><div class="ttname"><a href="namespaceecstasy_1_1query.html#a3d41373b2db15c07621fbe36544701f5">ecstasy::query::is_queryable_with_adjust_v</a></div><div class="ttdeci">static constexpr bool is_queryable_with_adjust_v</div><div class="ttdoc">Helper for is_queryable_with_adjust&lt;T&gt;::value.</div><div class="ttdef"><b>Definition:</b> <a href="_queryable_need_adjust_8hpp_source.html#l00092">QueryableNeedAdjust.hpp:92</a></div></div>
-<div class="ttc" id="anamespaceecstasy_1_1query_html_a4c703ad1e1c3899f179ed7702a365254"><div class="ttname"><a href="namespaceecstasy_1_1query.html#a4c703ad1e1c3899f179ed7702a365254">ecstasy::query::adjustMask</a></div><div class="ttdeci">constexpr void adjustMask(T &amp;queryable, size_t maxSize)</div><div class="ttdoc">Adjust the queryable mask if needed.</div><div class="ttdef"><b>Definition:</b> <a href="_queryable_need_adjust_8hpp_source.html#l00053">QueryableNeedAdjust.hpp:53</a></div></div>
+<div class="ttc" id="anamespaceecstasy_1_1query_html_a4c703ad1e1c3899f179ed7702a365254"><div class="ttname"><a href="namespaceecstasy_1_1query.html#a4c703ad1e1c3899f179ed7702a365254">ecstasy::query::adjustMask</a></div><div class="ttdeci">constexpr void adjustMask(T &amp;queryable, size_t maxSize)</div><div class="ttdoc">Adjust the queryable mask if needed.</div><div class="ttdef"><b>Definition:</b> <a href="_queryable_need_adjust_8hpp_source.html#l00052">QueryableNeedAdjust.hpp:52</a></div></div>
 <div class="ttc" id="asize_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/iterator/size.html">std::size</a></div><div class="ttdeci">T size(T... args)</div></div>
 </div><!-- fragment -->
 </div>
@@ -439,10 +449,10 @@ template&lt;size_t... Indices&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-20) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00438">438</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        {</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;            <span class="keywordflow">return</span> {std::get&lt;Indices&gt;(<a class="code" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#accb93797207f963232439109b7a369e1">_storages</a>).getQueryData(index)...};</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00491">491</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;        {</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;            <span class="keywordflow">return</span> {std::get&lt;Indices&gt;(<a class="code" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#accb93797207f963232439109b7a369e1">_storages</a>).getQueryData(index)...};</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -527,8 +537,159 @@ template&lt;Queryable First, Queryable... Others, typename... Conditions&gt; </d
 <div class="fragment"><div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;        {</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#ac24327d424c23d1ab0faff4445cf1251">get_components</a>(index, <a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/integer_sequence.html">std::make_index_sequence</a>&lt;(<span class="keyword">sizeof</span>...(Others)) + 1&gt;());</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        }</div>
-<div class="ttc" id="aclassecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2_html_ac24327d424c23d1ab0faff4445cf1251"><div class="ttname"><a href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#ac24327d424c23d1ab0faff4445cf1251">ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt; &gt;::get_components</a></div><div class="ttdeci">QueryData get_components(std::size_t index, std::index_sequence&lt; Indices... &gt;) const</div><div class="ttdoc">Get the components from the storages tuple.</div><div class="ttdef"><b>Definition:</b> <a href="_query_8hpp_source.html#l00438">Query.hpp:438</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2_html_ac24327d424c23d1ab0faff4445cf1251"><div class="ttname"><a href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#ac24327d424c23d1ab0faff4445cf1251">ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt; &gt;::get_components</a></div><div class="ttdeci">QueryData get_components(std::size_t index, std::index_sequence&lt; Indices... &gt;) const</div><div class="ttdoc">Get the components from the storages tuple.</div><div class="ttdef"><b>Definition:</b> <a href="_query_8hpp_source.html#l00491">Query.hpp:491</a></div></div>
 <div class="ttc" id="ainteger_sequence_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/utility/integer_sequence.html">std::make_index_sequence</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6fafc018a294f4594384834f3ee65692"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fafc018a294f4594384834f3ee65692">&#9670;&nbsp;</a></span>processBatch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;Queryable First, Queryable... Others, typename... Conditions&gt; </div>
+<div class="memtemplate">
+template&lt;typename F &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="classecstasy_1_1query_1_1_query_implementation.html">ecstasy::query::QueryImplementation</a>&lt; <a class="el" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt; First, Others... &gt;, <a class="el" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt; Conditions... &gt; &gt;::processBatch </td>
+          <td>(</td>
+          <td class="paramtype">Iterator&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Iterator&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramname"><em>fct</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00474">474</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;        {</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = start; i != <a class="code" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#ac0688ebb50b374cdc7076a0ecfda6d85">end</a>; ++i)</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;                fct(*i);</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;        }</div>
+<div class="ttc" id="aclassecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2_html_ac0688ebb50b374cdc7076a0ecfda6d85"><div class="ttname"><a href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#ac0688ebb50b374cdc7076a0ecfda6d85">ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt; &gt;::end</a></div><div class="ttdeci">Iterator end() const noexcept</div><div class="ttdoc">Get the end operator of the valid entities.</div><div class="ttdef"><b>Definition:</b> <a href="_query_8hpp_source.html#l00385">Query.hpp:385</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa682f730edc99ed1b7c17c4c8aa1f988"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa682f730edc99ed1b7c17c4c8aa1f988">&#9670;&nbsp;</a></span>splitThreads()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;Queryable First, Queryable... Others, typename... Conditions&gt; </div>
+<div class="memtemplate">
+template&lt;typename F &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classecstasy_1_1query_1_1_query_implementation.html">ecstasy::query::QueryImplementation</a>&lt; <a class="el" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt; First, Others... &gt;, <a class="el" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt; Conditions... &gt; &gt;::splitThreads </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a>&#160;</td>
+          <td class="paramname"><em>batchSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramname"><em>fct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>wait</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Split the query in multiple batch of <code>batchSize</code> matching entities. </p>
+<p>Each batch is executed in a separate thread.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This doesn't ensure thread safety if you modify the same value from different entities (therefore different threads). </dd></dl>
+<dl class="section note"><dt>Note</dt><dd></dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">F</td><td>Type of the function applied on each matching entity.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">batchSize</td><td>Max size of each batch. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fct</td><td>Function applied on each matching entity. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">wait</td><td>Whether this method must be synchronous (wait all threads to terminate) or not.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-01-08) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00440">440</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        {</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;            Iterator <a class="code" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#ac0688ebb50b374cdc7076a0ecfda6d85">end</a> = this-&gt;<a class="code" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#ac0688ebb50b374cdc7076a0ecfda6d85">end</a>();</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;            Iterator current = this-&gt;<a class="code" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#a2dcd2ac68aea929a423a2c3d1a534439">begin</a>();</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;            Iterator currentBatchStart = current;</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;            <span class="keywordtype">size_t</span> currentBatchSize = 0;</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;            <a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector&lt;std::thread&gt;</a> threads;</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160; </div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;            <span class="keywordflow">while</span> (current != <a class="code" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#ac0688ebb50b374cdc7076a0ecfda6d85">end</a>) {</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;                ++currentBatchSize;</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;                <span class="comment">// Find the next element (which may be the end sentinel)</span></div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;                ++current;</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;                <span class="comment">// Batch full, we start a new thread and reset the current batch informations</span></div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                <span class="keywordflow">if</span> (currentBatchSize == batchSize) {</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;                    threads.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/emplace_back.html">emplace_back</a>(processBatch&lt;F&gt;, currentBatchStart, current, fct);</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                    currentBatchSize = 0;</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;                    currentBatchStart = current;</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;                }</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;            }</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160; </div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;            <span class="keywordflow">if</span> (currentBatchSize &gt; 0)</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;                threads.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/emplace_back.html">emplace_back</a>(processBatch&lt;F&gt;, currentBatchStart, current, fct);</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160; </div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;            <span class="keywordflow">if</span> (wait)</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;thread : threads)</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;                    thread.join();</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;        }</div>
+<div class="ttc" id="aclassecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2_html_a2dcd2ac68aea929a423a2c3d1a534439"><div class="ttname"><a href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html#a2dcd2ac68aea929a423a2c3d1a534439">ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt; &gt;::begin</a></div><div class="ttdeci">Iterator begin() const noexcept</div><div class="ttdoc">Get the start operator of the valid entities.</div><div class="ttdef"><b>Definition:</b> <a href="_query_8hpp_source.html#l00372">Query.hpp:372</a></div></div>
+<div class="ttc" id="aemplace_back_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/vector/emplace_back.html">std::vector::emplace_back</a></div><div class="ttdeci">T emplace_back(T... args)</div></div>
+<div class="ttc" id="avector_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -555,7 +716,7 @@ template&lt;Queryable First, Queryable... Others, typename... Conditions&gt; </d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00425">425</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00471">471</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
 
 </div>
 </div>
@@ -581,7 +742,7 @@ template&lt;Queryable First, Queryable... Others, typename... Conditions&gt; </d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00423">423</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00469">469</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
 
 </div>
 </div>
@@ -607,7 +768,7 @@ template&lt;Queryable First, Queryable... Others, typename... Conditions&gt; </d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00424">424</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00470">470</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
 
 </div>
 </div>

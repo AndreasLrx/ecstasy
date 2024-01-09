@@ -149,14 +149,14 @@ Getting Started</h1>
 <div class="ttc" id="aclassecstasy_1_1_entity_html"><div class="ttname"><a href="classecstasy_1_1_entity.html">ecstasy::Entity</a></div><div class="ttdoc">Encapsulate an index to an entity.</div><div class="ttdef"><b>Definition:</b> <a href="_entity_8hpp_source.html#l00035">Entity.hpp:35</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_i_system_html"><div class="ttname"><a href="classecstasy_1_1_i_system.html">ecstasy::ISystem</a></div><div class="ttdoc">System interface, base class of all systems.</div><div class="ttdef"><b>Definition:</b> <a href="_i_system_8hpp_source.html#l00026">ISystem.hpp:26</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_i_system_html_aa9cf50e42a827f26e5d7e2c5d7fe9c46"><div class="ttname"><a href="classecstasy_1_1_i_system.html#aa9cf50e42a827f26e5d7e2c5d7fe9c46">ecstasy::ISystem::run</a></div><div class="ttdeci">virtual void run(Registry &amp;registry)=0</div><div class="ttdoc">Run the system.</div></div>
-<div class="ttc" id="aclassecstasy_1_1_registry_1_1_entity_builder_html_a9a9b131844a18902f64eaf941bf693fa"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_entity_builder.html#a9a9b131844a18902f64eaf941bf693fa">ecstasy::Registry::EntityBuilder::with</a></div><div class="ttdeci">EntityBuilder &amp; with(Args &amp;&amp;...args)</div><div class="ttdoc">Add a component to the builder target entity.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00379">Registry.hpp:379</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_1_1_entity_builder_html_a9a9b131844a18902f64eaf941bf693fa"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_entity_builder.html#a9a9b131844a18902f64eaf941bf693fa">ecstasy::Registry::EntityBuilder::with</a></div><div class="ttdeci">EntityBuilder &amp; with(Args &amp;&amp;...args)</div><div class="ttdoc">Add a component to the builder target entity.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00377">Registry.hpp:377</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html"><div class="ttname"><a href="classecstasy_1_1_registry.html">ecstasy::Registry</a></div><div class="ttdoc">Base of an ECS architecture.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00053">Registry.hpp:53</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a47b4f8718083b99319ff342011e9b110"><div class="ttname"><a href="classecstasy_1_1_registry.html#a47b4f8718083b99319ff342011e9b110">ecstasy::Registry::entityBuilder</a></div><div class="ttdeci">EntityBuilder entityBuilder()</div><div class="ttdoc">Create a new entity builder.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8cpp_source.html#l00033">Registry.cpp:33</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a5595f1c0811c0d7f658c01f49da8dc37"><div class="ttname"><a href="classecstasy_1_1_registry.html#a5595f1c0811c0d7f658c01f49da8dc37">ecstasy::Registry::runSystems</a></div><div class="ttdeci">void runSystems()</div><div class="ttdoc">Run all systems present in the registry.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8cpp_source.html#l00085">Registry.cpp:85</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_a84e0f98f2b37e6aa17fd320d443127f0"><div class="ttname"><a href="classecstasy_1_1_registry.html#a84e0f98f2b37e6aa17fd320d443127f0">ecstasy::Registry::addSystem</a></div><div class="ttdeci">S &amp; addSystem(Args &amp;&amp;...args)</div><div class="ttdoc">Add a new system in the registry.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00677">Registry.hpp:677</a></div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md21"></a>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_a84e0f98f2b37e6aa17fd320d443127f0"><div class="ttname"><a href="classecstasy_1_1_registry.html#a84e0f98f2b37e6aa17fd320d443127f0">ecstasy::Registry::addSystem</a></div><div class="ttdeci">S &amp; addSystem(Args &amp;&amp;...args)</div><div class="ttdoc">Add a new system in the registry.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00670">Registry.hpp:670</a></div></div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md22"></a>
 Using entities</h1>
-<h2><a class="anchor" id="autotoc_md22"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 Creating entities</h2>
 <p>There is 3 ways to create new entities in the registry:</p>
 <ul>
@@ -191,8 +191,8 @@ Since the <a class="el" href="classecstasy_1_1_entities_1_1_builder.html">entiti
 <div class="ttc" id="aclassecstasy_1_1_entities_html_a46b127b2cd6eeeae08d6b513d4742fe1"><div class="ttname"><a href="classecstasy_1_1_entities.html#a46b127b2cd6eeeae08d6b513d4742fe1">ecstasy::Entities::builder</a></div><div class="ttdeci">Builder builder()</div><div class="ttdoc">Create a new entity builder.</div><div class="ttdef"><b>Definition:</b> <a href="_entities_8cpp_source.html#l00064">Entities.cpp:64</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_1_1_entity_builder_html_ad6baf09aa8fb77d6c470295f02859aaf"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_entity_builder.html#ad6baf09aa8fb77d6c470295f02859aaf">ecstasy::Registry::EntityBuilder::build</a></div><div class="ttdeci">Entity build()</div><div class="ttdoc">Finalize the entity, making it alive.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8cpp_source.html#l00022">Registry.cpp:22</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a8bb4d756e09315c730fc230e6a5bd53a"><div class="ttname"><a href="classecstasy_1_1_registry.html#a8bb4d756e09315c730fc230e6a5bd53a">ecstasy::Registry::getEntities</a></div><div class="ttdeci">const Entities &amp; getEntities() const</div><div class="ttdoc">Get the Entities resource.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8cpp_source.html#l00038">Registry.cpp:38</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_ad6b0a8d29a43168653502dfc426bacc8"><div class="ttname"><a href="classecstasy_1_1_registry.html#ad6b0a8d29a43168653502dfc426bacc8">ecstasy::Registry::getStorage</a></div><div class="ttdeci">const getStorageType&lt; C &gt; &amp; getStorage() const</div><div class="ttdoc">Get the Storage for the component type C.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00786">Registry.hpp:786</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md23"></a>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_ad6b0a8d29a43168653502dfc426bacc8"><div class="ttname"><a href="classecstasy_1_1_registry.html#ad6b0a8d29a43168653502dfc426bacc8">ecstasy::Registry::getStorage</a></div><div class="ttdeci">const getStorageType&lt; C &gt; &amp; getStorage() const</div><div class="ttdoc">Get the Storage for the component type C.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00779">Registry.hpp:779</a></div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md24"></a>
 Manage entity component</h2>
 <p>When you have an instance of an <a class="el" href="classecstasy_1_1_entity.html">Entity</a> you can check the presence of a component, get it or add one. Always by sending the component storage. However, you can also use the <a class="el" href="classecstasy_1_1_registry_entity.html">RegistryEntity</a> class which, as its name says, is linked to a registry. It is only syntactic sugar to avoid fetching yourself storages from the registry.</p>
 <p>Examples:</p>
@@ -220,7 +220,7 @@ Manage entity component</h2>
 <div class="ttc" id="aclassecstasy_1_1_registry_entity_html_a3b59d87f10db806ba1e8cbcb76a21b91"><div class="ttname"><a href="classecstasy_1_1_registry_entity.html#a3b59d87f10db806ba1e8cbcb76a21b91">ecstasy::RegistryEntity::add</a></div><div class="ttdeci">C &amp; add(Args &amp;&amp;...args)</div><div class="ttdoc">Add a component to the entity.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_entity_8hpp_source.html#l00056">RegistryEntity.hpp:56</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_entity_html_ab8309218f27a95840495e9615cdde286"><div class="ttname"><a href="classecstasy_1_1_registry_entity.html#ab8309218f27a95840495e9615cdde286">ecstasy::RegistryEntity::has</a></div><div class="ttdeci">bool has() const</div><div class="ttdoc">Test if the entity has an associated component in the storage S.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_entity_8hpp_source.html#l00116">RegistryEntity.hpp:116</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a5d982d00370574aec1946df44d3484d0"><div class="ttname"><a href="classecstasy_1_1_registry.html#a5d982d00370574aec1946df44d3484d0">ecstasy::Registry::getEntity</a></div><div class="ttdeci">Entity getEntity(Entity::Index index) noexcept</div><div class="ttdoc">Get the Entity at the index index.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8cpp_source.html#l00048">Registry.cpp:48</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md24"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md25"></a>
 Delete entities</h2>
 <p>First I need to define two words used in the entities context</p>
 <ul>
@@ -250,7 +250,7 @@ Delete entities</h2>
 <div class="ttc" id="aclassecstasy_1_1_deletion_stack_html"><div class="ttname"><a href="classecstasy_1_1_deletion_stack.html">ecstasy::DeletionStack</a></div><div class="ttdoc">Helper to manage entity deletion safely within an iteration.</div><div class="ttdef"><b>Definition:</b> <a href="_deletion_stack_8hpp_source.html#l00030">DeletionStack.hpp:30</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_entities_html_ae6313ea1ae99037aaf335034d66e5e45"><div class="ttname"><a href="classecstasy_1_1_entities.html#ae6313ea1ae99037aaf335034d66e5e45">ecstasy::Entities::maintain</a></div><div class="ttdeci">std::vector&lt; Entity &gt; maintain()</div><div class="ttdoc">Effectively erase the entities marked for deletion (using kill()).</div><div class="ttdef"><b>Definition:</b> <a href="_entities_8cpp_source.html#l00117">Entities.cpp:117</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_entities_html_aec1fe19014484bfb198e627425b78180"><div class="ttname"><a href="classecstasy_1_1_entities.html#aec1fe19014484bfb198e627425b78180">ecstasy::Entities::kill</a></div><div class="ttdeci">bool kill(Entity index)</div><div class="ttdoc">Mark en entity for deletion.</div><div class="ttdef"><b>Definition:</b> <a href="_entities_8cpp_source.html#l00095">Entities.cpp:95</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_a2e6b89a6cfc37b53e96cd66103a0a53b"><div class="ttname"><a href="classecstasy_1_1_registry.html#a2e6b89a6cfc37b53e96cd66103a0a53b">ecstasy::Registry::query</a></div><div class="ttdeci">query::Query&lt; queryable_type_t&lt; C &gt;, queryable_type_t&lt; Cs &gt;... &gt; query(OptionalModifiersAllocator&lt; A &gt; allocator)</div><div class="ttdoc">Construct a query for the given components.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00884">Registry.hpp:884</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_a2e6b89a6cfc37b53e96cd66103a0a53b"><div class="ttname"><a href="classecstasy_1_1_registry.html#a2e6b89a6cfc37b53e96cd66103a0a53b">ecstasy::Registry::query</a></div><div class="ttdeci">query::Query&lt; queryable_type_t&lt; C &gt;, queryable_type_t&lt; Cs &gt;... &gt; query(OptionalModifiersAllocator&lt; A &gt; allocator)</div><div class="ttdoc">Construct a query for the given components.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00877">Registry.hpp:877</a></div></div>
 </div><!-- fragment --><h1><a class="anchor" id="CustomStorageTutorial"></a>
 Implement a custom storage</h1>
 <p>You can specify which storage you want a component to use with the define <a class="el" href="_storage_concepts_8hpp.html#a5081c2ba8fc64b28d27cdf3d74ffa960">SET_COMPONENT_STORAGE</a>. By default the <a class="el" href="classecstasy_1_1_map_storage.html">ecstasy::MapStorage</a> is used for all components but you may implement a more suitable storage based on your component.</p>
@@ -263,7 +263,15 @@ Making registry queries</h1>
 <div class="line">    position.x += velocity.x;</div>
 <div class="line">    position.y += velocity.y;</div>
 <div class="line">}</div>
-</div><!-- fragment --><p>You can request as many component as you want in the template parameters of the query method.</p>
+</div><!-- fragment --><p>You can also parallelized your query in multiple threads using the splitThreads query method:</p>
+<div class="fragment"><div class="line"><span class="comment">// Will make one thread for every 50 matching entities</span></div>
+<div class="line">registry.<a class="code" href="classecstasy_1_1_registry.html#a2e6b89a6cfc37b53e96cd66103a0a53b">query</a>&lt;Position, Velocity&gt;().splitThreads(50, [](<span class="keyword">auto</span> components) {</div>
+<div class="line">    <span class="keyword">auto</span> [position, velocity] = components;</div>
+<div class="line">    position.x += velocity.x;</div>
+<div class="line">    position.y += velocity.y;</div>
+<div class="line">});</div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Batch queriess (multi threaded) are not always better than single threaded queries. The more complex the task is for each entity, the more you may improve performances with batch queries.</dd></dl>
+<p>You can request as many component as you want in the template parameters of the query method.</p>
 <p>If you need more complex queries, check the following parts.</p>
 <h2><a class="anchor" id="SelectWhereTutorial"></a>
 Select ... Where ...</h2>
@@ -273,7 +281,7 @@ Select ... Where ...</h2>
 <div class="line">    position.x += velocity.x;</div>
 <div class="line">    position.y += velocity.y;</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_a21903809a52f0b813c940182bc102d02"><div class="ttname"><a href="classecstasy_1_1_registry.html#a21903809a52f0b813c940182bc102d02">ecstasy::Registry::select</a></div><div class="ttdeci">Select&lt; queryable_type_t&lt; C &gt;, queryable_type_t&lt; Cs &gt;... &gt; select()</div><div class="ttdoc">Starts the creation of a complex query in the registry.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00924">Registry.hpp:924</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_a21903809a52f0b813c940182bc102d02"><div class="ttname"><a href="classecstasy_1_1_registry.html#a21903809a52f0b813c940182bc102d02">ecstasy::Registry::select</a></div><div class="ttdeci">Select&lt; queryable_type_t&lt; C &gt;, queryable_type_t&lt; Cs &gt;... &gt; select()</div><div class="ttdoc">Starts the creation of a complex query in the registry.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00917">Registry.hpp:917</a></div></div>
 </div><!-- fragment --><p>This syntax retrieve only the components in the <code>Select</code> clause but it ensures all components in the <code>Select</code> <b>and</b> <code>Where</code> clauses are present.</p>
 <dl class="section note"><dt>Note</dt><dd>You can have the same component in the select and the where clauses. By default all components in Select not present in Where clause are implicitly appended to the where clause.</dd></dl>
 <h2><a class="anchor" id="ModifiersTutorial"></a>
@@ -394,7 +402,7 @@ Using conditions</h2>
 <div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span> [life] : registry.<a class="code" href="classecstasy_1_1_registry.html#a21903809a52f0b813c940182bc102d02">select</a>&lt;Life&gt;().where&lt;Shield, <a class="code" href="structecstasy_1_1query_1_1_condition.html">ecstasy::GreaterEqual&lt;&amp;Life::value, &amp;Shield::getValue&gt;</a>&gt;()) {</div>
 <div class="line">    <span class="comment">// Condition equals: if (!(life.value &gt;= shield.getValue())) continue;</span></div>
 <div class="line">}</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md25"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md26"></a>
 Using systems</h1>
 <p>To create systems, you only have to create a new class inheriting the <a class="el" href="classecstasy_1_1_i_system.html">ecstasy::ISystem</a> class and implement the <a class="el" href="classecstasy_1_1_i_system.html#aa9cf50e42a827f26e5d7e2c5d7fe9c46">ecstasy::ISystem::run</a> method.</p>
 <p>For example here is how you would create a Movement system:</p>
@@ -416,7 +424,7 @@ Using systems</h1>
 <div class="line">registry.<a class="code" href="classecstasy_1_1_registry.html#a59904982ed7490f12c63628951178dd5">runSystem</a>&lt;Movement&gt;();</div>
 <div class="line"><span class="comment">// or</span></div>
 <div class="line">registry.<a class="code" href="classecstasy_1_1_registry.html#a5595f1c0811c0d7f658c01f49da8dc37">runSystems</a>();</div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_a59904982ed7490f12c63628951178dd5"><div class="ttname"><a href="classecstasy_1_1_registry.html#a59904982ed7490f12c63628951178dd5">ecstasy::Registry::runSystem</a></div><div class="ttdeci">void runSystem()</div><div class="ttdoc">Run a specific system from the registry.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00974">Registry.hpp:974</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_a59904982ed7490f12c63628951178dd5"><div class="ttname"><a href="classecstasy_1_1_registry.html#a59904982ed7490f12c63628951178dd5">ecstasy::Registry::runSystem</a></div><div class="ttdeci">void runSystem()</div><div class="ttdoc">Run a specific system from the registry.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00967">Registry.hpp:967</a></div></div>
 </div><!-- fragment --><p>By default systems added with <code>Registry.addSystem()</code> have the same priority and the order of execution is undefined when calling <code>Registry.runSystems()</code>. But you can use the system priorities/groups to order them and be able to specify their priority and run a given system group.</p>
 <ol type="1">
 <li><p class="startli">Priority</p>

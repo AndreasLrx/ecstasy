@@ -531,14 +531,13 @@ template&lt;typename S &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a>()</div>
-<div class="line">    {</div>
+<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a>() {</div>
 <div class="line">        <a class="code" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a> IsStorage&lt;S&gt;;</div>
 <div class="line">        <span class="keyword">typename</span> S::Component::value_type;</div>
 <div class="line">    }</div>
 <div class="ttc" id="anamespaceecstasy_1_1query_html_aae5d7b89c92ec00ebea0cf94b09d8087"><div class="ttname"><a href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">ecstasy::query::requires</a></div><div class="ttdeci">requires(!std::is_member_pointer_v&lt; LeftType &gt; &amp;&amp;!std::is_member_pointer_v&lt; RightType &gt;) struct Condition&lt; Left</div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="_storage_concepts_8hpp_source.html#l00048">48</a> of file <a class="el" href="_storage_concepts_8hpp_source.html">StorageConcepts.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_storage_concepts_8hpp_source.html#l00045">45</a> of file <a class="el" href="_storage_concepts_8hpp_source.html">StorageConcepts.hpp</a>.</p>
 
 </div>
 </div>
@@ -555,11 +554,8 @@ template&lt;typename S &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= std::default_initializable&lt;S&gt; &amp;&amp; std::derived_from&lt;S, IStorage&gt; &amp;&amp; <a class="code" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a>(</div>
-<div class="line">        S &amp;storage, S <span class="keyword">const</span> &amp;cstorage)</div>
-<div class="line">    {</div>
-<div class="line">        <span class="keyword">typename</span> S::Component;</div>
-<div class="line">    }</div>
+<b>Initial value:</b><div class="fragment"><div class="line">= std::default_initializable&lt;S&gt; &amp;&amp; std::derived_from&lt;S, IStorage&gt;</div>
+<div class="line">        &amp;&amp; <a class="code" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a>(S &amp;storage, S <span class="keyword">const</span> &amp;cstorage) { <span class="keyword">typename</span> S::Component; }</div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="_storage_concepts_8hpp_source.html#l00041">41</a> of file <a class="el" href="_storage_concepts_8hpp_source.html">StorageConcepts.hpp</a>.</p>
 
@@ -597,7 +593,7 @@ template&lt;typename Q &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2023-11-08) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_queryable_allocator_size_8hpp_source.html#l00073">73</a> of file <a class="el" href="_queryable_allocator_size_8hpp_source.html">QueryableAllocatorSize.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_queryable_allocator_size_8hpp_source.html#l00068">68</a> of file <a class="el" href="_queryable_allocator_size_8hpp_source.html">QueryableAllocatorSize.hpp</a>.</p>
 
 </div>
 </div>
@@ -634,7 +630,7 @@ template&lt;typename Q , typename... Qs&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2023-11-08) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_queryable_allocator_size_8hpp_source.html#l00092">92</a> of file <a class="el" href="_queryable_allocator_size_8hpp_source.html">QueryableAllocatorSize.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_queryable_allocator_size_8hpp_source.html#l00086">86</a> of file <a class="el" href="_queryable_allocator_size_8hpp_source.html">QueryableAllocatorSize.hpp</a>.</p>
 
 </div>
 </div>
@@ -651,8 +647,7 @@ template&lt;typename M &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a>()</div>
-<div class="line">    {</div>
+<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a>() {</div>
 <div class="line">        <span class="keyword">typename</span> <a class="code" href="namespaceecstasy_1_1query.html#a761ae07d0a2b58e9277539d7a3722d3a">M::Modifier</a>;</div>
 <div class="line">        <a class="code" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a> query::Modifier&lt;typename M::Modifier&gt;;</div>
 <div class="line">    }</div>
