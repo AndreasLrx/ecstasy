@@ -185,6 +185,20 @@ for (auto [position, velocity] : registry.query<Position, Velocity>()) {
 }
 ```
 
+You can also parallelized your query in multiple threads using the splitThreads query method:
+
+```cpp
+// Will make one thread for every 50 matching entities
+registry.query<Position, Velocity>().splitThreads(50, [](auto components) {
+    auto [position, velocity] = components;
+    position.x += velocity.x;
+    position.y += velocity.y;
+});
+```
+
+@note
+Batch queriess (multi threaded) are not always better than single threaded queries. The more complex the task is for each entity, the more you may improve performances with batch queries.
+
 You can request as many component as you want in the template parameters of the query method.
 
 If you need more complex queries, check the following parts.

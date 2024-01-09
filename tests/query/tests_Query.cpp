@@ -624,7 +624,7 @@ TEST(QueryImplementation, BatchQuery)
     for (auto [pos, vel] : ecstasy::query::Query(positions, velocities)) {
         pos.x += vel.v.x;
         pos.y += vel.v.y;
-        usleep(10);
+        std::this_thread::sleep_for(std::chrono::microseconds(10));
     }
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> duration = end - start;
@@ -641,7 +641,7 @@ TEST(QueryImplementation, BatchQuery)
         auto &[pos, vel] = components;
         pos.x += vel.v.x;
         pos.y += vel.v.y;
-        usleep(10);
+        std::this_thread::sleep_for(std::chrono::microseconds(10));
     });
     end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> durationMthreads = end - start;
