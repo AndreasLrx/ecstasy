@@ -1,5 +1,5 @@
 ///
-/// @file System.hpp
+/// @file ISystem.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
 /// @brief
 /// @version 1.0.0

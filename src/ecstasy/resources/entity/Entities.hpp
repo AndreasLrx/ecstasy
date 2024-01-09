@@ -137,7 +137,7 @@ namespace ecstasy
             friend Entities;
         };
 
-        /// @brief @ref Queryable constraint
+        /// @brief @ref ecstasy::query::Queryable constraint
         using QueryData = Entity;
 
         ///
@@ -211,7 +211,8 @@ namespace ecstasy
         size_t erase(std::span<Entity> entities);
 
         ///
-        /// @brief Mark en entity for deletion. The entity is alive until a call to @ref maintain() is made.
+        /// @brief Mark en entity for deletion. The entity is alive until a call to @ref ecstasy::Entities::maintain()
+        /// is made.
         ///
         /// @param[in] entity @ref Entity to kill.
         ///
@@ -220,7 +221,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-21)
         ///
-        bool kill(Entity index);
+        bool kill(Entity entity);
 
         ///
         /// @brief Tests if an entity is alive.
@@ -250,7 +251,7 @@ namespace ecstasy
         ///
         /// @brief Get the entity from its index.
         ///
-        /// @note @ref Queryable constraints.
+        /// @note @ref ecstasy::query::Queryable constraints.
         ///
         /// @return const Entity Entity at index @p index.
         ///

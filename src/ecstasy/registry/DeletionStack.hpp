@@ -50,8 +50,8 @@ namespace ecstasy
         DeletionStack(const DeletionStack &other) = delete;
 
         ///
-        /// @brief Destroy the Deletion Stack, calling @ref Registry::erase() with all the entity marked for deletion
-        /// using @ref push().
+        /// @brief Destroy the Deletion Stack, calling @ref Registry::eraseEntities() with all the entity
+        /// marked for deletion using @ref push().
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-21)

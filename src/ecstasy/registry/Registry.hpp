@@ -278,7 +278,7 @@ namespace ecstasy
         ///
         /// @brief Proxy structure to extract the operand types using template partial specialization
         ///
-        /// @tparam Operands Must be a tuple of @ref Queryable types.
+        /// @tparam Operands Must be a tuple of @ref ecstasy::query::Queryable types.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-22)
@@ -422,8 +422,7 @@ namespace ecstasy
             ///
             /// @brief Construct a new EntityBuilder, this method can only be called by a @ref Registry.
             ///
-            /// @param[in] builder Internal Entities builder.
-            /// @param[in] entity Entity target (modified by the builder).
+            /// @param[in] registry Parent registry.
             ///
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-19)

@@ -78,7 +78,7 @@ namespace ecstasy::integration::user_action
         void updateBindings();
 
         ///
-        /// @brief Fetch the @ref Users resource in the registry if available and call @ref updateBinding().
+        /// @brief Fetch the @ref Users resource in the registry if available and call @ref updateBindings().
         ///
         /// @param[in] registry Registry owning the @ref Users resource.
         ///

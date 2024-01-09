@@ -21,8 +21,8 @@ namespace ecstasy
     ///
     /// @brief Try to get the type of a queryable associated to a type stored in the registry (component, storage,
     /// resource...).
-    /// Returns C if C is derived from the @ref Resource class, if C match the @ref IsStorage concept.
-    /// Returns C::Modifier if C match the @ref RegistryModifier concept.
+    /// Returns C if C is derived from the @ref ecstasy::Resource class, if C match the @ref ecstasy::IsStorage concept.
+    /// Returns C::Modifier if C match the @ref ecstasy::RegistryModifier concept.
     /// For all other cases, returns @ref getStorageType<C>.
     ///
     /// @tparam C Evaluated type.
@@ -49,7 +49,7 @@ namespace ecstasy
         using type = S;
     };
 
-    /// @copydoc queryable type
+    /// @copydoc queryable_type
     template <RegistryModifier M>
     struct queryable_type<M> {
         using type = typename M::Modifier;

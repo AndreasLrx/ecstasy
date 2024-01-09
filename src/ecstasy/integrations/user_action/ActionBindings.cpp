@@ -24,7 +24,7 @@ namespace ecstasy::integration::user_action
 
         /// There is no check for node type because we control the total flow of the toml nodes
         for (ActionBinding action : _bindings) {
-            /// The actions are named 'Action-<action_id>'
+            /// The actions are named 'Action-\<action_id\>'
             std::string key = std::string("Action-") + std::to_string(action.actionId);
             toml::node *nodePtr = table.get(key);
             std::stringstream value;

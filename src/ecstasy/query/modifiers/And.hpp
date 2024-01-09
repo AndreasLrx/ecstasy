@@ -39,8 +39,8 @@ namespace ecstasy::query::modifier
         ///
         /// @brief Construct a new And Queryable modifier.
         ///
-        /// @param[in] leftOperand left queryable operand.
-        /// @param[in] rightOperand right queryable operand.
+        /// @param[in] firstOperand left queryable operand.
+        /// @param[in] secondOperand right queryable operand.
         /// @param[in] otherOperands additional operands (optional).
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
@@ -56,7 +56,8 @@ namespace ecstasy::query::modifier
         ///
         /// @warning May throw exceptions, look at the specified operand type equivalent method documentation.
         ///
-        /// @param[in] operandId Id of the operand (where 0 is Q1, 1 is Q2...).
+        /// @tparam operandId Id of the operand (where 0 is Q1, 1 is Q2...).
+        ///
         /// @param[in] index Index of the entity.
         ///
         /// @return auto The operand data at index @p index.
