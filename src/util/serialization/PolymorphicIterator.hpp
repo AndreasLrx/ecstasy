@@ -143,9 +143,9 @@ namespace util::serialization
             }
 
             /// @copydoc Concept::equal()
-            bool equal(const Concept *rp) const override final
+            bool equal(const Concept *other) const override final
             {
-                return _iter == dynamic_cast<const Model *>(rp)->_iter;
+                return _iter == dynamic_cast<const Model *>(other)->_iter;
             }
 
             /// @copydoc Concept::clone()

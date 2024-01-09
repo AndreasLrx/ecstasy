@@ -42,7 +42,6 @@ namespace ecstasy
         /// @tparam C Component type.
         /// @tparam Args Type of the arguments to forward to the component constructor.
         ///
-        /// @param[in] storage Storage for type @b C.
         /// @param[in] args Arguments to forward to the component constructor.
         ///
         /// @return C& Reference to the newly created component.
@@ -63,8 +62,6 @@ namespace ecstasy
         ///
         /// @tparam C Type of the component to retrieve.
         ///
-        /// @param[in] storage Storage for type @b C.
-        ///
         /// @return const C& Const reference to the entity instance of @b C associated to the entity.
         ///
         /// @throw std::out_of_range If no associated instance found.
@@ -84,8 +81,6 @@ namespace ecstasy
         ///
         /// @tparam C Type of the component to retrieve.
         ///
-        /// @param[in] storage Storage for type @b C.
-        ///
         /// @return C& Reference to the entity instance of @b C associated to the entity.
         ///
         /// @throw std::out_of_range If no associated instance found.
@@ -104,8 +99,6 @@ namespace ecstasy
         /// @brief Test if the entity has an associated component in the storage @b S.
         ///
         /// @tparam S Storage of a component.
-        ///
-        /// @param[in] storage Storage for the component type searched.
         ///
         /// @return bool True if the entity has an associated entry in the storage.
         ///

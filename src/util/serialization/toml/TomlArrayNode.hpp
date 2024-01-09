@@ -38,10 +38,10 @@ namespace util::serialization
         ///
         TomlArrayNode(const toml::array &array);
 
-        /// @copydoc IArrayNode::&get()
+        /// @copydoc IArrayNode::get()
         NodeCView get(Index index) const override final;
 
-        /// @copydoc IArrayNode::&get()
+        /// @copydoc IArrayNode::get()
         NodeView get(Index index) override final;
 
         /// @copydoc IArrayNode::tryGet()

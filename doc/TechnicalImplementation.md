@@ -75,7 +75,7 @@ Then for each bit set, the query fetch the associated component in the position/
 
 #### Queryable and BitSet
 
-A storage is in fact a @ref ecstasy::Queryable. It is defined by three properties:
+A storage is in fact a @ref ecstasy::query::Queryable. It is defined by three properties:
 
 - A bitset, accessible through a `getMask()` method
 - A type for the value to return on iteration, defined as a nested `QueryData` type
@@ -97,7 +97,7 @@ concept Queryable = requires(Q &queryable, Q const &cqueryable, std::size_t inde
 ```
 
 Knowing this I can re explain the query behavior.
-The query takes only @ref ecstasy::Queryable in inputs. It then does a bitwise `and` on the associated bitsets and save it.
+The query takes only @ref ecstasy::query::Queryable in inputs. It then does a bitwise `and` on the associated bitsets and save it.
 The class also defines an iterator to... iterate on the matching entities and on each match it returns a tuple of the values, fetched through the `getQueryData` method.
 
 You can also create a Query with a precomputed bitset as you can see below with the first constructor.

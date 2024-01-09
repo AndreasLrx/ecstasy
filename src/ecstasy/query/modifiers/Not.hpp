@@ -39,7 +39,7 @@ namespace ecstasy::query::modifier
         /// @brief @ref Modifier constraint.
         using Operands = std::tuple<Q>;
 
-        /// @brief @ref Queryable constaint.
+        /// @brief @ref ecstasy::query::Queryable constaint.
         using QueryData = typename Internal::QueryData;
 
         ///
@@ -58,7 +58,7 @@ namespace ecstasy::query::modifier
         ///
         /// @brief Get the flipped mask of the internal queryable.
         ///
-        /// @note @ref Queryable constraint.
+        /// @note @ref ecstasy::query::Queryable constraint.
         ///
         /// @return const util::BitSet& Flipped bitset.
         ///
@@ -73,7 +73,7 @@ namespace ecstasy::query::modifier
         ///
         /// @brief Get the internal query data at the given index.
         ///
-        /// @note @ref Queryable constraint.
+        /// @note @ref ecstasy::query::Queryable constraint.
         /// @warning May throw exceptions, look at the @b Internal type equivalent method documentation.
         /// @warning Since this is a not modifier, all bit set to true in the masks means there @b isn't data at the
         /// associated index. Therefore you @b must @b not call this method for bits set to true in the mask.

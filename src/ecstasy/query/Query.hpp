@@ -164,7 +164,7 @@ namespace ecstasy::query
             ///
             /// @brief Fetch the components corresponding to the entity at the current position.
             ///
-            /// @return @ref value_type tuple containing component references.
+            /// @return @p value_type tuple containing component references.
             ///
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-20)
@@ -177,7 +177,7 @@ namespace ecstasy::query
             ///
             /// @brief Fetch the components corresponding to the entity at the current position.
             ///
-            /// @return @ref value_type tuple containing component references.
+            /// @return @p value_type tuple containing component references.
             ///
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-20)
@@ -190,7 +190,8 @@ namespace ecstasy::query
             ///
             /// @brief Increments the iterator in place.
             ///
-            /// @warning It is undefined behavior to increment the iterator past the end sentinel ( @ref Query::end() ).
+            /// @warning It is undefined behavior to increment the iterator past the end sentinel ( @ref
+            /// ecstasy::query::Query::end() ).
             ///
             /// @return Iterator& @b this.
             ///
@@ -208,7 +209,8 @@ namespace ecstasy::query
             ///
             /// @brief Copies the iterator and increments the copy, please use pre-incrementation instead.
             ///
-            /// @warning It is undefined behavior to increment the iterator past the end sentinel ( @ref Query::end() ).
+            /// @warning It is undefined behavior to increment the iterator past the end sentinel ( @ref
+            /// ecstasy::query::Query::end() ).
             /// @warning This creates a copy of the iterator!
             ///
             /// @return Iterator The incremented copy.
@@ -305,7 +307,7 @@ namespace ecstasy::query
             ///
             /// @tparam Indices Represent all the indices to fetch in the @p _storages attribute.
             ///
-            /// @return @ref value_type tuple containing component references.
+            /// @return @p value_type tuple containing component references.
             ///
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-20)
@@ -390,7 +392,7 @@ namespace ecstasy::query
         ///
         /// @brief Get the Query Mask. All bit set means an entity match the chained request.
         ///
-        /// @note @ref Queryable constraint.
+        /// @note @ref ecstasy::query::Queryable constraint.
         ///
         /// @return const util::BitSet& Query BitMask.
         ///
@@ -405,7 +407,7 @@ namespace ecstasy::query
         ///
         /// @brief Query the components associated to the given entity.
         ///
-        /// @note @ref Queryable constraint.
+        /// @note @ref ecstasy::query::Queryable constraint.
         ///
         /// @param[in] index Index of the entity.
         ///
@@ -425,7 +427,8 @@ namespace ecstasy::query
         ///
         /// @warning This doesn't ensure thread safety if you modify the same value from different entities (therefore
         /// different threads).
-        /// @note
+        /// @note Using batch query doesn't mean performance will be better, it depends on the @p batchSize and the
+        /// complexity of the @p fct
         ///
         /// @tparam F Type of the function applied on each matching entity.
         ///

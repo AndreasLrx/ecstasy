@@ -198,9 +198,9 @@ Here is the list of the implemented modifiers with their return data type. Note 
 
 - [Maybe<T>](@ref ecstasy::query::modifier::Maybe) -> [std::optional<T>](@ref std::optional)
 - [Not<T>](@ref ecstasy::query::modifier::Not) /!\ Do not fetch /!\
-- [Or<T1, T2...>](@ref ecstasy::query::modifier::Or) -> [std::tuple](@ref std::tuple)<[std::optional](@ref std::optional)<T1>, [std::optional](@ref std::optional)<T2>...>
-- [Xor<T1, T2...>](@ref ecstasy::query::modifier::Xor) -> [std::tuple](@ref std::tuple)<[std::optional](@ref std::optional)<T1>, [std::optional](@ref std::optional)<T2>...>
-- [And<T1, T2...>](@ref ecstasy::query::modifier::And) -> [std::tuple](@ref std::tuple)<T1, T2...>
+- [Or\<T1, T2...\>](@ref ecstasy::query::modifier::Or) -> [std::tuple](@ref std::tuple)<[std::optional](@ref std::optional)\<T1\>, [std::optional](@ref std::optional)\<T2\>...>
+- [Xor\<T1, T2...\>](@ref ecstasy::query::modifier::Xor) -> [std::tuple](@ref std::tuple)<[std::optional](@ref std::optional)\<T1\>, [std::optional](@ref std::optional)\<T2\>...>
+- [And\<T1, T2...\>](@ref ecstasy::query::modifier::And) -> [std::tuple](@ref std::tuple)\<T1, T2...\>
 
 As always, I think examples are more readable:
 

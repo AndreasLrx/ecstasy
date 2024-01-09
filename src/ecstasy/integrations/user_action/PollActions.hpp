@@ -43,7 +43,7 @@ namespace ecstasy::integration::user_action
     template <Action::Id... Actions>
     class PollActions<std::integer_sequence<Action::Id, Actions...>> : public ecstasy::ISystem {
       public:
-        /// @copydoc ISystem::run()
+        /// @copydoc ecstasy::ISystem::run()
         void run(Registry &registry) override final
         {
             if (!registry.hasResource<PendingActions>())

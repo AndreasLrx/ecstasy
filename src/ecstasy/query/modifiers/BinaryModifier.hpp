@@ -34,7 +34,7 @@ namespace ecstasy::query::modifier
         /// @brief @ref Modifier constraint.
         using Operands = std::tuple<Q1, Q2, Qs...>;
 
-        /// @brief @ref Queryable constaint.
+        /// @brief @ref ecstasy::query::Queryable constaint.
         // clang-format off
         using QueryData = std::tuple<
             typename DataModifier<typename Q1::QueryData>::type,
@@ -49,8 +49,8 @@ namespace ecstasy::query::modifier
         ///
         /// @brief Construct a new binary query modifier.
         ///
-        /// @param[in] leftOperand left queryable operand.
-        /// @param[in] rightOperand right queryable operand.
+        /// @param[in] firstOperand left queryable operand.
+        /// @param[in] secondOperand right queryable operand.
         /// @param[in] otherOperands additional operands (optional).
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
@@ -65,8 +65,8 @@ namespace ecstasy::query::modifier
         ///
         /// @brief Get the Mask of the internal queryables.
         ///
-        /// @note @ref Queryable constraint.
-        /// @warning Use @ref reloadMask() if the operand masks have changed since the construction.
+        /// @note @ref ecstasy::query::Queryable constraint.
+        /// @warning Use @p reloadMask() if the operand masks have changed since the construction.
         ///
         /// @return const util::BitSet& resulting mask.
         ///
@@ -81,7 +81,7 @@ namespace ecstasy::query::modifier
         ///
         /// @brief Get the operands data at the given index.
         ///
-        /// @note @ref Queryable constraint.
+        /// @note @ref ecstasy::query::Queryable constraint.
         ///
         /// @param[in] index Index of the entity.
         ///

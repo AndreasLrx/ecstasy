@@ -45,7 +45,7 @@ namespace ecstasy::query
     };
 
     ///
-    /// @brief Checks if the given type match the @ref Queryable concept.
+    /// @brief Checks if the given type match the @ref ecstasy::query::Queryable concept.
     ///
     /// @tparam T Evaluated type.
     ///
@@ -60,7 +60,7 @@ namespace ecstasy::query
     struct is_queryable<T> : public std::true_type {};
 
     ///
-    /// @brief Helper for @ref is_queryable<T>::value.
+    /// @brief Helper for @ref is_queryable "is_queryable<T>::value".
     ///
     /// @tparam T Evaluated type.
     ///

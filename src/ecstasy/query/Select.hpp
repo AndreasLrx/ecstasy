@@ -34,7 +34,7 @@ namespace ecstasy::query
     template <Queryable... SelectedQueryables>
     struct Select {
       public:
-        /// @brief Resulting selected @ref Queryables tuple
+        /// @brief Resulting selected @ref ecstasy::query::Queryable tuple
         using SelectedTuple = std::tuple<SelectedQueryables &...>;
 
       private:
@@ -144,11 +144,11 @@ namespace ecstasy::query
         template <bool ContainsPivot, Queryable Pivot, Queryable... Lefts>
         struct FilterQueryables {
             ///
-            /// @brief Test if the @ref Queryable type Q must be kept in the resulting queryables.
+            /// @brief Test if the @ref ecstasy::query::Queryable type Q must be kept in the resulting queryables.
             ///
             /// @tparam Q Evaluated type.
             ///
-            /// @return bool Whether the type Q is in the @ref SelectedQueryables types and not already
+            /// @return bool Whether the type Q is in the @p SelectedQueryables types and not already
             /// selected (in the Lefts types).
             ///
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
@@ -183,14 +183,14 @@ namespace ecstasy::query
 
             ///
             /// @brief Primary template recursively called until there is no @p nextPivot. It calls itself with:
-            /// - @p ContainsPivot to to true if @p nextPivot is in the @ref SelectedQueryables types.
+            /// - @p ContainsPivot to to true if @p nextPivot is in the @p SelectedQueryables types.
             /// - @p lefts to the current @p lefts with @p pivot (only if @p ContainsPivot is currently true).
             /// - @p pivot to current @p nextPivot.
             /// - @p nextPivot and @p rights are set or not depending on the queryable lefts in the current @p rights.
             /// If @p rights is empty, it will call the @ref value() without @p nextPivot value to finalize the result.
             ///
             /// @tparam NextPivot Next Pivot type.
-            /// @tparam Rights Remaining @ref Queryable types.
+            /// @tparam Rights Remaining @ref ecstasy::query::Queryable types.
             ///
             /// @param[in] lefts Already accepted queryables.
             /// @param[in] pivot Inspected queryable, will be accepted if @p ContainsPivot is true.
@@ -217,7 +217,7 @@ namespace ecstasy::query
         };
 
         ///
-        /// @brief Isolate the given queryables to keep only the @ref Selected ones.
+        /// @brief Isolate the given queryables to keep only the @p SelectedQueryables ones.
         ///
         /// @tparam Queryables given queryables types.
         ///
@@ -237,16 +237,16 @@ namespace ecstasy::query
 
       public:
         ///
-        /// @brief Execute a AND query with all the given Queryables but returns only the one in @ref Selected.
+        /// @brief Execute a AND query with all the given Queryables but returns only the one in @p SelectedQueryables.
         ///
-        /// @warning All queryables specified in @ref Selected @b must be passed as parameters.
+        /// @warning All queryables specified in @p SelectedQueryables @b must be passed as parameters.
         ///
         /// @tparam Conditions @ref util::meta::Traits of multiple @ref ecstasy::query::Condition.
-        /// @tparam FirstWhere First @ref Queryable type.
-        /// @tparam Wheres Others @ref Queryable types.
+        /// @tparam FirstWhere First @ref ecstasy::query::Queryable type.
+        /// @tparam Wheres Others @ref ecstasy::query::Queryable types.
         ///
-        /// @param[in] firstWhere first @ref Queryable instance.
-        /// @param[in] wheres others @ref Queryable instances.
+        /// @param[in] firstWhere first @ref ecstasy::query::Queryable instance.
+        /// @param[in] wheres others @ref ecstasy::query::Queryable instances.
         ///
         /// @return QueryImplementation<util::meta::Traits<SelectedQueryables...>, Conditions> Resulting query that can
         /// be iterated.

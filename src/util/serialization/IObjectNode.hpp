@@ -131,8 +131,6 @@ namespace util::serialization
         ///
         /// @param[in] key Node's key.
         ///
-        /// @return bool Whether a node was erased or not.
-        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///

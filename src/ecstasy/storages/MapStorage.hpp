@@ -34,7 +34,7 @@ namespace ecstasy
         /// @brief IsStorage constraint
         using Component = C;
 
-        /// @brief @ref Queryable constraint.
+        /// @brief @ref ecstasy::query::Queryable constraint.
         using QueryData = C &;
 
         ///
@@ -155,7 +155,7 @@ namespace ecstasy
         ///
         /// @brief Retrieve the @b Component instance associated to the given entity.
         ///
-        /// @note @ref Queryable constraint.
+        /// @note @ref ecstasy::query::Queryable constraint.
         ///
         /// @param[in] index Index of the entity.
         ///
@@ -201,7 +201,7 @@ namespace ecstasy
         /// @brief Get the Component Mask.
         ///
         /// @note Each bit set to true mean the entity at the bit index has a component @b C.
-        /// @note @ref Queryable constraint.
+        /// @note @ref ecstasy::query::Queryable constraint.
         /// @warning The mask might be smaller than the entity count.
         ///
         /// @return const util::BitSet& Component mask.

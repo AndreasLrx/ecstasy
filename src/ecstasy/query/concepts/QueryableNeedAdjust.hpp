@@ -17,7 +17,7 @@
 namespace ecstasy::query
 {
     ///
-    /// @brief Defines a Queryable type which has the @ref adjustMask() implemented.
+    /// @brief Defines a Queryable type which has the adjustMask() implemented.
     ///
     /// @tparam Q Evaluated Type.
     ///
@@ -38,7 +38,8 @@ namespace ecstasy::query
     /// @brief Adjust the queryable mask if needed.
     ///
     /// @note This is mainly for modifiers purposes.
-    /// @note This will call @ref adjustMask() method if implemented (see @ref QueryableNeedAdjust concept).
+    /// @note This will call @ref adjustMask() method if implemented (see @ref ecstasy::query::QueryableNeedAdjust
+    /// concept).
     ///
     /// @tparam T Type of the queryable.
     ///
@@ -63,7 +64,7 @@ namespace ecstasy::query
     }
 
     ///
-    /// @brief Checks if the given type match the @ref QueryableNeedAdjust concept.
+    /// @brief Checks if the given type match the @ref ecstasy::query::QueryableNeedAdjust concept.
     ///
     /// @tparam T Evaluated type.
     ///
@@ -78,7 +79,7 @@ namespace ecstasy::query
     struct is_queryable_with_adjust<T> : public std::true_type {};
 
     ///
-    /// @brief Helper for @ref is_queryable_with_adjust<T>::value.
+    /// @brief Helper for @ref is_queryable_with_adjust
     ///
     /// @tparam T Evaluated type.
     ///

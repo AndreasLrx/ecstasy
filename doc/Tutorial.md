@@ -169,11 +169,11 @@ entities.maintain();
 
 You can specify which storage you want a component to use with the define @ref SET_COMPONENT_STORAGE. By default the @ref ecstasy::MapStorage is used for all components but you may implement a more suitable storage based on your component.
 
-To create a custom storage, you need to validate the @ref IsStorage concept. In addition you also need to implement the contains and emplace methods (see MapStorage).
+To create a custom storage, you need to validate the @ref ecstasy::IsStorage concept. In addition you also need to implement the contains and emplace methods (see MapStorage).
 
 ## Making registry queries {#QueryTutorial}
 
-When you populated your registry with entities and resources you can query them with the... @ref Registry::query method.
+When you populated your registry with entities and resources you can query them with the... @ref ecstasy::Registry::query method.
 It will iterate on every entities having the requested components and return a reference of them.
 
 The easiest syntax is to use tuple unpacking in a for loop:
@@ -261,7 +261,7 @@ Modifiers can be nested and used in simple queries as well as in Select ... Wher
    }
    ```
 
-3. @ref ecstasy::Or / @ref ecstasy::XOr
+3. @ref ecstasy::Or / @ref ecstasy::Xor
 
    Performs a `Or`/`XOr` between the given components. Returned values are of type std::tuple<std::optional<Q1>, std::optional<Q2>...>.
    It works for at least two components but can take more than 2.
