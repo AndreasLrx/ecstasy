@@ -41,7 +41,7 @@ namespace ecstasy::integration::user_action
       public:
         // LCOV_EXCL_START
 
-        SERIALIZABLE_ENUM(Type, MouseButton, Key, GamepadButton, GamepadAxis, Count)
+        SERIALIZABLE_ENUM(Type, 0, MouseButton, Key, GamepadButton, GamepadAxis, Count)
 
         // LCOV_EXCL_STOP
 #ifdef _DOXYGEN_

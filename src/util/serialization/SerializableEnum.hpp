@@ -14,13 +14,15 @@
 
 #include "foreach.hpp"
 
-#define _ENUM_TO_STRING_ENTRY(name) {Enum::name, #name},
-#define _STRING_TO_ENUM_ENTRY(name) {#name, Enum::name},
+#define _ENUM_TO_STRING_ENTRY(name)  {Enum::name, #name},
+#define _STRING_TO_ENUM_ENTRY(name)  {#name, Enum::name},
+#define _GET_FIRST_ARG(arg1, ...)    arg1
+#define _REMOVE_FIRST_ARG(arg1, ...) __VA_ARGS__
 
-#define SERIALIZABLE_ENUM(NAME, ...)                                                                                 \
+#define SERIALIZABLE_ENUM(NAME, STARTING_AT, ...)                                                                    \
     struct __##NAME {                                                                                                \
       public:                                                                                                        \
-        enum class Enum { __VA_ARGS__ };                                                                             \
+        enum class Enum { _GET_FIRST_ARG(__VA_ARGS__) = STARTING_AT, _REMOVE_FIRST_ARG(__VA_ARGS__) };               \
                                                                                                                      \
         friend inline std::ostream &operator<<(std::ostream &stream, const Enum &e)                                  \
         {                                                                                                            \
