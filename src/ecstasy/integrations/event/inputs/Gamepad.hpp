@@ -31,15 +31,16 @@ namespace ecstasy::integration::event
       public:
         // LCOV_EXCL_START
 
-        SERIALIZABLE_ENUM(Button, Unknown, FaceUp, FaceRight, FaceDown, FaceLeft, BumperLeft, BumperRight, MiddleLeft,
-            Middle, MiddleRight, ThumbLeft, ThumbRight, Count)
-        SERIALIZABLE_ENUM(Axis, Unknown, LeftX, LeftY, RightX, RightY, TriggerLeft, TriggerRight, DPadX, DPadY, Count)
+        SERIALIZABLE_ENUM(Button, -1, Unknown, FaceUp, FaceRight, FaceDown, FaceLeft, BumperLeft, BumperRight,
+            MiddleLeft, Middle, MiddleRight, ThumbLeft, ThumbRight, Count)
+        SERIALIZABLE_ENUM(
+            Axis, -1, Unknown, LeftX, LeftY, RightX, RightY, TriggerLeft, TriggerRight, DPadX, DPadY, Count)
 
         // LCOV_EXCL_STOP
 #ifdef _DOXYGEN_
         /// @brief Gamepad buttons
         enum class Button {
-            Unknown, ///< Unhandled button
+            Unknown = -1, ///< Unhandled button
             /// Face Buttons
             FaceUp,    ///< Face button up (i.e. PS: Triangle, Xbox: Y)
             FaceRight, ///< Face button right (i.e. PS: Square, Xbox: X)
@@ -61,7 +62,7 @@ namespace ecstasy::integration::event
 
         /// @brief Gamepad axis, associated value must be in range [-1, 1]
         enum class Axis {
-            Unknown,      ///< Unhandled axis
+            Unknown = -1, ///< Unhandled axis
             LeftX,        ///< Left joystick X axis (default: 0)
             LeftY,        ///< Left joystick Y axis (default: 0)
             RightX,       ///< Right joystick X axis (default: 0)
