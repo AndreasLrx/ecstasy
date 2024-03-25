@@ -109,8 +109,12 @@ Macros</h2></td></tr>
 <tr class="separator:ab39d84903b41655a94277f4c4474e157"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd9fbb4df4bc6927538efdd7ab95d7cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_serializable_enum_8hpp.html#acd9fbb4df4bc6927538efdd7ab95d7cd">_STRING_TO_ENUM_ENTRY</a>(name)&#160;&#160;&#160;{#name, Enum::name},</td></tr>
 <tr class="separator:acd9fbb4df4bc6927538efdd7ab95d7cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f4e333ab2ffbf60afee1667e0395e93"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_serializable_enum_8hpp.html#a9f4e333ab2ffbf60afee1667e0395e93">SERIALIZABLE_ENUM</a>(NAME, ...)</td></tr>
-<tr class="separator:a9f4e333ab2ffbf60afee1667e0395e93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab84da5f5f04f20606b54433dd9299fc3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_serializable_enum_8hpp.html#ab84da5f5f04f20606b54433dd9299fc3">_GET_FIRST_ARG</a>(arg1, ...)&#160;&#160;&#160;arg1</td></tr>
+<tr class="separator:ab84da5f5f04f20606b54433dd9299fc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4c31d3c1e1c506ae1c3da8018df9df3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_serializable_enum_8hpp.html#ac4c31d3c1e1c506ae1c3da8018df9df3">_REMOVE_FIRST_ARG</a>(arg1, ...)&#160;&#160;&#160;__VA_ARGS__</td></tr>
+<tr class="separator:ac4c31d3c1e1c506ae1c3da8018df9df3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61af11852be6ce892f96a1f6d63fd680"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_serializable_enum_8hpp.html#a61af11852be6ce892f96a1f6d63fd680">SERIALIZABLE_ENUM</a>(NAME,  STARTING_AT, ...)</td></tr>
+<tr class="separator:a61af11852be6ce892f96a1f6d63fd680"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
@@ -140,6 +144,66 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a id="ab84da5f5f04f20606b54433dd9299fc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab84da5f5f04f20606b54433dd9299fc3">&#9670;&nbsp;</a></span>_GET_FIRST_ARG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _GET_FIRST_ARG</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">arg1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;arg1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_serializable_enum_8hpp_source.html#l00019">19</a> of file <a class="el" href="_serializable_enum_8hpp_source.html">SerializableEnum.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ac4c31d3c1e1c506ae1c3da8018df9df3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4c31d3c1e1c506ae1c3da8018df9df3">&#9670;&nbsp;</a></span>_REMOVE_FIRST_ARG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _REMOVE_FIRST_ARG</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">arg1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;__VA_ARGS__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_serializable_enum_8hpp_source.html#l00020">20</a> of file <a class="el" href="_serializable_enum_8hpp_source.html">SerializableEnum.hpp</a>.</p>
+
+</div>
+</div>
 <a id="acd9fbb4df4bc6927538efdd7ab95d7cd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acd9fbb4df4bc6927538efdd7ab95d7cd">&#9670;&nbsp;</a></span>_STRING_TO_ENUM_ENTRY</h2>
 
@@ -160,8 +224,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a9f4e333ab2ffbf60afee1667e0395e93"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f4e333ab2ffbf60afee1667e0395e93">&#9670;&nbsp;</a></span>SERIALIZABLE_ENUM</h2>
+<a id="a61af11852be6ce892f96a1f6d63fd680"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61af11852be6ce892f96a1f6d63fd680">&#9670;&nbsp;</a></span>SERIALIZABLE_ENUM</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -171,6 +235,12 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">NAME, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">STARTING_AT, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -187,7 +257,7 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">    <span class="keyword">struct </span>__##NAME {                                                                                                \</div>
 <div class="line">      public:                                                                                                        \</div>
-<div class="line">        enum <span class="keyword">class </span>Enum { __VA_ARGS__ };                                                                             \</div>
+<div class="line">        enum <span class="keyword">class </span>Enum { <a class="code" href="_serializable_enum_8hpp.html#ab84da5f5f04f20606b54433dd9299fc3">_GET_FIRST_ARG</a>(__VA_ARGS__) = STARTING_AT, <a class="code" href="_serializable_enum_8hpp.html#ac4c31d3c1e1c506ae1c3da8018df9df3">_REMOVE_FIRST_ARG</a>(__VA_ARGS__) };               \</div>
 <div class="line">                                                                                                                     \</div>
 <div class="line">        friend <span class="keyword">inline</span> <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;<a class="code" href="namespaceutil.html#a61516938bebca76c22e965e24066591e">operator&lt;&lt;</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;stream, <span class="keyword">const</span> Enum &amp;e)                                  \</div>
 <div class="line">        {                                                                                                            \</div>
@@ -206,6 +276,8 @@ Macros</h2></td></tr>
 <div class="line">    };                                                                                                               \</div>
 <div class="line">    using NAME = __##NAME::Enum;</div>
 <div class="ttc" id="a_serializable_enum_8hpp_html_ab39d84903b41655a94277f4c4474e157"><div class="ttname"><a href="_serializable_enum_8hpp.html#ab39d84903b41655a94277f4c4474e157">_ENUM_TO_STRING_ENTRY</a></div><div class="ttdeci">#define _ENUM_TO_STRING_ENTRY(name)</div><div class="ttdef"><b>Definition:</b> <a href="_serializable_enum_8hpp_source.html#l00017">SerializableEnum.hpp:17</a></div></div>
+<div class="ttc" id="a_serializable_enum_8hpp_html_ab84da5f5f04f20606b54433dd9299fc3"><div class="ttname"><a href="_serializable_enum_8hpp.html#ab84da5f5f04f20606b54433dd9299fc3">_GET_FIRST_ARG</a></div><div class="ttdeci">#define _GET_FIRST_ARG(arg1,...)</div><div class="ttdef"><b>Definition:</b> <a href="_serializable_enum_8hpp_source.html#l00019">SerializableEnum.hpp:19</a></div></div>
+<div class="ttc" id="a_serializable_enum_8hpp_html_ac4c31d3c1e1c506ae1c3da8018df9df3"><div class="ttname"><a href="_serializable_enum_8hpp.html#ac4c31d3c1e1c506ae1c3da8018df9df3">_REMOVE_FIRST_ARG</a></div><div class="ttdeci">#define _REMOVE_FIRST_ARG(arg1,...)</div><div class="ttdef"><b>Definition:</b> <a href="_serializable_enum_8hpp_source.html#l00020">SerializableEnum.hpp:20</a></div></div>
 <div class="ttc" id="a_serializable_enum_8hpp_html_acd9fbb4df4bc6927538efdd7ab95d7cd"><div class="ttname"><a href="_serializable_enum_8hpp.html#acd9fbb4df4bc6927538efdd7ab95d7cd">_STRING_TO_ENUM_ENTRY</a></div><div class="ttdeci">#define _STRING_TO_ENUM_ENTRY(name)</div><div class="ttdef"><b>Definition:</b> <a href="_serializable_enum_8hpp_source.html#l00018">SerializableEnum.hpp:18</a></div></div>
 <div class="ttc" id="abasic_istream_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_istream.html">std::istream</a></div></div>
 <div class="ttc" id="abasic_ostream_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a></div></div>
@@ -213,7 +285,7 @@ Macros</h2></td></tr>
 <div class="ttc" id="anamespaceutil_html_a61516938bebca76c22e965e24066591e"><div class="ttname"><a href="namespaceutil.html#a61516938bebca76c22e965e24066591e">util::operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;output, BitSet const &amp;set)</div><div class="ttdoc">Prints the contents of set into output.</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8cpp_source.html#l00189">BitSet.cpp:189</a></div></div>
 <div class="ttc" id="aunordered_map_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/unordered_map.html">std::unordered_map</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="_serializable_enum_8hpp_source.html#l00020">20</a> of file <a class="el" href="_serializable_enum_8hpp_source.html">SerializableEnum.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_serializable_enum_8hpp_source.html#l00022">22</a> of file <a class="el" href="_serializable_enum_8hpp_source.html">SerializableEnum.hpp</a>.</p>
 
 </div>
 </div>

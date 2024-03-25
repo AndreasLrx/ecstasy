@@ -106,17 +106,17 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "",
-"_toml_array_node_8cpp.html",
-"classecstasy_1_1integration_1_1event_1_1_events_manager.html#a3f308df176f02ba13fcf3241486eee61",
-"classecstasy_1_1query_1_1modifier_1_1_maybe.html#a4c037dcc696cddf56a3b1addab62f778",
-"classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html#aff376c43becb35f6d121df868d55c5f0",
-"cpp/algorithm/ranges/push_heap.html",
-"cpp/experimental/type_trait_variable_templates.html",
-"cpp/locale/setlocale.html",
-"cpp/regex/regex_replace.html",
-"cpp/utility/functional/bind_front.html",
-"namespaceecstasy_1_1integration_1_1event.html#a4925a9ee1e748545d47a5dbc2db06d2e",
-"structecstasy_1_1query_1_1_select.html#a052b19450204e529a5c685d4fa346233"
+"_text_entered_listener_8hpp.html#ad0db9ac0560ceb6e9137a8fa97cb6501",
+"classecstasy_1_1integration_1_1event_1_1_event_listeners.html#ad20fe658aa8c8f756b939d8d462ae830",
+"classecstasy_1_1query_1_1modifier_1_1_and.html",
+"classutil_1_1serialization_1_1_i_object_node.html#ac86395a80adac282dcda40e537c0799f",
+"cpp/algorithm/ranges/is_permutation.html",
+"cpp/experimental/shuffle.html",
+"cpp/iterator/inserter.html",
+"cpp/numeric/special_functions/expint.html",
+"cpp/utility/compare/named_comparison_functions.html",
+"meta_8hpp.html",
+"structecstasy_1_1integration_1_1event_1_1_mouse_wheel_scroll_event.html#a210d76d9185b0015063be46610719cc3"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
