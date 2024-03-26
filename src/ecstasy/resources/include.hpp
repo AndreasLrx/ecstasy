@@ -14,6 +14,6 @@
 
 #include "ObjectWrapper.hpp"
 #include "Resource.hpp"
-#include "entity/entity.hpp"
+#include "entity/include.hpp"
 
 #endif /* !ECSTASY_RESOURCES_HPP_ */

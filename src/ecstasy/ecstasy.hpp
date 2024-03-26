@@ -17,6 +17,7 @@
 #include "registry/include.hpp"
 #include "resources/include.hpp"
 #include "storages/include.hpp"
+#include "system/include.hpp"
 
 ///
 /// @brief Namespace containing all symbols specific to ecstasy.

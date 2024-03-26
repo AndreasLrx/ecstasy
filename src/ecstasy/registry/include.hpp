@@ -14,7 +14,7 @@
 
 #include "DeletionStack.hpp"
 #include "Registry.hpp"
-#include "concepts/concepts.hpp"
-#include "modifiers/modifiers.hpp"
+#include "concepts/include.hpp"
+#include "modifiers/include.hpp"
 
 #endif /* !ECSTASY_REGISTRY_HPP_ */
