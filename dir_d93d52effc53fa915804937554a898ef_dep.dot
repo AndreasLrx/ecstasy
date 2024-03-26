@@ -11,7 +11,7 @@ digraph "src/ecstasy/integrations/event/listeners" {
   dir_8c1a170fbd0a5283d7ed264cf6df56b3 [shape=box label="resources" fillcolor="white" style="filled" color="red" URL="dir_8c1a170fbd0a5283d7ed264cf6df56b3.html"];
   dir_a8078633be16197a18b2342aa1868a9d->dir_1ee6296ae77f12e2ec152e792b5317de [headlabel="6", labeldistance=1.5 headhref="dir_000005_000006.html"];
   dir_d93d52effc53fa915804937554a898ef->dir_1ee6296ae77f12e2ec152e792b5317de [headlabel="2", labeldistance=1.5 headhref="dir_000007_000006.html"];
-  dir_d93d52effc53fa915804937554a898ef->dir_8c1a170fbd0a5283d7ed264cf6df56b3 [headlabel="3", labeldistance=1.5 headhref="dir_000007_000019.html"];
+  dir_d93d52effc53fa915804937554a898ef->dir_8c1a170fbd0a5283d7ed264cf6df56b3 [headlabel="3", labeldistance=1.5 headhref="dir_000007_000020.html"];
   dir_d93d52effc53fa915804937554a898ef->dir_a8078633be16197a18b2342aa1868a9d [headlabel="2", labeldistance=1.5 headhref="dir_000007_000005.html"];
-  dir_1ee6296ae77f12e2ec152e792b5317de->dir_8c1a170fbd0a5283d7ed264cf6df56b3 [headlabel="3", labeldistance=1.5 headhref="dir_000006_000019.html"];
+  dir_1ee6296ae77f12e2ec152e792b5317de->dir_8c1a170fbd0a5283d7ed264cf6df56b3 [headlabel="3", labeldistance=1.5 headhref="dir_000006_000020.html"];
 }

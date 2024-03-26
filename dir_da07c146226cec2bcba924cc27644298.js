@@ -11,6 +11,7 @@ var dir_da07c146226cec2bcba924cc27644298 =
       [ "ActionBindings", "classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html", "classecstasy_1_1integration_1_1user__action_1_1_action_bindings" ]
     ] ],
     [ "ActionListener.hpp", "_action_listener_8hpp.html", "_action_listener_8hpp" ],
+    [ "include.hpp", "integrations_2user__action_2include_8hpp.html", null ],
     [ "PendingActions.hpp", "_pending_actions_8hpp.html", "_pending_actions_8hpp" ],
     [ "PollActions.hpp", "_poll_actions_8hpp.html", [
       [ "PollActions< std::integer_sequence< Action::Id, Actions... > >", "classecstasy_1_1integration_1_1user__action_1_1_poll_actions_3_01std_1_1integer__sequence_3_01_a67921aad8fc30a11f205db4b0bf5827d.html", "classecstasy_1_1integration_1_1user__action_1_1_poll_actions_3_01std_1_1integer__sequence_3_01_a67921aad8fc30a11f205db4b0bf5827d" ]

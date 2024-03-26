@@ -105,18 +105,18 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"",
-"_text_entered_listener_8hpp.html#ad0db9ac0560ceb6e9137a8fa97cb6501",
-"classecstasy_1_1integration_1_1event_1_1_event_listeners.html#ad20fe658aa8c8f756b939d8d462ae830",
-"classecstasy_1_1query_1_1modifier_1_1_and.html",
-"classutil_1_1serialization_1_1_i_object_node.html#ac86395a80adac282dcda40e537c0799f",
-"cpp/algorithm/ranges/is_permutation.html",
-"cpp/experimental/shuffle.html",
-"cpp/iterator/inserter.html",
-"cpp/numeric/special_functions/expint.html",
-"cpp/utility/compare/named_comparison_functions.html",
-"meta_8hpp.html",
-"structecstasy_1_1integration_1_1event_1_1_mouse_wheel_scroll_event.html#a210d76d9185b0015063be46610719cc3"
+"01__basic__window_2main_8cpp.html",
+"_toml_node_factory_8cpp_source.html",
+"classecstasy_1_1integration_1_1event_1_1_gamepad.html#a36f9d04ad082e3a412713f7be8086aa2",
+"classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#adaacb33d08cccbeab3656674128e4010",
+"classutil_1_1serialization_1_1_polymorphic_iterator.html#ae3df50771a3b00ec44920e627a085d57",
+"cpp/algorithm/ranges/mismatch.html",
+"cpp/experimental/type_trait_variable_templates.html",
+"cpp/locale/isalpha.html",
+"cpp/numeric/special_functions/sph_bessel.html",
+"cpp/utility/format/format_to_n.html",
+"namespaceecstasy.html#a53c8ca43801107dc959adbdc60810af8",
+"structecstasy_1_1integration_1_1user__action_1_1_action.html#ae5da598d1270ea60396b4a402bc73e96"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
