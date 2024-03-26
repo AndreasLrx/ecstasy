@@ -5,7 +5,7 @@
 /// @version 1.0.0
 /// @date 2023-11-08
 ///
-/// @copyright Copyright (c) ECSTASY 2022
+/// @copyright Copyright (c) ECSTASY 2022 - 2024
 ///
 ///
 
