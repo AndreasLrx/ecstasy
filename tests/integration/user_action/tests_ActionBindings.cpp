@@ -4,6 +4,8 @@
 namespace event = ecstasy::integration::event;
 namespace user_action = ecstasy::integration::user_action;
 
+enum class Actions : user_action::Action::Id { Action0, Action1, Count };
+
 TEST(ActionBinding, dump)
 {
     {
@@ -15,10 +17,10 @@ Action-0 = [ 'MouseButton->Left', 'Key->A', 'GamepadButton->FaceLeft' ]\n\
 Action-1 = [ 'GamepadAxis->TriggerLeft' ]";
         // clang-format on
 
-        bindings.getBindings().push_back(user_action::ActionBinding(0, event::Mouse::Button::Left));
-        bindings.getBindings().push_back(user_action::ActionBinding(0, event::Keyboard::Key::A));
-        bindings.getBindings().push_back(user_action::ActionBinding(0, event::Gamepad::Button::FaceLeft));
-        bindings.getBindings().push_back(user_action::ActionBinding(1, event::Gamepad::Axis::TriggerLeft));
+        bindings.getBindings().emplace_back(Actions::Action0, event::Mouse::Button::Left);
+        bindings.getBindings().emplace_back(0, event::Keyboard::Key::A);
+        bindings.getBindings().emplace_back(0, event::Gamepad::Button::FaceLeft);
+        bindings.getBindings().emplace_back(1, event::Gamepad::Axis::TriggerLeft);
         ss << bindings.dump();
         GTEST_ASSERT_EQ(ss.str(), expected);
     }
