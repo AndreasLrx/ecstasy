@@ -106,17 +106,17 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "01__basic__window_2main_8cpp.html",
-"_toml_node_factory_8cpp_source.html",
-"classecstasy_1_1integration_1_1event_1_1_gamepad.html#a36f9d04ad082e3a412713f7be8086aa2",
-"classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#adaacb33d08cccbeab3656674128e4010",
-"classutil_1_1serialization_1_1_polymorphic_iterator.html#ae3df50771a3b00ec44920e627a085d57",
-"cpp/algorithm/ranges/mismatch.html",
+"_toml_node_factory_8cpp.html",
+"classecstasy_1_1integration_1_1event_1_1_gamepad.html#a3188b214f02fb8a7f088f9aeeea48514",
+"classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#ad91b205b4ed727b40e34fec8c334f274",
+"classutil_1_1serialization_1_1_polymorphic_iterator.html#ae15d79ba9cb3163f921fd2f6f248ef8a",
+"cpp/algorithm/ranges/minmax_element.html",
 "cpp/experimental/type_trait_variable_templates.html",
-"cpp/locale/isalpha.html",
-"cpp/numeric/special_functions/sph_bessel.html",
-"cpp/utility/format/format_to_n.html",
-"namespaceecstasy.html#a53c8ca43801107dc959adbdc60810af8",
-"structecstasy_1_1integration_1_1user__action_1_1_action.html#ae5da598d1270ea60396b4a402bc73e96"
+"cpp/locale/isalnum.html",
+"cpp/numeric/special_functions/riemann_zeta.html",
+"cpp/utility/format/format_to.html",
+"namespaceecstasy.html#a3636e577cd1e59a7d31089601561cc39",
+"structecstasy_1_1integration_1_1user__action_1_1_action.html#abd960e5efeb67bcdc7ca0db13c873897"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

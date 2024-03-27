@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"classutil_1_1serialization_1_1_polymorphic_iterator.html#ae15d79ba9cb3163f921fd2f6f248ef8a":[5,0,1,1,5,2],
 "classutil_1_1serialization_1_1_polymorphic_iterator.html#ae3df50771a3b00ec44920e627a085d57":[5,0,1,1,5,10],
 "classutil_1_1serialization_1_1_polymorphic_iterator.html#aedc63b1d6cc934d9b4cd776f9a5beef0":[5,0,1,1,5,9],
 "classutil_1_1serialization_1_1_polymorphic_iterator.html#aee1249f19f8ecd96dfc934e5a26651da":[5,0,1,1,5,4],
@@ -146,8 +147,8 @@ var NAVTREEINDEX4 =
 "cpp/algorithm/binary_search.html":[4,0,1,90],
 "cpp/algorithm/bsearch.html":[4,0,1,100],
 "cpp/algorithm/clamp.html":[4,0,1,111],
-"cpp/algorithm/copy.html":[4,0,1,127],
 "cpp/algorithm/copy.html":[4,0,1,125],
+"cpp/algorithm/copy.html":[4,0,1,127],
 "cpp/algorithm/copy_backward.html":[4,0,1,126],
 "cpp/algorithm/copy_n.html":[4,0,1,128],
 "cpp/algorithm/count.html":[4,0,1,132],
@@ -213,19 +214,19 @@ var NAVTREEINDEX4 =
 "cpp/algorithm/ranges/all_any_none_of.html":[4,0,1,4,52],
 "cpp/algorithm/ranges/binary_search.html":[4,0,1,4,4],
 "cpp/algorithm/ranges/clamp.html":[4,0,1,4,6],
-"cpp/algorithm/ranges/copy.html":[4,0,1,4,8],
 "cpp/algorithm/ranges/copy.html":[4,0,1,4,10],
+"cpp/algorithm/ranges/copy.html":[4,0,1,4,8],
 "cpp/algorithm/ranges/copy_backward.html":[4,0,1,4,9],
 "cpp/algorithm/ranges/copy_n.html":[4,0,1,4,11],
-"cpp/algorithm/ranges/count.html":[4,0,1,4,12],
 "cpp/algorithm/ranges/count.html":[4,0,1,4,13],
+"cpp/algorithm/ranges/count.html":[4,0,1,4,12],
 "cpp/algorithm/ranges/equal.html":[4,0,1,4,17],
 "cpp/algorithm/ranges/equal_range.html":[4,0,1,4,18],
 "cpp/algorithm/ranges/fill.html":[4,0,1,4,19],
 "cpp/algorithm/ranges/fill_n.html":[4,0,1,4,20],
 "cpp/algorithm/ranges/find.html":[4,0,1,4,21],
-"cpp/algorithm/ranges/find.html":[4,0,1,4,24],
 "cpp/algorithm/ranges/find.html":[4,0,1,4,25],
+"cpp/algorithm/ranges/find.html":[4,0,1,4,24],
 "cpp/algorithm/ranges/find_end.html":[4,0,1,4,22],
 "cpp/algorithm/ranges/find_first_of.html":[4,0,1,4,23],
 "cpp/algorithm/ranges/for_each.html":[4,0,1,4,26],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "cpp/algorithm/ranges/merge.html":[4,0,1,4,43],
 "cpp/algorithm/ranges/min.html":[4,0,1,4,44],
 "cpp/algorithm/ranges/min_element.html":[4,0,1,4,45],
-"cpp/algorithm/ranges/minmax.html":[4,0,1,4,46],
-"cpp/algorithm/ranges/minmax_element.html":[4,0,1,4,47]
+"cpp/algorithm/ranges/minmax.html":[4,0,1,4,46]
 };

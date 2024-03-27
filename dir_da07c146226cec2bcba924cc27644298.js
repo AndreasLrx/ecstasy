@@ -3,9 +3,7 @@ var dir_da07c146226cec2bcba924cc27644298 =
     [ "Action.hpp", "_action_8hpp.html", [
       [ "Action", "structecstasy_1_1integration_1_1user__action_1_1_action.html", "structecstasy_1_1integration_1_1user__action_1_1_action" ]
     ] ],
-    [ "ActionBinding.hpp", "_action_binding_8hpp.html", [
-      [ "ActionBinding", "classecstasy_1_1integration_1_1user__action_1_1_action_binding.html", "classecstasy_1_1integration_1_1user__action_1_1_action_binding" ]
-    ] ],
+    [ "ActionBinding.hpp", "_action_binding_8hpp.html", "_action_binding_8hpp" ],
     [ "ActionBindings.cpp", "_action_bindings_8cpp.html", null ],
     [ "ActionBindings.hpp", "_action_bindings_8hpp.html", [
       [ "ActionBindings", "classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html", "classecstasy_1_1integration_1_1user__action_1_1_action_bindings" ]

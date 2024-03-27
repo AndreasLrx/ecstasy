@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"classecstasy_1_1integration_1_1event_1_1_gamepad.html#a3188b214f02fb8a7f088f9aeeea48514":[5,0,0,0,0,16,13],
 "classecstasy_1_1integration_1_1event_1_1_gamepad.html#a36f9d04ad082e3a412713f7be8086aa2":[5,0,0,0,0,16,19],
 "classecstasy_1_1integration_1_1event_1_1_gamepad.html#a3889e689614987816a56b70ee93cabcc":[5,0,0,0,0,16,0],
 "classecstasy_1_1integration_1_1event_1_1_gamepad.html#a3889e689614987816a56b70ee93cabcca482d1c1190728d3c4be1ffcbcce2dd49":[5,0,0,0,0,16,0,5],
@@ -134,9 +135,7 @@ var NAVTREEINDEX2 =
 "classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a0167827664161fe13b5bb0d9d69f4a6a":[5,0,0,0,2,1,7],
 "classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a0aef6144f03d7d76bfa57362aab067a1":[5,0,0,0,2,1,11],
 "classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a1a36b3127613cd11b8a18f734c2706ed":[5,0,0,0,2,1,8],
-"classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a3077cc48abd50d253aa86a2e1dd4c454":[5,0,0,0,2,1,4],
 "classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a4bf0f38a85c585bd957baaf22ab3bdda":[5,0,0,0,2,1,1],
-"classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a5bed22becec84a85fe31cf9c0a29b494":[5,0,0,0,2,1,5],
 "classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a5c5c0ba50ad322f3167c7b3c7eae5bf0":[5,0,0,0,2,1,9],
 "classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a61ae233154a98f65414a9e4fc94eecfe":[5,0,0,0,2,1,0],
 "classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a61ae233154a98f65414a9e4fc94eecfea4763e000c5c9b3689e9ed5d797eae210":[5,0,0,0,2,1,0,2],
@@ -146,9 +145,11 @@ var NAVTREEINDEX2 =
 "classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a61ae233154a98f65414a9e4fc94eecfeae93f994f01c537c4e2f7d8528c3eb5e9":[5,0,0,0,2,1,0,4],
 "classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a84fa5b2deb161cefa7d8f1746f23c938":[5,0,0,0,2,1,10],
 "classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a904ef30d99d42e549289265f9e1b1241":[5,0,0,0,2,1,6],
+"classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a99715c43108f48ab234df10e9fad135a":[5,0,0,0,2,1,5],
 "classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a9a7439130f0ea756f5e8850043bc78b9":[5,0,0,0,2,1,12],
-"classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#ac1bca672340bef93a4c83121a214f99d":[5,0,0,0,2,1,2],
-"classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#ad6460d0195368004f78563726ed4b5d3":[5,0,0,0,2,1,3],
+"classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#aaeee4c9e1d5f23de3df818987f8c2cc2":[5,0,0,0,2,1,4],
+"classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#aec33dd792815112a26ab1aa29674acf4":[5,0,0,0,2,1,3],
+"classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#af904c9c7574451709cba602af4ac981a":[5,0,0,0,2,1,2],
 "classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html":[5,0,0,0,2,2],
 "classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#a405a25c0e6c7d94d419c6b5bae4f4801":[5,0,0,0,2,2,6],
 "classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#a427229da39c47bda329ad0cf4a2f373a":[5,0,0,0,2,2,0],
@@ -207,9 +208,9 @@ var NAVTREEINDEX2 =
 "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html#a4afdbf70589a4abf676631b475c2b2a4":[5,0,0,1,8,0,15],
 "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html#a4c84ed0b24de2c607f0a6dac3fcf5104":[5,0,0,1,8,0,17],
 "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html#a4f7dc2c89e15b85fa9f2395b76639fdd":[5,0,0,1,8,0,11],
-"classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html#a4f7dc2c89e15b85fa9f2395b76639fdd":[5,0,0,1,8,0,12],
 "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html#a4f7dc2c89e15b85fa9f2395b76639fdd":[5,0,0,1,8,0,13],
 "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html#a4f7dc2c89e15b85fa9f2395b76639fdd":[5,0,0,1,8,0,10],
+"classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html#a4f7dc2c89e15b85fa9f2395b76639fdd":[5,0,0,1,8,0,12],
 "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html#a52a679a24185ea337143184f998f91ef":[5,0,0,1,8,0,26],
 "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html#a7034daf523cfd01542dcf76b473b7f59":[5,0,0,1,8,0,24],
 "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html#a77a063cd5691703a410fecafa735de69":[5,0,0,1,8,0,16],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#a60c2217c098c6ca76c7be8c856f24c50":[5,0,0,1,0,1,0],
 "classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#a9f44a55b1b6559bc8652ce0f286b46cc":[5,0,0,1,0,1,2],
 "classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#abbc065f2f2d7d4cf93305f72fb972ee9":[5,0,0,1,0,1,1],
-"classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#ad32636f3357f781e633dd1e275e2fa96":[5,0,0,1,0,1,9],
-"classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#ad91b205b4ed727b40e34fec8c334f274":[5,0,0,1,0,1,3]
+"classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#ad32636f3357f781e633dd1e275e2fa96":[5,0,0,1,0,1,9]
 };

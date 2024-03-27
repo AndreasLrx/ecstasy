@@ -10,5 +10,6 @@ var namespaceecstasy_1_1integration_1_1user__action =
     [ "UserProfile", "classecstasy_1_1integration_1_1user__action_1_1_user_profile.html", "classecstasy_1_1integration_1_1user__action_1_1_user_profile" ],
     [ "Users", "classecstasy_1_1integration_1_1user__action_1_1_users.html", "classecstasy_1_1integration_1_1user__action_1_1_users" ],
     [ "ActionListeners", "namespaceecstasy_1_1integration_1_1user__action.html#a463f381fdabb7e1e0b9b5ca3a2173fa1", null ],
+    [ "is_valid_action_id", "namespaceecstasy_1_1integration_1_1user__action.html#a08793900a49ef3c94b3f503cfc6cafeb", null ],
     [ "PendingActions", "namespaceecstasy_1_1integration_1_1user__action.html#a9b4f873eff13ede42a8a53839aea12b0", null ]
 ];

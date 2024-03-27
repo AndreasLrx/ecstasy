@@ -85,7 +85,8 @@ $(document).ready(function(){initNavTree('_action_binding_8hpp.html',''); initRe
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">ActionBinding.hpp File Reference</div>  </div>
 </div><!--header-->
@@ -128,6 +129,13 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespaceecstasy_1_1integration_1_1user__action"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1integration_1_1user__action.html">ecstasy::integration::user_action</a></td></tr>
 <tr class="memdesc:namespaceecstasy_1_1integration_1_1user__action"><td class="mdescLeft">&#160;</td><td class="mdescRight">User action integration. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a08793900a49ef3c94b3f503cfc6cafeb"><td class="memTemplParams" colspan="2">template&lt;typename E &gt; </td></tr>
+<tr class="memitem:a08793900a49ef3c94b3f503cfc6cafeb"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1integration_1_1user__action.html#a08793900a49ef3c94b3f503cfc6cafeb">ecstasy::integration::user_action::is_valid_action_id</a> = typename <a class="elRef" href="http://en.cppreference.com/w/cpp/types/conditional.html">std::conditional</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_enum.html">std::is_enum_v</a>&lt; E &gt;, <a class="elRef" href="http://en.cppreference.com/w/cpp/types/integral_constant.html">std::true_type</a>, <a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_same.html">std::is_same</a>&lt; E, Action::Id &gt; &gt;::type</td></tr>
+<tr class="memdesc:a08793900a49ef3c94b3f503cfc6cafeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boolean type trait to check if a type is a valid action id type (enum or size_t).  <a href="namespaceecstasy_1_1integration_1_1user__action.html#a08793900a49ef3c94b3f503cfc6cafeb">More...</a><br /></td></tr>
+<tr class="separator:a08793900a49ef3c94b3f503cfc6cafeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>

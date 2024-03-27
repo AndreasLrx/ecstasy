@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"_toml_node_factory_8cpp.html":[6,0,1,1,1,0,5],
 "_toml_node_factory_8cpp_source.html":[6,0,1,1,1,0,5],
 "_toml_node_factory_8hpp.html":[6,0,1,1,1,0,6],
 "_toml_node_factory_8hpp_source.html":[6,0,1,1,1,0,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "classecstasy_1_1integration_1_1event_1_1_gamepad.html#a1b1505d107fac8b9745aba71fed30fe8":[5,0,0,0,0,16,9],
 "classecstasy_1_1integration_1_1event_1_1_gamepad.html#a2b8a4a06f21e1c1207380ef2d52d8031":[5,0,0,0,0,16,5],
 "classecstasy_1_1integration_1_1event_1_1_gamepad.html#a2c5c1e7d9b7a82d7c7ed6902e6ce7424":[5,0,0,0,0,16,23],
-"classecstasy_1_1integration_1_1event_1_1_gamepad.html#a2f3662b764ea08a6055c9320f9d4b257":[5,0,0,0,0,16,27],
-"classecstasy_1_1integration_1_1event_1_1_gamepad.html#a3188b214f02fb8a7f088f9aeeea48514":[5,0,0,0,0,16,13]
+"classecstasy_1_1integration_1_1event_1_1_gamepad.html#a2f3662b764ea08a6055c9320f9d4b257":[5,0,0,0,0,16,27]
 };
