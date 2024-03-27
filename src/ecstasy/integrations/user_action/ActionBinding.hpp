@@ -31,6 +31,18 @@ namespace ecstasy::integration::user_action
     }
 
     ///
+    /// @brief Boolean type trait to check if a type is a valid action id type (enum or size_t).
+    ///
+    /// @tparam E Type to check.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-03-27)
+    ///
+    template <typename E>
+    using is_valid_action_id =
+        typename std::conditional<std::is_enum_v<E>, std::true_type, std::is_same<E, Action::Id>>::type;
+
+    ///
     /// @brief Action binding class, represent a binding between an input and a given action.
     /// Holds the binding type (set to Type::Count if empty), the associated data type and the action id.
     ///
@@ -69,55 +81,68 @@ namespace ecstasy::integration::user_action
         ///
         /// @brief Construct a mouse button action binding.
         ///
+        /// @tparam E Enum or size_t type.
+        ///
         /// @param[in] id Id of the associated action.
         /// @param[in] input Source input.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-25)
         ///
-        constexpr ActionBinding(Action::Id id, event::Mouse::Button input)
-            : type(Type::MouseButton), actionId(id), mouseButton(input)
+        template <typename E, typename = is_valid_action_id<E>>
+        constexpr ActionBinding(E id, event::Mouse::Button input)
+            : type(Type::MouseButton), actionId(static_cast<Action::Id>(id)), mouseButton(input)
         {
         }
 
         ///
         /// @brief Construct a key action binding.
         ///
+        /// @tparam E Enum or size_t type.
+        ///
         /// @param[in] id Id of the associated action.
         /// @param[in] input Source input.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-25)
         ///
-        constexpr ActionBinding(Action::Id id, event::Keyboard::Key input) : type(Type::Key), actionId(id), key(input)
+        template <typename E, typename = is_valid_action_id<E>>
+        constexpr ActionBinding(E id, event::Keyboard::Key input)
+            : type(Type::Key), actionId(static_cast<Action::Id>(id)), key(input)
         {
         }
 
         ///
         /// @brief Construct a gamepad button action binding.
         ///
+        /// @tparam E Enum or size_t type.
+        ///
         /// @param[in] id Id of the associated action.
         /// @param[in] input Source input.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-25)
         ///
-        constexpr ActionBinding(Action::Id id, event::Gamepad::Button input)
-            : type(Type::GamepadButton), actionId(id), gamepadButton(input)
+        template <typename E, typename = is_valid_action_id<E>>
+        constexpr ActionBinding(E id, event::Gamepad::Button input)
+            : type(Type::GamepadButton), actionId(static_cast<Action::Id>(id)), gamepadButton(input)
         {
         }
 
         ///
         /// @brief Construct a gamepad axis action binding.
         ///
+        /// @tparam E Enum or size_t type.
+        ///
         /// @param[in] id Id of the associated action.
         /// @param[in] input Source input.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-25)
         ///
-        constexpr ActionBinding(Action::Id id, event::Gamepad::Axis input)
-            : type(Type::GamepadAxis), actionId(id), gamepadAxis(input)
+        template <typename E, typename = is_valid_action_id<E>>
+        constexpr ActionBinding(E id, event::Gamepad::Axis input)
+            : type(Type::GamepadAxis), actionId(static_cast<Action::Id>(id)), gamepadAxis(input)
         {
         }
 
