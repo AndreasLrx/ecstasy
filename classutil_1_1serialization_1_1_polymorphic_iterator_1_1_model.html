@@ -113,9 +113,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af6d37f2c7108ca88706bcfbed5f28dd7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classutil_1_1serialization_1_1_polymorphic_iterator.html#a668f931c08d101a2b5943d925fe9d4c6">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html#af6d37f2c7108ca88706bcfbed5f28dd7">get</a> () const override final</td></tr>
 <tr class="memdesc:af6d37f2c7108ca88706bcfbed5f28dd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the iterator value.  <a href="classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html#af6d37f2c7108ca88706bcfbed5f28dd7">More...</a><br /></td></tr>
 <tr class="separator:af6d37f2c7108ca88706bcfbed5f28dd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76f283ec44bc6e7fbba4f0e34c394e36"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html#a76f283ec44bc6e7fbba4f0e34c394e36">equal</a> (const <a class="el" href="structutil_1_1serialization_1_1_polymorphic_iterator_1_1_concept.html">Concept</a> *rp) const override final</td></tr>
-<tr class="memdesc:a76f283ec44bc6e7fbba4f0e34c394e36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two operators.  <a href="classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html#a76f283ec44bc6e7fbba4f0e34c394e36">More...</a><br /></td></tr>
-<tr class="separator:a76f283ec44bc6e7fbba4f0e34c394e36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4f77d0001893ff12a49552a81c6903b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html#ab4f77d0001893ff12a49552a81c6903b">equal</a> (const <a class="el" href="structutil_1_1serialization_1_1_polymorphic_iterator_1_1_concept.html">Concept</a> *other) const override final</td></tr>
+<tr class="memdesc:ab4f77d0001893ff12a49552a81c6903b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two operators.  <a href="classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html#ab4f77d0001893ff12a49552a81c6903b">More...</a><br /></td></tr>
+<tr class="separator:ab4f77d0001893ff12a49552a81c6903b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3594daf838687c1b7a202d03657d8e02"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html">std::unique_ptr</a>&lt; <a class="el" href="structutil_1_1serialization_1_1_polymorphic_iterator_1_1_concept.html">Concept</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html#a3594daf838687c1b7a202d03657d8e02">clone</a> () const override final</td></tr>
 <tr class="memdesc:a3594daf838687c1b7a202d03657d8e02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clone <b>this</b>.  <a href="classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html#a3594daf838687c1b7a202d03657d8e02">More...</a><br /></td></tr>
 <tr class="separator:a3594daf838687c1b7a202d03657d8e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -272,8 +272,8 @@ template&lt;class Iter &gt; </div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a76f283ec44bc6e7fbba4f0e34c394e36"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76f283ec44bc6e7fbba4f0e34c394e36">&#9670;&nbsp;</a></span>equal()</h2>
+<a id="ab4f77d0001893ff12a49552a81c6903b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4f77d0001893ff12a49552a81c6903b">&#9670;&nbsp;</a></span>equal()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -289,7 +289,7 @@ template&lt;class Iter &gt; </div>
           <td class="memname">bool <a class="el" href="classutil_1_1serialization_1_1_polymorphic_iterator.html">util::serialization::PolymorphicIterator</a>&lt; T &gt;::<a class="el" href="classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html">Model</a>&lt; Iter &gt;::equal </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structutil_1_1serialization_1_1_polymorphic_iterator_1_1_concept.html">Concept</a> *&#160;</td>
-          <td class="paramname"><em>rp</em></td><td>)</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -316,7 +316,7 @@ template&lt;class Iter &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="_polymorphic_iterator_8hpp_source.html#l00146">146</a> of file <a class="el" href="_polymorphic_iterator_8hpp_source.html">PolymorphicIterator.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            {</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html#aff0a84264df0c931fc6f1ecd4a335540">_iter</a> == <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span><a class="code" href="classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html#aff376c43becb35f6d121df868d55c5f0">Model</a> *<span class="keyword">&gt;</span>(rp)-&gt;<a class="code" href="classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html#aff0a84264df0c931fc6f1ecd4a335540">_iter</a>;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html#aff0a84264df0c931fc6f1ecd4a335540">_iter</a> == <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span><a class="code" href="classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html#aff376c43becb35f6d121df868d55c5f0">Model</a> *<span class="keyword">&gt;</span>(other)-&gt;<a class="code" href="classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html#aff0a84264df0c931fc6f1ecd4a335540">_iter</a>;</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            }</div>
 <div class="ttc" id="aclassutil_1_1serialization_1_1_polymorphic_iterator_1_1_model_html_aff376c43becb35f6d121df868d55c5f0"><div class="ttname"><a href="classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html#aff376c43becb35f6d121df868d55c5f0">util::serialization::PolymorphicIterator::Model::Model</a></div><div class="ttdeci">Model(Iter iter)</div><div class="ttdoc">Construct a new Model.</div><div class="ttdef"><b>Definition:</b> <a href="_polymorphic_iterator_8hpp_source.html#l00129">PolymorphicIterator.hpp:129</a></div></div>
 </div><!-- fragment -->

@@ -116,8 +116,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:afb1d49b0d4df8b017fec24a72c1b4cc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Toml Array Node.  <a href="classutil_1_1serialization_1_1_toml_array_node.html#afb1d49b0d4df8b017fec24a72c1b4cc7">More...</a><br /></td></tr>
 <tr class="separator:afb1d49b0d4df8b017fec24a72c1b4cc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a623e79b69f5f68f381580c608ba58330"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceutil_1_1serialization.html#a0205346f475e840cdce95f716689825c">NodeCView</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_toml_array_node.html#a623e79b69f5f68f381580c608ba58330">get</a> (<a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a4e98adda8e4cfa0f33b1549ac76122c5">Index</a> index) const override final</td></tr>
+<tr class="memdesc:a623e79b69f5f68f381580c608ba58330"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the node at <code>index</code> if existing.  <a href="classutil_1_1serialization_1_1_toml_array_node.html#a623e79b69f5f68f381580c608ba58330">More...</a><br /></td></tr>
 <tr class="separator:a623e79b69f5f68f381580c608ba58330"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9f017080c702ff37ba9b663d1379964"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceutil_1_1serialization.html#a3235dfc13252d0b7eacdb86bc1e09a2c">NodeView</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_toml_array_node.html#af9f017080c702ff37ba9b663d1379964">get</a> (<a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a4e98adda8e4cfa0f33b1549ac76122c5">Index</a> index) override final</td></tr>
+<tr class="memdesc:af9f017080c702ff37ba9b663d1379964"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the node at <code>index</code> if existing.  <a href="classutil_1_1serialization_1_1_toml_array_node.html#af9f017080c702ff37ba9b663d1379964">More...</a><br /></td></tr>
 <tr class="separator:af9f017080c702ff37ba9b663d1379964"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a002d9060029bdf19226843d0e45495f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceutil_1_1serialization.html#a0205346f475e840cdce95f716689825c">NodeCView</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_toml_array_node.html#a002d9060029bdf19226843d0e45495f6">tryGet</a> (<a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a4e98adda8e4cfa0f33b1549ac76122c5">Index</a> index) const override final</td></tr>
 <tr class="memdesc:a002d9060029bdf19226843d0e45495f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the node at <code>index</code>.  <a href="classutil_1_1serialization_1_1_toml_array_node.html#a002d9060029bdf19226843d0e45495f6">More...</a><br /></td></tr>
@@ -780,7 +782,22 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p></p>
+<p>Get the node at <code>index</code> if existing. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>The node's index.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NodeCView A weak pointer to the requested node.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="elRef" href="http://en.cppreference.com/w/cpp/error/out_of_range.html">std::out_of_range</a></td><td>If the index is out of bounds.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
 
 <p>Implements <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#ab2087863e992ce1fb398ffbedd1d8498">util::serialization::IArrayNode</a>.</p>
 
@@ -815,7 +832,22 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p></p>
+<p>Get the node at <code>index</code> if existing. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>The node's index.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NodeCView A weak pointer to the requested node.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="elRef" href="http://en.cppreference.com/w/cpp/error/out_of_range.html">std::out_of_range</a></td><td>If the index is out of bounds.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
 
 <p>Implements <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html#a88bc53b797b4435b721c17cb95cbf7cc">util::serialization::IArrayNode</a>.</p>
 

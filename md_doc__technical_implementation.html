@@ -113,7 +113,7 @@ Entities Management</h1>
 <li><p class="startli">Entity deletion (<a class="el" href="classecstasy_1_1_entities.html#a8ab0b16f21e56cbdc4f773e35a634077">ecstasy::Entities::erase</a>)</p>
 <p class="startli">Erasing an entity just means setting the bit at its index to false in _alive bitset. The deletion is instant.</p>
 </li>
-<li><p class="startli">Entity kill (<a class="el" href="classecstasy_1_1_entities.html#aec1fe19014484bfb198e627425b78180">ecstasy::Entities::kill</a>)</p>
+<li><p class="startli">Entity kill (<a class="el" href="classecstasy_1_1_entities.html#a5b5ee10b59fdbd21568254ad57903755">ecstasy::Entities::kill</a>)</p>
 <p class="startli">Killing an entity does not erase the entity, it only marks it for deletion. It set the bit at the entity index to true in _killed bitset. If the bitset is too small, it is resize appropriately before. To effectively delete the killed entities, you need to call <a class="el" href="classecstasy_1_1_entities.html#ae6313ea1ae99037aaf335034d66e5e45">ecstasy::Entities::maintain</a>.</p>
 </li>
 </ol>
@@ -140,7 +140,7 @@ Query</h1>
 <p>The query can then perform a simple bitwise <code>and</code> on all the bitset and has its final bitset. When you query the registry, the bitset is computed only upon creation and you iterate on the computed bitset. Then for each bit set, the query fetch the associated component in the position/velocity storage.</p>
 <h3><a class="anchor" id="autotoc_md31"></a>
 Queryable and BitSet</h3>
-<p>A storage is in fact a ecstasy::Queryable. It is defined by three properties:</p>
+<p>A storage is in fact a <a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">ecstasy::query::Queryable</a>. It is defined by three properties:</p>
 <ul>
 <li>A bitset, accessible through a <code>getMask()</code> method</li>
 <li>A type for the value to return on iteration, defined as a nested <code>QueryData</code> type</li>
@@ -158,7 +158,7 @@ Queryable and BitSet</h3>
 <div class="ttc" id="anamespaceecstasy_1_1query_html_aae5d7b89c92ec00ebea0cf94b09d8087"><div class="ttname"><a href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">ecstasy::query::requires</a></div><div class="ttdeci">requires(!std::is_member_pointer_v&lt; LeftType &gt; &amp;&amp;!std::is_member_pointer_v&lt; RightType &gt;) struct Condition&lt; Left</div></div>
 <div class="ttc" id="anamespaceecstasy_1_1query_html_aef33b329c1a412eb7f7403b90881d468"><div class="ttname"><a href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">ecstasy::query::Queryable</a></div><div class="ttdeci">concept Queryable</div><div class="ttdoc">Defines a type that can be queried.</div><div class="ttdef"><b>Definition:</b> <a href="_queryable_8hpp_source.html#l00034">Queryable.hpp:34</a></div></div>
 <div class="ttc" id="asize_t_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a></div></div>
-</div><!-- fragment --><p>Knowing this I can re explain the query behavior. The query takes only ecstasy::Queryable in inputs. It then does a bitwise <code>and</code> on the associated bitsets and save it. The class also defines an iterator to... iterate on the matching entities and on each match it returns a tuple of the values, fetched through the <code>getQueryData</code> method.</p>
+</div><!-- fragment --><p>Knowing this I can re explain the query behavior. The query takes only <a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">ecstasy::query::Queryable</a> in inputs. It then does a bitwise <code>and</code> on the associated bitsets and save it. The class also defines an iterator to... iterate on the matching entities and on each match it returns a tuple of the values, fetched through the <code>getQueryData</code> method.</p>
 <p>You can also create a Query with a precomputed bitset as you can see below with the first constructor.</p>
 <p><em><a class="el" href="namespaceutil_1_1meta.html" title="Namespace regrouping all meta programmation helper types.">util::meta</a>::* are helpers meta programming "functions"/types</em></p>
 <div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<a class="code" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">Queryable</a> First, <a class="code" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">Queryable</a>... Others&gt;</div>

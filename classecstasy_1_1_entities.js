@@ -11,7 +11,7 @@ var classecstasy_1_1_entities =
     [ "getMask", "classecstasy_1_1_entities.html#ad1836d44e38c0f4eb13b74cf6e15b2ce", null ],
     [ "getQueryData", "classecstasy_1_1_entities.html#a0fb2172bdfac93a38d7b948a0f1a8570", null ],
     [ "isAlive", "classecstasy_1_1_entities.html#a909641851e5ced121a1e9030eb8ce787", null ],
-    [ "kill", "classecstasy_1_1_entities.html#aec1fe19014484bfb198e627425b78180", null ],
+    [ "kill", "classecstasy_1_1_entities.html#a5b5ee10b59fdbd21568254ad57903755", null ],
     [ "maintain", "classecstasy_1_1_entities.html#ae6313ea1ae99037aaf335034d66e5e45", null ],
     [ "_alive", "classecstasy_1_1_entities.html#a66333d5192ea6e070b9c2ecd178729f1", null ],
     [ "_generations", "classecstasy_1_1_entities.html#af547ab6f0b87f627193f19ec57bdfec4", null ],

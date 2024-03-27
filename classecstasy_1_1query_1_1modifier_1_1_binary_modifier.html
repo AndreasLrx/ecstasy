@@ -115,7 +115,7 @@ Public Types</h2></td></tr>
 <tr class="memdesc:abbc065f2f2d7d4cf93305f72fb972ee9"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier.html">Modifier</a> constraint.  <a href="classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#abbc065f2f2d7d4cf93305f72fb972ee9">More...</a><br /></td></tr>
 <tr class="separator:abbc065f2f2d7d4cf93305f72fb972ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f44a55b1b6559bc8652ce0f286b46cc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#a9f44a55b1b6559bc8652ce0f286b46cc">QueryData</a> = <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt; typename DataModifier&lt; typename Q1::QueryData &gt;::type, typename DataModifier&lt; typename Q2::QueryData &gt;::type, typename DataModifier&lt; typename Qs::QueryData &gt;::type... &gt;</td></tr>
-<tr class="memdesc:a9f44a55b1b6559bc8652ce0f286b46cc"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">Queryable</a> constaint.  <a href="classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#a9f44a55b1b6559bc8652ce0f286b46cc">More...</a><br /></td></tr>
+<tr class="memdesc:a9f44a55b1b6559bc8652ce0f286b46cc"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">ecstasy::query::Queryable</a> constaint.  <a href="classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#a9f44a55b1b6559bc8652ce0f286b46cc">More...</a><br /></td></tr>
 <tr class="separator:a9f44a55b1b6559bc8652ce0f286b46cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60c2217c098c6ca76c7be8c856f24c50"><td class="memTemplParams" colspan="2">template&lt;size_t operandId&gt; </td></tr>
 <tr class="memitem:a60c2217c098c6ca76c7be8c856f24c50"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#a60c2217c098c6ca76c7be8c856f24c50">OperandData</a> = std::tuple_element_t&lt; operandId, <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#a9f44a55b1b6559bc8652ce0f286b46cc">QueryData</a> &gt;</td></tr>
@@ -229,7 +229,7 @@ template&lt;typename Derived , template&lt; typename &gt; class DataModifier, Qu
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">Queryable</a> constaint. </p>
+<p><a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">ecstasy::query::Queryable</a> constaint. </p>
 
 <p class="definition">Definition at line <a class="el" href="_binary_modifier_8hpp_source.html#l00039">39</a> of file <a class="el" href="_binary_modifier_8hpp_source.html">BinaryModifier.hpp</a>.</p>
 
@@ -281,8 +281,8 @@ template&lt;typename Derived , template&lt; typename &gt; class DataModifier, Qu
 <p>Construct a new binary query modifier. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">leftOperand</td><td>left queryable operand. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">rightOperand</td><td>right queryable operand. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">firstOperand</td><td>left queryable operand. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">secondOperand</td><td>right queryable operand. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">otherOperands</td><td>additional operands (optional).</td></tr>
   </table>
   </dd>
@@ -361,8 +361,8 @@ template&lt;typename Derived , template&lt; typename &gt; class DataModifier, Qu
 </div><div class="memdoc">
 
 <p>Get the Mask of the internal queryables. </p>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">Queryable</a> constraint. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Use reloadMask() if the operand masks have changed since the construction.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">ecstasy::query::Queryable</a> constraint. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Use <code>reloadMask()</code> if the operand masks have changed since the construction.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>const <a class="el" href="classutil_1_1_bit_set.html" title="Mimics the API of std::bitset but with the dynamic properties of std::vector&lt;bool&gt;">util::BitSet</a>&amp; resulting mask.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-27) </dd></dl>
@@ -402,7 +402,7 @@ template&lt;typename Derived , template&lt; typename &gt; class DataModifier, Qu
 </div><div class="memdoc">
 
 <p>Get the operands data at the given index. </p>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">Queryable</a> constraint.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">ecstasy::query::Queryable</a> constraint.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Index of the entity.</td></tr>

@@ -8,7 +8,7 @@ var searchData=
   ['keypressedevent_5442',['KeyPressedEvent',['../structecstasy_1_1integration_1_1event_1_1_key_pressed_event.html#a94170d87a8cb78ac6e43b625e4357b70',1,'ecstasy::integration::event::KeyPressedEvent']]],
   ['keyreleasedevent_5443',['KeyReleasedEvent',['../structecstasy_1_1integration_1_1event_1_1_key_released_event.html#acf5eabd54ba87a16fcd1a570c06f2f23',1,'ecstasy::integration::event::KeyReleasedEvent']]],
   ['keysequencelistener_5444',['KeySequenceListener',['../classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a6aad80653676991e00ebe63b2c40f875',1,'ecstasy::integration::event::KeySequenceListener']]],
-  ['kill_5445',['kill',['../classecstasy_1_1_entities.html#aec1fe19014484bfb198e627425b78180',1,'ecstasy::Entities']]],
+  ['kill_5445',['kill',['../classecstasy_1_1_entities.html#a5b5ee10b59fdbd21568254ad57903755',1,'ecstasy::Entities']]],
   ['kill_5fdependency_5446',['kill_dependency',['http://en.cppreference.com/w/cpp/atomic/kill_dependency.html',1,'std']]],
   ['knuth_5fb_5447',['knuth_b',['http://en.cppreference.com/w/cpp/numeric/random/shuffle_order_engine/shuffle_order_engine.html',1,'std::knuth_b']]]
 ];

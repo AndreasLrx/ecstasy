@@ -244,7 +244,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
 <div class="ttc" id="aclassecstasy_1_1_entity_html_a4aac92ab111535a1a65e8bc4e6287331"><div class="ttname"><a href="classecstasy_1_1_entity.html#a4aac92ab111535a1a65e8bc4e6287331">ecstasy::Entity::Entity</a></div><div class="ttdeci">constexpr Entity(Index index, Generation generation)</div><div class="ttdoc">The entity structure may only be constructed by builders.</div><div class="ttdef"><b>Definition:</b> <a href="_entity_8hpp_source.html#l00234">Entity.hpp:234</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_registry_entity_html_af26f37cece2f86882456e665a23f60d2"><div class="ttname"><a href="classecstasy_1_1_registry_entity.html#af26f37cece2f86882456e665a23f60d2">ecstasy::RegistryEntity::_registry</a></div><div class="ttdeci">Registry &amp; _registry</div><div class="ttdef"><b>Definition:</b> <a href="_registry_entity_8hpp_source.html#l00135">RegistryEntity.hpp:135</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_entity_html_af26f37cece2f86882456e665a23f60d2"><div class="ttname"><a href="classecstasy_1_1_registry_entity.html#af26f37cece2f86882456e665a23f60d2">ecstasy::RegistryEntity::_registry</a></div><div class="ttdeci">Registry &amp; _registry</div><div class="ttdef"><b>Definition:</b> <a href="_registry_entity_8hpp_source.html#l00128">RegistryEntity.hpp:128</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -285,7 +285,6 @@ template&lt;typename C , typename... Args&gt; </div>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">storage</td><td>Storage for type <b>C</b>. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">args</td><td>Arguments to forward to the component constructor.</td></tr>
   </table>
   </dd>
@@ -300,12 +299,12 @@ template&lt;typename C , typename... Args&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-19) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_entity_8hpp_source.html#l00056">56</a> of file <a class="el" href="_registry_entity_8hpp_source.html">RegistryEntity.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_entity.html#a12d437d525fdb8d0a49c3c551f0cefa7">Entity::add</a>(<a class="code" href="classecstasy_1_1_registry_entity.html#af26f37cece2f86882456e665a23f60d2">_registry</a>.<a class="code" href="classecstasy_1_1_registry.html#a6b82e8e1b62be9b89329303ed4c2327a">getStorageSafe</a>&lt;C&gt;(), std::forward&lt;Args&gt;(args)...);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_entity_8hpp_source.html#l00055">55</a> of file <a class="el" href="_registry_entity_8hpp_source.html">RegistryEntity.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_entity.html#a12d437d525fdb8d0a49c3c551f0cefa7">Entity::add</a>(<a class="code" href="classecstasy_1_1_registry_entity.html#af26f37cece2f86882456e665a23f60d2">_registry</a>.<a class="code" href="classecstasy_1_1_registry.html#a6b82e8e1b62be9b89329303ed4c2327a">getStorageSafe</a>&lt;C&gt;(), std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
 <div class="ttc" id="aclassecstasy_1_1_entity_html_a12d437d525fdb8d0a49c3c551f0cefa7"><div class="ttname"><a href="classecstasy_1_1_entity.html#a12d437d525fdb8d0a49c3c551f0cefa7">ecstasy::Entity::add</a></div><div class="ttdeci">S::Component &amp; add(S &amp;storage, Args &amp;&amp;...args)</div><div class="ttdoc">Add a component to the entity.</div><div class="ttdef"><b>Definition:</b> <a href="_entity_8hpp_source.html#l00111">Entity.hpp:111</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_a6b82e8e1b62be9b89329303ed4c2327a"><div class="ttname"><a href="classecstasy_1_1_registry.html#a6b82e8e1b62be9b89329303ed4c2327a">ecstasy::Registry::getStorageSafe</a></div><div class="ttdeci">getStorageType&lt; C &gt; &amp; getStorageSafe() noexcept</div><div class="ttdoc">Get the Storage of a component and create it if not found.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00813">Registry.hpp:813</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_a6b82e8e1b62be9b89329303ed4c2327a"><div class="ttname"><a href="classecstasy_1_1_registry.html#a6b82e8e1b62be9b89329303ed4c2327a">ecstasy::Registry::getStorageSafe</a></div><div class="ttdeci">getStorageType&lt; C &gt; &amp; getStorageSafe() noexcept</div><div class="ttdoc">Get the Storage of a component and create it if not found.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00812">Registry.hpp:812</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -341,12 +340,6 @@ template&lt;typename C &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">storage</td><td>Storage for type <b>C</b>.</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>C&amp; Reference to the entity instance of <b>C</b> associated to the entity.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -358,12 +351,12 @@ template&lt;typename C &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-19) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_entity_8hpp_source.html#l00098">98</a> of file <a class="el" href="_registry_entity_8hpp_source.html">RegistryEntity.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry_entity.html#af26f37cece2f86882456e665a23f60d2">_registry</a>.<a class="code" href="classecstasy_1_1_registry.html#ad6b0a8d29a43168653502dfc426bacc8">getStorage</a>&lt;C&gt;()[<a class="code" href="classecstasy_1_1_entity.html#addeec91510f5480c5dcc68afb00eb63b">_index</a>];</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_entity_8hpp_source.html#l00093">93</a> of file <a class="el" href="_registry_entity_8hpp_source.html">RegistryEntity.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry_entity.html#af26f37cece2f86882456e665a23f60d2">_registry</a>.<a class="code" href="classecstasy_1_1_registry.html#ad6b0a8d29a43168653502dfc426bacc8">getStorage</a>&lt;C&gt;()[<a class="code" href="classecstasy_1_1_entity.html#addeec91510f5480c5dcc68afb00eb63b">_index</a>];</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        }</div>
 <div class="ttc" id="aclassecstasy_1_1_entity_html_addeec91510f5480c5dcc68afb00eb63b"><div class="ttname"><a href="classecstasy_1_1_entity.html#addeec91510f5480c5dcc68afb00eb63b">ecstasy::Entity::_index</a></div><div class="ttdeci">Index _index</div><div class="ttdef"><b>Definition:</b> <a href="_entity_8hpp_source.html#l00222">Entity.hpp:222</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_ad6b0a8d29a43168653502dfc426bacc8"><div class="ttname"><a href="classecstasy_1_1_registry.html#ad6b0a8d29a43168653502dfc426bacc8">ecstasy::Registry::getStorage</a></div><div class="ttdeci">const getStorageType&lt; C &gt; &amp; getStorage() const</div><div class="ttdoc">Get the Storage for the component type C.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00779">Registry.hpp:779</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_ad6b0a8d29a43168653502dfc426bacc8"><div class="ttname"><a href="classecstasy_1_1_registry.html#ad6b0a8d29a43168653502dfc426bacc8">ecstasy::Registry::getStorage</a></div><div class="ttdeci">const getStorageType&lt; C &gt; &amp; getStorage() const</div><div class="ttdoc">Get the Storage for the component type C.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00778">Registry.hpp:778</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -399,12 +392,6 @@ template&lt;typename C &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">storage</td><td>Storage for type <b>C</b>.</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>const C&amp; Const reference to the entity instance of <b>C</b> associated to the entity.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -416,10 +403,10 @@ template&lt;typename C &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-19) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_entity_8hpp_source.html#l00077">77</a> of file <a class="el" href="_registry_entity_8hpp_source.html">RegistryEntity.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry_entity.html#af26f37cece2f86882456e665a23f60d2">_registry</a>.<a class="code" href="classecstasy_1_1_registry.html#ad6b0a8d29a43168653502dfc426bacc8">getStorage</a>&lt;C&gt;()[<a class="code" href="classecstasy_1_1_entity.html#addeec91510f5480c5dcc68afb00eb63b">_index</a>];</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_entity_8hpp_source.html#l00074">74</a> of file <a class="el" href="_registry_entity_8hpp_source.html">RegistryEntity.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry_entity.html#af26f37cece2f86882456e665a23f60d2">_registry</a>.<a class="code" href="classecstasy_1_1_registry.html#ad6b0a8d29a43168653502dfc426bacc8">getStorage</a>&lt;C&gt;()[<a class="code" href="classecstasy_1_1_entity.html#addeec91510f5480c5dcc68afb00eb63b">_index</a>];</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -451,10 +438,10 @@ template&lt;typename C &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-06) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_entity_8hpp_source.html#l00129">129</a> of file <a class="el" href="_registry_entity_8hpp_source.html">RegistryEntity.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        {</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry_entity.html#af26f37cece2f86882456e665a23f60d2">_registry</a>;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_entity_8hpp_source.html#l00122">122</a> of file <a class="el" href="_registry_entity_8hpp_source.html">RegistryEntity.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry_entity.html#af26f37cece2f86882456e665a23f60d2">_registry</a>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -490,20 +477,14 @@ template&lt;typename C &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">storage</td><td>Storage for the component type searched.</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>bool True if the entity has an associated entry in the storage.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-19) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_entity_8hpp_source.html#l00116">116</a> of file <a class="el" href="_registry_entity_8hpp_source.html">RegistryEntity.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        {</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry_entity.html#af26f37cece2f86882456e665a23f60d2">_registry</a>.<a class="code" href="classecstasy_1_1_registry.html#a6b82e8e1b62be9b89329303ed4c2327a">getStorageSafe</a>&lt;C&gt;().<a class="code" href="namespaceutil_1_1meta.html#a519a7b798352fb24a6f902a8fbd1fe95">contains</a>(<a class="code" href="classecstasy_1_1_entity.html#addeec91510f5480c5dcc68afb00eb63b">_index</a>);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_entity_8hpp_source.html#l00109">109</a> of file <a class="el" href="_registry_entity_8hpp_source.html">RegistryEntity.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1_registry_entity.html#af26f37cece2f86882456e665a23f60d2">_registry</a>.<a class="code" href="classecstasy_1_1_registry.html#a6b82e8e1b62be9b89329303ed4c2327a">getStorageSafe</a>&lt;C&gt;().<a class="code" href="namespaceutil_1_1meta.html#a519a7b798352fb24a6f902a8fbd1fe95">contains</a>(<a class="code" href="classecstasy_1_1_entity.html#addeec91510f5480c5dcc68afb00eb63b">_index</a>);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        }</div>
 <div class="ttc" id="anamespaceutil_1_1meta_html_a519a7b798352fb24a6f902a8fbd1fe95"><div class="ttname"><a href="namespaceutil_1_1meta.html#a519a7b798352fb24a6f902a8fbd1fe95">util::meta::contains</a></div><div class="ttdeci">constexpr bool contains</div><div class="ttdoc">Checks if the type T exists in the types Ts.</div><div class="ttdef"><b>Definition:</b> <a href="contains_8hpp_source.html#l00029">contains.hpp:29</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -529,7 +510,7 @@ template&lt;typename C &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_registry_entity_8hpp_source.html#l00135">135</a> of file <a class="el" href="_registry_entity_8hpp_source.html">RegistryEntity.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_entity_8hpp_source.html#l00128">128</a> of file <a class="el" href="_registry_entity_8hpp_source.html">RegistryEntity.hpp</a>.</p>
 
 </div>
 </div>

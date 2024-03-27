@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('structecstasy_1_1query_1_1_select_1_1_
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a862d649be5c2805e10aae219a9137afb"><td class="memTemplParams" colspan="2">template&lt;Queryable Q&gt; </td></tr>
 <tr class="memitem:a862d649be5c2805e10aae219a9137afb"><td class="memTemplItemLeft" align="right" valign="top">constexpr static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1_select_1_1_filter_queryables.html#a862d649be5c2805e10aae219a9137afb">isQueryableRequired</a> ()</td></tr>
-<tr class="memdesc:a862d649be5c2805e10aae219a9137afb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test if the <a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">Queryable</a> type Q must be kept in the resulting queryables.  <a href="structecstasy_1_1query_1_1_select_1_1_filter_queryables.html#a862d649be5c2805e10aae219a9137afb">More...</a><br /></td></tr>
+<tr class="memdesc:a862d649be5c2805e10aae219a9137afb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test if the <a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">ecstasy::query::Queryable</a> type Q must be kept in the resulting queryables.  <a href="structecstasy_1_1query_1_1_select_1_1_filter_queryables.html#a862d649be5c2805e10aae219a9137afb">More...</a><br /></td></tr>
 <tr class="separator:a862d649be5c2805e10aae219a9137afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a1f79e938354ecb7c5488c2bc170fac"><td class="memItemLeft" align="right" valign="top">constexpr static <a class="el" href="structecstasy_1_1query_1_1_select.html#a534d67a4e74c6bbb765dc7c5c0981629">SelectedTuple</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1_select_1_1_filter_queryables.html#a1a1f79e938354ecb7c5488c2bc170fac">value</a> (Lefts &amp;...lefts, Pivot &amp;pivot)</td></tr>
 <tr class="memdesc:a1a1f79e938354ecb7c5488c2bc170fac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primary template to finalize the queryables selection.  <a href="structecstasy_1_1query_1_1_select_1_1_filter_queryables.html#a1a1f79e938354ecb7c5488c2bc170fac">More...</a><br /></td></tr>
@@ -142,14 +142,14 @@ template&lt;Queryable Q&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Test if the <a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">Queryable</a> type Q must be kept in the resulting queryables. </p>
+<p>Test if the <a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">ecstasy::query::Queryable</a> type Q must be kept in the resulting queryables. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Q</td><td>Evaluated type.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool Whether the type Q is in the SelectedQueryables types and not already selected (in the Lefts types).</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool Whether the type Q is in the <code>SelectedQueryables</code> types and not already selected (in the Lefts types).</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-25) </dd></dl>
 
@@ -278,7 +278,7 @@ template&lt;Queryable NextPivot, Queryable... Rights&gt; </div>
 
 <p>Primary template recursively called until there is no <code>nextPivot</code>. </p>
 <p>It calls itself with:</p><ul>
-<li><code>ContainsPivot</code> to to true if <code>nextPivot</code> is in the SelectedQueryables types.</li>
+<li><code>ContainsPivot</code> to to true if <code>nextPivot</code> is in the <code>SelectedQueryables</code> types.</li>
 <li><code>lefts</code> to the current <code>lefts</code> with <code>pivot</code> (only if <code>ContainsPivot</code> is currently true).</li>
 <li><code>pivot</code> to current <code>nextPivot</code>.</li>
 <li><code>nextPivot</code> and <code>rights</code> are set or not depending on the queryable lefts in the current <code>rights</code>. If <code>rights</code> is empty, it will call the <a class="el" href="structecstasy_1_1query_1_1_select_1_1_filter_queryables.html#a1a1f79e938354ecb7c5488c2bc170fac">value()</a> without <code>nextPivot</code> value to finalize the result.</li>
@@ -286,7 +286,7 @@ template&lt;Queryable NextPivot, Queryable... Rights&gt; </div>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">NextPivot</td><td>Next Pivot type. </td></tr>
-    <tr><td class="paramname">Rights</td><td>Remaining <a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">Queryable</a> types.</td></tr>
+    <tr><td class="paramname">Rights</td><td>Remaining <a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">ecstasy::query::Queryable</a> types.</td></tr>
   </table>
   </dd>
 </dl>
