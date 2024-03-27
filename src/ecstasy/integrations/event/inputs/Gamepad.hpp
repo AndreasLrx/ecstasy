@@ -14,7 +14,7 @@
 
 #include <array>
 #include <cstdint>
-#include <ostream>
+#include <iostream>
 #include <unordered_map>
 
 #include "util/serialization/SerializableEnum.hpp"

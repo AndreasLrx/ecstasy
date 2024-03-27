@@ -6,7 +6,11 @@ set(SRC
     ${INCROOT}/EventListeners.hpp
     ${INCROOT}/GamepadAxisListener.hpp
     ${INCROOT}/GamepadButtonListener.hpp
+    ${SRCROOT}/GamepadCombinationListener.cpp
+    ${INCROOT}/GamepadCombinationListener.hpp
     ${INCROOT}/GamepadConnectedListener.hpp
+    ${SRCROOT}/GamepadSequenceListener.cpp
+    ${INCROOT}/GamepadSequenceListener.hpp
     ${INCROOT}/include.hpp
     ${SRCROOT}/KeyCombinationListener.cpp
     ${INCROOT}/KeyCombinationListener.hpp

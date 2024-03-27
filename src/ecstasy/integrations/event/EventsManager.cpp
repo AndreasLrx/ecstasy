@@ -20,6 +20,8 @@
 #include "ecstasy/storages/MapStorage.hpp"
 #include "events/Event.hpp"
 #include "inputs/Gamepads.hpp"
+#include "listeners/GamepadCombinationListener.hpp"
+#include "listeners/GamepadSequenceListener.hpp"
 #include "listeners/KeyCombinationListener.hpp"
 #include "listeners/KeySequenceListener.hpp"
 
@@ -61,6 +63,25 @@ namespace ecstasy::integration::event
         }
     }
 
+    static void callGamepadListeners(Registry &registry, const GamepadButtonEvent &event)
+    {
+        for (auto [entity, listener, listeners, sequence, combination] :
+            registry
+                .select<Entities, Maybe<EventListener<GamepadButtonEvent>>, Maybe<EventListeners<GamepadButtonEvent>>,
+                    Maybe<GamepadSequenceListener>, Maybe<GamepadCombinationListener>>()
+                .where<Or<EventListener<GamepadButtonEvent>, EventListeners<GamepadButtonEvent>,
+                    GamepadSequenceListener, GamepadCombinationListener>>()) {
+            if (listener)
+                listener.value()(registry, entity, event);
+            if (listeners)
+                listeners.value()(registry, entity, event);
+            if (sequence && sequence.value().get().update(event))
+                sequence.value()(registry, entity);
+            if (combination && combination.value().get().update(event))
+                combination.value()(registry, entity);
+        }
+    }
+
     void EventsManager::handleEvent(Registry &registry, const Event &event)
     {
         switch (event.type) {
@@ -90,7 +111,7 @@ namespace ecstasy::integration::event
             case Event::Type::TextEntered: callListeners(registry, event.text); break;
             case Event::Type::GamepadButtonPressed:
             case Event::Type::GamepadButtonReleased:
-                callListeners(registry, event.gamepadButton);
+                callGamepadListeners(registry, event.gamepadButton);
 
                 if (registry.hasResource<Gamepads>())
                     registry.getResource<Gamepads>()
