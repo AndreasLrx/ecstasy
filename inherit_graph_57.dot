@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="ecstasy::Registry::\lregistry_query\< util\l::meta::Traits\< Selects...\l \>, util::meta::Traits\< Missings...\l \>, Condition, util::meta::Traits\l\< Cs... \> \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1_registry_1_1registry__query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_8_01_be17951311b4e09d699d04c2661dfbf9.html",tooltip="Registry query type from the query selected and missing types."];
+  Node0 [label="ecstasy::Registry::\lGetModifierProxy\< std\l::tuple\< Qs... \> \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1_registry_1_1_get_modifier_proxy_3_01std_1_1tuple_3_01_qs_8_8_8_01_4_01_4.html",tooltip="Proxy structure to extract the operand types using template partial specialization."];
 }

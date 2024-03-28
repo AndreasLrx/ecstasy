@@ -105,18 +105,18 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"01__basic__window_2main_8cpp.html",
-"_toml_node_factory_8cpp.html",
-"classecstasy_1_1integration_1_1event_1_1_gamepad.html#a3188b214f02fb8a7f088f9aeeea48514",
-"classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#ad91b205b4ed727b40e34fec8c334f274",
-"classutil_1_1serialization_1_1_polymorphic_iterator.html#ae15d79ba9cb3163f921fd2f6f248ef8a",
-"cpp/algorithm/ranges/minmax_element.html",
-"cpp/experimental/type_trait_variable_templates.html",
-"cpp/locale/isalnum.html",
-"cpp/numeric/special_functions/riemann_zeta.html",
-"cpp/utility/format/format_to.html",
-"namespaceecstasy.html#a3636e577cd1e59a7d31089601561cc39",
-"structecstasy_1_1integration_1_1user__action_1_1_action.html#abd960e5efeb67bcdc7ca0db13c873897"
+"",
+"_storage_concepts_8hpp.html#a2286cc039a6a746d313b6978bec7b058",
+"classecstasy_1_1_system_instances_1_1_comparer.html#ae3c058a19f8058a1a2b2dc4bb1bbf684",
+"classecstasy_1_1integration_1_1user__action_1_1_users.html#a72564f1cc6e32471078b5be69fc58935",
+"classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a4410ec34d9e6c1a68100ca0ce033fb17",
+"cpp/algorithm/merge.html",
+"cpp/experimental/fs/exists.html",
+"cpp/io/manip/boolalpha.html",
+"cpp/numeric/random/generate_canonical.html",
+"cpp/types/is_destructible.html",
+"integrations_2event_2events_2include_8hpp.html",
+"structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aae93f994f01c537c4e2f7d8528c3eb5e9"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

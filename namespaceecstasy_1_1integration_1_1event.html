@@ -160,6 +160,12 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_event_listeners.html">EventListeners</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html" title="Event class.">Event</a> listeners component type.  <a href="classecstasy_1_1integration_1_1event_1_1_event_listeners.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_gamepad_combination_listener.html">GamepadCombinationListener</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Listener of a button combination.  <a href="classecstasy_1_1integration_1_1event_1_1_gamepad_combination_listener.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_gamepad_sequence_listener.html">GamepadSequenceListener</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Listener of a button sequence.  <a href="classecstasy_1_1integration_1_1event_1_1_gamepad_sequence_listener.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html">KeyCombinationListener</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Listener of a key combination.  <a href="classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -205,6 +211,8 @@ Functions</h2></td></tr>
 <tr class="separator:ad57af5a8996d387878f4b373e61c4266"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe354348c09805ab5984709074db3404"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1integration_1_1event.html#afe354348c09805ab5984709074db3404">callKeyListeners</a> (<a class="el" href="classecstasy_1_1_registry.html">Registry</a> &amp;registry, const <a class="el" href="structecstasy_1_1integration_1_1event_1_1_key_event.html">KeyEvent</a> &amp;event)</td></tr>
 <tr class="separator:afe354348c09805ab5984709074db3404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebb1ace99a041fd27ab086ff098b1e7d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1integration_1_1event.html#aebb1ace99a041fd27ab086ff098b1e7d">callGamepadListeners</a> (<a class="el" href="classecstasy_1_1_registry.html">Registry</a> &amp;registry, const <a class="el" href="structecstasy_1_1integration_1_1event_1_1_gamepad_button_event.html">GamepadButtonEvent</a> &amp;event)</td></tr>
+<tr class="separator:aebb1ace99a041fd27ab086ff098b1e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="structecstasy_1_1integration_1_1event_1_1_event.html" title="Event class.">Event</a> integration. </p>
@@ -388,6 +396,62 @@ template&lt;typename E &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="aebb1ace99a041fd27ab086ff098b1e7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebb1ace99a041fd27ab086ff098b1e7d">&#9670;&nbsp;</a></span>callGamepadListeners()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ecstasy::integration::event::callGamepadListeners </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classecstasy_1_1_registry.html">Registry</a> &amp;&#160;</td>
+          <td class="paramname"><em>registry</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structecstasy_1_1integration_1_1event_1_1_gamepad_button_event.html">GamepadButtonEvent</a> &amp;&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_events_manager_8cpp_source.html#l00066">66</a> of file <a class="el" href="_events_manager_8cpp_source.html">EventsManager.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> [entity, listener, listeners, sequence, combination] :</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            registry</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                .select&lt;Entities, Maybe&lt;EventListener&lt;GamepadButtonEvent&gt;&gt;, Maybe&lt;EventListeners&lt;GamepadButtonEvent&gt;&gt;,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    Maybe&lt;GamepadSequenceListener&gt;, Maybe&lt;GamepadCombinationListener&gt;&gt;()</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                .where&lt;Or&lt;EventListener&lt;GamepadButtonEvent&gt;, EventListeners&lt;GamepadButtonEvent&gt;,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    GamepadSequenceListener, GamepadCombinationListener&gt;&gt;()) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">if</span> (listener)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                listener.value()(registry, entity, <a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">if</span> (listeners)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                listeners.value()(registry, entity, <a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">if</span> (sequence &amp;&amp; sequence.value().get().update(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>))</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                sequence.value()(registry, entity);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordflow">if</span> (combination &amp;&amp; combination.value().get().update(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>))</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                combination.value()(registry, entity);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="ttc" id="anamespaceecstasy_1_1integration_1_1event_html"><div class="ttname"><a href="namespaceecstasy_1_1integration_1_1event.html">ecstasy::integration::event</a></div><div class="ttdoc">Event integration.</div><div class="ttdef"><b>Definition:</b> <a href="_event_8hpp_source.html#l00024">Event.hpp:25</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="afe354348c09805ab5984709074db3404"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afe354348c09805ab5984709074db3404">&#9670;&nbsp;</a></span>callKeyListeners()</h2>
 
@@ -422,25 +486,24 @@ template&lt;typename E &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_events_manager_8cpp_source.html#l00045">45</a> of file <a class="el" href="_events_manager_8cpp_source.html">EventsManager.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> [entity, listener, listeners, sequence, combination] :</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            registry</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                .select&lt;Entities, Maybe&lt;EventListener&lt;KeyEvent&gt;&gt;, Maybe&lt;EventListeners&lt;KeyEvent&gt;&gt;,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    Maybe&lt;KeySequenceListener&gt;, Maybe&lt;KeyCombinationListener&gt;&gt;()</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                .where&lt;Or&lt;EventListener&lt;KeyEvent&gt;, EventListeners&lt;KeyEvent&gt;, KeySequenceListener,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    KeyCombinationListener&gt;&gt;()) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">if</span> (listener)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                listener.value()(registry, entity, <a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">if</span> (listeners)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                listeners.value()(registry, entity, <a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">if</span> (sequence &amp;&amp; sequence.value().get().update(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>))</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                sequence.value()(registry, entity);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">if</span> (combination &amp;&amp; combination.value().get().update(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>))</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                combination.value()(registry, entity);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-<div class="ttc" id="anamespaceecstasy_1_1integration_1_1event_html"><div class="ttname"><a href="namespaceecstasy_1_1integration_1_1event.html">ecstasy::integration::event</a></div><div class="ttdoc">Event integration.</div><div class="ttdef"><b>Definition:</b> <a href="_event_8hpp_source.html#l00024">Event.hpp:25</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_events_manager_8cpp_source.html#l00047">47</a> of file <a class="el" href="_events_manager_8cpp_source.html">EventsManager.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> [entity, listener, listeners, sequence, combination] :</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            registry</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                .select&lt;Entities, Maybe&lt;EventListener&lt;KeyEvent&gt;&gt;, Maybe&lt;EventListeners&lt;KeyEvent&gt;&gt;,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    Maybe&lt;KeySequenceListener&gt;, Maybe&lt;KeyCombinationListener&gt;&gt;()</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                .where&lt;Or&lt;EventListener&lt;KeyEvent&gt;, EventListeners&lt;KeyEvent&gt;, KeySequenceListener,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                    KeyCombinationListener&gt;&gt;()) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">if</span> (listener)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                listener.value()(registry, entity, <a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">if</span> (listeners)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                listeners.value()(registry, entity, <a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">if</span> (sequence &amp;&amp; sequence.value().get().update(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>))</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                sequence.value()(registry, entity);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">if</span> (combination &amp;&amp; combination.value().get().update(<a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>))</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                combination.value()(registry, entity);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -480,17 +543,17 @@ template&lt;typename E &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_events_manager_8cpp_source.html#l00033">33</a> of file <a class="el" href="_events_manager_8cpp_source.html">EventsManager.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> [entity, listener, listeners] :</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            registry.select&lt;Entities, Maybe&lt;EventListener&lt;E&gt;&gt;, Maybe&lt;EventListeners&lt;E&gt;&gt;&gt;()</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                .template where&lt;Or&lt;EventListener&lt;E&gt;, EventListeners&lt;E&gt;&gt;&gt;()) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">if</span> (listener)</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                listener.value()(registry, entity, <a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">if</span> (listeners)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                listeners.value()(registry, entity, <a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_events_manager_8cpp_source.html#l00035">35</a> of file <a class="el" href="_events_manager_8cpp_source.html">EventsManager.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> [entity, listener, listeners] :</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            registry.select&lt;Entities, Maybe&lt;EventListener&lt;E&gt;&gt;, Maybe&lt;EventListeners&lt;E&gt;&gt;&gt;()</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                .template where&lt;Or&lt;EventListener&lt;E&gt;, EventListeners&lt;E&gt;&gt;&gt;()) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">if</span> (listener)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                listener.value()(registry, entity, <a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">if</span> (listeners)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                listeners.value()(registry, entity, <a class="code" href="namespaceecstasy_1_1integration_1_1event.html">event</a>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>

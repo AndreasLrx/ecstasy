@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="util::meta::index\<\l T, Ts \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structutil_1_1meta_1_1index.html",tooltip="Get the index of the first occurence of type T in the types Ts."];
+  Node0 [label="util::meta::apply\<\l Functor, Ts \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structutil_1_1meta_1_1apply.html",tooltip="Apply a modification on all types in Ts."];
 }

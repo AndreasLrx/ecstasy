@@ -4,17 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="ecstasy::Resource",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_resource.html",tooltip="Base class of all registry resources."];
-  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node1 [label="ecstasy::Entities",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_entities.html",tooltip="Resource holding all the Registry entities."];
-  Node0 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="ecstasy::ObjectWrapper\< T \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_object_wrapper.html",tooltip="Basic object wrapper as a resource."];
-  Node0 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="ecstasy::integration\l::event::Gamepads",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1integration_1_1event_1_1_gamepads.html",tooltip="Current Gamepads states."];
-  Node0 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="ecstasy::integration\l::event::Keyboard",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1integration_1_1event_1_1_keyboard.html",tooltip="Current Keyboard state."];
-  Node0 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="ecstasy::integration\l::event::Mouse",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1integration_1_1event_1_1_mouse.html",tooltip="Current mouse state."];
-  Node0 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="ecstasy::integration\l::user_action::Users",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1integration_1_1user__action_1_1_users.html",tooltip="UserProfile container resource."];
+  Node0 [label="ecstasy::Registry::\lSelect\< Selects \>::Internal\l\< Missings, Cs, Conditions, A \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1_registry_1_1_select_1_1_internal.html",tooltip="Internal structure allowing to add implicitly required queryables (from the selected types)."];
 }

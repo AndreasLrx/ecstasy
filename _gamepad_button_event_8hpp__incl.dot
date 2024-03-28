@@ -11,7 +11,7 @@ digraph "src/ecstasy/integrations/event/events/GamepadButtonEvent.hpp"
   Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 [label="cstdint",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/cstdint.html",tooltip=" "];
   Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="ostream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/ostream.html",tooltip=" "];
+  Node5 [label="iostream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/iostream.html",tooltip=" "];
   Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 [label="unordered_map",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/unordered_map.html",tooltip=" "];
   Node2 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

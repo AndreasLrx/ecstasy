@@ -117,12 +117,18 @@ $(document).ready(function(){initNavTree('functions__.html',''); initResizable()
 : <a class="el" href="classecstasy_1_1integration_1_1event_1_1_gamepad.html#a3abc1ef6146b169f34cfbed10e9707a2">ecstasy::integration::event::Gamepad</a>
 , <a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a1fa5f5b51b5c8c2154e9541f6956a8c7">ecstasy::integration::event::Mouse</a>
 </li>
+<li>_buttonStates
+: <a class="el" href="classecstasy_1_1integration_1_1event_1_1_gamepad_combination_listener.html#a36fd713ce6c8d3ea924801f75c43a7ad">ecstasy::integration::event::GamepadCombinationListener</a>
+</li>
 <li>_callback
-: <a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html#abe1501a950a7f52acff709390116b53a">ecstasy::integration::event::KeyCombinationListener</a>
+: <a class="el" href="classecstasy_1_1integration_1_1event_1_1_gamepad_combination_listener.html#aa8d19c0043650eb6dff420f47fea9f26">ecstasy::integration::event::GamepadCombinationListener</a>
+, <a class="el" href="classecstasy_1_1integration_1_1event_1_1_gamepad_sequence_listener.html#a8e354e5bdb0f16fd9cb8b77d9ee822e4">ecstasy::integration::event::GamepadSequenceListener</a>
+, <a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html#abe1501a950a7f52acff709390116b53a">ecstasy::integration::event::KeyCombinationListener</a>
 , <a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a6f0c716cacc953272e9870ce5cf47f81">ecstasy::integration::event::KeySequenceListener</a>
 </li>
 <li>_combination
-: <a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html#a18245a04b2280b09a820c38b225e1d0f">ecstasy::integration::event::KeyCombinationListener</a>
+: <a class="el" href="classecstasy_1_1integration_1_1event_1_1_gamepad_combination_listener.html#a9a04000a3ae1f7c7212fc704e2d60472">ecstasy::integration::event::GamepadCombinationListener</a>
+, <a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html#a18245a04b2280b09a820c38b225e1d0f">ecstasy::integration::event::KeyCombinationListener</a>
 </li>
 <li>_components
 : <a class="el" href="classecstasy_1_1_map_storage.html#af3147139f9ed52b9a88c355689c9c95a">ecstasy::MapStorage&lt; C &gt;</a>
@@ -142,6 +148,10 @@ $(document).ready(function(){initNavTree('functions__.html',''); initResizable()
 <li>_gamepadButtonToAction
 : <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#a04c96869686565acb654c951e8c1f3a5">ecstasy::integration::user_action::Users</a>
 </li>
+<li>_gamepadId
+: <a class="el" href="classecstasy_1_1integration_1_1event_1_1_gamepad_combination_listener.html#a018088b728308635936dc1efe7194f14">ecstasy::integration::event::GamepadCombinationListener</a>
+, <a class="el" href="classecstasy_1_1integration_1_1event_1_1_gamepad_sequence_listener.html#ac8ce7b6e381b1e7e5cfc71bfe00a56de">ecstasy::integration::event::GamepadSequenceListener</a>
+</li>
 <li>_gamepads
 : <a class="el" href="classecstasy_1_1integration_1_1event_1_1_gamepads.html#a8e8e7c4db66745a6a8428d683377d95d">ecstasy::integration::event::Gamepads</a>
 </li>
@@ -150,6 +160,9 @@ $(document).ready(function(){initNavTree('functions__.html',''); initResizable()
 </li>
 <li>_generations
 : <a class="el" href="classecstasy_1_1_entities.html#af547ab6f0b87f627193f19ec57bdfec4">ecstasy::Entities</a>
+</li>
+<li>_heldButton
+: <a class="el" href="classecstasy_1_1integration_1_1event_1_1_gamepad_sequence_listener.html#ab926a86075742b8154d3159832b99402">ecstasy::integration::event::GamepadSequenceListener</a>
 </li>
 <li>_heldKey
 : <a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4ba47de613b115836bd6f22ec8a65f22">ecstasy::integration::event::KeySequenceListener</a>
@@ -240,7 +253,8 @@ $(document).ready(function(){initNavTree('functions__.html',''); initResizable()
 : <a class="el" href="classecstasy_1_1_registry.html#a2e6e0617857be6b09b743c42281de478">ecstasy::Registry</a>
 </li>
 <li>_sequence
-: <a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#ae5a7f5c2f0f5f2139049194c077351d5">ecstasy::integration::event::KeySequenceListener</a>
+: <a class="el" href="classecstasy_1_1integration_1_1event_1_1_gamepad_sequence_listener.html#a67dba9cc96e12a90361bcdea9dea9f6c">ecstasy::integration::event::GamepadSequenceListener</a>
+, <a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#ae5a7f5c2f0f5f2139049194c077351d5">ecstasy::integration::event::KeySequenceListener</a>
 </li>
 <li>_set
 : <a class="el" href="classutil_1_1_bit_set_1_1_reference.html#ac0b8121f690efa9234368d3a28e914c3">util::BitSet::Reference</a>
@@ -261,6 +275,10 @@ $(document).ready(function(){initNavTree('functions__.html',''); initResizable()
 </li>
 <li>_users
 : <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_users.html#acb00b11b12b61a1c2abe802383886216">ecstasy::integration::user_action::Users</a>
+</li>
+<li>_validatedButtons
+: <a class="el" href="classecstasy_1_1integration_1_1event_1_1_gamepad_combination_listener.html#a2ab457a98b6c3e3f1ac57530adfb565f">ecstasy::integration::event::GamepadCombinationListener</a>
+, <a class="el" href="classecstasy_1_1integration_1_1event_1_1_gamepad_sequence_listener.html#a91ce9523e2d39ba7e8a0a10c7267cb16">ecstasy::integration::event::GamepadSequenceListener</a>
 </li>
 <li>_validatedKeys
 : <a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html#a67ea8bc9fa8e0e7df3be0d42efcb3e6f">ecstasy::integration::event::KeyCombinationListener</a>

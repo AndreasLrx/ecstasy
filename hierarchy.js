@@ -66,7 +66,9 @@ var hierarchy =
       [ "ecstasy::integration::event::GamepadButtonPressedEvent", "structecstasy_1_1integration_1_1event_1_1_gamepad_button_pressed_event.html", null ],
       [ "ecstasy::integration::event::GamepadButtonReleasedEvent", "structecstasy_1_1integration_1_1event_1_1_gamepad_button_released_event.html", null ]
     ] ],
+    [ "ecstasy::integration::event::GamepadCombinationListener", "classecstasy_1_1integration_1_1event_1_1_gamepad_combination_listener.html", null ],
     [ "ecstasy::integration::event::GamepadConnectedEvent", "structecstasy_1_1integration_1_1event_1_1_gamepad_connected_event.html", null ],
+    [ "ecstasy::integration::event::GamepadSequenceListener", "classecstasy_1_1integration_1_1event_1_1_gamepad_sequence_listener.html", null ],
     [ "GetComponentStorageType< C >", "struct_get_component_storage_type.html", null ],
     [ "ecstasy::Registry::GetModifierProxy< Operands >", "structecstasy_1_1_registry_1_1_get_modifier_proxy.html", null ],
     [ "ecstasy::Registry::GetModifierProxy< std::tuple< Qs... > >", "structecstasy_1_1_registry_1_1_get_modifier_proxy_3_01std_1_1tuple_3_01_qs_8_8_8_01_4_01_4.html", null ],

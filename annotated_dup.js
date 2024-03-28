@@ -24,6 +24,8 @@ var annotated_dup =
           [ "Keyboard", "classecstasy_1_1integration_1_1event_1_1_keyboard.html", "classecstasy_1_1integration_1_1event_1_1_keyboard" ],
           [ "Mouse", "classecstasy_1_1integration_1_1event_1_1_mouse.html", "classecstasy_1_1integration_1_1event_1_1_mouse" ],
           [ "EventListeners", "classecstasy_1_1integration_1_1event_1_1_event_listeners.html", "classecstasy_1_1integration_1_1event_1_1_event_listeners" ],
+          [ "GamepadCombinationListener", "classecstasy_1_1integration_1_1event_1_1_gamepad_combination_listener.html", "classecstasy_1_1integration_1_1event_1_1_gamepad_combination_listener" ],
+          [ "GamepadSequenceListener", "classecstasy_1_1integration_1_1event_1_1_gamepad_sequence_listener.html", "classecstasy_1_1integration_1_1event_1_1_gamepad_sequence_listener" ],
           [ "KeyCombinationListener", "classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html", "classecstasy_1_1integration_1_1event_1_1_key_combination_listener" ],
           [ "KeySequenceListener", "classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html", "classecstasy_1_1integration_1_1event_1_1_key_sequence_listener" ]
         ] ],

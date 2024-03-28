@@ -21,6 +21,8 @@ var namespaceecstasy_1_1integration_1_1event =
     [ "Keyboard", "classecstasy_1_1integration_1_1event_1_1_keyboard.html", "classecstasy_1_1integration_1_1event_1_1_keyboard" ],
     [ "Mouse", "classecstasy_1_1integration_1_1event_1_1_mouse.html", "classecstasy_1_1integration_1_1event_1_1_mouse" ],
     [ "EventListeners", "classecstasy_1_1integration_1_1event_1_1_event_listeners.html", "classecstasy_1_1integration_1_1event_1_1_event_listeners" ],
+    [ "GamepadCombinationListener", "classecstasy_1_1integration_1_1event_1_1_gamepad_combination_listener.html", "classecstasy_1_1integration_1_1event_1_1_gamepad_combination_listener" ],
+    [ "GamepadSequenceListener", "classecstasy_1_1integration_1_1event_1_1_gamepad_sequence_listener.html", "classecstasy_1_1integration_1_1event_1_1_gamepad_sequence_listener" ],
     [ "KeyCombinationListener", "classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html", "classecstasy_1_1integration_1_1event_1_1_key_combination_listener" ],
     [ "KeySequenceListener", "classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html", "classecstasy_1_1integration_1_1event_1_1_key_sequence_listener" ],
     [ "EventListener", "namespaceecstasy_1_1integration_1_1event.html#adab3b08d6ace53ece2e64bede842d591", null ],
@@ -32,6 +34,7 @@ var namespaceecstasy_1_1integration_1_1event =
     [ "MouseMoveListener", "namespaceecstasy_1_1integration_1_1event.html#a4e60e59e1e3335867270ed7e8de49129", null ],
     [ "MouseWheelScrollListener", "namespaceecstasy_1_1integration_1_1event.html#a97e9e43d8e04a92b5fcb9851b31d8344", null ],
     [ "TextEnteredListener", "namespaceecstasy_1_1integration_1_1event.html#ad0db9ac0560ceb6e9137a8fa97cb6501", null ],
+    [ "callGamepadListeners", "namespaceecstasy_1_1integration_1_1event.html#aebb1ace99a041fd27ab086ff098b1e7d", null ],
     [ "callKeyListeners", "namespaceecstasy_1_1integration_1_1event.html#afe354348c09805ab5984709074db3404", null ],
     [ "callListeners", "namespaceecstasy_1_1integration_1_1event.html#ad57af5a8996d387878f4b373e61c4266", null ]
 ];

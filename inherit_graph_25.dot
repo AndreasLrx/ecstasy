@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="ecstasy::integration\l::user_action::Action",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1integration_1_1user__action_1_1_action.html",tooltip="Describe an action changed event."];
+  Node0 [label="ecstasy::integration\l::event::TextEnteredEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1integration_1_1event_1_1_text_entered_event.html",tooltip="Event describing a text (character) entered."];
 }
