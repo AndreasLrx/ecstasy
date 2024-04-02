@@ -6,6 +6,9 @@ option(BUILD_TEST_SUITE "Whether the test suite must be built." OFF)
 option(ENABLE_TEST_COVERAGE "Whether the tests code coverage must be enabled" OFF)
 option(BUILD_SHARED_LIBS "Whether ecstasy must be built as a shared library or not" OFF)
 
+## Miscelaneous options
+option(ECSTASY_MULTI_THREAD "Enable multi-threading support." OFF)
+
 ## Integration libraries
 option(ECSTASY_INTEGRATIONS_EVENT "Events managing integration. Include event listeners and input states (mouse, keyboard, gamepad)." OFF)
 CMAKE_DEPENDENT_OPTION(ECSTASY_INTEGRATIONS_SFML "SFML library integration." OFF ECSTASY_INTEGRATIONS_EVENT OFF)
@@ -26,6 +29,8 @@ list(APPEND CMAKE_MESSAGE_INDENT "  ")
     message(STATUS "Build Tests: ${BUILD_TEST_SUITE}")
     message(STATUS "Enable test coverage: ${ENABLE_TEST_COVERAGE}")
     message(STATUS "Build shared libraries: ${BUILD_SHARED_LIBS}")
+    ## Miscelaneous
+    message(STATUS "Multi-threading support: ${ECSTASY_MULTI_THREAD}")
     ## Integrations
     message(STATUS "Integrations:")
     list(APPEND CMAKE_MESSAGE_INDENT "  ")

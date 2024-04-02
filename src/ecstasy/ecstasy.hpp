@@ -19,6 +19,10 @@
 #include "storages/include.hpp"
 #include "system/include.hpp"
 
+#ifdef ECSTASY_MULTI_THREAD
+    #include "thread/include.hpp"
+#endif
+
 ///
 /// @brief Namespace containing all symbols specific to ecstasy.
 ///

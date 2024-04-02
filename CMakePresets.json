@@ -22,6 +22,14 @@
         "ECSTASY_INTEGRATIONS_USER_ACTION": {
           "type": "BOOL",
           "value": "TRUE"
+        },
+        "ECSTASY_SERIALIZER_TOML": {
+          "type": "BOOL",
+          "value": "TRUE"
+        },
+        "ECSTASY_MULTI_THREAD": {
+          "type": "BOOL",
+          "value": "TRUE"
         }
       }
     },

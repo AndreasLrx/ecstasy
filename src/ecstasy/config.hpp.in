@@ -19,6 +19,18 @@
 // User Action integration is available
 #cmakedefine ECSTASY_INTEGRATIONS_USER_ACTION
 
+// Multi thread is enabled
+#cmakedefine ECSTASY_MULTI_THREAD
+
+namespace ecstasy
+{
+#ifdef ECSTASY_MULTI_THREAD
+    static constexpr bool THREAD_SAFE_DEFAULT = true;
+#else
+    static constexpr bool THREAD_SAFE_DEFAULT = false;
+#endif
+} // namespace ecstasy
+
 // Toml Serializer is available
 #cmakedefine ECSTASY_SERIALIZER_TOML
 

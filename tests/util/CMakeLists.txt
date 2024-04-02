@@ -6,7 +6,10 @@ set(SRC
 )
 
 add_subdirectory(meta)
-add_subdirectory(serialization)
+
+if (${ECSTASY_SERIALIZER_TOML})
+    add_subdirectory(serialization)
+endif()
 
 add_ecstasy_test(
     NAME ecstasy_test_util
