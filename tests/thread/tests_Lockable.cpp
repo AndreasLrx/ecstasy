@@ -8,4 +8,5 @@ TEST(Lockable, SharedRecursiveMutex)
 {
     static_assert(Lockable<SharedRecursiveMutex>);
     static_assert(Lockable<const SharedRecursiveMutex>);
+    static_assert(!Lockable<int>);
 }

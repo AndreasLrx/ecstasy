@@ -19,6 +19,8 @@ namespace ecstasy::thread
     ///
     /// @brief Defines a type that can be locked.
     ///
+    /// @note Concept implementation of named requirement https://en.cppreference.com/w/cpp/named_req/BasicLockable
+    ///
     /// @tparam L Evaluated Type.
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
