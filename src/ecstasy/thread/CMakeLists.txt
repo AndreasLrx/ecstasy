@@ -3,7 +3,7 @@ set(SRCROOT ${SRCROOT}/thread)
 
 set(SRC
     ${SRC}
-    ${INCROOT}/SharedObjectView.hpp
+    ${INCROOT}/LockableView.hpp
     ${SRCROOT}/SharedRecursiveMutex.cpp
     ${INCROOT}/SharedRecursiveMutex.hpp
     PARENT_SCOPE

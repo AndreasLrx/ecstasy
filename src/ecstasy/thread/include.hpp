@@ -13,6 +13,7 @@
 #define ECSTASY_THREAD_HPP_
 
 #include "Lockable.hpp"
+#include "LockableView.hpp"
 #include "SharedRecursiveMutex.hpp"
 
 ///
