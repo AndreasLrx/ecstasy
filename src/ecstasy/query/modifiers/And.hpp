@@ -68,7 +68,7 @@ namespace ecstasy::query::modifier
         template <size_t operandId>
         inline typename ModifierClass::template OperandData<operandId> getOperandData(size_t index)
         {
-            return std::get<operandId>(this->_operands).getQueryData(index);
+            return getQueryableData(std::get<operandId>(this->_operands), index);
         }
 
         ///
@@ -82,7 +82,8 @@ namespace ecstasy::query::modifier
             if constexpr (sizeof...(Qs) > 0)
                 combineOperandMasks(std::make_index_sequence<(sizeof...(Qs))>());
             else
-                this->_mask = std::get<0>(this->_operands).getMask() & std::get<1>(this->_operands).getMask();
+                this->_mask = ecstasy::query::getQueryableMask(std::get<0>(this->_operands))
+                    & ecstasy::query::getQueryableMask(std::get<1>(this->_operands));
         }
 
       private:
@@ -100,9 +101,9 @@ namespace ecstasy::query::modifier
         inline void combineOperandMasks(std::integer_sequence<size_t, ints...> int_seq)
         {
             (void)int_seq;
-            this->_mask =
-                ((util::BitSet(std::get<0>(this->_operands).getMask()) & std::get<1>(this->_operands).getMask()) &=
-                    ... &= std::get<ints + 2>(this->_operands).getMask());
+            this->_mask = ((util::BitSet(getQueryableMask(std::get<0>(this->_operands)))
+                               & getQueryableMask(std::get<1>(this->_operands))) &= ... &=
+                getQueryableMask(std::get<ints + 2>(this->_operands)));
         }
     };
 } // namespace ecstasy::query::modifier

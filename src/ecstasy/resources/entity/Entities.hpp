@@ -137,8 +137,10 @@ namespace ecstasy
             friend Entities;
         };
 
-        /// @brief @ref ecstasy::query::Queryable constraint
+        /// @brief @ref ecstasy::query::QueryableObject constraint
         using QueryData = Entity;
+        /// @brief @ref ecstasy::query::ConstQueryableObject constraint
+        using ConstQueryData = QueryData;
 
         ///
         /// @brief Construct a new Entities resource without any entity.
@@ -251,7 +253,7 @@ namespace ecstasy
         ///
         /// @brief Get the entity from its index.
         ///
-        /// @note @ref ecstasy::query::Queryable constraints.
+        /// @note @ref ecstasy::query::QueryableObject constraints.
         ///
         /// @return const Entity Entity at index @p index.
         ///

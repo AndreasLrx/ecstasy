@@ -50,7 +50,7 @@ namespace ecstasy::query::modifier
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-24)
         ///
-        Not(Internal &internal) : _internal(internal), _mask(internal.getMask())
+        Not(Internal &internal) : _internal(internal), _mask(getQueryableMask(internal))
         {
             _mask.flip();
         }
@@ -87,7 +87,7 @@ namespace ecstasy::query::modifier
         ///
         QueryData getQueryData(size_t index)
         {
-            return _internal.getQueryData(index);
+            return getQueryableData(_internal, index);
         }
 
         ///
@@ -98,7 +98,7 @@ namespace ecstasy::query::modifier
         ///
         void reloadMask()
         {
-            _mask = ~_internal.getMask();
+            _mask = ~getQueryableMask(_internal);
         }
 
         ///
@@ -116,7 +116,7 @@ namespace ecstasy::query::modifier
             if (maxSize > _mask.size()) {
                 _mask.resize(maxSize);
                 _mask.setAll();
-                _mask.inplaceXor(_internal.getMask());
+                _mask.inplaceXor(getQueryableMask(_internal));
             }
         }
 

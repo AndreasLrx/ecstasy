@@ -5,18 +5,25 @@
 
 using namespace ecstasy::query;
 
-#ifdef ECSTASY_MULTI_THREAD
-    #include "ecstasy/thread/LockableView.hpp"
-    #include "ecstasy/thread/SharedRecursiveMutex.hpp"
+template <typename T>
+class WrapperImpl {
+  public:
+    using WrappedType = T;
 
-using namespace ecstasy::thread;
-#endif
+    WrapperImpl(T &data) : _data(data)
+    {
+    }
 
-class QueryableObjectImpl
-#ifdef ECSTASY_MULTI_THREAD
-    : public SharedRecursiveMutex
-#endif
-{
+    T *operator->() const
+    {
+        return &_data;
+    }
+
+  private:
+    T &_data;
+};
+
+class QueryableObjectImpl {
   public:
     using QueryData = std::string &;
 
@@ -56,6 +63,13 @@ class ConstQueryableObjectImpl : public PartialConstQueryableObjectImpl {
     using ConstQueryData = const std::string &;
 };
 
+/// Debugging helpers, this print types T1 and T2 in the compilation error message
+template <typename T1, typename T2>
+void assert_equals()
+{
+    static_assert(std::is_same_v<T1, T2>, "Types T1 and T2 differs.");
+}
+
 TEST(QueryableObject, QueryableObjectImpl)
 {
     // This is a valid queryable object
@@ -77,18 +91,25 @@ TEST(QueryableObject, QueryableObjectImpl)
     static_assert(Queryable<const ConstQueryableObjectImpl>);
 }
 
-#ifdef ECSTASY_MULTI_THREAD
-
-TEST(QueryableWrapper, LockableView)
+TEST(QueryableWrapper, WrapperImpl)
 {
     // This is a valid queryable object wrapper
-    static_assert(QueryableWrapper<LockableView<QueryableObjectImpl>>);
-    static_assert(Queryable<LockableView<QueryableObjectImpl>>);
-    static_assert(QueryableWrapper<LockableView<const ConstQueryableObjectImpl>>);
-    static_assert(Queryable<LockableView<const ConstQueryableObjectImpl>>);
+    static_assert(QueryableWrapper<WrapperImpl<QueryableObjectImpl>>);
+    static_assert(Queryable<WrapperImpl<QueryableObjectImpl>>);
+    static_assert(QueryableWrapper<WrapperImpl<const ConstQueryableObjectImpl>>);
+    static_assert(Queryable<WrapperImpl<const ConstQueryableObjectImpl>>);
 
     // Cannot wrap a const type which is not a ConstQueryableObject
-    static_assert(!QueryableWrapper<LockableView<const QueryableObjectImpl>>);
+    static_assert(!QueryableWrapper<WrapperImpl<const QueryableObjectImpl>>);
 }
 
-#endif
+TEST(queryable_data, QueryableObjectImpl)
+{
+    assert_equals<queryable_data_t<QueryableObjectImpl>, std::string &>();
+    assert_equals<queryable_data_t<ConstQueryableObjectImpl>, std::string &>();
+    assert_equals<queryable_data_t<const ConstQueryableObjectImpl>, const std::string &>();
+
+    assert_equals<queryable_data_t<WrapperImpl<QueryableObjectImpl>>, std::string &>();
+    assert_equals<queryable_data_t<WrapperImpl<ConstQueryableObjectImpl>>, std::string &>();
+    assert_equals<queryable_data_t<WrapperImpl<const ConstQueryableObjectImpl>>, const std::string &>();
+}

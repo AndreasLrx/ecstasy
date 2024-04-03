@@ -122,6 +122,91 @@ namespace ecstasy::query
     concept Queryable = QueryableObject<Q>
         || (std::is_const_v<Q> && ConstQueryableObject<std::remove_const_t<Q>>) || QueryableWrapper<Q>;
 
+    ///
+    /// @brief Get the query data type of a queryable object.
+    /// By default, this is the QueryData type of the @ref QueryableObject.
+    /// If Q is a const @ref ConstQueryableObject, then the ConstQueryData type is returned.
+    /// If Q is a @ref QueryableWrapper, then the queryable_data is called on the wrapped type.
+    ///
+    /// @tparam Q Queryable object.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-04-03)
+    ///
+    template <Queryable Q>
+    struct queryable_data {
+        using type = typename Q::QueryData;
+    };
+
+    /// @copydoc queryable_data
+    template <ConstQueryableObject Q>
+    struct queryable_data<const Q> {
+        using type = typename Q::ConstQueryData;
+    };
+
+    /// @copydoc queryable_data
+    template <QueryableWrapper W>
+    struct queryable_data<W> {
+        using type = queryable_data<typename W::WrappedType>::type;
+    };
+
+    ///
+    /// @brief Alias for the query data type of a queryable object.
+    ///
+    /// @tparam Q Queryable object.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-04-03)
+    ///
+    template <typename Q>
+    using queryable_data_t = typename queryable_data<Q>::type;
+
+    ///
+    /// @brief Get the mask of the queryable object.
+    ///
+    /// @note Required because the dot operator is not overloadable for @ref QueryableWrapper.
+    ///
+    /// @tparam Q Queryable object.
+    ///
+    /// @param[in] queryable Queryable object.
+    ///
+    /// @return constexpr const util::BitSet& Mask of the queryable object.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-04-03)
+    ///
+    template <Queryable Q>
+    constexpr const util::BitSet &getQueryableMask(const Q &queryable)
+    {
+        if constexpr (QueryableWrapper<Q>)
+            return queryable->getMask();
+        else
+            return queryable.getMask();
+    }
+
+    ///
+    /// @brief Get the query data at the given index.
+    ///
+    /// @note Required because the dot operator is not overloadable for @ref QueryableWrapper.
+    ///
+    /// @tparam Q Queryable object.
+    /// @param[in] queryable Queryable object.
+    /// @param[in] index Index of the query data to fetch.
+    ///
+    /// @return constexpr @ref ecstasy::query::queryable_data_t<Q> Query data at the given index.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-04-03)
+    ///
+    template <Queryable Q>
+    constexpr queryable_data_t<Q> getQueryableData(Q &queryable, size_t index)
+    {
+        if constexpr (QueryableWrapper<Q>)
+            return queryable->getQueryData(index);
+        else
+            return queryable.getQueryData(index);
+    }
+
 
     ///
     /// @brief Checks if the given type match the @ref ecstasy::query::Queryable concept.
