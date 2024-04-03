@@ -1,6 +1,9 @@
 set(SRCROOT ${SRCROOT}/query)
 
+add_subdirectory(concepts)
+
 set(SRC
+    ${SRC}
     ${SRCROOT}/tests_Query.cpp
 )
 
