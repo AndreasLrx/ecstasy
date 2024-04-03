@@ -54,7 +54,7 @@ namespace ecstasy::query::modifier
         ///
         Maybe(Internal &internal) : _internal(internal)
         {
-            adjustMask(internal.getMask().size());
+            adjustMask(getQueryableMask(internal).size());
         }
 
         ///
@@ -87,8 +87,8 @@ namespace ecstasy::query::modifier
         ///
         constexpr QueryData getQueryData(size_t index)
         {
-            if (index < _internal.getMask().size() && _internal.getMask()[index])
-                return QueryData{_internal.getQueryData(index)};
+            if (index < getQueryableMask(_internal).size() && getQueryableMask(_internal)[index])
+                return QueryData{getQueryableData(_internal, index)};
             return std::nullopt;
         }
 

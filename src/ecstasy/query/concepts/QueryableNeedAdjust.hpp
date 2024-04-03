@@ -17,7 +17,7 @@
 namespace ecstasy::query
 {
     ///
-    /// @brief Defines a Queryable type which has the adjustMask() implemented.
+    /// @brief Defines a Queryable object type which has the adjustMask() implemented.
     ///
     /// @tparam Q Evaluated Type.
     ///
@@ -25,14 +25,43 @@ namespace ecstasy::query
     /// @since 1.0.0 (2022-10-25)
     ///
     template <typename Q>
-    concept QueryableNeedAdjust = requires(Q &queryable, std::size_t maxSize) {
+    concept QueryableObjectNeedAdjust = requires(Q &queryable, std::size_t maxSize) {
         /// Ensure the type is a queryable
-        requires Queryable<Q>;
+        requires QueryableObject<Q>;
 
         // clang-format off
         { queryable.adjustMask(maxSize) } -> std::same_as<void>;
         // clang-format on
     };
+
+    ///
+    /// @brief Defines a Queryable wrapper type which has the adjustMask() implemented.
+    ///
+    /// @tparam Q Evaluated Type.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-04-03)
+    ///
+    template <typename Q>
+    concept QueryableWrapperNeedAdjust = requires(Q &queryable, std::size_t maxSize) {
+        /// Ensure the type is a queryable
+        requires QueryableWrapper<Q>;
+
+        // clang-format off
+        { queryable->adjustMask(maxSize) } -> std::same_as<void>;
+        // clang-format on
+    };
+
+    ///
+    /// @brief Defines a Queryable type which has the adjustMask() implemented.
+    ///
+    /// @tparam Q Evaluated Type.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-04-03)
+    ///
+    template <typename Q>
+    concept QueryableNeedAdjust = QueryableObjectNeedAdjust<Q> || QueryableWrapperNeedAdjust<Q>;
 
     ///
     /// @brief Adjust the queryable mask if needed.
@@ -60,7 +89,10 @@ namespace ecstasy::query
     template <QueryableNeedAdjust Q>
     constexpr void adjustMask(Q &queryable, size_t maxSize)
     {
-        queryable.adjustMask(maxSize);
+        if constexpr (QueryableWrapper<Q>)
+            queryable->adjustMask(maxSize);
+        else
+            queryable.adjustMask(maxSize);
     }
 
     ///

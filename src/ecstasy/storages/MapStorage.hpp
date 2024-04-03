@@ -34,8 +34,10 @@ namespace ecstasy
         /// @brief IsStorage constraint
         using Component = C;
 
-        /// @brief @ref ecstasy::query::Queryable constraint.
+        /// @brief @ref ecstasy::query::QueryableObject constraint.
         using QueryData = C &;
+        /// @brief @ref ecstasy::query::ConstQueryableObject constraint.
+        using ConstQueryData = const C &;
 
         ///
         /// @brief Construct a new Map Storage for a given Component type.
@@ -155,7 +157,7 @@ namespace ecstasy
         ///
         /// @brief Retrieve the @b Component instance associated to the given entity.
         ///
-        /// @note @ref ecstasy::query::Queryable constraint.
+        /// @note @ref ecstasy::query::QueryableObject constraint.
         ///
         /// @param[in] index Index of the entity.
         ///
@@ -167,6 +169,25 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-19)
         ///
         Component &getQueryData(Entity::Index index)
+        {
+            return _components.at(index);
+        }
+
+        ///
+        /// @brief Retrieve the const @b Component instance associated to the given entity.
+        ///
+        /// @note @ref ecstasy::query::ConstQueryableObject constraint.
+        ///
+        /// @param[in] index Index of the entity.
+        ///
+        /// @return const Component& Const reference to the associated component.
+        ///
+        /// @throw std::out_of_range If the entity doesn't have the component.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-04-03)
+        ///
+        const Component &getQueryData(Entity::Index index) const
         {
             return _components.at(index);
         }
@@ -201,7 +222,7 @@ namespace ecstasy
         /// @brief Get the Component Mask.
         ///
         /// @note Each bit set to true mean the entity at the bit index has a component @b C.
-        /// @note @ref ecstasy::query::Queryable constraint.
+        /// @note @ref ecstasy::query::QueryableObject constraint.
         /// @warning The mask might be smaller than the entity count.
         ///
         /// @return const util::BitSet& Component mask.

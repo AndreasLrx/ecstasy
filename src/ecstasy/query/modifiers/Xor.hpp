@@ -72,8 +72,8 @@ namespace ecstasy::query::modifier
         {
             auto &operand = std::get<operandId>(this->_operands);
 
-            if (index < operand.getMask().size() && operand.getMask()[index])
-                return operand.getQueryData(index);
+            if (index < getQueryableMask(operand).size() && getQueryableMask(operand)[index])
+                return getQueryableData(operand, index);
             return std::nullopt;
         }
 
@@ -91,12 +91,12 @@ namespace ecstasy::query::modifier
                 auto &leftOperand = std::get<0>(this->_operands);
                 auto &rightOperand = std::get<1>(this->_operands);
 
-                if (leftOperand.getMask().size() > rightOperand.getMask().size()) {
-                    this->_mask = leftOperand.getMask();
-                    this->_mask.inplaceXor(rightOperand.getMask());
+                if (getQueryableMask(leftOperand).size() > getQueryableMask(rightOperand).size()) {
+                    this->_mask = getQueryableMask(leftOperand);
+                    this->_mask.inplaceXor(getQueryableMask(rightOperand));
                 } else {
-                    this->_mask = rightOperand.getMask();
-                    this->_mask.inplaceXor(leftOperand.getMask());
+                    this->_mask = getQueryableMask(rightOperand);
+                    this->_mask.inplaceXor(getQueryableMask(leftOperand));
                 }
             }
         }
@@ -132,9 +132,9 @@ namespace ecstasy::query::modifier
         inline void combineOperandMasks(std::integer_sequence<size_t, ints...> int_seq)
         {
             (void)int_seq;
-            this->_mask = std::get<0>(this->_operands).getMask();
-            combineMask(std::get<1>(this->_operands).getMask());
-            std::ignore = std::make_tuple((combineMask(std::get<ints + 2>(this->_operands).getMask()), 0)...);
+            this->_mask = getQueryableMask(std::get<0>(this->_operands));
+            combineMask(getQueryableMask(std::get<1>(this->_operands)));
+            std::ignore = std::make_tuple((combineMask(getQueryableMask(std::get<ints + 2>(this->_operands))), 0)...);
         }
     };
 } // namespace ecstasy::query::modifier

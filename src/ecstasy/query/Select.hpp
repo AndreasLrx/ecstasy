@@ -261,13 +261,13 @@ namespace ecstasy::query
             /// Adjusts the masks only if required
             if constexpr (is_queryable_with_adjust_v<FirstWhere>
                 || std::disjunction_v<is_queryable_with_adjust<Wheres>...>) {
-                size_t maxSize = std::max({firstWhere.getMask().size(), wheres.getMask().size()...});
+                size_t maxSize = std::max({getQueryableMask(firstWhere).size(), getQueryableMask(wheres).size()...});
 
                 adjustMask(firstWhere, maxSize);
                 (adjustMask(wheres, maxSize), ...);
             }
 
-            util::BitSet mask = (util::BitSet(firstWhere.getMask()) &= ... &= wheres.getMask());
+            util::BitSet mask = (util::BitSet(getQueryableMask(firstWhere)) &= ... &= getQueryableMask(wheres));
 
             return QueryImplementation<util::meta::Traits<SelectedQueryables...>, Conditions>(
                 mask, filterQueryables(firstWhere, wheres...));

@@ -42,8 +42,8 @@ namespace ecstasy::query
     template <Queryable First, Queryable... Others, typename... Conditions>
     class QueryImplementation<util::meta::Traits<First, Others...>, util::meta::Traits<Conditions...>> {
       public:
-        /// @brief Queryable constraint.
-        using QueryData = std::tuple<typename First::QueryData, typename Others::QueryData...>;
+        /// @brief QueryableObject constraint.
+        using QueryData = std::tuple<queryable_data_t<First>, queryable_data_t<Others>...>;
 
         ///
         /// @brief Query iterator.
@@ -55,7 +55,7 @@ namespace ecstasy::query
           public:
             using iterator_category = std::input_iterator_tag;
             using difference_type = std::ptrdiff_t;
-            using value_type = std::tuple<typename First::QueryData, typename Others::QueryData...>;
+            using value_type = QueryData;
             using pointer = value_type *;
             using reference = value_type &;
 
@@ -249,45 +249,45 @@ namespace ecstasy::query
             bool checkCondition() const
             {
                 static_assert(std::disjunction_v<
-                    std::is_same<typename Condition::Left, std::remove_reference_t<typename Others::QueryData>>...,
-                    std::is_same<typename Condition::Left, std::remove_reference_t<typename First::QueryData>>>);
+                    std::is_same<typename Condition::Left, std::remove_reference_t<queryable_data_t<Others>>>...,
+                    std::is_same<typename Condition::Left, std::remove_reference_t<queryable_data_t<First>>>>);
                 auto &storage = std::get<
-                    util::meta::index_v<typename Condition::Left, std::remove_reference_t<typename First::QueryData>,
-                        std::remove_reference_t<typename Others::QueryData>...>>(_storages.get());
+                    util::meta::index_v<typename Condition::Left, std::remove_reference_t<queryable_data_t<First>>,
+                        std::remove_reference_t<queryable_data_t<Others>>...>>(_storages.get());
 
-                return Condition::test(storage.getQueryData(_pos));
+                return Condition::test(getQueryableData(storage, _pos));
             }
 
             template <QConditionRight Condition>
             bool checkCondition() const
             {
                 static_assert(std::disjunction_v<
-                    std::is_same<typename Condition::Right, std::remove_reference_t<typename Others::QueryData>>...,
-                    std::is_same<typename Condition::Right, std::remove_reference_t<typename First::QueryData>>>);
+                    std::is_same<typename Condition::Right, std::remove_reference_t<queryable_data_t<Others>>>...,
+                    std::is_same<typename Condition::Right, std::remove_reference_t<queryable_data_t<First>>>>);
                 auto &storage = std::get<
-                    util::meta::index_v<typename Condition::Right, std::remove_reference_t<typename First::QueryData>,
-                        std::remove_reference_t<typename Others::QueryData>...>>(_storages.get());
+                    util::meta::index_v<typename Condition::Right, std::remove_reference_t<queryable_data_t<First>>,
+                        std::remove_reference_t<queryable_data_t<Others>>...>>(_storages.get());
 
-                return Condition::test(storage.getQueryData(_pos));
+                return Condition::test(getQueryableData(storage, _pos));
             }
 
             template <QConditionLeftRight Condition>
             bool checkCondition() const
             {
                 static_assert(std::disjunction_v<
-                    std::is_same<typename Condition::Left, std::remove_reference_t<typename Others::QueryData>>...,
-                    std::is_same<typename Condition::Left, std::remove_reference_t<typename First::QueryData>>>);
+                    std::is_same<typename Condition::Left, std::remove_reference_t<queryable_data_t<Others>>>...,
+                    std::is_same<typename Condition::Left, std::remove_reference_t<queryable_data_t<First>>>>);
                 static_assert(std::disjunction_v<
-                    std::is_same<typename Condition::Right, std::remove_reference_t<typename Others::QueryData>>...,
-                    std::is_same<typename Condition::Right, std::remove_reference_t<typename First::QueryData>>>);
+                    std::is_same<typename Condition::Right, std::remove_reference_t<queryable_data_t<Others>>>...,
+                    std::is_same<typename Condition::Right, std::remove_reference_t<queryable_data_t<First>>>>);
                 auto &storageLeft = std::get<
-                    util::meta::index_v<typename Condition::Left, std::remove_reference_t<typename First::QueryData>,
-                        std::remove_reference_t<typename Others::QueryData>...>>(_storages.get());
+                    util::meta::index_v<typename Condition::Left, std::remove_reference_t<queryable_data_t<First>>,
+                        std::remove_reference_t<queryable_data_t<Others>>...>>(_storages.get());
                 auto &storageRight = std::get<
-                    util::meta::index_v<typename Condition::Right, std::remove_reference_t<typename First::QueryData>,
-                        std::remove_reference_t<typename Others::QueryData>...>>(_storages.get());
+                    util::meta::index_v<typename Condition::Right, std::remove_reference_t<queryable_data_t<First>>,
+                        std::remove_reference_t<queryable_data_t<Others>>...>>(_storages.get());
 
-                return Condition::test(storageLeft.getQueryData(_pos), storageRight.getQueryData(_pos));
+                return Condition::test(getQueryableData(storageLeft, _pos), getQueryableData(storageRight, _pos));
             }
 
             inline void applyConditions()
@@ -315,7 +315,7 @@ namespace ecstasy::query
             template <size_t... Indices>
             value_type get_components(std::index_sequence<Indices...>) const
             {
-                return {std::get<Indices>(_storages.get()).getQueryData(_pos)...};
+                return {getQueryableData(std::get<Indices>(_storages.get()), _pos)...};
             }
         };
 
@@ -350,12 +350,12 @@ namespace ecstasy::query
             /// Adjusts the masks only if required
             if constexpr (is_queryable_with_adjust_v<First>
                 || std::disjunction_v<is_queryable_with_adjust<Others>...>) {
-                size_t maxSize = std::max({first.getMask().size(), others.getMask().size()...});
+                size_t maxSize = std::max({getQueryableMask(first).size(), getQueryableMask(others).size()...});
 
                 adjustMask(first, maxSize);
                 (adjustMask(others, maxSize), ...);
             }
-            this->_mask = (util::BitSet(first.getMask()) &= ... &= others.getMask());
+            this->_mask = (util::BitSet(getQueryableMask(first)) &= ... &= getQueryableMask(others));
 
             // push a sentinel bit at the end.
             this->_mask.push(true);
@@ -392,7 +392,7 @@ namespace ecstasy::query
         ///
         /// @brief Get the Query Mask. All bit set means an entity match the chained request.
         ///
-        /// @note @ref ecstasy::query::Queryable constraint.
+        /// @note @ref ecstasy::query::QueryableObject constraint.
         ///
         /// @return const util::BitSet& Query BitMask.
         ///
@@ -407,7 +407,7 @@ namespace ecstasy::query
         ///
         /// @brief Query the components associated to the given entity.
         ///
-        /// @note @ref ecstasy::query::Queryable constraint.
+        /// @note @ref ecstasy::query::QueryableObject constraint.
         ///
         /// @param[in] index Index of the entity.
         ///
@@ -493,7 +493,7 @@ namespace ecstasy::query
         template <size_t... Indices>
         QueryData get_components(std::size_t index, std::index_sequence<Indices...>) const
         {
-            return {std::get<Indices>(_storages).getQueryData(index)...};
+            return {getQueryableData(std::get<Indices>(_storages), index)...};
         }
     };
 

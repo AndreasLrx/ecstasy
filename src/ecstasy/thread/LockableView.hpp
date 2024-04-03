@@ -44,6 +44,8 @@ namespace ecstasy::thread
       public:
         /// Type of the Lockable object.
         using LockableType = L;
+        /// @ref QueryableWrapper Constraint
+        using WrappedType = L;
 
         ///
         /// @brief Construct a new Lockable View.
