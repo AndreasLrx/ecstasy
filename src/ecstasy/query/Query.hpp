@@ -44,6 +44,7 @@ namespace ecstasy::query
       public:
         /// @brief QueryableObject constraint.
         using QueryData = std::tuple<queryable_data_t<First>, queryable_data_t<Others>...>;
+        using Queryables = std::tuple<queryable_qualifiers_t<First>, queryable_qualifiers_t<Others>...>;
 
         ///
         /// @brief Query iterator.
@@ -83,8 +84,7 @@ namespace ecstasy::query
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-20)
             ///
-            explicit Iterator(
-                util::BitSet const &mask, std::tuple<First &, Others &...> const &storages, std::size_t pos)
+            explicit Iterator(util::BitSet const &mask, Queryables const &storages, std::size_t pos)
                 : _mask(std::cref(mask)), _storages(std::cref(storages)), _pos(pos)
             {
                 if constexpr (sizeof...(Conditions) != 0)
@@ -299,7 +299,7 @@ namespace ecstasy::query
             }
 
             std::reference_wrapper<const util::BitSet> _mask;
-            std::reference_wrapper<const std::tuple<First &, Others &...>> _storages;
+            std::reference_wrapper<const Queryables> _storages;
             std::size_t _pos;
 
             ///
@@ -328,8 +328,7 @@ namespace ecstasy::query
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-22)
         ///
-        QueryImplementation(util::BitSet &mask, const std::tuple<First &, Others &...> &storages)
-            : _mask(mask), _storages(storages)
+        QueryImplementation(util::BitSet &mask, const Queryables &storages) : _mask(mask), _storages(storages)
         {
             // push a sentinel bit at the end.
             this->_mask.push(true);
@@ -470,7 +469,7 @@ namespace ecstasy::query
 
       private:
         util::BitSet _mask;
-        std::tuple<First &, Others &...> _storages;
+        Queryables _storages;
         size_t _begin;
 
         template <typename F>

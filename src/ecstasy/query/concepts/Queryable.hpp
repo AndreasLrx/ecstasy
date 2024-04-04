@@ -162,6 +162,46 @@ namespace ecstasy::query
     using queryable_data_t = typename queryable_data<Q>::type;
 
     ///
+    /// @brief Get the queryable type with the correct qualifiers.
+    /// By default this is a reference to the type @b Q.
+    /// If Q is a const @ref ConstQueryableObject, then the type is a const reference to the type.
+    /// If Q is a @ref QueryableWrapper, then the type is the wrapped type itself, it allows implicit constructions for
+    /// @ref LockableView.
+    ///
+    /// @tparam Q Queryable object.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-04-04)
+    ///
+    template <Queryable Q>
+    struct queryable_qualifiers {
+        using type = Q &;
+    };
+
+    /// @copydoc queryable_qualifiers
+    template <ConstQueryableObject Q>
+    struct queryable_qualifiers<const Q> {
+        using type = const Q &;
+    };
+
+    /// @copydoc queryable_qualifiers
+    template <QueryableWrapper Q>
+    struct queryable_qualifiers<Q> {
+        using type = Q;
+    };
+
+    ///
+    /// @brief Alias for the queryable type with the correct qualifiers.
+    ///
+    /// @tparam Q Queryable object.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-04-04)
+    ///
+    template <typename Q>
+    using queryable_qualifiers_t = typename queryable_qualifiers<Q>::type;
+
+    ///
     /// @brief Get the mask of the queryable object.
     ///
     /// @note Required because the dot operator is not overloadable for @ref QueryableWrapper.

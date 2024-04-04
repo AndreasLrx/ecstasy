@@ -9,6 +9,7 @@
 #define ECSTASY_STORAGE_STORAGECONCEPTS_HPP_
 
 #include <concepts>
+#include "IStorage.hpp"
 
 /// Sets the storage type to use for @b ComponentType, if not called @b MapStorage is used by default.
 #define SET_COMPONENT_STORAGE(ComponentType, StorageType) \
@@ -33,9 +34,19 @@ struct GetComponentStorageType {
 
 namespace ecstasy
 {
+    template <typename C>
+    struct getStorageTypeImpl {
+        using type = typename GetComponentStorageType<C>::Value;
+    };
+
+    template <typename C>
+    struct getStorageTypeImpl<const C> {
+        using type = const getStorageTypeImpl<C>::type;
+    };
+
     /// Get the storage type of a component, returns MapStorage by default.
     template <typename C>
-    using getStorageType = typename GetComponentStorageType<C>::Value;
+    using getStorageType = getStorageTypeImpl<C>::type;
 
     template <typename S>
     concept IsStorage = std::default_initializable<S> && std::derived_from<S, IStorage>

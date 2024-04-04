@@ -35,7 +35,7 @@ namespace ecstasy::query
     struct Select {
       public:
         /// @brief Resulting selected @ref ecstasy::query::Queryable tuple
-        using SelectedTuple = std::tuple<SelectedQueryables &...>;
+        using SelectedTuple = std::tuple<queryable_qualifiers_t<SelectedQueryables>...>;
 
       private:
         /// @internal

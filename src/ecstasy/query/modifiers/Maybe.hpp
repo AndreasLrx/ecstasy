@@ -36,13 +36,13 @@ namespace ecstasy::query::modifier
     class Maybe : public Modifier {
       public:
         /// @brief Wrapped queryable.
-        using Internal = Q;
+        using Internal = queryable_qualifiers_t<Q>;
 
         /// @brief @ref Modifier constraint.
         using Operands = std::tuple<Q>;
 
         /// @brief @ref ecstasy::query::Queryable constaint.
-        using QueryData = util::meta::add_optional_t<typename Internal::QueryData>;
+        using QueryData = util::meta::add_optional_t<queryable_data_t<Q>>;
 
         ///
         /// @brief Construct a new Maybe Queryable modifier.
@@ -52,7 +52,7 @@ namespace ecstasy::query::modifier
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-24)
         ///
-        Maybe(Internal &internal) : _internal(internal)
+        Maybe(Q &internal) : _internal(internal)
         {
             adjustMask(getQueryableMask(internal).size());
         }
@@ -109,7 +109,7 @@ namespace ecstasy::query::modifier
         }
 
       private:
-        Internal &_internal;
+        Internal _internal;
         util::BitSet _mask;
     };
 } // namespace ecstasy::query::modifier

@@ -123,7 +123,7 @@ namespace ecstasy::query::modifier
                 getDerivedOperandData<ints + 2>(index)...};
         }
 
-        std::tuple<Q1 &, Q2 &, Qs &...> _operands;
+        std::tuple<queryable_qualifiers_t<Q1>, queryable_qualifiers_t<Q2>, queryable_qualifiers_t<Qs>...> _operands;
         util::BitSet _mask;
     };
 } // namespace ecstasy::query::modifier

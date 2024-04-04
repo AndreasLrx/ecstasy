@@ -275,6 +275,17 @@ namespace ecstasy
             return _storages.get<S>();
         }
 
+        template <typename S, typename A = ModifiersAllocator>
+            requires std::is_const_v<S> && query::ConstQueryableObject<std::remove_const_t<S>>
+            && IsStorage<std::remove_const_t<S>>
+        S &getQueryable(OptionalModifiersAllocator<A> &allocator)
+        {
+            (void)allocator;
+            if (!_storages.contains<std::remove_const_t<S>>())
+                return _storages.emplace<std::remove_const_t<S>>();
+            return _storages.get<std::remove_const_t<S>>();
+        }
+
         ///
         /// @brief Proxy structure to extract the operand types using template partial specialization
         ///
@@ -795,7 +806,7 @@ namespace ecstasy
         template <typename C>
         getStorageType<C> &getStorage()
         {
-            return _storages.get<getStorageType<C>>();
+            return _storages.get<std::remove_const_t<getStorageType<C>>>();
         }
 
         ///
@@ -811,9 +822,9 @@ namespace ecstasy
         template <typename C>
         getStorageType<C> &getStorageSafe() noexcept
         {
-            if (!_storages.contains<getStorageType<C>>())
-                addStorage<C>();
-            return _storages.get<getStorageType<C>>();
+            if (!_storages.contains<std::remove_const_t<getStorageType<C>>>())
+                addStorage<std::remove_const_t<C>>();
+            return _storages.get<getStorageType<std::remove_const_t<C>>>();
         }
 
         ///

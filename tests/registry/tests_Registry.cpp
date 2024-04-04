@@ -139,6 +139,12 @@ struct Movement : public ecstasy::ISystem {
     }
 };
 
+template <typename T1, typename T2>
+void assert_equals()
+{
+    static_assert(std::is_same_v<T1, T2>, "Types differs.");
+}
+
 TEST(Registry, systems)
 {
     testing::internal::CaptureStdout();
@@ -189,11 +195,33 @@ TEST(Registry, storages)
     /// First call instantiate the storage and the second only fetch it.
     EXPECT_EQ(registry.getStorageSafe<A>().size(), 0);
     EXPECT_EQ(registry.getStorageSafe<A>().size(), 0);
+    EXPECT_EQ(registry.getStorageSafe<const A>().size(), 0);
     EXPECT_EQ(cregistry.getStorage<A>().size(), 0);
+    EXPECT_EQ(cregistry.getStorage<const A>().size(), 0);
+    assert_equals<decltype(registry.getStorage<A>()), ecstasy::MapStorage<A> &>();
+    assert_equals<decltype(registry.getStorage<const A>()), const ecstasy::MapStorage<A> &>();
+    assert_equals<decltype(registry.getStorageSafe<A>()), ecstasy::MapStorage<A> &>();
+    assert_equals<decltype(registry.getStorageSafe<const A>()), const ecstasy::MapStorage<A> &>();
 
     /// Add resource with an initial value of 5 and add one
     registry.addStorage<Counter>();
     EXPECT_EQ(registry.getStorage<Counter>().size(), 0);
+}
+
+TEST(Registry, getQueryable)
+{
+    ecstasy::Registry registry;
+    ecstasy::ModifiersAllocator alloc;
+    auto alloc_opt = std::optional(std::reference_wrapper(alloc));
+
+    assert_equals<decltype(registry.getQueryable<Position>(alloc_opt)), ecstasy::MapStorage<Position> &>();
+    assert_equals<decltype(registry.getQueryable<const Position>(alloc_opt)), const ecstasy::MapStorage<Position> &>();
+    assert_equals<decltype(registry.getQueryable<ecstasy::MapStorage<Position>>(alloc_opt)),
+        ecstasy::MapStorage<Position> &>();
+    assert_equals<decltype(registry.getQueryable<const ecstasy::MapStorage<Position>>(alloc_opt)),
+        const ecstasy::MapStorage<Position> &>();
+    assert_equals<decltype(registry.getQueryable<ecstasy::Entities>(alloc_opt)), ecstasy::Entities &>();
+    assert_equals<decltype(registry.getQueryable<const ecstasy::Entities>(alloc_opt)), const ecstasy::Entities &>();
 }
 
 TEST(Registry, eraseEntity)

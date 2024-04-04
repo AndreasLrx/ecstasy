@@ -34,13 +34,13 @@ namespace ecstasy::query::modifier
     class Not : public Modifier {
       public:
         /// @brief Wrapped queryable.
-        using Internal = Q;
+        using Internal = queryable_qualifiers_t<Q>;
 
         /// @brief @ref Modifier constraint.
         using Operands = std::tuple<Q>;
 
         /// @brief @ref ecstasy::query::Queryable constaint.
-        using QueryData = typename Internal::QueryData;
+        using QueryData = queryable_data_t<Q>;
 
         ///
         /// @brief Construct a new Not Queryable modifier.
@@ -50,7 +50,7 @@ namespace ecstasy::query::modifier
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-24)
         ///
-        Not(Internal &internal) : _internal(internal), _mask(getQueryableMask(internal))
+        Not(Q &internal) : _internal(internal), _mask(getQueryableMask(internal))
         {
             _mask.flip();
         }
@@ -121,7 +121,7 @@ namespace ecstasy::query::modifier
         }
 
       private:
-        Internal &_internal;
+        Internal _internal;
         util::BitSet _mask;
     };
 } // namespace ecstasy::query::modifier
