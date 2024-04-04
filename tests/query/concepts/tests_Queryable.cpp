@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include "ecstasy/config.hpp"
+#include "ecstasy/query/Query.hpp"
 #include "ecstasy/query/concepts/Queryable.hpp"
 #include "util/BitSet.hpp"
 
@@ -112,4 +113,34 @@ TEST(queryable_data, QueryableObjectImpl)
     assert_equals<queryable_data_t<WrapperImpl<QueryableObjectImpl>>, std::string &>();
     assert_equals<queryable_data_t<WrapperImpl<ConstQueryableObjectImpl>>, std::string &>();
     assert_equals<queryable_data_t<WrapperImpl<const ConstQueryableObjectImpl>>, const std::string &>();
+}
+
+TEST(queryable_qualifiers, QueryableObjectImpl)
+{
+    assert_equals<queryable_qualifiers_t<QueryableObjectImpl>, QueryableObjectImpl &>();
+    assert_equals<queryable_qualifiers_t<ConstQueryableObjectImpl>, ConstQueryableObjectImpl &>();
+    assert_equals<queryable_qualifiers_t<const ConstQueryableObjectImpl>, const ConstQueryableObjectImpl &>();
+
+    assert_equals<queryable_qualifiers_t<WrapperImpl<QueryableObjectImpl>>, WrapperImpl<QueryableObjectImpl>>();
+    assert_equals<queryable_qualifiers_t<WrapperImpl<ConstQueryableObjectImpl>>,
+        WrapperImpl<ConstQueryableObjectImpl>>();
+    assert_equals<queryable_qualifiers_t<WrapperImpl<const ConstQueryableObjectImpl>>,
+        WrapperImpl<const ConstQueryableObjectImpl>>();
+
+    // clang-format off
+    assert_equals<QueryImplementation<
+            util::meta::Traits<
+                QueryableObjectImpl, 
+                const ConstQueryableObjectImpl,
+                WrapperImpl<QueryableObjectImpl>
+            >,
+            util::meta::Traits<>
+        >::Queryables,
+        
+        std::tuple<
+            QueryableObjectImpl &, 
+            const ConstQueryableObjectImpl &, 
+            WrapperImpl<QueryableObjectImpl>
+        >>();
+    // clang-format on
 }
