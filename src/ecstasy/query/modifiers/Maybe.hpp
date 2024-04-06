@@ -18,6 +18,7 @@
 #include "Modifier.hpp"
 #include "ecstasy/query/concepts/Queryable.hpp"
 #include "util/BitSet.hpp"
+#include "util/meta/Traits.hpp"
 #include "util/meta/add_optional.hpp"
 
 namespace ecstasy::query::modifier
@@ -28,18 +29,19 @@ namespace ecstasy::query::modifier
     /// @note All bits are set to true.
     ///
     /// @tparam Internal Type of the wrapped queryable.
+    /// @tparam AutoLock Lock the @ref Lockable queryables if true.
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-10-24)
     ///
-    template <Queryable Q>
-    class Maybe : public Modifier {
+    template <Queryable Q, bool AutoLock = false>
+    class Maybe : public Modifier<AutoLock> {
       public:
         /// @brief Wrapped queryable.
-        using Internal = queryable_qualifiers_t<Q>;
+        using Internal = queryable_qualifiers_t<Q, AutoLock>;
 
         /// @brief @ref Modifier constraint.
-        using Operands = std::tuple<Q>;
+        using Operands = util::meta::Traits<Q>;
 
         /// @brief @ref ecstasy::query::Queryable constaint.
         using QueryData = util::meta::add_optional_t<queryable_data_t<Q>>;

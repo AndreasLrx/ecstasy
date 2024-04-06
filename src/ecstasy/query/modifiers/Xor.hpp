@@ -25,6 +25,7 @@ namespace ecstasy::query::modifier
     /// @warning Since the mask of multiple operands is (Q1 ^ Q2) ^ Qs..., it is true when an odd number of operands
     /// match a given id.
     ///
+    /// @tparam AutoLock Lock the @ref Lockable queryables if true.
     /// @tparam Q1 Left operand queryable type.
     /// @tparam Q2 Right operand queryable type.
     /// @tparam Qs Additional operand queryable types.
@@ -32,10 +33,12 @@ namespace ecstasy::query::modifier
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-10-27)
     ///
-    template <Queryable Q1, Queryable Q2, Queryable... Qs>
-    class Xor : public BinaryModifier<Xor<Q1, Q2, Qs...>, util::meta::add_optional, Q1, Q2, Qs...> {
+    template <bool AutoLock, Queryable Q1, Queryable Q2, Queryable... Qs>
+    class XorImpl
+        : public BinaryModifier<XorImpl<AutoLock, Q1, Q2, Qs...>, AutoLock, util::meta::add_optional, Q1, Q2, Qs...> {
         /// @brief Helper type for the base class.
-        using ModifierClass = BinaryModifier<Xor<Q1, Q2, Qs...>, util::meta::add_optional, Q1, Q2, Qs...>;
+        using ModifierClass =
+            BinaryModifier<XorImpl<AutoLock, Q1, Q2, Qs...>, AutoLock, util::meta::add_optional, Q1, Q2, Qs...>;
 
       public:
         ///
@@ -48,7 +51,7 @@ namespace ecstasy::query::modifier
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-27)
         ///
-        Xor(Q1 &firstOperand, Q2 &secondOperand, Qs &...otherOperands)
+        XorImpl(Q1 &firstOperand, Q2 &secondOperand, Qs &...otherOperands)
             : ModifierClass(firstOperand, secondOperand, otherOperands...)
         {
         }
@@ -137,6 +140,9 @@ namespace ecstasy::query::modifier
             std::ignore = std::make_tuple((combineMask(getQueryableMask(std::get<ints + 2>(this->_operands))), 0)...);
         }
     };
+
+    template <Queryable Q1, Queryable Q2, Queryable... Qs>
+    using Xor = XorImpl<false, Q1, Q2, Qs...>;
 } // namespace ecstasy::query::modifier
 
 #endif /* !ECSTASY_QUERY_MODIFIERS_XOR_HPP_ */

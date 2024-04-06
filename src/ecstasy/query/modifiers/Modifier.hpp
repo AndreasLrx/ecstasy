@@ -20,7 +20,13 @@ namespace ecstasy::query::modifier
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-10-24)
     ///
-    class Modifier {
+    class ModifierBase {
+      public:
+        virtual ~ModifierBase() = default;
+    };
+
+    template <bool AutoLock>
+    class Modifier : public ModifierBase {
       public:
         virtual ~Modifier() = default;
     };

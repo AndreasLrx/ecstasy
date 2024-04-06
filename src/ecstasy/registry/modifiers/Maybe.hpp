@@ -12,6 +12,7 @@
 #ifndef ECSTASY_REGISTRY_MODIFIERS_MAYBE_HPP_
 #define ECSTASY_REGISTRY_MODIFIERS_MAYBE_HPP_
 
+#include "ecstasy/config.hpp"
 #include "ecstasy/query/modifiers/Maybe.hpp"
 
 namespace ecstasy
@@ -26,7 +27,7 @@ namespace ecstasy
     ///
     template <typename C>
     struct Maybe {
-        using Modifier = query::modifier::Maybe<queryable_type_t<C>>;
+        using Modifier = query::modifier::Maybe<queryable_type_t<C>, THREAD_SAFE_DEFAULT>;
     };
 } // namespace ecstasy
 

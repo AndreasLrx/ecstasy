@@ -23,6 +23,7 @@ namespace ecstasy::query::modifier
     ///
     /// @note The mask is the result of the operation: Q1 | Q2 | Qs...
     ///
+    /// @tparam AutoLock Lock the @ref Lockable queryables if true.
     /// @tparam Q1 Left operand queryable type.
     /// @tparam Q2 Right operand queryable type.
     /// @tparam Qs Additional operand queryable types.
@@ -30,10 +31,12 @@ namespace ecstasy::query::modifier
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-10-27)
     ///
-    template <Queryable Q1, Queryable Q2, Queryable... Qs>
-    class Or : public BinaryModifier<Or<Q1, Q2, Qs...>, util::meta::add_optional, Q1, Q2, Qs...> {
+    template <bool AutoLock, Queryable Q1, Queryable Q2, Queryable... Qs>
+    class OrImpl
+        : public BinaryModifier<OrImpl<AutoLock, Q1, Q2, Qs...>, AutoLock, util::meta::add_optional, Q1, Q2, Qs...> {
         /// @brief Helper type for the base class.
-        using ModifierClass = BinaryModifier<Or<Q1, Q2, Qs...>, util::meta::add_optional, Q1, Q2, Qs...>;
+        using ModifierClass =
+            BinaryModifier<OrImpl<AutoLock, Q1, Q2, Qs...>, AutoLock, util::meta::add_optional, Q1, Q2, Qs...>;
 
       public:
         ///
@@ -46,7 +49,7 @@ namespace ecstasy::query::modifier
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-27)
         ///
-        Or(Q1 &firstOperand, Q2 &secondOperand, Qs &...otherOperands)
+        OrImpl(Q1 &firstOperand, Q2 &secondOperand, Qs &...otherOperands)
             : ModifierClass(firstOperand, secondOperand, otherOperands...)
         {
         }
@@ -136,6 +139,9 @@ namespace ecstasy::query::modifier
             std::ignore = std::make_tuple((combineMask(getQueryableMask(std::get<ints + 2>(this->_operands))), 0)...);
         }
     };
+
+    template <Queryable Q1, Queryable Q2, Queryable... Qs>
+    using Or = OrImpl<false, Q1, Q2, Qs...>;
 } // namespace ecstasy::query::modifier
 
 #endif /* !ECSTASY_QUERY_MODIFIERS_OR_HPP_ */

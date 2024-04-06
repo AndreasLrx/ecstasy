@@ -255,6 +255,15 @@ TEST(Select, omitStorages)
 
 TEST(Query, NotModifier)
 {
+    assert_equals<ecstasy::query::modifier::Not<ecstasy::MapStorage<MovableMarker>>::Internal,
+        ecstasy::MapStorage<MovableMarker> &>();
+    assert_equals<ecstasy::query::modifier::Not<ecstasy::MapStorage<MovableMarker>, true>::Internal,
+        ecstasy::thread::LockableView<ecstasy::MapStorage<MovableMarker>>>();
+    assert_equals<ecstasy::query::modifier::Not<const ecstasy::MapStorage<MovableMarker>>::Internal,
+        const ecstasy::MapStorage<MovableMarker> &>();
+    assert_equals<ecstasy::query::modifier::Not<const ecstasy::MapStorage<MovableMarker>, true>::Internal,
+        ecstasy::thread::LockableView<const ecstasy::MapStorage<MovableMarker>>>();
+
     ecstasy::MapStorage<Position> positions;
     ecstasy::MapStorage<Velocity> velocities;
     ecstasy::MapStorage<MovableMarker> statics;
@@ -315,6 +324,15 @@ TEST(Query, NotModifier)
 
 TEST(Query, Maybe)
 {
+    assert_equals<ecstasy::query::modifier::Maybe<ecstasy::MapStorage<MovableMarker>>::Internal,
+        ecstasy::MapStorage<MovableMarker> &>();
+    assert_equals<ecstasy::query::modifier::Maybe<ecstasy::MapStorage<MovableMarker>, true>::Internal,
+        ecstasy::thread::LockableView<ecstasy::MapStorage<MovableMarker>>>();
+    assert_equals<ecstasy::query::modifier::Maybe<const ecstasy::MapStorage<MovableMarker>>::Internal,
+        const ecstasy::MapStorage<MovableMarker> &>();
+    assert_equals<ecstasy::query::modifier::Maybe<const ecstasy::MapStorage<MovableMarker>, true>::Internal,
+        ecstasy::thread::LockableView<const ecstasy::MapStorage<MovableMarker>>>();
+
     ecstasy::MapStorage<Position> positions;
     ecstasy::MapStorage<Velocity> velocities;
     ecstasy::MapStorage<Vector2i> vectors;
@@ -410,6 +428,21 @@ TEST(Query, Maybe)
 
 TEST(Query, Or)
 {
+    assert_equals<ecstasy::query::modifier::OrImpl<false, ecstasy::MapStorage<MovableMarker>,
+                      ecstasy::MapStorage<Position>>::Internal,
+        std::tuple<ecstasy::MapStorage<MovableMarker> &, ecstasy::MapStorage<Position> &>>();
+    assert_equals<ecstasy::query::modifier::OrImpl<false, const ecstasy::MapStorage<MovableMarker>,
+                      const ecstasy::MapStorage<Position>>::Internal,
+        std::tuple<const ecstasy::MapStorage<MovableMarker> &, const ecstasy::MapStorage<Position> &>>();
+    assert_equals<ecstasy::query::modifier::OrImpl<true, ecstasy::MapStorage<MovableMarker>,
+                      ecstasy::MapStorage<Position>>::Internal,
+        std::tuple<ecstasy::thread::LockableView<ecstasy::MapStorage<MovableMarker>>,
+            ecstasy::thread::LockableView<ecstasy::MapStorage<Position>>>>();
+    assert_equals<ecstasy::query::modifier::OrImpl<true, const ecstasy::MapStorage<MovableMarker>,
+                      const ecstasy::MapStorage<Position>>::Internal,
+        std::tuple<ecstasy::thread::LockableView<const ecstasy::MapStorage<MovableMarker>>,
+            ecstasy::thread::LockableView<const ecstasy::MapStorage<Position>>>>();
+
     ecstasy::MapStorage<Position> positions;
     ecstasy::MapStorage<Velocity> velocities;
     ecstasy::MapStorage<Vector2i> vectors;
@@ -568,6 +601,21 @@ TEST(Query, OrVariadic)
 
 TEST(Query, AndVariadic)
 {
+    assert_equals<ecstasy::query::modifier::AndImpl<false, ecstasy::MapStorage<MovableMarker>,
+                      ecstasy::MapStorage<Position>>::Internal,
+        std::tuple<ecstasy::MapStorage<MovableMarker> &, ecstasy::MapStorage<Position> &>>();
+    assert_equals<ecstasy::query::modifier::AndImpl<false, const ecstasy::MapStorage<MovableMarker>,
+                      const ecstasy::MapStorage<Position>>::Internal,
+        std::tuple<const ecstasy::MapStorage<MovableMarker> &, const ecstasy::MapStorage<Position> &>>();
+    assert_equals<ecstasy::query::modifier::AndImpl<true, ecstasy::MapStorage<MovableMarker>,
+                      ecstasy::MapStorage<Position>>::Internal,
+        std::tuple<ecstasy::thread::LockableView<ecstasy::MapStorage<MovableMarker>>,
+            ecstasy::thread::LockableView<ecstasy::MapStorage<Position>>>>();
+    assert_equals<ecstasy::query::modifier::AndImpl<true, const ecstasy::MapStorage<MovableMarker>,
+                      const ecstasy::MapStorage<Position>>::Internal,
+        std::tuple<ecstasy::thread::LockableView<const ecstasy::MapStorage<MovableMarker>>,
+            ecstasy::thread::LockableView<const ecstasy::MapStorage<Position>>>>();
+
     ecstasy::MapStorage<Position> positions;
     ecstasy::MapStorage<Velocity> velocities;
     ecstasy::MapStorage<Vector2i> vectors;
@@ -593,6 +641,21 @@ TEST(Query, AndVariadic)
 
 TEST(Query, XorVariadic)
 {
+    assert_equals<ecstasy::query::modifier::XorImpl<false, ecstasy::MapStorage<MovableMarker>,
+                      ecstasy::MapStorage<Position>>::Internal,
+        std::tuple<ecstasy::MapStorage<MovableMarker> &, ecstasy::MapStorage<Position> &>>();
+    assert_equals<ecstasy::query::modifier::XorImpl<false, const ecstasy::MapStorage<MovableMarker>,
+                      const ecstasy::MapStorage<Position>>::Internal,
+        std::tuple<const ecstasy::MapStorage<MovableMarker> &, const ecstasy::MapStorage<Position> &>>();
+    assert_equals<ecstasy::query::modifier::XorImpl<true, ecstasy::MapStorage<MovableMarker>,
+                      ecstasy::MapStorage<Position>>::Internal,
+        std::tuple<ecstasy::thread::LockableView<ecstasy::MapStorage<MovableMarker>>,
+            ecstasy::thread::LockableView<ecstasy::MapStorage<Position>>>>();
+    assert_equals<ecstasy::query::modifier::XorImpl<true, const ecstasy::MapStorage<MovableMarker>,
+                      const ecstasy::MapStorage<Position>>::Internal,
+        std::tuple<ecstasy::thread::LockableView<const ecstasy::MapStorage<MovableMarker>>,
+            ecstasy::thread::LockableView<const ecstasy::MapStorage<Position>>>>();
+
     ecstasy::MapStorage<Position> positions;
     ecstasy::MapStorage<Velocity> velocities;
     ecstasy::MapStorage<Vector2i> vectors;
