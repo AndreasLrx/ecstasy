@@ -54,6 +54,64 @@ struct Velocity {
 
 struct MovableMarker {};
 
+/// Debugging helpers, this print types T1 and T2 in the compilation error message
+template <typename T1, typename T2>
+void assert_equals()
+{
+    static_assert(std::is_same_v<T1, T2>, "Types T1 and T2 differs.");
+}
+
+template <typename L>
+using LV = ecstasy::thread::LockableView<L>;
+
+TEST(ThreadSafeQuery, all)
+{
+    ecstasy::MapStorage<Position> positions;
+    ecstasy::MapStorage<Size> sizes;
+    ecstasy::Entities entities;
+    {
+        const auto &ce = entities;
+        auto queryLocked = ecstasy::query::ThreadSafeQuery(ce, positions, sizes);
+        assert_equals<decltype(queryLocked)::QueryData, std::tuple<ecstasy::Entity, Position &, Size &>>();
+        assert_equals<decltype(queryLocked)::Queryables,
+            std::tuple<LV<const ecstasy::Entities>, LV<ecstasy::MapStorage<Position>>,
+                LV<ecstasy::MapStorage<Size>>>>();
+    }
+
+    {
+        auto queryLocked_explicit = ecstasy::query::ThreadSafeQuery<const ecstasy::Entities,
+            ecstasy::MapStorage<Position>, ecstasy::MapStorage<Size>>(entities, positions, sizes);
+        assert_equals<decltype(queryLocked_explicit)::QueryData, std::tuple<ecstasy::Entity, Position &, Size &>>();
+        assert_equals<decltype(queryLocked_explicit)::Queryables,
+            std::tuple<LV<const ecstasy::Entities>, LV<ecstasy::MapStorage<Position>>,
+                LV<ecstasy::MapStorage<Size>>>>();
+    }
+
+    {
+        auto queryLocked_explicit = ecstasy::query::ThreadSafeQuery<ecstasy::MapStorage<Position>,
+            const ecstasy::Entities, ecstasy::MapStorage<Size>>(positions, entities, sizes);
+        assert_equals<decltype(queryLocked_explicit)::QueryData, std::tuple<Position &, ecstasy::Entity, Size &>>();
+        assert_equals<decltype(queryLocked_explicit)::Queryables,
+            std::tuple<LV<ecstasy::MapStorage<Position>>, LV<const ecstasy::Entities>,
+                LV<ecstasy::MapStorage<Size>>>>();
+    }
+
+    {
+        auto queryLocked = ecstasy::query::ThreadSafeQuery<ecstasy::Entities, ecstasy::MapStorage<Position>,
+            ecstasy::MapStorage<Size>>(entities, positions, sizes);
+        assert_equals<decltype(queryLocked)::QueryData, std::tuple<ecstasy::Entity, Position &, Size &>>();
+        assert_equals<decltype(queryLocked)::Queryables,
+            std::tuple<LV<ecstasy::Entities>, LV<ecstasy::MapStorage<Position>>, LV<ecstasy::MapStorage<Size>>>>();
+    }
+
+    {
+        auto queryLocked = ecstasy::query::ThreadSafeQuery(entities, positions, sizes);
+        assert_equals<decltype(queryLocked)::QueryData, std::tuple<ecstasy::Entity, Position &, Size &>>();
+        assert_equals<decltype(queryLocked)::Queryables,
+            std::tuple<LV<ecstasy::Entities>, LV<ecstasy::MapStorage<Position>>, LV<ecstasy::MapStorage<Size>>>>();
+    }
+}
+
 TEST(Query, where)
 {
     ecstasy::MapStorage<Position> positions;

@@ -15,6 +15,11 @@
 #include <concepts>
 #include <cstddef>
 
+#include "ecstasy/config.hpp"
+
+#ifdef ECSTASY_MULTI_THREAD
+    #include "ecstasy/thread/LockableView.hpp"
+#endif
 namespace util
 {
     class BitSet;
@@ -162,44 +167,81 @@ namespace ecstasy::query
     using queryable_data_t = typename queryable_data<Q>::type;
 
     ///
+    /// @brief Get the thread safe type of a queryable type.
+    /// If @b ThreadSafe is false, @b Q is not @ref thread::Lockable or @b ECSTASY_MULTI_THREAD is not set , the type is
+    /// @b Q. If the type is lockable, then the type is a @ref thread::LockableView<Q>.
+    ///
+    /// @tparam Q Queryable type.
+    /// @tparam ThreadSafe Whether the queryable should be thread safe or not.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-04-06)
+    ///
+    template <Queryable Q, bool ThreadSafe>
+    struct thread_safe_queryable {
+        using type = Q;
+    };
+
+#ifdef ECSTASY_MULTI_THREAD
+
+    /// @copydoc thread_safe_queryable
+    template <thread::Lockable Q>
+    struct thread_safe_queryable<Q, true> {
+        using type = thread::LockableView<Q>;
+    };
+#endif
+
+    ///
+    /// @brief Alias for the thread safe type of a queryable type.
+    ///
+    /// @tparam Q Queryable type.
+    /// @tparam ThreadSafe Whether the queryable should be thread safe or not. Default to true.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-04-06)
+    ///
+    template <typename Q, bool ThreadSafe = true>
+    using thread_safe_queryable_t = typename thread_safe_queryable<Q, ThreadSafe>::type;
+
+    ///
     /// @brief Get the queryable type with the correct qualifiers.
     /// By default this is a reference to the type @b Q.
-    /// If Q is a const @ref ConstQueryableObject, then the type is a const reference to the type.
-    /// If Q is a @ref QueryableWrapper, then the type is the wrapped type itself, it allows implicit constructions for
-    /// @ref LockableView.
+    /// If Q is @ref thread::Lockable and @b AutoLock is true, then the type is a @ref thread_safe_queryable_t<Q>. It is
+    /// not a reference to the type because it will be implicitly constructed using the @ref thread::LockableView<Q>
+    /// constructor (taking Q&). Meaning a @ref ThreadSafeQuery will have LockableView<Q> in its storages but Q& in its
+    /// constructor.
     ///
     /// @tparam Q Queryable object.
+    /// @tparam AutoLock Whether the queryable should be locked while used or not.
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2024-04-04)
     ///
-    template <Queryable Q>
+    template <Queryable Q, bool AutoLock = false>
     struct queryable_qualifiers {
         using type = Q &;
     };
 
-    /// @copydoc queryable_qualifiers
-    template <ConstQueryableObject Q>
-    struct queryable_qualifiers<const Q> {
-        using type = const Q &;
-    };
+#ifdef ECSTASY_MULTI_THREAD
 
     /// @copydoc queryable_qualifiers
-    template <QueryableWrapper Q>
-    struct queryable_qualifiers<Q> {
-        using type = Q;
+    template <thread::Lockable Q>
+    struct queryable_qualifiers<Q, true> {
+        using type = thread_safe_queryable_t<Q, true>;
     };
+#endif
 
     ///
     /// @brief Alias for the queryable type with the correct qualifiers.
     ///
     /// @tparam Q Queryable object.
+    /// @tparam AutoLock Whether the queryable should be locked while used or not.
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2024-04-04)
     ///
-    template <typename Q>
-    using queryable_qualifiers_t = typename queryable_qualifiers<Q>::type;
+    template <typename Q, bool AutoLock = false>
+    using queryable_qualifiers_t = typename queryable_qualifiers<Q, AutoLock>::type;
 
     ///
     /// @brief Get the mask of the queryable object.
@@ -246,7 +288,6 @@ namespace ecstasy::query
         else
             return queryable.getQueryData(index);
     }
-
 
     ///
     /// @brief Checks if the given type match the @ref ecstasy::query::Queryable concept.

@@ -26,6 +26,9 @@ namespace ecstasy::query
     ///
     /// @brief Advanced @ref Query. It allows to select which data must be kept from a query request.
     ///
+    /// @note Cannot do AutoLock at this scope because of variable lifetimes (see where method).  For thread safety,
+    /// queryables lock must be done before calling the where method.
+    ///
     /// @tparam SelectedQueryables Queryables to keep in the resulting query.
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
@@ -35,7 +38,7 @@ namespace ecstasy::query
     struct Select {
       public:
         /// @brief Resulting selected @ref ecstasy::query::Queryable tuple
-        using SelectedTuple = std::tuple<queryable_qualifiers_t<SelectedQueryables>...>;
+        using SelectedTuple = std::tuple<SelectedQueryables &...>;
 
       private:
         /// @internal
