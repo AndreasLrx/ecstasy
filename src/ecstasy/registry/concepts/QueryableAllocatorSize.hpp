@@ -53,7 +53,7 @@ namespace ecstasy
 
     /// @copydoc queryable_allocator_size
     template <typename Q, typename... Qs>
-    struct queryable_allocator_size<std::tuple<Q, Qs...>>
+    struct queryable_allocator_size<util::meta::Traits<Q, Qs...>>
         : public std::integral_constant<size_t, queryables_allocator_size<Q, Qs...>::value> {};
 
     ///

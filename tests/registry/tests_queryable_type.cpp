@@ -66,5 +66,5 @@ TEST(queryable_type, Modifier)
 
 TEST(queryable_type, RegistryModifier)
 {
-    assert_equals<queryable_type_t<Maybe<Position>>, query::modifier::Maybe<MapStorage<Position>>>();
+    assert_equals<queryable_type_t<Maybe<Position>>, query::modifier::Maybe<MapStorage<Position>, true>>();
 }

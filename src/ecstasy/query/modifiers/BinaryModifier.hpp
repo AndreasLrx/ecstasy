@@ -20,6 +20,8 @@ namespace ecstasy::query::modifier
     ///
     /// @brief Base class of query modifier operating on at least two queryables.
     ///
+    /// @tparam Derived Derived class implementing the modifier.
+    /// @tparam AutoLock Lock the @ref Lockable queryables if true.
     /// @tparam DataModifier Meta class implementing a type modifying the queryable data types (example std::optional).
     /// @tparam Q1 Left operand queryable type.
     /// @tparam Q2 Right operand queryable type.
@@ -28,11 +30,14 @@ namespace ecstasy::query::modifier
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-10-27)
     ///
-    template <typename Derived, template <typename> class DataModifier, Queryable Q1, Queryable Q2, Queryable... Qs>
-    class BinaryModifier : public Modifier {
+    template <typename Derived, bool AutoLock, template <typename> class DataModifier, Queryable Q1, Queryable Q2,
+        Queryable... Qs>
+    class BinaryModifier : public Modifier<AutoLock> {
       public:
         /// @brief @ref Modifier constraint.
-        using Operands = std::tuple<Q1, Q2, Qs...>;
+        using Operands = util::meta::Traits<Q1, Q2, Qs...>;
+        using Internal = std::tuple<queryable_qualifiers_t<Q1, AutoLock>, queryable_qualifiers_t<Q2, AutoLock>,
+            queryable_qualifiers_t<Qs, AutoLock>...>;
 
         /// @brief @ref ecstasy::query::Queryable constaint.
         // clang-format off
@@ -123,7 +128,7 @@ namespace ecstasy::query::modifier
                 getDerivedOperandData<ints + 2>(index)...};
         }
 
-        std::tuple<queryable_qualifiers_t<Q1>, queryable_qualifiers_t<Q2>, queryable_qualifiers_t<Qs>...> _operands;
+        Internal _operands;
         util::BitSet _mask;
     };
 } // namespace ecstasy::query::modifier

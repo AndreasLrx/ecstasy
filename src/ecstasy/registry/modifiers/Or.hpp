@@ -12,6 +12,7 @@
 #ifndef ECSTASY_REGISTRY_MODIFIERS_OR_HPP_
 #define ECSTASY_REGISTRY_MODIFIERS_OR_HPP_
 
+#include "ecstasy/config.hpp"
 #include "ecstasy/query/modifiers/Or.hpp"
 
 namespace ecstasy
@@ -28,7 +29,8 @@ namespace ecstasy
     ///
     template <typename C1, typename C2, typename... Cs>
     struct Or {
-        using Modifier = query::modifier::Or<queryable_type_t<C1>, queryable_type_t<C2>, queryable_type_t<Cs>...>;
+        using Modifier = query::modifier::OrImpl<THREAD_SAFE_DEFAULT, queryable_type_t<C1>, queryable_type_t<C2>,
+            queryable_type_t<Cs>...>;
     };
 } // namespace ecstasy
 

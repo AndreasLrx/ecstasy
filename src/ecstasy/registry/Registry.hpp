@@ -37,9 +37,9 @@
 
 namespace ecstasy
 {
-    using ModifiersAllocator = util::Allocator<ecstasy::query::modifier::Modifier>;
+    using ModifiersAllocator = util::Allocator<ecstasy::query::modifier::ModifierBase>;
     template <typename... Qs>
-    using StackAllocator = util::StackAllocator<queryables_allocator_size_v<Qs...>, query::modifier::Modifier>;
+    using StackAllocator = util::StackAllocator<queryables_allocator_size_v<Qs...>, query::modifier::ModifierBase>;
     template <typename A = ModifiersAllocator>
     using OptionalModifiersAllocator = std::optional<std::reference_wrapper<A>>;
     class Resource;
@@ -306,7 +306,7 @@ namespace ecstasy
         /// @since 1.0.0 (2022-11-22)
         ///
         template <query::Queryable... Qs>
-        struct GetModifierProxy<std::tuple<Qs...>> {
+        struct GetModifierProxy<util::meta::Traits<Qs...>> {
             ///
             /// @brief Specialization of @ref Registry::getQueryable(). Returns the required modifier with the operands
             /// queried from the registry.

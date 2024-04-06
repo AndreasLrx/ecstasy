@@ -31,7 +31,7 @@ namespace ecstasy::query
         requires Queryable<M>;
 
         /// Modifiers must inherit from the @ref ecstasy::query::modifier::Modifier .
-        requires std::derived_from<M, ecstasy::query::modifier::Modifier>;
+        requires std::derived_from<M, ecstasy::query::modifier::ModifierBase>;
 
         /// Modifier operands
         typename M::Operands;

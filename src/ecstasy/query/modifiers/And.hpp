@@ -22,6 +22,7 @@ namespace ecstasy::query::modifier
     ///
     /// @note The mask is the result of the operation: Q1 & Q2 & Qs...
     ///
+    /// @tparam AutoLock Lock the @ref Lockable queryables if true.
     /// @tparam Q1 Left operand queryable type.
     /// @tparam Q2 Right operand queryable type.
     /// @tparam Qs Additional operand queryable types.
@@ -29,11 +30,13 @@ namespace ecstasy::query::modifier
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-10-27)
     ///
-    template <Queryable Q1, Queryable Q2, Queryable... Qs>
-    class And : public BinaryModifier<And<Q1, Q2, Qs...>, std::type_identity, Q1, Q2, Qs...> {
+    template <bool AutoLock, Queryable Q1, Queryable Q2, Queryable... Qs>
+    class AndImpl
+        : public BinaryModifier<AndImpl<AutoLock, Q1, Q2, Qs...>, AutoLock, std::type_identity, Q1, Q2, Qs...> {
       private:
         /// @brief Helper type for the base class.
-        using ModifierClass = BinaryModifier<And<Q1, Q2, Qs...>, std::type_identity, Q1, Q2, Qs...>;
+        using ModifierClass =
+            BinaryModifier<AndImpl<AutoLock, Q1, Q2, Qs...>, AutoLock, std::type_identity, Q1, Q2, Qs...>;
 
       public:
         ///
@@ -46,7 +49,7 @@ namespace ecstasy::query::modifier
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-27)
         ///
-        And(Q1 &firstOperand, Q2 &secondOperand, Qs &...otherOperands)
+        AndImpl(Q1 &firstOperand, Q2 &secondOperand, Qs &...otherOperands)
             : ModifierClass(firstOperand, secondOperand, otherOperands...)
         {
         }
@@ -106,6 +109,9 @@ namespace ecstasy::query::modifier
                 getQueryableMask(std::get<ints + 2>(this->_operands)));
         }
     };
+
+    template <Queryable Q1, Queryable Q2, Queryable... Qs>
+    using And = AndImpl<false, Q1, Q2, Qs...>;
 } // namespace ecstasy::query::modifier
 
 #endif /* !ECSTASY_QUERY_MODIFIERS_AND_HPP_ */

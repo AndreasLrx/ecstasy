@@ -12,6 +12,7 @@
 #ifndef ECSTASY_REGISTRY_MODIFIERS_AND_HPP_
 #define ECSTASY_REGISTRY_MODIFIERS_AND_HPP_
 
+#include "ecstasy/config.hpp"
 #include "ecstasy/query/modifiers/And.hpp"
 #include "ecstasy/registry/concepts/QueryableType.hpp"
 
@@ -29,7 +30,8 @@ namespace ecstasy
     ///
     template <typename C1, typename C2, typename... Cs>
     struct And {
-        using Modifier = query::modifier::And<queryable_type_t<C1>, queryable_type_t<C2>, queryable_type_t<Cs>...>;
+        using Modifier = query::modifier::AndImpl<THREAD_SAFE_DEFAULT, queryable_type_t<C1>, queryable_type_t<C2>,
+            queryable_type_t<Cs>...>;
     };
 } // namespace ecstasy
 
