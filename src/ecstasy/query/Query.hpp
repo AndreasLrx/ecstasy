@@ -32,19 +32,21 @@ namespace ecstasy::query
     ///
     /// @tparam First First storage class.
     /// @tparam Others All other storage classes.
+    /// @tparam AutoLock Whether the query must be thread safe or not (locking any @ref Lockable queryable).
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-10-20)
     ///
-    template <typename Storages, typename Conditions = void>
+    template <typename Storages, typename Conditions = void, bool AutoLock = false>
     class QueryImplementation {};
 
-    template <Queryable First, Queryable... Others, typename... Conditions>
-    class QueryImplementation<util::meta::Traits<First, Others...>, util::meta::Traits<Conditions...>> {
+    template <Queryable First, Queryable... Others, typename... Conditions, bool AutoLock>
+    class QueryImplementation<util::meta::Traits<First, Others...>, util::meta::Traits<Conditions...>, AutoLock> {
       public:
         /// @brief QueryableObject constraint.
         using QueryData = std::tuple<queryable_data_t<First>, queryable_data_t<Others>...>;
-        using Queryables = std::tuple<queryable_qualifiers_t<First>, queryable_qualifiers_t<Others>...>;
+        using Queryables =
+            std::tuple<queryable_qualifiers_t<First, AutoLock>, queryable_qualifiers_t<Others, AutoLock>...>;
 
         ///
         /// @brief Query iterator.
@@ -507,6 +509,20 @@ namespace ecstasy::query
         Query(First &first, Others &...others)
             : QueryImplementation<util::meta::Traits<First, Others...>, util::meta::Traits<>>(
                 first, std::forward<Others &>(others)...)
+        {
+        }
+    };
+
+    template <Queryable... Qs>
+    class ThreadSafeQuery : public QueryImplementation<util::meta::Traits<Qs...>, util::meta::Traits<>, true> {
+      public:
+        ThreadSafeQuery(util::BitSet &mask, const std::tuple<Qs &...> &storages)
+            : QueryImplementation<util::meta::Traits<Qs...>, util::meta::Traits<>, true>(mask, storages)
+        {
+        }
+
+        ThreadSafeQuery(Qs &...others)
+            : QueryImplementation<util::meta::Traits<Qs...>, util::meta::Traits<>, true>(std::forward<Qs &>(others)...)
         {
         }
     };

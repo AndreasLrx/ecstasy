@@ -12,6 +12,12 @@
 #ifndef ECSTASY_RESOURCE_RESOURCE_HPP_
 #define ECSTASY_RESOURCE_RESOURCE_HPP_
 
+#include "ecstasy/config.hpp"
+
+#ifdef ECSTASY_MULTI_THREAD
+    #include "ecstasy/thread/SharedRecursiveMutex.hpp"
+#endif
+
 namespace ecstasy
 {
     ///
@@ -20,7 +26,11 @@ namespace ecstasy
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-10-17)
     ///
-    class Resource {
+    class Resource
+#ifdef ECSTASY_MULTI_THREAD
+        : public thread::SharedRecursiveMutex
+#endif
+    {
       public:
         /// @brief Default destructor.
         virtual ~Resource() = default;

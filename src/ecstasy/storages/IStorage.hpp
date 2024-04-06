@@ -14,6 +14,12 @@
 
 #include <span>
 
+#include "ecstasy/config.hpp"
+
+#ifdef ECSTASY_MULTI_THREAD
+    #include "ecstasy/thread/SharedRecursiveMutex.hpp"
+#endif
+
 namespace util
 {
     class BitSet;
@@ -29,7 +35,11 @@ namespace ecstasy
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-10-19)
     ///
-    class IStorage {
+    class IStorage
+#ifdef ECSTASY_MULTI_THREAD
+        : public thread::SharedRecursiveMutex
+#endif
+    {
       public:
         virtual ~IStorage() = default;
 

@@ -6,6 +6,40 @@
 
 using namespace ecstasy::query;
 
+#ifdef ECSTASY_MULTI_THREAD
+
+    #include "ecstasy/thread/LockableView.hpp"
+    #include "ecstasy/thread/SharedRecursiveMutex.hpp"
+
+class QueryableObjectImplTS : public ecstasy::thread::SharedRecursiveMutex {
+  public:
+    using QueryData = std::string &;
+    using ConstQueryData = const std::string &;
+
+    std::string &getQueryData(size_t index)
+    {
+        (void)index;
+        return _data;
+    }
+
+    const std::string &getQueryData(size_t index) const
+    {
+        (void)index;
+        return _data;
+    }
+
+    const util::BitSet &getMask() const
+    {
+        return _mask;
+    }
+
+  protected:
+    std::string _data;
+    util::BitSet _mask;
+};
+
+#endif
+
 template <typename T>
 class WrapperImpl {
   public:
@@ -121,11 +155,11 @@ TEST(queryable_qualifiers, QueryableObjectImpl)
     assert_equals<queryable_qualifiers_t<ConstQueryableObjectImpl>, ConstQueryableObjectImpl &>();
     assert_equals<queryable_qualifiers_t<const ConstQueryableObjectImpl>, const ConstQueryableObjectImpl &>();
 
-    assert_equals<queryable_qualifiers_t<WrapperImpl<QueryableObjectImpl>>, WrapperImpl<QueryableObjectImpl>>();
+    assert_equals<queryable_qualifiers_t<WrapperImpl<QueryableObjectImpl>>, WrapperImpl<QueryableObjectImpl> &>();
     assert_equals<queryable_qualifiers_t<WrapperImpl<ConstQueryableObjectImpl>>,
-        WrapperImpl<ConstQueryableObjectImpl>>();
+        WrapperImpl<ConstQueryableObjectImpl> &>();
     assert_equals<queryable_qualifiers_t<WrapperImpl<const ConstQueryableObjectImpl>>,
-        WrapperImpl<const ConstQueryableObjectImpl>>();
+        WrapperImpl<const ConstQueryableObjectImpl> &>();
 
     // clang-format off
     assert_equals<QueryImplementation<
@@ -140,7 +174,46 @@ TEST(queryable_qualifiers, QueryableObjectImpl)
         std::tuple<
             QueryableObjectImpl &, 
             const ConstQueryableObjectImpl &, 
-            WrapperImpl<QueryableObjectImpl>
+            WrapperImpl<QueryableObjectImpl>&
         >>();
     // clang-format on
+
+#ifdef ECSTASY_MULTI_THREAD
+    static_assert(ecstasy::thread::Lockable<QueryableObjectImplTS>);
+    static_assert(ecstasy::thread::Lockable<const QueryableObjectImplTS>);
+    assert_equals<queryable_qualifiers_t<QueryableObjectImplTS, true>,
+        ecstasy::thread::LockableView<QueryableObjectImplTS>>();
+    assert_equals<queryable_qualifiers_t<const QueryableObjectImplTS, true>,
+        ecstasy::thread::LockableView<const QueryableObjectImplTS>>();
+
+    assert_equals<queryable_qualifiers_t<QueryableObjectImplTS>, QueryableObjectImplTS &>();
+    assert_equals<queryable_qualifiers_t<const QueryableObjectImplTS>, const QueryableObjectImplTS &>();
+
+    assert_equals<queryable_qualifiers_t<QueryableObjectImplTS, false>, QueryableObjectImplTS &>();
+    assert_equals<queryable_qualifiers_t<const QueryableObjectImplTS, false>, const QueryableObjectImplTS &>();
+#endif
+}
+
+TEST(thread_safe_queryable, QueryableObjectImpl)
+{
+    // QueryableObjectImpl is not thread safe
+    assert_equals<thread_safe_queryable_t<QueryableObjectImpl>, QueryableObjectImpl>();
+    assert_equals<thread_safe_queryable_t<QueryableObjectImpl, true>, QueryableObjectImpl>();
+    assert_equals<thread_safe_queryable_t<QueryableObjectImpl, false>, QueryableObjectImpl>();
+
+#ifdef ECSTASY_MULTI_THREAD
+
+    assert_equals<thread_safe_queryable_t<QueryableObjectImplTS>,
+        ecstasy::thread::LockableView<QueryableObjectImplTS>>();
+    assert_equals<thread_safe_queryable_t<QueryableObjectImplTS, true>,
+        ecstasy::thread::LockableView<QueryableObjectImplTS>>();
+    assert_equals<thread_safe_queryable_t<QueryableObjectImplTS, false>, QueryableObjectImplTS>();
+
+    assert_equals<thread_safe_queryable_t<const QueryableObjectImplTS>,
+        ecstasy::thread::LockableView<const QueryableObjectImplTS>>();
+    assert_equals<thread_safe_queryable_t<const QueryableObjectImplTS, true>,
+        ecstasy::thread::LockableView<const QueryableObjectImplTS>>();
+    assert_equals<thread_safe_queryable_t<const QueryableObjectImplTS, false>, const QueryableObjectImplTS>();
+
+#endif
 }
