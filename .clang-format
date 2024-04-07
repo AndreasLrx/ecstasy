@@ -189,7 +189,6 @@ BreakBeforeTernaryOperators: true
 SortIncludes: true
 IncludeBlocks: Preserve
 IncludeCategories:
-IncludeCategories:
   - Regex:           '^"[[:alnum:]./]+"'       # Any "my_header.h"
     Priority:        3
   - Regex:           '<criterion/[a-z]+\.h>'  # Criterion headers

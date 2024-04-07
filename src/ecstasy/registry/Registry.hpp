@@ -22,7 +22,7 @@
 #include "ecstasy/query/Select.hpp"
 #include "ecstasy/query/conditions/Condition.hpp"
 #include "ecstasy/query/modifiers/Modifier.hpp"
-#include "ecstasy/registry/concepts/QueryableAllocatorSize.hpp"
+#include "ecstasy/registry/concepts/modifier_allocator_size.hpp"
 #include "ecstasy/resources/entity/Entities.hpp"
 #include "ecstasy/storages/IStorage.hpp"
 #include "ecstasy/storages/Instances.hpp"
@@ -35,14 +35,26 @@
 #include "util/meta/filter.hpp"
 #include "util/meta/outer_join.hpp"
 
+#ifdef ECSTASY_MULTI_THREAD
+    #include "ecstasy/thread/LockableView.hpp"
+#endif
+
 namespace ecstasy
 {
     using ModifiersAllocator = util::Allocator<ecstasy::query::modifier::ModifierBase>;
     template <typename... Qs>
-    using StackAllocator = util::StackAllocator<queryables_allocator_size_v<Qs...>, query::modifier::ModifierBase>;
+    using StackAllocator = util::StackAllocator<modifiers_allocator_size_v<Qs...>, query::modifier::ModifierBase>;
     template <typename A = ModifiersAllocator>
     using OptionalModifiersAllocator = std::optional<std::reference_wrapper<A>>;
-    class Resource;
+    class ResourceBase;
+
+    ///
+    /// @brief Empty type used with no_unique_address attribute to avoid memory overhead.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-04-07)
+    ///
+    struct EmptyType {};
 
     ///
     /// @brief Base of an ECS architecture. It stores the entities, components and systems.
@@ -193,7 +205,142 @@ namespace ecstasy
             std::optional<std::reference_wrapper<A>> _allocRef;
         };
 
-      public:
+        ///
+        /// @brief Base class of @ref RegistryStackQuery. This class is used to allocate the queryables on the stack.
+        /// At compile time it will evaluate the required queryables and reserve memory for the one requiring an
+        /// allocation. It allows faster runtime because there is no dynamic allocation but longer compile time.
+        ///
+        /// @note Thanks to no_unique_address attribute, the memory reserved for the allocator is not reserved if no
+        /// allocator is required, meaning there is no memory overhead.
+        /// @note Yes this is black magic and I'm proud of it (my brain hurts).
+        ///
+        /// @tparam Selects Selected queryables in a @ref util::meta::Traits.
+        /// @tparam Missings Selected queryables not given in the where clause in a @ref util::meta::Traits.
+        /// @tparam Conditions Query runtime conditions in a @ref util::meta::Traits.
+        /// @tparam AutoLock Whether or not the @ref thread::Lockable queryables must be locked.
+        /// @tparam Cs Selected components already present in the where clause. (Missings + Cs are all the components
+        /// queried).
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-04-07)
+        ///
+        template <typename Selects, typename Missings, typename Conditions, bool AutoLock, typename... Cs>
+        class RegistryStackQueryMemory {};
+
+        /// @copydoc RegistryStackQueryMemory
+        template <typename... Selects, typename... Missings, typename... Conditions, bool AutoLock, typename... Cs>
+        class RegistryStackQueryMemory<util::meta::Traits<Selects...>, util::meta::Traits<Missings...>,
+            util::meta::Traits<Conditions...>, AutoLock, Cs...> {
+          public:
+            // clang-format off
+                /// @brief Size in bytes of the modifiers allocator. 0 if no modifier.
+                using ModifiersAllocatorSize =  modifiers_allocator_size<Missings..., Cs...>;
+                /// @brief Whether or not the query has a modifier allocator.
+                using HasModifiersAllocator = std::bool_constant<ModifiersAllocatorSize::value != 0>;
+                /// @brief Type of the modifiers allocator.
+                using ModifiersAllocator = std::conditional_t<
+                    HasModifiersAllocator::value,
+                    util::StackAllocator<ModifiersAllocatorSize::value, query::modifier::ModifierBase>,
+                    EmptyType
+                >;
+                ///
+                /// @brief Reference to the modifiers allocator.
+                ///
+                /// @note Since a reference to the allocator is always required for getQueryable, we use a default type 
+                /// even if we don't need an allocator. 
+                /// The getQueryable method should be changed to avoid requiring an allocator if not required.
+                /// 
+                /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+                /// @since 1.0.0 (2024-04-07)
+                ///
+                using ModifiersAllocatorReference = std::conditional_t<
+                    HasModifiersAllocator::value,
+                    std::optional<std::reference_wrapper<ModifiersAllocator>>,
+                    std::optional<std::reference_wrapper<util::Allocator<ecstasy::query::modifier::ModifierBase>>>
+                >;
+                
+#ifdef ECSTASY_MULTI_THREAD
+                /// @brief Size in bytes of the views allocator. 0 if no view.
+                using ViewsAllocatorSize = ecstasy::query::views_allocator_size<AutoLock, queryable_type_t<Selects>..., queryable_type_t<Cs>...>;
+                /// @brief Whether or not the query has a views allocator.
+                using HasViewsAllocator = std::bool_constant<ViewsAllocatorSize::value != 0>;
+                /// @brief Type of the views allocator.
+                using ViewsAllocator = std::conditional_t<
+                    AutoLock && HasViewsAllocator::value,
+                    util::StackAllocator<ViewsAllocatorSize::value, thread::LockableViewBase>,
+                    EmptyType
+                >;
+#endif
+
+                ///
+                /// @brief Get the type of a queryable in this registry query context (with or without lock).
+                ///
+                /// @note This is a helper to get the queryable type with or without lock.
+                /// 
+                /// @tparam Q Queryable type (or component).
+                ///
+                /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+                /// @since 1.0.0 (2024-04-07)
+                ///
+                template <typename Q>
+                using QueryableType = ecstasy::query::thread_safe_queryable_t<queryable_type_t<Q>, AutoLock>;
+
+            // clang-format on
+
+            ///
+            /// @brief Construct a new Registry Stack Query Memory.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2024-04-07)
+            ///
+            RegistryStackQueryMemory()
+            {
+                if constexpr (HasModifiersAllocator::value)
+                    _modifiersAllocRef = _modifiersAllocator;
+                else
+                    _modifiersAllocRef = std::nullopt;
+            };
+
+            ///
+            /// @brief Get a reference to a queryable from the registry. If the queryable needs to be allocated (view or
+            /// modifier), allocate it and returns a reference to the allocated queryable.
+            ///
+            /// @tparam Q Queryable type to get.
+            ///
+            /// @param[in] registry Registry owning the queryable.
+            ///
+            /// @return constexpr QueryableType<Q>& Reference to the queryable (maybe in a view/modifier).
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2024-04-07)
+            ///
+            template <typename Q>
+            constexpr QueryableType<Q> &getQueryable(Registry &registry)
+            {
+#ifdef ECSTASY_MULTI_THREAD
+                if constexpr (HasViewsAllocator::value && thread::Lockable<queryable_type_t<Q>>)
+                    return _viewsAllocator.template instanciate<thread::LockableView<queryable_type_t<Q>>>(
+                        registry.getQueryable<Q>(_modifiersAllocRef));
+                else {
+#endif
+                    if constexpr (HasModifiersAllocator::value)
+                        return registry.getQueryable<Q, ModifiersAllocator>(_modifiersAllocRef);
+                    else
+
+                        return registry.getQueryable<Q>(_modifiersAllocRef);
+#ifdef ECSTASY_MULTI_THREAD
+                }
+#endif
+            }
+
+          protected:
+            [[no_unique_address]] ModifiersAllocator _modifiersAllocator;
+#ifdef ECSTASY_MULTI_THREAD
+            [[no_unique_address]] ViewsAllocator _viewsAllocator;
+#endif
+            ModifiersAllocatorReference _modifiersAllocRef;
+        };
+
         ///
         /// @brief Registry query allocating everything on the stack (if allocation required). This means longer compile
         /// time for faster runtime.
@@ -312,7 +459,7 @@ namespace ecstasy
         struct registry_query<util::meta::Traits<Selects...>, util::meta::Traits<Missings...>, Condition,
             util::meta::Traits<Cs...>> {
             // clang-format off
-            using type = std::conditional_t<((queryables_allocator_size_v<Selects..., Cs...>) > 0), 
+            using type = std::conditional_t<((modifiers_allocator_size_v<Selects..., Cs...>) > 0), 
                 RegistryStackQuery<
                     util::meta::Traits<Selects...>, 
                     util::meta::Traits<Missings...>,

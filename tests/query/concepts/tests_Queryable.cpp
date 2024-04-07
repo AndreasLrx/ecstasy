@@ -105,6 +105,9 @@ void assert_equals()
     static_assert(std::is_same_v<T1, T2>, "Types T1 and T2 differs.");
 }
 
+template <typename Q>
+using LV = ecstasy::thread::LockableView<Q>;
+
 TEST(QueryableObject, QueryableObjectImpl)
 {
     // This is a valid queryable object
@@ -215,5 +218,29 @@ TEST(thread_safe_queryable, QueryableObjectImpl)
         ecstasy::thread::LockableView<const QueryableObjectImplTS>>();
     assert_equals<thread_safe_queryable_t<const QueryableObjectImplTS, false>, const QueryableObjectImplTS>();
 
+#endif
+}
+
+TEST(views_allocator_size, QueryableObjectImpl)
+{
+    /// Not lockables
+    static_assert(views_allocator_size_v<false, QueryableObjectImpl> == 0);
+    static_assert(views_allocator_size_v<false, ConstQueryableObjectImpl> == 0);
+    static_assert(views_allocator_size_v<false, const ConstQueryableObjectImpl> == 0);
+
+    static_assert(views_allocator_size_v<true, QueryableObjectImpl> == 0);
+    static_assert(views_allocator_size_v<true, ConstQueryableObjectImpl> == 0);
+    static_assert(views_allocator_size_v<true, const ConstQueryableObjectImpl> == 0);
+
+#ifdef ECSTASY_MULTI_THREAD
+    // Lockables
+    static_assert(views_allocator_size_v<false, QueryableObjectImplTS> == 0);
+    static_assert(views_allocator_size_v<false, const QueryableObjectImplTS> == 0);
+    static_assert(views_allocator_size_v<true, QueryableObjectImplTS> == sizeof(LV<QueryableObjectImplTS>));
+    static_assert(views_allocator_size_v<true, const QueryableObjectImplTS> == sizeof(LV<const QueryableObjectImplTS>));
+
+    static_assert(views_allocator_size_v<true, QueryableObjectImplTS, QueryableObjectImpl, const QueryableObjectImplTS,
+                      ConstQueryableObjectImpl>
+        == sizeof(LV<QueryableObjectImplTS>) * 2);
 #endif
 }

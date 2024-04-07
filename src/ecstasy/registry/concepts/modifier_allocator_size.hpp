@@ -1,5 +1,5 @@
 ///
-/// @file QueryableAllocatorSize.hpp
+/// @file modifier_allocator_size.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
 /// @brief
 /// @version 1.0.0
@@ -9,8 +9,8 @@
 ///
 ///
 
-#ifndef ECSTASY_REGISTRY_CONCEPTS_QUERYABLEALLOCATORSIZE_HPP_
-#define ECSTASY_REGISTRY_CONCEPTS_QUERYABLEALLOCATORSIZE_HPP_
+#ifndef ECSTASY_REGISTRY_CONCEPTS_MODIFIERALLOCATORSIZE_HPP_
+#define ECSTASY_REGISTRY_CONCEPTS_MODIFIERALLOCATORSIZE_HPP_
 
 #include "ecstasy/query/concepts/Modifier.hpp"
 #include "ecstasy/query/concepts/Queryable.hpp"
@@ -28,7 +28,7 @@ namespace ecstasy
     /// @since 1.0.0 (2023-11-08)
     ///
     template <typename... Qs>
-    struct queryables_allocator_size : public std::integral_constant<size_t, 0> {};
+    struct modifiers_allocator_size : public std::integral_constant<size_t, 0> {};
 
     ///
     /// @brief Get the allocator required size for this queryable. It is equal to the modifier memory size (if any).
@@ -40,24 +40,24 @@ namespace ecstasy
     /// @since 1.0.0 (2023-11-08)
     ///
     template <typename Q>
-    struct queryable_allocator_size : public std::integral_constant<size_t, 0> {};
+    struct modifier_allocator_size : public std::integral_constant<size_t, 0> {};
 
-    /// @copydoc queryable_allocator_size
+    /// @copydoc modifier_allocator_size
     template <RegistryModifier M>
-    struct queryable_allocator_size<M> : public queryable_allocator_size<typename M::Modifier> {};
+    struct modifier_allocator_size<M> : public modifier_allocator_size<typename M::Modifier> {};
 
-    /// @copydoc queryable_allocator_size
+    /// @copydoc modifier_allocator_size
     template <query::Modifier M>
-    struct queryable_allocator_size<M>
-        : public std::integral_constant<size_t, sizeof(M) + queryable_allocator_size<typename M::Operands>::value> {};
+    struct modifier_allocator_size<M>
+        : public std::integral_constant<size_t, sizeof(M) + modifier_allocator_size<typename M::Operands>::value> {};
 
-    /// @copydoc queryable_allocator_size
+    /// @copydoc modifier_allocator_size
     template <typename Q, typename... Qs>
-    struct queryable_allocator_size<util::meta::Traits<Q, Qs...>>
-        : public std::integral_constant<size_t, queryables_allocator_size<Q, Qs...>::value> {};
+    struct modifier_allocator_size<util::meta::Traits<Q, Qs...>>
+        : public std::integral_constant<size_t, modifiers_allocator_size<Q, Qs...>::value> {};
 
     ///
-    /// @brief Helper for queryable_allocator_size<Q>::value.
+    /// @brief Helper for modifier_allocator_size<Q>::value.
     ///
     /// @tparam Q Evaluated type.
     ///
@@ -65,16 +65,16 @@ namespace ecstasy
     /// @since 1.0.0 (2023-11-08)
     ///
     template <typename Q>
-    size_t constexpr queryable_allocator_size_v = queryable_allocator_size<Q>::value;
+    size_t constexpr modifier_allocator_size_v = modifier_allocator_size<Q>::value;
 
-    /// @copydoc queryables_allocator_size
+    /// @copydoc modifiers_allocator_size
     template <typename Q, typename... Qs>
-    struct queryables_allocator_size<Q, Qs...>
-        : public std::integral_constant<size_t,
-              queryable_allocator_size_v<Q> + queryables_allocator_size<Qs...>::value> {};
+    struct modifiers_allocator_size<Q, Qs...>
+        : public std::integral_constant<size_t, modifier_allocator_size_v<Q> + modifiers_allocator_size<Qs...>::value> {
+    };
 
     ///
-    /// @brief Helper for queryables_allocator_size<Q, Qs...>::value.
+    /// @brief Helper for modifiers_allocator_size<Q, Qs...>::value.
     ///
     /// @tparam Q Evaluated type.
     /// @tparam Qs Next evaluated types.
@@ -83,8 +83,8 @@ namespace ecstasy
     /// @since 1.0.0 (2023-11-08)
     ///
     template <typename Q, typename... Qs>
-    size_t constexpr queryables_allocator_size_v = queryables_allocator_size<Q, Qs...>::value;
+    size_t constexpr modifiers_allocator_size_v = modifiers_allocator_size<Q, Qs...>::value;
 
 } // namespace ecstasy
 
-#endif /* !ECSTASY_REGISTRY_CONCEPTS_QUERYABLEALLOCATORSIZE_HPP_ */
+#endif /* !ECSTASY_REGISTRY_CONCEPTS_MODIFIERALLOCATORSIZE_HPP_ */

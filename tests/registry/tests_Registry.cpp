@@ -902,41 +902,41 @@ TEST(Registry, clear)
     EXPECT_THROW(registry.getStorage<Life>(), std::logic_error);
 }
 
-TEST(Registry, queryables_allocator_size)
+TEST(Registry, modifiers_allocator_size)
 {
     // Non modifiers must have a 0 size (no need for allocation)
-    GTEST_ASSERT_EQ(ecstasy::queryable_allocator_size_v<Velocity>, 0);
-    GTEST_ASSERT_EQ(ecstasy::queryable_allocator_size_v<Position>, 0);
+    GTEST_ASSERT_EQ(ecstasy::modifier_allocator_size_v<Velocity>, 0);
+    GTEST_ASSERT_EQ(ecstasy::modifier_allocator_size_v<Position>, 0);
 
     // Modifiers must have the size of the effective modifier (not the registry modifier helper)
     GTEST_ASSERT_EQ(
-        ecstasy::queryable_allocator_size_v<ecstasy::Maybe<Velocity>>, sizeof(ecstasy::Maybe<Velocity>::Modifier));
+        ecstasy::modifier_allocator_size_v<ecstasy::Maybe<Velocity>>, sizeof(ecstasy::Maybe<Velocity>::Modifier));
 
     size_t computed_size, expected_size;
-    computed_size = ecstasy::queryable_allocator_size_v<ecstasy::Or<Velocity, Position>>;
+    computed_size = ecstasy::modifier_allocator_size_v<ecstasy::Or<Velocity, Position>>;
     expected_size = sizeof(ecstasy::Or<Velocity, Position>::Modifier);
     GTEST_ASSERT_EQ(computed_size, expected_size);
 
     // Must handle nested modifiers
-    computed_size = ecstasy::queryable_allocator_size_v<ecstasy::Or<Velocity, ecstasy::Or<Density, Position>>>;
+    computed_size = ecstasy::modifier_allocator_size_v<ecstasy::Or<Velocity, ecstasy::Or<Density, Position>>>;
     expected_size = sizeof(ecstasy::Or<Velocity, ecstasy::Or<Density, Position>>::Modifier)
         + sizeof(ecstasy::Or<Density, Position>::Modifier);
     GTEST_ASSERT_EQ(computed_size, expected_size);
 
     // Same for multiple types
-    computed_size = ecstasy::queryables_allocator_size_v<Velocity, Position, Density>;
+    computed_size = ecstasy::modifiers_allocator_size_v<Velocity, Position, Density>;
     GTEST_ASSERT_EQ(computed_size, 0);
 
-    computed_size = ecstasy::queryables_allocator_size_v<Density, ecstasy::Or<Velocity, Position>>;
+    computed_size = ecstasy::modifiers_allocator_size_v<Density, ecstasy::Or<Velocity, Position>>;
     expected_size = sizeof(ecstasy::Or<Velocity, Position>::Modifier);
     GTEST_ASSERT_EQ(computed_size, expected_size);
 
     computed_size =
-        ecstasy::queryables_allocator_size_v<ecstasy::Maybe<Velocity>, Density, ecstasy::Or<Velocity, Position>>;
+        ecstasy::modifiers_allocator_size_v<ecstasy::Maybe<Velocity>, Density, ecstasy::Or<Velocity, Position>>;
     expected_size = sizeof(ecstasy::Or<Velocity, Position>::Modifier) + sizeof(ecstasy::Maybe<Velocity>::Modifier);
     GTEST_ASSERT_EQ(computed_size, expected_size);
 
-    computed_size = ecstasy::queryables_allocator_size_v<ecstasy::Maybe<Velocity>, Density,
+    computed_size = ecstasy::modifiers_allocator_size_v<ecstasy::Maybe<Velocity>, Density,
         ecstasy::Or<ecstasy::Not<Velocity>, Position>>;
     expected_size = sizeof(ecstasy::Or<ecstasy::Not<Velocity>, Position>::Modifier)
         + sizeof(ecstasy::Maybe<Velocity>::Modifier) + sizeof(ecstasy::Not<Velocity>::Modifier);
@@ -983,4 +983,78 @@ TEST(Registry, stackAllocator)
             ++i;
         }
     }
+}
+
+TEST(Registry, RegistryStackQueryMemory)
+{
+    ecstasy::Registry registry;
+
+    {
+        // No modifier, no view because autolock set to false
+        using NoAllocator = ecstasy::Registry::RegistryStackQueryMemory<
+            util::meta::Traits<ecstasy::MapStorage<Position>, ecstasy::MapStorage<Velocity>>,
+            util::meta::Traits<ecstasy::MapStorage<Position>, ecstasy::MapStorage<Velocity>>, util::meta::Traits<>,
+            false>;
+
+        assert_equals<NoAllocator::ModifiersAllocator, ecstasy::EmptyType>();
+        assert_equals<NoAllocator::ViewsAllocator, ecstasy::EmptyType>();
+        static_assert(sizeof(NoAllocator) == sizeof(NoAllocator::ModifiersAllocatorReference));
+    }
+
+    {
+        // Only modifier, no view because autolock set to false
+        using OnlyModifiers = ecstasy::Registry::RegistryStackQueryMemory<util::meta::Traits<ecstasy::Maybe<Position>>,
+            util::meta::Traits<ecstasy::Or<ecstasy::Maybe<Position>, Velocity>, ecstasy::Maybe<Position>>,
+            util::meta::Traits<>, false>;
+        constexpr size_t expected_size = sizeof(ecstasy::Maybe<Position>::Modifier)
+            + sizeof(ecstasy::Or<ecstasy::Maybe<Position>, Velocity>::Modifier)
+            + sizeof(ecstasy::Maybe<Position>::Modifier);
+        using ExpectedModifierAlloc = util::StackAllocator<expected_size, ecstasy::query::modifier::ModifierBase>;
+
+        assert_equals<OnlyModifiers::ModifiersAllocator, ExpectedModifierAlloc>();
+        static_assert(OnlyModifiers::ModifiersAllocatorSize::value == expected_size);
+        assert_equals<OnlyModifiers::ViewsAllocator, ecstasy::EmptyType>();
+        static_assert(sizeof(OnlyModifiers)
+            == sizeof(OnlyModifiers::ModifiersAllocatorReference) + sizeof(ExpectedModifierAlloc));
+    }
+
+#ifdef ECSTASY_MULTI_THREAD
+    {
+        // No modifier but views because autolock set to true and storages inherit from SharedRecursiveMutex (ie are
+        // Lockable)
+        using OnlyViews = ecstasy::Registry::RegistryStackQueryMemory<
+            util::meta::Traits<ecstasy::MapStorage<Position>, ecstasy::MapStorage<Velocity>>,
+            util::meta::Traits<ecstasy::MapStorage<Position>, ecstasy::MapStorage<Velocity>>, util::meta::Traits<>,
+            true>;
+
+        constexpr size_t expected_size = sizeof(ecstasy::thread::LockableView<ecstasy::MapStorage<Position>>)
+            + sizeof(ecstasy::thread::LockableView<ecstasy::MapStorage<Velocity>>);
+        using ExpectedViewAlloc = util::StackAllocator<expected_size, ecstasy::thread::LockableViewBase>;
+
+        assert_equals<OnlyViews::ModifiersAllocator, ecstasy::EmptyType>();
+        assert_equals<OnlyViews::ViewsAllocator, ExpectedViewAlloc>();
+        static_assert(OnlyViews::ViewsAllocatorSize::value == expected_size);
+        static_assert(sizeof(OnlyViews) == sizeof(OnlyViews::ModifiersAllocatorReference) + sizeof(ExpectedViewAlloc));
+    }
+
+    {
+        // Modifiers and lockable views
+        using ModifiersAndViews = ecstasy::Registry::RegistryStackQueryMemory<util::meta::Traits<Density>,
+            util::meta::Traits<ecstasy::Or<ecstasy::Maybe<Position>, Velocity>, Density>, util::meta::Traits<>, true>;
+        constexpr size_t expected_modifier_size = sizeof(ecstasy::Maybe<Position>::Modifier)
+            + sizeof(ecstasy::Or<ecstasy::Maybe<Position>, Velocity>::Modifier);
+        using ExpectedModifierAlloc =
+            util::StackAllocator<expected_modifier_size, ecstasy::query::modifier::ModifierBase>;
+        constexpr size_t expected_view_size = sizeof(ecstasy::thread::LockableView<ecstasy::MapStorage<Density>>);
+        using ExpectedViewAlloc = util::StackAllocator<expected_view_size, ecstasy::thread::LockableViewBase>;
+
+        assert_equals<ModifiersAndViews::ModifiersAllocator, ExpectedModifierAlloc>();
+        static_assert(ModifiersAndViews::ModifiersAllocatorSize::value == expected_modifier_size);
+        assert_equals<ModifiersAndViews::ViewsAllocator, ExpectedViewAlloc>();
+        static_assert(ModifiersAndViews::ViewsAllocatorSize::value == expected_view_size);
+        static_assert(sizeof(ModifiersAndViews)
+            == sizeof(ModifiersAndViews::ModifiersAllocatorReference) + sizeof(ExpectedModifierAlloc)
+                + sizeof(ExpectedViewAlloc));
+    }
+#endif
 }
