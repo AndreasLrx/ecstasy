@@ -152,7 +152,7 @@ namespace ecstasy::query
     /// @copydoc queryable_data
     template <QueryableWrapper W>
     struct queryable_data<W> {
-        using type = queryable_data<typename W::WrappedType>::type;
+        using type = typename queryable_data<typename W::WrappedType>::type;
     };
 
     ///

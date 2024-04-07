@@ -8,9 +8,7 @@ add_subdirectory(registry)
 add_subdirectory(resources)
 add_subdirectory(storages)
 add_subdirectory(system)
-if (${ECSTASY_MULTI_THREAD})
-    add_subdirectory(thread)
-endif()
+add_subdirectory(thread)
 
 configure_file(${SRCROOT}/config.hpp.in ${SRCROOT}/config.hpp)
 

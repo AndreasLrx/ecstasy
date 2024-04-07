@@ -39,6 +39,12 @@
     #include "ecstasy/thread/LockableView.hpp"
 #endif
 
+#ifdef _MSC_VER
+    #define NO_UNIQUE_ADDRESS [[msvc::no_unique_address]]
+#else
+    #define NO_UNIQUE_ADDRESS [[no_unique_address]]
+#endif
+
 namespace ecstasy
 {
     using ModifiersAllocator = util::Allocator<ecstasy::query::modifier::ModifierBase>;
@@ -91,7 +97,7 @@ namespace ecstasy
         }
 
         /// @copydoc getQueryable()
-        template <std::derived_from<ResourceBase> R, typename A = ModifiersAllocator>
+        template <std::derived_from<Resource> R, typename A = ModifiersAllocator>
             requires query::Queryable<R>
         constexpr R &getQueryable(OptionalModifiersAllocator<A> &allocator)
         {
@@ -102,18 +108,6 @@ namespace ecstasy
         /// @copydoc getQueryable()
         template <IsStorage S, typename A = ModifiersAllocator>
             requires query::Queryable<S>
-        S &getQueryable(OptionalModifiersAllocator<A> &allocator)
-        {
-            (void)allocator;
-            if (!_storages.contains<S>())
-                return _storages.emplace<S>();
-            return _storages.get<S>();
-        }
-
-        /// @copydoc getQueryable()
-        template <typename S, typename A = ModifiersAllocator>
-            requires std::is_const_v<S> && query::ConstQueryableObject<std::remove_const_t<S>>
-            && IsStorage<std::remove_const_t<S>>
         S &getQueryable(OptionalModifiersAllocator<A> &allocator)
         {
             (void)allocator;
@@ -313,9 +307,9 @@ namespace ecstasy
             }
 
           protected:
-            [[no_unique_address]] ModifiersAllocator _modifiersAllocator;
+            NO_UNIQUE_ADDRESS ModifiersAllocator _modifiersAllocator;
 #ifdef ECSTASY_MULTI_THREAD
-            [[no_unique_address]] ViewsAllocator _viewsAllocator;
+            NO_UNIQUE_ADDRESS ViewsAllocator _viewsAllocator;
 #endif
             ModifiersAllocatorReference _modifiersAllocRef;
         };

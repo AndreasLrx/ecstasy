@@ -111,7 +111,10 @@ namespace ecstasy::query::modifier
     };
 
     template <Queryable Q1, Queryable Q2, Queryable... Qs>
-    using And = AndImpl<false, Q1, Q2, Qs...>;
+    auto constexpr And(Q1 &firstOperand, Q2 &secondOperand, Qs &...otherOperands)
+    {
+        return AndImpl<false, Q1, Q2, Qs...>(firstOperand, secondOperand, otherOperands...);
+    }
 } // namespace ecstasy::query::modifier
 
 #endif /* !ECSTASY_QUERY_MODIFIERS_AND_HPP_ */

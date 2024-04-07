@@ -38,6 +38,9 @@ class QueryableObjectImplTS : public ecstasy::thread::SharedRecursiveMutex {
     util::BitSet _mask;
 };
 
+template <typename Q>
+using LV = ecstasy::thread::LockableView<Q>;
+
 #endif
 
 template <typename T>
@@ -104,9 +107,6 @@ void assert_equals()
 {
     static_assert(std::is_same_v<T1, T2>, "Types T1 and T2 differs.");
 }
-
-template <typename Q>
-using LV = ecstasy::thread::LockableView<Q>;
 
 TEST(QueryableObject, QueryableObjectImpl)
 {

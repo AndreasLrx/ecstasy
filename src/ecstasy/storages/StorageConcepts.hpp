@@ -41,16 +41,16 @@ namespace ecstasy
 
     template <typename C>
     struct getStorageTypeImpl<const C> {
-        using type = const getStorageTypeImpl<C>::type;
+        using type = const typename getStorageTypeImpl<C>::type;
     };
 
     /// Get the storage type of a component, returns MapStorage by default.
     template <typename C>
-    using getStorageType = getStorageTypeImpl<C>::type;
+    using getStorageType = typename getStorageTypeImpl<C>::type;
 
     template <typename S>
-    concept IsStorage = std::default_initializable<S> && std::derived_from<S, IStorage>
-        && requires(S &storage, S const &cstorage) { typename S::Component; };
+    concept IsStorage = std::default_initializable<std::remove_const_t<S>>
+        && std::derived_from<std::remove_const_t<S>, IStorage> && requires { typename S::Component; };
 
     template <typename S>
     concept IsContainerStorage = requires() {

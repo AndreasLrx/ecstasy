@@ -232,6 +232,8 @@ TEST(Registry, getQueryable)
     assert_equals<decltype(registry.getQueryable<const Position>(alloc_opt)), const ecstasy::MapStorage<Position> &>();
     assert_equals<decltype(registry.getQueryable<ecstasy::MapStorage<Position>>(alloc_opt)),
         ecstasy::MapStorage<Position> &>();
+    static_assert(ecstasy::IsStorage<const ecstasy::MapStorage<Position>>);
+    static_assert(ecstasy::query::Queryable<const ecstasy::MapStorage<Position>>);
     assert_equals<decltype(registry.getQueryable<const ecstasy::MapStorage<Position>>(alloc_opt)),
         const ecstasy::MapStorage<Position> &>();
     assert_equals<decltype(registry.getQueryable<ecstasy::Entities>(alloc_opt)), ecstasy::Entities &>();
@@ -1011,8 +1013,12 @@ TEST(Registry, RegistryStackQueryMemory)
             false>;
 
         assert_equals<NoAllocator::ModifiersAllocator, ecstasy::EmptyType>();
+#ifdef ECSTASY_MULTI_THREAD
         assert_equals<NoAllocator::ViewsAllocator, ecstasy::EmptyType>();
-        static_assert(sizeof(NoAllocator) == sizeof(NoAllocator::ModifiersAllocatorReference));
+#endif
+        assert_equals<std::integral_constant<size_t, sizeof(NoAllocator)>,
+            std::integral_constant<size_t, sizeof(NoAllocator::ModifiersAllocatorReference)>>();
+        // static_assert(sizeof(NoAllocator) == sizeof(NoAllocator::ModifiersAllocatorReference));
     }
 
     {
@@ -1027,7 +1033,9 @@ TEST(Registry, RegistryStackQueryMemory)
 
         assert_equals<OnlyModifiers::ModifiersAllocator, ExpectedModifierAlloc>();
         static_assert(OnlyModifiers::ModifiersAllocatorSize::value == expected_size);
+#ifdef ECSTASY_MULTI_THREAD
         assert_equals<OnlyModifiers::ViewsAllocator, ecstasy::EmptyType>();
+#endif
         static_assert(sizeof(OnlyModifiers)
             == sizeof(OnlyModifiers::ModifiersAllocatorReference) + sizeof(ExpectedModifierAlloc));
     }
