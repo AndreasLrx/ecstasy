@@ -22,7 +22,6 @@
 #include "ecstasy/query/Select.hpp"
 #include "ecstasy/query/conditions/Condition.hpp"
 #include "ecstasy/query/modifiers/Modifier.hpp"
-#include "ecstasy/registry/concepts/modifier_allocator_size.hpp"
 #include "ecstasy/resources/entity/Entities.hpp"
 #include "ecstasy/storages/IStorage.hpp"
 #include "ecstasy/storages/Instances.hpp"
@@ -33,6 +32,7 @@
 #include "util/StackAllocator.hpp"
 #include "util/meta/apply.hpp"
 #include "util/meta/filter.hpp"
+#include "ecstasy/registry/concepts/modifier_allocator_size.hpp"
 #include "util/meta/outer_join.hpp"
 
 #ifdef ECSTASY_MULTI_THREAD
@@ -183,28 +183,6 @@ namespace ecstasy
             return getQueryable<typename M::Modifier>(allocator);
         }
 
-    private:
-        ///
-        /// @brief Wrapper for the allocator, see @ref RegistryStackQuery for more details. This is almost equivalent as
-        /// just using the Allocator type directly.
-        ///
-        /// @tparam A Allocator type.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2023-11-08)
-        ///
-        template <typename A>
-        class AllocatorWrapper {
-          public:
-            AllocatorWrapper()
-            {
-                _allocRef = _allocator;
-            };
-
-            A _allocator;
-            std::optional<std::reference_wrapper<A>> _allocRef;
-        };
-
         ///
         /// @brief Base class of @ref RegistryStackQuery. This class is used to allocate the queryables on the stack.
         /// At compile time it will evaluate the required queryables and reserve memory for the one requiring an
@@ -215,7 +193,8 @@ namespace ecstasy
         /// @note Yes this is black magic and I'm proud of it (my brain hurts).
         ///
         /// @tparam Selects Selected queryables in a @ref util::meta::Traits.
-        /// @tparam Missings Selected queryables not given in the where clause in a @ref util::meta::Traits.
+        /// @tparam Missings Selected queryables not given in the where clause (in  @b Cs... ) in a @ref
+        /// util::meta::Traits.
         /// @tparam Conditions Query runtime conditions in a @ref util::meta::Traits.
         /// @tparam AutoLock Whether or not the @ref thread::Lockable queryables must be locked.
         /// @tparam Cs Selected components already present in the where clause. (Missings + Cs are all the components
@@ -261,7 +240,7 @@ namespace ecstasy
                 
 #ifdef ECSTASY_MULTI_THREAD
                 /// @brief Size in bytes of the views allocator. 0 if no view.
-                using ViewsAllocatorSize = ecstasy::query::views_allocator_size<AutoLock, queryable_type_t<Selects>..., queryable_type_t<Cs>...>;
+                using ViewsAllocatorSize = ecstasy::query::views_allocator_size<AutoLock, queryable_type_t<Missings>..., queryable_type_t<Cs>...>;
                 /// @brief Whether or not the query has a views allocator.
                 using HasViewsAllocator = std::bool_constant<ViewsAllocatorSize::value != 0>;
                 /// @brief Type of the views allocator.
@@ -348,152 +327,153 @@ namespace ecstasy
         /// @tparam Selects Selected queryables
         /// @tparam Missings Selected queryables not given in the where clause
         /// @tparam Condition Query runtime first condition
-        /// @tparam Cs Query runtime remaining conditions after @p Condition
+        /// @tparam Cs Query selected components already present in the where clause
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2023-11-08)
         ///
-        template <typename Selects, typename Missings, typename Condition, typename Cs>
+        template <typename Selects, typename Missings, typename Condition, typename Cs,
+            bool AutoLock = THREAD_SAFE_DEFAULT>
         class RegistryStackQuery {};
+
+        // clang-format on
+
+        template <bool AutoLock, typename... Selects>
+        // clang-format off
+        using RegistrySelectStackQueryMemory = RegistryStackQueryMemory<
+            util::meta::Traits<Selects...>,
+            util::meta::Traits<>,
+            util::meta::Traits<>,
+            AutoLock,
+            Selects...
+        >;
+
+        template <typename... Selects>
+        // clang-format off
+        using RegistrySelectStackQuery = RegistryStackQuery<
+            util::meta::Traits<Selects...>,
+            util::meta::Traits<>,
+            util::meta::Traits<>,
+            util::meta::Traits<Selects...>
+        >;
+        // clang-format on
 
         ///
         /// @brief Registry query allocating everything on the stack (if allocation required). This means longer compile
         /// time for faster runtime.
         ///
-        /// The goal is to return a single object containing the query object and the modifiers allocator. Thus the
-        /// lifetime of the query and of the modifiers are bound on the stack.
+        /// The goal is to return a single object containing the query object and the modifiers/views allocator. Thus
+        /// the lifetime of the query and of the modifiers/views are bound on the stack.
         ///
         /// This was quite difficult to achieve since the RegistryStackQuery needs the allocator and the query, but the
         /// query needs the allocator...
         /// The solution I found is using multiple inheritance to call a function before the query creation.
-        /// In our case the function is the @ref AllocatorWrapper constructor. This ensure a safe allocator
+        /// In our case the function is the @ref RegistryStackQueryMemory constructor. This ensure a safe allocator
         /// initialization just before the query creation and without move operations (meaning memory copy and usually
         /// pointers invalidation).
         ///
         /// @tparam Selects Selected queryables
         /// @tparam Missings Selected queryables not given in the where clause
         /// @tparam Condition Query runtime first condition
-        /// @tparam Cs Query runtime remaining conditions after @p Condition
+        /// @tparam Cs Query selected components already present in the where clause
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2023-11-08)
         ///
-        template <typename... Selects, typename... Missings, typename Condition, typename... Cs>
-        class RegistryStackQuery<util::meta::Traits<Selects...>, util::meta::Traits<Missings...>, Condition,
-            util::meta::Traits<Cs...>> : public AllocatorWrapper<StackAllocator<Selects..., Cs...>>,
-                                         public query::QueryImplementation<util::meta::Traits<Selects...>, Condition> {
-          public:
-            using Allocator = StackAllocator<Selects..., Cs...>;
-            using Base = query::QueryImplementation<util::meta::Traits<Selects...>, Condition>;
-
-            ///
-            /// @brief Construct a new Registry Stack Query.
-            ///
-            /// @param[in] registry owning registry to query the queryables (of course).
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2023-11-08)
-            ///
-            RegistryStackQuery(Registry &registry)
-                : AllocatorWrapper<Allocator>(),
-                  Base(std::move(ecstasy::query::Select<Selects...>::template where<Condition,
-                      std::remove_reference_t<decltype(registry.getQueryable<Missings, Allocator>(this->_allocRef))>...,
-                      std::remove_reference_t<decltype(registry.getQueryable<Cs, Allocator>(this->_allocRef))>...>(
-                      registry.getQueryable<Missings, Allocator>(this->_allocRef)...,
-                      registry.getQueryable<Cs, Allocator>(this->_allocRef)...)))
+        template <typename... Selects, typename... Missings, typename Conditions, typename... Cs, bool AutoLock>
+        class RegistryStackQuery<util::meta::Traits<Selects...>, util::meta::Traits<Missings...>, Conditions,
+            util::meta::Traits<Cs...>, AutoLock>
+            // clang-format off
+            : public RegistryStackQueryMemory<
+                        util::meta::Traits<Selects...>, 
+                        util::meta::Traits<Missings...>,
+                        Conditions, 
+                        AutoLock, 
+                        Cs...>,
+              public query::QueryImplementation<util::meta::Traits<
+                    typename RegistryStackQueryMemory<
+                        util::meta::Traits<Selects...>, 
+                        util::meta::Traits<Missings...>,
+                        Conditions, 
+                        AutoLock, 
+                        Cs...>::template QueryableType<Selects>...>,
+                    Conditions> 
             {
-            }
+              public:
+                /// @brief Memory type for the query.
+                using Memory = RegistryStackQueryMemory<
+                    util::meta::Traits<Selects...>, 
+                    util::meta::Traits<Missings...>,
+                    Conditions, 
+                    AutoLock, 
+                    Cs...>;
+                /// @brief Query type for the query.
+                using Base = ecstasy::query::QueryImplementation<
+                    util::meta::Traits<typename Memory::template QueryableType<Selects>...>, 
+                    Conditions>;
+                
+
+                ///
+                /// @brief Construct a new Registry Stack Query.
+                ///
+                /// @param[in] registry owning registry to query the queryables (of course).
+                ///
+                /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+                /// @since 1.0.0 (2023-11-08)
+                ///
+                RegistryStackQuery(Registry & registry)
+                    : Memory(),
+                      Base(std::move(
+                        ecstasy::query::Select<
+                            typename Memory::template QueryableType<Selects>...>::template 
+                        where<Conditions,
+                             typename Memory::template QueryableType<Missings>...,
+                             typename Memory::template QueryableType<Cs>...
+                        >(
+                            Memory::template getQueryable<Missings>(registry)...,
+                            Memory::template getQueryable<Cs>(registry)...
+                        )))
+                {
+                }
+
+            // clang-format on
         };
 
         ///
         /// @copydoc RegistryStackQuery
         ///
-        template <typename... Selects>
-        class RegistryStackQuery<util::meta::Traits<Selects...>, util::meta::Traits<Selects...>, util::meta::Traits<>,
-            util::meta::Traits<Selects...>> : public AllocatorWrapper<StackAllocator<Selects...>>,
-                                              public query::Query<Selects...> {
+        template <typename... Selects, bool AutoLock>
+        class RegistryStackQuery<util::meta::Traits<Selects...>, util::meta::Traits<>, util::meta::Traits<>,
+            util::meta::Traits<Selects...>, AutoLock>
+            // clang-format off
+            : public RegistrySelectStackQueryMemory<AutoLock, Selects...>,
+              public query::Query<
+                typename RegistrySelectStackQueryMemory<AutoLock, Selects...>::template QueryableType<Selects>...
+                >
+            {
           public:
-            using Allocator = StackAllocator<Selects...>;
-            using Base = query::Query<Selects...>;
+            /// @brief Memory type for the query.
+            using Memory = RegistrySelectStackQueryMemory<AutoLock, Selects...>;
+            /// @brief Query type for the query.
+            using Base = query::Query<
+                typename Memory::template QueryableType<Selects>...
+            >;
 
             ///
-            /// @brief Construct a new Registry Stack Query ( @ref RegistrySelectStackQuery).
+            /// @brief Construct a new Registry Stack Query.
             ///
             /// @param[in] registry owning registry to query the queryables (of course).
+            ///
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2023-11-08)
             ///
             RegistryStackQuery(Registry &registry)
-                : AllocatorWrapper<Allocator>(),
-                  Base(std::move(Base(registry.getQueryable<Selects, Allocator>(this->_allocRef)...)))
+                : Memory(),
+                    Base(Memory::template getQueryable<Selects>(registry)...)
             {
             }
         };
-
-        template <typename... Selects>
-        // clang-format off
-        using RegistrySelectStackQuery = RegistryStackQuery<
-            util::meta::Traits<Selects...>,
-            util::meta::Traits<Selects...>,
-            util::meta::Traits<>,
-            util::meta::Traits<Selects...>
-        >;
-        // clang-format on
-
-        ///
-        /// @brief Registry query type from the query selected and missing types. If an allocator is required, return a
-        /// @ref RegistryStackQuery otherwise a @ref query::QueryImplementation.
-        ///
-        /// @tparam Selects Selected queryables
-        /// @tparam Missings Selected queryables not given in the where clause
-        /// @tparam Condition Query runtime first condition
-        /// @tparam Cs Query runtime remaining conditions after @p Condition
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2023-11-08)
-        ///
-        template <typename Selects, typename Missings, typename Condition, typename Cs>
-        struct registry_query {};
-
-        /// @copydoc registry_query
-        template <typename... Selects, typename... Missings, typename Condition, typename... Cs>
-        struct registry_query<util::meta::Traits<Selects...>, util::meta::Traits<Missings...>, Condition,
-            util::meta::Traits<Cs...>> {
-            // clang-format off
-            using type = std::conditional_t<((modifiers_allocator_size_v<Selects..., Cs...>) > 0), 
-                RegistryStackQuery<
-                    util::meta::Traits<Selects...>, 
-                    util::meta::Traits<Missings...>,
-                    Condition,
-                    util::meta::Traits<Cs...>
-                >,
-                query::QueryImplementation<util::meta::Traits<Selects...>, Condition>
-            >;
-            // clang-format on
-        };
-
-        ///
-        /// @brief Helper for registry_query_t<Selects, Missings, Conditions, Cs>::type.
-        ///
-        /// @tparam Selects Selected queryables
-        /// @tparam Missings Selected queryables not given in the where clause
-        /// @tparam Condition Query runtime first condition
-        /// @tparam Cs Query runtime remaining conditions after @p Condition
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2023-11-08)
-        ///
-        template <typename Selects, typename Missings, typename Conditions, typename Cs>
-        using registry_query_t = typename registry_query<Selects, Missings, Conditions, Cs>::type;
-
-        template <typename... Selects>
-        // clang-format off
-        using registry_select_query_t = registry_query_t<
-            util::meta::Traits<Selects...>, 
-            util::meta::Traits<Selects...>,
-            util::meta::Traits<>,
-            util::meta::Traits<Selects...>
-        >;
-        // clang-format on
+        
 
       public:
         ///
@@ -760,23 +740,20 @@ namespace ecstasy
             // clang-format off
             /// @copydoc where
             template <typename C, typename... Cs>
-            registry_query_t<
-                SelectsTraits,
-                MissingsTraits<C, Cs...>,
-                ConditionsTraits<C, Cs...>,
-                ComponentsTraits<C, Cs...>
-            >
+            RegistryStackQuery<
+                        SelectsTraits,
+                        MissingsTraits<C, Cs...>,
+                        ConditionsTraits<C, Cs...>,
+                        ComponentsTraits<C, Cs...>
+                    >
             where()
             {
-                if constexpr ((queryables_allocator_size_v<Selects..., C, Cs...>) > 0)
                     return RegistryStackQuery<
                         SelectsTraits,
                         MissingsTraits<C, Cs...>,
                         ConditionsTraits<C, Cs...>,
                         ComponentsTraits<C, Cs...>
                     >(_registry);
-                else
-                    return explicitWhere<ModifiersAllocator, C, Cs...>();
             }
             // clang-format on
 
@@ -1047,13 +1024,10 @@ namespace ecstasy
         // clang-format off
         /// @copydoc query
         template <typename C, typename... Cs>
-        registry_select_query_t<queryable_type_t<C>, queryable_type_t<Cs>...>
+        RegistrySelectStackQuery<queryable_type_t<C>, queryable_type_t<Cs>...>
         query()
         {
-            if constexpr ((queryables_allocator_size_v<queryable_type_t<C>, queryable_type_t<Cs>...>) > 0)
-                return RegistrySelectStackQuery<queryable_type_t<C>, queryable_type_t<Cs>...>(*this);
-            else
-                return query<C, Cs...>(std::nullopt);
+            return RegistrySelectStackQuery<queryable_type_t<C>, queryable_type_t<Cs>...>(*this);
         }
         // clang-format on
 
