@@ -142,7 +142,10 @@ namespace ecstasy::query::modifier
     };
 
     template <Queryable Q1, Queryable Q2, Queryable... Qs>
-    using Xor = XorImpl<false, Q1, Q2, Qs...>;
+    auto constexpr Xor(Q1 &firstOperand, Q2 &secondOperand, Qs &...otherOperands)
+    {
+        return XorImpl<false, Q1, Q2, Qs...>(firstOperand, secondOperand, otherOperands...);
+    }
 } // namespace ecstasy::query::modifier
 
 #endif /* !ECSTASY_QUERY_MODIFIERS_XOR_HPP_ */

@@ -41,7 +41,9 @@ struct Position {
 TEST(queryable_type, Components)
 {
     assert_equals<queryable_type_t<Position>, getStorageType<Position>>();
+    assert_equals<getStorageType<Position>, MapStorage<Position>>();
     assert_equals<queryable_type_t<Position>, MapStorage<Position>>();
+    assert_equals<getStorageType<const Position>, const MapStorage<Position>>();
     assert_equals<queryable_type_t<const Position>, getStorageType<const Position>>();
     assert_equals<queryable_type_t<const Position>, const MapStorage<Position>>();
 }
@@ -66,5 +68,6 @@ TEST(queryable_type, Modifier)
 
 TEST(queryable_type, RegistryModifier)
 {
-    assert_equals<queryable_type_t<Maybe<Position>>, query::modifier::Maybe<MapStorage<Position>, true>>();
+    assert_equals<queryable_type_t<Maybe<Position>>,
+        query::modifier::Maybe<MapStorage<Position>, THREAD_SAFE_DEFAULT>>();
 }

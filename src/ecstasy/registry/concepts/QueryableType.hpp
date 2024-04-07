@@ -45,10 +45,11 @@ namespace ecstasy
     template <query::Queryable Q>
         requires query::ConstQueryableObject<Q>
     struct queryable_type<const Q> {
-        using type = const queryable_type<Q>::type;
+        using type = const typename queryable_type<Q>::type;
     };
 
     /// @copydoc queryable_type
+    template <std::derived_from<Resource> R>
         requires query::Queryable<R>
     struct queryable_type<R> {
         using type = R;
