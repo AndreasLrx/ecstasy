@@ -51,7 +51,127 @@ namespace ecstasy
     /// @since 1.0.0 (2022-11-18)
     ///
     class Registry {
-      private:
+      public:
+        ///
+        /// @brief Get a queryable from a registry variable (component storage, resource, queryable storage...)
+        ///
+        /// @warning If the type is (or might be) a modifier that will have to be allocated, you must send a @ref
+        /// ModifiersAllocator as parameter.
+        ///
+        /// @tparam C Type of the variable to fetch.
+        ///
+        /// @param[in] allocator Allocator to instanciate query modifier. Can be empty if no modifier needs to be
+        /// instanciated.
+        ///
+        /// @return @ref getStorageType<C>& Associated queryable (if no specific case the storage for C is
+        /// returned).
+        ///
+        /// @throw std::logic_error When @p allocator is empty and the queryable needs to be allocated.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-25)
+        ///
+        template <typename C, typename A = ModifiersAllocator>
+        constexpr getStorageType<C> &getQueryable(OptionalModifiersAllocator<A> &allocator)
+        {
+            (void)allocator;
+            return getStorageSafe<C>();
+        }
+
+        /// @copydoc getQueryable()
+        template <std::derived_from<ResourceBase> R, typename A = ModifiersAllocator>
+            requires query::Queryable<R>
+        constexpr R &getQueryable(OptionalModifiersAllocator<A> &allocator)
+        {
+            (void)allocator;
+            return getResource<R>();
+        }
+
+        /// @copydoc getQueryable()
+        template <IsStorage S, typename A = ModifiersAllocator>
+            requires query::Queryable<S>
+        S &getQueryable(OptionalModifiersAllocator<A> &allocator)
+        {
+            (void)allocator;
+            if (!_storages.contains<S>())
+                return _storages.emplace<S>();
+            return _storages.get<S>();
+        }
+
+        /// @copydoc getQueryable()
+        template <typename S, typename A = ModifiersAllocator>
+            requires std::is_const_v<S> && query::ConstQueryableObject<std::remove_const_t<S>>
+            && IsStorage<std::remove_const_t<S>>
+        S &getQueryable(OptionalModifiersAllocator<A> &allocator)
+        {
+            (void)allocator;
+            if (!_storages.contains<std::remove_const_t<S>>())
+                return _storages.emplace<std::remove_const_t<S>>();
+            return _storages.get<std::remove_const_t<S>>();
+        }
+
+        ///
+        /// @brief Proxy structure to extract the operand types using template partial specialization
+        ///
+        /// @tparam Operands Must be a tuple of @ref ecstasy::query::Queryable types.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-22)
+        ///
+        template <typename Operands>
+        struct GetModifierProxy {};
+
+        ///
+        /// @brief Proxy structure to extract the operand types using template partial specialization
+        ///
+        /// @tparam Qs Operands types of the modifier.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-11-22)
+        ///
+        template <query::Queryable... Qs>
+        struct GetModifierProxy<util::meta::Traits<Qs...>> {
+            ///
+            /// @brief Specialization of @ref Registry::getQueryable(). Returns the required modifier with the
+            /// operands queried from the registry.
+            ///
+            /// @tparam M Modifier type.
+            /// @tparam A Modifiers allocator type.
+            ///
+            /// @param[in] registry Owning registry.
+            /// @param[in] allocator Allocator to instanciate the modifier. Must not be empty.
+            ///
+            /// @return M& Required modifier.
+            ///
+            /// @throw std::logic_error When @p allocator is empty.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2022-11-22)
+            ///
+            template <query::Modifier M, typename A = ModifiersAllocator>
+            static constexpr M &get(Registry &registry, OptionalModifiersAllocator<A> &allocator)
+            {
+                if (!allocator)
+                    throw std::logic_error("Missing modifier allocator");
+                return allocator->get().template instanciate<M>(registry.getQueryable<Qs>(allocator)...);
+            }
+        };
+
+        /// @copydoc getQueryable()
+        template <query::Modifier M, typename A = ModifiersAllocator>
+        constexpr M &getQueryable(OptionalModifiersAllocator<A> &allocator)
+        {
+            return GetModifierProxy<typename M::Operands>::template get<M>(*this, allocator);
+        }
+
+        /// @copydoc getQueryable()
+        template <RegistryModifier M, typename A = ModifiersAllocator>
+        constexpr typename M::Modifier &getQueryable(OptionalModifiersAllocator<A> &allocator)
+        {
+            return getQueryable<typename M::Modifier>(allocator);
+        }
+
+    private:
         ///
         /// @brief Wrapper for the allocator, see @ref RegistryStackQuery for more details. This is almost equivalent as
         /// just using the Allocator type directly.
@@ -227,125 +347,6 @@ namespace ecstasy
             util::meta::Traits<Selects...>
         >;
         // clang-format on
-
-      private:
-        ///
-        /// @brief Get a queryable from a registry variable (component stoage, resource, queryable storage...)
-        ///
-        /// @warning If the type is (or might be) a modifier that will have to be allocated, you must send a @ref
-        /// ModifiersAllocator as parameter.
-        ///
-        /// @tparam C Type of the variable to fetch.
-        ///
-        /// @param[in] allocator Allocator to instanciate query modifier. Can be empty if no modifier needs to be
-        /// instanciated.
-        ///
-        /// @return @ref getStorageType<C>& Associated queryable (if no specific case the storage for C is
-        /// returned).
-        ///
-        /// @throw std::logic_error When @p allocator is empty and the queryable needs to be allocated.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-25)
-        ///
-        template <typename C, typename A = ModifiersAllocator>
-        constexpr getStorageType<C> &getQueryable(OptionalModifiersAllocator<A> &allocator)
-        {
-            (void)allocator;
-            return getStorageSafe<C>();
-        }
-
-        /// @copydoc getQueryable()
-        template <std::derived_from<Resource> R, typename A = ModifiersAllocator>
-            requires query::Queryable<R>
-        constexpr R &getQueryable(OptionalModifiersAllocator<A> &allocator)
-        {
-            (void)allocator;
-            return getResource<R>();
-        }
-
-        /// @copydoc getQueryable()
-        template <IsStorage S, typename A = ModifiersAllocator>
-            requires query::Queryable<S>
-        S &getQueryable(OptionalModifiersAllocator<A> &allocator)
-        {
-            (void)allocator;
-            if (!_storages.contains<S>())
-                return _storages.emplace<S>();
-            return _storages.get<S>();
-        }
-
-        template <typename S, typename A = ModifiersAllocator>
-            requires std::is_const_v<S> && query::ConstQueryableObject<std::remove_const_t<S>>
-            && IsStorage<std::remove_const_t<S>>
-        S &getQueryable(OptionalModifiersAllocator<A> &allocator)
-        {
-            (void)allocator;
-            if (!_storages.contains<std::remove_const_t<S>>())
-                return _storages.emplace<std::remove_const_t<S>>();
-            return _storages.get<std::remove_const_t<S>>();
-        }
-
-        ///
-        /// @brief Proxy structure to extract the operand types using template partial specialization
-        ///
-        /// @tparam Operands Must be a tuple of @ref ecstasy::query::Queryable types.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-11-22)
-        ///
-        template <typename Operands>
-        struct GetModifierProxy {};
-
-        ///
-        /// @brief Proxy structure to extract the operand types using template partial specialization
-        ///
-        /// @tparam Qs Operands types of the modifier.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-11-22)
-        ///
-        template <query::Queryable... Qs>
-        struct GetModifierProxy<util::meta::Traits<Qs...>> {
-            ///
-            /// @brief Specialization of @ref Registry::getQueryable(). Returns the required modifier with the operands
-            /// queried from the registry.
-            ///
-            /// @tparam M Modifier type.
-            /// @tparam A Modifiers allocator type.
-            ///
-            /// @param[in] registry Owning registry.
-            /// @param[in] allocator Allocator to instanciate the modifier. Must not be empty.
-            ///
-            /// @return M& Required modifier.
-            ///
-            /// @throw std::logic_error When @p allocator is empty.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2022-11-22)
-            ///
-            template <query::Modifier M, typename A = ModifiersAllocator>
-            static constexpr M &get(Registry &registry, OptionalModifiersAllocator<A> &allocator)
-            {
-                if (!allocator)
-                    throw std::logic_error("Missing modifier allocator");
-                return allocator->get().template instanciate<M>(registry.getQueryable<Qs>(allocator)...);
-            }
-        };
-
-        /// @copydoc getQueryable()
-        template <query::Modifier M, typename A = ModifiersAllocator>
-        constexpr M &getQueryable(OptionalModifiersAllocator<A> &allocator)
-        {
-            return GetModifierProxy<typename M::Operands>::template get<M>(*this, allocator);
-        }
-
-        /// @copydoc getQueryable()
-        template <RegistryModifier M, typename A = ModifiersAllocator>
-        constexpr typename M::Modifier &getQueryable(OptionalModifiersAllocator<A> &allocator)
-        {
-            return getQueryable<typename M::Modifier>(allocator);
-        }
 
       public:
         ///
