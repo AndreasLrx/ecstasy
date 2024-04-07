@@ -21,13 +21,14 @@ namespace ecstasy
     /// @brief Placeholder for @ref ecstasy::query::modifier::Not.
     ///
     /// @tparam C Component type.
+    /// @tparam AutoLock Whether the queryable should be locked automatically.
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-10-24)
     ///
-    template <typename C>
+    template <typename C, bool AutoLock = thread::AUTO_LOCK_DEFAULT>
     struct Not {
-        using Modifier = query::modifier::Not<queryable_type_t<C>, thread::AUTO_LOCK_DEFAULT>;
+        using Modifier = query::modifier::Not<queryable_type_t<C>, AutoLock>;
     };
 } // namespace ecstasy
 

@@ -332,13 +332,14 @@ namespace ecstasy
             Selects...
         >;
 
-        template <typename... Selects>
+        template <bool AutoLock, typename... Selects>
         // clang-format off
         using RegistrySelectStackQuery = RegistryStackQuery<
             util::meta::Traits<Selects...>,
             util::meta::Traits<>,
             util::meta::Traits<>,
-            util::meta::Traits<Selects...>
+            util::meta::Traits<Selects...>,
+            AutoLock
         >;
         // clang-format on
 
@@ -739,6 +740,37 @@ namespace ecstasy
                         ComponentsTraits<C, Cs...>
                     >(_registry);
             }
+
+            ///
+            /// @brief Query all entities which have all the given components. This extended version allows to set the AutoLock value.
+            /// 
+            /// @tparam AutoLock Whether or not the queryables should be locked.
+            /// @tparam C First constraint Type (Queryable or Condition).
+            /// @tparam Cs Other constraint Types (Queryables or Conditions).
+            ///
+            /// @return RegistryStackQuery Query object which can be iterated.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2024-04-07)
+            ///
+            template <bool AutoLock, typename C, typename... Cs>
+            RegistryStackQuery<
+                        SelectsTraits,
+                        MissingsTraits<C, Cs...>,
+                        ConditionsTraits<C, Cs...>,
+                        ComponentsTraits<C, Cs...>,
+                        AutoLock
+                    >
+            whereEx()
+            {
+                    return RegistryStackQuery<
+                        SelectsTraits,
+                        MissingsTraits<C, Cs...>,
+                        ConditionsTraits<C, Cs...>,
+                        ComponentsTraits<C, Cs...>,
+                        AutoLock
+                    >(_registry);
+            }
             // clang-format on
 
           private:
@@ -1008,10 +1040,30 @@ namespace ecstasy
         // clang-format off
         /// @copydoc query
         template <typename C, typename... Cs>
-        RegistrySelectStackQuery<queryable_type_t<C>, queryable_type_t<Cs>...>
+        RegistrySelectStackQuery<thread::AUTO_LOCK_DEFAULT, queryable_type_t<C>, queryable_type_t<Cs>...>
         query()
         {
-            return RegistrySelectStackQuery<queryable_type_t<C>, queryable_type_t<Cs>...>(*this);
+            return RegistrySelectStackQuery<thread::AUTO_LOCK_DEFAULT, queryable_type_t<C>, queryable_type_t<Cs>...>(*this);
+        }
+
+
+        ///
+        /// @brief Construct a query for the given components. This extented version allows to explicitly set the AutoLock value.
+        /// 
+        /// @tparam AutoLock Whether or not the query should be auto locked.
+        /// @tparam C First component type.
+        /// @tparam Cs Other component types.
+        ///
+        /// @return RegistrySelectStackQuery<AutoLock, queryable_type_t<C>, queryable_type_t<Cs>...> New query which can be iterated.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-04-07)
+        ///
+        template <bool AutoLock, typename C, typename... Cs>
+        RegistrySelectStackQuery<AutoLock, queryable_type_t<C>, queryable_type_t<Cs>...>
+        queryEx()
+        {
+            return RegistrySelectStackQuery<AutoLock, queryable_type_t<C>, queryable_type_t<Cs>...>(*this);
         }
         // clang-format on
 
