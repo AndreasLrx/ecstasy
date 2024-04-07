@@ -35,7 +35,7 @@ struct Velocity {
 struct Movement : public ecstasy::ISystem {
     void run(ecstasy::Registry &registry) override final
     {
-        for (auto [position, velocity] : registry.query<Position, Velocity>()) {
+        for (auto [position, velocity] : registry.query<Position, const Velocity>()) {
             position.x += velocity.x;
             position.y += velocity.y;
         }
@@ -178,8 +178,11 @@ It will iterate on every entities having the requested components and return a r
 
 The easiest syntax is to use tuple unpacking in a for loop:
 
+@note
+You should get used to querying your types as const if you don't modify them because of [thread safety](#EnsuringThreadSafety)
+
 ```cpp
-for (auto [position, velocity] : registry.query<Position, Velocity>()) {
+for (auto [position, velocity] : registry.query<Position, const Velocity>()) {
     position.x += velocity.x;
     position.y += velocity.y;
 }
@@ -189,7 +192,7 @@ You can also parallelized your query in multiple threads using the splitThreads 
 
 ```cpp
 // Will make one thread for every 50 matching entities
-registry.query<Position, Velocity>().splitThreads(50, [](auto components) {
+registry.query<Position, const Velocity>().splitThreads(50, [](auto components) {
     auto [position, velocity] = components;
     position.x += velocity.x;
     position.y += velocity.y;
@@ -211,7 +214,7 @@ Let's say you have a `Dynamic` component required to move your entities but it i
 You can use the Select ... Where ... syntax:
 
 ```cpp
-for (auto [position, velocity] : registry.select<Position, Velocity>().where<Dynamic>()) {
+for (auto [position, velocity] : registry.select<Position, const Velocity>().where<const Dynamic>()) {
     position.x += velocity.x;
     position.y += velocity.y;
 }
@@ -237,9 +240,9 @@ Modifiers can be nested and used in simple queries as well as in Select ... Wher
    Here comes an example:
 
    ```cpp
-   for (auto [position, velocity, mDensity] : registry.query<Position, Velocity, Maybe<Density>>()) {
+   for (auto [position, velocity, mDensity] : registry.query<Position, const Velocity, Maybe<const Density>>()) {
        float multiplier = 1;
-       // Density is a std::optional<std::reference_wrappper<Density&>>
+       // Density is a std::optional<std::reference_wrappper<const Density&>>
        if (mDensity)
            multiplier = mDensity->value;
        position.x += velocity.x * multiplier;
@@ -255,7 +258,7 @@ Modifiers can be nested and used in simple queries as well as in Select ... Wher
    Don't use in `Select` clause because it doesn't make sense to select non existing data.
 
    ```cpp
-   for (auto [position, velocity] : registry.select<Position, Velocity>().where<Not<Static>>()) {
+   for (auto [position, velocity] : registry.select<Position, const Velocity>().where<Not<const Static>>()) {
        position.x += velocity.x;
        position.y += velocity.y;
    }
@@ -270,7 +273,7 @@ Modifiers can be nested and used in simple queries as well as in Select ... Wher
 
    ```cpp
    // Assuming positions is a std::vector<Position>
-   for (auto [position, positions, velocity] : registry.select<Maybe<Position>, Maybe<Positions>, Velocity>().where<Or<Position, Positions>>()) {
+   for (auto [position, positions, velocity] : registry.select<Maybe<Position>, Maybe<Positions>, const Velocity>().where<Or<Position, Positions>>()) {
        if (position) {
            position.x += velocity.x;
            position.y += velocity.y;
@@ -291,8 +294,8 @@ Modifiers can be nested and used in simple queries as well as in Select ... Wher
    ```cpp
    // Assuming working with 2D or 3D (yes this is dumb you should do 2 systems)
    for (auto [position2, position3, velocity2, velocity3] : registry
-       .select<Maybe<Position2D>, Maybe<Position3D>, Maybe<Velocity2D>, Maybe<Velocity3>>()
-       .where<Or<And<Position2D, Velocity2D>, And<Position3D, Velocity3D>>>()) {
+       .select<Maybe<Position2D>, Maybe<Position3D>, Maybe<const Velocity2D>, Maybe<const Velocity3>>()
+       .where<Or<And<Position2D, const Velocity2D>, And<Position3D, const Velocity3D>>>()) {
        if (position2) {
            position2.x += velocity2.x;
            position2.y += velocity2.y;
@@ -320,7 +323,7 @@ Conditions supports comparisons with:
    Ensure the two operands are equal for each matching entities.
 
    ```cpp
-   for (auto [life] : registry.select<Life>().where<ecstasy::EqualTo<&Life::value, 0>>()) {
+   for (auto [life] : registry.select<const Life>().where<ecstasy::EqualTo<&Life::value, 0>>()) {
        // Condition equals: if (!(life.value == 0)) continue;
    }
    ```
@@ -330,7 +333,7 @@ Conditions supports comparisons with:
    Ensure the two operands are not equal for each matching entities.
 
    ```cpp
-   for (auto [life] : registry.select<Life>().where<ecstasy::NotEqualTo<&Life::value, 0>>()) {
+   for (auto [life] : registry.select<const Life>().where<ecstasy::NotEqualTo<&Life::value, 0>>()) {
        // Condition equals: if (!(life.value != 0)) continue;
    }
    ```
@@ -340,7 +343,7 @@ Conditions supports comparisons with:
    Ensure the first operand is strictly lower than the second operand.
 
    ```cpp
-   for (auto [life] : registry.select<Life>().where<Shield, ecstasy::Less<&Life::value, &Shield::getValue>>()) {
+   for (auto [life] : registry.select<const Life>().where<Shield, ecstasy::Less<&Life::value, &Shield::getValue>>()) {
        // Condition equals: if (!(life.value < shield.getValue())) continue;
    }
    ```
@@ -350,7 +353,7 @@ Conditions supports comparisons with:
    Ensure the first operand is lower than or equal to the second operand.
 
    ```cpp
-   for (auto [life] : registry.select<Life>().where<Shield, ecstasy::LessEqual<&Life::value, &Shield::getValue>>()) {
+   for (auto [life] : registry.select<const Life>().where<Shield, ecstasy::LessEqual<&Life::value, &Shield::getValue>>()) {
        // Condition equals: if (!(life.value <= shield.getValue())) continue;
    }
    ```
@@ -360,7 +363,7 @@ Conditions supports comparisons with:
    Ensure the first operand is strictly greater than the second operand.
 
    ```cpp
-   for (auto [life] : registry.select<Life>().where<Shield, ecstasy::Greater<&Life::value, &Shield::getValue>>()) {
+   for (auto [life] : registry.select<const Life>().where<Shield, ecstasy::Greater<&Life::value, &Shield::getValue>>()) {
        // Condition equals: if (!(life.value > shield.getValue())) continue;
    }
    ```
@@ -370,7 +373,7 @@ Conditions supports comparisons with:
    Ensure the first operand is greater than or equal to the second operand.
 
    ```cpp
-   for (auto [life] : registry.select<Life>().where<Shield, ecstasy::GreaterEqual<&Life::value, &Shield::getValue>>()) {
+   for (auto [life] : registry.select<const Life>().where<Shield, ecstasy::GreaterEqual<&Life::value, &Shield::getValue>>()) {
        // Condition equals: if (!(life.value >= shield.getValue())) continue;
    }
    ```
@@ -385,7 +388,7 @@ For example here is how you would create a Movement system:
 struct Movement : public ecstasy::ISystem {
     void run(ecstasy::Registry &registry) override final
     {
-        for (auto [position, velocity] : registry.query<Position, Velocity>()) {
+        for (auto [position, velocity] : registry.query<Position, const Velocity>()) {
             position.x += velocity.x;
             position.y += velocity.y;
         }
@@ -457,3 +460,35 @@ But you can use the system priorities/groups to order them and be able to specif
        registry.runSystems(abc, mask); // ABC
        registry.runSystems(def, mask); // DEF
    ```
+
+## Ensuring Thread Safety {#EnsuringThreadSafety}
+
+By default ecstasy is not thread safe. By not thread safe I mean there is absolutely nothing enabled to prevent your threads to do whatever they want at the same time.
+
+But no worries it is just some compilation options to set:
+
+- @b ECSTASY_LOCKABLE_RESOURCES will make @ref Resource class validate the [Lockable](@ref ecstasy::thread::Lockable) concept.
+- @b ECSTASY_LOCKABLE_STORAGES will make @ref IStorage class validate the [Lockable](@ref ecstasy::thread::Lockable) concept.
+- @b ECSTASY_AUTO_LOCK will lock any [Lockable](@ref ecstasy::thread::Lockable) queryables in any registry queries or registry modifiers.
+- @b ECSTASY_THREAD_SAFE will enable the three options above.
+
+This being done every lockables will be locked (if @b ECSTASY_AUTO_LOCK is set) when performing queries from the registry:
+
+- If they are queried const qualified they will be shared lock, meaning multiple threads can access the queryables at the same time in a read only way.
+- However if they are not const qualified the lock will be exclusive, waiting any thread reading (or writing) the queryable and then blocking any other thread to access it until unlocked.
+
+This allows a generic thread safety while reducing thread contention as much as possible.
+
+If you want to handle thread safety yourself you still have multiple options:
+
+1. Get it your own way
+
+   Just disable the above options and do what you want, but outside the queries because of encapsulation you will not have the same generic access.
+
+2. Lock explicitly
+
+   Keep the resources/storages as lockable and use the @ref Registry::queryEx (and Select.whereEx) methods or @ref AndEx, @ref OrEx, @ref NotEx modifiers where you can explicitly specify the AutoLock value.
+
+3. AutoLock by default but disable when you know what you're doing
+
+   I know sometimes ecstasy can lock multiple times the same mutex because it is hard to detect. But if you know it and it is sensitive systems (running lot of times per frame) you can use the \*Ex methods to UnLock explicitly the same way.

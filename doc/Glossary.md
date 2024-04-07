@@ -141,7 +141,7 @@ The easiest example are the component storages:
 But it is also true for the [Entities](@ref ecstasy::Entities) resource.
 The goal of the queryable is to allow performing queries on various data types, not limiting them to only Storages but any type matching the concept.
 
-Concept definition:
+Example concept definition:
 
 ```cpp
 template <typename Q>
@@ -158,7 +158,9 @@ concept Queryable = requires(Q &queryable, Q const &cqueryable, std::size_t inde
 };
 ```
 
-References: [Queryable](@ref ecstasy::query::Queryable)
+In fact there is multiple Queryable sub concepts such as [QueryableObject](@ref ecstasy::query::Queryable) (example above), [ConstQueryableObject](@ref ecstasy::query::ConstQueryableObject) and [QueryableWrapper](@ref ecstasy::query::QueryableWrapper). A Queryable must validate at least one of the said concepts.
+
+References: [Queryable](@ref ecstasy::query::Queryable), [Queryable](@ref ecstasy::query::Queryable), [ConstQueryableObject](@ref ecstasy::query::ConstQueryableObject), [QueryableWrapper](@ref ecstasy::query::QueryableWrapper)
 
 ### Batch Query
 
@@ -277,3 +279,22 @@ for (auto [life] : registry.select<Life>().where<ecstasy::EqualTo<&Life::value, 
 Follow [this tutorial](#ConditionsTutorial) to learn how to use them in details.
 
 References: [QCondition](@ref ecstasy::query::QCondition), [EqualTo](@ref ecstasy::EqualTo), [NotEqualTo](@ref ecstasy::NotEqualTo), [Greater](@ref ecstasy::Greater), [GreaterEqual](@ref ecstasy::GreaterEqual), [Less](@ref ecstasy::Less), [LessEqual](@ref ecstasy::LessEqual)
+
+## Thread
+
+### Lockable
+
+[Lockable](@ref ecstasy::thread::Lockable) is a concept following the c++ named requirement [BasicLockable](https://en.cppreference.com/w/cpp/named_req/BasicLockable).
+To resume, it defines a type having the methods `lock` and `unlock`. That's it.
+
+```cpp
+template <typename L>
+concept Lockable = requires(L &lockable) {
+    // clang-format off
+    { lockable.lock() } -> std::same_as<void>;
+    { lockable.unlock() } -> std::same_as<void>;
+    // clang-format on
+};
+```
+
+References: [Lockable](@ref ecstasy::thread::Lockable), [LockableView](@ref ecstasy::thread::LockableView)

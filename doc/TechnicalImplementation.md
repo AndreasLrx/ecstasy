@@ -181,6 +181,57 @@ The conditions are checked at runtime (because it check runtime values) on the q
 Meaning if you iterate three times the same query the conditions will be evaluated three times for each matching entities.
 But the good part about it is that it check the condition only when the values are fetched and doesn't make an extra fetch just for the condition.
 
+#### AutoLock
+
+The query parts have an `AutoLock` boolean template parameter. If it is set to true, it will wrap any queryables validating the [Lockable](@ref ecstasy::thread::Lockable) concept in a [LockableView](@ref ecstasy::thread::LockableView). This use the [RAII](https://en.cppreference.com/w/cpp/language/raii) concept: wrapping the lockable in the views will lock them upon view construction and unlock them upon view destruction.
+
+1. Make everything lockable
+
+   If you want thread safety, you need to be able to lock your storages and resources (especially @ref Entities) otherwise they will never be locked.
+
+   For this you can use the compilation options @b ECSTASY_LOCKABLE_RESOURCES and/or @b ECSTASY_LOCKABLE_STORAGES. It will make the @ref Resources and/or @ref IStorage inherit from [SharedRecursiveMutex](@ref ecstasy::thread::SharedRecursiveMutex), thus validating the Lockable concept.
+
+   @note
+   This is disabled by default to avoid memory overhead of the mutex fields (ie: Zero-overhead principle).
+
+   If you want to set the `AutoLock` to true by default for every **registry** queries, you can compile ecstasy with @b ECSTASY_AUTO_LOCK option.
+
+2. Skeptical Lock Mechanism (ie: [SharedRecursiveMutex](@ref ecstasy::thread::SharedRecursiveMutex))
+
+   The [SharedRecursiveMutex](@ref ecstasy::thread::SharedRecursiveMutex) (SRM, too loong to write) is made in a way to be @ref Lockable either with or without the const qualifier but the behavior will change:
+
+   - Calling `lock()`/`unlock()` on a non-const SRM will perform an **exclusive lock/unlock on the mutex**
+   - Calling `lock()`/`unlock()` on a const SRM will perform a **shared lock/unlock on the mutex**
+
+   @note
+   The mutex is recursive mostly because it is hard for ecstasy (meaning for my little brain) to detect whether a queryable is already locked by the current query or not, especially when dealing with the same queryable multiple times in the same query because of modifiers. Therefore it will be locked multiple times by the same query.
+
+   @warning
+   As said above the same lockable can be locked multiple times by the same query. You can easily have a deadlock if in the same query you request a const queryable and the non const version. Because it will try to perform an exclusive lock and a shared lock, which are not compatible. See [SharedRecursiveMutex](@ref ecstasy::thread::SharedRecursiveMutex) documentation.
+
+3. [LockableView](@ref ecstasy::thread::LockableView) instanciation
+
+   [LockableView](@ref ecstasy::thread::LockableView) (LV, I'm not too lazy for this parenthesis but too lazy to write [LockableView](@ref ecstasy::thread::LockableView)) can be instanciated at multiple times depending of the query.
+
+   1. In the Query itself
+
+      If you set @b AutoLock to true in the [QueryImplementation](@ref ecstasy::query::QueryImplementation) the query will take the queryables references as inputs as usual. However it will store them in an LV using implicit constructor, because LV takes a reference to the lockable in constructor.
+      Therefore the lifetime of the LV will be bound to the query.
+
+   2. In the registry stack query
+
+      However as you can guess it does not work well for precomputed mask like in the select where syntax because in these cases the query only keep the mask and the selected queryables, the where queryables are not kept in the query.
+
+      Therefore when doing query from the registry, the registry use the magical [RegistryStackQueryMemory](@ref ecstasy::Registry::RegistryStackQueryMemory) class. This class compute the required size for the LVs and for the modifiers to allocate them on the stack (because why allocate on the heap when you can know at compile time the required memory size ?).
+      The LV lifetime is the same as the RegistryStackQueryMemory, which is the same as the [RegistryStackQuery](@ref ecstasy::Registry::RegistryStackQuery) (being the query).
+
+   3. And the modifiers ?
+
+      The modifiers also have an @b AutoLock template parameters. If it it set it works exactly as the QueryImplementation: it locks the queryables upon construction using implicit LV constructor.
+
+      @note
+      By default the RegistryModifiers AutoLock value will be set from @b ECSTASY_AUTO_LOCK but you can use the extended version if you want to set/unset only one (@ref AndEx, @ref OrEx, @ref XorEx , the @ref Maybe and @ref Not don't have extended version because the classic version already supports a second AutoLock parameter).
+
 #### Resolution Order
 
 We have seen everything, not in the lowest details but enough to understand most of the query behaviors. Here is the resolution order of all those functionnality.
@@ -193,7 +244,7 @@ We have seen everything, not in the lowest details but enough to understand most
 **Query construction**
 
 - Fetch required queryables from registry (where and select clause)
-- Allocate required modifiers with the given allocator (which is by default the stack allocator)
+- Allocate required modifiers and views with the given allocator (which is by default the stack allocator)
 - Compute query bitset from the where clause
 - Creates the query object from the computed bitset and the selected queryables
 
