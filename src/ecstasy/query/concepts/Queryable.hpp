@@ -315,6 +315,52 @@ namespace ecstasy::query
     template <typename T>
     static constexpr inline bool is_queryable_v = is_queryable<T>::value;
 
+    ///
+    /// @brief Get the size of the allocator required for the given queryable types.
+    ///
+    /// @note Size is always 0 if @b AutoLock is false. Otherwise, it is the sum of the sizeof(Q) for each Lockable
+    /// queryable Q.
+    ///
+    /// @tparam AutoLock Whether the queryable should be locked while used or not.
+    /// @tparam Qs Queryable types.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-04-07)
+    ///
+    template <bool AutoLock, Queryable... Qs>
+    struct views_allocator_size : public std::integral_constant<size_t, 0> {};
+
+    /// @copydoc views_allocator_size
+    template <bool AutoLock, Queryable Q, Queryable... Qs>
+    struct views_allocator_size<AutoLock, Q, Qs...>
+        : public
+          // clang-format off
+        std::integral_constant<size_t, views_allocator_size<AutoLock, Qs...>::value> {};
+
+#ifdef ECSTASY_MULTI_THREAD
+    /// @copydoc thread_safe_queryable
+    template <thread::Lockable Q, Queryable... Qs>
+    struct views_allocator_size<true, Q, Qs...>
+        : public
+          // clang-format off
+        std::integral_constant<size_t, 
+                sizeof(thread_safe_queryable_t<Q, true>) + 
+                views_allocator_size<true, Qs...>::value> {};
+#endif
+    // clang-format on
+
+    ///
+    /// @brief Helper for @ref views_allocator_size "views_allocator_size<AutoLock, Qs...>::value".
+    ///
+    /// @tparam AutoLock Whether the queryable should be locked while used or not.
+    /// @tparam Qs Queryable types.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-04-07)
+    ///
+    template <bool AutoLock, Queryable... Qs>
+    size_t constexpr views_allocator_size_v = views_allocator_size<AutoLock, Qs...>::value;
+
 } // namespace ecstasy::query
 
 #endif /* !ECSTASY_QUERY_CONCEPTS_QUERYABLE_HPP_ */

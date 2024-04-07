@@ -15,5 +15,6 @@
 #include "ComponentType.hpp"
 #include "QueryableType.hpp"
 #include "RegistryModifier.hpp"
+#include "modifier_allocator_size.hpp"
 
 #endif /* !CONCEPTS_HPP_ */
