@@ -30,7 +30,7 @@ namespace ecstasy
     ///
     template <typename C1, typename C2, typename... Cs>
     struct And {
-        using Modifier = query::modifier::AndImpl<THREAD_SAFE_DEFAULT, queryable_type_t<C1>, queryable_type_t<C2>,
+        using Modifier = query::modifier::AndImpl<thread::AUTO_LOCK_DEFAULT, queryable_type_t<C1>, queryable_type_t<C2>,
             queryable_type_t<Cs>...>;
     };
 } // namespace ecstasy
