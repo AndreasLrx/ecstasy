@@ -93,18 +93,18 @@ $(document).ready(function(){initNavTree('functions_o.html',''); initResizable()
 : <a class="el" href="classecstasy_1_1_object_wrapper.html#ac1868b4c3ee075adc6b608ce0b465667">ecstasy::ObjectWrapper&lt; T &gt;</a>
 </li>
 <li>OperandData
-: <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#a60c2217c098c6ca76c7be8c856f24c50">ecstasy::query::modifier::BinaryModifier&lt; Derived, DataModifier, Q1, Q2, Qs &gt;</a>
+: <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#ae5243587ca0728261878bf01a9e696af">ecstasy::query::modifier::BinaryModifier&lt; Derived, AutoLock, DataModifier, Q1, Q2, Qs &gt;</a>
 </li>
 <li>Operands
-: <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#abbc065f2f2d7d4cf93305f72fb972ee9">ecstasy::query::modifier::BinaryModifier&lt; Derived, DataModifier, Q1, Q2, Qs &gt;</a>
-, <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a206b8a252b9589ceb8af3eebb504c6f7">ecstasy::query::modifier::Maybe&lt; Q &gt;</a>
-, <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a467ac48c6e60a4dcb4cf0162ee539eb4">ecstasy::query::modifier::Not&lt; Q &gt;</a>
+: <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#a55ab6ebf74db57e0ad6a272f58b266bd">ecstasy::query::modifier::BinaryModifier&lt; Derived, AutoLock, DataModifier, Q1, Q2, Qs &gt;</a>
+, <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a30e52f2107813868f503ca3a9d065bf5">ecstasy::query::modifier::Maybe&lt; Q, AutoLock &gt;</a>
+, <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a15ec501fbb8ec49c4e6df219285fb4f2">ecstasy::query::modifier::Not&lt; Q, AutoLock &gt;</a>
 </li>
 <li>operator bool()
 : <a class="el" href="classutil_1_1_bit_set_1_1_reference.html#afedbe7be09bbf4e6f1dd51b9a440fe0e">util::BitSet::Reference</a>
 </li>
 <li>operator!=()
-: <a class="el" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html#a77a063cd5691703a410fecafa735de69">ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt; &gt;::Iterator</a>
+: <a class="el" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe85d7ffd57dbe8185bd42d6b1216253c8.html#a7c16d604926e134528b8afd6dd25ff0c">ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt;, AutoLock &gt;::Iterator</a>
 , <a class="el" href="classutil_1_1_bit_set.html#a9907697fb62fb2e2a6b60de3b4e79ced">util::BitSet</a>
 , <a class="el" href="classutil_1_1serialization_1_1_polymorphic_iterator.html#aedc63b1d6cc934d9b4cd776f9a5beef0">util::serialization::PolymorphicIterator&lt; T &gt;</a>
 </li>
@@ -123,28 +123,30 @@ $(document).ready(function(){initNavTree('functions_o.html',''); initResizable()
 , <a class="el" href="classecstasy_1_1_system_instances_1_1_comparer.html#ab022c1e3b72642c95bac82afebc59b60">ecstasy::SystemInstances::Comparer</a>
 </li>
 <li>operator*()
-: <a class="el" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html#a4c84ed0b24de2c607f0a6dac3fcf5104">ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt; &gt;::Iterator</a>
+: <a class="el" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe85d7ffd57dbe8185bd42d6b1216253c8.html#a4867190ce897659b21e7454408366d48">ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt;, AutoLock &gt;::Iterator</a>
+, <a class="el" href="classecstasy_1_1thread_1_1_lockable_view.html#a61f1932a3df74eb21022f537bebdd7eb">ecstasy::thread::LockableView&lt; L &gt;</a>
 , <a class="el" href="classutil_1_1serialization_1_1_polymorphic_iterator.html#ae3df50771a3b00ec44920e627a085d57">util::serialization::PolymorphicIterator&lt; T &gt;</a>
 </li>
 <li>operator++()
-: <a class="el" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html#aa048ed6d20d31a55d3276bdaf45101fe">ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt; &gt;::Iterator</a>
+: <a class="el" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe85d7ffd57dbe8185bd42d6b1216253c8.html#acf1dfe7f634c6f7d5a38a30676ca8dbb">ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt;, AutoLock &gt;::Iterator</a>
 , <a class="el" href="classutil_1_1serialization_1_1_polymorphic_iterator.html#a33938cad9692a7a7ccf88a71e65d1942">util::serialization::PolymorphicIterator&lt; T &gt;</a>
 </li>
 <li>operator-&gt;()
-: <a class="el" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html#ae39c9f4f85bbc8cc68a9b739861ecf68">ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt; &gt;::Iterator</a>
+: <a class="el" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe85d7ffd57dbe8185bd42d6b1216253c8.html#a6a0a4f1059f736db44e5923ae0c06414">ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt;, AutoLock &gt;::Iterator</a>
+, <a class="el" href="classecstasy_1_1thread_1_1_lockable_view.html#aa6cf7d9cbb3b253485aa7662fb025f3a">ecstasy::thread::LockableView&lt; L &gt;</a>
 </li>
 <li>operator&lt;=&gt;()
 : <a class="el" href="classecstasy_1_1_entity.html#a13ea3f09bf322d632caa9d87982dc4cb">ecstasy::Entity</a>
 </li>
 <li>operator=()
-: <a class="el" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html#a38c270d62cbdf5aa5cf287e8af5a60a5">ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt; &gt;::Iterator</a>
+: <a class="el" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe85d7ffd57dbe8185bd42d6b1216253c8.html#a5f196a6af8169f952cca0bddc03b912e">ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt;, AutoLock &gt;::Iterator</a>
 , <a class="el" href="classutil_1_1_bit_set_1_1_reference.html#ac0a82af69647058575f28cf5f63674dc">util::BitSet::Reference</a>
 , <a class="el" href="classutil_1_1_stack_allocator.html#afbfa7b45a862ed734f16c70718cdd82b">util::StackAllocator&lt; size, Base &gt;</a>
 </li>
 <li>operator==()
 : <a class="el" href="classecstasy_1_1_entity.html#a6612cfc1590f07fce15558f66f62683f">ecstasy::Entity</a>
 , <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a904ef30d99d42e549289265f9e1b1241">ecstasy::integration::user_action::ActionBinding</a>
-, <a class="el" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html#a1525879cdbade3c48fc3aaa13242c0be">ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt; &gt;::Iterator</a>
+, <a class="el" href="classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe85d7ffd57dbe8185bd42d6b1216253c8.html#a303cffb4149bff3f92f5059aafc6b957">ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt;, AutoLock &gt;::Iterator</a>
 , <a class="el" href="classutil_1_1_bit_set.html#a0eca7662186e61cda971fbe7fe484aa9">util::BitSet</a>
 , <a class="el" href="classutil_1_1serialization_1_1_polymorphic_iterator.html#acbfe672ff90765ba8b28de7c37ee43af">util::serialization::PolymorphicIterator&lt; T &gt;</a>
 </li>
@@ -169,8 +171,8 @@ $(document).ready(function(){initNavTree('functions_o.html',''); initResizable()
 : <a class="el" href="classutil_1_1_bit_set.html#a78bbb103d83455923abab8d85fd18600">util::BitSet</a>
 , <a class="el" href="classutil_1_1_bit_set_1_1_reference.html#acad18fdeebf5a066fcd804ff9c30b9ec">util::BitSet::Reference</a>
 </li>
-<li>Or()
-: <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_or.html#a70568deb99d6a5c23909f0eee0df8ad0">ecstasy::query::modifier::Or&lt; Q1, Q2, Qs &gt;</a>
+<li>OrImpl()
+: <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_or_impl.html#a42ef886162e83378a631c130a6e403a0">ecstasy::query::modifier::OrImpl&lt; AutoLock, Q1, Q2, Qs &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->

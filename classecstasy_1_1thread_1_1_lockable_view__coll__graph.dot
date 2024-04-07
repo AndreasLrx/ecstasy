@@ -1,0 +1,11 @@
+digraph "ecstasy::thread::LockableView&lt; L &gt;"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="ecstasy::thread::Lockable\lView\< L \>",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Thread safe view of a Lockable object."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ecstasy::thread::Lockable\lViewBase",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1thread_1_1_lockable_view_base.html",tooltip="Non template base class for LockableView<T> types."];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _lockable" ,fontname="Helvetica"];
+  Node3 [label="L",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+}

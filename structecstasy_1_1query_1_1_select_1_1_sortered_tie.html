@@ -107,7 +107,7 @@ template&lt;typename... Valids&gt;<br />
 struct ecstasy::query::Select&lt; SelectedQueryables &gt;::SorteredTie&lt; Valids &gt;</h3>
 
 
-<p class="definition">Definition at line <a class="el" href="_select_8hpp_source.html#l00066">66</a> of file <a class="el" href="_select_8hpp_source.html">Select.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_select_8hpp_source.html#l00069">69</a> of file <a class="el" href="_select_8hpp_source.html">Select.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab64550b0270ac9e87e2c44886cc29c1e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab64550b0270ac9e87e2c44886cc29c1e">&#9670;&nbsp;</a></span>sort() <span class="overload">[1/2]</span></h2>
@@ -148,10 +148,10 @@ template&lt;typename... Valids&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-28) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_select_8hpp_source.html#l00077">77</a> of file <a class="el" href="_select_8hpp_source.html">Select.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keywordflow">return</span> <a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/tuple/tie.html">std::tie</a>(std::forward&lt;Valids &amp;&gt;(valids)...);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="_select_8hpp_source.html#l00080">80</a> of file <a class="el" href="_select_8hpp_source.html">Select.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="keywordflow">return</span> <a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/tuple/tie.html">std::tie</a>(std::forward&lt;Valids &amp;&gt;(valids)...);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            }</div>
 <div class="ttc" id="atie_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/utility/tuple/tie.html">std::tie</a></div><div class="ttdeci">T tie(T... args)</div></div>
 </div><!-- fragment -->
 </div>
@@ -222,20 +222,20 @@ template&lt;Queryable Q, Queryable... Qs&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-28) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_select_8hpp_source.html#l00098">98</a> of file <a class="el" href="_select_8hpp_source.html">Select.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="keywordflow">if</span> constexpr (<a class="codeRef" href="http://en.cppreference.com/w/cpp/types/is_same.html">std::is_same_v</a>&lt;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                  <span class="keyword">typename</span> <a class="code" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits&lt;SelectedQueryables...&gt;::template</a> Nth&lt;<span class="keyword">sizeof</span>...(Valids)&gt;,</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                                  Q&gt;)</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                    return SorteredTie&lt;Valids..., Q&gt;::<a class="code" href="structecstasy_1_1query_1_1_select_1_1_sortered_tie.html#ab64550b0270ac9e87e2c44886cc29c1e">sort</a>(</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                        <a class="codeRef" href="http://en.cppreference.com/w/namespacestd.html">std</a>::forward&lt;Valids &amp;&gt;(valids)..., current, <a class="codeRef" href="http://en.cppreference.com/w/namespacestd.html">std</a>::forward&lt;Qs &amp;&gt;(lefts)...);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                else</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                    return SorteredTie&lt;Valids...&gt;::<a class="code" href="structecstasy_1_1query_1_1_select_1_1_sortered_tie.html#ab64550b0270ac9e87e2c44886cc29c1e">sort</a>(</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                        <a class="codeRef" href="http://en.cppreference.com/w/namespacestd.html">std</a>::forward&lt;Valids &amp;&gt;(valids)..., <a class="codeRef" href="http://en.cppreference.com/w/namespacestd.html">std</a>::forward&lt;Qs &amp;&gt;(lefts)..., current);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="_select_8hpp_source.html#l00101">101</a> of file <a class="el" href="_select_8hpp_source.html">Select.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <span class="keywordflow">if</span> constexpr (<a class="codeRef" href="http://en.cppreference.com/w/cpp/types/is_same.html">std::is_same_v</a>&lt;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                  <span class="keyword">typename</span> <a class="code" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits&lt;SelectedQueryables...&gt;::template</a> Nth&lt;<span class="keyword">sizeof</span>...(Valids)&gt;,</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                  Q&gt;)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                    return SorteredTie&lt;Valids..., Q&gt;::<a class="code" href="structecstasy_1_1query_1_1_select_1_1_sortered_tie.html#ab64550b0270ac9e87e2c44886cc29c1e">sort</a>(</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                        <a class="codeRef" href="http://en.cppreference.com/w/namespacestd.html">std</a>::forward&lt;Valids &amp;&gt;(valids)..., current, <a class="codeRef" href="http://en.cppreference.com/w/namespacestd.html">std</a>::forward&lt;Qs &amp;&gt;(lefts)...);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                else</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                    return SorteredTie&lt;Valids...&gt;::<a class="code" href="structecstasy_1_1query_1_1_select_1_1_sortered_tie.html#ab64550b0270ac9e87e2c44886cc29c1e">sort</a>(</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                        <a class="codeRef" href="http://en.cppreference.com/w/namespacestd.html">std</a>::forward&lt;Valids &amp;&gt;(valids)..., <a class="codeRef" href="http://en.cppreference.com/w/namespacestd.html">std</a>::forward&lt;Qs &amp;&gt;(lefts)..., current);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            }</div>
 <div class="ttc" id="ais_same_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/types/is_same.html">std::is_same_v</a></div><div class="ttdeci">T is_same_v</div></div>
 <div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="http://en.cppreference.com/w/namespacestd.html">std</a></div></div>
-<div class="ttc" id="astructecstasy_1_1query_1_1_select_1_1_sortered_tie_html_ab64550b0270ac9e87e2c44886cc29c1e"><div class="ttname"><a href="structecstasy_1_1query_1_1_select_1_1_sortered_tie.html#ab64550b0270ac9e87e2c44886cc29c1e">ecstasy::query::Select::SorteredTie::sort</a></div><div class="ttdeci">static constexpr SelectedTuple sort(Valids &amp;...valids)</div><div class="ttdoc">Final condition: all queryables are in the good order so tie them and return the tuple.</div><div class="ttdef"><b>Definition:</b> <a href="_select_8hpp_source.html#l00077">Select.hpp:77</a></div></div>
+<div class="ttc" id="astructecstasy_1_1query_1_1_select_1_1_sortered_tie_html_ab64550b0270ac9e87e2c44886cc29c1e"><div class="ttname"><a href="structecstasy_1_1query_1_1_select_1_1_sortered_tie.html#ab64550b0270ac9e87e2c44886cc29c1e">ecstasy::query::Select::SorteredTie::sort</a></div><div class="ttdeci">static constexpr SelectedTuple sort(Valids &amp;...valids)</div><div class="ttdoc">Final condition: all queryables are in the good order so tie them and return the tuple.</div><div class="ttdef"><b>Definition:</b> <a href="_select_8hpp_source.html#l00080">Select.hpp:80</a></div></div>
 <div class="ttc" id="astructutil_1_1meta_1_1_traits_html"><div class="ttname"><a href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a></div><div class="ttdoc">Empty parameter pack helper type.</div><div class="ttdef"><b>Definition:</b> <a href="_traits_8hpp_source.html#l00028">Traits.hpp:28</a></div></div>
 </div><!-- fragment -->
 </div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['parens_7055',['PARENS',['../foreach_8hpp.html#a9357f62275c685754a405c064db6ec41',1,'foreach.hpp']]]
+  ['no_5funique_5faddress_7192',['NO_UNIQUE_ADDRESS',['../_registry_8hpp.html#afbab8d3e03b64c2dd9697c91ef11f5e8',1,'Registry.hpp']]]
 ];

@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="ecstasy::query::Select\l\< SelectedQueryables \>\l::SorteredTie\< Valids \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1query_1_1_select_1_1_sortered_tie.html",tooltip=" "];
+  Node0 [label="ecstasy::query::queryable\l_data\< const Q \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1query_1_1queryable__data_3_01const_01_q_01_4.html",tooltip="Get the query data type of a queryable object."];
 }

@@ -1,0 +1,9 @@
+digraph "ecstasy::Registry::RegistryStackQueryMemory&lt; util::meta::Traits&lt; Selects... &gt;, util::meta::Traits&lt; Missings... &gt;, util::meta::Traits&lt; Conditions... &gt;, AutoLock, Cs... &gt;"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="ecstasy::Registry::\lRegistryStackQueryMemory\l\< util::meta::Traits\< Selects...\l \>, util::meta::Traits\< Missings...\l \>, util::meta::Traits\< Conditions...\l \>, AutoLock, Cs... \>",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Base class of RegistryStackQuery."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _modifiersAllocator\n_viewsAllocator" ,fontname="Helvetica"];
+  Node2 [label="std::conditional_t",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/conditional.html",tooltip=" "];
+}

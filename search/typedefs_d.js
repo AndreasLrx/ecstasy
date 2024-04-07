@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['pendingactions_6959',['PendingActions',['../namespaceecstasy_1_1integration_1_1user__action.html#a9b4f873eff13ede42a8a53839aea12b0',1,'ecstasy::integration::user_action']]],
-  ['pointer_6960',['pointer',['../classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html#a2a160cfbe68f5279358110c255f737bf',1,'ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt; &gt;::Iterator::pointer()'],['../classutil_1_1serialization_1_1_polymorphic_iterator.html#aee1249f19f8ecd96dfc934e5a26651da',1,'util::serialization::PolymorphicIterator::pointer()']]]
+  ['objectiterator_7085',['ObjectIterator',['../classutil_1_1serialization_1_1_i_object_node.html#a8decfb3976f110db980cfffd702ff08b',1,'util::serialization::IObjectNode']]],
+  ['operanddata_7086',['OperandData',['../classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#ae5243587ca0728261878bf01a9e696af',1,'ecstasy::query::modifier::BinaryModifier']]],
+  ['operands_7087',['Operands',['../classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#a55ab6ebf74db57e0ad6a272f58b266bd',1,'ecstasy::query::modifier::BinaryModifier::Operands()'],['../classecstasy_1_1query_1_1modifier_1_1_maybe.html#a30e52f2107813868f503ca3a9d065bf5',1,'ecstasy::query::modifier::Maybe::Operands()'],['../classecstasy_1_1query_1_1modifier_1_1_not.html#a15ec501fbb8ec49c4e6df219285fb4f2',1,'ecstasy::query::modifier::Not::Operands()']]],
+  ['optionalmodifiersallocator_7088',['OptionalModifiersAllocator',['../namespaceecstasy.html#ae5640f20f821346bace72e8351acbb01',1,'ecstasy']]]
 ];

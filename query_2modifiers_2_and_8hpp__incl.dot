@@ -14,5 +14,10 @@ digraph "src/ecstasy/query/modifiers/And.hpp"
   Node5 [label="concepts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/concepts.html",tooltip=" "];
   Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 [label="cstddef",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/cstddef.html",tooltip=" "];
+  Node4 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="ecstasy/thread/LockableView.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_lockable_view_8hpp.html",tooltip=" "];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="ecstasy/thread/Lockable.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_lockable_8hpp.html",tooltip=" "];
+  Node8 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

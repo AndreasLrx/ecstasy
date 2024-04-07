@@ -96,10 +96,14 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 : <a class="el" href="classutil_1_1_bit_set.html#a349731228e9b8c79618360b357be3735">util::BitSet</a>
 </li>
 <li>Maybe()
-: <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a4a39344c9afee0ec8afb771f543f51bb">ecstasy::query::modifier::Maybe&lt; Q &gt;</a>
+: <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a5da76b7eb34c00799af8485de2bc7bb1">ecstasy::query::modifier::Maybe&lt; Q, AutoLock &gt;</a>
 </li>
 <li>mem_size
 : <a class="el" href="classutil_1_1_stack_allocator.html#a77f4dd3c6a91d6955a3321de64fe8982">util::StackAllocator&lt; size, Base &gt;</a>
+</li>
+<li>Memory
+: <a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_20e16f590d1e6d3a51f200dbd071ad9a.html#a900bd6ed2e08e079c73d8be446d22f7d">ecstasy::Registry::RegistryStackQuery&lt; util::meta::Traits&lt; Selects... &gt;, util::meta::Traits&lt; Missings... &gt;, Conditions, util::meta::Traits&lt; Cs... &gt;, AutoLock &gt;</a>
+, <a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_85f410b7f998e9fe9b0fa2e936412400.html#a1571a249b42c438f36067c4e9c331587">ecstasy::Registry::RegistryStackQuery&lt; util::meta::Traits&lt; Selects... &gt;, util::meta::Traits&lt;&gt;, util::meta::Traits&lt;&gt;, util::meta::Traits&lt; Selects... &gt;, AutoLock &gt;</a>
 </li>
 <li>MissingsTraits
 : <a class="el" href="classecstasy_1_1_registry_1_1_select.html#af2a1112e77002962549c639e6ff8c2e3">ecstasy::Registry::Select&lt; Selects &gt;</a>
@@ -108,16 +112,28 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 : <a class="el" href="classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html#aff376c43becb35f6d121df868d55c5f0">util::serialization::PolymorphicIterator&lt; T &gt;::Model&lt; Iter &gt;</a>
 </li>
 <li>Modifier
-: <a class="el" href="structecstasy_1_1_and.html#ae296037a52c5a0b9eed3e7b17ac0555e">ecstasy::And&lt; C1, C2, Cs &gt;</a>
-, <a class="el" href="structecstasy_1_1_maybe.html#a69c23efa522779c8aee53f7711577a10">ecstasy::Maybe&lt; C &gt;</a>
-, <a class="el" href="structecstasy_1_1_not.html#a36fbb66fc7f12b156e7d7bca1da5ca03">ecstasy::Not&lt; C &gt;</a>
-, <a class="el" href="structecstasy_1_1_or.html#a735d92a53b90f784cb1c65d2716ccda7">ecstasy::Or&lt; C1, C2, Cs &gt;</a>
-, <a class="el" href="structecstasy_1_1_xor.html#a71ae019af3072e08e7a16d760df26079">ecstasy::Xor&lt; C1, C2, Cs &gt;</a>
+: <a class="el" href="structecstasy_1_1_and.html#a1fd497dadad5aca7f7ff115170d51d38">ecstasy::And&lt; C1, C2, Cs &gt;</a>
+, <a class="el" href="structecstasy_1_1_and_ex.html#a857a4f6da7a4802864cec535ac5fb4b4">ecstasy::AndEx&lt; AutoLock, C1, C2, Cs &gt;</a>
+, <a class="el" href="structecstasy_1_1_maybe.html#a973e93729c627df3db566425757f950c">ecstasy::Maybe&lt; C, AutoLock &gt;</a>
+, <a class="el" href="structecstasy_1_1_not.html#a51660a5ec59a5b2fbb570ed42c6a0a2f">ecstasy::Not&lt; C, AutoLock &gt;</a>
+, <a class="el" href="structecstasy_1_1_or.html#aa4b4044e4ea8eba9786d99affdc5c991">ecstasy::Or&lt; C1, C2, Cs &gt;</a>
+, <a class="el" href="structecstasy_1_1_or_ex.html#a6c01821fcc680434ea777c37af87ef2e">ecstasy::OrEx&lt; AutoLock, C1, C2, Cs &gt;</a>
+, <a class="el" href="structecstasy_1_1_xor.html#a3dc97e76e0f6b2d020d189966bae5669">ecstasy::Xor&lt; C1, C2, Cs &gt;</a>
+, <a class="el" href="structecstasy_1_1_xor_ex.html#af65e0853eedc342116eee405d9ad3002">ecstasy::XorEx&lt; AutoLock, C1, C2, Cs &gt;</a>
 </li>
 <li>ModifierClass
-: <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_and.html#aec2584d4aa0c52dc311d7d075c1e74ad">ecstasy::query::modifier::And&lt; Q1, Q2, Qs &gt;</a>
-, <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_or.html#a1efc08b7ca4120aed3f6f152e5e6bd77">ecstasy::query::modifier::Or&lt; Q1, Q2, Qs &gt;</a>
-, <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_xor.html#a79d18641f9a0cbbedc20ea4bf5ff01a9">ecstasy::query::modifier::Xor&lt; Q1, Q2, Qs &gt;</a>
+: <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_and_impl.html#a4367170badd7bd535e8ce6b1a079b710">ecstasy::query::modifier::AndImpl&lt; AutoLock, Q1, Q2, Qs &gt;</a>
+, <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_or_impl.html#ae65eb03455d72567a4b42f8444801179">ecstasy::query::modifier::OrImpl&lt; AutoLock, Q1, Q2, Qs &gt;</a>
+, <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_xor_impl.html#a3d90ef2b507efeec7fd9da1f9d51f1a7">ecstasy::query::modifier::XorImpl&lt; AutoLock, Q1, Q2, Qs &gt;</a>
+</li>
+<li>ModifiersAllocator
+: <a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#ada8ab10a8231b3a80d82d0fce68dfca7">ecstasy::Registry::RegistryStackQueryMemory&lt; util::meta::Traits&lt; Selects... &gt;, util::meta::Traits&lt; Missings... &gt;, util::meta::Traits&lt; Conditions... &gt;, AutoLock, Cs... &gt;</a>
+</li>
+<li>ModifiersAllocatorReference
+: <a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#a71063b3e7b5799a8ca6d39c8bb2be984">ecstasy::Registry::RegistryStackQueryMemory&lt; util::meta::Traits&lt; Selects... &gt;, util::meta::Traits&lt; Missings... &gt;, util::meta::Traits&lt; Conditions... &gt;, AutoLock, Cs... &gt;</a>
+</li>
+<li>ModifiersAllocatorSize
+: <a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#ab3cf5f7aeed59a138889b71001b673a0">ecstasy::Registry::RegistryStackQueryMemory&lt; util::meta::Traits&lt; Selects... &gt;, util::meta::Traits&lt; Missings... &gt;, util::meta::Traits&lt; Conditions... &gt;, AutoLock, Cs... &gt;</a>
 </li>
 <li>Mouse()
 : <a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#afc4351f8c9fb6c3aaacbd7ab58727c7c">ecstasy::integration::event::Mouse</a>

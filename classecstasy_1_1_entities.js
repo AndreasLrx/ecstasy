@@ -1,6 +1,7 @@
 var classecstasy_1_1_entities =
 [
     [ "Builder", "classecstasy_1_1_entities_1_1_builder.html", "classecstasy_1_1_entities_1_1_builder" ],
+    [ "ConstQueryData", "classecstasy_1_1_entities.html#a6929f42ced37af83382710ee603c5a43", null ],
     [ "QueryData", "classecstasy_1_1_entities.html#a62025668f887e6bd99b1870dd0a00a80", null ],
     [ "Entities", "classecstasy_1_1_entities.html#a8406856e81d9885e8bce7a2f6b2594eb", null ],
     [ "builder", "classecstasy_1_1_entities.html#a46b127b2cd6eeeae08d6b513d4742fe1", null ],

@@ -6,9 +6,10 @@ var dir_5392b01d02c3d4d0985a94f633790057 =
     [ "include.hpp", "query_2include_8hpp.html", null ],
     [ "Query.hpp", "_query_8hpp.html", [
       [ "QueryImplementation", "classecstasy_1_1query_1_1_query_implementation.html", null ],
-      [ "QueryImplementation< util::meta::Traits< First, Others... >, util::meta::Traits< Conditions... > >", "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2.html", "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe54f6585a9fa8bcd87286289c838b61b2" ],
-      [ "Iterator", "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html", "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911" ],
-      [ "Query", "classecstasy_1_1query_1_1_query.html", "classecstasy_1_1query_1_1_query" ]
+      [ "QueryImplementation< util::meta::Traits< First, Others... >, util::meta::Traits< Conditions... >, AutoLock >", "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe8a771cd3061befcfd40dda019e51f87d.html", "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe8a771cd3061befcfd40dda019e51f87d" ],
+      [ "Iterator", "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe85d7ffd57dbe8185bd42d6b1216253c8.html", "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe85d7ffd57dbe8185bd42d6b1216253c8" ],
+      [ "Query", "classecstasy_1_1query_1_1_query.html", "classecstasy_1_1query_1_1_query" ],
+      [ "ThreadSafeQuery", "classecstasy_1_1query_1_1_thread_safe_query.html", "classecstasy_1_1query_1_1_thread_safe_query" ]
     ] ],
     [ "Select.hpp", "_select_8hpp.html", [
       [ "Select", "structecstasy_1_1query_1_1_select.html", "structecstasy_1_1query_1_1_select" ],

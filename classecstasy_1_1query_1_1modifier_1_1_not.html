@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ECSTASY: ecstasy::query::modifier::Not&lt; Q &gt; Class Template Reference</title>
+<title>ECSTASY: ecstasy::query::modifier::Not&lt; Q, AutoLock &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('classecstasy_1_1query_1_1modifier_1_1_
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classecstasy_1_1query_1_1modifier_1_1_not-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ecstasy::query::modifier::Not&lt; Q &gt; Class Template Reference</div>  </div>
+<div class="title">ecstasy::query::modifier::Not&lt; Q, AutoLock &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -98,149 +98,153 @@ $(document).ready(function(){initNavTree('classecstasy_1_1query_1_1modifier_1_1_
 
 <p><code>#include &lt;<a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for ecstasy::query::modifier::Not&lt; Q &gt;:</div>
+Inheritance diagram for ecstasy::query::modifier::Not&lt; Q, AutoLock &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="classecstasy_1_1query_1_1modifier_1_1_not__inherit__graph.png" border="0" usemap="#aecstasy_1_1query_1_1modifier_1_1_not_3_01_q_01_4_inherit__map" alt="Inheritance graph"/></div>
+<div class="center"><img src="classecstasy_1_1query_1_1modifier_1_1_not__inherit__graph.png" border="0" usemap="#aecstasy_1_1query_1_1modifier_1_1_not_3_01_q_00_01_auto_lock_01_4_inherit__map" alt="Inheritance graph"/></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
-Collaboration diagram for ecstasy::query::modifier::Not&lt; Q &gt;:</div>
+Collaboration diagram for ecstasy::query::modifier::Not&lt; Q, AutoLock &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="classecstasy_1_1query_1_1modifier_1_1_not__coll__graph.png" border="0" usemap="#aecstasy_1_1query_1_1modifier_1_1_not_3_01_q_01_4_coll__map" alt="Collaboration graph"/></div>
+<div class="center"><img src="classecstasy_1_1query_1_1modifier_1_1_not__coll__graph.png" border="0" usemap="#aecstasy_1_1query_1_1modifier_1_1_not_3_01_q_00_01_auto_lock_01_4_coll__map" alt="Collaboration graph"/></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ab89bd8253f758de4e1fc18a985ec5b78"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#ab89bd8253f758de4e1fc18a985ec5b78">Internal</a> = Q</td></tr>
-<tr class="memdesc:ab89bd8253f758de4e1fc18a985ec5b78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapped queryable.  <a href="classecstasy_1_1query_1_1modifier_1_1_not.html#ab89bd8253f758de4e1fc18a985ec5b78">More...</a><br /></td></tr>
-<tr class="separator:ab89bd8253f758de4e1fc18a985ec5b78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a467ac48c6e60a4dcb4cf0162ee539eb4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a467ac48c6e60a4dcb4cf0162ee539eb4">Operands</a> = <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt; Q &gt;</td></tr>
-<tr class="memdesc:a467ac48c6e60a4dcb4cf0162ee539eb4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier.html">Modifier</a> constraint.  <a href="classecstasy_1_1query_1_1modifier_1_1_not.html#a467ac48c6e60a4dcb4cf0162ee539eb4">More...</a><br /></td></tr>
-<tr class="separator:a467ac48c6e60a4dcb4cf0162ee539eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60e0fd4aa1e233ecf2e9d34526cfe0d2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a60e0fd4aa1e233ecf2e9d34526cfe0d2">QueryData</a> = typename Internal::QueryData</td></tr>
-<tr class="memdesc:a60e0fd4aa1e233ecf2e9d34526cfe0d2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">ecstasy::query::Queryable</a> constaint.  <a href="classecstasy_1_1query_1_1modifier_1_1_not.html#a60e0fd4aa1e233ecf2e9d34526cfe0d2">More...</a><br /></td></tr>
-<tr class="separator:a60e0fd4aa1e233ecf2e9d34526cfe0d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac627df9b184f544fbecd25c6d065922b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#ac627df9b184f544fbecd25c6d065922b">Internal</a> = <a class="el" href="namespaceecstasy_1_1query.html#a429c5fb231068dc9b88cc14dd62a4304">queryable_qualifiers_t</a>&lt; Q, AutoLock &gt;</td></tr>
+<tr class="memdesc:ac627df9b184f544fbecd25c6d065922b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapped queryable.  <a href="classecstasy_1_1query_1_1modifier_1_1_not.html#ac627df9b184f544fbecd25c6d065922b">More...</a><br /></td></tr>
+<tr class="separator:ac627df9b184f544fbecd25c6d065922b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15ec501fbb8ec49c4e6df219285fb4f2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a15ec501fbb8ec49c4e6df219285fb4f2">Operands</a> = <a class="el" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt; Q &gt;</td></tr>
+<tr class="memdesc:a15ec501fbb8ec49c4e6df219285fb4f2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier.html">Modifier</a> constraint.  <a href="classecstasy_1_1query_1_1modifier_1_1_not.html#a15ec501fbb8ec49c4e6df219285fb4f2">More...</a><br /></td></tr>
+<tr class="separator:a15ec501fbb8ec49c4e6df219285fb4f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a521d2f33440dcf568b12bda957459b3e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a521d2f33440dcf568b12bda957459b3e">QueryData</a> = <a class="el" href="namespaceecstasy_1_1query.html#a21d395b16bed191c3d72445cd7c0fad1">queryable_data_t</a>&lt; Q &gt;</td></tr>
+<tr class="memdesc:a521d2f33440dcf568b12bda957459b3e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">ecstasy::query::Queryable</a> constaint.  <a href="classecstasy_1_1query_1_1modifier_1_1_not.html#a521d2f33440dcf568b12bda957459b3e">More...</a><br /></td></tr>
+<tr class="separator:a521d2f33440dcf568b12bda957459b3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1db4775b64ffcbc70899575f1486c74b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a1db4775b64ffcbc70899575f1486c74b">Not</a> (<a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#ab89bd8253f758de4e1fc18a985ec5b78">Internal</a> &amp;internal)</td></tr>
-<tr class="memdesc:a1db4775b64ffcbc70899575f1486c74b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html" title="Query modifier which simply inverts the bits.">Not</a> Queryable modifier.  <a href="classecstasy_1_1query_1_1modifier_1_1_not.html#a1db4775b64ffcbc70899575f1486c74b">More...</a><br /></td></tr>
-<tr class="separator:a1db4775b64ffcbc70899575f1486c74b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a898ca3f47bb1de5e9a20e1f7bcdfeda6"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a898ca3f47bb1de5e9a20e1f7bcdfeda6">getMask</a> () const</td></tr>
-<tr class="memdesc:a898ca3f47bb1de5e9a20e1f7bcdfeda6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the flipped mask of the internal queryable.  <a href="classecstasy_1_1query_1_1modifier_1_1_not.html#a898ca3f47bb1de5e9a20e1f7bcdfeda6">More...</a><br /></td></tr>
-<tr class="separator:a898ca3f47bb1de5e9a20e1f7bcdfeda6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc870962ace6a41d8dc07efb7251fa78"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a60e0fd4aa1e233ecf2e9d34526cfe0d2">QueryData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#afc870962ace6a41d8dc07efb7251fa78">getQueryData</a> (size_t index)</td></tr>
-<tr class="memdesc:afc870962ace6a41d8dc07efb7251fa78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the internal query data at the given index.  <a href="classecstasy_1_1query_1_1modifier_1_1_not.html#afc870962ace6a41d8dc07efb7251fa78">More...</a><br /></td></tr>
-<tr class="separator:afc870962ace6a41d8dc07efb7251fa78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07bb8e9239df332986bc3855d6fb4f48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a07bb8e9239df332986bc3855d6fb4f48">reloadMask</a> ()</td></tr>
-<tr class="memdesc:a07bb8e9239df332986bc3855d6fb4f48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the mask to be up to date with the internal bitmask.  <a href="classecstasy_1_1query_1_1modifier_1_1_not.html#a07bb8e9239df332986bc3855d6fb4f48">More...</a><br /></td></tr>
-<tr class="separator:a07bb8e9239df332986bc3855d6fb4f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68177f76edb5755039274d35ea1ba782"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a68177f76edb5755039274d35ea1ba782">adjustMask</a> (size_t maxSize)</td></tr>
-<tr class="memdesc:a68177f76edb5755039274d35ea1ba782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust the mask to be at least the <code>maxSize</code>.  <a href="classecstasy_1_1query_1_1modifier_1_1_not.html#a68177f76edb5755039274d35ea1ba782">More...</a><br /></td></tr>
-<tr class="separator:a68177f76edb5755039274d35ea1ba782"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classecstasy_1_1query_1_1modifier_1_1_modifier"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classecstasy_1_1query_1_1modifier_1_1_modifier')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier.html">ecstasy::query::modifier::Modifier</a></td></tr>
-<tr class="memitem:a1c415dc2b13be6bd002322febc0d8fa2 inherit pub_methods_classecstasy_1_1query_1_1modifier_1_1_modifier"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier.html#a1c415dc2b13be6bd002322febc0d8fa2">~Modifier</a> ()=default</td></tr>
-<tr class="separator:a1c415dc2b13be6bd002322febc0d8fa2 inherit pub_methods_classecstasy_1_1query_1_1modifier_1_1_modifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe2fc7427ca49060219b5972682a477d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#afe2fc7427ca49060219b5972682a477d">Not</a> (Q &amp;internal)</td></tr>
+<tr class="memdesc:afe2fc7427ca49060219b5972682a477d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html" title="Query modifier which simply inverts the bits.">Not</a> Queryable modifier.  <a href="classecstasy_1_1query_1_1modifier_1_1_not.html#afe2fc7427ca49060219b5972682a477d">More...</a><br /></td></tr>
+<tr class="separator:afe2fc7427ca49060219b5972682a477d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22f24a84f7274ee8c8e0d7e2e85c103c"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a22f24a84f7274ee8c8e0d7e2e85c103c">getMask</a> () const</td></tr>
+<tr class="memdesc:a22f24a84f7274ee8c8e0d7e2e85c103c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the flipped mask of the internal queryable.  <a href="classecstasy_1_1query_1_1modifier_1_1_not.html#a22f24a84f7274ee8c8e0d7e2e85c103c">More...</a><br /></td></tr>
+<tr class="separator:a22f24a84f7274ee8c8e0d7e2e85c103c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9fd36c5623af2bd96018de1a404c0a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a521d2f33440dcf568b12bda957459b3e">QueryData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#af9fd36c5623af2bd96018de1a404c0a8">getQueryData</a> (size_t index)</td></tr>
+<tr class="memdesc:af9fd36c5623af2bd96018de1a404c0a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the internal query data at the given index.  <a href="classecstasy_1_1query_1_1modifier_1_1_not.html#af9fd36c5623af2bd96018de1a404c0a8">More...</a><br /></td></tr>
+<tr class="separator:af9fd36c5623af2bd96018de1a404c0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa7f721b9676db53cd5afb54d18d5266"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#aaa7f721b9676db53cd5afb54d18d5266">reloadMask</a> ()</td></tr>
+<tr class="memdesc:aaa7f721b9676db53cd5afb54d18d5266"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the mask to be up to date with the internal bitmask.  <a href="classecstasy_1_1query_1_1modifier_1_1_not.html#aaa7f721b9676db53cd5afb54d18d5266">More...</a><br /></td></tr>
+<tr class="separator:aaa7f721b9676db53cd5afb54d18d5266"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a113a3262213ea20b3df5654f233ce8ca"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a113a3262213ea20b3df5654f233ce8ca">adjustMask</a> (size_t maxSize)</td></tr>
+<tr class="memdesc:a113a3262213ea20b3df5654f233ce8ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust the mask to be at least the <code>maxSize</code>.  <a href="classecstasy_1_1query_1_1modifier_1_1_not.html#a113a3262213ea20b3df5654f233ce8ca">More...</a><br /></td></tr>
+<tr class="separator:a113a3262213ea20b3df5654f233ce8ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classecstasy_1_1query_1_1modifier_1_1_modifier"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classecstasy_1_1query_1_1modifier_1_1_modifier')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier.html">ecstasy::query::modifier::Modifier&lt; false &gt;</a></td></tr>
+<tr class="memitem:ac7e127dbf0e3ea48aea9fd9ea97dac1f inherit pub_methods_classecstasy_1_1query_1_1modifier_1_1_modifier"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier.html#ac7e127dbf0e3ea48aea9fd9ea97dac1f">~Modifier</a> ()=default</td></tr>
+<tr class="separator:ac7e127dbf0e3ea48aea9fd9ea97dac1f inherit pub_methods_classecstasy_1_1query_1_1modifier_1_1_modifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classecstasy_1_1query_1_1modifier_1_1_modifier_base"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classecstasy_1_1query_1_1modifier_1_1_modifier_base')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier_base.html">ecstasy::query::modifier::ModifierBase</a></td></tr>
+<tr class="memitem:abf9f5574f2a58ce4fae8ddd374acf7d8 inherit pub_methods_classecstasy_1_1query_1_1modifier_1_1_modifier_base"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier_base.html#abf9f5574f2a58ce4fae8ddd374acf7d8">~ModifierBase</a> ()=default</td></tr>
+<tr class="separator:abf9f5574f2a58ce4fae8ddd374acf7d8 inherit pub_methods_classecstasy_1_1query_1_1modifier_1_1_modifier_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a1336868a0ca81769b2194990094f53b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#ab89bd8253f758de4e1fc18a985ec5b78">Internal</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a1336868a0ca81769b2194990094f53b6">_internal</a></td></tr>
-<tr class="separator:a1336868a0ca81769b2194990094f53b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e57e4f90e4dc67b27fd303389e68c41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">_mask</a></td></tr>
-<tr class="separator:a4e57e4f90e4dc67b27fd303389e68c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff319d6425982083ae96e065da259489"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#ac627df9b184f544fbecd25c6d065922b">Internal</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#aff319d6425982083ae96e065da259489">_internal</a></td></tr>
+<tr class="separator:aff319d6425982083ae96e065da259489"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa15ac727311666767d80967ad1521fb0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#aa15ac727311666767d80967ad1521fb0">_mask</a></td></tr>
+<tr class="separator:aa15ac727311666767d80967ad1521fb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;Queryable Q&gt;<br />
-class ecstasy::query::modifier::Not&lt; Q &gt;</h3>
+<div class="textblock"><h3>template&lt;Queryable Q, bool AutoLock = false&gt;<br />
+class ecstasy::query::modifier::Not&lt; Q, AutoLock &gt;</h3>
 
 <p><a class="el" href="classecstasy_1_1query_1_1_query.html">Query</a> modifier which simply inverts the bits. </p>
-<dl class="section warning"><dt>Warning</dt><dd>Since it returns all entities that <b>haven't</b> the requested data, a call to <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#afc870962ace6a41d8dc07efb7251fa78">getQueryData()</a> is undefined behavior and will cause errors or exceptions depending on the Queryable implementation. Therefore you should <b>never</b> select this queryable.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Since it returns all entities that <b>haven't</b> the requested data, a call to <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#af9fd36c5623af2bd96018de1a404c0a8">getQueryData()</a> is undefined behavior and will cause errors or exceptions depending on the Queryable implementation. Therefore you should <b>never</b> select this queryable.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Internal</td><td>Type of the wrapped queryable.</td></tr>
+    <tr><td class="paramname">Q</td><td>Type of the wrapped queryable. </td></tr>
+    <tr><td class="paramname">AutoLock</td><td>Lock the Lockable queryables if true.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-24) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00034">34</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00035">35</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="ab89bd8253f758de4e1fc18a985ec5b78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab89bd8253f758de4e1fc18a985ec5b78">&#9670;&nbsp;</a></span>Internal</h2>
+<a id="ac627df9b184f544fbecd25c6d065922b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac627df9b184f544fbecd25c6d065922b">&#9670;&nbsp;</a></span>Internal</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Queryable Q&gt; </div>
+template&lt;Queryable Q, bool AutoLock = false&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html">ecstasy::query::modifier::Not</a>&lt; Q &gt;::<a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#ab89bd8253f758de4e1fc18a985ec5b78">Internal</a> =  Q</td>
+          <td class="memname">using <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html">ecstasy::query::modifier::Not</a>&lt; Q, AutoLock &gt;::<a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#ac627df9b184f544fbecd25c6d065922b">Internal</a> =  <a class="el" href="namespaceecstasy_1_1query.html#a429c5fb231068dc9b88cc14dd62a4304">queryable_qualifiers_t</a>&lt;Q, AutoLock&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Wrapped queryable. </p>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00037">37</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00038">38</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a467ac48c6e60a4dcb4cf0162ee539eb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a467ac48c6e60a4dcb4cf0162ee539eb4">&#9670;&nbsp;</a></span>Operands</h2>
+<a id="a15ec501fbb8ec49c4e6df219285fb4f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15ec501fbb8ec49c4e6df219285fb4f2">&#9670;&nbsp;</a></span>Operands</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Queryable Q&gt; </div>
+template&lt;Queryable Q, bool AutoLock = false&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html">ecstasy::query::modifier::Not</a>&lt; Q &gt;::<a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a467ac48c6e60a4dcb4cf0162ee539eb4">Operands</a> =  <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt;Q&gt;</td>
+          <td class="memname">using <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html">ecstasy::query::modifier::Not</a>&lt; Q, AutoLock &gt;::<a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a15ec501fbb8ec49c4e6df219285fb4f2">Operands</a> =  <a class="el" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt;Q&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier.html">Modifier</a> constraint. </p>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00040">40</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00041">41</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a60e0fd4aa1e233ecf2e9d34526cfe0d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60e0fd4aa1e233ecf2e9d34526cfe0d2">&#9670;&nbsp;</a></span>QueryData</h2>
+<a id="a521d2f33440dcf568b12bda957459b3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a521d2f33440dcf568b12bda957459b3e">&#9670;&nbsp;</a></span>QueryData</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Queryable Q&gt; </div>
+template&lt;Queryable Q, bool AutoLock = false&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html">ecstasy::query::modifier::Not</a>&lt; Q &gt;::<a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a60e0fd4aa1e233ecf2e9d34526cfe0d2">QueryData</a> =  typename Internal::QueryData</td>
+          <td class="memname">using <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html">ecstasy::query::modifier::Not</a>&lt; Q, AutoLock &gt;::<a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a521d2f33440dcf568b12bda957459b3e">QueryData</a> =  <a class="el" href="namespaceecstasy_1_1query.html#a21d395b16bed191c3d72445cd7c0fad1">queryable_data_t</a>&lt;Q&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p><a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">ecstasy::query::Queryable</a> constaint. </p>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00043">43</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00044">44</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a1db4775b64ffcbc70899575f1486c74b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1db4775b64ffcbc70899575f1486c74b">&#9670;&nbsp;</a></span>Not()</h2>
+<a id="afe2fc7427ca49060219b5972682a477d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe2fc7427ca49060219b5972682a477d">&#9670;&nbsp;</a></span>Not()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Queryable Q&gt; </div>
+template&lt;Queryable Q, bool AutoLock = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html">ecstasy::query::modifier::Not</a>&lt; Q &gt;::<a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html">Not</a> </td>
+          <td class="memname"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html">ecstasy::query::modifier::Not</a>&lt; Q, AutoLock &gt;::<a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html">Not</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#ab89bd8253f758de4e1fc18a985ec5b78">Internal</a> &amp;&#160;</td>
+          <td class="paramtype">Q &amp;&#160;</td>
           <td class="paramname"><em>internal</em></td><td>)</td>
           <td></td>
         </tr>
@@ -262,32 +266,32 @@ template&lt;Queryable Q&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-24) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00053">53</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                : <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a1336868a0ca81769b2194990094f53b6">_internal</a>(<span class="keyword">internal</span>), <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">_mask</a>(<span class="keyword">internal</span>.<a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a898ca3f47bb1de5e9a20e1f7bcdfeda6">getMask</a>())</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#affeb7b19f28f56c803f223d1dc96b85c">flip</a>();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
-<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_not_html_a1336868a0ca81769b2194990094f53b6"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_not.html#a1336868a0ca81769b2194990094f53b6">ecstasy::query::modifier::Not::_internal</a></div><div class="ttdeci">Internal &amp; _internal</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_not_8hpp_source.html#l00124">Not.hpp:124</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_not_html_a4e57e4f90e4dc67b27fd303389e68c41"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">ecstasy::query::modifier::Not::_mask</a></div><div class="ttdeci">util::BitSet _mask</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_not_8hpp_source.html#l00125">Not.hpp:125</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_not_html_a898ca3f47bb1de5e9a20e1f7bcdfeda6"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_not.html#a898ca3f47bb1de5e9a20e1f7bcdfeda6">ecstasy::query::modifier::Not::getMask</a></div><div class="ttdeci">constexpr const util::BitSet &amp; getMask() const</div><div class="ttdoc">Get the flipped mask of the internal queryable.</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_not_8hpp_source.html#l00068">Not.hpp:68</a></div></div>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00054">54</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                         : <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#aff319d6425982083ae96e065da259489">_internal</a>(<span class="keyword">internal</span>), <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#aa15ac727311666767d80967ad1521fb0">_mask</a>(<a class="code" href="namespaceecstasy_1_1query.html#adf5906cce7e01be04976287045f4325d">getQueryableMask</a>(<span class="keyword">internal</span>))</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#aa15ac727311666767d80967ad1521fb0">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#affeb7b19f28f56c803f223d1dc96b85c">flip</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
+<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_not_html_aa15ac727311666767d80967ad1521fb0"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_not.html#aa15ac727311666767d80967ad1521fb0">ecstasy::query::modifier::Not::_mask</a></div><div class="ttdeci">util::BitSet _mask</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_not_8hpp_source.html#l00126">Not.hpp:126</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_not_html_aff319d6425982083ae96e065da259489"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_not.html#aff319d6425982083ae96e065da259489">ecstasy::query::modifier::Not::_internal</a></div><div class="ttdeci">Internal _internal</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_not_8hpp_source.html#l00125">Not.hpp:125</a></div></div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_affeb7b19f28f56c803f223d1dc96b85c"><div class="ttname"><a href="classutil_1_1_bit_set.html#affeb7b19f28f56c803f223d1dc96b85c">util::BitSet::flip</a></div><div class="ttdeci">BitSet &amp; flip() noexcept</div><div class="ttdoc">Flips all the bits in the set.</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8cpp_source.html#l00052">BitSet.cpp:52</a></div></div>
+<div class="ttc" id="anamespaceecstasy_1_1query_html_adf5906cce7e01be04976287045f4325d"><div class="ttname"><a href="namespaceecstasy_1_1query.html#adf5906cce7e01be04976287045f4325d">ecstasy::query::getQueryableMask</a></div><div class="ttdeci">constexpr const util::BitSet &amp; getQueryableMask(const Q &amp;queryable)</div><div class="ttdoc">Get the mask of the queryable object.</div><div class="ttdef"><b>Definition:</b> <a href="_queryable_8hpp_source.html#l00252">Queryable.hpp:252</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a68177f76edb5755039274d35ea1ba782"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68177f76edb5755039274d35ea1ba782">&#9670;&nbsp;</a></span>adjustMask()</h2>
+<a id="a113a3262213ea20b3df5654f233ce8ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a113a3262213ea20b3df5654f233ce8ca">&#9670;&nbsp;</a></span>adjustMask()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Queryable Q&gt; </div>
+template&lt;Queryable Q, bool AutoLock = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr void <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html">ecstasy::query::modifier::Not</a>&lt; Q &gt;::adjustMask </td>
+          <td class="memname">constexpr void <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html">ecstasy::query::modifier::Not</a>&lt; Q, AutoLock &gt;::adjustMask </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>maxSize</em></td><td>)</td>
@@ -312,14 +316,14 @@ template&lt;Queryable Q&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-25) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00114">114</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="keywordflow">if</span> (maxSize &gt; <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#a1b7940aa2d91fd658b573692239866c0">size</a>()) {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918">resize</a>(maxSize);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#a1e15c54e82b2c4dcd15bd2d4a2af31a5">setAll</a>();</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#a47b259104f03b72450e56ce451e7aab1">inplaceXor</a>(<a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a1336868a0ca81769b2194990094f53b6">_internal</a>.getMask());</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            }</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00115">115</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keywordflow">if</span> (maxSize &gt; <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#aa15ac727311666767d80967ad1521fb0">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#a1b7940aa2d91fd658b573692239866c0">size</a>()) {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#aa15ac727311666767d80967ad1521fb0">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918">resize</a>(maxSize);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#aa15ac727311666767d80967ad1521fb0">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#a1e15c54e82b2c4dcd15bd2d4a2af31a5">setAll</a>();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#aa15ac727311666767d80967ad1521fb0">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#a47b259104f03b72450e56ce451e7aab1">inplaceXor</a>(<a class="code" href="namespaceecstasy_1_1query.html#adf5906cce7e01be04976287045f4325d">getQueryableMask</a>(<a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#aff319d6425982083ae96e065da259489">_internal</a>));</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        }</div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_a0a1be7ead3223ab02838a9e95b761918"><div class="ttname"><a href="classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918">util::BitSet::resize</a></div><div class="ttdeci">void resize(std::size_t size)</div><div class="ttdoc">Changes the number of bits stored in this set.</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8hpp_source.html#l00199">BitSet.hpp:199</a></div></div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_a1b7940aa2d91fd658b573692239866c0"><div class="ttname"><a href="classutil_1_1_bit_set.html#a1b7940aa2d91fd658b573692239866c0">util::BitSet::size</a></div><div class="ttdeci">constexpr std::size_t size() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8hpp_source.html#l00087">BitSet.hpp:87</a></div></div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_a1e15c54e82b2c4dcd15bd2d4a2af31a5"><div class="ttname"><a href="classutil_1_1_bit_set.html#a1e15c54e82b2c4dcd15bd2d4a2af31a5">util::BitSet::setAll</a></div><div class="ttdeci">BitSet &amp; setAll(bool value=true) noexcept</div><div class="ttdoc">Sets all bits to the given value.</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8cpp_source.html#l00034">BitSet.cpp:34</a></div></div>
@@ -327,19 +331,19 @@ template&lt;Queryable Q&gt; </div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a898ca3f47bb1de5e9a20e1f7bcdfeda6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a898ca3f47bb1de5e9a20e1f7bcdfeda6">&#9670;&nbsp;</a></span>getMask()</h2>
+<a id="a22f24a84f7274ee8c8e0d7e2e85c103c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22f24a84f7274ee8c8e0d7e2e85c103c">&#9670;&nbsp;</a></span>getMask()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Queryable Q&gt; </div>
+template&lt;Queryable Q, bool AutoLock = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr const <a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a>&amp; <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html">ecstasy::query::modifier::Not</a>&lt; Q &gt;::getMask </td>
+          <td class="memname">constexpr const <a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a>&amp; <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html">ecstasy::query::modifier::Not</a>&lt; Q, AutoLock &gt;::getMask </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -358,26 +362,26 @@ template&lt;Queryable Q&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-24) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00068">68</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">_mask</a>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00069">69</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#aa15ac727311666767d80967ad1521fb0">_mask</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="afc870962ace6a41d8dc07efb7251fa78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc870962ace6a41d8dc07efb7251fa78">&#9670;&nbsp;</a></span>getQueryData()</h2>
+<a id="af9fd36c5623af2bd96018de1a404c0a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9fd36c5623af2bd96018de1a404c0a8">&#9670;&nbsp;</a></span>getQueryData()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Queryable Q&gt; </div>
+template&lt;Queryable Q, bool AutoLock = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a60e0fd4aa1e233ecf2e9d34526cfe0d2">QueryData</a> <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html">ecstasy::query::modifier::Not</a>&lt; Q &gt;::getQueryData </td>
+          <td class="memname"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a521d2f33440dcf568b12bda957459b3e">QueryData</a> <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html">ecstasy::query::modifier::Not</a>&lt; Q, AutoLock &gt;::getQueryData </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -402,30 +406,31 @@ Since this is a not modifier, all bit set to true in the masks means there <b>is
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a60e0fd4aa1e233ecf2e9d34526cfe0d2">QueryData</a> internal queryable data.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a521d2f33440dcf568b12bda957459b3e">QueryData</a> internal queryable data.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-24) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00088">88</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a1336868a0ca81769b2194990094f53b6">_internal</a>.getQueryData(index);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00089">89</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespaceecstasy_1_1query.html#ad848a4606859f330adaf21aa379d9f5a">getQueryableData</a>(<a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#aff319d6425982083ae96e065da259489">_internal</a>, index);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
+<div class="ttc" id="anamespaceecstasy_1_1query_html_ad848a4606859f330adaf21aa379d9f5a"><div class="ttname"><a href="namespaceecstasy_1_1query.html#ad848a4606859f330adaf21aa379d9f5a">ecstasy::query::getQueryableData</a></div><div class="ttdeci">constexpr queryable_data_t&lt; Q &gt; getQueryableData(Q &amp;queryable, size_t index)</div><div class="ttdoc">Get the query data at the given index.</div><div class="ttdef"><b>Definition:</b> <a href="_queryable_8hpp_source.html#l00275">Queryable.hpp:275</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a07bb8e9239df332986bc3855d6fb4f48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07bb8e9239df332986bc3855d6fb4f48">&#9670;&nbsp;</a></span>reloadMask()</h2>
+<a id="aaa7f721b9676db53cd5afb54d18d5266"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa7f721b9676db53cd5afb54d18d5266">&#9670;&nbsp;</a></span>reloadMask()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Queryable Q&gt; </div>
+template&lt;Queryable Q, bool AutoLock = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html">ecstasy::query::modifier::Not</a>&lt; Q &gt;::reloadMask </td>
+          <td class="memname">void <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html">ecstasy::query::modifier::Not</a>&lt; Q, AutoLock &gt;::reloadMask </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -442,53 +447,27 @@ template&lt;Queryable Q&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-24) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00099">99</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a4e57e4f90e4dc67b27fd303389e68c41">_mask</a> = ~<a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a1336868a0ca81769b2194990094f53b6">_internal</a>.getMask();</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00100">100</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#aa15ac727311666767d80967ad1521fb0">_mask</a> = ~<a class="code" href="namespaceecstasy_1_1query.html#adf5906cce7e01be04976287045f4325d">getQueryableMask</a>(<a class="code" href="classecstasy_1_1query_1_1modifier_1_1_not.html#aff319d6425982083ae96e065da259489">_internal</a>);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a1336868a0ca81769b2194990094f53b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1336868a0ca81769b2194990094f53b6">&#9670;&nbsp;</a></span>_internal</h2>
+<a id="aff319d6425982083ae96e065da259489"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff319d6425982083ae96e065da259489">&#9670;&nbsp;</a></span>_internal</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Queryable Q&gt; </div>
+template&lt;Queryable Q, bool AutoLock = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#ab89bd8253f758de4e1fc18a985ec5b78">Internal</a>&amp; <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html">ecstasy::query::modifier::Not</a>&lt; Q &gt;::_internal</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00124">124</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a4e57e4f90e4dc67b27fd303389e68c41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e57e4f90e4dc67b27fd303389e68c41">&#9670;&nbsp;</a></span>_mask</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;Queryable Q&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a> <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html">ecstasy::query::modifier::Not</a>&lt; Q &gt;::_mask</td>
+          <td class="memname"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#ac627df9b184f544fbecd25c6d065922b">Internal</a> <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html">ecstasy::query::modifier::Not</a>&lt; Q, AutoLock &gt;::_internal</td>
         </tr>
       </table>
   </td>
@@ -499,6 +478,32 @@ template&lt;Queryable Q&gt; </div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00125">125</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa15ac727311666767d80967ad1521fb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa15ac727311666767d80967ad1521fb0">&#9670;&nbsp;</a></span>_mask</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;Queryable Q, bool AutoLock = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a> <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html">ecstasy::query::modifier::Not</a>&lt; Q, AutoLock &gt;::_mask</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00126">126</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
 
 </div>
 </div>

@@ -86,6 +86,8 @@ $(document).ready(function(){initNavTree('_queryable_8hpp.html',''); initResizab
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">Queryable.hpp File Reference</div>  </div>
@@ -93,6 +95,7 @@ $(document).ready(function(){initNavTree('_queryable_8hpp.html',''); initResizab
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/concepts.html">concepts</a>&gt;</code><br />
 <code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/cstddef.html">cstddef</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="_lockable_view_8hpp_source.html">ecstasy/thread/LockableView.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Queryable.hpp:</div>
 <div class="dyncontent">
@@ -108,11 +111,41 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1queryable__data.html">ecstasy::query::queryable_data&lt; Q &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the query data type of a queryable object.  <a href="structecstasy_1_1query_1_1queryable__data.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1queryable__data_3_01const_01_q_01_4.html">ecstasy::query::queryable_data&lt; const Q &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the query data type of a queryable object.  <a href="structecstasy_1_1query_1_1queryable__data_3_01const_01_q_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1queryable__data_3_01_w_01_4.html">ecstasy::query::queryable_data&lt; W &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the query data type of a queryable object.  <a href="structecstasy_1_1query_1_1queryable__data_3_01_w_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1thread__safe__queryable.html">ecstasy::query::thread_safe_queryable&lt; Q, ThreadSafe &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the thread safe type of a queryable type.  <a href="structecstasy_1_1query_1_1thread__safe__queryable.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1thread__safe__queryable_3_01_q_00_01true_01_4.html">ecstasy::query::thread_safe_queryable&lt; Q, true &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the thread safe type of a queryable type.  <a href="structecstasy_1_1query_1_1thread__safe__queryable_3_01_q_00_01true_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1queryable__qualifiers.html">ecstasy::query::queryable_qualifiers&lt; Q, AutoLock &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the queryable type with the correct qualifiers.  <a href="structecstasy_1_1query_1_1queryable__qualifiers.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1queryable__qualifiers_3_01_q_00_01true_01_4.html">ecstasy::query::queryable_qualifiers&lt; Q, true &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the queryable type with the correct qualifiers.  <a href="structecstasy_1_1query_1_1queryable__qualifiers_3_01_q_00_01true_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1is__queryable.html">ecstasy::query::is_queryable&lt; T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given type match the <a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">ecstasy::query::Queryable</a> concept.  <a href="structecstasy_1_1query_1_1is__queryable.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1is__queryable_3_01_t_01_4.html">ecstasy::query::is_queryable&lt; T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given type match the <a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">ecstasy::query::Queryable</a> concept.  <a href="structecstasy_1_1query_1_1is__queryable_3_01_t_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1views__allocator__size.html">ecstasy::query::views_allocator_size&lt; AutoLock, Qs &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of the allocator required for the given queryable types.  <a href="structecstasy_1_1query_1_1views__allocator__size.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1views__allocator__size_3_01_auto_lock_00_01_q_00_01_qs_8_8_8_01_4.html">ecstasy::query::views_allocator_size&lt; AutoLock, Q, Qs... &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of the allocator required for the given queryable types.  <a href="structecstasy_1_1query_1_1views__allocator__size_3_01_auto_lock_00_01_q_00_01_qs_8_8_8_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1views__allocator__size_3_01true_00_01_q_00_01_qs_8_8_8_01_4.html">ecstasy::query::views_allocator_size&lt; true, Q, Qs... &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the thread safe type of a queryable type.  <a href="structecstasy_1_1query_1_1views__allocator__size_3_01true_00_01_q_00_01_qs_8_8_8_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -127,8 +160,46 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespaceecstasy_1_1query"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace regrouping the internal ecstasy query system. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a21d395b16bed191c3d72445cd7c0fad1"><td class="memTemplParams" colspan="2">template&lt;typename Q &gt; </td></tr>
+<tr class="memitem:a21d395b16bed191c3d72445cd7c0fad1"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a21d395b16bed191c3d72445cd7c0fad1">ecstasy::query::queryable_data_t</a> = typename queryable_data&lt; Q &gt;::type</td></tr>
+<tr class="memdesc:a21d395b16bed191c3d72445cd7c0fad1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for the query data type of a queryable object.  <a href="namespaceecstasy_1_1query.html#a21d395b16bed191c3d72445cd7c0fad1">More...</a><br /></td></tr>
+<tr class="separator:a21d395b16bed191c3d72445cd7c0fad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0caa083dda1d39db3372c518a6c49ae4"><td class="memTemplParams" colspan="2">template&lt;typename Q , bool ThreadSafe = true&gt; </td></tr>
+<tr class="memitem:a0caa083dda1d39db3372c518a6c49ae4"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a0caa083dda1d39db3372c518a6c49ae4">ecstasy::query::thread_safe_queryable_t</a> = typename thread_safe_queryable&lt; Q, ThreadSafe &gt;::type</td></tr>
+<tr class="memdesc:a0caa083dda1d39db3372c518a6c49ae4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for the thread safe type of a queryable type.  <a href="namespaceecstasy_1_1query.html#a0caa083dda1d39db3372c518a6c49ae4">More...</a><br /></td></tr>
+<tr class="separator:a0caa083dda1d39db3372c518a6c49ae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a429c5fb231068dc9b88cc14dd62a4304"><td class="memTemplParams" colspan="2">template&lt;typename Q , bool AutoLock = false&gt; </td></tr>
+<tr class="memitem:a429c5fb231068dc9b88cc14dd62a4304"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a429c5fb231068dc9b88cc14dd62a4304">ecstasy::query::queryable_qualifiers_t</a> = typename queryable_qualifiers&lt; Q, AutoLock &gt;::type</td></tr>
+<tr class="memdesc:a429c5fb231068dc9b88cc14dd62a4304"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for the queryable type with the correct qualifiers.  <a href="namespaceecstasy_1_1query.html#a429c5fb231068dc9b88cc14dd62a4304">More...</a><br /></td></tr>
+<tr class="separator:a429c5fb231068dc9b88cc14dd62a4304"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:adf5906cce7e01be04976287045f4325d"><td class="memTemplParams" colspan="2">template&lt;Queryable Q&gt; </td></tr>
+<tr class="memitem:adf5906cce7e01be04976287045f4325d"><td class="memTemplItemLeft" align="right" valign="top">constexpr const <a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#adf5906cce7e01be04976287045f4325d">ecstasy::query::getQueryableMask</a> (const Q &amp;queryable)</td></tr>
+<tr class="memdesc:adf5906cce7e01be04976287045f4325d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the mask of the queryable object.  <a href="namespaceecstasy_1_1query.html#adf5906cce7e01be04976287045f4325d">More...</a><br /></td></tr>
+<tr class="separator:adf5906cce7e01be04976287045f4325d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad848a4606859f330adaf21aa379d9f5a"><td class="memTemplParams" colspan="2">template&lt;Queryable Q&gt; </td></tr>
+<tr class="memitem:ad848a4606859f330adaf21aa379d9f5a"><td class="memTemplItemLeft" align="right" valign="top">constexpr queryable_data_t&lt; Q &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#ad848a4606859f330adaf21aa379d9f5a">ecstasy::query::getQueryableData</a> (Q &amp;queryable, size_t index)</td></tr>
+<tr class="memdesc:ad848a4606859f330adaf21aa379d9f5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the query data at the given index.  <a href="namespaceecstasy_1_1query.html#ad848a4606859f330adaf21aa379d9f5a">More...</a><br /></td></tr>
+<tr class="separator:ad848a4606859f330adaf21aa379d9f5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a1bc2589fdd0a51fe6f5c0499a7a5d627"><td class="memTemplParams" colspan="2">template&lt;typename Q &gt; </td></tr>
+<tr class="memitem:a1bc2589fdd0a51fe6f5c0499a7a5d627"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a1bc2589fdd0a51fe6f5c0499a7a5d627">ecstasy::query::QueryableObject</a></td></tr>
+<tr class="memdesc:a1bc2589fdd0a51fe6f5c0499a7a5d627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a type that can be queried.  <a href="namespaceecstasy_1_1query.html#a1bc2589fdd0a51fe6f5c0499a7a5d627">More...</a><br /></td></tr>
+<tr class="separator:a1bc2589fdd0a51fe6f5c0499a7a5d627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade123f7a4fcdeccb86c1d5d088339b0a"><td class="memTemplParams" colspan="2">template&lt;typename Q &gt; </td></tr>
+<tr class="memitem:ade123f7a4fcdeccb86c1d5d088339b0a"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#ade123f7a4fcdeccb86c1d5d088339b0a">ecstasy::query::ConstQueryableObject</a></td></tr>
+<tr class="memdesc:ade123f7a4fcdeccb86c1d5d088339b0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a type that can be queried in a const context.  <a href="namespaceecstasy_1_1query.html#ade123f7a4fcdeccb86c1d5d088339b0a">More...</a><br /></td></tr>
+<tr class="separator:ade123f7a4fcdeccb86c1d5d088339b0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb44cd6f8471bc9e034215b74f8e4680"><td class="memTemplParams" colspan="2">template&lt;typename W &gt; </td></tr>
+<tr class="memitem:afb44cd6f8471bc9e034215b74f8e4680"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#afb44cd6f8471bc9e034215b74f8e4680">ecstasy::query::QueryableWrapper</a></td></tr>
+<tr class="memdesc:afb44cd6f8471bc9e034215b74f8e4680"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a type that can be queried through a wrapper.  <a href="namespaceecstasy_1_1query.html#afb44cd6f8471bc9e034215b74f8e4680">More...</a><br /></td></tr>
+<tr class="separator:afb44cd6f8471bc9e034215b74f8e4680"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef33b329c1a412eb7f7403b90881d468"><td class="memTemplParams" colspan="2">template&lt;typename Q &gt; </td></tr>
 <tr class="memitem:aef33b329c1a412eb7f7403b90881d468"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">ecstasy::query::Queryable</a></td></tr>
 <tr class="memdesc:aef33b329c1a412eb7f7403b90881d468"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a type that can be queried.  <a href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">More...</a><br /></td></tr>
@@ -137,6 +208,10 @@ Variables</h2></td></tr>
 <tr class="memitem:a2d0049da7e7d280f28107dae27b92003"><td class="memTemplItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a2d0049da7e7d280f28107dae27b92003">ecstasy::query::is_queryable_v</a> = is_queryable&lt;T&gt;::value</td></tr>
 <tr class="memdesc:a2d0049da7e7d280f28107dae27b92003"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper for <a class="el" href="structecstasy_1_1query_1_1is__queryable.html">is_queryable&lt;T&gt;::value</a>.  <a href="namespaceecstasy_1_1query.html#a2d0049da7e7d280f28107dae27b92003">More...</a><br /></td></tr>
 <tr class="separator:a2d0049da7e7d280f28107dae27b92003"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72caa57a6a25643283e72cb15535b832"><td class="memTemplParams" colspan="2">template&lt;bool AutoLock, Queryable... Qs&gt; </td></tr>
+<tr class="memitem:a72caa57a6a25643283e72cb15535b832"><td class="memTemplItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a72caa57a6a25643283e72cb15535b832">ecstasy::query::views_allocator_size_v</a> = views_allocator_size&lt;AutoLock, Qs...&gt;::value</td></tr>
+<tr class="memdesc:a72caa57a6a25643283e72cb15535b832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper for <a class="el" href="structecstasy_1_1query_1_1views__allocator__size.html">views_allocator_size&lt;AutoLock, Qs...&gt;::value</a>.  <a href="namespaceecstasy_1_1query.html#a72caa57a6a25643283e72cb15535b832">More...</a><br /></td></tr>
+<tr class="separator:a72caa57a6a25643283e72cb15535b832"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>

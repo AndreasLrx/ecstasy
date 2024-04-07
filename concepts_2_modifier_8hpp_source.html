@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('concepts_2_modifier_8hpp_source.html',
 <div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="namespaceecstasy_1_1query.html#a761ae07d0a2b58e9277539d7a3722d3a">   29</a></span>&#160;    concept <a class="code" href="namespaceecstasy_1_1query.html#a761ae07d0a2b58e9277539d7a3722d3a">Modifier</a> = <a class="code" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a>(M &amp;modifier) {</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a> Queryable&lt;M&gt;;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a> std::derived_from&lt;M, ecstasy::query::modifier::Modifier&gt;;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="namespaceecstasy_1_1query.html#aae5d7b89c92ec00ebea0cf94b09d8087">requires</a> std::derived_from&lt;M, ecstasy::query::modifier::ModifierBase&gt;;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">typename</span> M::Operands;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    };</div>

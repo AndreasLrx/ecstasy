@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="ecstasy::Registry",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_registry.html",tooltip="Base of an ECS architecture."];
+  Node0 [label="ecstasy::query::QueryImplementation\l\< Storages, Conditions, AutoLock \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1query_1_1_query_implementation.html",tooltip="Query components presents in all given queryables."];
 }

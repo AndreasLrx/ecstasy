@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ECSTASY: ecstasy::Registry::RegistryStackQuery&lt; Selects, Missings, Condition, Cs &gt; Class Template Reference</title>
+<title>ECSTASY: ecstasy::Registry::RegistryStackQuery&lt; Selects, Missings, Condition, Cs, AutoLock &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -84,7 +84,7 @@ $(document).ready(function(){initNavTree('classecstasy_1_1_registry_1_1_registry
 
 <div class="header">
   <div class="headertitle">
-<div class="title">ecstasy::Registry::RegistryStackQuery&lt; Selects, Missings, Condition, Cs &gt; Class Template Reference</div>  </div>
+<div class="title">ecstasy::Registry::RegistryStackQuery&lt; Selects, Missings, Condition, Cs, AutoLock &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -93,8 +93,8 @@ $(document).ready(function(){initNavTree('classecstasy_1_1_registry_1_1_registry
 
 <p><code>#include &lt;<a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>&gt;</code></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename Selects, typename Missings, typename Condition, typename Cs&gt;<br />
-class ecstasy::Registry::RegistryStackQuery&lt; Selects, Missings, Condition, Cs &gt;</h3>
+<div class="textblock"><h3>template&lt;typename Selects, typename Missings, typename Condition, typename Cs, bool AutoLock = thread::AUTO_LOCK_DEFAULT&gt;<br />
+class ecstasy::Registry::RegistryStackQuery&lt; Selects, Missings, Condition, Cs, AutoLock &gt;</h3>
 
 <p><a class="el" href="classecstasy_1_1_registry.html" title="Base of an ECS architecture.">Registry</a> query allocating everything on the stack (if allocation required). </p>
 <p>This means longer compile time for faster runtime.</p>
@@ -103,14 +103,14 @@ class ecstasy::Registry::RegistryStackQuery&lt; Selects, Missings, Condition, Cs
     <tr><td class="paramname">Selects</td><td>Selected queryables </td></tr>
     <tr><td class="paramname">Missings</td><td>Selected queryables not given in the where clause </td></tr>
     <tr><td class="paramname">Condition</td><td>Query runtime first condition </td></tr>
-    <tr><td class="paramname">Cs</td><td>Query runtime remaining conditions after <code>Condition</code> </td></tr>
+    <tr><td class="paramname">Cs</td><td>Query selected components already present in the where clause</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2023-11-08) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00090">90</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00321">321</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/ecstasy/registry/<a class="el" href="_registry_8hpp_source.html">Registry.hpp</a></li>
 </ul>

@@ -130,4 +130,19 @@ digraph "src/ecstasy/storages/IStorage.hpp"
   Node45 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node45 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node44 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node46 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node46 [label="src/ecstasy/storages\l/StorageConcepts.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_storage_concepts_8hpp.html",tooltip=" "];
+  Node46 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node46 -> Node47 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node47 [label="src/ecstasy/registry\l/concepts/QueryableType.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_queryable_type_8hpp.html",tooltip=" "];
+  Node47 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node47 -> Node48 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node48 [label="src/ecstasy/registry\l/modifiers/And.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$registry_2modifiers_2_and_8hpp.html",tooltip=" "];
+  Node48 -> Node49 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node49 [label="src/ecstasy/registry\l/modifiers/include.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$registry_2modifiers_2include_8hpp.html",tooltip=" "];
+  Node49 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node47 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node46 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node46 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node46 -> Node45 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

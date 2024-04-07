@@ -17,10 +17,15 @@ digraph "src/ecstasy/query/concepts/include.hpp"
   Node6 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node7 [label="cstddef",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/cstddef.html",tooltip=" "];
-  Node5 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node8 [label="ecstasy/query/modifiers\l/Modifier.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$modifiers_2_modifier_8hpp.html",tooltip=" "];
+  Node6 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="ecstasy/thread/LockableView.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_lockable_view_8hpp.html",tooltip=" "];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="ecstasy/thread/Lockable.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_lockable_8hpp.html",tooltip=" "];
+  Node9 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="ecstasy/query/modifiers\l/Modifier.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$modifiers_2_modifier_8hpp.html",tooltip=" "];
   Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node9 [label="QueryableNeedAdjust.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_queryable_need_adjust_8hpp.html",tooltip=" "];
-  Node9 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="QueryableNeedAdjust.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_queryable_need_adjust_8hpp.html",tooltip=" "];
+  Node11 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

@@ -94,6 +94,7 @@ $(document).ready(function(){initNavTree('_storage_concepts_8hpp.html',''); init
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/concepts.html">concepts</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="_i_storage_8hpp_source.html">IStorage.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for StorageConcepts.hpp:</div>
 <div class="dyncontent">
@@ -111,6 +112,10 @@ This graph shows which files directly or indirectly include this file:</div>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_get_component_storage_type.html">GetComponentStorageType&lt; C &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1get_storage_type_impl.html">ecstasy::getStorageTypeImpl&lt; C &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1get_storage_type_impl_3_01const_01_c_01_4.html">ecstasy::getStorageTypeImpl&lt; const C &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -126,10 +131,10 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ae219e3d50efdd81eb87d2a220e030193"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
-<tr class="memitem:ae219e3d50efdd81eb87d2a220e030193"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy.html#ae219e3d50efdd81eb87d2a220e030193">ecstasy::getStorageType</a> = typename <a class="el" href="struct_get_component_storage_type.html">GetComponentStorageType</a>&lt; C &gt;::Value</td></tr>
-<tr class="memdesc:ae219e3d50efdd81eb87d2a220e030193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the storage type of a component, returns <a class="el" href="classecstasy_1_1_map_storage.html" title="Associative Map to store entity components.">MapStorage</a> by default.  <a href="namespaceecstasy.html#ae219e3d50efdd81eb87d2a220e030193">More...</a><br /></td></tr>
-<tr class="separator:ae219e3d50efdd81eb87d2a220e030193"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c011da268733486119ae199f8bb4a04"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
+<tr class="memitem:a2c011da268733486119ae199f8bb4a04"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy.html#a2c011da268733486119ae199f8bb4a04">ecstasy::getStorageType</a> = typename getStorageTypeImpl&lt; C &gt;::type</td></tr>
+<tr class="memdesc:a2c011da268733486119ae199f8bb4a04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the storage type of a component, returns <a class="el" href="classecstasy_1_1_map_storage.html" title="Associative Map to store entity components.">MapStorage</a> by default.  <a href="namespaceecstasy.html#a2c011da268733486119ae199f8bb4a04">More...</a><br /></td></tr>
+<tr class="separator:a2c011da268733486119ae199f8bb4a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -170,11 +175,11 @@ Variables</h2></td></tr>
 <div class="line">    struct <a class="code" href="struct_get_component_storage_type.html">GetComponentStorageType&lt;ComponentType&gt;</a> {       \</div>
 <div class="line">        using Value = StorageType&lt;ComponentType&gt;;         \</div>
 <div class="line">    };</div>
-<div class="ttc" id="astruct_get_component_storage_type_html"><div class="ttname"><a href="struct_get_component_storage_type.html">GetComponentStorageType</a></div><div class="ttdef"><b>Definition:</b> <a href="_storage_concepts_8hpp_source.html#l00030">StorageConcepts.hpp:30</a></div></div>
+<div class="ttc" id="astruct_get_component_storage_type_html"><div class="ttname"><a href="struct_get_component_storage_type.html">GetComponentStorageType</a></div><div class="ttdef"><b>Definition:</b> <a href="_storage_concepts_8hpp_source.html#l00031">StorageConcepts.hpp:31</a></div></div>
 </div><!-- fragment -->
 <p>Sets the storage type to use for <b>ComponentType</b>, if not called <b>MapStorage</b> is used by default. </p>
 
-<p class="definition">Definition at line <a class="el" href="_storage_concepts_8hpp_source.html#l00014">14</a> of file <a class="el" href="_storage_concepts_8hpp_source.html">StorageConcepts.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_storage_concepts_8hpp_source.html#l00015">15</a> of file <a class="el" href="_storage_concepts_8hpp_source.html">StorageConcepts.hpp</a>.</p>
 
 </div>
 </div>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ECSTASY: ecstasy::query::modifier::Maybe&lt; Q &gt; Class Template Reference</title>
+<title>ECSTASY: ecstasy::query::modifier::Maybe&lt; Q, AutoLock &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('classecstasy_1_1query_1_1modifier_1_1_
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classecstasy_1_1query_1_1modifier_1_1_maybe-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ecstasy::query::modifier::Maybe&lt; Q &gt; Class Template Reference</div>  </div>
+<div class="title">ecstasy::query::modifier::Maybe&lt; Q, AutoLock &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -98,146 +98,150 @@ $(document).ready(function(){initNavTree('classecstasy_1_1query_1_1modifier_1_1_
 
 <p><code>#include &lt;<a class="el" href="query_2modifiers_2_maybe_8hpp_source.html">Maybe.hpp</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for ecstasy::query::modifier::Maybe&lt; Q &gt;:</div>
+Inheritance diagram for ecstasy::query::modifier::Maybe&lt; Q, AutoLock &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="classecstasy_1_1query_1_1modifier_1_1_maybe__inherit__graph.png" border="0" usemap="#aecstasy_1_1query_1_1modifier_1_1_maybe_3_01_q_01_4_inherit__map" alt="Inheritance graph"/></div>
+<div class="center"><img src="classecstasy_1_1query_1_1modifier_1_1_maybe__inherit__graph.png" border="0" usemap="#aecstasy_1_1query_1_1modifier_1_1_maybe_3_01_q_00_01_auto_lock_01_4_inherit__map" alt="Inheritance graph"/></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
-Collaboration diagram for ecstasy::query::modifier::Maybe&lt; Q &gt;:</div>
+Collaboration diagram for ecstasy::query::modifier::Maybe&lt; Q, AutoLock &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="classecstasy_1_1query_1_1modifier_1_1_maybe__coll__graph.png" border="0" usemap="#aecstasy_1_1query_1_1modifier_1_1_maybe_3_01_q_01_4_coll__map" alt="Collaboration graph"/></div>
+<div class="center"><img src="classecstasy_1_1query_1_1modifier_1_1_maybe__coll__graph.png" border="0" usemap="#aecstasy_1_1query_1_1modifier_1_1_maybe_3_01_q_00_01_auto_lock_01_4_coll__map" alt="Collaboration graph"/></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a4c037dcc696cddf56a3b1addab62f778"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a4c037dcc696cddf56a3b1addab62f778">Internal</a> = Q</td></tr>
-<tr class="memdesc:a4c037dcc696cddf56a3b1addab62f778"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapped queryable.  <a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a4c037dcc696cddf56a3b1addab62f778">More...</a><br /></td></tr>
-<tr class="separator:a4c037dcc696cddf56a3b1addab62f778"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a206b8a252b9589ceb8af3eebb504c6f7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a206b8a252b9589ceb8af3eebb504c6f7">Operands</a> = <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt; Q &gt;</td></tr>
-<tr class="memdesc:a206b8a252b9589ceb8af3eebb504c6f7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier.html">Modifier</a> constraint.  <a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a206b8a252b9589ceb8af3eebb504c6f7">More...</a><br /></td></tr>
-<tr class="separator:a206b8a252b9589ceb8af3eebb504c6f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fd03fe8771ebc36aae29e605a44d982"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a3fd03fe8771ebc36aae29e605a44d982">QueryData</a> = <a class="el" href="namespaceutil_1_1meta.html#a7788458e2dbea1a3cfcceec47e042cb8">util::meta::add_optional_t</a>&lt; typename Internal::QueryData &gt;</td></tr>
-<tr class="memdesc:a3fd03fe8771ebc36aae29e605a44d982"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">ecstasy::query::Queryable</a> constaint.  <a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a3fd03fe8771ebc36aae29e605a44d982">More...</a><br /></td></tr>
-<tr class="separator:a3fd03fe8771ebc36aae29e605a44d982"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1baa0b0405124e242561030404077cc7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a1baa0b0405124e242561030404077cc7">Internal</a> = <a class="el" href="namespaceecstasy_1_1query.html#a429c5fb231068dc9b88cc14dd62a4304">queryable_qualifiers_t</a>&lt; Q, AutoLock &gt;</td></tr>
+<tr class="memdesc:a1baa0b0405124e242561030404077cc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapped queryable.  <a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a1baa0b0405124e242561030404077cc7">More...</a><br /></td></tr>
+<tr class="separator:a1baa0b0405124e242561030404077cc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30e52f2107813868f503ca3a9d065bf5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a30e52f2107813868f503ca3a9d065bf5">Operands</a> = <a class="el" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt; Q &gt;</td></tr>
+<tr class="memdesc:a30e52f2107813868f503ca3a9d065bf5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier.html">Modifier</a> constraint.  <a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a30e52f2107813868f503ca3a9d065bf5">More...</a><br /></td></tr>
+<tr class="separator:a30e52f2107813868f503ca3a9d065bf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b9aa67b23f677e11d1737295e992084"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a8b9aa67b23f677e11d1737295e992084">QueryData</a> = <a class="el" href="namespaceutil_1_1meta.html#a7788458e2dbea1a3cfcceec47e042cb8">util::meta::add_optional_t</a>&lt; <a class="el" href="namespaceecstasy_1_1query.html#a21d395b16bed191c3d72445cd7c0fad1">queryable_data_t</a>&lt; Q &gt; &gt;</td></tr>
+<tr class="memdesc:a8b9aa67b23f677e11d1737295e992084"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">ecstasy::query::Queryable</a> constaint.  <a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a8b9aa67b23f677e11d1737295e992084">More...</a><br /></td></tr>
+<tr class="separator:a8b9aa67b23f677e11d1737295e992084"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4a39344c9afee0ec8afb771f543f51bb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a4a39344c9afee0ec8afb771f543f51bb">Maybe</a> (<a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a4c037dcc696cddf56a3b1addab62f778">Internal</a> &amp;internal)</td></tr>
-<tr class="memdesc:a4a39344c9afee0ec8afb771f543f51bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html" title="Query modifier which returns a std::optional filled when the data if existing.">Maybe</a> Queryable modifier.  <a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a4a39344c9afee0ec8afb771f543f51bb">More...</a><br /></td></tr>
-<tr class="separator:a4a39344c9afee0ec8afb771f543f51bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a304592f42ba82bb9a0de2140e1c629b7"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a304592f42ba82bb9a0de2140e1c629b7">getMask</a> () const</td></tr>
-<tr class="memdesc:a304592f42ba82bb9a0de2140e1c629b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the flipped mask of the internal queryable.  <a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a304592f42ba82bb9a0de2140e1c629b7">More...</a><br /></td></tr>
-<tr class="separator:a304592f42ba82bb9a0de2140e1c629b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a202fa5662af14ce80da97893ca09233c"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a3fd03fe8771ebc36aae29e605a44d982">QueryData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a202fa5662af14ce80da97893ca09233c">getQueryData</a> (size_t index)</td></tr>
-<tr class="memdesc:a202fa5662af14ce80da97893ca09233c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a> filled with the data at index <code>index</code> if existing.  <a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a202fa5662af14ce80da97893ca09233c">More...</a><br /></td></tr>
-<tr class="separator:a202fa5662af14ce80da97893ca09233c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a426c2bf3282945d8676f21fa640995f8"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a426c2bf3282945d8676f21fa640995f8">adjustMask</a> (size_t maxSize)</td></tr>
-<tr class="memdesc:a426c2bf3282945d8676f21fa640995f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust the mask to be at least the <code>maxSize</code>.  <a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a426c2bf3282945d8676f21fa640995f8">More...</a><br /></td></tr>
-<tr class="separator:a426c2bf3282945d8676f21fa640995f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classecstasy_1_1query_1_1modifier_1_1_modifier"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classecstasy_1_1query_1_1modifier_1_1_modifier')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier.html">ecstasy::query::modifier::Modifier</a></td></tr>
-<tr class="memitem:a1c415dc2b13be6bd002322febc0d8fa2 inherit pub_methods_classecstasy_1_1query_1_1modifier_1_1_modifier"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier.html#a1c415dc2b13be6bd002322febc0d8fa2">~Modifier</a> ()=default</td></tr>
-<tr class="separator:a1c415dc2b13be6bd002322febc0d8fa2 inherit pub_methods_classecstasy_1_1query_1_1modifier_1_1_modifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5da76b7eb34c00799af8485de2bc7bb1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a5da76b7eb34c00799af8485de2bc7bb1">Maybe</a> (Q &amp;internal)</td></tr>
+<tr class="memdesc:a5da76b7eb34c00799af8485de2bc7bb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html" title="Query modifier which returns a std::optional filled when the data if existing.">Maybe</a> Queryable modifier.  <a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a5da76b7eb34c00799af8485de2bc7bb1">More...</a><br /></td></tr>
+<tr class="separator:a5da76b7eb34c00799af8485de2bc7bb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af35b3f257f1d21ac17b5ff4b4666bb86"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#af35b3f257f1d21ac17b5ff4b4666bb86">getMask</a> () const</td></tr>
+<tr class="memdesc:af35b3f257f1d21ac17b5ff4b4666bb86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the flipped mask of the internal queryable.  <a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#af35b3f257f1d21ac17b5ff4b4666bb86">More...</a><br /></td></tr>
+<tr class="separator:af35b3f257f1d21ac17b5ff4b4666bb86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a418825f5627aa89e6c0258a2a0e9b987"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a8b9aa67b23f677e11d1737295e992084">QueryData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a418825f5627aa89e6c0258a2a0e9b987">getQueryData</a> (size_t index)</td></tr>
+<tr class="memdesc:a418825f5627aa89e6c0258a2a0e9b987"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a> filled with the data at index <code>index</code> if existing.  <a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a418825f5627aa89e6c0258a2a0e9b987">More...</a><br /></td></tr>
+<tr class="separator:a418825f5627aa89e6c0258a2a0e9b987"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8edf6a5a7625480ad3bb5c6b9fff330b"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a8edf6a5a7625480ad3bb5c6b9fff330b">adjustMask</a> (size_t maxSize)</td></tr>
+<tr class="memdesc:a8edf6a5a7625480ad3bb5c6b9fff330b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust the mask to be at least the <code>maxSize</code>.  <a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a8edf6a5a7625480ad3bb5c6b9fff330b">More...</a><br /></td></tr>
+<tr class="separator:a8edf6a5a7625480ad3bb5c6b9fff330b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classecstasy_1_1query_1_1modifier_1_1_modifier"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classecstasy_1_1query_1_1modifier_1_1_modifier')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier.html">ecstasy::query::modifier::Modifier&lt; false &gt;</a></td></tr>
+<tr class="memitem:ac7e127dbf0e3ea48aea9fd9ea97dac1f inherit pub_methods_classecstasy_1_1query_1_1modifier_1_1_modifier"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier.html#ac7e127dbf0e3ea48aea9fd9ea97dac1f">~Modifier</a> ()=default</td></tr>
+<tr class="separator:ac7e127dbf0e3ea48aea9fd9ea97dac1f inherit pub_methods_classecstasy_1_1query_1_1modifier_1_1_modifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classecstasy_1_1query_1_1modifier_1_1_modifier_base"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classecstasy_1_1query_1_1modifier_1_1_modifier_base')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier_base.html">ecstasy::query::modifier::ModifierBase</a></td></tr>
+<tr class="memitem:abf9f5574f2a58ce4fae8ddd374acf7d8 inherit pub_methods_classecstasy_1_1query_1_1modifier_1_1_modifier_base"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier_base.html#abf9f5574f2a58ce4fae8ddd374acf7d8">~ModifierBase</a> ()=default</td></tr>
+<tr class="separator:abf9f5574f2a58ce4fae8ddd374acf7d8 inherit pub_methods_classecstasy_1_1query_1_1modifier_1_1_modifier_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a401860d6e648d6755fd2a87e862110c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a4c037dcc696cddf56a3b1addab62f778">Internal</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a401860d6e648d6755fd2a87e862110c0">_internal</a></td></tr>
-<tr class="separator:a401860d6e648d6755fd2a87e862110c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75d9f7e63161bae8d017cf3565b19752"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a75d9f7e63161bae8d017cf3565b19752">_mask</a></td></tr>
-<tr class="separator:a75d9f7e63161bae8d017cf3565b19752"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6b1abcf41393768b91e22ef66b78038"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a1baa0b0405124e242561030404077cc7">Internal</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#ad6b1abcf41393768b91e22ef66b78038">_internal</a></td></tr>
+<tr class="separator:ad6b1abcf41393768b91e22ef66b78038"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4cd1488061a9e0294e56f0decb2f290"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#af4cd1488061a9e0294e56f0decb2f290">_mask</a></td></tr>
+<tr class="separator:af4cd1488061a9e0294e56f0decb2f290"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;Queryable Q&gt;<br />
-class ecstasy::query::modifier::Maybe&lt; Q &gt;</h3>
+<div class="textblock"><h3>template&lt;Queryable Q, bool AutoLock = false&gt;<br />
+class ecstasy::query::modifier::Maybe&lt; Q, AutoLock &gt;</h3>
 
 <p><a class="el" href="classecstasy_1_1query_1_1_query.html">Query</a> modifier which returns a <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a> filled when the data if existing. </p>
 <dl class="section note"><dt>Note</dt><dd>All bits are set to true.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Internal</td><td>Type of the wrapped queryable.</td></tr>
+    <tr><td class="paramname">Internal</td><td>Type of the wrapped queryable. </td></tr>
+    <tr><td class="paramname">AutoLock</td><td>Lock the Lockable queryables if true.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-24) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html#l00036">36</a> of file <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html">Maybe.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html#l00038">38</a> of file <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html">Maybe.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a4c037dcc696cddf56a3b1addab62f778"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c037dcc696cddf56a3b1addab62f778">&#9670;&nbsp;</a></span>Internal</h2>
+<a id="a1baa0b0405124e242561030404077cc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1baa0b0405124e242561030404077cc7">&#9670;&nbsp;</a></span>Internal</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Queryable Q&gt; </div>
+template&lt;Queryable Q, bool AutoLock = false&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">ecstasy::query::modifier::Maybe</a>&lt; Q &gt;::<a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a4c037dcc696cddf56a3b1addab62f778">Internal</a> =  Q</td>
+          <td class="memname">using <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">ecstasy::query::modifier::Maybe</a>&lt; Q, AutoLock &gt;::<a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a1baa0b0405124e242561030404077cc7">Internal</a> =  <a class="el" href="namespaceecstasy_1_1query.html#a429c5fb231068dc9b88cc14dd62a4304">queryable_qualifiers_t</a>&lt;Q, AutoLock&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Wrapped queryable. </p>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html#l00039">39</a> of file <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html">Maybe.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html#l00041">41</a> of file <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html">Maybe.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a206b8a252b9589ceb8af3eebb504c6f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a206b8a252b9589ceb8af3eebb504c6f7">&#9670;&nbsp;</a></span>Operands</h2>
+<a id="a30e52f2107813868f503ca3a9d065bf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30e52f2107813868f503ca3a9d065bf5">&#9670;&nbsp;</a></span>Operands</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Queryable Q&gt; </div>
+template&lt;Queryable Q, bool AutoLock = false&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">ecstasy::query::modifier::Maybe</a>&lt; Q &gt;::<a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a206b8a252b9589ceb8af3eebb504c6f7">Operands</a> =  <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt;Q&gt;</td>
+          <td class="memname">using <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">ecstasy::query::modifier::Maybe</a>&lt; Q, AutoLock &gt;::<a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a30e52f2107813868f503ca3a9d065bf5">Operands</a> =  <a class="el" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt;Q&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier.html">Modifier</a> constraint. </p>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html#l00042">42</a> of file <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html">Maybe.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html#l00044">44</a> of file <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html">Maybe.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a3fd03fe8771ebc36aae29e605a44d982"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3fd03fe8771ebc36aae29e605a44d982">&#9670;&nbsp;</a></span>QueryData</h2>
+<a id="a8b9aa67b23f677e11d1737295e992084"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b9aa67b23f677e11d1737295e992084">&#9670;&nbsp;</a></span>QueryData</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Queryable Q&gt; </div>
+template&lt;Queryable Q, bool AutoLock = false&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">ecstasy::query::modifier::Maybe</a>&lt; Q &gt;::<a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a3fd03fe8771ebc36aae29e605a44d982">QueryData</a> =  <a class="el" href="namespaceutil_1_1meta.html#a7788458e2dbea1a3cfcceec47e042cb8">util::meta::add_optional_t</a>&lt;typename Internal::QueryData&gt;</td>
+          <td class="memname">using <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">ecstasy::query::modifier::Maybe</a>&lt; Q, AutoLock &gt;::<a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a8b9aa67b23f677e11d1737295e992084">QueryData</a> =  <a class="el" href="namespaceutil_1_1meta.html#a7788458e2dbea1a3cfcceec47e042cb8">util::meta::add_optional_t</a>&lt;<a class="el" href="namespaceecstasy_1_1query.html#a21d395b16bed191c3d72445cd7c0fad1">queryable_data_t</a>&lt;Q&gt; &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p><a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">ecstasy::query::Queryable</a> constaint. </p>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html#l00045">45</a> of file <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html">Maybe.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html#l00047">47</a> of file <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html">Maybe.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a4a39344c9afee0ec8afb771f543f51bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a39344c9afee0ec8afb771f543f51bb">&#9670;&nbsp;</a></span>Maybe()</h2>
+<a id="a5da76b7eb34c00799af8485de2bc7bb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5da76b7eb34c00799af8485de2bc7bb1">&#9670;&nbsp;</a></span>Maybe()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Queryable Q&gt; </div>
+template&lt;Queryable Q, bool AutoLock = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">ecstasy::query::modifier::Maybe</a>&lt; Q &gt;::<a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">Maybe</a> </td>
+          <td class="memname"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">ecstasy::query::modifier::Maybe</a>&lt; Q, AutoLock &gt;::<a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">Maybe</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a4c037dcc696cddf56a3b1addab62f778">Internal</a> &amp;&#160;</td>
+          <td class="paramtype">Q &amp;&#160;</td>
           <td class="paramname"><em>internal</em></td><td>)</td>
           <td></td>
         </tr>
@@ -259,32 +263,32 @@ template&lt;Queryable Q&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-24) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html#l00055">55</a> of file <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html">Maybe.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                  : <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a401860d6e648d6755fd2a87e862110c0">_internal</a>(<span class="keyword">internal</span>)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a426c2bf3282945d8676f21fa640995f8">adjustMask</a>(<span class="keyword">internal</span>.<a class="code" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a304592f42ba82bb9a0de2140e1c629b7">getMask</a>().<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/size.html">size</a>());</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
-<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_maybe_html_a304592f42ba82bb9a0de2140e1c629b7"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a304592f42ba82bb9a0de2140e1c629b7">ecstasy::query::modifier::Maybe::getMask</a></div><div class="ttdeci">constexpr const util::BitSet &amp; getMask() const</div><div class="ttdoc">Get the flipped mask of the internal queryable.</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_maybe_8hpp_source.html#l00070">Maybe.hpp:70</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_maybe_html_a401860d6e648d6755fd2a87e862110c0"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a401860d6e648d6755fd2a87e862110c0">ecstasy::query::modifier::Maybe::_internal</a></div><div class="ttdeci">Internal &amp; _internal</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_maybe_8hpp_source.html#l00112">Maybe.hpp:112</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_maybe_html_a426c2bf3282945d8676f21fa640995f8"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a426c2bf3282945d8676f21fa640995f8">ecstasy::query::modifier::Maybe::adjustMask</a></div><div class="ttdeci">constexpr void adjustMask(size_t maxSize)</div><div class="ttdoc">Adjust the mask to be at least the maxSize.</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_maybe_8hpp_source.html#l00103">Maybe.hpp:103</a></div></div>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html#l00057">57</a> of file <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html">Maybe.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                           : <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#ad6b1abcf41393768b91e22ef66b78038">_internal</a>(<span class="keyword">internal</span>)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a8edf6a5a7625480ad3bb5c6b9fff330b">adjustMask</a>(<a class="code" href="namespaceecstasy_1_1query.html#adf5906cce7e01be04976287045f4325d">getQueryableMask</a>(<span class="keyword">internal</span>).<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/size.html">size</a>());</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_maybe_html_a8edf6a5a7625480ad3bb5c6b9fff330b"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a8edf6a5a7625480ad3bb5c6b9fff330b">ecstasy::query::modifier::Maybe::adjustMask</a></div><div class="ttdeci">constexpr void adjustMask(size_t maxSize)</div><div class="ttdoc">Adjust the mask to be at least the maxSize.</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_maybe_8hpp_source.html#l00105">Maybe.hpp:105</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_maybe_html_ad6b1abcf41393768b91e22ef66b78038"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#ad6b1abcf41393768b91e22ef66b78038">ecstasy::query::modifier::Maybe::_internal</a></div><div class="ttdeci">Internal _internal</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_maybe_8hpp_source.html#l00114">Maybe.hpp:114</a></div></div>
+<div class="ttc" id="anamespaceecstasy_1_1query_html_adf5906cce7e01be04976287045f4325d"><div class="ttname"><a href="namespaceecstasy_1_1query.html#adf5906cce7e01be04976287045f4325d">ecstasy::query::getQueryableMask</a></div><div class="ttdeci">constexpr const util::BitSet &amp; getQueryableMask(const Q &amp;queryable)</div><div class="ttdoc">Get the mask of the queryable object.</div><div class="ttdef"><b>Definition:</b> <a href="_queryable_8hpp_source.html#l00252">Queryable.hpp:252</a></div></div>
 <div class="ttc" id="asize_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/iterator/size.html">std::size</a></div><div class="ttdeci">T size(T... args)</div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a426c2bf3282945d8676f21fa640995f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a426c2bf3282945d8676f21fa640995f8">&#9670;&nbsp;</a></span>adjustMask()</h2>
+<a id="a8edf6a5a7625480ad3bb5c6b9fff330b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8edf6a5a7625480ad3bb5c6b9fff330b">&#9670;&nbsp;</a></span>adjustMask()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Queryable Q&gt; </div>
+template&lt;Queryable Q, bool AutoLock = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr void <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">ecstasy::query::modifier::Maybe</a>&lt; Q &gt;::adjustMask </td>
+          <td class="memname">constexpr void <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">ecstasy::query::modifier::Maybe</a>&lt; Q, AutoLock &gt;::adjustMask </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>maxSize</em></td><td>)</td>
@@ -308,33 +312,33 @@ template&lt;Queryable Q&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-25) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html#l00103">103</a> of file <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html">Maybe.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">if</span> (maxSize &gt; <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a75d9f7e63161bae8d017cf3565b19752">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#a1b7940aa2d91fd658b573692239866c0">size</a>()) {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a75d9f7e63161bae8d017cf3565b19752">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918">resize</a>(maxSize);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a75d9f7e63161bae8d017cf3565b19752">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#a1e15c54e82b2c4dcd15bd2d4a2af31a5">setAll</a>();</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div>
-<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_maybe_html_a75d9f7e63161bae8d017cf3565b19752"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a75d9f7e63161bae8d017cf3565b19752">ecstasy::query::modifier::Maybe::_mask</a></div><div class="ttdeci">util::BitSet _mask</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_maybe_8hpp_source.html#l00113">Maybe.hpp:113</a></div></div>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html#l00105">105</a> of file <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html">Maybe.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keywordflow">if</span> (maxSize &gt; <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#af4cd1488061a9e0294e56f0decb2f290">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#a1b7940aa2d91fd658b573692239866c0">size</a>()) {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#af4cd1488061a9e0294e56f0decb2f290">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918">resize</a>(maxSize);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#af4cd1488061a9e0294e56f0decb2f290">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#a1e15c54e82b2c4dcd15bd2d4a2af31a5">setAll</a>();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        }</div>
+<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_maybe_html_af4cd1488061a9e0294e56f0decb2f290"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#af4cd1488061a9e0294e56f0decb2f290">ecstasy::query::modifier::Maybe::_mask</a></div><div class="ttdeci">util::BitSet _mask</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_maybe_8hpp_source.html#l00115">Maybe.hpp:115</a></div></div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_a0a1be7ead3223ab02838a9e95b761918"><div class="ttname"><a href="classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918">util::BitSet::resize</a></div><div class="ttdeci">void resize(std::size_t size)</div><div class="ttdoc">Changes the number of bits stored in this set.</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8hpp_source.html#l00199">BitSet.hpp:199</a></div></div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_a1b7940aa2d91fd658b573692239866c0"><div class="ttname"><a href="classutil_1_1_bit_set.html#a1b7940aa2d91fd658b573692239866c0">util::BitSet::size</a></div><div class="ttdeci">constexpr std::size_t size() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8hpp_source.html#l00087">BitSet.hpp:87</a></div></div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_a1e15c54e82b2c4dcd15bd2d4a2af31a5"><div class="ttname"><a href="classutil_1_1_bit_set.html#a1e15c54e82b2c4dcd15bd2d4a2af31a5">util::BitSet::setAll</a></div><div class="ttdeci">BitSet &amp; setAll(bool value=true) noexcept</div><div class="ttdoc">Sets all bits to the given value.</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8cpp_source.html#l00034">BitSet.cpp:34</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a304592f42ba82bb9a0de2140e1c629b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a304592f42ba82bb9a0de2140e1c629b7">&#9670;&nbsp;</a></span>getMask()</h2>
+<a id="af35b3f257f1d21ac17b5ff4b4666bb86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af35b3f257f1d21ac17b5ff4b4666bb86">&#9670;&nbsp;</a></span>getMask()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Queryable Q&gt; </div>
+template&lt;Queryable Q, bool AutoLock = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr const <a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a>&amp; <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">ecstasy::query::modifier::Maybe</a>&lt; Q &gt;::getMask </td>
+          <td class="memname">constexpr const <a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a>&amp; <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">ecstasy::query::modifier::Maybe</a>&lt; Q, AutoLock &gt;::getMask </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -353,26 +357,26 @@ template&lt;Queryable Q&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-24) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html#l00070">70</a> of file <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html">Maybe.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a75d9f7e63161bae8d017cf3565b19752">_mask</a>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html#l00072">72</a> of file <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html">Maybe.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#af4cd1488061a9e0294e56f0decb2f290">_mask</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a202fa5662af14ce80da97893ca09233c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a202fa5662af14ce80da97893ca09233c">&#9670;&nbsp;</a></span>getQueryData()</h2>
+<a id="a418825f5627aa89e6c0258a2a0e9b987"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a418825f5627aa89e6c0258a2a0e9b987">&#9670;&nbsp;</a></span>getQueryData()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Queryable Q&gt; </div>
+template&lt;Queryable Q, bool AutoLock = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a3fd03fe8771ebc36aae29e605a44d982">QueryData</a> <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">ecstasy::query::modifier::Maybe</a>&lt; Q &gt;::getQueryData </td>
+          <td class="memname">constexpr <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a8b9aa67b23f677e11d1737295e992084">QueryData</a> <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">ecstasy::query::modifier::Maybe</a>&lt; Q, AutoLock &gt;::getQueryData </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -395,34 +399,35 @@ template&lt;Queryable Q&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a3fd03fe8771ebc36aae29e605a44d982">QueryData</a> A <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a> filled with the data at index <code>index</code> if existing.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a8b9aa67b23f677e11d1737295e992084">QueryData</a> A <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a> filled with the data at index <code>index</code> if existing.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-24) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html#l00088">88</a> of file <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html">Maybe.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">if</span> (index &lt; <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a401860d6e648d6755fd2a87e862110c0">_internal</a>.getMask().size() &amp;&amp; <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a401860d6e648d6755fd2a87e862110c0">_internal</a>.getMask()[index])</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a3fd03fe8771ebc36aae29e605a44d982">QueryData</a>{<a class="code" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a401860d6e648d6755fd2a87e862110c0">_internal</a>.getQueryData(index)};</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
-<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_maybe_html_a3fd03fe8771ebc36aae29e605a44d982"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a3fd03fe8771ebc36aae29e605a44d982">ecstasy::query::modifier::Maybe::QueryData</a></div><div class="ttdeci">util::meta::add_optional_t&lt; typename Internal::QueryData &gt; QueryData</div><div class="ttdoc">ecstasy::query::Queryable constaint.</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_maybe_8hpp_source.html#l00045">Maybe.hpp:45</a></div></div>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html#l00090">90</a> of file <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html">Maybe.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">if</span> (index &lt; <a class="code" href="namespaceecstasy_1_1query.html#adf5906cce7e01be04976287045f4325d">getQueryableMask</a>(<a class="code" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#ad6b1abcf41393768b91e22ef66b78038">_internal</a>).<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/size.html">size</a>() &amp;&amp; <a class="code" href="namespaceecstasy_1_1query.html#adf5906cce7e01be04976287045f4325d">getQueryableMask</a>(<a class="code" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#ad6b1abcf41393768b91e22ef66b78038">_internal</a>)[index])</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a8b9aa67b23f677e11d1737295e992084">QueryData</a>{<a class="code" href="namespaceecstasy_1_1query.html#ad848a4606859f330adaf21aa379d9f5a">getQueryableData</a>(<a class="code" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#ad6b1abcf41393768b91e22ef66b78038">_internal</a>, index)};</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        }</div>
+<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_maybe_html_a8b9aa67b23f677e11d1737295e992084"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a8b9aa67b23f677e11d1737295e992084">ecstasy::query::modifier::Maybe::QueryData</a></div><div class="ttdeci">util::meta::add_optional_t&lt; queryable_data_t&lt; Q &gt; &gt; QueryData</div><div class="ttdoc">ecstasy::query::Queryable constaint.</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_maybe_8hpp_source.html#l00047">Maybe.hpp:47</a></div></div>
+<div class="ttc" id="anamespaceecstasy_1_1query_html_ad848a4606859f330adaf21aa379d9f5a"><div class="ttname"><a href="namespaceecstasy_1_1query.html#ad848a4606859f330adaf21aa379d9f5a">ecstasy::query::getQueryableData</a></div><div class="ttdeci">constexpr queryable_data_t&lt; Q &gt; getQueryableData(Q &amp;queryable, size_t index)</div><div class="ttdoc">Get the query data at the given index.</div><div class="ttdef"><b>Definition:</b> <a href="_queryable_8hpp_source.html#l00275">Queryable.hpp:275</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a401860d6e648d6755fd2a87e862110c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a401860d6e648d6755fd2a87e862110c0">&#9670;&nbsp;</a></span>_internal</h2>
+<a id="ad6b1abcf41393768b91e22ef66b78038"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6b1abcf41393768b91e22ef66b78038">&#9670;&nbsp;</a></span>_internal</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Queryable Q&gt; </div>
+template&lt;Queryable Q, bool AutoLock = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a4c037dcc696cddf56a3b1addab62f778">Internal</a>&amp; <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">ecstasy::query::modifier::Maybe</a>&lt; Q &gt;::_internal</td>
+          <td class="memname"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#a1baa0b0405124e242561030404077cc7">Internal</a> <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">ecstasy::query::modifier::Maybe</a>&lt; Q, AutoLock &gt;::_internal</td>
         </tr>
       </table>
   </td>
@@ -432,23 +437,23 @@ template&lt;Queryable Q&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html#l00112">112</a> of file <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html">Maybe.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html#l00114">114</a> of file <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html">Maybe.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a75d9f7e63161bae8d017cf3565b19752"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75d9f7e63161bae8d017cf3565b19752">&#9670;&nbsp;</a></span>_mask</h2>
+<a id="af4cd1488061a9e0294e56f0decb2f290"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4cd1488061a9e0294e56f0decb2f290">&#9670;&nbsp;</a></span>_mask</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;Queryable Q&gt; </div>
+template&lt;Queryable Q, bool AutoLock = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a> <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">ecstasy::query::modifier::Maybe</a>&lt; Q &gt;::_mask</td>
+          <td class="memname"><a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a> <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">ecstasy::query::modifier::Maybe</a>&lt; Q, AutoLock &gt;::_mask</td>
         </tr>
       </table>
   </td>
@@ -458,7 +463,7 @@ template&lt;Queryable Q&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html#l00113">113</a> of file <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html">Maybe.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html#l00115">115</a> of file <a class="el" href="query_2modifiers_2_maybe_8hpp_source.html">Maybe.hpp</a>.</p>
 
 </div>
 </div>

@@ -4,21 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="util::serialization\l::IArrayNode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classutil_1_1serialization_1_1_i_array_node.html",tooltip="Array node."];
-  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node1 [label="util::serialization\l::TomlArrayNode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classutil_1_1serialization_1_1_toml_array_node.html",tooltip="Toml Array node."];
-  Node66 [label="util::serialization\l::INode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classutil_1_1serialization_1_1_i_node.html",tooltip="Serialization node."];
-  Node66 -> Node67 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node67 [label="util::serialization\l::ANode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classutil_1_1serialization_1_1_a_node.html",tooltip="Serialization node."];
-  Node67 -> Node68 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node68 [label="util::serialization\l::TomlNode\< toml::array \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classutil_1_1serialization_1_1_toml_node.html",tooltip=" "];
-  Node68 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node67 -> Node69 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node69 [label="util::serialization\l::TomlNode\< toml::table \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classutil_1_1serialization_1_1_toml_node.html",tooltip=" "];
-  Node69 -> Node70 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node70 [label="util::serialization\l::TomlObjectNode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classutil_1_1serialization_1_1_toml_object_node.html",tooltip="Toml Object node."];
-  Node67 -> Node71 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node71 [label="util::serialization\l::TomlNode\< N \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classutil_1_1serialization_1_1_toml_node.html",tooltip="Serialization node."];
-  Node95 [label="util::serialization\l::IObjectNode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classutil_1_1serialization_1_1_i_object_node.html",tooltip="Object node."];
-  Node95 -> Node70 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 [label="util::meta::_filter\l\< Treated, Filter, Untreated \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structutil_1_1meta_1_1__filter.html",tooltip=" "];
 }

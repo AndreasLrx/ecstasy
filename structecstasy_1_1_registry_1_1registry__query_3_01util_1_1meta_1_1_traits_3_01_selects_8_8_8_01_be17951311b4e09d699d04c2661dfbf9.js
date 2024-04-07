@@ -1,4 +1,0 @@
-var structecstasy_1_1_registry_1_1registry__query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_8_01_be17951311b4e09d699d04c2661dfbf9 =
-[
-    [ "type", "structecstasy_1_1_registry_1_1registry__query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_8_01_be17951311b4e09d699d04c2661dfbf9.html#a6ca5766bcbe43faf5df13613470966a0", null ]
-];

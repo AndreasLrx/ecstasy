@@ -34,8 +34,11 @@ digraph "src/ecstasy/integrations/event/listeners/GamepadCombinationListener.hpp
   Node15 [label="ecstasy/storages/IStorage.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_i_storage_8hpp.html",tooltip=" "];
   Node15 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node16 [label="span",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/span.html",tooltip=" "];
-  Node11 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node17 [label="ecstasy/storages/Storage\lConcepts.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_storage_concepts_8hpp.html",tooltip=" "];
-  Node17 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node18 [label="concepts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/concepts.html",tooltip=" "];
+  Node15 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="ecstasy/config.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node11 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="ecstasy/storages/Storage\lConcepts.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_storage_concepts_8hpp.html",tooltip=" "];
+  Node18 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="concepts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/concepts.html",tooltip=" "];
+  Node18 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="ecstasy::integration\l::event::GamepadAxisEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1integration_1_1event_1_1_gamepad_axis_event.html",tooltip="Event describing a gamepad axis value change."];
+  Node0 [label="ecstasy::integration\l::event::Event",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1integration_1_1event_1_1_event.html",tooltip="Event class."];
 }

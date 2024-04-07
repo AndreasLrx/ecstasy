@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="ecstasy::Registry::\lSelect\< Selects \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_registry_1_1_select.html",tooltip="Proxy class to use where method."];
+  Node0 [label="ecstasy::query::thread\l_safe_queryable\< Q, true \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1query_1_1thread__safe__queryable_3_01_q_00_01true_01_4.html",tooltip="Get the thread safe type of a queryable type."];
 }

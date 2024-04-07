@@ -1,6 +1,7 @@
 var classecstasy_1_1_map_storage =
 [
     [ "Component", "classecstasy_1_1_map_storage.html#a25b253a9a3be8a41a34a503f929fdc95", null ],
+    [ "ConstQueryData", "classecstasy_1_1_map_storage.html#a4c5a1bba90a6df1b6b5bf4b2bfe6b05e", null ],
     [ "QueryData", "classecstasy_1_1_map_storage.html#a81082ecb25e80e36ea048a3d323919f2", null ],
     [ "MapStorage", "classecstasy_1_1_map_storage.html#a302143f23b1a9c275fbc232fe23dd7fc", null ],
     [ "MapStorage", "classecstasy_1_1_map_storage.html#a41f052711acad9d2b56647506bf08ca9", null ],
@@ -10,6 +11,7 @@ var classecstasy_1_1_map_storage =
     [ "erase", "classecstasy_1_1_map_storage.html#a8b013a408d7d9dd91ed112813f3542f8", null ],
     [ "getMask", "classecstasy_1_1_map_storage.html#a75b9845c4fd3208059ab50a764c17bb7", null ],
     [ "getQueryData", "classecstasy_1_1_map_storage.html#a53f8ec44ab58f04f19a2e0165dbf1c96", null ],
+    [ "getQueryData", "classecstasy_1_1_map_storage.html#abfc3cdebb0276703653c99e1a80a39d0", null ],
     [ "operator[]", "classecstasy_1_1_map_storage.html#a302c492022b034b52e1a9bbbdf2dc431", null ],
     [ "operator[]", "classecstasy_1_1_map_storage.html#aa27533ac4612c7ed2f33c6c1eba79ce3", null ],
     [ "size", "classecstasy_1_1_map_storage.html#a16f117a34af9456982c1a320d70de96c", null ],

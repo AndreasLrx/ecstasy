@@ -11,8 +11,9 @@ var classecstasy_1_1_registry_1_1_select =
     [ "SelectsTraits", "classecstasy_1_1_registry_1_1_select.html#ad2da777410e2aee990c3564a998106ec", null ],
     [ "Select", "classecstasy_1_1_registry_1_1_select.html#a8adca10c89261c2395fdeac4ead01a55", null ],
     [ "explicitWhere", "classecstasy_1_1_registry_1_1_select.html#afcbc73146c0d3ca39b19d14b71e98fbb", null ],
-    [ "where", "classecstasy_1_1_registry_1_1_select.html#a81123f4d850f0195134b0560e5f45ce9", null ],
+    [ "where", "classecstasy_1_1_registry_1_1_select.html#a743a80a235db6789c108acddba43738c", null ],
     [ "where", "classecstasy_1_1_registry_1_1_select.html#ac0dc907c5e74198f17d9c6f2d71ecbed", null ],
     [ "where", "classecstasy_1_1_registry_1_1_select.html#aad436b9635d82c03debf875752ad8f2a", null ],
+    [ "whereEx", "classecstasy_1_1_registry_1_1_select.html#a393de612f029e47ecdcb476fa9c686da", null ],
     [ "_registry", "classecstasy_1_1_registry_1_1_select.html#ada9249a4d1a6efea9f7c6a33f30e9ada", null ]
 ];

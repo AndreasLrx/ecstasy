@@ -91,21 +91,22 @@ $(document).ready(function(){initNavTree('registry_2modifiers_2_maybe_8hpp_sourc
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef ECSTASY_REGISTRY_MODIFIERS_MAYBE_HPP_</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define ECSTASY_REGISTRY_MODIFIERS_MAYBE_HPP_</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="query_2modifiers_2_maybe_8hpp.html">ecstasy/query/modifiers/Maybe.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceecstasy.html">ecstasy</a></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> C&gt;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structecstasy_1_1_maybe.html">   28</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structecstasy_1_1_maybe.html">Maybe</a> {</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structecstasy_1_1_maybe.html#a69c23efa522779c8aee53f7711577a10">   29</a></span>&#160;        <span class="keyword">using</span> <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">Modifier</a> = <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">query::modifier::Maybe&lt;queryable_type_t&lt;C&gt;</a>&gt;;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    };</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;} <span class="comment">// namespace ecstasy</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !ECSTASY_REGISTRY_MODIFIERS_MAYBE_HPP_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_maybe_html"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">ecstasy::query::modifier::Maybe</a></div><div class="ttdoc">Query modifier which returns a std::optional filled when the data if existing.</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_maybe_8hpp_source.html#l00036">Maybe.hpp:36</a></div></div>
-<div class="ttc" id="anamespaceecstasy_html"><div class="ttname"><a href="namespaceecstasy.html">ecstasy</a></div><div class="ttdoc">Namespace containing all symbols specific to ecstasy.</div><div class="ttdef"><b>Definition:</b> <a href="ecstasy_8hpp_source.html#l00028">ecstasy.hpp:29</a></div></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;ecstasy/config.hpp&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="query_2modifiers_2_maybe_8hpp.html">ecstasy/query/modifiers/Maybe.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceecstasy.html">ecstasy</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> C, <span class="keywordtype">bool</span> AutoLock = thread::AUTO_LOCK_DEFAULT&gt;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structecstasy_1_1_maybe.html">   30</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structecstasy_1_1_maybe.html">Maybe</a> {</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structecstasy_1_1_maybe.html#a973e93729c627df3db566425757f950c">   31</a></span>&#160;        <span class="keyword">using</span> <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">Modifier</a> = <a class="code" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">query::modifier::Maybe&lt;queryable_type_t&lt;C&gt;</a>, AutoLock&gt;;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    };</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;} <span class="comment">// namespace ecstasy</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !ECSTASY_REGISTRY_MODIFIERS_MAYBE_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_maybe_html"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">ecstasy::query::modifier::Maybe</a></div><div class="ttdoc">Query modifier which returns a std::optional filled when the data if existing.</div><div class="ttdef"><b>Definition:</b> <a href="query_2modifiers_2_maybe_8hpp_source.html#l00038">Maybe.hpp:38</a></div></div>
+<div class="ttc" id="anamespaceecstasy_html"><div class="ttname"><a href="namespaceecstasy.html">ecstasy</a></div><div class="ttdoc">Namespace containing all symbols specific to ecstasy.</div><div class="ttdef"><b>Definition:</b> <a href="ecstasy_8hpp_source.html#l00029">ecstasy.hpp:30</a></div></div>
 <div class="ttc" id="aquery_2modifiers_2_maybe_8hpp_html"><div class="ttname"><a href="query_2modifiers_2_maybe_8hpp.html">Maybe.hpp</a></div></div>
-<div class="ttc" id="astructecstasy_1_1_maybe_html"><div class="ttname"><a href="structecstasy_1_1_maybe.html">ecstasy::Maybe</a></div><div class="ttdoc">Placeholder for ecstasy::query::modifier::Maybe.</div><div class="ttdef"><b>Definition:</b> <a href="registry_2modifiers_2_maybe_8hpp_source.html#l00028">Maybe.hpp:28</a></div></div>
+<div class="ttc" id="astructecstasy_1_1_maybe_html"><div class="ttname"><a href="structecstasy_1_1_maybe.html">ecstasy::Maybe</a></div><div class="ttdoc">Placeholder for ecstasy::query::modifier::Maybe.</div><div class="ttdef"><b>Definition:</b> <a href="registry_2modifiers_2_maybe_8hpp_source.html#l00030">Maybe.hpp:30</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

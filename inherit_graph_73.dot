@@ -4,15 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="std::integral_constant\l\< size_t, 0 \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/integral_constant.html",tooltip=" "];
-  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node1 [label="ecstasy::queryable\l_allocator_size\< M::\lModifier \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1queryable__allocator__size.html",tooltip=" "];
-  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="ecstasy::queryable\l_allocator_size\< M \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1queryable__allocator__size_3_01_m_01_4.html",tooltip="Get the allocator required size for this queryable."];
-  Node0 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="ecstasy::queryable\l_allocator_size\< Q \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1queryable__allocator__size.html",tooltip="Get the allocator required size for this queryable."];
-  Node0 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="ecstasy::queryables\l_allocator_size\< Qs \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1queryables__allocator__size.html",tooltip="Get the allocator required size for a list of queryables."];
-  Node88 [label="std::integral_constant\l\< size_t, sizeof(M)+queryable\l_allocator_size\< M::Operands\l \>::value \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/integral_constant.html",tooltip=" "];
-  Node88 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 [label="ecstasy::Registry::\lSelect\< Selects \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_registry_1_1_select.html",tooltip="Proxy class to use where method."];
 }

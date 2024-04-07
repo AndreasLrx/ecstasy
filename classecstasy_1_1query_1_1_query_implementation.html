@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ECSTASY: ecstasy::query::QueryImplementation&lt; Storages, Conditions &gt; Class Template Reference</title>
+<title>ECSTASY: ecstasy::query::QueryImplementation&lt; Storages, Conditions, AutoLock &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -84,7 +84,7 @@ $(document).ready(function(){initNavTree('classecstasy_1_1query_1_1_query_implem
 
 <div class="header">
   <div class="headertitle">
-<div class="title">ecstasy::query::QueryImplementation&lt; Storages, Conditions &gt; Class Template Reference</div>  </div>
+<div class="title">ecstasy::query::QueryImplementation&lt; Storages, Conditions, AutoLock &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -93,22 +93,23 @@ $(document).ready(function(){initNavTree('classecstasy_1_1query_1_1_query_implem
 
 <p><code>#include &lt;<a class="el" href="_query_8hpp_source.html">Query.hpp</a>&gt;</code></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename Storages, typename Conditions = void&gt;<br />
-class ecstasy::query::QueryImplementation&lt; Storages, Conditions &gt;</h3>
+<div class="textblock"><h3>template&lt;typename Storages, typename Conditions = void, bool AutoLock = false&gt;<br />
+class ecstasy::query::QueryImplementation&lt; Storages, Conditions, AutoLock &gt;</h3>
 
 <p><a class="el" href="classecstasy_1_1query_1_1_query.html">Query</a> components presents in all given queryables. </p>
 <dl class="section note"><dt>Note</dt><dd>See <a class="el" href="namespaceecstasy_1_1query_1_1modifier.html">ecstasy::query::modifier</a> for advanced queries using queryable modifiers.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">First</td><td>First storage class. </td></tr>
-    <tr><td class="paramname">Others</td><td>All other storage classes.</td></tr>
+    <tr><td class="paramname">Others</td><td>All other storage classes. </td></tr>
+    <tr><td class="paramname">AutoLock</td><td>Whether the query must be thread safe or not (locking any Lockable queryable).</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span style="display: none;">.nosp@m.</span>as.l<span style="display: none;">.nosp@m.</span>eroux<span style="display: none;">.nosp@m.</span>@epi<span style="display: none;">.nosp@m.</span>tech.<span style="display: none;">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-20) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00040">40</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00041">41</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/ecstasy/query/<a class="el" href="_query_8hpp_source.html">Query.hpp</a></li>
 </ul>

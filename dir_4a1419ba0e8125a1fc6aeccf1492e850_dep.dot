@@ -9,6 +9,6 @@ digraph "src/ecstasy/storages" {
   }
   dir_b7878ad5ecbf2506f4125b9d34c97e45 [shape=box label="util" fillcolor="white" style="filled" color="red" URL="dir_b7878ad5ecbf2506f4125b9d34c97e45.html"];
   dir_4a1419ba0e8125a1fc6aeccf1492e850->dir_8c1a170fbd0a5283d7ed264cf6df56b3 [headlabel="1", labeldistance=1.5 headhref="dir_000022_000020.html"];
-  dir_4a1419ba0e8125a1fc6aeccf1492e850->dir_b7878ad5ecbf2506f4125b9d34c97e45 [headlabel="1", labeldistance=1.5 headhref="dir_000022_000027.html"];
-  dir_8c1a170fbd0a5283d7ed264cf6df56b3->dir_b7878ad5ecbf2506f4125b9d34c97e45 [headlabel="1", labeldistance=1.5 headhref="dir_000020_000027.html"];
+  dir_4a1419ba0e8125a1fc6aeccf1492e850->dir_b7878ad5ecbf2506f4125b9d34c97e45 [headlabel="1", labeldistance=1.5 headhref="dir_000022_000028.html"];
+  dir_8c1a170fbd0a5283d7ed264cf6df56b3->dir_b7878ad5ecbf2506f4125b9d34c97e45 [headlabel="1", labeldistance=1.5 headhref="dir_000020_000028.html"];
 }

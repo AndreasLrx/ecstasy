@@ -16,8 +16,10 @@ digraph "src/ecstasy/integrations/event/events/MouseButtonReleasedEvent.hpp"
   Node6 [label="utility",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/utility.html",tooltip=" "];
   Node3 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node7 [label="ecstasy/resources/Resource.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_resource_8hpp.html",tooltip=" "];
-  Node3 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node8 [label="util/serialization\l/SerializableEnum.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_serializable_enum_8hpp.html",tooltip=" "];
-  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node9 [label="foreach.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$foreach_8hpp.html",tooltip=" "];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="ecstasy/config.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="util/serialization\l/SerializableEnum.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_serializable_enum_8hpp.html",tooltip=" "];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="foreach.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$foreach_8hpp.html",tooltip=" "];
 }

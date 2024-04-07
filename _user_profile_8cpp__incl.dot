@@ -42,15 +42,17 @@ digraph "src/ecstasy/integrations/user_action/UserProfile.cpp"
   Node16 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node16 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node17 [label="ecstasy/resources/Resource.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_resource_8hpp.html",tooltip=" "];
+  Node17 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="ecstasy/config.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node16 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node18 [label="ecstasy/integrations\l/event/inputs/Mouse.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_mouse_8hpp.html",tooltip=" "];
-  Node18 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node18 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node18 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node19 [label="utility",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/utility.html",tooltip=" "];
-  Node18 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node18 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="ecstasy/integrations\l/event/inputs/Mouse.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_mouse_8hpp.html",tooltip=" "];
+  Node19 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="utility",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/utility.html",tooltip=" "];
+  Node19 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

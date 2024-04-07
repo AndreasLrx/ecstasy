@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="ecstasy::query::QueryImplementation\l\< util::meta::Traits\< First,\l Others... \>, util::meta::Traits\l\< Conditions... \> \>::Iterator",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe3781b2e4ed68ff587bd23a798892b911.html",tooltip="Query iterator."];
+  Node0 [label="ecstasy::OrEx\< AutoLock,\l C1, C2, Cs \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1_or_ex.html",tooltip="Placeholder for ecstasy::query::modifier::Or."];
 }

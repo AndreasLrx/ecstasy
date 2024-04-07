@@ -48,14 +48,17 @@ var NAVTREE =
         [ "Batch Query", "md_doc__glossary.html#autotoc_md18", null ],
         [ "Modifier", "md_doc__glossary.html#autotoc_md19", null ],
         [ "Condition", "md_doc__glossary.html#autotoc_md20", null ]
+      ] ],
+      [ "Thread", "md_doc__glossary.html#autotoc_md21", [
+        [ "Lockable", "md_doc__glossary.html#autotoc_md22", null ]
       ] ]
     ] ],
     [ "Tutorial", "md_doc__tutorial.html", [
       [ "Getting Started", "md_doc__tutorial.html#GettingStarted", null ],
-      [ "Using entities", "md_doc__tutorial.html#autotoc_md22", [
-        [ "Creating entities", "md_doc__tutorial.html#autotoc_md23", null ],
-        [ "Manage entity component", "md_doc__tutorial.html#autotoc_md24", null ],
-        [ "Delete entities", "md_doc__tutorial.html#autotoc_md25", null ]
+      [ "Using entities", "md_doc__tutorial.html#autotoc_md24", [
+        [ "Creating entities", "md_doc__tutorial.html#autotoc_md25", null ],
+        [ "Manage entity component", "md_doc__tutorial.html#autotoc_md26", null ],
+        [ "Delete entities", "md_doc__tutorial.html#autotoc_md27", null ]
       ] ],
       [ "Implement a custom storage", "md_doc__tutorial.html#CustomStorageTutorial", null ],
       [ "Making registry queries", "md_doc__tutorial.html#QueryTutorial", [
@@ -63,12 +66,13 @@ var NAVTREE =
         [ "Using modifiers", "md_doc__tutorial.html#ModifiersTutorial", null ],
         [ "Using conditions", "md_doc__tutorial.html#ConditionsTutorial", null ]
       ] ],
-      [ "Using systems", "md_doc__tutorial.html#autotoc_md26", null ]
+      [ "Using systems", "md_doc__tutorial.html#autotoc_md28", null ],
+      [ "Ensuring Thread Safety", "md_doc__tutorial.html#EnsuringThreadSafety", null ]
     ] ],
     [ "Technical Implementations", "md_doc__technical_implementation.html", [
-      [ "Entities Management", "md_doc__technical_implementation.html#autotoc_md28", null ],
-      [ "Components Management (MapStorage)", "md_doc__technical_implementation.html#autotoc_md29", null ],
-      [ "Query", "md_doc__technical_implementation.html#autotoc_md30", null ]
+      [ "Entities Management", "md_doc__technical_implementation.html#autotoc_md30", null ],
+      [ "Components Management (MapStorage)", "md_doc__technical_implementation.html#autotoc_md31", null ],
+      [ "Query", "md_doc__technical_implementation.html#autotoc_md32", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -106,17 +110,18 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "",
-"_storage_concepts_8hpp.html#a2286cc039a6a746d313b6978bec7b058",
-"classecstasy_1_1_system_instances_1_1_comparer.html#ae3c058a19f8058a1a2b2dc4bb1bbf684",
-"classecstasy_1_1integration_1_1user__action_1_1_users.html#a72564f1cc6e32471078b5be69fc58935",
-"classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a4410ec34d9e6c1a68100ca0ce033fb17",
-"cpp/algorithm/merge.html",
-"cpp/experimental/fs/exists.html",
-"cpp/io/manip/boolalpha.html",
-"cpp/numeric/random/generate_canonical.html",
-"cpp/types/is_destructible.html",
-"integrations_2event_2events_2include_8hpp.html",
-"structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aae93f994f01c537c4e2f7d8528c3eb5e9"
+"_select_8hpp_source.html",
+"classecstasy_1_1_registry_entity.html",
+"classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#a4be0ff9fbab4331b5fcf6e91b3d4e74f",
+"classutil_1_1serialization_1_1_a_node.html#a689605f22b3922d598d9bc372d0f57e1",
+"conditions_2_condition_8hpp.html#a4adb839a91520e457bc2910f4437b69e",
+"cpp/chrono/c/ctime.html",
+"cpp/io/c/feof.html",
+"cpp/numeric/math/cosh.html",
+"cpp/string/wide/wcsncpy.html",
+"functions_enum.html",
+"outer__join_8hpp.html",
+"structutil_1_1meta_1_1_traits.html#a876f8ed4ef6a034b0b532871905270bb"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

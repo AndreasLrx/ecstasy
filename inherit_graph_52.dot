@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="ecstasy::Registry::\lAllocatorWrapper\< A \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_registry_1_1_allocator_wrapper.html",tooltip="Wrapper for the allocator, see RegistryStackQuery for more details."];
+  Node0 [label="ecstasy::query::QueryImplementation\l\< util::meta::Traits\< First,\l Others... \>, util::meta::Traits\l\< Conditions... \>, AutoLock \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe8a771cd3061befcfd40dda019e51f87d.html",tooltip=" "];
 }

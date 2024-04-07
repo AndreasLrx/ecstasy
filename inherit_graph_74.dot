@@ -4,7 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="std::integral_constant\l\< size_t, queryable_allocator\l_size_v\< Q \>+queryables_allocator\l_size\< Qs... \>::value \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/integral_constant.html",tooltip=" "];
-  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node1 [label="ecstasy::queryables\l_allocator_size\< Q,\l Qs... \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1queryables__allocator__size_3_01_q_00_01_qs_8_8_8_01_4.html",tooltip="Get the allocator required size for a list of queryables."];
+  Node0 [label="ecstasy::Registry::\lSelect\< Selects \>::Internal\l\< Missings, Cs, Conditions, A \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1_registry_1_1_select_1_1_internal.html",tooltip="Internal structure allowing to add implicitly required queryables (from the selected types)."];
 }

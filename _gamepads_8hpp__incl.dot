@@ -20,4 +20,6 @@ digraph "src/ecstasy/integrations/event/inputs/Gamepads.hpp"
   Node8 [label="foreach.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$foreach_8hpp.html",tooltip=" "];
   Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node9 [label="ecstasy/resources/Resource.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_resource_8hpp.html",tooltip=" "];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="ecstasy/config.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
 }

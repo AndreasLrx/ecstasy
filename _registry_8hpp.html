@@ -86,6 +86,7 @@ $(document).ready(function(){initNavTree('_registry_8hpp.html',''); initResizabl
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">Registry.hpp File Reference</div>  </div>
@@ -100,17 +101,18 @@ $(document).ready(function(){initNavTree('_registry_8hpp.html',''); initResizabl
 <code>#include &quot;<a class="el" href="_select_8hpp_source.html">ecstasy/query/Select.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="conditions_2_condition_8hpp_source.html">ecstasy/query/conditions/Condition.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="modifiers_2_modifier_8hpp_source.html">ecstasy/query/modifiers/Modifier.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_queryable_allocator_size_8hpp_source.html">ecstasy/registry/concepts/QueryableAllocatorSize.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_entities_8hpp_source.html">ecstasy/resources/entity/Entities.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_i_storage_8hpp_source.html">ecstasy/storages/IStorage.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_instances_8hpp_source.html">ecstasy/storages/Instances.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_storage_concepts_8hpp_source.html">ecstasy/storages/StorageConcepts.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_system_instances_8hpp_source.html">ecstasy/storages/SystemInstances.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_i_system_8hpp_source.html">ecstasy/system/ISystem.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_lockable_view_8hpp_source.html">ecstasy/thread/LockableView.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_allocator_8hpp_source.html">util/Allocator.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_stack_allocator_8hpp_source.html">util/StackAllocator.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="apply_8hpp_source.html">util/meta/apply.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="filter_8hpp_source.html">util/meta/filter.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="modifier__allocator__size_8hpp_source.html">ecstasy/registry/concepts/modifier_allocator_size.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="outer__join_8hpp_source.html">util/meta/outer_join.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Registry.hpp:</div>
@@ -127,32 +129,32 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1_empty_type.html">ecstasy::EmptyType</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty type used with no_unique_address attribute to avoid memory overhead.  <a href="structecstasy_1_1_empty_type.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html">ecstasy::Registry</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base of an ECS architecture.  <a href="classecstasy_1_1_registry.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry_1_1_allocator_wrapper.html">ecstasy::Registry::AllocatorWrapper&lt; A &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for the allocator, see <a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query.html">RegistryStackQuery</a> for more details.  <a href="classecstasy_1_1_registry_1_1_allocator_wrapper.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query.html">ecstasy::Registry::RegistryStackQuery&lt; Selects, Missings, Condition, Cs &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1_registry.html" title="Base of an ECS architecture.">Registry</a> query allocating everything on the stack (if allocation required).  <a href="classecstasy_1_1_registry_1_1_registry_stack_query.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_67423517c508eca6c225f0c9a9067d5e.html">ecstasy::Registry::RegistryStackQuery&lt; util::meta::Traits&lt; Selects... &gt;, util::meta::Traits&lt; Missings... &gt;, Condition, util::meta::Traits&lt; Cs... &gt; &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1_registry.html" title="Base of an ECS architecture.">Registry</a> query allocating everything on the stack (if allocation required).  <a href="classecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_67423517c508eca6c225f0c9a9067d5e.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_cc16d108cf5152bd66132d6b9187f68b.html">ecstasy::Registry::RegistryStackQuery&lt; util::meta::Traits&lt; Selects... &gt;, util::meta::Traits&lt; Selects... &gt;, util::meta::Traits&lt;&gt;, util::meta::Traits&lt; Selects... &gt; &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1_registry.html" title="Base of an ECS architecture.">Registry</a> query allocating everything on the stack (if allocation required).  <a href="classecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_cc16d108cf5152bd66132d6b9187f68b.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1_registry_1_1registry__query.html">ecstasy::Registry::registry_query&lt; Selects, Missings, Condition, Cs &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1_registry.html" title="Base of an ECS architecture.">Registry</a> query type from the query selected and missing types.  <a href="structecstasy_1_1_registry_1_1registry__query.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1_registry_1_1registry__query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_8_01_be17951311b4e09d699d04c2661dfbf9.html">ecstasy::Registry::registry_query&lt; util::meta::Traits&lt; Selects... &gt;, util::meta::Traits&lt; Missings... &gt;, Condition, util::meta::Traits&lt; Cs... &gt; &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1_registry.html" title="Base of an ECS architecture.">Registry</a> query type from the query selected and missing types.  <a href="structecstasy_1_1_registry_1_1registry__query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_8_01_be17951311b4e09d699d04c2661dfbf9.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1_registry_1_1_get_modifier_proxy.html">ecstasy::Registry::GetModifierProxy&lt; Operands &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proxy structure to extract the operand types using template partial specialization.  <a href="structecstasy_1_1_registry_1_1_get_modifier_proxy.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1_registry_1_1_get_modifier_proxy_3_01std_1_1tuple_3_01_qs_8_8_8_01_4_01_4.html">ecstasy::Registry::GetModifierProxy&lt; std::tuple&lt; Qs... &gt; &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proxy structure to extract the operand types using template partial specialization.  <a href="structecstasy_1_1_registry_1_1_get_modifier_proxy_3_01std_1_1tuple_3_01_qs_8_8_8_01_4_01_4.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1_registry_1_1_get_modifier_proxy_3_01util_1_1meta_1_1_traits_3_01_qs_8_8_8_01_4_01_4.html">ecstasy::Registry::GetModifierProxy&lt; util::meta::Traits&lt; Qs... &gt; &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proxy structure to extract the operand types using template partial specialization.  <a href="structecstasy_1_1_registry_1_1_get_modifier_proxy_3_01util_1_1meta_1_1_traits_3_01_qs_8_8_8_01_4_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query_memory.html">ecstasy::Registry::RegistryStackQueryMemory&lt; Selects, Missings, Conditions, AutoLock, Cs &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class of <a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query.html">RegistryStackQuery</a>.  <a href="classecstasy_1_1_registry_1_1_registry_stack_query_memory.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html">ecstasy::Registry::RegistryStackQueryMemory&lt; util::meta::Traits&lt; Selects... &gt;, util::meta::Traits&lt; Missings... &gt;, util::meta::Traits&lt; Conditions... &gt;, AutoLock, Cs... &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class of <a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query.html">RegistryStackQuery</a>.  <a href="classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query.html">ecstasy::Registry::RegistryStackQuery&lt; Selects, Missings, Condition, Cs, AutoLock &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1_registry.html" title="Base of an ECS architecture.">Registry</a> query allocating everything on the stack (if allocation required).  <a href="classecstasy_1_1_registry_1_1_registry_stack_query.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_20e16f590d1e6d3a51f200dbd071ad9a.html">ecstasy::Registry::RegistryStackQuery&lt; util::meta::Traits&lt; Selects... &gt;, util::meta::Traits&lt; Missings... &gt;, Conditions, util::meta::Traits&lt; Cs... &gt;, AutoLock &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1_registry.html" title="Base of an ECS architecture.">Registry</a> query allocating everything on the stack (if allocation required).  <a href="classecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_20e16f590d1e6d3a51f200dbd071ad9a.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_85f410b7f998e9fe9b0fa2e936412400.html">ecstasy::Registry::RegistryStackQuery&lt; util::meta::Traits&lt; Selects... &gt;, util::meta::Traits&lt;&gt;, util::meta::Traits&lt;&gt;, util::meta::Traits&lt; Selects... &gt;, AutoLock &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1_registry.html" title="Base of an ECS architecture.">Registry</a> query allocating everything on the stack (if allocation required).  <a href="classecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_85f410b7f998e9fe9b0fa2e936412400.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry_1_1_entity_builder.html">ecstasy::Registry::EntityBuilder</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1_entity.html" title="Encapsulate an index to an entity.">Entity</a> Builder using the registry storages.  <a href="classecstasy_1_1_registry_1_1_entity_builder.html#details">More...</a><br /></td></tr>
@@ -176,13 +178,18 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespaceecstasy"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace containing all symbols specific to ecstasy. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:afbab8d3e03b64c2dd9697c91ef11f5e8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_registry_8hpp.html#afbab8d3e03b64c2dd9697c91ef11f5e8">NO_UNIQUE_ADDRESS</a>&#160;&#160;&#160;[[no_unique_address]]</td></tr>
+<tr class="separator:afbab8d3e03b64c2dd9697c91ef11f5e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a2895efc7e86f6aca31285d6985eedf4a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy.html#a2895efc7e86f6aca31285d6985eedf4a">ecstasy::ModifiersAllocator</a> = <a class="el" href="classutil_1_1_allocator.html">util::Allocator</a>&lt; <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier.html">ecstasy::query::modifier::Modifier</a> &gt;</td></tr>
-<tr class="separator:a2895efc7e86f6aca31285d6985eedf4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf97def750636803824f90abd1325198"><td class="memTemplParams" colspan="2">template&lt;typename... Qs&gt; </td></tr>
-<tr class="memitem:abf97def750636803824f90abd1325198"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy.html#abf97def750636803824f90abd1325198">ecstasy::StackAllocator</a> = <a class="el" href="classutil_1_1_stack_allocator.html">util::StackAllocator</a>&lt; queryables_allocator_size_v&lt; Qs... &gt;, query::modifier::Modifier &gt;</td></tr>
-<tr class="separator:abf97def750636803824f90abd1325198"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23178e0869471d2ea8fbce5de4c2499b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy.html#a23178e0869471d2ea8fbce5de4c2499b">ecstasy::ModifiersAllocator</a> = <a class="el" href="classutil_1_1_allocator.html">util::Allocator</a>&lt; <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier_base.html">ecstasy::query::modifier::ModifierBase</a> &gt;</td></tr>
+<tr class="separator:a23178e0869471d2ea8fbce5de4c2499b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a029021666dc5e8cc0db0d817fc54a172"><td class="memTemplParams" colspan="2">template&lt;typename... Qs&gt; </td></tr>
+<tr class="memitem:a029021666dc5e8cc0db0d817fc54a172"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy.html#a029021666dc5e8cc0db0d817fc54a172">ecstasy::StackAllocator</a> = <a class="el" href="classutil_1_1_stack_allocator.html">util::StackAllocator</a>&lt; modifiers_allocator_size_v&lt; Qs... &gt;, query::modifier::ModifierBase &gt;</td></tr>
+<tr class="separator:a029021666dc5e8cc0db0d817fc54a172"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5640f20f821346bace72e8351acbb01"><td class="memTemplParams" colspan="2">template&lt;typename A  = ModifiersAllocator&gt; </td></tr>
 <tr class="memitem:ae5640f20f821346bace72e8351acbb01"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy.html#ae5640f20f821346bace72e8351acbb01">ecstasy::OptionalModifiersAllocator</a> = <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html">std::reference_wrapper</a>&lt; A &gt; &gt;</td></tr>
 <tr class="separator:ae5640f20f821346bace72e8351acbb01"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -194,7 +201,24 @@ Typedefs</h2></td></tr>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) ECSTASY 2022 - 2024 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="afbab8d3e03b64c2dd9697c91ef11f5e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbab8d3e03b64c2dd9697c91ef11f5e8">&#9670;&nbsp;</a></span>NO_UNIQUE_ADDRESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NO_UNIQUE_ADDRESS&#160;&#160;&#160;[[no_unique_address]]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00042">42</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
