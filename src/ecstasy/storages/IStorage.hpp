@@ -16,7 +16,7 @@
 
 #include "ecstasy/config.hpp"
 
-#ifdef ECSTASY_MULTI_THREAD
+#ifdef ECSTASY_LOCKABLE_STORAGES
     #include "ecstasy/thread/SharedRecursiveMutex.hpp"
 #endif
 
@@ -36,7 +36,7 @@ namespace ecstasy
     /// @since 1.0.0 (2022-10-19)
     ///
     class IStorage
-#ifdef ECSTASY_MULTI_THREAD
+#ifdef ECSTASY_LOCKABLE_STORAGES
         : public thread::SharedRecursiveMutex
 #endif
     {

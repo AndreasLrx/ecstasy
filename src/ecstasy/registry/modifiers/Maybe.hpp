@@ -27,7 +27,7 @@ namespace ecstasy
     ///
     template <typename C>
     struct Maybe {
-        using Modifier = query::modifier::Maybe<queryable_type_t<C>, THREAD_SAFE_DEFAULT>;
+        using Modifier = query::modifier::Maybe<queryable_type_t<C>, thread::AUTO_LOCK_DEFAULT>;
     };
 } // namespace ecstasy
 

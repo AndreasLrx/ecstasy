@@ -14,7 +14,7 @@
 
 #include "ecstasy/config.hpp"
 
-#ifdef ECSTASY_MULTI_THREAD
+#ifdef ECSTASY_LOCKABLE_RESOURCES
     #include "ecstasy/thread/SharedRecursiveMutex.hpp"
 #endif
 
@@ -27,7 +27,7 @@ namespace ecstasy
     /// @since 1.0.0 (2022-10-17)
     ///
     class Resource
-#ifdef ECSTASY_MULTI_THREAD
+#ifdef ECSTASY_LOCKABLE_RESOURCES
         : public thread::SharedRecursiveMutex
 #endif
     {

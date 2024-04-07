@@ -2,14 +2,11 @@
 #include "ecstasy/config.hpp"
 #include "ecstasy/query/Query.hpp"
 #include "ecstasy/query/concepts/Queryable.hpp"
+#include "ecstasy/thread/LockableView.hpp"
+#include "ecstasy/thread/SharedRecursiveMutex.hpp"
 #include "util/BitSet.hpp"
 
 using namespace ecstasy::query;
-
-#ifdef ECSTASY_MULTI_THREAD
-
-    #include "ecstasy/thread/LockableView.hpp"
-    #include "ecstasy/thread/SharedRecursiveMutex.hpp"
 
 class QueryableObjectImplTS : public ecstasy::thread::SharedRecursiveMutex {
   public:
@@ -40,8 +37,6 @@ class QueryableObjectImplTS : public ecstasy::thread::SharedRecursiveMutex {
 
 template <typename Q>
 using LV = ecstasy::thread::LockableView<Q>;
-
-#endif
 
 template <typename T>
 class WrapperImpl {
@@ -181,7 +176,6 @@ TEST(queryable_qualifiers, QueryableObjectImpl)
         >>();
     // clang-format on
 
-#ifdef ECSTASY_MULTI_THREAD
     static_assert(ecstasy::thread::Lockable<QueryableObjectImplTS>);
     static_assert(ecstasy::thread::Lockable<const QueryableObjectImplTS>);
     assert_equals<queryable_qualifiers_t<QueryableObjectImplTS, true>,
@@ -194,7 +188,6 @@ TEST(queryable_qualifiers, QueryableObjectImpl)
 
     assert_equals<queryable_qualifiers_t<QueryableObjectImplTS, false>, QueryableObjectImplTS &>();
     assert_equals<queryable_qualifiers_t<const QueryableObjectImplTS, false>, const QueryableObjectImplTS &>();
-#endif
 }
 
 TEST(thread_safe_queryable, QueryableObjectImpl)
@@ -203,8 +196,6 @@ TEST(thread_safe_queryable, QueryableObjectImpl)
     assert_equals<thread_safe_queryable_t<QueryableObjectImpl>, QueryableObjectImpl>();
     assert_equals<thread_safe_queryable_t<QueryableObjectImpl, true>, QueryableObjectImpl>();
     assert_equals<thread_safe_queryable_t<QueryableObjectImpl, false>, QueryableObjectImpl>();
-
-#ifdef ECSTASY_MULTI_THREAD
 
     assert_equals<thread_safe_queryable_t<QueryableObjectImplTS>,
         ecstasy::thread::LockableView<QueryableObjectImplTS>>();
@@ -217,8 +208,6 @@ TEST(thread_safe_queryable, QueryableObjectImpl)
     assert_equals<thread_safe_queryable_t<const QueryableObjectImplTS, true>,
         ecstasy::thread::LockableView<const QueryableObjectImplTS>>();
     assert_equals<thread_safe_queryable_t<const QueryableObjectImplTS, false>, const QueryableObjectImplTS>();
-
-#endif
 }
 
 TEST(views_allocator_size, QueryableObjectImpl)
@@ -232,7 +221,6 @@ TEST(views_allocator_size, QueryableObjectImpl)
     static_assert(views_allocator_size_v<true, ConstQueryableObjectImpl> == 0);
     static_assert(views_allocator_size_v<true, const ConstQueryableObjectImpl> == 0);
 
-#ifdef ECSTASY_MULTI_THREAD
     // Lockables
     static_assert(views_allocator_size_v<false, QueryableObjectImplTS> == 0);
     static_assert(views_allocator_size_v<false, const QueryableObjectImplTS> == 0);
@@ -242,5 +230,4 @@ TEST(views_allocator_size, QueryableObjectImpl)
     static_assert(views_allocator_size_v<true, QueryableObjectImplTS, QueryableObjectImpl, const QueryableObjectImplTS,
                       ConstQueryableObjectImpl>
         == sizeof(LV<QueryableObjectImplTS>) * 2);
-#endif
 }

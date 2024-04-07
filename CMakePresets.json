@@ -27,7 +27,7 @@
           "type": "BOOL",
           "value": "TRUE"
         },
-        "ECSTASY_MULTI_THREAD": {
+        "ECSTASY_THREAD_SAFE": {
           "type": "BOOL",
           "value": "TRUE"
         }

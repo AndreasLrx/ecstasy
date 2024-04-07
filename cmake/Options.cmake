@@ -6,8 +6,20 @@ option(BUILD_TEST_SUITE "Whether the test suite must be built." OFF)
 option(ENABLE_TEST_COVERAGE "Whether the tests code coverage must be enabled" OFF)
 option(BUILD_SHARED_LIBS "Whether ecstasy must be built as a shared library or not" OFF)
 
-## Miscelaneous options
-option(ECSTASY_MULTI_THREAD "Enable multi-threading support." OFF)
+## Multi-Threading options
+option(ECSTASY_THREAD_SAFE "Enable thread safety for all lockable resources and storages. 
+This is the combination of ECSTASY_AUTO_LOCK, ECSTASY_LOCKABLE_RESOURCES and  ECSTASY_LOCKABLE_STORAGES." OFF)
+
+option(ECSTASY_AUTO_LOCK "Registry queries and modifiers (RegistryModifier) lock Lockable queryables by default (implicit thread safety). 
+This doesn't affect the default false value in the ecstasy::query namespace. (QueryImplementation and ecstasy::query::modifier::*)" OFF)
+option(ECSTASY_LOCKABLE_RESOURCES "Resources inherit from SharedRecursiveMutex and are therefore lockable." OFF)
+option(ECSTASY_LOCKABLE_STORAGES "Storages inherit from SharedRecursiveMutex and are therefore lockable." OFF)
+
+if (${ECSTASY_THREAD_SAFE})
+    set(ECSTASY_AUTO_LOCK ON)
+    set(ECSTASY_LOCKABLE_RESOURCES ON)
+    set(ECSTASY_LOCKABLE_STORAGES ON)
+endif()
 
 ## Integration libraries
 option(ECSTASY_INTEGRATIONS_EVENT "Events managing integration. Include event listeners and input states (mouse, keyboard, gamepad)." OFF)
@@ -29,8 +41,13 @@ list(APPEND CMAKE_MESSAGE_INDENT "  ")
     message(STATUS "Build Tests: ${BUILD_TEST_SUITE}")
     message(STATUS "Enable test coverage: ${ENABLE_TEST_COVERAGE}")
     message(STATUS "Build shared libraries: ${BUILD_SHARED_LIBS}")
-    ## Miscelaneous
-    message(STATUS "Multi-threading support: ${ECSTASY_MULTI_THREAD}")
+    ## Multi-Threading
+    message(STATUS "Multi-Threading:")
+    list(APPEND CMAKE_MESSAGE_INDENT "  ")
+        message(STATUS "Auto lock: ${ECSTASY_AUTO_LOCK}")
+        message(STATUS "Lockable resources: ${ECSTASY_LOCKABLE_RESOURCES}")
+        message(STATUS "Lockable storages: ${ECSTASY_LOCKABLE_STORAGES}")
+    list(POP_BACK CMAKE_MESSAGE_INDENT)
     ## Integrations
     message(STATUS "Integrations:")
     list(APPEND CMAKE_MESSAGE_INDENT "  ")

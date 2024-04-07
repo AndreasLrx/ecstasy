@@ -15,11 +15,8 @@
 #include <concepts>
 #include <cstddef>
 
-#include "ecstasy/config.hpp"
+#include "ecstasy/thread/LockableView.hpp"
 
-#ifdef ECSTASY_MULTI_THREAD
-    #include "ecstasy/thread/LockableView.hpp"
-#endif
 namespace util
 {
     class BitSet;
@@ -168,8 +165,8 @@ namespace ecstasy::query
 
     ///
     /// @brief Get the thread safe type of a queryable type.
-    /// If @b ThreadSafe is false, @b Q is not @ref thread::Lockable or @b ECSTASY_MULTI_THREAD is not set , the type is
-    /// @b Q. If the type is lockable, then the type is a @ref thread::LockableView<Q>.
+    /// If @b ThreadSafe is false, @b Q is not @ref thread::Lockable the type is @b Q. If the type is lockable, then the
+    /// type is a @ref thread::LockableView<Q>.
     ///
     /// @tparam Q Queryable type.
     /// @tparam ThreadSafe Whether the queryable should be thread safe or not.
@@ -182,14 +179,11 @@ namespace ecstasy::query
         using type = Q;
     };
 
-#ifdef ECSTASY_MULTI_THREAD
-
     /// @copydoc thread_safe_queryable
     template <thread::Lockable Q>
     struct thread_safe_queryable<Q, true> {
         using type = thread::LockableView<Q>;
     };
-#endif
 
     ///
     /// @brief Alias for the thread safe type of a queryable type.
@@ -222,14 +216,11 @@ namespace ecstasy::query
         using type = Q &;
     };
 
-#ifdef ECSTASY_MULTI_THREAD
-
     /// @copydoc queryable_qualifiers
     template <thread::Lockable Q>
     struct queryable_qualifiers<Q, true> {
         using type = thread_safe_queryable_t<Q, true>;
     };
-#endif
 
     ///
     /// @brief Alias for the queryable type with the correct qualifiers.
@@ -337,7 +328,6 @@ namespace ecstasy::query
           // clang-format off
         std::integral_constant<size_t, views_allocator_size<AutoLock, Qs...>::value> {};
 
-#ifdef ECSTASY_MULTI_THREAD
     /// @copydoc thread_safe_queryable
     template <thread::Lockable Q, Queryable... Qs>
     struct views_allocator_size<true, Q, Qs...>
@@ -346,7 +336,6 @@ namespace ecstasy::query
         std::integral_constant<size_t, 
                 sizeof(thread_safe_queryable_t<Q, true>) + 
                 views_allocator_size<true, Qs...>::value> {};
-#endif
     // clang-format on
 
     ///

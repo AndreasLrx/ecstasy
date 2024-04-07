@@ -1013,9 +1013,7 @@ TEST(Registry, RegistryStackQueryMemory)
             false>;
 
         assert_equals<NoAllocator::ModifiersAllocator, ecstasy::EmptyType>();
-#ifdef ECSTASY_MULTI_THREAD
         assert_equals<NoAllocator::ViewsAllocator, ecstasy::EmptyType>();
-#endif
         assert_equals<std::integral_constant<size_t, sizeof(NoAllocator)>,
             std::integral_constant<size_t, sizeof(NoAllocator::ModifiersAllocatorReference)>>();
         // static_assert(sizeof(NoAllocator) == sizeof(NoAllocator::ModifiersAllocatorReference));
@@ -1033,14 +1031,11 @@ TEST(Registry, RegistryStackQueryMemory)
 
         assert_equals<OnlyModifiers::ModifiersAllocator, ExpectedModifierAlloc>();
         static_assert(OnlyModifiers::ModifiersAllocatorSize::value == expected_size);
-#ifdef ECSTASY_MULTI_THREAD
         assert_equals<OnlyModifiers::ViewsAllocator, ecstasy::EmptyType>();
-#endif
         static_assert(sizeof(OnlyModifiers)
             == sizeof(OnlyModifiers::ModifiersAllocatorReference) + sizeof(ExpectedModifierAlloc));
     }
 
-#ifdef ECSTASY_MULTI_THREAD
     {
         // No modifier but views because autolock set to true and storages inherit from SharedRecursiveMutex (ie are
         // Lockable)
@@ -1049,14 +1044,20 @@ TEST(Registry, RegistryStackQueryMemory)
             util::meta::Traits<ecstasy::MapStorage<Position>, ecstasy::MapStorage<Velocity>>, util::meta::Traits<>,
             true>;
 
+        assert_equals<OnlyViews::ModifiersAllocator, ecstasy::EmptyType>();
+
+#ifdef ECSTASY_LOCKABLE_STORAGES
         constexpr size_t expected_size = sizeof(ecstasy::thread::LockableView<ecstasy::MapStorage<Position>>)
             + sizeof(ecstasy::thread::LockableView<ecstasy::MapStorage<Velocity>>);
         using ExpectedViewAlloc = util::StackAllocator<expected_size, ecstasy::thread::LockableViewBase>;
 
-        assert_equals<OnlyViews::ModifiersAllocator, ecstasy::EmptyType>();
         assert_equals<OnlyViews::ViewsAllocator, ExpectedViewAlloc>();
         static_assert(OnlyViews::ViewsAllocatorSize::value == expected_size);
         static_assert(sizeof(OnlyViews) == sizeof(OnlyViews::ModifiersAllocatorReference) + sizeof(ExpectedViewAlloc));
+#else
+        assert_equals<OnlyViews::ViewsAllocator, ecstasy::EmptyType>();
+        static_assert(sizeof(OnlyViews) == sizeof(OnlyViews::ModifiersAllocatorReference));
+#endif
     }
 
     {
@@ -1067,16 +1068,23 @@ TEST(Registry, RegistryStackQueryMemory)
             + sizeof(ecstasy::Or<ecstasy::Maybe<Position>, Velocity>::Modifier);
         using ExpectedModifierAlloc =
             util::StackAllocator<expected_modifier_size, ecstasy::query::modifier::ModifierBase>;
-        constexpr size_t expected_view_size = sizeof(ecstasy::thread::LockableView<ecstasy::MapStorage<Density>>);
-        using ExpectedViewAlloc = util::StackAllocator<expected_view_size, ecstasy::thread::LockableViewBase>;
 
         assert_equals<ModifiersAndViews::ModifiersAllocator, ExpectedModifierAlloc>();
         static_assert(ModifiersAndViews::ModifiersAllocatorSize::value == expected_modifier_size);
+#ifdef ECSTASY_LOCKABLE_STORAGES
+        constexpr size_t expected_view_size = sizeof(ecstasy::thread::LockableView<ecstasy::MapStorage<Density>>);
+        using ExpectedViewAlloc = util::StackAllocator<expected_view_size, ecstasy::thread::LockableViewBase>;
+
         assert_equals<ModifiersAndViews::ViewsAllocator, ExpectedViewAlloc>();
         static_assert(ModifiersAndViews::ViewsAllocatorSize::value == expected_view_size);
         static_assert(sizeof(ModifiersAndViews)
             == sizeof(ModifiersAndViews::ModifiersAllocatorReference) + sizeof(ExpectedModifierAlloc)
                 + sizeof(ExpectedViewAlloc));
-    }
+#else
+
+        assert_equals<ModifiersAndViews::ViewsAllocator, ecstasy::EmptyType>();
+        static_assert(sizeof(ModifiersAndViews)
+            == sizeof(ModifiersAndViews::ModifiersAllocatorReference) + sizeof(ExpectedModifierAlloc));
 #endif
+    }
 }

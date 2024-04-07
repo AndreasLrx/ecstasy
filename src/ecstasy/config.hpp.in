@@ -19,17 +19,19 @@
 // User Action integration is available
 #cmakedefine ECSTASY_INTEGRATIONS_USER_ACTION
 
-// Multi thread is enabled
-#cmakedefine ECSTASY_MULTI_THREAD
+// Multi threading options
+#cmakedefine ECSTASY_AUTO_LOCK
+#cmakedefine ECSTASY_LOCKABLE_RESOURCES
+#cmakedefine ECSTASY_LOCKABLE_STORAGES
 
-namespace ecstasy
+namespace ecstasy::thread
 {
-#ifdef ECSTASY_MULTI_THREAD
-    static constexpr bool THREAD_SAFE_DEFAULT = true;
+#ifdef ECSTASY_AUTO_LOCK
+    static constexpr bool AUTO_LOCK_DEFAULT = true;
 #else
-    static constexpr bool THREAD_SAFE_DEFAULT = false;
+    static constexpr bool AUTO_LOCK_DEFAULT = false;
 #endif
-} // namespace ecstasy
+} // namespace ecstasy::thread
 
 // Toml Serializer is available
 #cmakedefine ECSTASY_SERIALIZER_TOML

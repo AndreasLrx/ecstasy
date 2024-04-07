@@ -29,7 +29,7 @@ namespace ecstasy
     ///
     template <typename C1, typename C2, typename... Cs>
     struct Or {
-        using Modifier = query::modifier::OrImpl<THREAD_SAFE_DEFAULT, queryable_type_t<C1>, queryable_type_t<C2>,
+        using Modifier = query::modifier::OrImpl<thread::AUTO_LOCK_DEFAULT, queryable_type_t<C1>, queryable_type_t<C2>,
             queryable_type_t<Cs>...>;
     };
 } // namespace ecstasy

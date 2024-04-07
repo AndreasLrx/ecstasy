@@ -27,7 +27,7 @@ namespace ecstasy
     ///
     template <typename C>
     struct Not {
-        using Modifier = query::modifier::Not<queryable_type_t<C>, THREAD_SAFE_DEFAULT>;
+        using Modifier = query::modifier::Not<queryable_type_t<C>, thread::AUTO_LOCK_DEFAULT>;
     };
 } // namespace ecstasy
 

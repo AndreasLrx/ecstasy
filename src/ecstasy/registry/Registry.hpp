@@ -28,16 +28,13 @@
 #include "ecstasy/storages/StorageConcepts.hpp"
 #include "ecstasy/storages/SystemInstances.hpp"
 #include "ecstasy/system/ISystem.hpp"
+#include "ecstasy/thread/LockableView.hpp"
 #include "util/Allocator.hpp"
 #include "util/StackAllocator.hpp"
 #include "util/meta/apply.hpp"
 #include "util/meta/filter.hpp"
 #include "ecstasy/registry/concepts/modifier_allocator_size.hpp"
 #include "util/meta/outer_join.hpp"
-
-#ifdef ECSTASY_MULTI_THREAD
-    #include "ecstasy/thread/LockableView.hpp"
-#endif
 
 #ifdef _MSC_VER
     #define NO_UNIQUE_ADDRESS [[msvc::no_unique_address]]
@@ -232,7 +229,6 @@ namespace ecstasy
                     std::optional<std::reference_wrapper<util::Allocator<ecstasy::query::modifier::ModifierBase>>>
                 >;
                 
-#ifdef ECSTASY_MULTI_THREAD
                 /// @brief Size in bytes of the views allocator. 0 if no view.
                 using ViewsAllocatorSize = ecstasy::query::views_allocator_size<AutoLock, queryable_type_t<Missings>..., queryable_type_t<Cs>...>;
                 /// @brief Whether or not the query has a views allocator.
@@ -243,7 +239,6 @@ namespace ecstasy
                     util::StackAllocator<ViewsAllocatorSize::value, thread::LockableViewBase>,
                     EmptyType
                 >;
-#endif
 
                 ///
                 /// @brief Get the type of a queryable in this registry query context (with or without lock).
@@ -290,27 +285,22 @@ namespace ecstasy
             template <typename Q>
             constexpr QueryableType<Q> &getQueryable(Registry &registry)
             {
-#ifdef ECSTASY_MULTI_THREAD
-                if constexpr (HasViewsAllocator::value && thread::Lockable<queryable_type_t<Q>>)
+                if constexpr (AutoLock && HasViewsAllocator::value && thread::Lockable<queryable_type_t<Q>>)
                     return _viewsAllocator.template instanciate<thread::LockableView<queryable_type_t<Q>>>(
                         registry.getQueryable<Q>(_modifiersAllocRef));
                 else {
-#endif
                     if constexpr (HasModifiersAllocator::value)
                         return registry.getQueryable<Q, ModifiersAllocator>(_modifiersAllocRef);
                     else
 
                         return registry.getQueryable<Q>(_modifiersAllocRef);
-#ifdef ECSTASY_MULTI_THREAD
                 }
-#endif
             }
 
           protected:
             NO_UNIQUE_ADDRESS ModifiersAllocator _modifiersAllocator;
-#ifdef ECSTASY_MULTI_THREAD
             NO_UNIQUE_ADDRESS ViewsAllocator _viewsAllocator;
-#endif
+
             ModifiersAllocatorReference _modifiersAllocRef;
         };
 
@@ -327,7 +317,7 @@ namespace ecstasy
         /// @since 1.0.0 (2023-11-08)
         ///
         template <typename Selects, typename Missings, typename Condition, typename Cs,
-            bool AutoLock = THREAD_SAFE_DEFAULT>
+            bool AutoLock = thread::AUTO_LOCK_DEFAULT>
         class RegistryStackQuery {};
 
         // clang-format on
