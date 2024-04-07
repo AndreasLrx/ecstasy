@@ -123,7 +123,7 @@ struct Static {};
 struct Gravity : public ecstasy::ISystem {
     void run(ecstasy::Registry &registry) override final
     {
-        for (auto [entity, velocity, density] : registry.query<ecstasy::Entities, Velocity, Density>())
+        for (auto [entity, velocity, density] : registry.query<ecstasy::Entities, Velocity, const Density>())
             velocity.v.y += 2 * density;
     }
 };
@@ -131,8 +131,8 @@ struct Gravity : public ecstasy::ISystem {
 struct Movement : public ecstasy::ISystem {
     void run(ecstasy::Registry &registry) override final
     {
-        for (auto [position, velocity] :
-            registry.select<Position, Velocity>().where<Position, Movable, Velocity, ecstasy::Not<Static>>()) {
+        for (auto [position, velocity] : registry.select<Position, const Velocity>()
+                                             .where<Position, Movable, const Velocity, ecstasy::Not<Static>>()) {
             position.v.x += velocity.v.x;
             position.v.y += velocity.v.y;
         }
@@ -182,6 +182,20 @@ TEST(Registry, resources)
 
     /// Try to add resource already present
     EXPECT_THROW(registry.addResource<Counter>(), std::logic_error);
+
+    {
+        auto query = registry.query<ecstasy::Entities>();
+        for (auto [e] : query) {
+            static_assert(std::is_same_v<decltype(e), ecstasy::Entity>);
+        }
+    }
+
+    {
+        auto cquery = registry.query<const ecstasy::Entities>();
+        for (auto [e] : cquery) {
+            assert_equals<decltype(e), ecstasy::Entity>();
+        }
+    }
 }
 
 TEST(Registry, storages)
