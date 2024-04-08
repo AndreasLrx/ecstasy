@@ -1,0 +1,24 @@
+name: 📖 Documentation
+description: Something unclear ? (you can use this template for asking questions too!)
+title: "[DOC]"
+labels: 
+  - documentation
+projects: 
+  - "AndreasLrx/4"
+body:
+- type: checkboxes
+  attributes:
+    label: Type of documentation issue
+    description: Check all applicable
+    options:
+      - label: Incorrect or outdated documentation
+      - label: Missing documentation
+      - label: Unclear documentation (lack of examples, links, etc.)
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: What is missing or incorrect?
+    description: A concise description of which part is unclear/missing. If possible add links to the documentation page.
+  validations:
+    required: true
