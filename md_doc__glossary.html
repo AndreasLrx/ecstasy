@@ -88,11 +88,11 @@ $(document).ready(function(){initNavTree('md_doc__glossary.html',''); initResiza
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>This page will help you define the various concepts used in ecstasy (most are common to other ECS). Do not hesitate to create an issue if a definition is still complicated or if a complex term is missing.</p>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md15"></a>
 Entity</h1>
 <p>An entity represents a distinct object or item in the registry. It is an abstract, unique identifier that groups together components to define its characteristics and behavior. Entities in an ECS can be seen as a link between multiple components.</p>
 <p>References: <a class="el" href="classecstasy_1_1_entity.html">Entity</a>, <a class="el" href="classecstasy_1_1_entities.html">Entities</a></p>
-<h1><a class="anchor" id="autotoc_md11"></a>
+<h1><a class="anchor" id="autotoc_md16"></a>
 Component</h1>
 <p>A component is a modular and reusable piece of data that encapsulates a specific aspect of an entity's state or behavior. Components are combined to compose the overall properties and functionalities of an entity.</p>
 <p>It is usually a simple <code>struct</code> for example:</p>
@@ -100,12 +100,12 @@ Component</h1>
 <div class="line">    <span class="keywordtype">float</span> x;</div>
 <div class="line">    <span class="keywordtype">float</span> y;</div>
 <div class="line">};</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md12"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md17"></a>
 Storage</h1>
 <p>A storage is a component container. It is used to store and manage components. It organizes components for efficient access and iteration during system execution, facilitating quick retrieval and manipulation of entity data.</p>
 <dl class="section note"><dt>Note</dt><dd>Ecstasy currently implements a single storage type: <a class="el" href="classecstasy_1_1_map_storage.html">MapStorage</a>. However you can create <a href="#CustomStorageTutorial">custom storages</a>.</dd></dl>
 <p>References: <a class="el" href="classecstasy_1_1_i_storage.html">IStorage</a>, <a class="el" href="namespaceecstasy.html#a2c011da268733486119ae199f8bb4a04">getStorageType</a>, <a class="el" href="namespaceecstasy.html#a73201157de93701763bb9dda9f0201a7">IsStorage</a>, <a class="el" href="classecstasy_1_1_map_storage.html">MapStorage</a>, <a class="el" href="classecstasy_1_1_registry.html#ab8d8a1bd2b85b7aaf893911cc995ab26">Registry.addStorage()</a></p>
-<h1><a class="anchor" id="autotoc_md13"></a>
+<h1><a class="anchor" id="autotoc_md18"></a>
 System</h1>
 <p>A system is a logic unit responsible for performing actions on the registry. It usually operate on entities with specific sets of components. Systems operate independently and collectively define the overall behavior of the ECS. They encapsulate the logic that acts on entities.</p>
 <p>In fact it is a function called with an instance of the <a class="el" href="classecstasy_1_1_registry.html">registry</a>:</p>
@@ -122,7 +122,7 @@ System</h1>
 <div class="ttc" id="aclassecstasy_1_1_i_system_html_aa9cf50e42a827f26e5d7e2c5d7fe9c46"><div class="ttname"><a href="classecstasy_1_1_i_system.html#aa9cf50e42a827f26e5d7e2c5d7fe9c46">ecstasy::ISystem::run</a></div><div class="ttdeci">virtual void run(Registry &amp;registry)=0</div><div class="ttdoc">Run the system.</div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html"><div class="ttname"><a href="classecstasy_1_1_registry.html">ecstasy::Registry</a></div><div class="ttdoc">Base of an ECS architecture.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00068">Registry.hpp:68</a></div></div>
 </div><!-- fragment --><p>References: <a class="el" href="classecstasy_1_1_i_system.html">ISystem</a>, <a class="el" href="classecstasy_1_1_registry.html#a84e0f98f2b37e6aa17fd320d443127f0">Registry.addSystem()</a>, <a class="el" href="classecstasy_1_1_registry.html#a59904982ed7490f12c63628951178dd5">Registry.runSystem()</a>, <a class="el" href="classecstasy_1_1_registry.html#a5595f1c0811c0d7f658c01f49da8dc37">Registry.runSystems()</a></p>
-<h1><a class="anchor" id="autotoc_md14"></a>
+<h1><a class="anchor" id="autotoc_md19"></a>
 Resource</h1>
 <p>A resource is a shared and globally accessible piece of data that can be utilized by systems or entities in the ECS. Resources typically represent data that is not tied to a specific entity but is needed by various parts of the <a class="el" href="classecstasy_1_1_registry.html">registry</a>, such as configuration settings or global parameters.</p>
 <dl class="section note"><dt>Note</dt><dd>In ecstasy, the <a class="el" href="classecstasy_1_1_entities.html">Entities</a> class is a resource present by default in the <a class="el" href="classecstasy_1_1_registry.html">registry</a>.</dd></dl>
@@ -164,7 +164,7 @@ Resource</h1>
 <div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="http://en.cppreference.com/w/namespacestd.html">std</a></div></div>
 <div class="ttc" id="anow_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/chrono/steady_clock/now.html">std::chrono::steady_clock::now</a></div><div class="ttdeci">T now(T... args)</div></div>
 </div><!-- fragment --><p>References: <a class="el" href="classecstasy_1_1_resource.html">Resource</a>, <a class="el" href="classecstasy_1_1_registry.html#a32c739cbf9fe54191f1e56dd0cfbb8e1">registry.addResource()</a>, <a class="el" href="classecstasy_1_1_registry.html#ad566ed29ec900fa80e4f908265f82de6">registry.getResource()</a>, <a class="el" href="classecstasy_1_1_entities.html">Entities</a></p>
-<h1><a class="anchor" id="autotoc_md15"></a>
+<h1><a class="anchor" id="autotoc_md20"></a>
 Registry</h1>
 <p>The registry is a centralized database or manager responsible for creating, managing, and tracking entities within the ECS. It maintains the relationships between entities and their components and provides essential functionality for entity lifecycle management.</p>
 <p>The registry contains:</p>
@@ -175,11 +175,11 @@ Registry</h1>
 </ul>
 <p>It is the link between the different data, the orchestrator of the application.</p>
 <p>References: <a class="el" href="classecstasy_1_1_registry.html">Registry</a></p>
-<h1><a class="anchor" id="autotoc_md16"></a>
+<h1><a class="anchor" id="autotoc_md21"></a>
 Query</h1>
 <p>A query in the context of this ECS refers to the process of selecting entities based on specific criteria or conditions. It allows developers to identify a subset of entities that possess certain components or meet certain requirements.</p>
 <p>Ecstasy provides a SQL like way of querying your entities which means more concepts to define. You can follow <a href="#QueryTutorial">this tutorial</a> to use them for more informations but you should first understand the associated concepts explained below.</p>
-<h2><a class="anchor" id="autotoc_md17"></a>
+<h2><a class="anchor" id="autotoc_md22"></a>
 Queryable</h2>
 <p><a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">Queryable</a> is a ecstasy concept (in the meaning of c++20 template concepts) on which the ecstasy <a class="el" href="classecstasy_1_1query_1_1_query.html">query</a> can operate.</p>
 <p>They must:</p>
@@ -210,7 +210,7 @@ Queryable</h2>
 <div class="ttc" id="asize_t_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a></div></div>
 </div><!-- fragment --><p>In fact there is multiple Queryable sub concepts such as <a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">QueryableObject</a> (example above), <a class="el" href="namespaceecstasy_1_1query.html#ade123f7a4fcdeccb86c1d5d088339b0a">ConstQueryableObject</a> and <a class="el" href="namespaceecstasy_1_1query.html#afb44cd6f8471bc9e034215b74f8e4680">QueryableWrapper</a>. A Queryable must validate at least one of the said concepts.</p>
 <p>References: <a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">Queryable</a>, <a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">Queryable</a>, <a class="el" href="namespaceecstasy_1_1query.html#ade123f7a4fcdeccb86c1d5d088339b0a">ConstQueryableObject</a>, <a class="el" href="namespaceecstasy_1_1query.html#afb44cd6f8471bc9e034215b74f8e4680">QueryableWrapper</a></p>
-<h2><a class="anchor" id="autotoc_md18"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 Batch Query</h2>
 <p>A batch query is a multi threaded query. Instead of iterating over the matching entities yourself in the current thread you can use the splitThreads method. It split the iteration over multiple threads of a custom batch size.</p>
 <p>In the following example, if you have 167 entities with a position and velocity components, it will starts 4 threads (4 batches) and execute the function given in parameter:</p>
@@ -226,7 +226,7 @@ Batch Query</h2>
 <div class="line">    position.x += velocity.x;</div>
 <div class="line">    position.y += velocity.y;</div>
 <div class="line">});</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md19"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md24"></a>
 Modifier</h2>
 <p><a class="el" href="namespaceecstasy_1_1query.html#a761ae07d0a2b58e9277539d7a3722d3a">Modifiers</a> is another ecstasy concept allowing to perform more complex queries in the registry. They must also match the <a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">queryable</a> concept but they are in fact queryable wrappers.</p>
 <p>If you are familiar with the decorators concepts in Python, Java, or any other language you can see the modifiers as a Queryable decorator:</p>
@@ -271,7 +271,7 @@ Modifier</h2>
 <div class="line">};</div>
 <div class="ttc" id="anamespaceecstasy_1_1query_html_a761ae07d0a2b58e9277539d7a3722d3a"><div class="ttname"><a href="namespaceecstasy_1_1query.html#a761ae07d0a2b58e9277539d7a3722d3a">ecstasy::query::Modifier</a></div><div class="ttdeci">concept Modifier</div><div class="ttdoc">Defines a query modifier type.</div><div class="ttdef"><b>Definition:</b> <a href="concepts_2_modifier_8hpp_source.html#l00029">Modifier.hpp:29</a></div></div>
 </div><!-- fragment --><p>References: <a class="el" href="namespaceecstasy_1_1query.html#a761ae07d0a2b58e9277539d7a3722d3a">Modifier</a>, <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">Maybe</a> , <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html">Not</a>, <a class="el" href="namespaceecstasy_1_1query_1_1modifier.html#a38c3a9cb4887db042e8f7c1c1fb2c68d">Or</a>, <a class="el" href="namespaceecstasy_1_1query_1_1modifier.html#a29a7c1437c51bcd2204884913735fdbb">Xor</a>, <a class="el" href="namespaceecstasy_1_1query_1_1modifier.html#a15b2dee6ad399020b53a71f9290f9c91">And</a></p>
-<h2><a class="anchor" id="autotoc_md20"></a>
+<h2><a class="anchor" id="autotoc_md25"></a>
 Condition</h2>
 <p><a class="el" href="namespaceecstasy_1_1query.html#aad13a1796398ea39bac6325be81d7276">Condition</a> is (yet) another ecstasy concept allowing to perform conditions on the fetched data instead of on the presence of data. They are not queryables and are evaluated when iterating on the query.</p>
 <p>When you are using <a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">queryables</a> or <a class="el" href="namespaceecstasy_1_1query.html#a761ae07d0a2b58e9277539d7a3722d3a">modifiers</a> the query performs verification on the presence of the component and not on the component state. The conditions however operates on the component state. This is just syntactic sugar to remove one small line in your code.</p>
@@ -298,9 +298,9 @@ Condition</h2>
 <div class="ttc" id="astructecstasy_1_1query_1_1_condition_html"><div class="ttname"><a href="structecstasy_1_1query_1_1_condition.html">ecstasy::query::Condition</a></div><div class="ttdef"><b>Definition:</b> <a href="conditions_2_condition_8hpp_source.html#l00022">Condition.hpp:22</a></div></div>
 </div><!-- fragment --><p>Follow <a href="#ConditionsTutorial">this tutorial</a> to learn how to use them in details.</p>
 <p>References: <a class="el" href="namespaceecstasy_1_1query.html#aad13a1796398ea39bac6325be81d7276">QCondition</a>, <a class="el" href="namespaceecstasy.html#a3636e577cd1e59a7d31089601561cc39">EqualTo</a>, <a class="el" href="namespaceecstasy.html#a632aba6a51f51ed40b7bdc35331c6821">NotEqualTo</a>, <a class="el" href="namespaceecstasy.html#a261413d053df4c424df13459db564c8b">Greater</a>, <a class="el" href="namespaceecstasy.html#accbc147ca8de440fdbe11ea1f67148af">GreaterEqual</a>, <a class="el" href="namespaceecstasy.html#a8a47386bd7276dc4040566079eb1ec04">Less</a>, <a class="el" href="namespaceecstasy.html#ac8221c0f73ca2e3e2d5d7e92c5241317">LessEqual</a></p>
-<h1><a class="anchor" id="autotoc_md21"></a>
+<h1><a class="anchor" id="autotoc_md26"></a>
 Thread</h1>
-<h2><a class="anchor" id="autotoc_md22"></a>
+<h2><a class="anchor" id="autotoc_md27"></a>
 Lockable</h2>
 <p><a class="el" href="namespaceecstasy_1_1thread.html#a3228b7205e71792e3a2f64a83579dc37">Lockable</a> is a concept following the c++ named requirement <a href="https://en.cppreference.com/w/cpp/named_req/BasicLockable">BasicLockable</a>. To resume, it defines a type having the methods <code>lock</code> and <code>unlock</code>. That's it.</p>
 <div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> L&gt;</div>

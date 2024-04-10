@@ -154,9 +154,9 @@ Getting Started</h1>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a47b4f8718083b99319ff342011e9b110"><div class="ttname"><a href="classecstasy_1_1_registry.html#a47b4f8718083b99319ff342011e9b110">ecstasy::Registry::entityBuilder</a></div><div class="ttdeci">EntityBuilder entityBuilder()</div><div class="ttdoc">Create a new entity builder.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8cpp_source.html#l00033">Registry.cpp:33</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a5595f1c0811c0d7f658c01f49da8dc37"><div class="ttname"><a href="classecstasy_1_1_registry.html#a5595f1c0811c0d7f658c01f49da8dc37">ecstasy::Registry::runSystems</a></div><div class="ttdeci">void runSystems()</div><div class="ttdoc">Run all systems present in the registry.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8cpp_source.html#l00085">Registry.cpp:85</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a84e0f98f2b37e6aa17fd320d443127f0"><div class="ttname"><a href="classecstasy_1_1_registry.html#a84e0f98f2b37e6aa17fd320d443127f0">ecstasy::Registry::addSystem</a></div><div class="ttdeci">S &amp; addSystem(Args &amp;&amp;...args)</div><div class="ttdoc">Add a new system in the registry.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00821">Registry.hpp:821</a></div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md24"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md29"></a>
 Using entities</h1>
-<h2><a class="anchor" id="autotoc_md25"></a>
+<h2><a class="anchor" id="autotoc_md30"></a>
 Creating entities</h2>
 <p>There is 3 ways to create new entities in the registry:</p>
 <ul>
@@ -192,7 +192,7 @@ Since the <a class="el" href="classecstasy_1_1_entities_1_1_builder.html">entiti
 <div class="ttc" id="aclassecstasy_1_1_registry_1_1_entity_builder_html_ad6baf09aa8fb77d6c470295f02859aaf"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_entity_builder.html#ad6baf09aa8fb77d6c470295f02859aaf">ecstasy::Registry::EntityBuilder::build</a></div><div class="ttdeci">Entity build()</div><div class="ttdoc">Finalize the entity, making it alive.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8cpp_source.html#l00022">Registry.cpp:22</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a8bb4d756e09315c730fc230e6a5bd53a"><div class="ttname"><a href="classecstasy_1_1_registry.html#a8bb4d756e09315c730fc230e6a5bd53a">ecstasy::Registry::getEntities</a></div><div class="ttdeci">const Entities &amp; getEntities() const</div><div class="ttdoc">Get the Entities resource.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8cpp_source.html#l00038">Registry.cpp:38</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_ad6b0a8d29a43168653502dfc426bacc8"><div class="ttname"><a href="classecstasy_1_1_registry.html#ad6b0a8d29a43168653502dfc426bacc8">ecstasy::Registry::getStorage</a></div><div class="ttdeci">const getStorageType&lt; C &gt; &amp; getStorage() const</div><div class="ttdoc">Get the Storage for the component type C.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00930">Registry.hpp:930</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md26"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md31"></a>
 Manage entity component</h2>
 <p>When you have an instance of an <a class="el" href="classecstasy_1_1_entity.html">Entity</a> you can check the presence of a component, get it or add one. Always by sending the component storage. However, you can also use the <a class="el" href="classecstasy_1_1_registry_entity.html">RegistryEntity</a> class which, as its name says, is linked to a registry. It is only syntactic sugar to avoid fetching yourself storages from the registry.</p>
 <p>Examples:</p>
@@ -220,7 +220,7 @@ Manage entity component</h2>
 <div class="ttc" id="aclassecstasy_1_1_registry_entity_html_a3b59d87f10db806ba1e8cbcb76a21b91"><div class="ttname"><a href="classecstasy_1_1_registry_entity.html#a3b59d87f10db806ba1e8cbcb76a21b91">ecstasy::RegistryEntity::add</a></div><div class="ttdeci">C &amp; add(Args &amp;&amp;...args)</div><div class="ttdoc">Add a component to the entity.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_entity_8hpp_source.html#l00055">RegistryEntity.hpp:55</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_entity_html_ab8309218f27a95840495e9615cdde286"><div class="ttname"><a href="classecstasy_1_1_registry_entity.html#ab8309218f27a95840495e9615cdde286">ecstasy::RegistryEntity::has</a></div><div class="ttdeci">bool has() const</div><div class="ttdoc">Test if the entity has an associated component in the storage S.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_entity_8hpp_source.html#l00109">RegistryEntity.hpp:109</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a5d982d00370574aec1946df44d3484d0"><div class="ttname"><a href="classecstasy_1_1_registry.html#a5d982d00370574aec1946df44d3484d0">ecstasy::Registry::getEntity</a></div><div class="ttdeci">Entity getEntity(Entity::Index index) noexcept</div><div class="ttdoc">Get the Entity at the index index.</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8cpp_source.html#l00048">Registry.cpp:48</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md27"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md32"></a>
 Delete entities</h2>
 <p>First I need to define two words used in the entities context</p>
 <ul>
@@ -404,7 +404,7 @@ Using conditions</h2>
 <div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span> [life] : registry.<a class="code" href="classecstasy_1_1_registry.html#a21903809a52f0b813c940182bc102d02">select</a>&lt;<span class="keyword">const</span> Life&gt;().where&lt;Shield, <a class="code" href="structecstasy_1_1query_1_1_condition.html">ecstasy::GreaterEqual&lt;&amp;Life::value, &amp;Shield::getValue&gt;</a>&gt;()) {</div>
 <div class="line">    <span class="comment">// Condition equals: if (!(life.value &gt;= shield.getValue())) continue;</span></div>
 <div class="line">}</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md28"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md33"></a>
 Using systems</h1>
 <p>To create systems, you only have to create a new class inheriting the <a class="el" href="classecstasy_1_1_i_system.html">ecstasy::ISystem</a> class and implement the <a class="el" href="classecstasy_1_1_i_system.html#aa9cf50e42a827f26e5d7e2c5d7fe9c46">ecstasy::ISystem::run</a> method.</p>
 <p>For example here is how you would create a Movement system:</p>

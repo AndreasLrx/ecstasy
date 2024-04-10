@@ -88,7 +88,7 @@ $(document).ready(function(){initNavTree('md_doc__technical_implementation.html'
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Explore the inner workings and technical details of Ecstasy. Gain insights into the core concepts, queryable structures, modifiers, conditions, and delve into the intricacies of implementing and utilizing these features. This section provides a deeper understanding of the ECS architecture and serves as a valuable resource for developers looking to integrate and optimize their systems with Ecstasy.</p>
-<h1><a class="anchor" id="autotoc_md30"></a>
+<h1><a class="anchor" id="autotoc_md35"></a>
 Entities Management</h1>
 <p>The <a class="el" href="classecstasy_1_1_entities.html">ecstasy::Entities</a> resource is the container of the registry entities informations. It is designed to be used within a registry and doesn't make sense alone. This resource only manage the <em>lifetime</em> of the entities. Meaning it only knows if an entity exist, if it is alive or killed etc... It has no knowledge about the entity components.</p>
 <p>An entity is in fact only an identifier, an index, it doesn't really contains components. To keep track of the entities and their status, two <a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a> and a <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a> are used.</p>
@@ -117,7 +117,7 @@ Entities Management</h1>
 <p class="startli">Killing an entity does not erase the entity, it only marks it for deletion. It set the bit at the entity index to true in _killed bitset. If the bitset is too small, it is resize appropriately before. To effectively delete the killed entities, you need to call <a class="el" href="classecstasy_1_1_entities.html#ae6313ea1ae99037aaf335034d66e5e45">ecstasy::Entities::maintain</a>.</p>
 </li>
 </ol>
-<h1><a class="anchor" id="autotoc_md31"></a>
+<h1><a class="anchor" id="autotoc_md36"></a>
 Components Management (MapStorage)</h1>
 <p>Components management is made through the <a class="el" href="classecstasy_1_1_i_storage.html">ecstasy::IStorage</a>. You can implement your own storage but the default storage is the <a class="el" href="classecstasy_1_1_map_storage.html">ecstasy::MapStorage</a> and this part will only talk about it.</p>
 <p>The MapStorage keep tracks of the components using two members:</p>
@@ -126,7 +126,7 @@ Components Management (MapStorage)</h1>
 <div class="line"><span class="comment">// BitSet for a fast access on entity having or not the component (bit set to 1 means the entity at the bit index has the component)</span></div>
 <div class="line"><a class="code" href="classutil_1_1_bit_set.html">util::BitSet</a> _mask;</div>
 <div class="ttc" id="aunordered_map_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/unordered_map.html">std::unordered_map&lt; Entity::Index, Component &gt;</a></div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md32"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md37"></a>
 Query</h1>
 <p>The query implementation is mostly in the <b><a class="el" href="namespaceecstasy_1_1query.html" title="Namespace regrouping the internal ecstasy query system.">ecstasy::query</a></b> namespace. It rely on <b>Queryable</b>, <b>Conditions</b> and mostly on <b>BitSet</b>. The registry have some query code too, mostly to fetch the queryables from the registry storages or resources. But the query class can be used without the registry parts if you provide the queryables yourself. Meaning the query system could be extracted to be used in another context with some work.</p>
 <p>So how does the query work behind the scene of the template black magic ?</p>
@@ -138,7 +138,7 @@ Query</h1>
 <li>Velocity storage bitset (_mask)</li>
 </ul>
 <p>The query can then perform a simple bitwise <code>and</code> on all the bitset and has its final bitset. When you query the registry, the bitset is computed only upon creation and you iterate on the computed bitset. Then for each bit set, the query fetch the associated component in the position/velocity storage.</p>
-<h3><a class="anchor" id="autotoc_md33"></a>
+<h3><a class="anchor" id="autotoc_md38"></a>
 Queryable and BitSet</h3>
 <p>A storage is in fact a <a class="el" href="namespaceecstasy_1_1query.html#aef33b329c1a412eb7f7403b90881d468">ecstasy::query::Queryable</a>. It is defined by three properties:</p>
 <ul>
@@ -181,7 +181,7 @@ Queryable and BitSet</h3>
 <div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="http://en.cppreference.com/w/namespacestd.html">std</a></div></div>
 <div class="ttc" id="anamespaceutil_html"><div class="ttname"><a href="namespaceutil.html">util</a></div><div class="ttdoc">Namespace regrouping helpers used by ecstasy but not specific to ecstasy.</div><div class="ttdef"><b>Definition:</b> <a href="_queryable_8hpp_source.html#l00020">Queryable.hpp:21</a></div></div>
 <div class="ttc" id="atuple_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a></div></div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md34"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md39"></a>
 Registry basic query</h3>
 <p>As we seen before, the <a class="el" href="classecstasy_1_1query_1_1_query.html">ecstasy::query::Query</a> needs queryables. But we don't send any in the registry query:</p>
 <div class="fragment"><div class="line">registry.query&lt;Position, Velocity&gt;()</div>
@@ -194,7 +194,7 @@ Registry basic query</h3>
 <div class="line">}</div>
 <div class="ttc" id="anamespaceecstasy_html_a23178e0869471d2ea8fbce5de4c2499b"><div class="ttname"><a href="namespaceecstasy.html#a23178e0869471d2ea8fbce5de4c2499b">ecstasy::ModifiersAllocator</a></div><div class="ttdeci">util::Allocator&lt; ecstasy::query::modifier::ModifierBase &gt; ModifiersAllocator</div><div class="ttdef"><b>Definition:</b> <a href="_registry_8hpp_source.html#l00047">Registry.hpp:47</a></div></div>
 </div><!-- fragment --><p>The following functionnalities (modifiers, conditions etc) respect the the zero-overhead C++ principle meaning if you don't use them it won't slow down your application.</p>
-<h3><a class="anchor" id="autotoc_md35"></a>
+<h3><a class="anchor" id="autotoc_md40"></a>
 Select where</h3>
 <p>We already have almost everything to implement the select where syntax. These are the steps of resolution of the query:</p>
 <ul>
@@ -204,18 +204,18 @@ Select where</h3>
 <li>Construct our query with the precomputed mask and our selected queryables</li>
 </ul>
 <p>The hardest part is the first step, we already have the others. This basically means doing a left outer join to find the queryables present in the select clause (left) but not in the where clause (right). This was a nightmare to do and I can't explain better than the documented code so go see <a class="el" href="structecstasy_1_1query_1_1_select.html">ecstasy::query::Select</a> and <a class="el" href="classecstasy_1_1_registry_1_1_select.html">ecstasy::Registry::Select</a> classes as long as the <a class="el" href="namespaceutil_1_1meta.html">util::meta</a> namespace (<a class="el" href="structutil_1_1meta_1_1left__outer__join.html">util::meta::left_outer_join</a>).</p>
-<h3><a class="anchor" id="autotoc_md36"></a>
+<h3><a class="anchor" id="autotoc_md41"></a>
 Modifiers</h3>
 <p>Modifiers are not complicated themselves. In fact they are only queryable wrappers. The easier example is the Maybe. What does it means to query <code>registry.query&lt;Maybe&lt;Position&gt;&gt;</code> ?</p>
 <p>It means querying <code>Position</code>. But having all bit sets. And not returning a <code>Position</code> but a <code><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt;Position&gt;</code>. Finally a Modifier is really a Queryable, returning a bitset and a query data. See <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">ecstasy::query::modifier::Maybe</a> implementation for more details.</p>
 <p>The hard part about the modifiers is not their implementation but their allocation. Usual queryables are allocated by the registry and stored in the registry. Modifiers should be allocated only for the query lifetime. And we need to allocate data to store the wrapped queryable (example <b>Position</b> storage) and eventually the computed mask if there is one.</p>
 <p>And because allocations means allocator, every registry query method can take an Allocator. First a heap allocator was used (<a class="el" href="namespaceecstasy.html#a23178e0869471d2ea8fbce5de4c2499b">ecstasy::ModifiersAllocator</a>) and was required if there was at least one modifier to allocate in the query and it raised an exception otherwise. But now you don't need to take care of it. I already did it for you. The modifiers are now allocated on the stack because the required size is known at compile time.</p>
 <p>This magic hidden stack allocator use multiple inheritance black magic tricks and you can find more about it in <a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query.html">ecstasy::Registry::RegistryStackQuery</a>.</p>
-<h3><a class="anchor" id="autotoc_md37"></a>
+<h3><a class="anchor" id="autotoc_md42"></a>
 Conditions</h3>
 <p>In opposite to modifiers, conditions are not queryable and doesn't use bitset either. The conditions are checked at runtime (because it check runtime values) on the query iteration.</p>
 <p>Meaning if you iterate three times the same query the conditions will be evaluated three times for each matching entities. But the good part about it is that it check the condition only when the values are fetched and doesn't make an extra fetch just for the condition.</p>
-<h3><a class="anchor" id="autotoc_md38"></a>
+<h3><a class="anchor" id="autotoc_md43"></a>
 AutoLock</h3>
 <p>The query parts have an <code>AutoLock</code> boolean template parameter. If it is set to true, it will wrap any queryables validating the <a class="el" href="namespaceecstasy_1_1thread.html#a3228b7205e71792e3a2f64a83579dc37">Lockable</a> concept in a <a class="el" href="classecstasy_1_1thread_1_1_lockable_view.html">LockableView</a>. This use the <a href="https://en.cppreference.com/w/cpp/language/raii">RAII</a> concept: wrapping the lockable in the views will lock them upon view construction and unlock them upon view destruction.</p>
 <ol type="1">
@@ -249,7 +249,7 @@ AutoLock</h3>
 </ol>
 </li>
 </ol>
-<h3><a class="anchor" id="autotoc_md39"></a>
+<h3><a class="anchor" id="autotoc_md44"></a>
 Resolution Order</h3>
 <p>We have seen everything, not in the lowest details but enough to understand most of the query behaviors. Here is the resolution order of all those functionnality.</p>
 <p><b>Compile Time</b></p>
