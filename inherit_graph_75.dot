@@ -1,8 +1,0 @@
-digraph "Graphical Class Hierarchy"
-{
- // LATEX_PDF_SIZE
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  rankdir="LR";
-  Node0 [label="ecstasy::Registry::\lSelect\< Selects \>::Internal\l\< util::meta::Traits\< Missings...\l \>, util::meta::Traits\< Cs...\l \>, Conditions, A \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecstasy_1_1_registry_1_1_select_1_1_internal_3_01util_1_1meta_1_1_traits_3_01_missings_8_85adf7fede83b5444fcab9e0bd02c3208.html",tooltip="Internal structure allowing to add implicitly required queryables (from the selected types)."];
-}

@@ -1,8 +1,0 @@
-digraph "Graphical Class Hierarchy"
-{
- // LATEX_PDF_SIZE
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  rankdir="LR";
-  Node0 [label="ecstasy::Registry::\lRegistryStackQueryMemory\l\< util::meta::Traits\< Selects...\l \>, util::meta::Traits\< Missings...\l \>, util::meta::Traits\< Conditions...\l \>, AutoLock, Cs... \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html",tooltip="Base class of RegistryStackQuery."];
-}

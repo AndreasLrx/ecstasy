@@ -1,0 +1,5 @@
+<map id="ecstasy::ISystem" name="ecstasy::ISystem">
+<area shape="rect" id="node1" title="System interface, base class of all systems." alt="" coords="5,53,137,79"/>
+<area shape="rect" id="node2" href="$classecstasy_1_1integration_1_1sfml_1_1_poll_events.html" title="Poll events system, polling the events from the RenderWindow resource if present." alt="" coords="205,5,356,47"/>
+<area shape="rect" id="node3" href="$classecstasy_1_1integration_1_1user__action_1_1_poll_actions_3_01std_1_1integer__sequence_3_01_a67921aad8fc30a11f205db4b0bf5827d.html" title="Templated system to poll pending actions using the PendingActions resource." alt="" coords="185,71,376,141"/>
+</map>
