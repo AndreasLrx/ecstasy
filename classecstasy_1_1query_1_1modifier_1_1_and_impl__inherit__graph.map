@@ -1,6 +1,9 @@
 <map id="ecstasy::query::modifier::AndImpl&lt; AutoLock, Q1, Q2, Qs &gt;" name="ecstasy::query::modifier::AndImpl&lt; AutoLock, Q1, Q2, Qs &gt;">
-<area shape="rect" id="node1" title="Binary query modifier which performs a and between at least two queryables." alt="" coords="735,20,924,76"/>
-<area shape="rect" id="node2" href="$classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html" title=" " alt="" coords="456,5,687,91"/>
-<area shape="rect" id="node3" href="$classecstasy_1_1query_1_1modifier_1_1_modifier.html" title=" " alt="" coords="231,27,408,69"/>
-<area shape="rect" id="node4" href="$classecstasy_1_1query_1_1modifier_1_1_modifier_base.html" title="Base class for all query modifiers." alt="" coords="5,27,183,69"/>
+<area shape="rect" id="Node000001" title="Binary query modifier which performs a and between at least two queryables." alt="" coords="735,20,924,75"/>
+<area shape="rect" id="Node000002" href="$classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html" title=" " alt="" coords="456,5,687,89"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="700,45,735,45,735,50,700,50"/>
+<area shape="rect" id="Node000003" href="$classecstasy_1_1query_1_1modifier_1_1_modifier.html" title=" " alt="" coords="231,27,408,67"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="422,45,456,45,456,50,422,50"/>
+<area shape="rect" id="Node000004" href="$classecstasy_1_1query_1_1modifier_1_1_modifier_base.html" title="Base class for all query modifiers." alt="" coords="5,27,183,67"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="196,45,231,45,231,50,196,50"/>
 </map>

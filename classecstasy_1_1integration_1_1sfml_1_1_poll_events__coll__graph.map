@@ -1,4 +1,5 @@
 <map id="ecstasy::integration::sfml::PollEvents" name="ecstasy::integration::sfml::PollEvents">
-<area shape="rect" id="node1" title="Poll events system, polling the events from the RenderWindow resource if present." alt="" coords="5,80,156,121"/>
-<area shape="rect" id="node2" href="$classecstasy_1_1_i_system.html" title="System interface, base class of all systems." alt="" coords="15,5,147,32"/>
+<area shape="rect" id="Node000001" title="Poll events system, polling the events from the RenderWindow resource if present." alt="" coords="5,79,156,119"/>
+<area shape="rect" id="Node000002" href="$classecstasy_1_1_i_system.html" title="System interface, base class of all systems." alt="" coords="15,5,147,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,44,83,79,78,79,78,44"/>
 </map>

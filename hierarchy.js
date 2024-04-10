@@ -35,7 +35,11 @@ var hierarchy =
       [ "util::meta::type_set_eq< std::tuple< Ts1... >, std::tuple< Ts2... > >", "structutil_1_1meta_1_1type__set__eq_3_01std_1_1tuple_3_01_ts1_8_8_8_01_4_00_01std_1_1tuple_3_01_ts2_8_8_8_01_4_01_4.html", null ]
     ] ],
     [ "ecstasy::query::ConditionBase", "structecstasy_1_1query_1_1_condition_base.html", [
-      [ "ecstasy::query::Condition< Left, Right, Comparer >", "structecstasy_1_1query_1_1_condition.html", null ]
+      [ "ecstasy::query::Condition< Left, Right, Comparer >", "structecstasy_1_1query_1_1_condition.html", null ],
+      [ "ecstasy::query::Condition< Left, Right, Comparer >", "structecstasy_1_1query_1_1_condition_3_01_left_00_01_right_00_01_comparer_01_4.html", null ],
+      [ "ecstasy::query::Condition< Left, ptr, Comparer >", "structecstasy_1_1query_1_1_condition_3_01_left_00_01ptr_00_01_comparer_01_4.html", null ],
+      [ "ecstasy::query::Condition< ptr, Right, Comparer >", "structecstasy_1_1query_1_1_condition_3_01ptr_00_01_right_00_01_comparer_01_4.html", null ],
+      [ "ecstasy::query::Condition< ptrLeft, ptrRight, Comparer >", "structecstasy_1_1query_1_1_condition_3_01ptr_left_00_01ptr_right_00_01_comparer_01_4.html", null ]
     ] ],
     [ "ecstasy::DeletionStack", "classecstasy_1_1_deletion_stack.html", null ],
     [ "ecstasy::EmptyType", "structecstasy_1_1_empty_type.html", null ],
@@ -152,10 +156,7 @@ var hierarchy =
     ] ],
     [ "ecstasy::Maybe< C, AutoLock >", "structecstasy_1_1_maybe.html", null ],
     [ "ecstasy::query::modifier::ModifierBase", "classecstasy_1_1query_1_1modifier_1_1_modifier_base.html", [
-      [ "ecstasy::query::modifier::Modifier< false >", "classecstasy_1_1query_1_1modifier_1_1_modifier.html", [
-        [ "ecstasy::query::modifier::Maybe< Q, AutoLock >", "classecstasy_1_1query_1_1modifier_1_1_maybe.html", null ],
-        [ "ecstasy::query::modifier::Not< Q, AutoLock >", "classecstasy_1_1query_1_1modifier_1_1_not.html", null ]
-      ] ],
+      [ "ecstasy::query::modifier::Modifier< false >", "classecstasy_1_1query_1_1modifier_1_1_modifier.html", null ],
       [ "ecstasy::query::modifier::Modifier< AutoLock >", "classecstasy_1_1query_1_1modifier_1_1_modifier.html", [
         [ "ecstasy::query::modifier::BinaryModifier< AndImpl< AutoLock, Q1, Q2, Qs... >, AutoLock, std::type_identity, Q1, Q2, Qs... >", "classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html", [
           [ "ecstasy::query::modifier::AndImpl< AutoLock, Q1, Q2, Qs >", "classecstasy_1_1query_1_1modifier_1_1_and_impl.html", null ]
@@ -166,7 +167,9 @@ var hierarchy =
         [ "ecstasy::query::modifier::BinaryModifier< XorImpl< AutoLock, Q1, Q2, Qs... >, AutoLock, util::meta::add_optional, Q1, Q2, Qs... >", "classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html", [
           [ "ecstasy::query::modifier::XorImpl< AutoLock, Q1, Q2, Qs >", "classecstasy_1_1query_1_1modifier_1_1_xor_impl.html", null ]
         ] ],
-        [ "ecstasy::query::modifier::BinaryModifier< Derived, AutoLock, DataModifier, Q1, Q2, Qs >", "classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html", null ]
+        [ "ecstasy::query::modifier::BinaryModifier< Derived, AutoLock, DataModifier, Q1, Q2, Qs >", "classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html", null ],
+        [ "ecstasy::query::modifier::Maybe< Q, AutoLock >", "classecstasy_1_1query_1_1modifier_1_1_maybe.html", null ],
+        [ "ecstasy::query::modifier::Not< Q, AutoLock >", "classecstasy_1_1query_1_1modifier_1_1_not.html", null ]
       ] ]
     ] ],
     [ "ecstasy::integration::event::MouseButtonEvent", "structecstasy_1_1integration_1_1event_1_1_mouse_button_event.html", [

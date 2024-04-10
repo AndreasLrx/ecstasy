@@ -1,13 +1,23 @@
 <map id="ecstasy::integration::event::Event" name="ecstasy::integration::event::Event">
-<area shape="rect" id="node1" title="Event class." alt="" coords="639,235,789,276"/>
-<area shape="rect" id="node2" href="$structecstasy_1_1integration_1_1event_1_1_gamepad_connected_event.html" title="Event describing a gamepad connection or disconnection." alt="" coords="212,5,456,47"/>
-<area shape="rect" id="node3" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/size_t.html" title=" " alt="" coords="13,13,101,39"/>
-<area shape="rect" id="node4" href="$structecstasy_1_1integration_1_1event_1_1_mouse_button_event.html" title="Event describing when a mouse button is pressed or released." alt="" coords="235,71,433,112"/>
-<area shape="rect" id="node5" href="$structecstasy_1_1integration_1_1event_1_1_text_entered_event.html" title="Event describing a text (character) entered." alt="" coords="239,136,429,177"/>
-<area shape="rect" id="node6" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/integer.html" title=" " alt="" coords="5,143,108,170"/>
-<area shape="rect" id="node7" href="$structecstasy_1_1integration_1_1event_1_1_gamepad_button_event.html" title="Event describing a gamepad button pressed or released." alt="" coords="225,201,443,243"/>
-<area shape="rect" id="node8" href="$structecstasy_1_1integration_1_1event_1_1_mouse_move_event.html" title="Event describing when the mouse move." alt="" coords="239,267,429,308"/>
-<area shape="rect" id="node9" href="$structecstasy_1_1integration_1_1event_1_1_key_event.html" title="Event describing a key pressed or released." alt="" coords="259,332,409,373"/>
-<area shape="rect" id="node10" href="$structecstasy_1_1integration_1_1event_1_1_mouse_wheel_scroll_event.html" title="Event describing when a mouse wheel is scrolled." alt="" coords="218,397,450,439"/>
-<area shape="rect" id="node11" href="$structecstasy_1_1integration_1_1event_1_1_gamepad_axis_event.html" title="Event describing a gamepad axis value change." alt="" coords="233,463,435,504"/>
+<area shape="rect" id="Node000001" title="Event class." alt="" coords="639,220,789,260"/>
+<area shape="rect" id="Node000002" href="$structecstasy_1_1integration_1_1event_1_1_mouse_button_event.html" title="Event describing when a mouse button is pressed or released." alt="" coords="235,5,433,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="448,31,490,39,534,51,577,68,616,91,648,121,674,155,707,219,703,221,670,158,645,124,613,95,574,73,532,56,489,44,447,36"/>
+<area shape="rect" id="Node000003" href="$structecstasy_1_1integration_1_1event_1_1_mouse_wheel_scroll_event.html" title="Event describing when a mouse wheel is scrolled." alt="" coords="218,69,450,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="465,106,541,126,616,156,661,186,696,218,692,222,657,190,613,161,539,131,463,111"/>
+<area shape="rect" id="Node000004" href="$structecstasy_1_1integration_1_1event_1_1_mouse_move_event.html" title="Event describing when the mouse move." alt="" coords="239,133,429,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="444,168,528,184,615,204,659,217,657,223,614,209,527,189,443,173"/>
+<area shape="rect" id="Node000005" href="$structecstasy_1_1integration_1_1event_1_1_key_event.html" title="Event describing a key pressed or released." alt="" coords="259,197,409,237"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="423,220,638,233,638,238,423,225"/>
+<area shape="rect" id="Node000006" href="$structecstasy_1_1integration_1_1event_1_1_text_entered_event.html" title="Event describing a text (character) entered." alt="" coords="239,261,429,301"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="443,270,614,252,638,249,639,254,615,257,443,275"/>
+<area shape="rect" id="Node000007" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/integer.html" title=" " alt="" coords="5,269,108,294"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="122,279,239,279,239,284,122,284"/>
+<area shape="rect" id="Node000008" href="$structecstasy_1_1integration_1_1event_1_1_gamepad_button_event.html" title="Event describing a gamepad button pressed or released." alt="" coords="225,325,443,365"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="456,326,535,309,614,287,677,258,679,263,616,292,536,315,457,331"/>
+<area shape="rect" id="Node000009" href="$structecstasy_1_1integration_1_1event_1_1_gamepad_axis_event.html" title="Event describing a gamepad axis value change." alt="" coords="233,389,435,429"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="448,395,532,376,574,361,613,342,639,323,662,301,697,259,701,262,666,305,643,327,616,346,576,366,534,381,449,401"/>
+<area shape="rect" id="Node000010" href="$structecstasy_1_1integration_1_1event_1_1_gamepad_connected_event.html" title="Event describing a gamepad connection or disconnection." alt="" coords="212,453,456,493"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="469,464,544,445,580,430,613,410,648,375,674,334,693,293,705,259,710,261,698,295,679,336,652,379,616,414,583,435,546,450,471,469"/>
+<area shape="rect" id="Node000011" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/size_t.html" title=" " alt="" coords="13,461,101,486"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="115,471,212,471,212,476,115,476"/>
 </map>

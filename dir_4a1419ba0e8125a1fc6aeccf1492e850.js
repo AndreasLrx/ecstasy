@@ -1,18 +1,9 @@
 var dir_4a1419ba0e8125a1fc6aeccf1492e850 =
 [
     [ "include.hpp", "storages_2include_8hpp.html", null ],
-    [ "Instances.hpp", "_instances_8hpp.html", [
-      [ "Instances", "classecstasy_1_1_instances.html", "classecstasy_1_1_instances" ]
-    ] ],
-    [ "IStorage.hpp", "_i_storage_8hpp.html", [
-      [ "IStorage", "classecstasy_1_1_i_storage.html", "classecstasy_1_1_i_storage" ]
-    ] ],
-    [ "MapStorage.hpp", "_map_storage_8hpp.html", [
-      [ "MapStorage", "classecstasy_1_1_map_storage.html", "classecstasy_1_1_map_storage" ]
-    ] ],
+    [ "Instances.hpp", "_instances_8hpp.html", "_instances_8hpp" ],
+    [ "IStorage.hpp", "_i_storage_8hpp.html", "_i_storage_8hpp" ],
+    [ "MapStorage.hpp", "_map_storage_8hpp.html", "_map_storage_8hpp" ],
     [ "StorageConcepts.hpp", "_storage_concepts_8hpp.html", "_storage_concepts_8hpp" ],
-    [ "SystemInstances.hpp", "_system_instances_8hpp.html", [
-      [ "SystemInstances", "classecstasy_1_1_system_instances.html", "classecstasy_1_1_system_instances" ],
-      [ "Comparer", "classecstasy_1_1_system_instances_1_1_comparer.html", "classecstasy_1_1_system_instances_1_1_comparer" ]
-    ] ]
+    [ "SystemInstances.hpp", "_system_instances_8hpp.html", "_system_instances_8hpp" ]
 ];

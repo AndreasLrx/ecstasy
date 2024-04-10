@@ -1,4 +1,9 @@
 <map id="ecstasy::integration::event::Gamepad" name="ecstasy::integration::event::Gamepad">
-<area shape="rect" id="node1" title="Current Gamepad state." alt="" coords="5,95,156,136"/>
-<area shape="rect" id="node2" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/size_t.html" title=" " alt="" coords="37,5,125,32"/>
+<area shape="rect" id="Node000001" title="Current Gamepad state." alt="" coords="315,62,465,102"/>
+<area shape="rect" id="Node000002" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/size_t.html" title=" " alt="" coords="61,5,149,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,28,315,63,314,68,162,33"/>
+<area shape="rect" id="Node000003" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/array.html" title=" " alt="" coords="5,55,205,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="219,79,314,79,314,85,219,85"/>
+<area shape="rect" id="Node000004" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/array.html" title=" " alt="" coords="23,133,188,188"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="201,132,316,99,318,105,202,137"/>
 </map>

@@ -1,8 +1,17 @@
 <map id="ecstasy::Registry::Select&lt; Selects &gt;" name="ecstasy::Registry::Select&lt; Selects &gt;">
-<area shape="rect" id="node1" title="Proxy class to use where method." alt="" coords="911,71,1051,112"/>
-<area shape="rect" id="node2" href="$classecstasy_1_1_registry.html" title="Base of an ECS architecture." alt="" coords="668,78,801,105"/>
-<area shape="rect" id="node3" href="$classecstasy_1_1_instances.html" title=" " alt="" coords="369,5,531,47"/>
-<area shape="rect" id="node4" href="$classecstasy_1_1_instances.html" title=" " alt="" coords="365,71,535,112"/>
-<area shape="rect" id="node5" href="$classecstasy_1_1_system_instances.html" title="Set of instances inheriting from the Base type." alt="" coords="355,137,545,163"/>
-<area shape="rect" id="node6" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/map.html" title=" " alt="" coords="5,107,233,193"/>
+<area shape="rect" id="Node000001" title="Proxy class to use where method." alt="" coords="911,113,1051,153"/>
+<area shape="rect" id="Node000002" href="$classecstasy_1_1_registry.html" title="Base of an ECS architecture." alt="" coords="668,121,801,146"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="815,131,910,131,910,136,815,136"/>
+<area shape="rect" id="Node000003" href="$classecstasy_1_1_instances.html" title=" " alt="" coords="365,32,535,72"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="535,73,690,118,689,123,533,78"/>
+<area shape="rect" id="Node000004" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/unordered_map.html" title=" " alt="" coords="37,5,202,75"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="216,41,365,46,365,52,216,46"/>
+<area shape="rect" id="Node000005" href="$classecstasy_1_1_instances.html" title=" " alt="" coords="369,113,531,153"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="545,131,668,131,668,136,545,136"/>
+<area shape="rect" id="Node000006" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/unordered_map.html" title=" " alt="" coords="37,99,202,168"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="216,131,368,131,368,136,216,136"/>
+<area shape="rect" id="Node000007" href="$classecstasy_1_1_system_instances.html" title="Set of instances inheriting from the Base type." alt="" coords="355,199,545,225"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="509,193,687,143,689,149,511,198"/>
+<area shape="rect" id="Node000008" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/map.html" title=" " alt="" coords="5,193,233,277"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="247,223,354,216,355,221,247,229"/>
 </map>

@@ -1,5 +1,7 @@
 <map id="ecstasy::integration::event::GamepadButtonEvent" name="ecstasy::integration::event::GamepadButtonEvent">
-<area shape="rect" id="node1" title="Event describing a gamepad button pressed or released." alt="" coords="5,53,224,94"/>
-<area shape="rect" id="node2" href="$structecstasy_1_1integration_1_1event_1_1_gamepad_button_pressed_event.html" title="Event describing a gamepad button pressed." alt="" coords="277,5,509,61"/>
-<area shape="rect" id="node3" href="$structecstasy_1_1integration_1_1event_1_1_gamepad_button_released_event.html" title="Event describing a gamepad button released." alt="" coords="272,85,513,141"/>
+<area shape="rect" id="Node000001" title="Event describing a gamepad button pressed or released." alt="" coords="5,53,224,93"/>
+<area shape="rect" id="Node000002" href="$structecstasy_1_1integration_1_1event_1_1_gamepad_button_pressed_event.html" title="Event describing a gamepad button pressed." alt="" coords="277,5,509,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="237,52,276,47,277,52,238,58"/>
+<area shape="rect" id="Node000003" href="$structecstasy_1_1integration_1_1event_1_1_gamepad_button_released_event.html" title="Event describing a gamepad button released." alt="" coords="272,84,513,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="238,87,272,92,271,97,237,92"/>
 </map>

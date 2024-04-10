@@ -1,6 +1,10 @@
 <map id="util::BitSet::Reference" name="util::BitSet::Reference">
-<area shape="rect" id="node1" title=" " alt="" coords="147,184,311,211"/>
-<area shape="rect" id="node2" href="$classutil_1_1_bit_set.html" title="Mimics the API of std::bitset but with the dynamic properties of std::vector&lt;bool&gt;" alt="" coords="137,95,228,121"/>
-<area shape="rect" id="node3" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="5,5,208,32"/>
-<area shape="rect" id="node4" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/size_t.html" title=" " alt="" coords="232,5,320,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,181,169,207"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1_bit_set.html" title="Mimics the API of std::bitset but with the dynamic properties of std::vector&lt;bool&gt;" alt="" coords="125,93,215,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,131,101,183,97,179,147,127"/>
+<area shape="rect" id="Node000003" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/size_t.html" title=" " alt="" coords="22,5,110,31"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="72,44,81,118,89,181,83,181,75,119,66,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="92,37,158,91,154,95,89,41"/>
+<area shape="rect" id="Node000004" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="134,5,337,31"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="220,43,181,94,177,91,216,40"/>
 </map>

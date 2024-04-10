@@ -1,5 +1,7 @@
 <map id="ecstasy::integration::event::Gamepads" name="ecstasy::integration::event::Gamepads">
-<area shape="rect" id="node1" title="Current Gamepads states." alt="" coords="351,31,501,73"/>
-<area shape="rect" id="node2" href="$classecstasy_1_1_resource.html" title="Base class of all registry resources." alt="" coords="45,5,183,32"/>
-<area shape="rect" id="node3" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/array.html" title=" " alt="" coords="5,56,223,112"/>
+<area shape="rect" id="Node000001" title="Current Gamepads states." alt="" coords="351,30,501,70"/>
+<area shape="rect" id="Node000002" href="$classecstasy_1_1_resource.html" title="Base class of all registry resources." alt="" coords="45,5,183,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,24,351,40,350,45,197,29"/>
+<area shape="rect" id="Node000003" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/array.html" title=" " alt="" coords="5,55,223,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="236,67,326,58,350,56,351,61,327,63,237,73"/>
 </map>

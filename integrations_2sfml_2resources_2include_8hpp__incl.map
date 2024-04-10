@@ -1,8 +1,13 @@
 <map id="src/ecstasy/integrations/sfml/resources/include.hpp" name="src/ecstasy/integrations/sfml/resources/include.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="148,5,349,47"/>
-<area shape="rect" id="node2" href="$_render_window_8hpp.html" title=" " alt="" coords="175,95,322,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,177,252,203"/>
-<area shape="rect" id="node4" href="$_object_wrapper_8hpp.html" title=" " alt="" coords="276,169,461,211"/>
-<area shape="rect" id="node5" href="$_resource_8hpp.html" title=" " alt="" coords="313,259,424,285"/>
-<area shape="rect" id="node6" title=" " alt="" coords="297,333,440,360"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="148,5,349,45"/>
+<area shape="rect" id="Node000002" href="$_render_window_8hpp.html" title=" " alt="" coords="175,93,322,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="251,46,251,79,246,79,246,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,174,252,199"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="232,121,160,168,157,164,230,117"/>
+<area shape="rect" id="Node000004" href="$_object_wrapper_8hpp.html" title=" " alt="" coords="276,167,461,207"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="268,117,330,157,327,161,265,121"/>
+<area shape="rect" id="Node000005" href="$_resource_8hpp.html" title=" " alt="" coords="313,255,424,280"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="371,207,371,241,366,241,366,207"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="297,328,440,353"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="371,280,371,314,366,314,366,280"/>
 </map>

@@ -1,8 +1,8 @@
 var namespaces_dup =
 [
     [ "ecstasy", "namespaceecstasy.html", "namespaceecstasy" ],
-    [ "std", null, [
-      [ "chrono", null, [
+    [ "std", "http://en.cppreference.com/w/namespacestd.html", [
+      [ "chrono", "http://en.cppreference.com/w/namespacestd_1_1chrono.html", [
         [ "clock_cast", "http://en.cppreference.com/w/cpp/chrono/clock_cast.html", null ],
         [ "current_zone", "http://en.cppreference.com/w/cpp/chrono/current_zone.html", null ],
         [ "duration_cast", "http://en.cppreference.com/w/cpp/chrono/duration/duration_cast.html", null ],
@@ -20,15 +20,16 @@ var namespaces_dup =
         [ "time_point_cast", "http://en.cppreference.com/w/cpp/chrono/time_point/time_point_cast.html", null ],
         [ "treat_as_floating_point_v", "http://en.cppreference.com/w/cpp/chrono/treat_as_floating_point.html", null ]
       ] ],
-      [ "experimental", null, [
-        [ "erase(std", null, [
+      [ "execution", "http://en.cppreference.com/w/namespacestd_1_1execution.html", null ],
+      [ "experimental", "http://en.cppreference.com/w/namespacestd_1_1experimental.html", [
+        [ "erase(std", "http://en.cppreference.com/w/namespacestd_1_1experimental_1_1erase_07std.html", [
           [ "basic_string)", "http://en.cppreference.com/w/cpp/experimental/basic_string/erase.html", null ],
           [ "deque)", "http://en.cppreference.com/w/cpp/experimental/deque/erase.html", null ],
           [ "forward_list)", "http://en.cppreference.com/w/cpp/experimental/forward_list/erase.html", null ],
           [ "list)", "http://en.cppreference.com/w/cpp/experimental/list/erase.html", null ],
           [ "vector)", "http://en.cppreference.com/w/cpp/experimental/vector/erase.html", null ]
         ] ],
-        [ "erase_if(std", null, [
+        [ "erase_if(std", "http://en.cppreference.com/w/namespacestd_1_1experimental_1_1erase__if_07std.html", [
           [ "basic_string)", "http://en.cppreference.com/w/cpp/experimental/basic_string/erase_if.html", null ],
           [ "deque)", "http://en.cppreference.com/w/cpp/experimental/deque/erase_if.html", null ],
           [ "forward_list)", "http://en.cppreference.com/w/cpp/experimental/forward_list/erase_if.html", null ],
@@ -43,7 +44,7 @@ var namespaces_dup =
           [ "unordered_set)", "http://en.cppreference.com/w/cpp/experimental/unordered_set/erase_if.html", null ],
           [ "vector)", "http://en.cppreference.com/w/cpp/experimental/vector/erase_if.html", null ]
         ] ],
-        [ "filesystem", null, [
+        [ "filesystem", "http://en.cppreference.com/w/namespacestd_1_1experimental_1_1filesystem.html", [
           [ "absolute", "http://en.cppreference.com/w/cpp/experimental/fs/absolute.html", null ],
           [ "canonical", "http://en.cppreference.com/w/cpp/experimental/fs/canonical.html", null ],
           [ "copy", "http://en.cppreference.com/w/cpp/experimental/fs/copy.html", null ],
@@ -82,11 +83,11 @@ var namespaces_dup =
           [ "system_complete", "http://en.cppreference.com/w/cpp/experimental/fs/absolute.html", null ],
           [ "temp_directory_path", "http://en.cppreference.com/w/cpp/experimental/fs/temp_directory_path.html", null ]
         ] ],
-        [ "parallel", null, [
+        [ "parallel", "http://en.cppreference.com/w/namespacestd_1_1experimental_1_1parallel.html", [
           [ "reduce", "http://en.cppreference.com/w/cpp/experimental/reduce.html", null ],
           [ "transform_reduce", "http://en.cppreference.com/w/cpp/experimental/transform_reduce.html", null ]
         ] ],
-        [ "pmr", null, [
+        [ "pmr", "http://en.cppreference.com/w/namespacestd_1_1experimental_1_1pmr.html", [
           [ "get_default_resource", "http://en.cppreference.com/w/cpp/experimental/get_default_resource.html", null ],
           [ "new_delete_resource", "http://en.cppreference.com/w/cpp/experimental/new_delete_resource.html", null ],
           [ "null_memory_resource", "http://en.cppreference.com/w/cpp/experimental/null_memory_resource.html", null ],
@@ -197,7 +198,7 @@ var namespaces_dup =
         [ "tuple_size_v", "http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html", null ],
         [ "uses_allocator_v", "http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html", null ]
       ] ],
-      [ "filesystem", null, [
+      [ "filesystem", "http://en.cppreference.com/w/namespacestd_1_1filesystem.html", [
         [ "absolute", "http://en.cppreference.com/w/cpp/filesystem/absolute.html", null ],
         [ "canonical", "http://en.cppreference.com/w/cpp/filesystem/canonical.html", null ],
         [ "copy", "http://en.cppreference.com/w/cpp/filesystem/copy.html", null ],
@@ -239,13 +240,14 @@ var namespaces_dup =
         [ "u8path", "http://en.cppreference.com/w/cpp/filesystem/path/u8path.html", null ],
         [ "weakly_canonical", "http://en.cppreference.com/w/cpp/filesystem/canonical.html", null ]
       ] ],
-      [ "pmr", null, [
+      [ "literals", "http://en.cppreference.com/w/namespacestd_1_1literals.html", null ],
+      [ "pmr", "http://en.cppreference.com/w/namespacestd_1_1pmr.html", [
         [ "get_default_resource", "http://en.cppreference.com/w/cpp/memory/get_default_resource.html", null ],
         [ "new_delete_resource", "http://en.cppreference.com/w/cpp/memory/new_delete_resource.html", null ],
         [ "null_memory_resource", "http://en.cppreference.com/w/cpp/memory/null_memory_resource.html", null ],
         [ "set_default_resource", "http://en.cppreference.com/w/cpp/memory/set_default_resource.html", null ]
       ] ],
-      [ "ranges", null, [
+      [ "ranges", "http://en.cppreference.com/w/namespacestd_1_1ranges.html", [
         [ "adjacent_find", "http://en.cppreference.com/w/cpp/algorithm/ranges/adjacent_find.html", null ],
         [ "all_of", "http://en.cppreference.com/w/cpp/algorithm/ranges/all_any_none_of.html", null ],
         [ "any_of", "http://en.cppreference.com/w/cpp/algorithm/ranges/all_any_none_of.html", null ],
@@ -349,13 +351,14 @@ var namespaces_dup =
         [ "unique_copy", "http://en.cppreference.com/w/cpp/algorithm/ranges/unique_copy.html", null ],
         [ "upper_bound", "http://en.cppreference.com/w/cpp/algorithm/ranges/upper_bound.html", null ]
       ] ],
-      [ "rel_ops", null, [
+      [ "regex_constants", "http://en.cppreference.com/w/namespacestd_1_1regex__constants.html", null ],
+      [ "rel_ops", "http://en.cppreference.com/w/namespacestd_1_1rel__ops.html", [
         [ "operator!=", "http://en.cppreference.com/w/cpp/utility/rel_ops/operator_cmp.html", null ],
         [ "operator<=", "http://en.cppreference.com/w/cpp/utility/rel_ops/operator_cmp.html", null ],
         [ "operator>", "http://en.cppreference.com/w/cpp/utility/rel_ops/operator_cmp.html", null ],
         [ "operator>=", "http://en.cppreference.com/w/cpp/utility/rel_ops/operator_cmp.html", null ]
       ] ],
-      [ "this_thread", null, [
+      [ "this_thread", "http://en.cppreference.com/w/namespacestd_1_1this__thread.html", [
         [ "get_id", "http://en.cppreference.com/w/cpp/thread/get_id.html", null ],
         [ "sleep_for", "http://en.cppreference.com/w/cpp/thread/sleep_for.html", null ],
         [ "sleep_until", "http://en.cppreference.com/w/cpp/thread/sleep_until.html", null ],

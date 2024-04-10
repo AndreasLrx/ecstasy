@@ -1,9 +1,19 @@
 <map id="src/ecstasy/integrations/user_action/UserProfile.hpp" name="src/ecstasy/integrations/user_action/UserProfile.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="118,5,322,47"/>
-<area shape="rect" id="node2" href="$_action_listener_8hpp.html" title=" " alt="" coords="454,95,679,136"/>
-<area shape="rect" id="node3" href="$integrations_2user__action_2include_8hpp.html" title=" " alt="" coords="154,273,334,315"/>
-<area shape="rect" id="node6" href="$_user_profile_8cpp.html" title=" " alt="" coords="226,95,429,136"/>
-<area shape="rect" id="node7" href="$_users_8hpp.html" title=" " alt="" coords="24,95,202,136"/>
-<area shape="rect" id="node4" href="$_poll_actions_8hpp.html" title=" " alt="" coords="460,184,665,225"/>
-<area shape="rect" id="node5" href="$_users_8cpp.html" title=" " alt="" coords="184,184,362,225"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="118,5,322,45"/>
+<area shape="rect" id="Node000002" href="$_action_listener_8hpp.html" title=" " alt="" coords="454,93,680,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="310,46,492,91,490,96,309,51"/>
+<area shape="rect" id="Node000004" href="$integrations_2user__action_2include_8hpp.html" title=" " alt="" coords="180,269,360,309"/>
+<area shape="poly" id="edge10_Node000001_Node000004" title=" " alt="" coords="106,40,55,60,33,75,15,95,8,113,15,132,29,158,47,181,93,219,145,247,196,267,194,272,143,252,90,223,43,185,25,161,10,134,3,113,10,92,29,71,52,55,104,35"/>
+<area shape="rect" id="Node000006" href="$_user_profile_8cpp.html" title=" " alt="" coords="227,93,430,133"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="257,52,306,91,303,95,253,56"/>
+<area shape="rect" id="Node000007" href="$_users_8hpp.html" title=" " alt="" coords="25,93,202,133"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="188,56,139,95,136,91,184,52"/>
+<area shape="rect" id="Node000003" href="$_poll_actions_8hpp.html" title=" " alt="" coords="339,181,544,221"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="529,144,471,183,468,179,526,139"/>
+<area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="576,147,575,186,569,206,558,223,545,234,526,244,477,260,360,281,359,276,476,255,524,239,542,230,554,220,564,203,569,185,570,147"/>
+<area shape="rect" id="Node000005" href="$_users_8cpp.html" title=" " alt="" coords="137,181,314,221"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="480,139,301,184,300,179,478,134"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="393,230,309,272,306,267,390,225"/>
+<area shape="poly" id="edge9_Node000007_Node000004" title=" " alt="" coords="112,147,114,185,119,203,128,220,158,248,195,267,192,272,155,252,124,223,114,205,109,185,107,147"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="151,140,202,179,199,183,148,144"/>
 </map>

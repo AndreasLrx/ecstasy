@@ -1,6 +1,9 @@
 <map id="src/ecstasy/thread/SharedRecursiveMutex.hpp" name="src/ecstasy/thread/SharedRecursiveMutex.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="26,5,230,47"/>
-<area shape="rect" id="node2" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/atomic.html" title=" " alt="" coords="5,95,72,121"/>
-<area shape="rect" id="node3" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/thread.html" title=" " alt="" coords="96,95,160,121"/>
-<area shape="rect" id="node4" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/shared_mutex.html" title=" " alt="" coords="184,95,299,121"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="26,5,230,45"/>
+<area shape="rect" id="Node000002" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/atomic.html" title=" " alt="" coords="5,93,72,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,48,64,86,60,82,105,44"/>
+<area shape="rect" id="Node000003" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/thread.html" title=" " alt="" coords="96,93,160,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="131,46,131,79,125,79,125,46"/>
+<area shape="rect" id="Node000004" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/shared_mutex.html" title=" " alt="" coords="184,93,299,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="157,43,215,83,212,87,154,48"/>
 </map>

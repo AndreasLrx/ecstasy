@@ -1,4 +1,7 @@
 <map id="ecstasy::integration::event::Mouse" name="ecstasy::integration::event::Mouse">
-<area shape="rect" id="node1" title="Current mouse state." alt="" coords="5,80,156,121"/>
-<area shape="rect" id="node2" href="$classecstasy_1_1_resource.html" title="Base class of all registry resources." alt="" coords="11,5,150,32"/>
+<area shape="rect" id="Node000001" title="Current mouse state." alt="" coords="99,108,250,148"/>
+<area shape="rect" id="Node000002" href="$classecstasy_1_1_resource.html" title="Base class of all registry resources." alt="" coords="5,13,144,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,46,158,106,154,110,94,50"/>
+<area shape="rect" id="Node000003" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/array.html" title=" " alt="" coords="168,5,381,45"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="248,57,195,110,192,106,245,53"/>
 </map>

@@ -1,6 +1,9 @@
 <map id="ecstasy::integration::event::GamepadCombinationListener" name="ecstasy::integration::event::GamepadCombinationListener">
-<area shape="rect" id="node1" title="Listener of a button combination." alt="" coords="441,63,663,119"/>
-<area shape="rect" id="node2" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/unordered_map.html" title=" " alt="" coords="51,5,253,47"/>
-<area shape="rect" id="node3" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="67,71,237,112"/>
-<area shape="rect" id="node4" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/utility/functional/function.html" title=" " alt="" coords="5,137,299,193"/>
+<area shape="rect" id="Node000001" title="Listener of a button combination." alt="" coords="441,62,663,117"/>
+<area shape="rect" id="Node000002" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="67,5,237,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="251,38,442,69,441,74,250,44"/>
+<area shape="rect" id="Node000003" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/unordered_map.html" title=" " alt="" coords="51,69,253,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="267,87,441,87,441,92,267,92"/>
+<area shape="rect" id="Node000004" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/utility/functional/function.html" title=" " alt="" coords="5,134,299,189"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="312,130,441,107,442,112,313,135"/>
 </map>

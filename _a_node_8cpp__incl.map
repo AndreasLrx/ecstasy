@@ -1,13 +1,28 @@
 <map id="src/util/serialization/ANode.cpp" name="src/util/serialization/ANode.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="239,5,390,47"/>
-<area shape="rect" id="node2" href="$_a_node_8hpp.html" title=" " alt="" coords="132,95,225,121"/>
-<area shape="rect" id="node9" href="$_i_array_node_8hpp.html" title=" " alt="" coords="404,95,527,121"/>
-<area shape="rect" id="node11" href="$_i_object_node_8hpp.html" title=" " alt="" coords="249,95,380,121"/>
-<area shape="rect" id="node3" href="$_i_node_8hpp.html" title=" " alt="" coords="200,169,288,196"/>
-<area shape="rect" id="node4" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/chrono.html" title=" " alt="" coords="211,244,277,271"/>
-<area shape="rect" id="node5" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/memory.html" title=" " alt="" coords="400,244,477,271"/>
-<area shape="rect" id="node6" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/optional.html" title=" " alt="" coords="301,244,376,271"/>
-<area shape="rect" id="node7" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/string.html" title=" " alt="" coords="5,244,64,271"/>
-<area shape="rect" id="node8" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/string_view.html" title=" " alt="" coords="89,244,186,271"/>
-<area shape="rect" id="node10" href="$_polymorphic_iterator_8hpp.html" title=" " alt="" coords="312,169,491,196"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="239,5,390,45"/>
+<area shape="rect" id="Node000002" href="$_a_node_8hpp.html" title=" " alt="" coords="132,93,225,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="283,48,212,89,209,84,281,43"/>
+<area shape="rect" id="Node000009" href="$_i_array_node_8hpp.html" title=" " alt="" coords="404,93,527,119"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="352,43,432,84,429,89,350,48"/>
+<area shape="rect" id="Node000011" href="$_i_object_node_8hpp.html" title=" " alt="" coords="249,93,380,119"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="317,46,317,79,312,79,312,46"/>
+<area shape="rect" id="Node000003" href="$_i_node_8hpp.html" title=" " alt="" coords="200,167,288,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="191,117,226,155,222,158,187,121"/>
+<area shape="rect" id="Node000004" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/chrono.html" title=" " alt="" coords="211,240,277,265"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="247,192,247,226,241,226,241,192"/>
+<area shape="rect" id="Node000005" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/memory.html" title=" " alt="" coords="400,240,477,265"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="276,190,395,233,393,238,274,195"/>
+<area shape="rect" id="Node000006" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/optional.html" title=" " alt="" coords="301,240,376,265"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="261,190,314,229,311,234,258,194"/>
+<area shape="rect" id="Node000007" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/string.html" title=" " alt="" coords="5,240,64,265"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="211,195,78,239,76,234,210,189"/>
+<area shape="rect" id="Node000008" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/string_view.html" title=" " alt="" coords="89,240,186,265"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="228,194,168,235,165,230,225,190"/>
+<area shape="poly" id="edge10_Node000009_Node000003" title=" " alt="" coords="431,121,293,165,292,160,429,116"/>
+<area shape="poly" id="edge9_Node000009_Node000005" title=" " alt="" coords="479,117,502,151,508,172,505,193,490,216,471,234,467,230,486,212,500,191,503,172,497,153,475,120"/>
+<area shape="rect" id="Node000010" href="$_polymorphic_iterator_8hpp.html" title=" " alt="" coords="312,167,491,192"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="457,121,423,158,419,155,453,117"/>
+<area shape="poly" id="edge12_Node000010_Node000005" title=" " alt="" coords="410,191,429,227,424,229,405,194"/>
+<area shape="poly" id="edge14_Node000011_Node000003" title=" " alt="" coords="305,121,267,159,263,155,301,117"/>
+<area shape="poly" id="edge15_Node000011_Node000010" title=" " alt="" coords="330,117,378,156,375,160,327,121"/>
 </map>

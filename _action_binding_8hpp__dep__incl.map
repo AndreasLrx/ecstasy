@@ -1,12 +1,27 @@
 <map id="src/ecstasy/integrations/user_action/ActionBinding.hpp" name="src/ecstasy/integrations/user_action/ActionBinding.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="550,5,773,47"/>
-<area shape="rect" id="node2" href="$_action_bindings_8hpp.html" title=" " alt="" coords="257,95,487,136"/>
-<area shape="rect" id="node4" href="$integrations_2user__action_2include_8hpp.html" title=" " alt="" coords="387,452,567,493"/>
-<area shape="rect" id="node3" href="$_action_bindings_8cpp.html" title=" " alt="" coords="5,184,235,225"/>
-<area shape="rect" id="node5" href="$_user_profile_8hpp.html" title=" " alt="" coords="370,184,574,225"/>
-<area shape="rect" id="node6" href="$_action_listener_8hpp.html" title=" " alt="" coords="359,273,585,315"/>
-<area shape="rect" id="node9" href="$_user_profile_8cpp.html" title=" " alt="" coords="609,273,812,315"/>
-<area shape="rect" id="node10" href="$_users_8hpp.html" title=" " alt="" coords="837,273,1014,315"/>
-<area shape="rect" id="node7" href="$_poll_actions_8hpp.html" title=" " alt="" coords="445,363,651,404"/>
-<area shape="rect" id="node8" href="$_users_8cpp.html" title=" " alt="" coords="685,363,862,404"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="819,5,1042,45"/>
+<area shape="rect" id="Node000002" href="$_action_bindings_8hpp.html" title=" " alt="" coords="739,93,970,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="907,58,873,95,869,91,903,54"/>
+<area shape="rect" id="Node000007" href="$integrations_2user__action_2include_8hpp.html" title=" " alt="" coords="567,445,747,485"/>
+<area shape="poly" id="edge15_Node000001_Node000007" title=" " alt="" coords="978,51,1014,77,1048,111,1075,152,1083,176,1085,200,1085,291,1083,305,1076,318,1049,344,1011,367,963,388,853,423,748,449,747,444,852,418,961,383,1008,362,1046,339,1071,315,1078,303,1080,290,1080,200,1077,177,1070,155,1044,115,1010,81,975,55"/>
+<area shape="rect" id="Node000003" href="$_action_bindings_8cpp.html" title=" " alt="" coords="816,181,1045,221"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="883,142,916,179,912,183,879,146"/>
+<area shape="rect" id="Node000004" href="$_user_profile_8hpp.html" title=" " alt="" coords="445,181,649,221"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="775,140,615,184,613,179,773,134"/>
+<area shape="poly" id="edge14_Node000002_Node000007" title=" " alt="" coords="832,145,806,183,781,242,769,291,755,341,744,368,726,399,705,425,683,447,679,443,701,422,722,396,739,366,750,339,764,290,776,240,802,180,827,142"/>
+<area shape="rect" id="Node000005" href="$_action_listener_8hpp.html" title=" " alt="" coords="434,269,659,309"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="549,235,549,269,544,269,544,235"/>
+<area shape="poly" id="edge13_Node000004_Node000007" title=" " alt="" coords="616,225,647,243,674,268,698,299,711,328,713,360,705,398,693,425,677,447,672,444,688,422,700,396,708,360,705,330,693,302,670,271,644,248,613,229"/>
+<area shape="rect" id="Node000009" href="$_user_profile_8cpp.html" title=" " alt="" coords="5,269,208,309"/>
+<area shape="poly" id="edge9_Node000004_Node000009" title=" " alt="" coords="437,227,204,272,202,267,436,221"/>
+<area shape="rect" id="Node000010" href="$_users_8hpp.html" title=" " alt="" coords="233,269,410,309"/>
+<area shape="poly" id="edge10_Node000004_Node000010" title=" " alt="" coords="485,229,372,272,370,267,483,224"/>
+<area shape="rect" id="Node000006" href="$_poll_actions_8hpp.html" title=" " alt="" coords="485,357,691,397"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="564,321,581,356,576,358,559,323"/>
+<area shape="poly" id="edge8_Node000005_Node000007" title=" " alt="" coords="509,320,490,338,476,357,470,377,476,396,494,416,516,431,568,451,566,456,514,436,490,420,471,399,464,377,471,354,486,334,505,316"/>
+<area shape="rect" id="Node000008" href="$_users_8cpp.html" title=" " alt="" coords="233,357,410,397"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="485,317,372,360,370,355,483,312"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="614,407,644,443,640,447,610,410"/>
+<area shape="poly" id="edge12_Node000010_Node000007" title=" " alt="" coords="272,318,246,336,225,356,216,376,217,386,223,396,245,412,279,426,320,437,368,446,471,456,567,461,567,466,471,462,367,451,319,442,277,431,243,417,219,399,212,387,211,375,221,353,242,332,269,314"/>
+<area shape="poly" id="edge11_Node000010_Node000008" title=" " alt="" coords="324,323,324,357,319,357,319,323"/>
 </map>

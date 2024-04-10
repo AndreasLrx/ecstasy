@@ -29,7 +29,6 @@ var menudata={children:[
 {text:"Namespace List",url:"namespaces.html"},
 {text:"Namespace Members",url:"namespacemembers.html",children:[
 {text:"All",url:"namespacemembers.html",children:[
-{text:"_",url:"namespacemembers.html#index__5F"},
 {text:"a",url:"namespacemembers.html#index_a"},
 {text:"c",url:"namespacemembers.html#index_c"},
 {text:"e",url:"namespacemembers.html#index_e"},
@@ -49,17 +48,7 @@ var menudata={children:[
 {text:"v",url:"namespacemembers.html#index_v"},
 {text:"x",url:"namespacemembers.html#index_x"}]},
 {text:"Functions",url:"namespacemembers_func.html"},
-{text:"Variables",url:"namespacemembers_vars.html",children:[
-{text:"_",url:"namespacemembers_vars.html#index__5F"},
-{text:"c",url:"namespacemembers_vars.html#index_c"},
-{text:"i",url:"namespacemembers_vars.html#index_i"},
-{text:"l",url:"namespacemembers_vars.html#index_l"},
-{text:"m",url:"namespacemembers_vars.html#index_m"},
-{text:"p",url:"namespacemembers_vars.html#index_p"},
-{text:"q",url:"namespacemembers_vars.html#index_q"},
-{text:"r",url:"namespacemembers_vars.html#index_r"},
-{text:"t",url:"namespacemembers_vars.html#index_t"},
-{text:"v",url:"namespacemembers_vars.html#index_v"}]},
+{text:"Variables",url:"namespacemembers_vars.html"},
 {text:"Typedefs",url:"namespacemembers_type.html",children:[
 {text:"a",url:"namespacemembers_type.html#index_a"},
 {text:"c",url:"namespacemembers_type.html#index_c"},
@@ -77,6 +66,7 @@ var menudata={children:[
 {text:"r",url:"namespacemembers_type.html#index_r"},
 {text:"s",url:"namespacemembers_type.html#index_s"},
 {text:"t",url:"namespacemembers_type.html#index_t"}]}]}]},
+{text:"Concepts",url:"concepts.html"},
 {text:"Classes",url:"annotated.html",children:[
 {text:"Class List",url:"annotated.html"},
 {text:"Class Index",url:"classes.html"},
@@ -180,7 +170,7 @@ var menudata={children:[
 {text:"v",url:"functions_type.html#index_v"},
 {text:"w",url:"functions_type.html#index_w"}]},
 {text:"Enumerations",url:"functions_enum.html"},
-{text:"Related Functions",url:"functions_rela.html"}]}]},
+{text:"Related Symbols",url:"functions_rela.html"}]}]},
 {text:"Files",url:"files.html",children:[
 {text:"File List",url:"files.html"},
 {text:"File Members",url:"globals.html",children:[

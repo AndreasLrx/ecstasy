@@ -1,4 +1,7 @@
 <map id="ecstasy::integration::event::Keyboard" name="ecstasy::integration::event::Keyboard">
-<area shape="rect" id="node1" title="Current Keyboard state." alt="" coords="5,80,156,121"/>
-<area shape="rect" id="node2" href="$classecstasy_1_1_resource.html" title="Base class of all registry resources." alt="" coords="11,5,150,32"/>
+<area shape="rect" id="Node000001" title="Current Keyboard state." alt="" coords="94,108,245,148"/>
+<area shape="rect" id="Node000002" href="$classecstasy_1_1_resource.html" title="Base class of all registry resources." alt="" coords="5,13,144,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,46,153,106,150,110,93,50"/>
+<area shape="rect" id="Node000003" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/array.html" title=" " alt="" coords="169,5,362,45"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="240,57,189,110,185,106,236,54"/>
 </map>

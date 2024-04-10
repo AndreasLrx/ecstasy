@@ -1,7 +1,11 @@
 <map id="util::serialization::TomlArrayNode" name="util::serialization::TomlArrayNode">
-<area shape="rect" id="node1" title="Toml Array node." alt="" coords="132,273,263,315"/>
-<area shape="rect" id="node2" href="$classutil_1_1serialization_1_1_toml_node.html" title=" " alt="" coords="5,184,203,225"/>
-<area shape="rect" id="node3" href="$classutil_1_1serialization_1_1_a_node.html" title="Serialization node." alt="" coords="39,95,169,136"/>
-<area shape="rect" id="node4" href="$classutil_1_1serialization_1_1_i_node.html" title="Serialization node." alt="" coords="39,5,169,47"/>
-<area shape="rect" id="node5" href="$classutil_1_1serialization_1_1_i_array_node.html" title="Array node." alt="" coords="227,184,357,225"/>
+<area shape="rect" id="Node000001" title="Toml Array node." alt="" coords="132,269,263,309"/>
+<area shape="rect" id="Node000002" href="$classutil_1_1serialization_1_1_toml_node.html" title=" " alt="" coords="5,181,203,221"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,229,178,267,175,271,133,233"/>
+<area shape="rect" id="Node000003" href="$classutil_1_1serialization_1_1_a_node.html" title="Serialization node." alt="" coords="39,93,169,133"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="107,147,107,181,101,181,101,147"/>
+<area shape="rect" id="Node000004" href="$classutil_1_1serialization_1_1_i_node.html" title="Serialization node." alt="" coords="39,5,169,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="107,59,107,93,101,93,101,59"/>
+<area shape="rect" id="Node000005" href="$classutil_1_1serialization_1_1_i_array_node.html" title="Array node." alt="" coords="227,181,357,221"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="263,233,220,271,216,267,259,229"/>
 </map>
