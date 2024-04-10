@@ -20,7 +20,7 @@ macro(ecstasy_set_compiler_flags target)
             "$<$<CONFIG:DEBUG>:-O0;-g3;-ggdb>"
         )
 
-        if(ENABLE_TEST_COVERAGE)
+        if(ENABLE_COVERAGE)
             target_compile_options(${target} PRIVATE "--coverage" "-fprofile-arcs" "-ftest-coverage")
             target_link_options(${target} PRIVATE "--coverage" "-fprofile-arcs" "-ftest-coverage")
         endif()

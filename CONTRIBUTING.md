@@ -26,7 +26,7 @@
 
 - Submit a [pull request](https://github.com/AndreasLrx/ecstasy/pulls).
 
-- Once validated, rebase and merge to PR to `master` and remove the source branch (with `git branch -D <branch_name>`.
+- Once validated, rebase and merge to PR to `main` and remove the source branch (with `git branch -D <branch_name>`).
 
 #### **How to title commits?**
 
