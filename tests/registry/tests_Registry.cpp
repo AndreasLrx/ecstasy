@@ -225,19 +225,16 @@ TEST(Registry, storages)
 TEST(Registry, getQueryable)
 {
     ecstasy::Registry registry;
-    ecstasy::ModifiersAllocator alloc;
-    auto alloc_opt = std::optional(std::reference_wrapper(alloc));
 
-    assert_equals<decltype(registry.getQueryable<Position>(alloc_opt)), ecstasy::MapStorage<Position> &>();
-    assert_equals<decltype(registry.getQueryable<const Position>(alloc_opt)), const ecstasy::MapStorage<Position> &>();
-    assert_equals<decltype(registry.getQueryable<ecstasy::MapStorage<Position>>(alloc_opt)),
-        ecstasy::MapStorage<Position> &>();
+    assert_equals<decltype(registry.getQueryable<Position>()), ecstasy::MapStorage<Position> &>();
+    assert_equals<decltype(registry.getQueryable<const Position>()), const ecstasy::MapStorage<Position> &>();
+    assert_equals<decltype(registry.getQueryable<ecstasy::MapStorage<Position>>()), ecstasy::MapStorage<Position> &>();
     static_assert(ecstasy::IsStorage<const ecstasy::MapStorage<Position>>);
     static_assert(ecstasy::query::Queryable<const ecstasy::MapStorage<Position>>);
-    assert_equals<decltype(registry.getQueryable<const ecstasy::MapStorage<Position>>(alloc_opt)),
+    assert_equals<decltype(registry.getQueryable<const ecstasy::MapStorage<Position>>()),
         const ecstasy::MapStorage<Position> &>();
-    assert_equals<decltype(registry.getQueryable<ecstasy::Entities>(alloc_opt)), ecstasy::Entities &>();
-    assert_equals<decltype(registry.getQueryable<const ecstasy::Entities>(alloc_opt)), const ecstasy::Entities &>();
+    assert_equals<decltype(registry.getQueryable<ecstasy::Entities>()), ecstasy::Entities &>();
+    assert_equals<decltype(registry.getQueryable<const ecstasy::Entities>()), const ecstasy::Entities &>();
 }
 
 TEST(Registry, eraseEntity)
@@ -975,13 +972,11 @@ TEST(Registry, stackAllocator)
     }
 
     {
-        ecstasy::StackAllocator<ecstasy::Maybe<Velocity>> allocator;
-        auto query = registry.query<ecstasy::Maybe<Velocity>>(allocator);
+        auto query = registry.query<ecstasy::Maybe<Velocity>>();
     }
 
     {
-        ecstasy::StackAllocator<ecstasy::Maybe<Position>, ecstasy::Or<Velocity, Density>> allocator;
-        auto query = registry.select<ecstasy::Maybe<Position>>().where<ecstasy::Or<Velocity, Density>>(allocator);
+        auto query = registry.select<ecstasy::Maybe<Position>>().where<ecstasy::Or<Velocity, Density>>();
     }
 
     {
@@ -1014,8 +1009,7 @@ TEST(Registry, RegistryStackQueryMemory)
 
         assert_equals<NoAllocator::ModifiersAllocator, ecstasy::EmptyType>();
         assert_equals<NoAllocator::ViewsAllocator, ecstasy::EmptyType>();
-        assert_equals<std::integral_constant<size_t, sizeof(NoAllocator)>,
-            std::integral_constant<size_t, sizeof(NoAllocator::ModifiersAllocatorReference)>>();
+        assert_equals<std::integral_constant<size_t, sizeof(NoAllocator)>, std::integral_constant<size_t, 2>>();
         // static_assert(sizeof(NoAllocator) == sizeof(NoAllocator::ModifiersAllocatorReference));
     }
 
@@ -1032,8 +1026,7 @@ TEST(Registry, RegistryStackQueryMemory)
         assert_equals<OnlyModifiers::ModifiersAllocator, ExpectedModifierAlloc>();
         static_assert(OnlyModifiers::ModifiersAllocatorSize::value == expected_size);
         assert_equals<OnlyModifiers::ViewsAllocator, ecstasy::EmptyType>();
-        static_assert(sizeof(OnlyModifiers)
-            == sizeof(OnlyModifiers::ModifiersAllocatorReference) + sizeof(ExpectedModifierAlloc));
+        static_assert(sizeof(OnlyModifiers) == sizeof(ExpectedModifierAlloc));
     }
 
     {
@@ -1053,10 +1046,10 @@ TEST(Registry, RegistryStackQueryMemory)
 
         assert_equals<OnlyViews::ViewsAllocator, ExpectedViewAlloc>();
         static_assert(OnlyViews::ViewsAllocatorSize::value == expected_size);
-        static_assert(sizeof(OnlyViews) == sizeof(OnlyViews::ModifiersAllocatorReference) + sizeof(ExpectedViewAlloc));
+        static_assert(sizeof(OnlyViews) == sizeof(ExpectedViewAlloc));
 #else
         assert_equals<OnlyViews::ViewsAllocator, ecstasy::EmptyType>();
-        static_assert(sizeof(OnlyViews) == sizeof(OnlyViews::ModifiersAllocatorReference));
+        static_assert(sizeof(OnlyViews) == 1);
 #endif
     }
 
@@ -1077,14 +1070,11 @@ TEST(Registry, RegistryStackQueryMemory)
 
         assert_equals<ModifiersAndViews::ViewsAllocator, ExpectedViewAlloc>();
         static_assert(ModifiersAndViews::ViewsAllocatorSize::value == expected_view_size);
-        static_assert(sizeof(ModifiersAndViews)
-            == sizeof(ModifiersAndViews::ModifiersAllocatorReference) + sizeof(ExpectedModifierAlloc)
-                + sizeof(ExpectedViewAlloc));
+        static_assert(sizeof(ModifiersAndViews) == sizeof(ExpectedModifierAlloc) + sizeof(ExpectedViewAlloc));
 #else
 
         assert_equals<ModifiersAndViews::ViewsAllocator, ecstasy::EmptyType>();
-        static_assert(sizeof(ModifiersAndViews)
-            == sizeof(ModifiersAndViews::ModifiersAllocatorReference) + sizeof(ExpectedModifierAlloc));
+        static_assert(sizeof(ModifiersAndViews) == sizeof(ExpectedModifierAlloc));
 #endif
     }
 }
