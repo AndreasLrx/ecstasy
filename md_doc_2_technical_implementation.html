@@ -189,14 +189,8 @@ Queryable and BitSet</h3>
 Registry basic query</h3>
 <p>As we seen before, the <a class="el" href="classecstasy_1_1query_1_1_query.html">ecstasy::query::Query</a> needs queryables. But we don't send any in the registry query:</p>
 <div class="fragment"><div class="line">registry.query&lt;Position, Velocity&gt;()</div>
-</div><!-- fragment --><p>Because magic happens in the registry, all the storages or resources are fetched with the <a class="el" href="classecstasy_1_1_registry.html#a5826fe17a274a480a60acae6646922cf">ecstasy::Registry::getQueryable</a> template method:</p>
-<div class="fragment"><div class="line"><span class="comment">// Don&#39;t take in account the allocator, it is for next steps</span></div>
-<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> C, <span class="keyword">typename</span>... Cs, <span class="keyword">typename</span> A = ModifiersAllocator&gt;</div>
-<div class="line">query::Query&lt;queryable_type_t&lt;C&gt;, queryable_type_t&lt;Cs&gt;...&gt; query(OptionalModifiersAllocator&lt;A&gt; allocator)</div>
-<div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> query::Query(getQueryable&lt;C&gt;(allocator), getQueryable&lt;Cs&gt;(allocator)...);</div>
-<div class="line">}</div>
-</div><!-- fragment --><p>The following functionnalities (modifiers, conditions etc) respect the the zero-overhead C++ principle meaning if you don't use them it won't slow down your application.</p>
+</div><!-- fragment --><p>Because magic happens in the registry, all the storages or resources are fetched with the ecstasy::Registry::RegistryStackQueryMemory::getQueryable template method. This allows you to use types instead of storages.</p>
+<p>The following functionnalities (modifiers, conditions etc) respect the the zero-overhead C++ principle meaning if you don't use them it won't slow down your application.</p>
 <h3><a class="anchor" id="autotoc_md40"></a>
 Select where</h3>
 <p>We already have almost everything to implement the select where syntax. These are the steps of resolution of the query:</p>
@@ -212,8 +206,7 @@ Modifiers</h3>
 <p>Modifiers are not complicated themselves. In fact they are only queryable wrappers. The easier example is the Maybe. What does it means to query <code>registry.query&lt;Maybe&lt;Position&gt;&gt;</code> ?</p>
 <p>It means querying <code>Position</code>. But having all bit sets. And not returning a <code>Position</code> but a <code><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt;Position&gt;</code>. Finally a Modifier is really a Queryable, returning a bitset and a query data. See <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">ecstasy::query::modifier::Maybe</a> implementation for more details.</p>
 <p>The hard part about the modifiers is not their implementation but their allocation. Usual queryables are allocated by the registry and stored in the registry. Modifiers should be allocated only for the query lifetime. And we need to allocate data to store the wrapped queryable (example <b>Position</b> storage) and eventually the computed mask if there is one.</p>
-<p>And because allocations means allocator, every registry query method can take an Allocator. First a heap allocator was used (<a class="el" href="namespaceecstasy.html#a23178e0869471d2ea8fbce5de4c2499b">ecstasy::ModifiersAllocator</a>) and was required if there was at least one modifier to allocate in the query and it raised an exception otherwise. But now you don't need to take care of it. I already did it for you. The modifiers are now allocated on the stack because the required size is known at compile time.</p>
-<p>This magic hidden stack allocator use multiple inheritance black magic tricks and you can find more about it in <a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query.html">ecstasy::Registry::RegistryStackQuery</a>.</p>
+<p>The interesting part however about theses allocations is that the size can be computed at compile time if you hate yourself enough to do it. Luckily for you, I did. The solution about this was to use multiple inheritance black magic tricks mixed with some weird <a href="https://en.cppreference.com/w/cpp/language/attributes/no_unique_address">non_unique_address</a> attribute, if you are curious about this you can find more details in the documentation of <a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query.html">ecstasy::Registry::RegistryStackQuery</a>.</p>
 <h3><a class="anchor" id="autotoc_md42"></a>
 Conditions</h3>
 <p>In opposite to modifiers, conditions are not queryable and doesn't use bitset either. The conditions are checked at runtime (because it check runtime values) on the query iteration.</p>
@@ -258,12 +251,12 @@ Resolution Order</h3>
 <p><b>Compile Time</b></p>
 <ul>
 <li>Detect missing Queryables in where clause from select clause</li>
-<li>If no allocator provided prepare place in the stack with the appropriate size</li>
+<li>Compute the required size to reserve on the stack for the modifiers/views</li>
 </ul>
 <p><b>Query construction</b></p>
 <ul>
 <li>Fetch required queryables from registry (where and select clause)</li>
-<li>Allocate required modifiers and views with the given allocator (which is by default the stack allocator)</li>
+<li>Allocate required modifiers and views with the stack allocator</li>
 <li>Compute query bitset from the where clause</li>
 <li>Creates the query object from the computed bitset and the selected queryables</li>
 </ul>

@@ -126,8 +126,6 @@ var hierarchy =
     [ "std::integral_constant< std::size_t, 1+index< T, Ts... >::value >", "http://en.cppreference.com/w/cpp/types/integral_constant.html", [
       [ "util::meta::index< T, U, Ts... >", "structutil_1_1meta_1_1index_3_01_t_00_01_u_00_01_ts_8_8_8_01_4.html", null ]
     ] ],
-    [ "ecstasy::Registry::Select< Selects >::Internal< Missings, Cs, Conditions, A >", "structecstasy_1_1_registry_1_1_select_1_1_internal.html", null ],
-    [ "ecstasy::Registry::Select< Selects >::Internal< util::meta::Traits< Missings... >, util::meta::Traits< Cs... >, Conditions, A >", "structecstasy_1_1_registry_1_1_select_1_1_internal_3_01util_1_1meta_1_1_traits_3_01_missings_8_85adf7fede83b5444fcab9e0bd02c3208.html", null ],
     [ "util::serialization::IObjectNode", "classutil_1_1serialization_1_1_i_object_node.html", [
       [ "util::serialization::TomlObjectNode", "classutil_1_1serialization_1_1_toml_object_node.html", null ]
     ] ],

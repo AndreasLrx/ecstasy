@@ -13,9 +13,6 @@ var _registry_8hpp =
     [ "ecstasy::Registry::Select< Selects >", "classecstasy_1_1_registry_1_1_select.html", "classecstasy_1_1_registry_1_1_select" ],
     [ "ecstasy::Registry::Select< Selects >::IsCondition< T >", "structecstasy_1_1_registry_1_1_select_1_1_is_condition.html", null ],
     [ "ecstasy::Registry::Select< Selects >::IsNotCondition< T >", "structecstasy_1_1_registry_1_1_select_1_1_is_not_condition.html", null ],
-    [ "ecstasy::Registry::Select< Selects >::Internal< util::meta::Traits< Missings... >, util::meta::Traits< Cs... >, Conditions, A >", "structecstasy_1_1_registry_1_1_select_1_1_internal_3_01util_1_1meta_1_1_traits_3_01_missings_8_85adf7fede83b5444fcab9e0bd02c3208.html", "structecstasy_1_1_registry_1_1_select_1_1_internal_3_01util_1_1meta_1_1_traits_3_01_missings_8_85adf7fede83b5444fcab9e0bd02c3208" ],
     [ "NO_UNIQUE_ADDRESS", "_registry_8hpp.html#afbab8d3e03b64c2dd9697c91ef11f5e8", null ],
-    [ "ModifiersAllocator", "_registry_8hpp.html#a23178e0869471d2ea8fbce5de4c2499b", null ],
-    [ "OptionalModifiersAllocator", "_registry_8hpp.html#ae5640f20f821346bace72e8351acbb01", null ],
     [ "StackAllocator", "_registry_8hpp.html#a029021666dc5e8cc0db0d817fc54a172", null ]
 ];

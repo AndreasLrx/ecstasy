@@ -154,7 +154,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class of <a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query.html">RegistryStackQuery</a>.    <a href="classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry_1_1_select.html">Select</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proxy class to use <a class="el" href="classecstasy_1_1_registry_1_1_select.html#aac3f81b78d7e22afe9a9175641d9909d">where</a> method.  <a href="classecstasy_1_1_registry_1_1_select.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proxy class to use <a class="el" href="classecstasy_1_1_registry_1_1_select.html#a31a6d83b712121fc7bfe42eff3539c79">where</a> method.  <a href="classecstasy_1_1_registry_1_1_select.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
@@ -168,28 +168,28 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5826fe17a274a480a60acae6646922cf"><td class="memTemplParams" colspan="2">template&lt;typename C , typename A  = ModifiersAllocator&gt; </td></tr>
-<tr class="memitem:a5826fe17a274a480a60acae6646922cf"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceecstasy.html#a2c011da268733486119ae199f8bb4a04">getStorageType</a>&lt; C &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#a5826fe17a274a480a60acae6646922cf">getQueryable</a> (<a class="el" href="namespaceecstasy.html#ae5640f20f821346bace72e8351acbb01">OptionalModifiersAllocator</a>&lt; A &gt; &amp;allocator)</td></tr>
-<tr class="memdesc:a5826fe17a274a480a60acae6646922cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a queryable from a registry variable (component storage, resource, queryable storage...)  <br /></td></tr>
-<tr class="separator:a5826fe17a274a480a60acae6646922cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70a4ceaddb614a7acec4ff62f9702c35"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_resource.html">Resource</a> &gt; R, typename A  = ModifiersAllocator&gt; <br />
+<tr class="memitem:ab1412c4cf0e910793616e1f1ef26e247"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
+<tr class="memitem:ab1412c4cf0e910793616e1f1ef26e247"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceecstasy.html#a2c011da268733486119ae199f8bb4a04">getStorageType</a>&lt; C &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#ab1412c4cf0e910793616e1f1ef26e247">getQueryable</a> ()</td></tr>
+<tr class="memdesc:ab1412c4cf0e910793616e1f1ef26e247"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a queryable from a registry variable (component storage, resource, queryable storage...)  <br /></td></tr>
+<tr class="separator:ab1412c4cf0e910793616e1f1ef26e247"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a617f5885f85941d8b6b9486f1d5de47c"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_resource.html">Resource</a> &gt; R&gt; <br />
 requires query::Queryable&lt;R&gt;</td></tr>
-<tr class="memitem:a70a4ceaddb614a7acec4ff62f9702c35"><td class="memTemplItemLeft" align="right" valign="top">constexpr R &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#a70a4ceaddb614a7acec4ff62f9702c35">getQueryable</a> (<a class="el" href="namespaceecstasy.html#ae5640f20f821346bace72e8351acbb01">OptionalModifiersAllocator</a>&lt; A &gt; &amp;allocator)</td></tr>
-<tr class="memdesc:a70a4ceaddb614a7acec4ff62f9702c35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a queryable from a registry variable (component storage, resource, queryable storage...)    <br /></td></tr>
-<tr class="separator:a70a4ceaddb614a7acec4ff62f9702c35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addb8593054c60fa5371e0364e8836641"><td class="memTemplParams" colspan="2">template&lt;IsStorage S, typename A  = ModifiersAllocator&gt; <br />
+<tr class="memitem:a617f5885f85941d8b6b9486f1d5de47c"><td class="memTemplItemLeft" align="right" valign="top">constexpr R &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#a617f5885f85941d8b6b9486f1d5de47c">getQueryable</a> ()</td></tr>
+<tr class="memdesc:a617f5885f85941d8b6b9486f1d5de47c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a queryable from a registry variable (component storage, resource, queryable storage...)    <br /></td></tr>
+<tr class="separator:a617f5885f85941d8b6b9486f1d5de47c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b58005381d91e50fdf4fdb62488ccb1"><td class="memTemplParams" colspan="2">template&lt;IsStorage S&gt; <br />
 requires query::Queryable&lt;S&gt;</td></tr>
-<tr class="memitem:addb8593054c60fa5371e0364e8836641"><td class="memTemplItemLeft" align="right" valign="top">S &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#addb8593054c60fa5371e0364e8836641">getQueryable</a> (<a class="el" href="namespaceecstasy.html#ae5640f20f821346bace72e8351acbb01">OptionalModifiersAllocator</a>&lt; A &gt; &amp;allocator)</td></tr>
-<tr class="memdesc:addb8593054c60fa5371e0364e8836641"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a queryable from a registry variable (component storage, resource, queryable storage...)    <br /></td></tr>
-<tr class="separator:addb8593054c60fa5371e0364e8836641"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a310fd86d0a6175786b81fe5b6db96781"><td class="memTemplParams" colspan="2">template&lt;query::Modifier M, typename A  = ModifiersAllocator&gt; </td></tr>
-<tr class="memitem:a310fd86d0a6175786b81fe5b6db96781"><td class="memTemplItemLeft" align="right" valign="top">constexpr M &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#a310fd86d0a6175786b81fe5b6db96781">getQueryable</a> (<a class="el" href="namespaceecstasy.html#ae5640f20f821346bace72e8351acbb01">OptionalModifiersAllocator</a>&lt; A &gt; &amp;allocator)</td></tr>
-<tr class="memdesc:a310fd86d0a6175786b81fe5b6db96781"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a queryable from a registry variable (component storage, resource, queryable storage...)    <br /></td></tr>
-<tr class="separator:a310fd86d0a6175786b81fe5b6db96781"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ea6ee45ca7181922adfc8c05f89a38a"><td class="memTemplParams" colspan="2">template&lt;RegistryModifier M, typename A  = ModifiersAllocator&gt; </td></tr>
-<tr class="memitem:a6ea6ee45ca7181922adfc8c05f89a38a"><td class="memTemplItemLeft" align="right" valign="top">constexpr M::Modifier &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#a6ea6ee45ca7181922adfc8c05f89a38a">getQueryable</a> (<a class="el" href="namespaceecstasy.html#ae5640f20f821346bace72e8351acbb01">OptionalModifiersAllocator</a>&lt; A &gt; &amp;allocator)</td></tr>
-<tr class="memdesc:a6ea6ee45ca7181922adfc8c05f89a38a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a queryable from a registry variable (component storage, resource, queryable storage...)    <br /></td></tr>
-<tr class="separator:a6ea6ee45ca7181922adfc8c05f89a38a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b58005381d91e50fdf4fdb62488ccb1"><td class="memTemplItemLeft" align="right" valign="top">S &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#a3b58005381d91e50fdf4fdb62488ccb1">getQueryable</a> ()</td></tr>
+<tr class="memdesc:a3b58005381d91e50fdf4fdb62488ccb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a queryable from a registry variable (component storage, resource, queryable storage...)    <br /></td></tr>
+<tr class="separator:a3b58005381d91e50fdf4fdb62488ccb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29db2eb3ec768cf21dd57fa3193d06c7"><td class="memTemplParams" colspan="2">template&lt;query::Modifier M, typename ModifierAllocator &gt; </td></tr>
+<tr class="memitem:a29db2eb3ec768cf21dd57fa3193d06c7"><td class="memTemplItemLeft" align="right" valign="top">constexpr M &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#a29db2eb3ec768cf21dd57fa3193d06c7">getQueryable</a> (ModifierAllocator &amp;allocator)</td></tr>
+<tr class="memdesc:a29db2eb3ec768cf21dd57fa3193d06c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a queryable from a registry variable (component storage, resource, queryable storage...)    <br /></td></tr>
+<tr class="separator:a29db2eb3ec768cf21dd57fa3193d06c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0784418c2cccef913360e12c8d3c358d"><td class="memTemplParams" colspan="2">template&lt;RegistryModifier M, typename ModifierAllocator &gt; </td></tr>
+<tr class="memitem:a0784418c2cccef913360e12c8d3c358d"><td class="memTemplItemLeft" align="right" valign="top">constexpr M::Modifier &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#a0784418c2cccef913360e12c8d3c358d">getQueryable</a> (ModifierAllocator &amp;allocator)</td></tr>
+<tr class="memdesc:a0784418c2cccef913360e12c8d3c358d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a queryable from a registry variable (component storage, resource, queryable storage...)    <br /></td></tr>
+<tr class="separator:a0784418c2cccef913360e12c8d3c358d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a404b8b6daf7e3d50b49def5b8543ad1f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#a404b8b6daf7e3d50b49def5b8543ad1f">Registry</a> (bool addEntities=true)</td></tr>
 <tr class="memdesc:a404b8b6daf7e3d50b49def5b8543ad1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classecstasy_1_1_registry.html" title="Base of an ECS architecture.">Registry</a>.  <br /></td></tr>
 <tr class="separator:a404b8b6daf7e3d50b49def5b8543ad1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -244,17 +244,9 @@ requires query::Queryable&lt;S&gt;</td></tr>
 <tr class="memitem:a5d982d00370574aec1946df44d3484d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1_entity.html">Entity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#a5d982d00370574aec1946df44d3484d0">getEntity</a> (<a class="el" href="classecstasy_1_1_entity.html#ad83d7f7e44a390c9c36e0079fd505b35">Entity::Index</a> index) noexcept</td></tr>
 <tr class="memdesc:a5d982d00370574aec1946df44d3484d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classecstasy_1_1_entity.html" title="Encapsulate an index to an entity.">Entity</a> at the index <code>index</code>.  <br /></td></tr>
 <tr class="separator:a5d982d00370574aec1946df44d3484d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33891cfef7fc66b220cfec2263e29b67"><td class="memTemplParams" colspan="2">template&lt;typename C , typename... Cs, typename A  = ModifiersAllocator&gt; </td></tr>
-<tr class="memitem:a33891cfef7fc66b220cfec2263e29b67"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1query_1_1_query.html">query::Query</a>&lt; <a class="el" href="namespaceecstasy.html#a53c8ca43801107dc959adbdc60810af8">queryable_type_t</a>&lt; C &gt;, <a class="el" href="namespaceecstasy.html#a53c8ca43801107dc959adbdc60810af8">queryable_type_t</a>&lt; Cs &gt;... &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#a33891cfef7fc66b220cfec2263e29b67">query</a> (<a class="el" href="namespaceecstasy.html#ae5640f20f821346bace72e8351acbb01">OptionalModifiersAllocator</a>&lt; A &gt; allocator)</td></tr>
-<tr class="memdesc:a33891cfef7fc66b220cfec2263e29b67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a query for the given components.  <br /></td></tr>
-<tr class="separator:a33891cfef7fc66b220cfec2263e29b67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58975277c3342970a92928d34aeab3c8"><td class="memTemplParams" colspan="2">template&lt;typename C , typename... Cs, typename A  = ModifiersAllocator&gt; </td></tr>
-<tr class="memitem:a58975277c3342970a92928d34aeab3c8"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="classecstasy_1_1query_1_1_query.html">query::Query</a>&lt; <a class="el" href="namespaceecstasy.html#a53c8ca43801107dc959adbdc60810af8">queryable_type_t</a>&lt; C &gt;, <a class="el" href="namespaceecstasy.html#a53c8ca43801107dc959adbdc60810af8">queryable_type_t</a>&lt; Cs &gt;... &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#a58975277c3342970a92928d34aeab3c8">query</a> (A &amp;allocator)</td></tr>
-<tr class="memdesc:a58975277c3342970a92928d34aeab3c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a query for the given components.    <br /></td></tr>
-<tr class="separator:a58975277c3342970a92928d34aeab3c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a827c2ce78375ab3c8cd3027f6c531eb6"><td class="memTemplParams" colspan="2">template&lt;typename C , typename... Cs&gt; </td></tr>
 <tr class="memitem:a827c2ce78375ab3c8cd3027f6c531eb6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1_registry.html#a8d598f5f47d1a481303a89579a0827f2">RegistrySelectStackQuery</a>&lt; thread::AUTO_LOCK_DEFAULT, <a class="el" href="namespaceecstasy.html#a53c8ca43801107dc959adbdc60810af8">queryable_type_t</a>&lt; C &gt;, <a class="el" href="namespaceecstasy.html#a53c8ca43801107dc959adbdc60810af8">queryable_type_t</a>&lt; Cs &gt;... &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#a827c2ce78375ab3c8cd3027f6c531eb6">query</a> ()</td></tr>
-<tr class="memdesc:a827c2ce78375ab3c8cd3027f6c531eb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a query for the given components.    <br /></td></tr>
+<tr class="memdesc:a827c2ce78375ab3c8cd3027f6c531eb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a query for the given components.  <br /></td></tr>
 <tr class="separator:a827c2ce78375ab3c8cd3027f6c531eb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2dcff29b1572f42791329d7c18ec35b"><td class="memTemplParams" colspan="2">template&lt;bool AutoLock, typename C , typename... Cs&gt; </td></tr>
 <tr class="memitem:ad2dcff29b1572f42791329d7c18ec35b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1_registry.html#a8d598f5f47d1a481303a89579a0827f2">RegistrySelectStackQuery</a>&lt; AutoLock, <a class="el" href="namespaceecstasy.html#a53c8ca43801107dc959adbdc60810af8">queryable_type_t</a>&lt; C &gt;, <a class="el" href="namespaceecstasy.html#a53c8ca43801107dc959adbdc60810af8">queryable_type_t</a>&lt; Cs &gt;... &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#ad2dcff29b1572f42791329d7c18ec35b">queryEx</a> ()</td></tr>
@@ -306,7 +298,7 @@ Private Attributes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-18) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00068">68</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00065">65</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a8d598f5f47d1a481303a89579a0827f2" name="a8d598f5f47d1a481303a89579a0827f2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8d598f5f47d1a481303a89579a0827f2">&#9670;&#160;</a></span>RegistrySelectStackQuery</h2>
@@ -322,7 +314,7 @@ template&lt;bool AutoLock, typename... Selects&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00337">337</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00338">338</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
@@ -340,7 +332,7 @@ template&lt;bool AutoLock, typename... Selects&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00327">327</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00328">328</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
@@ -457,11 +449,11 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_resource.
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-18) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00842">842</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  843</span>        {</div>
-<div class="line"><span class="lineno">  844</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a2e6e0617857be6b09b743c42281de478">_resources</a>.emplace&lt;R&gt;(std::forward&lt;Args&gt;(args)...);</div>
-<div class="line"><span class="lineno">  845</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_a2e6e0617857be6b09b743c42281de478"><div class="ttname"><a href="classecstasy_1_1_registry.html#a2e6e0617857be6b09b743c42281de478">ecstasy::Registry::_resources</a></div><div class="ttdeci">Instances&lt; Resource &gt; _resources</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l01168">Registry.hpp:1168</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00756">756</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  757</span>        {</div>
+<div class="line"><span class="lineno">  758</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a2e6e0617857be6b09b743c42281de478">_resources</a>.emplace&lt;R&gt;(std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><span class="lineno">  759</span>        }</div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_a2e6e0617857be6b09b743c42281de478"><div class="ttname"><a href="classecstasy_1_1_registry.html#a2e6e0617857be6b09b743c42281de478">ecstasy::Registry::_resources</a></div><div class="ttdeci">Instances&lt; Resource &gt; _resources</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l01062">Registry.hpp:1062</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -507,11 +499,11 @@ template&lt;typename C &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-18) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00860">860</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  861</span>        {</div>
-<div class="line"><span class="lineno">  862</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.emplace&lt;getStorageType&lt;C&gt;&gt;();</div>
-<div class="line"><span class="lineno">  863</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_a0a614c68449908484ab0db56fcf12cdb"><div class="ttname"><a href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">ecstasy::Registry::_storages</a></div><div class="ttdeci">Instances&lt; IStorage &gt; _storages</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l01169">Registry.hpp:1169</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00774">774</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  775</span>        {</div>
+<div class="line"><span class="lineno">  776</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.emplace&lt;getStorageType&lt;C&gt;&gt;();</div>
+<div class="line"><span class="lineno">  777</span>        }</div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_a0a614c68449908484ab0db56fcf12cdb"><div class="ttname"><a href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">ecstasy::Registry::_storages</a></div><div class="ttdeci">Instances&lt; IStorage &gt; _storages</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l01063">Registry.hpp:1063</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -566,11 +558,11 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00821">821</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  822</span>        {</div>
-<div class="line"><span class="lineno">  823</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a8f5d5b67bf0be48c342bb96672757a65">_systems</a>.<a class="code hl_function" href="classecstasy_1_1_system_instances.html#a3766ee0652c11cc376bc3e74d6365a8b">emplace</a>&lt;S, Priority&gt;(std::forward&lt;Args&gt;(args)...);</div>
-<div class="line"><span class="lineno">  824</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_a8f5d5b67bf0be48c342bb96672757a65"><div class="ttname"><a href="classecstasy_1_1_registry.html#a8f5d5b67bf0be48c342bb96672757a65">ecstasy::Registry::_systems</a></div><div class="ttdeci">SystemInstances _systems</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l01170">Registry.hpp:1170</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00735">735</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  736</span>        {</div>
+<div class="line"><span class="lineno">  737</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a8f5d5b67bf0be48c342bb96672757a65">_systems</a>.<a class="code hl_function" href="classecstasy_1_1_system_instances.html#a3766ee0652c11cc376bc3e74d6365a8b">emplace</a>&lt;S, Priority&gt;(std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><span class="lineno">  738</span>        }</div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_a8f5d5b67bf0be48c342bb96672757a65"><div class="ttname"><a href="classecstasy_1_1_registry.html#a8f5d5b67bf0be48c342bb96672757a65">ecstasy::Registry::_systems</a></div><div class="ttdeci">SystemInstances _systems</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l01064">Registry.hpp:1064</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_system_instances_html_a3766ee0652c11cc376bc3e74d6365a8b"><div class="ttname"><a href="classecstasy_1_1_system_instances.html#a3766ee0652c11cc376bc3e74d6365a8b">ecstasy::SystemInstances::emplace</a></div><div class="ttdeci">Derived &amp; emplace(Args &amp;&amp;...args)</div><div class="ttdoc">Emplace a new instance of type Derived in the storage.</div><div class="ttdef"><b>Definition</b> <a href="_system_instances_8hpp_source.html#l00105">SystemInstances.hpp:105</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -887,13 +879,13 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a5826fe17a274a480a60acae6646922cf" name="a5826fe17a274a480a60acae6646922cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5826fe17a274a480a60acae6646922cf">&#9670;&#160;</a></span>getQueryable() <span class="overload">[1/5]</span></h2>
+<a id="ab1412c4cf0e910793616e1f1ef26e247" name="ab1412c4cf0e910793616e1f1ef26e247"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1412c4cf0e910793616e1f1ef26e247">&#9670;&#160;</a></span>getQueryable() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename C , typename A  = ModifiersAllocator&gt; </div>
+template&lt;typename C &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -901,8 +893,7 @@ template&lt;typename C , typename A  = ModifiersAllocator&gt; </div>
         <tr>
           <td class="memname">constexpr <a class="el" href="namespaceecstasy.html#a2c011da268733486119ae199f8bb4a04">getStorageType</a>&lt; C &gt; &amp; ecstasy::Registry::getQueryable </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceecstasy.html#ae5640f20f821346bace72e8351acbb01">OptionalModifiersAllocator</a>&lt; A &gt; &amp;&#160;</td>
-          <td class="paramname"><em>allocator</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -914,44 +905,30 @@ template&lt;typename C , typename A  = ModifiersAllocator&gt; </div>
 </div><div class="memdoc">
 
 <p>Get a queryable from a registry variable (component storage, resource, queryable storage...) </p>
-<dl class="section warning"><dt>Warning</dt><dd>If the type is (or might be) a modifier that will have to be allocated, you must send a <a class="el" href="namespaceecstasy.html#a23178e0869471d2ea8fbce5de4c2499b">ModifiersAllocator</a> as parameter.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">C</td><td>Type of the variable to fetch.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">allocator</td><td>Allocator to instanciate query modifier. Can be empty if no modifier needs to be instanciated.</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="namespaceecstasy.html#a2c011da268733486119ae199f8bb4a04">&amp;</a> Associated queryable (if no specific case the storage for C is returned).</dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="elRef" href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a></td><td>When <code>allocator</code> is empty and the queryable needs to be allocated.</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-25) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00090">90</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   91</span>        {</div>
-<div class="line"><span class="lineno">   92</span>            (void)allocator;</div>
-<div class="line"><span class="lineno">   93</span>            <span class="keywordflow">return</span> getStorageSafe&lt;C&gt;();</div>
-<div class="line"><span class="lineno">   94</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00079">79</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   80</span>        {</div>
+<div class="line"><span class="lineno">   81</span>            <span class="keywordflow">return</span> getStorageSafe&lt;C&gt;();</div>
+<div class="line"><span class="lineno">   82</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a70a4ceaddb614a7acec4ff62f9702c35" name="a70a4ceaddb614a7acec4ff62f9702c35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a70a4ceaddb614a7acec4ff62f9702c35">&#9670;&#160;</a></span>getQueryable() <span class="overload">[2/5]</span></h2>
+<a id="a617f5885f85941d8b6b9486f1d5de47c" name="a617f5885f85941d8b6b9486f1d5de47c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a617f5885f85941d8b6b9486f1d5de47c">&#9670;&#160;</a></span>getQueryable() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_resource.html">Resource</a> &gt; R, typename A  = ModifiersAllocator&gt; <br />
+template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_resource.html">Resource</a> &gt; R&gt; <br />
 requires query::Queryable&lt;R&gt;</div>
 <table class="mlabels">
   <tr>
@@ -960,8 +937,7 @@ requires query::Queryable&lt;R&gt;</div>
         <tr>
           <td class="memname">constexpr R &amp; ecstasy::Registry::getQueryable </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceecstasy.html#ae5640f20f821346bace72e8351acbb01">OptionalModifiersAllocator</a>&lt; A &gt; &amp;&#160;</td>
-          <td class="paramname"><em>allocator</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -973,44 +949,30 @@ requires query::Queryable&lt;R&gt;</div>
 </div><div class="memdoc">
 
 <p>Get a queryable from a registry variable (component storage, resource, queryable storage...)   </p>
-<dl class="section warning"><dt>Warning</dt><dd>If the type is (or might be) a modifier that will have to be allocated, you must send a <a class="el" href="namespaceecstasy.html#a23178e0869471d2ea8fbce5de4c2499b">ModifiersAllocator</a> as parameter.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">C</td><td>Type of the variable to fetch.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">allocator</td><td>Allocator to instanciate query modifier. Can be empty if no modifier needs to be instanciated.</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="namespaceecstasy.html#a2c011da268733486119ae199f8bb4a04">&amp;</a> Associated queryable (if no specific case the storage for C is returned).</dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="elRef" href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a></td><td>When <code>allocator</code> is empty and the queryable needs to be allocated.</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-25)   </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00099">99</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  100</span>        {</div>
-<div class="line"><span class="lineno">  101</span>            (void)allocator;</div>
-<div class="line"><span class="lineno">  102</span>            <span class="keywordflow">return</span> getResource&lt;R&gt;();</div>
-<div class="line"><span class="lineno">  103</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00087">87</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   88</span>        {</div>
+<div class="line"><span class="lineno">   89</span>            <span class="keywordflow">return</span> getResource&lt;R&gt;();</div>
+<div class="line"><span class="lineno">   90</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="addb8593054c60fa5371e0364e8836641" name="addb8593054c60fa5371e0364e8836641"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#addb8593054c60fa5371e0364e8836641">&#9670;&#160;</a></span>getQueryable() <span class="overload">[3/5]</span></h2>
+<a id="a3b58005381d91e50fdf4fdb62488ccb1" name="a3b58005381d91e50fdf4fdb62488ccb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b58005381d91e50fdf4fdb62488ccb1">&#9670;&#160;</a></span>getQueryable() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;IsStorage S, typename A  = ModifiersAllocator&gt; <br />
+template&lt;IsStorage S&gt; <br />
 requires query::Queryable&lt;S&gt;</div>
 <table class="mlabels">
   <tr>
@@ -1019,8 +981,7 @@ requires query::Queryable&lt;S&gt;</div>
         <tr>
           <td class="memname">S &amp; ecstasy::Registry::getQueryable </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceecstasy.html#ae5640f20f821346bace72e8351acbb01">OptionalModifiersAllocator</a>&lt; A &gt; &amp;&#160;</td>
-          <td class="paramname"><em>allocator</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1032,47 +993,33 @@ requires query::Queryable&lt;S&gt;</div>
 </div><div class="memdoc">
 
 <p>Get a queryable from a registry variable (component storage, resource, queryable storage...)   </p>
-<dl class="section warning"><dt>Warning</dt><dd>If the type is (or might be) a modifier that will have to be allocated, you must send a <a class="el" href="namespaceecstasy.html#a23178e0869471d2ea8fbce5de4c2499b">ModifiersAllocator</a> as parameter.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">C</td><td>Type of the variable to fetch.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">allocator</td><td>Allocator to instanciate query modifier. Can be empty if no modifier needs to be instanciated.</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="namespaceecstasy.html#a2c011da268733486119ae199f8bb4a04">&amp;</a> Associated queryable (if no specific case the storage for C is returned).</dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="elRef" href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a></td><td>When <code>allocator</code> is empty and the queryable needs to be allocated.</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-25)   </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00108">108</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  109</span>        {</div>
-<div class="line"><span class="lineno">  110</span>            (void)allocator;</div>
-<div class="line"><span class="lineno">  111</span>            <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.contains&lt;<a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/remove_cv.html">std::remove_const_t&lt;S&gt;</a>&gt;())</div>
-<div class="line"><span class="lineno">  112</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.emplace&lt;<a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/remove_cv.html">std::remove_const_t&lt;S&gt;</a>&gt;();</div>
-<div class="line"><span class="lineno">  113</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.get&lt;<a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/remove_cv.html">std::remove_const_t&lt;S&gt;</a>&gt;();</div>
-<div class="line"><span class="lineno">  114</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00095">95</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   96</span>        {</div>
+<div class="line"><span class="lineno">   97</span>            <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.contains&lt;<a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/remove_cv.html">std::remove_const_t&lt;S&gt;</a>&gt;())</div>
+<div class="line"><span class="lineno">   98</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.emplace&lt;<a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/remove_cv.html">std::remove_const_t&lt;S&gt;</a>&gt;();</div>
+<div class="line"><span class="lineno">   99</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.get&lt;<a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/remove_cv.html">std::remove_const_t&lt;S&gt;</a>&gt;();</div>
+<div class="line"><span class="lineno">  100</span>        }</div>
 <div class="ttc" id="aremove_cv_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/types/remove_cv.html">std::remove_const_t</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a310fd86d0a6175786b81fe5b6db96781" name="a310fd86d0a6175786b81fe5b6db96781"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a310fd86d0a6175786b81fe5b6db96781">&#9670;&#160;</a></span>getQueryable() <span class="overload">[4/5]</span></h2>
+<a id="a29db2eb3ec768cf21dd57fa3193d06c7" name="a29db2eb3ec768cf21dd57fa3193d06c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29db2eb3ec768cf21dd57fa3193d06c7">&#9670;&#160;</a></span>getQueryable() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;query::Modifier M, typename A  = ModifiersAllocator&gt; </div>
+template&lt;query::Modifier M, typename ModifierAllocator &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1080,7 +1027,7 @@ template&lt;query::Modifier M, typename A  = ModifiersAllocator&gt; </div>
         <tr>
           <td class="memname">constexpr M &amp; ecstasy::Registry::getQueryable </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceecstasy.html#ae5640f20f821346bace72e8351acbb01">OptionalModifiersAllocator</a>&lt; A &gt; &amp;&#160;</td>
+          <td class="paramtype">ModifierAllocator &amp;&#160;</td>
           <td class="paramname"><em>allocator</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1093,43 +1040,30 @@ template&lt;query::Modifier M, typename A  = ModifiersAllocator&gt; </div>
 </div><div class="memdoc">
 
 <p>Get a queryable from a registry variable (component storage, resource, queryable storage...)   </p>
-<dl class="section warning"><dt>Warning</dt><dd>If the type is (or might be) a modifier that will have to be allocated, you must send a <a class="el" href="namespaceecstasy.html#a23178e0869471d2ea8fbce5de4c2499b">ModifiersAllocator</a> as parameter.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">C</td><td>Type of the variable to fetch.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">allocator</td><td>Allocator to instanciate query modifier. Can be empty if no modifier needs to be instanciated.</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="namespaceecstasy.html#a2c011da268733486119ae199f8bb4a04">&amp;</a> Associated queryable (if no specific case the storage for C is returned).</dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="elRef" href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a></td><td>When <code>allocator</code> is empty and the queryable needs to be allocated.</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-25)   </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00165">165</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  166</span>        {</div>
-<div class="line"><span class="lineno">  167</span>            <span class="keywordflow">return</span> GetModifierProxy&lt;typename M::Operands&gt;::template get&lt;M&gt;(*<span class="keyword">this</span>, allocator);</div>
-<div class="line"><span class="lineno">  168</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00172">172</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  173</span>        {</div>
+<div class="line"><span class="lineno">  174</span>            <span class="keywordflow">return</span> GetModifierProxy&lt;typename M::Operands&gt;::template get&lt;M, ModifierAllocator&gt;(*<span class="keyword">this</span>, allocator);</div>
+<div class="line"><span class="lineno">  175</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a6ea6ee45ca7181922adfc8c05f89a38a" name="a6ea6ee45ca7181922adfc8c05f89a38a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ea6ee45ca7181922adfc8c05f89a38a">&#9670;&#160;</a></span>getQueryable() <span class="overload">[5/5]</span></h2>
+<a id="a0784418c2cccef913360e12c8d3c358d" name="a0784418c2cccef913360e12c8d3c358d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0784418c2cccef913360e12c8d3c358d">&#9670;&#160;</a></span>getQueryable() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;RegistryModifier M, typename A  = ModifiersAllocator&gt; </div>
+template&lt;RegistryModifier M, typename ModifierAllocator &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1137,7 +1071,7 @@ template&lt;RegistryModifier M, typename A  = ModifiersAllocator&gt; </div>
         <tr>
           <td class="memname">constexpr M::Modifier &amp; ecstasy::Registry::getQueryable </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceecstasy.html#ae5640f20f821346bace72e8351acbb01">OptionalModifiersAllocator</a>&lt; A &gt; &amp;&#160;</td>
+          <td class="paramtype">ModifierAllocator &amp;&#160;</td>
           <td class="paramname"><em>allocator</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1150,33 +1084,20 @@ template&lt;RegistryModifier M, typename A  = ModifiersAllocator&gt; </div>
 </div><div class="memdoc">
 
 <p>Get a queryable from a registry variable (component storage, resource, queryable storage...)   </p>
-<dl class="section warning"><dt>Warning</dt><dd>If the type is (or might be) a modifier that will have to be allocated, you must send a <a class="el" href="namespaceecstasy.html#a23178e0869471d2ea8fbce5de4c2499b">ModifiersAllocator</a> as parameter.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">C</td><td>Type of the variable to fetch.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">allocator</td><td>Allocator to instanciate query modifier. Can be empty if no modifier needs to be instanciated.</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="namespaceecstasy.html#a2c011da268733486119ae199f8bb4a04">&amp;</a> Associated queryable (if no specific case the storage for C is returned).</dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="elRef" href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a></td><td>When <code>allocator</code> is empty and the queryable needs to be allocated.</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-25)   </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00172">172</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  173</span>        {</div>
-<div class="line"><span class="lineno">  174</span>            <span class="keywordflow">return</span> getQueryable&lt;typename M::Modifier&gt;(allocator);</div>
-<div class="line"><span class="lineno">  175</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00179">179</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  180</span>        {</div>
+<div class="line"><span class="lineno">  181</span>            <span class="keywordflow">return</span> getQueryable&lt;typename M::Modifier, ModifierAllocator&gt;(allocator);</div>
+<div class="line"><span class="lineno">  182</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1222,10 +1143,10 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_resource.
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-18) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00912">912</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  913</span>        {</div>
-<div class="line"><span class="lineno">  914</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a2e6e0617857be6b09b743c42281de478">_resources</a>.get&lt;R&gt;();</div>
-<div class="line"><span class="lineno">  915</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00826">826</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  827</span>        {</div>
+<div class="line"><span class="lineno">  828</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a2e6e0617857be6b09b743c42281de478">_resources</a>.get&lt;R&gt;();</div>
+<div class="line"><span class="lineno">  829</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1271,10 +1192,10 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_resource.
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-18) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00894">894</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  895</span>        {</div>
-<div class="line"><span class="lineno">  896</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a2e6e0617857be6b09b743c42281de478">_resources</a>.get&lt;R&gt;();</div>
-<div class="line"><span class="lineno">  897</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00808">808</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  809</span>        {</div>
+<div class="line"><span class="lineno">  810</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a2e6e0617857be6b09b743c42281de478">_resources</a>.get&lt;R&gt;();</div>
+<div class="line"><span class="lineno">  811</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1320,10 +1241,10 @@ template&lt;typename C &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-18) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00948">948</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  949</span>        {</div>
-<div class="line"><span class="lineno">  950</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.get&lt;<a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/remove_cv.html">std::remove_const_t&lt;getStorageType&lt;C&gt;</a>&gt;&gt;();</div>
-<div class="line"><span class="lineno">  951</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00862">862</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  863</span>        {</div>
+<div class="line"><span class="lineno">  864</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.get&lt;<a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/remove_cv.html">std::remove_const_t&lt;getStorageType&lt;C&gt;</a>&gt;&gt;();</div>
+<div class="line"><span class="lineno">  865</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1369,10 +1290,10 @@ template&lt;typename C &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-18) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00930">930</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  931</span>        {</div>
-<div class="line"><span class="lineno">  932</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.get&lt;getStorageType&lt;C&gt;&gt;();</div>
-<div class="line"><span class="lineno">  933</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00844">844</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  845</span>        {</div>
+<div class="line"><span class="lineno">  846</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.get&lt;getStorageType&lt;C&gt;&gt;();</div>
+<div class="line"><span class="lineno">  847</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1412,12 +1333,12 @@ template&lt;typename C &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-19) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00964">964</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  965</span>        {</div>
-<div class="line"><span class="lineno">  966</span>            <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.contains&lt;<a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/remove_cv.html">std::remove_const_t</a>&lt;getStorageType&lt;C&gt;&gt;&gt;())</div>
-<div class="line"><span class="lineno">  967</span>                addStorage&lt;std::remove_const_t&lt;C&gt;&gt;();</div>
-<div class="line"><span class="lineno">  968</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.get&lt;getStorageType&lt;std::remove_const_t&lt;C&gt;&gt;&gt;();</div>
-<div class="line"><span class="lineno">  969</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00878">878</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  879</span>        {</div>
+<div class="line"><span class="lineno">  880</span>            <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.contains&lt;<a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/remove_cv.html">std::remove_const_t</a>&lt;getStorageType&lt;C&gt;&gt;&gt;())</div>
+<div class="line"><span class="lineno">  881</span>                addStorage&lt;std::remove_const_t&lt;C&gt;&gt;();</div>
+<div class="line"><span class="lineno">  882</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.get&lt;getStorageType&lt;std::remove_const_t&lt;C&gt;&gt;&gt;();</div>
+<div class="line"><span class="lineno">  883</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1457,15 +1378,15 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_resource.
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-06) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00876">876</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  877</span>        {</div>
-<div class="line"><span class="lineno">  878</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a2e6e0617857be6b09b743c42281de478">_resources</a>.contains&lt;R&gt;();</div>
-<div class="line"><span class="lineno">  879</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00790">790</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  791</span>        {</div>
+<div class="line"><span class="lineno">  792</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a2e6e0617857be6b09b743c42281de478">_resources</a>.contains&lt;R&gt;();</div>
+<div class="line"><span class="lineno">  793</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="a827c2ce78375ab3c8cd3027f6c531eb6" name="a827c2ce78375ab3c8cd3027f6c531eb6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a827c2ce78375ab3c8cd3027f6c531eb6">&#9670;&#160;</a></span>query() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a827c2ce78375ab3c8cd3027f6c531eb6">&#9670;&#160;</a></span>query()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1489,128 +1410,11 @@ template&lt;typename C , typename... Cs&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Construct a query for the given components.   </p>
-<dl class="section note"><dt>Note</dt><dd>If you use modifers and don't send a <code>allocator</code> it will default to a <a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query.html" title="Registry query allocating everything on the stack (if allocation required).">RegistryStackQuery</a> using a <a class="el" href="namespaceecstasy.html#a029021666dc5e8cc0db0d817fc54a172">StackAllocator</a>.</dd></dl>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">C</td><td>First component type. </td></tr>
-    <tr><td class="paramname">Cs</td><td>Other component types. </td></tr>
-    <tr><td class="paramname">A</td><td>Modifiers allocator type.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">allocator</td><td>Allocator for the required modifiers (<a class="el" href="structecstasy_1_1_maybe.html" title="Placeholder for ecstasy::query::modifier::Maybe.">Maybe</a>...).</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classecstasy_1_1query_1_1_query.html">query::Query</a>&lt;<a class="el" href="namespaceecstasy.html#a53c8ca43801107dc959adbdc60810af8">queryable_type_t&lt;C&gt;</a>, <a class="el" href="namespaceecstasy.html#a53c8ca43801107dc959adbdc60810af8">queryable_type_t&lt;Cs&gt;</a>...&gt; New query which can be iterated.</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-20)   </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01044">1044</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1045</span>        {</div>
-<div class="line"><span class="lineno"> 1046</span>            <span class="keywordflow">return</span> RegistrySelectStackQuery&lt;thread::AUTO_LOCK_DEFAULT, queryable_type_t&lt;C&gt;, queryable_type_t&lt;Cs&gt;...&gt;(*this);</div>
-<div class="line"><span class="lineno"> 1047</span>        }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a58975277c3342970a92928d34aeab3c8" name="a58975277c3342970a92928d34aeab3c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58975277c3342970a92928d34aeab3c8">&#9670;&#160;</a></span>query() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename C , typename... Cs, typename A  = ModifiersAllocator&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr <a class="el" href="classecstasy_1_1query_1_1_query.html">query::Query</a>&lt; <a class="el" href="namespaceecstasy.html#a53c8ca43801107dc959adbdc60810af8">queryable_type_t</a>&lt; C &gt;, <a class="el" href="namespaceecstasy.html#a53c8ca43801107dc959adbdc60810af8">queryable_type_t</a>&lt; Cs &gt;... &gt; ecstasy::Registry::query </td>
-          <td>(</td>
-          <td class="paramtype">A &amp;&#160;</td>
-          <td class="paramname"><em>allocator</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Construct a query for the given components.   </p>
-<dl class="section note"><dt>Note</dt><dd>If you use modifers and don't send a <code>allocator</code> it will default to a <a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query.html" title="Registry query allocating everything on the stack (if allocation required).">RegistryStackQuery</a> using a <a class="el" href="namespaceecstasy.html#a029021666dc5e8cc0db0d817fc54a172">StackAllocator</a>.</dd></dl>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">C</td><td>First component type. </td></tr>
-    <tr><td class="paramname">Cs</td><td>Other component types. </td></tr>
-    <tr><td class="paramname">A</td><td>Modifiers allocator type.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">allocator</td><td>Allocator for the required modifiers (<a class="el" href="structecstasy_1_1_maybe.html" title="Placeholder for ecstasy::query::modifier::Maybe.">Maybe</a>...).</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classecstasy_1_1query_1_1_query.html">query::Query</a>&lt;<a class="el" href="namespaceecstasy.html#a53c8ca43801107dc959adbdc60810af8">queryable_type_t&lt;C&gt;</a>, <a class="el" href="namespaceecstasy.html#a53c8ca43801107dc959adbdc60810af8">queryable_type_t&lt;Cs&gt;</a>...&gt; New query which can be iterated.</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-20)   </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01035">1035</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1036</span>        {</div>
-<div class="line"><span class="lineno"> 1037</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classecstasy_1_1_registry.html#a827c2ce78375ab3c8cd3027f6c531eb6">query</a>&lt;C, Cs...&gt;(<a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>(<a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html">std::reference_wrapper</a>(allocator)));</div>
-<div class="line"><span class="lineno"> 1038</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_a827c2ce78375ab3c8cd3027f6c531eb6"><div class="ttname"><a href="classecstasy_1_1_registry.html#a827c2ce78375ab3c8cd3027f6c531eb6">ecstasy::Registry::query</a></div><div class="ttdeci">RegistrySelectStackQuery&lt; thread::AUTO_LOCK_DEFAULT, queryable_type_t&lt; C &gt;, queryable_type_t&lt; Cs &gt;... &gt; query()</div><div class="ttdoc">Construct a query for the given components.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l01044">Registry.hpp:1044</a></div></div>
-<div class="ttc" id="aoptional_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a></div></div>
-<div class="ttc" id="areference_wrapper_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html">std::reference_wrapper</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a33891cfef7fc66b220cfec2263e29b67" name="a33891cfef7fc66b220cfec2263e29b67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33891cfef7fc66b220cfec2263e29b67">&#9670;&#160;</a></span>query() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename C , typename... Cs, typename A  = ModifiersAllocator&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classecstasy_1_1query_1_1_query.html">query::Query</a>&lt; <a class="el" href="namespaceecstasy.html#a53c8ca43801107dc959adbdc60810af8">queryable_type_t</a>&lt; C &gt;, <a class="el" href="namespaceecstasy.html#a53c8ca43801107dc959adbdc60810af8">queryable_type_t</a>&lt; Cs &gt;... &gt; ecstasy::Registry::query </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceecstasy.html#ae5640f20f821346bace72e8351acbb01">OptionalModifiersAllocator</a>&lt; A &gt;&#160;</td>
-          <td class="paramname"><em>allocator</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
 <p>Construct a query for the given components. </p>
-<dl class="section note"><dt>Note</dt><dd>If you use modifers and don't send a <code>allocator</code> it will default to a <a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query.html" title="Registry query allocating everything on the stack (if allocation required).">RegistryStackQuery</a> using a <a class="el" href="namespaceecstasy.html#a029021666dc5e8cc0db0d817fc54a172">StackAllocator</a>.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">C</td><td>First component type. </td></tr>
-    <tr><td class="paramname">Cs</td><td>Other component types. </td></tr>
-    <tr><td class="paramname">A</td><td>Modifiers allocator type.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">allocator</td><td>Allocator for the required modifiers (<a class="el" href="structecstasy_1_1_maybe.html" title="Placeholder for ecstasy::query::modifier::Maybe.">Maybe</a>...).</td></tr>
+    <tr><td class="paramname">Cs</td><td>Other component types.</td></tr>
   </table>
   </dd>
 </dl>
@@ -1618,10 +1422,10 @@ template&lt;typename C , typename... Cs, typename A  = ModifiersAllocator&gt; </
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-20) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01028">1028</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1029</span>        {</div>
-<div class="line"><span class="lineno"> 1030</span>            <span class="keywordflow">return</span> query::Query(getQueryable&lt;C&gt;(allocator), getQueryable&lt;Cs&gt;(allocator)...);</div>
-<div class="line"><span class="lineno"> 1031</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00938">938</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  939</span>        {</div>
+<div class="line"><span class="lineno">  940</span>            <span class="keywordflow">return</span> RegistrySelectStackQuery&lt;thread::AUTO_LOCK_DEFAULT, queryable_type_t&lt;C&gt;, queryable_type_t&lt;Cs&gt;...&gt;(*this);</div>
+<div class="line"><span class="lineno">  941</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1664,10 +1468,10 @@ template&lt;bool AutoLock, typename C , typename... Cs&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-07) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01064">1064</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1065</span>        {</div>
-<div class="line"><span class="lineno"> 1066</span>            <span class="keywordflow">return</span> RegistrySelectStackQuery&lt;AutoLock, queryable_type_t&lt;C&gt;, queryable_type_t&lt;Cs&gt;...&gt;(*this);</div>
-<div class="line"><span class="lineno"> 1067</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00958">958</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  959</span>        {</div>
+<div class="line"><span class="lineno">  960</span>            <span class="keywordflow">return</span> RegistrySelectStackQuery&lt;AutoLock, queryable_type_t&lt;C&gt;, queryable_type_t&lt;Cs&gt;...&gt;(*this);</div>
+<div class="line"><span class="lineno">  961</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1712,10 +1516,10 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01135">1135</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1136</span>        {</div>
-<div class="line"><span class="lineno"> 1137</span>            <a class="code hl_variable" href="classecstasy_1_1_registry.html#a8f5d5b67bf0be48c342bb96672757a65">_systems</a>.<a class="code hl_function" href="classecstasy_1_1_system_instances.html#a41921426e86d8f9bc7f5890393b53f09">get</a>&lt;S&gt;().run(*<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno"> 1138</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01029">1029</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1030</span>        {</div>
+<div class="line"><span class="lineno"> 1031</span>            <a class="code hl_variable" href="classecstasy_1_1_registry.html#a8f5d5b67bf0be48c342bb96672757a65">_systems</a>.<a class="code hl_function" href="classecstasy_1_1_system_instances.html#a41921426e86d8f9bc7f5890393b53f09">get</a>&lt;S&gt;().run(*<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno"> 1032</span>        }</div>
 <div class="ttc" id="aclassecstasy_1_1_system_instances_html_a41921426e86d8f9bc7f5890393b53f09"><div class="ttname"><a href="classecstasy_1_1_system_instances.html#a41921426e86d8f9bc7f5890393b53f09">ecstasy::SystemInstances::get</a></div><div class="ttdeci">const ISystem &amp; get(const std::type_index &amp;type) const</div><div class="ttdoc">Get a const reference to the contained instance identified by type.</div><div class="ttdef"><b>Definition</b> <a href="_system_instances_8hpp_source.html#l00130">SystemInstances.hpp:130</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -1847,10 +1651,10 @@ template&lt;typename C , typename... Cs&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-24) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01085">1085</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1086</span>        {</div>
-<div class="line"><span class="lineno"> 1087</span>            <span class="keywordflow">return</span> Select&lt;queryable_type_t&lt;C&gt;, queryable_type_t&lt;Cs&gt;...&gt;(*this);</div>
-<div class="line"><span class="lineno"> 1088</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00979">979</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  980</span>        {</div>
+<div class="line"><span class="lineno">  981</span>            <span class="keywordflow">return</span> Select&lt;queryable_type_t&lt;C&gt;, queryable_type_t&lt;Cs&gt;...&gt;(*this);</div>
+<div class="line"><span class="lineno">  982</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1875,7 +1679,7 @@ template&lt;typename C , typename... Cs&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01168">1168</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01062">1062</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
@@ -1899,7 +1703,7 @@ template&lt;typename C , typename... Cs&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01169">1169</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01063">1063</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
@@ -1923,7 +1727,7 @@ template&lt;typename C , typename... Cs&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01170">1170</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01064">1064</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>

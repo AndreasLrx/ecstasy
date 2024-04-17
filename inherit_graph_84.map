@@ -1,5 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/conditional.html" title=" " alt="" coords="5,5,223,119"/>
-<area shape="rect" id="Node000001" href="$structutil_1_1meta_1_1__type__set__eq_3_01std_1_1tuple_3_01_t1_00_01_ts1_8_8_8_01_4_00_01std_1_1tuple_3_01_ts2_8_8_8_01_4_01_4.html" title=" " alt="" coords="271,27,427,97"/>
-<area shape="poly" id="edge42_Node000000_Node000001" title=" " alt="" coords="236,59,271,59,271,65,236,65"/>
+<area shape="rect" id="Node000000" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/integral_constant.html" title=" " alt="" coords="5,109,124,134"/>
+<area shape="rect" id="Node000001" href="$structecstasy_1_1query_1_1is__queryable.html" title="Checks if the given type match the ecstasy::query::Queryable concept." alt="" coords="212,5,347,45"/>
+<area shape="poly" id="edge44_Node000000_Node000001" title=" " alt="" coords="94,99,130,76,171,55,211,40,212,45,173,60,132,81,97,103"/>
+<area shape="rect" id="Node000002" href="$structecstasy_1_1query_1_1is__queryable__with__adjust.html" title="Checks if the given type match the ecstasy::query::QueryableNeedAdjust concept." alt="" coords="172,69,387,109"/>
+<area shape="poly" id="edge45_Node000000_Node000002" title=" " alt="" coords="138,108,171,103,172,108,138,113"/>
+<area shape="rect" id="Node000003" href="$structutil_1_1meta_1_1__type__set__eq.html" title=" " alt="" coords="172,133,387,173"/>
+<area shape="poly" id="edge46_Node000000_Node000003" title=" " alt="" coords="138,130,172,135,171,140,138,135"/>
+<area shape="rect" id="Node000004" href="$structutil_1_1meta_1_1type__set__eq.html" title="Test if two tuple types contains the exact same type independently of the order." alt="" coords="172,197,387,237"/>
+<area shape="poly" id="edge47_Node000000_Node000004" title=" " alt="" coords="97,139,132,162,173,183,204,195,202,200,171,188,130,166,94,144"/>
 </map>

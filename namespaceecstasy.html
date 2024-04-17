@@ -269,14 +269,9 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a53c8ca43801107dc959adbdc60810af8"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy.html#a53c8ca43801107dc959adbdc60810af8">queryable_type_t</a> = typename <a class="el" href="structecstasy_1_1queryable__type.html">queryable_type</a>&lt; C &gt;::type</td></tr>
 <tr class="memdesc:a53c8ca43801107dc959adbdc60810af8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to <a class="el" href="structecstasy_1_1queryable__type.html#a88cababc113f9c749d33546c3565a326">queryable_type&lt;C&gt;::type</a>.  <br /></td></tr>
 <tr class="separator:a53c8ca43801107dc959adbdc60810af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23178e0869471d2ea8fbce5de4c2499b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy.html#a23178e0869471d2ea8fbce5de4c2499b">ModifiersAllocator</a> = <a class="el" href="classutil_1_1_allocator.html">util::Allocator</a>&lt; <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier_base.html">ecstasy::query::modifier::ModifierBase</a> &gt;</td></tr>
-<tr class="separator:a23178e0869471d2ea8fbce5de4c2499b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a029021666dc5e8cc0db0d817fc54a172"><td class="memTemplParams" colspan="2">template&lt;typename... Qs&gt; </td></tr>
 <tr class="memitem:a029021666dc5e8cc0db0d817fc54a172"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy.html#a029021666dc5e8cc0db0d817fc54a172">StackAllocator</a> = <a class="el" href="classutil_1_1_stack_allocator.html">util::StackAllocator</a>&lt; <a class="el" href="namespaceecstasy.html#ae3d09d8dc606623d5049790980069d46">modifiers_allocator_size_v</a>&lt; Qs... &gt;, <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier_base.html">query::modifier::ModifierBase</a> &gt;</td></tr>
 <tr class="separator:a029021666dc5e8cc0db0d817fc54a172"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5640f20f821346bace72e8351acbb01"><td class="memTemplParams" colspan="2">template&lt;typename A  = ModifiersAllocator&gt; </td></tr>
-<tr class="memitem:ae5640f20f821346bace72e8351acbb01"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy.html#ae5640f20f821346bace72e8351acbb01">OptionalModifiersAllocator</a> = <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html">std::reference_wrapper</a>&lt; A &gt; &gt;</td></tr>
-<tr class="separator:ae5640f20f821346bace72e8351acbb01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c011da268733486119ae199f8bb4a04"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
 <tr class="memitem:a2c011da268733486119ae199f8bb4a04"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy.html#a2c011da268733486119ae199f8bb4a04">getStorageType</a> = typename <a class="el" href="structecstasy_1_1get_storage_type_impl.html">getStorageTypeImpl</a>&lt; C &gt;::type</td></tr>
 <tr class="memdesc:a2c011da268733486119ae199f8bb4a04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the storage type of a component, returns <a class="el" href="classecstasy_1_1_map_storage.html" title="Associative Map to store entity components.">MapStorage</a> by default.  <br /></td></tr>
@@ -447,22 +442,6 @@ template&lt;auto Left, auto Right&gt; </div>
 
 </div>
 </div>
-<a id="a23178e0869471d2ea8fbce5de4c2499b" name="a23178e0869471d2ea8fbce5de4c2499b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23178e0869471d2ea8fbce5de4c2499b">&#9670;&#160;</a></span>ModifiersAllocator</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespaceecstasy.html#a23178e0869471d2ea8fbce5de4c2499b">ecstasy::ModifiersAllocator</a> = typedef <a class="el" href="classutil_1_1_allocator.html">util::Allocator</a>&lt;<a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier_base.html">ecstasy::query::modifier::ModifierBase</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00047">47</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-
-</div>
-</div>
 <a id="a632aba6a51f51ed40b7bdc35331c6821" name="a632aba6a51f51ed40b7bdc35331c6821"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a632aba6a51f51ed40b7bdc35331c6821">&#9670;&#160;</a></span>NotEqualTo</h2>
 
@@ -480,24 +459,6 @@ template&lt;auto Left, auto Right&gt; </div>
 <p>Inequality condition. </p>
 
 <p class="definition">Definition at line <a class="el" href="_not_equal_to_8hpp_source.html#l00021">21</a> of file <a class="el" href="_not_equal_to_8hpp_source.html">NotEqualTo.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ae5640f20f821346bace72e8351acbb01" name="ae5640f20f821346bace72e8351acbb01"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5640f20f821346bace72e8351acbb01">&#9670;&#160;</a></span>OptionalModifiersAllocator</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename A  = ModifiersAllocator&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespaceecstasy.html#ae5640f20f821346bace72e8351acbb01">ecstasy::OptionalModifiersAllocator</a> = typedef <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html">std::reference_wrapper</a>&lt;A&gt; &gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00051">51</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
@@ -543,7 +504,7 @@ template&lt;typename... Qs&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00049">49</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00048">48</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>

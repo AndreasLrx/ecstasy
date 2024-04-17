@@ -93,6 +93,7 @@ $(document).ready(function(){initNavTree('structecstasy_1_1_registry_1_1_get_mod
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="structecstasy_1_1_registry_1_1_get_modifier_proxy_3_01util_1_1meta_1_1_traits_3_01_qs_8_8_8_01_4_01_4-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ecstasy::Registry::GetModifierProxy&lt; util::meta::Traits&lt; Qs... &gt; &gt; Struct Template Reference</div></div>
 </div><!--header-->
@@ -105,10 +106,17 @@ $(document).ready(function(){initNavTree('structecstasy_1_1_registry_1_1_get_mod
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:af869fd7f52214da200774848574107de"><td class="memTemplParams" colspan="2">template&lt;query::Modifier M, typename A  = ModifiersAllocator&gt; </td></tr>
-<tr class="memitem:af869fd7f52214da200774848574107de"><td class="memTemplItemLeft" align="right" valign="top">static constexpr M &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structecstasy_1_1_registry_1_1_get_modifier_proxy_3_01util_1_1meta_1_1_traits_3_01_qs_8_8_8_01_4_01_4.html#af869fd7f52214da200774848574107de">get</a> (<a class="el" href="classecstasy_1_1_registry.html">Registry</a> &amp;registry, <a class="el" href="namespaceecstasy.html#ae5640f20f821346bace72e8351acbb01">OptionalModifiersAllocator</a>&lt; A &gt; &amp;allocator)</td></tr>
-<tr class="memdesc:af869fd7f52214da200774848574107de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of <a class="el" href="classecstasy_1_1_registry.html#a5826fe17a274a480a60acae6646922cf">Registry::getQueryable()</a>.  <br /></td></tr>
-<tr class="separator:af869fd7f52214da200774848574107de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16b5b6928b210e61a388ce42014571dd"><td class="memTemplParams" colspan="2">template&lt;query::Modifier M, typename ModifierAllocator &gt; </td></tr>
+<tr class="memitem:a16b5b6928b210e61a388ce42014571dd"><td class="memTemplItemLeft" align="right" valign="top">static constexpr M &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structecstasy_1_1_registry_1_1_get_modifier_proxy_3_01util_1_1meta_1_1_traits_3_01_qs_8_8_8_01_4_01_4.html#a16b5b6928b210e61a388ce42014571dd">get</a> (<a class="el" href="classecstasy_1_1_registry.html">Registry</a> &amp;registry, ModifierAllocator &amp;allocator)</td></tr>
+<tr class="memdesc:a16b5b6928b210e61a388ce42014571dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of <a class="el" href="classecstasy_1_1_registry.html#ab1412c4cf0e910793616e1f1ef26e247">Registry::getQueryable()</a>.  <br /></td></tr>
+<tr class="separator:a16b5b6928b210e61a388ce42014571dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:ae13a48556026d6950a468ae117c2f8ee"><td class="memTemplParams" colspan="2">template&lt;typename Q , typename ModifierAllocator &gt; </td></tr>
+<tr class="memitem:ae13a48556026d6950a468ae117c2f8ee"><td class="memTemplItemLeft" align="right" valign="top">static constexpr Q &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structecstasy_1_1_registry_1_1_get_modifier_proxy_3_01util_1_1meta_1_1_traits_3_01_qs_8_8_8_01_4_01_4.html#ae13a48556026d6950a468ae117c2f8ee">getRegistryQueryable</a> (<a class="el" href="classecstasy_1_1_registry.html">Registry</a> &amp;registry, ModifierAllocator &amp;allocator)</td></tr>
+<tr class="memdesc:ae13a48556026d6950a468ae117c2f8ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a queryable from the registry.  <br /></td></tr>
+<tr class="separator:ae13a48556026d6950a468ae117c2f8ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;query::Queryable... Qs&gt;<br />
@@ -122,17 +130,17 @@ struct ecstasy::Registry::GetModifierProxy&lt; util::meta::Traits&lt; Qs... &gt;
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-22) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00136">136</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00122">122</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="af869fd7f52214da200774848574107de" name="af869fd7f52214da200774848574107de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af869fd7f52214da200774848574107de">&#9670;&#160;</a></span>get()</h2>
+<a id="a16b5b6928b210e61a388ce42014571dd" name="a16b5b6928b210e61a388ce42014571dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16b5b6928b210e61a388ce42014571dd">&#9670;&#160;</a></span>get()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;query::Queryable... Qs&gt; </div>
 <div class="memtemplate">
-template&lt;query::Modifier M, typename A  = ModifiersAllocator&gt; </div>
+template&lt;query::Modifier M, typename ModifierAllocator &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -146,7 +154,7 @@ template&lt;query::Modifier M, typename A  = ModifiersAllocator&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceecstasy.html#ae5640f20f821346bace72e8351acbb01">OptionalModifiersAllocator</a>&lt; A &gt; &amp;&#160;</td>
+          <td class="paramtype">ModifierAllocator &amp;&#160;</td>
           <td class="paramname"><em>allocator</em>&#160;</td>
         </tr>
         <tr>
@@ -162,12 +170,12 @@ template&lt;query::Modifier M, typename A  = ModifiersAllocator&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Specialization of <a class="el" href="classecstasy_1_1_registry.html#a5826fe17a274a480a60acae6646922cf">Registry::getQueryable()</a>. </p>
+<p>Specialization of <a class="el" href="classecstasy_1_1_registry.html#ab1412c4cf0e910793616e1f1ef26e247">Registry::getQueryable()</a>. </p>
 <p>Returns the required modifier with the operands queried from the registry.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">M</td><td>Modifier type. </td></tr>
-    <tr><td class="paramname">A</td><td>Modifiers allocator type.</td></tr>
+    <tr><td class="paramname">ModifierAllocator</td><td>Modifiers allocator type.</td></tr>
   </table>
   </dd>
 </dl>
@@ -179,22 +187,82 @@ template&lt;query::Modifier M, typename A  = ModifiersAllocator&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>M&amp; Required modifier.</dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="elRef" href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a></td><td>When <code>allocator</code> is empty.</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-22) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00155">155</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  156</span>            {</div>
-<div class="line"><span class="lineno">  157</span>                <span class="keywordflow">if</span> (!allocator)</div>
-<div class="line"><span class="lineno">  158</span>                    <span class="keywordflow">throw</span> <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a>(<span class="stringliteral">&quot;Missing modifier allocator&quot;</span>);</div>
-<div class="line"><span class="lineno">  159</span>                <span class="keywordflow">return</span> allocator-&gt;get().template instanciate&lt;M&gt;(registry.getQueryable&lt;Qs&gt;(allocator)...);</div>
-<div class="line"><span class="lineno">  160</span>            }</div>
-<div class="ttc" id="alogic_error_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00139">139</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  140</span>            {</div>
+<div class="line"><span class="lineno">  141</span>                <span class="keywordflow">return</span> allocator.template instanciate&lt;M&gt;(</div>
+<div class="line"><span class="lineno">  142</span>                    getRegistryQueryable&lt;Qs, ModifierAllocator&gt;(registry, allocator)...);</div>
+<div class="line"><span class="lineno">  143</span>            }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae13a48556026d6950a468ae117c2f8ee" name="ae13a48556026d6950a468ae117c2f8ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae13a48556026d6950a468ae117c2f8ee">&#9670;&#160;</a></span>getRegistryQueryable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;query::Queryable... Qs&gt; </div>
+<div class="memtemplate">
+template&lt;typename Q , typename ModifierAllocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static constexpr Q &amp; <a class="el" href="structecstasy_1_1_registry_1_1_get_modifier_proxy.html">ecstasy::Registry::GetModifierProxy</a>&lt; <a class="el" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt; Qs... &gt; &gt;::getRegistryQueryable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classecstasy_1_1_registry.html">Registry</a> &amp;&#160;</td>
+          <td class="paramname"><em>registry</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ModifierAllocator &amp;&#160;</td>
+          <td class="paramname"><em>allocator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get a queryable from the registry. </p>
+<p>This function is a proxy to send or not the allocator</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Q</td><td>Queryable type to get. </td></tr>
+    <tr><td class="paramname">ModifierAllocator</td><td>Allocator type for the modifier.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">registry</td><td>Owning registry. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">allocator</td><td>Allocator to instanciate the modifier (if required).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>constexpr Q&amp; Reference to the queryable (maybe in a view/modifier).</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-17) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00161">161</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  162</span>            {</div>
+<div class="line"><span class="lineno">  163</span>                <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (RegistryModifier&lt;Q&gt; || query::Modifier&lt;Q&gt;)</div>
+<div class="line"><span class="lineno">  164</span>                    <span class="keywordflow">return</span> registry.getQueryable&lt;Q, ModifierAllocator&gt;(allocator);</div>
+<div class="line"><span class="lineno">  165</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  166</span>                    <span class="keywordflow">return</span> registry.getQueryable&lt;Q&gt;();</div>
+<div class="line"><span class="lineno">  167</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>

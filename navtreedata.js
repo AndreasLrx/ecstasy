@@ -102,22 +102,22 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "01__basic__window_2main_8cpp.html",
-"_text_entered_event_8hpp.html",
-"classecstasy_1_1_registry.html#a33891cfef7fc66b220cfec2263e29b67",
-"classecstasy_1_1integration_1_1event_1_1_events_manager.html#ab3208b7bccb4863cce263f0edda67c16",
-"classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a04dad9be535430902d45a744b9a3d2ca",
-"classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe85d7ffd57dbe8185bd42d6b1216253c8.html#a1026ee502720e32309b574deb8348e63",
-"classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ae20ea1f75a8489321b379a528c89daae",
-"classutil_1_1serialization_1_1_i_node.html#a419483d24c2915b2d68ab5cc6a4fb1c2",
-"classutil_1_1serialization_1_1_toml_array_node.html#af89a6335f5ccce12c7826a5328522193",
-"cpp/algorithm/ranges/find.html",
-"cpp/experimental/not_fn.html",
-"cpp/io/manip/uppercase.html",
-"cpp/numeric/special_functions/cyl_neumann.html",
-"cpp/types/is_trivial.html",
-"md_doc_2_tutorial.html#SelectWhereTutorial",
-"structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aac17e6984c1e5a887a49831beadee6bca",
-"structecstasy_1_1query_1_1_select_1_1_sortered_tie.html"
+"_text_entered_listener_8hpp.html",
+"classecstasy_1_1_registry.html#a3b58005381d91e50fdf4fdb62488ccb1",
+"classecstasy_1_1integration_1_1event_1_1_gamepad.html#a2c5c1e7d9b7a82d7c7ed6902e6ce7424",
+"classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a5b2c4198fe2740d97a33c6f36e32609d",
+"classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe85d7ffd57dbe8185bd42d6b1216253c8.html#a487e3916bf80b50d89cab6fbd0a3d521",
+"classutil_1_1_bit_set.html",
+"classutil_1_1serialization_1_1_i_node.html#a5f5eecfccdd570eca30bf9abf6dbee3e",
+"classutil_1_1serialization_1_1_toml_conversion.html#a80347805a093ce1a758fdb6c819e41ad",
+"cpp/algorithm/ranges/is_sorted.html",
+"cpp/experimental/to_array.html",
+"cpp/iterator/make_move_iterator.html",
+"cpp/numeric/special_functions/hermite.html",
+"cpp/utility/compare/named_comparison_functions.html",
+"namespaceecstasy.html",
+"structecstasy_1_1integration_1_1event_1_1_event.html#a552698af46783c3bc637ce410aa7d473",
+"structecstasy_1_1query_1_1queryable__data_3_01_w_01_4.html#acb6d1fb08eb6a163220a978cd3c95562"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

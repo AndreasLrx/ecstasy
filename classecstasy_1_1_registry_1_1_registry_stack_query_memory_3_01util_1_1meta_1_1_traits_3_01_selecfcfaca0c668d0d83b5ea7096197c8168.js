@@ -3,14 +3,13 @@ var classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1
     [ "HasModifiersAllocator", "classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#accaf9b7678705bd501e8d8b71c0a38c0", null ],
     [ "HasViewsAllocator", "classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#a984bb4cce7e1659dfe2c7d5b20ce8a97", null ],
     [ "ModifiersAllocator", "classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#ada8ab10a8231b3a80d82d0fce68dfca7", null ],
-    [ "ModifiersAllocatorReference", "classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#a71063b3e7b5799a8ca6d39c8bb2be984", null ],
     [ "ModifiersAllocatorSize", "classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#ab3cf5f7aeed59a138889b71001b673a0", null ],
     [ "QueryableType", "classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#a42dfb55e2d958a38af1b2b1885735903", null ],
     [ "ViewsAllocator", "classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#a29f289787c1bafe1f5d3e2cd995b9a5b", null ],
     [ "ViewsAllocatorSize", "classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#a887d5f3819369dce4871e65e0560eb1d", null ],
     [ "RegistryStackQueryMemory", "classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#a01647bbc9aad6bbfe998ca2827da915d", null ],
     [ "getQueryable", "classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#a7356894bee320f01db470796fce3d67e", null ],
+    [ "getRegistryQueryable", "classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#ae6a0979483eb1a06e84922357f00ca28", null ],
     [ "_modifiersAllocator", "classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#a3b7af02a3e833ccdc69bf4440f0add57", null ],
-    [ "_modifiersAllocRef", "classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#acfa270fb7a0121f2f906a7458c344d08", null ],
     [ "_viewsAllocator", "classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#a9accc938d225617581a8130afbecc5d0", null ]
 ];
