@@ -21,6 +21,7 @@
 
 // Multi threading options
 #cmakedefine ECSTASY_AUTO_LOCK
+#cmakedefine ECSTASY_AUTO_LOCK_RESOURCES
 #cmakedefine ECSTASY_LOCKABLE_RESOURCES
 #cmakedefine ECSTASY_LOCKABLE_STORAGES
 
@@ -30,6 +31,12 @@ namespace ecstasy::thread
     static constexpr bool AUTO_LOCK_DEFAULT = true;
 #else
     static constexpr bool AUTO_LOCK_DEFAULT = false;
+#endif
+
+#ifdef ECSTASY_AUTO_LOCK_RESOURCES
+    static constexpr bool AUTO_LOCK_RESOURCES_DEFAULT = true;
+#else
+    static constexpr bool AUTO_LOCK_RESOURCES_DEFAULT = false;
 #endif
 } // namespace ecstasy::thread
 

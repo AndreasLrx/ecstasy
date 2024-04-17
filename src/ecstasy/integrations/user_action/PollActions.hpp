@@ -48,10 +48,10 @@ namespace ecstasy::integration::user_action
         {
             if (!registry.hasResource<PendingActions>())
                 return;
-            auto &pendingActions = registry.getResource<PendingActions>();
-            while (!pendingActions.get().empty()) {
-                std::ignore = std::make_tuple((callListeners<Actions>(registry, pendingActions.get().front()), 0)...);
-                pendingActions.get().pop();
+            RR<PendingActions> pendingActions = registry.getResource<PendingActions>();
+            while (!pendingActions->get().empty()) {
+                std::ignore = std::make_tuple((callListeners<Actions>(registry, pendingActions->get().front()), 0)...);
+                pendingActions->get().pop();
             }
         }
 

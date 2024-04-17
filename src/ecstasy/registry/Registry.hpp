@@ -46,7 +46,10 @@ namespace ecstasy
 {
     template <typename... Qs>
     using StackAllocator = util::StackAllocator<modifiers_allocator_size_v<Qs...>, query::modifier::ModifierBase>;
-    class ResourceBase;
+    template <typename R, bool AutoLock = thread::AUTO_LOCK_RESOURCES_DEFAULT>
+    using ResourceReference = query::thread_safe_reference_t<R, AutoLock>;
+    template <typename R, bool AutoLock = thread::AUTO_LOCK_RESOURCES_DEFAULT>
+    using RR = ResourceReference<R, AutoLock>;
 
     ///
     /// @brief Empty type used with no_unique_address attribute to avoid memory overhead.
@@ -82,11 +85,11 @@ namespace ecstasy
         }
 
         /// @copydoc getQueryable()
-        template <std::derived_from<Resource> R>
+        template <std::derived_from<ResourceBase> R>
             requires query::Queryable<R>
         constexpr R &getQueryable()
         {
-            return getResource<R>();
+            return getResource<R, false>();
         }
 
         /// @copydoc getQueryable()
@@ -752,7 +755,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-18)
         ///
-        template <std::derived_from<Resource> R, typename... Args>
+        template <std::derived_from<ResourceBase> R, typename... Args>
         R &addResource(Args &&...args)
         {
             return _resources.emplace<R>(std::forward<Args>(args)...);
@@ -786,7 +789,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
         ///
-        template <std::derived_from<Resource> R>
+        template <std::derived_from<ResourceBase> R>
         bool hasResource() const
         {
             return _resources.contains<R>();
@@ -804,8 +807,8 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-18)
         ///
-        template <std::derived_from<Resource> R>
-        const R &getResource() const
+        template <std::derived_from<ResourceBase> R, bool Locked = thread::AUTO_LOCK_RESOURCES_DEFAULT>
+        ResourceReference<const R, Locked> getResource() const
         {
             return _resources.get<R>();
         }
@@ -822,8 +825,8 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-18)
         ///
-        template <std::derived_from<Resource> R>
-        R &getResource()
+        template <std::derived_from<ResourceBase> R, bool Locked = thread::AUTO_LOCK_RESOURCES_DEFAULT>
+        ResourceReference<R, Locked> getResource()
         {
             return _resources.get<R>();
         }
@@ -892,7 +895,11 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-21)
         ///
-        const Entities &getEntities() const;
+        template <bool Locked = thread::AUTO_LOCK_RESOURCES_DEFAULT>
+        ResourceReference<const Entities, Locked> getEntities() const
+        {
+            return _resources.get<Entities>();
+        }
 
         ///
         /// @brief Get the Entities resource.
@@ -904,7 +911,11 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-21)
         ///
-        Entities &getEntities();
+        template <bool Locked = thread::AUTO_LOCK_RESOURCES_DEFAULT>
+        ResourceReference<Entities, Locked> getEntities()
+        {
+            return _resources.get<Entities>();
+        }
 
         ///
         /// @brief Get the Entity at the index @p index.
@@ -1059,7 +1070,7 @@ namespace ecstasy
         void runSystems(size_t group, size_t mask);
 
       private:
-        Instances<Resource> _resources;
+        Instances<ResourceBase> _resources;
         Instances<IStorage> _storages;
         SystemInstances _systems;
 

@@ -27,7 +27,7 @@ namespace ecstasy
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-10-18)
     ///
-    class Entities : public Resource {
+    class Entities : public Resource<Entities> {
       public:
         ///
         /// @brief Entities builder to add multiple component to an entity on creation.

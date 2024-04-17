@@ -23,7 +23,7 @@ namespace ecstasy::integration::event
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-11-18)
     ///
-    class Gamepads : public ecstasy::Resource {
+    class Gamepads : public ecstasy::Resource<Gamepads> {
       public:
         /// @brief Number of supported gamepads.
         static const size_t GamepadCount = 4;
