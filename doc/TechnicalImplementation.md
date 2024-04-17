@@ -131,16 +131,7 @@ As we seen before, the @ref ecstasy::query::Query needs queryables. But we don't
 registry.query<Position, Velocity>()
 ```
 
-Because magic happens in the registry, all the storages or resources are fetched with the @ref ecstasy::Registry::getQueryable template method:
-
-```cpp
-// Don't take in account the allocator, it is for next steps
-template <typename C, typename... Cs, typename A = ModifiersAllocator>
-query::Query<queryable_type_t<C>, queryable_type_t<Cs>...> query(OptionalModifiersAllocator<A> allocator)
-{
-    return query::Query(getQueryable<C>(allocator), getQueryable<Cs>(allocator)...);
-}
-```
+Because magic happens in the registry, all the storages or resources are fetched with the @ref ecstasy::Registry::RegistryStackQueryMemory::getQueryable template method. This allows you to use types instead of storages.
 
 The following functionnalities (modifiers, conditions etc) respect the the zero-overhead C++ principle meaning if you don't use them it won't slow down your application.
 
@@ -167,11 +158,8 @@ Finally a Modifier is really a Queryable, returning a bitset and a query data. S
 The hard part about the modifiers is not their implementation but their allocation. Usual queryables are allocated by the registry and stored in the registry.
 Modifiers should be allocated only for the query lifetime. And we need to allocate data to store the wrapped queryable (example **Position** storage) and eventually the computed mask if there is one.
 
-And because allocations means allocator, every registry query method can take an Allocator.
-First a heap allocator was used (@ref ecstasy::ModifiersAllocator) and was required if there was at least one modifier to allocate in the query and it raised an exception otherwise.
-But now you don't need to take care of it. I already did it for you. The modifiers are now allocated on the stack because the required size is known at compile time.
-
-This magic hidden stack allocator use multiple inheritance black magic tricks and you can find more about it in @ref ecstasy::Registry::RegistryStackQuery.
+The interesting part however about theses allocations is that the size can be computed at compile time if you hate yourself enough to do it. Luckily for you, I did.
+The solution about this was to use multiple inheritance black magic tricks mixed with some weird [non_unique_address](https://en.cppreference.com/w/cpp/language/attributes/no_unique_address) attribute, if you are curious about this you can find more details in the documentation of @ref ecstasy::Registry::RegistryStackQuery.
 
 #### Conditions
 
@@ -239,12 +227,12 @@ We have seen everything, not in the lowest details but enough to understand most
 **Compile Time**
 
 - Detect missing Queryables in where clause from select clause
-- If no allocator provided prepare place in the stack with the appropriate size
+- Compute the required size to reserve on the stack for the modifiers/views
 
 **Query construction**
 
 - Fetch required queryables from registry (where and select clause)
-- Allocate required modifiers and views with the given allocator (which is by default the stack allocator)
+- Allocate required modifiers and views with the stack allocator
 - Compute query bitset from the where clause
 - Creates the query object from the computed bitset and the selected queryables
 
