@@ -49,7 +49,7 @@ namespace ecstasy
     };
 
     /// @copydoc queryable_type
-    template <std::derived_from<Resource> R>
+    template <std::derived_from<ResourceBase> R>
         requires query::Queryable<R>
     struct queryable_type<R> {
         using type = R;

@@ -37,7 +37,7 @@ namespace ecstasy::integration::user_action
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-12-02)
     ///
-    class Users : public ecstasy::Resource {
+    class Users : public ecstasy::Resource<Users> {
       private:
         /// @brief Helper type instead of using @ref std::pair.
         /// Describe a link between an action and a user.

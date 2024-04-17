@@ -26,14 +26,41 @@ namespace ecstasy
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-10-17)
     ///
-    class Resource
+    class ResourceBase
 #ifdef ECSTASY_LOCKABLE_RESOURCES
         : public thread::SharedRecursiveMutex
 #endif
     {
       public:
         /// @brief Default destructor.
-        virtual ~Resource() = default;
+        virtual ~ResourceBase() = default;
+    }; // namespace ecstasy
+
+    ///
+    /// @brief Resource class.
+    /// This class is templated to allow compatibility with LockableView.
+    ///
+    /// @tparam R Type of the resource.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-04-17)
+    ///
+    template <typename R>
+    class Resource : public ResourceBase {
+      public:
+        ///
+        /// @brief Compatibility for LockableView. Using -> on a Resource or a LockableView will return the pointer to
+        /// the resource.
+        ///
+        /// @return R* Pointer to the resource.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-04-17)
+        ///
+        R *operator->()
+        {
+            return this;
+        }
     };
 } // namespace ecstasy
 

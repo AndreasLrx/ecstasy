@@ -15,7 +15,7 @@
 namespace ecstasy
 {
     Registry::EntityBuilder::EntityBuilder(Registry &registry)
-        : _registry(registry), _builder(registry.getResource<Entities>().builder())
+        : _registry(registry), _builder(registry.getResource<Entities>()->builder())
     {
     }
 
@@ -35,24 +35,14 @@ namespace ecstasy
         return EntityBuilder(*this);
     }
 
-    const Entities &Registry::getEntities() const
-    {
-        return getResource<Entities>();
-    }
-
-    Entities &Registry::getEntities()
-    {
-        return getResource<Entities>();
-    }
-
     Entity Registry::getEntity(Entity::Index index) noexcept
     {
-        return getResource<Entities>().get(index);
+        return getResource<const Entities>()->get(index);
     }
 
     bool Registry::eraseEntity(Entity entity)
     {
-        bool erased = getResource<Entities>().erase(entity);
+        bool erased = getResource<Entities>()->erase(entity);
 
         if (!erased)
             return false;
@@ -62,7 +52,7 @@ namespace ecstasy
 
     size_t Registry::eraseEntities(std::span<Entity> entities)
     {
-        size_t erased = getResource<Entities>().erase(entities);
+        size_t erased = getResource<Entities>()->erase(entities);
 
         if (!erased)
             return 0;

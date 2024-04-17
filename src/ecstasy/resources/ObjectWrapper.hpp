@@ -25,7 +25,7 @@ namespace ecstasy
     /// @since 1.0.0 (2022-11-16)
     ///
     template <typename T>
-    class ObjectWrapper : public Resource {
+    class ObjectWrapper : public Resource<ObjectWrapper<T>> {
       public:
         ///
         /// @brief Construct a new Object Wrapper.

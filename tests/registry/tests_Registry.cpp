@@ -55,7 +55,7 @@ class B : public ecstasy::ISystem {
     }
 };
 
-struct Counter : public ecstasy::Resource {
+struct Counter : public ecstasy::Resource<Counter> {
     int value;
 
     Counter(int initial = 0)
@@ -177,8 +177,8 @@ TEST(Registry, resources)
     /// Add resource with an initial value of 5 and add one
     registry.addResource<Counter>(5).count();
     ASSERT_TRUE(registry.hasResource<Counter>());
-    EXPECT_EQ(registry.getResource<Counter>().value, 6);
-    EXPECT_EQ(cregistry.getResource<Counter>().value, 6);
+    EXPECT_EQ(registry.getResource<Counter>()->value, 6);
+    EXPECT_EQ(cregistry.getResource<Counter>()->value, 6);
 
     /// Try to add resource already present
     EXPECT_THROW(registry.addResource<Counter>(), std::logic_error);
@@ -244,19 +244,19 @@ TEST(Registry, eraseEntity)
 
     for (int i = 0; i < 10; i++)
         registry.entityBuilder().with<Position>(1, 2).with<Size>(3, 4).build();
-    GTEST_ASSERT_EQ(cregistry.getEntities().getMask(), util::BitSet("1111111111"));
+    GTEST_ASSERT_EQ(cregistry.getEntities()->getMask(), util::BitSet("1111111111"));
     GTEST_ASSERT_EQ(registry.getStorage<Position>().getMask(), util::BitSet("1111111111"));
     GTEST_ASSERT_EQ(registry.getStorage<Size>().getMask(), util::BitSet("1111111111"));
     GTEST_ASSERT_TRUE(registry.eraseEntity(registry.getEntity(1)));
     GTEST_ASSERT_FALSE(registry.eraseEntity(registry.getEntity(1)));
     GTEST_ASSERT_TRUE(registry.eraseEntity(registry.getEntity(5)));
-    GTEST_ASSERT_EQ(registry.getEntities().getMask(), util::BitSet("1111011101"));
+    GTEST_ASSERT_EQ(registry.getEntities()->getMask(), util::BitSet("1111011101"));
     GTEST_ASSERT_EQ(registry.getStorage<Position>().getMask(), util::BitSet("1111011101"));
     GTEST_ASSERT_EQ(registry.getStorage<Size>().getMask(), util::BitSet("1111011101"));
 
-    GTEST_ASSERT_TRUE(cregistry.getEntities().isAlive(registry.getEntity(0)));
-    GTEST_ASSERT_FALSE(registry.getEntities().isAlive(registry.getEntity(1)));
-    GTEST_ASSERT_FALSE(registry.getEntities().isAlive(registry.getEntity(5)));
+    GTEST_ASSERT_TRUE(cregistry.getEntities()->isAlive(registry.getEntity(0)));
+    GTEST_ASSERT_FALSE(registry.getEntities()->isAlive(registry.getEntity(1)));
+    GTEST_ASSERT_FALSE(registry.getEntities()->isAlive(registry.getEntity(5)));
 }
 
 TEST(Registry, eraseEntities)
@@ -266,19 +266,19 @@ TEST(Registry, eraseEntities)
 
     for (int i = 0; i < 10; i++)
         registry.entityBuilder().with<Position>(1, 2).with<Size>(3, 4).build();
-    GTEST_ASSERT_EQ(cregistry.getEntities().getMask(), util::BitSet("1111111111"));
+    GTEST_ASSERT_EQ(cregistry.getEntities()->getMask(), util::BitSet("1111111111"));
     GTEST_ASSERT_EQ(registry.getStorage<Position>().getMask(), util::BitSet("1111111111"));
     GTEST_ASSERT_EQ(registry.getStorage<Size>().getMask(), util::BitSet("1111111111"));
     ecstasy::Entity toDelete[] = {registry.getEntity(1), registry.getEntity(5)};
     GTEST_ASSERT_EQ(registry.eraseEntities(std::span(toDelete)), 2);
     GTEST_ASSERT_EQ(registry.eraseEntities(std::span(toDelete)), 0);
-    GTEST_ASSERT_EQ(registry.getEntities().getMask(), util::BitSet("1111011101"));
+    GTEST_ASSERT_EQ(registry.getEntities()->getMask(), util::BitSet("1111011101"));
     GTEST_ASSERT_EQ(registry.getStorage<Position>().getMask(), util::BitSet("1111011101"));
     GTEST_ASSERT_EQ(registry.getStorage<Size>().getMask(), util::BitSet("1111011101"));
 
-    GTEST_ASSERT_TRUE(cregistry.getEntities().isAlive(registry.getEntity(0)));
-    GTEST_ASSERT_FALSE(registry.getEntities().isAlive(registry.getEntity(1)));
-    GTEST_ASSERT_FALSE(registry.getEntities().isAlive(registry.getEntity(5)));
+    GTEST_ASSERT_TRUE(cregistry.getEntities()->isAlive(registry.getEntity(0)));
+    GTEST_ASSERT_FALSE(registry.getEntities()->isAlive(registry.getEntity(1)));
+    GTEST_ASSERT_FALSE(registry.getEntities()->isAlive(registry.getEntity(5)));
 }
 
 TEST(Registry, EntityBuilder)

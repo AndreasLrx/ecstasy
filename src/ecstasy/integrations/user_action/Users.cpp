@@ -27,7 +27,7 @@ namespace ecstasy::integration::user_action
     {
         if (!registry.hasResource<Users>())
             return;
-        registry.getResource<Users>().updateBindings();
+        registry.getResource<Users>()->updateBindings();
     }
 
     void Users::updateBindings()
@@ -61,7 +61,7 @@ namespace ecstasy::integration::user_action
     void Users::callActionListeners(Registry &registry, Action action)
     {
         if (registry.hasResource<PendingActions>())
-            registry.getResource<PendingActions>().get().push(action);
+            registry.getResource<PendingActions>()->get().push(action);
 
         for (auto [entity, maybeListener, maybeListeners] :
             registry.select<Entities, Maybe<ActionListener>, Maybe<ActionListeners>>()

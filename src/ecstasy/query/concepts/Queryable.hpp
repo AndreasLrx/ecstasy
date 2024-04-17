@@ -198,6 +198,40 @@ namespace ecstasy::query
     using thread_safe_queryable_t = typename thread_safe_queryable<Q, ThreadSafe>::type;
 
     ///
+    /// @brief Get the reference type of a maybe thread safe type.
+    /// If @b ThreadSafe is true and @b T is @ref thread::Lockable, then the type is a @ref thread::LockableView<T>.
+    /// Otherwise, the type is a reference to the type @b T.
+    ///
+    /// @tparam T Type.
+    /// @tparam ThreadSafe Whether the type should be thread safe or not. Default to true.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-04-17)
+    ///
+    template <typename T, bool ThreadSafe>
+    struct thread_safe_reference {
+        using type = T &;
+    };
+
+    /// @copydoc thread_safe_reference
+    template <thread::Lockable T>
+    struct thread_safe_reference<T, true> {
+        using type = thread::LockableView<T>;
+    };
+
+    ///
+    /// @brief Alias for the reference type of a maybe thread safe type.
+    ///
+    /// @tparam T Type.
+    /// @tparam ThreadSafe Whether the type should be thread safe or not. Default to true.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-04-17)
+    ///
+    template <typename T, bool ThreadSafe = true>
+    using thread_safe_reference_t = typename thread_safe_reference<T, ThreadSafe>::type;
+
+    ///
     /// @brief Get the queryable type with the correct qualifiers.
     /// By default this is a reference to the type @b Q.
     /// If Q is @ref thread::Lockable and @b AutoLock is true, then the type is a @ref thread_safe_queryable_t<Q>. It is

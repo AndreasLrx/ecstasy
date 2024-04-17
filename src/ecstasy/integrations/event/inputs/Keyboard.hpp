@@ -27,7 +27,7 @@ namespace ecstasy::integration::event
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-11-16)
     ///
-    class Keyboard : public Resource {
+    class Keyboard : public Resource<Keyboard> {
       public:
         // LCOV_EXCL_START
 

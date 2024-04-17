@@ -27,7 +27,7 @@ namespace ecstasy::integration::event
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-11-04)
     ///
-    class Mouse : public Resource {
+    class Mouse : public Resource<Mouse> {
       public:
         // LCOV_EXCL_START
 

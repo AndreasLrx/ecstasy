@@ -92,17 +92,18 @@ _I am writing these lines because I suffered too much with CMake and if it can s
 You can find more details about the options and their dependencies in [Options.cmake](/cmake/Options.cmake). <br>
 _In case this documentation is not up to date with the [Options.cmake](/cmake/Options.cmake) file, open an issue._
 
-| Option Name                          | Description                                                                                                        | Default Value |
-| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------- |
-| BUILD_TEST_SUITE                     | Build the test suite along the ecstasy code                                                                        | OFF           |
-| ENABLE_COVERAGE                      | Enable code coverage tracking. Must be set with **BUILD_TEST_SUITE** to have the tests coverage                    | OFF           |
-| BUILD_SHARED_LIBS                    | Build Ecstasy as shared libaries                                                                                   | OFF           |
-| ECSTASY_THREAD_SAFE                  | Combination of **ECSTASY_AUTO_LOCK**, **ECSTASY_LOCKABLE_RESOURCES** and **ECSTASY_LOCKABLE_STORAGES**             | OFF           |
-| ECSTASY_AUTO_LOCK                    | Auto lock lockable queryables in registry queries                                                                  | OFF           |
-| ECSTASY_LOCKABLE_RESOURCES           | Make [Resource](@ref ecstasy::Resource) inherit [SharedRecursiveMutex](@ref ecstasy::thread::SharedRecursiveMutex) | OFF           |
-| ECSTASY_LOCKABLE_STORAGES            | Make [IStorage](@ref ecstasy::IStorage) inherit [SharedRecursiveMutex](@ref ecstasy::thread::SharedRecursiveMutex) | OFF           |
-| ECSTASY_INTEGRATIONS_EVENT           | Enable the Event integration                                                                                       | OFF           |
-| ECSTASY_INTEGRATIONS_SFML            | Enable the Sfml integration. Requires **ECSTASY_INTEGRATIONS_EVENT**                                               | OFF           |
-| ECSTASY_INTEGRATIONS_SFML_BUILD_DEMO | Enable the Sfml integration demos. Requires **ECSTASY_INTEGRATIONS_SFML**                                          | OFF           |
-| ECSTASY_INTEGRATIONS_USER_ACTION     | Enable the User Actions integration. Requires **ECSTASY_INTEGRATIONS_EVENT**                                       | OFF           |
-| ECSTASY_SERIALIZER_TOML              | Enable the Toml Serializer. Force set if **ECSTASY_INTEGRATIONS_USER_ACTION** is set                               | OFF           |
+| Option Name                          | Description                                                                                                                             | Default Value |
+| ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| BUILD_TEST_SUITE                     | Build the test suite along the ecstasy code                                                                                             | OFF           |
+| ENABLE_COVERAGE                      | Enable code coverage tracking. Must be set with **BUILD_TEST_SUITE** to have the tests coverage                                         | OFF           |
+| BUILD_SHARED_LIBS                    | Build Ecstasy as shared libaries                                                                                                        | OFF           |
+| ECSTASY_THREAD_SAFE                  | Combination of **ECSTASY_AUTO_LOCK**, **ECSTASY_AUTO_LOCK_RESOURCES**, **ECSTASY_LOCKABLE_RESOURCES** and **ECSTASY_LOCKABLE_STORAGES** | OFF           |
+| ECSTASY_LOCKABLE_RESOURCES           | Make [Resource](@ref ecstasy::Resource) inherit [SharedRecursiveMutex](@ref ecstasy::thread::SharedRecursiveMutex)                      | OFF           |
+| ECSTASY_LOCKABLE_STORAGES            | Make [IStorage](@ref ecstasy::IStorage) inherit [SharedRecursiveMutex](@ref ecstasy::thread::SharedRecursiveMutex)                      | OFF           |
+| ECSTASY_AUTO_LOCK                    | Auto lock lockable queryables in registry queries                                                                                       | OFF           |
+| ECSTASY_AUTO_LOCK_RESOURCES          | Auto lock resources with registry.getResource. Requires **ECSTASY_LOCKABLE_RESOURCES**                                                  | OFF           |
+| ECSTASY_INTEGRATIONS_EVENT           | Enable the Event integration                                                                                                            | OFF           |
+| ECSTASY_INTEGRATIONS_SFML            | Enable the Sfml integration. Requires **ECSTASY_INTEGRATIONS_EVENT**                                                                    | OFF           |
+| ECSTASY_INTEGRATIONS_SFML_BUILD_DEMO | Enable the Sfml integration demos. Requires **ECSTASY_INTEGRATIONS_SFML**                                                               | OFF           |
+| ECSTASY_INTEGRATIONS_USER_ACTION     | Enable the User Actions integration. Requires **ECSTASY_INTEGRATIONS_EVENT**                                                            | OFF           |
+| ECSTASY_SERIALIZER_TOML              | Enable the Toml Serializer. Force set if **ECSTASY_INTEGRATIONS_USER_ACTION** is set                                                    | OFF           |

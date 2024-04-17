@@ -8,15 +8,17 @@ option(BUILD_SHARED_LIBS "Whether ecstasy must be built as a shared library or n
 
 ## Multi-Threading options
 option(ECSTASY_THREAD_SAFE "Enable thread safety for all lockable resources and storages. 
-This is the combination of ECSTASY_AUTO_LOCK, ECSTASY_LOCKABLE_RESOURCES and  ECSTASY_LOCKABLE_STORAGES." OFF)
+This is the combination of ECSTASY_AUTO_LOCK, ECSTASY_AUTO_LOCK_RESOURCES, ECSTASY_LOCKABLE_RESOURCES and  ECSTASY_LOCKABLE_STORAGES." OFF)
 
-option(ECSTASY_AUTO_LOCK "Registry queries and modifiers (RegistryModifier) lock Lockable queryables by default (implicit thread safety). 
-This doesn't affect the default false value in the ecstasy::query namespace. (QueryImplementation and ecstasy::query::modifier::*)" OFF)
 option(ECSTASY_LOCKABLE_RESOURCES "Resources inherit from SharedRecursiveMutex and are therefore lockable." OFF)
 option(ECSTASY_LOCKABLE_STORAGES "Storages inherit from SharedRecursiveMutex and are therefore lockable." OFF)
+option(ECSTASY_AUTO_LOCK "Registry queries and modifiers (RegistryModifier) lock Lockable queryables by default (implicit thread safety). 
+This doesn't affect the default false value in the ecstasy::query namespace. (QueryImplementation and ecstasy::query::modifier::*)" OFF)
+CMAKE_DEPENDENT_OPTION(ECSTASY_AUTO_LOCK_RESOURCES "Resources are locked by default when calling registry.getResource (implicit thread safety)." OFF ECSTASY_LOCKABLE_RESOURCES OFF)
 
 if (${ECSTASY_THREAD_SAFE})
     set(ECSTASY_AUTO_LOCK ON)
+    set(ECSTASY_AUTO_LOCK_RESOURCES ON)
     set(ECSTASY_LOCKABLE_RESOURCES ON)
     set(ECSTASY_LOCKABLE_STORAGES ON)
 endif()
@@ -44,9 +46,10 @@ list(APPEND CMAKE_MESSAGE_INDENT "  ")
     ## Multi-Threading
     message(STATUS "Multi-Threading:")
     list(APPEND CMAKE_MESSAGE_INDENT "  ")
-        message(STATUS "Auto lock: ${ECSTASY_AUTO_LOCK}")
         message(STATUS "Lockable resources: ${ECSTASY_LOCKABLE_RESOURCES}")
         message(STATUS "Lockable storages: ${ECSTASY_LOCKABLE_STORAGES}")
+        message(STATUS "Auto lock: ${ECSTASY_AUTO_LOCK}")
+        message(STATUS "Auto lock resources: ${ECSTASY_AUTO_LOCK_RESOURCES}")
     list(POP_BACK CMAKE_MESSAGE_INDENT)
     ## Integrations
     message(STATUS "Integrations:")
