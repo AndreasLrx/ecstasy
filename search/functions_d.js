@@ -97,7 +97,7 @@ var searchData=
   ['month_5fweekday_94',['month_weekday',['http://en.cppreference.com/w/cpp/chrono/month_weekday/month_weekday.html',1,'std::chrono::month_weekday']]],
   ['month_5fweekday_5flast_95',['month_weekday_last',['http://en.cppreference.com/w/cpp/chrono/month_weekday_last/month_weekday_last.html',1,'std::chrono::month_weekday_last']]],
   ['months_96',['months',['http://en.cppreference.com/w/cpp/chrono/duration/duration.html',1,'std::chrono::months']]],
-  ['mouse_97',['Mouse',['../classecstasy_1_1integration_1_1event_1_1_mouse.html#afc4351f8c9fb6c3aaacbd7ab58727c7c',1,'ecstasy::integration::event::Mouse']]],
+  ['mouse_97',['Mouse',['../classecstasy_1_1integration_1_1event_1_1_mouse.html#a8847d934ed25bbea7500eca503653da9',1,'ecstasy::integration::event::Mouse']]],
   ['mousebuttonevent_98',['MouseButtonEvent',['../structecstasy_1_1integration_1_1event_1_1_mouse_button_event.html#ae56262d55c39e9521cd976f3a429f37f',1,'ecstasy::integration::event::MouseButtonEvent']]],
   ['mousebuttonpressedevent_99',['MouseButtonPressedEvent',['../structecstasy_1_1integration_1_1event_1_1_mouse_button_pressed_event.html#aed061f4631d8197184e1e620dcd937a6',1,'ecstasy::integration::event::MouseButtonPressedEvent']]],
   ['mousebuttonreleasedevent_100',['MouseButtonReleasedEvent',['../structecstasy_1_1integration_1_1event_1_1_mouse_button_released_event.html#a6d98382f88dd58904e4486124e7461eb',1,'ecstasy::integration::event::MouseButtonReleasedEvent']]],

@@ -93,6 +93,7 @@ $(document).ready(function(){initNavTree('classecstasy_1_1thread_1_1_shared_recu
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classecstasy_1_1thread_1_1_shared_recursive_mutex-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ecstasy::thread::SharedRecursiveMutex Class Reference</div></div>
@@ -108,11 +109,13 @@ Collaboration diagram for ecstasy::thread::SharedRecursiveMutex:</div>
 <div class="dyncontent">
 <div class="center"><img src="classecstasy_1_1thread_1_1_shared_recursive_mutex__coll__graph.png" border="0" usemap="#aecstasy_1_1thread_1_1_shared_recursive_mutex_coll__map" alt="Collaboration graph"/></div>
 <map name="aecstasy_1_1thread_1_1_shared_recursive_mutex_coll__map" id="aecstasy_1_1thread_1_1_shared_recursive_mutex_coll__map">
-<area shape="rect" title="Wrapper for std::shared_mutex allowing recursive locking by the same thread." alt="" coords="49,108,288,148"/>
-<area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/thread/shared_mutex.html" title=" " alt="" coords="5,13,148,38"/>
-<area shape="poly" title=" " alt="" coords="97,47,129,82,152,106,148,110,125,86,94,50"/>
-<area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/atomic/atomic.html" title=" " alt="" coords="172,5,352,45"/>
-<area shape="poly" title=" " alt="" coords="252,60,235,86,205,110,202,106,231,82,247,57"/>
+<area shape="rect" title="Wrapper for std::shared_mutex allowing recursive locking by the same thread." alt="" coords="339,55,577,95"/>
+<area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/thread/shared_mutex.html" title=" " alt="" coords="24,5,167,31"/>
+<area shape="poly" title=" " alt="" coords="181,29,339,54,338,59,180,34"/>
+<area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/atomic/atomic.html" title=" " alt="" coords="5,55,185,95"/>
+<area shape="poly" title=" " alt="" coords="199,73,338,73,338,78,199,78"/>
+<area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/container/unordered_map.html" title=" " alt="" coords="12,119,179,159"/>
+<area shape="poly" title=" " alt="" coords="192,120,343,93,344,98,193,125"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -148,9 +151,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aac4f03921e972a909500ba5008f2bf8e"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#aac4f03921e972a909500ba5008f2bf8e">get_lock_count</a> (void) const noexcept</td></tr>
 <tr class="memdesc:aac4f03921e972a909500ba5008f2bf8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of recursive locks held by the current thread.  <br /></td></tr>
 <tr class="separator:aac4f03921e972a909500ba5008f2bf8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae809ecde944b16ebae832ef72d4018c5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ae809ecde944b16ebae832ef72d4018c5">get_shared_lock_count</a> (void) const noexcept</td></tr>
+<tr class="memdesc:ae809ecde944b16ebae832ef72d4018c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of recursive shared locks held by the current thread.  <br /></td></tr>
+<tr class="separator:ae809ecde944b16ebae832ef72d4018c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef69e550dc397e6130dc8c994fc53c7d"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="elRef" href="http://en.cppreference.com/w/cpp/atomic/atomic.html">std::atomic</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/thread/thread/id.html">std::thread::id</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#aef69e550dc397e6130dc8c994fc53c7d">get_owner</a> (void) const noexcept</td></tr>
 <tr class="memdesc:aef69e550dc397e6130dc8c994fc53c7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the owner of the mutex.  <br /></td></tr>
 <tr class="separator:aef69e550dc397e6130dc8c994fc53c7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ab2d6e35bd5a87954433d73382f4cd238"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ab2d6e35bd5a87954433d73382f4cd238">has_shared_lock</a> (void) const noexcept</td></tr>
+<tr class="separator:ab2d6e35bd5a87954433d73382f4cd238"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -160,15 +171,15 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ab2bba21505692e117c3c52d4a3180387"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbd20b23701d5742ed82b28d982dc7b7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#acbd20b23701d5742ed82b28d982dc7b7">_lock_count</a></td></tr>
 <tr class="separator:acbd20b23701d5742ed82b28d982dc7b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b6394873a506f3602d122c6fb4ed6e1"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/unordered_map.html">std::unordered_map</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/thread/thread/id.html">std::thread::id</a>, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a8b6394873a506f3602d122c6fb4ed6e1">_shared_locks</a></td></tr>
+<tr class="separator:a8b6394873a506f3602d122c6fb4ed6e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Wrapper for <a class="elRef" href="http://en.cppreference.com/w/cpp/thread/shared_mutex.html">std::shared_mutex</a> allowing recursive locking by the same thread. </p>
-<dl class="section note"><dt>Note</dt><dd>Recursive locking is only allowed if the thread locks the mutex with exclusive access. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Deadlock always appears if a thread locks the mutex as shared and then tries to lock it normally.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-02) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8hpp_source.html#l00030">30</a> of file <a class="el" href="_shared_recursive_mutex_8hpp_source.html">SharedRecursiveMutex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8hpp_source.html#l00028">28</a> of file <a class="el" href="_shared_recursive_mutex_8hpp_source.html">SharedRecursiveMutex.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae20ea1f75a8489321b379a528c89daae" name="ae20ea1f75a8489321b379a528c89daae"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae20ea1f75a8489321b379a528c89daae">&#9670;&#160;</a></span>SharedRecursiveMutex()</h2>
@@ -260,11 +271,11 @@ Private Attributes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-02) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8hpp_source.html#l00118">118</a> of file <a class="el" href="_shared_recursive_mutex_8hpp_source.html">SharedRecursiveMutex.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  119</span>        {</div>
-<div class="line"><span class="lineno">  120</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#acbd20b23701d5742ed82b28d982dc7b7">_lock_count</a>;</div>
-<div class="line"><span class="lineno">  121</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1thread_1_1_shared_recursive_mutex_html_acbd20b23701d5742ed82b28d982dc7b7"><div class="ttname"><a href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#acbd20b23701d5742ed82b28d982dc7b7">ecstasy::thread::SharedRecursiveMutex::_lock_count</a></div><div class="ttdeci">int _lock_count</div><div class="ttdef"><b>Definition</b> <a href="_shared_recursive_mutex_8hpp_source.html#l00142">SharedRecursiveMutex.hpp:142</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8hpp_source.html#l00132">132</a> of file <a class="el" href="_shared_recursive_mutex_8hpp_source.html">SharedRecursiveMutex.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  133</span>        {</div>
+<div class="line"><span class="lineno">  134</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#acbd20b23701d5742ed82b28d982dc7b7">_lock_count</a>;</div>
+<div class="line"><span class="lineno">  135</span>        }</div>
+<div class="ttc" id="aclassecstasy_1_1thread_1_1_shared_recursive_mutex_html_acbd20b23701d5742ed82b28d982dc7b7"><div class="ttname"><a href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#acbd20b23701d5742ed82b28d982dc7b7">ecstasy::thread::SharedRecursiveMutex::_lock_count</a></div><div class="ttdeci">int _lock_count</div><div class="ttdef"><b>Definition</b> <a href="_shared_recursive_mutex_8hpp_source.html#l00176">SharedRecursiveMutex.hpp:176</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -300,11 +311,57 @@ This value is thread safe.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-02) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8hpp_source.html#l00134">134</a> of file <a class="el" href="_shared_recursive_mutex_8hpp_source.html">SharedRecursiveMutex.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  135</span>        {</div>
-<div class="line"><span class="lineno">  136</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ab2bba21505692e117c3c52d4a3180387">_owner</a>;</div>
-<div class="line"><span class="lineno">  137</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1thread_1_1_shared_recursive_mutex_html_ab2bba21505692e117c3c52d4a3180387"><div class="ttname"><a href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ab2bba21505692e117c3c52d4a3180387">ecstasy::thread::SharedRecursiveMutex::_owner</a></div><div class="ttdeci">std::atomic&lt; std::thread::id &gt; _owner</div><div class="ttdef"><b>Definition</b> <a href="_shared_recursive_mutex_8hpp_source.html#l00141">SharedRecursiveMutex.hpp:141</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8hpp_source.html#l00166">166</a> of file <a class="el" href="_shared_recursive_mutex_8hpp_source.html">SharedRecursiveMutex.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  167</span>        {</div>
+<div class="line"><span class="lineno">  168</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ab2bba21505692e117c3c52d4a3180387">_owner</a>;</div>
+<div class="line"><span class="lineno">  169</span>        }</div>
+<div class="ttc" id="aclassecstasy_1_1thread_1_1_shared_recursive_mutex_html_ab2bba21505692e117c3c52d4a3180387"><div class="ttname"><a href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ab2bba21505692e117c3c52d4a3180387">ecstasy::thread::SharedRecursiveMutex::_owner</a></div><div class="ttdeci">std::atomic&lt; std::thread::id &gt; _owner</div><div class="ttdef"><b>Definition</b> <a href="_shared_recursive_mutex_8hpp_source.html#l00175">SharedRecursiveMutex.hpp:175</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae809ecde944b16ebae832ef72d4018c5" name="ae809ecde944b16ebae832ef72d4018c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae809ecde944b16ebae832ef72d4018c5">&#9670;&#160;</a></span>get_shared_lock_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ecstasy::thread::SharedRecursiveMutex::get_shared_lock_count </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the number of recursive shared locks held by the current thread. </p>
+<dl class="section note"><dt>Note</dt><dd>0 means the mutex has no shared lock held by the current thread. The shared lock count is also incremented by 1 when the mutex is locked exclusively (only once) to keep track of the shared lock count before/within an exclusive lock to unset them during the exclusive lock and reset them after. Therefore the real count of shared locks is the return value minus 1 if the owner is not null (<a class="elRef" href="http://en.cppreference.com/w/cpp/thread/thread/id.html">std::thread::id()</a>). </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>This value is exposed for debugging purposes, you should not rely on it for your locks, use the lock/unlock methods instead.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>constexpr int number of recursive shared locks held by the current thread.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-20) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8cpp_source.html#l00082">82</a> of file <a class="el" href="_shared_recursive_mutex_8cpp_source.html">SharedRecursiveMutex.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>    {</div>
+<div class="line"><span class="lineno">   84</span>        <span class="comment">// Better than handling exceptions</span></div>
+<div class="line"><span class="lineno">   85</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ab2d6e35bd5a87954433d73382f4cd238">has_shared_lock</a>())</div>
+<div class="line"><span class="lineno">   86</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a8b6394873a506f3602d122c6fb4ed6e1">_shared_locks</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/unordered_map/at.html">at</a>(<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/thread/get_id.html">std::this_thread::get_id</a>());</div>
+<div class="line"><span class="lineno">   87</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   88</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   89</span>    }</div>
+<div class="ttc" id="aat_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/unordered_map/at.html">std::unordered_map::at</a></div><div class="ttdeci">T at(T... args)</div></div>
+<div class="ttc" id="aclassecstasy_1_1thread_1_1_shared_recursive_mutex_html_a8b6394873a506f3602d122c6fb4ed6e1"><div class="ttname"><a href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a8b6394873a506f3602d122c6fb4ed6e1">ecstasy::thread::SharedRecursiveMutex::_shared_locks</a></div><div class="ttdeci">std::unordered_map&lt; std::thread::id, int &gt; _shared_locks</div><div class="ttdef"><b>Definition</b> <a href="_shared_recursive_mutex_8hpp_source.html#l00177">SharedRecursiveMutex.hpp:177</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1thread_1_1_shared_recursive_mutex_html_ab2d6e35bd5a87954433d73382f4cd238"><div class="ttname"><a href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ab2d6e35bd5a87954433d73382f4cd238">ecstasy::thread::SharedRecursiveMutex::has_shared_lock</a></div><div class="ttdeci">bool has_shared_lock(void) const noexcept</div><div class="ttdef"><b>Definition</b> <a href="_shared_recursive_mutex_8cpp_source.html#l00091">SharedRecursiveMutex.cpp:91</a></div></div>
+<div class="ttc" id="aget_id_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/thread/get_id.html">std::this_thread::get_id</a></div><div class="ttdeci">T get_id(T... args)</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -337,11 +394,47 @@ This value is thread safe.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-02) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8hpp_source.html#l00102">102</a> of file <a class="el" href="_shared_recursive_mutex_8hpp_source.html">SharedRecursiveMutex.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  103</span>        {</div>
-<div class="line"><span class="lineno">  104</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a70574897a7275f9592d5e6c3f851e53a">_shared_mutex</a>;</div>
-<div class="line"><span class="lineno">  105</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1thread_1_1_shared_recursive_mutex_html_a70574897a7275f9592d5e6c3f851e53a"><div class="ttname"><a href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a70574897a7275f9592d5e6c3f851e53a">ecstasy::thread::SharedRecursiveMutex::_shared_mutex</a></div><div class="ttdeci">std::shared_mutex _shared_mutex</div><div class="ttdef"><b>Definition</b> <a href="_shared_recursive_mutex_8hpp_source.html#l00140">SharedRecursiveMutex.hpp:140</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8hpp_source.html#l00116">116</a> of file <a class="el" href="_shared_recursive_mutex_8hpp_source.html">SharedRecursiveMutex.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  117</span>        {</div>
+<div class="line"><span class="lineno">  118</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a70574897a7275f9592d5e6c3f851e53a">_shared_mutex</a>;</div>
+<div class="line"><span class="lineno">  119</span>        }</div>
+<div class="ttc" id="aclassecstasy_1_1thread_1_1_shared_recursive_mutex_html_a70574897a7275f9592d5e6c3f851e53a"><div class="ttname"><a href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a70574897a7275f9592d5e6c3f851e53a">ecstasy::thread::SharedRecursiveMutex::_shared_mutex</a></div><div class="ttdeci">std::shared_mutex _shared_mutex</div><div class="ttdef"><b>Definition</b> <a href="_shared_recursive_mutex_8hpp_source.html#l00174">SharedRecursiveMutex.hpp:174</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab2d6e35bd5a87954433d73382f4cd238" name="ab2d6e35bd5a87954433d73382f4cd238"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2d6e35bd5a87954433d73382f4cd238">&#9670;&#160;</a></span>has_shared_lock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ecstasy::thread::SharedRecursiveMutex::has_shared_lock </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8cpp_source.html#l00091">91</a> of file <a class="el" href="_shared_recursive_mutex_8cpp_source.html">SharedRecursiveMutex.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>    {</div>
+<div class="line"><span class="lineno">   93</span>        <span class="keywordflow">return</span> <span class="keyword">const_cast&lt;</span><span class="keyword">const </span><a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/container/unordered_map.html">std::unordered_map&lt;std::thread::id, int&gt;</a> &amp;<span class="keyword">&gt;</span>(<a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a8b6394873a506f3602d122c6fb4ed6e1">_shared_locks</a>)</div>
+<div class="line"><span class="lineno">   94</span>                   .<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/algorithm/find.html">find</a>(<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/thread/get_id.html">std::this_thread::get_id</a>())</div>
+<div class="line"><span class="lineno">   95</span>            != <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a8b6394873a506f3602d122c6fb4ed6e1">_shared_locks</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/unordered_map/end.html">cend</a>();</div>
+<div class="line"><span class="lineno">   96</span>    }</div>
+<div class="ttc" id="aend_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/unordered_map/end.html">std::unordered_map::cend</a></div><div class="ttdeci">T cend(T... args)</div></div>
+<div class="ttc" id="afind_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/algorithm/find.html">std::find</a></div><div class="ttdeci">T find(T... args)</div></div>
+<div class="ttc" id="aunordered_map_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/unordered_map.html">std::unordered_map</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -362,26 +455,40 @@ This value is thread safe.</dd></dl>
 </div><div class="memdoc">
 
 <p>Lock the mutex with exclusive access. </p>
-<dl class="section note"><dt>Note</dt><dd>Waits until the mutex is available for exclusive access.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Waits until the mutex is available for exclusive access. (ie no shared or exclusive lock held by <b>other</b> threads) </dd>
+<dd>
+If the lock is already acquired, only increment the lock count. </dd>
+<dd>
+If the mutex has a shared lock held by the current thread, it will be upgraded to an exclusive lock and downgraded after unlock. For example : <a class="el" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a9c627e9da036388c3aa69b3ef4a5ef89" title="Lock the mutex with shared access.">lock_shared()</a>; <a class="el" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#aad2f56c3dd2c83059a8ed170d3f00859" title="Lock the mutex with exclusive access.">lock()</a>; <a class="el" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a2e2c56dab945fadbe8d5e939bcb054c0" title="Unlock the mutex locked with exclusive access.">unlock()</a>; <a class="el" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ace5c67c07d8c23dc4a2e86125ac379a9" title="Unlock the mutex locked with shared access.">unlock_shared()</a>;</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-02) </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8cpp_source.html#l00016">16</a> of file <a class="el" href="_shared_recursive_mutex_8cpp_source.html">SharedRecursiveMutex.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   17</span>    {</div>
 <div class="line"><span class="lineno">   18</span>        <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/thread/thread/id.html">std::thread::id</a> this_id = <a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/thread/get_id.html">std::this_thread::get_id</a>();</div>
-<div class="line"><span class="lineno">   19</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ab2bba21505692e117c3c52d4a3180387">_owner</a> == this_id) {</div>
-<div class="line"><span class="lineno">   20</span>            <span class="comment">// recursive locking</span></div>
-<div class="line"><span class="lineno">   21</span>            <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#acbd20b23701d5742ed82b28d982dc7b7">_lock_count</a>++;</div>
-<div class="line"><span class="lineno">   22</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   23</span>            <span class="comment">// normal locking</span></div>
-<div class="line"><span class="lineno">   24</span>            <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a70574897a7275f9592d5e6c3f851e53a">_shared_mutex</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/thread/shared_mutex/lock.html">lock</a>();</div>
-<div class="line"><span class="lineno">   25</span>            <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ab2bba21505692e117c3c52d4a3180387">_owner</a> = this_id;</div>
-<div class="line"><span class="lineno">   26</span>            <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#acbd20b23701d5742ed82b28d982dc7b7">_lock_count</a> = 1;</div>
-<div class="line"><span class="lineno">   27</span>        }</div>
-<div class="line"><span class="lineno">   28</span>    }</div>
-<div class="ttc" id="aget_id_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/thread/get_id.html">std::this_thread::get_id</a></div><div class="ttdeci">T get_id(T... args)</div></div>
+<div class="line"><span class="lineno">   19</span> </div>
+<div class="line"><span class="lineno">   20</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ab2bba21505692e117c3c52d4a3180387">_owner</a> == this_id) {</div>
+<div class="line"><span class="lineno">   21</span>            <span class="comment">// recursive locking</span></div>
+<div class="line"><span class="lineno">   22</span>            <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#acbd20b23701d5742ed82b28d982dc7b7">_lock_count</a>++;</div>
+<div class="line"><span class="lineno">   23</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   24</span>            <span class="comment">// Unlock the shared lock if any</span></div>
+<div class="line"><span class="lineno">   25</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ae809ecde944b16ebae832ef72d4018c5">get_shared_lock_count</a>() &gt; 0) {</div>
+<div class="line"><span class="lineno">   26</span>                <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a70574897a7275f9592d5e6c3f851e53a">_shared_mutex</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/thread/shared_mutex/unlock_shared.html">unlock_shared</a>();</div>
+<div class="line"><span class="lineno">   27</span>                <span class="comment">// Add a count to avoid the unlock_shared() to be called before the unlock()</span></div>
+<div class="line"><span class="lineno">   28</span>                <span class="comment">// While the thread has exclusive lock, there is no real shared_lock, therefore calling unlock_shared()</span></div>
+<div class="line"><span class="lineno">   29</span>                <span class="comment">// would cause an error</span></div>
+<div class="line"><span class="lineno">   30</span>                ++<a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a8b6394873a506f3602d122c6fb4ed6e1">_shared_locks</a>[this_id];</div>
+<div class="line"><span class="lineno">   31</span>            }</div>
+<div class="line"><span class="lineno">   32</span>            <span class="comment">// normal locking</span></div>
+<div class="line"><span class="lineno">   33</span>            <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a70574897a7275f9592d5e6c3f851e53a">_shared_mutex</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/thread/shared_mutex/lock.html">lock</a>();</div>
+<div class="line"><span class="lineno">   34</span>            <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ab2bba21505692e117c3c52d4a3180387">_owner</a> = this_id;</div>
+<div class="line"><span class="lineno">   35</span>            <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#acbd20b23701d5742ed82b28d982dc7b7">_lock_count</a> = 1;</div>
+<div class="line"><span class="lineno">   36</span>        }</div>
+<div class="line"><span class="lineno">   37</span>    }</div>
+<div class="ttc" id="aclassecstasy_1_1thread_1_1_shared_recursive_mutex_html_ae809ecde944b16ebae832ef72d4018c5"><div class="ttname"><a href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ae809ecde944b16ebae832ef72d4018c5">ecstasy::thread::SharedRecursiveMutex::get_shared_lock_count</a></div><div class="ttdeci">int get_shared_lock_count(void) const noexcept</div><div class="ttdoc">Get the number of recursive shared locks held by the current thread.</div><div class="ttdef"><b>Definition</b> <a href="_shared_recursive_mutex_8cpp_source.html#l00082">SharedRecursiveMutex.cpp:82</a></div></div>
 <div class="ttc" id="aid_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/thread/thread/id.html">std::thread::id</a></div></div>
 <div class="ttc" id="alock_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/thread/shared_mutex/lock.html">std::shared_mutex::lock</a></div><div class="ttdeci">T lock(T... args)</div></div>
+<div class="ttc" id="aunlock_shared_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/thread/shared_mutex/unlock_shared.html">std::shared_mutex::unlock_shared</a></div><div class="ttdeci">T unlock_shared(T... args)</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -410,11 +517,11 @@ This value is thread safe.</dd></dl>
 
 <p>Lock the mutex with shared access.   </p>
 
-<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8hpp_source.html#l00067">67</a> of file <a class="el" href="_shared_recursive_mutex_8hpp_source.html">SharedRecursiveMutex.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   68</span>        {</div>
-<div class="line"><span class="lineno">   69</span>            <a class="code hl_function" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a9c627e9da036388c3aa69b3ef4a5ef89">lock_shared</a>();</div>
-<div class="line"><span class="lineno">   70</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1thread_1_1_shared_recursive_mutex_html_a9c627e9da036388c3aa69b3ef4a5ef89"><div class="ttname"><a href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a9c627e9da036388c3aa69b3ef4a5ef89">ecstasy::thread::SharedRecursiveMutex::lock_shared</a></div><div class="ttdeci">void lock_shared() const</div><div class="ttdoc">Lock the mutex with shared access.</div><div class="ttdef"><b>Definition</b> <a href="_shared_recursive_mutex_8cpp_source.html#l00030">SharedRecursiveMutex.cpp:30</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8hpp_source.html#l00075">75</a> of file <a class="el" href="_shared_recursive_mutex_8hpp_source.html">SharedRecursiveMutex.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   76</span>        {</div>
+<div class="line"><span class="lineno">   77</span>            <a class="code hl_function" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a9c627e9da036388c3aa69b3ef4a5ef89">lock_shared</a>();</div>
+<div class="line"><span class="lineno">   78</span>        }</div>
+<div class="ttc" id="aclassecstasy_1_1thread_1_1_shared_recursive_mutex_html_a9c627e9da036388c3aa69b3ef4a5ef89"><div class="ttname"><a href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a9c627e9da036388c3aa69b3ef4a5ef89">ecstasy::thread::SharedRecursiveMutex::lock_shared</a></div><div class="ttdeci">void lock_shared() const</div><div class="ttdoc">Lock the mutex with shared access.</div><div class="ttdef"><b>Definition</b> <a href="_shared_recursive_mutex_8cpp_source.html#l00039">SharedRecursiveMutex.cpp:39</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -435,13 +542,26 @@ This value is thread safe.</dd></dl>
 </div><div class="memdoc">
 
 <p>Lock the mutex with shared access. </p>
+<dl class="section note"><dt>Note</dt><dd>If the shared lock is already acquired, only increment the lock count. </dd>
+<dd>
+If the mutex has an exclusive lock held by the current thread, the shared lock request will be "stored" and applied after exclusive unlock if unlock_shared was not called before. For example: <a class="el" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#aad2f56c3dd2c83059a8ed170d3f00859" title="Lock the mutex with exclusive access.">lock()</a>; <a class="el" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a9c627e9da036388c3aa69b3ef4a5ef89" title="Lock the mutex with shared access.">lock_shared()</a>; <a class="el" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a2e2c56dab945fadbe8d5e939bcb054c0" title="Unlock the mutex locked with exclusive access.">unlock()</a>; <a class="el" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ace5c67c07d8c23dc4a2e86125ac379a9" title="Unlock the mutex locked with shared access.">unlock_shared()</a>;</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-02) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8cpp_source.html#l00030">30</a> of file <a class="el" href="_shared_recursive_mutex_8cpp_source.html">SharedRecursiveMutex.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   31</span>    {</div>
-<div class="line"><span class="lineno">   32</span>        <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a70574897a7275f9592d5e6c3f851e53a">_shared_mutex</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/thread/shared_mutex/lock_shared.html">lock_shared</a>();</div>
-<div class="line"><span class="lineno">   33</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8cpp_source.html#l00039">39</a> of file <a class="el" href="_shared_recursive_mutex_8cpp_source.html">SharedRecursiveMutex.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>    {</div>
+<div class="line"><span class="lineno">   41</span>        <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/thread/thread/id.html">std::thread::id</a> this_id = <a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/thread/get_id.html">std::this_thread::get_id</a>();</div>
+<div class="line"><span class="lineno">   42</span>        <span class="comment">// Increment the shared lock count for this thread</span></div>
+<div class="line"><span class="lineno">   43</span>        <span class="keywordtype">int</span> &amp;shared_lock_count = ++<a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a8b6394873a506f3602d122c6fb4ed6e1">_shared_locks</a>[this_id];</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>        <span class="comment">// If it is the first shared lock, the count is set to 1 by incrementing the 0 default initialized value</span></div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">if</span> (shared_lock_count == 1) {</div>
+<div class="line"><span class="lineno">   47</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ab2bba21505692e117c3c52d4a3180387">_owner</a> != this_id)</div>
+<div class="line"><span class="lineno">   48</span>                <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a70574897a7275f9592d5e6c3f851e53a">_shared_mutex</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/thread/shared_mutex/lock_shared.html">lock_shared</a>();</div>
+<div class="line"><span class="lineno">   49</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   50</span>                ++shared_lock_count;</div>
+<div class="line"><span class="lineno">   51</span>        }</div>
+<div class="line"><span class="lineno">   52</span>    }</div>
 <div class="ttc" id="alock_shared_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/thread/shared_mutex/lock_shared.html">std::shared_mutex::lock_shared</a></div><div class="ttdeci">T lock_shared(T... args)</div></div>
 </div><!-- fragment -->
 </div>
@@ -463,21 +583,30 @@ This value is thread safe.</dd></dl>
 </div><div class="memdoc">
 
 <p>Unlock the mutex locked with exclusive access. </p>
+<dl class="section note"><dt>Note</dt><dd>Decrement the lock count and unlock the mutex if the new lock count is 0. </dd>
+<dd>
+If the mutex had shared locks held by the current thread before lock (and not unlocked until now), they will be re enabled.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-02) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8cpp_source.html#l00035">35</a> of file <a class="el" href="_shared_recursive_mutex_8cpp_source.html">SharedRecursiveMutex.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   36</span>    {</div>
-<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#acbd20b23701d5742ed82b28d982dc7b7">_lock_count</a> &gt; 1) {</div>
-<div class="line"><span class="lineno">   38</span>            <span class="comment">// recursive unlocking</span></div>
-<div class="line"><span class="lineno">   39</span>            <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#acbd20b23701d5742ed82b28d982dc7b7">_lock_count</a>--;</div>
-<div class="line"><span class="lineno">   40</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   41</span>            <span class="comment">// normal unlocking</span></div>
-<div class="line"><span class="lineno">   42</span>            <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ab2bba21505692e117c3c52d4a3180387">_owner</a> = <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/thread/thread/id.html">std::thread::id</a>();</div>
-<div class="line"><span class="lineno">   43</span>            <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#acbd20b23701d5742ed82b28d982dc7b7">_lock_count</a> = 0;</div>
-<div class="line"><span class="lineno">   44</span>            <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a70574897a7275f9592d5e6c3f851e53a">_shared_mutex</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/thread/shared_mutex/unlock.html">unlock</a>();</div>
-<div class="line"><span class="lineno">   45</span>        }</div>
-<div class="line"><span class="lineno">   46</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8cpp_source.html#l00054">54</a> of file <a class="el" href="_shared_recursive_mutex_8cpp_source.html">SharedRecursiveMutex.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   55</span>    {</div>
+<div class="line"><span class="lineno">   56</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#acbd20b23701d5742ed82b28d982dc7b7">_lock_count</a> &gt; 1) {</div>
+<div class="line"><span class="lineno">   57</span>            <span class="comment">// recursive unlocking</span></div>
+<div class="line"><span class="lineno">   58</span>            <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#acbd20b23701d5742ed82b28d982dc7b7">_lock_count</a>--;</div>
+<div class="line"><span class="lineno">   59</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   60</span>            <span class="comment">// normal unlocking</span></div>
+<div class="line"><span class="lineno">   61</span>            <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ab2bba21505692e117c3c52d4a3180387">_owner</a> = <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/thread/thread/id.html">std::thread::id</a>();</div>
+<div class="line"><span class="lineno">   62</span>            <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#acbd20b23701d5742ed82b28d982dc7b7">_lock_count</a> = 0;</div>
+<div class="line"><span class="lineno">   63</span>            <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a70574897a7275f9592d5e6c3f851e53a">_shared_mutex</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/thread/shared_mutex/unlock.html">unlock</a>();</div>
+<div class="line"><span class="lineno">   64</span>            <span class="comment">// Apply the remaining shared locks that were made before/inside the exclusive lock</span></div>
+<div class="line"><span class="lineno">   65</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ae809ecde944b16ebae832ef72d4018c5">get_shared_lock_count</a>() &gt; 0) {</div>
+<div class="line"><span class="lineno">   66</span>                <span class="comment">// Remove the count added in lock() and call remaininc lock_shared()</span></div>
+<div class="line"><span class="lineno">   67</span>                <span class="keywordflow">if</span> (--<a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a8b6394873a506f3602d122c6fb4ed6e1">_shared_locks</a>[<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/thread/get_id.html">std::this_thread::get_id</a>()] &gt; 0)</div>
+<div class="line"><span class="lineno">   68</span>                    <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a70574897a7275f9592d5e6c3f851e53a">_shared_mutex</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/thread/shared_mutex/lock_shared.html">lock_shared</a>();</div>
+<div class="line"><span class="lineno">   69</span>            }</div>
+<div class="line"><span class="lineno">   70</span>        }</div>
+<div class="line"><span class="lineno">   71</span>    }</div>
 <div class="ttc" id="aunlock_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/thread/shared_mutex/unlock.html">std::shared_mutex::unlock</a></div><div class="ttdeci">T unlock(T... args)</div></div>
 </div><!-- fragment -->
 </div>
@@ -507,11 +636,11 @@ This value is thread safe.</dd></dl>
 
 <p>Unlock the mutex locked with shared access.   </p>
 
-<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8hpp_source.html#l00089">89</a> of file <a class="el" href="_shared_recursive_mutex_8hpp_source.html">SharedRecursiveMutex.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   90</span>        {</div>
-<div class="line"><span class="lineno">   91</span>            <a class="code hl_function" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ace5c67c07d8c23dc4a2e86125ac379a9">unlock_shared</a>();</div>
-<div class="line"><span class="lineno">   92</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1thread_1_1_shared_recursive_mutex_html_ace5c67c07d8c23dc4a2e86125ac379a9"><div class="ttname"><a href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ace5c67c07d8c23dc4a2e86125ac379a9">ecstasy::thread::SharedRecursiveMutex::unlock_shared</a></div><div class="ttdeci">void unlock_shared() const</div><div class="ttdoc">Unlock the mutex locked with shared access.</div><div class="ttdef"><b>Definition</b> <a href="_shared_recursive_mutex_8cpp_source.html#l00048">SharedRecursiveMutex.cpp:48</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8hpp_source.html#l00103">103</a> of file <a class="el" href="_shared_recursive_mutex_8hpp_source.html">SharedRecursiveMutex.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  104</span>        {</div>
+<div class="line"><span class="lineno">  105</span>            <a class="code hl_function" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ace5c67c07d8c23dc4a2e86125ac379a9">unlock_shared</a>();</div>
+<div class="line"><span class="lineno">  106</span>        }</div>
+<div class="ttc" id="aclassecstasy_1_1thread_1_1_shared_recursive_mutex_html_ace5c67c07d8c23dc4a2e86125ac379a9"><div class="ttname"><a href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ace5c67c07d8c23dc4a2e86125ac379a9">ecstasy::thread::SharedRecursiveMutex::unlock_shared</a></div><div class="ttdeci">void unlock_shared() const</div><div class="ttdoc">Unlock the mutex locked with shared access.</div><div class="ttdef"><b>Definition</b> <a href="_shared_recursive_mutex_8cpp_source.html#l00073">SharedRecursiveMutex.cpp:73</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -532,14 +661,18 @@ This value is thread safe.</dd></dl>
 </div><div class="memdoc">
 
 <p>Unlock the mutex locked with shared access. </p>
+<dl class="section note"><dt>Note</dt><dd>Decrement the shared lock count and unlock the mutex if the new lock count is 0.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-02) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8cpp_source.html#l00048">48</a> of file <a class="el" href="_shared_recursive_mutex_8cpp_source.html">SharedRecursiveMutex.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>    {</div>
-<div class="line"><span class="lineno">   50</span>        <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a70574897a7275f9592d5e6c3f851e53a">_shared_mutex</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/thread/shared_mutex/unlock_shared.html">unlock_shared</a>();</div>
-<div class="line"><span class="lineno">   51</span>    }</div>
-<div class="ttc" id="aunlock_shared_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/thread/shared_mutex/unlock_shared.html">std::shared_mutex::unlock_shared</a></div><div class="ttdeci">T unlock_shared(T... args)</div></div>
+<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8cpp_source.html#l00073">73</a> of file <a class="el" href="_shared_recursive_mutex_8cpp_source.html">SharedRecursiveMutex.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>    {</div>
+<div class="line"><span class="lineno">   75</span>        <span class="keywordtype">int</span> &amp;_shared_lock_count = --<a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a8b6394873a506f3602d122c6fb4ed6e1">_shared_locks</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/unordered_map/at.html">at</a>(<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/thread/get_id.html">std::this_thread::get_id</a>());</div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>        <span class="comment">// If it was the last shared lock, unlock the shared mutex</span></div>
+<div class="line"><span class="lineno">   78</span>        <span class="keywordflow">if</span> (_shared_lock_count == 0)</div>
+<div class="line"><span class="lineno">   79</span>            <a class="code hl_variable" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html#a70574897a7275f9592d5e6c3f851e53a">_shared_mutex</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/thread/shared_mutex/unlock_shared.html">unlock_shared</a>();</div>
+<div class="line"><span class="lineno">   80</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -564,7 +697,7 @@ This value is thread safe.</dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8hpp_source.html#l00142">142</a> of file <a class="el" href="_shared_recursive_mutex_8hpp_source.html">SharedRecursiveMutex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8hpp_source.html#l00176">176</a> of file <a class="el" href="_shared_recursive_mutex_8hpp_source.html">SharedRecursiveMutex.hpp</a>.</p>
 
 </div>
 </div>
@@ -588,7 +721,31 @@ This value is thread safe.</dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8hpp_source.html#l00141">141</a> of file <a class="el" href="_shared_recursive_mutex_8hpp_source.html">SharedRecursiveMutex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8hpp_source.html#l00175">175</a> of file <a class="el" href="_shared_recursive_mutex_8hpp_source.html">SharedRecursiveMutex.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8b6394873a506f3602d122c6fb4ed6e1" name="a8b6394873a506f3602d122c6fb4ed6e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b6394873a506f3602d122c6fb4ed6e1">&#9670;&#160;</a></span>_shared_locks</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/unordered_map.html">std::unordered_map</a>&lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/thread/thread/id.html">std::thread::id</a>, int&gt; ecstasy::thread::SharedRecursiveMutex::_shared_locks</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8hpp_source.html#l00177">177</a> of file <a class="el" href="_shared_recursive_mutex_8hpp_source.html">SharedRecursiveMutex.hpp</a>.</p>
 
 </div>
 </div>
@@ -612,7 +769,7 @@ This value is thread safe.</dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8hpp_source.html#l00140">140</a> of file <a class="el" href="_shared_recursive_mutex_8hpp_source.html">SharedRecursiveMutex.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shared_recursive_mutex_8hpp_source.html#l00174">174</a> of file <a class="el" href="_shared_recursive_mutex_8hpp_source.html">SharedRecursiveMutex.hpp</a>.</p>
 
 </div>
 </div>

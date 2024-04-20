@@ -14,7 +14,7 @@ var classecstasy_1_1integration_1_1event_1_1_mouse =
       [ "Vertical", "classecstasy_1_1integration_1_1event_1_1_mouse.html#a3c1e7b5b3d6fa0fc7a4abd900363a2c6a06ce2a25e5d12c166a36f654dbea6012", null ],
       [ "Count", "classecstasy_1_1integration_1_1event_1_1_mouse.html#a3c1e7b5b3d6fa0fc7a4abd900363a2c6ae93f994f01c537c4e2f7d8528c3eb5e9", null ]
     ] ],
-    [ "Mouse", "classecstasy_1_1integration_1_1event_1_1_mouse.html#afc4351f8c9fb6c3aaacbd7ab58727c7c", null ],
+    [ "Mouse", "classecstasy_1_1integration_1_1event_1_1_mouse.html#a8847d934ed25bbea7500eca503653da9", null ],
     [ "~Mouse", "classecstasy_1_1integration_1_1event_1_1_mouse.html#ae6fda5e2ca760f0ad1adb664d246ce61", null ],
     [ "getPosition", "classecstasy_1_1integration_1_1event_1_1_mouse.html#a64da94272e39a2fe79d7e26c1ecb7195", null ],
     [ "getX", "classecstasy_1_1integration_1_1event_1_1_mouse.html#a10437a14974674d5dd5538069ce60966", null ],

@@ -1,7 +1,9 @@
 <map id="ecstasy::thread::SharedRecursiveMutex" name="ecstasy::thread::SharedRecursiveMutex">
-<area shape="rect" id="Node000001" title="Wrapper for std::shared_mutex allowing recursive locking by the same thread." alt="" coords="49,108,288,148"/>
-<area shape="rect" id="Node000002" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/thread/shared_mutex.html" title=" " alt="" coords="5,13,148,38"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,47,129,82,152,106,148,110,125,86,94,50"/>
-<area shape="rect" id="Node000003" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/atomic/atomic.html" title=" " alt="" coords="172,5,352,45"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="252,60,235,86,205,110,202,106,231,82,247,57"/>
+<area shape="rect" id="Node000001" title="Wrapper for std::shared_mutex allowing recursive locking by the same thread." alt="" coords="339,55,577,95"/>
+<area shape="rect" id="Node000002" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/thread/shared_mutex.html" title=" " alt="" coords="24,5,167,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,29,339,54,338,59,180,34"/>
+<area shape="rect" id="Node000003" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/atomic/atomic.html" title=" " alt="" coords="5,55,185,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="199,73,338,73,338,78,199,78"/>
+<area shape="rect" id="Node000004" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/unordered_map.html" title=" " alt="" coords="12,119,179,159"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="192,120,343,93,344,98,193,125"/>
 </map>
