@@ -194,9 +194,6 @@ The query parts have an `AutoLock` boolean template parameter. If it is set to t
    @note
    The mutex is recursive mostly because it is hard for ecstasy (meaning for my little brain) to detect whether a queryable is already locked by the current query or not, especially when dealing with the same queryable multiple times in the same query because of modifiers. Therefore it will be locked multiple times by the same query.
 
-   @warning
-   As said above the same lockable can be locked multiple times by the same query. You can easily have a deadlock if in the same query you request a const queryable and the non const version. Because it will try to perform an exclusive lock and a shared lock, which are not compatible. See [SharedRecursiveMutex](@ref ecstasy::thread::SharedRecursiveMutex) documentation.
-
 3. [LockableView](@ref ecstasy::thread::LockableView) instanciation
 
    [LockableView](@ref ecstasy::thread::LockableView) (LV, I'm not too lazy for this parenthesis but too lazy to write [LockableView](@ref ecstasy::thread::LockableView)) can be instanciated at multiple times depending of the query.

@@ -34,7 +34,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-18)
         ///
-        constexpr Gamepads()
+        Gamepads()
         {
             for (size_t i = 0; i < GamepadCount; i++)
                 _gamepads[i] = Gamepad(i);
