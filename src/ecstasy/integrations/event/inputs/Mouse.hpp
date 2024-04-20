@@ -62,7 +62,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-05)
         ///
-        constexpr Mouse() : _buttons({false}), _x(0), _y(0){};
+        Mouse() : _buttons({false}), _x(0), _y(0){};
 
         ///
         /// @brief Destroy the Mouse resource.

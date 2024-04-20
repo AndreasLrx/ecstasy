@@ -156,7 +156,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-16)
         ///
-        constexpr Keyboard() : _keys({false}){};
+        Keyboard() : _keys({false}){};
 
         ///
         /// @brief Destroy the Keyboard.
