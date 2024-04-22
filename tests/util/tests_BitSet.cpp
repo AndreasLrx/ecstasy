@@ -264,6 +264,24 @@ TEST(BitSet, firstSet)
     EXPECT_EQ(big.firstSet(681), 681);
 }
 
+TEST(BitSet, lastSet)
+{
+    // Return 0 if none set
+    EXPECT_EQ(util::BitSet("0").lastSet(), 0);
+    EXPECT_EQ(util::BitSet("1").lastSet(), 0);
+    EXPECT_EQ(util::BitSet("100").lastSet(), 2);
+    EXPECT_EQ(util::BitSet("0101").lastSet(), 2);
+    EXPECT_EQ(util::BitSet("00111").lastSet(), 2);
+    EXPECT_EQ(util::BitSet("0100111").lastSet(), 5);
+
+    util::BitSet big(1678);
+
+    big[681] = true;
+    EXPECT_EQ(big.lastSet(), 681);
+    big[1242] = true;
+    EXPECT_EQ(big.lastSet(), 1242);
+}
+
 TEST(BitSet, firstUnset)
 {
     EXPECT_EQ(util::BitSet("0").firstUnset(), 0);
@@ -278,6 +296,25 @@ TEST(BitSet, firstUnset)
     EXPECT_EQ(big.firstUnset(), 681);
     EXPECT_EQ(big.firstUnset(600), 681);
     EXPECT_EQ(big.firstUnset(681), 681);
+}
+
+TEST(BitSet, lastUnset)
+{
+    // Return 0 if none unset
+    EXPECT_EQ(util::BitSet("1").lastUnset(), 0);
+    EXPECT_EQ(util::BitSet("0").lastUnset(), 0);
+    EXPECT_EQ(util::BitSet("011").lastUnset(), 2);
+    EXPECT_EQ(util::BitSet("1010").lastUnset(), 2);
+    EXPECT_EQ(util::BitSet("11000").lastUnset(), 2);
+    EXPECT_EQ(util::BitSet("1011000").lastUnset(), 5);
+
+    util::BitSet big(1678);
+
+    big.setAll();
+    big[681] = false;
+    EXPECT_EQ(big.lastUnset(), 681);
+    big[1242] = false;
+    EXPECT_EQ(big.lastUnset(), 1242);
 }
 
 TEST(BitSet, outputStream)
