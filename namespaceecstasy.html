@@ -147,6 +147,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1get_storage_type_impl.html">getStorageTypeImpl</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1get_storage_type_impl_3_01_c_01_4.html">getStorageTypeImpl&lt; C &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1get_storage_type_impl_3_01const_01_c_01_4.html">getStorageTypeImpl&lt; const C &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_instances.html">Instances</a></td></tr>
@@ -160,6 +162,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_map_storage.html">MapStorage</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Associative Map to store entity components.  <a href="classecstasy_1_1_map_storage.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_marker_storage.html">MarkerStorage</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Storage for empty components.  <a href="classecstasy_1_1_marker_storage.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1_maybe.html">Maybe</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Placeholder for <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">ecstasy::query::modifier::Maybe</a>.  <a href="structecstasy_1_1_maybe.html#details">More...</a><br /></td></tr>
@@ -233,9 +238,13 @@ Concepts</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptecstasy_1_1_registry_modifier.html">RegistryModifier</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registry Modifier concept, which are placeholders for the actual query modifiers. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptecstasy_1_1_explicit_component_storage.html">ExplicitComponentStorage</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptecstasy_1_1_is_storage.html">IsStorage</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concept to check if a type is a storage. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptecstasy_1_1_is_container_storage.html">IsContainerStorage</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concept to check if a storage is a container storage. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
@@ -283,7 +292,7 @@ Typedefs</h2></td></tr>
 <tr class="separator:a04209f7d5ba97ef54c6169c3148e44ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c011da268733486119ae199f8bb4a04"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
 <tr class="memitem:a2c011da268733486119ae199f8bb4a04"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy.html#a2c011da268733486119ae199f8bb4a04">getStorageType</a> = typename <a class="el" href="structecstasy_1_1get_storage_type_impl.html">getStorageTypeImpl</a>&lt; C &gt;::type</td></tr>
-<tr class="memdesc:a2c011da268733486119ae199f8bb4a04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the storage type of a component, returns <a class="el" href="classecstasy_1_1_map_storage.html" title="Associative Map to store entity components.">MapStorage</a> by default.  <br /></td></tr>
+<tr class="memdesc:a2c011da268733486119ae199f8bb4a04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the storage type to use for a component.  <br /></td></tr>
 <tr class="separator:a2c011da268733486119ae199f8bb4a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -365,9 +374,21 @@ template&lt;typename C &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Get the storage type of a component, returns <a class="el" href="classecstasy_1_1_map_storage.html" title="Associative Map to store entity components.">MapStorage</a> by default. </p>
+<p>Get the storage type to use for a component. </p>
+<p>You can set the storage type to use for a component by defining a <b>StorageType</b> member type in the component. If you can't modify the component, you can still use the <a class="el" href="_storage_concepts_8hpp.html#a5081c2ba8fc64b28d27cdf3d74ffa960">SET_COMPONENT_STORAGE</a> macro.</p>
+<dl class="section note"><dt>Note</dt><dd>By default, it uses <b><a class="el" href="classecstasy_1_1_map_storage.html" title="Associative Map to store entity components.">MapStorage</a></b>. </dd>
+<dd>
+If C is const, the storage type will be const.</dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">C</td><td>Component type to get the storage type for.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-22) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_storage_concepts_8hpp_source.html#l00049">49</a> of file <a class="el" href="_storage_concepts_8hpp_source.html">StorageConcepts.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_storage_concepts_8hpp_source.html#l00090">90</a> of file <a class="el" href="_storage_concepts_8hpp_source.html">StorageConcepts.hpp</a>.</p>
 
 </div>
 </div>

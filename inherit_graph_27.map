@@ -1,3 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$structecstasy_1_1integration_1_1event_1_1_mouse_move_event.html" title="Event describing when the mouse move." alt="" coords="5,5,196,45"/>
+<area shape="rect" id="Node000000" href="$structecstasy_1_1integration_1_1event_1_1_mouse_button_event.html" title="Event describing when a mouse button is pressed or released." alt="" coords="5,53,204,93"/>
+<area shape="rect" id="Node000001" href="$structecstasy_1_1integration_1_1event_1_1_mouse_button_pressed_event.html" title="Event describing when a mouse button is pressed." alt="" coords="257,5,469,60"/>
+<area shape="poly" id="edge6_Node000000_Node000001" title=" " alt="" coords="217,53,256,46,257,52,218,58"/>
+<area shape="rect" id="Node000002" href="$structecstasy_1_1integration_1_1event_1_1_mouse_button_released_event.html" title="Event describing when a mouse button is released." alt="" coords="252,84,473,139"/>
+<area shape="poly" id="edge7_Node000000_Node000002" title=" " alt="" coords="218,87,252,92,252,97,217,92"/>
 </map>

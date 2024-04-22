@@ -20,6 +20,7 @@ var concepts =
         [ "Lockable", "conceptecstasy_1_1thread_1_1_lockable.html", null ]
       ] ],
       [ "RegistryModifier", "conceptecstasy_1_1_registry_modifier.html", null ],
+      [ "ExplicitComponentStorage", "conceptecstasy_1_1_explicit_component_storage.html", null ],
       [ "IsStorage", "conceptecstasy_1_1_is_storage.html", null ],
       [ "IsContainerStorage", "conceptecstasy_1_1_is_container_storage.html", null ]
     ] ]

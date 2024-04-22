@@ -102,22 +102,22 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "01__basic__window_2main_8cpp.html",
-"_system_instances_8hpp_source.html",
-"classecstasy_1_1_registry.html#a29db2eb3ec768cf21dd57fa3193d06c7",
-"classecstasy_1_1integration_1_1event_1_1_gamepad.html#a0244bd81557911356548dd7067d353d0",
-"classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a3c1aa64a675e84d9d163d126361355b2",
-"classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe85d7ffd57dbe8185bd42d6b1216253c8.html#a303cffb4149bff3f92f5059aafc6b957",
-"classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ae809ecde944b16ebae832ef72d4018c5",
-"classutil_1_1serialization_1_1_i_node.html#a46d7233b97a9ca8115dd630a477a45e0",
-"classutil_1_1serialization_1_1_toml_array_node.html#af9f017080c702ff37ba9b663d1379964",
-"cpp/algorithm/ranges/find.html",
-"cpp/experimental/null_memory_resource.html",
-"cpp/io/manip/uppercase.html",
-"cpp/numeric/special_functions/cyl_neumann.html",
-"cpp/types/is_trivially_copyable.html",
-"md_doc_2_tutorial.html#autotoc_md29",
-"structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aac2770ad109c8063ce69a3608a9a16c08",
-"structecstasy_1_1query_1_1_select_1_1_sortered_tie.html#afe9b37f0347a7d1f58872d8b496ec5aa"
+"_storage_concepts_8hpp_source.html",
+"classecstasy_1_1_marker_storage.html#a7c697b2ad2d657b18da9969e6e97c5c4",
+"classecstasy_1_1_system_instances_1_1_comparer.html#a7db1c7cce74e71dfe4a0fd49413fa7d5",
+"classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html#a214ef3b796f970818b539402e48750d5",
+"classecstasy_1_1integration_1_1user__action_1_1_users.html#a4d6918009ceefcaf33a4b3aa1300ad8a",
+"classecstasy_1_1thread_1_1_lockable_view.html#a5d83bcd049020c9c8300d22adbe2502f",
+"classutil_1_1serialization_1_1_i_array_node.html#ab2087863e992ce1fb398ffbedd1d8498",
+"classutil_1_1serialization_1_1_toml_array_node.html",
+"cpp/algorithm/max.html",
+"cpp/experimental/fs/current_path.html",
+"cpp/io/c/vfwscanf.html",
+"cpp/numeric/midpoint.html",
+"cpp/types/is_default_constructible.html",
+"integrations_2event_2inputs_2include_8hpp_source.html",
+"structecstasy_1_1component__type_3_01_q_01_4.html#afefee5490755b3d095ac247f90f976e3",
+"structecstasy_1_1query_1_1_condition_3_01ptr_left_00_01ptr_right_00_01_comparer_01_4.html#a0f4818531a80b5a201ec865916578f82"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

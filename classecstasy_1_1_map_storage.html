@@ -375,19 +375,19 @@ template&lt;typename C &gt; </div>
 <p>Test if the entity index match a <b>Component</b> instance. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Index of the entity.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool True if the entity has a component, false otherwise.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-19) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_map_storage_8hpp_source.html#l00203">203</a> of file <a class="el" href="_map_storage_8hpp_source.html">MapStorage.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  204</span>        {</div>
-<div class="line"><span class="lineno">  205</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_map_storage.html#af3147139f9ed52b9a88c355689c9c95a">_components</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/unordered_map/find.html">find</a>(index) != <a class="code hl_variable" href="classecstasy_1_1_map_storage.html#af3147139f9ed52b9a88c355689c9c95a">_components</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/unordered_map/end.html">end</a>();</div>
-<div class="line"><span class="lineno">  206</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1_map_storage_html_af3147139f9ed52b9a88c355689c9c95a"><div class="ttname"><a href="classecstasy_1_1_map_storage.html#af3147139f9ed52b9a88c355689c9c95a">ecstasy::MapStorage::_components</a></div><div class="ttdeci">std::unordered_map&lt; Entity::Index, Component &gt; _components</div><div class="ttdef"><b>Definition</b> <a href="_map_storage_8hpp_source.html#l00239">MapStorage.hpp:239</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_map_storage_8hpp_source.html#l00205">205</a> of file <a class="el" href="_map_storage_8hpp_source.html">MapStorage.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  206</span>        {</div>
+<div class="line"><span class="lineno">  207</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_map_storage.html#af3147139f9ed52b9a88c355689c9c95a">_components</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/unordered_map/find.html">find</a>(index) != <a class="code hl_variable" href="classecstasy_1_1_map_storage.html#af3147139f9ed52b9a88c355689c9c95a">_components</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/unordered_map/end.html">end</a>();</div>
+<div class="line"><span class="lineno">  208</span>        }</div>
+<div class="ttc" id="aclassecstasy_1_1_map_storage_html_af3147139f9ed52b9a88c355689c9c95a"><div class="ttname"><a href="classecstasy_1_1_map_storage.html#af3147139f9ed52b9a88c355689c9c95a">ecstasy::MapStorage::_components</a></div><div class="ttdeci">std::unordered_map&lt; Entity::Index, Component &gt; _components</div><div class="ttdef"><b>Definition</b> <a href="_map_storage_8hpp_source.html#l00241">MapStorage.hpp:241</a></div></div>
 <div class="ttc" id="aend_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/unordered_map/end.html">std::unordered_map::end</a></div><div class="ttdeci">T end(T... args)</div></div>
 <div class="ttc" id="afind_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/unordered_map/find.html">std::unordered_map::find</a></div><div class="ttdeci">T find(T... args)</div></div>
 </div><!-- fragment -->
@@ -457,7 +457,7 @@ template&lt;typename... Args&gt; </div>
 <div class="line"><span class="lineno">   80</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_map_storage.html#af3147139f9ed52b9a88c355689c9c95a">_components</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/unordered_map/emplace.html">emplace</a>(<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/utility/pair/make_pair.html">std::make_pair</a>(index, <a class="code hl_typedef" href="classecstasy_1_1_map_storage.html#a25b253a9a3be8a41a34a503f929fdc95">Component</a>(std::forward&lt;Args&gt;(args)...))).first-&gt;second;</div>
 <div class="line"><span class="lineno">   81</span>        }</div>
 <div class="ttc" id="aclassecstasy_1_1_map_storage_html_a25b253a9a3be8a41a34a503f929fdc95"><div class="ttname"><a href="classecstasy_1_1_map_storage.html#a25b253a9a3be8a41a34a503f929fdc95">ecstasy::MapStorage::Component</a></div><div class="ttdeci">C Component</div><div class="ttdoc">IsStorage constraint.</div><div class="ttdef"><b>Definition</b> <a href="_map_storage_8hpp_source.html#l00035">MapStorage.hpp:35</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_map_storage_html_a6a48aa137d08b303fe8ae31671dc1ebd"><div class="ttname"><a href="classecstasy_1_1_map_storage.html#a6a48aa137d08b303fe8ae31671dc1ebd">ecstasy::MapStorage::_mask</a></div><div class="ttdeci">util::BitSet _mask</div><div class="ttdef"><b>Definition</b> <a href="_map_storage_8hpp_source.html#l00240">MapStorage.hpp:240</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_map_storage_html_a6a48aa137d08b303fe8ae31671dc1ebd"><div class="ttname"><a href="classecstasy_1_1_map_storage.html#a6a48aa137d08b303fe8ae31671dc1ebd">ecstasy::MapStorage::_mask</a></div><div class="ttdeci">util::BitSet _mask</div><div class="ttdef"><b>Definition</b> <a href="_map_storage_8hpp_source.html#l00242">MapStorage.hpp:242</a></div></div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_a0a1be7ead3223ab02838a9e95b761918"><div class="ttname"><a href="classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918">util::BitSet::resize</a></div><div class="ttdeci">void resize(std::size_t size)</div><div class="ttdoc">Changes the number of bits stored in this set.</div><div class="ttdef"><b>Definition</b> <a href="_bit_set_8hpp_source.html#l00199">BitSet.hpp:199</a></div></div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_a1b7940aa2d91fd658b573692239866c0"><div class="ttname"><a href="classutil_1_1_bit_set.html#a1b7940aa2d91fd658b573692239866c0">util::BitSet::size</a></div><div class="ttdeci">constexpr std::size_t size() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="_bit_set_8hpp_source.html#l00087">BitSet.hpp:87</a></div></div>
 <div class="ttc" id="aemplace_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/unordered_map/emplace.html">std::unordered_map::emplace</a></div><div class="ttdeci">T emplace(T... args)</div></div>
@@ -602,10 +602,10 @@ template&lt;typename C &gt; </div>
 
 <p>Implements <a class="el" href="classecstasy_1_1_i_storage.html#a15f593db3bd0022c24670f34b34a1655">ecstasy::IStorage</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_map_storage_8hpp_source.html#l00233">233</a> of file <a class="el" href="_map_storage_8hpp_source.html">MapStorage.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  234</span>        {</div>
-<div class="line"><span class="lineno">  235</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_map_storage.html#a6a48aa137d08b303fe8ae31671dc1ebd">_mask</a>;</div>
-<div class="line"><span class="lineno">  236</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_map_storage_8hpp_source.html#l00235">235</a> of file <a class="el" href="_map_storage_8hpp_source.html">MapStorage.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  236</span>        {</div>
+<div class="line"><span class="lineno">  237</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_map_storage.html#a6a48aa137d08b303fe8ae31671dc1ebd">_mask</a>;</div>
+<div class="line"><span class="lineno">  238</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -842,10 +842,10 @@ template&lt;typename C &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-19) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_map_storage_8hpp_source.html#l00216">216</a> of file <a class="el" href="_map_storage_8hpp_source.html">MapStorage.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  217</span>        {</div>
-<div class="line"><span class="lineno">  218</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_map_storage.html#af3147139f9ed52b9a88c355689c9c95a">_components</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/unordered_map/size.html">size</a>();</div>
-<div class="line"><span class="lineno">  219</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_map_storage_8hpp_source.html#l00218">218</a> of file <a class="el" href="_map_storage_8hpp_source.html">MapStorage.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  219</span>        {</div>
+<div class="line"><span class="lineno">  220</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_map_storage.html#af3147139f9ed52b9a88c355689c9c95a">_components</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/unordered_map/size.html">size</a>();</div>
+<div class="line"><span class="lineno">  221</span>        }</div>
 <div class="ttc" id="asize_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/unordered_map/size.html">std::unordered_map::size</a></div><div class="ttdeci">T size(T... args)</div></div>
 </div><!-- fragment -->
 </div>
@@ -873,7 +873,7 @@ template&lt;typename C &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_map_storage_8hpp_source.html#l00239">239</a> of file <a class="el" href="_map_storage_8hpp_source.html">MapStorage.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_storage_8hpp_source.html#l00241">241</a> of file <a class="el" href="_map_storage_8hpp_source.html">MapStorage.hpp</a>.</p>
 
 </div>
 </div>
@@ -899,7 +899,7 @@ template&lt;typename C &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_map_storage_8hpp_source.html#l00240">240</a> of file <a class="el" href="_map_storage_8hpp_source.html">MapStorage.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_storage_8hpp_source.html#l00242">242</a> of file <a class="el" href="_map_storage_8hpp_source.html">MapStorage.hpp</a>.</p>
 
 </div>
 </div>

@@ -152,6 +152,8 @@ var NAVTREEINDEX0 =
 "_lockable_view_8hpp_source.html":[8,0,1,0,6,2],
 "_map_storage_8hpp.html":[8,0,1,0,4,3],
 "_map_storage_8hpp_source.html":[8,0,1,0,4,3],
+"_marker_storage_8hpp.html":[8,0,1,0,4,4],
+"_marker_storage_8hpp_source.html":[8,0,1,0,4,4],
 "_mouse_8hpp.html":[8,0,1,0,0,0,1,4],
 "_mouse_8hpp_source.html":[8,0,1,0,0,0,1,4],
 "_mouse_button_event_8hpp.html":[8,0,1,0,0,0,0,10],
@@ -245,9 +247,7 @@ var NAVTREEINDEX0 =
 "_shared_recursive_mutex_8hpp_source.html":[8,0,1,0,6,4],
 "_stack_allocator_8hpp.html":[8,0,1,1,5],
 "_stack_allocator_8hpp_source.html":[8,0,1,1,5],
-"_storage_concepts_8hpp.html":[8,0,1,0,4,4],
-"_storage_concepts_8hpp.html#a2c011da268733486119ae199f8bb4a04":[8,0,1,0,4,4,6],
-"_storage_concepts_8hpp.html#a5081c2ba8fc64b28d27cdf3d74ffa960":[8,0,1,0,4,4,5],
-"_storage_concepts_8hpp_source.html":[8,0,1,0,4,4],
-"_system_instances_8hpp.html":[8,0,1,0,4,5]
+"_storage_concepts_8hpp.html":[8,0,1,0,4,5],
+"_storage_concepts_8hpp.html#a2c011da268733486119ae199f8bb4a04":[8,0,1,0,4,5,8],
+"_storage_concepts_8hpp.html#a5081c2ba8fc64b28d27cdf3d74ffa960":[8,0,1,0,4,5,7]
 };

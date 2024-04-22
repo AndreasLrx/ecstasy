@@ -95,6 +95,9 @@ $(document).ready(function(){initNavTree('conceptecstasy_1_1_is_container_storag
 </div><!--header-->
 <div class="contents">
 
+<p>Concept to check if a storage is a container storage.  
+<a href="conceptecstasy_1_1_is_container_storage.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_storage_concepts_8hpp_source.html">StorageConcepts.hpp</a>&gt;</code></p>
 <h2 class="groupheader">Concept definition</h2>
 <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> S&gt;</div>
@@ -102,11 +105,21 @@ $(document).ready(function(){initNavTree('conceptecstasy_1_1_is_container_storag
 <div class="line">        <span class="keyword">requires</span> <a class="code hl_concept" href="conceptecstasy_1_1_is_storage.html">IsStorage&lt;S&gt;</a>;</div>
 <div class="line">        <span class="keyword">typename</span> S::Component::value_type;</div>
 <div class="line">    }</div>
-<div class="ttc" id="aconceptecstasy_1_1_is_container_storage_html"><div class="ttname"><a href="conceptecstasy_1_1_is_container_storage.html">ecstasy::IsContainerStorage</a></div><div class="ttdef"><b>Definition</b> <a href="_storage_concepts_8hpp_source.html#l00056">StorageConcepts.hpp:56</a></div></div>
-<div class="ttc" id="aconceptecstasy_1_1_is_storage_html"><div class="ttname"><a href="conceptecstasy_1_1_is_storage.html">ecstasy::IsStorage</a></div><div class="ttdef"><b>Definition</b> <a href="_storage_concepts_8hpp_source.html#l00052">StorageConcepts.hpp:52</a></div></div>
+<div class="ttc" id="aconceptecstasy_1_1_is_container_storage_html"><div class="ttname"><a href="conceptecstasy_1_1_is_container_storage.html">ecstasy::IsContainerStorage</a></div><div class="ttdoc">Concept to check if a storage is a container storage.</div><div class="ttdef"><b>Definition</b> <a href="_storage_concepts_8hpp_source.html#l00114">StorageConcepts.hpp:114</a></div></div>
+<div class="ttc" id="aconceptecstasy_1_1_is_storage_html"><div class="ttname"><a href="conceptecstasy_1_1_is_storage.html">ecstasy::IsStorage</a></div><div class="ttdoc">Concept to check if a type is a storage.</div><div class="ttdef"><b>Definition</b> <a href="_storage_concepts_8hpp_source.html#l00101">StorageConcepts.hpp:101</a></div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_storage_concepts_8hpp_source.html#l00056">56</a> of file <a class="el" href="_storage_concepts_8hpp_source.html">StorageConcepts.hpp</a>.</p>
+<div class="textblock"><p>Concept to check if a storage is a container storage. </p>
+<p>(i.e. has a value_type member type like <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>)</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">S</td><td>Storage type to check.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-22) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_storage_concepts_8hpp_source.html#l00114">114</a> of file <a class="el" href="_storage_concepts_8hpp_source.html">StorageConcepts.hpp</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

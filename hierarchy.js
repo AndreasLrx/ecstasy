@@ -72,6 +72,7 @@ var hierarchy =
     [ "ecstasy::Registry::GetModifierProxy< Operands >", "structecstasy_1_1_registry_1_1_get_modifier_proxy.html", null ],
     [ "ecstasy::Registry::GetModifierProxy< util::meta::Traits< Qs... > >", "structecstasy_1_1_registry_1_1_get_modifier_proxy_3_01util_1_1meta_1_1_traits_3_01_qs_8_8_8_01_4_01_4.html", null ],
     [ "ecstasy::getStorageTypeImpl< C >", "structecstasy_1_1get_storage_type_impl.html", null ],
+    [ "ecstasy::getStorageTypeImpl< C >", "structecstasy_1_1get_storage_type_impl_3_01_c_01_4.html", null ],
     [ "ecstasy::getStorageTypeImpl< const C >", "structecstasy_1_1get_storage_type_impl_3_01const_01_c_01_4.html", null ],
     [ "util::serialization::IArrayNode", "classutil_1_1serialization_1_1_i_array_node.html", [
       [ "util::serialization::TomlArrayNode", "classutil_1_1serialization_1_1_toml_array_node.html", null ]
@@ -133,7 +134,8 @@ var hierarchy =
       [ "ecstasy::Registry::Select< Selects >::IsCondition< T >", "structecstasy_1_1_registry_1_1_select_1_1_is_condition.html", null ]
     ] ],
     [ "ecstasy::IStorage", "classecstasy_1_1_i_storage.html", [
-      [ "ecstasy::MapStorage< C >", "classecstasy_1_1_map_storage.html", null ]
+      [ "ecstasy::MapStorage< C >", "classecstasy_1_1_map_storage.html", null ],
+      [ "ecstasy::MarkerStorage< C >", "classecstasy_1_1_marker_storage.html", null ]
     ] ],
     [ "ecstasy::ISystem", "classecstasy_1_1_i_system.html", [
       [ "ecstasy::integration::sfml::PollEvents", "classecstasy_1_1integration_1_1sfml_1_1_poll_events.html", null ],
