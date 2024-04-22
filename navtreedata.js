@@ -102,22 +102,22 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "01__basic__window_2main_8cpp.html",
-"_text_entered_listener_8hpp.html",
-"classecstasy_1_1_registry.html#a3b58005381d91e50fdf4fdb62488ccb1",
-"classecstasy_1_1integration_1_1event_1_1_gamepad.html#a2c5c1e7d9b7a82d7c7ed6902e6ce7424",
-"classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a5b2c4198fe2740d97a33c6f36e32609d",
-"classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe85d7ffd57dbe8185bd42d6b1216253c8.html#a487e3916bf80b50d89cab6fbd0a3d521",
-"classutil_1_1_allocator.html",
-"classutil_1_1serialization_1_1_i_node.html#a4ea36a93412eef7618ae5d32be93b32b",
-"classutil_1_1serialization_1_1_toml_conversion.html#a02ec01641041befff8cd4df451e3ee5b",
-"cpp/algorithm/ranges/includes.html",
-"cpp/experimental/reseed.html",
-"cpp/iterator/distance.html",
-"cpp/numeric/special_functions/ellint_3.html",
-"cpp/types/rank.html",
-"modifier__allocator__size_8hpp.html",
-"structecstasy_1_1integration_1_1event_1_1_event.html#a4cb329b4aad0740343e1dce052b94b0a",
-"structecstasy_1_1query_1_1queryable__data.html"
+"_system_instances_8hpp_source.html",
+"classecstasy_1_1_registry.html#a29db2eb3ec768cf21dd57fa3193d06c7",
+"classecstasy_1_1integration_1_1event_1_1_gamepad.html#a0244bd81557911356548dd7067d353d0",
+"classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a3c1aa64a675e84d9d163d126361355b2",
+"classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe85d7ffd57dbe8185bd42d6b1216253c8.html#a303cffb4149bff3f92f5059aafc6b957",
+"classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ae809ecde944b16ebae832ef72d4018c5",
+"classutil_1_1serialization_1_1_i_node.html#a46d7233b97a9ca8115dd630a477a45e0",
+"classutil_1_1serialization_1_1_toml_array_node.html#af9f017080c702ff37ba9b663d1379964",
+"cpp/algorithm/ranges/find.html",
+"cpp/experimental/null_memory_resource.html",
+"cpp/io/manip/uppercase.html",
+"cpp/numeric/special_functions/cyl_neumann.html",
+"cpp/types/is_trivially_copyable.html",
+"md_doc_2_tutorial.html#autotoc_md29",
+"structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aac2770ad109c8063ce69a3608a9a16c08",
+"structecstasy_1_1query_1_1_select_1_1_sortered_tie.html#afe9b37f0347a7d1f58872d8b496ec5aa"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

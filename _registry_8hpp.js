@@ -14,5 +14,7 @@ var _registry_8hpp =
     [ "ecstasy::Registry::Select< Selects >::IsCondition< T >", "structecstasy_1_1_registry_1_1_select_1_1_is_condition.html", null ],
     [ "ecstasy::Registry::Select< Selects >::IsNotCondition< T >", "structecstasy_1_1_registry_1_1_select_1_1_is_not_condition.html", null ],
     [ "NO_UNIQUE_ADDRESS", "_registry_8hpp.html#afbab8d3e03b64c2dd9697c91ef11f5e8", null ],
+    [ "ResourceReference", "_registry_8hpp.html#a935f8c5172bfb738d9af3f1585f41cad", null ],
+    [ "RR", "_registry_8hpp.html#a04209f7d5ba97ef54c6169c3148e44ed", null ],
     [ "StackAllocator", "_registry_8hpp.html#a029021666dc5e8cc0db0d817fc54a172", null ]
 ];

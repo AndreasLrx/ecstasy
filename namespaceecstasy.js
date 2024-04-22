@@ -36,6 +36,7 @@ var namespaceecstasy =
     [ "Registry", "classecstasy_1_1_registry.html", "classecstasy_1_1_registry" ],
     [ "RegistryEntity", "classecstasy_1_1_registry_entity.html", "classecstasy_1_1_registry_entity" ],
     [ "Resource", "classecstasy_1_1_resource.html", "classecstasy_1_1_resource" ],
+    [ "ResourceBase", "classecstasy_1_1_resource_base.html", "classecstasy_1_1_resource_base" ],
     [ "SystemInstances", "classecstasy_1_1_system_instances.html", "classecstasy_1_1_system_instances" ],
     [ "Xor", "structecstasy_1_1_xor.html", "structecstasy_1_1_xor" ],
     [ "XorEx", "structecstasy_1_1_xor_ex.html", "structecstasy_1_1_xor_ex" ],
@@ -51,6 +52,8 @@ var namespaceecstasy =
     [ "LessEqual", "namespaceecstasy.html#ac8221c0f73ca2e3e2d5d7e92c5241317", null ],
     [ "NotEqualTo", "namespaceecstasy.html#a632aba6a51f51ed40b7bdc35331c6821", null ],
     [ "queryable_type_t", "namespaceecstasy.html#a53c8ca43801107dc959adbdc60810af8", null ],
+    [ "ResourceReference", "namespaceecstasy.html#a935f8c5172bfb738d9af3f1585f41cad", null ],
+    [ "RR", "namespaceecstasy.html#a04209f7d5ba97ef54c6169c3148e44ed", null ],
     [ "StackAllocator", "namespaceecstasy.html#a029021666dc5e8cc0db0d817fc54a172", null ],
     [ "modifier_allocator_size_v", "namespaceecstasy.html#a2831a324e09dd41177dc35f2ad92a5b1", null ],
     [ "modifiers_allocator_size_v", "namespaceecstasy.html#ae3d09d8dc606623d5049790980069d46", null ]

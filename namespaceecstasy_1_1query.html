@@ -168,6 +168,12 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1thread__safe__queryable_3_01_q_00_01true_01_4.html">thread_safe_queryable&lt; Q, true &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the thread safe type of a queryable type.    <a href="structecstasy_1_1query_1_1thread__safe__queryable_3_01_q_00_01true_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1thread__safe__reference.html">thread_safe_reference</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the reference type of a maybe thread safe type.  <a href="structecstasy_1_1query_1_1thread__safe__reference.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1thread__safe__reference_3_01_t_00_01true_01_4.html">thread_safe_reference&lt; T, true &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the reference type of a maybe thread safe type.    <a href="structecstasy_1_1query_1_1thread__safe__reference_3_01_t_00_01true_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1_thread_safe_query.html">ThreadSafeQuery</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1views__allocator__size.html">views_allocator_size</a></td></tr>
@@ -227,6 +233,10 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a0caa083dda1d39db3372c518a6c49ae4"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a0caa083dda1d39db3372c518a6c49ae4">thread_safe_queryable_t</a> = typename <a class="el" href="structecstasy_1_1query_1_1thread__safe__queryable.html">thread_safe_queryable</a>&lt; Q, ThreadSafe &gt;::type</td></tr>
 <tr class="memdesc:a0caa083dda1d39db3372c518a6c49ae4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for the thread safe type of a queryable type.  <br /></td></tr>
 <tr class="separator:a0caa083dda1d39db3372c518a6c49ae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a897d7c05813e9c64ab715f1481cc4489"><td class="memTemplParams" colspan="2">template&lt;typename T , bool ThreadSafe = true&gt; </td></tr>
+<tr class="memitem:a897d7c05813e9c64ab715f1481cc4489"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a897d7c05813e9c64ab715f1481cc4489">thread_safe_reference_t</a> = typename <a class="el" href="structecstasy_1_1query_1_1thread__safe__reference.html">thread_safe_reference</a>&lt; T, ThreadSafe &gt;::type</td></tr>
+<tr class="memdesc:a897d7c05813e9c64ab715f1481cc4489"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for the reference type of a maybe thread safe type.  <br /></td></tr>
+<tr class="separator:a897d7c05813e9c64ab715f1481cc4489"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a429c5fb231068dc9b88cc14dd62a4304"><td class="memTemplParams" colspan="2">template&lt;typename Q , bool AutoLock = false&gt; </td></tr>
 <tr class="memitem:a429c5fb231068dc9b88cc14dd62a4304"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query.html#a429c5fb231068dc9b88cc14dd62a4304">queryable_qualifiers_t</a> = typename <a class="el" href="structecstasy_1_1query_1_1queryable__qualifiers.html">queryable_qualifiers</a>&lt; Q, AutoLock &gt;::type</td></tr>
 <tr class="memdesc:a429c5fb231068dc9b88cc14dd62a4304"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for the queryable type with the correct qualifiers.  <br /></td></tr>
@@ -324,7 +334,7 @@ template&lt;typename Q , bool AutoLock = false&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-04) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_queryable_8hpp_source.html#l00235">235</a> of file <a class="el" href="_queryable_8hpp_source.html">Queryable.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_queryable_8hpp_source.html#l00269">269</a> of file <a class="el" href="_queryable_8hpp_source.html">Queryable.hpp</a>.</p>
 
 </div>
 </div>
@@ -354,6 +364,35 @@ template&lt;typename Q , bool ThreadSafe = true&gt; </div>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-06) </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_queryable_8hpp_source.html#l00198">198</a> of file <a class="el" href="_queryable_8hpp_source.html">Queryable.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a897d7c05813e9c64ab715f1481cc4489" name="a897d7c05813e9c64ab715f1481cc4489"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a897d7c05813e9c64ab715f1481cc4489">&#9670;&#160;</a></span>thread_safe_reference_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , bool ThreadSafe = true&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceecstasy_1_1query.html#a897d7c05813e9c64ab715f1481cc4489">ecstasy::query::thread_safe_reference_t</a> = typedef typename <a class="el" href="structecstasy_1_1query_1_1thread__safe__reference.html">thread_safe_reference</a>&lt;T, ThreadSafe&gt;::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alias for the reference type of a maybe thread safe type. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type. </td></tr>
+    <tr><td class="paramname">ThreadSafe</td><td>Whether the type should be thread safe or not. Default to true.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-17) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_queryable_8hpp_source.html#l00232">232</a> of file <a class="el" href="_queryable_8hpp_source.html">Queryable.hpp</a>.</p>
 
 </div>
 </div>
@@ -544,13 +583,13 @@ template&lt;Queryable Q&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-03) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_queryable_8hpp_source.html#l00275">275</a> of file <a class="el" href="_queryable_8hpp_source.html">Queryable.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  276</span>    {</div>
-<div class="line"><span class="lineno">  277</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptecstasy_1_1query_1_1_queryable_wrapper.html">QueryableWrapper&lt;Q&gt;</a>)</div>
-<div class="line"><span class="lineno">  278</span>            <span class="keywordflow">return</span> queryable-&gt;getQueryData(index);</div>
-<div class="line"><span class="lineno">  279</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  280</span>            <span class="keywordflow">return</span> queryable.getQueryData(index);</div>
-<div class="line"><span class="lineno">  281</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_queryable_8hpp_source.html#l00309">309</a> of file <a class="el" href="_queryable_8hpp_source.html">Queryable.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  310</span>    {</div>
+<div class="line"><span class="lineno">  311</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptecstasy_1_1query_1_1_queryable_wrapper.html">QueryableWrapper&lt;Q&gt;</a>)</div>
+<div class="line"><span class="lineno">  312</span>            <span class="keywordflow">return</span> queryable-&gt;getQueryData(index);</div>
+<div class="line"><span class="lineno">  313</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  314</span>            <span class="keywordflow">return</span> queryable.getQueryData(index);</div>
+<div class="line"><span class="lineno">  315</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -598,13 +637,13 @@ template&lt;Queryable Q&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-03) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_queryable_8hpp_source.html#l00252">252</a> of file <a class="el" href="_queryable_8hpp_source.html">Queryable.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  253</span>    {</div>
-<div class="line"><span class="lineno">  254</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptecstasy_1_1query_1_1_queryable_wrapper.html">QueryableWrapper&lt;Q&gt;</a>)</div>
-<div class="line"><span class="lineno">  255</span>            <span class="keywordflow">return</span> queryable-&gt;getMask();</div>
-<div class="line"><span class="lineno">  256</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  257</span>            <span class="keywordflow">return</span> queryable.getMask();</div>
-<div class="line"><span class="lineno">  258</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_queryable_8hpp_source.html#l00286">286</a> of file <a class="el" href="_queryable_8hpp_source.html">Queryable.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  287</span>    {</div>
+<div class="line"><span class="lineno">  288</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptecstasy_1_1query_1_1_queryable_wrapper.html">QueryableWrapper&lt;Q&gt;</a>)</div>
+<div class="line"><span class="lineno">  289</span>            <span class="keywordflow">return</span> queryable-&gt;getMask();</div>
+<div class="line"><span class="lineno">  290</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  291</span>            <span class="keywordflow">return</span> queryable.getMask();</div>
+<div class="line"><span class="lineno">  292</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -641,7 +680,7 @@ template&lt;typename T &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-30) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_queryable_8hpp_source.html#l00307">307</a> of file <a class="el" href="_queryable_8hpp_source.html">Queryable.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_queryable_8hpp_source.html#l00341">341</a> of file <a class="el" href="_queryable_8hpp_source.html">Queryable.hpp</a>.</p>
 
 </div>
 </div>
@@ -714,7 +753,7 @@ template&lt;bool AutoLock, Queryable... Qs&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-07) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_queryable_8hpp_source.html#l00351">351</a> of file <a class="el" href="_queryable_8hpp_source.html">Queryable.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_queryable_8hpp_source.html#l00385">385</a> of file <a class="el" href="_queryable_8hpp_source.html">Queryable.hpp</a>.</p>
 
 </div>
 </div>

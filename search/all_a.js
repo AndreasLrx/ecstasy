@@ -62,7 +62,7 @@ var searchData=
   ['instances_59',['Instances',['../classecstasy_1_1_instances.html',1,'ecstasy::Instances&lt; Base &gt;'],['../classecstasy_1_1_instances.html#a1c8bb1c646e54c1c9dbc74f461494f51',1,'ecstasy::Instances::Instances()=default'],['../classecstasy_1_1_instances.html#a1ea11116c2da702f388dffe5dfe51558',1,'ecstasy::Instances::Instances(const Instances &amp;other)=delete']]],
   ['instances_2ehpp_60',['Instances.hpp',['../_instances_8hpp.html',1,'']]],
   ['instances_3c_20ecstasy_3a_3aistorage_20_3e_61',['Instances&lt; ecstasy::IStorage &gt;',['../classecstasy_1_1_instances.html',1,'ecstasy']]],
-  ['instances_3c_20ecstasy_3a_3aresource_20_3e_62',['Instances&lt; ecstasy::Resource &gt;',['../classecstasy_1_1_instances.html',1,'ecstasy']]],
+  ['instances_3c_20ecstasy_3a_3aresourcebase_20_3e_62',['Instances&lt; ecstasy::ResourceBase &gt;',['../classecstasy_1_1_instances.html',1,'ecstasy']]],
   ['instanciate_63',['instanciate',['../classutil_1_1_allocator.html#a0acecb64152a6d866f088ace9d71f1aa',1,'util::Allocator::instanciate()'],['../classutil_1_1_stack_allocator.html#a70f8ede04d0858fc004dca0b70e2a979',1,'util::StackAllocator::instanciate()']]],
   ['int16_5ft_64',['int16_t',['http://en.cppreference.com/w/cpp/types/integer.html',1,'std']]],
   ['int32_5ft_65',['int32_t',['http://en.cppreference.com/w/cpp/types/integer.html',1,'std']]],

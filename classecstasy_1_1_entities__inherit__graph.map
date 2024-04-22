@@ -1,5 +1,7 @@
 <map id="ecstasy::Entities" name="ecstasy::Entities">
-<area shape="rect" id="Node000001" title="Resource holding all the Registry entities." alt="" coords="11,79,139,104"/>
-<area shape="rect" id="Node000002" href="$classecstasy_1_1_resource.html" title="Base class of all registry resources." alt="" coords="5,5,144,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,44,77,79,72,79,72,44"/>
+<area shape="rect" id="Node000001" title="Resource holding all the Registry entities." alt="" coords="27,167,155,192"/>
+<area shape="rect" id="Node000002" href="$classecstasy_1_1_resource.html" title=" " alt="" coords="15,79,166,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,132,93,166,88,166,88,132"/>
+<area shape="rect" id="Node000003" href="$classecstasy_1_1_resource_base.html" title="Base class of all registry resources." alt="" coords="5,5,176,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="93,44,93,79,88,79,88,44"/>
 </map>

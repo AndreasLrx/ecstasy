@@ -1,7 +1,9 @@
 <map id="ecstasy::integration::event::Gamepads" name="ecstasy::integration::event::Gamepads">
-<area shape="rect" id="Node000001" title="Current Gamepads states." alt="" coords="351,30,501,70"/>
-<area shape="rect" id="Node000002" href="$classecstasy_1_1_resource.html" title="Base class of all registry resources." alt="" coords="45,5,183,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,24,351,40,350,45,197,29"/>
-<area shape="rect" id="Node000003" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/array.html" title=" " alt="" coords="5,55,223,109"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="236,67,326,58,350,56,351,61,327,63,237,73"/>
+<area shape="rect" id="Node000001" title="Current Gamepads states." alt="" coords="571,60,721,100"/>
+<area shape="rect" id="Node000002" href="$classecstasy_1_1_resource.html" title=" " alt="" coords="259,5,409,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="423,38,571,64,570,70,422,43"/>
+<area shape="rect" id="Node000003" href="$classecstasy_1_1_resource_base.html" title="Base class of all registry resources." alt="" coords="5,13,176,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="190,23,259,23,259,28,190,28"/>
+<area shape="rect" id="Node000004" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/array.html" title=" " alt="" coords="225,70,443,125"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="456,88,570,82,570,87,457,93"/>
 </map>

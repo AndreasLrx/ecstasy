@@ -24,7 +24,7 @@ var searchData=
   ['insert_5fiterator_21',['insert_iterator',['http://en.cppreference.com/w/cpp/iterator/insert_iterator.html',1,'std']]],
   ['instances_22',['Instances',['../classecstasy_1_1_instances.html',1,'ecstasy']]],
   ['instances_3c_20ecstasy_3a_3aistorage_20_3e_23',['Instances&lt; ecstasy::IStorage &gt;',['../classecstasy_1_1_instances.html',1,'ecstasy']]],
-  ['instances_3c_20ecstasy_3a_3aresource_20_3e_24',['Instances&lt; ecstasy::Resource &gt;',['../classecstasy_1_1_instances.html',1,'ecstasy']]],
+  ['instances_3c_20ecstasy_3a_3aresourcebase_20_3e_24',['Instances&lt; ecstasy::ResourceBase &gt;',['../classecstasy_1_1_instances.html',1,'ecstasy']]],
   ['int16_5ft_25',['int16_t',['http://en.cppreference.com/w/cpp/types/integer.html',1,'std']]],
   ['int32_5ft_26',['int32_t',['http://en.cppreference.com/w/cpp/types/integer.html',1,'std']]],
   ['int64_5ft_27',['int64_t',['http://en.cppreference.com/w/cpp/types/integer.html',1,'std']]],

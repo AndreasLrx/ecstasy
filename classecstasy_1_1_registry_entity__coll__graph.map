@@ -1,19 +1,19 @@
 <map id="ecstasy::RegistryEntity" name="ecstasy::RegistryEntity">
-<area shape="rect" id="Node000001" title="Entity containing a reference to the registry." alt="" coords="911,95,1081,121"/>
-<area shape="rect" id="Node000002" href="$classecstasy_1_1_entity.html" title="Encapsulate an index to an entity." alt="" coords="676,71,793,97"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="807,88,911,98,910,103,806,93"/>
-<area shape="rect" id="Node000003" href="$classecstasy_1_1_registry.html" title="Base of an ECS architecture." alt="" coords="668,121,801,146"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="815,123,886,116,910,114,911,119,887,121,815,128"/>
-<area shape="rect" id="Node000004" href="$classecstasy_1_1_instances.html" title=" " alt="" coords="365,32,535,72"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="535,73,690,118,689,123,533,78"/>
+<area shape="rect" id="Node000001" title="Entity containing a reference to the registry." alt="" coords="921,95,1092,121"/>
+<area shape="rect" id="Node000002" href="$classecstasy_1_1_entity.html" title="Encapsulate an index to an entity." alt="" coords="687,71,804,97"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="818,88,921,98,921,103,817,93"/>
+<area shape="rect" id="Node000003" href="$classecstasy_1_1_registry.html" title="Base of an ECS architecture." alt="" coords="679,121,812,146"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="825,123,897,116,921,114,921,119,898,121,826,128"/>
+<area shape="rect" id="Node000004" href="$classecstasy_1_1_instances.html" title=" " alt="" coords="355,32,556,72"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="541,73,700,118,698,123,539,78"/>
 <area shape="rect" id="Node000005" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/unordered_map.html" title=" " alt="" coords="37,5,202,75"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="216,41,365,46,365,52,216,46"/>
-<area shape="rect" id="Node000006" href="$classecstasy_1_1_instances.html" title=" " alt="" coords="369,113,531,153"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="545,131,668,131,668,136,545,136"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="216,41,354,46,354,51,216,46"/>
+<area shape="rect" id="Node000006" href="$classecstasy_1_1_instances.html" title=" " alt="" coords="374,113,537,153"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="550,131,678,131,678,136,550,136"/>
 <area shape="rect" id="Node000007" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/unordered_map.html" title=" " alt="" coords="37,99,202,168"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="216,131,368,131,368,136,216,136"/>
-<area shape="rect" id="Node000008" href="$classecstasy_1_1_system_instances.html" title="Set of instances inheriting from the Base type." alt="" coords="355,199,545,225"/>
-<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="509,193,687,143,689,149,511,198"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="216,131,374,131,374,136,216,136"/>
+<area shape="rect" id="Node000008" href="$classecstasy_1_1_system_instances.html" title="Set of instances inheriting from the Base type." alt="" coords="360,199,551,225"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="516,193,697,143,698,149,517,198"/>
 <area shape="rect" id="Node000009" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/map.html" title=" " alt="" coords="5,193,233,277"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="247,223,354,216,355,221,247,229"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="247,223,359,216,360,221,247,229"/>
 </map>

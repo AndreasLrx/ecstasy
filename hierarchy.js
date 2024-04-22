@@ -93,7 +93,7 @@ var hierarchy =
     ] ],
     [ "ecstasy::Instances< Base >", "classecstasy_1_1_instances.html", null ],
     [ "ecstasy::Instances< ecstasy::IStorage >", "classecstasy_1_1_instances.html", null ],
-    [ "ecstasy::Instances< ecstasy::Resource >", "classecstasy_1_1_instances.html", null ],
+    [ "ecstasy::Instances< ecstasy::ResourceBase >", "classecstasy_1_1_instances.html", null ],
     [ "std::integral_constant< bool, !IsCondition< T >::value >", "http://en.cppreference.com/w/cpp/types/integral_constant.html", [
       [ "ecstasy::Registry::Select< Selects >::IsNotCondition< T >", "structecstasy_1_1_registry_1_1_select_1_1_is_not_condition.html", null ]
     ] ],
@@ -215,13 +215,26 @@ var hierarchy =
       [ "ecstasy::Registry::RegistryStackQuery< util::meta::Traits< Selects... >, util::meta::Traits< Missings... >, Conditions, util::meta::Traits< Cs... >, AutoLock >", "classecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_20e16f590d1e6d3a51f200dbd071ad9a.html", null ]
     ] ],
     [ "ecstasy::Registry::RegistryStackQueryMemory< util::meta::Traits< Selects... >, util::meta::Traits< Missings... >, util::meta::Traits< Conditions... >, AutoLock, Cs... >", "classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html", null ],
-    [ "ecstasy::Resource", "classecstasy_1_1_resource.html", [
-      [ "ecstasy::Entities", "classecstasy_1_1_entities.html", null ],
-      [ "ecstasy::ObjectWrapper< T >", "classecstasy_1_1_object_wrapper.html", null ],
-      [ "ecstasy::integration::event::Gamepads", "classecstasy_1_1integration_1_1event_1_1_gamepads.html", null ],
-      [ "ecstasy::integration::event::Keyboard", "classecstasy_1_1integration_1_1event_1_1_keyboard.html", null ],
-      [ "ecstasy::integration::event::Mouse", "classecstasy_1_1integration_1_1event_1_1_mouse.html", null ],
-      [ "ecstasy::integration::user_action::Users", "classecstasy_1_1integration_1_1user__action_1_1_users.html", null ]
+    [ "ecstasy::ResourceBase", "classecstasy_1_1_resource_base.html", [
+      [ "ecstasy::Resource< Entities >", "classecstasy_1_1_resource.html", [
+        [ "ecstasy::Entities", "classecstasy_1_1_entities.html", null ]
+      ] ],
+      [ "ecstasy::Resource< ObjectWrapper< T > >", "classecstasy_1_1_resource.html", [
+        [ "ecstasy::ObjectWrapper< T >", "classecstasy_1_1_object_wrapper.html", null ]
+      ] ],
+      [ "ecstasy::Resource< Gamepads >", "classecstasy_1_1_resource.html", [
+        [ "ecstasy::integration::event::Gamepads", "classecstasy_1_1integration_1_1event_1_1_gamepads.html", null ]
+      ] ],
+      [ "ecstasy::Resource< Keyboard >", "classecstasy_1_1_resource.html", [
+        [ "ecstasy::integration::event::Keyboard", "classecstasy_1_1integration_1_1event_1_1_keyboard.html", null ]
+      ] ],
+      [ "ecstasy::Resource< Mouse >", "classecstasy_1_1_resource.html", [
+        [ "ecstasy::integration::event::Mouse", "classecstasy_1_1integration_1_1event_1_1_mouse.html", null ]
+      ] ],
+      [ "ecstasy::Resource< Users >", "classecstasy_1_1_resource.html", [
+        [ "ecstasy::integration::user_action::Users", "classecstasy_1_1integration_1_1user__action_1_1_users.html", null ]
+      ] ],
+      [ "ecstasy::Resource< R >", "classecstasy_1_1_resource.html", null ]
     ] ],
     [ "util::meta::_left_outer_join< Traits< Rights... >, IsInner, Left, OuterLefts... >::result< LeftsUntreated >", "structutil_1_1meta_1_1__left__outer__join_3_01_traits_3_01_rights_8_8_8_01_4_00_01_is_inner_00_0976b977fc3db4c0d2dc93c5d53c35a08.html", null ],
     [ "util::meta::_left_outer_join< Traits< Rights... >, IsInner, Left, OuterLefts... >::result< NextLeft, LeftsUntreated... >", "structutil_1_1meta_1_1__left__outer__join_3_01_traits_3_01_rights_8_8_8_01_4_00_01_is_inner_00_0e4c618fb3b7be1c193ef63fbe4938be5.html", null ],
@@ -235,6 +248,8 @@ var hierarchy =
     [ "ecstasy::integration::event::TextEnteredEvent", "structecstasy_1_1integration_1_1event_1_1_text_entered_event.html", null ],
     [ "ecstasy::query::thread_safe_queryable< Q, ThreadSafe >", "structecstasy_1_1query_1_1thread__safe__queryable.html", null ],
     [ "ecstasy::query::thread_safe_queryable< Q, true >", "structecstasy_1_1query_1_1thread__safe__queryable_3_01_q_00_01true_01_4.html", null ],
+    [ "ecstasy::query::thread_safe_reference< T, ThreadSafe >", "structecstasy_1_1query_1_1thread__safe__reference.html", null ],
+    [ "ecstasy::query::thread_safe_reference< T, true >", "structecstasy_1_1query_1_1thread__safe__reference_3_01_t_00_01true_01_4.html", null ],
     [ "util::serialization::TomlConversion", "classutil_1_1serialization_1_1_toml_conversion.html", null ],
     [ "util::meta::Traits< Args >", "structutil_1_1meta_1_1_traits.html", null ],
     [ "util::meta::Traits< Arg, Args... >", "structutil_1_1meta_1_1_traits_3_01_arg_00_01_args_8_8_8_01_4.html", null ],

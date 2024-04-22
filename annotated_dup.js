@@ -77,6 +77,8 @@ var annotated_dup =
         [ "Select", "structecstasy_1_1query_1_1_select.html", "structecstasy_1_1query_1_1_select" ],
         [ "thread_safe_queryable", "structecstasy_1_1query_1_1thread__safe__queryable.html", "structecstasy_1_1query_1_1thread__safe__queryable" ],
         [ "thread_safe_queryable< Q, true >", "structecstasy_1_1query_1_1thread__safe__queryable_3_01_q_00_01true_01_4.html", "structecstasy_1_1query_1_1thread__safe__queryable_3_01_q_00_01true_01_4" ],
+        [ "thread_safe_reference", "structecstasy_1_1query_1_1thread__safe__reference.html", "structecstasy_1_1query_1_1thread__safe__reference" ],
+        [ "thread_safe_reference< T, true >", "structecstasy_1_1query_1_1thread__safe__reference_3_01_t_00_01true_01_4.html", "structecstasy_1_1query_1_1thread__safe__reference_3_01_t_00_01true_01_4" ],
         [ "ThreadSafeQuery", "classecstasy_1_1query_1_1_thread_safe_query.html", "classecstasy_1_1query_1_1_thread_safe_query" ],
         [ "views_allocator_size", "structecstasy_1_1query_1_1views__allocator__size.html", null ],
         [ "views_allocator_size< AutoLock, Q, Qs... >", "structecstasy_1_1query_1_1views__allocator__size_3_01_auto_lock_00_01_q_00_01_qs_8_8_8_01_4.html", null ],
@@ -120,6 +122,7 @@ var annotated_dup =
       [ "Registry", "classecstasy_1_1_registry.html", "classecstasy_1_1_registry" ],
       [ "RegistryEntity", "classecstasy_1_1_registry_entity.html", "classecstasy_1_1_registry_entity" ],
       [ "Resource", "classecstasy_1_1_resource.html", "classecstasy_1_1_resource" ],
+      [ "ResourceBase", "classecstasy_1_1_resource_base.html", "classecstasy_1_1_resource_base" ],
       [ "SystemInstances", "classecstasy_1_1_system_instances.html", "classecstasy_1_1_system_instances" ],
       [ "Xor", "structecstasy_1_1_xor.html", "structecstasy_1_1_xor" ],
       [ "XorEx", "structecstasy_1_1_xor_ex.html", "structecstasy_1_1_xor_ex" ]

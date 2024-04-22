@@ -1,4 +1,4 @@
 var classecstasy_1_1_resource =
 [
-    [ "~Resource", "classecstasy_1_1_resource.html#a4df9be87da12432f3536c555bd61ddc0", null ]
+    [ "operator->", "classecstasy_1_1_resource.html#a6e8ce269598e967087b09cb413e6439e", null ]
 ];
