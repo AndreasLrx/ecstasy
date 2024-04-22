@@ -239,6 +239,29 @@ namespace util
             return (word_pos << 6) + static_cast<std::size_t>(std::countr_zero(word));
         }
 
+        /// Finds the last set bit in the set.
+        ///
+        /// @note If the set does not contain a single 'one' bit, the return value is 0.
+        ///
+        /// @returns The position of the last set bit.
+        BIT_SET_CONSTEXPR std::size_t lastSet() const
+        {
+            std::uint64_t mask = ~((~std::uint64_t(0)) << (_size & 0b111111));
+            std::size_t word_pos = _size >> 6;
+            std::uint64_t word = this->_store[word_pos] & mask;
+
+            while (word == 0) {
+                // Avoid underflow
+                if (word_pos == 0)
+                    break;
+                --word_pos;
+                word = this->_store[word_pos];
+            }
+            if (word == 0)
+                return 0;
+            return (word_pos << 6) + static_cast<std::size_t>(0b111111 - std::countl_zero(word));
+        }
+
         /// Finds the first unset bit in the set, starting from (and including) @b start.
         ///
         /// @note The behavior is undefined if the set does not contain a single 'zero' bit from @b start.
@@ -257,6 +280,29 @@ namespace util
                 word = this->_store[word_pos];
             }
             return (word_pos << 6) + static_cast<std::size_t>(std::countr_one(word));
+        }
+
+        /// Finds the last unset bit in the set.
+        ///
+        /// @note If the set does not contain a single 'zero' bit, the return value is 0.
+        ///
+        /// @returns The position of the last set bit.
+        BIT_SET_CONSTEXPR std::size_t lastUnset() const
+        {
+            std::uint64_t mask = ~((~std::uint64_t(0)) << (_size & 0b111111));
+            std::size_t word_pos = _size >> 6;
+            std::uint64_t word = this->_store[word_pos] | (~mask);
+
+            while (word == (~std::uint64_t(0))) {
+                // Avoid underflow
+                if (word_pos == 0)
+                    break;
+                --word_pos;
+                word = this->_store[word_pos];
+            }
+            if (word == (~std::uint64_t(0)))
+                return 0;
+            return (word_pos << 6) + static_cast<std::size_t>(0b111111 - std::countl_one(word));
         }
 
       private:
