@@ -9,6 +9,7 @@
 #include "ecstasy/resources/Resource.hpp"
 #include "ecstasy/resources/entity/RegistryEntity.hpp"
 #include "ecstasy/storages/MapStorage.hpp"
+#include "ecstasy/storages/MarkerStorage.hpp"
 #include "ecstasy/system/ISystem.hpp"
 #include "util/StackAllocator.hpp"
 #include "util/meta/outer_join.hpp"
@@ -117,8 +118,12 @@ struct Size {
 using Density = int;
 
 /// Movable marker to test complex queries
-struct Movable {};
-struct Static {};
+struct Movable {
+    using StorageType = ecstasy::MarkerStorage<Movable>;
+};
+struct Static {
+    using StorageType = ecstasy::MarkerStorage<Static>;
+};
 
 struct Gravity : public ecstasy::ISystem {
     void run(ecstasy::Registry &registry) override final

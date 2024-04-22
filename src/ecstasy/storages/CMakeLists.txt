@@ -7,6 +7,7 @@ set(SRC
     ${INCROOT}/Instances.hpp
     ${INCROOT}/IStorage.hpp
     ${INCROOT}/MapStorage.hpp
+    ${INCROOT}/MarkerStorage.hpp
     ${INCROOT}/StorageConcepts.hpp
     PARENT_SCOPE
 )
