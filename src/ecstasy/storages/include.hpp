@@ -15,6 +15,7 @@
 #include "IStorage.hpp"
 #include "Instances.hpp"
 #include "MapStorage.hpp"
+#include "MarkerStorage.hpp"
 #include "StorageConcepts.hpp"
 
 #endif /* !ECSTASY_STORAGES_HPP_ */

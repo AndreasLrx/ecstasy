@@ -195,8 +195,10 @@ namespace ecstasy
         ///
         /// @brief Test if the entity index match a @b Component instance.
         ///
-        /// @param[in] index
-        /// @return bool
+        /// @param[in] index Index of the entity.
+        ///
+        /// @return bool True if the entity has a component, false otherwise.
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-19)
         ///
