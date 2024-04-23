@@ -1,5 +1,5 @@
 ///
-/// @file MapStorage.hpp
+/// @file VectorStorage.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
 /// @brief
 /// @version 1.0.0
@@ -9,10 +9,10 @@
 ///
 ///
 
-#ifndef ECSTASY_STORAGE_MAPSTORAGE_HPP_
-#define ECSTASY_STORAGE_MAPSTORAGE_HPP_
+#ifndef ECSTASY_STORAGE_VECTORSTORAGE_HPP_
+#define ECSTASY_STORAGE_VECTORSTORAGE_HPP_
 
-#include <unordered_map>
+#include <vector>
 
 #include "IStorage.hpp"
 #include "ecstasy/resources/entity/Entity.hpp"
@@ -21,8 +21,11 @@
 namespace ecstasy
 {
     ///
-    /// @brief Associative Map to store entity components
-    /// Recommended for sparse components. (ie. components that are not attached to all entities)
+    /// @brief Linear vector to store entity components.
+    /// Recommended for dense components. (ie. components that are attached to all entities)
+    ///
+    /// @note This storage is not recommended for sparse components as it will waste memory.
+    /// @warning Requires default constructible and movable components (for the padding elements).
     ///
     /// @tparam C Component type.
     ///
@@ -30,7 +33,7 @@ namespace ecstasy
     /// @since 1.0.0 (2022-10-19)
     ///
     template <typename C>
-    class MapStorage : public IStorage {
+    class VectorStorage : public IStorage {
       public:
         /// @brief IsStorage constraint
         using Component = C;
@@ -41,12 +44,20 @@ namespace ecstasy
         using ConstQueryData = const C &;
 
         ///
-        /// @brief Construct a new Map Storage for a given Component type.
+        /// @brief Construct a new Vector Storage for a given Component type.
+        ///
+        /// @param[in] initialCapacity Initial capacity of the storage.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-19)
         ///
-        MapStorage() = default;
+        VectorStorage(size_t initialCapacity = 0) : _components(), _mask()
+        {
+            if (initialCapacity) {
+                _components.reserve(initialCapacity);
+                _mask.resize(initialCapacity);
+            }
+        };
 
         ///
         /// @brief Copy constructor is deleted.
@@ -56,12 +67,14 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-19)
         ///
-        MapStorage(const MapStorage &other) = delete;
+        VectorStorage(const VectorStorage &other) = delete;
 
         ///
         /// @brief Emplace a new @b Component instance for a given entity.
         ///
-        /// @note No check is done to see if the entity already has the component.
+        /// @note Overwrite the previous component if any.
+        /// @warning This method may resize the internal vector, which will probably invalidate references to the
+        /// components.
         ///
         /// @tparam Args Type of the arguments to forward to the component constructor.
         ///
@@ -76,9 +89,19 @@ namespace ecstasy
         template <typename... Args>
         Component &emplace(Entity::Index index, Args &&...args)
         {
-            _mask.resize(std::max(_mask.size(), index + 1));
+            // Component at index already existing
+            if (_components.size() > index)
+                _components[index] = std::move(Component(std::forward<Args>(args)...));
+            else {
+                _mask.resize(std::max(_mask.size(), index + 1));
+                // Padding elements
+                if (_components.size() < index)
+                    _components.resize(index);
+                // New component
+                _components.emplace_back(std::forward<Args>(args)...);
+            }
             _mask[index] = true;
-            return _components.emplace(std::make_pair(index, Component(std::forward<Args>(args)...))).first->second;
+            return _components[index];
         }
 
         ///
@@ -86,22 +109,32 @@ namespace ecstasy
         ///
         /// @note Does nothing if the index doesn't match with any component (ie if the entity doesn't have a component
         /// @b Component)
+        /// @note Unset the flag in the mask but effectively delete the component only if it's the last one. Otherwise,
+        /// it becomes a padding element.
         ///
         /// @param[in] index Index of the entity.
+        ///
+        /// @return bool True if the component was erased, false otherwise.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-19)
         ///
         bool erase(Entity::Index index)
         {
-            auto it = _components.find(index);
+            if (index >= _components.size())
+                return false;
+            size_t effectiveSize;
 
-            if (it != _components.end()) {
-                _components.erase(index);
-                _mask[index] = false;
-                return true;
+            _mask[index] = false;
+            effectiveSize = _mask.lastSet() + 1;
+
+            // Last component, we can safely remove it and the padding elements until the last set bit
+            // The size is never lower than 1 because 0 is returned if no bit is set (unsigned number)
+            if (effectiveSize < _mask.size()) {
+                _mask.resize(effectiveSize);
+                _components.resize(effectiveSize);
             }
-            return false;
+            return true;
         }
 
         ///
@@ -135,7 +168,10 @@ namespace ecstasy
         ///
         const Component &operator[](Entity::Index index) const
         {
-            return _components.at(index);
+            // We must do explicit check because the index can be a padding element
+            if (!contains(index))
+                throw std::out_of_range("Entity doesn't have the component");
+            return _components[index];
         }
 
         ///
@@ -152,7 +188,10 @@ namespace ecstasy
         ///
         Component &operator[](Entity::Index index)
         {
-            return _components.at(index);
+            // We must do explicit check because the index can be a padding element
+            if (!contains(index))
+                throw std::out_of_range("Entity doesn't have the component");
+            return _components[index];
         }
 
         ///
@@ -171,7 +210,10 @@ namespace ecstasy
         ///
         Component &getQueryData(Entity::Index index)
         {
-            return _components.at(index);
+            // We must do explicit check because the index can be a padding element
+            if (!contains(index))
+                throw std::out_of_range("Entity doesn't have the component");
+            return _components[index];
         }
 
         ///
@@ -190,7 +232,10 @@ namespace ecstasy
         ///
         const Component &getQueryData(Entity::Index index) const
         {
-            return _components.at(index);
+            // We must do explicit check because the index can be a padding element
+            if (!contains(index))
+                throw std::out_of_range("Entity doesn't have the component");
+            return _components[index];
         }
 
         ///
@@ -205,20 +250,7 @@ namespace ecstasy
         ///
         bool contains(Entity::Index index) const
         {
-            return _components.find(index) != _components.end();
-        }
-
-        ///
-        /// @brief Get the number of @b Component instances.
-        ///
-        /// @return size_t number of @b Component instances.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-19)
-        ///
-        size_t size() const noexcept
-        {
-            return _components.size();
+            return (index < _components.size()) && _mask[index];
         }
 
         ///
@@ -239,9 +271,11 @@ namespace ecstasy
         }
 
       private:
-        std::unordered_map<Entity::Index, Component> _components;
+        std::vector<Component> _components;
         util::BitSet _mask;
+
+        friend class VectorStorageTest;
     };
 } // namespace ecstasy
 
-#endif /* !ECSTASY_STORAGE_MAPSTORAGE_HPP_ */
+#endif /* !ECSTASY_STORAGE_VECTORSTORAGE_HPP_ */

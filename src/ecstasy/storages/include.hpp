@@ -17,5 +17,6 @@
 #include "MapStorage.hpp"
 #include "MarkerStorage.hpp"
 #include "StorageConcepts.hpp"
+#include "VectorStorage.hpp"
 
 #endif /* !ECSTASY_STORAGES_HPP_ */
