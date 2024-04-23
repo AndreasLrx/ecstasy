@@ -14,9 +14,7 @@
 
 #include <vector>
 
-#include "IStorage.hpp"
-#include "ecstasy/resources/entity/Entity.hpp"
-#include "util/BitSet.hpp"
+#include "AStorage.hpp"
 
 namespace ecstasy
 {
@@ -25,7 +23,8 @@ namespace ecstasy
     /// Recommended for dense components. (ie. components that are attached to all entities)
     ///
     /// @note This storage is not recommended for sparse components as it will waste memory.
-    /// @warning Requires default constructible and movable components (for the padding elements).
+    /// @warning Requires default constructible (for the padding elements) and movable components (including move
+    /// assignement operator).
     ///
     /// @tparam C Component type.
     ///
@@ -33,15 +32,10 @@ namespace ecstasy
     /// @since 1.0.0 (2022-10-19)
     ///
     template <typename C>
-    class VectorStorage : public IStorage {
+    class VectorStorage : public AStorage<C> {
       public:
         /// @brief IsStorage constraint
-        using Component = C;
-
-        /// @brief @ref ecstasy::query::QueryableObject constraint.
-        using QueryData = C &;
-        /// @brief @ref ecstasy::query::ConstQueryableObject constraint.
-        using ConstQueryData = const C &;
+        using Component = typename AStorage<C>::Component;
 
         ///
         /// @brief Construct a new Vector Storage for a given Component type.
@@ -104,22 +98,11 @@ namespace ecstasy
             return _components[index];
         }
 
+        /// @copydoc AStorage::erase
         ///
-        /// @brief Erase the @b Component instance associated to the given entity.
-        ///
-        /// @note Does nothing if the index doesn't match with any component (ie if the entity doesn't have a component
-        /// @b Component)
         /// @note Unset the flag in the mask but effectively delete the component only if it's the last one. Otherwise,
         /// it becomes a padding element.
-        ///
-        /// @param[in] index Index of the entity.
-        ///
-        /// @return bool True if the component was erased, false otherwise.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-19)
-        ///
-        bool erase(Entity::Index index)
+        bool erase(Entity::Index index) override final
         {
             if (index >= _components.size())
                 return false;
@@ -137,134 +120,19 @@ namespace ecstasy
             return true;
         }
 
-        ///
-        /// @brief Erase multiple @b Component instances associated to the given @p entities.
-        ///
-        /// @note Does nothing for entity without attached component (ie if the entity doesn't have a component
-        /// @b Component)
-        ///
-        /// @param[in] entities target entities.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-21)
-        ///
-        void erase(std::span<Entity> entities) override final
+        /// @copydoc AStorage::operator[]
+        Component &operator[](Entity::Index index) noexcept override final
         {
-            for (Entity entity : entities)
-                erase(entity.getIndex());
-        }
-
-        ///
-        /// @brief Retrieve the @b Component instance associated to the given entity.
-        ///
-        /// @param[in] index Index of the entity.
-        ///
-        /// @return const Component& Const reference to the associated component.
-        ///
-        /// @throw std::out_of_range If the entity doesn't have the component.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-19)
-        ///
-        const Component &operator[](Entity::Index index) const
-        {
-            // We must do explicit check because the index can be a padding element
-            if (!contains(index))
-                throw std::out_of_range("Entity doesn't have the component");
             return _components[index];
         }
 
-        ///
-        /// @brief Retrieve the @b Component instance associated to the given entity.
-        ///
-        /// @param[in] index Index of the entity.
-        ///
-        /// @return Component& Reference to the associated component.
-        ///
-        /// @throw std::out_of_range If the entity doesn't have the component.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-19)
-        ///
-        Component &operator[](Entity::Index index)
+        /// @copydoc AStorage::operator[]
+        const Component &operator[](Entity::Index index) const noexcept override final
         {
-            // We must do explicit check because the index can be a padding element
-            if (!contains(index))
-                throw std::out_of_range("Entity doesn't have the component");
             return _components[index];
         }
 
-        ///
-        /// @brief Retrieve the @b Component instance associated to the given entity.
-        ///
-        /// @note @ref ecstasy::query::QueryableObject constraint.
-        ///
-        /// @param[in] index Index of the entity.
-        ///
-        /// @return Component& Reference to the associated component.
-        ///
-        /// @throw std::out_of_range If the entity doesn't have the component.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-19)
-        ///
-        Component &getQueryData(Entity::Index index)
-        {
-            // We must do explicit check because the index can be a padding element
-            if (!contains(index))
-                throw std::out_of_range("Entity doesn't have the component");
-            return _components[index];
-        }
-
-        ///
-        /// @brief Retrieve the const @b Component instance associated to the given entity.
-        ///
-        /// @note @ref ecstasy::query::ConstQueryableObject constraint.
-        ///
-        /// @param[in] index Index of the entity.
-        ///
-        /// @return const Component& Const reference to the associated component.
-        ///
-        /// @throw std::out_of_range If the entity doesn't have the component.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2024-04-03)
-        ///
-        const Component &getQueryData(Entity::Index index) const
-        {
-            // We must do explicit check because the index can be a padding element
-            if (!contains(index))
-                throw std::out_of_range("Entity doesn't have the component");
-            return _components[index];
-        }
-
-        ///
-        /// @brief Test if the entity index match a @b Component instance.
-        ///
-        /// @param[in] index Index of the entity.
-        ///
-        /// @return bool True if the entity has a component, false otherwise.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-19)
-        ///
-        bool contains(Entity::Index index) const
-        {
-            return (index < _components.size()) && _mask[index];
-        }
-
-        ///
-        /// @brief Get the Component Mask.
-        ///
-        /// @note Each bit set to true mean the entity at the bit index has a component @b C.
-        /// @note @ref ecstasy::query::QueryableObject constraint.
-        /// @warning The mask might be smaller than the entity count.
-        ///
-        /// @return const util::BitSet& Component mask.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-20)
-        ///
+        /// @copydoc IStorage::getMask
         constexpr const util::BitSet &getMask() const override final
         {
             return _mask;

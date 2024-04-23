@@ -6,6 +6,7 @@ set(SRC
     ${INCROOT}/include.hpp
     ${INCROOT}/Instances.hpp
     ${INCROOT}/IStorage.hpp
+    ${INCROOT}/AStorage.hpp
     ${INCROOT}/MapStorage.hpp
     ${INCROOT}/MarkerStorage.hpp
     ${INCROOT}/VectorStorage.hpp
