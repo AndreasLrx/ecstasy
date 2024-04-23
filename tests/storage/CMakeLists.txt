@@ -4,6 +4,7 @@ set(SRC
     ${SRCROOT}/tests_Instances.cpp
     ${SRCROOT}/tests_MapStorage.cpp
     ${SRCROOT}/tests_MarkerStorage.cpp
+    ${SRCROOT}/tests_VectorStorage.cpp
     ${SRCROOT}/tests_StorageConcept.cpp
 )
 
