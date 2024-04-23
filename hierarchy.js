@@ -134,8 +134,11 @@ var hierarchy =
       [ "ecstasy::Registry::Select< Selects >::IsCondition< T >", "structecstasy_1_1_registry_1_1_select_1_1_is_condition.html", null ]
     ] ],
     [ "ecstasy::IStorage", "classecstasy_1_1_i_storage.html", [
-      [ "ecstasy::MapStorage< C >", "classecstasy_1_1_map_storage.html", null ],
-      [ "ecstasy::MarkerStorage< C >", "classecstasy_1_1_marker_storage.html", null ]
+      [ "ecstasy::AStorage< C >", "classecstasy_1_1_a_storage.html", [
+        [ "ecstasy::MapStorage< C >", "classecstasy_1_1_map_storage.html", null ],
+        [ "ecstasy::MarkerStorage< C >", "classecstasy_1_1_marker_storage.html", null ],
+        [ "ecstasy::VectorStorage< C >", "classecstasy_1_1_vector_storage.html", null ]
+      ] ]
     ] ],
     [ "ecstasy::ISystem", "classecstasy_1_1_i_system.html", [
       [ "ecstasy::integration::sfml::PollEvents", "classecstasy_1_1integration_1_1sfml_1_1_poll_events.html", null ],

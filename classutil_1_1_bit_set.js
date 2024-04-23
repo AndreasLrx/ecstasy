@@ -11,6 +11,8 @@ var classutil_1_1_bit_set =
     [ "inplaceAnd", "classutil_1_1_bit_set.html#a95d877d109aa2613d6dcf0f5a40b10f9", null ],
     [ "inplaceOr", "classutil_1_1_bit_set.html#a971fbc52f6b679589d468c1d15a810d5", null ],
     [ "inplaceXor", "classutil_1_1_bit_set.html#a47b259104f03b72450e56ce451e7aab1", null ],
+    [ "lastSet", "classutil_1_1_bit_set.html#a0ea58e4406f7addbc3fc5a6356a5da04", null ],
+    [ "lastUnset", "classutil_1_1_bit_set.html#ad0e6dd9ad01d3690cf27f8a711ac7353", null ],
     [ "mask", "classutil_1_1_bit_set.html#a349731228e9b8c79618360b357be3735", null ],
     [ "normalize", "classutil_1_1_bit_set.html#a6466c5d085f082a8877062ec74039672", null ],
     [ "operator!=", "classutil_1_1_bit_set.html#a9907697fb62fb2e2a6b60de3b4e79ced", null ],

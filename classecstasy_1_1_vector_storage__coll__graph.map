@@ -1,0 +1,15 @@
+<map id="ecstasy::VectorStorage&lt; C &gt;" name="ecstasy::VectorStorage&lt; C &gt;">
+<area shape="rect" id="Node000001" title="Linear vector to store entity components." alt="" coords="200,181,409,207"/>
+<area shape="rect" id="Node000002" href="$classecstasy_1_1_a_storage.html" title="Abstract class for all components storage." alt="" coords="5,93,183,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,122,277,179,275,184,134,126"/>
+<area shape="rect" id="Node000003" href="$classecstasy_1_1_i_storage.html" title="Base class of all components storage." alt="" coords="27,5,161,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="97,45,97,93,91,93,91,45"/>
+<area shape="rect" id="Node000004" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="207,93,403,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="307,133,307,181,302,181,302,133"/>
+<area shape="rect" id="Node000005" href="$classutil_1_1_bit_set.html" title="Mimics the API of std::bitset but with the dynamic properties of std::vector&lt;bool&gt;" alt="" coords="427,93,518,119"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="449,130,403,160,345,184,343,179,401,155,446,125"/>
+<area shape="rect" id="Node000006" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/size_t.html" title=" " alt="" coords="343,5,431,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="411,39,463,91,459,95,407,43"/>
+<area shape="rect" id="Node000007" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="455,5,658,31"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="538,43,486,95,482,91,534,39"/>
+</map>

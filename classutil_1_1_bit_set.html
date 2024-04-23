@@ -196,9 +196,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a90f9991829f5f5cb4d24c5213b6ba829"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_bit_set_8hpp.html#a80a8d26d1dc1a492f730825a5cec4031">BIT_SET_CONSTEXPR</a> <a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1_bit_set.html#a90f9991829f5f5cb4d24c5213b6ba829">firstSet</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> start=0) const</td></tr>
 <tr class="memdesc:a90f9991829f5f5cb4d24c5213b6ba829"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the first set bit in the set, starting from (and including) <b>start</b>.  <br /></td></tr>
 <tr class="separator:a90f9991829f5f5cb4d24c5213b6ba829"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ea58e4406f7addbc3fc5a6356a5da04"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_bit_set_8hpp.html#a80a8d26d1dc1a492f730825a5cec4031">BIT_SET_CONSTEXPR</a> <a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1_bit_set.html#a0ea58e4406f7addbc3fc5a6356a5da04">lastSet</a> () const</td></tr>
+<tr class="memdesc:a0ea58e4406f7addbc3fc5a6356a5da04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the last set bit in the set.  <br /></td></tr>
+<tr class="separator:a0ea58e4406f7addbc3fc5a6356a5da04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a034726ec31b4e4ad0b2c7a82cbfad3e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_bit_set_8hpp.html#a80a8d26d1dc1a492f730825a5cec4031">BIT_SET_CONSTEXPR</a> <a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1_bit_set.html#a034726ec31b4e4ad0b2c7a82cbfad3e4">firstUnset</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> start=0) const</td></tr>
 <tr class="memdesc:a034726ec31b4e4ad0b2c7a82cbfad3e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the first unset bit in the set, starting from (and including) <b>start</b>.  <br /></td></tr>
 <tr class="separator:a034726ec31b4e4ad0b2c7a82cbfad3e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0e6dd9ad01d3690cf27f8a711ac7353"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_bit_set_8hpp.html#a80a8d26d1dc1a492f730825a5cec4031">BIT_SET_CONSTEXPR</a> <a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1_bit_set.html#ad0e6dd9ad01d3690cf27f8a711ac7353">lastUnset</a> () const</td></tr>
+<tr class="memdesc:ad0e6dd9ad01d3690cf27f8a711ac7353"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the last unset bit in the set.  <br /></td></tr>
+<tr class="separator:ad0e6dd9ad01d3690cf27f8a711ac7353"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -262,9 +268,9 @@ Friends</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   24</span>                                        : <a class="code hl_variable" href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">_size</a>(initialSize), <a class="code hl_variable" href="classutil_1_1_bit_set.html#a9509e8497148ab22f834f27c68aa09d3">_store</a>(<a class="code hl_function" href="classutil_1_1_bit_set.html#a0a05c4dcfaafa79d3b6ee10a1f9b5dba">getStoreWordCount</a>(initialSize))</div>
 <div class="line"><span class="lineno">   25</span>    {</div>
 <div class="line"><span class="lineno">   26</span>    }</div>
-<div class="ttc" id="aclassutil_1_1_bit_set_html_a0a05c4dcfaafa79d3b6ee10a1f9b5dba"><div class="ttname"><a href="classutil_1_1_bit_set.html#a0a05c4dcfaafa79d3b6ee10a1f9b5dba">util::BitSet::getStoreWordCount</a></div><div class="ttdeci">static constexpr std::size_t getStoreWordCount(std::size_t bitCount)</div><div class="ttdef"><b>Definition</b> <a href="_bit_set_8hpp_source.html#l00273">BitSet.hpp:273</a></div></div>
-<div class="ttc" id="aclassutil_1_1_bit_set_html_a525fd88fa272c30f62ad21df180493d3"><div class="ttname"><a href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">util::BitSet::_size</a></div><div class="ttdeci">std::size_t _size</div><div class="ttdef"><b>Definition</b> <a href="_bit_set_8hpp_source.html#l00263">BitSet.hpp:263</a></div></div>
-<div class="ttc" id="aclassutil_1_1_bit_set_html_a9509e8497148ab22f834f27c68aa09d3"><div class="ttname"><a href="classutil_1_1_bit_set.html#a9509e8497148ab22f834f27c68aa09d3">util::BitSet::_store</a></div><div class="ttdeci">std::vector&lt; std::uint64_t &gt; _store</div><div class="ttdef"><b>Definition</b> <a href="_bit_set_8hpp_source.html#l00264">BitSet.hpp:264</a></div></div>
+<div class="ttc" id="aclassutil_1_1_bit_set_html_a0a05c4dcfaafa79d3b6ee10a1f9b5dba"><div class="ttname"><a href="classutil_1_1_bit_set.html#a0a05c4dcfaafa79d3b6ee10a1f9b5dba">util::BitSet::getStoreWordCount</a></div><div class="ttdeci">static constexpr std::size_t getStoreWordCount(std::size_t bitCount)</div><div class="ttdef"><b>Definition</b> <a href="_bit_set_8hpp_source.html#l00319">BitSet.hpp:319</a></div></div>
+<div class="ttc" id="aclassutil_1_1_bit_set_html_a525fd88fa272c30f62ad21df180493d3"><div class="ttname"><a href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">util::BitSet::_size</a></div><div class="ttdeci">std::size_t _size</div><div class="ttdef"><b>Definition</b> <a href="_bit_set_8hpp_source.html#l00309">BitSet.hpp:309</a></div></div>
+<div class="ttc" id="aclassutil_1_1_bit_set_html_a9509e8497148ab22f834f27c68aa09d3"><div class="ttname"><a href="classutil_1_1_bit_set.html#a9509e8497148ab22f834f27c68aa09d3">util::BitSet::_store</a></div><div class="ttdeci">std::vector&lt; std::uint64_t &gt; _store</div><div class="ttdef"><b>Definition</b> <a href="_bit_set_8hpp_source.html#l00310">BitSet.hpp:310</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -384,7 +390,7 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">  238</span>            }</div>
 <div class="line"><span class="lineno">  239</span>            <span class="keywordflow">return</span> (word_pos &lt;&lt; 6) + <span class="keyword">static_cast&lt;</span><a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a><span class="keyword">&gt;</span>(<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/numeric/countr_zero.html">std::countr_zero</a>(word));</div>
 <div class="line"><span class="lineno">  240</span>        }</div>
-<div class="ttc" id="aclassutil_1_1_bit_set_html_a349731228e9b8c79618360b357be3735"><div class="ttname"><a href="classutil_1_1_bit_set.html#a349731228e9b8c79618360b357be3735">util::BitSet::mask</a></div><div class="ttdeci">static constexpr std::uint64_t mask(std::size_t pos)</div><div class="ttdef"><b>Definition</b> <a href="_bit_set_8hpp_source.html#l00267">BitSet.hpp:267</a></div></div>
+<div class="ttc" id="aclassutil_1_1_bit_set_html_a349731228e9b8c79618360b357be3735"><div class="ttname"><a href="classutil_1_1_bit_set.html#a349731228e9b8c79618360b357be3735">util::BitSet::mask</a></div><div class="ttdeci">static constexpr std::uint64_t mask(std::size_t pos)</div><div class="ttdef"><b>Definition</b> <a href="_bit_set_8hpp_source.html#l00313">BitSet.hpp:313</a></div></div>
 <div class="ttc" id="acountr_zero_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/numeric/countr_zero.html">std::countr_zero</a></div><div class="ttdeci">T countr_zero(T... args)</div></div>
 <div class="ttc" id="ainteger_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/types/integer.html">std::uint64_t</a></div></div>
 <div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="http://en.cppreference.com/w/namespacestd.html">std</a></div></div>
@@ -425,18 +431,18 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The position of the first unset bit. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_bit_set_8hpp_source.html#l00249">249</a> of file <a class="el" href="_bit_set_8hpp_source.html">BitSet.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  250</span>        {</div>
-<div class="line"><span class="lineno">  251</span>            <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/integer.html">std::uint64_t</a> <a class="code hl_function" href="classutil_1_1_bit_set.html#a349731228e9b8c79618360b357be3735">mask</a> = (<a class="code hl_namespaceRef" href="http://en.cppreference.com/w/namespacestd.html">~std</a>::uint64_t(0)) &lt;&lt; (start &amp; 0b111111);</div>
-<div class="line"><span class="lineno">  252</span>            <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> word_pos = start &gt;&gt; 6;</div>
-<div class="line"><span class="lineno">  253</span>            <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/integer.html">std::uint64_t</a> word = this-&gt;<a class="code hl_variable" href="classutil_1_1_bit_set.html#a9509e8497148ab22f834f27c68aa09d3">_store</a>[word_pos] | (~mask);</div>
-<div class="line"><span class="lineno">  254</span> </div>
-<div class="line"><span class="lineno">  255</span>            <span class="keywordflow">while</span> (word == (~<a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/integer.html">std::uint64_t</a>(0))) {</div>
-<div class="line"><span class="lineno">  256</span>                ++word_pos;</div>
-<div class="line"><span class="lineno">  257</span>                word = this-&gt;<a class="code hl_variable" href="classutil_1_1_bit_set.html#a9509e8497148ab22f834f27c68aa09d3">_store</a>[word_pos];</div>
-<div class="line"><span class="lineno">  258</span>            }</div>
-<div class="line"><span class="lineno">  259</span>            <span class="keywordflow">return</span> (word_pos &lt;&lt; 6) + <span class="keyword">static_cast&lt;</span><a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a><span class="keyword">&gt;</span>(<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/numeric/countr_one.html">std::countr_one</a>(word));</div>
-<div class="line"><span class="lineno">  260</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_bit_set_8hpp_source.html#l00272">272</a> of file <a class="el" href="_bit_set_8hpp_source.html">BitSet.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  273</span>        {</div>
+<div class="line"><span class="lineno">  274</span>            <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/integer.html">std::uint64_t</a> <a class="code hl_function" href="classutil_1_1_bit_set.html#a349731228e9b8c79618360b357be3735">mask</a> = (<a class="code hl_namespaceRef" href="http://en.cppreference.com/w/namespacestd.html">~std</a>::uint64_t(0)) &lt;&lt; (start &amp; 0b111111);</div>
+<div class="line"><span class="lineno">  275</span>            <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> word_pos = start &gt;&gt; 6;</div>
+<div class="line"><span class="lineno">  276</span>            <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/integer.html">std::uint64_t</a> word = this-&gt;<a class="code hl_variable" href="classutil_1_1_bit_set.html#a9509e8497148ab22f834f27c68aa09d3">_store</a>[word_pos] | (~mask);</div>
+<div class="line"><span class="lineno">  277</span> </div>
+<div class="line"><span class="lineno">  278</span>            <span class="keywordflow">while</span> (word == (~<a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/integer.html">std::uint64_t</a>(0))) {</div>
+<div class="line"><span class="lineno">  279</span>                ++word_pos;</div>
+<div class="line"><span class="lineno">  280</span>                word = this-&gt;<a class="code hl_variable" href="classutil_1_1_bit_set.html#a9509e8497148ab22f834f27c68aa09d3">_store</a>[word_pos];</div>
+<div class="line"><span class="lineno">  281</span>            }</div>
+<div class="line"><span class="lineno">  282</span>            <span class="keywordflow">return</span> (word_pos &lt;&lt; 6) + <span class="keyword">static_cast&lt;</span><a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a><span class="keyword">&gt;</span>(<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/numeric/countr_one.html">std::countr_one</a>(word));</div>
+<div class="line"><span class="lineno">  283</span>        }</div>
 <div class="ttc" id="acountr_one_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/numeric/countr_one.html">std::countr_one</a></div><div class="ttdeci">T countr_one(T... args)</div></div>
 </div><!-- fragment -->
 </div>
@@ -503,13 +509,13 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The number of 64-bit words needed to store <b>bitCount</b> amount of bits. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_bit_set_8hpp_source.html#l00273">273</a> of file <a class="el" href="_bit_set_8hpp_source.html">BitSet.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  274</span>        {</div>
-<div class="line"><span class="lineno">  275</span>            <span class="keywordflow">if</span> ((bitCount &amp; (~<span class="keyword">static_cast&lt;</span><a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a><span class="keyword">&gt;</span>(0b111111))) == bitCount)</div>
-<div class="line"><span class="lineno">  276</span>                <span class="keywordflow">return</span> bitCount &gt;&gt; 6; <span class="comment">// if bitCount is a multiple of 64, return bitCount / 64</span></div>
-<div class="line"><span class="lineno">  277</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  278</span>                <span class="keywordflow">return</span> (bitCount &gt;&gt; 6) + 1; <span class="comment">// or else, add one word to contain the extra bits</span></div>
-<div class="line"><span class="lineno">  279</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_bit_set_8hpp_source.html#l00319">319</a> of file <a class="el" href="_bit_set_8hpp_source.html">BitSet.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  320</span>        {</div>
+<div class="line"><span class="lineno">  321</span>            <span class="keywordflow">if</span> ((bitCount &amp; (~<span class="keyword">static_cast&lt;</span><a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a><span class="keyword">&gt;</span>(0b111111))) == bitCount)</div>
+<div class="line"><span class="lineno">  322</span>                <span class="keywordflow">return</span> bitCount &gt;&gt; 6; <span class="comment">// if bitCount is a multiple of 64, return bitCount / 64</span></div>
+<div class="line"><span class="lineno">  323</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  324</span>                <span class="keywordflow">return</span> (bitCount &gt;&gt; 6) + 1; <span class="comment">// or else, add one word to contain the extra bits</span></div>
+<div class="line"><span class="lineno">  325</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -631,6 +637,102 @@ Friends</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a0ea58e4406f7addbc3fc5a6356a5da04" name="a0ea58e4406f7addbc3fc5a6356a5da04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ea58e4406f7addbc3fc5a6356a5da04">&#9670;&#160;</a></span>lastSet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_bit_set_8hpp.html#a80a8d26d1dc1a492f730825a5cec4031">BIT_SET_CONSTEXPR</a> <a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> util::BitSet::lastSet </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Finds the last set bit in the set. </p>
+<dl class="section note"><dt>Note</dt><dd>If the set does not contain a single 'one' bit, the return value is 0.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The position of the last set bit. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_bit_set_8hpp_source.html#l00247">247</a> of file <a class="el" href="_bit_set_8hpp_source.html">BitSet.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  248</span>        {</div>
+<div class="line"><span class="lineno">  249</span>            <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/integer.html">std::uint64_t</a> <a class="code hl_function" href="classutil_1_1_bit_set.html#a349731228e9b8c79618360b357be3735">mask</a> = ~((<a class="code hl_namespaceRef" href="http://en.cppreference.com/w/namespacestd.html">~std</a>::uint64_t(0)) &lt;&lt; (<a class="code hl_variable" href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">_size</a> &amp; 0b111111));</div>
+<div class="line"><span class="lineno">  250</span>            <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> word_pos = <a class="code hl_variable" href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">_size</a> &gt;&gt; 6;</div>
+<div class="line"><span class="lineno">  251</span>            <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/integer.html">std::uint64_t</a> word = this-&gt;<a class="code hl_variable" href="classutil_1_1_bit_set.html#a9509e8497148ab22f834f27c68aa09d3">_store</a>[word_pos] &amp; <a class="code hl_function" href="classutil_1_1_bit_set.html#a349731228e9b8c79618360b357be3735">mask</a>;</div>
+<div class="line"><span class="lineno">  252</span> </div>
+<div class="line"><span class="lineno">  253</span>            <span class="keywordflow">while</span> (word == 0) {</div>
+<div class="line"><span class="lineno">  254</span>                <span class="comment">// Avoid underflow</span></div>
+<div class="line"><span class="lineno">  255</span>                <span class="keywordflow">if</span> (word_pos == 0)</div>
+<div class="line"><span class="lineno">  256</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  257</span>                --word_pos;</div>
+<div class="line"><span class="lineno">  258</span>                word = this-&gt;<a class="code hl_variable" href="classutil_1_1_bit_set.html#a9509e8497148ab22f834f27c68aa09d3">_store</a>[word_pos];</div>
+<div class="line"><span class="lineno">  259</span>            }</div>
+<div class="line"><span class="lineno">  260</span>            <span class="keywordflow">if</span> (word == 0)</div>
+<div class="line"><span class="lineno">  261</span>                <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  262</span>            <span class="keywordflow">return</span> (word_pos &lt;&lt; 6) + <span class="keyword">static_cast&lt;</span><a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a><span class="keyword">&gt;</span>(0b111111 - <a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/numeric/countl_zero.html">std::countl_zero</a>(word));</div>
+<div class="line"><span class="lineno">  263</span>        }</div>
+<div class="ttc" id="acountl_zero_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/numeric/countl_zero.html">std::countl_zero</a></div><div class="ttdeci">T countl_zero(T... args)</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad0e6dd9ad01d3690cf27f8a711ac7353" name="ad0e6dd9ad01d3690cf27f8a711ac7353"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0e6dd9ad01d3690cf27f8a711ac7353">&#9670;&#160;</a></span>lastUnset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_bit_set_8hpp.html#a80a8d26d1dc1a492f730825a5cec4031">BIT_SET_CONSTEXPR</a> <a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> util::BitSet::lastUnset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Finds the last unset bit in the set. </p>
+<dl class="section note"><dt>Note</dt><dd>If the set does not contain a single 'zero' bit, the return value is 0.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The position of the last set bit. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_bit_set_8hpp_source.html#l00290">290</a> of file <a class="el" href="_bit_set_8hpp_source.html">BitSet.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  291</span>        {</div>
+<div class="line"><span class="lineno">  292</span>            <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/integer.html">std::uint64_t</a> <a class="code hl_function" href="classutil_1_1_bit_set.html#a349731228e9b8c79618360b357be3735">mask</a> = ~((<a class="code hl_namespaceRef" href="http://en.cppreference.com/w/namespacestd.html">~std</a>::uint64_t(0)) &lt;&lt; (<a class="code hl_variable" href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">_size</a> &amp; 0b111111));</div>
+<div class="line"><span class="lineno">  293</span>            <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> word_pos = <a class="code hl_variable" href="classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3">_size</a> &gt;&gt; 6;</div>
+<div class="line"><span class="lineno">  294</span>            <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/integer.html">std::uint64_t</a> word = this-&gt;<a class="code hl_variable" href="classutil_1_1_bit_set.html#a9509e8497148ab22f834f27c68aa09d3">_store</a>[word_pos] | (~mask);</div>
+<div class="line"><span class="lineno">  295</span> </div>
+<div class="line"><span class="lineno">  296</span>            <span class="keywordflow">while</span> (word == (~<a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/integer.html">std::uint64_t</a>(0))) {</div>
+<div class="line"><span class="lineno">  297</span>                <span class="comment">// Avoid underflow</span></div>
+<div class="line"><span class="lineno">  298</span>                <span class="keywordflow">if</span> (word_pos == 0)</div>
+<div class="line"><span class="lineno">  299</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  300</span>                --word_pos;</div>
+<div class="line"><span class="lineno">  301</span>                word = this-&gt;<a class="code hl_variable" href="classutil_1_1_bit_set.html#a9509e8497148ab22f834f27c68aa09d3">_store</a>[word_pos];</div>
+<div class="line"><span class="lineno">  302</span>            }</div>
+<div class="line"><span class="lineno">  303</span>            <span class="keywordflow">if</span> (word == (~<a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/integer.html">std::uint64_t</a>(0)))</div>
+<div class="line"><span class="lineno">  304</span>                <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  305</span>            <span class="keywordflow">return</span> (word_pos &lt;&lt; 6) + <span class="keyword">static_cast&lt;</span><a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a><span class="keyword">&gt;</span>(0b111111 - <a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/numeric/countl_one.html">std::countl_one</a>(word));</div>
+<div class="line"><span class="lineno">  306</span>        }</div>
+<div class="ttc" id="acountl_one_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/numeric/countl_one.html">std::countl_one</a></div><div class="ttdeci">T countl_one(T... args)</div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a349731228e9b8c79618360b357be3735" name="a349731228e9b8c79618360b357be3735"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a349731228e9b8c79618360b357be3735">&#9670;&#160;</a></span>mask()</h2>
 
@@ -656,10 +758,10 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The bit mask for the requested bit position. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_bit_set_8hpp_source.html#l00267">267</a> of file <a class="el" href="_bit_set_8hpp_source.html">BitSet.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  268</span>        {</div>
-<div class="line"><span class="lineno">  269</span>            <span class="keywordflow">return</span> <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/integer.html">std::uint64_t</a>(1) &lt;&lt; (pos &amp; 0b111111);</div>
-<div class="line"><span class="lineno">  270</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_bit_set_8hpp_source.html#l00313">313</a> of file <a class="el" href="_bit_set_8hpp_source.html">BitSet.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  314</span>        {</div>
+<div class="line"><span class="lineno">  315</span>            <span class="keywordflow">return</span> <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/integer.html">std::uint64_t</a>(1) &lt;&lt; (pos &amp; 0b111111);</div>
+<div class="line"><span class="lineno">  316</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -898,7 +1000,7 @@ Friends</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">  127</span>        {</div>
 <div class="line"><span class="lineno">  128</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classutil_1_1_bit_set.html#adbc690e56987545c1ffef321f4bfc8cf">Reference</a>(*<span class="keyword">this</span>, pos);</div>
 <div class="line"><span class="lineno">  129</span>        }</div>
-<div class="ttc" id="aclassutil_1_1_bit_set_html_adbc690e56987545c1ffef321f4bfc8cf"><div class="ttname"><a href="classutil_1_1_bit_set.html#adbc690e56987545c1ffef321f4bfc8cf">util::BitSet::Reference</a></div><div class="ttdeci">friend Reference</div><div class="ttdef"><b>Definition</b> <a href="_bit_set_8hpp_source.html#l00287">BitSet.hpp:287</a></div></div>
+<div class="ttc" id="aclassutil_1_1_bit_set_html_adbc690e56987545c1ffef321f4bfc8cf"><div class="ttname"><a href="classutil_1_1_bit_set.html#adbc690e56987545c1ffef321f4bfc8cf">util::BitSet::Reference</a></div><div class="ttdeci">friend Reference</div><div class="ttdef"><b>Definition</b> <a href="_bit_set_8hpp_source.html#l00333">BitSet.hpp:333</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1378,7 +1480,7 @@ Friends</h2></td></tr>
 
 <p>Used by unit tests to access <a class="el" href="classutil_1_1_bit_set.html" title="Mimics the API of std::bitset but with the dynamic properties of std::vector&lt;bool&gt;">BitSet</a> internals. </p>
 
-<p class="definition">Definition at line <a class="el" href="_bit_set_8hpp_source.html#l00289">289</a> of file <a class="el" href="_bit_set_8hpp_source.html">BitSet.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_bit_set_8hpp_source.html#l00335">335</a> of file <a class="el" href="_bit_set_8hpp_source.html">BitSet.hpp</a>.</p>
 
 </div>
 </div>
@@ -1403,7 +1505,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_bit_set_8hpp_source.html#l00263">263</a> of file <a class="el" href="_bit_set_8hpp_source.html">BitSet.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_bit_set_8hpp_source.html#l00309">309</a> of file <a class="el" href="_bit_set_8hpp_source.html">BitSet.hpp</a>.</p>
 
 </div>
 </div>
@@ -1427,7 +1529,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_bit_set_8hpp_source.html#l00264">264</a> of file <a class="el" href="_bit_set_8hpp_source.html">BitSet.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_bit_set_8hpp_source.html#l00310">310</a> of file <a class="el" href="_bit_set_8hpp_source.html">BitSet.hpp</a>.</p>
 
 </div>
 </div>
@@ -1451,7 +1553,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_bit_set_8hpp_source.html#l00287">287</a> of file <a class="el" href="_bit_set_8hpp_source.html">BitSet.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_bit_set_8hpp_source.html#l00333">333</a> of file <a class="el" href="_bit_set_8hpp_source.html">BitSet.hpp</a>.</p>
 
 </div>
 </div>

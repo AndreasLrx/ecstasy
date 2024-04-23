@@ -102,22 +102,23 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "01__basic__window_2main_8cpp.html",
-"_storage_concepts_8hpp_source.html",
-"classecstasy_1_1_marker_storage.html#a7c697b2ad2d657b18da9969e6e97c5c4",
-"classecstasy_1_1_system_instances_1_1_comparer.html#a7db1c7cce74e71dfe4a0fd49413fa7d5",
-"classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html#a214ef3b796f970818b539402e48750d5",
-"classecstasy_1_1integration_1_1user__action_1_1_users.html#a4d6918009ceefcaf33a4b3aa1300ad8a",
-"classecstasy_1_1thread_1_1_lockable_view.html#a5d83bcd049020c9c8300d22adbe2502f",
-"classutil_1_1serialization_1_1_i_array_node.html#ab2087863e992ce1fb398ffbedd1d8498",
-"classutil_1_1serialization_1_1_toml_array_node.html",
-"cpp/algorithm/max.html",
-"cpp/experimental/fs/current_path.html",
-"cpp/io/c/vfwscanf.html",
-"cpp/numeric/midpoint.html",
-"cpp/types/is_default_constructible.html",
-"integrations_2event_2inputs_2include_8hpp_source.html",
-"structecstasy_1_1component__type_3_01_q_01_4.html#afefee5490755b3d095ac247f90f976e3",
-"structecstasy_1_1query_1_1_condition_3_01ptr_left_00_01ptr_right_00_01_comparer_01_4.html#a0f4818531a80b5a201ec865916578f82"
+"_storage_concepts_8hpp.html#a2c011da268733486119ae199f8bb4a04",
+"classecstasy_1_1_marker_storage.html",
+"classecstasy_1_1_system_instances.html#ae7e13bc178e7457825f5e3e2c8481f15",
+"classecstasy_1_1integration_1_1event_1_1_gamepad_sequence_listener.html#ab2178611f35a6daafcd2629ddf7022e8",
+"classecstasy_1_1integration_1_1user__action_1_1_user_profile.html#a90da4730ab8ccdfcedb27c42693a0a4f",
+"classecstasy_1_1query_1_1modifier_1_1_xor_impl.html",
+"classutil_1_1serialization_1_1_a_node.html#abc0b24e5d2e07d3b99060a3f0c1e42f6",
+"classutil_1_1serialization_1_1_polymorphic_iterator.html#aedc63b1d6cc934d9b4cd776f9a5beef0",
+"cpp/algorithm/copy_n.html",
+"cpp/error/get_unexpected.html",
+"cpp/io/c/fwprintf.html",
+"cpp/numeric/math/isunordered.html",
+"cpp/thread/try_lock.html",
+"functions_j.html",
+"structecstasy_1_1_or.html",
+"structecstasy_1_1modifiers__allocator__size_3_01_q_00_01_qs_8_8_8_01_4.html",
+"structutil_1_1meta_1_1type__set__eq_3_01std_1_1tuple_3_01_ts1_8_8_8_01_4_00_01std_1_1tuple_3_01_ts2_8_8_8_01_4_01_4.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

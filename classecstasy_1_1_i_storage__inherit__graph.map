@@ -1,7 +1,11 @@
 <map id="ecstasy::IStorage" name="ecstasy::IStorage">
-<area shape="rect" id="Node000001" title="Base class of all components storage." alt="" coords="151,5,285,31"/>
-<area shape="rect" id="Node000002" href="$classecstasy_1_1_map_storage.html" title="Associative Map to store entity components." alt="" coords="5,79,201,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,40,123,81,121,76,187,35"/>
-<area shape="rect" id="Node000003" href="$classecstasy_1_1_marker_storage.html" title="Storage for empty components." alt="" coords="226,79,439,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="249,35,315,76,313,81,246,40"/>
+<area shape="rect" id="Node000001" title="Base class of all components storage." alt="" coords="266,5,399,31"/>
+<area shape="rect" id="Node000002" href="$classecstasy_1_1_a_storage.html" title="Abstract class for all components storage." alt="" coords="244,79,421,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="335,44,335,79,330,79,330,44"/>
+<area shape="rect" id="Node000003" href="$classecstasy_1_1_map_storage.html" title="Associative Map to store entity components Recommended for sparse components." alt="" coords="5,152,201,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="283,111,141,154,140,149,282,106"/>
+<area shape="rect" id="Node000004" href="$classecstasy_1_1_marker_storage.html" title="Storage for empty components." alt="" coords="226,152,439,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="335,118,335,152,330,152,330,118"/>
+<area shape="rect" id="Node000005" href="$classecstasy_1_1_vector_storage.html" title="Linear vector to store entity components." alt="" coords="464,152,673,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="384,105,531,149,530,154,383,110"/>
 </map>

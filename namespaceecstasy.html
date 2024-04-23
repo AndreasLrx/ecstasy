@@ -124,6 +124,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1_and_ex.html">AndEx</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Placeholder for <a class="el" href="namespaceecstasy_1_1query_1_1modifier.html#af3b38801bd60e121da0b71baaf547dcb">ecstasy::query::modifier::And</a>.  <a href="structecstasy_1_1_and_ex.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_a_storage.html">AStorage</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract class for all components storage.  <a href="classecstasy_1_1_a_storage.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1component__type.html">component_type</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the component type of the given type.  <a href="structecstasy_1_1component__type.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,7 +164,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">System interface, base class of all systems.  <a href="classecstasy_1_1_i_system.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_map_storage.html">MapStorage</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Associative Map to store entity components.  <a href="classecstasy_1_1_map_storage.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Associative Map to store entity components Recommended for sparse components.  <a href="classecstasy_1_1_map_storage.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_marker_storage.html">MarkerStorage</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Storage for empty components.  <a href="classecstasy_1_1_marker_storage.html#details">More...</a><br /></td></tr>
@@ -225,6 +228,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_system_instances.html">SystemInstances</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set of instances inheriting from the <b>Base</b> type.  <a href="classecstasy_1_1_system_instances.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_vector_storage.html">VectorStorage</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear vector to store entity components.  <a href="classecstasy_1_1_vector_storage.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1_xor.html">Xor</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Placeholder for <a class="el" href="namespaceecstasy_1_1query_1_1modifier.html#a33f419fd9483cc8440d37b724fc4054e">ecstasy::query::modifier::Xor</a>.  <a href="structecstasy_1_1_xor.html#details">More...</a><br /></td></tr>
@@ -376,7 +382,7 @@ template&lt;typename C &gt; </div>
 
 <p>Get the storage type to use for a component. </p>
 <p>You can set the storage type to use for a component by defining a <b>StorageType</b> member type in the component. If you can't modify the component, you can still use the <a class="el" href="_storage_concepts_8hpp.html#a5081c2ba8fc64b28d27cdf3d74ffa960">SET_COMPONENT_STORAGE</a> macro.</p>
-<dl class="section note"><dt>Note</dt><dd>By default, it uses <b><a class="el" href="classecstasy_1_1_map_storage.html" title="Associative Map to store entity components.">MapStorage</a></b>. </dd>
+<dl class="section note"><dt>Note</dt><dd>By default, it uses <b><a class="el" href="classecstasy_1_1_map_storage.html" title="Associative Map to store entity components Recommended for sparse components.">MapStorage</a></b>. </dd>
 <dd>
 If C is const, the storage type will be const.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>

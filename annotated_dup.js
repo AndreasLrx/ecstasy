@@ -91,6 +91,7 @@ var annotated_dup =
       ] ],
       [ "And", "structecstasy_1_1_and.html", "structecstasy_1_1_and" ],
       [ "AndEx", "structecstasy_1_1_and_ex.html", "structecstasy_1_1_and_ex" ],
+      [ "AStorage", "classecstasy_1_1_a_storage.html", "classecstasy_1_1_a_storage" ],
       [ "component_type", "structecstasy_1_1component__type.html", "structecstasy_1_1component__type" ],
       [ "component_type< Q >", "structecstasy_1_1component__type_3_01_q_01_4.html", "structecstasy_1_1component__type_3_01_q_01_4" ],
       [ "component_type< S >", "structecstasy_1_1component__type_3_01_s_01_4.html", "structecstasy_1_1component__type_3_01_s_01_4" ],
@@ -126,6 +127,7 @@ var annotated_dup =
       [ "Resource", "classecstasy_1_1_resource.html", "classecstasy_1_1_resource" ],
       [ "ResourceBase", "classecstasy_1_1_resource_base.html", "classecstasy_1_1_resource_base" ],
       [ "SystemInstances", "classecstasy_1_1_system_instances.html", "classecstasy_1_1_system_instances" ],
+      [ "VectorStorage", "classecstasy_1_1_vector_storage.html", "classecstasy_1_1_vector_storage" ],
       [ "Xor", "structecstasy_1_1_xor.html", "structecstasy_1_1_xor" ],
       [ "XorEx", "structecstasy_1_1_xor_ex.html", "structecstasy_1_1_xor_ex" ]
     ] ],
