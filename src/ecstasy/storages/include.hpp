@@ -12,6 +12,7 @@
 #ifndef ECSTASY_STORAGES_HPP_
 #define ECSTASY_STORAGES_HPP_
 
+#include "AStorage.hpp"
 #include "IStorage.hpp"
 #include "Instances.hpp"
 #include "MapStorage.hpp"

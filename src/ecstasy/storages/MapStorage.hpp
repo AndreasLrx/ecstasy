@@ -14,9 +14,7 @@
 
 #include <unordered_map>
 
-#include "IStorage.hpp"
-#include "ecstasy/resources/entity/Entity.hpp"
-#include "util/BitSet.hpp"
+#include "AStorage.hpp"
 
 namespace ecstasy
 {
@@ -30,16 +28,9 @@ namespace ecstasy
     /// @since 1.0.0 (2022-10-19)
     ///
     template <typename C>
-    class MapStorage : public IStorage {
+    class MapStorage : public AStorage<C> {
       public:
-        /// @brief IsStorage constraint
-        using Component = C;
-
-        /// @brief @ref ecstasy::query::QueryableObject constraint.
-        using QueryData = C &;
-        /// @brief @ref ecstasy::query::ConstQueryableObject constraint.
-        using ConstQueryData = const C &;
-
+        using Component = typename AStorage<C>::Component;
         ///
         /// @brief Construct a new Map Storage for a given Component type.
         ///
@@ -81,18 +72,8 @@ namespace ecstasy
             return _components.emplace(std::make_pair(index, Component(std::forward<Args>(args)...))).first->second;
         }
 
-        ///
-        /// @brief Erase the @b Component instance associated to the given entity.
-        ///
-        /// @note Does nothing if the index doesn't match with any component (ie if the entity doesn't have a component
-        /// @b Component)
-        ///
-        /// @param[in] index Index of the entity.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-19)
-        ///
-        bool erase(Entity::Index index)
+        /// @copydoc AStorage::erase(Entity::Index)
+        bool erase(Entity::Index index) override final
         {
             auto it = _components.find(index);
 
@@ -104,108 +85,16 @@ namespace ecstasy
             return false;
         }
 
-        ///
-        /// @brief Erase multiple @b Component instances associated to the given @p entities.
-        ///
-        /// @note Does nothing for entity without attached component (ie if the entity doesn't have a component
-        /// @b Component)
-        ///
-        /// @param[in] entities target entities.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-21)
-        ///
-        void erase(std::span<Entity> entities) override final
-        {
-            for (Entity entity : entities)
-                erase(entity.getIndex());
-        }
-
-        ///
-        /// @brief Retrieve the @b Component instance associated to the given entity.
-        ///
-        /// @param[in] index Index of the entity.
-        ///
-        /// @return const Component& Const reference to the associated component.
-        ///
-        /// @throw std::out_of_range If the entity doesn't have the component.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-19)
-        ///
-        const Component &operator[](Entity::Index index) const
+        /// @copydoc AStorage::operator[]
+        Component &operator[](Entity::Index index) override final
         {
             return _components.at(index);
         }
 
-        ///
-        /// @brief Retrieve the @b Component instance associated to the given entity.
-        ///
-        /// @param[in] index Index of the entity.
-        ///
-        /// @return Component& Reference to the associated component.
-        ///
-        /// @throw std::out_of_range If the entity doesn't have the component.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-19)
-        ///
-        Component &operator[](Entity::Index index)
+        /// @copydoc AStorage::operator[]
+        const Component &operator[](Entity::Index index) const override final
         {
             return _components.at(index);
-        }
-
-        ///
-        /// @brief Retrieve the @b Component instance associated to the given entity.
-        ///
-        /// @note @ref ecstasy::query::QueryableObject constraint.
-        ///
-        /// @param[in] index Index of the entity.
-        ///
-        /// @return Component& Reference to the associated component.
-        ///
-        /// @throw std::out_of_range If the entity doesn't have the component.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-19)
-        ///
-        Component &getQueryData(Entity::Index index)
-        {
-            return _components.at(index);
-        }
-
-        ///
-        /// @brief Retrieve the const @b Component instance associated to the given entity.
-        ///
-        /// @note @ref ecstasy::query::ConstQueryableObject constraint.
-        ///
-        /// @param[in] index Index of the entity.
-        ///
-        /// @return const Component& Const reference to the associated component.
-        ///
-        /// @throw std::out_of_range If the entity doesn't have the component.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2024-04-03)
-        ///
-        const Component &getQueryData(Entity::Index index) const
-        {
-            return _components.at(index);
-        }
-
-        ///
-        /// @brief Test if the entity index match a @b Component instance.
-        ///
-        /// @param[in] index Index of the entity.
-        ///
-        /// @return bool True if the entity has a component, false otherwise.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-19)
-        ///
-        bool contains(Entity::Index index) const
-        {
-            return _components.find(index) != _components.end();
         }
 
         ///
@@ -221,18 +110,7 @@ namespace ecstasy
             return _components.size();
         }
 
-        ///
-        /// @brief Get the Component Mask.
-        ///
-        /// @note Each bit set to true mean the entity at the bit index has a component @b C.
-        /// @note @ref ecstasy::query::QueryableObject constraint.
-        /// @warning The mask might be smaller than the entity count.
-        ///
-        /// @return const util::BitSet& Component mask.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-20)
-        ///
+        /// @copydoc IStorage::getMask
         constexpr const util::BitSet &getMask() const override final
         {
             return _mask;

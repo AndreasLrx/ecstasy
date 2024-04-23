@@ -12,9 +12,7 @@
 #ifndef ECSTASY_STORAGE_MARKERSTORAGE_HPP_
 #define ECSTASY_STORAGE_MARKERSTORAGE_HPP_
 
-#include "IStorage.hpp"
-#include "ecstasy/resources/entity/Entity.hpp"
-#include "util/BitSet.hpp"
+#include "AStorage.hpp"
 
 namespace ecstasy
 {
@@ -28,15 +26,10 @@ namespace ecstasy
     /// @since 1.0.0 (2024-04-22)
     ///
     template <typename C>
-    class MarkerStorage : public IStorage {
+    class MarkerStorage : public AStorage<C> {
       public:
         /// @brief IsStorage constraint
-        using Component = C;
-
-        /// @brief @ref ecstasy::query::QueryableObject constraint.
-        using QueryData = C &;
-        /// @brief @ref ecstasy::query::ConstQueryableObject constraint.
-        using ConstQueryData = const C &;
+        using Component = typename AStorage<C>::Component;
 
         ///
         /// @brief Construct a new Marker Storage for a given Component type.
@@ -82,19 +75,8 @@ namespace ecstasy
             return _defaultComponent;
         }
 
-        ///
-        /// @brief Erase the marker of the given entity.
-        ///
-        /// @note Does nothing if the entity doesn't have the marker.
-        ///
-        /// @param[in] index Index of the entity.
-        ///
-        /// @return bool True if the marker was erased, false otherwise.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2024-04-22)
-        ///
-        bool erase(Entity::Index index)
+        /// @copydoc AStorage::erase(Entity::Index)
+        bool erase(Entity::Index index) override final
         {
             if (_mask.size() <= index)
                 return false;
@@ -104,118 +86,21 @@ namespace ecstasy
             return result;
         }
 
-        ///
-        /// @brief Erase the marker from multiple @p entities.
-        ///
-        /// @note Does nothing for entity without the marker.
-        ///
-        /// @param[in] entities target entities.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2024-04-22)
-        ///
-        void erase(std::span<Entity> entities) override final
+        /// @copydoc AStorage::operator[]
+        Component &operator[](Entity::Index index) noexcept override final
         {
-            for (Entity entity : entities)
-                erase(entity.getIndex());
-        }
-
-        ///
-        /// @brief Retrieve the default marker if the entity is marked.
-        ///
-        /// @param[in] index Index of the entity.
-        ///
-        /// @return const Component& Const reference to the internal marker.
-        ///
-        /// @throw std::out_of_range If the entity doesn't have the marker.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2024-04-22)
-        ///
-        const Component &operator[](Entity::Index index) const
-        {
-            if (!this->contains(index))
-                throw std::out_of_range("Entity doesn't have the marker.");
+            (void)index;
             return _defaultComponent;
         }
 
-        /// @copydoc MarkerStorage::operator[]
-        Component &operator[](Entity::Index index)
+        /// @copydoc AStorage::operator[]
+        const Component &operator[](Entity::Index index) const noexcept override final
         {
-            if (!this->contains(index))
-                throw std::out_of_range("Entity doesn't have the marker.");
+            (void)index;
             return _defaultComponent;
         }
 
-        ///
-        /// @brief Retrieve the default marker if the entity is marked.
-        ///
-        /// @note @ref ecstasy::query::QueryableObject constraint.
-        ///
-        /// @param[in] index Index of the entity.
-        ///
-        /// @return Component& Reference to the default marker.
-        ///
-        /// @throw std::out_of_range If the entity doesn't have the marker.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2024-04-22)
-        ///
-        Component &getQueryData(Entity::Index index)
-        {
-            if (!this->contains(index))
-                throw std::out_of_range("Entity doesn't have the marker.");
-            return _defaultComponent;
-        }
-
-        ///
-        /// @brief Retrieve the default marker if the entity is marked.
-        ///
-        /// @note @ref ecstasy::query::ConstQueryableObject constraint.
-        ///
-        /// @param[in] index Index of the entity.
-        ///
-        /// @return const Component& Const reference to the default marker.
-        ///
-        /// @throw std::out_of_range If the entity doesn't have the marker.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2024-04-03)
-        ///
-        const Component &getQueryData(Entity::Index index) const
-        {
-            if (!this->contains(index))
-                throw std::out_of_range("Entity doesn't have the marker.");
-            return _defaultComponent;
-        }
-
-        ///
-        /// @brief Test if the entity index is marked.
-        ///
-        /// @param[in] index Index of the entity.
-        ///
-        /// @return bool True if the entity is marked, false otherwise.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2024-04-22)
-        ///
-        bool contains(Entity::Index index) const
-        {
-            return (index < _mask.size()) && _mask[index];
-        }
-
-        ///
-        /// @brief Get the marker Mask.
-        ///
-        /// @note Each bit set to true mean the entity at the bit index is marked.
-        /// @note @ref ecstasy::query::QueryableObject constraint.
-        /// @warning The mask might be smaller than the entity count.
-        ///
-        /// @return const util::BitSet& Marker mask.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2024-04-22)
-        ///
+        /// @copydoc IStorage::getMask
         constexpr const util::BitSet &getMask() const override final
         {
             return _mask;
