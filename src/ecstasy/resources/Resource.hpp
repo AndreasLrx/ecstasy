@@ -59,7 +59,13 @@ namespace ecstasy
         ///
         R *operator->()
         {
-            return this;
+            return dynamic_cast<R *>(this);
+        }
+
+        /// @copydoc Resource::operator->()
+        const R *operator->() const
+        {
+            return dynamic_cast<const R *>(this);
         }
     };
 } // namespace ecstasy
