@@ -543,6 +543,12 @@ namespace ecstasy
             ///
             Entity build();
 
+            /// @copydoc Entities::Builder::getEntity
+            const Entity &getEntity() const
+            {
+                return _builder.getEntity();
+            }
+
           private:
             Registry &_registry;
             Entities::Builder _builder;

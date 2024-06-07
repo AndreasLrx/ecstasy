@@ -108,6 +108,22 @@ namespace ecstasy
             ///
             Entity build();
 
+            ///
+            /// @brief Get a const reference to the entity being built.
+            ///
+            /// @warning This method is here in case you need the entity id before calling @ref build(). For example if
+            /// you need it inside a component constructor.
+            ///
+            /// @return const Entity& Entity being built.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2024-06-07)
+            ///
+            const Entity &getEntity() const
+            {
+                return _entity;
+            }
+
           private:
             Entities &_parent;
             Entity _entity;
