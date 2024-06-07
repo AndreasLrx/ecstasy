@@ -1,5 +1,9 @@
 var NAVTREEINDEX14 =
 {
+"functions_func_w.html":[7,3,1,22],
+"functions_func_x.html":[7,3,1,23],
+"functions_func_~.html":[7,3,1,24],
+"functions_g.html":[7,3,0,8],
 "functions_h.html":[7,3,0,9],
 "functions_i.html":[7,3,0,10],
 "functions_j.html":[7,3,0,11],
@@ -26,8 +30,8 @@ var NAVTREEINDEX14 =
 "globals_defs.html":[8,1,2],
 "globals_func.html":[8,1,1],
 "hierarchy.html":[7,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index_8hpp.html":[8,0,1,1,0,4],
 "index_8hpp.html#a8badee472633419708bb1de289e22ea8":[8,0,1,1,0,4,2],
 "index_8hpp_source.html":[8,0,1,1,0,4],
@@ -238,16 +242,12 @@ var NAVTREEINDEX14 =
 "structecstasy_1_1_and.html":[7,0,0,3],
 "structecstasy_1_1_and.html#a1fd497dadad5aca7f7ff115170d51d38":[5,0,0,3,0],
 "structecstasy_1_1_and.html#a1fd497dadad5aca7f7ff115170d51d38":[7,0,0,3,0],
-"structecstasy_1_1_and_ex.html":[5,0,0,4],
 "structecstasy_1_1_and_ex.html":[7,0,0,4],
+"structecstasy_1_1_and_ex.html":[5,0,0,4],
 "structecstasy_1_1_and_ex.html#a857a4f6da7a4802864cec535ac5fb4b4":[5,0,0,4,0],
 "structecstasy_1_1_and_ex.html#a857a4f6da7a4802864cec535ac5fb4b4":[7,0,0,4,0],
 "structecstasy_1_1_empty_type.html":[5,0,0,10],
 "structecstasy_1_1_empty_type.html":[7,0,0,10],
 "structecstasy_1_1_maybe.html":[7,0,0,21],
-"structecstasy_1_1_maybe.html":[5,0,0,21],
-"structecstasy_1_1_maybe.html#a973e93729c627df3db566425757f950c":[5,0,0,21,0],
-"structecstasy_1_1_maybe.html#a973e93729c627df3db566425757f950c":[7,0,0,21,0],
-"structecstasy_1_1_not.html":[5,0,0,27],
-"structecstasy_1_1_not.html":[7,0,0,27]
+"structecstasy_1_1_maybe.html":[5,0,0,21]
 };

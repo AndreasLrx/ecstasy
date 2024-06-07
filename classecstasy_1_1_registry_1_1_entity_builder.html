@@ -162,6 +162,9 @@ requires requires() { typename C::value_type; }</td></tr>
 <tr class="memitem:ad6baf09aa8fb77d6c470295f02859aaf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1_entity.html">Entity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry_1_1_entity_builder.html#ad6baf09aa8fb77d6c470295f02859aaf">build</a> ()</td></tr>
 <tr class="memdesc:ad6baf09aa8fb77d6c470295f02859aaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalize the entity, making it alive.  <br /></td></tr>
 <tr class="separator:ad6baf09aa8fb77d6c470295f02859aaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5c5fed4ce673f722ed8a60f00290f5f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classecstasy_1_1_entity.html">Entity</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry_1_1_entity_builder.html#ac5c5fed4ce673f722ed8a60f00290f5f">getEntity</a> () const</td></tr>
+<tr class="memdesc:ac5c5fed4ce673f722ed8a60f00290f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a const reference to the entity being built.    <br /></td></tr>
+<tr class="separator:ac5c5fed4ce673f722ed8a60f00290f5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -260,8 +263,8 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   18</span>        : <a class="code hl_variable" href="classecstasy_1_1_registry_1_1_entity_builder.html#a4d8afa51a373214457652e71ccf80475">_registry</a>(registry), <a class="code hl_variable" href="classecstasy_1_1_registry_1_1_entity_builder.html#a0187e8664dd4bec9d34f15fae2ef601c">_builder</a>(registry.getResource&lt;Entities&gt;()-&gt;builder())</div>
 <div class="line"><span class="lineno">   19</span>    {</div>
 <div class="line"><span class="lineno">   20</span>    }</div>
-<div class="ttc" id="aclassecstasy_1_1_registry_1_1_entity_builder_html_a0187e8664dd4bec9d34f15fae2ef601c"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_entity_builder.html#a0187e8664dd4bec9d34f15fae2ef601c">ecstasy::Registry::EntityBuilder::_builder</a></div><div class="ttdeci">Entities::Builder _builder</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00548">Registry.hpp:548</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_registry_1_1_entity_builder_html_a4d8afa51a373214457652e71ccf80475"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_entity_builder.html#a4d8afa51a373214457652e71ccf80475">ecstasy::Registry::EntityBuilder::_registry</a></div><div class="ttdeci">Registry &amp; _registry</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00547">Registry.hpp:547</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_1_1_entity_builder_html_a0187e8664dd4bec9d34f15fae2ef601c"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_entity_builder.html#a0187e8664dd4bec9d34f15fae2ef601c">ecstasy::Registry::EntityBuilder::_builder</a></div><div class="ttdeci">Entities::Builder _builder</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00554">Registry.hpp:554</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_1_1_entity_builder_html_a4d8afa51a373214457652e71ccf80475"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_entity_builder.html#a4d8afa51a373214457652e71ccf80475">ecstasy::Registry::EntityBuilder::_registry</a></div><div class="ttdeci">Registry &amp; _registry</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00553">Registry.hpp:553</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -297,6 +300,43 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   24</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry_1_1_entity_builder.html#a0187e8664dd4bec9d34f15fae2ef601c">_builder</a>.<a class="code hl_function" href="classecstasy_1_1_entities_1_1_builder.html#ae5ec38f89997d70c29afdfc195cf1824">build</a>();</div>
 <div class="line"><span class="lineno">   25</span>    }</div>
 <div class="ttc" id="aclassecstasy_1_1_entities_1_1_builder_html_ae5ec38f89997d70c29afdfc195cf1824"><div class="ttname"><a href="classecstasy_1_1_entities_1_1_builder.html#ae5ec38f89997d70c29afdfc195cf1824">ecstasy::Entities::Builder::build</a></div><div class="ttdeci">Entity build()</div><div class="ttdoc">Finalize the entity, making it alive.</div><div class="ttdef"><b>Definition</b> <a href="_entities_8cpp_source.html#l00027">Entities.cpp:27</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac5c5fed4ce673f722ed8a60f00290f5f" name="ac5c5fed4ce673f722ed8a60f00290f5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5c5fed4ce673f722ed8a60f00290f5f">&#9670;&#160;</a></span>getEntity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classecstasy_1_1_entity.html">Entity</a> &amp; ecstasy::Registry::EntityBuilder::getEntity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get a const reference to the entity being built.   </p>
+<dl class="section warning"><dt>Warning</dt><dd>This method is here in case you need the entity id before calling <a class="el" href="classecstasy_1_1_registry_1_1_entity_builder.html#ad6baf09aa8fb77d6c470295f02859aaf">build()</a>. For example if you need it inside a component constructor.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>const <a class="el" href="classecstasy_1_1_entity.html" title="Encapsulate an index to an entity.">Entity</a>&amp; <a class="el" href="classecstasy_1_1_entity.html" title="Encapsulate an index to an entity.">Entity</a> being built.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-06-07)   </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00547">547</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  548</span>            {</div>
+<div class="line"><span class="lineno">  549</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry_1_1_entity_builder.html#a0187e8664dd4bec9d34f15fae2ef601c">_builder</a>.<a class="code hl_function" href="classecstasy_1_1_entities_1_1_builder.html#a1d341f87ca2eea4e18ec90024cd360d2">getEntity</a>();</div>
+<div class="line"><span class="lineno">  550</span>            }</div>
+<div class="ttc" id="aclassecstasy_1_1_entities_1_1_builder_html_a1d341f87ca2eea4e18ec90024cd360d2"><div class="ttname"><a href="classecstasy_1_1_entities_1_1_builder.html#a1d341f87ca2eea4e18ec90024cd360d2">ecstasy::Entities::Builder::getEntity</a></div><div class="ttdeci">const Entity &amp; getEntity() const</div><div class="ttdoc">Get a const reference to the entity being built.</div><div class="ttdef"><b>Definition</b> <a href="_entities_8hpp_source.html#l00122">Entities.hpp:122</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -356,7 +396,7 @@ template&lt;typename C , typename... Args&gt; </div>
 <div class="line"><span class="lineno">  508</span>                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><span class="lineno">  509</span>            }</div>
 <div class="ttc" id="aclassecstasy_1_1_entities_1_1_builder_html_a6d7863b8f9b0b9a6efc34e78c300709a"><div class="ttname"><a href="classecstasy_1_1_entities_1_1_builder.html#a6d7863b8f9b0b9a6efc34e78c300709a">ecstasy::Entities::Builder::with</a></div><div class="ttdeci">Builder &amp; with(S &amp;storage, Args &amp;&amp;...args)</div><div class="ttdoc">Add a component to the builder target entity.</div><div class="ttdef"><b>Definition</b> <a href="_entities_8hpp_source.html#l00068">Entities.hpp:68</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_a425b11006bbd0b2175d739d64e0ebdaa"><div class="ttname"><a href="classecstasy_1_1_registry.html#a425b11006bbd0b2175d739d64e0ebdaa">ecstasy::Registry::getStorageSafe</a></div><div class="ttdeci">getStorageType&lt; C &gt; &amp; getStorageSafe() noexcept</div><div class="ttdoc">Get the Storage of a component and create it if not found.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00881">Registry.hpp:881</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_a425b11006bbd0b2175d739d64e0ebdaa"><div class="ttname"><a href="classecstasy_1_1_registry.html#a425b11006bbd0b2175d739d64e0ebdaa">ecstasy::Registry::getStorageSafe</a></div><div class="ttdeci">getStorageType&lt; C &gt; &amp; getStorageSafe() noexcept</div><div class="ttdoc">Get the Storage of a component and create it if not found.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00887">Registry.hpp:887</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -439,7 +479,7 @@ requires requires() { typename C::value_type; }</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00548">548</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00554">554</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
@@ -463,7 +503,7 @@ requires requires() { typename C::value_type; }</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00547">547</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00553">553</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
@@ -487,7 +527,7 @@ requires requires() { typename C::value_type; }</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00560">560</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00566">566</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
