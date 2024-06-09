@@ -89,6 +89,11 @@ The with() method returns the builder, allowing to chain the calls.
 @note
 Since the [entities builder](@ref ecstasy::Entities::Builder) [with()](@ref ecstasy::Entities::Builder::with) method takes the storage in parameters, it can deduce the storage/component type. You don't have to use the template parameters.
 
+@warning
+You should never try to use persistent pointers/reference to components. A component memory address is unstable and can change due to its storage. For example adding a new element to the storage may make the storage resize and **move** its components.
+Therefore you should be very carefull when using **this** inside a component constructor for example.
+In case you really need an identifier, use the entity ID.
+
 Here is an example using the two builders:
 
 ```cpp
