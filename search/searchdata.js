@@ -11,7 +11,7 @@ var indexSectionsWithContent =
   8: "abcdefghiklmnorstuv",
   9: ":buv",
   10: "_befnps",
-  11: "begt",
+  11: "begstu",
   12: "e"
 };
 

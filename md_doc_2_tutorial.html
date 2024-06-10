@@ -180,6 +180,7 @@ Creating entities</h2>
 <dl class="section note"><dt>Note</dt><dd>The with() method returns the builder, allowing to chain the calls.</dd>
 <dd>
 Since the <a class="el" href="classecstasy_1_1_entities_1_1_builder.html">entities builder</a> <a class="el" href="classecstasy_1_1_entities_1_1_builder.html#a6d7863b8f9b0b9a6efc34e78c300709a">with()</a> method takes the storage in parameters, it can deduce the storage/component type. You don't have to use the template parameters.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>You should never try to use persistent pointers/reference to components. A component memory address is unstable and can change due to its storage. For example adding a new element to the storage may make the storage resize and <b>move</b> its components. Therefore you should be very carefull when using <b>this</b> inside a component constructor for example. In case you really need an identifier, use the entity ID.</dd></dl>
 <p>Here is an example using the two builders:</p>
 <div class="fragment"><div class="line"><a class="code hl_class" href="classecstasy_1_1_registry.html">ecstasy::Registry</a> registry;</div>
 <div class="line"><a class="code hl_class" href="classecstasy_1_1_entities.html">ecstasy::Entities</a> &amp;entities = registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#aa5e142b869a115fca7f24debea38681b">getEntities</a>();</div>

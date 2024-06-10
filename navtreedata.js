@@ -65,6 +65,37 @@ var NAVTREE =
       [ "Components Management (MapStorage)", "md_doc_2_technical_implementation.html#autotoc_md36", null ],
       [ "Query", "md_doc_2_technical_implementation.html#autotoc_md37", null ]
     ] ],
+    [ "Events integration", "md_doc_2integrations_2events.html", [
+      [ "Description", "md_doc_2integrations_2events.html#autotoc_md46", [
+        [ "How to get feedback", "md_doc_2integrations_2events.html#autotoc_md47", null ],
+        [ "Event flow", "md_doc_2integrations_2events.html#autotoc_md48", null ]
+      ] ],
+      [ "Example", "md_doc_2integrations_2events.html#autotoc_md49", [
+        [ "Creating listeners components", "md_doc_2integrations_2events.html#autotoc_md50", null ],
+        [ "Sending an event", "md_doc_2integrations_2events.html#autotoc_md51", null ],
+        [ "Accessing an input state", "md_doc_2integrations_2events.html#autotoc_md52", null ]
+      ] ]
+    ] ],
+    [ "SFML integration", "md_doc_2integrations_2sfml.html", [
+      [ "Description", "md_doc_2integrations_2sfml.html#autotoc_md54", null ],
+      [ "Usage", "md_doc_2integrations_2sfml.html#autotoc_md55", null ]
+    ] ],
+    [ "User Actions integration", "md_doc_2integrations_2user__actions.html", [
+      [ "Description", "md_doc_2integrations_2user__actions.html#autotoc_md57", null ],
+      [ "Usage", "md_doc_2integrations_2user__actions.html#autotoc_md58", [
+        [ "Register your actions and bindings", "md_doc_2integrations_2user__actions.html#autotoc_md59", null ],
+        [ "Listen to your actions", "md_doc_2integrations_2user__actions.html#autotoc_md60", [
+          [ "ActionListener", "md_doc_2integrations_2user__actions.html#autotoc_md61", null ],
+          [ "ActionListeners", "md_doc_2integrations_2user__actions.html#autotoc_md62", null ],
+          [ "ActionIdListener", "md_doc_2integrations_2user__actions.html#autotoc_md63", null ]
+        ] ],
+        [ "Using intermediate actions", "md_doc_2integrations_2user__actions.html#autotoc_md64", null ],
+        [ "Saving and loading the bindings", "md_doc_2integrations_2user__actions.html#autotoc_md65", [
+          [ "Saving", "md_doc_2integrations_2user__actions.html#autotoc_md66", null ],
+          [ "Loading", "md_doc_2integrations_2user__actions.html#autotoc_md67", null ]
+        ] ]
+      ] ]
+    ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -115,10 +146,10 @@ var NAVTREEINDEX =
 "cpp/io/c/fscanf.html",
 "cpp/numeric/math/isinf.html",
 "cpp/thread/future_category.html",
-"functions_func_w.html",
-"structecstasy_1_1_maybe.html#a973e93729c627df3db566425757f950c",
-"structecstasy_1_1modifier__allocator__size_3_01_m_01_4.html",
-"structutil_1_1meta_1_1left__outer__join_3_01std_1_1tuple_3_01_lefts_8_8_8_01_4_00_01std_1_1tuple_3_01_rights_8_8_8_01_4_01_4.html"
+"functions_func_v.html",
+"registry_2modifiers_2_xor_8hpp.html",
+"structecstasy_1_1integration_1_1user__action_1_1_action.html#ae5da598d1270ea60396b4a402bc73e96",
+"structutil_1_1meta_1_1apply.html#a1292c5e6f0787ddff662096fa95c79fc"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
