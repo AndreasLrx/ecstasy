@@ -236,3 +236,22 @@ TEST(Serializer, compound_struct)
     GTEST_ASSERT_EQ(npcLoaded.pos.x, 1.0f);
     GTEST_ASSERT_EQ(npcLoaded.pos.y, -8456.0f);
 }
+
+TEST(Serializer, entityComponents)
+{
+    RawSerializer rawSerializer;
+    ecstasy::Registry registry;
+
+    ecstasy::RegistryEntity entity(
+        registry.entityBuilder().with<Position>(1.0f, -8456.0f).with<NPC>(Position(42.f, 0.f), "Steve").build(),
+        registry);
+
+    rawSerializer.saveEntity<Position, NPC>(entity);
+    std::string entitySerialized = rawSerializer.getStream().str();
+
+    rawSerializer.getStream().str("");
+    rawSerializer << typeid(Position) << entity.get<Position>() << typeid(NPC) << entity.get<NPC>();
+    std::string expected = rawSerializer.getStream().str();
+
+    GTEST_ASSERT_EQ(entitySerialized, expected);
+}
