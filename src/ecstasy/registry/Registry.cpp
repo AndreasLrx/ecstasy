@@ -40,6 +40,15 @@ namespace ecstasy
         return getResource<const Entities>()->get(index);
     }
 
+    std::vector<std::reference_wrapper<IStorage>> Registry::getEntityStorages(Entity entity)
+    {
+        std::vector<std::reference_wrapper<IStorage>> storages;
+        for (auto &storage : _storages.getInner())
+            if (storage.second->contains(entity.getIndex()))
+                storages.push_back(*storage.second);
+        return storages;
+    }
+
     bool Registry::eraseEntity(Entity entity)
     {
         bool erased = getResource<Entities>()->erase(entity);

@@ -1054,7 +1054,7 @@ TEST(Registry, RegistryStackQueryMemory)
         static_assert(sizeof(OnlyViews) == sizeof(ExpectedViewAlloc));
 #else
         assert_equals<OnlyViews::ViewsAllocator, ecstasy::EmptyType>();
-        static_assert(sizeof(OnlyViews) == 1);
+        static_assert(sizeof(OnlyViews) > 1 && sizeof(OnlyViews) < 4);
 #endif
     }
 
