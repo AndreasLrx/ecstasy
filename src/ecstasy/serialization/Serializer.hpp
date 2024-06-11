@@ -12,6 +12,7 @@
 #ifndef ECSTASY_SERIALIZATION_SERIALIZER_HPP_
 #define ECSTASY_SERIALIZATION_SERIALIZER_HPP_
 
+#include "ecstasy/resources/entity/RegistryEntity.hpp"
 #include "ecstasy/serialization/ISerializer.hpp"
 
 namespace ecstasy::serialization
@@ -91,6 +92,28 @@ namespace ecstasy::serialization
         S &save(const U &object)
         {
             return object >> inner();
+        }
+
+        ///
+        /// @brief Save an entity to the serializer with explicit components.
+        ///
+        /// @tparam Cs Components to save.
+        ///
+        /// @param[in] entity Entity to save.
+        ///
+        /// @return S& Reference to @b this for chain calls.
+        ///
+        /// @throws std::out_of_range If the entity does not have one of the components.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-06-11)
+        ///
+        template <typename... Cs>
+        S &saveEntity(const RegistryEntity &entity)
+        {
+            S &s = inner();
+            ((s << typeid(Cs) << entity.get<Cs>()), ...);
+            return s;
         }
 
         ///

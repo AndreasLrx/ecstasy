@@ -69,6 +69,8 @@ namespace ecstasy::serialization
                 *this << object.size();
                 for (const auto &elem : object)
                     *this << elem;
+            } else if constexpr (std::is_same_v<T, std::type_info>) {
+                save(object.hash_code());
             } else {
                 return Parent::save(object);
             }
