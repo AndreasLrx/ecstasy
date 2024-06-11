@@ -15,6 +15,7 @@
 #include <span>
 
 #include "ecstasy/config.hpp"
+#include "util/meta/Traits.hpp"
 
 #ifdef ECSTASY_LOCKABLE_STORAGES
     #include "ecstasy/thread/SharedRecursiveMutex.hpp"
@@ -27,6 +28,11 @@ namespace util
 
 namespace ecstasy
 {
+
+    namespace serialization
+    {
+        class ISerializer;
+    }
     class Entity;
 
     ///
@@ -77,6 +83,23 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-19)
         ///
         virtual bool contains(size_t index) const noexcept = 0;
+
+        ///
+        /// @brief Serialize an entity component.
+        ///
+        /// @note The type_info is used to counter the impossibility to use template virtual methods.
+        ///
+        /// @param[in] serializer Serializer object.
+        /// @param[in] stype Type informations of the serializer.
+        /// @param[in] entityId Entity index.
+        ///
+        /// @return serialization::ISerializer& Serializer object.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-06-11)
+        ///
+        virtual serialization::ISerializer &serialize(
+            serialization::ISerializer &serializer, const std::type_info &stype, size_t entityId) const = 0;
     };
 
 } // namespace ecstasy

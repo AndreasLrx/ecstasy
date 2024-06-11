@@ -95,6 +95,25 @@ namespace ecstasy::serialization
         }
 
         ///
+        /// @brief Save an entity component to the serializer. This includes the component type before the component
+        /// data.
+        ///
+        /// @tparam C Component type.
+        ///
+        /// @param[in] component Component to save.
+        ///
+        /// @return S& Reference to @b this for chain calls.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-06-11)
+        ///
+        template <typename C>
+        S &saveEntityComponent(const C &component)
+        {
+            return inner() << typeid(C) << component;
+        }
+
+        ///
         /// @brief Save an entity to the serializer with explicit components.
         ///
         /// @tparam Cs Components to save.
@@ -112,8 +131,32 @@ namespace ecstasy::serialization
         S &saveEntity(const RegistryEntity &entity)
         {
             S &s = inner();
-            ((s << typeid(Cs) << entity.get<Cs>()), ...);
+            (saveEntityComponent(entity.get<Cs>()), ...);
             return s;
+        }
+
+        ///
+        /// @brief Save an entity to the serializer.
+        ///
+        /// @warning This will try to save all the components of the entity, but not the entity ID.
+        ///
+        /// @param[in] entity Entity to save.
+        ///
+        /// @return S& Reference to @b this for chain calls.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-06-11)
+        ///
+        S &saveEntity(RegistryEntity &entity)
+        {
+            auto storages = entity.getRegistry().getEntityStorages(entity);
+
+            for (auto &storage : storages) {
+                // We send the typeid of the serializer before loosing the type information (since storage.serialize
+                // takes an ISerializer)
+                storage.get().serialize(*this, typeid(S), entity.getIndex());
+            }
+            return inner();
         }
 
         ///

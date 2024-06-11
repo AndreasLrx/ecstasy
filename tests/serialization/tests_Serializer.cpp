@@ -246,12 +246,17 @@ TEST(Serializer, entityComponents)
         registry.entityBuilder().with<Position>(1.0f, -8456.0f).with<NPC>(Position(42.f, 0.f), "Steve").build(),
         registry);
 
-    rawSerializer.saveEntity<Position, NPC>(entity);
-    std::string entitySerialized = rawSerializer.getStream().str();
+    rawSerializer.saveEntity<NPC, Position>(entity);
+    std::string entitySerializedExplicit = rawSerializer.getStream().str();
 
     rawSerializer.getStream().str("");
-    rawSerializer << typeid(Position) << entity.get<Position>() << typeid(NPC) << entity.get<NPC>();
+    rawSerializer << typeid(NPC) << entity.get<NPC>() << typeid(Position) << entity.get<Position>();
     std::string expected = rawSerializer.getStream().str();
+    GTEST_ASSERT_EQ(entitySerializedExplicit, expected);
 
+    rawSerializer.getStream().str("");
+    rawSerializer.saveEntity(entity);
+    std::string entitySerialized = rawSerializer.getStream().str();
+    // Not a good test since the order of the components is not guaranteed
     GTEST_ASSERT_EQ(entitySerialized, expected);
 }
