@@ -20,7 +20,7 @@ class Base {
         _reference++;
     }
 
-    ~Base()
+    virtual ~Base()
     {
         _reference--;
     }

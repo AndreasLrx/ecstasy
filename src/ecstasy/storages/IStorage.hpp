@@ -77,7 +77,6 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-19)
         ///
         virtual bool contains(size_t index) const noexcept = 0;
-
     };
 
 } // namespace ecstasy
