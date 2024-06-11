@@ -19,6 +19,8 @@
 #include "ecstasy/storages/IStorage.hpp"
 #include "util/BitSet.hpp"
 
+#include "ecstasy/serialization/ComponentSerializer.hpp"
+
 namespace ecstasy
 {
 
@@ -162,6 +164,15 @@ namespace ecstasy
         {
             return (*this)[index];
         };
+
+        /// @copybrief serialize
+        virtual serialization::ISerializer &serialize(
+            serialization::ISerializer &serializer, const std::type_info &stype, size_t entityId) const override final
+        {
+            if (contains(entityId))
+                return serialization::serialize(serializer, stype, at(entityId));
+            return serializer;
+        }
     };
 
 } // namespace ecstasy

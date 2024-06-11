@@ -12,9 +12,11 @@
 #ifndef ECSTASY_SERIALIZER_HPP_
 #define ECSTASY_SERIALIZER_HPP_
 
+#include "ComponentSerializer.hpp"
 #include "ISerializer.hpp"
 #include "RawSerializer.hpp"
 #include "Serializer.hpp"
+#include "is_serializable.hpp"
 
 ///
 /// @brief Namespace regrouping the serialization ecstasy classes.
