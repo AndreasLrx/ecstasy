@@ -73,17 +73,8 @@ namespace ecstasy
                 erase(entity.getIndex());
         }
 
-        ///
-        /// @brief Test if the entity index match a @b Component instance.
-        ///
-        /// @param[in] index Index of the entity.
-        ///
-        /// @return bool True if the entity has a component, false otherwise.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-10-19)
-        ///
-        constexpr bool contains(Entity::Index index) const noexcept
+        /// @copydoc contains
+        bool contains(Entity::Index index) const noexcept override final
         {
             return (index < getMask().size()) && getMask()[index];
         }

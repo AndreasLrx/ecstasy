@@ -20,7 +20,7 @@
 /// @brief Namespace regrouping the thread safe ecstasy symbols.
 ///
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @since 1.0.0 (2022-11-18)
+/// @since 1.0.0 (2024-03-29)
 ///
 namespace ecstasy::thread
 {

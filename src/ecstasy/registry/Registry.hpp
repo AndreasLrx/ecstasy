@@ -938,6 +938,21 @@ namespace ecstasy
         Entity getEntity(Entity::Index index) noexcept;
 
         ///
+        /// @brief Get the Entity Storages
+        ///
+        /// @note This is the only way to return a list of components attached to an entity because components have no
+        /// base class constraints and therefore cannot be stored in a container.
+        ///
+        /// @param[in] entity Entity to get the storages from.
+        ///
+        /// @return std::vector<std::reference_wrapper<IStorage>> List of storages attached to the entity.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-06-11)
+        ///
+        std::vector<std::reference_wrapper<IStorage>> getEntityStorages(Entity entity);
+
+        ///
         /// @brief Construct a query for the given components.
         ///
         /// @tparam C First component type.

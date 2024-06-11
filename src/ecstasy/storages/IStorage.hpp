@@ -65,6 +65,19 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-21)
         ///
         virtual void erase(std::span<Entity> entities) = 0;
+
+        ///
+        /// @brief Test if the entity index match a @b Component instance.
+        ///
+        /// @param[in] index Index of the entity.
+        ///
+        /// @return bool True if the entity has a component, false otherwise.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2022-10-19)
+        ///
+        virtual bool contains(size_t index) const noexcept = 0;
+
     };
 
 } // namespace ecstasy
