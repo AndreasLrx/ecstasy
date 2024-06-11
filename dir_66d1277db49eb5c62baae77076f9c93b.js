@@ -10,5 +10,5 @@ var dir_66d1277db49eb5c62baae77076f9c93b =
     [ "IObjectNode.hpp", "_i_object_node_8hpp.html", "_i_object_node_8hpp" ],
     [ "PolymorphicIterator.hpp", "_polymorphic_iterator_8hpp.html", "_polymorphic_iterator_8hpp" ],
     [ "SerializableEnum.hpp", "_serializable_enum_8hpp.html", "_serializable_enum_8hpp" ],
-    [ "Serializer.hpp", "_serializer_8hpp.html", "_serializer_8hpp" ]
+    [ "Serializer.hpp", "util_2serialization_2_serializer_8hpp.html", "util_2serialization_2_serializer_8hpp" ]
 ];

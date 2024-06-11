@@ -133,23 +133,23 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "01__basic__window_2main_8cpp.html",
-"_storage_concepts_8hpp.html#a2c011da268733486119ae199f8bb4a04",
-"classecstasy_1_1_map_storage.html#af3147139f9ed52b9a88c355689c9c95a",
-"classecstasy_1_1_system_instances.html#aac25b8b20249fec4dc73552a52c413d3",
-"classecstasy_1_1integration_1_1event_1_1_gamepad_sequence_listener.html#a8e354e5bdb0f16fd9cb8b77d9ee822e4",
-"classecstasy_1_1integration_1_1user__action_1_1_user_profile.html#a314395b23ba7fcec5c22d69134dce67b",
-"classecstasy_1_1query_1_1modifier_1_1_or_impl.html#a595986bfbda6240bd37608a8eab71e38",
-"classutil_1_1serialization_1_1_a_node.html#a96e0dfccf8bd6ef64b323734655a00a4",
-"classutil_1_1serialization_1_1_polymorphic_iterator.html#add3b399246433e5470bbb9638d74edfa",
-"cpp/algorithm/binary_search.html",
-"cpp/chrono/tzdb_functions.html",
-"cpp/io/c/fscanf.html",
-"cpp/numeric/math/isinf.html",
-"cpp/thread/future_category.html",
-"functions_func_v.html",
-"registry_2modifiers_2_xor_8hpp.html",
-"structecstasy_1_1integration_1_1user__action_1_1_action.html#ae5da598d1270ea60396b4a402bc73e96",
-"structutil_1_1meta_1_1apply.html#a1292c5e6f0787ddff662096fa95c79fc"
+"_stack_allocator_8hpp_source.html",
+"classecstasy_1_1_map_storage.html#a82270207ce27bc7b1a271bd4192249ec",
+"classecstasy_1_1_system_instances.html#a81523f114e3546bb639d573a4db79c0d",
+"classecstasy_1_1integration_1_1event_1_1_gamepad_sequence_listener.html#a67dba9cc96e12a90361bcdea9dea9f6c",
+"classecstasy_1_1integration_1_1user__action_1_1_poll_actions_3_01std_1_1integer__sequence_3_01_a67921aad8fc30a11f205db4b0bf5827d.html#a928cfdbe680d858779b429bc204daa5e",
+"classecstasy_1_1query_1_1modifier_1_1_or_impl.html#a0ee221f903faf9d101dfd031d3f0662a",
+"classutil_1_1_stack_allocator.html#a70f8ede04d0858fc004dca0b70e2a979",
+"classutil_1_1serialization_1_1_i_object_node.html#a155e9db1be0dcef088261fa72ae69da9",
+"classutil_1_1serialization_1_1_toml_object_node.html#ad383fa4edf47e866b02500837e96c3b7",
+"cpp/atomic/atomic_fetch_and.html",
+"cpp/filesystem/create_symlink.html",
+"cpp/numeric/countl_zero.html",
+"cpp/string/multibyte/mbsrtowcs.html",
+"dir_b7878ad5ecbf2506f4125b9d34c97e45.html",
+"namespaceecstasy_1_1query.html#a429c5fb231068dc9b88cc14dd62a4304",
+"structecstasy_1_1integration_1_1event_1_1_gamepad_connected_event.html#a30fd10ed7c0f02165161d4d43307c5f5",
+"structecstasy_1_1queryable__type_3_01const_01_q_01_4.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

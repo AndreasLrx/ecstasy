@@ -147,6 +147,12 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutil_1_1meta_1_1index_3_01_t_00_01_u_00_01_ts_8_8_8_01_4.html">index&lt; T, U, Ts... &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index of the first occurence of type <code>T</code> in the types <code>Ts</code>.    <a href="structutil_1_1meta_1_1index_3_01_t_00_01_u_00_01_ts_8_8_8_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutil_1_1meta_1_1is__std__vector.html">is_std_vector</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a type is a <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>.  <a href="structutil_1_1meta_1_1is__std__vector.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutil_1_1meta_1_1is__std__vector_3_01std_1_1vector_3_01_t_00_01_a_01_4_01_4.html">is_std_vector&lt; std::vector&lt; T, A &gt; &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a type is a <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>.    <a href="structutil_1_1meta_1_1is__std__vector_3_01std_1_1vector_3_01_t_00_01_a_01_4_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutil_1_1meta_1_1left__outer__join.html">left_outer_join</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a left outer join on two parameter pack types (returns types in Lefts but no in Rights).  <a href="structutil_1_1meta_1_1left__outer__join.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -182,6 +188,10 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a75d9b5031ee3406b1427475892418def"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutil_1_1meta.html#a75d9b5031ee3406b1427475892418def">filter_t</a> = typename <a class="el" href="structutil_1_1meta_1_1filter.html">filter</a>&lt; Filter, Ts... &gt;::type</td></tr>
 <tr class="memdesc:a75d9b5031ee3406b1427475892418def"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper for <a class="el" href="structutil_1_1meta_1_1filter.html#aab1a8e9a1d42ce27f564cda4ac7a74bd">filter&lt;...&gt;::type</a>.  <br /></td></tr>
 <tr class="separator:a75d9b5031ee3406b1427475892418def"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea58726857ae49d7841225568ba07807"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aea58726857ae49d7841225568ba07807"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutil_1_1meta.html#aea58726857ae49d7841225568ba07807">is_std_vector_v</a> = typename <a class="el" href="structutil_1_1meta_1_1is__std__vector.html">is_std_vector</a>&lt; T &gt;::value</td></tr>
+<tr class="memdesc:aea58726857ae49d7841225568ba07807"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper for is_std_vector&lt;...&gt;::value.  <br /></td></tr>
+<tr class="separator:aea58726857ae49d7841225568ba07807"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1275a7e7a8046b1a8df6916960efe97f"><td class="memTemplParams" colspan="2">template&lt;typename Lefts , typename Rights &gt; </td></tr>
 <tr class="memitem:a1275a7e7a8046b1a8df6916960efe97f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutil_1_1meta.html#a1275a7e7a8046b1a8df6916960efe97f">left_outer_join_t</a> = typename <a class="el" href="structutil_1_1meta_1_1left__outer__join.html">left_outer_join</a>&lt; Lefts, Rights &gt;::type</td></tr>
 <tr class="memdesc:a1275a7e7a8046b1a8df6916960efe97f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper for <a class="el" href="structutil_1_1meta_1_1left__outer__join.html#af221ce34fdf0d67030a0535f974e3656">left_outer_join&lt;...&gt;::type</a>.  <br /></td></tr>
@@ -298,6 +308,34 @@ template&lt;template&lt; typename &gt; typename Filter, typename... Ts&gt; </div
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-29) </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="filter_8hpp_source.html#l00082">82</a> of file <a class="el" href="filter_8hpp_source.html">filter.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aea58726857ae49d7841225568ba07807" name="aea58726857ae49d7841225568ba07807"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea58726857ae49d7841225568ba07807">&#9670;&#160;</a></span>is_std_vector_v</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceutil_1_1meta.html#aea58726857ae49d7841225568ba07807">util::meta::is_std_vector_v</a> = typedef typename <a class="el" href="structutil_1_1meta_1_1is__std__vector.html">is_std_vector</a>&lt;T&gt;::value</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Helper for is_std_vector&lt;...&gt;::value. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type to check.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-30) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="is__std__vector_8hpp_source.html#l00044">44</a> of file <a class="el" href="is__std__vector_8hpp_source.html">is_std_vector.hpp</a>.</p>
 
 </div>
 </div>

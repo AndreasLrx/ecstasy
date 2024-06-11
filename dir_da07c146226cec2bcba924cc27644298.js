@@ -5,7 +5,7 @@ var dir_da07c146226cec2bcba924cc27644298 =
     [ "ActionBindings.cpp", "_action_bindings_8cpp.html", null ],
     [ "ActionBindings.hpp", "_action_bindings_8hpp.html", "_action_bindings_8hpp" ],
     [ "ActionListener.hpp", "_action_listener_8hpp.html", "_action_listener_8hpp" ],
-    [ "include.hpp", "integrations_2user__action_2include_8hpp.html", null ],
+    [ "include.hpp", "ecstasy_2integrations_2user__action_2include_8hpp.html", null ],
     [ "PendingActions.hpp", "_pending_actions_8hpp.html", "_pending_actions_8hpp" ],
     [ "PollActions.hpp", "_poll_actions_8hpp.html", "_poll_actions_8hpp" ],
     [ "UserProfile.cpp", "_user_profile_8cpp.html", null ],

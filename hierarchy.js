@@ -55,6 +55,7 @@ var hierarchy =
       [ "ecstasy::query::is_queryable< T >", "structecstasy_1_1query_1_1is__queryable.html", null ],
       [ "ecstasy::query::is_queryable_with_adjust< T >", "structecstasy_1_1query_1_1is__queryable__with__adjust.html", null ],
       [ "util::meta::_type_set_eq< typename, typename >", "structutil_1_1meta_1_1__type__set__eq.html", null ],
+      [ "util::meta::is_std_vector< typename >", "structutil_1_1meta_1_1is__std__vector.html", null ],
       [ "util::meta::type_set_eq< typename, typename >", "structutil_1_1meta_1_1type__set__eq.html", null ]
     ] ],
     [ "util::meta::filter< Filter, Ts >", "structutil_1_1meta_1_1filter.html", null ],
@@ -132,6 +133,12 @@ var hierarchy =
     ] ],
     [ "std::is_base_of< ecstasy::query::ConditionBase, T >", "http://en.cppreference.com/w/cpp/types/is_base_of.html", [
       [ "ecstasy::Registry::Select< Selects >::IsCondition< T >", "structecstasy_1_1_registry_1_1_select_1_1_is_condition.html", null ]
+    ] ],
+    [ "ecstasy::serialization::ISerializer", "classecstasy_1_1serialization_1_1_i_serializer.html", [
+      [ "ecstasy::serialization::Serializer< RawSerializer >", "classecstasy_1_1serialization_1_1_serializer.html", [
+        [ "ecstasy::serialization::RawSerializer", "classecstasy_1_1serialization_1_1_raw_serializer.html", null ]
+      ] ],
+      [ "ecstasy::serialization::Serializer< S >", "classecstasy_1_1serialization_1_1_serializer.html", null ]
     ] ],
     [ "ecstasy::IStorage", "classecstasy_1_1_i_storage.html", [
       [ "ecstasy::AStorage< C >", "classecstasy_1_1_a_storage.html", [
@@ -261,7 +268,8 @@ var hierarchy =
     [ "std::true_type", "http://en.cppreference.com/w/cpp/types/integral_constant.html", [
       [ "ecstasy::query::is_queryable< T >", "structecstasy_1_1query_1_1is__queryable_3_01_t_01_4.html", null ],
       [ "ecstasy::query::is_queryable_with_adjust< T >", "structecstasy_1_1query_1_1is__queryable__with__adjust_3_01_t_01_4.html", null ],
-      [ "util::meta::_type_set_eq< std::tuple<>, std::tuple<> >", "structutil_1_1meta_1_1__type__set__eq_3_01std_1_1tuple_3_4_00_01std_1_1tuple_3_4_01_4.html", null ]
+      [ "util::meta::_type_set_eq< std::tuple<>, std::tuple<> >", "structutil_1_1meta_1_1__type__set__eq_3_01std_1_1tuple_3_4_00_01std_1_1tuple_3_4_01_4.html", null ],
+      [ "util::meta::is_std_vector< std::vector< T, A > >", "structutil_1_1meta_1_1is__std__vector_3_01std_1_1vector_3_01_t_00_01_a_01_4_01_4.html", null ]
     ] ],
     [ "ecstasy::integration::user_action::Users::UserActionLink", "structecstasy_1_1integration_1_1user__action_1_1_users_1_1_user_action_link.html", null ],
     [ "ecstasy::integration::user_action::UserProfile", "classecstasy_1_1integration_1_1user__action_1_1_user_profile.html", null ],

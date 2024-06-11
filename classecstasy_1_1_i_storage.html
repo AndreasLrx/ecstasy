@@ -129,6 +129,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4188b8316c1ee722db5a8a2c9c1de34b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_storage.html#a4188b8316c1ee722db5a8a2c9c1de34b">erase</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/container/span.html">std::span</a>&lt; <a class="el" href="classecstasy_1_1_entity.html">Entity</a> &gt; entities)=0</td></tr>
 <tr class="memdesc:a4188b8316c1ee722db5a8a2c9c1de34b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase the components attached to the given entities.  <br /></td></tr>
 <tr class="separator:a4188b8316c1ee722db5a8a2c9c1de34b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acff621f7894acd9d73ea903148b8a4fc"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_storage.html#acff621f7894acd9d73ea903148b8a4fc">contains</a> (size_t index) const noexcept=0</td></tr>
+<tr class="memdesc:acff621f7894acd9d73ea903148b8a4fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test if the entity index match a <b>Component</b> instance.  <br /></td></tr>
+<tr class="separator:acff621f7894acd9d73ea903148b8a4fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class of all components storage. </p>
@@ -163,6 +166,45 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="acff621f7894acd9d73ea903148b8a4fc" name="acff621f7894acd9d73ea903148b8a4fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acff621f7894acd9d73ea903148b8a4fc">&#9670;&#160;</a></span>contains()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool ecstasy::IStorage::contains </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Test if the entity index match a <b>Component</b> instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Index of the entity.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool True if the entity has a component, false otherwise.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-19) </dd></dl>
+
+<p>Implemented in <a class="el" href="classecstasy_1_1_a_storage.html#a5d5a338cfda0beeef9e73b66aec94e47">ecstasy::AStorage&lt; C &gt;</a>.</p>
+
+</div>
+</div>
 <a id="a4188b8316c1ee722db5a8a2c9c1de34b" name="a4188b8316c1ee722db5a8a2c9c1de34b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4188b8316c1ee722db5a8a2c9c1de34b">&#9670;&#160;</a></span>erase()</h2>
 

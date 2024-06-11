@@ -5,5 +5,5 @@ var dir_183c73d974247df0fabaedf6b9eb94ef =
     [ "listeners", "dir_d93d52effc53fa915804937554a898ef.html", "dir_d93d52effc53fa915804937554a898ef" ],
     [ "EventsManager.cpp", "_events_manager_8cpp.html", "_events_manager_8cpp" ],
     [ "EventsManager.hpp", "_events_manager_8hpp.html", "_events_manager_8hpp" ],
-    [ "include.hpp", "integrations_2event_2include_8hpp.html", null ]
+    [ "include.hpp", "ecstasy_2integrations_2event_2include_8hpp.html", null ]
 ];

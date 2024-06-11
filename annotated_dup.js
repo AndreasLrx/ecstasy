@@ -84,6 +84,11 @@ var annotated_dup =
         [ "views_allocator_size< AutoLock, Q, Qs... >", "structecstasy_1_1query_1_1views__allocator__size_3_01_auto_lock_00_01_q_00_01_qs_8_8_8_01_4.html", null ],
         [ "views_allocator_size< true, Q, Qs... >", "structecstasy_1_1query_1_1views__allocator__size_3_01true_00_01_q_00_01_qs_8_8_8_01_4.html", null ]
       ] ],
+      [ "serialization", "namespaceecstasy_1_1serialization.html", [
+        [ "ISerializer", "classecstasy_1_1serialization_1_1_i_serializer.html", "classecstasy_1_1serialization_1_1_i_serializer" ],
+        [ "RawSerializer", "classecstasy_1_1serialization_1_1_raw_serializer.html", "classecstasy_1_1serialization_1_1_raw_serializer" ],
+        [ "Serializer", "classecstasy_1_1serialization_1_1_serializer.html", "classecstasy_1_1serialization_1_1_serializer" ]
+      ] ],
       [ "thread", "namespaceecstasy_1_1thread.html", [
         [ "LockableView", "classecstasy_1_1thread_1_1_lockable_view.html", "classecstasy_1_1thread_1_1_lockable_view" ],
         [ "LockableViewBase", "classecstasy_1_1thread_1_1_lockable_view_base.html", "classecstasy_1_1thread_1_1_lockable_view_base" ],
@@ -150,6 +155,8 @@ var annotated_dup =
         [ "index", "structutil_1_1meta_1_1index.html", null ],
         [ "index< T, T, Ts... >", "structutil_1_1meta_1_1index_3_01_t_00_01_t_00_01_ts_8_8_8_01_4.html", null ],
         [ "index< T, U, Ts... >", "structutil_1_1meta_1_1index_3_01_t_00_01_u_00_01_ts_8_8_8_01_4.html", null ],
+        [ "is_std_vector", "structutil_1_1meta_1_1is__std__vector.html", null ],
+        [ "is_std_vector< std::vector< T, A > >", "structutil_1_1meta_1_1is__std__vector_3_01std_1_1vector_3_01_t_00_01_a_01_4_01_4.html", null ],
         [ "left_outer_join", "structutil_1_1meta_1_1left__outer__join.html", "structutil_1_1meta_1_1left__outer__join" ],
         [ "left_outer_join< std::tuple< Lefts... >, std::tuple< Rights... > >", "structutil_1_1meta_1_1left__outer__join_3_01std_1_1tuple_3_01_lefts_8_8_8_01_4_00_01std_1_1tuple_3_01_rights_8_8_8_01_4_01_4.html", "structutil_1_1meta_1_1left__outer__join_3_01std_1_1tuple_3_01_lefts_8_8_8_01_4_00_01std_1_1tuple_3_01_rights_8_8_8_01_4_01_4" ],
         [ "left_outer_join< Traits< Left, Lefts... >, Traits< Rights... > >", "structutil_1_1meta_1_1left__outer__join_3_01_traits_3_01_left_00_01_lefts_8_8_8_01_4_00_01_traits_3_01_rights_8_8_8_01_4_01_4.html", "structutil_1_1meta_1_1left__outer__join_3_01_traits_3_01_left_00_01_lefts_8_8_8_01_4_00_01_traits_3_01_rights_8_8_8_01_4_01_4" ],

@@ -6,7 +6,7 @@ var dir_a8078633be16197a18b2342aa1868a9d =
     [ "GamepadButtonPressedEvent.hpp", "_gamepad_button_pressed_event_8hpp.html", "_gamepad_button_pressed_event_8hpp" ],
     [ "GamepadButtonReleasedEvent.hpp", "_gamepad_button_released_event_8hpp.html", "_gamepad_button_released_event_8hpp" ],
     [ "GamepadConnectedEvent.hpp", "_gamepad_connected_event_8hpp.html", "_gamepad_connected_event_8hpp" ],
-    [ "include.hpp", "integrations_2event_2events_2include_8hpp.html", null ],
+    [ "include.hpp", "ecstasy_2integrations_2event_2events_2include_8hpp.html", null ],
     [ "KeyEvent.hpp", "_key_event_8hpp.html", "_key_event_8hpp" ],
     [ "KeyPressedEvent.hpp", "_key_pressed_event_8hpp.html", "_key_pressed_event_8hpp" ],
     [ "KeyReleasedEvent.hpp", "_key_released_event_8hpp.html", "_key_released_event_8hpp" ],
