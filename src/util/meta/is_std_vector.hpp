@@ -41,7 +41,7 @@ namespace util::meta
     /// @since 1.0.0 (2024-04-30)
     ///
     template <typename T>
-    using is_std_vector_v = is_std_vector<T>::value;
+    using is_std_vector_v = typename is_std_vector<T>::value;
 
 } // namespace util::meta
 
