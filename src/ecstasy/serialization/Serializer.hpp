@@ -15,6 +15,7 @@
 #include "ecstasy/resources/entity/RegistryEntity.hpp"
 #include "ecstasy/serialization/ISerializer.hpp"
 #include "ecstasy/serialization/concepts/has_extraction_operator.hpp"
+#include "ecstasy/serialization/concepts/has_insertion_operator.hpp"
 
 namespace ecstasy::serialization
 {
@@ -203,6 +204,7 @@ namespace ecstasy::serialization
         /// @since 1.0.0 (2024-04-30)
         ///
         template <typename U>
+            requires std::is_fundamental_v<U> || concepts::has_insertion_operator<U, S>
         S &update(U &object)
         {
             if constexpr (std::is_fundamental_v<U>) {

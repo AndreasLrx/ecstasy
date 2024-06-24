@@ -97,8 +97,19 @@ namespace ecstasy::serialization
             return *this;
         }
 
+        /// @copydoc Serializer::update
+        using Serializer<RawSerializer>::update;
+
+        // clang-format off
         /// @copydoc update
-        template <typename U>
+        template <typename U,
+            typename = std::enable_if<(
+                (std::is_fundamental_v<U> || std::is_same_v<U, std::string>) || // Load
+                 std::is_bounded_array_v<U> || // Bounded array
+                 util::meta::is_std_vector<U>::value) // std::vector
+                ,
+                int>::type>
+        // clang-format on
         RawSerializer &update(U &object)
         {
             if constexpr (std::is_fundamental_v<U> || std::is_same_v<U, std::string>)

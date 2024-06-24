@@ -90,7 +90,7 @@ namespace ecstasy::serialization
         template <typename S, typename Comp>
         static bool trySerialize(ISerializer &serializer, const std::type_info &stype, const Comp &component)
         {
-            if constexpr (concepts::can_save_type_v<S, Comp>) {
+            if constexpr (traits::can_save_type_v<S, Comp>) {
                 if (stype == typeid(S)) {
                     dynamic_cast<S &>(serializer).saveEntityComponent(component);
                     return true;

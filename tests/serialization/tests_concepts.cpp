@@ -57,3 +57,11 @@ TEST(has_extraction_operator, all)
         "False positive on NonSerializable component");
     static_assert(!concepts::has_extraction_operator<int, RawSerializer>, "False positive on fundamental type (int)");
 }
+
+TEST(has_insertion_operator, all)
+{
+    static_assert(concepts::has_insertion_operator<Position, RawSerializer>, "False negative on RawSerializer");
+    static_assert(!concepts::has_insertion_operator<NonSerializable, RawSerializer>,
+        "False positive on NonSerializable component");
+    static_assert(!concepts::has_insertion_operator<int, RawSerializer>, "False positive on fundamental type (int)");
+}

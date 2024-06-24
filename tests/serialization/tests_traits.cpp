@@ -3,6 +3,7 @@
 #include "ecstasy/resources/entity/RegistryEntity.hpp"
 #include "ecstasy/serialization/RawSerializer.hpp"
 #include "ecstasy/serialization/Serializer.hpp"
+#include "ecstasy/serialization/traits/include.hpp"
 #include "ecstasy/storages/MapStorage.hpp"
 
 using namespace ecstasy::serialization;
@@ -44,8 +45,16 @@ struct NonSerializable {
 
 TEST(can_save_type, all)
 {
-    static_assert(concepts::can_save_type_v<RawSerializer, int>, "False negative on int");
-    static_assert(concepts::can_save_type_v<RawSerializer, Position>, "False negative on Position component");
+    static_assert(traits::can_save_type_v<RawSerializer, int>, "False negative on int");
+    static_assert(traits::can_save_type_v<RawSerializer, Position>, "False negative on Position component");
     static_assert(
-        !concepts::can_save_type_v<RawSerializer, NonSerializable>, "False positive on NonSerializable component");
+        !traits::can_save_type_v<RawSerializer, NonSerializable>, "False positive on NonSerializable component");
+}
+
+TEST(can_update_type, all)
+{
+    static_assert(traits::can_update_type_v<RawSerializer, int>, "False negative on int");
+    static_assert(traits::can_update_type_v<RawSerializer, Position>, "False negative on Position component");
+    static_assert(
+        !traits::can_update_type_v<RawSerializer, NonSerializable>, "False positive on NonSerializable component");
 }
