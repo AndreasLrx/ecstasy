@@ -166,7 +166,7 @@ namespace ecstasy
         };
 
         /// @copybrief serialize
-        virtual serialization::ISerializer &serialize(
+        serialization::ISerializer &serialize(
             serialization::ISerializer &serializer, const std::type_info &stype, size_t entityId) const override final
         {
             if (contains(entityId))

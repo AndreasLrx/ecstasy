@@ -54,9 +54,20 @@ namespace ecstasy::serialization
         ///
         ~RawSerializer() override = default;
 
+        /// @copydoc Serializer::save
+        using Serializer<RawSerializer>::save;
+
         /// @copydoc save
-        template <typename T>
-            requires(!std::is_fundamental_v<T>)
+        // clang-format off
+        template <typename T,
+            typename = std::enable_if<
+                (std::is_same_v<T, std::string> || std::is_same_v<T, std::string_view>) || // String
+                std::is_bounded_array_v<T> || // Bounded array
+                util::meta::is_std_vector<T>::value || // std::vector
+                std::is_same_v<T, std::type_info> // std::type_info
+                , int>::type >
+                requires(!std::is_fundamental_v<T>)
+        // clang-format on
         RawSerializer &save(const T &object)
         {
             if constexpr (std::is_same_v<T, std::string> || std::is_same_v<T, std::string_view>) {
