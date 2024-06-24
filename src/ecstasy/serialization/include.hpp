@@ -16,7 +16,8 @@
 #include "ISerializer.hpp"
 #include "RawSerializer.hpp"
 #include "Serializer.hpp"
-#include "is_serializable.hpp"
+#include "concepts/include.hpp"
+#include "traits/include.hpp"
 
 ///
 /// @brief Namespace regrouping the serialization ecstasy classes.

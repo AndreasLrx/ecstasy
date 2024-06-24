@@ -15,7 +15,7 @@
 #include "ecstasy/config.hpp"
 #include "ecstasy/serialization/RawSerializer.hpp"
 #include "util/meta/Traits.hpp"
-#include "ecstasy/serialization/is_serializable.hpp"
+#include "ecstasy/serialization/traits/can_save_type.hpp"
 
 #ifndef ECSTASY_SERIALIZERS
     #define ECSTASY_SERIALIZERS util::meta::Traits<ecstasy::serialization::RawSerializer>
@@ -90,7 +90,7 @@ namespace ecstasy::serialization
         template <typename S, typename Comp>
         static bool trySerialize(ISerializer &serializer, const std::type_info &stype, const Comp &component)
         {
-            if constexpr (is_serializable_v<S, Comp>) {
+            if constexpr (concepts::can_save_type_v<S, Comp>) {
                 if (stype == typeid(S)) {
                     dynamic_cast<S &>(serializer).saveEntityComponent(component);
                     return true;
