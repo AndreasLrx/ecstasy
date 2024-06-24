@@ -14,6 +14,7 @@
 
 #include "ecstasy/resources/entity/RegistryEntity.hpp"
 #include "ecstasy/serialization/ISerializer.hpp"
+#include "ecstasy/serialization/concepts/has_extraction_operator.hpp"
 
 namespace ecstasy::serialization
 {
@@ -88,7 +89,7 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-04-30)
         ///
-        template <typename U>
+        template <concepts::has_extraction_operator<S> U>
         S &save(const U &object)
         {
             return object >> inner();

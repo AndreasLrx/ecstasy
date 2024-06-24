@@ -1,6 +1,8 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.15)
 
 if(NOT tomlplusplus_FOUND)
+include(FetchContent)
+
     FetchContent_Declare(
         tomlplusplus
         GIT_REPOSITORY https://github.com/marzer/tomlplusplus.git
