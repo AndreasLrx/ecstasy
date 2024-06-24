@@ -13,6 +13,7 @@
 #define ECSTASY_SERIALIZATION_TRAITS_INCLUDE_HPP_
 
 #include "can_save_type.hpp"
+#include "can_update_type.hpp"
 
 ///
 /// @brief Namespace regrouping the serialization ecstasy type traits.
