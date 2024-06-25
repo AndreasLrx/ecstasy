@@ -16,6 +16,7 @@ macro(ecstasy_set_compiler_flags target)
             "-Wall" "-Wextra" "-Wshadow" "-pedantic" "-Wpointer-arith"
             "-Wsuggest-override" "-Wconversion"
             "-Wno-unknown-pragmas"
+            "-fconcepts-diagnostics-depth=200"
             "$<$<AND:$<CONFIG:RELEASE>,$<NOT:${BUILDING_TESTS}>>:-O3;-Werror>"
             "$<$<CONFIG:DEBUG>:-O0;-g3;-ggdb>"
         )

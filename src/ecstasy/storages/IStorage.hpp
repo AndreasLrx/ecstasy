@@ -85,7 +85,17 @@ namespace ecstasy
         virtual bool contains(size_t index) const noexcept = 0;
 
         ///
-        /// @brief Serialize an entity component.
+        /// @brief Get the Component stored type infos.
+        ///
+        /// @return const std::type_info& Type informations of the component stored in the storage.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-06-11)
+        ///
+        virtual const std::type_info &getComponentTypeInfos() const noexcept = 0;
+
+        ///
+        /// @brief Save an entity component.
         ///
         /// @note The type_info is used to counter the impossibility to use template virtual methods.
         ///
@@ -98,8 +108,20 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-06-11)
         ///
-        virtual serialization::ISerializer &serialize(
+        virtual serialization::ISerializer &save(
             serialization::ISerializer &serializer, const std::type_info &stype, size_t entityId) const = 0;
+
+        ///
+        /// @brief Load/update an entity component.
+        ///
+        /// @param[in] serializer Serializer object.
+        /// @param[in] stype Type informations of the serializer.
+        /// @param[in] entityId Entity index.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-06-25)
+        ///
+        virtual void load(serialization::ISerializer &serializer, const std::type_info &stype, size_t entityId) = 0;
     };
 
 } // namespace ecstasy

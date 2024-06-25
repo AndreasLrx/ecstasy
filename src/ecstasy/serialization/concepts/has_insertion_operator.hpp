@@ -29,7 +29,7 @@ namespace ecstasy::serialization::concepts
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2024-06-24)
     ///
-    template <typename T, typename S>
+    template <typename S, typename T>
     concept has_insertion_operator = requires(S &s, T &t) {
         // Cannot use is_serializer here because it would create a circular dependency.
         requires std::derived_from<S, ISerializer>;

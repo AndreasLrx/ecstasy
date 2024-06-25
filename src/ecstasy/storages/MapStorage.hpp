@@ -72,6 +72,18 @@ namespace ecstasy
             return _components.emplace(std::make_pair(index, Component(std::forward<Args>(args)...))).first->second;
         }
 
+        /// @copydoc insert
+        Component &insert(Entity::Index index, Component &&c) override final
+        {
+            if constexpr (!std::movable<Component>)
+                throw std::runtime_error("MapStorage: Component is not movable");
+            else {
+                _mask.resize(std::max(_mask.size(), index + 1));
+                _mask[index] = true;
+                return _components.emplace(std::make_pair(index, std::move(c))).first->second;
+            }
+        }
+
         /// @copydoc AStorage::erase(Entity::Index)
         bool erase(Entity::Index index) override final
         {
