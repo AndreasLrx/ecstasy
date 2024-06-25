@@ -16,6 +16,7 @@
 #include "ecstasy/serialization/ISerializer.hpp"
 #include "ecstasy/serialization/concepts/has_extraction_operator.hpp"
 #include "ecstasy/serialization/concepts/has_insertion_operator.hpp"
+#include "ecstasy/serialization/traits/can_update_type.hpp"
 
 namespace ecstasy::serialization
 {
@@ -174,17 +175,15 @@ namespace ecstasy::serialization
         /// @since 1.0.0 (2024-04-30)
         ///
         template <typename U>
+            requires is_constructible<U> || (std::is_default_constructible_v<U> && traits::can_update_type_v<S, U>)
         U load()
         {
             if constexpr (is_constructible<U>) {
                 return U(inner());
-            } else if constexpr (std::is_default_constructible_v<U>) {
+            } else {
                 U object;
                 inner().update(object);
                 return object;
-            } else {
-                static_assert(!(is_constructible<U> || std::is_default_constructible_v<U>),
-                    "Type cannot be loaded. It must be default constructible or constructible from a serializer");
             }
         }
 
