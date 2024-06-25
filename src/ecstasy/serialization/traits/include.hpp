@@ -12,6 +12,7 @@
 #ifndef ECSTASY_SERIALIZATION_TRAITS_INCLUDE_HPP_
 #define ECSTASY_SERIALIZATION_TRAITS_INCLUDE_HPP_
 
+#include "can_load_type.hpp"
 #include "can_save_type.hpp"
 #include "can_update_type.hpp"
 

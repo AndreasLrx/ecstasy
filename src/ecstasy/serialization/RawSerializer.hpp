@@ -132,8 +132,12 @@ namespace ecstasy::serialization
             return *this;
         }
 
+        /// @copydoc Serializer::load
+        using Serializer<RawSerializer>::load;
+
         /// @copydoc load
         template <typename U>
+            requires std::is_fundamental_v<U> || std::is_same_v<U, std::string>
         U load()
         {
             if constexpr (std::is_fundamental_v<U>)
