@@ -1,5 +1,5 @@
 ///
-/// @file can_save_type.hpp
+/// @file can_load_type.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
 /// @brief
 /// @version 1.0.0
@@ -9,8 +9,8 @@
 ///
 ///
 
-#ifndef ECSTASY_SERIALIZATION_CAN_SAVE_TYPE_HPP_
-#define ECSTASY_SERIALIZATION_CAN_SAVE_TYPE_HPP_
+#ifndef ECSTASY_SERIALIZATION_CAN_LOAD_TYPE_HPP_
+#define ECSTASY_SERIALIZATION_CAN_LOAD_TYPE_HPP_
 
 #include <type_traits>
 
@@ -20,8 +20,8 @@ namespace ecstasy::serialization::traits
 {
 
     ///
-    /// @brief Concept to check if a type can be saved with a serializer.
-    /// To be @ref std::true_type S::save(const T &) must be a valid expression.
+    /// @brief Concept to check if a type can be updated with a serializer.
+    /// To be true S::load<T>() must be a valid expression.
     ///
     /// @tparam S Serializer type.
     /// @tparam T Type to save.
@@ -30,15 +30,14 @@ namespace ecstasy::serialization::traits
     /// @since 1.0.0 (2024-06-24)
     ///
     template <typename S, typename T, typename = std::void_t<>>
-    struct can_save_type : std::false_type {};
+    struct can_load_type : std::false_type {};
 
-    /// @copydoc can_save_type
+    /// @copydoc can_load_type
     template <concepts::is_serializer S, typename T>
-    struct can_save_type<S, T, std::void_t<decltype(std::declval<S &>().save(std::declval<const T &>()))>>
-        : std::true_type {};
+    struct can_load_type<S, T, std::void_t<decltype(std::declval<S &>().template load<T>())>> : std::true_type {};
 
     ///
-    /// @brief Alias for @ref can_save_type::value.
+    /// @brief Alias for @ref can_load_type::value.
     ///
     /// @tparam S Serializer type.
     /// @tparam C Component type.
@@ -46,8 +45,8 @@ namespace ecstasy::serialization::traits
     /// @since 1.0.0 (2024-06-11)
     ///
     template <concepts::is_serializer S, typename C>
-    bool constexpr can_save_type_v = can_save_type<S, C>::value;
+    bool constexpr can_load_type_v = can_load_type<S, C>::value;
 
 } // namespace ecstasy::serialization::traits
 
-#endif /* !ECSTASY_SERIALIZATION_CAN_SAVE_TYPE_HPP_ */
+#endif /* !ECSTASY_SERIALIZATION_CAN_LOAD_TYPE_HPP_ */

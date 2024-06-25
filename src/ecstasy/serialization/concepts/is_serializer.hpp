@@ -23,6 +23,9 @@ namespace ecstasy::serialization::concepts
     ///
     /// @brief Concept to check if a type is a serializer.
     ///
+    /// @note This checks for the save and update methods. It don't check for the load method because it would create
+    /// circular concept dependencies.
+    ///
     /// @tparam S Serializer type.
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
@@ -39,15 +42,12 @@ namespace ecstasy::serialization::concepts
         // int
         { serializer.save(std::declval<int>())} -> std::same_as<S &>;
         { serializer.update(std::declval<int &>())} -> std::same_as<S &>;
-        { serializer.template load<int>()} -> std::same_as<int>;
         // double
         { serializer.save(std::declval<double>())} -> std::same_as<S &>;
         { serializer.update(std::declval<double &>())} -> std::same_as<S &>;
-        { serializer.template load<double>()} -> std::same_as<double>;
         // std::string
         { serializer.save(std::declval<std::string>())} -> std::same_as<S &>;
         { serializer.update(std::declval<std::string &>())} -> std::same_as<S &>;
-        { serializer.template load<std::string>()} -> std::same_as<std::string>;
 
         // clang-format on
     };

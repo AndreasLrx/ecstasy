@@ -21,10 +21,10 @@ namespace ecstasy::serialization::traits
 
     ///
     /// @brief Concept to check if a type can be updated with a serializer.
+    /// To be true S::update(T &) must be a valid expression.
     ///
     /// @tparam S Serializer type.
     /// @tparam T Type to save.
-    /// @tparam typename S::update(T &) must be a valid expression.
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2024-06-24)

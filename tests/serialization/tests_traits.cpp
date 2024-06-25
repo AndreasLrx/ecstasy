@@ -58,3 +58,12 @@ TEST(can_update_type, all)
     static_assert(
         !traits::can_update_type_v<RawSerializer, NonSerializable>, "False positive on NonSerializable component");
 }
+
+TEST(can_load_type, all)
+{
+    NonSerializable a;
+    static_assert(traits::can_load_type_v<RawSerializer, int>, "False negative on int");
+    static_assert(traits::can_load_type_v<RawSerializer, Position>, "False negative on Position component");
+    static_assert(
+        !traits::can_load_type_v<RawSerializer, NonSerializable>, "False positive on NonSerializable component");
+}
