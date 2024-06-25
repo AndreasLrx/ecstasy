@@ -98,6 +98,28 @@ namespace ecstasy
             return _components[index];
         }
 
+        /// @copydoc insert
+        Component &insert(Entity::Index index, Component &&c) override final
+        {
+            if constexpr (!std::movable<Component>)
+                throw std::runtime_error("VectorStorage: Component is not movable");
+            else {
+                // Component at index already existing
+                if (_components.size() > index)
+                    _components[index] = std::move(c);
+                else {
+                    _mask.resize(std::max(_mask.size(), index + 1));
+                    // Padding elements
+                    if (_components.size() < index)
+                        _components.resize(index);
+                    // New component
+                    _components.push_back(std::move(c));
+                }
+                _mask[index] = true;
+                return _components[index];
+            }
+        }
+
         /// @copydoc AStorage::erase
         ///
         /// @note Unset the flag in the mask but effectively delete the component only if it's the last one. Otherwise,

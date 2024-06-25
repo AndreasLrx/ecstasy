@@ -165,14 +165,42 @@ namespace ecstasy
             return (*this)[index];
         };
 
-        /// @copybrief serialize
-        serialization::ISerializer &serialize(
+        /// @copybrief getComponentTypeInfos
+        const std::type_info &getComponentTypeInfos() const noexcept override final
+        {
+            return typeid(Component);
+        }
+
+        /// @copydoc save
+        serialization::ISerializer &save(
             serialization::ISerializer &serializer, const std::type_info &stype, size_t entityId) const override final
         {
             if (contains(entityId))
-                return serialization::serialize(serializer, stype, at(entityId));
+                return serialization::save(serializer, stype, at(entityId));
             return serializer;
         }
+
+        /// @copydoc load
+        void load(serialization::ISerializer &serializer, const std::type_info &stype, size_t entityId) override final
+        {
+            if (contains(entityId))
+                serialization::update(serializer, stype, at(entityId));
+            else
+                serialization::load(serializer, stype, *this, entityId);
+        }
+
+        ///
+        /// @brief Insert a new @b Component instance associated to the given entity.
+        ///
+        /// @param[in] index Index of the entity.
+        /// @param[in] c Component instance to insert.
+        ///
+        /// @return Component& Reference to the inserted component.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-06-25)
+        ///
+        virtual Component &insert(Entity::Index index, Component &&c) = 0;
     };
 
 } // namespace ecstasy

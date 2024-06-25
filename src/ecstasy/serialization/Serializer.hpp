@@ -157,7 +157,7 @@ namespace ecstasy::serialization
             for (auto &storage : storages) {
                 // We send the typeid of the serializer before loosing the type information (since storage.serialize
                 // takes an ISerializer)
-                storage.get().serialize(*this, typeid(S), entity.getIndex());
+                storage.get().save(*this, typeid(S), entity.getIndex());
             }
             return inner();
         }
@@ -188,6 +188,24 @@ namespace ecstasy::serialization
         }
 
         ///
+        /// @brief Load an entity from the serializer.
+        ///
+        /// @param[in] registry Registry to load the entity into.
+        ///
+        /// @return RegistryEntity Loaded entity.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-06-25)
+        ///
+        RegistryEntity loadEntity(Registry &registry)
+        {
+            RegistryEntity entity(registry.entityBuilder().build(), registry);
+
+            updateEntity(entity);
+            return entity;
+        }
+
+        ///
         /// @brief Update an existing object from the serializer.
         ///
         /// @note If the object is fundamental, it will use the assignment operator, otherwise the << operator is
@@ -210,6 +228,29 @@ namespace ecstasy::serialization
                 object = inner().template load<U>();
             } else {
                 object << inner();
+            }
+            return inner();
+        }
+
+        ///
+        /// @brief Update an entity component from the serializer.
+        ///
+        /// @param[in] entity Entity to update.
+        ///
+        /// @return S& Reference to @b this for chain calls.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-06-25)
+        ///
+        S &updateEntity(RegistryEntity &entity)
+        {
+            std::size_t component_hash = load<std::size_t>();
+            auto &storages = entity.getRegistry().getStorages().getInner();
+
+            for (const auto &pair : storages) {
+                if (pair.second->getComponentTypeInfos().hash_code() == component_hash) {
+                    pair.second->load(*this, typeid(S), entity.getIndex());
+                }
             }
             return inner();
         }

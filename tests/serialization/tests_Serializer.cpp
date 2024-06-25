@@ -246,6 +246,7 @@ TEST(Serializer, entityComponents)
         registry.entityBuilder().with<Position>(1.0f, -8456.0f).with<NPC>(Position(42.f, 0.f), "Steve").build(),
         registry);
 
+    //// Test saveEntity
     rawSerializer.saveEntity<NPC, Position>(entity);
     std::string entitySerializedExplicit = rawSerializer.getStream().str();
 
@@ -254,6 +255,20 @@ TEST(Serializer, entityComponents)
     std::string expected = rawSerializer.getStream().str();
     GTEST_ASSERT_EQ(entitySerializedExplicit, expected);
 
+    /// Test Update entity
+    GTEST_ASSERT_EQ(entity.get<NPC>().name, "Steve");
+    entity.get<NPC>().name = "John";
+
+    rawSerializer.getStream().seekg(0);
+    rawSerializer.updateEntity(entity);
+    GTEST_ASSERT_EQ(entity.get<NPC>().name, "Steve");
+
+    /// Test loadEntity
+    rawSerializer.getStream().seekg(0);
+    ecstasy::RegistryEntity newEntity = rawSerializer.loadEntity(registry);
+    GTEST_ASSERT_EQ(newEntity.get<NPC>().name, "Steve");
+
+    /// Final saveEntity test
     rawSerializer.getStream().str("");
     rawSerializer.saveEntity(entity);
     std::string entitySerialized = rawSerializer.getStream().str();
