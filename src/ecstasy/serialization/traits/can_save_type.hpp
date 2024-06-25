@@ -48,6 +48,34 @@ namespace ecstasy::serialization::traits
     template <concepts::is_serializer S, typename C>
     bool constexpr can_save_type_v = can_save_type<S, C>::value;
 
+    ///
+    /// @brief Concept to check if a serializer has a specific save implementation for a type.
+    ///
+    /// @tparam S Serializer type.
+    /// @tparam T Type to check.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-07-16)
+    ///
+    template <typename S, typename T, typename = std::void_t<>>
+    struct has_save_impl_for_type : std::false_type {};
+
+    /// @copydoc has_save_impl_for_type
+    template <typename S, typename T>
+    struct has_save_impl_for_type<S, T, std::void_t<decltype(std::declval<S &>().saveImpl(std::declval<const T &>()))>>
+        : std::true_type {};
+
+    ///
+    /// @brief Alias for @ref has_save_impl_for_type::value.
+    ///
+    /// @tparam S Serializer type.
+    /// @tparam C Component type.
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-06-11)
+    ///
+    template <typename S, typename C>
+    bool constexpr has_save_impl_for_type_v = has_save_impl_for_type<S, C>::value;
+
 } // namespace ecstasy::serialization::traits
 
 #endif /* !ECSTASY_SERIALIZATION_CAN_SAVE_TYPE_HPP_ */

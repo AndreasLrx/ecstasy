@@ -16,6 +16,8 @@
 #include "ecstasy/serialization/ISerializer.hpp"
 #include "ecstasy/serialization/concepts/has_extraction_operator.hpp"
 #include "ecstasy/serialization/concepts/has_insertion_operator.hpp"
+#include "ecstasy/serialization/traits/can_load_type.hpp"
+#include "ecstasy/serialization/traits/can_save_type.hpp"
 #include "ecstasy/serialization/traits/can_update_type.hpp"
 
 namespace ecstasy::serialization
@@ -91,10 +93,14 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-04-30)
         ///
-        template <concepts::has_extraction_operator<S> U>
+        template <typename U>
+            requires concepts::has_extraction_operator<S, U> || traits::has_save_impl_for_type_v<S, U>
         S &save(const U &object)
         {
-            return object >> inner();
+            if constexpr (traits::has_save_impl_for_type_v<S, U>)
+                return inner().saveImpl(object);
+            else
+                return object >> inner();
         }
 
         ///
@@ -157,7 +163,7 @@ namespace ecstasy::serialization
             for (auto &storage : storages) {
                 // We send the typeid of the serializer before loosing the type information (since storage.serialize
                 // takes an ISerializer)
-                storage.get().serialize(*this, typeid(S), entity.getIndex());
+                storage.get().save(*this, typeid(S), entity.getIndex());
             }
             return inner();
         }
@@ -176,15 +182,36 @@ namespace ecstasy::serialization
         ///
         template <typename U>
             requires is_constructible<U> || (std::is_default_constructible_v<U> && traits::can_update_type_v<S, U>)
+            || traits::has_load_impl_for_type_v<S, U>
         U load()
         {
-            if constexpr (is_constructible<U>) {
+            if constexpr (traits::has_load_impl_for_type_v<S, U>)
+                return inner().template loadImpl<U>();
+            else if constexpr (is_constructible<U>) {
                 return U(inner());
             } else {
                 U object;
                 inner().update(object);
                 return object;
             }
+        }
+
+        ///
+        /// @brief Load an entity from the serializer.
+        ///
+        /// @param[in] registry Registry to load the entity into.
+        ///
+        /// @return RegistryEntity Loaded entity.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-06-25)
+        ///
+        RegistryEntity loadEntity(Registry &registry)
+        {
+            RegistryEntity entity(registry.entityBuilder().build(), registry);
+
+            updateEntity(entity);
+            return entity;
         }
 
         ///
@@ -203,13 +230,38 @@ namespace ecstasy::serialization
         /// @since 1.0.0 (2024-04-30)
         ///
         template <typename U>
-            requires std::is_fundamental_v<U> || concepts::has_insertion_operator<U, S>
+            requires traits::has_update_impl_for_type_v<S, U> || std::is_fundamental_v<U>
+            || concepts::has_insertion_operator<S, U>
         S &update(U &object)
         {
-            if constexpr (std::is_fundamental_v<U>) {
+            if constexpr (traits::has_update_impl_for_type_v<S, U>)
+                return inner().updateImpl(object);
+            else if constexpr (std::is_fundamental_v<U>)
                 object = inner().template load<U>();
-            } else {
+            else
                 object << inner();
+            return inner();
+        }
+
+        ///
+        /// @brief Update an entity component from the serializer.
+        ///
+        /// @param[in] entity Entity to update.
+        ///
+        /// @return S& Reference to @b this for chain calls.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-06-25)
+        ///
+        S &updateEntity(RegistryEntity &entity)
+        {
+            std::size_t component_hash = load<std::size_t>();
+            auto &storages = entity.getRegistry().getStorages().getInner();
+
+            for (const auto &pair : storages) {
+                if (pair.second->getComponentTypeInfos().hash_code() == component_hash) {
+                    pair.second->load(*this, typeid(S), entity.getIndex());
+                }
             }
             return inner();
         }

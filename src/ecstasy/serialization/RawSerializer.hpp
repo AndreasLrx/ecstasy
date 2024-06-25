@@ -54,13 +54,10 @@ namespace ecstasy::serialization
         ///
         ~RawSerializer() override = default;
 
-        /// @copydoc Serializer::save
-        using Serializer<RawSerializer>::save;
-
         /// @copydoc save
         // clang-format off
         template <typename T,
-            typename = std::enable_if<
+            typename = typename std::enable_if<
                 (std::is_same_v<T, std::string> || std::is_same_v<T, std::string_view>) || // String
                 std::is_bounded_array_v<T> || // Bounded array
                 util::meta::is_std_vector<T>::value || // std::vector
@@ -68,7 +65,7 @@ namespace ecstasy::serialization
                 , int>::type >
                 requires(!std::is_fundamental_v<T>)
         // clang-format on
-        RawSerializer &save(const T &object)
+        RawSerializer &saveImpl(const T &object)
         {
             if constexpr (std::is_same_v<T, std::string> || std::is_same_v<T, std::string_view>) {
                 save(static_cast<uint32_t>(object.size()));
@@ -91,28 +88,25 @@ namespace ecstasy::serialization
         /// @copydoc save
         template <typename U>
             requires std::is_fundamental_v<U>
-        RawSerializer &save(U object)
+        RawSerializer &saveImpl(U object)
         {
             write(reinterpret_cast<const char *>(&object), sizeof(object));
             return *this;
         }
 
-        /// @copydoc Serializer::update
-        using Serializer<RawSerializer>::update;
-
         // clang-format off
         /// @copydoc update
         template <typename U,
-            typename = std::enable_if<(
-                (std::is_fundamental_v<U> || std::is_same_v<U, std::string>) || // Load
+            typename = typename std::enable_if<(
+                std::is_same_v<U, std::string> || // Load
                  std::is_bounded_array_v<U> || // Bounded array
                  util::meta::is_std_vector<U>::value) // std::vector
                 ,
                 int>::type>
         // clang-format on
-        RawSerializer &update(U &object)
+        RawSerializer &updateImpl(U &object)
         {
-            if constexpr (std::is_fundamental_v<U> || std::is_same_v<U, std::string>)
+            if constexpr (std::is_same_v<U, std::string>)
                 object = load<U>();
             else if constexpr (std::is_bounded_array_v<U>)
                 for (size_t i = 0; i < std::extent_v<U>; i++)
@@ -132,13 +126,10 @@ namespace ecstasy::serialization
             return *this;
         }
 
-        /// @copydoc Serializer::load
-        using Serializer<RawSerializer>::load;
-
         /// @copydoc load
         template <typename U>
             requires std::is_fundamental_v<U> || std::is_same_v<U, std::string>
-        U load()
+        U loadImpl()
         {
             if constexpr (std::is_fundamental_v<U>)
                 return loadRaw<U>();
@@ -148,8 +139,6 @@ namespace ecstasy::serialization
                 _stream.seekg(pos + std::streamoff(size));
 
                 return std::string(_stream.view().data() + pos, size);
-            } else {
-                return Parent::load<U>();
             }
         }
 
@@ -185,7 +174,7 @@ namespace ecstasy::serialization
         ///
         void write(const char *bytes, size_t size)
         {
-            _stream.write(bytes, size);
+            _stream.write(bytes, static_cast<std::streamsize>(size));
         }
 
         ///

@@ -20,8 +20,8 @@ namespace ecstasy::serialization::concepts
     ///
     /// @brief Concept to check if a type can be saved with a serializer using the extraction operator.
     ///
-    /// @tparam T Type to save.
     /// @tparam S Serializer type.
+    /// @tparam T Type to save.
     ///
     /// @param[in] s Serializer.
     /// @param[in] t Type to save.
@@ -29,7 +29,7 @@ namespace ecstasy::serialization::concepts
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2024-06-24)
     ///
-    template <typename T, typename S>
+    template <typename S, typename T>
     concept has_extraction_operator = requires(S &s, const T &t) {
         // Cannot use is_serializer here because it would create a circular dependency.
         requires std::derived_from<S, ISerializer>;

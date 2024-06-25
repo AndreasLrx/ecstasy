@@ -75,6 +75,15 @@ namespace ecstasy
             return _defaultComponent;
         }
 
+        /// @copydoc insert
+        Component &insert(Entity::Index index, Component &&c) override final
+        {
+            (void)c;
+            _mask.resize(std::max(_mask.size(), index + 1));
+            _mask[index] = true;
+            return _defaultComponent;
+        }
+
         /// @copydoc AStorage::erase(Entity::Index)
         bool erase(Entity::Index index) override final
         {
