@@ -107,3 +107,4 @@ _In case this documentation is not up to date with the [Options.cmake](/cmake/Op
 | ECSTASY_INTEGRATIONS_SFML_BUILD_DEMO | Enable the Sfml integration demos. Requires **ECSTASY_INTEGRATIONS_SFML**                                                               | OFF           |
 | ECSTASY_INTEGRATIONS_USER_ACTION     | Enable the User Actions integration. Requires **ECSTASY_INTEGRATIONS_EVENT**                                                            | OFF           |
 | ECSTASY_SERIALIZER_TOML              | Enable the Toml Serializer. Force set if **ECSTASY_INTEGRATIONS_USER_ACTION** is set                                                    | OFF           |
+| ECSTASY_ENABLE_ENTITY_SERIALIZERS    | **WIP** - Enable the serialization methods in I/AStorage classes. This allows easy entity (de)serialization.                            | OFF           |

@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/resources/entity/RegistryEntity.hpp"
+#include "ecstasy/serialization/ComponentSerializer.hpp"
 #include "ecstasy/serialization/RawSerializer.hpp"
 #include "ecstasy/serialization/Serializer.hpp"
 #include "ecstasy/storages/MapStorage.hpp"

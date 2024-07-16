@@ -78,6 +78,7 @@ jobs:
           -DECSTASY_INTEGRATIONS_SFML_BUILD_DEMO=TRUE
           -DECSTASY_INTEGRATIONS_USER_ACTION=TRUE
           -DECSTASY_THREAD_SAFE=TRUE
+          -DECSTASY_ENABLE_ENTITY_SERIALIZERS=FALSE
 
       - name: Build
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} -j
