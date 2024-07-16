@@ -255,6 +255,7 @@ TEST(Serializer, entityComponents)
     std::string expected = rawSerializer.getStream().str();
     GTEST_ASSERT_EQ(entitySerializedExplicit, expected);
 
+#ifdef ECSTASY_ENABLE_ENTITY_SERIALIZERS
     /// Test Update entity
     GTEST_ASSERT_EQ(entity.get<NPC>().name, "Steve");
     entity.get<NPC>().name = "John";
@@ -273,12 +274,13 @@ TEST(Serializer, entityComponents)
     rawSerializer.saveEntity(entity);
     std::string entitySerialized = rawSerializer.getStream().str();
 
-#ifdef _MSC_VER
+    #ifdef _MSC_VER
     // MSVC does not guarantee the same order of the components
     rawSerializer.getStream().str("");
     rawSerializer << typeid(Position) << entity.get<Position>() << typeid(NPC) << entity.get<NPC>();
     expected = rawSerializer.getStream().str();
-#endif
+    #endif
     // Not a good test since the order of the components is not guaranteed
     GTEST_ASSERT_EQ(entitySerialized, expected);
+#endif
 }

@@ -19,7 +19,9 @@
 #include "ecstasy/storages/IStorage.hpp"
 #include "util/BitSet.hpp"
 
-#include "ecstasy/serialization/ComponentSerializer.hpp"
+#ifdef ECSTASY_ENABLE_ENTITY_SERIALIZERS
+    #include "ecstasy/serialization/ComponentSerializer.hpp"
+#endif
 
 namespace ecstasy
 {
@@ -171,6 +173,8 @@ namespace ecstasy
             return typeid(Component);
         }
 
+#ifdef ECSTASY_ENABLE_ENTITY_SERIALIZERS
+
         /// @copydoc save
         serialization::ISerializer &save(
             serialization::ISerializer &serializer, const std::type_info &stype, size_t entityId) const override final
@@ -188,6 +192,7 @@ namespace ecstasy
             else
                 serialization::load(serializer, stype, *this, entityId);
         }
+#endif
 
         ///
         /// @brief Insert a new @b Component instance associated to the given entity.

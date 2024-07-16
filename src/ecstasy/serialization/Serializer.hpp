@@ -144,6 +144,7 @@ namespace ecstasy::serialization
             return s;
         }
 
+#ifdef ECSTASY_ENABLE_ENTITY_SERIALIZERS
         ///
         /// @brief Save an entity to the serializer.
         ///
@@ -167,6 +168,7 @@ namespace ecstasy::serialization
             }
             return inner();
         }
+#endif
 
         ///
         /// @brief Load an object from the serializer.
@@ -196,6 +198,7 @@ namespace ecstasy::serialization
             }
         }
 
+#ifdef ECSTASY_ENABLE_ENTITY_SERIALIZERS
         ///
         /// @brief Load an entity from the serializer.
         ///
@@ -213,6 +216,7 @@ namespace ecstasy::serialization
             updateEntity(entity);
             return entity;
         }
+#endif
 
         ///
         /// @brief Update an existing object from the serializer.
@@ -243,6 +247,7 @@ namespace ecstasy::serialization
             return inner();
         }
 
+#ifdef ECSTASY_ENABLE_ENTITY_SERIALIZERS
         ///
         /// @brief Update an entity component from the serializer.
         ///
@@ -265,6 +270,7 @@ namespace ecstasy::serialization
             }
             return inner();
         }
+#endif
 
         ///
         /// @brief Operator overload to simplify the save method.

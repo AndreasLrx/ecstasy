@@ -29,10 +29,13 @@ namespace util
 namespace ecstasy
 {
 
+#ifdef ECSTASY_ENABLE_ENTITY_SERIALIZERS
     namespace serialization
     {
         class ISerializer;
     }
+#endif
+
     class Entity;
 
     ///
@@ -94,6 +97,7 @@ namespace ecstasy
         ///
         virtual const std::type_info &getComponentTypeInfos() const noexcept = 0;
 
+#ifdef ECSTASY_ENABLE_ENTITY_SERIALIZERS
         ///
         /// @brief Save an entity component.
         ///
@@ -122,6 +126,7 @@ namespace ecstasy
         /// @since 1.0.0 (2024-06-25)
         ///
         virtual void load(serialization::ISerializer &serializer, const std::type_info &stype, size_t entityId) = 0;
+#endif
     };
 
 } // namespace ecstasy
