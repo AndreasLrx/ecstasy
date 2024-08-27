@@ -99,6 +99,14 @@ struct Position {
     }
 };
 
+struct NeedRegistry {
+    const ecstasy::Registry &registry;
+
+    NeedRegistry(const ecstasy::Registry &aRegistry) : registry(aRegistry)
+    {
+    }
+};
+
 struct Velocity {
     Vector2i v;
 
@@ -290,23 +298,32 @@ TEST(Registry, EntityBuilder)
 {
     ecstasy::Registry registry;
 
-    /// Build the entity
-    ecstasy::Registry::EntityBuilder builder = registry.entityBuilder();
-    builder.with<Position>(1, 2).with<Velocity>(3, 4).with<Size>(4, 5).with<std::vector<int>>({1, 2, 3, 4, 5, 6});
-    EXPECT_THROW(builder.with<Position>(42, 84), std::logic_error);
-    ecstasy::RegistryEntity e(builder.build(), registry);
+    {
+        /// Build the entity
+        ecstasy::Registry::EntityBuilder builder = registry.entityBuilder();
+        builder.with<Position>(1, 2).with<Velocity>(3, 4).with<Size>(4, 5).with<std::vector<int>>({1, 2, 3, 4, 5, 6});
+        EXPECT_THROW(builder.with<Position>(42, 84), std::logic_error);
+        ecstasy::RegistryEntity e(builder.build(), registry);
 
-    /// Mess with the builder after build done
-    EXPECT_THROW(builder.with<Vector2i>(5, 2), std::logic_error);
-    EXPECT_THROW(builder.build(), std::logic_error);
+        /// Mess with the builder after build done
+        EXPECT_THROW(builder.with<Vector2i>(5, 2), std::logic_error);
+        EXPECT_THROW(builder.build(), std::logic_error);
 
-    /// Test if entity has all attached components
-    EXPECT_TRUE(e.has<Position>());
-    EXPECT_TRUE(e.has<Velocity>());
-    EXPECT_TRUE(e.has<Size>());
-    EXPECT_TRUE(e.has<std::vector<int>>());
-    EXPECT_EQ(e.get<std::vector<int>>().size(), 6);
-    EXPECT_FALSE(e.has<Vector2i>());
+        /// Test if entity has all attached components
+        EXPECT_TRUE(e.has<Position>());
+        EXPECT_TRUE(e.has<Velocity>());
+        EXPECT_TRUE(e.has<Size>());
+        EXPECT_TRUE(e.has<std::vector<int>>());
+        EXPECT_EQ(e.get<std::vector<int>>().size(), 6);
+        EXPECT_FALSE(e.has<Vector2i>());
+    }
+
+    {
+        /// Use withRegistry
+        ecstasy::Registry::EntityBuilder builder = registry.entityBuilder();
+        ecstasy::RegistryEntity e(builder.withRegistry<NeedRegistry>().build(), builder.getRegistry());
+        EXPECT_EQ(&e.get<NeedRegistry>().registry, &registry);
+    }
 }
 
 TEST(Registry, functionnal)

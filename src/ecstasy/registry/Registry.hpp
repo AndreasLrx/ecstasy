@@ -508,6 +508,29 @@ namespace ecstasy
                 return *this;
             }
 
+
+            /// @brief Add a component to the builder target entity, forwarding the registry as first constructor parameter.
+            ///
+            /// @tparam C Component type.
+            /// @tparam Args Type of the Component constructor parameters
+            ///
+            /// @param[in] args Arguments to forward to the component constructor.
+            ///
+            /// @return EntityBuilder& @b this.
+            ///
+            /// @throw std::logic_error If the builder was already consumed or if the entity already has the
+            /// component.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2024-08-27)
+            ///
+            template <typename C, typename... Args>
+            EntityBuilder &withRegistry(Args &&...args)
+            {
+                _builder.with(_registry.getStorageSafe<C>(), _registry, std::forward<Args>(args)...);
+                return *this;
+            }
+
             ///
             /// @brief Add a component to the builder target entity.
             ///
@@ -547,6 +570,30 @@ namespace ecstasy
             const Entity &getEntity() const
             {
                 return _builder.getEntity();
+            }
+
+            /// @brief Get a const reference to the registry.
+            ///
+            /// @return const Registry& Const reference to the registry
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2024-08-27)
+            ///
+            constexpr const Registry &getRegistry() const
+            {
+                return _registry;
+            }
+
+            /// @brief Get a reference to the registry.
+            ///
+            /// @return Registry& reference to the registry
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2024-08-27)
+            ///
+            constexpr Registry &getRegistry()
+            {
+                return _registry;
             }
 
           private:
