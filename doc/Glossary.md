@@ -298,3 +298,29 @@ concept Lockable = requires(L &lockable) {
 ```
 
 References: [Lockable](@ref ecstasy::thread::Lockable), [LockableView](@ref ecstasy::thread::LockableView)
+
+## Serialization
+
+### Serializer actions
+
+#### Export
+
+Export\* methods allows to save the serialized variables into bytes. It can be loaded later with Import\* methods.
+
+#### Import
+
+Import\* methods allows to load a previously serialized data (with Export\* methods) into the serializer instance, to deserialize it into variables.
+
+### Variable actions
+
+#### Serialize: Save
+
+Serialize a variable and append it to the serializer stream.
+
+#### Deserialize: Update
+
+Read the serialized form of a variable and apply it to an existing variable.
+
+#### Deserialize: Load
+
+Instantiate a new variable from its serialized format.

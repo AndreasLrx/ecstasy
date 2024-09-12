@@ -65,11 +65,11 @@ TEST(ComponentSerializer, SaveComponent)
     Position position(1.f, 2.f);
 
     rawSerializer << typeid(Position) << position;
-    std::string expected = rawSerializer.getStream().str();
+    std::string expected = rawSerializer.exportBytes();
 
-    rawSerializer.getStream().str("");
+    rawSerializer.clear();
     ComponentSerializer<Serializers>::save(rawSerializer, typeid(RawSerializer), position);
-    GTEST_ASSERT_EQ(rawSerializer.str(), expected);
+    GTEST_ASSERT_EQ(rawSerializer.exportBytes(), expected);
 }
 
 TEST(ComponentSerializer, UpdateComponent)
@@ -79,11 +79,10 @@ TEST(ComponentSerializer, UpdateComponent)
 
     // Don't include typeid here
     rawSerializer << position;
-    std::string expected = rawSerializer.getStream().str();
+    std::string expected = rawSerializer.exportBytes();
     position.x = 420.f;
     position.y = 69.f;
 
-    rawSerializer.getStream().seekg(0);
     ComponentSerializer<Serializers>::update(rawSerializer, typeid(RawSerializer), position);
     GTEST_ASSERT_EQ(position.x, 1.f);
     GTEST_ASSERT_EQ(position.y, 2.f);

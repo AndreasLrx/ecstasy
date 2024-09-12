@@ -47,12 +47,121 @@ namespace ecstasy::serialization
         RawSerializer() = default;
 
         ///
+        /// @brief Construct a new Raw Serializer and import the content from a string.
+        ///
+        /// @param[in] content String to import.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-09-12)
+        ///
+        RawSerializer(const std::string &content)
+        {
+            importBytes(content);
+        }
+
+        ///
+        /// @brief Construct a new Raw Serializer and import the content from a file.
+        ///
+        /// @param[in] filename Path to the file to import.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-09-12)
+        ///
+        explicit RawSerializer(const std::filesystem::path &filename)
+        {
+            importFile(filename);
+        }
+
+        ///
+        /// @brief Construct a new Raw Serializer and import the content from a stream.
+        ///
+        /// @param[in] stream Input stream.
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-09-12)
+        ///
+        RawSerializer(std::istream &stream)
+        {
+            importStream(stream);
+        }
+
+        ///
         /// @brief Destroy the RawSerializer
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-06-11)
         ///
         ~RawSerializer() override = default;
+
+        /// @copydoc ISerializer::clear
+        void clear() override final
+        {
+            _stream.str("");
+        }
+
+        ///
+        /// @brief Reset the read and write cursor to the begining of the stream.
+        ///
+        /// @param[in] read Whether to reset the read cursor.
+        /// @param[in] write Whether to reset the write cursor.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-09-12)
+        ///
+        void resetCursors(bool read = true, bool write = true)
+        {
+            if (read)
+                resetReadCursor();
+            if (write)
+                resetWriteCursor();
+        }
+
+        ///
+        /// @brief Reset the read cursor to the begining of the stream.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-09-12)
+        ///
+        void resetReadCursor()
+        {
+            _stream.seekg(0);
+        }
+
+        ///
+        /// @brief Reset the write cursor to the begining of the stream.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-09-12)
+        ///
+        void resetWriteCursor()
+        {
+            _stream.seekp(0);
+        }
+
+        /// @copydoc ISerializer::size
+        size_t size() const override final
+        {
+            return _stream.str().size();
+        }
+
+        /// @copydoc ISerializer::importBytes
+        void importStream(std::istream &stream) override final
+        {
+            clear();
+            _stream << stream.rdbuf();
+            _stream.seekp(0);
+        }
+
+        /// @copydoc ISerializer::exportStream
+        void exportStream(std::ostream &stream) override final
+        {
+            std::streampos pos = _stream.tellg();
+
+            // Read from the begining of the stream
+            _stream.seekg(0);
+            stream << _stream.rdbuf();
+            // Replace the read cursor at the original position
+            _stream.seekg(pos);
+        }
 
         /// @copydoc save
         // clang-format off
@@ -196,19 +305,6 @@ namespace ecstasy::serialization
             const U *result = reinterpret_cast<const U *>(_stream.view().data() + pos);
             _stream.seekg(pos + std::streamoff(sizeof(U)));
             return *result;
-        }
-
-        ///
-        /// @brief Get the string representation of the serializer content.
-        ///
-        /// @return std::string String representation of the serializer content.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2024-06-11)
-        ///
-        std::string str()
-        {
-            return _stream.str();
         }
 
         ///
