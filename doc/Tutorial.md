@@ -497,3 +497,167 @@ If you want to handle thread safety yourself you still have multiple options:
 3. AutoLock by default but disable when you know what you're doing
 
    I know sometimes ecstasy can lock multiple times the same mutex because it is hard to detect. But if you know it and it is sensitive systems (running lot of times per frame) you can use the \*Ex methods to UnLock explicitly the same way.
+
+## Serializing your entities
+
+Ecstasy has some built in serialization helpers in the @ref ecstasy::serialization namespace.
+
+@warning
+The entity serialization without specifying components is still WIP and will probably have a huge refactor.
+
+The current available serializers are the following:
+
+- RawSerializer: Custom binary serialization of components fields. Compact form but not related to any RFC.
+
+If you need a missing serializer, you can write it yourself by inheriting the @ref ecstasy::serialization::Serializer class.
+In case of a commonly used serializer type (json/yaml/NDR...) feel free to open an issue about it.
+
+@warning
+The RawSerializer uses a @ref std::stringstream. Therefore there are cursor positions, if you need to read twice the data, you need to reset the read cursor position.
+
+### Using a serializer
+
+Following examples below will be using the RawSerializer type and the example component Position:
+
+```cpp
+struct Position {
+  public:
+    float x;
+    float y;
+};
+```
+
+#### Common types
+
+Serializer should support fundamental and container types by default but it depends on the serializer implementation.
+
+| Serializer                                 | Fundamental (integers, floats, doubles...) | strings | containers |
+| ------------------------------------------ | ------------------------------------------ | ------- | ---------- |
+| @ref ecstasy::serialization::RawSerializer | Ok                                         | OK      | Ok         |
+
+**1. Saving**
+
+To save an object in a serializer, you can either call the method **save** or use the insertion operator **<<**
+
+```cpp
+RawSerializer serializer();
+
+// Either with method save
+serializer.save(42);
+// Or with insertion operator
+serializer << 42;
+```
+
+**2. Exporting/Importing**
+
+You can export your serialized data using the _export\*_ methods.
+And import them back with _import\*_ methods.
+
+```cpp
+RawSerializer serializer();
+
+// Save all your variables...
+
+// Export to a string
+std::string serialized = serializer.exportBytes();
+// Or to a file
+serializer.exportFile("mydata.bin");
+// Or to a stream
+serializer.exportStream(std::cout);
+
+/// Import back our data in the constructor
+RawSerializer importSerializer(serialized);
+
+// Or import from bytes on existing serializer
+importSerializer.importBytes(serialized);
+// Or from a file
+importSerializer.importFile("mydata.bin");
+// Or from a stream
+importSerializer.importStream(std::cin);
+```
+
+**3. Updating**
+
+To update an object from a serializer, you can either call the method **update** or use the extraction operator **>>**
+
+```cpp
+RawSerializer serializer(std::filesystem::path("mydata.bin"));
+
+int my_number = 0;
+
+// Either with method update
+serializer.update(my_number);
+// Or with extraction operator
+serializer >> my_number;
+```
+
+**4. Loading**
+
+To load an object from a serializer, you need to call the load template method.
+
+@note
+If there is no load method implemented for the type but the type is default constructible, it will be default constructed then updated.
+
+```cpp
+RawSerializer serializer(std::filesystem::path("mydata.bin"));
+
+// Fill your serializer with previously saved data using import methods
+
+int my_number = serializer.load<int>();
+```
+
+#### Custom types
+
+If you are working with custom type (ie components) you can implement the extraction (**>>**) and insertion operator (**<<**) with the said serializer type for the _save_/_update_. And a constructor taking the serializer as parameter for the _load_.
+
+@note
+The operators doesn't have to be inside the class, you can define it outside the class if you don't have access to the class definition.
+However it cannot work for the constructor.
+
+```cpp
+// Custom constructor for load method
+Position(RawSerializer &serializer) : x(serializer.load<float>()), y(serializer.load<float>())
+{
+}
+
+// Extraction operator for save
+RawSerializer &operator>>(RawSerializer &serializer) const
+{
+    return serializer << x << y
+}
+
+// Insertion operator for update
+Position &operator<<(RawSerializer &serializer)
+{
+    serializer >> x >> y;
+    return *this;
+}
+```
+
+#### Working with Entities (WIP)
+
+Since you can serialize any type, you can serialize entity components manually using the functions above.
+
+If you define **ECSTASY_ENABLE_ENTITY_SERIALIZERS**, you can serialize an entire entity.
+
+@warning
+This is still work in progress and will certainly be refactored because the underlying code is shit.
+
+```cpp
+RawSerializer serializer();
+
+ecstasy::RegistryEntity entity(
+        registry.entityBuilder().with<Position>(1.0f, -8456.0f).with<NPC>(Position(42.f, 0.f), "Steve").build(),
+        registry);
+
+// Save an entity explicit components
+rawSerializer.saveEntity<NPC, Position>(entity);
+// Or save the whole entity
+rawSerializer.saveEntity(entity);
+
+// Update an existing entity
+rawSerializer.updateEntity(entity);
+
+// Or create it entirely
+ecstasy::RegistryEntity newEntity = rawSerializer.loadEntity(registry);
+```

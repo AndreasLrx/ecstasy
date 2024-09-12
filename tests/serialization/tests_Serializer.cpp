@@ -65,7 +65,7 @@ TEST(RawSerializer, fundamental_types)
     // INT
     rawSerializer << static_cast<uint8_t>(21) << static_cast<uint16_t>(42) << static_cast<uint32_t>(84)
                   << static_cast<uint64_t>(168) << -45612.f;
-    std::string bytes = rawSerializer.str();
+    std::string bytes = rawSerializer.exportBytes();
     EXPECT_EQ(bytes.length(), 1 + 2 + 4 + 8 + 4);
     EXPECT_EQ(*reinterpret_cast<const uint8_t *>(&bytes.c_str()[0]), 21);
     EXPECT_EQ(*reinterpret_cast<const uint16_t *>(&bytes.c_str()[1]), 42);
@@ -89,13 +89,50 @@ TEST(RawSerializer, fundamental_types)
     u32 = 0;
     u64 = 0;
     f = 0;
-    rawSerializer.getStream().seekg(0);
+    // Double read
+    rawSerializer.resetReadCursor();
     rawSerializer >> u8 >> u16 >> u32 >> u64 >> f;
     EXPECT_EQ(u8, 21);
     EXPECT_EQ(u16, 42);
     EXPECT_EQ(u32, 84);
     EXPECT_EQ(u64, 168);
     EXPECT_EQ(f, -45612.f);
+}
+
+TEST(Serializer, common_methods)
+{
+    RawSerializer serializer;
+    std::stringstream stream;
+
+    // Save a uint8_t
+    uint8_t u8 = 42;
+    serializer << u8;
+    GTEST_ASSERT_EQ(serializer.size(), sizeof(uint8_t));
+
+    // Test stream export
+    serializer.exportStream(stream);
+    GTEST_ASSERT_EQ(stream.str().size(), sizeof(uint8_t));
+    GTEST_ASSERT_EQ(*reinterpret_cast<const uint8_t *>(stream.str().data()), 42);
+
+    // Test bytes export
+    std::string bytes = serializer.exportBytes();
+    GTEST_ASSERT_EQ(bytes.size(), sizeof(uint8_t));
+    GTEST_ASSERT_EQ(*reinterpret_cast<const uint8_t *>(bytes.data()), 42);
+
+    // Test stream and bytes have same behavior
+    GTEST_ASSERT_EQ(bytes, stream.str());
+
+    // Test clear
+    serializer.clear();
+    GTEST_ASSERT_EQ(serializer.size(), 0);
+    serializer.clear();
+    GTEST_ASSERT_EQ(serializer.size(), 0);
+
+    // Test import
+    RawSerializer serializer2(bytes);
+    GTEST_ASSERT_EQ(serializer2.size(), sizeof(uint8_t));
+    uint8_t u8Loaded = serializer2.load<uint8_t>();
+    GTEST_ASSERT_EQ(u8Loaded, 42);
 }
 
 TEST(Serializer, strings)
@@ -107,7 +144,7 @@ TEST(Serializer, strings)
     serializer << empty << std::string_view("this is a test");
     serializer >> loaded;
 
-    GTEST_ASSERT_EQ(serializer.str().length(), sizeof(uint32_t) * 2 + 14);
+    GTEST_ASSERT_EQ(serializer.size(), sizeof(uint32_t) * 2 + 14);
     GTEST_ASSERT_EQ(reinterpret_cast<const uint32_t *>(serializer.getStream().view().data())[0], 0);
     GTEST_ASSERT_EQ(reinterpret_cast<const uint32_t *>(serializer.getStream().view().data())[1], 14);
 
@@ -126,7 +163,7 @@ TEST(Serializer, arrays)
         int someInts[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
         serializer << someInts;
-        GTEST_ASSERT_EQ(serializer.str().length(), sizeof(int) * 10);
+        GTEST_ASSERT_EQ(serializer.size(), sizeof(int) * 10);
 
         // We can't load them, returning an array is not possible
         int updated[10];
@@ -136,7 +173,7 @@ TEST(Serializer, arrays)
     }
 
     // Reset the stream
-    serializer.getStream().str("");
+    serializer.clear();
 
     // Vector of fundamental types
     {
@@ -145,22 +182,22 @@ TEST(Serializer, arrays)
             vec[i] = i + 1;
 
         serializer << vec;
-        GTEST_ASSERT_EQ(serializer.str().length(), sizeof(decltype(vec.size())) + sizeof(int) * 10);
+        GTEST_ASSERT_EQ(serializer.size(), sizeof(decltype(vec.size())) + sizeof(int) * 10);
 
         std::vector<int> updated;
         serializer >> updated;
         for (int i = 0; i < 10; i++)
             GTEST_ASSERT_EQ(updated[i], i + 1);
 
-        // Load
-        serializer.getStream().seekg(0);
+        // Load (Double read)
+        serializer.resetReadCursor();
         std::vector<int> loaded = serializer.load<std::vector<int>>();
         for (int i = 0; i < 10; i++)
             GTEST_ASSERT_EQ(loaded[i], i + 1);
     }
 
     // Reset the stream
-    serializer.getStream().str("");
+    serializer.clear();
 
     // Vector of compound type
     {
@@ -172,15 +209,15 @@ TEST(Serializer, arrays)
             vec[i].x = static_cast<float>(i) + 1;
 
         serializer << vec;
-        GTEST_ASSERT_EQ(serializer.str().length(), sizeof(decltype(vec.size())) + sizeof(Position) * 10);
+        GTEST_ASSERT_EQ(serializer.size(), sizeof(decltype(vec.size())) + sizeof(Position) * 10);
 
         std::vector<Position> updated;
         serializer >> updated;
         for (int i = 0; i < 10; i++)
             GTEST_ASSERT_EQ(updated[i].x, i + 1);
 
-        // Load
-        serializer.getStream().seekg(0);
+        // Load (Double read)
+        serializer.resetReadCursor();
         std::vector<Position> loaded = serializer.load<std::vector<Position>>();
         for (int i = 0; i < 10; i++)
             GTEST_ASSERT_EQ(loaded[i].x, i + 1);
@@ -196,41 +233,39 @@ TEST(Serializer, compound_struct)
 
     // Save
     rawSerializer << position;
-    std::string posSerialized = rawSerializer.getStream().str();
+    std::string posSerialized = rawSerializer.exportBytes();
     EXPECT_EQ(*reinterpret_cast<const float *>(&posSerialized.c_str()[0]), 1.0f);
     EXPECT_EQ(*reinterpret_cast<const float *>(&posSerialized.c_str()[4]), -8456.0f);
 
     // Update
-    rawSerializer.getStream().seekg(0);
     Position posDeserialized;
     rawSerializer >> posDeserialized;
     GTEST_ASSERT_EQ(posDeserialized.x, 1.0f);
     GTEST_ASSERT_EQ(posDeserialized.y, -8456.0f);
 
-    // Load
-    rawSerializer.getStream().seekg(0);
+    // Load (Double read)
+    rawSerializer.resetReadCursor();
     Position posLoaded = Position(rawSerializer);
     GTEST_ASSERT_EQ(posLoaded.x, 1.0f);
     GTEST_ASSERT_EQ(posLoaded.y, -8456.0f);
 
     /// NPC
-    rawSerializer.getStream().str("");
+    rawSerializer.clear();
     NPC npc{position, "Steve"};
 
     // Save
     rawSerializer << npc;
-    std::string npcSerialized = rawSerializer.getStream().str();
+    std::string npcSerialized = rawSerializer.exportBytes();
 
     // Update
-    rawSerializer.getStream().seekg(0);
     NPC npcDeserialized;
     rawSerializer >> npcDeserialized;
     GTEST_ASSERT_EQ(npcDeserialized.name, "Steve");
     GTEST_ASSERT_EQ(npcDeserialized.pos.x, 1.0f);
     GTEST_ASSERT_EQ(npcDeserialized.pos.y, -8456.0f);
 
-    // Load
-    rawSerializer.getStream().seekg(0);
+    // Load (Double read)
+    rawSerializer.resetReadCursor();
     NPC npcLoaded = NPC(rawSerializer);
     GTEST_ASSERT_EQ(npcLoaded.name, "Steve");
     GTEST_ASSERT_EQ(npcLoaded.pos.x, 1.0f);
@@ -248,11 +283,11 @@ TEST(Serializer, entityComponents)
 
     //// Test saveEntity
     rawSerializer.saveEntity<NPC, Position>(entity);
-    std::string entitySerializedExplicit = rawSerializer.getStream().str();
+    std::string entitySerializedExplicit = rawSerializer.exportBytes();
 
-    rawSerializer.getStream().str("");
+    rawSerializer.clear();
     rawSerializer << typeid(NPC) << entity.get<NPC>() << typeid(Position) << entity.get<Position>();
-    std::string expected = rawSerializer.getStream().str();
+    std::string expected = rawSerializer.exportBytes();
     GTEST_ASSERT_EQ(entitySerializedExplicit, expected);
 
 #ifdef ECSTASY_ENABLE_ENTITY_SERIALIZERS
@@ -260,25 +295,24 @@ TEST(Serializer, entityComponents)
     GTEST_ASSERT_EQ(entity.get<NPC>().name, "Steve");
     entity.get<NPC>().name = "John";
 
-    rawSerializer.getStream().seekg(0);
     rawSerializer.updateEntity(entity);
     GTEST_ASSERT_EQ(entity.get<NPC>().name, "Steve");
 
-    /// Test loadEntity
-    rawSerializer.getStream().seekg(0);
+    /// Test loadEntity (Double read)
+    rawSerializer.resetReadCursor();
     ecstasy::RegistryEntity newEntity = rawSerializer.loadEntity(registry);
     GTEST_ASSERT_EQ(newEntity.get<NPC>().name, "Steve");
 
     /// Final saveEntity test
-    rawSerializer.getStream().str("");
+    rawSerializer.clear();
     rawSerializer.saveEntity(entity);
-    std::string entitySerialized = rawSerializer.getStream().str();
+    std::string entitySerialized = rawSerializer.exportBytes();
 
     #ifdef _MSC_VER
     // MSVC does not guarantee the same order of the components
-    rawSerializer.getStream().str("");
+    rawSerializer.clear();
     rawSerializer << typeid(Position) << entity.get<Position>() << typeid(NPC) << entity.get<NPC>();
-    expected = rawSerializer.getStream().str();
+    expected = rawSerializer.exportBytes();
     #endif
     // Not a good test since the order of the components is not guaranteed
     GTEST_ASSERT_EQ(entitySerialized, expected);

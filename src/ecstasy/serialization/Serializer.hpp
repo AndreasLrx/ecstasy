@@ -12,6 +12,9 @@
 #ifndef ECSTASY_SERIALIZATION_SERIALIZER_HPP_
 #define ECSTASY_SERIALIZATION_SERIALIZER_HPP_
 
+#include <fstream>
+#include <sstream>
+
 #include "ecstasy/resources/entity/RegistryEntity.hpp"
 #include "ecstasy/serialization/ISerializer.hpp"
 #include "ecstasy/serialization/concepts/has_extraction_operator.hpp"
@@ -79,6 +82,39 @@ namespace ecstasy::serialization
         constexpr S &inner()
         {
             return reinterpret_cast<S &>(*this);
+        }
+
+        /// @copydoc ISerializer::importFile
+        void importFile(const std::filesystem::path &filename) override
+        {
+            std::ifstream fstream(filename);
+
+            importStream(fstream);
+        }
+
+        /// @copydoc ISerializer::importBytes
+        void importBytes(const std::string &content) override
+        {
+            std::stringstream stream(content);
+
+            importStream(stream);
+        }
+
+        /// @copydoc ISerializer::exportFile
+        void exportFile(const std::filesystem::path &filename) override
+        {
+            std::ofstream fstream(filename);
+
+            exportStream(fstream);
+        }
+
+        /// @copydoc ISerializer::exportBytes
+        std::string exportBytes() override
+        {
+            std::stringstream stream;
+
+            exportStream(stream);
+            return stream.str();
         }
 
         ///
