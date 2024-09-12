@@ -85,6 +85,22 @@ var annotated_dup =
         [ "views_allocator_size< true, Q, Qs... >", "structecstasy_1_1query_1_1views__allocator__size_3_01true_00_01_q_00_01_qs_8_8_8_01_4.html", null ]
       ] ],
       [ "serialization", "namespaceecstasy_1_1serialization.html", [
+        [ "traits", "namespaceecstasy_1_1serialization_1_1traits.html", [
+          [ "can_load_type", "structecstasy_1_1serialization_1_1traits_1_1can__load__type.html", null ],
+          [ "can_load_type< S, T, std::void_t< decltype(std::declval< S & >().template load< T >())> >", "structecstasy_1_1serialization_1_1traits_1_1can__load__type_3_01_s_00_01_t_00_01std_1_1void__t_355fac616e5d5cef23b8cc5cb6ec42564.html", null ],
+          [ "can_save_type", "structecstasy_1_1serialization_1_1traits_1_1can__save__type.html", null ],
+          [ "can_save_type< S, T, std::void_t< decltype(std::declval< S & >().save(std::declval< const T & >()))> >", "structecstasy_1_1serialization_1_1traits_1_1can__save__type_3_01_s_00_01_t_00_01std_1_1void__t_3f047b2e31f70f7fd0ee6176f1ca914e7.html", null ],
+          [ "can_update_type", "structecstasy_1_1serialization_1_1traits_1_1can__update__type.html", null ],
+          [ "can_update_type< S, T, std::void_t< decltype(std::declval< S & >().update(std::declval< T & >()))> >", "structecstasy_1_1serialization_1_1traits_1_1can__update__type_3_01_s_00_01_t_00_01std_1_1void__t45d7947f1b390ef11c086bf0be051dfd.html", null ],
+          [ "has_load_impl_for_type", "structecstasy_1_1serialization_1_1traits_1_1has__load__impl__for__type.html", null ],
+          [ "has_load_impl_for_type< S, T, std::void_t< decltype(std::declval< S & >().template loadImpl< T >())> >", "structecstasy_1_1serialization_1_1traits_1_1has__load__impl__for__type_3_01_s_00_01_t_00_01std_1984c1959d90b7970ad9598d748a3517b.html", null ],
+          [ "has_save_impl_for_type", "structecstasy_1_1serialization_1_1traits_1_1has__save__impl__for__type.html", null ],
+          [ "has_save_impl_for_type< S, T, std::void_t< decltype(std::declval< S & >().saveImpl(std::declval< const T & >()))> >", "structecstasy_1_1serialization_1_1traits_1_1has__save__impl__for__type_3_01_s_00_01_t_00_01std_10874f3ca517d6278146bb8b8ad405957.html", null ],
+          [ "has_update_impl_for_type", "structecstasy_1_1serialization_1_1traits_1_1has__update__impl__for__type.html", null ],
+          [ "has_update_impl_for_type< S, T, std::void_t< decltype(std::declval< S & >().updateImpl(std::declval< T & >()))> >", "structecstasy_1_1serialization_1_1traits_1_1has__update__impl__for__type_3_01_s_00_01_t_00_01std43c639ac8e926e09a4c13e869525b7a1.html", null ]
+        ] ],
+        [ "ComponentSerializer", "structecstasy_1_1serialization_1_1_component_serializer.html", null ],
+        [ "ComponentSerializer< util::meta::Traits< S1, Ss... > >", "structecstasy_1_1serialization_1_1_component_serializer_3_01util_1_1meta_1_1_traits_3_01_s1_00_01_ss_8_8_8_01_4_01_4.html", "structecstasy_1_1serialization_1_1_component_serializer_3_01util_1_1meta_1_1_traits_3_01_s1_00_01_ss_8_8_8_01_4_01_4" ],
         [ "ISerializer", "classecstasy_1_1serialization_1_1_i_serializer.html", "classecstasy_1_1serialization_1_1_i_serializer" ],
         [ "RawSerializer", "classecstasy_1_1serialization_1_1_raw_serializer.html", "classecstasy_1_1serialization_1_1_raw_serializer" ],
         [ "Serializer", "classecstasy_1_1serialization_1_1_serializer.html", "classecstasy_1_1serialization_1_1_serializer" ]

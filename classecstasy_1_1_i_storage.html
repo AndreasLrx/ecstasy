@@ -132,13 +132,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acff621f7894acd9d73ea903148b8a4fc"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_storage.html#acff621f7894acd9d73ea903148b8a4fc">contains</a> (size_t index) const noexcept=0</td></tr>
 <tr class="memdesc:acff621f7894acd9d73ea903148b8a4fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test if the entity index match a <b>Component</b> instance.  <br /></td></tr>
 <tr class="separator:acff621f7894acd9d73ea903148b8a4fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2da70acd215f03b0cea2a0a764e75f0a"><td class="memItemLeft" align="right" valign="top">virtual const <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_storage.html#a2da70acd215f03b0cea2a0a764e75f0a">getComponentTypeInfos</a> () const noexcept=0</td></tr>
+<tr class="memdesc:a2da70acd215f03b0cea2a0a764e75f0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Component stored type infos.  <br /></td></tr>
+<tr class="separator:a2da70acd215f03b0cea2a0a764e75f0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class of all components storage. </p>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-19) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_storage_8hpp_source.html#l00038">38</a> of file <a class="el" href="_i_storage_8hpp_source.html">IStorage.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_storage_8hpp_source.html#l00047">47</a> of file <a class="el" href="_i_storage_8hpp_source.html">IStorage.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa8f594bbee0e3d777affb26390677671" name="aa8f594bbee0e3d777affb26390677671"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa8f594bbee0e3d777affb26390677671">&#9670;&#160;</a></span>~IStorage()</h2>
@@ -240,6 +243,38 @@ Public Member Functions</h2></td></tr>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-21) </dd></dl>
 
 <p>Implemented in <a class="el" href="classecstasy_1_1_a_storage.html#a565dfd64b653f3c23cea0ed34ee87382">ecstasy::AStorage&lt; C &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a2da70acd215f03b0cea2a0a764e75f0a" name="a2da70acd215f03b0cea2a0a764e75f0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2da70acd215f03b0cea2a0a764e75f0a">&#9670;&#160;</a></span>getComponentTypeInfos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a> &amp; ecstasy::IStorage::getComponentTypeInfos </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the Component stored type infos. </p>
+<dl class="section return"><dt>Returns</dt><dd>const <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a>&amp; Type informations of the component stored in the storage.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-06-11) </dd></dl>
+
+<p>Implemented in <a class="el" href="classecstasy_1_1_a_storage.html#ab25f1caf270c78c88c8b0a80d64a1fe6">ecstasy::AStorage&lt; C &gt;</a>.</p>
 
 </div>
 </div>

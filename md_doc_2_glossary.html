@@ -314,7 +314,28 @@ Lockable</h2>
 <div class="line">    { lockable.unlock() } -&gt; std::same_as&lt;void&gt;;</div>
 <div class="line">    <span class="comment">// clang-format on</span></div>
 <div class="line">};</div>
-</div><!-- fragment --><p>References: <a class="el" href="conceptecstasy_1_1thread_1_1_lockable.html">Lockable</a>, <a class="el" href="classecstasy_1_1thread_1_1_lockable_view.html">LockableView</a> </p>
+</div><!-- fragment --><p>References: <a class="el" href="conceptecstasy_1_1thread_1_1_lockable.html">Lockable</a>, <a class="el" href="classecstasy_1_1thread_1_1_lockable_view.html">LockableView</a></p>
+<h1><a class="anchor" id="autotoc_md28"></a>
+Serialization</h1>
+<h2><a class="anchor" id="autotoc_md29"></a>
+Serializer actions</h2>
+<h3><a class="anchor" id="autotoc_md30"></a>
+Export</h3>
+<p>Export* methods allows to save the serialized variables into bytes. It can be loaded later with Import* methods.</p>
+<h3><a class="anchor" id="autotoc_md31"></a>
+Import</h3>
+<p>Import* methods allows to load a previously serialized data (with Export* methods) into the serializer instance, to deserialize it into variables.</p>
+<h2><a class="anchor" id="autotoc_md32"></a>
+Variable actions</h2>
+<h3><a class="anchor" id="autotoc_md33"></a>
+Serialize: Save</h3>
+<p>Serialize a variable and append it to the serializer stream.</p>
+<h3><a class="anchor" id="autotoc_md34"></a>
+Deserialize: Update</h3>
+<p>Read the serialized form of a variable and apply it to an existing variable.</p>
+<h3><a class="anchor" id="autotoc_md35"></a>
+Deserialize: Load</h3>
+<p>Instantiate a new variable from its serialized format. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

@@ -136,18 +136,41 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4ce66cbe7066affeb54dc9bc489a8346"><td class="memItemLeft" align="right" valign="top">constexpr S &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#a4ce66cbe7066affeb54dc9bc489a8346">inner</a> ()</td></tr>
 <tr class="memdesc:a4ce66cbe7066affeb54dc9bc489a8346"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a reference to the inner serializer.  <br /></td></tr>
 <tr class="separator:a4ce66cbe7066affeb54dc9bc489a8346"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a108b1b9c10f3ed54bdc07a436d86d257"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
-<tr class="memitem:a108b1b9c10f3ed54bdc07a436d86d257"><td class="memTemplItemLeft" align="right" valign="top">S &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#a108b1b9c10f3ed54bdc07a436d86d257">save</a> (const U &amp;object)</td></tr>
-<tr class="memdesc:a108b1b9c10f3ed54bdc07a436d86d257"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save an object to the serializer.  <br /></td></tr>
-<tr class="separator:a108b1b9c10f3ed54bdc07a436d86d257"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77088b0d55a8510c5b64937a0895e18a"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
-<tr class="memitem:a77088b0d55a8510c5b64937a0895e18a"><td class="memTemplItemLeft" align="right" valign="top">U&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#a77088b0d55a8510c5b64937a0895e18a">load</a> ()</td></tr>
-<tr class="memdesc:a77088b0d55a8510c5b64937a0895e18a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load an object from the serializer.  <br /></td></tr>
-<tr class="separator:a77088b0d55a8510c5b64937a0895e18a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28d513108fe063523b3b404124d4f9ad"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
-<tr class="memitem:a28d513108fe063523b3b404124d4f9ad"><td class="memTemplItemLeft" align="right" valign="top">S &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#a28d513108fe063523b3b404124d4f9ad">update</a> (U &amp;object)</td></tr>
-<tr class="memdesc:a28d513108fe063523b3b404124d4f9ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update an existing object from the serializer.  <br /></td></tr>
-<tr class="separator:a28d513108fe063523b3b404124d4f9ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e8253eb7baea6732d8e8a0113c21687"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#a2e8253eb7baea6732d8e8a0113c21687">importFile</a> (const <a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> &amp;filename) override</td></tr>
+<tr class="memdesc:a2e8253eb7baea6732d8e8a0113c21687"><td class="mdescLeft">&#160;</td><td class="mdescRight">Import data from a file into the serializer.    <br /></td></tr>
+<tr class="separator:a2e8253eb7baea6732d8e8a0113c21687"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af01133ff547607f54bd9abf00f687ad3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#af01133ff547607f54bd9abf00f687ad3">importBytes</a> (const <a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> &amp;content) override</td></tr>
+<tr class="memdesc:af01133ff547607f54bd9abf00f687ad3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Import data from a string into the serializer.    <br /></td></tr>
+<tr class="separator:af01133ff547607f54bd9abf00f687ad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad8b23daa04cb1b5e0b285d2ff3e9210"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#aad8b23daa04cb1b5e0b285d2ff3e9210">exportFile</a> (const <a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> &amp;filename) override</td></tr>
+<tr class="memdesc:aad8b23daa04cb1b5e0b285d2ff3e9210"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export the serializer content to a file.    <br /></td></tr>
+<tr class="separator:aad8b23daa04cb1b5e0b285d2ff3e9210"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25774b84c5ff9e8076a2228d917bfce5"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#a25774b84c5ff9e8076a2228d917bfce5">exportBytes</a> () override</td></tr>
+<tr class="memdesc:a25774b84c5ff9e8076a2228d917bfce5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export the serializer content to a string.    <br /></td></tr>
+<tr class="separator:a25774b84c5ff9e8076a2228d917bfce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c418f96a2d5a800c66c8f20e1450475"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; <br />
+requires concepts::has_extraction_operator&lt;S, U&gt; || <a class="el" href="namespaceecstasy_1_1serialization_1_1traits.html#af817368948da0ef6ad42237502f8b6aa">traits::has_save_impl_for_type_v</a>&lt;S, U&gt;</td></tr>
+<tr class="memitem:a4c418f96a2d5a800c66c8f20e1450475"><td class="memTemplItemLeft" align="right" valign="top">S &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#a4c418f96a2d5a800c66c8f20e1450475">save</a> (const U &amp;object)</td></tr>
+<tr class="memdesc:a4c418f96a2d5a800c66c8f20e1450475"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save an object to the serializer.  <br /></td></tr>
+<tr class="separator:a4c418f96a2d5a800c66c8f20e1450475"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7859baaddf7407c354a6ac154b2a62e5"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
+<tr class="memitem:a7859baaddf7407c354a6ac154b2a62e5"><td class="memTemplItemLeft" align="right" valign="top">S &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#a7859baaddf7407c354a6ac154b2a62e5">saveEntityComponent</a> (const C &amp;component)</td></tr>
+<tr class="memdesc:a7859baaddf7407c354a6ac154b2a62e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save an entity component to the serializer.  <br /></td></tr>
+<tr class="separator:a7859baaddf7407c354a6ac154b2a62e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70e09fccc644879cfbb903855e830d0c"><td class="memTemplParams" colspan="2">template&lt;typename... Cs&gt; </td></tr>
+<tr class="memitem:a70e09fccc644879cfbb903855e830d0c"><td class="memTemplItemLeft" align="right" valign="top">S &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#a70e09fccc644879cfbb903855e830d0c">saveEntity</a> (const <a class="el" href="classecstasy_1_1_registry_entity.html">RegistryEntity</a> &amp;entity)</td></tr>
+<tr class="memdesc:a70e09fccc644879cfbb903855e830d0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save an entity to the serializer with explicit components.  <br /></td></tr>
+<tr class="separator:a70e09fccc644879cfbb903855e830d0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a953d9156ab0b96c1860911599d6731ec"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; <br />
+requires <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#ae49487ac450466c4901c470182dc87d0">is_constructible</a>&lt;U&gt; || (<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_default_constructible.html">std::is_default_constructible_v</a>&lt;U&gt; &amp;&amp; <a class="el" href="namespaceecstasy_1_1serialization_1_1traits.html#ab8d798d87c1bf948066452b3dc081bd6">traits::can_update_type_v</a>&lt;S, U&gt;) || <a class="el" href="namespaceecstasy_1_1serialization_1_1traits.html#a4f5f4a966971e048d87995a9cb5d94c8">traits::has_load_impl_for_type_v</a>&lt;S, U&gt;</td></tr>
+<tr class="memitem:a953d9156ab0b96c1860911599d6731ec"><td class="memTemplItemLeft" align="right" valign="top">U&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#a953d9156ab0b96c1860911599d6731ec">load</a> ()</td></tr>
+<tr class="memdesc:a953d9156ab0b96c1860911599d6731ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load an object from the serializer.  <br /></td></tr>
+<tr class="separator:a953d9156ab0b96c1860911599d6731ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dcb2621e2751e9854967eb845b4c43b"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; <br />
+requires <a class="el" href="namespaceecstasy_1_1serialization_1_1traits.html#aabdf0e0bed5d4dde7dbb5a948ed31388">traits::has_update_impl_for_type_v</a>&lt;S, U&gt; || <a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_fundamental.html">std::is_fundamental_v</a>&lt;U&gt; || concepts::has_insertion_operator&lt;S, U&gt;</td></tr>
+<tr class="memitem:a3dcb2621e2751e9854967eb845b4c43b"><td class="memTemplItemLeft" align="right" valign="top">S &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#a3dcb2621e2751e9854967eb845b4c43b">update</a> (U &amp;object)</td></tr>
+<tr class="memdesc:a3dcb2621e2751e9854967eb845b4c43b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update an existing object from the serializer.  <br /></td></tr>
+<tr class="separator:a3dcb2621e2751e9854967eb845b4c43b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab57cc26efd48513c4d72b3d5a82ca1ba"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
 <tr class="memitem:ab57cc26efd48513c4d72b3d5a82ca1ba"><td class="memTemplItemLeft" align="right" valign="top">S &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#ab57cc26efd48513c4d72b3d5a82ca1ba">operator&lt;&lt;</a> (const U &amp;object)</td></tr>
 <tr class="memdesc:ab57cc26efd48513c4d72b3d5a82ca1ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator overload to simplify the save method.  <br /></td></tr>
@@ -160,6 +183,30 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa1be094a8e6c0489746e36c336830321 inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html#aa1be094a8e6c0489746e36c336830321">~ISerializer</a> ()=default</td></tr>
 <tr class="memdesc:aa1be094a8e6c0489746e36c336830321 inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html" title="Interface for all serializer classes.">ISerializer</a>.  <br /></td></tr>
 <tr class="separator:aa1be094a8e6c0489746e36c336830321 inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62bdb10ad4d884ed32f49989d0918266 inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html#a62bdb10ad4d884ed32f49989d0918266">clear</a> ()=0</td></tr>
+<tr class="memdesc:a62bdb10ad4d884ed32f49989d0918266 inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the serializer content.  <br /></td></tr>
+<tr class="separator:a62bdb10ad4d884ed32f49989d0918266 inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1760f7f115483e1cd6df7c324eaab74f inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html#a1760f7f115483e1cd6df7c324eaab74f">size</a> () const =0</td></tr>
+<tr class="memdesc:a1760f7f115483e1cd6df7c324eaab74f inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of the serializer content (in bytes).  <br /></td></tr>
+<tr class="separator:a1760f7f115483e1cd6df7c324eaab74f inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33fc95c99ffcd9a60edc2a9cfae34ec8 inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html#a33fc95c99ffcd9a60edc2a9cfae34ec8">importFile</a> (const <a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> &amp;filename)=0</td></tr>
+<tr class="memdesc:a33fc95c99ffcd9a60edc2a9cfae34ec8 inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Import data from a file into the serializer.  <br /></td></tr>
+<tr class="separator:a33fc95c99ffcd9a60edc2a9cfae34ec8 inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79d29727363ab75e3d6b51d1851e6a37 inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html#a79d29727363ab75e3d6b51d1851e6a37">importBytes</a> (const <a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> &amp;content)=0</td></tr>
+<tr class="memdesc:a79d29727363ab75e3d6b51d1851e6a37 inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Import data from a string into the serializer.  <br /></td></tr>
+<tr class="separator:a79d29727363ab75e3d6b51d1851e6a37 inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ba385804c59ea87c8f140aa2d8c6b65 inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html#a6ba385804c59ea87c8f140aa2d8c6b65">importStream</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_istream.html">std::istream</a> &amp;stream)=0</td></tr>
+<tr class="memdesc:a6ba385804c59ea87c8f140aa2d8c6b65 inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Import data from a stream into the serializer.  <br /></td></tr>
+<tr class="separator:a6ba385804c59ea87c8f140aa2d8c6b65 inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a845724bac2a10c009249626a04b72f47 inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html#a845724bac2a10c009249626a04b72f47">exportFile</a> (const <a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> &amp;filename)=0</td></tr>
+<tr class="memdesc:a845724bac2a10c009249626a04b72f47 inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export the serializer content to a file.  <br /></td></tr>
+<tr class="separator:a845724bac2a10c009249626a04b72f47 inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad684db54d055b44684fbdb4b3f3c6e69 inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html#ad684db54d055b44684fbdb4b3f3c6e69">exportBytes</a> ()=0</td></tr>
+<tr class="memdesc:ad684db54d055b44684fbdb4b3f3c6e69 inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export the serializer content to a string.  <br /></td></tr>
+<tr class="separator:ad684db54d055b44684fbdb4b3f3c6e69 inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a740335336006dede2125409ee47a453c inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html#a740335336006dede2125409ee47a453c">exportStream</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;stream)=0</td></tr>
+<tr class="memdesc:a740335336006dede2125409ee47a453c inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export the serializer content to a stream.  <br /></td></tr>
+<tr class="separator:a740335336006dede2125409ee47a453c inherit pub_methods_classecstasy_1_1serialization_1_1_i_serializer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -186,7 +233,7 @@ class ecstasy::serialization::Serializer&lt; S &gt;</div><p><a class="el" href="
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-30) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00030">30</a> of file <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html">Serializer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00039">39</a> of file <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html">Serializer.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ae2c1678f57a9e4d60684b16c1a11fedb" name="ae2c1678f57a9e4d60684b16c1a11fedb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae2c1678f57a9e4d60684b16c1a11fedb">&#9670;&#160;</a></span>Parent</h2>
@@ -212,7 +259,7 @@ template&lt;typename S &gt; </div>
 
 <p>Parent serializer type, used for inheriting classes. </p>
 
-<p class="definition">Definition at line <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00033">33</a> of file <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html">Serializer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00042">42</a> of file <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html">Serializer.hpp</a>.</p>
 
 </div>
 </div>
@@ -280,6 +327,199 @@ template&lt;typename S &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a25774b84c5ff9e8076a2228d917bfce5" name="a25774b84c5ff9e8076a2228d917bfce5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25774b84c5ff9e8076a2228d917bfce5">&#9670;&#160;</a></span>exportBytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename S &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html">ecstasy::serialization::Serializer</a>&lt; S &gt;::exportBytes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Export the serializer content to a string.   </p>
+<dl class="section note"><dt>Note</dt><dd>Calls the exportStream method with a stringstream.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> String representation of the serializer content.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-09-12)   </dd></dl>
+
+<p>Implements <a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html#ad684db54d055b44684fbdb4b3f3c6e69">ecstasy::serialization::ISerializer</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00112">112</a> of file <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html">Serializer.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  113</span>        {</div>
+<div class="line"><span class="lineno">  114</span>            <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/io/basic_stringstream.html">std::stringstream</a> stream;</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>            <a class="code hl_function" href="classecstasy_1_1serialization_1_1_i_serializer.html#a740335336006dede2125409ee47a453c">exportStream</a>(stream);</div>
+<div class="line"><span class="lineno">  117</span>            <span class="keywordflow">return</span> stream.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/io/basic_stringstream/str.html">str</a>();</div>
+<div class="line"><span class="lineno">  118</span>        }</div>
+<div class="ttc" id="abasic_stringstream_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_stringstream.html">std::stringstream</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1serialization_1_1_i_serializer_html_a740335336006dede2125409ee47a453c"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_i_serializer.html#a740335336006dede2125409ee47a453c">ecstasy::serialization::ISerializer::exportStream</a></div><div class="ttdeci">virtual void exportStream(std::ostream &amp;stream)=0</div><div class="ttdoc">Export the serializer content to a stream.</div></div>
+<div class="ttc" id="astr_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_stringstream/str.html">std::stringstream::str</a></div><div class="ttdeci">T str(T... args)</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aad8b23daa04cb1b5e0b285d2ff3e9210" name="aad8b23daa04cb1b5e0b285d2ff3e9210"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad8b23daa04cb1b5e0b285d2ff3e9210">&#9670;&#160;</a></span>exportFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename S &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html">ecstasy::serialization::Serializer</a>&lt; S &gt;::exportFile </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> &amp;&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Export the serializer content to a file.   </p>
+<dl class="section note"><dt>Note</dt><dd>Calls the exportStream method with a file stream.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filename</td><td>Path to the file to export the serializer content to.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-09-12)   </dd></dl>
+
+<p>Implements <a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html#a845724bac2a10c009249626a04b72f47">ecstasy::serialization::ISerializer</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00104">104</a> of file <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html">Serializer.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span>        {</div>
+<div class="line"><span class="lineno">  106</span>            <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/io/basic_ofstream.html">std::ofstream</a> fstream(filename);</div>
+<div class="line"><span class="lineno">  107</span> </div>
+<div class="line"><span class="lineno">  108</span>            <a class="code hl_function" href="classecstasy_1_1serialization_1_1_i_serializer.html#a740335336006dede2125409ee47a453c">exportStream</a>(fstream);</div>
+<div class="line"><span class="lineno">  109</span>        }</div>
+<div class="ttc" id="abasic_ofstream_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_ofstream.html">std::ofstream</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af01133ff547607f54bd9abf00f687ad3" name="af01133ff547607f54bd9abf00f687ad3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af01133ff547607f54bd9abf00f687ad3">&#9670;&#160;</a></span>importBytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename S &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html">ecstasy::serialization::Serializer</a>&lt; S &gt;::importBytes </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> &amp;&#160;</td>
+          <td class="paramname"><em>content</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Import data from a string into the serializer.   </p>
+<dl class="section note"><dt>Note</dt><dd>Calls the importStream method with a stringstream.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">content</td><td>String to import.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-09-12)   </dd></dl>
+
+<p>Implements <a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html#a79d29727363ab75e3d6b51d1851e6a37">ecstasy::serialization::ISerializer</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00096">96</a> of file <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html">Serializer.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   97</span>        {</div>
+<div class="line"><span class="lineno">   98</span>            <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/io/basic_stringstream.html">std::stringstream</a> stream(content);</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>            <a class="code hl_function" href="classecstasy_1_1serialization_1_1_i_serializer.html#a6ba385804c59ea87c8f140aa2d8c6b65">importStream</a>(stream);</div>
+<div class="line"><span class="lineno">  101</span>        }</div>
+<div class="ttc" id="aclassecstasy_1_1serialization_1_1_i_serializer_html_a6ba385804c59ea87c8f140aa2d8c6b65"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_i_serializer.html#a6ba385804c59ea87c8f140aa2d8c6b65">ecstasy::serialization::ISerializer::importStream</a></div><div class="ttdeci">virtual void importStream(std::istream &amp;stream)=0</div><div class="ttdoc">Import data from a stream into the serializer.</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2e8253eb7baea6732d8e8a0113c21687" name="a2e8253eb7baea6732d8e8a0113c21687"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e8253eb7baea6732d8e8a0113c21687">&#9670;&#160;</a></span>importFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename S &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html">ecstasy::serialization::Serializer</a>&lt; S &gt;::importFile </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> &amp;&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Import data from a file into the serializer.   </p>
+<dl class="section note"><dt>Note</dt><dd>Calls the importStream method with a file stream.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filename</td><td>Path to the file to import.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-09-12)   </dd></dl>
+
+<p>Implements <a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html#a33fc95c99ffcd9a60edc2a9cfae34ec8">ecstasy::serialization::ISerializer</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00088">88</a> of file <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html">Serializer.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   89</span>        {</div>
+<div class="line"><span class="lineno">   90</span>            <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/io/basic_ifstream.html">std::ifstream</a> fstream(filename);</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>            <a class="code hl_function" href="classecstasy_1_1serialization_1_1_i_serializer.html#a6ba385804c59ea87c8f140aa2d8c6b65">importStream</a>(fstream);</div>
+<div class="line"><span class="lineno">   93</span>        }</div>
+<div class="ttc" id="abasic_ifstream_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_ifstream.html">std::ifstream</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a4ce66cbe7066affeb54dc9bc489a8346" name="a4ce66cbe7066affeb54dc9bc489a8346"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4ce66cbe7066affeb54dc9bc489a8346">&#9670;&#160;</a></span>inner()</h2>
 
@@ -310,22 +550,23 @@ template&lt;typename S &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-30) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00073">73</a> of file <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html">Serializer.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   74</span>        {</div>
-<div class="line"><span class="lineno">   75</span>            <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>S &amp;<span class="keyword">&gt;</span>(*this);</div>
-<div class="line"><span class="lineno">   76</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00082">82</a> of file <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html">Serializer.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>        {</div>
+<div class="line"><span class="lineno">   84</span>            <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>S &amp;<span class="keyword">&gt;</span>(*this);</div>
+<div class="line"><span class="lineno">   85</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a77088b0d55a8510c5b64937a0895e18a" name="a77088b0d55a8510c5b64937a0895e18a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77088b0d55a8510c5b64937a0895e18a">&#9670;&#160;</a></span>load()</h2>
+<a id="a953d9156ab0b96c1860911599d6731ec" name="a953d9156ab0b96c1860911599d6731ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a953d9156ab0b96c1860911599d6731ec">&#9670;&#160;</a></span>load()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename S &gt; </div>
 <div class="memtemplate">
-template&lt;typename U &gt; </div>
+template&lt;typename U &gt; <br />
+requires <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#ae49487ac450466c4901c470182dc87d0">is_constructible</a>&lt;U&gt; || (<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_default_constructible.html">std::is_default_constructible_v</a>&lt;U&gt; &amp;&amp; <a class="el" href="namespaceecstasy_1_1serialization_1_1traits.html#ab8d798d87c1bf948066452b3dc081bd6">traits::can_update_type_v</a>&lt;S, U&gt;) || <a class="el" href="namespaceecstasy_1_1serialization_1_1traits.html#a4f5f4a966971e048d87995a9cb5d94c8">traits::has_load_impl_for_type_v</a>&lt;S, U&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -356,20 +597,19 @@ template&lt;typename U &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-30) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00109">109</a> of file <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html">Serializer.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  110</span>        {</div>
-<div class="line"><span class="lineno">  111</span>            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (is_constructible&lt;U&gt;) {</div>
-<div class="line"><span class="lineno">  112</span>                <span class="keywordflow">return</span> U(<a class="code hl_function" href="classecstasy_1_1serialization_1_1_serializer.html#a4ce66cbe7066affeb54dc9bc489a8346">inner</a>());</div>
-<div class="line"><span class="lineno">  113</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_default_constructible_v&lt;U&gt;) {</div>
-<div class="line"><span class="lineno">  114</span>                U object;</div>
-<div class="line"><span class="lineno">  115</span>                <a class="code hl_function" href="classecstasy_1_1serialization_1_1_serializer.html#a4ce66cbe7066affeb54dc9bc489a8346">inner</a>().update(<span class="keywordtype">object</span>);</div>
-<div class="line"><span class="lineno">  116</span>                <span class="keywordflow">return</span> object;</div>
-<div class="line"><span class="lineno">  117</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  118</span>                <span class="keyword">static_assert</span>(!(is_constructible&lt;U&gt; || std::is_default_constructible_v&lt;U&gt;),</div>
-<div class="line"><span class="lineno">  119</span>                    <span class="stringliteral">&quot;Type cannot be loaded. It must be default constructible or constructible from a serializer&quot;</span>);</div>
-<div class="line"><span class="lineno">  120</span>            }</div>
-<div class="line"><span class="lineno">  121</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1serialization_1_1_serializer_html_a4ce66cbe7066affeb54dc9bc489a8346"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_serializer.html#a4ce66cbe7066affeb54dc9bc489a8346">ecstasy::serialization::Serializer::inner</a></div><div class="ttdeci">constexpr S &amp; inner()</div><div class="ttdoc">Get a reference to the inner serializer.</div><div class="ttdef"><b>Definition</b> <a href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00073">Serializer.hpp:73</a></div></div>
+<p class="definition">Definition at line <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00224">224</a> of file <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html">Serializer.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  225</span>        {</div>
+<div class="line"><span class="lineno">  226</span>            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (traits::has_load_impl_for_type_v&lt;S, U&gt;)</div>
+<div class="line"><span class="lineno">  227</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="classecstasy_1_1serialization_1_1_serializer.html#a4ce66cbe7066affeb54dc9bc489a8346">inner</a>().template loadImpl&lt;U&gt;();</div>
+<div class="line"><span class="lineno">  228</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (is_constructible&lt;U&gt;) {</div>
+<div class="line"><span class="lineno">  229</span>                <span class="keywordflow">return</span> U(<a class="code hl_function" href="classecstasy_1_1serialization_1_1_serializer.html#a4ce66cbe7066affeb54dc9bc489a8346">inner</a>());</div>
+<div class="line"><span class="lineno">  230</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  231</span>                U object;</div>
+<div class="line"><span class="lineno">  232</span>                <a class="code hl_function" href="classecstasy_1_1serialization_1_1_serializer.html#a4ce66cbe7066affeb54dc9bc489a8346">inner</a>().update(<span class="keywordtype">object</span>);</div>
+<div class="line"><span class="lineno">  233</span>                <span class="keywordflow">return</span> object;</div>
+<div class="line"><span class="lineno">  234</span>            }</div>
+<div class="line"><span class="lineno">  235</span>        }</div>
+<div class="ttc" id="aclassecstasy_1_1serialization_1_1_serializer_html_a4ce66cbe7066affeb54dc9bc489a8346"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_serializer.html#a4ce66cbe7066affeb54dc9bc489a8346">ecstasy::serialization::Serializer::inner</a></div><div class="ttdeci">constexpr S &amp; inner()</div><div class="ttdoc">Get a reference to the inner serializer.</div><div class="ttdef"><b>Definition</b> <a href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00082">Serializer.hpp:82</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -418,10 +658,10 @@ template&lt;typename U &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-30) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00162">162</a> of file <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html">Serializer.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  163</span>        {</div>
-<div class="line"><span class="lineno">  164</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classecstasy_1_1serialization_1_1_serializer.html#a4ce66cbe7066affeb54dc9bc489a8346">inner</a>().save(<span class="keywordtype">object</span>);</div>
-<div class="line"><span class="lineno">  165</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00324">324</a> of file <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html">Serializer.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  325</span>        {</div>
+<div class="line"><span class="lineno">  326</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classecstasy_1_1serialization_1_1_serializer.html#a4ce66cbe7066affeb54dc9bc489a8346">inner</a>().save(<span class="keywordtype">object</span>);</div>
+<div class="line"><span class="lineno">  327</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -470,22 +710,23 @@ template&lt;typename U &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-30) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00180">180</a> of file <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html">Serializer.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  181</span>        {</div>
-<div class="line"><span class="lineno">  182</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classecstasy_1_1serialization_1_1_serializer.html#a4ce66cbe7066affeb54dc9bc489a8346">inner</a>().update(<span class="keywordtype">object</span>);</div>
-<div class="line"><span class="lineno">  183</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00342">342</a> of file <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html">Serializer.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  343</span>        {</div>
+<div class="line"><span class="lineno">  344</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classecstasy_1_1serialization_1_1_serializer.html#a4ce66cbe7066affeb54dc9bc489a8346">inner</a>().update(<span class="keywordtype">object</span>);</div>
+<div class="line"><span class="lineno">  345</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a108b1b9c10f3ed54bdc07a436d86d257" name="a108b1b9c10f3ed54bdc07a436d86d257"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a108b1b9c10f3ed54bdc07a436d86d257">&#9670;&#160;</a></span>save()</h2>
+<a id="a4c418f96a2d5a800c66c8f20e1450475" name="a4c418f96a2d5a800c66c8f20e1450475"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c418f96a2d5a800c66c8f20e1450475">&#9670;&#160;</a></span>save()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename S &gt; </div>
 <div class="memtemplate">
-template&lt;typename U &gt; </div>
+template&lt;typename U &gt; <br />
+requires concepts::has_extraction_operator&lt;S, U&gt; || <a class="el" href="namespaceecstasy_1_1serialization_1_1traits.html#af817368948da0ef6ad42237502f8b6aa">traits::has_save_impl_for_type_v</a>&lt;S, U&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -522,22 +763,140 @@ template&lt;typename U &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-30) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00091">91</a> of file <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html">Serializer.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   92</span>        {</div>
-<div class="line"><span class="lineno">   93</span>            <span class="keywordflow">return</span> <span class="keywordtype">object</span> &gt;&gt; <a class="code hl_function" href="classecstasy_1_1serialization_1_1_serializer.html#a4ce66cbe7066affeb54dc9bc489a8346">inner</a>();</div>
-<div class="line"><span class="lineno">   94</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00134">134</a> of file <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html">Serializer.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  135</span>        {</div>
+<div class="line"><span class="lineno">  136</span>            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (traits::has_save_impl_for_type_v&lt;S, U&gt;)</div>
+<div class="line"><span class="lineno">  137</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="classecstasy_1_1serialization_1_1_serializer.html#a4ce66cbe7066affeb54dc9bc489a8346">inner</a>().saveImpl(<span class="keywordtype">object</span>);</div>
+<div class="line"><span class="lineno">  138</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  139</span>                <span class="keywordflow">return</span> <span class="keywordtype">object</span> &gt;&gt; <a class="code hl_function" href="classecstasy_1_1serialization_1_1_serializer.html#a4ce66cbe7066affeb54dc9bc489a8346">inner</a>();</div>
+<div class="line"><span class="lineno">  140</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a28d513108fe063523b3b404124d4f9ad" name="a28d513108fe063523b3b404124d4f9ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28d513108fe063523b3b404124d4f9ad">&#9670;&#160;</a></span>update()</h2>
+<a id="a70e09fccc644879cfbb903855e830d0c" name="a70e09fccc644879cfbb903855e830d0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70e09fccc644879cfbb903855e830d0c">&#9670;&#160;</a></span>saveEntity()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename S &gt; </div>
 <div class="memtemplate">
-template&lt;typename U &gt; </div>
+template&lt;typename... Cs&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">S &amp; <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html">ecstasy::serialization::Serializer</a>&lt; S &gt;::saveEntity </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classecstasy_1_1_registry_entity.html">RegistryEntity</a> &amp;&#160;</td>
+          <td class="paramname"><em>entity</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Save an entity to the serializer with explicit components. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Cs</td><td>Components to save.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">entity</td><td><a class="el" href="classecstasy_1_1_entity.html" title="Encapsulate an index to an entity.">Entity</a> to save.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>S&amp; Reference to <b>this</b> for chain calls.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="elRef" href="http://en.cppreference.com/w/cpp/error/out_of_range.html">std::out_of_range</a></td><td>If the entity does not have one of the components.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-06-11) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00176">176</a> of file <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html">Serializer.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  177</span>        {</div>
+<div class="line"><span class="lineno">  178</span>            S &amp;s = <a class="code hl_function" href="classecstasy_1_1serialization_1_1_serializer.html#a4ce66cbe7066affeb54dc9bc489a8346">inner</a>();</div>
+<div class="line"><span class="lineno">  179</span>            (<a class="code hl_function" href="classecstasy_1_1serialization_1_1_serializer.html#a7859baaddf7407c354a6ac154b2a62e5">saveEntityComponent</a>(entity.get&lt;Cs&gt;()), ...);</div>
+<div class="line"><span class="lineno">  180</span>            <span class="keywordflow">return</span> s;</div>
+<div class="line"><span class="lineno">  181</span>        }</div>
+<div class="ttc" id="aclassecstasy_1_1serialization_1_1_serializer_html_a7859baaddf7407c354a6ac154b2a62e5"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_serializer.html#a7859baaddf7407c354a6ac154b2a62e5">ecstasy::serialization::Serializer::saveEntityComponent</a></div><div class="ttdeci">S &amp; saveEntityComponent(const C &amp;component)</div><div class="ttdoc">Save an entity component to the serializer.</div><div class="ttdef"><b>Definition</b> <a href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00156">Serializer.hpp:156</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7859baaddf7407c354a6ac154b2a62e5" name="a7859baaddf7407c354a6ac154b2a62e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7859baaddf7407c354a6ac154b2a62e5">&#9670;&#160;</a></span>saveEntityComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename S &gt; </div>
+<div class="memtemplate">
+template&lt;typename C &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">S &amp; <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html">ecstasy::serialization::Serializer</a>&lt; S &gt;::saveEntityComponent </td>
+          <td>(</td>
+          <td class="paramtype">const C &amp;&#160;</td>
+          <td class="paramname"><em>component</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Save an entity component to the serializer. </p>
+<p>This includes the component type before the component data.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">C</td><td>Component type.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">component</td><td>Component to save.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>S&amp; Reference to <b>this</b> for chain calls.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-06-11) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00156">156</a> of file <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html">Serializer.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  157</span>        {</div>
+<div class="line"><span class="lineno">  158</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classecstasy_1_1serialization_1_1_serializer.html#a4ce66cbe7066affeb54dc9bc489a8346">inner</a>() &lt;&lt; <span class="keyword">typeid</span>(C) &lt;&lt; component;</div>
+<div class="line"><span class="lineno">  159</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3dcb2621e2751e9854967eb845b4c43b" name="a3dcb2621e2751e9854967eb845b4c43b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dcb2621e2751e9854967eb845b4c43b">&#9670;&#160;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename S &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; <br />
+requires <a class="el" href="namespaceecstasy_1_1serialization_1_1traits.html#aabdf0e0bed5d4dde7dbb5a948ed31388">traits::has_update_impl_for_type_v</a>&lt;S, U&gt; || <a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_fundamental.html">std::is_fundamental_v</a>&lt;U&gt; || concepts::has_insertion_operator&lt;S, U&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -575,15 +934,16 @@ template&lt;typename U &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-30) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00139">139</a> of file <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html">Serializer.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  140</span>        {</div>
-<div class="line"><span class="lineno">  141</span>            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_fundamental_v&lt;U&gt;) {</div>
-<div class="line"><span class="lineno">  142</span>                <span class="keywordtype">object</span> = <a class="code hl_function" href="classecstasy_1_1serialization_1_1_serializer.html#a4ce66cbe7066affeb54dc9bc489a8346">inner</a>().template load&lt;U&gt;();</div>
-<div class="line"><span class="lineno">  143</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  144</span>                <span class="keywordtype">object</span> &lt;&lt; <a class="code hl_function" href="classecstasy_1_1serialization_1_1_serializer.html#a4ce66cbe7066affeb54dc9bc489a8346">inner</a>();</div>
-<div class="line"><span class="lineno">  145</span>            }</div>
-<div class="line"><span class="lineno">  146</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classecstasy_1_1serialization_1_1_serializer.html#a4ce66cbe7066affeb54dc9bc489a8346">inner</a>();</div>
-<div class="line"><span class="lineno">  147</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00275">275</a> of file <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html">Serializer.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  276</span>        {</div>
+<div class="line"><span class="lineno">  277</span>            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (traits::has_update_impl_for_type_v&lt;S, U&gt;)</div>
+<div class="line"><span class="lineno">  278</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="classecstasy_1_1serialization_1_1_serializer.html#a4ce66cbe7066affeb54dc9bc489a8346">inner</a>().updateImpl(<span class="keywordtype">object</span>);</div>
+<div class="line"><span class="lineno">  279</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_fundamental_v&lt;U&gt;)</div>
+<div class="line"><span class="lineno">  280</span>                <span class="keywordtype">object</span> = <a class="code hl_function" href="classecstasy_1_1serialization_1_1_serializer.html#a4ce66cbe7066affeb54dc9bc489a8346">inner</a>().template load&lt;U&gt;();</div>
+<div class="line"><span class="lineno">  281</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  282</span>                <span class="keywordtype">object</span> &lt;&lt; <a class="code hl_function" href="classecstasy_1_1serialization_1_1_serializer.html#a4ce66cbe7066affeb54dc9bc489a8346">inner</a>();</div>
+<div class="line"><span class="lineno">  283</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classecstasy_1_1serialization_1_1_serializer.html#a4ce66cbe7066affeb54dc9bc489a8346">inner</a>();</div>
+<div class="line"><span class="lineno">  284</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -623,7 +983,7 @@ template&lt;typename U &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-30) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00047">47</a> of file <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html">Serializer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00056">56</a> of file <a class="el" href="ecstasy_2serialization_2_serializer_8hpp_source.html">Serializer.hpp</a>.</p>
 
 </div>
 </div>

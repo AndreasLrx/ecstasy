@@ -25,6 +25,8 @@ var hierarchy =
     [ "ecstasy::component_type< T >", "structecstasy_1_1component__type.html", null ],
     [ "ecstasy::component_type< Q >", "structecstasy_1_1component__type_3_01_q_01_4.html", null ],
     [ "ecstasy::component_type< S >", "structecstasy_1_1component__type_3_01_s_01_4.html", null ],
+    [ "ecstasy::serialization::ComponentSerializer< S >", "structecstasy_1_1serialization_1_1_component_serializer.html", null ],
+    [ "ecstasy::serialization::ComponentSerializer< util::meta::Traits< S1, Ss... > >", "structecstasy_1_1serialization_1_1_component_serializer_3_01util_1_1meta_1_1_traits_3_01_s1_00_01_ss_8_8_8_01_4_01_4.html", null ],
     [ "util::serialization::PolymorphicIterator< T >::Concept", "structutil_1_1serialization_1_1_polymorphic_iterator_1_1_concept.html", [
       [ "util::serialization::PolymorphicIterator< T >::Model< Iter >", "classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html", null ]
     ] ],
@@ -54,6 +56,12 @@ var hierarchy =
     [ "std::false_type", "http://en.cppreference.com/w/cpp/types/integral_constant.html", [
       [ "ecstasy::query::is_queryable< T >", "structecstasy_1_1query_1_1is__queryable.html", null ],
       [ "ecstasy::query::is_queryable_with_adjust< T >", "structecstasy_1_1query_1_1is__queryable__with__adjust.html", null ],
+      [ "ecstasy::serialization::traits::can_load_type< S, T, typename >", "structecstasy_1_1serialization_1_1traits_1_1can__load__type.html", null ],
+      [ "ecstasy::serialization::traits::can_save_type< S, T, typename >", "structecstasy_1_1serialization_1_1traits_1_1can__save__type.html", null ],
+      [ "ecstasy::serialization::traits::can_update_type< S, T, typename >", "structecstasy_1_1serialization_1_1traits_1_1can__update__type.html", null ],
+      [ "ecstasy::serialization::traits::has_load_impl_for_type< S, T, typename >", "structecstasy_1_1serialization_1_1traits_1_1has__load__impl__for__type.html", null ],
+      [ "ecstasy::serialization::traits::has_save_impl_for_type< S, T, typename >", "structecstasy_1_1serialization_1_1traits_1_1has__save__impl__for__type.html", null ],
+      [ "ecstasy::serialization::traits::has_update_impl_for_type< S, T, typename >", "structecstasy_1_1serialization_1_1traits_1_1has__update__impl__for__type.html", null ],
       [ "util::meta::_type_set_eq< typename, typename >", "structutil_1_1meta_1_1__type__set__eq.html", null ],
       [ "util::meta::is_std_vector< typename >", "structutil_1_1meta_1_1is__std__vector.html", null ],
       [ "util::meta::type_set_eq< typename, typename >", "structutil_1_1meta_1_1type__set__eq.html", null ]
@@ -268,6 +276,12 @@ var hierarchy =
     [ "std::true_type", "http://en.cppreference.com/w/cpp/types/integral_constant.html", [
       [ "ecstasy::query::is_queryable< T >", "structecstasy_1_1query_1_1is__queryable_3_01_t_01_4.html", null ],
       [ "ecstasy::query::is_queryable_with_adjust< T >", "structecstasy_1_1query_1_1is__queryable__with__adjust_3_01_t_01_4.html", null ],
+      [ "ecstasy::serialization::traits::can_load_type< S, T, std::void_t< decltype(std::declval< S & >().template load< T >())> >", "structecstasy_1_1serialization_1_1traits_1_1can__load__type_3_01_s_00_01_t_00_01std_1_1void__t_355fac616e5d5cef23b8cc5cb6ec42564.html", null ],
+      [ "ecstasy::serialization::traits::can_save_type< S, T, std::void_t< decltype(std::declval< S & >().save(std::declval< const T & >()))> >", "structecstasy_1_1serialization_1_1traits_1_1can__save__type_3_01_s_00_01_t_00_01std_1_1void__t_3f047b2e31f70f7fd0ee6176f1ca914e7.html", null ],
+      [ "ecstasy::serialization::traits::can_update_type< S, T, std::void_t< decltype(std::declval< S & >().update(std::declval< T & >()))> >", "structecstasy_1_1serialization_1_1traits_1_1can__update__type_3_01_s_00_01_t_00_01std_1_1void__t45d7947f1b390ef11c086bf0be051dfd.html", null ],
+      [ "ecstasy::serialization::traits::has_load_impl_for_type< S, T, std::void_t< decltype(std::declval< S & >().template loadImpl< T >())> >", "structecstasy_1_1serialization_1_1traits_1_1has__load__impl__for__type_3_01_s_00_01_t_00_01std_1984c1959d90b7970ad9598d748a3517b.html", null ],
+      [ "ecstasy::serialization::traits::has_save_impl_for_type< S, T, std::void_t< decltype(std::declval< S & >().saveImpl(std::declval< const T & >()))> >", "structecstasy_1_1serialization_1_1traits_1_1has__save__impl__for__type_3_01_s_00_01_t_00_01std_10874f3ca517d6278146bb8b8ad405957.html", null ],
+      [ "ecstasy::serialization::traits::has_update_impl_for_type< S, T, std::void_t< decltype(std::declval< S & >().updateImpl(std::declval< T & >()))> >", "structecstasy_1_1serialization_1_1traits_1_1has__update__impl__for__type_3_01_s_00_01_t_00_01std43c639ac8e926e09a4c13e869525b7a1.html", null ],
       [ "util::meta::_type_set_eq< std::tuple<>, std::tuple<> >", "structutil_1_1meta_1_1__type__set__eq_3_01std_1_1tuple_3_4_00_01std_1_1tuple_3_4_01_4.html", null ],
       [ "util::meta::is_std_vector< std::vector< T, A > >", "structutil_1_1meta_1_1is__std__vector_3_01std_1_1vector_3_01_t_00_01_a_01_4_01_4.html", null ]
     ] ],

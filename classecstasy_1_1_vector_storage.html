@@ -166,6 +166,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a56ecde92a1aeacd0f88f7a73549d82ca"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1_vector_storage.html#a344967da62cf0644e6c934a159ee405e">Component</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_vector_storage.html#a56ecde92a1aeacd0f88f7a73549d82ca">emplace</a> (<a class="el" href="classecstasy_1_1_entity.html#ad83d7f7e44a390c9c36e0079fd505b35">Entity::Index</a> index, Args &amp;&amp;...args)</td></tr>
 <tr class="memdesc:a56ecde92a1aeacd0f88f7a73549d82ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emplace a new <b>Component</b> instance for a given entity.  <br /></td></tr>
 <tr class="separator:a56ecde92a1aeacd0f88f7a73549d82ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ba061ffcbab4aaaf8d2030b5eee4ff0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1_vector_storage.html#a344967da62cf0644e6c934a159ee405e">Component</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_vector_storage.html#a2ba061ffcbab4aaaf8d2030b5eee4ff0">insert</a> (<a class="el" href="classecstasy_1_1_entity.html#ad83d7f7e44a390c9c36e0079fd505b35">Entity::Index</a> index, <a class="el" href="classecstasy_1_1_vector_storage.html#a344967da62cf0644e6c934a159ee405e">Component</a> &amp;&amp;c) override final</td></tr>
+<tr class="separator:a2ba061ffcbab4aaaf8d2030b5eee4ff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af186f07c68a5142c8d024516a7f47bee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_vector_storage.html#af186f07c68a5142c8d024516a7f47bee">erase</a> (<a class="el" href="classecstasy_1_1_entity.html#ad83d7f7e44a390c9c36e0079fd505b35">Entity::Index</a> index) override final</td></tr>
 <tr class="memdesc:af186f07c68a5142c8d024516a7f47bee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase the <b>Component</b> instance associated to the given entity.    <br /></td></tr>
 <tr class="separator:af186f07c68a5142c8d024516a7f47bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -205,6 +207,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5f8cd4d86aca35f01d1c81f5df5c8594 inherit pub_methods_classecstasy_1_1_a_storage"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1_a_storage.html#a720cfb5a3b35c4b7e63aab77d2fd8dd9">ConstQueryData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_a_storage.html#a5f8cd4d86aca35f01d1c81f5df5c8594">getQueryData</a> (<a class="el" href="classecstasy_1_1_entity.html#ad83d7f7e44a390c9c36e0079fd505b35">Entity::Index</a> index) const</td></tr>
 <tr class="memdesc:a5f8cd4d86aca35f01d1c81f5df5c8594 inherit pub_methods_classecstasy_1_1_a_storage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the <b>Component</b> instance associated to the given entity.    <br /></td></tr>
 <tr class="separator:a5f8cd4d86aca35f01d1c81f5df5c8594 inherit pub_methods_classecstasy_1_1_a_storage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab25f1caf270c78c88c8b0a80d64a1fe6 inherit pub_methods_classecstasy_1_1_a_storage"><td class="memItemLeft" align="right" valign="top">const <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_a_storage.html#ab25f1caf270c78c88c8b0a80d64a1fe6">getComponentTypeInfos</a> () const noexcept override final</td></tr>
+<tr class="separator:ab25f1caf270c78c88c8b0a80d64a1fe6 inherit pub_methods_classecstasy_1_1_a_storage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74cbf9ca50c452329bd43c05ba6322ed inherit pub_methods_classecstasy_1_1_a_storage"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classecstasy_1_1_a_storage.html#a2e05faeb7287592c19ff2dbcfdeba24b">Component</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_a_storage.html#a74cbf9ca50c452329bd43c05ba6322ed">insert</a> (<a class="el" href="classecstasy_1_1_entity.html#ad83d7f7e44a390c9c36e0079fd505b35">Entity::Index</a> index, <a class="el" href="classecstasy_1_1_a_storage.html#a2e05faeb7287592c19ff2dbcfdeba24b">Component</a> &amp;&amp;c)=0</td></tr>
+<tr class="memdesc:a74cbf9ca50c452329bd43c05ba6322ed inherit pub_methods_classecstasy_1_1_a_storage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new <b>Component</b> instance associated to the given entity.  <br /></td></tr>
+<tr class="separator:a74cbf9ca50c452329bd43c05ba6322ed inherit pub_methods_classecstasy_1_1_a_storage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classecstasy_1_1_i_storage"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classecstasy_1_1_i_storage')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classecstasy_1_1_i_storage.html">ecstasy::IStorage</a></td></tr>
 <tr class="memitem:aa8f594bbee0e3d777affb26390677671 inherit pub_methods_classecstasy_1_1_i_storage"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_storage.html#aa8f594bbee0e3d777affb26390677671">~IStorage</a> ()=default</td></tr>
 <tr class="separator:aa8f594bbee0e3d777affb26390677671 inherit pub_methods_classecstasy_1_1_i_storage"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -217,6 +224,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acff621f7894acd9d73ea903148b8a4fc inherit pub_methods_classecstasy_1_1_i_storage"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_storage.html#acff621f7894acd9d73ea903148b8a4fc">contains</a> (size_t index) const noexcept=0</td></tr>
 <tr class="memdesc:acff621f7894acd9d73ea903148b8a4fc inherit pub_methods_classecstasy_1_1_i_storage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test if the entity index match a <b>Component</b> instance.  <br /></td></tr>
 <tr class="separator:acff621f7894acd9d73ea903148b8a4fc inherit pub_methods_classecstasy_1_1_i_storage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2da70acd215f03b0cea2a0a764e75f0a inherit pub_methods_classecstasy_1_1_i_storage"><td class="memItemLeft" align="right" valign="top">virtual const <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_storage.html#a2da70acd215f03b0cea2a0a764e75f0a">getComponentTypeInfos</a> () const noexcept=0</td></tr>
+<tr class="memdesc:a2da70acd215f03b0cea2a0a764e75f0a inherit pub_methods_classecstasy_1_1_i_storage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Component stored type infos.  <br /></td></tr>
+<tr class="separator:a2da70acd215f03b0cea2a0a764e75f0a inherit pub_methods_classecstasy_1_1_i_storage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -312,8 +322,8 @@ template&lt;typename C &gt; </div>
 <div class="line"><span class="lineno">   52</span>                <a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#a5e590333a1a362f621eda45dd402df47">_mask</a>.<a class="code hl_function" href="classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918">resize</a>(initialCapacity);</div>
 <div class="line"><span class="lineno">   53</span>            }</div>
 <div class="line"><span class="lineno">   54</span>        };</div>
-<div class="ttc" id="aclassecstasy_1_1_vector_storage_html_a5e590333a1a362f621eda45dd402df47"><div class="ttname"><a href="classecstasy_1_1_vector_storage.html#a5e590333a1a362f621eda45dd402df47">ecstasy::VectorStorage::_mask</a></div><div class="ttdeci">util::BitSet _mask</div><div class="ttdef"><b>Definition</b> <a href="_vector_storage_8hpp_source.html#l00143">VectorStorage.hpp:143</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_vector_storage_html_aa9f251ed51821ce1a0f6a2a7c1e8efad"><div class="ttname"><a href="classecstasy_1_1_vector_storage.html#aa9f251ed51821ce1a0f6a2a7c1e8efad">ecstasy::VectorStorage::_components</a></div><div class="ttdeci">std::vector&lt; Component &gt; _components</div><div class="ttdef"><b>Definition</b> <a href="_vector_storage_8hpp_source.html#l00142">VectorStorage.hpp:142</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_vector_storage_html_a5e590333a1a362f621eda45dd402df47"><div class="ttname"><a href="classecstasy_1_1_vector_storage.html#a5e590333a1a362f621eda45dd402df47">ecstasy::VectorStorage::_mask</a></div><div class="ttdeci">util::BitSet _mask</div><div class="ttdef"><b>Definition</b> <a href="_vector_storage_8hpp_source.html#l00165">VectorStorage.hpp:165</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_vector_storage_html_aa9f251ed51821ce1a0f6a2a7c1e8efad"><div class="ttname"><a href="classecstasy_1_1_vector_storage.html#aa9f251ed51821ce1a0f6a2a7c1e8efad">ecstasy::VectorStorage::_components</a></div><div class="ttdeci">std::vector&lt; Component &gt; _components</div><div class="ttdef"><b>Definition</b> <a href="_vector_storage_8hpp_source.html#l00164">VectorStorage.hpp:164</a></div></div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_a0a1be7ead3223ab02838a9e95b761918"><div class="ttname"><a href="classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918">util::BitSet::resize</a></div><div class="ttdeci">void resize(std::size_t size)</div><div class="ttdoc">Changes the number of bits stored in this set.</div><div class="ttdef"><b>Definition</b> <a href="_bit_set_8hpp_source.html#l00199">BitSet.hpp:199</a></div></div>
 <div class="ttc" id="areserve_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/vector/reserve.html">std::vector::reserve</a></div><div class="ttdeci">T reserve(T... args)</div></div>
 </div><!-- fragment -->
@@ -482,23 +492,23 @@ template&lt;typename C &gt; </div>
 
 <p>Implements <a class="el" href="classecstasy_1_1_a_storage.html#afe65a9664a9427ae6af730f6cae3e9d2">ecstasy::AStorage&lt; C &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_vector_storage_8hpp_source.html#l00105">105</a> of file <a class="el" href="_vector_storage_8hpp_source.html">VectorStorage.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  106</span>        {</div>
-<div class="line"><span class="lineno">  107</span>            <span class="keywordflow">if</span> (index &gt;= <a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#aa9f251ed51821ce1a0f6a2a7c1e8efad">_components</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/vector/size.html">size</a>())</div>
-<div class="line"><span class="lineno">  108</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  109</span>            <span class="keywordtype">size_t</span> effectiveSize;</div>
-<div class="line"><span class="lineno">  110</span> </div>
-<div class="line"><span class="lineno">  111</span>            <a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#a5e590333a1a362f621eda45dd402df47">_mask</a>[index] = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  112</span>            effectiveSize = <a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#a5e590333a1a362f621eda45dd402df47">_mask</a>.<a class="code hl_function" href="classutil_1_1_bit_set.html#a0ea58e4406f7addbc3fc5a6356a5da04">lastSet</a>() + 1;</div>
-<div class="line"><span class="lineno">  113</span> </div>
-<div class="line"><span class="lineno">  114</span>            <span class="comment">// Last component, we can safely remove it and the padding elements until the last set bit</span></div>
-<div class="line"><span class="lineno">  115</span>            <span class="comment">// The size is never lower than 1 because 0 is returned if no bit is set (unsigned number)</span></div>
-<div class="line"><span class="lineno">  116</span>            <span class="keywordflow">if</span> (effectiveSize &lt; <a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#a5e590333a1a362f621eda45dd402df47">_mask</a>.<a class="code hl_function" href="classutil_1_1_bit_set.html#a1b7940aa2d91fd658b573692239866c0">size</a>()) {</div>
-<div class="line"><span class="lineno">  117</span>                <a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#a5e590333a1a362f621eda45dd402df47">_mask</a>.<a class="code hl_function" href="classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918">resize</a>(effectiveSize);</div>
-<div class="line"><span class="lineno">  118</span>                <a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#aa9f251ed51821ce1a0f6a2a7c1e8efad">_components</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/vector/resize.html">resize</a>(effectiveSize);</div>
-<div class="line"><span class="lineno">  119</span>            }</div>
-<div class="line"><span class="lineno">  120</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  121</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_vector_storage_8hpp_source.html#l00127">127</a> of file <a class="el" href="_vector_storage_8hpp_source.html">VectorStorage.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  128</span>        {</div>
+<div class="line"><span class="lineno">  129</span>            <span class="keywordflow">if</span> (index &gt;= <a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#aa9f251ed51821ce1a0f6a2a7c1e8efad">_components</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/vector/size.html">size</a>())</div>
+<div class="line"><span class="lineno">  130</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  131</span>            <span class="keywordtype">size_t</span> effectiveSize;</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>            <a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#a5e590333a1a362f621eda45dd402df47">_mask</a>[index] = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  134</span>            effectiveSize = <a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#a5e590333a1a362f621eda45dd402df47">_mask</a>.<a class="code hl_function" href="classutil_1_1_bit_set.html#a0ea58e4406f7addbc3fc5a6356a5da04">lastSet</a>() + 1;</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>            <span class="comment">// Last component, we can safely remove it and the padding elements until the last set bit</span></div>
+<div class="line"><span class="lineno">  137</span>            <span class="comment">// The size is never lower than 1 because 0 is returned if no bit is set (unsigned number)</span></div>
+<div class="line"><span class="lineno">  138</span>            <span class="keywordflow">if</span> (effectiveSize &lt; <a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#a5e590333a1a362f621eda45dd402df47">_mask</a>.<a class="code hl_function" href="classutil_1_1_bit_set.html#a1b7940aa2d91fd658b573692239866c0">size</a>()) {</div>
+<div class="line"><span class="lineno">  139</span>                <a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#a5e590333a1a362f621eda45dd402df47">_mask</a>.<a class="code hl_function" href="classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918">resize</a>(effectiveSize);</div>
+<div class="line"><span class="lineno">  140</span>                <a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#aa9f251ed51821ce1a0f6a2a7c1e8efad">_components</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/vector/resize.html">resize</a>(effectiveSize);</div>
+<div class="line"><span class="lineno">  141</span>            }</div>
+<div class="line"><span class="lineno">  142</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  143</span>        }</div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_a0ea58e4406f7addbc3fc5a6356a5da04"><div class="ttname"><a href="classutil_1_1_bit_set.html#a0ea58e4406f7addbc3fc5a6356a5da04">util::BitSet::lastSet</a></div><div class="ttdeci">BIT_SET_CONSTEXPR std::size_t lastSet() const</div><div class="ttdoc">Finds the last set bit in the set.</div><div class="ttdef"><b>Definition</b> <a href="_bit_set_8hpp_source.html#l00247">BitSet.hpp:247</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -537,10 +547,75 @@ template&lt;typename C &gt; </div>
 
 <p>Implements <a class="el" href="classecstasy_1_1_i_storage.html#a15f593db3bd0022c24670f34b34a1655">ecstasy::IStorage</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_vector_storage_8hpp_source.html#l00136">136</a> of file <a class="el" href="_vector_storage_8hpp_source.html">VectorStorage.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  137</span>        {</div>
-<div class="line"><span class="lineno">  138</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#a5e590333a1a362f621eda45dd402df47">_mask</a>;</div>
-<div class="line"><span class="lineno">  139</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_vector_storage_8hpp_source.html#l00158">158</a> of file <a class="el" href="_vector_storage_8hpp_source.html">VectorStorage.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  159</span>        {</div>
+<div class="line"><span class="lineno">  160</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#a5e590333a1a362f621eda45dd402df47">_mask</a>;</div>
+<div class="line"><span class="lineno">  161</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2ba061ffcbab4aaaf8d2030b5eee4ff0" name="a2ba061ffcbab4aaaf8d2030b5eee4ff0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ba061ffcbab4aaaf8d2030b5eee4ff0">&#9670;&#160;</a></span>insert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename C &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classecstasy_1_1_vector_storage.html#a344967da62cf0644e6c934a159ee405e">Component</a> &amp; <a class="el" href="classecstasy_1_1_vector_storage.html">ecstasy::VectorStorage</a>&lt; C &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classecstasy_1_1_entity.html#ad83d7f7e44a390c9c36e0079fd505b35">Entity::Index</a>&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classecstasy_1_1_vector_storage.html#a344967da62cf0644e6c934a159ee405e">Component</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+<p>Implements <a class="el" href="classecstasy_1_1_a_storage.html#a74cbf9ca50c452329bd43c05ba6322ed">ecstasy::AStorage&lt; C &gt;</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_vector_storage_8hpp_source.html#l00102">102</a> of file <a class="el" href="_vector_storage_8hpp_source.html">VectorStorage.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  103</span>        {</div>
+<div class="line"><span class="lineno">  104</span>            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (!std::movable&lt;Component&gt;)</div>
+<div class="line"><span class="lineno">  105</span>                <span class="keywordflow">throw</span> <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/error/runtime_error.html">std::runtime_error</a>(<span class="stringliteral">&quot;VectorStorage: Component is not movable&quot;</span>);</div>
+<div class="line"><span class="lineno">  106</span>            <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  107</span>                <span class="comment">// Component at index already existing</span></div>
+<div class="line"><span class="lineno">  108</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#aa9f251ed51821ce1a0f6a2a7c1e8efad">_components</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/vector/size.html">size</a>() &gt; index)</div>
+<div class="line"><span class="lineno">  109</span>                    <a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#aa9f251ed51821ce1a0f6a2a7c1e8efad">_components</a>[index] = std::move(c);</div>
+<div class="line"><span class="lineno">  110</span>                <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  111</span>                    <a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#a5e590333a1a362f621eda45dd402df47">_mask</a>.<a class="code hl_function" href="classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918">resize</a>(<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/algorithm/max.html">std::max</a>(<a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#a5e590333a1a362f621eda45dd402df47">_mask</a>.<a class="code hl_function" href="classutil_1_1_bit_set.html#a1b7940aa2d91fd658b573692239866c0">size</a>(), index + 1));</div>
+<div class="line"><span class="lineno">  112</span>                    <span class="comment">// Padding elements</span></div>
+<div class="line"><span class="lineno">  113</span>                    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#aa9f251ed51821ce1a0f6a2a7c1e8efad">_components</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/vector/size.html">size</a>() &lt; index)</div>
+<div class="line"><span class="lineno">  114</span>                        <a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#aa9f251ed51821ce1a0f6a2a7c1e8efad">_components</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/vector/resize.html">resize</a>(index);</div>
+<div class="line"><span class="lineno">  115</span>                    <span class="comment">// New component</span></div>
+<div class="line"><span class="lineno">  116</span>                    <a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#aa9f251ed51821ce1a0f6a2a7c1e8efad">_components</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/vector/push_back.html">push_back</a>(std::move(c));</div>
+<div class="line"><span class="lineno">  117</span>                }</div>
+<div class="line"><span class="lineno">  118</span>                <a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#a5e590333a1a362f621eda45dd402df47">_mask</a>[index] = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  119</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#aa9f251ed51821ce1a0f6a2a7c1e8efad">_components</a>[index];</div>
+<div class="line"><span class="lineno">  120</span>            }</div>
+<div class="line"><span class="lineno">  121</span>        }</div>
+<div class="ttc" id="apush_back_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/vector/push_back.html">std::vector::push_back</a></div><div class="ttdeci">T push_back(T... args)</div></div>
+<div class="ttc" id="aruntime_error_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/error/runtime_error.html">std::runtime_error</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -584,10 +659,10 @@ template&lt;typename C &gt; </div>
 
 <p>Implements <a class="el" href="classecstasy_1_1_a_storage.html#a40919de2053ad044de7bc661d89f5523">ecstasy::AStorage&lt; C &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_vector_storage_8hpp_source.html#l00130">130</a> of file <a class="el" href="_vector_storage_8hpp_source.html">VectorStorage.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  131</span>        {</div>
-<div class="line"><span class="lineno">  132</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#aa9f251ed51821ce1a0f6a2a7c1e8efad">_components</a>[index];</div>
-<div class="line"><span class="lineno">  133</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_vector_storage_8hpp_source.html#l00152">152</a> of file <a class="el" href="_vector_storage_8hpp_source.html">VectorStorage.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  153</span>        {</div>
+<div class="line"><span class="lineno">  154</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#aa9f251ed51821ce1a0f6a2a7c1e8efad">_components</a>[index];</div>
+<div class="line"><span class="lineno">  155</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -631,10 +706,10 @@ template&lt;typename C &gt; </div>
 
 <p>Implements <a class="el" href="classecstasy_1_1_a_storage.html#aaa9d9d631cceeafd55b76e471a4f42e2">ecstasy::AStorage&lt; C &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_vector_storage_8hpp_source.html#l00124">124</a> of file <a class="el" href="_vector_storage_8hpp_source.html">VectorStorage.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  125</span>        {</div>
-<div class="line"><span class="lineno">  126</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#aa9f251ed51821ce1a0f6a2a7c1e8efad">_components</a>[index];</div>
-<div class="line"><span class="lineno">  127</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_vector_storage_8hpp_source.html#l00146">146</a> of file <a class="el" href="_vector_storage_8hpp_source.html">VectorStorage.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  147</span>        {</div>
+<div class="line"><span class="lineno">  148</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_vector_storage.html#aa9f251ed51821ce1a0f6a2a7c1e8efad">_components</a>[index];</div>
+<div class="line"><span class="lineno">  149</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -661,7 +736,7 @@ template&lt;typename C &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vector_storage_8hpp_source.html#l00145">145</a> of file <a class="el" href="_vector_storage_8hpp_source.html">VectorStorage.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vector_storage_8hpp_source.html#l00167">167</a> of file <a class="el" href="_vector_storage_8hpp_source.html">VectorStorage.hpp</a>.</p>
 
 </div>
 </div>
@@ -688,7 +763,7 @@ template&lt;typename C &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vector_storage_8hpp_source.html#l00142">142</a> of file <a class="el" href="_vector_storage_8hpp_source.html">VectorStorage.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vector_storage_8hpp_source.html#l00164">164</a> of file <a class="el" href="_vector_storage_8hpp_source.html">VectorStorage.hpp</a>.</p>
 
 </div>
 </div>
@@ -714,7 +789,7 @@ template&lt;typename C &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vector_storage_8hpp_source.html#l00143">143</a> of file <a class="el" href="_vector_storage_8hpp_source.html">VectorStorage.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vector_storage_8hpp_source.html#l00165">165</a> of file <a class="el" href="_vector_storage_8hpp_source.html">VectorStorage.hpp</a>.</p>
 
 </div>
 </div>

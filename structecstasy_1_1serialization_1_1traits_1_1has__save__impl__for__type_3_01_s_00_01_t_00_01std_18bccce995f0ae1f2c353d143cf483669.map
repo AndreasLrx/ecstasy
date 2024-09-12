@@ -1,0 +1,5 @@
+<map id="ecstasy::serialization::traits::has_save_impl_for_type&lt; S, T, std::void_t&lt; decltype(std::declval&lt; S &amp; &gt;().saveImpl(std::declval&lt; const T &amp; &gt;()))&gt; &gt;" name="ecstasy::serialization::traits::has_save_impl_for_type&lt; S, T, std::void_t&lt; decltype(std::declval&lt; S &amp; &gt;().saveImpl(std::declval&lt; const T &amp; &gt;()))&gt; &gt;">
+<area shape="rect" id="Node000001" title="Concept to check if a serializer has a specific save implementation for a type." alt="" coords="5,79,233,177"/>
+<area shape="rect" id="Node000002" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/integral_constant.html" title=" " alt="" coords="63,5,175,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,44,122,78,117,78,117,44"/>
+</map>

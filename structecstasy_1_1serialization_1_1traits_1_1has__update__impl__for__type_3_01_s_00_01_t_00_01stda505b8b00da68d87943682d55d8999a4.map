@@ -1,0 +1,5 @@
+<map id="ecstasy::serialization::traits::has_update_impl_for_type&lt; S, T, std::void_t&lt; decltype(std::declval&lt; S &amp; &gt;().updateImpl(std::declval&lt; T &amp; &gt;()))&gt; &gt;" name="ecstasy::serialization::traits::has_update_impl_for_type&lt; S, T, std::void_t&lt; decltype(std::declval&lt; S &amp; &gt;().updateImpl(std::declval&lt; T &amp; &gt;()))&gt; &gt;">
+<area shape="rect" id="Node000001" title="Concept to check if a serializer has a specific update implementation for a type." alt="" coords="5,79,236,177"/>
+<area shape="rect" id="Node000002" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/integral_constant.html" title=" " alt="" coords="65,5,177,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,44,123,78,118,78,118,44"/>
+</map>
