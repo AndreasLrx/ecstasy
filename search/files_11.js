@@ -3,7 +3,7 @@ var searchData=
   ['scoped_5fallocator_0',['scoped_allocator',['http://en.cppreference.com/w/cpp/header/scoped_allocator.html',1,'']]],
   ['select_2ehpp_1',['Select.hpp',['../_select_8hpp.html',1,'']]],
   ['serializableenum_2ehpp_2',['SerializableEnum.hpp',['../_serializable_enum_8hpp.html',1,'']]],
-  ['serializer_2ehpp_3',['Serializer.hpp',['../ecstasy_2serialization_2_serializer_8hpp.html',1,'(Global Namespace)'],['../util_2serialization_2_serializer_8hpp.html',1,'(Global Namespace)']]],
+  ['serializer_2ehpp_3',['Serializer.hpp',['../util_2serialization_2_serializer_8hpp.html',1,'(Global Namespace)'],['../ecstasy_2serialization_2_serializer_8hpp.html',1,'(Global Namespace)']]],
   ['set_4',['set',['http://en.cppreference.com/w/cpp/header/set.html',1,'']]],
   ['sfml_2emd_5',['sfml.md',['../sfml_8md.html',1,'']]],
   ['shared_5fmutex_6',['shared_mutex',['http://en.cppreference.com/w/cpp/header/shared_mutex.html',1,'']]],

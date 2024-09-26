@@ -107,14 +107,17 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1sfml_1_1_encoding.html">Encoding</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1sfml_1_1_poll_events.html">PollEvents</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Poll events system, polling the events from the <a class="el" href="namespaceecstasy_1_1integration_1_1sfml.html#a3dba8149d6bf68bd3c5e5e1a8f2aae2e">RenderWindow</a> resource if present.  <a href="classecstasy_1_1integration_1_1sfml_1_1_poll_events.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Poll events system, polling the events from the <a class="el" href="classecstasy_1_1integration_1_1sfml_1_1_render_window.html">RenderWindow</a> resource if present.  <a href="classecstasy_1_1integration_1_1sfml_1_1_poll_events.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1sfml_1_1_render_window.html">RenderWindow</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">SFML <a class="el" href="classecstasy_1_1integration_1_1sfml_1_1_render_window.html" title="SFML RenderWindow wrapper.">RenderWindow</a> wrapper.  <a href="classecstasy_1_1integration_1_1sfml_1_1_render_window.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a3dba8149d6bf68bd3c5e5e1a8f2aae2e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1integration_1_1sfml.html#a3dba8149d6bf68bd3c5e5e1a8f2aae2e">RenderWindow</a> = <a class="el" href="classecstasy_1_1_object_wrapper.html">ecstasy::ObjectWrapper</a>&lt; sf::RenderWindow &gt;</td></tr>
-<tr class="memdesc:a3dba8149d6bf68bd3c5e5e1a8f2aae2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">SFML RenderWindow wrapper.  <br /></td></tr>
-<tr class="separator:a3dba8149d6bf68bd3c5e5e1a8f2aae2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acad7efec554bc47f3bf3eec7d2338998"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1integration_1_1sfml.html#acad7efec554bc47f3bf3eec7d2338998">EventListener</a> = <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/functional/function.html">std::function</a>&lt; bool(const sf::Event &amp;)&gt;</td></tr>
+<tr class="memdesc:acad7efec554bc47f3bf3eec7d2338998"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event listener type.  <br /></td></tr>
+<tr class="separator:acad7efec554bc47f3bf3eec7d2338998"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -130,23 +133,30 @@ Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-18) </dd></dl>
 </div><h2 class="groupheader">Typedef Documentation</h2>
-<a id="a3dba8149d6bf68bd3c5e5e1a8f2aae2e" name="a3dba8149d6bf68bd3c5e5e1a8f2aae2e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3dba8149d6bf68bd3c5e5e1a8f2aae2e">&#9670;&#160;</a></span>RenderWindow</h2>
+<a id="acad7efec554bc47f3bf3eec7d2338998" name="acad7efec554bc47f3bf3eec7d2338998"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acad7efec554bc47f3bf3eec7d2338998">&#9670;&#160;</a></span>EventListener</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespaceecstasy_1_1integration_1_1sfml.html#a3dba8149d6bf68bd3c5e5e1a8f2aae2e">ecstasy::integration::sfml::RenderWindow</a> = typedef <a class="el" href="classecstasy_1_1_object_wrapper.html">ecstasy::ObjectWrapper</a>&lt;sf::RenderWindow&gt;</td>
+          <td class="memname">using <a class="el" href="namespaceecstasy_1_1integration_1_1sfml.html#acad7efec554bc47f3bf3eec7d2338998">ecstasy::integration::sfml::EventListener</a> = typedef <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/functional/function.html">std::function</a>&lt;bool(const sf::Event &amp;)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>SFML RenderWindow wrapper. </p>
+<p>Event listener type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Event to handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true If the event was handled (ie must not be processed anymore).</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-16) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-09-26) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_render_window_8hpp_source.html#l00027">27</a> of file <a class="el" href="_render_window_8hpp_source.html">RenderWindow.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_render_window_8hpp_source.html#l00032">32</a> of file <a class="el" href="_render_window_8hpp_source.html">RenderWindow.hpp</a>.</p>
 
 </div>
 </div>

@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('classecstasy_1_1integration_1_1sfml_1_
 </div><!--header-->
 <div class="contents">
 
-<p>Poll events system, polling the events from the <a class="el" href="namespaceecstasy_1_1integration_1_1sfml.html#a3dba8149d6bf68bd3c5e5e1a8f2aae2e">RenderWindow</a> resource if present.  
+<p>Poll events system, polling the events from the <a class="el" href="classecstasy_1_1integration_1_1sfml_1_1_render_window.html">RenderWindow</a> resource if present.  
  <a href="classecstasy_1_1integration_1_1sfml_1_1_poll_events.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_poll_events_8hpp_source.html">PollEvents.hpp</a>&gt;</code></p>
@@ -137,7 +137,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa9cf50e42a827f26e5d7e2c5d7fe9c46 inherit pub_methods_classecstasy_1_1_i_system"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Poll events system, polling the events from the <a class="el" href="namespaceecstasy_1_1integration_1_1sfml.html#a3dba8149d6bf68bd3c5e5e1a8f2aae2e">RenderWindow</a> resource if present. </p>
+<div class="textblock"><p>Poll events system, polling the events from the <a class="el" href="classecstasy_1_1integration_1_1sfml_1_1_render_window.html">RenderWindow</a> resource if present. </p>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-16) </dd></dl>
 
@@ -176,12 +176,12 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_poll_events_8cpp_source.html#l00063">63</a> of file <a class="el" href="_poll_events_8cpp_source.html">PollEvents.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   64</span>    {</div>
-<div class="line"><span class="lineno">   65</span>        <span class="keywordflow">if</span> (!registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#aec79cde823bf51eb899cf5d3a20fd863">hasResource</a>&lt;<a class="code hl_typedef" href="namespaceecstasy_1_1integration_1_1sfml.html#a3dba8149d6bf68bd3c5e5e1a8f2aae2e">RenderWindow</a>&gt;())</div>
+<div class="line"><span class="lineno">   65</span>        <span class="keywordflow">if</span> (!registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#aec79cde823bf51eb899cf5d3a20fd863">hasResource</a>&lt;RenderWindow&gt;())</div>
 <div class="line"><span class="lineno">   66</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   67</span>        RR&lt;RenderWindow&gt; windowWrapper = registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a516a8ea8065455d601a30e1d3afbef52">getResource</a>&lt;<a class="code hl_typedef" href="namespaceecstasy_1_1integration_1_1sfml.html#a3dba8149d6bf68bd3c5e5e1a8f2aae2e">RenderWindow</a>&gt;();</div>
+<div class="line"><span class="lineno">   67</span>        RR&lt;RenderWindow&gt; windowWrapper = registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a516a8ea8065455d601a30e1d3afbef52">getResource</a>&lt;RenderWindow&gt;();</div>
 <div class="line"><span class="lineno">   68</span> </div>
 <div class="line"><span class="lineno">   69</span>        sf::Event <a class="code hl_namespace" href="namespaceecstasy_1_1integration_1_1event.html">event</a>;</div>
-<div class="line"><span class="lineno">   70</span>        <span class="keywordflow">while</span> (windowWrapper-&gt;get().pollEvent(<a class="code hl_namespace" href="namespaceecstasy_1_1integration_1_1event.html">event</a>)) {</div>
+<div class="line"><span class="lineno">   70</span>        <span class="keywordflow">while</span> (windowWrapper-&gt;pollEvent(<a class="code hl_namespace" href="namespaceecstasy_1_1integration_1_1event.html">event</a>)) {</div>
 <div class="line"><span class="lineno">   71</span>            <span class="keywordflow">switch</span> (<a class="code hl_namespace" href="namespaceecstasy_1_1integration_1_1event.html">event</a>.type) {</div>
 <div class="line"><span class="lineno">   73</span>                <span class="keywordflow">case</span> sf::Event::MouseButtonPressed:</div>
 <div class="line"><span class="lineno">   74</span>                <span class="keywordflow">case</span> sf::Event::MouseButtonReleased:</div>
@@ -240,7 +240,6 @@ Public Member Functions</h2></td></tr>
 <div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_mouse_html_ae02624c1f85027219f4f594abe1c0d8e"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_mouse.html#ae02624c1f85027219f4f594abe1c0d8e">ecstasy::integration::event::Mouse::Button</a></div><div class="ttdeci">Button</div><div class="ttdoc">Mouse buttons.</div><div class="ttdef"><b>Definition</b> <a href="_mouse_8hpp_source.html#l00039">Mouse.hpp:39</a></div></div>
 <div class="ttc" id="anamespaceecstasy_1_1integration_1_1event_html"><div class="ttname"><a href="namespaceecstasy_1_1integration_1_1event.html">ecstasy::integration::event</a></div><div class="ttdoc">Event integration.</div><div class="ttdef"><b>Definition</b> <a href="_event_8hpp_source.html#l00024">Event.hpp:25</a></div></div>
 <div class="ttc" id="anamespaceecstasy_1_1integration_1_1sfml_html_a064132472282c69506776cd0adb3f01c"><div class="ttname"><a href="namespaceecstasy_1_1integration_1_1sfml.html#a064132472282c69506776cd0adb3f01c">ecstasy::integration::sfml::getGamepadAxis</a></div><div class="ttdeci">static event::Gamepad::Axis getGamepadAxis(int sfmlAxis)</div><div class="ttdef"><b>Definition</b> <a href="_poll_events_8cpp_source.html#l00047">PollEvents.cpp:47</a></div></div>
-<div class="ttc" id="anamespaceecstasy_1_1integration_1_1sfml_html_a3dba8149d6bf68bd3c5e5e1a8f2aae2e"><div class="ttname"><a href="namespaceecstasy_1_1integration_1_1sfml.html#a3dba8149d6bf68bd3c5e5e1a8f2aae2e">ecstasy::integration::sfml::RenderWindow</a></div><div class="ttdeci">ecstasy::ObjectWrapper&lt; sf::RenderWindow &gt; RenderWindow</div><div class="ttdoc">SFML RenderWindow wrapper.</div><div class="ttdef"><b>Definition</b> <a href="_render_window_8hpp_source.html#l00027">RenderWindow.hpp:27</a></div></div>
 <div class="ttc" id="anamespaceecstasy_1_1integration_1_1sfml_html_adfd9e8709ab145bbaf5aaa3cab19fceb"><div class="ttname"><a href="namespaceecstasy_1_1integration_1_1sfml.html#adfd9e8709ab145bbaf5aaa3cab19fceb">ecstasy::integration::sfml::getGamepadButton</a></div><div class="ttdeci">static event::Gamepad::Button getGamepadButton(unsigned int sfmlButton)</div><div class="ttdef"><b>Definition</b> <a href="_poll_events_8cpp_source.html#l00028">PollEvents.cpp:28</a></div></div>
 <div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_gamepad_axis_event_html"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_gamepad_axis_event.html">ecstasy::integration::event::GamepadAxisEvent</a></div><div class="ttdoc">Event describing a gamepad axis value change.</div><div class="ttdef"><b>Definition</b> <a href="_gamepad_axis_event_8hpp_source.html#l00025">GamepadAxisEvent.hpp:25</a></div></div>
 <div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_gamepad_button_event_html"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_gamepad_button_event.html">ecstasy::integration::event::GamepadButtonEvent</a></div><div class="ttdoc">Event describing a gamepad button pressed or released.</div><div class="ttdef"><b>Definition</b> <a href="_gamepad_button_event_8hpp_source.html#l00025">GamepadButtonEvent.hpp:25</a></div></div>

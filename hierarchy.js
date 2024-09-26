@@ -251,10 +251,15 @@ var hierarchy =
       [ "ecstasy::Resource< Mouse >", "classecstasy_1_1_resource.html", [
         [ "ecstasy::integration::event::Mouse", "classecstasy_1_1integration_1_1event_1_1_mouse.html", null ]
       ] ],
+      [ "ecstasy::Resource< ObjectWrapper< sf::RenderWindow > >", "classecstasy_1_1_resource.html", null ],
       [ "ecstasy::Resource< Users >", "classecstasy_1_1_resource.html", [
         [ "ecstasy::integration::user_action::Users", "classecstasy_1_1integration_1_1user__action_1_1_users.html", null ]
       ] ],
-      [ "ecstasy::Resource< R >", "classecstasy_1_1_resource.html", null ]
+      [ "ecstasy::Resource< R >", "classecstasy_1_1_resource.html", [
+        [ "ecstasy::ObjectWrapper< sf::RenderWindow >", "classecstasy_1_1_object_wrapper.html", [
+          [ "ecstasy::integration::sfml::RenderWindow", "classecstasy_1_1integration_1_1sfml_1_1_render_window.html", null ]
+        ] ]
+      ] ]
     ] ],
     [ "util::meta::_left_outer_join< Traits< Rights... >, IsInner, Left, OuterLefts... >::result< LeftsUntreated >", "structutil_1_1meta_1_1__left__outer__join_3_01_traits_3_01_rights_8_8_8_01_4_00_01_is_inner_00_0976b977fc3db4c0d2dc93c5d53c35a08.html", null ],
     [ "util::meta::_left_outer_join< Traits< Rights... >, IsInner, Left, OuterLefts... >::result< NextLeft, LeftsUntreated... >", "structutil_1_1meta_1_1__left__outer__join_3_01_traits_3_01_rights_8_8_8_01_4_00_01_is_inner_00_0e4c618fb3b7be1c193ef63fbe4938be5.html", null ],

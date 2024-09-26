@@ -31,7 +31,8 @@ var annotated_dup =
         ] ],
         [ "sfml", "namespaceecstasy_1_1integration_1_1sfml.html", [
           [ "Encoding", "classecstasy_1_1integration_1_1sfml_1_1_encoding.html", "classecstasy_1_1integration_1_1sfml_1_1_encoding" ],
-          [ "PollEvents", "classecstasy_1_1integration_1_1sfml_1_1_poll_events.html", "classecstasy_1_1integration_1_1sfml_1_1_poll_events" ]
+          [ "PollEvents", "classecstasy_1_1integration_1_1sfml_1_1_poll_events.html", "classecstasy_1_1integration_1_1sfml_1_1_poll_events" ],
+          [ "RenderWindow", "classecstasy_1_1integration_1_1sfml_1_1_render_window.html", "classecstasy_1_1integration_1_1sfml_1_1_render_window" ]
         ] ],
         [ "user_action", "namespaceecstasy_1_1integration_1_1user__action.html", [
           [ "Action", "structecstasy_1_1integration_1_1user__action_1_1_action.html", "structecstasy_1_1integration_1_1user__action_1_1_action" ],

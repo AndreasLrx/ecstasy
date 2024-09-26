@@ -30,12 +30,13 @@ var searchData=
   ['front_5finsert_5fiterator_27',['front_insert_iterator',['http://en.cppreference.com/w/cpp/iterator/front_insert_iterator.html',1,'std']]],
   ['fstream_28',['fstream',['http://en.cppreference.com/w/cpp/io/basic_fstream.html',1,'std']]],
   ['function_29',['function',['http://en.cppreference.com/w/cpp/experimental/function.html',1,'std::experimental::function'],['http://en.cppreference.com/w/cpp/utility/functional/function.html',1,'std::function']]],
-  ['function_3c_20void_28registry_20_26_2c_20entity_2c_20action_29_3e_30',['function&lt; void(Registry &amp;, Entity, Action)&gt;',['http://en.cppreference.com/w/cpp/utility/functional/function.html',1,'std']]],
-  ['function_3c_20void_28registry_20_26_2c_20entity_2c_20const_20gamepadcombinationlistener_20_26_29_3e_31',['function&lt; void(Registry &amp;, Entity, const GamepadCombinationListener &amp;)&gt;',['http://en.cppreference.com/w/cpp/utility/functional/function.html',1,'std']]],
-  ['function_3c_20void_28registry_20_26_2c_20entity_2c_20const_20gamepadsequencelistener_20_26_29_3e_32',['function&lt; void(Registry &amp;, Entity, const GamepadSequenceListener &amp;)&gt;',['http://en.cppreference.com/w/cpp/utility/functional/function.html',1,'std']]],
-  ['function_3c_20void_28registry_20_26_2c_20entity_2c_20const_20keycombinationlistener_20_26_29_3e_33',['function&lt; void(Registry &amp;, Entity, const KeyCombinationListener &amp;)&gt;',['http://en.cppreference.com/w/cpp/utility/functional/function.html',1,'std']]],
-  ['function_3c_20void_28registry_20_26_2c_20entity_2c_20const_20keysequencelistener_20_26_29_3e_34',['function&lt; void(Registry &amp;, Entity, const KeySequenceListener &amp;)&gt;',['http://en.cppreference.com/w/cpp/utility/functional/function.html',1,'std']]],
-  ['future_35',['future',['http://en.cppreference.com/w/cpp/experimental/future.html',1,'std::experimental::future'],['http://en.cppreference.com/w/cpp/thread/future.html',1,'std::future']]],
-  ['future_5ferrc_36',['future_errc',['http://en.cppreference.com/w/cpp/thread/future_errc.html',1,'std']]],
-  ['future_5ferror_37',['future_error',['http://en.cppreference.com/w/cpp/thread/future_error.html',1,'std']]]
+  ['function_3c_20bool_28const_20sf_3a_3aevent_20_26_29_3e_30',['function&lt; bool(const sf::Event &amp;)&gt;',['http://en.cppreference.com/w/cpp/utility/functional/function.html',1,'std']]],
+  ['function_3c_20void_28registry_20_26_2c_20entity_2c_20action_29_3e_31',['function&lt; void(Registry &amp;, Entity, Action)&gt;',['http://en.cppreference.com/w/cpp/utility/functional/function.html',1,'std']]],
+  ['function_3c_20void_28registry_20_26_2c_20entity_2c_20const_20gamepadcombinationlistener_20_26_29_3e_32',['function&lt; void(Registry &amp;, Entity, const GamepadCombinationListener &amp;)&gt;',['http://en.cppreference.com/w/cpp/utility/functional/function.html',1,'std']]],
+  ['function_3c_20void_28registry_20_26_2c_20entity_2c_20const_20gamepadsequencelistener_20_26_29_3e_33',['function&lt; void(Registry &amp;, Entity, const GamepadSequenceListener &amp;)&gt;',['http://en.cppreference.com/w/cpp/utility/functional/function.html',1,'std']]],
+  ['function_3c_20void_28registry_20_26_2c_20entity_2c_20const_20keycombinationlistener_20_26_29_3e_34',['function&lt; void(Registry &amp;, Entity, const KeyCombinationListener &amp;)&gt;',['http://en.cppreference.com/w/cpp/utility/functional/function.html',1,'std']]],
+  ['function_3c_20void_28registry_20_26_2c_20entity_2c_20const_20keysequencelistener_20_26_29_3e_35',['function&lt; void(Registry &amp;, Entity, const KeySequenceListener &amp;)&gt;',['http://en.cppreference.com/w/cpp/utility/functional/function.html',1,'std']]],
+  ['future_36',['future',['http://en.cppreference.com/w/cpp/experimental/future.html',1,'std::experimental::future'],['http://en.cppreference.com/w/cpp/thread/future.html',1,'std::future']]],
+  ['future_5ferrc_37',['future_errc',['http://en.cppreference.com/w/cpp/thread/future_errc.html',1,'std']]],
+  ['future_5ferror_38',['future_error',['http://en.cppreference.com/w/cpp/thread/future_error.html',1,'std']]]
 ];
