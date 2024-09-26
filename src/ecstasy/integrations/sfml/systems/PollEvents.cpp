@@ -67,7 +67,7 @@ namespace ecstasy::integration::sfml
         RR<RenderWindow> windowWrapper = registry.getResource<RenderWindow>();
 
         sf::Event event;
-        while (windowWrapper->get().pollEvent(event)) {
+        while (windowWrapper->pollEvent(event)) {
             switch (event.type) {
                 /// Mouse events
                 case sf::Event::MouseButtonPressed:

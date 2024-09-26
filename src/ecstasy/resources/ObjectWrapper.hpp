@@ -76,7 +76,7 @@ namespace ecstasy
             return _object;
         }
 
-      private:
+      protected:
         T _object;
     };
 } // namespace ecstasy

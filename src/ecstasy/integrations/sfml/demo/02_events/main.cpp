@@ -99,6 +99,10 @@ int main(int argc, char **argv)
     ecstasy::Registry registry;
     esf::RenderWindow &window =
         registry.addResource<esf::RenderWindow>(sf::VideoMode(1280, 720), "ECSTASY SFML integration: events");
+    window.setEventListener([](const sf::Event &event) {
+        std::cout << "Event " << event.type << std::endl;
+        return false;
+    });
     registry.addSystem<esf::PollEvents>();
     (void)argv;
     (void)argc;
