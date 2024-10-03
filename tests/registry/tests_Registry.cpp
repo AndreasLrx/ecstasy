@@ -107,6 +107,22 @@ struct NeedRegistry {
     }
 };
 
+struct NeedStorage {
+    const ecstasy::MapStorage<Position> &storage;
+
+    NeedStorage(const ecstasy::MapStorage<Position> &aStorage) : storage(aStorage)
+    {
+    }
+};
+
+struct NeedResource {
+    Counter &resource;
+
+    NeedResource(Counter &aResource) : resource(aResource)
+    {
+    }
+};
+
 struct Velocity {
     Vector2i v;
 
@@ -297,6 +313,7 @@ TEST(Registry, eraseEntities)
 TEST(Registry, EntityBuilder)
 {
     ecstasy::Registry registry;
+    registry.addResource<Counter>();
 
     {
         /// Build the entity
@@ -319,10 +336,33 @@ TEST(Registry, EntityBuilder)
     }
 
     {
-        /// Use withRegistry
+        /// Use with Registry
         ecstasy::Registry::EntityBuilder builder = registry.entityBuilder();
-        ecstasy::RegistryEntity e(builder.withRegistry<NeedRegistry>().build(), builder.getRegistry());
+        ecstasy::RegistryEntity e(builder.with<NeedRegistry, ecstasy::Registry>().build(), builder.getRegistry());
         EXPECT_EQ(&e.get<NeedRegistry>().registry, &registry);
+    }
+
+    {
+        /// Use Queryables with the builder
+        ecstasy::Registry::EntityBuilder builder = registry.entityBuilder();
+        ecstasy::RegistryEntity e(builder.with<NeedStorage, const Position>().build(), builder.getRegistry());
+        EXPECT_EQ(&e.get<NeedStorage>().storage, &registry.getStorage<Position>());
+    }
+
+    {
+        /// Use Queryables with the builder
+        ecstasy::Registry::EntityBuilder builder = registry.entityBuilder();
+        ecstasy::RegistryEntity e(
+            builder.with<NeedStorage, ecstasy::MapStorage<Position>>().build(), builder.getRegistry());
+        EXPECT_EQ(&e.get<NeedStorage>().storage, &registry.getStorage<Position>());
+    }
+
+    {
+        /// Use Queryables with the builder
+        ecstasy::Registry::EntityBuilder builder = registry.entityBuilder();
+        ecstasy::RegistryEntity e(builder.with<NeedResource, Counter>().build(), builder.getRegistry());
+        auto &resource = registry.getResource<Counter, false>();
+        EXPECT_EQ(&e.get<NeedResource>().resource, &resource);
     }
 }
 

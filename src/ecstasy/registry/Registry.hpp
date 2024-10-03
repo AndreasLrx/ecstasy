@@ -103,6 +103,51 @@ namespace ecstasy
         }
 
         ///
+        /// @brief Get a registry object reference (storage, resource, system, or the registry itself) from its type.
+        ///
+        /// @tparam C Type of the registry object to fetch.
+        ///
+        /// @return constexpr getStorageType<C>& Associated registry object (if no specific case the storage for C is
+        /// returned).
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-03)
+        ///
+        template <typename C>
+        constexpr getStorageType<C> &getFromType()
+        {
+            return getStorageSafe<C>();
+        }
+
+        /// @copydoc getQueryable()
+        template <IsStorage S>
+        S &getFromType()
+        {
+            return _storages.get<std::remove_const_t<S>>();
+        }
+
+        /// @copydoc getFromType()
+        template <std::derived_from<ResourceBase> R>
+        constexpr R &getFromType()
+        {
+            return getResource<R, false>();
+        }
+
+        /// @copydoc getFromType()
+        template <std::derived_from<ISystem> S>
+        constexpr S &getFromType()
+        {
+            return getSystem<S>();
+        }
+
+        /// @copydoc getFromType()
+        template <std::derived_from<Registry> R>
+        constexpr R &getFromType()
+        {
+            return *this;
+        }
+
+        ///
         /// @brief Proxy structure to extract the operand types using template partial specialization
         ///
         /// @tparam Operands Must be a tuple of @ref ecstasy::query::Queryable types.
@@ -501,33 +546,10 @@ namespace ecstasy
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-19)
             ///
-            template <typename C, typename... Args>
+            template <typename C, typename... Qs, typename... Args>
             EntityBuilder &with(Args &&...args)
             {
-                _builder.with(_registry.getStorageSafe<C>(), std::forward<Args>(args)...);
-                return *this;
-            }
-
-
-            /// @brief Add a component to the builder target entity, forwarding the registry as first constructor parameter.
-            ///
-            /// @tparam C Component type.
-            /// @tparam Args Type of the Component constructor parameters
-            ///
-            /// @param[in] args Arguments to forward to the component constructor.
-            ///
-            /// @return EntityBuilder& @b this.
-            ///
-            /// @throw std::logic_error If the builder was already consumed or if the entity already has the
-            /// component.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2024-08-27)
-            ///
-            template <typename C, typename... Args>
-            EntityBuilder &withRegistry(Args &&...args)
-            {
-                _builder.with(_registry.getStorageSafe<C>(), _registry, std::forward<Args>(args)...);
+                _builder.with(_registry.getStorageSafe<C>(), _registry.getFromType<Qs>()..., std::forward<Args>(args)...);
                 return *this;
             }
 
@@ -852,6 +874,7 @@ namespace ecstasy
         /// @brief Get the Resource of type @b R.
         ///
         /// @tparam R Type of the resource to fetch.
+        /// @tparam Locked Whether or not the resource should be locked.
         ///
         /// @return const R& Const reference to an instance of type @b R.
         ///
@@ -998,6 +1021,24 @@ namespace ecstasy
         /// @since 1.0.0 (2024-06-11)
         ///
         std::vector<std::reference_wrapper<IStorage>> getEntityStorages(Entity entity);
+
+        ///
+        /// @brief Get the System of type @b S.
+        ///
+        /// @tparam S Type of the system to get.
+        ////
+        /// @return S& Reference to the system of type @b S.
+        ///
+        /// @throw std::logic_error If the system @b S was not found in the registry.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-03)
+        ///
+        template <std::derived_from<ISystem> S>
+        S &getSystem()
+        {
+            return _storages.get<S>();
+        }
 
         ///
         /// @brief Construct a query for the given components.

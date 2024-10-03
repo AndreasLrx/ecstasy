@@ -111,6 +111,26 @@ ecstasy::Entity e2 = entities.builder().with(registry.getStorage<Position>(), 2,
                         .build();
 ```
 
+#### Using type resolution
+
+You can add Component storages, Resources, Systems, or even the Registry instance to the `with` template parameters.
+This will fetch them from the registry and forward them to the component constructor.
+
+```cpp
+struct NeedStorage {
+    const ecstasy::MapStorage<Position> &storage;
+
+    NeedStorage(const ecstasy::MapStorage<Position> &aStorage) : storage(aStorage)
+    {
+    }
+};
+
+ecstasy::Registry registry;
+ecstasy::Entity e1 = registry.entityBuilder()
+                        .with<NeedStorage, Position>() // No need to send registry.getStorage<Position>() as parameters
+                        .build();
+```
+
 ### Manage entity component
 
 When you have an instance of an [Entity](@ref ecstasy::Entity) you can check the presence of a component, get it or add one. Always by sending the component storage. However, you can also use the [RegistryEntity](@ref ecstasy::RegistryEntity) class which, as its name says, is linked to a registry. It is only syntactic sugar to avoid fetching yourself storages from the registry.
