@@ -58,9 +58,11 @@ var NAVTREE =
     [ "Tutorial", "md_doc_2_tutorial.html", [
       [ "Getting Started", "md_doc_2_tutorial.html#GettingStarted", null ],
       [ "Using entities", "md_doc_2_tutorial.html#autotoc_md37", [
-        [ "Creating entities", "md_doc_2_tutorial.html#autotoc_md38", null ],
-        [ "Manage entity component", "md_doc_2_tutorial.html#autotoc_md39", null ],
-        [ "Delete entities", "md_doc_2_tutorial.html#autotoc_md40", null ]
+        [ "Creating entities", "md_doc_2_tutorial.html#autotoc_md38", [
+          [ "Using type resolution", "md_doc_2_tutorial.html#autotoc_md39", null ]
+        ] ],
+        [ "Manage entity component", "md_doc_2_tutorial.html#autotoc_md40", null ],
+        [ "Delete entities", "md_doc_2_tutorial.html#autotoc_md41", null ]
       ] ],
       [ "Implement a custom storage", "md_doc_2_tutorial.html#CustomStorageTutorial", null ],
       [ "Making registry queries", "md_doc_2_tutorial.html#QueryTutorial", [
@@ -68,49 +70,49 @@ var NAVTREE =
         [ "Using modifiers", "md_doc_2_tutorial.html#ModifiersTutorial", null ],
         [ "Using conditions", "md_doc_2_tutorial.html#ConditionsTutorial", null ]
       ] ],
-      [ "Using systems", "md_doc_2_tutorial.html#autotoc_md41", null ],
+      [ "Using systems", "md_doc_2_tutorial.html#autotoc_md42", null ],
       [ "Ensuring Thread Safety", "md_doc_2_tutorial.html#EnsuringThreadSafety", null ],
-      [ "Serializing your entities", "md_doc_2_tutorial.html#autotoc_md42", [
-        [ "Using a serializer", "md_doc_2_tutorial.html#autotoc_md43", [
-          [ "Common types", "md_doc_2_tutorial.html#autotoc_md44", null ],
-          [ "Custom types", "md_doc_2_tutorial.html#autotoc_md45", null ],
-          [ "Working with Entities (WIP)", "md_doc_2_tutorial.html#autotoc_md46", null ]
+      [ "Serializing your entities", "md_doc_2_tutorial.html#autotoc_md43", [
+        [ "Using a serializer", "md_doc_2_tutorial.html#autotoc_md44", [
+          [ "Common types", "md_doc_2_tutorial.html#autotoc_md45", null ],
+          [ "Custom types", "md_doc_2_tutorial.html#autotoc_md46", null ],
+          [ "Working with Entities (WIP)", "md_doc_2_tutorial.html#autotoc_md47", null ]
         ] ]
       ] ]
     ] ],
     [ "Technical Implementations", "md_doc_2_technical_implementation.html", [
-      [ "Entities Management", "md_doc_2_technical_implementation.html#autotoc_md48", null ],
-      [ "Components Management (MapStorage)", "md_doc_2_technical_implementation.html#autotoc_md49", null ],
-      [ "Query", "md_doc_2_technical_implementation.html#autotoc_md50", null ]
+      [ "Entities Management", "md_doc_2_technical_implementation.html#autotoc_md49", null ],
+      [ "Components Management (MapStorage)", "md_doc_2_technical_implementation.html#autotoc_md50", null ],
+      [ "Query", "md_doc_2_technical_implementation.html#autotoc_md51", null ]
     ] ],
     [ "Events integration", "md_doc_2integrations_2events.html", [
-      [ "Description", "md_doc_2integrations_2events.html#autotoc_md59", [
-        [ "How to get feedback", "md_doc_2integrations_2events.html#autotoc_md60", null ],
-        [ "Event flow", "md_doc_2integrations_2events.html#autotoc_md61", null ]
+      [ "Description", "md_doc_2integrations_2events.html#autotoc_md60", [
+        [ "How to get feedback", "md_doc_2integrations_2events.html#autotoc_md61", null ],
+        [ "Event flow", "md_doc_2integrations_2events.html#autotoc_md62", null ]
       ] ],
-      [ "Example", "md_doc_2integrations_2events.html#autotoc_md62", [
-        [ "Creating listeners components", "md_doc_2integrations_2events.html#autotoc_md63", null ],
-        [ "Sending an event", "md_doc_2integrations_2events.html#autotoc_md64", null ],
-        [ "Accessing an input state", "md_doc_2integrations_2events.html#autotoc_md65", null ]
+      [ "Example", "md_doc_2integrations_2events.html#autotoc_md63", [
+        [ "Creating listeners components", "md_doc_2integrations_2events.html#autotoc_md64", null ],
+        [ "Sending an event", "md_doc_2integrations_2events.html#autotoc_md65", null ],
+        [ "Accessing an input state", "md_doc_2integrations_2events.html#autotoc_md66", null ]
       ] ]
     ] ],
     [ "SFML integration", "md_doc_2integrations_2sfml.html", [
-      [ "Description", "md_doc_2integrations_2sfml.html#autotoc_md67", null ],
-      [ "Usage", "md_doc_2integrations_2sfml.html#autotoc_md68", null ]
+      [ "Description", "md_doc_2integrations_2sfml.html#autotoc_md68", null ],
+      [ "Usage", "md_doc_2integrations_2sfml.html#autotoc_md69", null ]
     ] ],
     [ "User Actions integration", "md_doc_2integrations_2user__actions.html", [
-      [ "Description", "md_doc_2integrations_2user__actions.html#autotoc_md70", null ],
-      [ "Usage", "md_doc_2integrations_2user__actions.html#autotoc_md71", [
-        [ "Register your actions and bindings", "md_doc_2integrations_2user__actions.html#autotoc_md72", null ],
-        [ "Listen to your actions", "md_doc_2integrations_2user__actions.html#autotoc_md73", [
-          [ "ActionListener", "md_doc_2integrations_2user__actions.html#autotoc_md74", null ],
-          [ "ActionListeners", "md_doc_2integrations_2user__actions.html#autotoc_md75", null ],
-          [ "ActionIdListener", "md_doc_2integrations_2user__actions.html#autotoc_md76", null ]
+      [ "Description", "md_doc_2integrations_2user__actions.html#autotoc_md71", null ],
+      [ "Usage", "md_doc_2integrations_2user__actions.html#autotoc_md72", [
+        [ "Register your actions and bindings", "md_doc_2integrations_2user__actions.html#autotoc_md73", null ],
+        [ "Listen to your actions", "md_doc_2integrations_2user__actions.html#autotoc_md74", [
+          [ "ActionListener", "md_doc_2integrations_2user__actions.html#autotoc_md75", null ],
+          [ "ActionListeners", "md_doc_2integrations_2user__actions.html#autotoc_md76", null ],
+          [ "ActionIdListener", "md_doc_2integrations_2user__actions.html#autotoc_md77", null ]
         ] ],
-        [ "Using intermediate actions", "md_doc_2integrations_2user__actions.html#autotoc_md77", null ],
-        [ "Saving and loading the bindings", "md_doc_2integrations_2user__actions.html#autotoc_md78", [
-          [ "Saving", "md_doc_2integrations_2user__actions.html#autotoc_md79", null ],
-          [ "Loading", "md_doc_2integrations_2user__actions.html#autotoc_md80", null ]
+        [ "Using intermediate actions", "md_doc_2integrations_2user__actions.html#autotoc_md78", null ],
+        [ "Saving and loading the bindings", "md_doc_2integrations_2user__actions.html#autotoc_md79", [
+          [ "Saving", "md_doc_2integrations_2user__actions.html#autotoc_md80", null ],
+          [ "Loading", "md_doc_2integrations_2user__actions.html#autotoc_md81", null ]
         ] ]
       ] ]
     ] ],
@@ -153,22 +155,22 @@ var NAVTREEINDEX =
 "01__basic__window_2main_8cpp.html",
 "_serializable_enum_8hpp.html#acd9fbb4df4bc6927538efdd7ab95d7cd",
 "classecstasy_1_1_instances.html#ab75cf0b10766154da309113b0ce8833c",
-"classecstasy_1_1_registry_entity.html#ab8309218f27a95840495e9615cdde286",
-"classecstasy_1_1integration_1_1event_1_1_gamepad_combination_listener.html#a8201cb56477332eab04291af788f5cf2",
-"classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a4bf0f38a85c585bd957baaf22ab3bdda",
-"classecstasy_1_1query_1_1modifier_1_1_maybe.html",
-"classutil_1_1_bit_set.html#a034726ec31b4e4ad0b2c7a82cbfad3e4",
-"classutil_1_1serialization_1_1_i_node.html#a5f5eecfccdd570eca30bf9abf6dbee3e",
-"classutil_1_1serialization_1_1_toml_conversion.html#a80347805a093ce1a758fdb6c819e41ad",
-"cpp/algorithm/ranges/generate.html",
-"cpp/experimental/randint.html",
-"cpp/iterator/begin.html",
-"cpp/numeric/special_functions/ellint_2.html",
-"cpp/types/is_volatile.html",
-"has__extraction__operator_8hpp_source.html",
-"structecstasy_1_1_or.html#aa4b4044e4ea8eba9786d99affdc5c991",
-"structecstasy_1_1query_1_1_condition.html",
-"structutil_1_1meta_1_1add__optional_3_01_t_01_6_01_4.html#abfd66a2f66b0b62a27874c93829cc3af"
+"classecstasy_1_1_registry_1_1_select.html#af2a1112e77002962549c639e6ff8c2e3",
+"classecstasy_1_1integration_1_1event_1_1_gamepad_combination_listener.html#a2df19bc28769f7d0289f163bdccececd",
+"classecstasy_1_1integration_1_1sfml_1_1_render_window.html#ae5ad16a68ec818a4b327e99d797e2949",
+"classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#a88285a49ce3fa1696cd254d45bdaa63e",
+"classutil_1_1_allocator.html",
+"classutil_1_1serialization_1_1_i_node.html#a4cd3483fc59bcf2221547f2fcdab905e",
+"classutil_1_1serialization_1_1_toml_array_node.html#afb1d49b0d4df8b017fec24a72c1b4cc7",
+"cpp/algorithm/ranges/equal_range.html",
+"cpp/experimental/map/erase_if.html",
+"cpp/io/manip/skipws.html",
+"cpp/numeric/special_functions/cyl_bessel_k.html",
+"cpp/types/is_swappable.html",
+"functions_vars.html",
+"structecstasy_1_1_empty_type.html",
+"structecstasy_1_1integration_1_1user__action_1_1_users_1_1_user_action_link.html#ac89c7c4faad36afaf1fe0928ffd71067",
+"structutil_1_1meta_1_1_traits_3_01_arg_00_01_args_8_8_8_01_4.html#a37457752027ce8ceb510051e784df526"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

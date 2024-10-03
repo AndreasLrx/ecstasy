@@ -139,9 +139,9 @@ Getting Started</h1>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Populate the registry with some entities</span></div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 10; i++) {</div>
-<div class="line">        <span class="keyword">auto</span> builder = registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a47b4f8718083b99319ff342011e9b110">entityBuilder</a>().<a class="code hl_function" href="classecstasy_1_1_registry_1_1_entity_builder.html#a9e0a1c1e4cb39f7d34d8c440f3461e0f">with</a>&lt;Position&gt;(i * 2, i * 10);</div>
+<div class="line">        <span class="keyword">auto</span> builder = registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a47b4f8718083b99319ff342011e9b110">entityBuilder</a>().<a class="code hl_function" href="classecstasy_1_1_registry_1_1_entity_builder.html#ae55a0fc396c88eeedb1795b3fd6cb0f7">with</a>&lt;Position&gt;(i * 2, i * 10);</div>
 <div class="line">        <span class="keywordflow">if</span> (i % 2 == 0)</div>
-<div class="line">            builder.<a class="code hl_function" href="classecstasy_1_1_registry_1_1_entity_builder.html#a9e0a1c1e4cb39f7d34d8c440f3461e0f">with</a>&lt;Velocity&gt;(i * 10, i * 2);</div>
+<div class="line">            builder.<a class="code hl_function" href="classecstasy_1_1_registry_1_1_entity_builder.html#ae55a0fc396c88eeedb1795b3fd6cb0f7">with</a>&lt;Velocity&gt;(i * 10, i * 2);</div>
 <div class="line">        <a class="code hl_class" href="classecstasy_1_1_entity.html">ecstasy::Entity</a> entity = builder.build();</div>
 <div class="line">        <span class="comment">// If needed, use the entity</span></div>
 <div class="line">    }</div>
@@ -156,11 +156,11 @@ Getting Started</h1>
 <div class="ttc" id="aclassecstasy_1_1_entity_html"><div class="ttname"><a href="classecstasy_1_1_entity.html">ecstasy::Entity</a></div><div class="ttdoc">Encapsulate an index to an entity.</div><div class="ttdef"><b>Definition</b> <a href="_entity_8hpp_source.html#l00035">Entity.hpp:35</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_i_system_html"><div class="ttname"><a href="classecstasy_1_1_i_system.html">ecstasy::ISystem</a></div><div class="ttdoc">System interface, base class of all systems.</div><div class="ttdef"><b>Definition</b> <a href="_i_system_8hpp_source.html#l00026">ISystem.hpp:26</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_i_system_html_aa9cf50e42a827f26e5d7e2c5d7fe9c46"><div class="ttname"><a href="classecstasy_1_1_i_system.html#aa9cf50e42a827f26e5d7e2c5d7fe9c46">ecstasy::ISystem::run</a></div><div class="ttdeci">virtual void run(Registry &amp;registry)=0</div><div class="ttdoc">Run the system.</div></div>
-<div class="ttc" id="aclassecstasy_1_1_registry_1_1_entity_builder_html_a9e0a1c1e4cb39f7d34d8c440f3461e0f"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_entity_builder.html#a9e0a1c1e4cb39f7d34d8c440f3461e0f">ecstasy::Registry::EntityBuilder::with</a></div><div class="ttdeci">EntityBuilder &amp; with(Args &amp;&amp;...args)</div><div class="ttdoc">Add a component to the builder target entity.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00505">Registry.hpp:505</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_1_1_entity_builder_html_ae55a0fc396c88eeedb1795b3fd6cb0f7"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_entity_builder.html#ae55a0fc396c88eeedb1795b3fd6cb0f7">ecstasy::Registry::EntityBuilder::with</a></div><div class="ttdeci">EntityBuilder &amp; with(Args &amp;&amp;...args)</div><div class="ttdoc">Add a component to the builder target entity.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00550">Registry.hpp:550</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html"><div class="ttname"><a href="classecstasy_1_1_registry.html">ecstasy::Registry</a></div><div class="ttdoc">Base of an ECS architecture.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00068">Registry.hpp:68</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a47b4f8718083b99319ff342011e9b110"><div class="ttname"><a href="classecstasy_1_1_registry.html#a47b4f8718083b99319ff342011e9b110">ecstasy::Registry::entityBuilder</a></div><div class="ttdeci">EntityBuilder entityBuilder()</div><div class="ttdoc">Create a new entity builder.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8cpp_source.html#l00033">Registry.cpp:33</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a5595f1c0811c0d7f658c01f49da8dc37"><div class="ttname"><a href="classecstasy_1_1_registry.html#a5595f1c0811c0d7f658c01f49da8dc37">ecstasy::Registry::runSystems</a></div><div class="ttdeci">void runSystems()</div><div class="ttdoc">Run all systems present in the registry.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8cpp_source.html#l00084">Registry.cpp:84</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_a9ae0f363babc862fecb95e860730f5b7"><div class="ttname"><a href="classecstasy_1_1_registry.html#a9ae0f363babc862fecb95e860730f5b7">ecstasy::Registry::addSystem</a></div><div class="ttdeci">S &amp; addSystem(Args &amp;&amp;...args)</div><div class="ttdoc">Add a new system in the registry.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00791">Registry.hpp:791</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_a9ae0f363babc862fecb95e860730f5b7"><div class="ttname"><a href="classecstasy_1_1_registry.html#a9ae0f363babc862fecb95e860730f5b7">ecstasy::Registry::addSystem</a></div><div class="ttdeci">S &amp; addSystem(Args &amp;&amp;...args)</div><div class="ttdoc">Add a new system in the registry.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00813">Registry.hpp:813</a></div></div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md37"></a>
 Using entities</h1>
 <h2><a class="anchor" id="autotoc_md38"></a>
@@ -186,7 +186,7 @@ Since the <a class="el" href="classecstasy_1_1_entities_1_1_builder.html">entiti
 <div class="line"><a class="code hl_class" href="classecstasy_1_1_entities.html">ecstasy::Entities</a> &amp;entities = registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#aa5e142b869a115fca7f24debea38681b">getEntities</a>();</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Registry builder</span></div>
-<div class="line"><a class="code hl_class" href="classecstasy_1_1_entity.html">ecstasy::Entity</a> e1 = registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a47b4f8718083b99319ff342011e9b110">entityBuilder</a>().<a class="code hl_function" href="classecstasy_1_1_registry_1_1_entity_builder.html#a9e0a1c1e4cb39f7d34d8c440f3461e0f">with</a>&lt;Position&gt;(2, 10)</div>
+<div class="line"><a class="code hl_class" href="classecstasy_1_1_entity.html">ecstasy::Entity</a> e1 = registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a47b4f8718083b99319ff342011e9b110">entityBuilder</a>().<a class="code hl_function" href="classecstasy_1_1_registry_1_1_entity_builder.html#ae55a0fc396c88eeedb1795b3fd6cb0f7">with</a>&lt;Position&gt;(2, 10)</div>
 <div class="line">                        .with&lt;Velocity&gt;(10, 2)</div>
 <div class="line">                        .<a class="code hl_function" href="classecstasy_1_1_registry_1_1_entity_builder.html#ad6baf09aa8fb77d6c470295f02859aaf">build</a>();</div>
 <div class="line"> </div>
@@ -198,9 +198,25 @@ Since the <a class="el" href="classecstasy_1_1_entities_1_1_builder.html">entiti
 <div class="ttc" id="aclassecstasy_1_1_entities_html"><div class="ttname"><a href="classecstasy_1_1_entities.html">ecstasy::Entities</a></div><div class="ttdoc">Resource holding all the Registry entities.</div><div class="ttdef"><b>Definition</b> <a href="_entities_8hpp_source.html#l00030">Entities.hpp:30</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_entities_html_a46b127b2cd6eeeae08d6b513d4742fe1"><div class="ttname"><a href="classecstasy_1_1_entities.html#a46b127b2cd6eeeae08d6b513d4742fe1">ecstasy::Entities::builder</a></div><div class="ttdeci">Builder builder()</div><div class="ttdoc">Create a new entity builder.</div><div class="ttdef"><b>Definition</b> <a href="_entities_8cpp_source.html#l00064">Entities.cpp:64</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_1_1_entity_builder_html_ad6baf09aa8fb77d6c470295f02859aaf"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_entity_builder.html#ad6baf09aa8fb77d6c470295f02859aaf">ecstasy::Registry::EntityBuilder::build</a></div><div class="ttdeci">Entity build()</div><div class="ttdoc">Finalize the entity, making it alive.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8cpp_source.html#l00022">Registry.cpp:22</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_a9fa7247f6c5383c37be80ee116de1e62"><div class="ttname"><a href="classecstasy_1_1_registry.html#a9fa7247f6c5383c37be80ee116de1e62">ecstasy::Registry::getStorage</a></div><div class="ttdeci">const getStorageType&lt; C &gt; &amp; getStorage() const</div><div class="ttdoc">Get the Storage for the component type C.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00900">Registry.hpp:900</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_aa5e142b869a115fca7f24debea38681b"><div class="ttname"><a href="classecstasy_1_1_registry.html#aa5e142b869a115fca7f24debea38681b">ecstasy::Registry::getEntities</a></div><div class="ttdeci">ResourceReference&lt; const Entities, Locked &gt; getEntities() const</div><div class="ttdoc">Get the Entities resource.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00952">Registry.hpp:952</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md39"></a>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_a9fa7247f6c5383c37be80ee116de1e62"><div class="ttname"><a href="classecstasy_1_1_registry.html#a9fa7247f6c5383c37be80ee116de1e62">ecstasy::Registry::getStorage</a></div><div class="ttdeci">const getStorageType&lt; C &gt; &amp; getStorage() const</div><div class="ttdoc">Get the Storage for the component type C.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00923">Registry.hpp:923</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_aa5e142b869a115fca7f24debea38681b"><div class="ttname"><a href="classecstasy_1_1_registry.html#aa5e142b869a115fca7f24debea38681b">ecstasy::Registry::getEntities</a></div><div class="ttdeci">ResourceReference&lt; const Entities, Locked &gt; getEntities() const</div><div class="ttdoc">Get the Entities resource.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00975">Registry.hpp:975</a></div></div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md39"></a>
+Using type resolution</h3>
+<p>You can add Component storages, Resources, Systems, or even the Registry instance to the <code>with</code> template parameters. This will fetch them from the registry and forward them to the component constructor.</p>
+<div class="fragment"><div class="line"><span class="keyword">struct </span>NeedStorage {</div>
+<div class="line">    <span class="keyword">const</span> <a class="code hl_class" href="classecstasy_1_1_map_storage.html">ecstasy::MapStorage&lt;Position&gt;</a> &amp;storage;</div>
+<div class="line"> </div>
+<div class="line">    NeedStorage(<span class="keyword">const</span> <a class="code hl_class" href="classecstasy_1_1_map_storage.html">ecstasy::MapStorage&lt;Position&gt;</a> &amp;aStorage) : storage(aStorage)</div>
+<div class="line">    {</div>
+<div class="line">    }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_class" href="classecstasy_1_1_registry.html">ecstasy::Registry</a> registry;</div>
+<div class="line"><a class="code hl_class" href="classecstasy_1_1_entity.html">ecstasy::Entity</a> e1 = registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a47b4f8718083b99319ff342011e9b110">entityBuilder</a>()</div>
+<div class="line">                        .<a class="code hl_function" href="classecstasy_1_1_registry_1_1_entity_builder.html#ae55a0fc396c88eeedb1795b3fd6cb0f7">with</a>&lt;NeedStorage, Position&gt;() <span class="comment">// No need to send registry.getStorage&lt;Position&gt;() as parameters</span></div>
+<div class="line">                        .build();</div>
+<div class="ttc" id="aclassecstasy_1_1_map_storage_html"><div class="ttname"><a href="classecstasy_1_1_map_storage.html">ecstasy::MapStorage</a></div><div class="ttdoc">Associative Map to store entity components Recommended for sparse components.</div><div class="ttdef"><b>Definition</b> <a href="_map_storage_8hpp_source.html#l00031">MapStorage.hpp:31</a></div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md40"></a>
 Manage entity component</h2>
 <p>When you have an instance of an <a class="el" href="classecstasy_1_1_entity.html">Entity</a> you can check the presence of a component, get it or add one. Always by sending the component storage. However, you can also use the <a class="el" href="classecstasy_1_1_registry_entity.html">RegistryEntity</a> class which, as its name says, is linked to a registry. It is only syntactic sugar to avoid fetching yourself storages from the registry.</p>
 <p>Examples:</p>
@@ -228,7 +244,7 @@ Manage entity component</h2>
 <div class="ttc" id="aclassecstasy_1_1_registry_entity_html_a66d16e8a12f364fdd94a12d11767f9f8"><div class="ttname"><a href="classecstasy_1_1_registry_entity.html#a66d16e8a12f364fdd94a12d11767f9f8">ecstasy::RegistryEntity::add</a></div><div class="ttdeci">C &amp; add(Args &amp;&amp;...args)</div><div class="ttdoc">Add a component to the entity.</div><div class="ttdef"><b>Definition</b> <a href="_registry_entity_8hpp_source.html#l00055">RegistryEntity.hpp:55</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_entity_html_ab8309218f27a95840495e9615cdde286"><div class="ttname"><a href="classecstasy_1_1_registry_entity.html#ab8309218f27a95840495e9615cdde286">ecstasy::RegistryEntity::has</a></div><div class="ttdeci">bool has() const</div><div class="ttdoc">Test if the entity has an associated component in the storage S.</div><div class="ttdef"><b>Definition</b> <a href="_registry_entity_8hpp_source.html#l00109">RegistryEntity.hpp:109</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a5d982d00370574aec1946df44d3484d0"><div class="ttname"><a href="classecstasy_1_1_registry.html#a5d982d00370574aec1946df44d3484d0">ecstasy::Registry::getEntity</a></div><div class="ttdeci">Entity getEntity(Entity::Index index) noexcept</div><div class="ttdoc">Get the Entity at the index index.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8cpp_source.html#l00038">Registry.cpp:38</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md40"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md41"></a>
 Delete entities</h2>
 <p>First I need to define two words used in the entities context</p>
 <ul>
@@ -279,7 +295,7 @@ Making registry queries</h1>
 <div class="line">    position.x += velocity.x;</div>
 <div class="line">    position.y += velocity.y;</div>
 <div class="line">});</div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_a827c2ce78375ab3c8cd3027f6c531eb6"><div class="ttname"><a href="classecstasy_1_1_registry.html#a827c2ce78375ab3c8cd3027f6c531eb6">ecstasy::Registry::query</a></div><div class="ttdeci">RegistrySelectStackQuery&lt; thread::AUTO_LOCK_DEFAULT, queryable_type_t&lt; C &gt;, queryable_type_t&lt; Cs &gt;... &gt; query()</div><div class="ttdoc">Construct a query for the given components.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l01017">Registry.hpp:1017</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_a827c2ce78375ab3c8cd3027f6c531eb6"><div class="ttname"><a href="classecstasy_1_1_registry.html#a827c2ce78375ab3c8cd3027f6c531eb6">ecstasy::Registry::query</a></div><div class="ttdeci">RegistrySelectStackQuery&lt; thread::AUTO_LOCK_DEFAULT, queryable_type_t&lt; C &gt;, queryable_type_t&lt; Cs &gt;... &gt; query()</div><div class="ttdoc">Construct a query for the given components.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l01058">Registry.hpp:1058</a></div></div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Batch queriess (multi threaded) are not always better than single threaded queries. The more complex the task is for each entity, the more you may improve performances with batch queries.</dd></dl>
 <p>You can request as many component as you want in the template parameters of the query method.</p>
 <p>If you need more complex queries, check the following parts.</p>
@@ -396,7 +412,7 @@ Using conditions</h2>
 <div class="line">}</div>
 </div><!-- fragment --></li>
 </ol>
-<h1><a class="anchor" id="autotoc_md41"></a>
+<h1><a class="anchor" id="autotoc_md42"></a>
 Using systems</h1>
 <p>To create systems, you only have to create a new class inheriting the <a class="el" href="classecstasy_1_1_i_system.html">ecstasy::ISystem</a> class and implement the <a class="el" href="classecstasy_1_1_i_system.html#aa9cf50e42a827f26e5d7e2c5d7fe9c46">ecstasy::ISystem::run</a> method.</p>
 <p>For example here is how you would create a Movement system:</p>
@@ -418,7 +434,7 @@ Using systems</h1>
 <div class="line">registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a59904982ed7490f12c63628951178dd5">runSystem</a>&lt;Movement&gt;();</div>
 <div class="line"><span class="comment">// or</span></div>
 <div class="line">registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a5595f1c0811c0d7f658c01f49da8dc37">runSystems</a>();</div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_a59904982ed7490f12c63628951178dd5"><div class="ttname"><a href="classecstasy_1_1_registry.html#a59904982ed7490f12c63628951178dd5">ecstasy::Registry::runSystem</a></div><div class="ttdeci">void runSystem()</div><div class="ttdoc">Run a specific system from the registry.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l01108">Registry.hpp:1108</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_a59904982ed7490f12c63628951178dd5"><div class="ttname"><a href="classecstasy_1_1_registry.html#a59904982ed7490f12c63628951178dd5">ecstasy::Registry::runSystem</a></div><div class="ttdeci">void runSystem()</div><div class="ttdoc">Run a specific system from the registry.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l01149">Registry.hpp:1149</a></div></div>
 </div><!-- fragment --><p>By default systems added with <code>Registry.addSystem()</code> have the same priority and the order of execution is undefined when calling <code>Registry.runSystems()</code>. But you can use the system priorities/groups to order them and be able to specify their priority and run a given system group.</p>
 <ol type="1">
 <li><p class="startli">Priority</p>
@@ -491,7 +507,7 @@ Ensuring Thread Safety</h1>
 <p class="startli">I know sometimes ecstasy can lock multiple times the same mutex because it is hard to detect. But if you know it and it is sensitive systems (running lot of times per frame) you can use the *Ex methods to UnLock explicitly the same way.</p>
 </li>
 </ol>
-<h1><a class="anchor" id="autotoc_md42"></a>
+<h1><a class="anchor" id="autotoc_md43"></a>
 Serializing your entities</h1>
 <p>Ecstasy has some built in serialization helpers in the <a class="el" href="namespaceecstasy_1_1serialization.html">ecstasy::serialization</a> namespace.</p>
 <dl class="section warning"><dt>Warning</dt><dd>The entity serialization without specifying components is still WIP and will probably have a huge refactor.</dd></dl>
@@ -501,7 +517,7 @@ Serializing your entities</h1>
 </ul>
 <p>If you need a missing serializer, you can write it yourself by inheriting the <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html">ecstasy::serialization::Serializer</a> class. In case of a commonly used serializer type (json/yaml/NDR...) feel free to open an issue about it.</p>
 <dl class="section warning"><dt>Warning</dt><dd>The RawSerializer uses a <a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_stringstream.html">std::stringstream</a>. Therefore there are cursor positions, if you need to read twice the data, you need to reset the read cursor position.</dd></dl>
-<h2><a class="anchor" id="autotoc_md43"></a>
+<h2><a class="anchor" id="autotoc_md44"></a>
 Using a serializer</h2>
 <p>Following examples below will be using the RawSerializer type and the example component Position:</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>Position {</div>
@@ -509,7 +525,7 @@ Using a serializer</h2>
 <div class="line">    <span class="keywordtype">float</span> x;</div>
 <div class="line">    <span class="keywordtype">float</span> y;</div>
 <div class="line">};</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md44"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md45"></a>
 Common types</h3>
 <p>Serializer should support fundamental and container types by default but it depends on the serializer implementation.</p>
 <table class="markdownTable">
@@ -569,7 +585,7 @@ Common types</h3>
 <div class="line"><span class="comment">// Fill your serializer with previously saved data using import methods</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> my_number = serializer.load&lt;<span class="keywordtype">int</span>&gt;();</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md45"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md46"></a>
 Custom types</h3>
 <p>If you are working with custom type (ie components) you can implement the extraction (**&gt;&gt;**) and insertion operator (**&lt;&lt;**) with the said serializer type for the <em>save</em>/_update_. And a constructor taking the serializer as parameter for the <em>load</em>.</p>
 <dl class="section note"><dt>Note</dt><dd>The operators doesn't have to be inside the class, you can define it outside the class if you don't have access to the class definition. However it cannot work for the constructor.</dd></dl>
@@ -591,7 +607,7 @@ Custom types</h3>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">}</div>
 <div class="ttc" id="anamespaceutil_html_a61516938bebca76c22e965e24066591e"><div class="ttname"><a href="namespaceutil.html#a61516938bebca76c22e965e24066591e">util::operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;output, BitSet const &amp;set)</div><div class="ttdoc">Prints the contents of set into output.</div><div class="ttdef"><b>Definition</b> <a href="_bit_set_8cpp_source.html#l00189">BitSet.cpp:189</a></div></div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md46"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md47"></a>
 Working with Entities (WIP)</h3>
 <p>Since you can serialize any type, you can serialize entity components manually using the functions above.</p>
 <p>If you define <b>ECSTASY_ENABLE_ENTITY_SERIALIZERS</b>, you can serialize an entire entity.</p>
@@ -599,7 +615,7 @@ Working with Entities (WIP)</h3>
 <div class="fragment"><div class="line">RawSerializer serializer();</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classecstasy_1_1_registry_entity.html">ecstasy::RegistryEntity</a> entity(</div>
-<div class="line">        registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a47b4f8718083b99319ff342011e9b110">entityBuilder</a>().<a class="code hl_function" href="classecstasy_1_1_registry_1_1_entity_builder.html#a9e0a1c1e4cb39f7d34d8c440f3461e0f">with</a>&lt;Position&gt;(1.0f, -8456.0f).<a class="code hl_function" href="classecstasy_1_1_registry_1_1_entity_builder.html#a9e0a1c1e4cb39f7d34d8c440f3461e0f">with</a>&lt;NPC&gt;(Position(42.f, 0.f), <span class="stringliteral">&quot;Steve&quot;</span>).build(),</div>
+<div class="line">        registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a47b4f8718083b99319ff342011e9b110">entityBuilder</a>().<a class="code hl_function" href="classecstasy_1_1_registry_1_1_entity_builder.html#ae55a0fc396c88eeedb1795b3fd6cb0f7">with</a>&lt;Position&gt;(1.0f, -8456.0f).<a class="code hl_function" href="classecstasy_1_1_registry_1_1_entity_builder.html#ae55a0fc396c88eeedb1795b3fd6cb0f7">with</a>&lt;NPC&gt;(Position(42.f, 0.f), <span class="stringliteral">&quot;Steve&quot;</span>).build(),</div>
 <div class="line">        registry);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Save an entity explicit components</span></div>

@@ -161,7 +161,7 @@ class ecstasy::Registry::RegistryStackQuery&lt; util::meta::Traits&lt; Selects..
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2023-11-08) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00373">373</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00418">418</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a3b9bc8a4e6157622039709d17c1f244c" name="a3b9bc8a4e6157622039709d17c1f244c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3b9bc8a4e6157622039709d17c1f244c">&#9670;&#160;</a></span>Base</h2>
@@ -179,7 +179,7 @@ template&lt;typename... Selects, typename... Missings, typename Conditions , typ
 
 <p>Query type for the query. </p>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00400">400</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00445">445</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
@@ -199,7 +199,7 @@ template&lt;typename... Selects, typename... Missings, typename Conditions , typ
 
 <p>Memory type for the query. </p>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00393">393</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00438">438</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
@@ -240,22 +240,22 @@ template&lt;typename... Selects, typename... Missings, typename Conditions , typ
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2023-11-08) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00413">413</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  414</span>                    : <a class="code hl_typedef" href="classecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_20e16f590d1e6d3a51f200dbd071ad9a.html#a900bd6ed2e08e079c73d8be446d22f7d">Memory</a>(),</div>
-<div class="line"><span class="lineno">  415</span>                      <a class="code hl_typedef" href="classecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_20e16f590d1e6d3a51f200dbd071ad9a.html#a3b9bc8a4e6157622039709d17c1f244c">Base</a>(std::move(</div>
-<div class="line"><span class="lineno">  416</span>                        <a class="code hl_struct" href="structecstasy_1_1query_1_1_select.html">ecstasy::query::Select</a>&lt;</div>
-<div class="line"><span class="lineno">  417</span>                            <span class="keyword">typename</span> Memory::template QueryableType&lt;Selects&gt;...&gt;::template </div>
-<div class="line"><span class="lineno">  418</span>                        where&lt;Conditions,</div>
-<div class="line"><span class="lineno">  419</span>                             <span class="keyword">typename</span> Memory::template QueryableType&lt;Missings&gt;...,</div>
-<div class="line"><span class="lineno">  420</span>                             <span class="keyword">typename</span> Memory::template QueryableType&lt;Cs&gt;...</div>
-<div class="line"><span class="lineno">  421</span>                        &gt;(</div>
-<div class="line"><span class="lineno">  422</span>                            Memory::template getQueryable&lt;Missings&gt;(registry)...,</div>
-<div class="line"><span class="lineno">  423</span>                            Memory::template getQueryable&lt;Cs&gt;(registry)...</div>
-<div class="line"><span class="lineno">  424</span>                        )))</div>
-<div class="line"><span class="lineno">  425</span>                {</div>
-<div class="line"><span class="lineno">  426</span>                }</div>
-<div class="ttc" id="aclassecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_20e16f590d1e6d3a51f200dbd071ad9a_html_a3b9bc8a4e6157622039709d17c1f244c"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_20e16f590d1e6d3a51f200dbd071ad9a.html#a3b9bc8a4e6157622039709d17c1f244c">ecstasy::Registry::RegistryStackQuery&lt; util::meta::Traits&lt; Selects... &gt;, util::meta::Traits&lt; Missings... &gt;, Conditions, util::meta::Traits&lt; Cs... &gt;, AutoLock &gt;::Base</a></div><div class="ttdeci">ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; typename Memory::template QueryableType&lt; Selects &gt;... &gt;, Conditions &gt; Base</div><div class="ttdoc">Query type for the query.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00400">Registry.hpp:402</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_20e16f590d1e6d3a51f200dbd071ad9a_html_a900bd6ed2e08e079c73d8be446d22f7d"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_20e16f590d1e6d3a51f200dbd071ad9a.html#a900bd6ed2e08e079c73d8be446d22f7d">ecstasy::Registry::RegistryStackQuery&lt; util::meta::Traits&lt; Selects... &gt;, util::meta::Traits&lt; Missings... &gt;, Conditions, util::meta::Traits&lt; Cs... &gt;, AutoLock &gt;::Memory</a></div><div class="ttdeci">RegistryStackQueryMemory&lt; util::meta::Traits&lt; Selects... &gt;, util::meta::Traits&lt; Missings... &gt;, Conditions, AutoLock, Cs... &gt; Memory</div><div class="ttdoc">Memory type for the query.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00393">Registry.hpp:398</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00458">458</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  459</span>                    : <a class="code hl_typedef" href="classecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_20e16f590d1e6d3a51f200dbd071ad9a.html#a900bd6ed2e08e079c73d8be446d22f7d">Memory</a>(),</div>
+<div class="line"><span class="lineno">  460</span>                      <a class="code hl_typedef" href="classecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_20e16f590d1e6d3a51f200dbd071ad9a.html#a3b9bc8a4e6157622039709d17c1f244c">Base</a>(std::move(</div>
+<div class="line"><span class="lineno">  461</span>                        <a class="code hl_struct" href="structecstasy_1_1query_1_1_select.html">ecstasy::query::Select</a>&lt;</div>
+<div class="line"><span class="lineno">  462</span>                            <span class="keyword">typename</span> Memory::template QueryableType&lt;Selects&gt;...&gt;::template </div>
+<div class="line"><span class="lineno">  463</span>                        where&lt;Conditions,</div>
+<div class="line"><span class="lineno">  464</span>                             <span class="keyword">typename</span> Memory::template QueryableType&lt;Missings&gt;...,</div>
+<div class="line"><span class="lineno">  465</span>                             <span class="keyword">typename</span> Memory::template QueryableType&lt;Cs&gt;...</div>
+<div class="line"><span class="lineno">  466</span>                        &gt;(</div>
+<div class="line"><span class="lineno">  467</span>                            Memory::template getQueryable&lt;Missings&gt;(registry)...,</div>
+<div class="line"><span class="lineno">  468</span>                            Memory::template getQueryable&lt;Cs&gt;(registry)...</div>
+<div class="line"><span class="lineno">  469</span>                        )))</div>
+<div class="line"><span class="lineno">  470</span>                {</div>
+<div class="line"><span class="lineno">  471</span>                }</div>
+<div class="ttc" id="aclassecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_20e16f590d1e6d3a51f200dbd071ad9a_html_a3b9bc8a4e6157622039709d17c1f244c"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_20e16f590d1e6d3a51f200dbd071ad9a.html#a3b9bc8a4e6157622039709d17c1f244c">ecstasy::Registry::RegistryStackQuery&lt; util::meta::Traits&lt; Selects... &gt;, util::meta::Traits&lt; Missings... &gt;, Conditions, util::meta::Traits&lt; Cs... &gt;, AutoLock &gt;::Base</a></div><div class="ttdeci">ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; typename Memory::template QueryableType&lt; Selects &gt;... &gt;, Conditions &gt; Base</div><div class="ttdoc">Query type for the query.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00445">Registry.hpp:447</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_20e16f590d1e6d3a51f200dbd071ad9a_html_a900bd6ed2e08e079c73d8be446d22f7d"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_20e16f590d1e6d3a51f200dbd071ad9a.html#a900bd6ed2e08e079c73d8be446d22f7d">ecstasy::Registry::RegistryStackQuery&lt; util::meta::Traits&lt; Selects... &gt;, util::meta::Traits&lt; Missings... &gt;, Conditions, util::meta::Traits&lt; Cs... &gt;, AutoLock &gt;::Memory</a></div><div class="ttdeci">RegistryStackQueryMemory&lt; util::meta::Traits&lt; Selects... &gt;, util::meta::Traits&lt; Missings... &gt;, Conditions, AutoLock, Cs... &gt; Memory</div><div class="ttdoc">Memory type for the query.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00438">Registry.hpp:443</a></div></div>
 <div class="ttc" id="astructecstasy_1_1query_1_1_select_html"><div class="ttname"><a href="structecstasy_1_1query_1_1_select.html">ecstasy::query::Select</a></div><div class="ttdoc">Advanced Query.</div><div class="ttdef"><b>Definition</b> <a href="_select_8hpp_source.html#l00038">Select.hpp:38</a></div></div>
 </div><!-- fragment -->
 </div>
