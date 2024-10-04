@@ -31,6 +31,7 @@ struct Position {
         return *this;
     }
 };
+REGISTER_SERIALIZABLES(Position, RawSerializer)
 
 struct NPC {
     Position pos;
@@ -270,6 +271,46 @@ TEST(Serializer, compound_struct)
     GTEST_ASSERT_EQ(npcLoaded.name, "Steve");
     GTEST_ASSERT_EQ(npcLoaded.pos.x, 1.0f);
     GTEST_ASSERT_EQ(npcLoaded.pos.y, -8456.0f);
+}
+
+TEST(Serializer, ComponentsRTTI)
+{
+    RawSerializer rawSerializer;
+    ecstasy::Registry registry;
+
+    // Ensure components are registered (or not)
+    GTEST_ASSERT_TRUE(RawSerializer::hasEntityComponentSerializer(typeid(Position).hash_code()));
+    GTEST_ASSERT_FALSE(RawSerializer::hasEntityComponentSerializer(typeid(NPC).hash_code()));
+
+    ecstasy::RegistryEntity entity(
+        registry.entityBuilder().with<Position>(1.0f, -8456.0f).with<NPC>(Position(42.f, 0.f), "Steve").build(),
+        registry);
+
+    // Only save the Position component (NPC is not registered)
+    rawSerializer.saveEntity(entity);
+    // Check the serialized data
+    rawSerializer.resetReadCursor();
+    std::size_t component_hash = rawSerializer.load<std::size_t>();
+    GTEST_ASSERT_EQ(component_hash, typeid(Position).hash_code());
+    Position posLoaded = Position(rawSerializer);
+    GTEST_ASSERT_EQ(posLoaded.x, 1.0f);
+    GTEST_ASSERT_EQ(posLoaded.y, -8456.0f);
+
+    // Update the Position component
+    entity.get<Position>().x = 2.0f;
+    entity.get<Position>().y = -8457.0f;
+    rawSerializer.resetReadCursor();
+    rawSerializer.updateEntity(entity);
+
+    // Check the updated data
+    GTEST_ASSERT_EQ(entity.get<Position>().x, 1.0f);
+    GTEST_ASSERT_EQ(entity.get<Position>().y, -8456.0f);
+
+    // Load the Position component
+    rawSerializer.resetReadCursor();
+    ecstasy::RegistryEntity e2 = rawSerializer.loadEntity(registry);
+    GTEST_ASSERT_EQ(e2.get<Position>().x, 1.0f);
+    GTEST_ASSERT_EQ(e2.get<Position>().y, -8456.0f);
 }
 
 TEST(Serializer, entityComponents)

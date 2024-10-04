@@ -14,14 +14,42 @@
 
 #include <fstream>
 #include <sstream>
+#include <unordered_map>
 
 #include "ecstasy/resources/entity/RegistryEntity.hpp"
+#include "ecstasy/serialization/EntityComponentSerializer.hpp"
 #include "ecstasy/serialization/ISerializer.hpp"
+#include "util/serialization/foreach.hpp"
 #include "ecstasy/serialization/concepts/has_extraction_operator.hpp"
 #include "ecstasy/serialization/concepts/has_insertion_operator.hpp"
 #include "ecstasy/serialization/traits/can_load_type.hpp"
 #include "ecstasy/serialization/traits/can_save_type.hpp"
 #include "ecstasy/serialization/traits/can_update_type.hpp"
+
+#define __CONCATENATE_DETAIL(x, y)      x##y
+#define __CONCATENATE(x, y)             __CONCATENATE_DETAIL(x, y)
+#define _REGISTER_SERIALIZABLES_AGAIN() _REGISTER_SERIALIZABLES_HELPER
+#define _REGISTER_SERIALIZABLES_HELPER(COMPONENT, a1, ...) \
+    REGISTER_SERIALIZABLE(COMPONENT, a1)                   \
+    __VA_OPT__(_REGISTER_SERIALIZABLES_AGAIN PARENS(COMPONENT, __VA_ARGS__))
+
+///
+/// @brief Register a component to a serializer.
+///
+/// @author Andréas Leroux (andreas.leroux@epitech.eu)
+/// @since 1.0.0 (2024-10-04)
+///
+#define REGISTER_SERIALIZABLE(COMPONENT, SERIALIZER)                                  \
+    static bool __CONCATENATE(registered_, __CONCATENATE(COMPONENT, _##SERIALIZER)) = \
+        SERIALIZER::registerComponent<COMPONENT>();
+
+///
+/// @brief Register a component to multiple serializers.
+///
+/// @author Andréas Leroux (andreas.leroux@epitech.eu)
+/// @since 1.0.0 (2024-10-04)
+///
+#define REGISTER_SERIALIZABLES(COMPONENT, a1, ...) EXPAND(_REGISTER_SERIALIZABLES_HELPER(COMPONENT, a1, __VA_ARGS__))
 
 namespace ecstasy::serialization
 {
@@ -181,6 +209,32 @@ namespace ecstasy::serialization
         }
 
         ///
+        /// @brief Save all registered components of an entity to the serializer.
+        ///
+        /// @note See @ref registerComponent for registering components.
+        ///
+        /// @param[in] entity Entity to save.
+        ///
+        /// @return S& Reference to @b this for chain calls.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-04)
+        ///
+        S &saveEntity(RegistryEntity &entity)
+        {
+            auto storages = entity.getRegistry().getEntityStorages(entity);
+
+            for (IStorage &storage : storages) {
+                std::size_t hash = storage.getComponentTypeInfos().hash_code();
+
+                if (this->hasEntityComponentSerializer(hash)) {
+                    this->getEntityComponentSerializer(hash).save(*this, storage, entity);
+                }
+            }
+            return inner();
+        }
+
+        ///
         /// @brief Load an object from the serializer.
         ///
         /// @note This construct a new object and consume the associated data from the serializer.
@@ -209,6 +263,24 @@ namespace ecstasy::serialization
         }
 
         ///
+        /// @brief Load an entity component from the serializer.
+        ///
+        /// @param[in] registry Registry to load the component to.
+        ///
+        /// @return RegistryEntity Loaded entity.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-04)
+        ///
+        RegistryEntity loadEntity(Registry &registry)
+        {
+            RegistryEntity entity(registry.entityBuilder().build(), registry);
+
+            updateEntity(entity);
+            return entity;
+        }
+
+        ///
         /// @brief Update an existing object from the serializer.
         ///
         /// @note If the object is fundamental, it will use the assignment operator, otherwise the << operator is
@@ -234,6 +306,37 @@ namespace ecstasy::serialization
                 object = inner().template load<U>();
             else
                 object << inner();
+            return inner();
+        }
+
+        ///
+        /// @brief Update all registered components of an entity from the serializer.
+        ///
+        /// @note Missing components are loaded, existing components are updated.
+        ///
+        /// @param[in] entity Entity to update.
+        ///
+        /// @return S& Reference to @b this for chain calls.
+        ///
+        /// @throws std::out_of_range If an entity component is not registered in the serializer.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-04)
+        ///
+        S &updateEntity(RegistryEntity &entity)
+        {
+            std::size_t component_hash = loadComponentHash();
+
+            if (this->hasEntityComponentSerializer(component_hash)) {
+                IEntityComponentSerializer &component = this->getEntityComponentSerializer(component_hash);
+                IStorage &storage = entity.getRegistry().getStorages().get(component.getStorageTypeIndex());
+
+                component.load(*this, storage, entity);
+            } else {
+                throw std::out_of_range("Component with hash " + std::to_string(component_hash)
+                    + " not registered. Use "
+                      "registerComponent to register components.");
+            }
             return inner();
         }
 
@@ -272,7 +375,87 @@ namespace ecstasy::serialization
         {
             return inner().update(object);
         }
+
+        ///
+        /// @brief Load the hash of the component type from the stream.
+        ///
+        /// @return std::size_t Hash of the component type.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-04)
+        ///
+        virtual std::size_t loadComponentHash() = 0;
+
+        ///
+        /// @brief Register a component to this serializer type.
+        ///
+        /// This is required for calls to saveEntity calls without explicit component types.
+        ///
+        /// @tparam C Component type to register.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-04)
+        ///
+        template <typename C>
+        static bool registerComponent()
+        {
+            size_t hash = typeid(C).hash_code();
+
+            if (getRegisteredComponents().contains(hash))
+                return false;
+            getRegisteredComponents()[hash] = std::make_unique<EntityComponentSerializer<C, S>>();
+            return true;
+        }
+
+        ///
+        /// @brief Get the Entity Component Serializer for a component type.
+        ///
+        /// @param[in] hash Hash of the component type.
+        ///
+        /// @return IEntityComponentSerializer& Reference to the entity component serializer.
+        ///
+        /// @throw std::out_of_range If the component type is not registered.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-04)
+        ///
+        static IEntityComponentSerializer &getEntityComponentSerializer(std::size_t hash)
+        {
+            return *getRegisteredComponents().at(hash);
+        }
+
+        ///
+        /// @brief Check if a component type is registered to this serializer.
+        ///
+        /// @param[in] hash Hash of the component type.
+        ///
+        /// @return bool True if the component type is registered, false otherwise.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-04)
+        ///
+        static bool hasEntityComponentSerializer(std::size_t hash)
+        {
+            return getRegisteredComponents().contains(hash);
+        }
+
+      protected:
+        ///
+        /// @brief Get a reference to the Registered Components map.
+        ///
+        /// @return std::unordered_map<std::size_t, std::unique_ptr<IEntityComponentSerializer>>& Reference to the
+        /// registered components map.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-10)
+        ///
+        static std::unordered_map<std::size_t, std::unique_ptr<IEntityComponentSerializer>> &getRegisteredComponents()
+        {
+            static std::unordered_map<std::size_t, std::unique_ptr<IEntityComponentSerializer>> registeredComponents;
+            return registeredComponents;
+        }
     };
+
 } // namespace ecstasy::serialization
 
 #endif /* !ECSTASY_SERIALIZATION_SERIALIZER_HPP_ */

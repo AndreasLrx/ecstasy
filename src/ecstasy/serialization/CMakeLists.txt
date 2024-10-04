@@ -6,7 +6,8 @@ add_subdirectory(traits)
 
 set(SRC
     ${SRC}
-    ${INCROOT}/ComponentSerializer.hpp
+    ${INCROOT}/EntityComponentSerializer.hpp
+    ${INCROOT}/IEntityComponentSerializer.hpp
     ${INCROOT}/include.hpp
     ${INCROOT}/ISerializer.hpp
     ${INCROOT}/RawSerializer.hpp

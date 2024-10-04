@@ -654,14 +654,22 @@ Position &operator<<(RawSerializer &serializer)
 }
 ```
 
-#### Working with Entities (WIP)
+If you need to (de)serialize the type from the save/update/loadEntity methods, you first need to register the type as serializable by the expected Serializer using the variadic macro @ref REGISTER_SERIALIZABLES
+
+For example, if you want you type Position to be serializable by the RawSerializer and the (maybe to come) JsonSerializer:
+
+```cpp
+REGISTER_SERIALIZABLES(Position, RawSerializer, JsonSerializer)
+```
+
+#### Working with Entities
 
 Since you can serialize any type, you can serialize entity components manually using the functions above.
 
-If you define **ECSTASY_ENABLE_ENTITY_SERIALIZERS**, you can serialize an entire entity.
+You can save entity components explicitly using the templated saveEntity method, or every registered components with the classic saveEntity method.
 
 @warning
-This is still work in progress and will certainly be refactored because the underlying code is shit.
+To use the non templated `saveEntity` method, you need to register them using the @ref REGISTER_SERIALIZABLES macro (see below).
 
 ```cpp
 RawSerializer serializer();
