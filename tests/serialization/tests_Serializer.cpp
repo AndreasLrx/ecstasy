@@ -289,32 +289,4 @@ TEST(Serializer, entityComponents)
     rawSerializer << typeid(NPC) << entity.get<NPC>() << typeid(Position) << entity.get<Position>();
     std::string expected = rawSerializer.exportBytes();
     GTEST_ASSERT_EQ(entitySerializedExplicit, expected);
-
-#ifdef ECSTASY_ENABLE_ENTITY_SERIALIZERS
-    /// Test Update entity
-    GTEST_ASSERT_EQ(entity.get<NPC>().name, "Steve");
-    entity.get<NPC>().name = "John";
-
-    rawSerializer.updateEntity(entity);
-    GTEST_ASSERT_EQ(entity.get<NPC>().name, "Steve");
-
-    /// Test loadEntity (Double read)
-    rawSerializer.resetReadCursor();
-    ecstasy::RegistryEntity newEntity = rawSerializer.loadEntity(registry);
-    GTEST_ASSERT_EQ(newEntity.get<NPC>().name, "Steve");
-
-    /// Final saveEntity test
-    rawSerializer.clear();
-    rawSerializer.saveEntity(entity);
-    std::string entitySerialized = rawSerializer.exportBytes();
-
-    #ifdef _MSC_VER
-    // MSVC does not guarantee the same order of the components
-    rawSerializer.clear();
-    rawSerializer << typeid(Position) << entity.get<Position>() << typeid(NPC) << entity.get<NPC>();
-    expected = rawSerializer.exportBytes();
-    #endif
-    // Not a good test since the order of the components is not guaranteed
-    GTEST_ASSERT_EQ(entitySerialized, expected);
-#endif
 }

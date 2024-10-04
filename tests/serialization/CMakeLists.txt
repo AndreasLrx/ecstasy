@@ -1,7 +1,6 @@
 set(SRCROOT ${SRCROOT}/serialization)
 
 set(SRC
-    ${SRCROOT}/tests_ComponentSerializer.cpp
     ${SRCROOT}/tests_concepts.cpp
     ${SRCROOT}/tests_Serializer.cpp
     ${SRCROOT}/tests_traits.cpp

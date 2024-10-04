@@ -40,8 +40,6 @@ namespace ecstasy::thread
 #endif
 } // namespace ecstasy::thread
 
-// Enable serialization methods in I/AStorage classes
-#cmakedefine ECSTASY_ENABLE_ENTITY_SERIALIZERS
 // Toml Serializer is available
 #cmakedefine ECSTASY_SERIALIZER_TOML
 

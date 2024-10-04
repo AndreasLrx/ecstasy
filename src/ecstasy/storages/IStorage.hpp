@@ -29,13 +29,6 @@ namespace util
 namespace ecstasy
 {
 
-#ifdef ECSTASY_ENABLE_ENTITY_SERIALIZERS
-    namespace serialization
-    {
-        class ISerializer;
-    }
-#endif
-
     class Entity;
 
     ///
@@ -96,37 +89,6 @@ namespace ecstasy
         /// @since 1.0.0 (2024-06-11)
         ///
         virtual const std::type_info &getComponentTypeInfos() const noexcept = 0;
-
-#ifdef ECSTASY_ENABLE_ENTITY_SERIALIZERS
-        ///
-        /// @brief Save an entity component.
-        ///
-        /// @note The type_info is used to counter the impossibility to use template virtual methods.
-        ///
-        /// @param[in] serializer Serializer object.
-        /// @param[in] stype Type informations of the serializer.
-        /// @param[in] entityId Entity index.
-        ///
-        /// @return serialization::ISerializer& Serializer object.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2024-06-11)
-        ///
-        virtual serialization::ISerializer &save(
-            serialization::ISerializer &serializer, const std::type_info &stype, size_t entityId) const = 0;
-
-        ///
-        /// @brief Load/update an entity component.
-        ///
-        /// @param[in] serializer Serializer object.
-        /// @param[in] stype Type informations of the serializer.
-        /// @param[in] entityId Entity index.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2024-06-25)
-        ///
-        virtual void load(serialization::ISerializer &serializer, const std::type_info &stype, size_t entityId) = 0;
-#endif
     };
 
 } // namespace ecstasy

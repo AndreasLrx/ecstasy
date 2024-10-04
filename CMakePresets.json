@@ -30,10 +30,6 @@
         "ECSTASY_THREAD_SAFE": {
           "type": "BOOL",
           "value": "TRUE"
-        },
-        "ECSTASY_ENABLE_ENTITY_SERIALIZERS": {
-          "type": "BOOL",
-          "value": "FALSE"
         }
       }
     },

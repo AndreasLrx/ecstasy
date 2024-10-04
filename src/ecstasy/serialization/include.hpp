@@ -12,9 +12,6 @@
 #ifndef ECSTASY_SERIALIZER_HPP_
 #define ECSTASY_SERIALIZER_HPP_
 
-#ifdef ECSTASY_ENABLE_ENTITY_SERIALIZERS
-    #include "ComponentSerializer.hpp"
-#endif
 #include "ISerializer.hpp"
 #include "RawSerializer.hpp"
 #include "Serializer.hpp"

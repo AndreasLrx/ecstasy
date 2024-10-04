@@ -180,32 +180,6 @@ namespace ecstasy::serialization
             return s;
         }
 
-#ifdef ECSTASY_ENABLE_ENTITY_SERIALIZERS
-        ///
-        /// @brief Save an entity to the serializer.
-        ///
-        /// @warning This will try to save all the components of the entity, but not the entity ID.
-        ///
-        /// @param[in] entity Entity to save.
-        ///
-        /// @return S& Reference to @b this for chain calls.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2024-06-11)
-        ///
-        S &saveEntity(RegistryEntity &entity)
-        {
-            auto storages = entity.getRegistry().getEntityStorages(entity);
-
-            for (auto &storage : storages) {
-                // We send the typeid of the serializer before loosing the type information (since storage.serialize
-                // takes an ISerializer)
-                storage.get().save(*this, typeid(S), entity.getIndex());
-            }
-            return inner();
-        }
-#endif
-
         ///
         /// @brief Load an object from the serializer.
         ///
@@ -233,26 +207,6 @@ namespace ecstasy::serialization
                 return object;
             }
         }
-
-#ifdef ECSTASY_ENABLE_ENTITY_SERIALIZERS
-        ///
-        /// @brief Load an entity from the serializer.
-        ///
-        /// @param[in] registry Registry to load the entity into.
-        ///
-        /// @return RegistryEntity Loaded entity.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2024-06-25)
-        ///
-        RegistryEntity loadEntity(Registry &registry)
-        {
-            RegistryEntity entity(registry.entityBuilder().build(), registry);
-
-            updateEntity(entity);
-            return entity;
-        }
-#endif
 
         ///
         /// @brief Update an existing object from the serializer.
@@ -282,31 +236,6 @@ namespace ecstasy::serialization
                 object << inner();
             return inner();
         }
-
-#ifdef ECSTASY_ENABLE_ENTITY_SERIALIZERS
-        ///
-        /// @brief Update an entity component from the serializer.
-        ///
-        /// @param[in] entity Entity to update.
-        ///
-        /// @return S& Reference to @b this for chain calls.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2024-06-25)
-        ///
-        S &updateEntity(RegistryEntity &entity)
-        {
-            std::size_t component_hash = load<std::size_t>();
-            auto &storages = entity.getRegistry().getStorages().getInner();
-
-            for (const auto &pair : storages) {
-                if (pair.second->getComponentTypeInfos().hash_code() == component_hash) {
-                    pair.second->load(*this, typeid(S), entity.getIndex());
-                }
-            }
-            return inner();
-        }
-#endif
 
         ///
         /// @brief Operator overload to simplify the save method.
