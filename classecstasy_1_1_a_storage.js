@@ -8,6 +8,7 @@ var classecstasy_1_1_a_storage =
     [ "contains", "classecstasy_1_1_a_storage.html#a5d5a338cfda0beeef9e73b66aec94e47", null ],
     [ "erase", "classecstasy_1_1_a_storage.html#afe65a9664a9427ae6af730f6cae3e9d2", null ],
     [ "erase", "classecstasy_1_1_a_storage.html#a565dfd64b653f3c23cea0ed34ee87382", null ],
+    [ "getComponentPtr", "classecstasy_1_1_a_storage.html#a036e018bba046ceea37c3e3d92e39da8", null ],
     [ "getComponentTypeInfos", "classecstasy_1_1_a_storage.html#ab25f1caf270c78c88c8b0a80d64a1fe6", null ],
     [ "getQueryData", "classecstasy_1_1_a_storage.html#a46427524a1b8cfceeaa327f5743d53ae", null ],
     [ "getQueryData", "classecstasy_1_1_a_storage.html#a5f8cd4d86aca35f01d1c81f5df5c8594", null ],

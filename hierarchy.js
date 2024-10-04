@@ -86,6 +86,9 @@ var hierarchy =
     [ "util::serialization::IArrayNode", "classutil_1_1serialization_1_1_i_array_node.html", [
       [ "util::serialization::TomlArrayNode", "classutil_1_1serialization_1_1_toml_array_node.html", null ]
     ] ],
+    [ "ecstasy::serialization::IComponentRtti", "classecstasy_1_1serialization_1_1_i_component_rtti.html", [
+      [ "ecstasy::serialization::ComponentRtti< Component, Serializer >", "classecstasy_1_1serialization_1_1_component_rtti.html", null ]
+    ] ],
     [ "util::meta::index< T, Ts >", "structutil_1_1meta_1_1index.html", null ],
     [ "util::serialization::INode", "classutil_1_1serialization_1_1_i_node.html", [
       [ "util::serialization::ANode", "classutil_1_1serialization_1_1_a_node.html", [

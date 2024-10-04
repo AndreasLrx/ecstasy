@@ -100,8 +100,10 @@ var annotated_dup =
           [ "has_update_impl_for_type", "structecstasy_1_1serialization_1_1traits_1_1has__update__impl__for__type.html", null ],
           [ "has_update_impl_for_type< S, T, std::void_t< decltype(std::declval< S & >().updateImpl(std::declval< T & >()))> >", "structecstasy_1_1serialization_1_1traits_1_1has__update__impl__for__type_3_01_s_00_01_t_00_01std43c639ac8e926e09a4c13e869525b7a1.html", null ]
         ] ],
+        [ "ComponentRtti", "classecstasy_1_1serialization_1_1_component_rtti.html", "classecstasy_1_1serialization_1_1_component_rtti" ],
         [ "ComponentSerializer", "structecstasy_1_1serialization_1_1_component_serializer.html", null ],
         [ "ComponentSerializer< util::meta::Traits< S1, Ss... > >", "structecstasy_1_1serialization_1_1_component_serializer_3_01util_1_1meta_1_1_traits_3_01_s1_00_01_ss_8_8_8_01_4_01_4.html", "structecstasy_1_1serialization_1_1_component_serializer_3_01util_1_1meta_1_1_traits_3_01_s1_00_01_ss_8_8_8_01_4_01_4" ],
+        [ "IComponentRtti", "classecstasy_1_1serialization_1_1_i_component_rtti.html", "classecstasy_1_1serialization_1_1_i_component_rtti" ],
         [ "ISerializer", "classecstasy_1_1serialization_1_1_i_serializer.html", "classecstasy_1_1serialization_1_1_i_serializer" ],
         [ "RawSerializer", "classecstasy_1_1serialization_1_1_raw_serializer.html", "classecstasy_1_1serialization_1_1_raw_serializer" ],
         [ "Serializer", "classecstasy_1_1serialization_1_1_serializer.html", "classecstasy_1_1serialization_1_1_serializer" ]

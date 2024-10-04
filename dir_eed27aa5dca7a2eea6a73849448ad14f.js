@@ -2,7 +2,9 @@ var dir_eed27aa5dca7a2eea6a73849448ad14f =
 [
     [ "concepts", "dir_4d88d3ef8695341c40100af3c6be2310.html", "dir_4d88d3ef8695341c40100af3c6be2310" ],
     [ "traits", "dir_f7670e9e491a80409a52b75ae2895122.html", "dir_f7670e9e491a80409a52b75ae2895122" ],
+    [ "ComponentRtti.hpp", "_component_rtti_8hpp.html", "_component_rtti_8hpp" ],
     [ "ComponentSerializer.hpp", "_component_serializer_8hpp.html", "_component_serializer_8hpp" ],
+    [ "IComponentRtti.hpp", "_i_component_rtti_8hpp.html", "_i_component_rtti_8hpp" ],
     [ "include.hpp", "ecstasy_2serialization_2include_8hpp.html", null ],
     [ "ISerializer.hpp", "_i_serializer_8hpp.html", "_i_serializer_8hpp" ],
     [ "RawSerializer.hpp", "_raw_serializer_8hpp.html", "_raw_serializer_8hpp" ],

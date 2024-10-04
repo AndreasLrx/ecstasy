@@ -158,6 +158,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5b223620c4bb3a00c80fe14b7c2453e6"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classecstasy_1_1_a_storage.html#a2e05faeb7287592c19ff2dbcfdeba24b">Component</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_a_storage.html#a5b223620c4bb3a00c80fe14b7c2453e6">at</a> (<a class="el" href="classecstasy_1_1_entity.html#ad83d7f7e44a390c9c36e0079fd505b35">Entity::Index</a> index) const</td></tr>
 <tr class="memdesc:a5b223620c4bb3a00c80fe14b7c2453e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the <b>Component</b> instance associated to the given entity and perform bound checking.  <br /></td></tr>
 <tr class="separator:a5b223620c4bb3a00c80fe14b7c2453e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a036e018bba046ceea37c3e3d92e39da8"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_a_storage.html#a036e018bba046ceea37c3e3d92e39da8">getComponentPtr</a> (size_t index) override final</td></tr>
+<tr class="separator:a036e018bba046ceea37c3e3d92e39da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa9d9d631cceeafd55b76e471a4f42e2"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classecstasy_1_1_a_storage.html#a2e05faeb7287592c19ff2dbcfdeba24b">Component</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_a_storage.html#aaa9d9d631cceeafd55b76e471a4f42e2">operator[]</a> (<a class="el" href="classecstasy_1_1_entity.html#ad83d7f7e44a390c9c36e0079fd505b35">Entity::Index</a> index)=0</td></tr>
 <tr class="memdesc:aaa9d9d631cceeafd55b76e471a4f42e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the <b>Component</b> instance associated to the given entity.  <br /></td></tr>
 <tr class="separator:aaa9d9d631cceeafd55b76e471a4f42e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -190,6 +192,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2da70acd215f03b0cea2a0a764e75f0a inherit pub_methods_classecstasy_1_1_i_storage"><td class="memItemLeft" align="right" valign="top">virtual const <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_storage.html#a2da70acd215f03b0cea2a0a764e75f0a">getComponentTypeInfos</a> () const noexcept=0</td></tr>
 <tr class="memdesc:a2da70acd215f03b0cea2a0a764e75f0a inherit pub_methods_classecstasy_1_1_i_storage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Component stored type infos.  <br /></td></tr>
 <tr class="separator:a2da70acd215f03b0cea2a0a764e75f0a inherit pub_methods_classecstasy_1_1_i_storage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ca01206a5d35f4294ea83c29a1d2485 inherit pub_methods_classecstasy_1_1_i_storage"><td class="memItemLeft" align="right" valign="top">virtual void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_storage.html#a5ca01206a5d35f4294ea83c29a1d2485">getComponentPtr</a> (size_t index)=0</td></tr>
+<tr class="memdesc:a5ca01206a5d35f4294ea83c29a1d2485 inherit pub_methods_classecstasy_1_1_i_storage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Component Ptr at the given index.  <br /></td></tr>
+<tr class="separator:a5ca01206a5d35f4294ea83c29a1d2485 inherit pub_methods_classecstasy_1_1_i_storage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename C&gt;<br />
@@ -501,6 +506,44 @@ template&lt;typename C &gt; </div>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a036e018bba046ceea37c3e3d92e39da8" name="a036e018bba046ceea37c3e3d92e39da8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a036e018bba046ceea37c3e3d92e39da8">&#9670;&#160;</a></span>getComponentPtr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename C &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * <a class="el" href="classecstasy_1_1_a_storage.html">ecstasy::AStorage</a>&lt; C &gt;::getComponentPtr </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+<p>Implements <a class="el" href="classecstasy_1_1_i_storage.html#a5ca01206a5d35f4294ea83c29a1d2485">ecstasy::IStorage</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_a_storage_8hpp_source.html#l00125">125</a> of file <a class="el" href="_a_storage_8hpp_source.html">AStorage.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  126</span>        {</div>
+<div class="line"><span class="lineno">  127</span>            <span class="keywordflow">return</span> &amp;<a class="code hl_function" href="classecstasy_1_1_a_storage.html#a4b9150c01289385490972e8052132a31">at</a>(index);</div>
+<div class="line"><span class="lineno">  128</span>        }</div>
+<div class="ttc" id="aclassecstasy_1_1_a_storage_html_a4b9150c01289385490972e8052132a31"><div class="ttname"><a href="classecstasy_1_1_a_storage.html#a4b9150c01289385490972e8052132a31">ecstasy::AStorage::at</a></div><div class="ttdeci">Component &amp; at(Entity::Index index)</div><div class="ttdoc">Retrieve the Component instance associated to the given entity and perform bound checking.</div><div class="ttdef"><b>Definition</b> <a href="_a_storage_8hpp_source.html#l00098">AStorage.hpp:98</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ab25f1caf270c78c88c8b0a80d64a1fe6" name="ab25f1caf270c78c88c8b0a80d64a1fe6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab25f1caf270c78c88c8b0a80d64a1fe6">&#9670;&#160;</a></span>getComponentTypeInfos()</h2>
 
@@ -530,10 +573,10 @@ template&lt;typename C &gt; </div>
 
 <p>Implements <a class="el" href="classecstasy_1_1_i_storage.html#a2da70acd215f03b0cea2a0a764e75f0a">ecstasy::IStorage</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_a_storage_8hpp_source.html#l00171">171</a> of file <a class="el" href="_a_storage_8hpp_source.html">AStorage.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  172</span>        {</div>
-<div class="line"><span class="lineno">  173</span>            <span class="keywordflow">return</span> <span class="keyword">typeid</span>(<a class="code hl_typedef" href="classecstasy_1_1_a_storage.html#a2e05faeb7287592c19ff2dbcfdeba24b">Component</a>);</div>
-<div class="line"><span class="lineno">  174</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_a_storage_8hpp_source.html#l00177">177</a> of file <a class="el" href="_a_storage_8hpp_source.html">AStorage.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  178</span>        {</div>
+<div class="line"><span class="lineno">  179</span>            <span class="keywordflow">return</span> <span class="keyword">typeid</span>(<a class="code hl_typedef" href="classecstasy_1_1_a_storage.html#a2e05faeb7287592c19ff2dbcfdeba24b">Component</a>);</div>
+<div class="line"><span class="lineno">  180</span>        }</div>
 <div class="ttc" id="aclassecstasy_1_1_a_storage_html_a2e05faeb7287592c19ff2dbcfdeba24b"><div class="ttname"><a href="classecstasy_1_1_a_storage.html#a2e05faeb7287592c19ff2dbcfdeba24b">ecstasy::AStorage::Component</a></div><div class="ttdeci">C Component</div><div class="ttdoc">IsStorage constraint.</div><div class="ttdef"><b>Definition</b> <a href="_a_storage_8hpp_source.html#l00041">AStorage.hpp:41</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -577,10 +620,10 @@ template&lt;typename C &gt; </div>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-19)  </dd></dl>
 <dl class="section note"><dt>Note</dt><dd><a class="el" href="conceptecstasy_1_1query_1_1_queryable_object.html">ecstasy::query::QueryableObject</a> constraint. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_a_storage_8hpp_source.html#l00142">142</a> of file <a class="el" href="_a_storage_8hpp_source.html">AStorage.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  143</span>        {</div>
-<div class="line"><span class="lineno">  144</span>            <span class="keywordflow">return</span> (*<span class="keyword">this</span>)[index];</div>
-<div class="line"><span class="lineno">  145</span>        };</div>
+<p class="definition">Definition at line <a class="el" href="_a_storage_8hpp_source.html#l00148">148</a> of file <a class="el" href="_a_storage_8hpp_source.html">AStorage.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  149</span>        {</div>
+<div class="line"><span class="lineno">  150</span>            <span class="keywordflow">return</span> (*<span class="keyword">this</span>)[index];</div>
+<div class="line"><span class="lineno">  151</span>        };</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -623,10 +666,10 @@ template&lt;typename C &gt; </div>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-19)  </dd></dl>
 <dl class="section note"><dt>Note</dt><dd><a class="el" href="conceptecstasy_1_1query_1_1_const_queryable_object.html">ecstasy::query::ConstQueryableObject</a> constraint. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_a_storage_8hpp_source.html#l00165">165</a> of file <a class="el" href="_a_storage_8hpp_source.html">AStorage.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  166</span>        {</div>
-<div class="line"><span class="lineno">  167</span>            <span class="keywordflow">return</span> (*<span class="keyword">this</span>)[index];</div>
-<div class="line"><span class="lineno">  168</span>        };</div>
+<p class="definition">Definition at line <a class="el" href="_a_storage_8hpp_source.html#l00171">171</a> of file <a class="el" href="_a_storage_8hpp_source.html">AStorage.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  172</span>        {</div>
+<div class="line"><span class="lineno">  173</span>            <span class="keywordflow">return</span> (*<span class="keyword">this</span>)[index];</div>
+<div class="line"><span class="lineno">  174</span>        };</div>
 </div><!-- fragment -->
 </div>
 </div>
