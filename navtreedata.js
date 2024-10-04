@@ -153,24 +153,24 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "01__basic__window_2main_8cpp.html",
-"_serializable_enum_8hpp.html#a61af11852be6ce892f96a1f6d63fd680",
-"classecstasy_1_1_instances.html#a737c3f183c231185227ade1b3cdb2426",
-"classecstasy_1_1_registry_1_1_select.html#a7e25b1f7e5dcc0d4ae5520ba23a0f9b3",
-"classecstasy_1_1integration_1_1event_1_1_gamepad_combination_listener.html#a018088b728308635936dc1efe7194f14",
-"classecstasy_1_1integration_1_1sfml_1_1_render_window.html#a3f029428baf9a897ddb9fd00ab371ab5",
-"classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#a310815c38f25a3f17ff5199ca82d9ab2",
-"classecstasy_1_1thread_1_1_lockable_view.html#a5cfdbd8821fad3d32e7018f28bcde418",
-"classutil_1_1serialization_1_1_i_array_node.html#a8bc20ee4c4a8d62d0b106323976b4b37",
-"classutil_1_1serialization_1_1_serializer.html#a778105300738c741d9e9fac79b33f0f6",
-"cpp/algorithm/iota.html",
-"cpp/experimental/forward_list/erase.html",
-"cpp/io/c/ungetwc.html",
-"cpp/numeric/math/round.html",
-"cpp/types/is_constructible.html",
-"functions_b.html",
-"namespaceutil_1_1meta.html#a7788458e2dbea1a3cfcceec47e042cb8",
-"structecstasy_1_1integration_1_1event_1_1_mouse_move_event.html#aadea56a8c89ff05313e9390108c683d2",
-"structecstasy_1_1serialization_1_1traits_1_1has__update__impl__for__type.html"
+"_serializable_enum_8hpp.html#acd9fbb4df4bc6927538efdd7ab95d7cd",
+"classecstasy_1_1_instances.html#ab75cf0b10766154da309113b0ce8833c",
+"classecstasy_1_1_registry_1_1_select.html#af2a1112e77002962549c639e6ff8c2e3",
+"classecstasy_1_1integration_1_1event_1_1_gamepad_combination_listener.html#a2df19bc28769f7d0289f163bdccececd",
+"classecstasy_1_1integration_1_1sfml_1_1_render_window.html#ae5ad16a68ec818a4b327e99d797e2949",
+"classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#a88285a49ce3fa1696cd254d45bdaa63e",
+"classutil_1_1_allocator.html",
+"classutil_1_1serialization_1_1_i_node.html#a4cd3483fc59bcf2221547f2fcdab905e",
+"classutil_1_1serialization_1_1_toml_array_node.html#afb1d49b0d4df8b017fec24a72c1b4cc7",
+"cpp/algorithm/ranges/equal_range.html",
+"cpp/experimental/map/erase_if.html",
+"cpp/io/manip/skipws.html",
+"cpp/numeric/special_functions/cyl_bessel_k.html",
+"cpp/types/is_swappable.html",
+"functions_vars.html",
+"structecstasy_1_1_empty_type.html",
+"structecstasy_1_1integration_1_1user__action_1_1_users_1_1_user_action_link.html#ac89c7c4faad36afaf1fe0928ffd71067",
+"structutil_1_1meta_1_1_traits_3_01_arg_00_01_args_8_8_8_01_4.html#a37457752027ce8ceb510051e784df526"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

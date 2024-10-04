@@ -135,9 +135,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2da70acd215f03b0cea2a0a764e75f0a"><td class="memItemLeft" align="right" valign="top">virtual const <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_storage.html#a2da70acd215f03b0cea2a0a764e75f0a">getComponentTypeInfos</a> () const noexcept=0</td></tr>
 <tr class="memdesc:a2da70acd215f03b0cea2a0a764e75f0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Component stored type infos.  <br /></td></tr>
 <tr class="separator:a2da70acd215f03b0cea2a0a764e75f0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ca01206a5d35f4294ea83c29a1d2485"><td class="memItemLeft" align="right" valign="top">virtual void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_storage.html#a5ca01206a5d35f4294ea83c29a1d2485">getComponentPtr</a> (size_t index)=0</td></tr>
-<tr class="memdesc:a5ca01206a5d35f4294ea83c29a1d2485"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Component Ptr at the given index.  <br /></td></tr>
-<tr class="separator:a5ca01206a5d35f4294ea83c29a1d2485"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class of all components storage. </p>
@@ -246,46 +243,6 @@ Public Member Functions</h2></td></tr>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-21) </dd></dl>
 
 <p>Implemented in <a class="el" href="classecstasy_1_1_a_storage.html#a565dfd64b653f3c23cea0ed34ee87382">ecstasy::AStorage&lt; C &gt;</a>.</p>
-
-</div>
-</div>
-<a id="a5ca01206a5d35f4294ea83c29a1d2485" name="a5ca01206a5d35f4294ea83c29a1d2485"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ca01206a5d35f4294ea83c29a1d2485">&#9670;&#160;</a></span>getComponentPtr()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void * ecstasy::IStorage::getComponentPtr </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>index</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the Component Ptr at the given index. </p>
-<dl class="section warning"><dt>Warning</dt><dd>This method is mostly for internal use for type erasure in serialization.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Index of the entity.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>void* Pointer to the component at the given index.</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-04) </dd></dl>
-
-<p>Implemented in <a class="el" href="classecstasy_1_1_a_storage.html#a036e018bba046ceea37c3e3d92e39da8">ecstasy::AStorage&lt; C &gt;</a>.</p>
 
 </div>
 </div>

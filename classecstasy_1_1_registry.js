@@ -40,7 +40,6 @@ var classecstasy_1_1_registry =
     [ "getResource", "classecstasy_1_1_registry.html#a516a8ea8065455d601a30e1d3afbef52", null ],
     [ "getStorage", "classecstasy_1_1_registry.html#ae13796f9c29c71297914b9e963aab5ca", null ],
     [ "getStorage", "classecstasy_1_1_registry.html#a9fa7247f6c5383c37be80ee116de1e62", null ],
-    [ "getStorages", "classecstasy_1_1_registry.html#a7e10c2dadf18576b69ff8d6f1f934679", null ],
     [ "getStorages", "classecstasy_1_1_registry.html#afc956006aecf1e73c9f06f84d69539d8", null ],
     [ "getStorageSafe", "classecstasy_1_1_registry.html#a425b11006bbd0b2175d739d64e0ebdaa", null ],
     [ "getSystem", "classecstasy_1_1_registry.html#aba17762b3e392840085dcc7fc48895ac", null ],
