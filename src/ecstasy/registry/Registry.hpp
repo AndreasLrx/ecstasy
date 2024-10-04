@@ -1037,7 +1037,7 @@ namespace ecstasy
         template <std::derived_from<ISystem> S>
         S &getSystem()
         {
-            return _storages.get<S>();
+            return _systems.get<S>();
         }
 
         ///
@@ -1179,7 +1179,7 @@ namespace ecstasy
         void runSystems(size_t group, size_t mask);
 
         ///
-        /// @brief Get a reference to the storages instances.
+        /// @brief Get a const reference to the storages instances.
         ///
         /// @return constexpr const Instances<IStorage>& Const reference to the storages instance.
         ///
@@ -1187,6 +1187,19 @@ namespace ecstasy
         /// @since 1.0.0 (2024-06-11)
         ///
         constexpr const Instances<IStorage> &getStorages() const
+        {
+            return _storages;
+        }
+
+        ///
+        /// @brief Get a reference to the storages instances.
+        ///
+        /// @return constexpr Instances<IStorage>& Reference to the storages instance.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-04)
+        ///
+        constexpr Instances<IStorage> &getStorages()
         {
             return _storages;
         }

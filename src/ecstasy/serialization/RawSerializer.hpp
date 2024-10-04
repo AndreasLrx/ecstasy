@@ -307,6 +307,12 @@ namespace ecstasy::serialization
             return *result;
         }
 
+        /// @copydoc loadComponentHash
+        std::size_t loadComponentHash() override final
+        {
+            return loadRaw<std::size_t>();
+        }
+
         ///
         /// @brief Get the string stream of the serializer.
         ///
