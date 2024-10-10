@@ -31,6 +31,7 @@ CMAKE_DEPENDENT_OPTION(ECSTASY_INTEGRATIONS_USER_ACTION "User Action integration
 
 ## Serializer formats
 option(ECSTASY_SERIALIZER_TOML "Build Toml serializer." OFF)
+option(ECSTASY_SERIALIZER_JSON "Build Json serializer." OFF)
 
 if (${ECSTASY_INTEGRATIONS_USER_ACTION})
     set(ECSTASY_SERIALIZER_TOML ON)
@@ -65,5 +66,6 @@ list(APPEND CMAKE_MESSAGE_INDENT "  ")
     message(STATUS "Serializes:")
     list(APPEND CMAKE_MESSAGE_INDENT "  ")
         message(STATUS "Toml: ${ECSTASY_SERIALIZER_TOML}")
+        message(STATUS "Json: ${ECSTASY_SERIALIZER_JSON}")
     list(POP_BACK CMAKE_MESSAGE_INDENT)
 list(POP_BACK CMAKE_MESSAGE_INDENT)

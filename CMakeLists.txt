@@ -23,6 +23,10 @@ if (${ECSTASY_SERIALIZER_TOML})
     set(TomlPlusPlus_IncDir ${tomlplusplus_SOURCE_DIR}/include)
 endif()
 
+if (${ECSTASY_SERIALIZER_JSON})
+    find_package(RapidJson)
+endif()
+
 project(ecstasy LANGUAGES CXX)
 set(VERSION_MAJOR 1)
 set(VERSION_MINOR 0)

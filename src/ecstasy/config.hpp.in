@@ -42,5 +42,7 @@ namespace ecstasy::thread
 
 // Toml Serializer is available
 #cmakedefine ECSTASY_SERIALIZER_TOML
+// Json Serializer is available
+#cmakedefine ECSTASY_SERIALIZER_JSON
 
 #endif

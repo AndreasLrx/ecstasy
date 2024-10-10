@@ -27,6 +27,10 @@
           "type": "BOOL",
           "value": "TRUE"
         },
+        "ECSTASY_SERIALIZER_JSON": {
+          "type": "BOOL",
+          "value": "TRUE"
+        },
         "ECSTASY_THREAD_SAFE": {
           "type": "BOOL",
           "value": "TRUE"
