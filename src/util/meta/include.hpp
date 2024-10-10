@@ -19,6 +19,7 @@
 #include "index.hpp"
 #include "add_optional.hpp"
 #include "is_std_vector.hpp"
+#include "is_type_bounded_array.hpp"
 #include "outer_join.hpp"
 #include "type_set_eq.hpp"
 
