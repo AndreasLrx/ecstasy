@@ -18,6 +18,10 @@
 #include "concepts/include.hpp"
 #include "traits/include.hpp"
 
+#ifdef ECSTASY_SERIALIZER_JSON
+    #include "JsonSerializer.hpp"
+#endif
+
 ///
 /// @brief Namespace regrouping the serialization ecstasy classes.
 ///

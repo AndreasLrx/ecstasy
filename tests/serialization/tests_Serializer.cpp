@@ -5,6 +5,10 @@
 #include "ecstasy/serialization/Serializer.hpp"
 #include "ecstasy/storages/MapStorage.hpp"
 
+#ifdef ECSTASY_SERIALIZER_JSON
+    #include "ecstasy/serialization/JsonSerializer.hpp"
+#endif
+
 using namespace ecstasy::serialization;
 
 struct Position {
@@ -330,4 +334,29 @@ TEST(Serializer, entityComponents)
     rawSerializer << typeid(NPC) << entity.get<NPC>() << typeid(Position) << entity.get<Position>();
     std::string expected = rawSerializer.exportBytes();
     GTEST_ASSERT_EQ(entitySerializedExplicit, expected);
+}
+
+TEST(JsonSerializer, all)
+{
+    JsonSerializer jsonSerializer;
+
+    // Fundamental types
+    std::string empty = "";
+    jsonSerializer << static_cast<uint8_t>(21) << static_cast<uint16_t>(42) << static_cast<uint32_t>(84)
+                   << static_cast<uint64_t>(168) << -45612.f << empty << std::string_view("this is a test")
+                   << "raw string";
+
+    std::string json = jsonSerializer.exportBytes();
+    GTEST_ASSERT_EQ(json, "[21,42,84,168,-45612.0,\"\",\"this is a test\",\"raw string\"]");
+
+    jsonSerializer.clear();
+    // Array types
+    std::vector<int> vec(5);
+    int someInts[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    for (int i = 0; i < 5; i++)
+        vec[i] = i + 1;
+
+    jsonSerializer << someInts << vec;
+    json = jsonSerializer.exportBytes();
+    GTEST_ASSERT_EQ(json, "[[1,2,3,4,5,6,7,8,9,10],[1,2,3,4,5]]");
 }
