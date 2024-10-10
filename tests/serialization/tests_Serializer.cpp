@@ -29,6 +29,11 @@ struct Position {
         return serializer.appendRaw(*this);
     }
 
+    JsonSerializer &operator>>(JsonSerializer &serializer) const
+    {
+        return serializer << JsonSerializer::OP::NewObject << "x" << x << "y" << y << JsonSerializer::OP::Close;
+    }
+
     Position &operator<<(RawSerializer &serializer)
     {
         serializer >> x >> y;
@@ -54,6 +59,12 @@ struct NPC {
     RawSerializer &operator>>(RawSerializer &serializer) const
     {
         return serializer << pos << std::string_view(name);
+    }
+
+    JsonSerializer &operator>>(JsonSerializer &serializer) const
+    {
+        return serializer << JsonSerializer::OP::NewObject << "pos" << pos << "name" << std::string_view(name)
+                          << JsonSerializer::OP::Close;
     }
 
     NPC &operator<<(RawSerializer &serializer)
@@ -359,4 +370,13 @@ TEST(JsonSerializer, all)
     jsonSerializer << someInts << vec;
     json = jsonSerializer.exportBytes();
     GTEST_ASSERT_EQ(json, "[[1,2,3,4,5,6,7,8,9,10],[1,2,3,4,5]]");
+
+    jsonSerializer.clear();
+    // Compound types
+    Position pos{1.0f, -8456.0f};
+    NPC npc{Position(42.f, 0.f), "Steve"};
+
+    jsonSerializer << pos << npc;
+    json = jsonSerializer.exportBytes();
+    GTEST_ASSERT_EQ(json, "[{\"x\":1.0,\"y\":-8456.0},{\"pos\":{\"x\":42.0,\"y\":0.0},\"name\":\"Steve\"}]");
 }
