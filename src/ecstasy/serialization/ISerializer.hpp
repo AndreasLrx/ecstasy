@@ -100,7 +100,7 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-09-12)
         ///
-        virtual void exportFile(const std::filesystem::path &filename) = 0;
+        virtual void exportFile(const std::filesystem::path &filename) const = 0;
 
         ///
         /// @brief Export the serializer content to a string.
@@ -112,7 +112,7 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-09-12)
         ///
-        virtual std::string exportBytes() = 0;
+        virtual std::string exportBytes() const = 0;
 
         ///
         /// @brief Export the serializer content to a stream.
@@ -122,7 +122,7 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-09-12)
         ///
-        virtual void exportStream(std::ostream &stream) = 0;
+        virtual void exportStream(std::ostream &stream) const = 0;
     };
 } // namespace ecstasy::serialization
 

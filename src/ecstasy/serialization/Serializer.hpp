@@ -129,7 +129,7 @@ namespace ecstasy::serialization
         }
 
         /// @copydoc ISerializer::exportFile
-        void exportFile(const std::filesystem::path &filename) override
+        void exportFile(const std::filesystem::path &filename) const override
         {
             std::ofstream fstream(filename);
 
@@ -137,7 +137,7 @@ namespace ecstasy::serialization
         }
 
         /// @copydoc ISerializer::exportBytes
-        std::string exportBytes() override
+        std::string exportBytes() const override
         {
             std::stringstream stream;
 

@@ -152,15 +152,16 @@ namespace ecstasy::serialization
         }
 
         /// @copydoc ISerializer::exportStream
-        void exportStream(std::ostream &stream) override final
+        void exportStream(std::ostream &stream) const override final
         {
-            std::streampos pos = _stream.tellg();
+            std::stringstream &s = const_cast<std::stringstream &>(_stream);
+            std::streampos pos = s.tellg();
 
             // Read from the begining of the stream
-            _stream.seekg(0);
-            stream << _stream.rdbuf();
+            s.seekg(0);
+            stream << s.rdbuf();
             // Replace the read cursor at the original position
-            _stream.seekg(pos);
+            s.seekg(pos);
         }
 
         /// @copydoc save
