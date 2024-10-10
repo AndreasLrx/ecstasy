@@ -10,6 +10,7 @@ set(SRC
     ${INCROOT}/include.hpp
     ${INCROOT}/index.hpp
     ${INCROOT}/is_std_vector.hpp
+    ${INCROOT}/is_type_bounded_array.hpp
     ${INCROOT}/outer_join.hpp
     ${INCROOT}/Traits.hpp
     ${INCROOT}/type_set_eq.hpp
