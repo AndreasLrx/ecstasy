@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ECSTASY: ecstasy::serialization::ComponentSerializer&lt; S &gt; Struct Template Reference</title>
+<title>ECSTASY: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -65,7 +65,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('structecstasy_1_1serialization_1_1_component_serializer.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('classecstasy_1_1serialization_1_1_i_entity_component_serializer.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -91,38 +91,21 @@ $(document).ready(function(){initNavTree('structecstasy_1_1serialization_1_1_com
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">ecstasy::serialization::ComponentSerializer&lt; S &gt; Struct Template Reference</div></div>
+  <div class="headertitle"><div class="title">ecstasy::serialization::IEntityComponentSerializer Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Serialize a component with the given serializer.  
- <a href="structecstasy_1_1serialization_1_1_component_serializer.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="_component_serializer_8hpp_source.html">ComponentSerializer.hpp</a>&gt;</code></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename S&gt;<br />
-struct ecstasy::serialization::ComponentSerializer&lt; S &gt;</div><p>Serialize a component with the given serializer. </p>
-<p><a class="el" href="classecstasy_1_1serialization_1_1_serializer.html" title="Serializer class.">Serializer</a> is passed as an <a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html" title="Interface for all serializer classes.">ISerializer</a> but with its type_info.</p>
-<dl class="section note"><dt>Note</dt><dd>This struct is used to counter the limit of the C++ language that doesn't allow to have a virtual template.</dd></dl>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">S</td><td>Registered serializer types wrapped inside an <a class="el" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-06-11) </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_component_serializer_8hpp_source.html#l00045">45</a> of file <a class="el" href="_component_serializer_8hpp_source.html">ComponentSerializer.hpp</a>.</p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/ecstasy/serialization/<a class="el" href="_component_serializer_8hpp_source.html">ComponentSerializer.hpp</a></li>
-</ul>
-</div><!-- contents -->
+<p>This is the complete list of members for <a class="el" href="classecstasy_1_1serialization_1_1_i_entity_component_serializer.html">ecstasy::serialization::IEntityComponentSerializer</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="classecstasy_1_1serialization_1_1_i_entity_component_serializer.html#a03e521791acd8c3b819dfb9ac398b816">getStorageTypeIndex</a>() const =0</td><td class="entry"><a class="el" href="classecstasy_1_1serialization_1_1_i_entity_component_serializer.html">ecstasy::serialization::IEntityComponentSerializer</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classecstasy_1_1serialization_1_1_i_entity_component_serializer.html#a35574973d7a3ad2cd2f1a61eea88883b">load</a>(ISerializer &amp;serializer, IStorage &amp;storage, RegistryEntity &amp;entity) const =0</td><td class="entry"><a class="el" href="classecstasy_1_1serialization_1_1_i_entity_component_serializer.html">ecstasy::serialization::IEntityComponentSerializer</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classecstasy_1_1serialization_1_1_i_entity_component_serializer.html#a45a9afa019551d1871a96cc491abbe18">save</a>(ISerializer &amp;serializer, const IStorage &amp;storage, const RegistryEntity &amp;entity) const =0</td><td class="entry"><a class="el" href="classecstasy_1_1serialization_1_1_i_entity_component_serializer.html">ecstasy::serialization::IEntityComponentSerializer</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classecstasy_1_1serialization_1_1_i_entity_component_serializer.html#acb35b834237abc16072136ab7edd5541">~IEntityComponentSerializer</a>()=default</td><td class="entry"><a class="el" href="classecstasy_1_1serialization_1_1_i_entity_component_serializer.html">ecstasy::serialization::IEntityComponentSerializer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+</table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespaceecstasy.html">ecstasy</a></li><li class="navelem"><a class="el" href="namespaceecstasy_1_1serialization.html">serialization</a></li><li class="navelem"><a class="el" href="structecstasy_1_1serialization_1_1_component_serializer.html">ComponentSerializer</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
   </ul>
 </div>

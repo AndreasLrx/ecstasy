@@ -76,7 +76,7 @@ var NAVTREE =
         [ "Using a serializer", "md_doc_2_tutorial.html#autotoc_md44", [
           [ "Common types", "md_doc_2_tutorial.html#autotoc_md45", null ],
           [ "Custom types", "md_doc_2_tutorial.html#autotoc_md46", null ],
-          [ "Working with Entities (WIP)", "md_doc_2_tutorial.html#autotoc_md47", null ]
+          [ "Working with Entities", "md_doc_2_tutorial.html#autotoc_md47", null ]
         ] ]
       ] ]
     ] ],
@@ -153,24 +153,24 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "01__basic__window_2main_8cpp.html",
-"_serializable_enum_8hpp.html#acd9fbb4df4bc6927538efdd7ab95d7cd",
-"classecstasy_1_1_instances.html#ab75cf0b10766154da309113b0ce8833c",
+"_shared_recursive_mutex_8cpp_source.html",
+"classecstasy_1_1_instances.html#ad901e2fddc153f372eea64db9f4ca52b",
 "classecstasy_1_1_registry_1_1_select.html#af2a1112e77002962549c639e6ff8c2e3",
 "classecstasy_1_1integration_1_1event_1_1_gamepad_combination_listener.html#a2df19bc28769f7d0289f163bdccececd",
 "classecstasy_1_1integration_1_1sfml_1_1_render_window.html#ae5ad16a68ec818a4b327e99d797e2949",
 "classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#a88285a49ce3fa1696cd254d45bdaa63e",
-"classutil_1_1_allocator.html",
-"classutil_1_1serialization_1_1_i_node.html#a4cd3483fc59bcf2221547f2fcdab905e",
-"classutil_1_1serialization_1_1_toml_array_node.html#afb1d49b0d4df8b017fec24a72c1b4cc7",
-"cpp/algorithm/ranges/equal_range.html",
-"cpp/experimental/map/erase_if.html",
-"cpp/io/manip/skipws.html",
-"cpp/numeric/special_functions/cyl_bessel_k.html",
-"cpp/types/is_swappable.html",
-"functions_vars.html",
-"structecstasy_1_1_empty_type.html",
-"structecstasy_1_1integration_1_1user__action_1_1_users_1_1_user_action_link.html#ac89c7c4faad36afaf1fe0928ffd71067",
-"structutil_1_1meta_1_1_traits_3_01_arg_00_01_args_8_8_8_01_4.html#a37457752027ce8ceb510051e784df526"
+"classecstasy_1_1thread_1_1_lockable_view_base.html",
+"classutil_1_1serialization_1_1_i_array_node.html#ab63352dff8f0009132cc9b92a54110b9",
+"classutil_1_1serialization_1_1_toml_array_node.html#a002d9060029bdf19226843d0e45495f6",
+"cpp/algorithm/lexicographical_compare.html",
+"cpp/experimental/fs/create_directory.html",
+"cpp/io/c/vfwprintf.html",
+"cpp/numeric/math/tan.html",
+"cpp/types/is_copy_constructible.html",
+"functions_e.html",
+"namespaceutil_1_1serialization.html#a3235dfc13252d0b7eacdb86bc1e09a2c",
+"structecstasy_1_1integration_1_1event_1_1_mouse_wheel_scroll_event.html#a210d76d9185b0015063be46610719cc3",
+"structutil_1_1meta_1_1__left__outer__join_3_01_traits_3_01_rights_8_8_8_01_4_00_01_is_inner_00_0e1c6c75ebd27a9e3cd5f35357e042e62.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

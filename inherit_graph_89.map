@@ -1,5 +1,25 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/conditional.html" title=" " alt="" coords="5,5,212,104"/>
-<area shape="rect" id="Node000001" href="$structutil_1_1meta_1_1type__set__eq_3_01std_1_1tuple_3_01_ts1_8_8_8_01_4_00_01std_1_1tuple_3_01_ts2_8_8_8_01_4_01_4.html" title=" " alt="" coords="260,27,444,82"/>
-<area shape="poly" id="edge59_Node000000_Node000001" title=" " alt="" coords="226,52,260,52,260,57,226,57"/>
+<area shape="rect" id="Node000000" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/integral_constant.html" title=" " alt="" coords="5,385,124,410"/>
+<area shape="rect" id="Node000001" href="$structecstasy_1_1query_1_1is__queryable.html" title="Checks if the given type match the ecstasy::query::Queryable concept." alt="" coords="212,5,347,45"/>
+<area shape="poly" id="edge61_Node000000_Node000001" title=" " alt="" coords="64,371,69,307,84,223,97,178,116,133,140,92,170,55,189,42,210,32,213,37,192,46,174,59,144,95,121,136,103,179,89,224,74,308,69,371"/>
+<area shape="rect" id="Node000002" href="$structecstasy_1_1query_1_1is__queryable__with__adjust.html" title="Checks if the given type match the ecstasy::query::QueryableNeedAdjust concept." alt="" coords="172,69,387,109"/>
+<area shape="poly" id="edge62_Node000000_Node000002" title=" " alt="" coords="66,370,75,318,93,250,123,180,144,148,170,119,187,107,190,112,174,123,149,151,128,183,98,252,80,319,71,371"/>
+<area shape="rect" id="Node000003" href="$structecstasy_1_1serialization_1_1traits_1_1can__load__type.html" title="Concept to check if a type can be updated with a serializer." alt="" coords="196,134,363,189"/>
+<area shape="poly" id="edge63_Node000000_Node000003" title=" " alt="" coords="71,370,84,332,105,286,133,239,170,198,194,182,197,186,174,202,138,242,110,289,89,334,76,372"/>
+<area shape="rect" id="Node000004" href="$structecstasy_1_1serialization_1_1traits_1_1can__save__type.html" title="Concept to check if a type can be saved with a serializer." alt="" coords="195,213,364,267"/>
+<area shape="poly" id="edge64_Node000000_Node000004" title=" " alt="" coords="80,371,118,324,143,299,171,276,193,264,196,268,173,281,146,303,122,327,84,375"/>
+<area shape="rect" id="Node000005" href="$structecstasy_1_1serialization_1_1traits_1_1can__update__type.html" title="Concept to check if a type can be updated with a serializer." alt="" coords="188,291,371,346"/>
+<area shape="poly" id="edge65_Node000000_Node000005" title=" " alt="" coords="111,377,171,355,202,344,204,349,173,360,113,382"/>
+<area shape="rect" id="Node000006" href="$structecstasy_1_1serialization_1_1traits_1_1has__load__impl__for__type.html" title="Concept to check if a serializer has a specific load implementation for a type." alt="" coords="174,370,385,425"/>
+<area shape="poly" id="edge66_Node000000_Node000006" title=" " alt="" coords="138,395,174,395,174,400,138,400"/>
+<area shape="rect" id="Node000007" href="$structecstasy_1_1serialization_1_1traits_1_1has__save__impl__for__type.html" title="Concept to check if a serializer has a specific save implementation for a type." alt="" coords="174,449,385,503"/>
+<area shape="poly" id="edge67_Node000000_Node000007" title=" " alt="" coords="114,412,205,446,203,451,112,417"/>
+<area shape="rect" id="Node000008" href="$structecstasy_1_1serialization_1_1traits_1_1has__update__impl__for__type.html" title="Concept to check if a serializer has a specific update implementation for a type." alt="" coords="174,527,385,582"/>
+<area shape="poly" id="edge68_Node000000_Node000008" title=" " alt="" coords="84,420,122,466,147,491,174,512,195,525,193,530,170,517,143,495,118,470,80,423"/>
+<area shape="rect" id="Node000009" href="$structutil_1_1meta_1_1__type__set__eq.html" title=" " alt="" coords="172,607,387,647"/>
+<area shape="poly" id="edge69_Node000000_Node000009" title=" " alt="" coords="76,422,88,460,109,505,137,552,174,591,194,604,191,609,170,595,133,555,104,508,84,462,70,424"/>
+<area shape="rect" id="Node000010" href="$structutil_1_1meta_1_1is__std__vector.html" title="Check if a type is a std::vector." alt="" coords="196,671,363,711"/>
+<area shape="poly" id="edge70_Node000000_Node000010" title=" " alt="" coords="72,423,81,473,99,536,130,601,150,631,174,657,197,672,194,676,170,661,146,634,125,603,94,538,76,474,67,424"/>
+<area shape="rect" id="Node000011" href="$structutil_1_1meta_1_1type__set__eq.html" title="Test if two tuple types contains the exact same type independently of the order." alt="" coords="172,735,387,775"/>
+<area shape="poly" id="edge71_Node000000_Node000011" title=" " alt="" coords="69,423,75,484,91,564,104,606,122,648,145,687,174,721,189,732,186,737,170,725,141,690,117,650,99,608,86,565,70,485,64,424"/>
 </map>

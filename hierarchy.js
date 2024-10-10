@@ -25,8 +25,6 @@ var hierarchy =
     [ "ecstasy::component_type< T >", "structecstasy_1_1component__type.html", null ],
     [ "ecstasy::component_type< Q >", "structecstasy_1_1component__type_3_01_q_01_4.html", null ],
     [ "ecstasy::component_type< S >", "structecstasy_1_1component__type_3_01_s_01_4.html", null ],
-    [ "ecstasy::serialization::ComponentSerializer< S >", "structecstasy_1_1serialization_1_1_component_serializer.html", null ],
-    [ "ecstasy::serialization::ComponentSerializer< util::meta::Traits< S1, Ss... > >", "structecstasy_1_1serialization_1_1_component_serializer_3_01util_1_1meta_1_1_traits_3_01_s1_00_01_ss_8_8_8_01_4_01_4.html", null ],
     [ "util::serialization::PolymorphicIterator< T >::Concept", "structutil_1_1serialization_1_1_polymorphic_iterator_1_1_concept.html", [
       [ "util::serialization::PolymorphicIterator< T >::Model< Iter >", "classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html", null ]
     ] ],
@@ -85,6 +83,9 @@ var hierarchy =
     [ "ecstasy::getStorageTypeImpl< const C >", "structecstasy_1_1get_storage_type_impl_3_01const_01_c_01_4.html", null ],
     [ "util::serialization::IArrayNode", "classutil_1_1serialization_1_1_i_array_node.html", [
       [ "util::serialization::TomlArrayNode", "classutil_1_1serialization_1_1_toml_array_node.html", null ]
+    ] ],
+    [ "ecstasy::serialization::IEntityComponentSerializer", "classecstasy_1_1serialization_1_1_i_entity_component_serializer.html", [
+      [ "ecstasy::serialization::EntityComponentSerializer< Component, Serializer >", "classecstasy_1_1serialization_1_1_entity_component_serializer.html", null ]
     ] ],
     [ "util::meta::index< T, Ts >", "structutil_1_1meta_1_1index.html", null ],
     [ "util::serialization::INode", "classutil_1_1serialization_1_1_i_node.html", [

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['serializable_5fenum_0',['SERIALIZABLE_ENUM',['../_serializable_enum_8hpp.html#a61af11852be6ce892f96a1f6d63fd680',1,'SerializableEnum.hpp']]],
-  ['set_5fcomponent_5fstorage_1',['SET_COMPONENT_STORAGE',['../_storage_concepts_8hpp.html#a5081c2ba8fc64b28d27cdf3d74ffa960',1,'StorageConcepts.hpp']]]
+  ['register_5fserializable_0',['REGISTER_SERIALIZABLE',['../ecstasy_2serialization_2_serializer_8hpp.html#a457ba20e656d799ea2ccf5a6683419f8',1,'Serializer.hpp']]],
+  ['register_5fserializables_1',['REGISTER_SERIALIZABLES',['../ecstasy_2serialization_2_serializer_8hpp.html#a0ca77627672ee4d0c582e482138445c6',1,'Serializer.hpp']]]
 ];

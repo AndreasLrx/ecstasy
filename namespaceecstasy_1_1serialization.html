@@ -93,9 +93,7 @@ $(document).ready(function(){initNavTree('namespaceecstasy_1_1serialization.html
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle"><div class="title">ecstasy::serialization Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -114,11 +112,11 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1serialization_1_1_component_serializer.html">ComponentSerializer</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize a component with the given serializer.  <a href="structecstasy_1_1serialization_1_1_component_serializer.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_entity_component_serializer.html">EntityComponentSerializer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1_entity.html" title="Encapsulate an index to an entity.">Entity</a> component serializer class bound to a specific component and a serializer type.  <a href="classecstasy_1_1serialization_1_1_entity_component_serializer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1serialization_1_1_component_serializer_3_01util_1_1meta_1_1_traits_3_01_s1_00_01_ss_8_8_8_01_4_01_4.html">ComponentSerializer&lt; util::meta::Traits&lt; S1, Ss... &gt; &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize a component with the given serializer.    <a href="structecstasy_1_1serialization_1_1_component_serializer_3_01util_1_1meta_1_1_traits_3_01_s1_00_01_ss_8_8_8_01_4_01_4.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_i_entity_component_serializer.html">IEntityComponentSerializer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type erased interface for serializing entity components.  <a href="classecstasy_1_1serialization_1_1_i_entity_component_serializer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html">ISerializer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for all serializer classes.  <a href="classecstasy_1_1serialization_1_1_i_serializer.html#details">More...</a><br /></td></tr>
@@ -129,238 +127,12 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_serializer.html">Serializer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1serialization_1_1_serializer.html" title="Serializer class.">Serializer</a> class.  <a href="classecstasy_1_1serialization_1_1_serializer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a723ba8ab703ccd8a043f20e120ff637f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1serialization.html#a723ba8ab703ccd8a043f20e120ff637f">Serializers</a> = <a class="el" href="_component_serializer_8hpp.html#a9c0ddc7d031fed6cb9bfe5c01f2bc4aa">ECSTASY_SERIALIZERS</a></td></tr>
-<tr class="separator:a723ba8ab703ccd8a043f20e120ff637f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a60ebed7213671e7fea37e1d944a80797"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
-<tr class="memitem:a60ebed7213671e7fea37e1d944a80797"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html">ISerializer</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1serialization.html#a60ebed7213671e7fea37e1d944a80797">save</a> (<a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html">ISerializer</a> &amp;serializer, const <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a> &amp;stype, const C &amp;component)</td></tr>
-<tr class="memdesc:a60ebed7213671e7fea37e1d944a80797"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save a component with the given serializer if possible.  <br /></td></tr>
-<tr class="separator:a60ebed7213671e7fea37e1d944a80797"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a879993122e33c32036c1c03c5315928b"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
-<tr class="memitem:a879993122e33c32036c1c03c5315928b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html">ISerializer</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1serialization.html#a879993122e33c32036c1c03c5315928b">update</a> (<a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html">ISerializer</a> &amp;serializer, const <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a> &amp;stype, C &amp;component)</td></tr>
-<tr class="memdesc:a879993122e33c32036c1c03c5315928b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update a component with the given serializer if possible.  <br /></td></tr>
-<tr class="separator:a879993122e33c32036c1c03c5315928b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9ccecc8e189b039d2bbdb4568558e62"><td class="memTemplParams" colspan="2">template&lt;typename Storage &gt; </td></tr>
-<tr class="memitem:ad9ccecc8e189b039d2bbdb4568558e62"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html">ISerializer</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1serialization.html#ad9ccecc8e189b039d2bbdb4568558e62">load</a> (<a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html">ISerializer</a> &amp;serializer, const <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a> &amp;stype, Storage &amp;storage, size_t entityId)</td></tr>
-<tr class="memdesc:ad9ccecc8e189b039d2bbdb4568558e62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a component with the given serializer if possible.  <br /></td></tr>
-<tr class="separator:ad9ccecc8e189b039d2bbdb4568558e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Namespace regrouping the serialization ecstasy classes. </p>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-29) </dd></dl>
-</div><h2 class="groupheader">Typedef Documentation</h2>
-<a id="a723ba8ab703ccd8a043f20e120ff637f" name="a723ba8ab703ccd8a043f20e120ff637f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a723ba8ab703ccd8a043f20e120ff637f">&#9670;&#160;</a></span>Serializers</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespaceecstasy_1_1serialization.html#a723ba8ab703ccd8a043f20e120ff637f">ecstasy::serialization::Serializers</a> = typedef <a class="el" href="_component_serializer_8hpp.html#a9c0ddc7d031fed6cb9bfe5c01f2bc4aa">ECSTASY_SERIALIZERS</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_component_serializer_8hpp_source.html#l00030">30</a> of file <a class="el" href="_component_serializer_8hpp_source.html">ComponentSerializer.hpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="ad9ccecc8e189b039d2bbdb4568558e62" name="ad9ccecc8e189b039d2bbdb4568558e62"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9ccecc8e189b039d2bbdb4568558e62">&#9670;&#160;</a></span>load()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Storage &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html">ISerializer</a> &amp; ecstasy::serialization::load </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html">ISerializer</a> &amp;&#160;</td>
-          <td class="paramname"><em>serializer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a> &amp;&#160;</td>
-          <td class="paramname"><em>stype</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Storage &amp;&#160;</td>
-          <td class="paramname"><em>storage</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>entityId</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Load a component with the given serializer if possible. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Storage</td><td>Storage type.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">serializer</td><td><a class="el" href="classecstasy_1_1serialization_1_1_serializer.html" title="Serializer class.">Serializer</a> to use. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">stype</td><td>Type of the serializer. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">storage</td><td>Storage to use. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">entityId</td><td><a class="el" href="classecstasy_1_1_entity.html" title="Encapsulate an index to an entity.">Entity</a> id to which the storage must be loaded.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html" title="Interface for all serializer classes.">ISerializer</a>&amp; The serializer.</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-06-25) </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_component_serializer_8hpp_source.html#l00263">263</a> of file <a class="el" href="_component_serializer_8hpp_source.html">ComponentSerializer.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  264</span>    {</div>
-<div class="line"><span class="lineno">  265</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structecstasy_1_1serialization_1_1_component_serializer.html">ComponentSerializer&lt;Serializers&gt;::load</a>(serializer, stype, storage, entityId);</div>
-<div class="line"><span class="lineno">  266</span>    }</div>
-<div class="ttc" id="astructecstasy_1_1serialization_1_1_component_serializer_html"><div class="ttname"><a href="structecstasy_1_1serialization_1_1_component_serializer.html">ecstasy::serialization::ComponentSerializer</a></div><div class="ttdoc">Serialize a component with the given serializer.</div><div class="ttdef"><b>Definition</b> <a href="_component_serializer_8hpp_source.html#l00045">ComponentSerializer.hpp:45</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a60ebed7213671e7fea37e1d944a80797" name="a60ebed7213671e7fea37e1d944a80797"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60ebed7213671e7fea37e1d944a80797">&#9670;&#160;</a></span>save()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename C &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html">ISerializer</a> &amp; ecstasy::serialization::save </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html">ISerializer</a> &amp;&#160;</td>
-          <td class="paramname"><em>serializer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a> &amp;&#160;</td>
-          <td class="paramname"><em>stype</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const C &amp;&#160;</td>
-          <td class="paramname"><em>component</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Save a component with the given serializer if possible. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">C</td><td>Component type.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">serializer</td><td><a class="el" href="classecstasy_1_1serialization_1_1_serializer.html" title="Serializer class.">Serializer</a> to use. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">stype</td><td>Type of the serializer. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">component</td><td>Component to serialize.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html" title="Interface for all serializer classes.">ISerializer</a>&amp; The serializer.</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-06-11) </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_component_serializer_8hpp_source.html#l00222">222</a> of file <a class="el" href="_component_serializer_8hpp_source.html">ComponentSerializer.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  223</span>    {</div>
-<div class="line"><span class="lineno">  224</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structecstasy_1_1serialization_1_1_component_serializer.html">ComponentSerializer&lt;Serializers&gt;::save</a>(serializer, stype, component);</div>
-<div class="line"><span class="lineno">  225</span>    }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a879993122e33c32036c1c03c5315928b" name="a879993122e33c32036c1c03c5315928b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a879993122e33c32036c1c03c5315928b">&#9670;&#160;</a></span>update()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename C &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html">ISerializer</a> &amp; ecstasy::serialization::update </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html">ISerializer</a> &amp;&#160;</td>
-          <td class="paramname"><em>serializer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a> &amp;&#160;</td>
-          <td class="paramname"><em>stype</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">C &amp;&#160;</td>
-          <td class="paramname"><em>component</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Update a component with the given serializer if possible. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">C</td><td>Component type.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">serializer</td><td><a class="el" href="classecstasy_1_1serialization_1_1_serializer.html" title="Serializer class.">Serializer</a> to use. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">stype</td><td>Type of the serializer. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">component</td><td>Component to update.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html" title="Interface for all serializer classes.">ISerializer</a>&amp; The serializer.</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-06-25) </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_component_serializer_8hpp_source.html#l00242">242</a> of file <a class="el" href="_component_serializer_8hpp_source.html">ComponentSerializer.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  243</span>    {</div>
-<div class="line"><span class="lineno">  244</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structecstasy_1_1serialization_1_1_component_serializer.html">ComponentSerializer&lt;Serializers&gt;::update</a>(serializer, stype, component);</div>
-<div class="line"><span class="lineno">  245</span>    }</div>
-</div><!-- fragment -->
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
