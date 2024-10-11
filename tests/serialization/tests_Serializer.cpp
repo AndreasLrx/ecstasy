@@ -31,7 +31,13 @@ struct Position {
 
     JsonSerializer &operator>>(JsonSerializer &serializer) const
     {
-        return serializer << JsonSerializer::OP::NewObject << "x" << x << "y" << y << JsonSerializer::OP::Close;
+        return serializer << JsonSerializer::NewObject << "x" << x << "y" << y << JsonSerializer::Close;
+    }
+
+    Position &operator<<(JsonSerializer &serializer)
+    {
+        serializer >> JsonSerializer::NewObject >> "x" >> x >> "y" >> y >> JsonSerializer::Close;
+        return *this;
     }
 
     Position &operator<<(RawSerializer &serializer)
@@ -63,8 +69,14 @@ struct NPC {
 
     JsonSerializer &operator>>(JsonSerializer &serializer) const
     {
-        return serializer << JsonSerializer::OP::NewObject << "pos" << pos << "name" << std::string_view(name)
-                          << JsonSerializer::OP::Close;
+        return serializer << JsonSerializer::NewObject << "pos" << pos << "name" << std::string_view(name)
+                          << JsonSerializer::Close;
+    }
+
+    NPC &operator<<(JsonSerializer &serializer)
+    {
+        serializer >> JsonSerializer::NewObject >> "pos" >> pos >> "name" >> name >> JsonSerializer::Close;
+        return *this;
     }
 
     NPC &operator<<(RawSerializer &serializer)
@@ -360,6 +372,23 @@ TEST(JsonSerializer, all)
     std::string json = jsonSerializer.exportBytes();
     GTEST_ASSERT_EQ(json, "[21,42,84,168,-45612.0,\"\",\"this is a test\",\"raw string\"]");
 
+    jsonSerializer.resetCursor();
+    uint8_t u8 = 0;
+    uint16_t u16 = 0;
+    uint32_t u32 = 0;
+    uint64_t u64 = 0;
+    float f = 0;
+    std::string emptyLoaded, loaded, rawLoaded;
+    jsonSerializer >> u8 >> u16 >> u32 >> u64 >> f >> emptyLoaded >> loaded >> rawLoaded;
+    GTEST_ASSERT_EQ(u8, 21);
+    GTEST_ASSERT_EQ(u16, 42);
+    GTEST_ASSERT_EQ(u32, 84);
+    GTEST_ASSERT_EQ(u64, 168);
+    GTEST_ASSERT_EQ(f, -45612.f);
+    GTEST_ASSERT_EQ(emptyLoaded, "");
+    GTEST_ASSERT_EQ(loaded, "this is a test");
+    GTEST_ASSERT_EQ(rawLoaded, "raw string");
+
     jsonSerializer.clear();
     // Array types
     std::vector<int> vec(5);
@@ -371,6 +400,17 @@ TEST(JsonSerializer, all)
     json = jsonSerializer.exportBytes();
     GTEST_ASSERT_EQ(json, "[[1,2,3,4,5,6,7,8,9,10],[1,2,3,4,5]]");
 
+    jsonSerializer.resetCursor();
+    int updated[std::extent_v<decltype(someInts)>];
+    std::vector<int> updatedVec;
+    jsonSerializer >> updated >> updatedVec;
+    for (int i = 0; i < 10; i++) {
+        GTEST_ASSERT_EQ(updated[i], i + 1);
+        if (i < 5) {
+            GTEST_ASSERT_EQ(updatedVec[i], i + 1);
+        }
+    }
+
     jsonSerializer.clear();
     // Compound types
     Position pos{1.0f, -8456.0f};
@@ -379,4 +419,23 @@ TEST(JsonSerializer, all)
     jsonSerializer << pos << npc;
     json = jsonSerializer.exportBytes();
     GTEST_ASSERT_EQ(json, "[{\"x\":1.0,\"y\":-8456.0},{\"pos\":{\"x\":42.0,\"y\":0.0},\"name\":\"Steve\"}]");
+
+    jsonSerializer.resetCursor();
+    Position posUpdated;
+    NPC npcUpdated;
+    jsonSerializer >> posUpdated >> npcUpdated;
+    GTEST_ASSERT_EQ(posUpdated.x, 1.0f);
+    GTEST_ASSERT_EQ(posUpdated.y, -8456.0f);
+    GTEST_ASSERT_EQ(npcUpdated.name, "Steve");
+    GTEST_ASSERT_EQ(npcUpdated.pos.x, 42.f);
+    GTEST_ASSERT_EQ(npcUpdated.pos.y, 0.f);
+
+    jsonSerializer.resetCursor();
+    Position posLoaded = jsonSerializer.load<Position>();
+    NPC npcLoaded = jsonSerializer.load<NPC>();
+    GTEST_ASSERT_EQ(posLoaded.x, 1.0f);
+    GTEST_ASSERT_EQ(posLoaded.y, -8456.0f);
+    GTEST_ASSERT_EQ(npcLoaded.name, "Steve");
+    GTEST_ASSERT_EQ(npcLoaded.pos.x, 42.f);
+    GTEST_ASSERT_EQ(npcLoaded.pos.y, 0.f);
 }
