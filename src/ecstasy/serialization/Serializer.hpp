@@ -41,7 +41,7 @@
 ///
 #define REGISTER_SERIALIZABLE(COMPONENT, SERIALIZER)                                  \
     static bool __CONCATENATE(registered_, __CONCATENATE(COMPONENT, _##SERIALIZER)) = \
-        SERIALIZER::registerComponent<COMPONENT>();
+        SERIALIZER::registerComponent<COMPONENT>(#COMPONENT);
 
 ///
 /// @brief Register a component to multiple serializers.
@@ -222,6 +222,7 @@ namespace ecstasy::serialization
         ///
         S &saveEntity(RegistryEntity &entity)
         {
+            beforeSaveEntity(entity);
             auto storages = entity.getRegistry().getEntityStorages(entity);
 
             for (IStorage &storage : storages) {
@@ -231,6 +232,7 @@ namespace ecstasy::serialization
                     this->getEntityComponentSerializer(hash).save(*this, storage, entity);
                 }
             }
+            afterSaveEntity(entity);
             return inner();
         }
 
@@ -325,18 +327,24 @@ namespace ecstasy::serialization
         ///
         S &updateEntity(RegistryEntity &entity)
         {
+            beforeUpdateEntity(entity);
             std::size_t component_hash = loadComponentHash();
 
-            if (this->hasEntityComponentSerializer(component_hash)) {
-                IEntityComponentSerializer &component = this->getEntityComponentSerializer(component_hash);
-                IStorage &storage = entity.getRegistry().getStorages().get(component.getStorageTypeIndex());
+            while (component_hash != 0) {
+                if (this->hasEntityComponentSerializer(component_hash)) {
+                    IEntityComponentSerializer &component = this->getEntityComponentSerializer(component_hash);
+                    IStorage &storage =
+                        entity.getRegistry().getStorages().get(std::type_index(component.getStorageTypeInfo()));
 
-                component.load(*this, storage, entity);
-            } else {
-                throw std::out_of_range("Component with hash " + std::to_string(component_hash)
-                    + " not registered. Use "
-                      "registerComponent to register components.");
+                    component.load(*this, storage, entity);
+                } else {
+                    throw std::out_of_range("Component with hash " + std::to_string(component_hash)
+                        + " not registered. Use "
+                          "registerComponent to register components.");
+                }
+                component_hash = loadComponentHash();
             }
+            afterUpdateEntity(entity);
             return inner();
         }
 
@@ -377,34 +385,41 @@ namespace ecstasy::serialization
         }
 
         ///
-        /// @brief Load the hash of the component type from the stream.
-        ///
-        /// @return std::size_t Hash of the component type.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2024-10-04)
-        ///
-        virtual std::size_t loadComponentHash() = 0;
-
-        ///
         /// @brief Register a component to this serializer type.
         ///
         /// This is required for calls to saveEntity calls without explicit component types.
         ///
         /// @tparam C Component type to register.
         ///
+        /// @param[in] name Name of the component type.
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-10-04)
         ///
         template <typename C>
-        static bool registerComponent()
+        static bool registerComponent(std::string_view name)
         {
             size_t hash = typeid(C).hash_code();
 
             if (getRegisteredComponents().contains(hash))
                 return false;
-            getRegisteredComponents()[hash] = std::make_unique<EntityComponentSerializer<C, S>>();
+            getRegisteredComponents()[hash] = std::make_unique<EntityComponentSerializer<C, S>>(name);
             return true;
+        }
+
+        ///
+        /// @brief Check if a component type is registered to this serializer.
+        ///
+        /// @param[in] hash Hash of the component type.
+        ///
+        /// @return bool True if the component type is registered, false otherwise.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-04)
+        ///
+        static bool hasEntityComponentSerializer(std::size_t hash)
+        {
+            return getRegisteredComponents().contains(hash);
         }
 
         ///
@@ -425,18 +440,45 @@ namespace ecstasy::serialization
         }
 
         ///
-        /// @brief Check if a component type is registered to this serializer.
+        /// @brief Try to get the Entity Component Serializer for a component type.
         ///
         /// @param[in] hash Hash of the component type.
         ///
-        /// @return bool True if the component type is registered, false otherwise.
+        /// @return std::optional<std::reference_wrapper<IEntityComponentSerializer>> Optional reference to the entity
+        /// component serializer.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2024-10-04)
+        /// @since 1.0.0 (2024-10-13)
         ///
-        static bool hasEntityComponentSerializer(std::size_t hash)
+        static std::optional<std::reference_wrapper<IEntityComponentSerializer>> tryGetEntityComponentSerializer(
+            std::size_t hash)
         {
-            return getRegisteredComponents().contains(hash);
+            auto it = getRegisteredComponents().find(hash);
+
+            if (it != getRegisteredComponents().end())
+                return std::ref(*it->second);
+            return std::nullopt;
+        }
+
+        ///
+        /// @brief Get the Entity Component Serializer from a component type name.
+        ///
+        /// @param[in] name Name of the component type.
+        ///
+        /// @return IEntityComponentSerializer& Reference to the entity component serializer.
+        ///
+        /// @throw std::out_of_range If the component type is not registered.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-11)
+        ///
+        static IEntityComponentSerializer &getEntityComponentSerializer(std::string_view name)
+        {
+            for (auto &[hash, serializer] : getRegisteredComponents()) {
+                if (serializer->getTypeName() == name)
+                    return *serializer;
+            }
+            throw std::out_of_range("Component with name " + std::string(name) + " not registered.");
         }
 
       protected:
@@ -453,6 +495,70 @@ namespace ecstasy::serialization
         {
             static std::unordered_map<std::size_t, std::unique_ptr<IEntityComponentSerializer>> registeredComponents;
             return registeredComponents;
+        }
+
+        ///
+        /// @brief Load the hash of the next component type from the stream.
+        ///
+        /// @note Return 0 if there is no more components to load.
+        ///
+        /// @return std::size_t Hash of the component type.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-04)
+        ///
+        virtual std::size_t loadComponentHash() = 0;
+
+        ///
+        /// @brief Optional method triggered at the start of @ref saveEntity.
+        ///
+        /// @param[in] entity Entity being saved.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-11)
+        ///
+        virtual void beforeSaveEntity(RegistryEntity &entity)
+        {
+            static_cast<void>(entity);
+        }
+
+        ///
+        /// @brief Optional method triggered at the end of @ref saveEntity.
+        ///
+        /// @param[in] entity Entity being saved.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-11)
+        ///
+        virtual void afterSaveEntity(RegistryEntity &entity)
+        {
+            static_cast<void>(entity);
+        }
+
+        ///
+        /// @brief Optional method triggered at the start of @ref updateEntity.
+        ///
+        /// @param[in] entity Entity being updated.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-11)
+        ///
+        virtual void beforeUpdateEntity(RegistryEntity &entity)
+        {
+            static_cast<void>(entity);
+        }
+
+        ///
+        /// @brief Optional method triggered at the end of @ref updateEntity.
+        ///
+        /// @param[in] entity Entity being updated.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-11)
+        ///
+        virtual void afterUpdateEntity(RegistryEntity &entity)
+        {
+            static_cast<void>(entity);
         }
     };
 

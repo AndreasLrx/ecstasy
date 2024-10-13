@@ -551,9 +551,10 @@ struct Position {
 
 Serializer should support fundamental and container types by default but it depends on the serializer implementation.
 
-| Serializer                                 | Fundamental (integers, floats, doubles...) | strings | containers |
-| ------------------------------------------ | ------------------------------------------ | ------- | ---------- |
-| @ref ecstasy::serialization::RawSerializer | Ok                                         | OK      | Ok         |
+| Serializer                                  | Fundamental (integers, floats, doubles...) | strings | containers |
+| ------------------------------------------- | ------------------------------------------ | ------- | ---------- |
+| @ref ecstasy::serialization::RawSerializer  | Ok                                         | OK      | Ok         |
+| @ref ecstasy::serialization::JsonSerializer | Ok                                         | OK      | Ok         |
 
 **1. Saving**
 
