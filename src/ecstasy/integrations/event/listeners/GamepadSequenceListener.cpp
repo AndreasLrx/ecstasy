@@ -15,13 +15,13 @@
 namespace ecstasy::integration::event
 {
     GamepadSequenceListener::GamepadSequenceListener(
-        const std::vector<Gamepad::Button> &sequence, Callback callback, size_t gamepadId)
+        const std::vector<Gamepad::Button> &sequence, Callback callback, size_t gamepadId) noexcept
         : _sequence(sequence), _callback(callback), _gamepadId(gamepadId)
     {
         reset();
     }
 
-    bool GamepadSequenceListener::update(const GamepadButtonEvent &event)
+    bool GamepadSequenceListener::update(const GamepadButtonEvent &event) noexcept
     {
         if (event.id != _gamepadId)
             return false;
@@ -44,7 +44,7 @@ namespace ecstasy::integration::event
         return false;
     }
 
-    bool GamepadSequenceListener::isComplete() const
+    bool GamepadSequenceListener::isComplete() const noexcept
     {
         return _sequence.size() == _validatedButtons.size();
     }
@@ -57,7 +57,7 @@ namespace ecstasy::integration::event
         }
     }
 
-    void GamepadSequenceListener::setSequence(const std::vector<Gamepad::Button> &newSequence)
+    void GamepadSequenceListener::setSequence(const std::vector<Gamepad::Button> &newSequence) noexcept
     {
         _sequence = newSequence;
         reset();

@@ -92,7 +92,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-18)
         ///
-        constexpr Gamepad(std::size_t id = 0) : _id(id), _connected(false), _buttons({false}), _axis({0.f})
+        constexpr Gamepad(std::size_t id = 0) noexcept : _id(id), _connected(false), _buttons({false}), _axis({0.f})
         {
             setAxisValue(Axis::TriggerLeft, -1.f);
             setAxisValue(Axis::TriggerRight, -1.f);
@@ -104,7 +104,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-18)
         ///
-        ~Gamepad() = default;
+        ~Gamepad() noexcept = default;
 
         ///
         /// @brief Get the gamepad id.
@@ -113,7 +113,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-18)
         ///
-        constexpr std::size_t getId() const
+        [[nodiscard]] constexpr std::size_t getId() const noexcept
         {
             return _id;
         }
@@ -128,7 +128,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-18)
         ///
-        constexpr void setId(std::size_t id)
+        constexpr void setId(std::size_t id) noexcept
         {
             _id = id;
         }
@@ -141,7 +141,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-18)
         ///
-        constexpr bool isConnected() const
+        [[nodiscard]] constexpr bool isConnected() const noexcept
         {
             return _connected;
         }
@@ -156,7 +156,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-18)
         ///
-        constexpr void setConnected(bool connected)
+        constexpr void setConnected(bool connected) noexcept
         {
             _connected = connected;
         }
@@ -168,11 +168,14 @@ namespace ecstasy::integration::event
         ///
         /// @return bool Whether the button is down.
         ///
+        /// @throw std::invalid_argument If the button is invalid
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-16)
         ///
-        constexpr bool isButtonDown(Button button) const
+        [[nodiscard]] constexpr bool isButtonDown(Button button) const
         {
+            assertButtonValid(button);
             return _buttons[static_cast<std::size_t>(button)];
         }
 
@@ -183,11 +186,14 @@ namespace ecstasy::integration::event
         ///
         /// @return bool Whether the button is up.
         ///
+        /// @throw std::invalid_argument If the button is invalid
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-16)
         ///
-        constexpr bool isButtonUp(Button button) const
+        [[nodiscard]] constexpr bool isButtonUp(Button button) const
         {
+            assertButtonValid(button);
             return !isButtonDown(button);
         }
 
@@ -199,11 +205,14 @@ namespace ecstasy::integration::event
         /// @param[in] button button to update.
         /// @param[in] down Whether the button must be set down or not.
         ///
+        /// @throw std::invalid_argument If the button is invalid.
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-16)
         ///
         constexpr void setButtonState(Button button, bool down)
         {
+            assertButtonValid(button);
             _buttons[static_cast<std::size_t>(button)] = down;
         }
 
@@ -214,11 +223,14 @@ namespace ecstasy::integration::event
         ///
         /// @return float axis value.
         ///
+        /// @throw std::invalid_argument If the axis is invalid.
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-18)
         ///
-        constexpr float getAxisValue(Axis axis) const
+        [[nodiscard]] constexpr float getAxisValue(Axis axis) const
         {
+            assertAxisValid(axis);
             return _axis[static_cast<std::size_t>(axis)];
         }
 
@@ -230,18 +242,59 @@ namespace ecstasy::integration::event
         /// @param[in] axis modified axis.
         /// @param[in] value new value.
         ///
+        /// @throw std::invalid_argument If the axis is invalid.
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-18)
         ///
         constexpr void setAxisValue(Axis axis, float value)
         {
+            assertAxisValid(axis);
             _axis[static_cast<std::size_t>(axis)] = value;
         }
 
+        ///
+        /// @brief Check whether a button is valid.
+        ///
+        /// @param[in] button evaluated button.
+        ///
+        /// @throw std::invalid_argument If the button is invalid
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-13)
+        ///
+        constexpr static void assertButtonValid(Button button, bool allowUnknown = false)
+        {
+            if (static_cast<std::size_t>(button) >= static_cast<std::size_t>(Button::Count)
+                || (!allowUnknown && button == Button::Unknown)) [[unlikely]]
+                throw std::invalid_argument("Invalid button");
+        }
+
+        ///
+        /// @brief Check whether an axis is valid.
+        ///
+        /// @param[in] axis evaluated axis.
+        ///
+        /// @throw std::invalid_argument If the axis is invalid.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-13)
+        ///
+        constexpr static void assertAxisValid(Axis axis, bool allowUnknown = false)
+        {
+            if (static_cast<std::size_t>(axis) >= static_cast<std::size_t>(Axis::Count)
+                || (!allowUnknown && axis == Axis::Unknown)) [[unlikely]]
+                throw std::invalid_argument("Invalid axis");
+        }
+
       private:
+        /// Gamepad id.
         std::size_t _id;
+        /// Gamepad connection state.
         bool _connected;
+        /// Gamepad buttons state.
         std::array<bool, static_cast<std::size_t>(Button::Count)> _buttons;
+        /// Gamepad axis values.
         std::array<float, static_cast<std::size_t>(Axis::Count)> _axis;
     };
 } // namespace ecstasy::integration::event

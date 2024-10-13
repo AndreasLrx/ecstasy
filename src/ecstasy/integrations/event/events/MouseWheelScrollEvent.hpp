@@ -37,7 +37,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
         ///
-        constexpr MouseWheelScrollEvent(float pDelta = 0, Mouse::Wheel pWheel = Mouse::Wheel::Horizontal)
+        constexpr MouseWheelScrollEvent(float pDelta = 0, Mouse::Wheel pWheel = Mouse::Wheel::Horizontal) noexcept
             : delta(pDelta), wheel(pWheel)
         {
         }

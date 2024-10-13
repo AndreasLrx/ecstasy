@@ -17,20 +17,20 @@
 
 namespace ecstasy::integration::user_action
 {
-    Users::Users(size_t count) : _users(count)
+    Users::Users(size_t count) noexcept : _users(count)
     {
         for (size_t i = 1; i < count; i++)
             _users[i].setId(i);
     }
 
-    void Users::updateBindings(Registry &registry)
+    void Users::updateBindings(Registry &registry) noexcept
     {
         if (!registry.hasResource<Users>())
             return;
         registry.getResource<Users>()->updateBindings();
     }
 
-    void Users::updateBindings()
+    void Users::updateBindings() noexcept
     {
         removeOutdatedBindings(_mouseButtonToAction);
         removeOutdatedBindings(_keyToAction);

@@ -40,7 +40,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
         ///
-        constexpr GamepadButtonEvent(size_t pId, Gamepad::Button pButton, bool pPressed)
+        constexpr GamepadButtonEvent(size_t pId, Gamepad::Button pButton, bool pPressed) noexcept
             : id(pId), button(pButton), pressed(pPressed)
         {
         }

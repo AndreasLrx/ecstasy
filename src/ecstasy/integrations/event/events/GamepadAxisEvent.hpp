@@ -40,7 +40,8 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-18)
         ///
-        constexpr GamepadAxisEvent(size_t pId, Gamepad::Axis pAxis, float pValue) : id(pId), axis(pAxis), value(pValue)
+        constexpr GamepadAxisEvent(size_t pId, Gamepad::Axis pAxis, float pValue) noexcept
+            : id(pId), axis(pAxis), value(pValue)
         {
         }
     };

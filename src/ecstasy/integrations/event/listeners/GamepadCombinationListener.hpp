@@ -52,7 +52,7 @@ namespace ecstasy::integration::event
         /// @since 1.0.0 (2024-03-27)
         ///
         GamepadCombinationListener(
-            const std::vector<Gamepad::Button> &combination, Callback callback, size_t gamepadId = 0);
+            const std::vector<Gamepad::Button> &combination, Callback callback, size_t gamepadId = 0) noexcept;
 
         ///
         /// @brief Default destructor.
@@ -60,7 +60,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-03-27)
         ///
-        ~GamepadCombinationListener() = default;
+        ~GamepadCombinationListener() noexcept = default;
 
         ///
         /// @brief Update the combination with the given @ref GamepadButtonEvent.
@@ -72,7 +72,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-03-27)
         ///
-        bool update(const GamepadButtonEvent &event);
+        bool update(const GamepadButtonEvent &event) noexcept;
 
         ///
         /// @brief Check whether the combination is complete or not.
@@ -82,7 +82,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-03-27)
         ///
-        bool isComplete() const;
+        [[nodiscard]] bool isComplete() const noexcept;
 
         ///
         /// @brief Reset the combination completion.
@@ -90,7 +90,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-03-27)
         ///
-        void reset();
+        void reset() noexcept;
 
         ///
         /// @brief Call the callback and @ref reset() if the combination is complete or if @p force.
@@ -114,7 +114,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-03-27)
         ///
-        void setCombination(const std::vector<Gamepad::Button> &newCombination);
+        void setCombination(const std::vector<Gamepad::Button> &newCombination) noexcept;
 
         ///
         /// @brief Get the expected combination.
@@ -124,7 +124,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-03-27)
         ///
-        constexpr const std::vector<Gamepad::Button> &getCombination() const
+        [[nodiscard]] constexpr const std::vector<Gamepad::Button> &getCombination() const noexcept
         {
             return _combination;
         }
@@ -139,7 +139,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-03-27)
         ///
-        constexpr std::vector<Gamepad::Button> &getCombination()
+        [[nodiscard]] constexpr std::vector<Gamepad::Button> &getCombination() noexcept
         {
             return _combination;
         }
@@ -152,7 +152,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-03-27)
         ///
-        constexpr const Callback &getCallback() const
+        [[nodiscard]] constexpr const Callback &getCallback() const noexcept
         {
             return _callback;
         }
@@ -165,7 +165,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-03-27)
         ///
-        constexpr size_t getValidatedButtons() const
+        [[nodiscard]] constexpr size_t getValidatedButtons() const noexcept
         {
             return _validatedButtons;
         }
@@ -180,7 +180,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-03-27)
         ///
-        constexpr const std::unordered_map<Gamepad::Button, bool> &getButtonStates() const
+        [[nodiscard]] constexpr const std::unordered_map<Gamepad::Button, bool> &getButtonStates() const noexcept
         {
             return _buttonStates;
         }
@@ -193,7 +193,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-03-28)
         ///
-        constexpr size_t getGamepadId() const
+        [[nodiscard]] constexpr size_t getGamepadId() const noexcept
         {
             return _gamepadId;
         }
@@ -208,17 +208,22 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-03-28)
         ///
-        void setGamepadId(size_t gamepadId)
+        void setGamepadId(size_t gamepadId) noexcept
         {
             _gamepadId = gamepadId;
             reset();
         }
 
       private:
+        // Combination of buttons to watch for.
         std::vector<Gamepad::Button> _combination;
+        // Buttons of the combination that are pressed.
         std::unordered_map<Gamepad::Button, bool> _buttonStates;
+        // Count of validated buttons.
         size_t _validatedButtons;
+        // Callback called when the combination is validated.
         Callback _callback;
+        // Gamepad id to watch for.
         size_t _gamepadId;
     };
 } // namespace ecstasy::integration::event

@@ -34,7 +34,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-18)
         ///
-        Gamepads()
+        Gamepads() noexcept
         {
             for (size_t i = 0; i < GamepadCount; i++)
                 _gamepads[i] = Gamepad(i);
@@ -46,7 +46,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-18)
         ///
-        ~Gamepads() = default;
+        ~Gamepads() noexcept = default;
 
         ///
         /// @brief Fetch a gamepad.
@@ -57,10 +57,12 @@ namespace ecstasy::integration::event
         ///
         /// @return Gamepad& A reference to the gamepad at the id @p i.
         ///
+        /// @throw std::out_of_range If the id is out of bounds (ie > GamepadCount).
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-18)
         ///
-        Gamepad &get(std::size_t i)
+        [[nodiscard]] Gamepad &get(std::size_t i)
         {
             return _gamepads[i];
         }
@@ -74,15 +76,18 @@ namespace ecstasy::integration::event
         ///
         /// @return Gamepad& A const reference to the gamepad at the id @p i.
         ///
+        /// @throw std::out_of_range If the id is out of bounds (ie > GamepadCount).
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-18)
         ///
-        const Gamepad &get(std::size_t i) const
+        [[nodiscard]] const Gamepad &get(std::size_t i) const
         {
             return _gamepads[i];
         }
 
       private:
+        /// Array of gamepads.
         std::array<Gamepad, GamepadCount> _gamepads;
     };
 } // namespace ecstasy::integration::event

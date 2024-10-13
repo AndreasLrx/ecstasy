@@ -37,7 +37,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-18)
         ///
-        constexpr GamepadConnectedEvent(std::size_t pId, bool pConnected) : id(pId), connected(pConnected)
+        constexpr GamepadConnectedEvent(std::size_t pId, bool pConnected) noexcept : id(pId), connected(pConnected)
         {
         }
     };

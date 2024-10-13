@@ -156,7 +156,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-16)
         ///
-        Keyboard() : _keys({false}){};
+        Keyboard() noexcept : _keys({false}){};
 
         ///
         /// @brief Destroy the Keyboard.
@@ -164,7 +164,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-16)
         ///
-        virtual ~Keyboard() = default;
+        virtual ~Keyboard() noexcept = default;
 
         ///
         /// @brief Check whether a key is down.
@@ -173,11 +173,14 @@ namespace ecstasy::integration::event
         ///
         /// @return bool Whether the key is down.
         ///
+        /// @throw std::invalid_argument If the key is invalid.
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-16)
         ///
-        constexpr bool isKeyDown(Key key) const
+        [[nodiscard]] constexpr bool isKeyDown(Key key) const
         {
+            assertKeyValid(key);
             return _keys[static_cast<size_t>(key)];
         }
 
@@ -188,10 +191,12 @@ namespace ecstasy::integration::event
         ///
         /// @return bool Whether the key is up.
         ///
+        /// @throw std::invalid_argument If the key is invalid.
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-16)
         ///
-        constexpr bool isKeyUp(Key key) const
+        [[nodiscard]] constexpr bool isKeyUp(Key key) const
         {
             return !isKeyDown(key);
         }
@@ -204,15 +209,36 @@ namespace ecstasy::integration::event
         /// @param[in] key Key to update.
         /// @param[in] down Whether the key must be set down or not.
         ///
+        /// @throw std::invalid_argument If the key is invalid.
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-16)
         ///
         constexpr void setKeyState(Key key, bool down)
         {
+            assertKeyValid(key);
             _keys[static_cast<size_t>(key)] = down;
         }
 
+        ///
+        /// @brief Check whether a key is valid.
+        ///
+        /// @param[in] key Evaluated key.
+        ///
+        /// @throw std::invalid_argument If the key is invalid.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-13)
+        ///
+        constexpr static void assertKeyValid(Key key, bool allowUnknown = false)
+        {
+            if (static_cast<size_t>(key) >= static_cast<size_t>(Key::Count) || (!allowUnknown && key == Key::Unknown))
+                [[unlikely]]
+                throw std::invalid_argument("Invalid key");
+        }
+
       private:
+        /// Keyboard keys state.
         std::array<bool, static_cast<int>(Key::Count)> _keys;
     };
 } // namespace ecstasy::integration::event

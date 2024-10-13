@@ -18,7 +18,7 @@ namespace event = ecstasy::integration::event;
 
 namespace ecstasy::integration::user_action
 {
-    toml::table ActionBindings::dump() const
+    toml::table ActionBindings::dump() const noexcept
     {
         toml::table table;
 
@@ -48,7 +48,7 @@ namespace ecstasy::integration::user_action
         return table;
     }
 
-    bool ActionBindings::load(const toml::table &bindings)
+    bool ActionBindings::load(const toml::table &bindings) noexcept
     {
         _bindings.clear();
         const std::regex reActionName("^Action-([0-9]+)$");
@@ -104,7 +104,7 @@ namespace ecstasy::integration::user_action
         return true;
     }
 
-    bool ActionBindings::contains(ActionBinding binding) const
+    bool ActionBindings::contains(ActionBinding binding) const noexcept
     {
         return std::find(_bindings.cbegin(), _bindings.cend(), binding) != _bindings.cend();
     }

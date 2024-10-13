@@ -54,7 +54,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-18)
         ///
-        constexpr EventListeners() = default;
+        constexpr EventListeners() noexcept = default;
 
         ///
         /// @brief Construct a new EventListeners with the given listeners.
@@ -64,7 +64,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-18)
         ///
-        constexpr EventListeners(std::vector<EventListener<E>> &&listeners) : _listeners(listeners)
+        constexpr EventListeners(std::vector<EventListener<E>> &&listeners) noexcept : _listeners(listeners)
         {
         }
 
@@ -74,7 +74,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-18)
         ///
-        ~EventListeners() = default;
+        ~EventListeners() noexcept = default;
 
         ///
         /// @brief Add a listener.
@@ -84,7 +84,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-18)
         ///
-        void add(EventListener<E> listener)
+        inline void add(EventListener<E> listener) noexcept
         {
             _listeners.push_back(listener);
         }
@@ -95,7 +95,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-18)
         ///
-        constexpr void clear()
+        constexpr void clear() noexcept
         {
             _listeners.clear();
         }
@@ -124,7 +124,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-18)
         ///
-        constexpr std::vector<EventListener<E>> &getInner()
+        [[nodiscard]] constexpr std::vector<EventListener<E>> &getInner() noexcept
         {
             return _listeners;
         }
@@ -137,12 +137,13 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-18)
         ///
-        constexpr const std::vector<EventListener<E>> &getInner() const
+        [[nodiscard]] constexpr const std::vector<EventListener<E>> &getInner() const noexcept
         {
             return _listeners;
         }
 
       private:
+        // Internal listeners container.
         std::vector<EventListener<E>> _listeners;
     };
 } // namespace ecstasy::integration::event
