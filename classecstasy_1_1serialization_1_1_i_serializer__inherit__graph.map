@@ -1,9 +1,13 @@
 <map id="ecstasy::serialization::ISerializer" name="ecstasy::serialization::ISerializer">
-<area shape="rect" id="Node000001" title="Interface for all serializer classes." alt="" coords="5,37,164,77"/>
-<area shape="rect" id="Node000002" href="$classecstasy_1_1serialization_1_1_serializer.html" title=" " alt="" coords="212,5,423,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,42,211,37,212,42,178,47"/>
-<area shape="rect" id="Node000004" href="$classecstasy_1_1serialization_1_1_serializer.html" title="Serializer class." alt="" coords="238,69,397,109"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="178,67,238,76,237,81,178,73"/>
-<area shape="rect" id="Node000003" href="$classecstasy_1_1serialization_1_1_raw_serializer.html" title="RawSerializer class." alt="" coords="471,5,629,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="436,23,471,23,471,28,436,28"/>
+<area shape="rect" id="Node000001" title="Interface for all serializer classes." alt="" coords="5,69,164,109"/>
+<area shape="rect" id="Node000002" href="$classecstasy_1_1serialization_1_1_serializer.html" title=" " alt="" coords="213,5,422,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,63,243,43,245,48,172,68"/>
+<area shape="rect" id="Node000004" href="$classecstasy_1_1serialization_1_1_serializer.html" title=" " alt="" coords="212,69,423,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="178,87,212,87,212,92,178,92"/>
+<area shape="rect" id="Node000006" href="$classecstasy_1_1serialization_1_1_serializer.html" title="Serializer class." alt="" coords="238,133,397,173"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="172,110,245,131,243,136,171,116"/>
+<area shape="rect" id="Node000003" href="$classecstasy_1_1serialization_1_1_json_serializer.html" title="JsonSerializer class." alt="" coords="471,5,629,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="436,23,470,23,470,28,436,28"/>
+<area shape="rect" id="Node000005" href="$classecstasy_1_1serialization_1_1_raw_serializer.html" title="RawSerializer class." alt="" coords="471,69,629,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="436,87,471,87,471,92,436,92"/>
 </map>

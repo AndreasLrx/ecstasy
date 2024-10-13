@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['objectwrapper_2ehpp_0',['ObjectWrapper.hpp',['../_object_wrapper_8hpp.html',1,'']]],
-  ['optional_1',['optional',['http://en.cppreference.com/w/cpp/header/optional.html',1,'']]],
-  ['or_2ehpp_2',['Or.hpp',['../query_2modifiers_2_or_8hpp.html',1,'(Global Namespace)'],['../registry_2modifiers_2_or_8hpp.html',1,'(Global Namespace)']]],
-  ['ostream_3',['ostream',['http://en.cppreference.com/w/cpp/header/ostream.html',1,'']]],
-  ['outer_5fjoin_2ehpp_4',['outer_join.hpp',['../outer__join_8hpp.html',1,'']]]
+  ['new_0',['new',['http://en.cppreference.com/w/cpp/header/new.html',1,'']]],
+  ['not_2ehpp_1',['Not.hpp',['../query_2modifiers_2_not_8hpp.html',1,'(Global Namespace)'],['../registry_2modifiers_2_not_8hpp.html',1,'(Global Namespace)']]],
+  ['notequalto_2ehpp_2',['NotEqualTo.hpp',['../_not_equal_to_8hpp.html',1,'']]],
+  ['numeric_3',['numeric',['http://en.cppreference.com/w/cpp/header/numeric.html',1,'']]]
 ];

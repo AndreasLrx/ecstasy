@@ -62,6 +62,7 @@ var hierarchy =
       [ "ecstasy::serialization::traits::has_update_impl_for_type< S, T, typename >", "structecstasy_1_1serialization_1_1traits_1_1has__update__impl__for__type.html", null ],
       [ "util::meta::_type_set_eq< typename, typename >", "structutil_1_1meta_1_1__type__set__eq.html", null ],
       [ "util::meta::is_std_vector< typename >", "structutil_1_1meta_1_1is__std__vector.html", null ],
+      [ "util::meta::is_type_bounded_array< T, U >", "structutil_1_1meta_1_1is__type__bounded__array.html", null ],
       [ "util::meta::type_set_eq< typename, typename >", "structutil_1_1meta_1_1type__set__eq.html", null ]
     ] ],
     [ "util::meta::filter< Filter, Ts >", "structutil_1_1meta_1_1filter.html", null ],
@@ -143,7 +144,13 @@ var hierarchy =
     [ "std::is_base_of< ecstasy::query::ConditionBase, T >", "http://en.cppreference.com/w/cpp/types/is_base_of.html", [
       [ "ecstasy::Registry::Select< Selects >::IsCondition< T >", "structecstasy_1_1_registry_1_1_select_1_1_is_condition.html", null ]
     ] ],
+    [ "std::is_same< std::remove_cvref_t< decltype(std::declval< T >()[0])>, U >", "http://en.cppreference.com/w/cpp/types/is_same.html", [
+      [ "util::meta::is_type_bounded_array< T, U >", "structutil_1_1meta_1_1is__type__bounded__array_3_01_t_00_01_u_01_4.html", null ]
+    ] ],
     [ "ecstasy::serialization::ISerializer", "classecstasy_1_1serialization_1_1_i_serializer.html", [
+      [ "ecstasy::serialization::Serializer< JsonSerializer >", "classecstasy_1_1serialization_1_1_serializer.html", [
+        [ "ecstasy::serialization::JsonSerializer", "classecstasy_1_1serialization_1_1_json_serializer.html", null ]
+      ] ],
       [ "ecstasy::serialization::Serializer< RawSerializer >", "classecstasy_1_1serialization_1_1_serializer.html", [
         [ "ecstasy::serialization::RawSerializer", "classecstasy_1_1serialization_1_1_raw_serializer.html", null ]
       ] ],

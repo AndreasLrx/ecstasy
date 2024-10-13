@@ -103,6 +103,7 @@ var annotated_dup =
         [ "EntityComponentSerializer", "classecstasy_1_1serialization_1_1_entity_component_serializer.html", "classecstasy_1_1serialization_1_1_entity_component_serializer" ],
         [ "IEntityComponentSerializer", "classecstasy_1_1serialization_1_1_i_entity_component_serializer.html", "classecstasy_1_1serialization_1_1_i_entity_component_serializer" ],
         [ "ISerializer", "classecstasy_1_1serialization_1_1_i_serializer.html", "classecstasy_1_1serialization_1_1_i_serializer" ],
+        [ "JsonSerializer", "classecstasy_1_1serialization_1_1_json_serializer.html", "classecstasy_1_1serialization_1_1_json_serializer" ],
         [ "RawSerializer", "classecstasy_1_1serialization_1_1_raw_serializer.html", "classecstasy_1_1serialization_1_1_raw_serializer" ],
         [ "Serializer", "classecstasy_1_1serialization_1_1_serializer.html", "classecstasy_1_1serialization_1_1_serializer" ]
       ] ],
@@ -174,6 +175,8 @@ var annotated_dup =
         [ "index< T, U, Ts... >", "structutil_1_1meta_1_1index_3_01_t_00_01_u_00_01_ts_8_8_8_01_4.html", null ],
         [ "is_std_vector", "structutil_1_1meta_1_1is__std__vector.html", null ],
         [ "is_std_vector< std::vector< T, A > >", "structutil_1_1meta_1_1is__std__vector_3_01std_1_1vector_3_01_t_00_01_a_01_4_01_4.html", null ],
+        [ "is_type_bounded_array", "structutil_1_1meta_1_1is__type__bounded__array.html", null ],
+        [ "is_type_bounded_array< T, U >", "structutil_1_1meta_1_1is__type__bounded__array_3_01_t_00_01_u_01_4.html", null ],
         [ "left_outer_join", "structutil_1_1meta_1_1left__outer__join.html", "structutil_1_1meta_1_1left__outer__join" ],
         [ "left_outer_join< std::tuple< Lefts... >, std::tuple< Rights... > >", "structutil_1_1meta_1_1left__outer__join_3_01std_1_1tuple_3_01_lefts_8_8_8_01_4_00_01std_1_1tuple_3_01_rights_8_8_8_01_4_01_4.html", "structutil_1_1meta_1_1left__outer__join_3_01std_1_1tuple_3_01_lefts_8_8_8_01_4_00_01std_1_1tuple_3_01_rights_8_8_8_01_4_01_4" ],
         [ "left_outer_join< Traits< Left, Lefts... >, Traits< Rights... > >", "structutil_1_1meta_1_1left__outer__join_3_01_traits_3_01_left_00_01_lefts_8_8_8_01_4_00_01_traits_3_01_rights_8_8_8_01_4_01_4.html", "structutil_1_1meta_1_1left__outer__join_3_01_traits_3_01_left_00_01_lefts_8_8_8_01_4_00_01_traits_3_01_rights_8_8_8_01_4_01_4" ],

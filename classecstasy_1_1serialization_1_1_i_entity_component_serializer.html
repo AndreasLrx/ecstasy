@@ -124,9 +124,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a35574973d7a3ad2cd2f1a61eea88883b"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html">ISerializer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_i_entity_component_serializer.html#a35574973d7a3ad2cd2f1a61eea88883b">load</a> (<a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html">ISerializer</a> &amp;serializer, <a class="el" href="classecstasy_1_1_i_storage.html">IStorage</a> &amp;storage, <a class="el" href="classecstasy_1_1_registry_entity.html">RegistryEntity</a> &amp;entity) const =0</td></tr>
 <tr class="memdesc:a35574973d7a3ad2cd2f1a61eea88883b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load an entity component from the serializer.  <br /></td></tr>
 <tr class="separator:a35574973d7a3ad2cd2f1a61eea88883b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03e521791acd8c3b819dfb9ac398b816"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_index.html">std::type_index</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_i_entity_component_serializer.html#a03e521791acd8c3b819dfb9ac398b816">getStorageTypeIndex</a> () const =0</td></tr>
-<tr class="memdesc:a03e521791acd8c3b819dfb9ac398b816"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Storage Type Index of the component.  <br /></td></tr>
-<tr class="separator:a03e521791acd8c3b819dfb9ac398b816"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afff4227b57a4f7dccce2e0c080a8eabd"><td class="memItemLeft" align="right" valign="top">virtual const <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_i_entity_component_serializer.html#afff4227b57a4f7dccce2e0c080a8eabd">getStorageTypeInfo</a> () const =0</td></tr>
+<tr class="memdesc:afff4227b57a4f7dccce2e0c080a8eabd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the type info of the component storage.  <br /></td></tr>
+<tr class="separator:afff4227b57a4f7dccce2e0c080a8eabd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b2fc1dfec1568eca920af88c94ce576"><td class="memItemLeft" align="right" valign="top">virtual const <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_i_entity_component_serializer.html#a7b2fc1dfec1568eca920af88c94ce576">getComponentTypeInfo</a> () const =0</td></tr>
+<tr class="memdesc:a7b2fc1dfec1568eca920af88c94ce576"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the type info of the component.  <br /></td></tr>
+<tr class="separator:a7b2fc1dfec1568eca920af88c94ce576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c2ef37619887a465fd3d03d0157706d"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_i_entity_component_serializer.html#a9c2ef37619887a465fd3d03d0157706d">getTypeName</a> () const =0</td></tr>
+<tr class="memdesc:a9c2ef37619887a465fd3d03d0157706d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Component Type Name.  <br /></td></tr>
+<tr class="separator:a9c2ef37619887a465fd3d03d0157706d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Type erased interface for serializing entity components. </p>
@@ -166,8 +172,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a03e521791acd8c3b819dfb9ac398b816" name="a03e521791acd8c3b819dfb9ac398b816"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03e521791acd8c3b819dfb9ac398b816">&#9670;&#160;</a></span>getStorageTypeIndex()</h2>
+<a id="a7b2fc1dfec1568eca920af88c94ce576" name="a7b2fc1dfec1568eca920af88c94ce576"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b2fc1dfec1568eca920af88c94ce576">&#9670;&#160;</a></span>getComponentTypeInfo()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -176,7 +182,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_index.html">std::type_index</a> ecstasy::serialization::IEntityComponentSerializer::getStorageTypeIndex </td>
+          <td class="memname">virtual const <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a> &amp; ecstasy::serialization::IEntityComponentSerializer::getComponentTypeInfo </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -189,12 +195,77 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Get the Storage Type Index of the component. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_index.html">std::type_index</a> Type index of the storage.</dd></dl>
+<p>Get the type info of the component. </p>
+<dl class="section return"><dt>Returns</dt><dd>const <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a>&amp; Type info of the component.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-11) </dd></dl>
+
+<p>Implemented in <a class="el" href="classecstasy_1_1serialization_1_1_entity_component_serializer.html#a2dc72bbe92871cbd0a0d4e4489dc9c10">ecstasy::serialization::EntityComponentSerializer&lt; Component, Serializer &gt;</a>.</p>
+
+</div>
+</div>
+<a id="afff4227b57a4f7dccce2e0c080a8eabd" name="afff4227b57a4f7dccce2e0c080a8eabd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afff4227b57a4f7dccce2e0c080a8eabd">&#9670;&#160;</a></span>getStorageTypeInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a> &amp; ecstasy::serialization::IEntityComponentSerializer::getStorageTypeInfo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the type info of the component storage. </p>
+<dl class="section return"><dt>Returns</dt><dd>const <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a>&amp; Type info of the component storage.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-04) </dd></dl>
 
-<p>Implemented in <a class="el" href="classecstasy_1_1serialization_1_1_entity_component_serializer.html#a94b43e8cea259963d76d2412920f5c35">ecstasy::serialization::EntityComponentSerializer&lt; Component, Serializer &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classecstasy_1_1serialization_1_1_entity_component_serializer.html#aec4e14c79fceaeab3accf56cdfecc3ee">ecstasy::serialization::EntityComponentSerializer&lt; Component, Serializer &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a9c2ef37619887a465fd3d03d0157706d" name="a9c2ef37619887a465fd3d03d0157706d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c2ef37619887a465fd3d03d0157706d">&#9670;&#160;</a></span>getTypeName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> ecstasy::serialization::IEntityComponentSerializer::getTypeName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the Component Type Name. </p>
+<dl class="section note"><dt>Note</dt><dd>Return the explicit name of the component if any and fallback on the type name.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> Name of the component type.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-11) </dd></dl>
+
+<p>Implemented in <a class="el" href="classecstasy_1_1serialization_1_1_entity_component_serializer.html#a1b9ccc1ebf49ba5871539663235f7f89">ecstasy::serialization::EntityComponentSerializer&lt; Component, Serializer &gt;</a>.</p>
 
 </div>
 </div>

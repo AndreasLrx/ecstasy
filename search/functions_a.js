@@ -2,5 +2,6 @@ var searchData=
 [
   ['join_0',['join',['http://en.cppreference.com/w/cpp/thread/jthread/join.html',1,'std::jthread::join()'],['http://en.cppreference.com/w/cpp/thread/thread/join.html',1,'std::thread::join()']]],
   ['joinable_1',['joinable',['http://en.cppreference.com/w/cpp/thread/jthread/joinable.html',1,'std::jthread::joinable()'],['http://en.cppreference.com/w/cpp/thread/thread/joinable.html',1,'std::thread::joinable()']]],
-  ['jthread_2',['jthread',['http://en.cppreference.com/w/cpp/thread/jthread/jthread.html',1,'std::jthread']]]
+  ['jsonserializer_2',['JsonSerializer',['../classecstasy_1_1serialization_1_1_json_serializer.html#ab2d0a48c4662213a6a734e96d1518061',1,'ecstasy::serialization::JsonSerializer::JsonSerializer()'],['../classecstasy_1_1serialization_1_1_json_serializer.html#a7f23c4a3bb5d8e7222096ae9343488ff',1,'ecstasy::serialization::JsonSerializer::JsonSerializer(const std::string &amp;content)'],['../classecstasy_1_1serialization_1_1_json_serializer.html#afd3e374ff679fdaa4a8dcaa2f7bff25f',1,'ecstasy::serialization::JsonSerializer::JsonSerializer(const std::filesystem::path &amp;filename)'],['../classecstasy_1_1serialization_1_1_json_serializer.html#a1135c92ca8b68b1197dbc64a503ec4cb',1,'ecstasy::serialization::JsonSerializer::JsonSerializer(std::istream &amp;stream)']]],
+  ['jthread_3',['jthread',['http://en.cppreference.com/w/cpp/thread/jthread/jthread.html',1,'std::jthread']]]
 ];

@@ -107,13 +107,17 @@ Inheritance diagram for ecstasy::serialization::ISerializer:</div>
 <div class="dyncontent">
 <div class="center"><img src="classecstasy_1_1serialization_1_1_i_serializer__inherit__graph.png" border="0" usemap="#aecstasy_1_1serialization_1_1_i_serializer_inherit__map" alt="Inheritance graph"/></div>
 <map name="aecstasy_1_1serialization_1_1_i_serializer_inherit__map" id="aecstasy_1_1serialization_1_1_i_serializer_inherit__map">
-<area shape="rect" title="Interface for all serializer classes." alt="" coords="5,37,164,77"/>
-<area shape="rect" href="classecstasy_1_1serialization_1_1_serializer.html" title=" " alt="" coords="212,5,423,45"/>
-<area shape="poly" title=" " alt="" coords="178,42,211,37,212,42,178,47"/>
-<area shape="rect" href="classecstasy_1_1serialization_1_1_serializer.html" title="Serializer class." alt="" coords="238,69,397,109"/>
-<area shape="poly" title=" " alt="" coords="178,67,238,76,237,81,178,73"/>
-<area shape="rect" href="classecstasy_1_1serialization_1_1_raw_serializer.html" title="RawSerializer class." alt="" coords="471,5,629,45"/>
-<area shape="poly" title=" " alt="" coords="436,23,471,23,471,28,436,28"/>
+<area shape="rect" title="Interface for all serializer classes." alt="" coords="5,69,164,109"/>
+<area shape="rect" href="classecstasy_1_1serialization_1_1_serializer.html" title=" " alt="" coords="213,5,422,45"/>
+<area shape="poly" title=" " alt="" coords="171,63,243,43,245,48,172,68"/>
+<area shape="rect" href="classecstasy_1_1serialization_1_1_serializer.html" title=" " alt="" coords="212,69,423,109"/>
+<area shape="poly" title=" " alt="" coords="178,87,212,87,212,92,178,92"/>
+<area shape="rect" href="classecstasy_1_1serialization_1_1_serializer.html" title="Serializer class." alt="" coords="238,133,397,173"/>
+<area shape="poly" title=" " alt="" coords="172,110,245,131,243,136,171,116"/>
+<area shape="rect" href="classecstasy_1_1serialization_1_1_json_serializer.html" title="JsonSerializer class." alt="" coords="471,5,629,45"/>
+<area shape="poly" title=" " alt="" coords="436,23,470,23,470,28,436,28"/>
+<area shape="rect" href="classecstasy_1_1serialization_1_1_raw_serializer.html" title="RawSerializer class." alt="" coords="471,69,629,109"/>
+<area shape="poly" title=" " alt="" coords="436,87,471,87,471,92,436,92"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -137,15 +141,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6ba385804c59ea87c8f140aa2d8c6b65"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html#a6ba385804c59ea87c8f140aa2d8c6b65">importStream</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_istream.html">std::istream</a> &amp;stream)=0</td></tr>
 <tr class="memdesc:a6ba385804c59ea87c8f140aa2d8c6b65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Import data from a stream into the serializer.  <br /></td></tr>
 <tr class="separator:a6ba385804c59ea87c8f140aa2d8c6b65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a845724bac2a10c009249626a04b72f47"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html#a845724bac2a10c009249626a04b72f47">exportFile</a> (const <a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> &amp;filename)=0</td></tr>
-<tr class="memdesc:a845724bac2a10c009249626a04b72f47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export the serializer content to a file.  <br /></td></tr>
-<tr class="separator:a845724bac2a10c009249626a04b72f47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad684db54d055b44684fbdb4b3f3c6e69"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html#ad684db54d055b44684fbdb4b3f3c6e69">exportBytes</a> ()=0</td></tr>
-<tr class="memdesc:ad684db54d055b44684fbdb4b3f3c6e69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export the serializer content to a string.  <br /></td></tr>
-<tr class="separator:ad684db54d055b44684fbdb4b3f3c6e69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a740335336006dede2125409ee47a453c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html#a740335336006dede2125409ee47a453c">exportStream</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;stream)=0</td></tr>
-<tr class="memdesc:a740335336006dede2125409ee47a453c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export the serializer content to a stream.  <br /></td></tr>
-<tr class="separator:a740335336006dede2125409ee47a453c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31a31931abac72856adb3c700ab2dad8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html#a31a31931abac72856adb3c700ab2dad8">exportFile</a> (const <a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> &amp;filename) const =0</td></tr>
+<tr class="memdesc:a31a31931abac72856adb3c700ab2dad8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export the serializer content to a file.  <br /></td></tr>
+<tr class="separator:a31a31931abac72856adb3c700ab2dad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab306df82c7957d4240d450f388084ac9"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html#ab306df82c7957d4240d450f388084ac9">exportBytes</a> () const =0</td></tr>
+<tr class="memdesc:ab306df82c7957d4240d450f388084ac9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export the serializer content to a string.  <br /></td></tr>
+<tr class="separator:ab306df82c7957d4240d450f388084ac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77fa86502bd38f0fe1fd4ededf7dd963"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_i_serializer.html#a77fa86502bd38f0fe1fd4ededf7dd963">exportStream</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;stream) const =0</td></tr>
+<tr class="memdesc:a77fa86502bd38f0fe1fd4ededf7dd963"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export the serializer content to a stream.  <br /></td></tr>
+<tr class="separator:a77fa86502bd38f0fe1fd4ededf7dd963"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interface for all serializer classes. </p>
@@ -214,12 +218,12 @@ The serializer classes can be seen as a stream of bytes that can be read and wri
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-09-12) </dd></dl>
 
-<p>Implemented in <a class="el" href="classecstasy_1_1serialization_1_1_raw_serializer.html#a67930f16830695a71b789e1679907f6c">ecstasy::serialization::RawSerializer</a>.</p>
+<p>Implemented in <a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html#a01c131d2597c462e5f981589d4eb94a1">ecstasy::serialization::JsonSerializer</a>, and <a class="el" href="classecstasy_1_1serialization_1_1_raw_serializer.html#a67930f16830695a71b789e1679907f6c">ecstasy::serialization::RawSerializer</a>.</p>
 
 </div>
 </div>
-<a id="ad684db54d055b44684fbdb4b3f3c6e69" name="ad684db54d055b44684fbdb4b3f3c6e69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad684db54d055b44684fbdb4b3f3c6e69">&#9670;&#160;</a></span>exportBytes()</h2>
+<a id="ab306df82c7957d4240d450f388084ac9" name="ab306df82c7957d4240d450f388084ac9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab306df82c7957d4240d450f388084ac9">&#9670;&#160;</a></span>exportBytes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -231,7 +235,7 @@ The serializer classes can be seen as a stream of bytes that can be read and wri
           <td class="memname">virtual <a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> ecstasy::serialization::ISerializer::exportBytes </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -247,12 +251,12 @@ The serializer classes can be seen as a stream of bytes that can be read and wri
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-09-12) </dd></dl>
 
-<p>Implemented in <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#a25774b84c5ff9e8076a2228d917bfce5">ecstasy::serialization::Serializer&lt; S &gt;</a>, and <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#a25774b84c5ff9e8076a2228d917bfce5">ecstasy::serialization::Serializer&lt; RawSerializer &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#a53d4a28853d7f371faa6374f8f4abb54">ecstasy::serialization::Serializer&lt; S &gt;</a>, <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#a53d4a28853d7f371faa6374f8f4abb54">ecstasy::serialization::Serializer&lt; JsonSerializer &gt;</a>, and <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#a53d4a28853d7f371faa6374f8f4abb54">ecstasy::serialization::Serializer&lt; RawSerializer &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a845724bac2a10c009249626a04b72f47" name="a845724bac2a10c009249626a04b72f47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a845724bac2a10c009249626a04b72f47">&#9670;&#160;</a></span>exportFile()</h2>
+<a id="a31a31931abac72856adb3c700ab2dad8" name="a31a31931abac72856adb3c700ab2dad8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31a31931abac72856adb3c700ab2dad8">&#9670;&#160;</a></span>exportFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -265,7 +269,7 @@ The serializer classes can be seen as a stream of bytes that can be read and wri
           <td>(</td>
           <td class="paramtype">const <a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> &amp;&#160;</td>
           <td class="paramname"><em>filename</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -286,12 +290,12 @@ The serializer classes can be seen as a stream of bytes that can be read and wri
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-09-12) </dd></dl>
 
-<p>Implemented in <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#aad8b23daa04cb1b5e0b285d2ff3e9210">ecstasy::serialization::Serializer&lt; S &gt;</a>, and <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#aad8b23daa04cb1b5e0b285d2ff3e9210">ecstasy::serialization::Serializer&lt; RawSerializer &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#ae682a9f4e7a37b7ae5b46387ce15de6b">ecstasy::serialization::Serializer&lt; S &gt;</a>, <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#ae682a9f4e7a37b7ae5b46387ce15de6b">ecstasy::serialization::Serializer&lt; JsonSerializer &gt;</a>, and <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#ae682a9f4e7a37b7ae5b46387ce15de6b">ecstasy::serialization::Serializer&lt; RawSerializer &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a740335336006dede2125409ee47a453c" name="a740335336006dede2125409ee47a453c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a740335336006dede2125409ee47a453c">&#9670;&#160;</a></span>exportStream()</h2>
+<a id="a77fa86502bd38f0fe1fd4ededf7dd963" name="a77fa86502bd38f0fe1fd4ededf7dd963"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77fa86502bd38f0fe1fd4ededf7dd963">&#9670;&#160;</a></span>exportStream()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -304,7 +308,7 @@ The serializer classes can be seen as a stream of bytes that can be read and wri
           <td>(</td>
           <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;&#160;</td>
           <td class="paramname"><em>stream</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -324,7 +328,7 @@ The serializer classes can be seen as a stream of bytes that can be read and wri
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-09-12) </dd></dl>
 
-<p>Implemented in <a class="el" href="classecstasy_1_1serialization_1_1_raw_serializer.html#af7ca3c0ee919f2696dcdd5e42c3b1044">ecstasy::serialization::RawSerializer</a>.</p>
+<p>Implemented in <a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html#aa6e14a74b11bfc9115fcca7d02370f3c">ecstasy::serialization::JsonSerializer</a>, and <a class="el" href="classecstasy_1_1serialization_1_1_raw_serializer.html#ad5a8f3ccb99b5a0bcab858455008dc1e">ecstasy::serialization::RawSerializer</a>.</p>
 
 </div>
 </div>
@@ -363,7 +367,7 @@ The serializer classes can be seen as a stream of bytes that can be read and wri
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-09-12) </dd></dl>
 
-<p>Implemented in <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#af01133ff547607f54bd9abf00f687ad3">ecstasy::serialization::Serializer&lt; S &gt;</a>, and <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#af01133ff547607f54bd9abf00f687ad3">ecstasy::serialization::Serializer&lt; RawSerializer &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#af01133ff547607f54bd9abf00f687ad3">ecstasy::serialization::Serializer&lt; S &gt;</a>, <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#af01133ff547607f54bd9abf00f687ad3">ecstasy::serialization::Serializer&lt; JsonSerializer &gt;</a>, and <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#af01133ff547607f54bd9abf00f687ad3">ecstasy::serialization::Serializer&lt; RawSerializer &gt;</a>.</p>
 
 </div>
 </div>
@@ -402,7 +406,7 @@ The serializer classes can be seen as a stream of bytes that can be read and wri
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-09-12) </dd></dl>
 
-<p>Implemented in <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#a2e8253eb7baea6732d8e8a0113c21687">ecstasy::serialization::Serializer&lt; S &gt;</a>, and <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#a2e8253eb7baea6732d8e8a0113c21687">ecstasy::serialization::Serializer&lt; RawSerializer &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#a2e8253eb7baea6732d8e8a0113c21687">ecstasy::serialization::Serializer&lt; S &gt;</a>, <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#a2e8253eb7baea6732d8e8a0113c21687">ecstasy::serialization::Serializer&lt; JsonSerializer &gt;</a>, and <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#a2e8253eb7baea6732d8e8a0113c21687">ecstasy::serialization::Serializer&lt; RawSerializer &gt;</a>.</p>
 
 </div>
 </div>
@@ -440,7 +444,7 @@ The serializer classes can be seen as a stream of bytes that can be read and wri
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-09-12) </dd></dl>
 
-<p>Implemented in <a class="el" href="classecstasy_1_1serialization_1_1_raw_serializer.html#acfbc254580176cef7d2bf444b8b666ec">ecstasy::serialization::RawSerializer</a>.</p>
+<p>Implemented in <a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html#ad9cd3c79179ee4c4c7e7dead668a07e5">ecstasy::serialization::JsonSerializer</a>, and <a class="el" href="classecstasy_1_1serialization_1_1_raw_serializer.html#acfbc254580176cef7d2bf444b8b666ec">ecstasy::serialization::RawSerializer</a>.</p>
 
 </div>
 </div>
@@ -472,7 +476,7 @@ The serializer classes can be seen as a stream of bytes that can be read and wri
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-09-12) </dd></dl>
 
-<p>Implemented in <a class="el" href="classecstasy_1_1serialization_1_1_raw_serializer.html#ad0f3ff7c1c21c8fa86ffbacd54464834">ecstasy::serialization::RawSerializer</a>.</p>
+<p>Implemented in <a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html#aee8547586688d3ff49d38e649b4b8759">ecstasy::serialization::JsonSerializer</a>, and <a class="el" href="classecstasy_1_1serialization_1_1_raw_serializer.html#ad0f3ff7c1c21c8fa86ffbacd54464834">ecstasy::serialization::RawSerializer</a>.</p>
 
 </div>
 </div>

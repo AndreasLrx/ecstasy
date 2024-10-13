@@ -129,6 +129,8 @@ var NAVTREEINDEX0 =
 "_i_system_8hpp_source.html":[11,0,1,0,6,1],
 "_instances_8hpp.html":[11,0,1,0,5,2],
 "_instances_8hpp_source.html":[11,0,1,0,5,2],
+"_json_serializer_8hpp.html":[11,0,1,0,4,6],
+"_json_serializer_8hpp_source.html":[11,0,1,0,4,6],
 "_key_combination_listener_8cpp.html":[11,0,1,0,0,0,2,9],
 "_key_combination_listener_8cpp_source.html":[11,0,1,0,0,0,2,9],
 "_key_combination_listener_8hpp.html":[11,0,1,0,0,0,2,10],
@@ -221,8 +223,8 @@ var NAVTREEINDEX0 =
 "_queryable_type_8hpp.html":[11,0,1,0,2,0,3],
 "_queryable_type_8hpp.html#a53c8ca43801107dc959adbdc60810af8":[11,0,1,0,2,0,3,5],
 "_queryable_type_8hpp_source.html":[11,0,1,0,2,0,3],
-"_raw_serializer_8hpp.html":[11,0,1,0,4,6],
-"_raw_serializer_8hpp_source.html":[11,0,1,0,4,6],
+"_raw_serializer_8hpp.html":[11,0,1,0,4,7],
+"_raw_serializer_8hpp_source.html":[11,0,1,0,4,7],
 "_registry_8cpp.html":[11,0,1,0,2,5],
 "_registry_8cpp_source.html":[11,0,1,0,2,5],
 "_registry_8hpp.html":[11,0,1,0,2,6],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "_serializable_enum_8hpp.html#ab39d84903b41655a94277f4c4474e157":[11,0,1,1,1,9,0],
 "_serializable_enum_8hpp.html#ab84da5f5f04f20606b54433dd9299fc3":[11,0,1,1,1,9,1],
 "_serializable_enum_8hpp.html#ac4c31d3c1e1c506ae1c3da8018df9df3":[11,0,1,1,1,9,2],
-"_serializable_enum_8hpp.html#acd9fbb4df4bc6927538efdd7ab95d7cd":[11,0,1,1,1,9,3],
-"_serializable_enum_8hpp_source.html":[11,0,1,1,1,9],
-"_shared_recursive_mutex_8cpp.html":[11,0,1,0,7,3]
+"_serializable_enum_8hpp.html#acd9fbb4df4bc6927538efdd7ab95d7cd":[11,0,1,1,1,9,3]
 };

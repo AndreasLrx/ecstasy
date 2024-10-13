@@ -153,24 +153,24 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "01__basic__window_2main_8cpp.html",
-"_shared_recursive_mutex_8cpp_source.html",
-"classecstasy_1_1_instances.html#ad901e2fddc153f372eea64db9f4ca52b",
-"classecstasy_1_1_registry_1_1_select.html#af2a1112e77002962549c639e6ff8c2e3",
-"classecstasy_1_1integration_1_1event_1_1_gamepad_combination_listener.html#a2df19bc28769f7d0289f163bdccececd",
-"classecstasy_1_1integration_1_1sfml_1_1_render_window.html#ae5ad16a68ec818a4b327e99d797e2949",
-"classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#a88285a49ce3fa1696cd254d45bdaa63e",
-"classecstasy_1_1thread_1_1_lockable_view_base.html",
-"classutil_1_1serialization_1_1_i_array_node.html#ab63352dff8f0009132cc9b92a54110b9",
-"classutil_1_1serialization_1_1_toml_array_node.html#a002d9060029bdf19226843d0e45495f6",
-"cpp/algorithm/lexicographical_compare.html",
-"cpp/experimental/fs/create_directory.html",
-"cpp/io/c/vfwprintf.html",
-"cpp/numeric/math/tan.html",
-"cpp/types/is_copy_constructible.html",
-"functions_e.html",
-"namespaceutil_1_1serialization.html#a3235dfc13252d0b7eacdb86bc1e09a2c",
-"structecstasy_1_1integration_1_1event_1_1_mouse_wheel_scroll_event.html#a210d76d9185b0015063be46610719cc3",
-"structutil_1_1meta_1_1__left__outer__join_3_01_traits_3_01_rights_8_8_8_01_4_00_01_is_inner_00_0e1c6c75ebd27a9e3cd5f35357e042e62.html"
+"_serializable_enum_8hpp_source.html",
+"classecstasy_1_1_instances.html#ab75cf0b10766154da309113b0ce8833c",
+"classecstasy_1_1_registry_1_1_select.html#ada9249a4d1a6efea9f7c6a33f30e9ada",
+"classecstasy_1_1integration_1_1event_1_1_gamepad_combination_listener.html#a2ab457a98b6c3e3f1ac57530adfb565f",
+"classecstasy_1_1integration_1_1sfml_1_1_render_window.html#ac9b07c80013a68692713752e64a48f4b",
+"classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#a6db978f9a8ed5286409648973fb2d5b3",
+"classecstasy_1_1serialization_1_1_raw_serializer.html#a8f93e4286530d22bab9db262aecaa9d8",
+"classutil_1_1_stack_allocator.html#a3c480a174b916eb9b0cfee84b04796d4",
+"classutil_1_1serialization_1_1_i_node_factory.html#ae45bcea1fe6f14a49df95fc88a802ef9",
+"classutil_1_1serialization_1_1_toml_object_node.html#a946ca0a3ba3aea1e9590d7e9764ffd23",
+"cpp/algorithm/transform_reduce.html",
+"cpp/experimental/vector/erase_if.html",
+"cpp/memory/uninitialized_move_n.html",
+"cpp/string/byte/toupper.html",
+"dir_4d88d3ef8695341c40100af3c6be2310.html",
+"md_doc_2integrations_2user__actions.html#autotoc_md80",
+"structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aae93f994f01c537c4e2f7d8528c3eb5e9",
+"structecstasy_1_1query_1_1is__queryable__with__adjust.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

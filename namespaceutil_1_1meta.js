@@ -19,6 +19,8 @@ var namespaceutil_1_1meta =
     [ "index< T, U, Ts... >", "structutil_1_1meta_1_1index_3_01_t_00_01_u_00_01_ts_8_8_8_01_4.html", null ],
     [ "is_std_vector", "structutil_1_1meta_1_1is__std__vector.html", null ],
     [ "is_std_vector< std::vector< T, A > >", "structutil_1_1meta_1_1is__std__vector_3_01std_1_1vector_3_01_t_00_01_a_01_4_01_4.html", null ],
+    [ "is_type_bounded_array", "structutil_1_1meta_1_1is__type__bounded__array.html", null ],
+    [ "is_type_bounded_array< T, U >", "structutil_1_1meta_1_1is__type__bounded__array_3_01_t_00_01_u_01_4.html", null ],
     [ "left_outer_join", "structutil_1_1meta_1_1left__outer__join.html", "structutil_1_1meta_1_1left__outer__join" ],
     [ "left_outer_join< std::tuple< Lefts... >, std::tuple< Rights... > >", "structutil_1_1meta_1_1left__outer__join_3_01std_1_1tuple_3_01_lefts_8_8_8_01_4_00_01std_1_1tuple_3_01_rights_8_8_8_01_4_01_4.html", "structutil_1_1meta_1_1left__outer__join_3_01std_1_1tuple_3_01_lefts_8_8_8_01_4_00_01std_1_1tuple_3_01_rights_8_8_8_01_4_01_4" ],
     [ "left_outer_join< Traits< Left, Lefts... >, Traits< Rights... > >", "structutil_1_1meta_1_1left__outer__join_3_01_traits_3_01_left_00_01_lefts_8_8_8_01_4_00_01_traits_3_01_rights_8_8_8_01_4_01_4.html", "structutil_1_1meta_1_1left__outer__join_3_01_traits_3_01_left_00_01_lefts_8_8_8_01_4_00_01_traits_3_01_rights_8_8_8_01_4_01_4" ],
@@ -35,5 +37,6 @@ var namespaceutil_1_1meta =
     [ "right_outer_join_t", "namespaceutil_1_1meta.html#ac8fd27617569b55777291d7020a4de60", null ],
     [ "contains", "namespaceutil_1_1meta.html#a519a7b798352fb24a6f902a8fbd1fe95", null ],
     [ "index_v", "namespaceutil_1_1meta.html#a8badee472633419708bb1de289e22ea8", null ],
+    [ "is_type_bounded_array_v", "namespaceutil_1_1meta.html#a2bf7dc25f5b2bace4bfef6322369b435", null ],
     [ "type_set_eq_v", "namespaceutil_1_1meta.html#a88a60bf5a304c3bcf50d767c01dc1a1a", null ]
 ];
