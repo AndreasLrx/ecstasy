@@ -44,6 +44,16 @@ namespace ecstasy::serialization
         }
 
         ///
+        /// @brief Construct a new Component Rtti with a custom name.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-04)
+        ///
+        EntityComponentSerializer(std::string_view name) : IEntityComponentSerializer(), _name(name)
+        {
+        }
+
+        ///
         /// @brief Destroy the Component Rtti
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
@@ -72,11 +82,29 @@ namespace ecstasy::serialization
                     .template update<Component>(dynamic_cast<StorageType &>(storage).at(entity.getIndex()));
         }
 
-        /// @copydoc IEntityComponentSerializer::getStorageTypeIndex
-        std::type_index getStorageTypeIndex() const override final
+        /// @copydoc IEntityComponentSerializer::getStorageTypeInfo
+        const std::type_info &getStorageTypeInfo() const override final
         {
-            return std::type_index(typeid(StorageType));
+            return typeid(StorageType);
         }
+
+        /// @copydoc IEntityComponentSerializer::getComponentTypeInfo
+        const std::type_info &getComponentTypeInfo() const override final
+        {
+            return typeid(Component);
+        }
+
+        /// @copydoc IEntityComponentSerializer::getTypeName
+        std::string_view getTypeName() const override final
+        {
+            if (_name.empty())
+                return typeid(Component).name();
+            return _name;
+        }
+
+      private:
+        /// Name of the component type.
+        std::string_view _name;
     };
 
 } // namespace ecstasy::serialization

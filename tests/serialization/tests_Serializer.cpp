@@ -46,7 +46,7 @@ struct Position {
         return *this;
     }
 };
-REGISTER_SERIALIZABLES(Position, RawSerializer)
+REGISTER_SERIALIZABLES(Position, RawSerializer, JsonSerializer)
 
 struct NPC {
     Position pos;
@@ -85,6 +85,7 @@ struct NPC {
         return *this;
     }
 };
+REGISTER_SERIALIZABLES(NPC, JsonSerializer)
 
 TEST(RawSerializer, fundamental_types)
 {
@@ -438,4 +439,30 @@ TEST(JsonSerializer, all)
     GTEST_ASSERT_EQ(npcLoaded.name, "Steve");
     GTEST_ASSERT_EQ(npcLoaded.pos.x, 42.f);
     GTEST_ASSERT_EQ(npcLoaded.pos.y, 0.f);
+
+    jsonSerializer.clear();
+    // Test with entire entities
+    ecstasy::Registry registry;
+    ecstasy::RegistryEntity entity(
+        registry.entityBuilder().with<Position>(1.0f, -8456.0f).with<NPC>(Position(42.f, 0.f), "Steve").build(),
+        registry);
+
+    // Save both components as they are registered (Position and NPC)
+    jsonSerializer.saveEntity(entity);
+    json = jsonSerializer.exportBytes();
+#ifndef _WIN32
+    GTEST_ASSERT_EQ(
+        json, "[{\"NPC\":{\"pos\":{\"x\":42.0,\"y\":0.0},\"name\":\"Steve\"},\"Position\":{\"x\":1.0,\"y\":-8456.0}}]");
+#else
+    GTEST_ASSERT_EQ(
+        json, "[{\"Position\":{\"x\":1.0,\"y\":-8456.0},\"NPC\":{\"pos\":{\"x\":42.0,\"y\":0.0},\"name\":\"Steve\"}}]");
+#endif
+
+    jsonSerializer.resetCursor();
+    ecstasy::RegistryEntity e2 = jsonSerializer.loadEntity(registry);
+    GTEST_ASSERT_EQ(e2.get<NPC>().name, "Steve");
+    GTEST_ASSERT_EQ(e2.get<NPC>().pos.x, 42.f);
+    GTEST_ASSERT_EQ(e2.get<NPC>().pos.y, 0.f);
+    GTEST_ASSERT_EQ(e2.get<Position>().x, 1.0f);
+    GTEST_ASSERT_EQ(e2.get<Position>().y, -8456.0f);
 }

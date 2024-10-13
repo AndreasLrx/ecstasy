@@ -206,7 +206,16 @@ namespace ecstasy::serialization
                     array.PushBack(elem, _document.GetAllocator());
                 addValue(std::move(array.Move()));
             } else if constexpr (std::is_same_v<T, std::type_info>) {
-                save(object.hash_code());
+                if (getWriteCursor().IsObject()) {
+                    // Use name if the type is registered
+                    auto componentSerializer = tryGetEntityComponentSerializer(object.hash_code());
+
+                    if (componentSerializer)
+                        save(componentSerializer->get().getTypeName());
+                    else
+                        save(std::to_string(object.hash_code()));
+                } else
+                    save(object.hash_code());
             } else if constexpr (std::is_fundamental_v<T>) {
                 addValue(rapidjson::Value(object));
             } else {
@@ -364,12 +373,6 @@ namespace ecstasy::serialization
             }
         }
 
-        /// @copydoc loadComponentHash
-        std::size_t loadComponentHash() override final
-        {
-            return 0; // loadRaw<std::size_t>();
-        }
-
         ///
         /// @brief Open a new nested object or array context in the current object (see @ref getWriteCursor).
         /// The context can be closed with @ref closeNested.
@@ -502,7 +505,54 @@ namespace ecstasy::serialization
         rapidjson::Document _document;
         std::stack<std::reference_wrapper<rapidjson::Value>> _stack;
         std::stack<rapidjson::Value::ValueIterator> _arrayIterators;
+        std::stack<rapidjson::Value::MemberIterator> _objectIterators;
         std::string _nextKey;
+
+        /// @copydoc loadComponentHash
+        std::size_t loadComponentHash() override final
+        {
+            if (getWriteCursor().IsObject()) {
+                if (_objectIterators.empty())
+                    throw std::logic_error(
+                        "No object iterator. This function should be called in an updateEntity context.");
+                if (_objectIterators.top() == getWriteCursor().MemberEnd())
+                    return 0;
+                _nextKey = _objectIterators.top()->name.GetString();
+                ++_objectIterators.top();
+                return getEntityComponentSerializer(_nextKey).getComponentTypeInfo().hash_code();
+            } else
+                return load<std::size_t>();
+        }
+
+        /// @copydoc beforeSaveEntity
+        void beforeSaveEntity(RegistryEntity &entity) override final
+        {
+            newNestedObject();
+            static_cast<void>(entity);
+        }
+
+        /// @copydoc afterSaveEntity
+        void afterSaveEntity(RegistryEntity &entity) override final
+        {
+            closeNested();
+            static_cast<void>(entity);
+        }
+
+        /// @copydoc beforeUpdateEntity
+        void beforeUpdateEntity(RegistryEntity &entity) override final
+        {
+            newNestedObject(false);
+            _objectIterators.push(getWriteCursor().MemberBegin());
+            static_cast<void>(entity);
+        }
+
+        /// @copydoc afterUpdateEntity
+        void afterUpdateEntity(RegistryEntity &entity) override final
+        {
+            _objectIterators.pop();
+            closeNested();
+            static_cast<void>(entity);
+        }
     };
 } // namespace ecstasy::serialization
 
