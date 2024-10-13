@@ -14,13 +14,14 @@
 
 namespace ecstasy::integration::event
 {
-    KeyCombinationListener::KeyCombinationListener(const std::vector<Keyboard::Key> &combination, Callback callback)
+    KeyCombinationListener::KeyCombinationListener(
+        const std::vector<Keyboard::Key> &combination, Callback callback) noexcept
         : _combination(combination), _callback(callback)
     {
         reset();
     }
 
-    bool KeyCombinationListener::update(const KeyEvent &event)
+    bool KeyCombinationListener::update(const KeyEvent &event) noexcept
     {
         auto it = _keyStates.find(event.key);
 
@@ -35,12 +36,12 @@ namespace ecstasy::integration::event
         return false;
     }
 
-    bool KeyCombinationListener::isComplete() const
+    bool KeyCombinationListener::isComplete() const noexcept
     {
         return _validatedKeys == _combination.size();
     }
 
-    void KeyCombinationListener::reset()
+    void KeyCombinationListener::reset() noexcept
     {
         _validatedKeys = 0;
         _keyStates.clear();
@@ -56,7 +57,7 @@ namespace ecstasy::integration::event
         }
     }
 
-    void KeyCombinationListener::setCombination(const std::vector<Keyboard::Key> &newCombination)
+    void KeyCombinationListener::setCombination(const std::vector<Keyboard::Key> &newCombination) noexcept
     {
         _combination = newCombination;
         reset();

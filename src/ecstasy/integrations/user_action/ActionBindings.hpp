@@ -32,9 +32,7 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-25)
         ///
-        ActionBindings()
-        {
-        }
+        ActionBindings() noexcept = default;
 
         ///
         /// @brief Get the Bindings.
@@ -44,7 +42,7 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-25)
         ///
-        constexpr std::vector<ActionBinding> &getBindings()
+        [[nodiscard]] constexpr std::vector<ActionBinding> &getBindings() noexcept
         {
             return _bindings;
         }
@@ -57,7 +55,7 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-25)
         ///
-        constexpr const std::vector<ActionBinding> &getBindings() const
+        [[nodiscard]] constexpr const std::vector<ActionBinding> &getBindings() const noexcept
         {
             return _bindings;
         }
@@ -70,7 +68,7 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-29)
         ///
-        toml::table dump() const;
+        [[nodiscard]] toml::table dump() const noexcept;
 
         ///
         /// @brief Load a given toml table representing a list of bindings. See the format of @ref dump().
@@ -84,7 +82,7 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-30)
         ///
-        bool load(const toml::table &bindings);
+        bool load(const toml::table &bindings) noexcept;
 
         ///
         /// @brief Check whether @p action is contained in the internal @ref ActionBinding vector.
@@ -96,9 +94,10 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-02)
         ///
-        bool contains(ActionBinding action) const;
+        [[nodiscard]] bool contains(ActionBinding action) const noexcept;
 
       private:
+        // Internal bindings.
         std::vector<ActionBinding> _bindings;
     };
 } // namespace ecstasy::integration::user_action

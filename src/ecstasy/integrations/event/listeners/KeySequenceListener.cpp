@@ -14,13 +14,13 @@
 
 namespace ecstasy::integration::event
 {
-    KeySequenceListener::KeySequenceListener(const std::vector<Keyboard::Key> &sequence, Callback callback)
+    KeySequenceListener::KeySequenceListener(const std::vector<Keyboard::Key> &sequence, Callback callback) noexcept
         : _sequence(sequence), _callback(callback)
     {
         reset();
     }
 
-    bool KeySequenceListener::update(const KeyEvent &event)
+    bool KeySequenceListener::update(const KeyEvent &event) noexcept
     {
         if (event.pressed) {
             if (_heldKey == Keyboard::Key::Unknown && event.key == _sequence.at(_validatedKeys.size()))
@@ -40,7 +40,7 @@ namespace ecstasy::integration::event
         return false;
     }
 
-    bool KeySequenceListener::isComplete() const
+    bool KeySequenceListener::isComplete() const noexcept
     {
         return _sequence.size() == _validatedKeys.size();
     }
@@ -53,13 +53,13 @@ namespace ecstasy::integration::event
         }
     }
 
-    void KeySequenceListener::setSequence(const std::vector<Keyboard::Key> &newSequence)
+    void KeySequenceListener::setSequence(const std::vector<Keyboard::Key> &newSequence) noexcept
     {
         _sequence = newSequence;
         reset();
     }
 
-    void KeySequenceListener::reset()
+    void KeySequenceListener::reset() noexcept
     {
         _validatedKeys.clear();
         _heldKey = Keyboard::Key::Unknown;

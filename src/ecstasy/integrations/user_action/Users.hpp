@@ -57,7 +57,7 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-02)
         ///
-        Users(size_t count = 1);
+        Users(size_t count = 1) noexcept;
 
         ///
         /// @brief Default destructor.
@@ -65,17 +65,17 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-02)
         ///
-        ~Users() = default;
+        ~Users() noexcept = default;
 
         ///
         /// @brief Update the internal bindings associative maps.
         ///
-        /// @note This must be called when one UserProfile binding changed.
+        /// @note This should be called when one UserProfile binding changed.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-02)
         ///
-        void updateBindings();
+        void updateBindings() noexcept;
 
         ///
         /// @brief Fetch the @ref Users resource in the registry if available and call @ref updateBindings().
@@ -85,7 +85,7 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-02)
         ///
-        static void updateBindings(Registry &registry);
+        static void updateBindings(Registry &registry) noexcept;
 
         ///
         /// @brief Call action listeners associated to the event if any.
@@ -110,13 +110,13 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-05)
         ///
-        constexpr UserProfile &getUserProfile(size_t index = 0)
+        [[nodiscard]] constexpr UserProfile &getUserProfile(size_t index = 0) noexcept
         {
             return _users[index];
         }
 
         /// @copydoc getUserProfile
-        constexpr const UserProfile &getUserProfile(size_t index = 0) const
+        [[nodiscard]] constexpr const UserProfile &getUserProfile(size_t index = 0) const noexcept
         {
             return _users[index];
         }
@@ -125,7 +125,7 @@ namespace ecstasy::integration::user_action
         /// @internal
         /// @brief Remove the bindings present in @p map and not in the @p _users bindings.
         template <typename T>
-        void removeOutdatedBindings(std::unordered_multimap<T, UserActionLink> &map)
+        void removeOutdatedBindings(std::unordered_multimap<T, UserActionLink> &map) noexcept
         {
             for (auto it = map.begin(); it != map.end();) {
                 if (it->second.userId >= _users.size()
@@ -141,7 +141,7 @@ namespace ecstasy::integration::user_action
         /// @brief Add the @p binding in the @p map if it is missing for the user @p user.
         template <typename T>
         void addBindingIfMissing(const UserProfile &user, const ActionBinding &binding, T input,
-            std::unordered_multimap<T, UserActionLink> &map)
+            std::unordered_multimap<T, UserActionLink> &map) noexcept
         {
             bool add = true;
             auto range = map.equal_range(input);
@@ -170,13 +170,18 @@ namespace ecstasy::integration::user_action
                 callActionListeners(registry, Action{it->second.actionId, it->second.userId, value});
         }
 
+        // Link between the mouse buttons and the associated actions.
         std::unordered_multimap<event::Mouse::Button, UserActionLink> _mouseButtonToAction;
+        // Link between the keyboard keys and the associated actions.
         std::unordered_multimap<event::Keyboard::Key, UserActionLink> _keyToAction;
+        // Link between the gamepad buttons and the associated actions.
         std::unordered_multimap<event::Gamepad::Button, UserActionLink> _gamepadButtonToAction;
+        // Link between the gamepad axis and the associated actions.
         std::unordered_multimap<event::Gamepad::Axis, UserActionLink> _gamepadAxisToAction;
-
+        // User profiles.
         std::vector<UserProfile> _users;
 
+        /// @internal
         friend class UsersTester;
     };
 } // namespace ecstasy::integration::user_action

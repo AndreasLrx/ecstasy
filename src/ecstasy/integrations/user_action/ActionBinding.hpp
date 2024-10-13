@@ -74,7 +74,7 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-25)
         ///
-        constexpr ActionBinding() : type(Type::Count), actionId(0)
+        constexpr ActionBinding() noexcept : type(Type::Count), actionId(0)
         {
         }
 
@@ -90,7 +90,7 @@ namespace ecstasy::integration::user_action
         /// @since 1.0.0 (2022-11-25)
         ///
         template <typename E, typename = is_valid_action_id<E>>
-        constexpr ActionBinding(E id, event::Mouse::Button input)
+        constexpr ActionBinding(E id, event::Mouse::Button input) noexcept
             : type(Type::MouseButton), actionId(static_cast<Action::Id>(id)), mouseButton(input)
         {
         }
@@ -103,6 +103,8 @@ namespace ecstasy::integration::user_action
         /// @param[in] id Id of the associated action.
         /// @param[in] input Source input.
         ///
+        /// @throw std::invalid_argument If the key is invalid.
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-25)
         ///
@@ -110,6 +112,7 @@ namespace ecstasy::integration::user_action
         constexpr ActionBinding(E id, event::Keyboard::Key input)
             : type(Type::Key), actionId(static_cast<Action::Id>(id)), key(input)
         {
+            event::Keyboard::assertKeyValid(input);
         }
 
         ///
@@ -120,6 +123,8 @@ namespace ecstasy::integration::user_action
         /// @param[in] id Id of the associated action.
         /// @param[in] input Source input.
         ///
+        /// @throw std::invalid_argument If the button is invalid.
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-25)
         ///
@@ -127,6 +132,7 @@ namespace ecstasy::integration::user_action
         constexpr ActionBinding(E id, event::Gamepad::Button input)
             : type(Type::GamepadButton), actionId(static_cast<Action::Id>(id)), gamepadButton(input)
         {
+            event::Gamepad::assertButtonValid(input);
         }
 
         ///
@@ -137,6 +143,8 @@ namespace ecstasy::integration::user_action
         /// @param[in] id Id of the associated action.
         /// @param[in] input Source input.
         ///
+        /// @throw std::invalid_argument If the axis is invalid.
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-25)
         ///
@@ -144,6 +152,7 @@ namespace ecstasy::integration::user_action
         constexpr ActionBinding(E id, event::Gamepad::Axis input)
             : type(Type::GamepadAxis), actionId(static_cast<Action::Id>(id)), gamepadAxis(input)
         {
+            event::Gamepad::assertAxisValid(input);
         }
 
         ///
@@ -156,7 +165,7 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-02)
         ///
-        constexpr bool operator==(const ActionBinding &other) const
+        [[nodiscard]] constexpr bool operator==(const ActionBinding &other) const noexcept
         {
             if (type != other.type || actionId != other.actionId)
                 return false;

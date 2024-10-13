@@ -50,7 +50,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
         ///
-        KeyCombinationListener(const std::vector<Keyboard::Key> &combination, Callback callback);
+        KeyCombinationListener(const std::vector<Keyboard::Key> &combination, Callback callback) noexcept;
 
         ///
         /// @brief Default destructor.
@@ -58,7 +58,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
         ///
-        ~KeyCombinationListener() = default;
+        ~KeyCombinationListener() noexcept = default;
 
         ///
         /// @brief Update the combination with the given @ref KeyEvent.
@@ -70,7 +70,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
         ///
-        bool update(const KeyEvent &event);
+        bool update(const KeyEvent &event) noexcept;
 
         ///
         /// @brief Check whether the combination is complete or not.
@@ -80,7 +80,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
         ///
-        bool isComplete() const;
+        [[nodiscard]] bool isComplete() const noexcept;
 
         ///
         /// @brief Reset the combination completion.
@@ -88,7 +88,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
         ///
-        void reset();
+        void reset() noexcept;
 
         ///
         /// @brief Call the callback and @ref reset() if the combination is complete or if @p force.
@@ -112,7 +112,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
         ///
-        void setCombination(const std::vector<Keyboard::Key> &newCombination);
+        void setCombination(const std::vector<Keyboard::Key> &newCombination) noexcept;
 
         ///
         /// @brief Get the expected combination.
@@ -122,7 +122,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
         ///
-        constexpr const std::vector<Keyboard::Key> &getCombination() const
+        [[nodiscard]] constexpr const std::vector<Keyboard::Key> &getCombination() const noexcept
         {
             return _combination;
         }
@@ -137,7 +137,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
         ///
-        constexpr std::vector<Keyboard::Key> &getCombination()
+        [[nodiscard]] constexpr std::vector<Keyboard::Key> &getCombination() noexcept
         {
             return _combination;
         }
@@ -150,7 +150,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
         ///
-        constexpr const Callback &getCallback() const
+        [[nodiscard]] constexpr const Callback &getCallback() const noexcept
         {
             return _callback;
         }
@@ -163,7 +163,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
         ///
-        constexpr size_t getValidatedKeys() const
+        [[nodiscard]] constexpr size_t getValidatedKeys() const noexcept
         {
             return _validatedKeys;
         }
@@ -178,15 +178,19 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
         ///
-        constexpr const std::unordered_map<Keyboard::Key, bool> &getKeyStates() const
+        [[nodiscard]] constexpr const std::unordered_map<Keyboard::Key, bool> &getKeyStates() const noexcept
         {
             return _keyStates;
         }
 
       private:
+        // Expected combination of keys to watch for.
         std::vector<Keyboard::Key> _combination;
+        // Validated keys.
         std::unordered_map<Keyboard::Key, bool> _keyStates;
+        // Count of validated keys.
         size_t _validatedKeys;
+        // Callback called when the combination is validated.
         Callback _callback;
     };
 } // namespace ecstasy::integration::event

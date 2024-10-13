@@ -13,12 +13,7 @@
 
 namespace ecstasy::integration::user_action
 {
-    void UserProfile::setId(Id id)
-    {
-        _id = id;
-    }
-
-    toml::table UserProfile::dump() const
+    toml::table UserProfile::dump() const noexcept
     {
         toml::table table;
 
@@ -27,7 +22,7 @@ namespace ecstasy::integration::user_action
         return table;
     }
 
-    bool UserProfile::load(const toml::table &infos)
+    bool UserProfile::load(const toml::table &infos) noexcept
     {
         /// User Id
         auto id = infos.get("id");

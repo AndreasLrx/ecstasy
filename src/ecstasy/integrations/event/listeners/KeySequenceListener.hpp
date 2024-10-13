@@ -52,7 +52,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
         ///
-        KeySequenceListener(const std::vector<Keyboard::Key> &sequence, Callback callback);
+        KeySequenceListener(const std::vector<Keyboard::Key> &sequence, Callback callback) noexcept;
 
         ///
         /// @brief Default destructor.
@@ -60,7 +60,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
         ///
-        ~KeySequenceListener() = default;
+        ~KeySequenceListener() noexcept = default;
 
         ///
         /// @brief Update the sequence with the given @ref KeyEvent.
@@ -72,7 +72,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
         ///
-        bool update(const KeyEvent &event);
+        bool update(const KeyEvent &event) noexcept;
 
         ///
         /// @brief Check whether the sequence is complete or not.
@@ -82,7 +82,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
         ///
-        bool isComplete() const;
+        [[nodiscard]] bool isComplete() const noexcept;
 
         ///
         /// @brief Reset the sequence completion.
@@ -90,7 +90,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
         ///
-        void reset();
+        void reset() noexcept;
 
         ///
         /// @brief Call the callback and @ref reset() if the sequence is complete or if @p force.
@@ -114,7 +114,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
         ///
-        void setSequence(const std::vector<Keyboard::Key> &newSequence);
+        void setSequence(const std::vector<Keyboard::Key> &newSequence) noexcept;
 
         ///
         /// @brief Get the expected sequence.
@@ -124,7 +124,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
         ///
-        constexpr const std::vector<Keyboard::Key> &getSequence() const
+        [[nodiscard]] constexpr const std::vector<Keyboard::Key> &getSequence() const noexcept
         {
             return _sequence;
         }
@@ -139,7 +139,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
         ///
-        constexpr std::vector<Keyboard::Key> &getSequence()
+        [[nodiscard]] constexpr std::vector<Keyboard::Key> &getSequence() noexcept
         {
             return _sequence;
         }
@@ -152,7 +152,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
         ///
-        constexpr const Callback &getCallback() const
+        [[nodiscard]] constexpr const Callback &getCallback() const noexcept
         {
             return _callback;
         }
@@ -168,7 +168,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
         ///
-        constexpr Keyboard::Key getHeldKey() const
+        [[nodiscard]] constexpr Keyboard::Key getHeldKey() const noexcept
         {
             return _heldKey;
         }
@@ -183,15 +183,19 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
         ///
-        constexpr const std::vector<Keyboard::Key> &getValidatedKeys() const
+        [[nodiscard]] constexpr const std::vector<Keyboard::Key> &getValidatedKeys() const noexcept
         {
             return _validatedKeys;
         }
 
       private:
+        // Sequence to watch for.
         std::vector<Keyboard::Key> _sequence;
+        // Validated keys.
         std::vector<Keyboard::Key> _validatedKeys;
+        // Current key held (if any, @ref Keyboard::Key::Unknown otherwise).
         Keyboard::Key _heldKey;
+        // Callback called when the sequence is validated.
         Callback _callback;
     };
 } // namespace ecstasy::integration::event

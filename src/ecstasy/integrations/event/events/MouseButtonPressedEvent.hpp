@@ -31,7 +31,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
         ///
-        constexpr MouseButtonPressedEvent(Mouse::Button pButton) : MouseButtonEvent(pButton, true)
+        constexpr MouseButtonPressedEvent(Mouse::Button pButton) noexcept : MouseButtonEvent(pButton, true)
         {
         }
     };

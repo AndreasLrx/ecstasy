@@ -44,7 +44,7 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-02)
         ///
-        ActionListener(Listener pListener, Action::Id pActionId = Action::All)
+        ActionListener(Listener pListener, Action::Id pActionId = Action::All) noexcept
             : actionId(pActionId), listener(pListener)
         {
         }
@@ -68,7 +68,7 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-07)
         ///
-        ActionIdListener(Listener pListener) : ActionListener(pListener, Target)
+        ActionIdListener(Listener pListener) noexcept : ActionListener(pListener, Target)
         {
         }
     };

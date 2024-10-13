@@ -55,7 +55,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
         ///
-        constexpr Event() : type(Type::Count){};
+        constexpr Event() noexcept : type(Type::Count){};
 
         ///
         /// @brief Construct a mouse button event wrapper.
@@ -65,7 +65,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
         ///
-        constexpr Event(MouseButtonEvent &&event)
+        constexpr Event(MouseButtonEvent &&event) noexcept
             : type(event.pressed ? Type::MouseButtonPressed : Type::MouseButtonReleased), mouseButton(event)
         {
         }
@@ -78,7 +78,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
         ///
-        constexpr Event(MouseWheelScrollEvent &&event) : type(Type::MouseWheelScrolled), mouseWheel(event)
+        constexpr Event(MouseWheelScrollEvent &&event) noexcept : type(Type::MouseWheelScrolled), mouseWheel(event)
         {
         }
 
@@ -90,7 +90,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
         ///
-        constexpr Event(MouseMoveEvent &&event) : type(Type::MouseMoved), mouseMove(event)
+        constexpr Event(MouseMoveEvent &&event) noexcept : type(Type::MouseMoved), mouseMove(event)
         {
         }
 
@@ -102,7 +102,8 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
         ///
-        constexpr Event(KeyEvent &&event) : type(event.pressed ? Type::KeyPressed : Type::KeyReleased), key(event)
+        constexpr Event(KeyEvent &&event) noexcept
+            : type(event.pressed ? Type::KeyPressed : Type::KeyReleased), key(event)
         {
         }
 
@@ -114,7 +115,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
         ///
-        constexpr Event(TextEnteredEvent &&event) : type(Type::TextEntered), text(event)
+        constexpr Event(TextEnteredEvent &&event) noexcept : type(Type::TextEntered), text(event)
         {
         }
 
@@ -126,7 +127,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
         ///
-        constexpr Event(GamepadButtonEvent &&event)
+        constexpr Event(GamepadButtonEvent &&event) noexcept
             : type(event.pressed ? Type::GamepadButtonPressed : Type::GamepadButtonReleased), gamepadButton(event)
         {
         }
@@ -139,7 +140,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
         ///
-        constexpr Event(GamepadConnectedEvent &&event)
+        constexpr Event(GamepadConnectedEvent &&event) noexcept
             : type(event.connected ? Type::GamepadConnected : Type::GamepadDisconnected), gamepadConnected(event)
         {
         }
@@ -152,7 +153,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
         ///
-        constexpr Event(GamepadAxisEvent &&event) : type(Type::GamepadAxis), gamepadAxis(event)
+        constexpr Event(GamepadAxisEvent &&event) noexcept : type(Type::GamepadAxis), gamepadAxis(event)
         {
         }
 
@@ -162,7 +163,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
         ///
-        ~Event() = default;
+        ~Event() noexcept = default;
 
         ///
         /// @brief Type of the event stored.

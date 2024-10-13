@@ -55,14 +55,14 @@ namespace ecstasy::integration::sfml
         ///
         /// @brief Destroy the Render Window.
         ///
-        ~RenderWindow() = default;
+        ~RenderWindow() noexcept = default;
 
         ///
         /// @brief Set the event listener.
         ///
         /// @param[in] listener Event listener.
         ///
-        void setEventListener(EventListener listener)
+        void setEventListener(EventListener listener) noexcept
         {
             _eventListener = listener;
         }
@@ -75,7 +75,7 @@ namespace ecstasy::integration::sfml
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-09-26)
         ///
-        constexpr EventListener &getEventListener()
+        constexpr EventListener &getEventListener() noexcept
         {
             return _eventListener;
         }
@@ -98,6 +98,7 @@ namespace ecstasy::integration::sfml
         }
 
       private:
+        // Optional event listener
         EventListener _eventListener;
     };
 } // namespace ecstasy::integration::sfml

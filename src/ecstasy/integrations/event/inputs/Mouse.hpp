@@ -62,7 +62,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-05)
         ///
-        Mouse() : _buttons({false}), _x(0), _y(0){};
+        Mouse() noexcept : _buttons({false}), _x(0), _y(0){};
 
         ///
         /// @brief Destroy the Mouse resource.
@@ -70,7 +70,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-05)
         ///
-        virtual ~Mouse() = default;
+        virtual ~Mouse() noexcept = default;
 
         ///
         /// @brief Check whether a mouse button is down.
@@ -79,11 +79,14 @@ namespace ecstasy::integration::event
         ///
         /// @return bool Whether the button is down or not.
         ///
+        /// @throw std::invalid_argument If the button is invalid.
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-05)
         ///
-        constexpr bool isButtonDown(Button button) const
+        [[nodiscard]] constexpr bool isButtonDown(Button button) const
         {
+            assertButtonValid(button);
             return _buttons[static_cast<size_t>(button)];
         }
 
@@ -94,10 +97,12 @@ namespace ecstasy::integration::event
         ///
         /// @return bool Whether the button is up or not.
         ///
+        /// @throw std::invalid_argument If the button is invalid.
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-05)
         ///
-        constexpr bool isButtonUp(Button button) const
+        [[nodiscard]] constexpr bool isButtonUp(Button button) const
         {
             return !isButtonDown(button);
         }
@@ -110,11 +115,14 @@ namespace ecstasy::integration::event
         /// @param[in] button Button to update.
         /// @param[in] down Whether the button must be set down or not.
         ///
+        /// @throw std::invalid_argument If the button is invalid.
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-05)
         ///
         constexpr void setButtonState(Button button, bool down)
         {
+            assertButtonValid(button);
             _buttons[static_cast<size_t>(button)] = down;
         }
 
@@ -126,7 +134,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-05)
         ///
-        constexpr int getX() const
+        [[nodiscard]] constexpr int getX() const noexcept
         {
             return _x;
         }
@@ -141,7 +149,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-05)
         ///
-        constexpr void setX(int x)
+        constexpr void setX(int x) noexcept
         {
             _x = x;
         }
@@ -154,7 +162,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-05)
         ///
-        constexpr int getY() const
+        [[nodiscard]] constexpr int getY() const noexcept
         {
             return _y;
         }
@@ -169,7 +177,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-05)
         ///
-        constexpr void setY(int y)
+        constexpr void setY(int y) noexcept
         {
             _y = y;
         }
@@ -182,7 +190,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-05)
         ///
-        constexpr std::pair<int, int> getPosition()
+        [[nodiscard]] constexpr std::pair<int, int> getPosition() noexcept
         {
             return std::make_pair(_x, _y);
         }
@@ -198,15 +206,34 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-05)
         ///
-        constexpr void setPosition(int x, int y)
+        constexpr void setPosition(int x, int y) noexcept
         {
             _x = x;
             _y = y;
         }
 
+        ///
+        /// @brief Assert the validity of a mouse button.
+        ///
+        /// @param[in] button Button to assert.
+        ///
+        /// @throw std::invalid_argument If the button is invalid.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-13)
+        ///
+        constexpr static void assertButtonValid(Button button)
+        {
+            if (static_cast<std::size_t>(button) >= static_cast<std::size_t>(Button::Count)) [[unlikely]]
+                throw std::invalid_argument("Invalid mouse button");
+        }
+
       private:
+        // Mouse buttons state
         std::array<bool, static_cast<int>(Button::Count)> _buttons;
+        // Mouse X position
         int _x;
+        // Mouse Y position
         int _y;
     };
 } // namespace ecstasy::integration::event

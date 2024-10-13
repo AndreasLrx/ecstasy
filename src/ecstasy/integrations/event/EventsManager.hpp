@@ -36,6 +36,8 @@ namespace ecstasy::integration::event
         /// @param[in] registry Reference to the registry owning the input resources/event listeners components.
         /// @param[in] event Event to handle.
         ///
+        /// @throw std::invalid_argument If the event is 'corrupted' (ie invalid mouse button, invalid key, etc).
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
         ///

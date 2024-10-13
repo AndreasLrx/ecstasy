@@ -31,7 +31,7 @@ namespace ecstasy::integration::event
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
         ///
-        constexpr KeyPressedEvent(Keyboard::Key pKey) : KeyEvent(pKey, true)
+        constexpr KeyPressedEvent(Keyboard::Key pKey) noexcept : KeyEvent(pKey, true)
         {
         }
     };

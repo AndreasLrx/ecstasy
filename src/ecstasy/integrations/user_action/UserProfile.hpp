@@ -40,7 +40,7 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-25)
         ///
-        UserProfile(Id id = 0) : _id(id)
+        UserProfile(Id id = 0) noexcept : _id(id)
         {
         }
 
@@ -52,7 +52,7 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-25)
         ///
-        constexpr ActionBindings &getActionBindings()
+        constexpr ActionBindings &getActionBindings() noexcept
         {
             return _actionBindings;
         }
@@ -65,7 +65,7 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-25)
         ///
-        constexpr const ActionBindings &getActionBindings() const
+        constexpr const ActionBindings &getActionBindings() const noexcept
         {
             return _actionBindings;
         }
@@ -80,7 +80,7 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-02)
         ///
-        constexpr Id getId() const
+        constexpr Id getId() const noexcept
         {
             return _id;
         }
@@ -93,7 +93,10 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-05)
         ///
-        void setId(Id id);
+        constexpr void setId(Id id) noexcept
+        {
+            _id = id;
+        }
 
         ///
         /// @brief Dump the user profile informations as a toml table.
@@ -103,7 +106,7 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-29)
         ///
-        toml::table dump() const;
+        [[nodiscard]] toml::table dump() const noexcept;
 
         ///
         /// @brief Load a given toml table representing a user profile. See the format of @ref dump().
@@ -117,10 +120,12 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-30)
         ///
-        bool load(const toml::table &infos);
+        bool load(const toml::table &infos) noexcept;
 
       private:
+        // User identifier
         Id _id;
+        // User action bindings
         ActionBindings _actionBindings;
     };
 } // namespace ecstasy::integration::user_action
