@@ -49,7 +49,7 @@ Get started with Ecstasy today and experience a new level of performance and pro
 
 ### Code Example
 
-_The following is a basic example extracted from the [Tutorial](https://andreaslrx.github.io/ecstasy/md_doc__tutorial.html)._
+_The following is a basic example extracted from the [Tutorial](https://andreaslrx.github.io/ecstasy/md_doc_2_tutorial.html)._
 
 ```cpp
 #include <ecstasy/registry/Registry.hpp>
@@ -100,7 +100,7 @@ int main() {
 
 ### Building
 
-Follow the [building documentation](https://andreaslrx.github.io/ecstasy/md_doc__building.html)
+Follow the [building documentation](https://andreaslrx.github.io/ecstasy/md_doc_2_building.html)
 
 ### Documentation
 

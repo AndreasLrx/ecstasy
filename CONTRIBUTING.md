@@ -16,7 +16,7 @@
 
 - PR with merge commits will not be validated.
 
-- The project began using the merge commit, which explains the presence of old merge commits.
+- The project began by using merge commit, which explains the presence of old merge commits.
 
 #### **Do you want to fix an issue?**
 
