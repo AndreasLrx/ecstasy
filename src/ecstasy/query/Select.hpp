@@ -1,7 +1,7 @@
 ///
 /// @file Select.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Advanced @ref Query. It allows to select which data must be kept from a query request.
 /// @version 1.0.0
 /// @date 2022-10-21
 ///
@@ -52,7 +52,7 @@ namespace ecstasy::query
         /// @since 1.0.0 (2022-10-25)
         ///
         template <Queryable Q>
-        constexpr static bool isQueryableSelected()
+        [[nodiscard]] constexpr static bool isQueryableSelected() noexcept
         {
             return util::meta::contains<Q, SelectedQueryables...>;
         }
@@ -77,7 +77,7 @@ namespace ecstasy::query
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-28)
             ///
-            static constexpr SelectedTuple sort(Valids &...valids)
+            [[nodiscard]] static constexpr SelectedTuple sort(Valids &...valids) noexcept
             {
                 return std::tie(std::forward<Valids &>(valids)...);
             }
@@ -98,7 +98,7 @@ namespace ecstasy::query
             /// @since 1.0.0 (2022-10-28)
             ///
             template <Queryable Q, Queryable... Qs>
-            static constexpr SelectedTuple sort(Valids &...valids, Q &current, Qs &...lefts)
+            [[nodiscard]] static constexpr SelectedTuple sort(Valids &...valids, Q &current, Qs &...lefts) noexcept
             {
                 if constexpr (std::is_same_v<
                                   typename util::meta::Traits<SelectedQueryables...>::template Nth<sizeof...(Valids)>,
@@ -124,7 +124,7 @@ namespace ecstasy::query
         /// @since 1.0.0 (2022-10-28)
         ///
         template <Queryable... Qs>
-        constexpr static SelectedTuple tieQueryables(Qs &...queryables)
+        [[nodiscard]] constexpr static SelectedTuple tieQueryables(Qs &...queryables) noexcept
         {
             static_assert(util::meta::type_set_eq_v<std::tuple<SelectedQueryables...>, std::tuple<Qs...>>,
                 "Missing queryables in where clause");
@@ -158,7 +158,7 @@ namespace ecstasy::query
             /// @since 1.0.0 (2022-10-25)
             ///
             template <Queryable Q>
-            constexpr static bool isQueryableRequired()
+            [[nodiscard]] constexpr static bool isQueryableRequired() noexcept
             {
                 return isQueryableSelected<Q>() && !util::meta::contains<Q, Lefts...>;
             }
@@ -174,7 +174,7 @@ namespace ecstasy::query
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-22)
             ///
-            constexpr static SelectedTuple value(Lefts &...lefts, Pivot &pivot)
+            [[nodiscard]] constexpr static SelectedTuple value(Lefts &...lefts, Pivot &pivot) noexcept
             {
                 if constexpr (ContainsPivot)
                     return tieQueryables(std::forward<Lefts &>(lefts)..., pivot);
@@ -206,7 +206,8 @@ namespace ecstasy::query
             /// @since 1.0.0 (2022-10-22)
             ///
             template <Queryable NextPivot, Queryable... Rights>
-            constexpr static SelectedTuple value(Lefts &...lefts, Pivot &pivot, NextPivot &nextPivot, Rights &...rights)
+            [[nodiscard]] constexpr static SelectedTuple value(
+                Lefts &...lefts, Pivot &pivot, NextPivot &nextPivot, Rights &...rights) noexcept
             {
                 if constexpr (ContainsPivot)
                     return FilterQueryables<isQueryableRequired<NextPivot>(), NextPivot, Lefts..., Pivot>::value(
@@ -232,7 +233,7 @@ namespace ecstasy::query
         /// @since 1.0.0 (2022-10-22)
         ///
         template <Queryable... Queryables>
-        constexpr static SelectedTuple filterQueryables(Queryables &...queryables)
+        [[nodiscard]] constexpr static SelectedTuple filterQueryables(Queryables &...queryables) noexcept
         {
             return FilterQueryables<isQueryableSelected<typename util::meta::Traits<Queryables...>::First>(),
                 typename util::meta::Traits<Queryables...>::First>::value(std::forward<Queryables &>(queryables)...);

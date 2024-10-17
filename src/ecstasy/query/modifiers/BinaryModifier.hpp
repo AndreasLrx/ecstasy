@@ -78,7 +78,7 @@ namespace ecstasy::query::modifier
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-27)
         ///
-        constexpr const util::BitSet &getMask() const
+        [[nodiscard]] constexpr const util::BitSet &getMask() const noexcept
         {
             return _mask;
         }
@@ -95,12 +95,23 @@ namespace ecstasy::query::modifier
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-27)
         ///
-        QueryData getQueryData(size_t index)
+        [[nodiscard]] QueryData getQueryData(size_t index)
         {
             return getQueryData(index, std::make_index_sequence<(sizeof...(Qs))>());
         }
 
       protected:
+        /// @internal
+        /// @brief Get the Derived Operand Data
+        ///
+        /// @tparam operandId Operand id.
+        /// @param[in] index Index of the entity.
+        ///
+        /// @return OperandData<operandId> The operand data at index @p index.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-17)
+        ///
         template <size_t operandId>
         inline OperandData<operandId> getDerivedOperandData(size_t index)
         {
@@ -121,14 +132,15 @@ namespace ecstasy::query::modifier
         /// @since 1.0.0 (2022-11-21)
         ///
         template <size_t... ints>
-        inline QueryData getQueryData(size_t index, std::integer_sequence<size_t, ints...> int_seq)
+        inline QueryData getQueryData(size_t index, [[maybe_unused]] std::integer_sequence<size_t, ints...> int_seq)
         {
-            (void)int_seq;
             return {getDerivedOperandData<0>(index), getDerivedOperandData<1>(index),
                 getDerivedOperandData<ints + 2>(index)...};
         }
 
+        /// @brief Tuple containing the queryables.
         Internal _operands;
+        /// @brief Mask of the queryables.
         util::BitSet _mask;
     };
 } // namespace ecstasy::query::modifier

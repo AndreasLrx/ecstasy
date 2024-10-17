@@ -1,7 +1,7 @@
 ///
 /// @file Or.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Binary query modifier which performs a or between at least two queryables.
 /// @version 1.0.0
 /// @date 2022-10-27
 ///
@@ -69,7 +69,7 @@ namespace ecstasy::query::modifier
         /// @since 1.0.0 (2022-10-27)
         ///
         template <size_t operandId>
-        inline typename ModifierClass::template OperandData<operandId> getOperandData(size_t index)
+        [[nodiscard]] inline typename ModifierClass::template OperandData<operandId> getOperandData(size_t index)
         {
             auto &operand = std::get<operandId>(this->_operands);
 
@@ -112,7 +112,7 @@ namespace ecstasy::query::modifier
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-21)
         ///
-        inline void combineMask(const util::BitSet &mask)
+        inline void combineMask(const util::BitSet &mask) noexcept
         {
             if (this->_mask.size() < mask.size())
                 this->_mask = util::BitSet(mask).inplaceOr(this->_mask);
@@ -140,8 +140,23 @@ namespace ecstasy::query::modifier
         }
     };
 
+    ///
+    /// @brief Binary query modifier which performs a or between at least two queryables.
+    ///
+    /// @tparam Q1 Left operand queryable type.
+    /// @tparam Q2 Right operand queryable type.
+    /// @tparam Qs Additional operand queryable types.
+    /// @param[in] firstOperand left queryable operand.
+    /// @param[in] secondOperand right queryable operand.
+    /// @param[in] otherOperands additional operands (optional).
+    ///
+    /// @return auto The resulting queryable modifier.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-10-17)
+    ///
     template <Queryable Q1, Queryable Q2, Queryable... Qs>
-    auto constexpr Or(Q1 &firstOperand, Q2 &secondOperand, Qs &...otherOperands)
+    [[nodiscard]] auto constexpr Or(Q1 &firstOperand, Q2 &secondOperand, Qs &...otherOperands)
     {
         return OrImpl<false, Q1, Q2, Qs...>(firstOperand, secondOperand, otherOperands...);
     }

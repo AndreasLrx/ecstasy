@@ -1,9 +1,13 @@
-/*
-** EPITECH PROJECT, 2022
-** ecstasy
-** File description:
-** Query
-*/
+///
+/// @file Query.hpp
+/// @author Andréas Leroux (andreas.leroux@epitech.eu)
+/// @brief Query components presents in all given queryables.
+/// @version 1.0.0
+/// @date 2024-10-17
+///
+/// @copyright Copyright (c) ECSTASY 2024
+///
+///
 
 #ifndef ECSTASY_QUERY_QUERY_HPP_
 #define ECSTASY_QUERY_QUERY_HPP_
@@ -40,6 +44,17 @@ namespace ecstasy::query
     template <typename Storages, typename Conditions = void, bool AutoLock = false>
     class QueryImplementation {};
 
+    ///
+    /// @brief @ref QueryImplementation specialization.
+    ///
+    /// @tparam First First queryable type.
+    /// @tparam Others All other queryable types.
+    /// @tparam Conditions All query conditions.
+    /// @tparam AutoLock Whether the query must be thread safe or not (locking any @ref Lockable queryable).
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-10-17)
+    ///
     template <Queryable First, Queryable... Others, typename... Conditions, bool AutoLock>
     class QueryImplementation<util::meta::Traits<First, Others...>, util::meta::Traits<Conditions...>, AutoLock> {
       public:
@@ -72,7 +87,7 @@ namespace ecstasy::query
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-20)
             ///
-            explicit Iterator()
+            explicit Iterator() noexcept
             {
             }
 
@@ -86,7 +101,8 @@ namespace ecstasy::query
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-20)
             ///
-            explicit Iterator(util::BitSet const &mask, Queryables const &storages, std::size_t pos)
+            explicit Iterator(util::BitSet const &mask, Queryables const &storages, std::size_t pos) noexcept(
+                sizeof...(Conditions) == 0)
                 : _mask(std::cref(mask)), _storages(std::cref(storages)), _pos(pos)
             {
                 if constexpr (sizeof...(Conditions) != 0)
@@ -99,7 +115,7 @@ namespace ecstasy::query
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-20)
             ///
-            Iterator(Iterator const &) = default;
+            Iterator(Iterator const &) noexcept = default;
 
             ///
             /// @brief Default assignment operator.
@@ -109,7 +125,7 @@ namespace ecstasy::query
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-20)
             ///
-            Iterator &operator=(Iterator const &) = default;
+            [[nodiscard]] Iterator &operator=(Iterator const &) noexcept = default;
 
             ///
             /// @brief Default move constructor.
@@ -117,7 +133,7 @@ namespace ecstasy::query
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-20)
             ///
-            Iterator(Iterator &&) = default;
+            Iterator(Iterator &&) noexcept = default;
 
             ///
             /// @brief Default move assignment operator.
@@ -127,7 +143,7 @@ namespace ecstasy::query
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-20)
             ///
-            Iterator &operator=(Iterator &&) = default;
+            [[nodiscard]] Iterator &operator=(Iterator &&) noexcept = default;
 
             ///
             /// @brief Compare two iterators from the same @ref Query.
@@ -141,7 +157,7 @@ namespace ecstasy::query
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-20)
             ///
-            constexpr bool operator==(Iterator const &other) const
+            [[nodiscard]] constexpr bool operator==(Iterator const &other) const noexcept
             {
                 return this->_pos == other._pos;
             }
@@ -158,7 +174,7 @@ namespace ecstasy::query
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-20)
             ///
-            constexpr bool operator!=(Iterator const &other) const
+            [[nodiscard]] constexpr bool operator!=(Iterator const &other) const noexcept
             {
                 return this->_pos != other._pos;
             }
@@ -171,7 +187,7 @@ namespace ecstasy::query
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-20)
             ///
-            value_type operator*() const
+            [[nodiscard]] value_type operator*() const
             {
                 return this->get_components(std::make_index_sequence<(sizeof...(Others)) + 1>());
             }
@@ -184,7 +200,7 @@ namespace ecstasy::query
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-20)
             ///
-            value_type operator->() const
+            [[nodiscard]] value_type operator->() const
             {
                 return *this;
             }
@@ -220,7 +236,7 @@ namespace ecstasy::query
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-20)
             ///
-            Iterator operator++(int)
+            [[nodiscard]] Iterator operator++(int)
             {
                 Iterator result = *this;
 
@@ -235,24 +251,53 @@ namespace ecstasy::query
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-12-20)
             ///
-            constexpr size_t getPosition() const
+            [[nodiscard]] constexpr size_t getPosition() const noexcept
             {
                 return _pos;
             }
 
           private:
+            /// @brief Mask of the query.
+            std::reference_wrapper<const util::BitSet> _mask;
+            /// @brief Storages of the query.
+            std::reference_wrapper<const Queryables> _storages;
+            /// @brief Current position in the mask.
+            std::size_t _pos;
+
+            ///
+            /// @brief Evaluate a constant condition.
+            ///
+            /// @tparam Condition Condition to check.
+            ///
+            /// @return bool Whether the condition is valid.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2024-10-17)
+            ///
             template <QConditionConst Condition>
             bool checkCondition() const
             {
                 return Condition::test();
             }
 
+            ///
+            /// @brief Evaluate a condition with a left operand and a constant right operand.
+            ///
+            /// @tparam Condition Condition to check.
+            ///
+            /// @return bool Whether the condition is valid.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2024-10-17)
+            ///
             template <QConditionLeft Condition>
             bool checkCondition() const
             {
-                static_assert(std::disjunction_v<
-                    std::is_same<typename Condition::Left, std::remove_reference_t<queryable_data_t<Others>>>...,
-                    std::is_same<typename Condition::Left, std::remove_reference_t<queryable_data_t<First>>>>);
+                static_assert(
+                    std::disjunction_v<
+                        std::is_same<typename Condition::Left, std::remove_reference_t<queryable_data_t<Others>>>...,
+                        std::is_same<typename Condition::Left, std::remove_reference_t<queryable_data_t<First>>>>,
+                    "Condition left operand must be included in the queryable types.");
                 auto &storage = std::get<
                     util::meta::index_v<typename Condition::Left, std::remove_reference_t<queryable_data_t<First>>,
                         std::remove_reference_t<queryable_data_t<Others>>...>>(_storages.get());
@@ -260,12 +305,24 @@ namespace ecstasy::query
                 return Condition::test(getQueryableData(storage, _pos));
             }
 
+            ///
+            /// @brief Evaluate a condition with a constant left operand and a right operand.
+            ///
+            /// @tparam Condition Condition to check.
+            ///
+            /// @return bool Whether the condition is valid.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2024-10-17)
+            ///
             template <QConditionRight Condition>
             bool checkCondition() const
             {
-                static_assert(std::disjunction_v<
-                    std::is_same<typename Condition::Right, std::remove_reference_t<queryable_data_t<Others>>>...,
-                    std::is_same<typename Condition::Right, std::remove_reference_t<queryable_data_t<First>>>>);
+                static_assert(
+                    std::disjunction_v<
+                        std::is_same<typename Condition::Right, std::remove_reference_t<queryable_data_t<Others>>>...,
+                        std::is_same<typename Condition::Right, std::remove_reference_t<queryable_data_t<First>>>>,
+                    "Condition right operand must be included in the queryable types.");
                 auto &storage = std::get<
                     util::meta::index_v<typename Condition::Right, std::remove_reference_t<queryable_data_t<First>>,
                         std::remove_reference_t<queryable_data_t<Others>>...>>(_storages.get());
@@ -273,15 +330,29 @@ namespace ecstasy::query
                 return Condition::test(getQueryableData(storage, _pos));
             }
 
+            ///
+            /// @brief Evaluate a condition with two runtime operands.
+            ///
+            /// @tparam Condition Condition to check.
+            ///
+            /// @return bool Whether the condition is valid.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2024-10-17)
+            ///
             template <QConditionLeftRight Condition>
             bool checkCondition() const
             {
-                static_assert(std::disjunction_v<
-                    std::is_same<typename Condition::Left, std::remove_reference_t<queryable_data_t<Others>>>...,
-                    std::is_same<typename Condition::Left, std::remove_reference_t<queryable_data_t<First>>>>);
-                static_assert(std::disjunction_v<
-                    std::is_same<typename Condition::Right, std::remove_reference_t<queryable_data_t<Others>>>...,
-                    std::is_same<typename Condition::Right, std::remove_reference_t<queryable_data_t<First>>>>);
+                static_assert(
+                    std::disjunction_v<
+                        std::is_same<typename Condition::Left, std::remove_reference_t<queryable_data_t<Others>>>...,
+                        std::is_same<typename Condition::Left, std::remove_reference_t<queryable_data_t<First>>>>,
+                    "Condition left operand must be included in the queryable types.");
+                static_assert(
+                    std::disjunction_v<
+                        std::is_same<typename Condition::Right, std::remove_reference_t<queryable_data_t<Others>>>...,
+                        std::is_same<typename Condition::Right, std::remove_reference_t<queryable_data_t<First>>>>,
+                    "Condition right operand must be included in the queryable types.");
                 auto &storageLeft = std::get<
                     util::meta::index_v<typename Condition::Left, std::remove_reference_t<queryable_data_t<First>>,
                         std::remove_reference_t<queryable_data_t<Others>>...>>(_storages.get());
@@ -292,6 +363,15 @@ namespace ecstasy::query
                 return Condition::test(getQueryableData(storageLeft, _pos), getQueryableData(storageRight, _pos));
             }
 
+            ///
+            /// @brief Apply all conditions to the current entity.
+            /// This function will increment the iterator until all conditions are met.
+            ///
+            /// @note This function is only called if conditions are present.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2024-10-17)
+            ///
             inline void applyConditions()
             {
                 if constexpr (sizeof...(Conditions) != 0) {
@@ -299,10 +379,6 @@ namespace ecstasy::query
                         ++*this;
                 }
             }
-
-            std::reference_wrapper<const util::BitSet> _mask;
-            std::reference_wrapper<const Queryables> _storages;
-            std::size_t _pos;
 
             ///
             /// @brief Get the components from the storages tuple.
@@ -315,7 +391,7 @@ namespace ecstasy::query
             /// @since 1.0.0 (2022-10-20)
             ///
             template <size_t... Indices>
-            value_type get_components(std::index_sequence<Indices...>) const
+            [[nodiscard]] value_type get_components(std::index_sequence<Indices...>) const
             {
                 return {getQueryableData(std::get<Indices>(_storages.get()), _pos)...};
             }
@@ -372,7 +448,7 @@ namespace ecstasy::query
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-20)
         ///
-        Iterator begin() const noexcept
+        [[nodiscard]] Iterator begin() const noexcept
         {
             return Iterator(this->_mask, this->_storages, this->_begin);
         }
@@ -385,7 +461,7 @@ namespace ecstasy::query
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-20)
         ///
-        Iterator end() const noexcept
+        [[nodiscard]] Iterator end() const noexcept
         {
             return Iterator(this->_mask, this->_storages, this->_mask.size() - 1);
         }
@@ -400,7 +476,7 @@ namespace ecstasy::query
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-20)
         ///
-        constexpr const util::BitSet &getMask() const
+        [[nodiscard]] constexpr const util::BitSet &getMask() const noexcept
         {
             return _mask;
         }
@@ -417,7 +493,7 @@ namespace ecstasy::query
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-20)
         ///
-        QueryData getQueryData(std::size_t index)
+        [[nodiscard]] QueryData getQueryData(std::size_t index) const
         {
             return get_components(index, std::make_index_sequence<(sizeof...(Others)) + 1>());
         }
@@ -470,12 +546,27 @@ namespace ecstasy::query
         }
 
       private:
+        /// @brief Mask of the query.
         util::BitSet _mask;
+        /// @brief Storages of the query.
         Queryables _storages;
+        /// @brief Begin position of the query.
         size_t _begin;
 
+        ///
+        /// @brief Adjust the mask of a queryable to the given size.
+        ///
+        /// @tparam F Type of the function applied on each matching entity.
+        ///
+        /// @param[in] start Iterator to the first entity.
+        /// @param[in] end Iterator to the last entity.
+        /// @param[in] fct Function applied on each matching entity.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-17)
+        ///
         template <typename F>
-        static void processBatch(Iterator start, Iterator end, F &&fct)
+        static void processBatch(Iterator start, Iterator end, F &&fct) noexcept(noexcept(fct(*start)))
         {
             for (auto i = start; i != end; ++i)
                 fct(*i);
@@ -498,14 +589,41 @@ namespace ecstasy::query
         }
     };
 
+    ///
+    /// @brief More high-level query class, wrapping the @ref QueryImplementation.
+    ///
+    /// @tparam First First queryable type.
+    /// @tparam Others All other queryable types.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-10-17)
+    ///
     template <Queryable First, Queryable... Others>
     class Query : public QueryImplementation<util::meta::Traits<First, Others...>, util::meta::Traits<>> {
       public:
+        ///
+        /// @brief Construct a new Query from a bitmask already computed and a storages list.
+        ///
+        /// @param[in] mask mask matching a precomputed query.
+        /// @param[in] storages storages containing requested data.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-17)
+        ///
         Query(util::BitSet &mask, const std::tuple<First &, Others &...> &storages)
             : QueryImplementation<util::meta::Traits<First, Others...>, util::meta::Traits<>>(mask, storages)
         {
         }
 
+        ///
+        /// @brief Construct a new Query from a list of storages. The mask is computed from the storages.
+        ///
+        /// @param[in] first First storage.
+        /// @param[in] others All other storages.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-17)
+        ///
         Query(First &first, Others &...others)
             : QueryImplementation<util::meta::Traits<First, Others...>, util::meta::Traits<>>(
                 first, std::forward<Others &>(others)...)
@@ -513,14 +631,40 @@ namespace ecstasy::query
         }
     };
 
+    ///
+    /// @brief More high-level query class, wrapping the @ref QueryImplementation and locking all @ref Lockable
+    /// queryables.
+    ///
+    /// @tparam Qs All queryable types.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-10-17)
+    ///
     template <Queryable... Qs>
     class ThreadSafeQuery : public QueryImplementation<util::meta::Traits<Qs...>, util::meta::Traits<>, true> {
       public:
+        ///
+        /// @brief Construct a new Thread Safe Query from a bitmask already computed and a storages list.
+        ///
+        /// @param[in] mask mask matching a precomputed query.
+        /// @param[in] storages storages containing requested data.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-17)
+        ///
         ThreadSafeQuery(util::BitSet &mask, const std::tuple<Qs &...> &storages)
             : QueryImplementation<util::meta::Traits<Qs...>, util::meta::Traits<>, true>(mask, storages)
         {
         }
 
+        ///
+        /// @brief Construct a new Thread Safe Query from a list of storages. The mask is computed from the storages.
+        ///
+        /// @param[in] others All other storages.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-17)
+        ///
         ThreadSafeQuery(Qs &...others)
             : QueryImplementation<util::meta::Traits<Qs...>, util::meta::Traits<>, true>(std::forward<Qs &>(others)...)
         {

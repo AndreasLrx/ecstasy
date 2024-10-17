@@ -1,7 +1,7 @@
 ///
 /// @file Queryable.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Contains the concepts for queryable objects.
 /// @version 1.0.0
 /// @date 2022-10-25
 ///
@@ -28,6 +28,10 @@ namespace ecstasy::query
 
     ///
     /// @brief Defines a type that can be queried.
+    /// A queryable type must have:
+    /// - An internal QueryData type, which is the data stored in the queryable.
+    /// - A method getMask returning a const reference to a BitSet where all bits set to 1 means a query data at the bit index is available.
+    /// - A method getQueryData returning the query data at the given index. This method will be called with indexes of bit set to 1 in the mask.
     ///
     /// @tparam Q Evaluated Type.
     ///
@@ -48,6 +52,9 @@ namespace ecstasy::query
 
     ///
     /// @brief Defines a type that can be queried in a const context.
+    /// In addition to the @ref QueryableObject concept, a const queryable object must have:
+    /// - An internal ConstQueryData type, which is the data stored in the queryable.
+    /// - A const version of the method getQueryData returning ConstQueryData object.
     ///
     /// @note This concept is a subset of @ref QueryableObject.
     /// @warning The type Q is not expected to be const qualified.
