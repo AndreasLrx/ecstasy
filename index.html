@@ -113,6 +113,7 @@ Code Example</h2>
 <p><em>The following is a basic example extracted from the <a href="https://andreaslrx.github.io/ecstasy/md_doc_2_tutorial.html">Tutorial</a>.</em></p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_registry_8hpp.html">ecstasy/registry/Registry.hpp</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_i_system_8hpp.html">ecstasy/system/ISystem.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_map_storage_8hpp.html">ecstasy/storages/MapStorage.hpp</a>&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">struct </span>Position {</div>
 <div class="line">    <span class="keywordtype">float</span> x;</div>
@@ -144,7 +145,8 @@ Code Example</h2>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Populate the registry with some entities</span></div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 10; i++) {</div>
-<div class="line">        <span class="keyword">auto</span> builder = registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a47b4f8718083b99319ff342011e9b110">entityBuilder</a>().<a class="code hl_function" href="classecstasy_1_1_registry_1_1_entity_builder.html#ae55a0fc396c88eeedb1795b3fd6cb0f7">with</a>&lt;Position&gt;(i * 2, i * 10);</div>
+<div class="line">        <span class="keyword">auto</span> builder = registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a47b4f8718083b99319ff342011e9b110">entityBuilder</a>();</div>
+<div class="line">        builder.<a class="code hl_function" href="classecstasy_1_1_registry_1_1_entity_builder.html#ae55a0fc396c88eeedb1795b3fd6cb0f7">with</a>&lt;Position&gt;(i * 2, i * 10);</div>
 <div class="line">        <span class="keywordflow">if</span> (i % 2 == 0)</div>
 <div class="line">            builder.<a class="code hl_function" href="classecstasy_1_1_registry_1_1_entity_builder.html#ae55a0fc396c88eeedb1795b3fd6cb0f7">with</a>&lt;Velocity&gt;(i * 10, i * 2);</div>
 <div class="line">        <a class="code hl_class" href="classecstasy_1_1_entity.html">ecstasy::Entity</a> entity = builder.build();</div>
@@ -157,6 +159,7 @@ Code Example</h2>
 <div class="line">}</div>
 <div class="ttc" id="a01__basic__window_2main_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="01__basic__window_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition</b> <a href="01__basic__window_2main_8cpp_source.html#l00022">main.cpp:22</a></div></div>
 <div class="ttc" id="a_i_system_8hpp_html"><div class="ttname"><a href="_i_system_8hpp.html">ISystem.hpp</a></div></div>
+<div class="ttc" id="a_map_storage_8hpp_html"><div class="ttname"><a href="_map_storage_8hpp.html">MapStorage.hpp</a></div></div>
 <div class="ttc" id="a_registry_8hpp_html"><div class="ttname"><a href="_registry_8hpp.html">Registry.hpp</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_entity_html"><div class="ttname"><a href="classecstasy_1_1_entity.html">ecstasy::Entity</a></div><div class="ttdoc">Encapsulate an index to an entity.</div><div class="ttdef"><b>Definition</b> <a href="_entity_8hpp_source.html#l00035">Entity.hpp:35</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_i_system_html"><div class="ttname"><a href="classecstasy_1_1_i_system.html">ecstasy::ISystem</a></div><div class="ttdoc">System interface, base class of all systems.</div><div class="ttdef"><b>Definition</b> <a href="_i_system_8hpp_source.html#l00026">ISystem.hpp:26</a></div></div>
