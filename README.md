@@ -54,6 +54,7 @@ _The following is a basic example extracted from the [Tutorial](https://andreasl
 ```cpp
 #include <ecstasy/registry/Registry.hpp>
 #include <ecstasy/system/ISystem.hpp>
+#include <ecstasy/storages/MapStorage.hpp>
 
 struct Position {
     float x;
@@ -85,7 +86,8 @@ int main() {
 
     // Populate the registry with some entities
     for (int i = 0; i < 10; i++) {
-        auto builder = registry.entityBuilder().with<Position>(i * 2, i * 10);
+        auto builder = registry.entityBuilder();
+        builder.with<Position>(i * 2, i * 10);
         if (i % 2 == 0)
             builder.with<Velocity>(i * 10, i * 2);
         ecstasy::Entity entity = builder.build();
