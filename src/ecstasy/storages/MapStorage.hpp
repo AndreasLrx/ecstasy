@@ -1,7 +1,7 @@
 ///
 /// @file MapStorage.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Associative Map to store entity components
 /// @version 1.0.0
 /// @date 2022-10-19
 ///
@@ -89,7 +89,7 @@ namespace ecstasy
         {
             auto it = _components.find(index);
 
-            if (it != _components.end()) {
+            if (it != _components.end()) [[likely]] {
                 _components.erase(index);
                 _mask[index] = false;
                 return true;
@@ -98,13 +98,13 @@ namespace ecstasy
         }
 
         /// @copydoc AStorage::operator[]
-        Component &operator[](Entity::Index index) override final
+        [[nodiscard]] Component &operator[](Entity::Index index) override final
         {
             return _components.at(index);
         }
 
         /// @copydoc AStorage::operator[]
-        const Component &operator[](Entity::Index index) const override final
+        [[nodiscard]] const Component &operator[](Entity::Index index) const override final
         {
             return _components.at(index);
         }
@@ -117,19 +117,21 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-19)
         ///
-        size_t size() const noexcept
+        [[nodiscard]] size_t size() const noexcept
         {
             return _components.size();
         }
 
         /// @copydoc IStorage::getMask
-        constexpr const util::BitSet &getMask() const override final
+        [[nodiscard]] constexpr const util::BitSet &getMask() const noexcept override final
         {
             return _mask;
         }
 
       private:
+        /// @brief Components map.
         std::unordered_map<Entity::Index, Component> _components;
+        /// @brief Component mask.
         util::BitSet _mask;
     };
 } // namespace ecstasy

@@ -1,7 +1,7 @@
 ///
 /// @file DeletionStack.cpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Deletion stack implementation.
 /// @version 1.0.0
 /// @date 2022-10-21
 ///
@@ -29,7 +29,7 @@ namespace ecstasy
         _killed.push_back(entity);
     }
 
-    size_t DeletionStack::size() const
+    [[nodiscard]] size_t DeletionStack::size() const noexcept
     {
         return _killed.size();
     }

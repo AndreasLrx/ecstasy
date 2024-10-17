@@ -1,7 +1,7 @@
 ///
 /// @file Entities.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Definition of the Entities class.
 /// @version 1.0.0
 /// @date 2022-10-18
 ///
@@ -99,6 +99,8 @@ namespace ecstasy
             ///
             /// @brief Finalize the entity, making it alive.
             ///
+            /// @note This method can only be called once.
+            ///
             /// @return Entity Newly created entity.
             ///
             /// @throw std::logic_error If the builder was already consumed.
@@ -119,14 +121,17 @@ namespace ecstasy
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2024-06-07)
             ///
-            const Entity &getEntity() const
+            [[nodiscard]] const Entity &getEntity() const noexcept
             {
                 return _entity;
             }
 
           private:
+            /// @brief Reference to the parent Entities.
             Entities &_parent;
+            /// @brief Entity being built.
             Entity _entity;
+            /// @brief Whether the builder has been consumed.
             bool _built;
 
             ///
@@ -138,7 +143,7 @@ namespace ecstasy
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-19)
             ///
-            Builder(Entities &parent, Entity entity);
+            Builder(Entities &parent, Entity entity) noexcept;
 
             ///
             /// @brief Verify if the builder has not already been consumed.
@@ -198,7 +203,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-18)
         ///
-        Entity get(Entity::Index id) const noexcept;
+        [[nodiscard]] Entity get(Entity::Index id) const noexcept;
 
         ///
         /// @brief Erase (delete) the entity when called.
@@ -251,7 +256,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-18)
         ///
-        bool isAlive(Entity entity) const;
+        [[nodiscard]] bool isAlive(Entity entity) const;
 
         ///
         /// @brief Get the Alive entities mask.
@@ -261,7 +266,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-20)
         ///
-        constexpr const util::BitSet &getMask() const
+        [[nodiscard]] constexpr const util::BitSet &getMask() const noexcept
         {
             return _alive;
         }
@@ -276,7 +281,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-20)
         ///
-        Entity getQueryData(Entity::Index index) const;
+        [[nodiscard]] Entity getQueryData(Entity::Index index) const;
 
         ///
         /// @brief Effectively erase the entities marked for deletion (using @ref kill()).
@@ -292,8 +297,11 @@ namespace ecstasy
         std::vector<Entity> maintain();
 
       private:
+        /// @brief List of entity generations.
         std::vector<Entity::Generation> _generations;
+        /// @brief Mask of alive entities.
         util::BitSet _alive;
+        /// @brief Mask of entities marked for deletion.
         util::BitSet _killed;
     };
 } // namespace ecstasy

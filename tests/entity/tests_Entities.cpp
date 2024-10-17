@@ -72,7 +72,7 @@ TEST(Entities, builder)
 
     /// Mess with the builder after build done
     EXPECT_THROW(builder.with(vectors, 5, 2), std::logic_error);
-    EXPECT_THROW(builder.build(), std::logic_error);
+    EXPECT_THROW(static_cast<void>(builder.build()), std::logic_error);
 
     /// Test if entity has all attached components
     EXPECT_TRUE(e.has(positions));

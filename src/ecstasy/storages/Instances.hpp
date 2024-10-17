@@ -1,7 +1,7 @@
 ///
 /// @file Instances.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Set of instances inheriting from the @b Base type.
 /// @version 1.0.0
 /// @date 2022-10-17
 ///
@@ -77,7 +77,7 @@ namespace ecstasy
         {
             std::type_index id(typeid(Derived));
 
-            if (_instances.contains(id))
+            if (_instances.contains(id)) [[unlikely]]
                 throw std::logic_error("Duplicate instance");
 
             return *dynamic_cast<Derived *>(
@@ -97,7 +97,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-17)
         ///
-        const Base &get(const std::type_index &type) const
+        [[nodiscard]] const Base &get(const std::type_index &type) const
         {
             return *getPtr(type);
         }
@@ -115,7 +115,7 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-17)
         ///
         template <std::derived_from<Base> Derived>
-        const Derived &get() const
+        [[nodiscard]] const Derived &get() const
         {
             return *getPtr<Derived>();
         }
@@ -132,7 +132,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-17)
         ///
-        Base &get(const std::type_index &type)
+        [[nodiscard]] Base &get(const std::type_index &type)
         {
             return *getPtr(type);
         }
@@ -150,7 +150,7 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-17)
         ///
         template <std::derived_from<Base> Derived>
-        Derived &get()
+        [[nodiscard]] Derived &get()
         {
             return *getPtr<Derived>();
         }
@@ -167,11 +167,11 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-17)
         ///
-        Base *getPtr(const std::type_index &type) const
+        [[nodiscard]] Base *getPtr(const std::type_index &type) const
         {
             const auto &valueIt = _instances.find(type);
 
-            if (valueIt == _instances.end())
+            if (valueIt == _instances.end()) [[unlikely]]
                 throw std::logic_error("Instance not found");
             return valueIt->second.get();
         }
@@ -189,7 +189,7 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-17)
         ///
         template <std::derived_from<Base> Derived>
-        Derived *getPtr() const
+        [[nodiscard]] Derived *getPtr() const
         {
             return dynamic_cast<Derived *>(getPtr(std::type_index(typeid(Derived))));
         }
@@ -204,7 +204,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-17)
         ///
-        bool contains(const std::type_index &type) const
+        [[nodiscard]] bool contains(const std::type_index &type) const
         {
             return _instances.contains(type);
         }
@@ -220,7 +220,7 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-17)
         ///
         template <std::derived_from<Base> Derived>
-        bool contains() const
+        [[nodiscard]] bool contains() const
         {
             return contains(std::type_index(typeid(Derived)));
         }
@@ -244,12 +244,14 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-17)
         ///
-        constexpr const std::unordered_map<std::type_index, std::unique_ptr<Base>> &getInner() const
+        [[nodiscard]] constexpr const std::unordered_map<std::type_index, std::unique_ptr<Base>> &
+        getInner() const noexcept
         {
             return _instances;
         }
 
       private:
+        /// @brief The instances container.
         std::unordered_map<std::type_index, std::unique_ptr<Base>> _instances;
     };
 } // namespace ecstasy

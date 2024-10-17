@@ -1,7 +1,7 @@
 ///
 /// @file Entity.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Encapsulate an index to an entity.
 /// @version 1.0.0
 /// @date 2022-10-18
 ///
@@ -47,7 +47,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-18)
         ///
-        constexpr Index getIndex() const
+        [[nodiscard]] constexpr Index getIndex() const noexcept
         {
             return _index;
         }
@@ -64,7 +64,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-18)
         ///
-        constexpr Generation getGeneration() const
+        [[nodiscard]] constexpr Generation getGeneration() const noexcept
         {
             return _generation;
         }
@@ -75,7 +75,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-18)
         ///
-        constexpr auto operator<=>(Entity const &other) const
+        [[nodiscard]] constexpr auto operator<=>(Entity const &other) const noexcept
         {
             return this->_index <=> other._index;
         }
@@ -86,7 +86,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-18)
         ///
-        constexpr bool operator==(Entity const &other) const
+        [[nodiscard]] constexpr bool operator==(Entity const &other) const noexcept
         {
             return this->_index == other._index;
         }
@@ -110,7 +110,7 @@ namespace ecstasy
         template <IsStorage S, typename... Args>
         typename S::Component &add(S &storage, Args &&...args)
         {
-            if (storage.contains(_index))
+            if (storage.contains(_index)) [[unlikely]]
                 throw std::logic_error(std::string("Trying to add twice the component ")
                     + typeid(typename S::Component).name() + " on the same entity.");
             return storage.emplace(_index, std::forward<Args>(args)...);
@@ -135,7 +135,7 @@ namespace ecstasy
         template <IsStorage S>
         typename S::Component &operator[](S &storage)
         {
-            if (!storage.contains(_index))
+            if (!storage.contains(_index)) [[unlikely]]
                 return storage.emplace(_index);
             return storage[_index];
         }
@@ -175,7 +175,7 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-19)
         ///
         template <IsStorage S>
-        const typename S::Component &get(S &storage) const
+        [[nodiscard]] const typename S::Component &get(S &storage) const
         {
             return storage[_index];
         }
@@ -195,7 +195,7 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-19)
         ///
         template <IsStorage S>
-        typename S::Component &get(S &storage)
+        [[nodiscard]] typename S::Component &get(S &storage)
         {
             return storage[_index];
         }
@@ -213,13 +213,15 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-19)
         ///
         template <IsStorage S>
-        bool has(S &storage) const
+        [[nodiscard]] bool has(S &storage) const
         {
             return storage.contains(_index);
         }
 
       protected:
+        /// @brief The entity identifier.
         Index _index;
+        /// @brief The entity generation.
         Generation _generation;
 
         ///
@@ -231,7 +233,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-18)
         ///
-        constexpr Entity(Index index, Generation generation) : _index(index), _generation(generation){};
+        constexpr Entity(Index index, Generation generation) noexcept : _index(index), _generation(generation){};
 
         /// The 'Entities' Resource is the only class able to create entities.
         friend class ::ecstasy::Entities;

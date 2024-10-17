@@ -1,7 +1,7 @@
 ///
 /// @file ISystem.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief System interface, base class of all systems.
 /// @version 1.0.0
 /// @date 2022-10-17
 ///

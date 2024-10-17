@@ -49,8 +49,8 @@ TEST(MapStorage, get)
 {
     ecstasy::MapStorage<Position> storage;
 
-    EXPECT_THROW(storage[0], std::out_of_range);
-    EXPECT_THROW(const_cast<ecstasy::MapStorage<Position> &>(storage)[0], std::out_of_range);
+    EXPECT_THROW(static_cast<void>(storage[0]), std::out_of_range);
+    EXPECT_THROW(static_cast<void>(const_cast<ecstasy::MapStorage<Position> &>(storage)[0]), std::out_of_range);
 
     storage.emplace(0, 5, 3);
     EXPECT_EQ(storage[0].x, 5);
@@ -64,17 +64,17 @@ TEST(MapStorage, erase)
     const auto &cstorage = storage;
 
     EXPECT_EQ(storage.getMask(), util::BitSet(""));
-    EXPECT_THROW(storage[0], std::out_of_range);
-    EXPECT_THROW(cstorage[0], std::out_of_range);
+    EXPECT_THROW(static_cast<void>(storage[0]), std::out_of_range);
+    EXPECT_THROW(static_cast<void>(cstorage[0]), std::out_of_range);
 
     storage.erase(0);
-    EXPECT_THROW(storage[0], std::out_of_range);
+    EXPECT_THROW(static_cast<void>(storage[0]), std::out_of_range);
 
     storage.emplace(0, 5, 3);
     EXPECT_EQ(storage.getMask(), util::BitSet("1"));
     EXPECT_EQ(storage[0].x, 5);
     EXPECT_EQ(cstorage[0].x, 5);
     storage.erase(0);
-    EXPECT_THROW(storage[0], std::out_of_range);
+    EXPECT_THROW(static_cast<void>(storage[0]), std::out_of_range);
     EXPECT_EQ(storage.getMask(), util::BitSet("0"));
 }

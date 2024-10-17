@@ -1,7 +1,7 @@
 ///
 /// @file Entities.cpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Implementation of the Entities class.
 /// @version 1.0.0
 /// @date 2022-10-18
 ///
@@ -13,13 +13,14 @@
 
 namespace ecstasy
 {
-    Entities::Builder::Builder(Entities &parent, Entity entity) : _parent(parent), _entity(entity), _built(false)
+    Entities::Builder::Builder(Entities &parent, Entity entity) noexcept
+        : _parent(parent), _entity(entity), _built(false)
     {
     }
 
     void Entities::Builder::assertNotBuilt() const
     {
-        if (_built)
+        if (_built) [[unlikely]]
             throw std::logic_error(
                 "Try to change entity using an Entities::Builder already consumed (build() has been called)");
     }

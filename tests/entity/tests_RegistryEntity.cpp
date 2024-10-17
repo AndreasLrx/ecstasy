@@ -41,8 +41,8 @@ TEST(RegistryEntity, get)
 
     /// Throw on missing component (const independent) -> storage missing
     GTEST_ASSERT_FALSE(e1.has<Position>());
-    EXPECT_THROW(ce1.get<Position>(), std::logic_error);
-    EXPECT_THROW(e1.get<Position>(), std::logic_error);
+    EXPECT_THROW(static_cast<void>(ce1.get<Position>()), std::logic_error);
+    EXPECT_THROW(static_cast<void>(e1.get<Position>()), std::logic_error);
 
     e1.add<Position>(5, 9);
     GTEST_ASSERT_TRUE(e1.has<Position>());
@@ -55,6 +55,6 @@ TEST(RegistryEntity, get)
 
     /// Throw on missing component (const independent) -> component missing
     GTEST_ASSERT_FALSE(e2.has<Position>());
-    EXPECT_THROW(ce2.get<Position>(), std::out_of_range);
-    EXPECT_THROW(e2.get<Position>(), std::out_of_range);
+    EXPECT_THROW(static_cast<void>(ce2.get<Position>()), std::out_of_range);
+    EXPECT_THROW(static_cast<void>(e2.get<Position>()), std::out_of_range);
 }

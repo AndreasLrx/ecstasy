@@ -1,7 +1,7 @@
 ///
 /// @file MarkerStorage.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Storage for empty components.
 /// @version 1.0.0
 /// @date 2024-04-22
 ///
@@ -87,7 +87,7 @@ namespace ecstasy
         /// @copydoc AStorage::erase(Entity::Index)
         bool erase(Entity::Index index) override final
         {
-            if (_mask.size() <= index)
+            if (_mask.size() <= index) [[unlikely]]
                 return false;
             bool result = _mask[index];
 
@@ -96,21 +96,21 @@ namespace ecstasy
         }
 
         /// @copydoc AStorage::operator[]
-        Component &operator[](Entity::Index index) noexcept override final
+        [[nodiscard]] Component &operator[](Entity::Index index) noexcept override final
         {
             (void)index;
             return _defaultComponent;
         }
 
         /// @copydoc AStorage::operator[]
-        const Component &operator[](Entity::Index index) const noexcept override final
+        [[nodiscard]] const Component &operator[](Entity::Index index) const noexcept override final
         {
             (void)index;
             return _defaultComponent;
         }
 
         /// @copydoc IStorage::getMask
-        constexpr const util::BitSet &getMask() const override final
+        [[nodiscard]] constexpr const util::BitSet &getMask() const noexcept override final
         {
             return _mask;
         }
@@ -123,7 +123,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-04-22)
         ///
-        constexpr const Component &GetInternalComponent() const
+        [[nodiscard]] constexpr const Component &GetInternalComponent() const noexcept
         {
             return _defaultComponent;
         }
@@ -136,13 +136,15 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-04-22)
         ///
-        constexpr Component &GetInternalComponent()
+        [[nodiscard]] constexpr Component &GetInternalComponent() noexcept
         {
             return _defaultComponent;
         }
 
       private:
+        /// @brief Default component returned for all entities.
         Component _defaultComponent;
+        /// @brief Mask of the entities with the marker.
         util::BitSet _mask;
     };
 } // namespace ecstasy

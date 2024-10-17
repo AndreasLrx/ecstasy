@@ -1,7 +1,7 @@
 ///
 /// @file RegistryModifier.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Defines a RegistryModifier concept.
 /// @version 1.0.0
 /// @date 2022-10-24
 ///

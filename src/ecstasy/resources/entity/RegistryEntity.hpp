@@ -1,7 +1,7 @@
 ///
 /// @file RegistryEntity.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Entity containing a reference to the registry. Allows to find storage implicitly.
 /// @version 1.0.0
 /// @date 2022-10-19
 ///
@@ -31,7 +31,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-19)
         ///
-        constexpr RegistryEntity(Entity entity, Registry &registry)
+        constexpr RegistryEntity(Entity entity, Registry &registry) noexcept
             : Entity(entity.getIndex(), entity.getGeneration()), _registry(registry)
         {
         }
@@ -71,7 +71,7 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-19)
         ///
         template <typename C>
-        const C &get() const
+        [[nodiscard]] const C &get() const
         {
             return _registry.getStorage<C>()[_index];
         }
@@ -90,7 +90,7 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-19)
         ///
         template <typename C>
-        C &get()
+        [[nodiscard]] C &get()
         {
             return _registry.getStorage<C>()[_index];
         }
@@ -106,7 +106,7 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-19)
         ///
         template <typename C>
-        bool has() const
+        [[nodiscard]] bool has() const
         {
             return _registry.getStorageSafe<C>().contains(_index);
         }
@@ -119,12 +119,13 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
         ///
-        constexpr Registry &getRegistry()
+        [[nodiscard]] constexpr Registry &getRegistry() noexcept
         {
             return _registry;
         }
 
       private:
+        /// @brief Reference to the registry.
         Registry &_registry;
     };
 } // namespace ecstasy

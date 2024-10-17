@@ -60,8 +60,8 @@ TEST(MarkerStorage, get)
     ecstasy::MarkerStorage<Static> storage;
     const auto &cstorage = storage;
 
-    EXPECT_THROW(storage.at(0), std::out_of_range);
-    EXPECT_THROW(cstorage.at(0), std::out_of_range);
+    EXPECT_THROW(static_cast<void>(storage.at(0)), std::out_of_range);
+    EXPECT_THROW(static_cast<void>(cstorage.at(0)), std::out_of_range);
 
     storage.emplace(0);
     EXPECT_EQ(&storage.at(0), &storage.GetInternalComponent());
@@ -74,15 +74,15 @@ TEST(MarkerStorage, erase)
     const auto &cstorage = storage;
 
     EXPECT_EQ(storage.getMask(), util::BitSet(""));
-    EXPECT_THROW(storage.at(0), std::out_of_range);
-    EXPECT_THROW(cstorage.at(0), std::out_of_range);
+    EXPECT_THROW(static_cast<void>(storage.at(0)), std::out_of_range);
+    EXPECT_THROW(static_cast<void>(cstorage.at(0)), std::out_of_range);
 
     storage.erase(0);
-    EXPECT_THROW(storage.at(0), std::out_of_range);
+    EXPECT_THROW(static_cast<void>(storage.at(0)), std::out_of_range);
 
     storage.emplace(0);
     EXPECT_EQ(storage.getMask(), util::BitSet("1"));
     storage.erase(0);
-    EXPECT_THROW(storage.at(0), std::out_of_range);
+    EXPECT_THROW(static_cast<void>(storage.at(0)), std::out_of_range);
     EXPECT_EQ(storage.getMask(), util::BitSet("0"));
 }

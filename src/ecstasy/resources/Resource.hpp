@@ -1,7 +1,7 @@
 ///
 /// @file Resource.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Base class of all registry resources.
 /// @version 1.0.0
 /// @date 2022-10-17
 ///
@@ -57,13 +57,13 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-04-17)
         ///
-        R *operator->()
+        [[nodiscard]] R *operator->() noexcept
         {
             return dynamic_cast<R *>(this);
         }
 
         /// @copydoc Resource::operator->()
-        const R *operator->() const
+        [[nodiscard]] const R *operator->() const noexcept
         {
             return dynamic_cast<const R *>(this);
         }

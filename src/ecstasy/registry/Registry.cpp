@@ -14,7 +14,7 @@
 
 namespace ecstasy
 {
-    Registry::EntityBuilder::EntityBuilder(Registry &registry)
+    Registry::EntityBuilder::EntityBuilder(Registry &registry) noexcept
         : _registry(registry), _builder(registry.getResource<Entities>()->builder())
     {
     }
@@ -30,12 +30,12 @@ namespace ecstasy
             addResource<Entities>();
     }
 
-    Registry::EntityBuilder Registry::entityBuilder()
+    Registry::EntityBuilder Registry::entityBuilder() noexcept
     {
         return EntityBuilder(*this);
     }
 
-    Entity Registry::getEntity(Entity::Index index) noexcept
+    Entity Registry::getEntity(Entity::Index index)
     {
         return getResource<const Entities>()->get(index);
     }
@@ -90,16 +90,13 @@ namespace ecstasy
     void Registry::runSystems(size_t group, size_t mask)
     {
         auto &systems = _systems.getInner();
+        auto it = systems.begin();
 
-        auto it = std::find_if(systems.begin(), systems.end(), [&group, &mask](auto &entry) {
-            return (entry.first.second & mask) == group;
-        });
-
+        // Run all systems with the same group and mask
         while (it != systems.end()) {
-            it->second->run(*this);
+            if ((it->first.second & mask) == group)
+                it->second->run(*this);
             ++it;
-            if ((it->first.second & mask) != group)
-                break;
         }
     }
 

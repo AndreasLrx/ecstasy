@@ -1,7 +1,7 @@
 ///
 /// @file ObjectWrapper.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Basic object wrapper as a resource.
 /// @version 1.0.0
 /// @date 2022-11-16
 ///
@@ -58,7 +58,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-16)
         ///
-        constexpr T &get()
+        [[nodiscard]] constexpr T &get() noexcept
         {
             return _object;
         }
@@ -71,12 +71,13 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-16)
         ///
-        constexpr const T &get() const
+        [[nodiscard]] constexpr const T &get() const noexcept
         {
             return _object;
         }
 
       protected:
+        /// @brief Wrapped object.
         T _object;
     };
 } // namespace ecstasy

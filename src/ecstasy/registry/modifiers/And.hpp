@@ -1,7 +1,7 @@
 ///
 /// @file And.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Binary query modifier which performs a and between at least two queryables.
 /// @version 1.0.0
 /// @date 2022-10-27
 ///
@@ -14,7 +14,6 @@
 
 #include "ecstasy/config.hpp"
 #include "ecstasy/query/modifiers/And.hpp"
-#include "ecstasy/registry/concepts/QueryableType.hpp"
 
 namespace ecstasy
 {

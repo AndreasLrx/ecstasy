@@ -1,10 +1,10 @@
 #include <gtest/gtest.h>
 #include "ecstasy/config.hpp"
 #include "ecstasy/query/modifiers/Maybe.hpp"
-#include "ecstasy/registry/concepts/QueryableType.hpp"
 #include "ecstasy/registry/modifiers/Maybe.hpp"
 #include "ecstasy/resources/entity/Entities.hpp"
 #include "ecstasy/storages/MapStorage.hpp"
+#include "ecstasy/registry/concepts/queryable_type.hpp"
 
 using namespace ecstasy;
 

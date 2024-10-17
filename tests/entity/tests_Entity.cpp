@@ -61,8 +61,8 @@ TEST(Entity, get)
 
     /// Throw on missing component (const independent)
     GTEST_ASSERT_FALSE(e1.has(positionStorage));
-    EXPECT_THROW(ce1.get(positionStorage), std::out_of_range);
-    EXPECT_THROW(e1.get(positionStorage), std::out_of_range);
+    EXPECT_THROW(static_cast<void>(ce1.get(positionStorage)), std::out_of_range);
+    EXPECT_THROW(static_cast<void>(e1.get(positionStorage)), std::out_of_range);
 
     e1.add(positionStorage, 5, 9);
     GTEST_ASSERT_TRUE(e1.has(positionStorage));
