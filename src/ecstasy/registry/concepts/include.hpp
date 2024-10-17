@@ -12,9 +12,9 @@
 #ifndef ECSTASY_REGISTRY_CONCEPTS_HPP_
 #define ECSTASY_REGISTRY_CONCEPTS_HPP_
 
-#include "ComponentType.hpp"
-#include "QueryableType.hpp"
 #include "RegistryModifier.hpp"
+#include "component_type.hpp"
 #include "modifier_allocator_size.hpp"
+#include "queryable_type.hpp"
 
 #endif /* !CONCEPTS_HPP_ */

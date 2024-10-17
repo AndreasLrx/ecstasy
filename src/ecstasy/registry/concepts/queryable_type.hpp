@@ -1,7 +1,7 @@
 ///
-/// @file QueryableType.hpp
+/// @file queryable_type.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Defines the queryable_type type trait.
 /// @version 1.0.0
 /// @date 2022-10-25
 ///

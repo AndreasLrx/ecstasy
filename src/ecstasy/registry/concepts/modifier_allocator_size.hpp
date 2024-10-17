@@ -1,7 +1,7 @@
 ///
 /// @file modifier_allocator_size.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Get the allocator required size for a list of queryables.
 /// @version 1.0.0
 /// @date 2023-11-08
 ///

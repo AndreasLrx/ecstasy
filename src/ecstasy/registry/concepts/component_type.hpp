@@ -1,7 +1,7 @@
 ///
-/// @file ComponentType.hpp
+/// @file component_type.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Get the component type of the given type.
 /// @version 1.0.0
 /// @date 2022-10-25
 ///
@@ -31,6 +31,7 @@ namespace ecstasy
     template <typename T>
     struct component_type;
 
+    /// @copydoc component_type
     template <typename T>
     struct component_type {
         using type = T;

@@ -1,7 +1,7 @@
 ///
 /// @file Or.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Binary query modifier which performs a or between at least two queryables.
 /// @version 1.0.0
 /// @date 2022-10-27
 ///

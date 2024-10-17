@@ -1,7 +1,7 @@
 ///
 /// @file Maybe.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Query modifier which returns a std::optional filled when the data if existing.
 /// @version 1.0.0
 /// @date 2022-10-25
 ///
@@ -14,6 +14,7 @@
 
 #include "ecstasy/config.hpp"
 #include "ecstasy/query/modifiers/Maybe.hpp"
+#include "ecstasy/registry/concepts/queryable_type.hpp"
 
 namespace ecstasy
 {

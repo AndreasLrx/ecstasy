@@ -1,7 +1,7 @@
 ///
 /// @file Registry.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Registry class definition.
 /// @version 1.0.0
 /// @date 2022-10-17
 ///
@@ -15,8 +15,6 @@
 #include <optional>
 #include <span>
 
-#include "concepts/ComponentType.hpp"
-#include "concepts/QueryableType.hpp"
 #include "concepts/RegistryModifier.hpp"
 #include "ecstasy/query/Query.hpp"
 #include "ecstasy/query/Select.hpp"
@@ -33,6 +31,8 @@
 #include "util/StackAllocator.hpp"
 #include "util/meta/apply.hpp"
 #include "util/meta/filter.hpp"
+#include "concepts/component_type.hpp"
+#include "concepts/queryable_type.hpp"
 #include "ecstasy/registry/concepts/modifier_allocator_size.hpp"
 #include "util/meta/outer_join.hpp"
 
@@ -44,14 +44,24 @@
 
 namespace ecstasy
 {
-    template <typename... Qs>
-    using StackAllocator = util::StackAllocator<modifiers_allocator_size_v<Qs...>, query::modifier::ModifierBase>;
+
+    ///
+    /// @brief Resource reference type.
+    /// This type is used to reference a resource in a thread-safe way depending on the AutoLock parameter.
+    ///
+    /// @tparam R Resource type.
+    /// @tparam AutoLock Whether the resource should be locked automatically.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-10-17)
+    ///
     template <typename R, bool AutoLock = thread::AUTO_LOCK_RESOURCES_DEFAULT>
     using ResourceReference = query::thread_safe_reference_t<R, AutoLock>;
+    /// @brief @ref ResourceReference alias
     template <typename R, bool AutoLock = thread::AUTO_LOCK_RESOURCES_DEFAULT>
     using RR = ResourceReference<R, AutoLock>;
 
-    ///
+    /// @internal
     /// @brief Empty type used with no_unique_address attribute to avoid memory overhead.
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
@@ -79,7 +89,7 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-25)
         ///
         template <typename C>
-        constexpr getStorageType<C> &getQueryable()
+        [[nodiscard]] constexpr getStorageType<C> &getQueryable()
         {
             return getStorageSafe<C>();
         }
@@ -87,7 +97,7 @@ namespace ecstasy
         /// @copydoc getQueryable()
         template <std::derived_from<ResourceBase> R>
             requires query::Queryable<R>
-        constexpr R &getQueryable()
+        [[nodiscard]] constexpr R &getQueryable()
         {
             return getResource<R, false>();
         }
@@ -95,9 +105,9 @@ namespace ecstasy
         /// @copydoc getQueryable()
         template <IsStorage S>
             requires query::Queryable<S>
-        S &getQueryable()
+        [[nodiscard]] S &getQueryable()
         {
-            if (!_storages.contains<std::remove_const_t<S>>())
+            if (!_storages.contains<std::remove_const_t<S>>()) [[unlikely]]
                 return _storages.emplace<std::remove_const_t<S>>();
             return _storages.get<std::remove_const_t<S>>();
         }
@@ -114,35 +124,35 @@ namespace ecstasy
         /// @since 1.0.0 (2024-10-03)
         ///
         template <typename C>
-        constexpr getStorageType<C> &getFromType()
+        [[nodiscard]] constexpr getStorageType<C> &getFromType()
         {
             return getStorageSafe<C>();
         }
 
-        /// @copydoc getQueryable()
+        /// @copydoc getFromType()
         template <IsStorage S>
-        S &getFromType()
+        [[nodiscard]] S &getFromType()
         {
             return _storages.get<std::remove_const_t<S>>();
         }
 
         /// @copydoc getFromType()
         template <std::derived_from<ResourceBase> R>
-        constexpr R &getFromType()
+        [[nodiscard]] constexpr R &getFromType()
         {
             return getResource<R, false>();
         }
 
         /// @copydoc getFromType()
         template <std::derived_from<ISystem> S>
-        constexpr S &getFromType()
+        [[nodiscard]] constexpr S &getFromType()
         {
             return getSystem<S>();
         }
 
         /// @copydoc getFromType()
         template <std::derived_from<Registry> R>
-        constexpr R &getFromType()
+        [[nodiscard]] constexpr R &getFromType() noexcept
         {
             return *this;
         }
@@ -184,7 +194,7 @@ namespace ecstasy
             /// @since 1.0.0 (2022-11-22)
             ///
             template <query::Modifier M, typename ModifierAllocator>
-            static constexpr M &get(Registry &registry, ModifierAllocator &allocator)
+            [[nodiscard]] static constexpr M &get(Registry &registry, ModifierAllocator &allocator)
             {
                 return allocator.template instanciate<M>(
                     getRegistryQueryable<Qs, ModifierAllocator>(registry, allocator)...);
@@ -206,7 +216,7 @@ namespace ecstasy
             /// @since 1.0.0 (2024-04-17)
             ///
             template <typename Q, typename ModifierAllocator>
-            static constexpr Q &getRegistryQueryable(Registry &registry, ModifierAllocator &allocator)
+            [[nodiscard]] static constexpr Q &getRegistryQueryable(Registry &registry, ModifierAllocator &allocator)
             {
                 if constexpr (RegistryModifier<Q> || query::Modifier<Q>)
                     return registry.getQueryable<Q, ModifierAllocator>(allocator);
@@ -217,14 +227,14 @@ namespace ecstasy
 
         /// @copydoc getQueryable()
         template <query::Modifier M, typename ModifierAllocator>
-        constexpr M &getQueryable(ModifierAllocator &allocator)
+        [[nodiscard]] constexpr M &getQueryable(ModifierAllocator &allocator)
         {
             return GetModifierProxy<typename M::Operands>::template get<M, ModifierAllocator>(*this, allocator);
         }
 
         /// @copydoc getQueryable()
         template <RegistryModifier M, typename ModifierAllocator>
-        constexpr typename M::Modifier &getQueryable(ModifierAllocator &allocator)
+        [[nodiscard]] constexpr typename M::Modifier &getQueryable(ModifierAllocator &allocator)
         {
             return getQueryable<typename M::Modifier, ModifierAllocator>(allocator);
         }
@@ -317,7 +327,7 @@ namespace ecstasy
             /// @since 1.0.0 (2024-04-07)
             ///
             template <typename Q>
-            constexpr QueryableType<Q> &getQueryable(Registry &registry)
+            [[nodiscard]] constexpr QueryableType<Q> &getQueryable(Registry &registry)
             {
                 if constexpr (AutoLock && HasViewsAllocator::value && thread::Lockable<queryable_type_t<Q>>)
                     return _viewsAllocator.template instanciate<thread::LockableView<queryable_type_t<Q>>>(
@@ -327,7 +337,9 @@ namespace ecstasy
             }
 
           protected:
+            /// @brief Modifiers allocator. Is @ref EmptyType if no modifier.
             NO_UNIQUE_ADDRESS ModifiersAllocator _modifiersAllocator;
+            /// @brief Views allocator. Is @ref EmptyType if no view.
             NO_UNIQUE_ADDRESS ViewsAllocator _viewsAllocator;
 
           private:
@@ -344,7 +356,7 @@ namespace ecstasy
             /// @since 1.0.0 (2024-04-17)
             ///
             template <typename Q>
-            constexpr auto &getRegistryQueryable(Registry &registry)
+            [[nodiscard]] constexpr auto &getRegistryQueryable(Registry &registry)
             {
                 if constexpr (HasModifiersAllocator::value && (RegistryModifier<Q> || query::Modifier<Q>))
                     return registry.getQueryable<Q, ModifiersAllocator>(_modifiersAllocator);
@@ -579,6 +591,8 @@ namespace ecstasy
             ///
             /// @brief Finalize the entity, making it alive.
             ///
+            /// @note The builder is consumed after this call. Any further with/build call will throw an exception.
+            ///
             /// @return Entity Newly created entity.
             ///
             /// @throw std::logic_error If the builder was already consumed.
@@ -589,7 +603,7 @@ namespace ecstasy
             Entity build();
 
             /// @copydoc Entities::Builder::getEntity
-            const Entity &getEntity() const
+            [[nodiscard]] const Entity &getEntity() const noexcept
             {
                 return _builder.getEntity();
             }
@@ -601,7 +615,7 @@ namespace ecstasy
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2024-08-27)
             ///
-            constexpr const Registry &getRegistry() const
+            [[nodiscard]] constexpr const Registry &getRegistry() const noexcept
             {
                 return _registry;
             }
@@ -613,13 +627,15 @@ namespace ecstasy
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2024-08-27)
             ///
-            constexpr Registry &getRegistry()
+            [[nodiscard]] constexpr Registry &getRegistry() noexcept
             {
                 return _registry;
             }
 
           private:
+            /// @brief Owning registry.
             Registry &_registry;
+            /// @brief Entities builder.
             Entities::Builder _builder;
 
             ///
@@ -630,7 +646,7 @@ namespace ecstasy
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-19)
             ///
-            EntityBuilder(Registry &registry);
+            EntityBuilder(Registry &registry) noexcept;
 
             friend Registry;
         };
@@ -700,7 +716,7 @@ namespace ecstasy
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-10-22)
             ///
-            Select(Registry &registry) : _registry(registry)
+            Select(Registry &registry) noexcept : _registry(registry)
             {
             }
 
@@ -717,7 +733,7 @@ namespace ecstasy
             ///
             // clang-format off
             template <typename C, typename... Cs>
-            RegistryStackQuery<
+            [[nodiscard]] RegistryStackQuery<
                         SelectsTraits,
                         MissingsTraits<C, Cs...>,
                         ConditionsTraits<C, Cs...>,
@@ -746,7 +762,7 @@ namespace ecstasy
             /// @since 1.0.0 (2024-04-07)
             ///
             template <bool AutoLock, typename C, typename... Cs>
-            RegistryStackQuery<
+            [[nodiscard]] RegistryStackQuery<
                         SelectsTraits,
                         MissingsTraits<C, Cs...>,
                         ConditionsTraits<C, Cs...>,
@@ -766,6 +782,7 @@ namespace ecstasy
             // clang-format on
 
           private:
+            /// @brief Owning registry.
             Registry &_registry;
         };
 
@@ -791,7 +808,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-19)
         ///
-        [[nodiscard]] EntityBuilder entityBuilder();
+        [[nodiscard]] EntityBuilder entityBuilder() noexcept;
 
         ///
         /// @brief Add a new system in the registry.
@@ -865,7 +882,7 @@ namespace ecstasy
         /// @since 1.0.0 (2022-11-06)
         ///
         template <std::derived_from<ResourceBase> R>
-        bool hasResource() const
+        [[nodiscard]] bool hasResource() const
         {
             return _resources.contains<R>();
         }
@@ -884,7 +901,7 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-18)
         ///
         template <std::derived_from<ResourceBase> R, bool Locked = thread::AUTO_LOCK_RESOURCES_DEFAULT>
-        ResourceReference<const R, Locked> getResource() const
+        [[nodiscard]] ResourceReference<const R, Locked> getResource() const
         {
             return _resources.get<R>();
         }
@@ -902,7 +919,7 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-18)
         ///
         template <std::derived_from<ResourceBase> R, bool Locked = thread::AUTO_LOCK_RESOURCES_DEFAULT>
-        ResourceReference<R, Locked> getResource()
+        [[nodiscard]] ResourceReference<R, Locked> getResource()
         {
             return _resources.get<R>();
         }
@@ -920,7 +937,7 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-18)
         ///
         template <typename C>
-        const getStorageType<C> &getStorage() const
+        [[nodiscard]] const getStorageType<C> &getStorage() const
         {
             return _storages.get<getStorageType<C>>();
         }
@@ -938,7 +955,7 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-18)
         ///
         template <typename C>
-        getStorageType<C> &getStorage()
+        [[nodiscard]] getStorageType<C> &getStorage()
         {
             return _storages.get<std::remove_const_t<getStorageType<C>>>();
         }
@@ -954,9 +971,9 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-19)
         ///
         template <typename C>
-        getStorageType<C> &getStorageSafe() noexcept
+        [[nodiscard]] getStorageType<C> &getStorageSafe() noexcept
         {
-            if (!_storages.contains<std::remove_const_t<getStorageType<C>>>())
+            if (!_storages.contains<std::remove_const_t<getStorageType<C>>>()) [[unlikely]]
                 addStorage<std::remove_const_t<C>>();
             return _storages.get<getStorageType<std::remove_const_t<C>>>();
         }
@@ -972,7 +989,7 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-21)
         ///
         template <bool Locked = thread::AUTO_LOCK_RESOURCES_DEFAULT>
-        ResourceReference<const Entities, Locked> getEntities() const
+        [[nodiscard]] ResourceReference<const Entities, Locked> getEntities() const
         {
             return _resources.get<Entities>();
         }
@@ -988,7 +1005,7 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-21)
         ///
         template <bool Locked = thread::AUTO_LOCK_RESOURCES_DEFAULT>
-        ResourceReference<Entities, Locked> getEntities()
+        [[nodiscard]] ResourceReference<Entities, Locked> getEntities()
         {
             return _resources.get<Entities>();
         }
@@ -1005,7 +1022,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-21)
         ///
-        Entity getEntity(Entity::Index index) noexcept;
+        [[nodiscard]] Entity getEntity(Entity::Index index);
 
         ///
         /// @brief Get the Entity Storages
@@ -1020,7 +1037,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-06-11)
         ///
-        std::vector<std::reference_wrapper<IStorage>> getEntityStorages(Entity entity);
+        [[nodiscard]] std::vector<std::reference_wrapper<IStorage>> getEntityStorages(Entity entity);
 
         ///
         /// @brief Get the System of type @b S.
@@ -1035,7 +1052,7 @@ namespace ecstasy
         /// @since 1.0.0 (2024-10-03)
         ///
         template <std::derived_from<ISystem> S>
-        S &getSystem()
+        [[nodiscard]] S &getSystem()
         {
             return _systems.get<S>();
         }
@@ -1054,7 +1071,7 @@ namespace ecstasy
         ///
         // clang-format off
         template <typename C, typename... Cs>
-        RegistrySelectStackQuery<thread::AUTO_LOCK_DEFAULT, queryable_type_t<C>, queryable_type_t<Cs>...>
+        [[nodiscard]] RegistrySelectStackQuery<thread::AUTO_LOCK_DEFAULT, queryable_type_t<C>, queryable_type_t<Cs>...>
         query()
         {
             return RegistrySelectStackQuery<thread::AUTO_LOCK_DEFAULT, queryable_type_t<C>, queryable_type_t<Cs>...>(*this);
@@ -1074,7 +1091,7 @@ namespace ecstasy
         /// @since 1.0.0 (2024-04-07)
         ///
         template <bool AutoLock, typename C, typename... Cs>
-        RegistrySelectStackQuery<AutoLock, queryable_type_t<C>, queryable_type_t<Cs>...>
+        [[nodiscard]] RegistrySelectStackQuery<AutoLock, queryable_type_t<C>, queryable_type_t<Cs>...>
         queryEx()
         {
             return RegistrySelectStackQuery<AutoLock, queryable_type_t<C>, queryable_type_t<Cs>...>(*this);
@@ -1096,7 +1113,7 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-24)
         ///
         template <typename C, typename... Cs>
-        Select<queryable_type_t<C>, queryable_type_t<Cs>...> select()
+        [[nodiscard]] Select<queryable_type_t<C>, queryable_type_t<Cs>...> select()
         {
             return Select<queryable_type_t<C>, queryable_type_t<Cs>...>(*this);
         }
@@ -1186,7 +1203,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-06-11)
         ///
-        constexpr const Instances<IStorage> &getStorages() const
+        [[nodiscard]] constexpr const Instances<IStorage> &getStorages() const noexcept
         {
             return _storages;
         }
@@ -1199,14 +1216,17 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-10-04)
         ///
-        constexpr Instances<IStorage> &getStorages()
+        [[nodiscard]] constexpr Instances<IStorage> &getStorages() noexcept
         {
             return _storages;
         }
 
       private:
+        /// @brief Registry resources.
         Instances<ResourceBase> _resources;
+        /// @brief Registry storages.
         Instances<IStorage> _storages;
+        /// @brief Registry systems.
         SystemInstances _systems;
 
         /// @internal

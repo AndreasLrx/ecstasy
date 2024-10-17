@@ -25,7 +25,7 @@ namespace ecstasy::integration::user_action
 
     void Users::updateBindings(Registry &registry) noexcept
     {
-        if (!registry.hasResource<Users>())
+        if (!registry.hasResource<Users>()) [[unlikely]]
             return;
         registry.getResource<Users>()->updateBindings();
     }

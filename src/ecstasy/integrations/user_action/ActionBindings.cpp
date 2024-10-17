@@ -56,13 +56,13 @@ namespace ecstasy::integration::user_action
         std::cmatch match;
 
         for (auto &&[key, value] : bindings) {
-            if (!std::regex_match(key.data(), match, reActionName)) {
+            if (!std::regex_match(key.data(), match, reActionName)) [[unlikely]] {
                 std::cerr << "Invalid action name." << std::endl;
                 break;
             }
 
             Action::Id actionId = std::stoul(match[1].str());
-            if (!value.is_array()) {
+            if (!value.is_array()) [[unlikely]] {
                 std::cerr << "Action '" << key.data() << "' is not a valid toml array." << std::endl;
                 continue;
             }

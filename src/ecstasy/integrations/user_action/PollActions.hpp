@@ -46,7 +46,7 @@ namespace ecstasy::integration::user_action
         /// @copydoc ecstasy::ISystem::run()
         void run(Registry &registry) override final
         {
-            if (!registry.hasResource<PendingActions>())
+            if (!registry.hasResource<PendingActions>()) [[unlikely]]
                 return;
             RR<PendingActions> pendingActions = registry.getResource<PendingActions>();
             while (!pendingActions->get().empty()) {

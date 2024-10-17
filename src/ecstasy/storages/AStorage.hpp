@@ -1,7 +1,7 @@
 ///
 /// @file IStorage.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Abstract class for all components storage.
 /// @version 1.0.0
 /// @date 2022-10-19
 ///
@@ -91,9 +91,9 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-04-23)
         ///
-        Component &at(Entity::Index index)
+        [[nodiscard]] Component &at(Entity::Index index)
         {
-            if (!contains(index))
+            if (!contains(index)) [[unlikely]]
                 throw std::out_of_range("Entity doesn't have the component");
             return (*this)[index];
         }
@@ -110,9 +110,9 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-04-23)
         ///
-        const Component &at(Entity::Index index) const
+        [[nodiscard]] const Component &at(Entity::Index index) const
         {
-            if (!contains(index))
+            if (!contains(index)) [[unlikely]]
                 throw std::out_of_range("Entity doesn't have the component");
             return (*this)[index];
         }
@@ -130,12 +130,12 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-19)
         ///
-        virtual Component &operator[](Entity::Index index) = 0;
+        [[nodiscard]] virtual Component &operator[](Entity::Index index) = 0;
 
         /// @copydoc operator[](Entity::Index)
         ///
         /// @note @ref ecstasy::query::QueryableObject constraint.
-        QueryData getQueryData(Entity::Index index)
+        [[nodiscard]] QueryData getQueryData(Entity::Index index)
         {
             return (*this)[index];
         };
@@ -153,18 +153,18 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-19)
         ///
-        virtual const Component &operator[](Entity::Index index) const = 0;
+        [[nodiscard]] virtual const Component &operator[](Entity::Index index) const = 0;
 
         /// @copydoc operator[](Entity::Index)
         ///
         /// @note @ref ecstasy::query::ConstQueryableObject constraint.
-        ConstQueryData getQueryData(Entity::Index index) const
+        [[nodiscard]] ConstQueryData getQueryData(Entity::Index index) const
         {
             return (*this)[index];
         };
 
         /// @copybrief getComponentTypeInfos
-        const std::type_info &getComponentTypeInfos() const noexcept override final
+        [[nodiscard]] const std::type_info &getComponentTypeInfos() const noexcept override final
         {
             return typeid(Component);
         }
@@ -180,7 +180,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-06-25)
         ///
-        virtual Component &insert(Entity::Index index, Component &&c) = 0;
+        [[nodiscard]] virtual Component &insert(Entity::Index index, Component &&c) = 0;
     };
 
 } // namespace ecstasy

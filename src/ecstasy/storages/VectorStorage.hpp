@@ -126,7 +126,7 @@ namespace ecstasy
         /// it becomes a padding element.
         bool erase(Entity::Index index) override final
         {
-            if (index >= _components.size())
+            if (index >= _components.size()) [[unlikely]]
                 return false;
             size_t effectiveSize;
 
@@ -143,25 +143,27 @@ namespace ecstasy
         }
 
         /// @copydoc AStorage::operator[]
-        Component &operator[](Entity::Index index) noexcept override final
+        [[nodiscard]] Component &operator[](Entity::Index index) noexcept override final
         {
             return _components[index];
         }
 
         /// @copydoc AStorage::operator[]
-        const Component &operator[](Entity::Index index) const noexcept override final
+        [[nodiscard]] const Component &operator[](Entity::Index index) const noexcept override final
         {
             return _components[index];
         }
 
         /// @copydoc IStorage::getMask
-        constexpr const util::BitSet &getMask() const override final
+        [[nodiscard]] constexpr const util::BitSet &getMask() const noexcept override final
         {
             return _mask;
         }
 
       private:
+        /// @brief Components vector.
         std::vector<Component> _components;
+        /// @brief Mask to know if a component is set for an entity.
         util::BitSet _mask;
 
         friend class VectorStorageTest;

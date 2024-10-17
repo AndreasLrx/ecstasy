@@ -62,7 +62,7 @@ namespace ecstasy::integration::sfml
 
     void PollEvents::run(ecstasy::Registry &registry)
     {
-        if (!registry.hasResource<RenderWindow>())
+        if (!registry.hasResource<RenderWindow>()) [[unlikely]]
             return;
         RR<RenderWindow> windowWrapper = registry.getResource<RenderWindow>();
 

@@ -1,7 +1,7 @@
 ///
 /// @file Xor.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Binary query modifier which performs a xor between at least two queryables.
 /// @version 1.0.0
 /// @date 2022-10-27
 ///

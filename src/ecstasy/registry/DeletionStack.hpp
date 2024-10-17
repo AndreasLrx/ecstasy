@@ -1,7 +1,7 @@
 ///
 /// @file DeletionStack.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Helper to manage entity deletion safely within an iteration.
 /// @version 1.0.0
 /// @date 2022-10-21
 ///
@@ -76,10 +76,12 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-21)
         ///
-        size_t size() const;
+        [[nodiscard]] size_t size() const noexcept;
 
       private:
+        /// @brief Registry attached to this stack.
         Registry &_registry;
+        /// @brief Entities marked for deletion.
         std::vector<Entity> _killed;
     };
 } // namespace ecstasy

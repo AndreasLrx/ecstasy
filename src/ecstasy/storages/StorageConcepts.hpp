@@ -1,9 +1,13 @@
-/*
-** EPITECH PROJECT, 2022
-** ecstasy
-** File description:
-** StorageConcepts
-*/
+///
+/// @file StorageConcepts.hpp
+/// @author Andréas Leroux (andreas.leroux@epitech.eu)
+/// @brief Storage concepts and utilities.
+/// @version 0.1
+/// @date 2024-10-17
+///
+/// @copyright Copyright (c) 2024
+///
+///
 
 #ifndef ECSTASY_STORAGE_STORAGECONCEPTS_HPP_
 #define ECSTASY_STORAGE_STORAGECONCEPTS_HPP_

@@ -1,7 +1,7 @@
 ///
 /// @file IStorage.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Storage interface for components.
 /// @version 1.0.0
 /// @date 2022-10-19
 ///
@@ -56,7 +56,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-20)
         ///
-        virtual constexpr const util::BitSet &getMask() const = 0;
+        [[nodiscard]] virtual constexpr const util::BitSet &getMask() const noexcept = 0;
 
         ///
         /// @brief Erase the components attached to the given entities.
@@ -78,7 +78,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-19)
         ///
-        virtual bool contains(size_t index) const noexcept = 0;
+        [[nodiscard]] virtual bool contains(size_t index) const noexcept = 0;
 
         ///
         /// @brief Get the Component stored type infos.
@@ -88,7 +88,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-06-11)
         ///
-        virtual const std::type_info &getComponentTypeInfos() const noexcept = 0;
+        [[nodiscard]] virtual const std::type_info &getComponentTypeInfos() const noexcept = 0;
     };
 
 } // namespace ecstasy

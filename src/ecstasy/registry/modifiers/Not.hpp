@@ -1,7 +1,7 @@
 ///
 /// @file Not.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Query modifier which returns a std::optional filled when the data if existing.
 /// @version 1.0.0
 /// @date 2022-10-25
 ///

@@ -200,8 +200,8 @@ TEST(Registry, resources)
 
     /// Resource not present
     ASSERT_FALSE(registry.hasResource<Counter>());
-    EXPECT_THROW(registry.getResource<Counter>(), std::logic_error);
-    EXPECT_THROW(cregistry.getResource<Counter>(), std::logic_error);
+    EXPECT_THROW(static_cast<void>(registry.getResource<Counter>()), std::logic_error);
+    EXPECT_THROW(static_cast<void>(cregistry.getResource<Counter>()), std::logic_error);
 
     /// Add resource with an initial value of 5 and add one
     registry.addResource<Counter>(5).count();
@@ -210,7 +210,7 @@ TEST(Registry, resources)
     EXPECT_EQ(cregistry.getResource<Counter>()->value, 6);
 
     /// Try to add resource already present
-    EXPECT_THROW(registry.addResource<Counter>(), std::logic_error);
+    EXPECT_THROW(static_cast<void>(registry.addResource<Counter>()), std::logic_error);
 
     {
         auto query = registry.query<ecstasy::Entities>();
@@ -233,8 +233,8 @@ TEST(Registry, storages)
     const ecstasy::Registry &cregistry = registry;
 
     /// Storage not present
-    EXPECT_THROW(registry.getStorage<A>(), std::logic_error);
-    EXPECT_THROW(cregistry.getStorage<A>(), std::logic_error);
+    EXPECT_THROW(static_cast<void>(registry.getStorage<A>()), std::logic_error);
+    EXPECT_THROW(static_cast<void>(cregistry.getStorage<A>()), std::logic_error);
     /// First call instantiate the storage and the second only fetch it.
     EXPECT_EQ(registry.getStorageSafe<A>().size(), 0);
     EXPECT_EQ(registry.getStorageSafe<A>().size(), 0);
@@ -974,7 +974,7 @@ TEST(Registry, clear)
     GTEST_ASSERT_EQ(registry.getStorage<Life>().size(), 1);
     registry.clear();
     GTEST_ASSERT_FALSE(registry.hasResource<Counter>());
-    EXPECT_THROW(registry.getStorage<Life>(), std::logic_error);
+    EXPECT_THROW(static_cast<void>(registry.getStorage<Life>()), std::logic_error);
 }
 
 TEST(Registry, modifiers_allocator_size)

@@ -97,8 +97,8 @@ TEST(VectorStorage, get)
 {
     ecstasy::VectorStorage<Position> storage;
 
-    EXPECT_THROW(storage.at(0), std::out_of_range);
-    EXPECT_THROW(const_cast<ecstasy::VectorStorage<Position> &>(storage).at(0), std::out_of_range);
+    EXPECT_THROW(static_cast<void>(storage.at(0)), std::out_of_range);
+    EXPECT_THROW(static_cast<void>(const_cast<ecstasy::VectorStorage<Position> &>(storage).at(0)), std::out_of_range);
 
     storage.emplace(0, 5, 3);
     EXPECT_EQ(storage.at(0).x, 5);
@@ -114,11 +114,11 @@ TEST(VectorStorage, erase)
 
     EXPECT_EQ(storage.getMask(), util::BitSet(""));
     EXPECT_EQ(components.size(), 0);
-    EXPECT_THROW(storage.at(0), std::out_of_range);
-    EXPECT_THROW(cstorage.at(0), std::out_of_range);
+    EXPECT_THROW(static_cast<void>(storage.at(0)), std::out_of_range);
+    EXPECT_THROW(static_cast<void>(cstorage.at(0)), std::out_of_range);
 
     storage.erase(0);
-    EXPECT_THROW(storage.at(0), std::out_of_range);
+    EXPECT_THROW(static_cast<void>(storage.at(0)), std::out_of_range);
 
     storage.emplace(0, 5, 3);
     EXPECT_EQ(storage.getMask(), util::BitSet("1"));
@@ -142,12 +142,12 @@ TEST(VectorStorage, erase)
     // But the mask is updated and is the source of truth
     storage.erase(1);
     EXPECT_EQ(components.size(), 6);
-    EXPECT_THROW(storage.at(1), std::out_of_range);
+    EXPECT_THROW(static_cast<void>(storage.at(1)), std::out_of_range);
     EXPECT_EQ(storage.getMask(), util::BitSet("100001"));
 
     // Erase entity 5, the padding is removed
     storage.erase(5);
     EXPECT_EQ(components.size(), 1);
-    EXPECT_THROW(storage.at(5), std::out_of_range);
+    EXPECT_THROW(static_cast<void>(storage.at(5)), std::out_of_range);
     EXPECT_EQ(storage.getMask(), util::BitSet("1"));
 }
