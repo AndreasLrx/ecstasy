@@ -1,7 +1,7 @@
 ///
 /// @file And.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Binary query modifier which performs a and between at least two queryables.
 /// @version 1.0.0
 /// @date 2022-10-27
 ///
@@ -69,7 +69,7 @@ namespace ecstasy::query::modifier
         /// @since 1.0.0 (2022-10-27)
         ///
         template <size_t operandId>
-        inline typename ModifierClass::template OperandData<operandId> getOperandData(size_t index)
+        [[nodiscard]] inline typename ModifierClass::template OperandData<operandId> getOperandData(size_t index)
         {
             return getQueryableData(std::get<operandId>(this->_operands), index);
         }
@@ -101,17 +101,31 @@ namespace ecstasy::query::modifier
         /// @since 1.0.0 (2022-11-21)
         ///
         template <size_t... ints>
-        inline void combineOperandMasks(std::integer_sequence<size_t, ints...> int_seq)
+        inline void combineOperandMasks([[maybe_unused]] std::integer_sequence<size_t, ints...> int_seq)
         {
-            (void)int_seq;
             this->_mask = ((util::BitSet(getQueryableMask(std::get<0>(this->_operands)))
                                & getQueryableMask(std::get<1>(this->_operands))) &= ... &=
                 getQueryableMask(std::get<ints + 2>(this->_operands)));
         }
     };
 
+    ///
+    /// @brief Binary query modifier which performs a and between at least two queryables.
+    ///
+    /// @tparam Q1 Left operand queryable type.
+    /// @tparam Q2 Right operand queryable type.
+    /// @tparam Qs Additional operand queryable types.
+    ///
+    /// @param[in] firstOperand left queryable operand.
+    /// @param[in] secondOperand right queryable operand.
+    /// @param[in] otherOperands additional operands (optional).
+    ///
+    /// @return auto The resulting queryable modifier.
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-10-17)
+    ///
     template <Queryable Q1, Queryable Q2, Queryable... Qs>
-    auto constexpr And(Q1 &firstOperand, Q2 &secondOperand, Qs &...otherOperands)
+    [[nodiscard]] auto constexpr And(Q1 &firstOperand, Q2 &secondOperand, Qs &...otherOperands)
     {
         return AndImpl<false, Q1, Q2, Qs...>(firstOperand, secondOperand, otherOperands...);
     }

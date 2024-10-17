@@ -1,7 +1,7 @@
 ///
 /// @file Not.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Unary query modifier which performs a not operation on a queryable.
 /// @version 1.0.0
 /// @date 2022-10-24
 ///
@@ -66,7 +66,7 @@ namespace ecstasy::query::modifier
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-24)
         ///
-        constexpr const util::BitSet &getMask() const
+        [[nodiscard]] constexpr const util::BitSet &getMask() const noexcept
         {
             return _mask;
         }
@@ -86,7 +86,7 @@ namespace ecstasy::query::modifier
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-24)
         ///
-        QueryData getQueryData(size_t index)
+        [[nodiscard]] QueryData getQueryData(size_t index)
         {
             return getQueryableData(_internal, index);
         }
@@ -122,7 +122,9 @@ namespace ecstasy::query::modifier
         }
 
       private:
+        /// @brief Wrapped queryable.
         Internal _internal;
+        /// @brief Mask of the internal queryable.
         util::BitSet _mask;
     };
 } // namespace ecstasy::query::modifier

@@ -1,7 +1,7 @@
 ///
 /// @file Modifier.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Type erased base class for all query modifiers.
 /// @version 1.0.0
 /// @date 2022-10-24
 ///
@@ -15,19 +15,34 @@
 namespace ecstasy::query::modifier
 {
     ///
-    /// @brief Base class for all query modifiers.
+    /// @brief Type erased base class for all query modifiers.
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-10-24)
     ///
     class ModifierBase {
       public:
+        ///
+        /// @brief Destroy the modifier base object.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-17)
+        ///
         virtual ~ModifierBase() = default;
     };
 
+    ///
+    /// @brief Base class for all query modifiers.
+    ///
+    /// @tparam AutoLock Lock the @ref Lockable queryables if true.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-10-17)
+    ///
     template <bool AutoLock>
     class Modifier : public ModifierBase {
       public:
+        /// @copydoc ModifierBase::~ModifierBase()
         virtual ~Modifier() = default;
     };
 } // namespace ecstasy::query::modifier

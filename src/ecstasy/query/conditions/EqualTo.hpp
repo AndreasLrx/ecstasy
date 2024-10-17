@@ -1,7 +1,7 @@
 ///
 /// @file EqualTo.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Equality condition.
 /// @version 1.0.0
 /// @date 2022-12-16
 ///

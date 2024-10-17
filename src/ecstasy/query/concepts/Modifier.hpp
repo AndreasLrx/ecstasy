@@ -1,7 +1,7 @@
 ///
 /// @file Modifier.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Contains the concepts for query modifiers.
 /// @version 1.0.0
 /// @date 2022-11-22
 ///
@@ -19,6 +19,8 @@ namespace ecstasy::query
 {
     ///
     /// @brief Defines a query modifier type.
+    /// A modifier is a queryable type, that inherits from @ref ecstasy::query::modifier::ModifierBase and has an
+    /// Operands type.
     ///
     /// @tparam M Evaluated type.
     ///

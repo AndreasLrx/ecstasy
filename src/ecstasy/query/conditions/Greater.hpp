@@ -1,7 +1,7 @@
 ///
 /// @file Greater.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Greater than condition.
 /// @version 1.0.0
 /// @date 2022-12-16
 ///

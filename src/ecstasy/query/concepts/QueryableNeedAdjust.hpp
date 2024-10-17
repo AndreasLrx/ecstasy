@@ -1,7 +1,7 @@
 ///
 /// @file QueryableNeedAdjust.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Defines a Queryable object type which has the adjustMask() implemented.
 /// @version 1.0.0
 /// @date 2022-10-25
 ///
@@ -79,10 +79,8 @@ namespace ecstasy::query
     /// @since 1.0.0 (2022-10-25)
     ///
     template <typename T>
-    constexpr void adjustMask(T &queryable, size_t maxSize)
+    constexpr void adjustMask([[maybe_unused]] T &queryable, [[maybe_unused]] size_t maxSize) noexcept
     {
-        (void)queryable;
-        (void)maxSize;
     }
 
     /// @copydoc adjustMask()

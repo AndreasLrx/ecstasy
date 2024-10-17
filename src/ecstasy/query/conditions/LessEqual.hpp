@@ -1,7 +1,7 @@
 ///
 /// @file LessEqual.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Less than or equal condition.
 /// @version 1.0.0
 /// @date 2022-12-16
 ///
