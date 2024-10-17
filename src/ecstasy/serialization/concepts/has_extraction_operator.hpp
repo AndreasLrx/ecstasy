@@ -1,7 +1,7 @@
 ///
 /// @file has_extraction_operator.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Concept to check if a type can be saved with a serializer using the extraction operator.
 /// @version 1.0.0
 /// @date 2024-06-24
 ///
@@ -30,7 +30,8 @@ namespace ecstasy::serialization::concepts
     /// @since 1.0.0 (2024-06-24)
     ///
     template <typename S, typename T>
-    concept has_extraction_operator = requires(S &s, const T &t) {
+    concept has_extraction_operator = requires(S &s, const T &t)
+    {
         // Cannot use is_serializer here because it would create a circular dependency.
         requires std::derived_from<S, ISerializer>;
 

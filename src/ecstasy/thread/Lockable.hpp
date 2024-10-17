@@ -1,7 +1,7 @@
 ///
 /// @file Queryable.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Queryable interface, base class of all queryable objects.
 /// @version 1.0.0
 /// @date 2022-10-25
 ///
@@ -27,7 +27,8 @@ namespace ecstasy::thread
     /// @since 1.0.0 (20224-31-03)
     ///
     template <typename L>
-    concept Lockable = requires(L &lockable) {
+    concept Lockable = requires(L &lockable)
+    {
         // clang-format off
         { lockable.lock() } -> std::same_as<void>;
         { lockable.unlock() } -> std::same_as<void>;

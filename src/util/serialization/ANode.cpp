@@ -78,7 +78,7 @@ namespace util::serialization
 
     IObjectNode &ANode::asObject()
     {
-        if (!isObject())
+        if (!isObject()) [[unlikely]]
             throw std::runtime_error("Node is not an Object Node.");
         return dynamic_cast<IObjectNode &>(*this);
     }
@@ -104,7 +104,7 @@ namespace util::serialization
 
     IArrayNode &ANode::asArray()
     {
-        if (!isArray())
+        if (!isArray()) [[unlikely]]
             throw std::runtime_error("Node is not an Array Node.");
         return dynamic_cast<IArrayNode &>(*this);
     }

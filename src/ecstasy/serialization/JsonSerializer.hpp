@@ -525,33 +525,29 @@ namespace ecstasy::serialization
         }
 
         /// @copydoc beforeSaveEntity
-        void beforeSaveEntity(RegistryEntity &entity) override final
+        void beforeSaveEntity([[maybe_unused]] RegistryEntity &entity) override final
         {
             newNestedObject();
-            static_cast<void>(entity);
         }
 
         /// @copydoc afterSaveEntity
-        void afterSaveEntity(RegistryEntity &entity) override final
+        void afterSaveEntity([[maybe_unused]] RegistryEntity &entity) override final
         {
             closeNested();
-            static_cast<void>(entity);
         }
 
         /// @copydoc beforeUpdateEntity
-        void beforeUpdateEntity(RegistryEntity &entity) override final
+        void beforeUpdateEntity([[maybe_unused]] RegistryEntity &entity) override final
         {
             newNestedObject(false);
             _objectIterators.push(getWriteCursor().MemberBegin());
-            static_cast<void>(entity);
         }
 
         /// @copydoc afterUpdateEntity
-        void afterUpdateEntity(RegistryEntity &entity) override final
+        void afterUpdateEntity([[maybe_unused]] RegistryEntity &entity) override final
         {
             _objectIterators.pop();
             closeNested();
-            static_cast<void>(entity);
         }
     };
 } // namespace ecstasy::serialization

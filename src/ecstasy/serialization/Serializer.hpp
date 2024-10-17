@@ -158,8 +158,8 @@ namespace ecstasy::serialization
         /// @since 1.0.0 (2024-04-30)
         ///
         template <typename U>
-            requires concepts::has_extraction_operator<S, U> || traits::has_save_impl_for_type_v<S, U>
-        S &save(const U &object)
+        requires concepts::has_extraction_operator<S, U> || traits::has_save_impl_for_type_v<S, U> S &save(
+            const U &object)
         {
             if constexpr (traits::has_save_impl_for_type_v<S, U>)
                 return inner().saveImpl(object);
@@ -249,9 +249,8 @@ namespace ecstasy::serialization
         /// @since 1.0.0 (2024-04-30)
         ///
         template <typename U>
-            requires is_constructible<U> || (std::is_default_constructible_v<U> && traits::can_update_type_v<S, U>)
-            || traits::has_load_impl_for_type_v<S, U>
-        U load()
+        requires is_constructible<U> ||(std::is_default_constructible_v<U> &&traits::can_update_type_v<S, U>)
+            || traits::has_load_impl_for_type_v<S, U> U load()
         {
             if constexpr (traits::has_load_impl_for_type_v<S, U>)
                 return inner().template loadImpl<U>();
@@ -298,17 +297,19 @@ namespace ecstasy::serialization
         /// @since 1.0.0 (2024-04-30)
         ///
         template <typename U>
-            requires traits::has_update_impl_for_type_v<S, U> || std::is_fundamental_v<U>
-            || concepts::has_insertion_operator<S, U>
-        S &update(U &object)
+        requires traits::has_update_impl_for_type_v<S,
+            U> || std::is_fundamental_v<U> || concepts::has_insertion_operator<S, U>
+            S &update(U &object)
         {
             if constexpr (traits::has_update_impl_for_type_v<S, U>)
                 return inner().updateImpl(object);
-            else if constexpr (std::is_fundamental_v<U>)
-                object = inner().template load<U>();
-            else
-                object << inner();
-            return inner();
+            else {
+                if constexpr (std::is_fundamental_v<U>)
+                    object = inner().template load<U>();
+                else
+                    object << inner();
+                return inner();
+            }
         }
 
         ///
@@ -517,9 +518,8 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-10-11)
         ///
-        virtual void beforeSaveEntity(RegistryEntity &entity)
+        virtual void beforeSaveEntity([[maybe_unused]] RegistryEntity &entity)
         {
-            static_cast<void>(entity);
         }
 
         ///
@@ -530,9 +530,8 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-10-11)
         ///
-        virtual void afterSaveEntity(RegistryEntity &entity)
+        virtual void afterSaveEntity([[maybe_unused]] RegistryEntity &entity)
         {
-            static_cast<void>(entity);
         }
 
         ///
@@ -543,9 +542,8 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-10-11)
         ///
-        virtual void beforeUpdateEntity(RegistryEntity &entity)
+        virtual void beforeUpdateEntity([[maybe_unused]] RegistryEntity &entity)
         {
-            static_cast<void>(entity);
         }
 
         ///
@@ -556,9 +554,8 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-10-11)
         ///
-        virtual void afterUpdateEntity(RegistryEntity &entity)
+        virtual void afterUpdateEntity([[maybe_unused]] RegistryEntity &entity)
         {
-            static_cast<void>(entity);
         }
     };
 

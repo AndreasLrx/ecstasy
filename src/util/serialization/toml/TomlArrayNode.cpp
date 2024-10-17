@@ -54,7 +54,7 @@ namespace util::serialization
 
     void TomlArrayNode::insert(Index index, const INode &node)
     {
-        if (index > size())
+        if (index > size()) [[unlikely]]
             throw std::out_of_range("Index out of bounds.");
 
         _nodes.insert(_nodes.cbegin() + static_cast<long>(index), TomlNodeFactory::get().create(node));
@@ -62,7 +62,7 @@ namespace util::serialization
 
     void TomlArrayNode::replace(Index index, const INode &node)
     {
-        if (index >= size())
+        if (index >= size()) [[unlikely]]
             throw std::out_of_range("Index out of bounds.");
 
         _nodes.at(index) = TomlNodeFactory::get().create(node);

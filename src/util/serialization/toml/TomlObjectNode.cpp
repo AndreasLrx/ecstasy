@@ -24,7 +24,7 @@ namespace util::serialization
     NodeView TomlObjectNode::get(std::string_view key)
     {
         auto it = _nodes.find(key);
-        if (it == _nodes.end())
+        if (it == _nodes.end()) [[unlikely]]
             throw std::out_of_range(std::string("Key '") + std::string(key) + "' no found in Toml Object.");
 
         return it->second;
@@ -33,7 +33,7 @@ namespace util::serialization
     NodeCView TomlObjectNode::get(std::string_view key) const
     {
         auto it = _nodes.find(key);
-        if (it == _nodes.end())
+        if (it == _nodes.end()) [[unlikely]]
             throw std::out_of_range(std::string("Key '") + std::string(key) + "' no found in Toml Object.");
 
         return it->second;

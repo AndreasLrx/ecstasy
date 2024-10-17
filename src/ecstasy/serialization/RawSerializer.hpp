@@ -325,11 +325,10 @@ namespace ecstasy::serialization
         std::stringstream _stream;
 
         /// @copydoc afterSaveEntity
-        void afterSaveEntity(RegistryEntity &entity) override final
+        void afterSaveEntity([[maybe_unused]] RegistryEntity &entity) override final
         {
             // Notify the end of the entity
             save<std::size_t>(0);
-            static_cast<void>(entity);
         }
 
         /// @copydoc loadComponentHash

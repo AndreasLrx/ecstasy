@@ -60,6 +60,31 @@ namespace ecstasy::integration::sfml
         }
     }
 
+    ///
+    /// @brief Poll an event from a window wrapper.
+    ///
+    /// @note This looks trash but it allows to handle Lockable and non Lockable window wrappers.
+    ///
+    /// @tparam T Type of the window wrapper.
+    ///
+    /// @param[in] windowWrapper Window wrapper.
+    /// @param[in] event Event to poll.
+    ///
+    /// @return bool True if an event was polled.
+    ///
+    /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+    /// @since 1.0.0 (2024-10-17)
+    ///
+    template <typename T>
+    static bool pollEvent(T &windowWrapper, sf::Event &event)
+    {
+        if constexpr (std::is_reference_v<T>) {
+            return windowWrapper.pollEvent(event);
+        } else {
+            return windowWrapper->pollEvent(event);
+        }
+    }
+
     void PollEvents::run(ecstasy::Registry &registry)
     {
         if (!registry.hasResource<RenderWindow>()) [[unlikely]]
@@ -67,7 +92,7 @@ namespace ecstasy::integration::sfml
         RR<RenderWindow> windowWrapper = registry.getResource<RenderWindow>();
 
         sf::Event event;
-        while (windowWrapper->pollEvent(event)) {
+        while (pollEvent(windowWrapper, event)) {
             switch (event.type) {
                 /// Mouse events
                 case sf::Event::MouseButtonPressed:

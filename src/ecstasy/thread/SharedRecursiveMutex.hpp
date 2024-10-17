@@ -1,7 +1,7 @@
 ///
 /// @file SharedRecursiveMutex.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Wrapper for @ref std::shared_mutex allowing recursive locking by the same thread.
 /// @version 1.0.0
 /// @date 2024-03-30
 ///
@@ -113,7 +113,7 @@ namespace ecstasy::thread
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-04-02)
         ///
-        constexpr const std::shared_mutex &get_shared_mutex(void) noexcept
+        [[nodiscard]] constexpr const std::shared_mutex &get_shared_mutex(void) noexcept
         {
             return _shared_mutex;
         }
@@ -129,7 +129,7 @@ namespace ecstasy::thread
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-04-02)
         ///
-        constexpr int get_lock_count(void) const noexcept
+        [[nodiscard]] constexpr int get_lock_count(void) const noexcept
         {
             return _lock_count;
         }
@@ -150,7 +150,7 @@ namespace ecstasy::thread
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-04-20)
         ///
-        int get_shared_lock_count(void) const noexcept;
+        [[nodiscard]] int get_shared_lock_count(void) const noexcept;
 
         ///
         /// @brief Get the owner of the mutex.
@@ -163,17 +163,29 @@ namespace ecstasy::thread
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-04-02)
         ///
-        constexpr const std::atomic<std::thread::id> &get_owner(void) const noexcept
+        [[nodiscard]] constexpr const std::atomic<std::thread::id> &get_owner(void) const noexcept
         {
             return _owner;
         }
 
       private:
-        bool has_shared_lock(void) const noexcept;
+        /// @internal
+        /// @brief Check if the current thread has a shared lock.
+        ///
+        /// @return Whether the current thread has a shared lock.
+        ///
+        /// @author Andréas Leroux
+        /// @since 1.0.0 (2024-10-17)
+        ///
+        [[nodiscard]] bool has_shared_lock(void) const noexcept;
 
+        /// @brief Internal shared mutex.
         mutable std::shared_mutex _shared_mutex;
+        /// @brief Owner of the mutex.
         std::atomic<std::thread::id> _owner;
+        /// @brief Lock count.
         int _lock_count;
+        /// @brief Shared lock count.
         mutable std::unordered_map<std::thread::id, int> _shared_locks;
     };
 
