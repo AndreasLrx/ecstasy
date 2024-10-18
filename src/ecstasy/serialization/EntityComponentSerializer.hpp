@@ -1,7 +1,7 @@
 ///
 /// @file EntityComponentSerializer.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Entity component serializer class bound to a specific component and a serializer type.
 /// @version 1.0.0
 /// @date 2024-10-03
 ///
@@ -39,7 +39,7 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-10-04)
         ///
-        EntityComponentSerializer() : IEntityComponentSerializer()
+        EntityComponentSerializer() noexcept : IEntityComponentSerializer()
         {
         }
 
@@ -49,7 +49,7 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-10-04)
         ///
-        EntityComponentSerializer(std::string_view name) : IEntityComponentSerializer(), _name(name)
+        EntityComponentSerializer(std::string_view name) noexcept : IEntityComponentSerializer(), _name(name)
         {
         }
 
@@ -59,7 +59,7 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-10-04)
         ///
-        ~EntityComponentSerializer() override = default;
+        ~EntityComponentSerializer() noexcept override = default;
 
         /// @copydoc IEntityComponentSerializer::save
         ISerializer &save(
@@ -83,19 +83,19 @@ namespace ecstasy::serialization
         }
 
         /// @copydoc IEntityComponentSerializer::getStorageTypeInfo
-        const std::type_info &getStorageTypeInfo() const override final
+        [[nodiscard]] const std::type_info &getStorageTypeInfo() const noexcept override final
         {
             return typeid(StorageType);
         }
 
         /// @copydoc IEntityComponentSerializer::getComponentTypeInfo
-        const std::type_info &getComponentTypeInfo() const override final
+        [[nodiscard]] const std::type_info &getComponentTypeInfo() const noexcept override final
         {
             return typeid(Component);
         }
 
         /// @copydoc IEntityComponentSerializer::getTypeName
-        std::string_view getTypeName() const override final
+        [[nodiscard]] std::string_view getTypeName() const noexcept override final
         {
             if (_name.empty())
                 return typeid(Component).name();
@@ -103,7 +103,7 @@ namespace ecstasy::serialization
         }
 
       private:
-        /// Name of the component type.
+        /// @brief Name of the component type.
         std::string_view _name;
     };
 

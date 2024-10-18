@@ -1,7 +1,7 @@
 ///
 /// @file Serializer.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief RawSerializer class.
 /// @version 1.0.0
 /// @date 2024-04-29
 ///
@@ -138,7 +138,7 @@ namespace ecstasy::serialization
         }
 
         /// @copydoc ISerializer::size
-        size_t size() const override final
+        [[nodiscard]] size_t size() const override final
         {
             return _stream.str().size();
         }
@@ -239,7 +239,7 @@ namespace ecstasy::serialization
         /// @copydoc load
         template <typename U>
             requires std::is_fundamental_v<U> || std::is_same_v<U, std::string>
-        U loadImpl()
+        [[nodiscard]] U loadImpl()
         {
             if constexpr (std::is_fundamental_v<U>)
                 return loadRaw<U>();
@@ -300,7 +300,7 @@ namespace ecstasy::serialization
         /// @since 1.0.0 (2024-04-30)
         ///
         template <typename U>
-        U loadRaw()
+        [[nodiscard]] U loadRaw()
         {
             std::streampos pos = _stream.tellg();
             const U *result = reinterpret_cast<const U *>(_stream.view().data() + pos);
@@ -316,20 +316,20 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-06-11)
         ///
-        std::stringstream &getStream()
+        [[nodiscard]] std::stringstream &getStream() noexcept
         {
             return _stream;
         }
 
       private:
+        /// @brief Internal string stream used as a buffer.
         std::stringstream _stream;
 
         /// @copydoc afterSaveEntity
-        void afterSaveEntity(RegistryEntity &entity) override final
+        void afterSaveEntity([[maybe_unused]] RegistryEntity &entity) override final
         {
             // Notify the end of the entity
             save<std::size_t>(0);
-            static_cast<void>(entity);
         }
 
         /// @copydoc loadComponentHash

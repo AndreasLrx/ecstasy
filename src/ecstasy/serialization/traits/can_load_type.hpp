@@ -1,7 +1,7 @@
 ///
 /// @file can_load_type.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Concept to check if a type can be loaded with a serializer using the extraction operator.
 /// @version 1.0.0
 /// @date 2024-06-24
 ///

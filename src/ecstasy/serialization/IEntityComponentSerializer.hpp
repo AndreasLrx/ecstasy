@@ -42,7 +42,7 @@ namespace ecstasy
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2024-10-04)
             ///
-            virtual ~IEntityComponentSerializer() = default;
+            virtual ~IEntityComponentSerializer() noexcept = default;
 
             ///
             /// @brief Save the component to the serializer.
@@ -81,7 +81,7 @@ namespace ecstasy
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2024-10-04)
             ///
-            virtual const std::type_info &getStorageTypeInfo() const = 0;
+            [[nodiscard]] virtual const std::type_info &getStorageTypeInfo() const noexcept = 0;
 
             ///
             /// @brief Get the type info of the component.
@@ -91,7 +91,7 @@ namespace ecstasy
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2024-10-11)
             ///
-            virtual const std::type_info &getComponentTypeInfo() const = 0;
+            [[nodiscard]] virtual const std::type_info &getComponentTypeInfo() const noexcept = 0;
 
             ////
             /// @brief Get the Component Type Name
@@ -103,7 +103,7 @@ namespace ecstasy
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2024-10-11)
             ///
-            virtual std::string_view getTypeName() const = 0;
+            [[nodiscard]] virtual std::string_view getTypeName() const noexcept = 0;
         };
 
     } // namespace serialization

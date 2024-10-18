@@ -1,7 +1,7 @@
 ///
 /// @file ISerializer.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Interface for all serializer classes.
 /// @version 1.0.0
 /// @date 2024-04-29
 ///
@@ -54,7 +54,7 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-09-12)
         ///
-        virtual size_t size() const = 0;
+        [[nodiscard]] virtual size_t size() const = 0;
 
         ///
         /// @brief Import data from a file into the serializer.
@@ -112,7 +112,7 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-09-12)
         ///
-        virtual std::string exportBytes() const = 0;
+        [[nodiscard]] virtual std::string exportBytes() const = 0;
 
         ///
         /// @brief Export the serializer content to a stream.
