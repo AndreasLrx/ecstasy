@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ECSTASY: src/ecstasy/resources/Resource.hpp Source File</title>
+<title>ECSTASY: src/ecstasy/resources/IResource.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -65,7 +65,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('_resource_8hpp_source.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('_i_resource_8hpp_source.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -91,13 +91,13 @@ $(document).ready(function(){initNavTree('_resource_8hpp_source.html',''); initR
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Resource.hpp</div></div>
+  <div class="headertitle"><div class="title">IResource.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_resource_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<a href="_i_resource_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#ifndef ECSTASY_RESOURCE_RESOURCE_HPP_</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define ECSTASY_RESOURCE_RESOURCE_HPP_</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#ifndef ECSTASY_RESOURCE_IRESOURCE_HPP_</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define ECSTASY_RESOURCE_IRESOURCE_HPP_</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;ecstasy/config.hpp&quot;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
@@ -107,37 +107,20 @@ $(document).ready(function(){initNavTree('_resource_8hpp_source.html',''); initR
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceecstasy.html">ecstasy</a></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classecstasy_1_1_resource_base.html">   29</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classecstasy_1_1_resource_base.html">ResourceBase</a></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classecstasy_1_1_i_resource.html">   29</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classecstasy_1_1_i_resource.html">IResource</a></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>#ifdef ECSTASY_LOCKABLE_RESOURCES</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        : <span class="keyword">public</span> <a class="code hl_class" href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html">thread::SharedRecursiveMutex</a></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    {</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>      <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classecstasy_1_1_resource_base.html#a4c034d619c11eeb2a5568dce369b003c">   36</a></span>        <span class="keyword">virtual</span> <a class="code hl_function" href="classecstasy_1_1_resource_base.html#a4c034d619c11eeb2a5568dce369b003c">~ResourceBase</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classecstasy_1_1_i_resource.html#a78bf3b146499166eeee8a41201d66f6a">   36</a></span>        <span class="keyword">virtual</span> <a class="code hl_function" href="classecstasy_1_1_i_resource.html#a78bf3b146499166eeee8a41201d66f6a">~IResource</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    }; <span class="comment">// namespace ecstasy</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> R&gt;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classecstasy_1_1_resource.html">   49</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classecstasy_1_1_resource.html">Resource</a> : <span class="keyword">public</span> <a class="code hl_class" href="classecstasy_1_1_resource_base.html">ResourceBase</a> {</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>      <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classecstasy_1_1_resource.html#aefe6c3174e1c9e93cfbf744a66a6c05c">   60</a></span>        [[nodiscard]] R *<a class="code hl_function" href="classecstasy_1_1_resource.html#aefe6c3174e1c9e93cfbf744a66a6c05c">operator-&gt;</a>() noexcept</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span>R *<span class="keyword">&gt;</span>(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classecstasy_1_1_resource.html#a4f468428be2751577f8e20cccae4435e">   66</a></span>        [[nodiscard]] <span class="keyword">const</span> R *<a class="code hl_function" href="classecstasy_1_1_resource.html#a4f468428be2751577f8e20cccae4435e">operator-&gt;</a>() const noexcept</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span>R *<span class="keyword">&gt;</span>(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        }</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    };</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>} <span class="comment">// namespace ecstasy</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#endif </span><span class="comment">/* !ECSTASY_RESOURCE_RESOURCE_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>} <span class="comment">// namespace ecstasy</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif </span><span class="comment">/* !ECSTASY_RESOURCE_IRESOURCE_HPP_ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="a_shared_recursive_mutex_8hpp_html"><div class="ttname"><a href="_shared_recursive_mutex_8hpp.html">SharedRecursiveMutex.hpp</a></div><div class="ttdoc">Wrapper for std::shared_mutex allowing recursive locking by the same thread.</div></div>
-<div class="ttc" id="aclassecstasy_1_1_resource_base_html"><div class="ttname"><a href="classecstasy_1_1_resource_base.html">ecstasy::ResourceBase</a></div><div class="ttdoc">Base class of all registry resources.</div><div class="ttdef"><b>Definition</b> <a href="_resource_8hpp_source.html#l00029">Resource.hpp:33</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_resource_base_html_a4c034d619c11eeb2a5568dce369b003c"><div class="ttname"><a href="classecstasy_1_1_resource_base.html#a4c034d619c11eeb2a5568dce369b003c">ecstasy::ResourceBase::~ResourceBase</a></div><div class="ttdeci">virtual ~ResourceBase()=default</div><div class="ttdoc">Default destructor.</div></div>
-<div class="ttc" id="aclassecstasy_1_1_resource_html"><div class="ttname"><a href="classecstasy_1_1_resource.html">ecstasy::Resource</a></div><div class="ttdoc">Resource class.</div><div class="ttdef"><b>Definition</b> <a href="_resource_8hpp_source.html#l00049">Resource.hpp:49</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_resource_html_a4f468428be2751577f8e20cccae4435e"><div class="ttname"><a href="classecstasy_1_1_resource.html#a4f468428be2751577f8e20cccae4435e">ecstasy::Resource::operator-&gt;</a></div><div class="ttdeci">const R * operator-&gt;() const noexcept</div><div class="ttdoc">Compatibility for LockableView.</div><div class="ttdef"><b>Definition</b> <a href="_resource_8hpp_source.html#l00066">Resource.hpp:66</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_resource_html_aefe6c3174e1c9e93cfbf744a66a6c05c"><div class="ttname"><a href="classecstasy_1_1_resource.html#aefe6c3174e1c9e93cfbf744a66a6c05c">ecstasy::Resource::operator-&gt;</a></div><div class="ttdeci">R * operator-&gt;() noexcept</div><div class="ttdoc">Compatibility for LockableView.</div><div class="ttdef"><b>Definition</b> <a href="_resource_8hpp_source.html#l00060">Resource.hpp:60</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_i_resource_html"><div class="ttname"><a href="classecstasy_1_1_i_resource.html">ecstasy::IResource</a></div><div class="ttdoc">Base class of all registry resources.</div><div class="ttdef"><b>Definition</b> <a href="_i_resource_8hpp_source.html#l00029">IResource.hpp:33</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_i_resource_html_a78bf3b146499166eeee8a41201d66f6a"><div class="ttname"><a href="classecstasy_1_1_i_resource.html#a78bf3b146499166eeee8a41201d66f6a">ecstasy::IResource::~IResource</a></div><div class="ttdeci">virtual ~IResource()=default</div><div class="ttdoc">Default destructor.</div></div>
 <div class="ttc" id="aclassecstasy_1_1thread_1_1_shared_recursive_mutex_html"><div class="ttname"><a href="classecstasy_1_1thread_1_1_shared_recursive_mutex.html">ecstasy::thread::SharedRecursiveMutex</a></div><div class="ttdoc">Wrapper for std::shared_mutex allowing recursive locking by the same thread.</div><div class="ttdef"><b>Definition</b> <a href="_shared_recursive_mutex_8hpp_source.html#l00028">SharedRecursiveMutex.hpp:28</a></div></div>
 <div class="ttc" id="anamespaceecstasy_html"><div class="ttname"><a href="namespaceecstasy.html">ecstasy</a></div><div class="ttdoc">Namespace containing all symbols specific to ecstasy.</div><div class="ttdef"><b>Definition</b> <a href="ecstasy_8hpp_source.html#l00029">ecstasy.hpp:30</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -145,7 +128,7 @@ $(document).ready(function(){initNavTree('_resource_8hpp_source.html',''); initR
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_6b0b9537e2784bce85aaa1605580a3a0.html">ecstasy</a></li><li class="navelem"><a class="el" href="dir_8c1a170fbd0a5283d7ed264cf6df56b3.html">resources</a></li><li class="navelem"><a class="el" href="_resource_8hpp.html">Resource.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_6b0b9537e2784bce85aaa1605580a3a0.html">ecstasy</a></li><li class="navelem"><a class="el" href="dir_8c1a170fbd0a5283d7ed264cf6df56b3.html">resources</a></li><li class="navelem"><a class="el" href="_i_resource_8hpp.html">IResource.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
   </ul>
 </div>

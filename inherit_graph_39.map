@@ -1,11 +1,19 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classecstasy_1_1_i_storage.html" title="Base class of all components storage." alt="" coords="5,55,139,80"/>
-<area shape="rect" id="Node000001" href="$classecstasy_1_1_a_storage.html" title="Abstract class for all components storage." alt="" coords="187,55,364,80"/>
-<area shape="poly" id="edge9_Node000000_Node000001" title=" " alt="" coords="152,65,187,65,187,70,152,70"/>
-<area shape="rect" id="Node000002" href="$classecstasy_1_1_map_storage.html" title="Associative Map to store entity components Recommended for sparse components." alt="" coords="421,5,617,31"/>
-<area shape="poly" id="edge10_Node000001_Node000002" title=" " alt="" coords="351,49,455,28,456,33,353,55"/>
-<area shape="rect" id="Node000003" href="$classecstasy_1_1_marker_storage.html" title="Storage for empty components." alt="" coords="412,55,625,80"/>
-<area shape="poly" id="edge11_Node000001_Node000003" title=" " alt="" coords="378,65,412,65,412,70,378,70"/>
-<area shape="rect" id="Node000004" href="$classecstasy_1_1_vector_storage.html" title="Linear vector to store entity components." alt="" coords="414,104,623,129"/>
-<area shape="poly" id="edge12_Node000001_Node000004" title=" " alt="" coords="353,80,456,101,455,107,351,85"/>
+<area shape="rect" id="Node000000" href="$classecstasy_1_1_i_resource.html" title="Base class of all registry resources." alt="" coords="5,177,148,202"/>
+<area shape="rect" id="Node000001" href="$classecstasy_1_1_object_wrapper.html" title=" " alt="" coords="215,5,391,45"/>
+<area shape="poly" id="edge9_Node000000_Node000001" title=" " alt="" coords="91,163,134,109,162,80,195,55,218,43,220,48,197,60,166,84,138,112,96,167"/>
+<area shape="rect" id="Node000003" href="$classecstasy_1_1_entities.html" title="Resource holding all the Registry entities." alt="" coords="239,70,367,95"/>
+<area shape="poly" id="edge11_Node000000_Node000003" title=" " alt="" coords="101,165,143,134,195,104,238,90,240,95,197,109,146,138,104,170"/>
+<area shape="rect" id="Node000004" href="$classecstasy_1_1_object_wrapper.html" title="Basic object wrapper as a resource." alt="" coords="196,119,411,145"/>
+<area shape="poly" id="edge12_Node000000_Node000004" title=" " alt="" coords="136,170,195,155,247,142,248,147,197,160,138,176"/>
+<area shape="rect" id="Node000005" href="$classecstasy_1_1integration_1_1event_1_1_gamepads.html" title="Current Gamepads states." alt="" coords="228,169,379,209"/>
+<area shape="poly" id="edge13_Node000000_Node000005" title=" " alt="" coords="162,187,228,187,228,192,162,192"/>
+<area shape="rect" id="Node000006" href="$classecstasy_1_1integration_1_1event_1_1_keyboard.html" title="Current Keyboard state." alt="" coords="228,233,379,273"/>
+<area shape="poly" id="edge14_Node000000_Node000006" title=" " alt="" coords="136,203,232,231,231,236,135,208"/>
+<area shape="rect" id="Node000007" href="$classecstasy_1_1integration_1_1event_1_1_mouse.html" title="Current mouse state." alt="" coords="228,297,379,337"/>
+<area shape="poly" id="edge15_Node000000_Node000007" title=" " alt="" coords="102,210,144,247,197,283,229,296,226,301,195,288,141,252,99,214"/>
+<area shape="rect" id="Node000008" href="$classecstasy_1_1integration_1_1user__action_1_1_users.html" title="UserProfile container resource." alt="" coords="228,361,379,401"/>
+<area shape="poly" id="edge16_Node000000_Node000008" title=" " alt="" coords="92,213,133,280,163,316,198,347,229,363,227,368,194,352,159,320,129,283,88,216"/>
+<area shape="rect" id="Node000002" href="$classecstasy_1_1integration_1_1sfml_1_1_render_window.html" title="SFML RenderWindow wrapper." alt="" coords="459,5,624,45"/>
+<area shape="poly" id="edge10_Node000001_Node000002" title=" " alt="" coords="405,23,458,23,458,28,405,28"/>
 </map>

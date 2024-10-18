@@ -118,23 +118,23 @@ Collaboration diagram for ecstasy::RegistryEntity:</div>
 <div class="dyncontent">
 <div class="center"><img src="classecstasy_1_1_registry_entity__coll__graph.png" border="0" usemap="#aecstasy_1_1_registry_entity_coll__map" alt="Collaboration graph"/></div>
 <map name="aecstasy_1_1_registry_entity_coll__map" id="aecstasy_1_1_registry_entity_coll__map">
-<area shape="rect" title="Entity containing a reference to the registry." alt="" coords="968,95,1139,121"/>
-<area shape="rect" href="classecstasy_1_1_entity.html" title="Encapsulate an index to an entity." alt="" coords="733,71,851,97"/>
-<area shape="poly" title=" " alt="" coords="864,88,968,98,967,103,864,93"/>
-<area shape="rect" href="classecstasy_1_1_registry.html" title="Base of an ECS architecture." alt="" coords="725,121,859,146"/>
-<area shape="poly" title=" " alt="" coords="872,123,944,116,967,114,968,119,944,121,873,128"/>
-<area shape="rect" href="classecstasy_1_1_instances.html" title=" " alt="" coords="401,32,603,72"/>
-<area shape="poly" title=" " alt="" coords="588,73,747,118,745,123,586,78"/>
+<area shape="rect" title="Entity containing a reference to the registry." alt="" coords="957,95,1128,121"/>
+<area shape="rect" href="classecstasy_1_1_entity.html" title="Encapsulate an index to an entity." alt="" coords="723,71,840,97"/>
+<area shape="poly" title=" " alt="" coords="854,88,957,98,957,103,853,93"/>
+<area shape="rect" href="classecstasy_1_1_registry.html" title="Base of an ECS architecture." alt="" coords="715,121,848,146"/>
+<area shape="poly" title=" " alt="" coords="861,123,933,116,957,114,957,119,934,121,862,128"/>
+<area shape="rect" href="classecstasy_1_1_instances.html" title=" " alt="" coords="410,32,583,72"/>
+<area shape="poly" title=" " alt="" coords="581,73,737,118,735,123,580,78"/>
 <area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/container/unordered_map.html" title=" " alt="" coords="60,5,225,75"/>
-<area shape="poly" title=" " alt="" coords="239,41,401,46,401,51,239,46"/>
-<area shape="rect" href="classecstasy_1_1_instances.html" title=" " alt="" coords="421,113,583,153"/>
-<area shape="poly" title=" " alt="" coords="597,131,725,131,725,136,597,136"/>
+<area shape="poly" title=" " alt="" coords="239,41,409,46,409,52,239,46"/>
+<area shape="rect" href="classecstasy_1_1_instances.html" title=" " alt="" coords="415,113,578,153"/>
+<area shape="poly" title=" " alt="" coords="591,131,714,131,714,136,591,136"/>
 <area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/container/unordered_map.html" title=" " alt="" coords="60,99,225,168"/>
-<area shape="poly" title=" " alt="" coords="239,131,420,131,420,136,239,136"/>
-<area shape="rect" href="classecstasy_1_1_system_instances.html" title="Set of instances inheriting from the Base type." alt="" coords="407,195,597,221"/>
-<area shape="poly" title=" " alt="" coords="565,189,741,143,743,149,566,194"/>
+<area shape="poly" title=" " alt="" coords="239,131,415,131,415,136,239,136"/>
+<area shape="rect" href="classecstasy_1_1_system_instances.html" title="Set of instances inheriting from the Base type." alt="" coords="401,195,592,221"/>
+<area shape="poly" title=" " alt="" coords="559,189,731,143,733,149,561,194"/>
 <area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/container/map.html" title=" " alt="" coords="5,192,280,261"/>
-<area shape="poly" title=" " alt="" coords="294,216,406,210,407,216,294,221"/>
+<area shape="poly" title=" " alt="" coords="294,216,401,210,401,216,294,221"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -338,7 +338,7 @@ template&lt;typename C , typename... Args&gt; </div>
 <div class="line"><span class="lineno">   57</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classecstasy_1_1_entity.html#aab273bfe6a547817e1a9259eba5912cd">Entity::add</a>(<a class="code hl_variable" href="classecstasy_1_1_registry_entity.html#af26f37cece2f86882456e665a23f60d2">_registry</a>.<a class="code hl_function" href="classecstasy_1_1_registry.html#a425b11006bbd0b2175d739d64e0ebdaa">getStorageSafe</a>&lt;C&gt;(), std::forward&lt;Args&gt;(args)...);</div>
 <div class="line"><span class="lineno">   58</span>        }</div>
 <div class="ttc" id="aclassecstasy_1_1_entity_html_aab273bfe6a547817e1a9259eba5912cd"><div class="ttname"><a href="classecstasy_1_1_entity.html#aab273bfe6a547817e1a9259eba5912cd">ecstasy::Entity::add</a></div><div class="ttdeci">S::Component &amp; add(S &amp;storage, Args &amp;&amp;...args)</div><div class="ttdoc">Add a component to the entity.</div><div class="ttdef"><b>Definition</b> <a href="_entity_8hpp_source.html#l00111">Entity.hpp:111</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_a425b11006bbd0b2175d739d64e0ebdaa"><div class="ttname"><a href="classecstasy_1_1_registry.html#a425b11006bbd0b2175d739d64e0ebdaa">ecstasy::Registry::getStorageSafe</a></div><div class="ttdeci">getStorageType&lt; C &gt; &amp; getStorageSafe() noexcept</div><div class="ttdoc">Get the Storage of a component and create it if not found.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00974">Registry.hpp:974</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_a425b11006bbd0b2175d739d64e0ebdaa"><div class="ttname"><a href="classecstasy_1_1_registry.html#a425b11006bbd0b2175d739d64e0ebdaa">ecstasy::Registry::getStorageSafe</a></div><div class="ttdeci">getStorageType&lt; C &gt; &amp; getStorageSafe() noexcept</div><div class="ttdoc">Get the Storage of a component and create it if not found.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00976">Registry.hpp:976</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -390,7 +390,7 @@ template&lt;typename C &gt; </div>
 <div class="line"><span class="lineno">   95</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry_entity.html#af26f37cece2f86882456e665a23f60d2">_registry</a>.<a class="code hl_function" href="classecstasy_1_1_registry.html#a9fa7247f6c5383c37be80ee116de1e62">getStorage</a>&lt;C&gt;()[<a class="code hl_variable" href="classecstasy_1_1_entity.html#addeec91510f5480c5dcc68afb00eb63b">_index</a>];</div>
 <div class="line"><span class="lineno">   96</span>        }</div>
 <div class="ttc" id="aclassecstasy_1_1_entity_html_addeec91510f5480c5dcc68afb00eb63b"><div class="ttname"><a href="classecstasy_1_1_entity.html#addeec91510f5480c5dcc68afb00eb63b">ecstasy::Entity::_index</a></div><div class="ttdeci">Index _index</div><div class="ttdoc">The entity identifier.</div><div class="ttdef"><b>Definition</b> <a href="_entity_8hpp_source.html#l00223">Entity.hpp:223</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_a9fa7247f6c5383c37be80ee116de1e62"><div class="ttname"><a href="classecstasy_1_1_registry.html#a9fa7247f6c5383c37be80ee116de1e62">ecstasy::Registry::getStorage</a></div><div class="ttdeci">const getStorageType&lt; C &gt; &amp; getStorage() const</div><div class="ttdoc">Get the Storage for the component type C.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00940">Registry.hpp:940</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_a9fa7247f6c5383c37be80ee116de1e62"><div class="ttname"><a href="classecstasy_1_1_registry.html#a9fa7247f6c5383c37be80ee116de1e62">ecstasy::Registry::getStorage</a></div><div class="ttdeci">const getStorageType&lt; C &gt; &amp; getStorage() const</div><div class="ttdoc">Get the Storage for the component type C.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00942">Registry.hpp:942</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

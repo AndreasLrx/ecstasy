@@ -130,7 +130,7 @@ struct ecstasy::Registry::GetModifierProxy&lt; util::meta::Traits&lt; Qs... &gt;
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-22) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00180">180</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00182">182</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a16b5b6928b210e61a388ce42014571dd" name="a16b5b6928b210e61a388ce42014571dd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a16b5b6928b210e61a388ce42014571dd">&#9670;&#160;</a></span>get()</h2>
@@ -190,11 +190,11 @@ template&lt;query::Modifier M, typename ModifierAllocator &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-22) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00197">197</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  198</span>            {</div>
-<div class="line"><span class="lineno">  199</span>                <span class="keywordflow">return</span> allocator.template instanciate&lt;M&gt;(</div>
-<div class="line"><span class="lineno">  200</span>                    getRegistryQueryable&lt;Qs, ModifierAllocator&gt;(registry, allocator)...);</div>
-<div class="line"><span class="lineno">  201</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00199">199</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  200</span>            {</div>
+<div class="line"><span class="lineno">  201</span>                <span class="keywordflow">return</span> allocator.template instanciate&lt;M&gt;(</div>
+<div class="line"><span class="lineno">  202</span>                    getRegistryQueryable&lt;Qs, ModifierAllocator&gt;(registry, allocator)...);</div>
+<div class="line"><span class="lineno">  203</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -256,13 +256,13 @@ template&lt;typename Q , typename ModifierAllocator &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00219">219</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  220</span>            {</div>
-<div class="line"><span class="lineno">  221</span>                <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (RegistryModifier&lt;Q&gt; || query::Modifier&lt;Q&gt;)</div>
-<div class="line"><span class="lineno">  222</span>                    <span class="keywordflow">return</span> registry.getQueryable&lt;Q, ModifierAllocator&gt;(allocator);</div>
-<div class="line"><span class="lineno">  223</span>                <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  224</span>                    <span class="keywordflow">return</span> registry.getQueryable&lt;Q&gt;();</div>
-<div class="line"><span class="lineno">  225</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00221">221</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  222</span>            {</div>
+<div class="line"><span class="lineno">  223</span>                <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (RegistryModifier&lt;Q&gt; || query::Modifier&lt;Q&gt;)</div>
+<div class="line"><span class="lineno">  224</span>                    <span class="keywordflow">return</span> registry.getQueryable&lt;Q, ModifierAllocator&gt;(allocator);</div>
+<div class="line"><span class="lineno">  225</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  226</span>                    <span class="keywordflow">return</span> registry.getQueryable&lt;Q&gt;();</div>
+<div class="line"><span class="lineno">  227</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>

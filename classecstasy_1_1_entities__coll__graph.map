@@ -1,15 +1,13 @@
 <map id="ecstasy::Entities" name="ecstasy::Entities">
-<area shape="rect" id="Node000001" title="Resource holding all the Registry entities." alt="" coords="199,211,327,236"/>
-<area shape="rect" id="Node000002" href="$classecstasy_1_1_resource.html" title=" " alt="" coords="15,93,166,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,138,246,208,243,213,131,143"/>
-<area shape="rect" id="Node000003" href="$classecstasy_1_1_resource_base.html" title="Base class of all registry resources." alt="" coords="5,5,176,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="93,44,93,93,88,93,88,44"/>
-<area shape="rect" id="Node000004" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="191,93,335,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="265,147,265,210,260,210,260,147"/>
-<area shape="rect" id="Node000005" href="$classutil_1_1_bit_set.html" title="Mimics the API of std::bitset but with the dynamic properties of std::vector&lt;bool&gt;" alt="" coords="359,101,449,126"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="396,140,381,165,359,189,336,203,312,213,310,208,334,198,356,185,376,162,391,137"/>
-<area shape="rect" id="Node000006" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/size_t.html" title=" " alt="" coords="280,5,368,31"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="345,39,396,99,392,102,341,43"/>
-<area shape="rect" id="Node000007" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="392,5,595,31"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="475,42,417,102,413,99,471,39"/>
+<area shape="rect" id="Node000001" title="Resource holding all the Registry entities." alt="" coords="181,211,309,236"/>
+<area shape="rect" id="Node000002" href="$classecstasy_1_1_i_resource.html" title="Base class of all registry resources." alt="" coords="5,101,148,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,131,228,208,225,213,105,136"/>
+<area shape="rect" id="Node000003" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="173,93,317,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="247,147,247,210,242,210,242,147"/>
+<area shape="rect" id="Node000004" href="$classutil_1_1_bit_set.html" title="Mimics the API of std::bitset but with the dynamic properties of std::vector&lt;bool&gt;" alt="" coords="341,101,431,126"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="378,140,363,165,341,189,318,203,294,213,292,208,316,198,338,185,358,162,373,137"/>
+<area shape="rect" id="Node000005" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/size_t.html" title=" " alt="" coords="258,5,346,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="323,39,378,99,374,102,319,42"/>
+<area shape="rect" id="Node000006" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="370,5,573,31"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="454,42,399,102,395,99,450,39"/>
 </map>

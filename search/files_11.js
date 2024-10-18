@@ -10,6 +10,5 @@ var searchData=
   ['registry_2ehpp_7',['Registry.hpp',['../_registry_8hpp.html',1,'']]],
   ['registryentity_2ehpp_8',['RegistryEntity.hpp',['../_registry_entity_8hpp.html',1,'']]],
   ['registrymodifier_2ehpp_9',['RegistryModifier.hpp',['../_registry_modifier_8hpp.html',1,'']]],
-  ['renderwindow_2ehpp_10',['RenderWindow.hpp',['../_render_window_8hpp.html',1,'']]],
-  ['resource_2ehpp_11',['Resource.hpp',['../_resource_8hpp.html',1,'']]]
+  ['renderwindow_2ehpp_10',['RenderWindow.hpp',['../_render_window_8hpp.html',1,'']]]
 ];

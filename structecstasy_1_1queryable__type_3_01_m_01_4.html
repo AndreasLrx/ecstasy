@@ -114,7 +114,7 @@ Public Types</h2></td></tr>
 <div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="conceptecstasy_1_1query_1_1_modifier.html">ecstasy::query::Modifier</a> M&gt;<br />
 struct ecstasy::queryable_type&lt; M &gt;</div><p>Try to get the type of a queryable associated to a type stored in the registry (component, storage, resource...).   </p>
 <p>Returns C if:</p><ul>
-<li>C is derived from the <a class="el" href="classecstasy_1_1_resource.html">ecstasy::Resource</a> class and match the Queryable concept.</li>
+<li>C is derived from the <a class="el" href="classecstasy_1_1_i_resource.html">ecstasy::IResource</a> class and match the Queryable concept.</li>
 <li>C match the <a class="el" href="conceptecstasy_1_1_is_storage.html">ecstasy::IsStorage</a> concept and match the Queryable concept.</li>
 <li>C is a const type matching the ConstQueryableObject concept.</li>
 <li>C match the <a class="el" href="conceptecstasy_1_1query_1_1_modifier.html">ecstasy::query::Modifier</a> Returns C::Modifier if C match the <a class="el" href="conceptecstasy_1_1_registry_modifier.html">ecstasy::RegistryModifier</a> concept. Otherwise, returns <a class="el" href="namespaceecstasy.html#a2c011da268733486119ae199f8bb4a04">getStorageType&lt;C&gt;</a>.</li>

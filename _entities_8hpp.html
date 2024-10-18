@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('_entities_8hpp.html',''); initResizabl
 <div class="textblock"><code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/span.html">span</a>&gt;</code><br />
 <code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/vector.html">vector</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="_entity_8hpp_source.html">Entity.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_resource_8hpp_source.html">ecstasy/resources/Resource.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_i_resource_8hpp_source.html">ecstasy/resources/IResource.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_bit_set_8hpp_source.html">util/BitSet.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Entities.hpp:</div>
@@ -117,8 +117,8 @@ Include dependency graph for Entities.hpp:</div>
 <area shape="poly" title=" " alt="" coords="651,44,701,160,696,162,646,47"/>
 <area shape="rect" href="_entity_8hpp.html" title="Encapsulate an index to an entity." alt="" coords="342,93,429,119"/>
 <area shape="poly" title=" " alt="" coords="580,48,437,92,435,87,578,43"/>
-<area shape="rect" href="_resource_8hpp.html" title="Base class of all registry resources." alt="" coords="469,255,699,280"/>
-<area shape="poly" title=" " alt="" coords="642,46,636,118,629,163,617,208,601,244,596,242,612,206,623,162,631,117,637,45"/>
+<area shape="rect" href="_i_resource_8hpp.html" title="Base class of all registry resources." alt="" coords="468,255,703,280"/>
+<area shape="poly" title=" " alt="" coords="642,46,636,118,628,163,617,208,601,244,596,242,612,206,623,162,630,117,637,45"/>
 <area shape="rect" href="_bit_set_8hpp.html" title=" " alt="" coords="856,93,971,119"/>
 <area shape="poly" title=" " alt="" coords="706,43,861,87,860,92,705,48"/>
 <area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/header/compare.html" title=" " alt="" coords="425,174,503,199"/>
@@ -132,8 +132,8 @@ Include dependency graph for Entities.hpp:</div>
 <area shape="rect" href="_storage_concepts_8hpp.html" title="Storage concepts and utilities." alt="" coords="213,167,400,207"/>
 <area shape="poly" title=" " alt="" coords="376,121,337,159,333,155,372,117"/>
 <area shape="poly" title=" " alt="" coords="154,282,69,324,67,319,152,278"/>
-<area shape="rect" title=" " alt="" coords="393,328,535,353"/>
-<area shape="poly" title=" " alt="" coords="223,277,405,322,404,327,222,283"/>
+<area shape="rect" title=" " alt="" coords="394,328,537,353"/>
+<area shape="poly" title=" " alt="" coords="223,277,406,322,405,327,222,283"/>
 <area shape="rect" href="_traits_8hpp.html" title="Helper types for parameter packs." alt="" coords="102,328,250,353"/>
 <area shape="poly" title=" " alt="" coords="179,280,179,314,173,314,173,280"/>
 <area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/header/tuple.html" title=" " alt="" coords="149,401,203,427"/>
@@ -141,7 +141,7 @@ Include dependency graph for Entities.hpp:</div>
 <area shape="poly" title=" " alt="" coords="276,209,208,250,206,245,274,205"/>
 <area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/header/concepts.html" title=" " alt="" coords="309,255,389,280"/>
 <area shape="poly" title=" " alt="" coords="319,206,339,241,334,244,315,208"/>
-<area shape="poly" title=" " alt="" coords="566,282,497,323,494,318,563,278"/>
+<area shape="poly" title=" " alt="" coords="567,282,498,323,496,318,565,278"/>
 <area shape="poly" title=" " alt="" coords="881,121,753,169,748,171,746,166,751,164,879,116"/>
 <area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/header/bit.html" title=" " alt="" coords="986,174,1025,199"/>
 <area shape="poly" title=" " alt="" coords="929,117,983,163,980,167,925,121"/>
@@ -217,7 +217,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_entities.html">ecstasy::Entities</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1_resource.html" title="Resource class.">Resource</a> holding all the <a class="el" href="classecstasy_1_1_registry.html" title="Base of an ECS architecture.">Registry</a> entities.  <a href="classecstasy_1_1_entities.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resource holding all the <a class="el" href="classecstasy_1_1_registry.html" title="Base of an ECS architecture.">Registry</a> entities.  <a href="classecstasy_1_1_entities.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_entities_1_1_builder.html">ecstasy::Entities::Builder</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1_entities.html" title="Resource holding all the Registry entities.">Entities</a> builder to add multiple component to an entity on creation.  <a href="classecstasy_1_1_entities_1_1_builder.html#details">More...</a><br /></td></tr>
