@@ -15,6 +15,26 @@
 
 namespace util::serialization
 {
+    void TomlNodeFactory::exportStream(const INode &node, std::ostream &stream)
+    {
+        if (node.getType() == INode::Type::Object) {
+            toml::table table;
+
+            for (auto it : node.asObject())
+                table.insert(it.first, dynamic_cast<const ITomlNode &>(*it.second.lock()).getNode());
+
+            stream << table;
+        } else if (node.getType() == INode::Type::Array) {
+            toml::array array;
+
+            for (auto it : node.asArray())
+                array.push_back(dynamic_cast<const ITomlNode &>(*it.lock()).getNode());
+            stream << array;
+
+        } else
+            throw std::runtime_error("Cannot export non-object/array node.");
+    }
+
     TomlNodeFactory &TomlNodeFactory::get() noexcept
     {
         static TomlNodeFactory instance;

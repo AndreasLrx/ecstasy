@@ -287,6 +287,18 @@ namespace util::serialization
         [[nodiscard]] virtual std::optional<std::reference_wrapper<IArrayNode>> tryAsArray() noexcept = 0;
 
         ///
+        /// @brief Set the String value of the node.
+        ///
+        /// @param[in] value New node value.
+        ///
+        /// @throw std::runtime_error If the node is the node type is not @ref Type::String.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-18)
+        ///
+        virtual void setString(std::string_view value) = 0;
+
+        ///
         /// @brief Get the string node value.
         ///
         /// @return std::string_view node value.
@@ -308,6 +320,18 @@ namespace util::serialization
         /// @since 1.0.0 (2022-12-08)
         ///
         [[nodiscard]] virtual std::optional<std::string_view> tryAsString() const noexcept = 0;
+
+        ///
+        /// @brief Set the Integer value of the node.
+        ///
+        /// @param[in] value New node value.
+        ///
+        /// @throw std::runtime_error If the node is the node type is not @ref Type::Integer.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-18)
+        ///
+        virtual void setInteger(int64_t value) = 0;
 
         ///
         /// @brief Get the integer node value.
@@ -333,6 +357,18 @@ namespace util::serialization
         [[nodiscard]] virtual std::optional<int64_t> tryAsInteger() const noexcept = 0;
 
         ///
+        /// @brief Set the Float value of the node.
+        ///
+        /// @param[in] value New node value.
+        ///
+        /// @throw std::runtime_error If the node is the node type is not @ref Type::Float.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-18)
+        ///
+        virtual void setFloat(double value) = 0;
+
+        ///
         /// @brief Get the float node value.
         ///
         /// @return double node value.
@@ -354,6 +390,18 @@ namespace util::serialization
         /// @since 1.0.0 (2022-12-08)
         ///
         [[nodiscard]] virtual std::optional<double> tryAsFloat() const noexcept = 0;
+
+        ///
+        /// @brief Set the Boolean value of the node.
+        ///
+        /// @param[in] value New node value.
+        ///
+        /// @throw std::runtime_error If the node is the node type is not @ref Type::Boolean.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-18)
+        ///
+        virtual void setBoolean(bool value) = 0;
 
         ///
         /// @brief Get the boolean node value.
@@ -379,6 +427,18 @@ namespace util::serialization
         [[nodiscard]] virtual std::optional<bool> tryAsBoolean() const noexcept = 0;
 
         ///
+        /// @brief Set the Date value of the node.
+        ///
+        /// @param[in] value New node value.
+        ///
+        /// @throw std::runtime_error If the node is the node type is not @ref Type::Date.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-18)
+        ///
+        virtual void setDate(const Date &value) = 0;
+
+        ///
         /// @brief Get the date node value.
         ///
         /// @return Date node value.
@@ -402,6 +462,18 @@ namespace util::serialization
         [[nodiscard]] virtual std::optional<Date> tryAsDate() const noexcept = 0;
 
         ///
+        /// @brief Set the Time value of the node.
+        ///
+        /// @param[in] value New node value.
+        ///
+        /// @throw std::runtime_error If the node is the node type is not @ref Type::Time.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-18)
+        ///
+        virtual void setTime(const Time &value) = 0;
+
+        ///
         /// @brief Get the time node value.
         ///
         /// @return Time node value.
@@ -423,6 +495,18 @@ namespace util::serialization
         /// @since 1.0.0 (2022-12-08)
         ///
         [[nodiscard]] virtual std::optional<Time> tryAsTime() const noexcept = 0;
+
+        ///
+        /// @brief Set the Date Time value of the node.
+        ///
+        /// @param[in] value New node value.
+        ///
+        /// @throw std::runtime_error If the node is the node type is not @ref Type::DateTime.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-18)
+        ///
+        virtual void setDateTime(const DateTime &value) = 0;
 
         ///
         /// @brief Get the datetime node value.

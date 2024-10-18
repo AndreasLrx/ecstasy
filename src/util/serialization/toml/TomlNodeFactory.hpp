@@ -36,6 +36,8 @@ namespace util::serialization
         ///
         [[nodiscard]] static TomlNodeFactory &get() noexcept;
 
+        void exportStream(const INode &node, std::ostream &stream) override final;
+
         ///
         /// @brief Create a node from a @ref toml::node object.
         ///

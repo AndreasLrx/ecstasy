@@ -8,6 +8,8 @@
 #ifdef ECSTASY_SERIALIZER_JSON
     #include "ecstasy/serialization/JsonSerializer.hpp"
 #endif
+#include "ecstasy/serialization/NodeSerializer.hpp"
+#include "util/serialization/toml/TomlNodeFactory.hpp"
 
 using namespace ecstasy::serialization;
 
@@ -465,4 +467,21 @@ TEST(JsonSerializer, all)
     GTEST_ASSERT_EQ(e2.get<NPC>().pos.y, 0.f);
     GTEST_ASSERT_EQ(e2.get<Position>().x, 1.0f);
     GTEST_ASSERT_EQ(e2.get<Position>().y, -8456.0f);
+}
+
+TEST(NodeSerializer, all)
+{
+    NodeSerializer nodeSerializer(util::serialization::TomlNodeFactory::get());
+
+    // Fundamental types
+    std::string empty = "";
+    nodeSerializer << static_cast<int64_t>(168) << -45612.f << empty << std::string_view("this is a test")
+                   << "raw string" << NodeSerializer::NewObject << "x" << 1.0f << "y" << -8456.0f
+                   << NodeSerializer::Close;
+    // nodeSerializer << static_cast<uint16_t>(42) << static_cast<uint32_t>(84) << static_cast<uint64_t>(168) <<
+    // -45612.f
+    //                << empty << std::string_view("this is a test") << "raw string";
+
+    std::string toml = nodeSerializer.exportBytes();
+    GTEST_ASSERT_EQ(toml, "[21,42,84,168,-45612.0,\"\",\"this is a test\",\"raw string\"]");
 }

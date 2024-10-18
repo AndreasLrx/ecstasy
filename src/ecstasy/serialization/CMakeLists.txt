@@ -19,6 +19,7 @@ set(SRC
     ${INCROOT}/IEntityComponentSerializer.hpp
     ${INCROOT}/include.hpp
     ${INCROOT}/ISerializer.hpp
+    ${INCROOT}/NodeSerializer.hpp
     ${INCROOT}/RawSerializer.hpp
     ${INCROOT}/Serializer.hpp
     PARENT_SCOPE

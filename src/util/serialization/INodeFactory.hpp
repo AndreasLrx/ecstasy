@@ -27,6 +27,8 @@ namespace util::serialization
         /// @brief Default destructor.
         virtual ~INodeFactory() = default;
 
+        virtual void exportStream(const INode &node, std::ostream &stream) = 0;
+
         ///
         /// @brief Construct an empty node from its type.
         ///
