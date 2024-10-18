@@ -1,7 +1,7 @@
 ///
 /// @file apply.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Apply a modification on all types in a list.
 /// @version 1.0.0
 /// @date 2022-12-15
 ///

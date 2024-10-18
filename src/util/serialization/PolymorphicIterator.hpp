@@ -1,7 +1,7 @@
 ///
 /// @file PolymorphicIterator.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Polymorphic iterator for value T.
 /// @version 1.0.0
 /// @date 2022-12-13
 ///
@@ -42,7 +42,7 @@ namespace util::serialization
         ///
         struct Concept {
             /// @brief Default destructor.
-            virtual ~Concept() = default;
+            virtual ~Concept() noexcept = default;
 
             ///
             /// @brief Increment the iterator by one.
@@ -60,7 +60,7 @@ namespace util::serialization
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-12-13)
             ///
-            virtual value_type get() const = 0;
+            [[nodiscard]] virtual value_type get() const = 0;
 
             ///
             /// @brief Compare two operators.
@@ -74,7 +74,7 @@ namespace util::serialization
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-12-13)
             ///
-            virtual bool equal(const Concept *other) const = 0;
+            [[nodiscard]] virtual bool equal(const Concept *other) const = 0;
 
             ///
             /// @brief Clone @b this.
@@ -84,7 +84,7 @@ namespace util::serialization
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-12-13)
             ///
-            virtual std::unique_ptr<Concept> clone() const = 0;
+            [[nodiscard]] virtual std::unique_ptr<Concept> clone() const = 0;
 
             ///
             /// @brief Get the current iterator type info.
@@ -94,7 +94,7 @@ namespace util::serialization
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-12-13)
             ///
-            virtual const std::type_info &type() const = 0;
+            [[nodiscard]] virtual const std::type_info &type() const noexcept = 0;
 
             ///
             /// @brief Get @b this address.
@@ -104,7 +104,7 @@ namespace util::serialization
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2022-12-13)
             ///
-            virtual const Concept *address() const = 0;
+            [[nodiscard]] virtual const Concept *address() const noexcept = 0;
         };
 
         /// @internal
@@ -137,36 +137,37 @@ namespace util::serialization
             }
 
             /// @copydoc Concept::get()
-            value_type get() const override final
+            [[nodiscard]] value_type get() const override final
             {
                 return *_iter;
             }
 
             /// @copydoc Concept::equal()
-            bool equal(const Concept *other) const override final
+            [[nodiscard]] bool equal(const Concept *other) const override final
             {
                 return _iter == dynamic_cast<const Model *>(other)->_iter;
             }
 
             /// @copydoc Concept::clone()
-            std::unique_ptr<Concept> clone() const override final
+            [[nodiscard]] std::unique_ptr<Concept> clone() const override final
             {
                 return std::make_unique<Model>(*this);
             }
 
             /// @copydoc Concept::type()
-            const std::type_info &type() const override final
+            [[nodiscard]] const std::type_info &type() const noexcept override final
             {
                 return typeid(_iter);
             }
 
             /// @copydoc Concept::address()
-            const Concept *address() const override final
+            [[nodiscard]] const Concept *address() const noexcept override final
             {
                 return this;
             }
 
           private:
+            /// @internal @brief Wrapped iterator.
             Iter _iter;
         };
 
@@ -206,7 +207,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-13)
         ///
-        value_type operator*() const
+        [[nodiscard]] value_type operator*() const
         {
             return _impl->get();
         }
@@ -235,7 +236,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-13)
         ///
-        PolymorphicIterator operator++(int)
+        [[nodiscard]] PolymorphicIterator operator++(int)
         {
             PolymorphicIterator res = *this;
 
@@ -252,9 +253,9 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-13)
         ///
-        bool operator==(const PolymorphicIterator &r) const
+        [[nodiscard]] bool operator==(const PolymorphicIterator &r) const noexcept
         {
-            return _impl->type() == r._impl->type() and _impl->equal(r._impl->address());
+            return _impl->type() == r._impl->type() && _impl->equal(r._impl->address());
         }
 
         ///
@@ -267,12 +268,13 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-13)
         ///
-        bool operator!=(const PolymorphicIterator &r) const
+        [[nodiscard]] bool operator!=(const PolymorphicIterator &r) const noexcept
         {
             return !(*this == r);
         }
 
       private:
+        /// @internal @brief Internal iterator implementation.
         std::unique_ptr<Concept> _impl;
     };
 } // namespace util::serialization

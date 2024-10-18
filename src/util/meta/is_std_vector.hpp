@@ -1,7 +1,7 @@
 ///
 /// @file is_std_vector.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Check if a type is a std::vector.
 /// @version 1.0.0
 /// @date 2024-04-30
 ///

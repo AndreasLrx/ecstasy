@@ -1,7 +1,7 @@
 ///
 /// @file ANode.cpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Abstract node partial implementation.
 /// @version 1.0.0
 /// @date 2022-12-08
 ///
@@ -15,58 +15,57 @@
 
 namespace util::serialization
 {
-
-    bool ANode::isType(Type type) const
+    bool ANode::isType(Type type) const noexcept
     {
         return getType() == type;
     }
 
-    bool ANode::isNull() const
+    bool ANode::isNull() const noexcept
     {
         return isType(Type::Null);
     }
 
-    bool ANode::isObject() const
+    bool ANode::isObject() const noexcept
     {
         return isType(Type::Object);
     }
 
-    bool ANode::isArray() const
+    bool ANode::isArray() const noexcept
     {
         return isType(Type::Array);
     }
 
-    bool ANode::isString() const
+    bool ANode::isString() const noexcept
     {
         return isType(Type::String);
     }
 
-    bool ANode::isInteger() const
+    bool ANode::isInteger() const noexcept
     {
         return isType(Type::Integer);
     }
 
-    bool ANode::isFloat() const
+    bool ANode::isFloat() const noexcept
     {
         return isType(Type::Float);
     }
 
-    bool ANode::isBoolean() const
+    bool ANode::isBoolean() const noexcept
     {
         return isType(Type::Boolean);
     }
 
-    bool ANode::isDate() const
+    bool ANode::isDate() const noexcept
     {
         return isType(Type::Date);
     }
 
-    bool ANode::isTime() const
+    bool ANode::isTime() const noexcept
     {
         return isType(Type::Time);
     }
 
-    bool ANode::isDateTime() const
+    bool ANode::isDateTime() const noexcept
     {
         return isType(Type::DateTime);
     }
@@ -78,19 +77,19 @@ namespace util::serialization
 
     IObjectNode &ANode::asObject()
     {
-        if (!isObject())
+        if (!isObject()) [[unlikely]]
             throw std::runtime_error("Node is not an Object Node.");
         return dynamic_cast<IObjectNode &>(*this);
     }
 
-    std::optional<std::reference_wrapper<const IObjectNode>> ANode::tryAsObject() const
+    std::optional<std::reference_wrapper<const IObjectNode>> ANode::tryAsObject() const noexcept
     {
         if (isObject())
             return dynamic_cast<const IObjectNode &>(*this);
         return std::optional<std::reference_wrapper<const IObjectNode>>();
     }
 
-    std::optional<std::reference_wrapper<IObjectNode>> ANode::tryAsObject()
+    std::optional<std::reference_wrapper<IObjectNode>> ANode::tryAsObject() noexcept
     {
         if (isObject())
             return dynamic_cast<IObjectNode &>(*this);
@@ -104,19 +103,19 @@ namespace util::serialization
 
     IArrayNode &ANode::asArray()
     {
-        if (!isArray())
+        if (!isArray()) [[unlikely]]
             throw std::runtime_error("Node is not an Array Node.");
         return dynamic_cast<IArrayNode &>(*this);
     }
 
-    std::optional<std::reference_wrapper<const IArrayNode>> ANode::tryAsArray() const
+    std::optional<std::reference_wrapper<const IArrayNode>> ANode::tryAsArray() const noexcept
     {
         if (isArray())
             return dynamic_cast<const IArrayNode &>(*this);
         return std::optional<std::reference_wrapper<const IArrayNode>>();
     }
 
-    std::optional<std::reference_wrapper<IArrayNode>> ANode::tryAsArray()
+    std::optional<std::reference_wrapper<IArrayNode>> ANode::tryAsArray() noexcept
     {
         if (isArray())
             return dynamic_cast<IArrayNode &>(*this);

@@ -1,7 +1,7 @@
 ///
 /// @file TomlArrayNode.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Toml array node.
 /// @version 1.0.0
 /// @date 2022-12-08
 ///
@@ -39,16 +39,16 @@ namespace util::serialization
         TomlArrayNode(const toml::array &array);
 
         /// @copydoc IArrayNode::get()
-        NodeCView get(Index index) const override final;
+        [[nodiscard]] NodeCView get(Index index) const override final;
 
         /// @copydoc IArrayNode::get()
-        NodeView get(Index index) override final;
+        [[nodiscard]] NodeView get(Index index) override final;
 
         /// @copydoc IArrayNode::tryGet()
-        NodeCView tryGet(Index index) const override final;
+        [[nodiscard]] NodeCView tryGet(Index index) const noexcept override final;
 
         /// @copydoc IArrayNode::tryGet()
-        NodeView tryGet(Index index) override final;
+        [[nodiscard]] NodeView tryGet(Index index) noexcept override final;
 
         /// @copydoc IArrayNode::pushBack()
         void pushBack(const INode &node) override final;
@@ -66,33 +66,34 @@ namespace util::serialization
         void erase(Index index) override final;
 
         /// @copydoc IArrayNode::clear()
-        void clear() override final;
+        void clear() noexcept override final;
 
         /// @copydoc IArrayNode::empty()
-        bool empty() const override final;
+        bool empty() const noexcept override final;
 
         /// @copydoc IArrayNode::size()
-        size_t size() const override final;
+        [[nodiscard]] size_t size() const noexcept override final;
 
         /// @copydoc IArrayNode::cbegin()
-        const_iterator cbegin() const override final;
+        [[nodiscard]] const_iterator cbegin() const noexcept override final;
 
         /// @copydoc IArrayNode::begin()
-        const_iterator begin() const override final;
+        [[nodiscard]] const_iterator begin() const noexcept override final;
 
         /// @copydoc IArrayNode::begin()
-        iterator begin() override final;
+        [[nodiscard]] iterator begin() noexcept override final;
 
         /// @copydoc IArrayNode::cend()
-        const_iterator cend() const override final;
+        [[nodiscard]] const_iterator cend() const noexcept override final;
 
         /// @copydoc IArrayNode::end()
-        const_iterator end() const override final;
+        [[nodiscard]] const_iterator end() const noexcept override final;
 
         /// @copydoc IArrayNode::end()
-        iterator end() override final;
+        [[nodiscard]] iterator end() noexcept override final;
 
       private:
+        /// @brief Array nodes.
         std::vector<NodePtr> _nodes;
     };
 } // namespace util::serialization

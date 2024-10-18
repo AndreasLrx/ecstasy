@@ -1,7 +1,7 @@
 ///
 /// @file IArrayNode.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Array node interface.
 /// @version 1.0.0
 /// @date 2022-12-08
 ///
@@ -60,7 +60,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual NodeCView get(Index index) const = 0;
+        [[nodiscard]] virtual NodeCView get(Index index) const = 0;
 
         ///
         /// @brief Get the node at @p index if existing.
@@ -74,7 +74,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual NodeView get(Index index) = 0;
+        [[nodiscard]] virtual NodeView get(Index index) = 0;
 
         ///
         /// @brief Get the node at @p index.
@@ -86,7 +86,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual NodeCView tryGet(Index index) const = 0;
+        [[nodiscard]] virtual NodeCView tryGet(Index index) const noexcept = 0;
 
         ///
         /// @brief Get the node at @p index.
@@ -98,7 +98,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual NodeView tryGet(Index index) = 0;
+        [[nodiscard]] virtual NodeView tryGet(Index index) noexcept = 0;
 
         ///
         /// @brief Push a new node at the end of the array.
@@ -176,7 +176,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual bool empty() const = 0;
+        [[nodiscard]] virtual bool empty() const noexcept = 0;
 
         ///
         /// @brief Get the number of node in @p this.
@@ -186,7 +186,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual size_t size() const = 0;
+        [[nodiscard]] virtual size_t size() const noexcept = 0;
 
         ///
         /// @brief Get the start iterator of the internal nodes.
@@ -196,10 +196,10 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual const_iterator cbegin() const = 0;
+        [[nodiscard]] virtual const_iterator cbegin() const noexcept = 0;
 
         /// @copydoc cbegin().
-        virtual const_iterator begin() const = 0;
+        [[nodiscard]] virtual const_iterator begin() const noexcept = 0;
 
         ///
         /// @brief Get the start iterator of the internal nodes.
@@ -209,7 +209,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual iterator begin() = 0;
+        [[nodiscard]] virtual iterator begin() noexcept = 0;
 
         ///
         /// @brief Get the end iterator of the internal nodes.
@@ -221,10 +221,10 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual const_iterator cend() const = 0;
+        [[nodiscard]] virtual const_iterator cend() const noexcept = 0;
 
         /// @copydoc cend().
-        virtual const_iterator end() const = 0;
+        [[nodiscard]] virtual const_iterator end() const noexcept = 0;
 
         ///
         /// @brief Get the end iterator of the internal nodes.
@@ -236,7 +236,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual iterator end() = 0;
+        [[nodiscard]] virtual iterator end() noexcept = 0;
     };
 } // namespace util::serialization
 

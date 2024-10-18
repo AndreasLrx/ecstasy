@@ -1,7 +1,7 @@
 ///
 /// @file is_type_bounded_array.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Check if a type is a bounded array of a given element type.
 /// @version 1.0.0
 /// @date 2024-10-10
 ///

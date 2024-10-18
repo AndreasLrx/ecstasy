@@ -1,7 +1,7 @@
 ///
 /// @file TomlNodeFactory.cpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Toml node factory implementation.
 /// @version 1.0.0
 /// @date 2022-12-12
 ///
@@ -15,7 +15,7 @@
 
 namespace util::serialization
 {
-    TomlNodeFactory &TomlNodeFactory::get()
+    TomlNodeFactory &TomlNodeFactory::get() noexcept
     {
         static TomlNodeFactory instance;
 

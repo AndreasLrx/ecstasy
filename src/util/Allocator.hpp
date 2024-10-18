@@ -40,7 +40,7 @@ namespace util
         /// @since 1.0.0 (2022-10-24)
         ///
         template <std::derived_from<Base> T, typename... Args>
-        T &instanciate(Args &&...args)
+        [[nodiscard]] T &instanciate(Args &&...args)
         {
             return dynamic_cast<T &>(*_instances.emplace_back(std::make_unique<T>(std::forward<Args>(args)...)).get());
         }

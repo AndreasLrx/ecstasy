@@ -1,7 +1,7 @@
 ///
 /// @file ANode.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Abstract node partial implementation.
 /// @version 1.0.0
 /// @date 2022-12-08
 ///
@@ -28,82 +28,84 @@ namespace util::serialization
         virtual ~ANode() = default;
 
         /// @copydoc INode::isType()
-        bool isType(Type type) const override final;
+        [[nodiscard]] bool isType(Type type) const noexcept override final;
 
         /// @copydoc INode::isNull()
-        bool isNull() const override final;
+        [[nodiscard]] bool isNull() const noexcept override final;
 
         /// @copydoc INode::isObject()
-        bool isObject() const override final;
+        [[nodiscard]] bool isObject() const noexcept override final;
 
         /// @copydoc INode::isArray()
-        bool isArray() const override final;
+        [[nodiscard]] bool isArray() const noexcept override final;
 
         /// @copydoc INode::isString()
-        bool isString() const override final;
+        [[nodiscard]] bool isString() const noexcept override final;
 
         /// @copydoc INode::isInteger()
-        bool isInteger() const override final;
+        [[nodiscard]] bool isInteger() const noexcept override final;
 
         /// @copydoc INode::isFloat()
-        bool isFloat() const override final;
+        [[nodiscard]] bool isFloat() const noexcept override final;
 
         /// @copydoc INode::isBoolean()
-        bool isBoolean() const override final;
+        [[nodiscard]] bool isBoolean() const noexcept override final;
 
         /// @copydoc INode::isDate()
-        bool isDate() const override final;
+        [[nodiscard]] bool isDate() const noexcept override final;
 
         /// @copydoc INode::isTime()
-        bool isTime() const override final;
+        [[nodiscard]] bool isTime() const noexcept override final;
 
         /// @copydoc INode::isDateTime()
-        bool isDateTime() const override final;
+        [[nodiscard]] bool isDateTime() const noexcept override final;
 
         /// @copydoc INode::asObject()
-        const IObjectNode &asObject() const override final;
+        [[nodiscard]] const IObjectNode &asObject() const override final;
 
         /// @copydoc INode::asObject()
-        IObjectNode &asObject() override final;
+        [[nodiscard]] IObjectNode &asObject() override final;
 
         /// @copydoc INode::tryAsObject()
-        std::optional<std::reference_wrapper<const IObjectNode>> tryAsObject() const override final;
+        [[nodiscard]] std::optional<std::reference_wrapper<const IObjectNode>>
+        tryAsObject() const noexcept override final;
 
         /// @copydoc INode::tryAsObject()
-        std::optional<std::reference_wrapper<IObjectNode>> tryAsObject() override final;
+        [[nodiscard]] std::optional<std::reference_wrapper<IObjectNode>> tryAsObject() noexcept override final;
 
         /// @copydoc INode::asArray()
-        const IArrayNode &asArray() const override final;
+        [[nodiscard]] const IArrayNode &asArray() const override final;
 
         /// @copydoc INode::asArray()
-        IArrayNode &asArray() override final;
+        [[nodiscard]] IArrayNode &asArray() override final;
 
         /// @copydoc INode::tryAsArray()
-        std::optional<std::reference_wrapper<const IArrayNode>> tryAsArray() const override final;
+        [[nodiscard]] std::optional<std::reference_wrapper<const IArrayNode>>
+        tryAsArray() const noexcept override final;
 
         /// @copydoc INode::tryAsArray()
-        std::optional<std::reference_wrapper<IArrayNode>> tryAsArray() override final;
+        [[nodiscard]] std::optional<std::reference_wrapper<IArrayNode>> tryAsArray() noexcept override final;
 
         /// @copydoc INode::asString()
-        std::string_view asString() const override final;
+        [[nodiscard]] std::string_view asString() const override final;
 
         /// @copydoc INode::asInteger()
-        int64_t asInteger() const override final;
+        [[nodiscard]] int64_t asInteger() const override final;
 
         /// @copydoc INode::asFloat()
-        double asFloat() const override final;
+        [[nodiscard]] double asFloat() const override final;
 
         /// @copydoc INode::asBoolean()
-        bool asBoolean() const override final;
+        [[nodiscard]] bool asBoolean() const override final;
 
         /// @copydoc INode::asDate()
-        Date asDate() const override final;
+        [[nodiscard]] Date asDate() const override final;
 
         /// @copydoc INode::asTime()
-        Time asTime() const override final;
+        [[nodiscard]] Time asTime() const override final;
 
         /// @copydoc INode::asDateTime()
-        DateTime asDateTime() const override final;
+        [[nodiscard]] DateTime asDateTime() const override final;
     };
 } // namespace util::serialization
 

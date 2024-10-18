@@ -1,7 +1,7 @@
 ///
 /// @file outer_join.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Performs a left outer join between two parameter packs.
 /// @version 1.0.0
 /// @date 2022-10-28
 ///

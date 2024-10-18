@@ -1,7 +1,7 @@
 ///
 /// @file TomlNode.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Toml node implementation.
 /// @version 1.0.0
 /// @date 2022-12-08
 ///
@@ -34,7 +34,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-12)
         ///
-        TomlNode() = default;
+        TomlNode() noexcept(std::is_nothrow_default_constructible_v<N>) = default;
 
         ///
         /// @brief Construct a new Toml Node from a @ref toml::node derived class object.
@@ -44,7 +44,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-12)
         ///
-        TomlNode(const N &node) : _node(node)
+        TomlNode(const N &node) noexcept(std::is_nothrow_copy_constructible_v<N>) : _node(node)
         {
         }
 
@@ -59,12 +59,13 @@ namespace util::serialization
         /// @since 1.0.0 (2022-12-12)
         ///
         template <typename... Args>
-        TomlNode(Args &&...args) : _node(std::forward<Args &&>(args)...)
+        TomlNode(Args &&...args) noexcept(std::is_nothrow_constructible_v<N, Args...>)
+            : _node(std::forward<Args &&>(args)...)
         {
         }
 
         /// @copydoc INode::getType()
-        constexpr INode::Type getType() const override final
+        [[nodiscard]] constexpr INode::Type getType() const noexcept override final
         {
             if constexpr (std::same_as<toml::table, N>)
                 return INode::Type::Object;
@@ -89,7 +90,7 @@ namespace util::serialization
         }
 
         /// @copydoc INode::tryAsString()
-        std::optional<std::string_view> tryAsString() const override final
+        [[nodiscard]] std::optional<std::string_view> tryAsString() const noexcept override final
         {
             if constexpr (std::same_as<toml::value<std::string>, N>)
                 return _node.get();
@@ -98,7 +99,7 @@ namespace util::serialization
         }
 
         /// @copydoc INode::tryAsInteger()
-        std::optional<int64_t> tryAsInteger() const override final
+        [[nodiscard]] std::optional<int64_t> tryAsInteger() const noexcept override final
         {
             if constexpr (std::same_as<toml::value<int64_t>, N>)
                 return _node.get();
@@ -107,7 +108,7 @@ namespace util::serialization
         }
 
         /// @copydoc INode::tryAsFloat()
-        std::optional<double> tryAsFloat() const override final
+        [[nodiscard]] std::optional<double> tryAsFloat() const noexcept override final
         {
             if constexpr (std::same_as<toml::value<double>, N>)
                 return _node.get();
@@ -116,7 +117,7 @@ namespace util::serialization
         }
 
         /// @copydoc INode::tryAsBoolean()
-        std::optional<bool> tryAsBoolean() const override final
+        [[nodiscard]] std::optional<bool> tryAsBoolean() const noexcept override final
         {
             if constexpr (std::same_as<toml::value<bool>, N>)
                 return _node.get();
@@ -125,7 +126,7 @@ namespace util::serialization
         }
 
         /// @copydoc INode::tryAsDate()
-        std::optional<Date> tryAsDate() const override final
+        [[nodiscard]] std::optional<Date> tryAsDate() const noexcept override final
         {
             if constexpr (std::same_as<toml::value<toml::date>, N>)
                 return TomlConversion::fromToml(_node.get());
@@ -134,7 +135,7 @@ namespace util::serialization
         }
 
         /// @copydoc INode::tryAsTime()
-        std::optional<Time> tryAsTime() const override final
+        [[nodiscard]] std::optional<Time> tryAsTime() const noexcept override final
         {
             if constexpr (std::same_as<toml::value<toml::time>, N>)
                 return TomlConversion::fromToml(_node.get());
@@ -143,7 +144,7 @@ namespace util::serialization
         }
 
         /// @copydoc INode::tryAsDateTime()
-        std::optional<DateTime> tryAsDateTime() const override final
+        [[nodiscard]] std::optional<DateTime> tryAsDateTime() const noexcept override final
         {
             if constexpr (std::same_as<toml::value<toml::date_time>, N>)
                 return TomlConversion::fromToml(_node.get());
@@ -152,6 +153,7 @@ namespace util::serialization
         }
 
       protected:
+        /// @brief Inner node.
         N _node;
     };
 

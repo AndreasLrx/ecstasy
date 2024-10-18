@@ -1,7 +1,7 @@
 ///
 /// @file filter.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Filter types from a list.
 /// @version 1.0.0
 /// @date 2022-12-15
 ///

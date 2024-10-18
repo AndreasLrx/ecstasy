@@ -1,7 +1,7 @@
 ///
 /// @file index.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Get the index of the first occurence of a type in a list of types.
 /// @version 1.0.0
 /// @date 2022-10-28
 ///
