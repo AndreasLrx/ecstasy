@@ -8,6 +8,8 @@
 
 #### **Do you want to create a branch?**
 
+- You need to work on your own [fork](https://docs.github.com/articles/fork-a-repo), unless you are added as a collaborator (in case you are a recurrent contributor)
+
 - Your branch name should be formatted as `fix/<ISSUENUMBER>-<TITLE>` for bug fixes or `feature/<ISSUENUMBER>-<TITLE>` for features, example: `fix/4221-infinite-loop`.
 
 #### **Rebase or Merge strategy ?**
@@ -62,9 +64,13 @@
 
 - The brief line should be separated from the rest of the doc comment by an empty comment.
 
-- You may add author command.
+- You may add `@author` command.
 
-- The since command must be present.
+- The `@since` command must be present.
+
+- You need to add the `@throw` command if your function may raise exceptions.
+
+- You should also add the `@throw` command if the underlying functions may raise, but it is not mandatory especially if it is very uncommon (such as @ref std::bad_alloc)
 
 - Example:
   ```cpp
@@ -76,7 +82,9 @@
   /// @param parameter1 Parameter description.
   ///
   /// @returns Some value
+  ///
   /// @throws std::logic_error Error condition.
+  ///
   /// @author Andreas Leroux (andreas.leroux@epitech.eu)
   /// @since 1.0.0 (2022-07-09)
   ///
@@ -95,7 +103,7 @@
   ```cpp
   constexpr int MEANING_OF_LIFE = 42;
   ```
-- Use UpperCamelCase for type names (classes, structs, enums, type aliases and template parameters):
+- Use UpperCamelCase for type names (classes, structs, enums, type aliases, template parameters and concepts):
 
   ```cpp
   template <typename ValueType>
@@ -105,9 +113,23 @@
   };
   ```
 
+- Use snake_case for [type_traits](https://en.cppreference.com/w/cpp/header/type_traits) or other meta structures
+
 - Separate functions by an empty line (even for declaration in header files).
 
 - Name header guards in the following format: [NAMESPACE0]\_[NAMESPACE1]\*\_FILENAME_HPP
+
+#### Using attributes specifiers and keywords
+
+These are not always mandatory, but having it in mind result in free compiler optimizations (likely, noexcept...) and avoid some useless code (discarding the return value of a getter).
+
+1. [Attributes specifiers](https://en.cppreference.com/w/cpp/language/attributes):
+   - [[[maybe_unused]]](https://en.cppreference.com/w/cpp/language/attributes/maybe_unused): Use for unused function parameters instead of using static_cast<void>.
+   - [[[nodiscard]]](https://en.cppreference.com/w/cpp/language/attributes/nodiscard): For every function whose purpose is to return a value (instead of inplace edition). This explicitly includes all getters.
+   - [[[(un)likely]]](https://en.cppreference.com/w/cpp/language/attributes/likely): For branch conditions which are not taken evenly. Checks before raising exceptions are usually [[unlikely]] (otherwise it would not be called an exception)
+2. Other keywords:
+   - [noexcept](https://en.cppreference.com/w/cpp/language/noexcept_spec): For all functions **never** raising an exception.
+   - [final](https://en.cppreference.com/w/cpp/language/final): For all overriding objects (class, methods...) which mustn't be overriden after.
 
 ---
 
