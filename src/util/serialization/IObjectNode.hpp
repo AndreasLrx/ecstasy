@@ -1,7 +1,7 @@
 ///
 /// @file IObjectNode.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Object node interface.
 /// @version 1.0.0
 /// @date 2022-12-08
 ///
@@ -58,7 +58,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual NodeCView get(std::string_view key) const = 0;
+        [[nodiscard]] virtual NodeCView get(std::string_view key) const = 0;
 
         ///
         /// @brief Get the node matching @p key if existing.
@@ -72,7 +72,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual NodeView get(std::string_view key) = 0;
+        [[nodiscard]] virtual NodeView get(std::string_view key) = 0;
 
         ///
         /// @brief Get the node matching @p key.
@@ -84,7 +84,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual NodeCView tryGet(std::string_view key) const = 0;
+        [[nodiscard]] virtual NodeCView tryGet(std::string_view key) const noexcept = 0;
 
         ///
         /// @brief Get the node matching @p key.
@@ -96,7 +96,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual NodeView tryGet(std::string_view key) = 0;
+        [[nodiscard]] virtual NodeView tryGet(std::string_view key) noexcept = 0;
 
         ///
         /// @brief Try to insert a new node at @p key.
@@ -152,7 +152,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual bool empty() const = 0;
+        [[nodiscard]] virtual bool empty() const noexcept = 0;
 
         ///
         /// @brief Get the number of node in @p this.
@@ -162,7 +162,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual size_t size() const = 0;
+        [[nodiscard]] virtual size_t size() const noexcept = 0;
 
         ///
         /// @brief Check if @p key match a node.
@@ -174,7 +174,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual bool contains(std::string_view key) const = 0;
+        [[nodiscard]] virtual bool contains(std::string_view key) const noexcept = 0;
 
         ///
         /// @brief Get the start iterator of the internal nodes.
@@ -184,10 +184,10 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual const_iterator cbegin() const = 0;
+        [[nodiscard]] virtual const_iterator cbegin() const noexcept = 0;
 
         /// @copydoc cbegin().
-        virtual const_iterator begin() const = 0;
+        [[nodiscard]] virtual const_iterator begin() const noexcept = 0;
 
         ///
         /// @brief Get the start iterator of the internal nodes.
@@ -197,7 +197,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual iterator begin() = 0;
+        [[nodiscard]] virtual iterator begin() noexcept = 0;
 
         ///
         /// @brief Get the end iterator of the internal nodes.
@@ -209,10 +209,10 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual const_iterator cend() const = 0;
+        [[nodiscard]] virtual const_iterator cend() const noexcept = 0;
 
         /// @copydoc cend().
-        virtual const_iterator end() const = 0;
+        [[nodiscard]] virtual const_iterator end() const noexcept = 0;
 
         ///
         /// @brief Get the end iterator of the internal nodes.
@@ -224,7 +224,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual iterator end() = 0;
+        [[nodiscard]] virtual iterator end() noexcept = 0;
     };
 } // namespace util::serialization
 #endif /* !UTIL_SERIALIZATION_IOBJECTNODE_HPP_ */

@@ -1,7 +1,7 @@
 ///
 /// @file TomlArrayNode.cpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Toml array node implementation.
 /// @version 1.0.0
 /// @date 2022-12-08
 ///
@@ -31,7 +31,7 @@ namespace util::serialization
         return _nodes.at(index);
     }
 
-    NodeView TomlArrayNode::tryGet(Index index)
+    NodeView TomlArrayNode::tryGet(Index index) noexcept
     {
         if (index >= size())
             return NodeView();
@@ -39,7 +39,7 @@ namespace util::serialization
         return _nodes.at(index);
     }
 
-    NodeCView TomlArrayNode::tryGet(Index index) const
+    NodeCView TomlArrayNode::tryGet(Index index) const noexcept
     {
         if (index >= size())
             return NodeCView();
@@ -54,7 +54,7 @@ namespace util::serialization
 
     void TomlArrayNode::insert(Index index, const INode &node)
     {
-        if (index > size())
+        if (index > size()) [[unlikely]]
             throw std::out_of_range("Index out of bounds.");
 
         _nodes.insert(_nodes.cbegin() + static_cast<long>(index), TomlNodeFactory::get().create(node));
@@ -62,7 +62,7 @@ namespace util::serialization
 
     void TomlArrayNode::replace(Index index, const INode &node)
     {
-        if (index >= size())
+        if (index >= size()) [[unlikely]]
             throw std::out_of_range("Index out of bounds.");
 
         _nodes.at(index) = TomlNodeFactory::get().create(node);
@@ -79,47 +79,47 @@ namespace util::serialization
             _nodes.erase(_nodes.cbegin() + static_cast<long>(index));
     }
 
-    void TomlArrayNode::clear()
+    void TomlArrayNode::clear() noexcept
     {
         _nodes.clear();
     }
 
-    bool TomlArrayNode::empty() const
+    bool TomlArrayNode::empty() const noexcept
     {
         return _nodes.empty();
     }
 
-    size_t TomlArrayNode::size() const
+    size_t TomlArrayNode::size() const noexcept
     {
         return _nodes.size();
     }
 
-    TomlArrayNode::const_iterator TomlArrayNode::cbegin() const
+    TomlArrayNode::const_iterator TomlArrayNode::cbegin() const noexcept
     {
         return _nodes.cbegin();
     }
 
-    TomlArrayNode::const_iterator TomlArrayNode::begin() const
+    TomlArrayNode::const_iterator TomlArrayNode::begin() const noexcept
     {
         return cbegin();
     }
 
-    TomlArrayNode::iterator TomlArrayNode::begin()
+    TomlArrayNode::iterator TomlArrayNode::begin() noexcept
     {
         return _nodes.begin();
     }
 
-    TomlArrayNode::const_iterator TomlArrayNode::cend() const
+    TomlArrayNode::const_iterator TomlArrayNode::cend() const noexcept
     {
         return _nodes.cend();
     }
 
-    TomlArrayNode::const_iterator TomlArrayNode::end() const
+    TomlArrayNode::const_iterator TomlArrayNode::end() const noexcept
     {
         return cend();
     }
 
-    TomlArrayNode::iterator TomlArrayNode::end()
+    TomlArrayNode::iterator TomlArrayNode::end() noexcept
     {
         return _nodes.end();
     }

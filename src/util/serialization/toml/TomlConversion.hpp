@@ -1,7 +1,7 @@
 ///
 /// @file TomlConversion.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Toml conversion interface.
 /// @version 1.0.0
 /// @date 2022-12-12
 ///
@@ -29,7 +29,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-09)
         ///
-        static toml::date toToml(INode::Date date);
+        [[nodiscard]] static toml::date toToml(const INode::Date &date) noexcept;
 
         ///
         /// @brief Convert a @ref INode::Time to a @ref toml::time.
@@ -41,7 +41,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-09)
         ///
-        static toml::time toToml(INode::Time time);
+        [[nodiscard]] static toml::time toToml(const INode::Time &time) noexcept;
 
         ///
         /// @brief Convert a @ref INode::DateTime to a @ref toml::date_time.
@@ -53,7 +53,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-09)
         ///
-        static toml::date_time toToml(INode::DateTime dateTime);
+        [[nodiscard]] static toml::date_time toToml(const INode::DateTime &dateTime) noexcept;
 
         ///
         /// @brief Convert a @ref toml::date to a @ref INode::Date.
@@ -65,7 +65,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-09)
         ///
-        static INode::Date fromToml(toml::date date);
+        [[nodiscard]] static INode::Date fromToml(const toml::date &date) noexcept;
 
         ///
         /// @brief Convert a @ref toml::time to a @ref INode::Time.
@@ -77,7 +77,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-09)
         ///
-        static INode::Time fromToml(toml::time time);
+        [[nodiscard]] static INode::Time fromToml(const toml::time &time) noexcept;
 
         ///
         /// @brief Convert a @ref toml::date_time to a @ref INode::DateTime.
@@ -89,7 +89,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-09)
         ///
-        static INode::DateTime fromToml(toml::date_time dateTime);
+        [[nodiscard]] static INode::DateTime fromToml(const toml::date_time &dateTime) noexcept;
 
       private:
         TomlConversion() = default;

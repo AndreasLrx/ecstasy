@@ -1,7 +1,7 @@
 ///
 /// @file Serializer.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Serialize and deserialize objects.
 /// @version 1.0.0
 /// @date 2022-12-01
 ///

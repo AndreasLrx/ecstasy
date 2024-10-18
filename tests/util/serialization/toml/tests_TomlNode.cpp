@@ -24,7 +24,7 @@ TEST(TomlNode, Copy)
     GTEST_ASSERT_TRUE(a.tryAsString());
     GTEST_ASSERT_EQ(a.asString(), "Hello world!");
     GTEST_ASSERT_FALSE(a.tryAsInteger());
-    EXPECT_THROW(a.asInteger(), std::bad_optional_access);
+    EXPECT_THROW(static_cast<void>(a.asInteger()), std::bad_optional_access);
 }
 
 TEST(TomlNode, ObjectNode)
@@ -37,9 +37,9 @@ TEST(TomlNode, ObjectNode)
     GTEST_ASSERT_TRUE(const_cast<const TomlObjectNode &>(a).tryAsObject());
 
     GTEST_ASSERT_FALSE(a.tryAsArray());
-    EXPECT_THROW(a.asArray(), std::runtime_error);
+    EXPECT_THROW(static_cast<void>(a.asArray()), std::runtime_error);
     GTEST_ASSERT_FALSE(ca.tryAsArray());
-    EXPECT_THROW(ca.asArray(), std::runtime_error);
+    EXPECT_THROW(static_cast<void>(ca.asArray()), std::runtime_error);
 }
 
 TEST(TomlNode, ArrayNode)
@@ -50,7 +50,7 @@ TEST(TomlNode, ArrayNode)
     GTEST_ASSERT_TRUE(a.tryAsArray());
     GTEST_ASSERT_TRUE(const_cast<const TomlArrayNode &>(a).tryAsArray());
     GTEST_ASSERT_FALSE(a.tryAsString());
-    EXPECT_THROW(a.asString(), std::bad_optional_access);
+    EXPECT_THROW(static_cast<void>(a.asString()), std::bad_optional_access);
 }
 
 TEST(TomlNode, StringView)
@@ -61,7 +61,7 @@ TEST(TomlNode, StringView)
     GTEST_ASSERT_TRUE(a.tryAsString());
     GTEST_ASSERT_EQ(a.asString(), "Hello world!");
     GTEST_ASSERT_FALSE(a.tryAsInteger());
-    EXPECT_THROW(a.asInteger(), std::bad_optional_access);
+    EXPECT_THROW(static_cast<void>(a.asInteger()), std::bad_optional_access);
 }
 
 TEST(TomlNode, String)
@@ -77,7 +77,7 @@ TEST(TomlNode, String)
     GTEST_ASSERT_TRUE(a.tryAsString());
     GTEST_ASSERT_EQ(a.asString(), "Hello world!");
     GTEST_ASSERT_FALSE(a.tryAsInteger());
-    EXPECT_THROW(a.asInteger(), std::bad_optional_access);
+    EXPECT_THROW(static_cast<void>(a.asInteger()), std::bad_optional_access);
 }
 
 TEST(TomlNode, Integer)
@@ -88,7 +88,7 @@ TEST(TomlNode, Integer)
     GTEST_ASSERT_TRUE(a.tryAsInteger());
     GTEST_ASSERT_EQ(a.asInteger(), 42);
     GTEST_ASSERT_FALSE(a.tryAsFloat());
-    EXPECT_THROW(a.asFloat(), std::bad_optional_access);
+    EXPECT_THROW(static_cast<void>(a.asFloat()), std::bad_optional_access);
 }
 
 TEST(TomlNode, Float)
@@ -99,7 +99,7 @@ TEST(TomlNode, Float)
     GTEST_ASSERT_TRUE(a.tryAsFloat());
     GTEST_ASSERT_EQ(a.asFloat(), 42.0);
     GTEST_ASSERT_FALSE(a.tryAsBoolean());
-    EXPECT_THROW(a.asBoolean(), std::bad_optional_access);
+    EXPECT_THROW(static_cast<void>(a.asBoolean()), std::bad_optional_access);
 }
 
 TEST(TomlNode, Boolean)
@@ -110,7 +110,7 @@ TEST(TomlNode, Boolean)
     GTEST_ASSERT_TRUE(a.tryAsBoolean());
     GTEST_ASSERT_TRUE(a.asBoolean());
     GTEST_ASSERT_FALSE(a.tryAsDate());
-    EXPECT_THROW(a.asDate(), std::bad_optional_access);
+    EXPECT_THROW(static_cast<void>(a.asDate()), std::bad_optional_access);
 }
 
 TEST(TomlNode, Date)
@@ -122,7 +122,7 @@ TEST(TomlNode, Date)
     GTEST_ASSERT_TRUE(a.tryAsDate());
     GTEST_ASSERT_EQ(a.asDate(), date);
     GTEST_ASSERT_FALSE(a.tryAsTime());
-    EXPECT_THROW(a.asTime(), std::bad_optional_access);
+    EXPECT_THROW(static_cast<void>(a.asTime()), std::bad_optional_access);
 }
 
 TEST(TomlNode, Time)
@@ -134,7 +134,7 @@ TEST(TomlNode, Time)
     GTEST_ASSERT_TRUE(a.tryAsTime());
     GTEST_ASSERT_EQ(a.asTime(), time);
     GTEST_ASSERT_FALSE(a.tryAsDateTime());
-    EXPECT_THROW(a.asDateTime(), std::bad_optional_access);
+    EXPECT_THROW(static_cast<void>(a.asDateTime()), std::bad_optional_access);
 }
 
 TEST(TomlNode, DateTime)
@@ -147,7 +147,7 @@ TEST(TomlNode, DateTime)
     GTEST_ASSERT_TRUE(a.tryAsDateTime());
     GTEST_ASSERT_EQ(a.asDateTime(), tp);
     GTEST_ASSERT_FALSE(a.tryAsObject());
-    EXPECT_THROW(a.asObject(), std::runtime_error);
+    EXPECT_THROW(static_cast<void>(a.asObject()), std::runtime_error);
     GTEST_ASSERT_FALSE(ca.tryAsObject());
-    EXPECT_THROW(ca.asObject(), std::runtime_error);
+    EXPECT_THROW(static_cast<void>(ca.asObject()), std::runtime_error);
 }

@@ -114,7 +114,7 @@ namespace util
         /// @since 1.0.0 (2022-10-24)
         ///
         template <std::derived_from<Base> T, typename... Args>
-        T &instanciate(Args &&...args)
+        [[nodiscard]] T &instanciate(Args &&...args)
         {
             T *newObject = new (reinterpret_cast<void *>(&_memory[_cursor])) T(std::forward<Args>(args)...);
 
@@ -130,7 +130,7 @@ namespace util
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2023-11-08)
         ///
-        constexpr const std::vector<Base *> &getInstances() const
+        [[nodiscard]] constexpr const std::vector<Base *> &getInstances() const noexcept
         {
             return _instances;
         }

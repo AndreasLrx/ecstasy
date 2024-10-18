@@ -1,7 +1,7 @@
 ///
 /// @file INodeFactory.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Node factory to hide underlying format.
 /// @version 1.0.0
 /// @date 2022-12-12
 ///
@@ -40,7 +40,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-12)
         ///
-        virtual NodePtr create(INode::Type type) = 0;
+        [[nodiscard]] virtual NodePtr create(INode::Type type) = 0;
 
         ///
         /// @brief Construct a copy of an existing node.
@@ -52,7 +52,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-12)
         ///
-        virtual NodePtr create(const INode &node) = 0;
+        [[nodiscard]] virtual NodePtr create(const INode &node) = 0;
 
         ///
         /// @brief Construct a @ref INode::Type::Object node.
@@ -64,7 +64,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-12)
         ///
-        virtual NodePtr createObject(const IObjectNode &object) = 0;
+        [[nodiscard]] virtual NodePtr createObject(const IObjectNode &object) = 0;
 
         ///
         /// @brief Construct a @ref INode::Type::Array node.
@@ -76,7 +76,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-12)
         ///
-        virtual NodePtr createArray(const IArrayNode &array) = 0;
+        [[nodiscard]] virtual NodePtr createArray(const IArrayNode &array) = 0;
 
         ///
         /// @brief Construct a @ref INode::Type::String node.
@@ -88,7 +88,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-12)
         ///
-        virtual NodePtr create(std::string_view string) = 0;
+        [[nodiscard]] virtual NodePtr create(std::string_view string) = 0;
 
         ///
         /// @brief Construct a @ref INode::Type::Integer node.
@@ -100,7 +100,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-12)
         ///
-        virtual NodePtr create(int64_t integer) = 0;
+        [[nodiscard]] virtual NodePtr create(int64_t integer) = 0;
 
         ///
         /// @brief Construct a @ref INode::Type::Float node.
@@ -112,7 +112,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-12)
         ///
-        virtual NodePtr create(double floatingPoint) = 0;
+        [[nodiscard]] virtual NodePtr create(double floatingPoint) = 0;
 
         ///
         /// @brief Construct a @ref INode::Type::Boolean node.
@@ -124,7 +124,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-12)
         ///
-        virtual NodePtr create(bool boolean) = 0;
+        [[nodiscard]] virtual NodePtr create(bool boolean) = 0;
 
         ///
         /// @brief Construct a @ref INode::Type::Date node.
@@ -136,7 +136,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-12)
         ///
-        virtual NodePtr create(INode::Date date) = 0;
+        [[nodiscard]] virtual NodePtr create(INode::Date date) = 0;
 
         ///
         /// @brief Construct a @ref INode::Type::Time node.
@@ -148,7 +148,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-12)
         ///
-        virtual NodePtr create(INode::Time time) = 0;
+        [[nodiscard]] virtual NodePtr create(INode::Time time) = 0;
 
         ///
         /// @brief Construct a @ref INode::Type::DateTime node.
@@ -160,7 +160,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-12)
         ///
-        virtual NodePtr create(INode::DateTime dateTime) = 0;
+        [[nodiscard]] virtual NodePtr create(INode::DateTime dateTime) = 0;
     };
 } // namespace util::serialization
 

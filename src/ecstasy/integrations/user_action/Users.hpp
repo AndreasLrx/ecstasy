@@ -57,7 +57,7 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-02)
         ///
-        Users(size_t count = 1) noexcept;
+        Users(size_t count = 1);
 
         ///
         /// @brief Default destructor.
@@ -65,7 +65,7 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-02)
         ///
-        ~Users() noexcept = default;
+        ~Users() = default;
 
         ///
         /// @brief Update the internal bindings associative maps.
@@ -75,7 +75,7 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-02)
         ///
-        void updateBindings() noexcept;
+        void updateBindings();
 
         ///
         /// @brief Fetch the @ref Users resource in the registry if available and call @ref updateBindings().
@@ -85,7 +85,7 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-02)
         ///
-        static void updateBindings(Registry &registry) noexcept;
+        static void updateBindings(Registry &registry);
 
         ///
         /// @brief Call action listeners associated to the event if any.
@@ -107,16 +107,18 @@ namespace ecstasy::integration::user_action
         ///
         /// @return UserProfile& A reference to the requested user.
         ///
+        /// @throw std::out_of_range If the index is out of bounds.
+        ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-05)
         ///
-        [[nodiscard]] constexpr UserProfile &getUserProfile(size_t index = 0) noexcept
+        [[nodiscard]] constexpr UserProfile &getUserProfile(size_t index = 0)
         {
             return _users[index];
         }
 
         /// @copydoc getUserProfile
-        [[nodiscard]] constexpr const UserProfile &getUserProfile(size_t index = 0) const noexcept
+        [[nodiscard]] constexpr const UserProfile &getUserProfile(size_t index = 0) const
         {
             return _users[index];
         }
@@ -125,7 +127,7 @@ namespace ecstasy::integration::user_action
         /// @internal
         /// @brief Remove the bindings present in @p map and not in the @p _users bindings.
         template <typename T>
-        void removeOutdatedBindings(std::unordered_multimap<T, UserActionLink> &map) noexcept
+        void removeOutdatedBindings(std::unordered_multimap<T, UserActionLink> &map)
         {
             for (auto it = map.begin(); it != map.end();) {
                 if (it->second.userId >= _users.size()
@@ -141,7 +143,7 @@ namespace ecstasy::integration::user_action
         /// @brief Add the @p binding in the @p map if it is missing for the user @p user.
         template <typename T>
         void addBindingIfMissing(const UserProfile &user, const ActionBinding &binding, T input,
-            std::unordered_multimap<T, UserActionLink> &map) noexcept
+            std::unordered_multimap<T, UserActionLink> &map)
         {
             bool add = true;
             auto range = map.equal_range(input);

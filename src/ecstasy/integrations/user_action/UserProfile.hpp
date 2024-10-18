@@ -52,7 +52,7 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-25)
         ///
-        constexpr ActionBindings &getActionBindings() noexcept
+        [[nodiscard]] constexpr ActionBindings &getActionBindings() noexcept
         {
             return _actionBindings;
         }
@@ -65,7 +65,7 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-25)
         ///
-        constexpr const ActionBindings &getActionBindings() const noexcept
+        [[nodiscard]] constexpr const ActionBindings &getActionBindings() const noexcept
         {
             return _actionBindings;
         }
@@ -80,7 +80,7 @@ namespace ecstasy::integration::user_action
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-02)
         ///
-        constexpr Id getId() const noexcept
+        [[nodiscard]] constexpr Id getId() const noexcept
         {
             return _id;
         }

@@ -84,7 +84,7 @@ namespace util
         BitSet(std::string_view bitString);
 
         /// @returns The number of bits in the set.
-        constexpr std::size_t size() const noexcept
+        [[nodiscard]] constexpr std::size_t size() const noexcept
         {
             return this->_size;
         }
@@ -92,7 +92,7 @@ namespace util
         /// @note This function does not perform bounds-checking.
         ///
         /// @returns The value of the bit at @b pos.
-        BIT_SET_CONSTEXPR bool test(std::size_t pos) const noexcept
+        [[nodiscard]] BIT_SET_CONSTEXPR bool test(std::size_t pos) const noexcept
         {
             return (this->_store[pos >> 6] & mask(pos)) != 0;
         }
@@ -100,7 +100,7 @@ namespace util
         /// @note This function does not perform bounds-checking.
         ///
         /// @returns The value of the bit at @b pos.
-        BIT_SET_CONSTEXPR bool operator[](std::size_t pos) const noexcept
+        [[nodiscard]] BIT_SET_CONSTEXPR bool operator[](std::size_t pos) const noexcept
         {
             return this->test(pos);
         }
@@ -129,10 +129,10 @@ namespace util
         }
 
         /// @returns Whether the bit sets are equal, both sets must have the same size.
-        bool operator==(BitSet const &other) const noexcept;
+        [[nodiscard]] bool operator==(BitSet const &other) const noexcept;
 
         /// @returns Whether the bit sets are not equal, both sets must have the same size.
-        bool operator!=(BitSet const &other) const noexcept;
+        [[nodiscard]] bool operator!=(BitSet const &other) const noexcept;
 
         /// Flips all the bits in the set.
         ///
@@ -226,7 +226,7 @@ namespace util
         /// @param start The bit position of where to start the search for a set bit.
         ///
         /// @returns The position of the first set bit.
-        BIT_SET_CONSTEXPR std::size_t firstSet(std::size_t start = 0) const
+        [[nodiscard]] BIT_SET_CONSTEXPR std::size_t firstSet(std::size_t start = 0) const
         {
             std::uint64_t mask = (~std::uint64_t(0)) << (start & 0b111111);
             std::size_t word_pos = start >> 6;
@@ -244,7 +244,7 @@ namespace util
         /// @note If the set does not contain a single 'one' bit, the return value is 0.
         ///
         /// @returns The position of the last set bit.
-        BIT_SET_CONSTEXPR std::size_t lastSet() const
+        [[nodiscard]] BIT_SET_CONSTEXPR std::size_t lastSet() const
         {
             std::uint64_t mask = ~((~std::uint64_t(0)) << (_size & 0b111111));
             std::size_t word_pos = _size >> 6;
@@ -269,7 +269,7 @@ namespace util
         /// @param start The bit position of where to start the search for an unset bit.
         ///
         /// @returns The position of the first unset bit.
-        BIT_SET_CONSTEXPR std::size_t firstUnset(std::size_t start = 0) const
+        [[nodiscard]] BIT_SET_CONSTEXPR std::size_t firstUnset(std::size_t start = 0) const
         {
             std::uint64_t mask = (~std::uint64_t(0)) << (start & 0b111111);
             std::size_t word_pos = start >> 6;
@@ -287,7 +287,7 @@ namespace util
         /// @note If the set does not contain a single 'zero' bit, the return value is 0.
         ///
         /// @returns The position of the last set bit.
-        BIT_SET_CONSTEXPR std::size_t lastUnset() const
+        [[nodiscard]] BIT_SET_CONSTEXPR std::size_t lastUnset() const
         {
             std::uint64_t mask = ~((~std::uint64_t(0)) << (_size & 0b111111));
             std::size_t word_pos = _size >> 6;

@@ -1,7 +1,7 @@
 ///
 /// @file SerializableEnum.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Create a serializable enumeration type.
 /// @version 1.0.0
 /// @date 2022-11-30
 ///
@@ -19,6 +19,12 @@
 #define _GET_FIRST_ARG(arg1, ...)    arg1
 #define _REMOVE_FIRST_ARG(arg1, ...) __VA_ARGS__
 
+///
+/// @brief Create a serializable enumeration type.
+///
+/// @author Andréas Leroux (andreas.leroux@epitech.eu)
+/// @since 1.0.0 (2024-10-18)
+///
 #define SERIALIZABLE_ENUM(NAME, STARTING_AT, ...)                                                                    \
     struct __##NAME {                                                                                                \
       public:                                                                                                        \

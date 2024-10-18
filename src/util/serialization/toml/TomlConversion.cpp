@@ -1,7 +1,7 @@
 ///
 /// @file TomlConversion.cpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Toml conversion implementation.
 /// @version 1.0.0
 /// @date 2022-12-08
 ///
@@ -13,14 +13,13 @@
 
 namespace util::serialization
 {
-
-    toml::date TomlConversion::toToml(INode::Date date)
+    toml::date TomlConversion::toToml(const INode::Date &date) noexcept
     {
         return toml::date(static_cast<int>(date.year()), static_cast<unsigned int>(date.month()),
             static_cast<unsigned int>(date.day()));
     }
 
-    toml::time TomlConversion::toToml(INode::Time timeNs)
+    toml::time TomlConversion::toToml(const INode::Time &timeNs) noexcept
     {
         std::chrono::hh_mm_ss<std::chrono::nanoseconds> time(timeNs);
 
@@ -28,7 +27,7 @@ namespace util::serialization
             time.hours().count(), time.minutes().count(), time.seconds().count(), time.subseconds().count());
     }
 
-    toml::date_time TomlConversion::toToml(INode::DateTime dateTime)
+    toml::date_time TomlConversion::toToml(const INode::DateTime &dateTime) noexcept
     {
 #ifdef _MSC_VER
         std::chrono::system_clock::time_point t2(
@@ -43,12 +42,12 @@ namespace util::serialization
 #endif
     }
 
-    INode::Date TomlConversion::fromToml(toml::date date)
+    INode::Date TomlConversion::fromToml(const toml::date &date) noexcept
     {
         return INode::Date(std::chrono::year(date.year), std::chrono::month(date.month), std::chrono::day(date.day));
     }
 
-    INode::Time TomlConversion::fromToml(toml::time time)
+    INode::Time TomlConversion::fromToml(const toml::time &time) noexcept
     {
         return INode::Time(std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::hours(time.hour))
             + std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::minutes(time.minute))
@@ -56,7 +55,7 @@ namespace util::serialization
             + std::chrono::nanoseconds(time.nanosecond));
     }
 
-    INode::DateTime TomlConversion::fromToml(toml::date_time dateTime)
+    INode::DateTime TomlConversion::fromToml(const toml::date_time &dateTime) noexcept
     {
         return INode::DateTime(
             static_cast<std::chrono::sys_days>(fromToml(dateTime.date)).time_since_epoch() + fromToml(dateTime.time));

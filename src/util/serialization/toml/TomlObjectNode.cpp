@@ -1,7 +1,7 @@
 ///
 /// @file TomlObjectNode.cpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Toml object node implementation.
 /// @version 1.0.0
 /// @date 2022-12-08
 ///
@@ -24,7 +24,7 @@ namespace util::serialization
     NodeView TomlObjectNode::get(std::string_view key)
     {
         auto it = _nodes.find(key);
-        if (it == _nodes.end())
+        if (it == _nodes.end()) [[unlikely]]
             throw std::out_of_range(std::string("Key '") + std::string(key) + "' no found in Toml Object.");
 
         return it->second;
@@ -33,13 +33,13 @@ namespace util::serialization
     NodeCView TomlObjectNode::get(std::string_view key) const
     {
         auto it = _nodes.find(key);
-        if (it == _nodes.end())
+        if (it == _nodes.end()) [[unlikely]]
             throw std::out_of_range(std::string("Key '") + std::string(key) + "' no found in Toml Object.");
 
         return it->second;
     }
 
-    NodeView TomlObjectNode::tryGet(std::string_view key)
+    NodeView TomlObjectNode::tryGet(std::string_view key) noexcept
     {
         auto it = _nodes.find(key);
         if (it == _nodes.end())
@@ -48,7 +48,7 @@ namespace util::serialization
         return it->second;
     }
 
-    NodeCView TomlObjectNode::tryGet(std::string_view key) const
+    NodeCView TomlObjectNode::tryGet(std::string_view key) const noexcept
     {
         auto it = _nodes.find(key);
         if (it == _nodes.end())
@@ -89,52 +89,52 @@ namespace util::serialization
             _nodes.erase(it);
     }
 
-    void TomlObjectNode::clear()
+    void TomlObjectNode::clear() noexcept
     {
         _nodes.clear();
     }
 
-    bool TomlObjectNode::empty() const
+    bool TomlObjectNode::empty() const noexcept
     {
         return _nodes.empty();
     }
 
-    size_t TomlObjectNode::size() const
+    size_t TomlObjectNode::size() const noexcept
     {
         return _nodes.size();
     }
 
-    bool TomlObjectNode::contains(std::string_view key) const
+    bool TomlObjectNode::contains(std::string_view key) const noexcept
     {
         return _nodes.find(key) != _nodes.end();
     }
 
-    TomlObjectNode::const_iterator TomlObjectNode::cbegin() const
+    TomlObjectNode::const_iterator TomlObjectNode::cbegin() const noexcept
     {
         return _nodes.cbegin();
     }
 
-    TomlObjectNode::const_iterator TomlObjectNode::begin() const
+    TomlObjectNode::const_iterator TomlObjectNode::begin() const noexcept
     {
         return cbegin();
     }
 
-    TomlObjectNode::iterator TomlObjectNode::begin()
+    TomlObjectNode::iterator TomlObjectNode::begin() noexcept
     {
         return _nodes.begin();
     }
 
-    TomlObjectNode::const_iterator TomlObjectNode::cend() const
+    TomlObjectNode::const_iterator TomlObjectNode::cend() const noexcept
     {
         return _nodes.cend();
     }
 
-    TomlObjectNode::const_iterator TomlObjectNode::end() const
+    TomlObjectNode::const_iterator TomlObjectNode::end() const noexcept
     {
         return cend();
     }
 
-    TomlObjectNode::iterator TomlObjectNode::end()
+    TomlObjectNode::iterator TomlObjectNode::end() noexcept
     {
         return _nodes.end();
     }

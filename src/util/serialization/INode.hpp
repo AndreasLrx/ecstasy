@@ -1,7 +1,7 @@
 ///
 /// @file INode.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Serialization node interface.
 /// @version 1.0.0
 /// @date 2022-12-08
 ///
@@ -54,13 +54,13 @@ namespace util::serialization
             Count         ///< Keep last - number of available node types.
         };
 
-        /// @brief @ref Type::Date type.
+        /// @brief @ref Type::Date underlying type.
         using Date = std::chrono::year_month_day;
 
-        /// @brief @ref Type::Time type.
+        /// @brief @ref Type::Time underlying type.
         using Time = std::chrono::nanoseconds;
 
-        /// @brief @ref Type::DateTime type.
+        /// @brief @ref Type::DateTime underlying type.
         using DateTime = std::chrono::high_resolution_clock::time_point;
 
         /// @brief Default destructor.
@@ -78,7 +78,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual Type getType() const = 0;
+        [[nodiscard]] virtual Type getType() const noexcept = 0;
 
         ///
         /// @brief Check if the node type is @p type.
@@ -88,7 +88,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual bool isType(Type type) const = 0;
+        [[nodiscard]] virtual bool isType(Type type) const noexcept = 0;
 
         ///
         /// @brief Check if the node type is @ref Type::Null.
@@ -98,7 +98,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual bool isNull() const = 0;
+        [[nodiscard]] virtual bool isNull() const noexcept = 0;
 
         ///
         /// @brief Check if the node type is @ref Type::Object.
@@ -108,7 +108,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual bool isObject() const = 0;
+        [[nodiscard]] virtual bool isObject() const noexcept = 0;
 
         ///
         /// @brief Check if the node type is @ref Type::Array.
@@ -118,7 +118,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual bool isArray() const = 0;
+        [[nodiscard]] virtual bool isArray() const noexcept = 0;
 
         ///
         /// @brief Check if the node type is @ref Type::String.
@@ -128,7 +128,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual bool isString() const = 0;
+        [[nodiscard]] virtual bool isString() const noexcept = 0;
 
         ///
         /// @brief Check if the node type is @ref Type::Integer.
@@ -138,7 +138,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual bool isInteger() const = 0;
+        [[nodiscard]] virtual bool isInteger() const noexcept = 0;
 
         ///
         /// @brief Check if the node type is @ref Type::Float.
@@ -148,7 +148,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual bool isFloat() const = 0;
+        [[nodiscard]] virtual bool isFloat() const noexcept = 0;
 
         ///
         /// @brief Check if the node type is @ref Type::Boolean.
@@ -158,7 +158,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual bool isBoolean() const = 0;
+        [[nodiscard]] virtual bool isBoolean() const noexcept = 0;
 
         ///
         /// @brief Check if the node type is @ref Type::Date.
@@ -168,7 +168,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual bool isDate() const = 0;
+        [[nodiscard]] virtual bool isDate() const noexcept = 0;
 
         ///
         /// @brief Check if the node type is @ref Type::Time.
@@ -178,7 +178,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual bool isTime() const = 0;
+        [[nodiscard]] virtual bool isTime() const noexcept = 0;
 
         ///
         /// @brief Check if the node type is @ref Type::DateTime.
@@ -188,7 +188,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual bool isDateTime() const = 0;
+        [[nodiscard]] virtual bool isDateTime() const noexcept = 0;
 
         //////////////////////
         ///  Value getter  ///
@@ -204,7 +204,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual const IObjectNode &asObject() const = 0;
+        [[nodiscard]] virtual const IObjectNode &asObject() const = 0;
 
         ///
         /// @brief Get the object node value.
@@ -216,7 +216,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual IObjectNode &asObject() = 0;
+        [[nodiscard]] virtual IObjectNode &asObject() = 0;
 
         ///
         /// @brief Try to get the node object value.
@@ -227,7 +227,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<std::reference_wrapper<const IObjectNode>> tryAsObject() const = 0;
+        [[nodiscard]] virtual std::optional<std::reference_wrapper<const IObjectNode>> tryAsObject() const noexcept = 0;
 
         ///
         /// @brief Try to get the node object value.
@@ -238,7 +238,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<std::reference_wrapper<IObjectNode>> tryAsObject() = 0;
+        [[nodiscard]] virtual std::optional<std::reference_wrapper<IObjectNode>> tryAsObject() noexcept = 0;
 
         ///
         /// @brief Get the array node value.
@@ -250,7 +250,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual const IArrayNode &asArray() const = 0;
+        [[nodiscard]] virtual const IArrayNode &asArray() const = 0;
 
         ///
         /// @brief Get the array node value.
@@ -262,7 +262,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual IArrayNode &asArray() = 0;
+        [[nodiscard]] virtual IArrayNode &asArray() = 0;
 
         ///
         /// @brief Try to get the node array value.
@@ -273,7 +273,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<std::reference_wrapper<const IArrayNode>> tryAsArray() const = 0;
+        [[nodiscard]] virtual std::optional<std::reference_wrapper<const IArrayNode>> tryAsArray() const noexcept = 0;
 
         ///
         /// @brief Try to get the node array value.
@@ -284,7 +284,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<std::reference_wrapper<IArrayNode>> tryAsArray() = 0;
+        [[nodiscard]] virtual std::optional<std::reference_wrapper<IArrayNode>> tryAsArray() noexcept = 0;
 
         ///
         /// @brief Get the string node value.
@@ -296,7 +296,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::string_view asString() const = 0;
+        [[nodiscard]] virtual std::string_view asString() const = 0;
 
         ///
         /// @brief Try to get the node string value.
@@ -307,7 +307,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<std::string_view> tryAsString() const = 0;
+        [[nodiscard]] virtual std::optional<std::string_view> tryAsString() const noexcept = 0;
 
         ///
         /// @brief Get the integer node value.
@@ -319,7 +319,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual int64_t asInteger() const = 0;
+        [[nodiscard]] virtual int64_t asInteger() const = 0;
 
         ///
         /// @brief Try to get the node integer value.
@@ -330,7 +330,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<int64_t> tryAsInteger() const = 0;
+        [[nodiscard]] virtual std::optional<int64_t> tryAsInteger() const noexcept = 0;
 
         ///
         /// @brief Get the float node value.
@@ -342,7 +342,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual double asFloat() const = 0;
+        [[nodiscard]] virtual double asFloat() const = 0;
 
         ///
         /// @brief Try to get the node float value.
@@ -353,7 +353,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<double> tryAsFloat() const = 0;
+        [[nodiscard]] virtual std::optional<double> tryAsFloat() const noexcept = 0;
 
         ///
         /// @brief Get the boolean node value.
@@ -365,7 +365,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual bool asBoolean() const = 0;
+        [[nodiscard]] virtual bool asBoolean() const = 0;
 
         ///
         /// @brief Try to get the node boolean value.
@@ -376,7 +376,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<bool> tryAsBoolean() const = 0;
+        [[nodiscard]] virtual std::optional<bool> tryAsBoolean() const noexcept = 0;
 
         ///
         /// @brief Get the date node value.
@@ -388,7 +388,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual Date asDate() const = 0;
+        [[nodiscard]] virtual Date asDate() const = 0;
 
         ///
         /// @brief Try to get the node date value.
@@ -399,7 +399,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<Date> tryAsDate() const = 0;
+        [[nodiscard]] virtual std::optional<Date> tryAsDate() const noexcept = 0;
 
         ///
         /// @brief Get the time node value.
@@ -411,7 +411,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual Time asTime() const = 0;
+        [[nodiscard]] virtual Time asTime() const = 0;
 
         ///
         /// @brief Try to get the node time value.
@@ -422,7 +422,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<Time> tryAsTime() const = 0;
+        [[nodiscard]] virtual std::optional<Time> tryAsTime() const noexcept = 0;
 
         ///
         /// @brief Get the datetime node value.
@@ -434,7 +434,7 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual DateTime asDateTime() const = 0;
+        [[nodiscard]] virtual DateTime asDateTime() const = 0;
 
         ///
         /// @brief Try to get the node datetime value.
@@ -445,13 +445,17 @@ namespace util::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-12-08)
         ///
-        virtual std::optional<DateTime> tryAsDateTime() const = 0;
+        [[nodiscard]] virtual std::optional<DateTime> tryAsDateTime() const noexcept = 0;
     };
 
+    /// @brief Pointer to node.
     using NodePtr = std::shared_ptr<INode>;
+    /// @brief Pointer to const node.
     using NodeCPtr = std::shared_ptr<const INode>;
 
+    /// @brief Non owning pointer to node.
     using NodeView = std::weak_ptr<INode>;
+    /// @brief Non owning pointer to const node.
     using NodeCView = std::weak_ptr<const INode>;
 } // namespace util::serialization
 

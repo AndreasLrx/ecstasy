@@ -1,7 +1,7 @@
 ///
 /// @file type_set_eq.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Test if two tuple types contains the exact same types independently of the order.
 /// @version 1.0.0
 /// @date 2022-10-28
 ///

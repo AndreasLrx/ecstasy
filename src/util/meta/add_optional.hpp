@@ -1,7 +1,7 @@
 ///
 /// @file add_optional.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Add std::optional to a type if required.
 /// @version 1.0.0
 /// @date 2022-10-27
 ///

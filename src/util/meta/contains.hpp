@@ -1,7 +1,7 @@
 ///
 /// @file contains.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Checks if a type exists in a list of types.
 /// @version 1.0.0
 /// @date 2022-10-28
 ///

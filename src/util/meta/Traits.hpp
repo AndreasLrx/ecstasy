@@ -1,7 +1,7 @@
 ///
 /// @file Traits.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Helper types for parameter packs.
 /// @version 1.0.0
 /// @date 2022-10-28
 ///
