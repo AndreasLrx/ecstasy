@@ -488,6 +488,42 @@ But you can use the system priorities/groups to order them and be able to specif
        registry.runSystems(def, mask); // DEF
    ```
 
+## Using resources
+
+Creating a resource is even simpler than creating a system: you only have to inherit @ref ecstasy::IResource.
+And in case you cannot modify the inheritance tree of your object, you can just declare a using with @ref ecstasy::ObjectWrapper (like @ref ecstasy::integration::user_action::PendingActions ).
+
+@note
+@ref ecstasy::Registry::getResource will return a @ref ecstasy::ResourceReference (optional thread safe proxy) and you will therefore need to use the `get()` method.
+
+For example here is how you would create and use an absolutely must have Counter system:
+
+```cpp
+#include <ecstasy/resources/IResource.hpp>
+
+class Counter : public ecstasy::IResource {
+    int value;
+
+    Counter(int initial = 0)
+    {
+        this->value = initial;
+    }
+
+    void count()
+    {
+        ++this->value;
+    }
+};
+
+// Add it to the registry
+ecstasy::Registry registry;
+registry.addResource<Counter>(5);
+
+// Get and use
+registry.getResource<Counter>().get().count();
+registry.getResource<Counter>().get().value;
+```
+
 ## Ensuring Thread Safety {#EnsuringThreadSafety}
 
 By default ecstasy is not thread safe. By not thread safe I mean there is absolutely nothing enabled to prevent your threads to do whatever they want at the same time.
