@@ -1,7 +1,7 @@
 ///
 /// @file has_extraction_operator.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Concept to check if a type can be saved with a serializer using the extraction operator.
 /// @version 1.0.0
 /// @date 2024-06-24
 ///

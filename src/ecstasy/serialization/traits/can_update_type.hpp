@@ -1,7 +1,7 @@
 ///
 /// @file can_update_type.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Concept to check if a type can be updated with a serializer.
 /// @version 1.0.0
 /// @date 2024-06-24
 ///

@@ -1,7 +1,7 @@
 ///
 /// @file JsonSerializer.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief JsonSerializer class
 /// @version 1.0.0
 /// @date 2024-10-10
 ///
@@ -122,7 +122,7 @@ namespace ecstasy::serialization
         }
 
         /// @copydoc ISerializer::size
-        size_t size() const override final
+        [[nodiscard]] size_t size() const override final
         {
             return exportBytes().size();
         }
@@ -297,7 +297,7 @@ namespace ecstasy::serialization
             requires std::is_fundamental_v<U> || // Fundamental type
             std::is_same_v<U, std::string>
         // clang-format on
-        U loadImpl()
+        [[nodiscard]] U loadImpl()
         {
             const rapidjson::Value &value = readCurrentValue(true);
 
@@ -342,7 +342,7 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-10-11)
         ///
-        rapidjson::Value &readCurrentValue(bool andMoveCursor = true)
+        [[nodiscard]] rapidjson::Value &readCurrentValue(bool andMoveCursor = true)
         {
             rapidjson::Value &cursor = getWriteCursor();
 
@@ -460,7 +460,7 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-10-10)
         ///
-        rapidjson::Value &getWriteCursor()
+        [[nodiscard]] rapidjson::Value &getWriteCursor() noexcept
         {
             if (_stack.empty())
                 return _document;
@@ -502,14 +502,19 @@ namespace ecstasy::serialization
         }
 
       private:
+        /// @brief RapidJson document
         rapidjson::Document _document;
+        /// @brief Stack of nested objects or arrays, to keep track of the current context.
         std::stack<std::reference_wrapper<rapidjson::Value>> _stack;
+        /// @brief Stack of array iterators, to keep track of the current array element.
         std::stack<rapidjson::Value::ValueIterator> _arrayIterators;
+        /// @brief Stack of object iterators, to keep track of the current object element.
         std::stack<rapidjson::Value::MemberIterator> _objectIterators;
+        /// @brief Next key to use for the next object value.
         std::string _nextKey;
 
         /// @copydoc loadComponentHash
-        std::size_t loadComponentHash() override final
+        [[nodiscard]] std::size_t loadComponentHash() override final
         {
             if (getWriteCursor().IsObject()) {
                 if (_objectIterators.empty())
@@ -525,33 +530,29 @@ namespace ecstasy::serialization
         }
 
         /// @copydoc beforeSaveEntity
-        void beforeSaveEntity(RegistryEntity &entity) override final
+        void beforeSaveEntity([[maybe_unused]] RegistryEntity &entity) override final
         {
             newNestedObject();
-            static_cast<void>(entity);
         }
 
         /// @copydoc afterSaveEntity
-        void afterSaveEntity(RegistryEntity &entity) override final
+        void afterSaveEntity([[maybe_unused]] RegistryEntity &entity) override final
         {
             closeNested();
-            static_cast<void>(entity);
         }
 
         /// @copydoc beforeUpdateEntity
-        void beforeUpdateEntity(RegistryEntity &entity) override final
+        void beforeUpdateEntity([[maybe_unused]] RegistryEntity &entity) override final
         {
             newNestedObject(false);
             _objectIterators.push(getWriteCursor().MemberBegin());
-            static_cast<void>(entity);
         }
 
         /// @copydoc afterUpdateEntity
-        void afterUpdateEntity(RegistryEntity &entity) override final
+        void afterUpdateEntity([[maybe_unused]] RegistryEntity &entity) override final
         {
             _objectIterators.pop();
             closeNested();
-            static_cast<void>(entity);
         }
     };
 } // namespace ecstasy::serialization

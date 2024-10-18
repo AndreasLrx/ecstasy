@@ -1,7 +1,7 @@
 ///
 /// @file LockableView.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Thread safe view of a Lockable object.
 /// @version 1.0.0
 /// @date 2024-04-02
 ///

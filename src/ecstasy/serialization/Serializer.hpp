@@ -1,7 +1,7 @@
 ///
 /// @file Serializer.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief
+/// @brief Abstract serializer parent class.
 /// @version 1.0.0
 /// @date 2024-04-29
 ///
@@ -137,7 +137,7 @@ namespace ecstasy::serialization
         }
 
         /// @copydoc ISerializer::exportBytes
-        std::string exportBytes() const override
+        [[nodiscard]] std::string exportBytes() const override
         {
             std::stringstream stream;
 
@@ -251,7 +251,7 @@ namespace ecstasy::serialization
         template <typename U>
             requires is_constructible<U> || (std::is_default_constructible_v<U> && traits::can_update_type_v<S, U>)
             || traits::has_load_impl_for_type_v<S, U>
-        U load()
+        [[nodiscard]] U load()
         {
             if constexpr (traits::has_load_impl_for_type_v<S, U>)
                 return inner().template loadImpl<U>();
@@ -304,11 +304,13 @@ namespace ecstasy::serialization
         {
             if constexpr (traits::has_update_impl_for_type_v<S, U>)
                 return inner().updateImpl(object);
-            else if constexpr (std::is_fundamental_v<U>)
-                object = inner().template load<U>();
-            else
-                object << inner();
-            return inner();
+            else {
+                if constexpr (std::is_fundamental_v<U>)
+                    object = inner().template load<U>();
+                else
+                    object << inner();
+                return inner();
+            }
         }
 
         ///
@@ -417,7 +419,7 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-10-04)
         ///
-        static bool hasEntityComponentSerializer(std::size_t hash)
+        [[nodiscard]] static bool hasEntityComponentSerializer(std::size_t hash)
         {
             return getRegisteredComponents().contains(hash);
         }
@@ -434,7 +436,7 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-10-04)
         ///
-        static IEntityComponentSerializer &getEntityComponentSerializer(std::size_t hash)
+        [[nodiscard]] static IEntityComponentSerializer &getEntityComponentSerializer(std::size_t hash)
         {
             return *getRegisteredComponents().at(hash);
         }
@@ -450,8 +452,8 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-10-13)
         ///
-        static std::optional<std::reference_wrapper<IEntityComponentSerializer>> tryGetEntityComponentSerializer(
-            std::size_t hash)
+        [[nodiscard]] static std::optional<std::reference_wrapper<IEntityComponentSerializer>>
+        tryGetEntityComponentSerializer(std::size_t hash)
         {
             auto it = getRegisteredComponents().find(hash);
 
@@ -472,7 +474,7 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-10-11)
         ///
-        static IEntityComponentSerializer &getEntityComponentSerializer(std::string_view name)
+        [[nodiscard]] static IEntityComponentSerializer &getEntityComponentSerializer(std::string_view name)
         {
             for (auto &[hash, serializer] : getRegisteredComponents()) {
                 if (serializer->getTypeName() == name)
@@ -491,7 +493,8 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-10-10)
         ///
-        static std::unordered_map<std::size_t, std::unique_ptr<IEntityComponentSerializer>> &getRegisteredComponents()
+        [[nodiscard]] static std::unordered_map<std::size_t, std::unique_ptr<IEntityComponentSerializer>> &
+        getRegisteredComponents()
         {
             static std::unordered_map<std::size_t, std::unique_ptr<IEntityComponentSerializer>> registeredComponents;
             return registeredComponents;
@@ -507,7 +510,7 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-10-04)
         ///
-        virtual std::size_t loadComponentHash() = 0;
+        [[nodiscard]] virtual std::size_t loadComponentHash() = 0;
 
         ///
         /// @brief Optional method triggered at the start of @ref saveEntity.
@@ -517,9 +520,8 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-10-11)
         ///
-        virtual void beforeSaveEntity(RegistryEntity &entity)
+        virtual void beforeSaveEntity([[maybe_unused]] RegistryEntity &entity)
         {
-            static_cast<void>(entity);
         }
 
         ///
@@ -530,9 +532,8 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-10-11)
         ///
-        virtual void afterSaveEntity(RegistryEntity &entity)
+        virtual void afterSaveEntity([[maybe_unused]] RegistryEntity &entity)
         {
-            static_cast<void>(entity);
         }
 
         ///
@@ -543,9 +544,8 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-10-11)
         ///
-        virtual void beforeUpdateEntity(RegistryEntity &entity)
+        virtual void beforeUpdateEntity([[maybe_unused]] RegistryEntity &entity)
         {
-            static_cast<void>(entity);
         }
 
         ///
@@ -556,9 +556,8 @@ namespace ecstasy::serialization
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-10-11)
         ///
-        virtual void afterUpdateEntity(RegistryEntity &entity)
+        virtual void afterUpdateEntity([[maybe_unused]] RegistryEntity &entity)
         {
-            static_cast<void>(entity);
         }
     };
 
