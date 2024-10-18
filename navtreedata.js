@@ -71,48 +71,49 @@ var NAVTREE =
         [ "Using conditions", "md_doc_2_tutorial.html#ConditionsTutorial", null ]
       ] ],
       [ "Using systems", "md_doc_2_tutorial.html#autotoc_md42", null ],
+      [ "Using resources", "md_doc_2_tutorial.html#autotoc_md43", null ],
       [ "Ensuring Thread Safety", "md_doc_2_tutorial.html#EnsuringThreadSafety", null ],
-      [ "Serializing your entities", "md_doc_2_tutorial.html#autotoc_md43", [
-        [ "Using a serializer", "md_doc_2_tutorial.html#autotoc_md44", [
-          [ "Common types", "md_doc_2_tutorial.html#autotoc_md45", null ],
-          [ "Custom types", "md_doc_2_tutorial.html#autotoc_md46", null ],
-          [ "Working with Entities", "md_doc_2_tutorial.html#autotoc_md47", null ]
+      [ "Serializing your entities", "md_doc_2_tutorial.html#autotoc_md44", [
+        [ "Using a serializer", "md_doc_2_tutorial.html#autotoc_md45", [
+          [ "Common types", "md_doc_2_tutorial.html#autotoc_md46", null ],
+          [ "Custom types", "md_doc_2_tutorial.html#autotoc_md47", null ],
+          [ "Working with Entities", "md_doc_2_tutorial.html#autotoc_md48", null ]
         ] ]
       ] ]
     ] ],
     [ "Technical Implementations", "md_doc_2_technical_implementation.html", [
-      [ "Entities Management", "md_doc_2_technical_implementation.html#autotoc_md49", null ],
-      [ "Components Management (MapStorage)", "md_doc_2_technical_implementation.html#autotoc_md50", null ],
-      [ "Query", "md_doc_2_technical_implementation.html#autotoc_md51", null ]
+      [ "Entities Management", "md_doc_2_technical_implementation.html#autotoc_md50", null ],
+      [ "Components Management (MapStorage)", "md_doc_2_technical_implementation.html#autotoc_md51", null ],
+      [ "Query", "md_doc_2_technical_implementation.html#autotoc_md52", null ]
     ] ],
     [ "Events integration", "md_doc_2integrations_2events.html", [
-      [ "Description", "md_doc_2integrations_2events.html#autotoc_md60", [
-        [ "How to get feedback", "md_doc_2integrations_2events.html#autotoc_md61", null ],
-        [ "Event flow", "md_doc_2integrations_2events.html#autotoc_md62", null ]
+      [ "Description", "md_doc_2integrations_2events.html#autotoc_md61", [
+        [ "How to get feedback", "md_doc_2integrations_2events.html#autotoc_md62", null ],
+        [ "Event flow", "md_doc_2integrations_2events.html#autotoc_md63", null ]
       ] ],
-      [ "Example", "md_doc_2integrations_2events.html#autotoc_md63", [
-        [ "Creating listeners components", "md_doc_2integrations_2events.html#autotoc_md64", null ],
-        [ "Sending an event", "md_doc_2integrations_2events.html#autotoc_md65", null ],
-        [ "Accessing an input state", "md_doc_2integrations_2events.html#autotoc_md66", null ]
+      [ "Example", "md_doc_2integrations_2events.html#autotoc_md64", [
+        [ "Creating listeners components", "md_doc_2integrations_2events.html#autotoc_md65", null ],
+        [ "Sending an event", "md_doc_2integrations_2events.html#autotoc_md66", null ],
+        [ "Accessing an input state", "md_doc_2integrations_2events.html#autotoc_md67", null ]
       ] ]
     ] ],
     [ "SFML integration", "md_doc_2integrations_2sfml.html", [
-      [ "Description", "md_doc_2integrations_2sfml.html#autotoc_md68", null ],
-      [ "Usage", "md_doc_2integrations_2sfml.html#autotoc_md69", null ]
+      [ "Description", "md_doc_2integrations_2sfml.html#autotoc_md69", null ],
+      [ "Usage", "md_doc_2integrations_2sfml.html#autotoc_md70", null ]
     ] ],
     [ "User Actions integration", "md_doc_2integrations_2user__actions.html", [
-      [ "Description", "md_doc_2integrations_2user__actions.html#autotoc_md71", null ],
-      [ "Usage", "md_doc_2integrations_2user__actions.html#autotoc_md72", [
-        [ "Register your actions and bindings", "md_doc_2integrations_2user__actions.html#autotoc_md73", null ],
-        [ "Listen to your actions", "md_doc_2integrations_2user__actions.html#autotoc_md74", [
-          [ "ActionListener", "md_doc_2integrations_2user__actions.html#autotoc_md75", null ],
-          [ "ActionListeners", "md_doc_2integrations_2user__actions.html#autotoc_md76", null ],
-          [ "ActionIdListener", "md_doc_2integrations_2user__actions.html#autotoc_md77", null ]
+      [ "Description", "md_doc_2integrations_2user__actions.html#autotoc_md72", null ],
+      [ "Usage", "md_doc_2integrations_2user__actions.html#autotoc_md73", [
+        [ "Register your actions and bindings", "md_doc_2integrations_2user__actions.html#autotoc_md74", null ],
+        [ "Listen to your actions", "md_doc_2integrations_2user__actions.html#autotoc_md75", [
+          [ "ActionListener", "md_doc_2integrations_2user__actions.html#autotoc_md76", null ],
+          [ "ActionListeners", "md_doc_2integrations_2user__actions.html#autotoc_md77", null ],
+          [ "ActionIdListener", "md_doc_2integrations_2user__actions.html#autotoc_md78", null ]
         ] ],
-        [ "Using intermediate actions", "md_doc_2integrations_2user__actions.html#autotoc_md78", null ],
-        [ "Saving and loading the bindings", "md_doc_2integrations_2user__actions.html#autotoc_md79", [
-          [ "Saving", "md_doc_2integrations_2user__actions.html#autotoc_md80", null ],
-          [ "Loading", "md_doc_2integrations_2user__actions.html#autotoc_md81", null ]
+        [ "Using intermediate actions", "md_doc_2integrations_2user__actions.html#autotoc_md79", null ],
+        [ "Saving and loading the bindings", "md_doc_2integrations_2user__actions.html#autotoc_md80", [
+          [ "Saving", "md_doc_2integrations_2user__actions.html#autotoc_md81", null ],
+          [ "Loading", "md_doc_2integrations_2user__actions.html#autotoc_md82", null ]
         ] ]
       ] ]
     ] ],
@@ -168,7 +169,7 @@ var NAVTREEINDEX =
 "cpp/memory/shared_ptr/pointer_cast.html",
 "cpp/string/byte/strtof.html",
 "dir_13af086a2b4f3f42e1124b964311462f.html",
-"md_doc_2integrations_2user__actions.html",
+"md_doc_2integrations_2sfml.html#autotoc_md70",
 "structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa8ed4d3c0783d6f909907e1592ffe47ac",
 "structecstasy_1_1query_1_1_select_1_1_filter_queryables.html#a9bd5caf2dbefc4a90f87d15d9b5d3b8e"
 ];

@@ -482,7 +482,39 @@ Using systems</h1>
 <div class="line">registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a5595f1c0811c0d7f658c01f49da8dc37">runSystems</a>(def, mask); <span class="comment">// DEF</span></div>
 </div><!-- fragment --></li>
 </ol>
-<h1><a class="anchor" id="EnsuringThreadSafety"></a>
+<h1><a class="anchor" id="autotoc_md43"></a>
+Using resources</h1>
+<p>Creating a resource is even simpler than creating a system: you only have to inherit <a class="el" href="classecstasy_1_1_i_resource.html">ecstasy::IResource</a>. And in case you cannot modify the inheritance tree of your object, you can just declare a using with <a class="el" href="classecstasy_1_1_object_wrapper.html">ecstasy::ObjectWrapper</a> (like <a class="el" href="namespaceecstasy_1_1integration_1_1user__action.html#a9b4f873eff13ede42a8a53839aea12b0">ecstasy::integration::user_action::PendingActions</a> ).</p>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="classecstasy_1_1_registry.html#a516a8ea8065455d601a30e1d3afbef52">ecstasy::Registry::getResource</a> will return a <a class="el" href="namespaceecstasy.html#a935f8c5172bfb738d9af3f1585f41cad">ecstasy::ResourceReference</a> (optional thread safe proxy) and you will therefore need to use the <code>get()</code> method.</dd></dl>
+<p>For example here is how you would create and use an absolutely must have Counter system:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_i_resource_8hpp.html">ecstasy/resources/IResource.hpp</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>Counter : <span class="keyword">public</span> <a class="code hl_class" href="classecstasy_1_1_i_resource.html">ecstasy::IResource</a> {</div>
+<div class="line">    <span class="keywordtype">int</span> value;</div>
+<div class="line"> </div>
+<div class="line">    Counter(<span class="keywordtype">int</span> initial = 0)</div>
+<div class="line">    {</div>
+<div class="line">        this-&gt;value = initial;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">void</span> count()</div>
+<div class="line">    {</div>
+<div class="line">        ++this-&gt;value;</div>
+<div class="line">    }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Add it to the registry</span></div>
+<div class="line"><a class="code hl_class" href="classecstasy_1_1_registry.html">ecstasy::Registry</a> registry;</div>
+<div class="line">registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a79cab84435e7b20e9c41aae9cc543cfa">addResource</a>&lt;Counter&gt;(5);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Get and use</span></div>
+<div class="line">registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a516a8ea8065455d601a30e1d3afbef52">getResource</a>&lt;Counter&gt;().get().count();</div>
+<div class="line">registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a516a8ea8065455d601a30e1d3afbef52">getResource</a>&lt;Counter&gt;().get().value;</div>
+<div class="ttc" id="a_i_resource_8hpp_html"><div class="ttname"><a href="_i_resource_8hpp.html">IResource.hpp</a></div><div class="ttdoc">Base class of all registry resources.</div></div>
+<div class="ttc" id="aclassecstasy_1_1_i_resource_html"><div class="ttname"><a href="classecstasy_1_1_i_resource.html">ecstasy::IResource</a></div><div class="ttdoc">Base class of all registry resources.</div><div class="ttdef"><b>Definition</b> <a href="_i_resource_8hpp_source.html#l00029">IResource.hpp:33</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_a516a8ea8065455d601a30e1d3afbef52"><div class="ttname"><a href="classecstasy_1_1_registry.html#a516a8ea8065455d601a30e1d3afbef52">ecstasy::Registry::getResource</a></div><div class="ttdeci">ResourceReference&lt; const R, Locked &gt; getResource() const</div><div class="ttdoc">Get the Resource of type R.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00906">Registry.hpp:906</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_a79cab84435e7b20e9c41aae9cc543cfa"><div class="ttname"><a href="classecstasy_1_1_registry.html#a79cab84435e7b20e9c41aae9cc543cfa">ecstasy::Registry::addResource</a></div><div class="ttdeci">R &amp; addResource(Args &amp;&amp;...args)</div><div class="ttdoc">Add a new resource in the registry.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00853">Registry.hpp:853</a></div></div>
+</div><!-- fragment --><h1><a class="anchor" id="EnsuringThreadSafety"></a>
 Ensuring Thread Safety</h1>
 <p>By default ecstasy is not thread safe. By not thread safe I mean there is absolutely nothing enabled to prevent your threads to do whatever they want at the same time.</p>
 <p>But no worries it is just some compilation options to set:</p>
@@ -510,7 +542,7 @@ Ensuring Thread Safety</h1>
 <p class="startli">I know sometimes ecstasy can lock multiple times the same mutex because it is hard to detect. But if you know it and it is sensitive systems (running lot of times per frame) you can use the *Ex methods to UnLock explicitly the same way.</p>
 </li>
 </ol>
-<h1><a class="anchor" id="autotoc_md43"></a>
+<h1><a class="anchor" id="autotoc_md44"></a>
 Serializing your entities</h1>
 <p>Ecstasy has some built in serialization helpers in the <a class="el" href="namespaceecstasy_1_1serialization.html">ecstasy::serialization</a> namespace.</p>
 <dl class="section warning"><dt>Warning</dt><dd>The entity serialization without specifying components is still WIP and will probably have a huge refactor.</dd></dl>
@@ -520,7 +552,7 @@ Serializing your entities</h1>
 </ul>
 <p>If you need a missing serializer, you can write it yourself by inheriting the <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html">ecstasy::serialization::Serializer</a> class. In case of a commonly used serializer type (json/yaml/NDR...) feel free to open an issue about it.</p>
 <dl class="section warning"><dt>Warning</dt><dd>The RawSerializer uses a <a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_stringstream.html">std::stringstream</a>. Therefore there are cursor positions, if you need to read twice the data, you need to reset the read cursor position.</dd></dl>
-<h2><a class="anchor" id="autotoc_md44"></a>
+<h2><a class="anchor" id="autotoc_md45"></a>
 Using a serializer</h2>
 <p>Following examples below will be using the RawSerializer type and the example component Position:</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>Position {</div>
@@ -528,7 +560,7 @@ Using a serializer</h2>
 <div class="line">    <span class="keywordtype">float</span> x;</div>
 <div class="line">    <span class="keywordtype">float</span> y;</div>
 <div class="line">};</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md45"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md46"></a>
 Common types</h3>
 <p>Serializer should support fundamental and container types by default but it depends on the serializer implementation.</p>
 <table class="markdownTable">
@@ -590,7 +622,7 @@ Common types</h3>
 <div class="line"><span class="comment">// Fill your serializer with previously saved data using import methods</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> my_number = serializer.load&lt;<span class="keywordtype">int</span>&gt;();</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md46"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md47"></a>
 Custom types</h3>
 <p>If you are working with custom type (ie components) you can implement the extraction (**&gt;&gt;**) and insertion operator (**&lt;&lt;**) with the said serializer type for the <em>save</em>/_update_. And a constructor taking the serializer as parameter for the <em>load</em>.</p>
 <dl class="section note"><dt>Note</dt><dd>The operators doesn't have to be inside the class, you can define it outside the class if you don't have access to the class definition. However it cannot work for the constructor.</dd></dl>
@@ -616,7 +648,7 @@ Custom types</h3>
 <p>For example, if you want you type Position to be serializable by the RawSerializer and the (maybe to come) JsonSerializer:</p>
 <div class="fragment"><div class="line"><a class="code hl_define" href="ecstasy_2serialization_2_serializer_8hpp.html#a0ca77627672ee4d0c582e482138445c6">REGISTER_SERIALIZABLES</a>(Position, RawSerializer, JsonSerializer)</div>
 <div class="ttc" id="aecstasy_2serialization_2_serializer_8hpp_html_a0ca77627672ee4d0c582e482138445c6"><div class="ttname"><a href="ecstasy_2serialization_2_serializer_8hpp.html#a0ca77627672ee4d0c582e482138445c6">REGISTER_SERIALIZABLES</a></div><div class="ttdeci">#define REGISTER_SERIALIZABLES(COMPONENT, a1,...)</div><div class="ttdoc">Register a component to multiple serializers.</div><div class="ttdef"><b>Definition</b> <a href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00052">Serializer.hpp:52</a></div></div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md47"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md48"></a>
 Working with Entities</h3>
 <p>Since you can serialize any type, you can serialize entity components manually using the functions above.</p>
 <p>You can save entity components explicitly using the templated saveEntity method, or every registered components with the classic saveEntity method.</p>
