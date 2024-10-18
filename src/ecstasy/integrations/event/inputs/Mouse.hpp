@@ -16,7 +16,7 @@
 #include <iostream>
 #include <utility>
 
-#include "ecstasy/resources/Resource.hpp"
+#include "ecstasy/resources/IResource.hpp"
 #include "util/serialization/SerializableEnum.hpp"
 
 namespace ecstasy::integration::event
@@ -27,7 +27,7 @@ namespace ecstasy::integration::event
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-11-04)
     ///
-    class Mouse : public Resource<Mouse> {
+    class Mouse : public IResource {
       public:
         // LCOV_EXCL_START
 

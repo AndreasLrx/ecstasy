@@ -25,10 +25,10 @@ TEST(DeletionStack, basic_cases)
 
     /// No deletion
     {
-        GTEST_ASSERT_EQ(registry.getEntities()->getMask(), util::BitSet("1111111111"));
+        GTEST_ASSERT_EQ(registry.getEntities().get().getMask(), util::BitSet("1111111111"));
         ecstasy::DeletionStack delStack(registry);
     }
-    GTEST_ASSERT_EQ(registry.getEntities()->getMask(), util::BitSet("1111111111"));
+    GTEST_ASSERT_EQ(registry.getEntities().get().getMask(), util::BitSet("1111111111"));
 
     {
         ecstasy::DeletionStack delStack(registry);
@@ -38,11 +38,11 @@ TEST(DeletionStack, basic_cases)
             if (++i % 2 == 0)
                 delStack.push(entity);
             /// Even if entity was marked for deletion it is still alive while the delStack isn't destroyed.
-            GTEST_ASSERT_TRUE(registry.getEntities()->isAlive(entity));
+            GTEST_ASSERT_TRUE(registry.getEntities().get().isAlive(entity));
         }
-        GTEST_ASSERT_EQ(registry.getEntities()->getMask(), util::BitSet("1111111111"));
+        GTEST_ASSERT_EQ(registry.getEntities().get().getMask(), util::BitSet("1111111111"));
         GTEST_ASSERT_EQ(delStack.size(), 5);
     }
     /// delStack deleted and so are the entities
-    GTEST_ASSERT_EQ(registry.getEntities()->getMask(), util::BitSet("0101010101"));
+    GTEST_ASSERT_EQ(registry.getEntities().get().getMask(), util::BitSet("0101010101"));
 }

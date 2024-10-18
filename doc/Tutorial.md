@@ -494,7 +494,7 @@ By default ecstasy is not thread safe. By not thread safe I mean there is absolu
 
 But no worries it is just some compilation options to set:
 
-- @b ECSTASY_LOCKABLE_RESOURCES will make @ref Resource class validate the [Lockable](@ref ecstasy::thread::Lockable) concept.
+- @b ECSTASY_LOCKABLE_RESOURCES will make @ref IResource class validate the [Lockable](@ref ecstasy::thread::Lockable) concept.
 - @b ECSTASY_LOCKABLE_STORAGES will make @ref IStorage class validate the [Lockable](@ref ecstasy::thread::Lockable) concept.
 - @b ECSTASY_AUTO_LOCK will lock any [Lockable](@ref ecstasy::thread::Lockable) queryables in any registry queries or registry modifiers.
 - @b ECSTASY_THREAD_SAFE will enable the three options above.

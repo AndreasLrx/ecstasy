@@ -92,7 +92,7 @@ jobs:
           gcovr -r ${{github.workspace}}  --exclude-unreachable-branches --exclude-throw-branches --xml --output ./coverage.xml -e "src/ecstasy/integrations/sfml/*" ${{github.workspace}}/build/src
 
       - name: Upload Coverage Data
-        if: matrix.GCOV && (secrets.CODECOV_TOKEN != '') && (github.event_name == 'push'  || github.event.pull_request.head.repo.full_name == github.event.pull_request.base.repo.full_name)
+        if: matrix.GCOV && (github.event_name == 'push'  || github.event.pull_request.head.repo.full_name == github.event.pull_request.base.repo.full_name)
         uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}

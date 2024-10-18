@@ -19,7 +19,7 @@
 #include "ecstasy/integrations/event/inputs/Keyboard.hpp"
 #include "ecstasy/integrations/event/inputs/Mouse.hpp"
 #include "ecstasy/registry/Registry.hpp"
-#include "ecstasy/resources/Resource.hpp"
+#include "ecstasy/resources/IResource.hpp"
 #include "ecstasy/storages/MapStorage.hpp"
 #include <unordered_map>
 
@@ -37,7 +37,7 @@ namespace ecstasy::integration::user_action
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-12-02)
     ///
-    class Users : public ecstasy::Resource<Users> {
+    class Users : public ecstasy::IResource {
       private:
         /// @brief Helper type instead of using @ref std::pair.
         /// Describe a link between an action and a user.

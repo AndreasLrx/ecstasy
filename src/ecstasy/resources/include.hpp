@@ -12,8 +12,8 @@
 #ifndef ECSTASY_RESOURCES_HPP_
 #define ECSTASY_RESOURCES_HPP_
 
+#include "IResource.hpp"
 #include "ObjectWrapper.hpp"
-#include "Resource.hpp"
 #include "entity/include.hpp"
 
 #endif /* !ECSTASY_RESOURCES_HPP_ */

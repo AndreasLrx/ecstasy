@@ -49,6 +49,8 @@ namespace ecstasy
     /// @brief Resource reference type.
     /// This type is used to reference a resource in a thread-safe way depending on the AutoLock parameter.
     ///
+    /// @note Consider this as a thread_safe @ref std::reference_wrapper.
+    ///
     /// @tparam R Resource type.
     /// @tparam AutoLock Whether the resource should be locked automatically.
     ///
@@ -95,7 +97,7 @@ namespace ecstasy
         }
 
         /// @copydoc getQueryable()
-        template <std::derived_from<ResourceBase> R>
+        template <std::derived_from<IResource> R>
             requires query::Queryable<R>
         [[nodiscard]] constexpr R &getQueryable()
         {
@@ -137,7 +139,7 @@ namespace ecstasy
         }
 
         /// @copydoc getFromType()
-        template <std::derived_from<ResourceBase> R>
+        template <std::derived_from<IResource> R>
         [[nodiscard]] constexpr R &getFromType()
         {
             return getResource<R, false>();
@@ -847,7 +849,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-18)
         ///
-        template <std::derived_from<ResourceBase> R, typename... Args>
+        template <std::derived_from<IResource> R, typename... Args>
         R &addResource(Args &&...args)
         {
             return _resources.emplace<R>(std::forward<Args>(args)...);
@@ -881,7 +883,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-06)
         ///
-        template <std::derived_from<ResourceBase> R>
+        template <std::derived_from<IResource> R>
         [[nodiscard]] bool hasResource() const
         {
             return _resources.contains<R>();
@@ -900,7 +902,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-18)
         ///
-        template <std::derived_from<ResourceBase> R, bool Locked = thread::AUTO_LOCK_RESOURCES_DEFAULT>
+        template <std::derived_from<IResource> R, bool Locked = thread::AUTO_LOCK_RESOURCES_DEFAULT>
         [[nodiscard]] ResourceReference<const R, Locked> getResource() const
         {
             return _resources.get<R>();
@@ -918,7 +920,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-18)
         ///
-        template <std::derived_from<ResourceBase> R, bool Locked = thread::AUTO_LOCK_RESOURCES_DEFAULT>
+        template <std::derived_from<IResource> R, bool Locked = thread::AUTO_LOCK_RESOURCES_DEFAULT>
         [[nodiscard]] ResourceReference<R, Locked> getResource()
         {
             return _resources.get<R>();
@@ -1223,7 +1225,7 @@ namespace ecstasy
 
       private:
         /// @brief Registry resources.
-        Instances<ResourceBase> _resources;
+        Instances<IResource> _resources;
         /// @brief Registry storages.
         Instances<IStorage> _storages;
         /// @brief Registry systems.

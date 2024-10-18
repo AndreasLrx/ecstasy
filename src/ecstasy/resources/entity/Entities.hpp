@@ -16,7 +16,7 @@
 #include <vector>
 
 #include "Entity.hpp"
-#include "ecstasy/resources/Resource.hpp"
+#include "ecstasy/resources/IResource.hpp"
 #include "util/BitSet.hpp"
 
 namespace ecstasy
@@ -27,7 +27,7 @@ namespace ecstasy
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-10-18)
     ///
-    class Entities : public Resource<Entities> {
+    class Entities : public IResource {
       public:
         ///
         /// @brief Entities builder to add multiple component to an entity on creation.

@@ -12,7 +12,7 @@
 #ifndef ECSTASY_RESOURCES_OBJECTWRAPPER_HPP_
 #define ECSTASY_RESOURCES_OBJECTWRAPPER_HPP_
 
-#include "Resource.hpp"
+#include "IResource.hpp"
 
 namespace ecstasy
 {
@@ -25,7 +25,7 @@ namespace ecstasy
     /// @since 1.0.0 (2022-11-16)
     ///
     template <typename T>
-    class ObjectWrapper : public Resource<ObjectWrapper<T>> {
+    class ObjectWrapper : public IResource {
       public:
         ///
         /// @brief Construct a new Object Wrapper.
@@ -49,6 +49,57 @@ namespace ecstasy
         /// @since 1.0.0 (2022-11-16)
         ///
         ~ObjectWrapper() = default;
+
+        ///
+        /// @brief Access the wrapped object.
+        ///
+        /// @return T& Reference to the wrapped object.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-18)
+        ///
+        [[nodiscard]] constexpr T &operator*() noexcept
+        {
+            return _object;
+        }
+
+        ///
+        /// @brief Access the wrapped object.
+        ///
+        /// @return const T& Const reference to the wrapped object.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-18)
+        ///
+        [[nodiscard]] constexpr const T &operator*() const noexcept
+        {
+            return _object;
+        }
+
+        ///
+        /// @brief Access the wrapped object pointer.
+        ///
+        /// @return T* Pointer to the wrapped object.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-18)
+        ///
+        [[nodiscard]] constexpr T *operator->() noexcept
+        {
+            return &_object;
+        }
+
+        ///
+        /// @brief Access the wrapped object pointer.
+        ///
+        /// @return T const* Const pointer to the wrapped object.
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-18)
+        ///
+        [[nodiscard]] constexpr T const *operator->() const noexcept
+        {
+            return &_object;
+        }
 
         ///
         /// @brief Get a reference to the object.

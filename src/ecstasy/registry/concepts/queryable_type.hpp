@@ -15,7 +15,7 @@
 #include "ecstasy/query/concepts/Modifier.hpp"
 #include "ecstasy/query/concepts/Queryable.hpp"
 #include "ecstasy/registry/concepts/RegistryModifier.hpp"
-#include "ecstasy/resources/Resource.hpp"
+#include "ecstasy/resources/IResource.hpp"
 #include "ecstasy/storages/StorageConcepts.hpp"
 
 namespace ecstasy
@@ -24,7 +24,7 @@ namespace ecstasy
     /// @brief Try to get the type of a queryable associated to a type stored in the registry (component, storage,
     /// resource...).
     /// Returns C if:
-    /// - C is derived from the @ref ecstasy::Resource class and match the @ref Queryable concept.
+    /// - C is derived from the @ref ecstasy::IResource class and match the @ref Queryable concept.
     /// - C match the @ref ecstasy::IsStorage concept and match the @ref Queryable concept.
     /// - C is a const type matching the @ref ConstQueryableObject concept.
     /// - C match the @ref ecstasy::query::Modifier
@@ -49,7 +49,7 @@ namespace ecstasy
     };
 
     /// @copydoc queryable_type
-    template <std::derived_from<ResourceBase> R>
+    template <std::derived_from<IResource> R>
         requires query::Queryable<R>
     struct queryable_type<R> {
         using type = R;

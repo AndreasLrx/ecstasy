@@ -110,7 +110,7 @@ namespace ecstasy::thread
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-04-03)
         ///
-        L &operator*()
+        [[nodiscard]] L &operator*() noexcept
         {
             return _lockable;
         }
@@ -123,7 +123,7 @@ namespace ecstasy::thread
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-04-03)
         ///
-        L *operator->()
+        [[nodiscard]] L *operator->() noexcept
         {
             return &_lockable;
         }
@@ -139,9 +139,35 @@ namespace ecstasy::thread
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-04-03)
         ///
-        L *operator->() const
+        [[nodiscard]] L *operator->() const noexcept
         {
             return &_lockable;
+        }
+
+        ///
+        /// @brief Access the internal lockable object.
+        ///
+        /// @return L& Reference to the internal lockable object.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-18)
+        ///
+        [[nodiscard]] L &get() noexcept
+        {
+            return _lockable;
+        }
+
+        ///
+        /// @brief Access the internal lockable object.
+        ///
+        /// @return L& Reference to the internal lockable object.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-18)
+        ///
+        [[nodiscard]] L &get() const noexcept
+        {
+            return _lockable;
         }
 
       private:

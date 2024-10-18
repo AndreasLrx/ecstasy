@@ -217,7 +217,7 @@ namespace ecstasy::query
     ///
     template <typename T, bool ThreadSafe>
     struct thread_safe_reference {
-        using type = T &;
+        using type = std::reference_wrapper<T>;
     };
 
     /// @copydoc thread_safe_reference

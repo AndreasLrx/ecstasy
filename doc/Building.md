@@ -98,7 +98,7 @@ _In case this documentation is not up to date with the [Options.cmake](/cmake/Op
 | ENABLE_COVERAGE                      | Enable code coverage tracking. Must be set with **BUILD_TEST_SUITE** to have the tests coverage                                         | OFF           |
 | BUILD_SHARED_LIBS                    | Build Ecstasy as shared libaries                                                                                                        | OFF           |
 | ECSTASY_THREAD_SAFE                  | Combination of **ECSTASY_AUTO_LOCK**, **ECSTASY_AUTO_LOCK_RESOURCES**, **ECSTASY_LOCKABLE_RESOURCES** and **ECSTASY_LOCKABLE_STORAGES** | OFF           |
-| ECSTASY_LOCKABLE_RESOURCES           | Make [Resource](@ref ecstasy::Resource) inherit [SharedRecursiveMutex](@ref ecstasy::thread::SharedRecursiveMutex)                      | OFF           |
+| ECSTASY_LOCKABLE_RESOURCES           | Make [IResource](@ref ecstasy::IResource) inherit [SharedRecursiveMutex](@ref ecstasy::thread::SharedRecursiveMutex)                    | OFF           |
 | ECSTASY_LOCKABLE_STORAGES            | Make [IStorage](@ref ecstasy::IStorage) inherit [SharedRecursiveMutex](@ref ecstasy::thread::SharedRecursiveMutex)                      | OFF           |
 | ECSTASY_AUTO_LOCK                    | Auto lock lockable queryables in registry queries                                                                                       | OFF           |
 | ECSTASY_AUTO_LOCK_RESOURCES          | Auto lock resources with registry.getResource. Requires **ECSTASY_LOCKABLE_RESOURCES**                                                  | OFF           |
