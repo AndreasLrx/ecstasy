@@ -67,7 +67,7 @@ namespace ecstasy::integration::sfml
         RR<RenderWindow> windowWrapper = registry.getResource<RenderWindow>();
 
         sf::Event event;
-        while (windowWrapper->pollEvent(event)) {
+        while (windowWrapper.get().pollEvent(event)) {
             switch (event.type) {
                 /// Mouse events
                 case sf::Event::MouseButtonPressed:
@@ -117,7 +117,7 @@ namespace ecstasy::integration::sfml
                             event.joystickMove.position / 100.f));
                     break;
 
-                case sf::Event::Closed: windowWrapper->get().close(); break;
+                case sf::Event::Closed: windowWrapper.get()->close(); break;
                 default: break;
             }
         }

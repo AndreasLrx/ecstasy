@@ -90,7 +90,8 @@ namespace ecstasy::integration::event
                 callListeners(registry, event.mouseButton);
 
                 if (registry.hasResource<Mouse>())
-                    registry.getResource<Mouse>()->setButtonState(event.mouseButton.button, event.mouseButton.pressed);
+                    registry.getResource<Mouse>().get().setButtonState(
+                        event.mouseButton.button, event.mouseButton.pressed);
                 break;
             case Event::Type::MouseWheelScrolled: callListeners(registry, event.mouseWheel); break;
             case Event::Type::MouseMoved:
@@ -98,7 +99,8 @@ namespace ecstasy::integration::event
 
                 if (registry.hasResource<Mouse>()) {
                     RR<Mouse> mouse = registry.getResource<Mouse>();
-                    mouse->setPosition(event.mouseMove.x + mouse->getX(), event.mouseMove.y + mouse->getY());
+                    mouse.get().setPosition(
+                        event.mouseMove.x + mouse.get().getX(), event.mouseMove.y + mouse.get().getY());
                 }
                 break;
             case Event::Type::KeyPressed:
@@ -106,7 +108,7 @@ namespace ecstasy::integration::event
                 callKeyListeners(registry, event.key);
 
                 if (registry.hasResource<Keyboard>())
-                    registry.getResource<Keyboard>()->setKeyState(event.key.key, event.key.pressed);
+                    registry.getResource<Keyboard>().get().setKeyState(event.key.key, event.key.pressed);
                 break;
             case Event::Type::TextEntered: callListeners(registry, event.text); break;
             case Event::Type::GamepadButtonPressed:
@@ -115,7 +117,8 @@ namespace ecstasy::integration::event
 
                 if (registry.hasResource<Gamepads>())
                     registry.getResource<Gamepads>()
-                        ->get(event.gamepadButton.id)
+                        .get()
+                        .get(event.gamepadButton.id)
                         .setButtonState(event.gamepadButton.button, event.gamepadButton.pressed);
                 break;
             case Event::Type::GamepadConnected:
@@ -124,7 +127,8 @@ namespace ecstasy::integration::event
 
                 if (registry.hasResource<Gamepads>())
                     registry.getResource<Gamepads>()
-                        ->get(event.gamepadConnected.id)
+                        .get()
+                        .get(event.gamepadConnected.id)
                         .setConnected(event.gamepadConnected.connected);
                 break;
             case Event::Type::GamepadAxis:
@@ -132,7 +136,8 @@ namespace ecstasy::integration::event
 
                 if (registry.hasResource<Gamepads>())
                     registry.getResource<Gamepads>()
-                        ->get(event.gamepadAxis.id)
+                        .get()
+                        .get(event.gamepadAxis.id)
                         .setAxisValue(event.gamepadAxis.axis, event.gamepadAxis.value);
                 break;
             default: break;
@@ -140,7 +145,7 @@ namespace ecstasy::integration::event
 
 #ifdef ECSTASY_INTEGRATIONS_USER_ACTION
         if (registry.hasResource<user_action::Users>())
-            registry.getResource<const user_action::Users>()->handleEvent(registry, event);
+            registry.getResource<const user_action::Users>().get().handleEvent(registry, event);
 #endif
     }
 } // namespace ecstasy::integration::event

@@ -63,7 +63,7 @@ In ecstasy, the [Entities](@ref ecstasy::Entities) class is a resource present b
 A simple use case would be a Timer resource to improve our previous Movement system:
 
 ```cpp
-class Timer : public ecstasy::Resource {
+class Timer : public ecstasy::IResource {
 public:
     /// Creates a new timer.
     explicit Timer() noexcept : _lastReset(std::chrono::steady_clock::now()) {}
@@ -99,7 +99,7 @@ struct Movement : public ecstasy::ISystem {
 };
 ```
 
-References: [Resource](@ref ecstasy::Resource), [registry.addResource()](@ref ecstasy::Registry::addResource), [registry.getResource()](@ref ecstasy::Registry.getResource), [Entities](@ref ecstasy::Entities)
+References: [IResource](@ref ecstasy::IResource), [registry.addResource()](@ref ecstasy::Registry::addResource), [registry.getResource()](@ref ecstasy::Registry.getResource), [Entities](@ref ecstasy::Entities)
 
 ## Registry
 

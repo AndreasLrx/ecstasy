@@ -13,7 +13,7 @@
 #define ECSTASY_INTEGRATIONS_EVENT_INPUTS_GAMEPADS_HPP_
 
 #include "Gamepad.hpp"
-#include "ecstasy/resources/Resource.hpp"
+#include "ecstasy/resources/IResource.hpp"
 
 namespace ecstasy::integration::event
 {
@@ -23,7 +23,7 @@ namespace ecstasy::integration::event
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-11-18)
     ///
-    class Gamepads : public ecstasy::Resource<Gamepads> {
+    class Gamepads : public ecstasy::IResource {
       public:
         /// @brief Number of supported gamepads.
         static const size_t GamepadCount = 4;
