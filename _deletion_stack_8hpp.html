@@ -97,6 +97,9 @@ $(document).ready(function(){initNavTree('_deletion_stack_8hpp.html',''); initRe
   <div class="headertitle"><div class="title">DeletionStack.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Helper to manage entity deletion safely within an iteration.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/vector.html">vector</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="_entity_8hpp_source.html">ecstasy/resources/entity/Entity.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -104,10 +107,10 @@ Include dependency graph for DeletionStack.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="_deletion_stack_8hpp__incl.png" border="0" usemap="#asrc_2ecstasy_2registry_2_deletion_stack_8hpp" alt=""/></div>
 <map name="asrc_2ecstasy_2registry_2_deletion_stack_8hpp" id="asrc_2ecstasy_2registry_2_deletion_stack_8hpp">
-<area shape="rect" title=" " alt="" coords="103,5,253,45"/>
+<area shape="rect" title="Helper to manage entity deletion safely within an iteration." alt="" coords="103,5,253,45"/>
 <area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/header/vector.html" title=" " alt="" coords="73,101,136,126"/>
 <area shape="poly" title=" " alt="" coords="164,47,126,91,122,88,160,44"/>
-<area shape="rect" href="_entity_8hpp.html" title=" " alt="" coords="161,93,342,133"/>
+<area shape="rect" href="_entity_8hpp.html" title="Encapsulate an index to an entity." alt="" coords="161,93,342,133"/>
 <area shape="poly" title=" " alt="" coords="196,44,228,81,224,85,192,47"/>
 <area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/header/compare.html" title=" " alt="" coords="5,189,84,214"/>
 <area shape="poly" title=" " alt="" coords="207,136,86,186,84,181,205,131"/>
@@ -115,15 +118,15 @@ Include dependency graph for DeletionStack.hpp:</div>
 <area shape="poly" title=" " alt="" coords="230,136,173,182,169,178,226,132"/>
 <area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/header/stdexcept.html" title=" " alt="" coords="208,189,295,214"/>
 <area shape="poly" title=" " alt="" coords="254,134,254,175,249,175,249,134"/>
-<area shape="rect" href="_i_storage_8hpp.html" title=" " alt="" coords="223,269,442,295"/>
+<area shape="rect" href="_i_storage_8hpp.html" title="Abstract class for all components storage." alt="" coords="223,269,442,295"/>
 <area shape="poly" title=" " alt="" coords="273,132,292,154,310,180,324,219,332,255,327,256,319,220,305,183,288,157,269,135"/>
-<area shape="rect" href="_storage_concepts_8hpp.html" title=" " alt="" coords="370,181,557,221"/>
+<area shape="rect" href="_storage_concepts_8hpp.html" title="Storage concepts and utilities." alt="" coords="370,181,557,221"/>
 <area shape="poly" title=" " alt="" coords="299,131,405,174,403,179,297,136"/>
 <area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/header/span.html" title=" " alt="" coords="183,343,237,368"/>
 <area shape="poly" title=" " alt="" coords="314,297,243,338,240,333,312,292"/>
 <area shape="rect" title=" " alt="" coords="261,343,404,368"/>
 <area shape="poly" title=" " alt="" coords="335,295,335,329,330,329,330,295"/>
-<area shape="rect" href="_traits_8hpp.html" title=" " alt="" coords="428,343,576,368"/>
+<area shape="rect" href="_traits_8hpp.html" title="Helper types for parameter packs." alt="" coords="428,343,576,368"/>
 <area shape="poly" title=" " alt="" coords="361,292,463,335,461,340,359,297"/>
 <area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/header/tuple.html" title=" " alt="" coords="475,416,529,441"/>
 <area shape="poly" title=" " alt="" coords="505,368,505,402,499,402,499,368"/>
@@ -137,8 +140,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="_deletion_stack_8hpp__dep__incl.png" border="0" usemap="#asrc_2ecstasy_2registry_2_deletion_stack_8hppdep" alt=""/></div>
 <map name="asrc_2ecstasy_2registry_2_deletion_stack_8hppdep" id="asrc_2ecstasy_2registry_2_deletion_stack_8hppdep">
-<area shape="rect" title=" " alt="" coords="92,5,241,45"/>
-<area shape="rect" href="_deletion_stack_8cpp.html" title=" " alt="" coords="5,93,155,133"/>
+<area shape="rect" title="Helper to manage entity deletion safely within an iteration." alt="" coords="92,5,241,45"/>
+<area shape="rect" href="_deletion_stack_8cpp.html" title="Deletion stack implementation." alt="" coords="5,93,155,133"/>
 <area shape="poly" title=" " alt="" coords="140,57,101,95,97,91,136,53"/>
 <area shape="rect" href="ecstasy_2registry_2include_8hpp.html" title=" " alt="" coords="179,93,328,133"/>
 <area shape="poly" title=" " alt="" coords="197,53,236,91,232,95,194,57"/>
@@ -162,7 +165,8 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<div class="textblock"><p>Helper to manage entity deletion safely within an iteration. </p>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2022-10-21</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) ECSTASY 2022 - 2024 </dd></dl>

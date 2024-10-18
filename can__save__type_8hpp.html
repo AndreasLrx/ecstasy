@@ -98,6 +98,9 @@ $(document).ready(function(){initNavTree('can__save__type_8hpp.html',''); initRe
   <div class="headertitle"><div class="title">can_save_type.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Concept to check if a type can be saved with a serializer.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/type_traits.html">type_traits</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="is__serializer_8hpp_source.html">ecstasy/serialization/concepts/is_serializer.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -105,17 +108,17 @@ Include dependency graph for can_save_type.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="can__save__type_8hpp__incl.png" border="0" usemap="#asrc_2ecstasy_2serialization_2traits_2can__save__type_8hpp" alt=""/></div>
 <map name="asrc_2ecstasy_2serialization_2traits_2can__save__type_8hpp" id="asrc_2ecstasy_2serialization_2traits_2can__save__type_8hpp">
-<area shape="rect" title=" " alt="" coords="23,5,213,45"/>
+<area shape="rect" title="Concept to check if a type can be saved with a serializer." alt="" coords="23,5,213,45"/>
 <area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/header/type_traits.html" title=" " alt="" coords="5,189,97,214"/>
 <area shape="poly" title=" " alt="" coords="106,47,79,94,66,137,58,176,52,175,60,135,74,92,102,44"/>
-<area shape="rect" href="is__serializer_8hpp.html" title=" " alt="" coords="89,93,283,133"/>
+<area shape="rect" href="is__serializer_8hpp.html" title="Concept to check if a type is a serializer." alt="" coords="89,93,283,133"/>
 <area shape="poly" title=" " alt="" coords="135,44,165,81,160,84,131,47"/>
 <area shape="poly" title=" " alt="" coords="158,136,82,183,80,179,155,131"/>
 <area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/header/concepts.html" title=" " alt="" coords="122,189,202,214"/>
 <area shape="poly" title=" " alt="" coords="183,134,172,176,166,175,178,133"/>
 <area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/header/string.html" title=" " alt="" coords="226,189,285,214"/>
 <area shape="poly" title=" " alt="" coords="203,132,239,176,235,179,199,135"/>
-<area shape="rect" href="_i_serializer_8hpp.html" title=" " alt="" coords="309,181,465,221"/>
+<area shape="rect" href="_i_serializer_8hpp.html" title="Interface for all serializer classes." alt="" coords="309,181,465,221"/>
 <area shape="poly" title=" " alt="" coords="231,131,332,173,330,178,229,136"/>
 <area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/header/filesystem.html" title=" " alt="" coords="287,269,378,295"/>
 <area shape="poly" title=" " alt="" coords="376,223,351,260,346,256,372,220"/>
@@ -128,12 +131,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="can__save__type_8hpp__dep__incl.png" border="0" usemap="#asrc_2ecstasy_2serialization_2traits_2can__save__type_8hppdep" alt=""/></div>
 <map name="asrc_2ecstasy_2serialization_2traits_2can__save__type_8hppdep" id="asrc_2ecstasy_2serialization_2traits_2can__save__type_8hppdep">
-<area shape="rect" title=" " alt="" coords="297,5,487,45"/>
-<area shape="rect" href="ecstasy_2serialization_2_serializer_8hpp.html" title=" " alt="" coords="201,93,380,133"/>
+<area shape="rect" title="Concept to check if a type can be saved with a serializer." alt="" coords="297,5,487,45"/>
+<area shape="rect" href="ecstasy_2serialization_2_serializer_8hpp.html" title="RawSerializer class." alt="" coords="201,93,380,133"/>
 <area shape="poly" title=" " alt="" coords="361,56,315,95,311,91,357,52"/>
 <area shape="rect" href="ecstasy_2serialization_2traits_2include_8hpp.html" title=" " alt="" coords="404,93,583,133"/>
 <area shape="poly" title=" " alt="" coords="427,52,473,91,469,95,423,56"/>
-<area shape="rect" href="_json_serializer_8hpp.html" title=" " alt="" coords="5,181,184,221"/>
+<area shape="rect" href="_json_serializer_8hpp.html" title="JsonSerializer class." alt="" coords="5,181,184,221"/>
 <area shape="poly" title=" " alt="" coords="236,141,139,184,137,179,234,136"/>
 <area shape="rect" href="_raw_serializer_8hpp.html" title=" " alt="" coords="208,181,387,221"/>
 <area shape="poly" title=" " alt="" coords="296,147,299,181,293,181,291,147"/>
@@ -185,7 +188,8 @@ Variables</h2></td></tr>
 <tr class="separator:af817368948da0ef6ad42237502f8b6aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<div class="textblock"><p>Concept to check if a type can be saved with a serializer. </p>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2024-06-24</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) ECSTASY 2022 - 2024 </dd></dl>

@@ -123,9 +123,9 @@ Inheritance diagram for ecstasy::IStorage:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa8f594bbee0e3d777affb26390677671"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_storage.html#aa8f594bbee0e3d777affb26390677671">~IStorage</a> ()=default</td></tr>
 <tr class="separator:aa8f594bbee0e3d777affb26390677671"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15f593db3bd0022c24670f34b34a1655"><td class="memItemLeft" align="right" valign="top">virtual constexpr const <a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_storage.html#a15f593db3bd0022c24670f34b34a1655">getMask</a> () const =0</td></tr>
-<tr class="memdesc:a15f593db3bd0022c24670f34b34a1655"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Component Mask.  <br /></td></tr>
-<tr class="separator:a15f593db3bd0022c24670f34b34a1655"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c979e389d0d0b5576901500049effcd"><td class="memItemLeft" align="right" valign="top">virtual constexpr const <a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_storage.html#a2c979e389d0d0b5576901500049effcd">getMask</a> () const noexcept=0</td></tr>
+<tr class="memdesc:a2c979e389d0d0b5576901500049effcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Component Mask.  <br /></td></tr>
+<tr class="separator:a2c979e389d0d0b5576901500049effcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4188b8316c1ee722db5a8a2c9c1de34b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_storage.html#a4188b8316c1ee722db5a8a2c9c1de34b">erase</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/container/span.html">std::span</a>&lt; <a class="el" href="classecstasy_1_1_entity.html">Entity</a> &gt; entities)=0</td></tr>
 <tr class="memdesc:a4188b8316c1ee722db5a8a2c9c1de34b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase the components attached to the given entities.  <br /></td></tr>
 <tr class="separator:a4188b8316c1ee722db5a8a2c9c1de34b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -278,8 +278,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a15f593db3bd0022c24670f34b34a1655" name="a15f593db3bd0022c24670f34b34a1655"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15f593db3bd0022c24670f34b34a1655">&#9670;&#160;</a></span>getMask()</h2>
+<a id="a2c979e389d0d0b5576901500049effcd" name="a2c979e389d0d0b5576901500049effcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c979e389d0d0b5576901500049effcd">&#9670;&#160;</a></span>getMask()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -296,7 +296,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -308,7 +308,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-20) </dd></dl>
 
-<p>Implemented in <a class="el" href="classecstasy_1_1_map_storage.html#a5bc5bc157e373571b9e37781992a8154">ecstasy::MapStorage&lt; C &gt;</a>, <a class="el" href="classecstasy_1_1_marker_storage.html#a7781a622659171816bf4842de7cbf2bf">ecstasy::MarkerStorage&lt; C &gt;</a>, and <a class="el" href="classecstasy_1_1_vector_storage.html#a80d797680d14326e128ad3a0152b25be">ecstasy::VectorStorage&lt; C &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classecstasy_1_1_map_storage.html#ac751c81ddecdc373a295188384b4a845">ecstasy::MapStorage&lt; C &gt;</a>, <a class="el" href="classecstasy_1_1_marker_storage.html#a4860bdb7ed8051f853177106f508fde4">ecstasy::MarkerStorage&lt; C &gt;</a>, and <a class="el" href="classecstasy_1_1_vector_storage.html#ae645655a7e616cd7a6962f615ab18707">ecstasy::VectorStorage&lt; C &gt;</a>.</p>
 
 </div>
 </div>

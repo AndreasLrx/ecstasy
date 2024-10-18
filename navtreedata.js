@@ -153,24 +153,24 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "01__basic__window_2main_8cpp.html",
-"_serializable_enum_8hpp_source.html",
-"classecstasy_1_1_instances.html#ab75cf0b10766154da309113b0ce8833c",
-"classecstasy_1_1_registry_1_1_select.html#ada9249a4d1a6efea9f7c6a33f30e9ada",
-"classecstasy_1_1integration_1_1event_1_1_gamepad_combination_listener.html#a2ab457a98b6c3e3f1ac57530adfb565f",
-"classecstasy_1_1integration_1_1sfml_1_1_render_window.html#ac9b07c80013a68692713752e64a48f4b",
-"classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#a6db978f9a8ed5286409648973fb2d5b3",
-"classecstasy_1_1serialization_1_1_raw_serializer.html#a8f93e4286530d22bab9db262aecaa9d8",
-"classutil_1_1_stack_allocator.html#a3c480a174b916eb9b0cfee84b04796d4",
-"classutil_1_1serialization_1_1_i_node_factory.html#ae45bcea1fe6f14a49df95fc88a802ef9",
-"classutil_1_1serialization_1_1_toml_object_node.html#a946ca0a3ba3aea1e9590d7e9764ffd23",
-"cpp/algorithm/transform_reduce.html",
-"cpp/experimental/vector/erase_if.html",
-"cpp/memory/uninitialized_move_n.html",
-"cpp/string/byte/toupper.html",
-"dir_4d88d3ef8695341c40100af3c6be2310.html",
-"md_doc_2integrations_2user__actions.html#autotoc_md80",
-"structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aae93f994f01c537c4e2f7d8528c3eb5e9",
-"structecstasy_1_1query_1_1is__queryable__with__adjust.html"
+"_storage_concepts_8hpp.html",
+"classecstasy_1_1_map_storage.html#a0fafe82f65b037356382974075ff258b",
+"classecstasy_1_1_registry_entity.html#a64b5b5609880025e9d195014b847bae0",
+"classecstasy_1_1integration_1_1event_1_1_gamepad_combination_listener.html#a70ce17f6370447ace361f856e06231da",
+"classecstasy_1_1integration_1_1sfml_1_1_render_window.html#ac7c1ea853334f98e6d6827ad3645ebf5",
+"classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#a88285a49ce3fa1696cd254d45bdaa63e",
+"classecstasy_1_1serialization_1_1_raw_serializer.html#a9b899be4e342300b605a806e28670bcb",
+"classutil_1_1_stack_allocator.html#a083d90b56e98ae177f3edf206ceea3fb",
+"classutil_1_1serialization_1_1_i_node_factory.html#ae1140c0f8dfeacf7bbf88d2befa0c7cf",
+"classutil_1_1serialization_1_1_toml_object_node.html#abccc09a7daf3291447205ef54ea5c479",
+"cpp/algorithm/swap_ranges.html",
+"cpp/experimental/unordered_multimap/erase_if.html",
+"cpp/memory/uninitialized_default_construct_n.html",
+"cpp/string/byte/strtoul.html",
+"dir_30970fbe9de3918f98e58b7106d748f8.html",
+"md_doc_2integrations_2user__actions.html#autotoc_md76",
+"structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aac17e6984c1e5a887a49831beadee6bca",
+"structecstasy_1_1query_1_1_select_1_1_sortered_tie.html#a899b147f0c90051c95c2c6584ac716aa"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

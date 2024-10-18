@@ -160,13 +160,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a737c3f183c231185227ade1b3cdb2426"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_instances.html#a737c3f183c231185227ade1b3cdb2426">clear</a> ()</td></tr>
 <tr class="memdesc:a737c3f183c231185227ade1b3cdb2426"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all stored instances.  <br /></td></tr>
 <tr class="separator:a737c3f183c231185227ade1b3cdb2426"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf543e46ccc08acf2e8a8c3633155634"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/unordered_map.html">std::unordered_map</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_index.html">std::type_index</a>, <a class="elRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html">std::unique_ptr</a>&lt; Base &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_instances.html#aaf543e46ccc08acf2e8a8c3633155634">getInner</a> () const</td></tr>
-<tr class="memdesc:aaf543e46ccc08acf2e8a8c3633155634"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the backing container.  <br /></td></tr>
-<tr class="separator:aaf543e46ccc08acf2e8a8c3633155634"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a301910795dd77d542a8a21d3914d1d79"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/unordered_map.html">std::unordered_map</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_index.html">std::type_index</a>, <a class="elRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html">std::unique_ptr</a>&lt; Base &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_instances.html#a301910795dd77d542a8a21d3914d1d79">getInner</a> () const noexcept</td></tr>
+<tr class="memdesc:a301910795dd77d542a8a21d3914d1d79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the backing container.  <br /></td></tr>
+<tr class="separator:a301910795dd77d542a8a21d3914d1d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ab75cf0b10766154da309113b0ce8833c"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/unordered_map.html">std::unordered_map</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_index.html">std::type_index</a>, <a class="elRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html">std::unique_ptr</a>&lt; Base &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_instances.html#ab75cf0b10766154da309113b0ce8833c">_instances</a></td></tr>
+<tr class="memdesc:ab75cf0b10766154da309113b0ce8833c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The instances container.  <br /></td></tr>
 <tr class="separator:ab75cf0b10766154da309113b0ce8833c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -318,7 +319,7 @@ template&lt;typename Base &gt; </div>
 <div class="fragment"><div class="line"><span class="lineno">  235</span>        {</div>
 <div class="line"><span class="lineno">  236</span>            <a class="code hl_variable" href="classecstasy_1_1_instances.html#ab75cf0b10766154da309113b0ce8833c">_instances</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/unordered_map/clear.html">clear</a>();</div>
 <div class="line"><span class="lineno">  237</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1_instances_html_ab75cf0b10766154da309113b0ce8833c"><div class="ttname"><a href="classecstasy_1_1_instances.html#ab75cf0b10766154da309113b0ce8833c">ecstasy::Instances::_instances</a></div><div class="ttdeci">std::unordered_map&lt; std::type_index, std::unique_ptr&lt; Base &gt; &gt; _instances</div><div class="ttdef"><b>Definition</b> <a href="_instances_8hpp_source.html#l00253">Instances.hpp:253</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_instances_html_ab75cf0b10766154da309113b0ce8833c"><div class="ttname"><a href="classecstasy_1_1_instances.html#ab75cf0b10766154da309113b0ce8833c">ecstasy::Instances::_instances</a></div><div class="ttdeci">std::unordered_map&lt; std::type_index, std::unique_ptr&lt; Base &gt; &gt; _instances</div><div class="ttdoc">The instances container.</div><div class="ttdef"><b>Definition</b> <a href="_instances_8hpp_source.html#l00255">Instances.hpp:255</a></div></div>
 <div class="ttc" id="aclear_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/unordered_map/clear.html">std::unordered_map::clear</a></div><div class="ttdeci">T clear(T... args)</div></div>
 </div><!-- fragment -->
 </div>
@@ -471,7 +472,7 @@ template&lt;std::derived_from&lt; Base &gt; Derived, typename... Args&gt; </div>
 <div class="fragment"><div class="line"><span class="lineno">   77</span>        {</div>
 <div class="line"><span class="lineno">   78</span>            <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/type_index.html">std::type_index</a> id(<span class="keyword">typeid</span>(Derived));</div>
 <div class="line"><span class="lineno">   79</span> </div>
-<div class="line"><span class="lineno">   80</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classecstasy_1_1_instances.html#ab75cf0b10766154da309113b0ce8833c">_instances</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/unordered_map/contains.html">contains</a>(<span class="keywordtype">id</span>))</div>
+<div class="line"><span class="lineno">   80</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classecstasy_1_1_instances.html#ab75cf0b10766154da309113b0ce8833c">_instances</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/unordered_map/contains.html">contains</a>(<span class="keywordtype">id</span>)) [[unlikely]]</div>
 <div class="line"><span class="lineno">   81</span>                <span class="keywordflow">throw</span> <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a>(<span class="stringliteral">&quot;Duplicate instance&quot;</span>);</div>
 <div class="line"><span class="lineno">   82</span> </div>
 <div class="line"><span class="lineno">   83</span>            <span class="keywordflow">return</span> *<span class="keyword">dynamic_cast&lt;</span>Derived *<span class="keyword">&gt;</span>(</div>
@@ -687,8 +688,8 @@ template&lt;typename Base &gt; </div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="aaf543e46ccc08acf2e8a8c3633155634" name="aaf543e46ccc08acf2e8a8c3633155634"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf543e46ccc08acf2e8a8c3633155634">&#9670;&#160;</a></span>getInner()</h2>
+<a id="a301910795dd77d542a8a21d3914d1d79" name="a301910795dd77d542a8a21d3914d1d79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a301910795dd77d542a8a21d3914d1d79">&#9670;&#160;</a></span>getInner()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -707,7 +708,7 @@ template&lt;typename Base &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -717,10 +718,10 @@ template&lt;typename Base &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_instances_8hpp_source.html#l00247">247</a> of file <a class="el" href="_instances_8hpp_source.html">Instances.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  248</span>        {</div>
-<div class="line"><span class="lineno">  249</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_instances.html#ab75cf0b10766154da309113b0ce8833c">_instances</a>;</div>
-<div class="line"><span class="lineno">  250</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_instances_8hpp_source.html#l00248">248</a> of file <a class="el" href="_instances_8hpp_source.html">Instances.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  249</span>        {</div>
+<div class="line"><span class="lineno">  250</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_instances.html#ab75cf0b10766154da309113b0ce8833c">_instances</a>;</div>
+<div class="line"><span class="lineno">  251</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -822,7 +823,7 @@ template&lt;typename Base &gt; </div>
 <div class="fragment"><div class="line"><span class="lineno">  171</span>        {</div>
 <div class="line"><span class="lineno">  172</span>            <span class="keyword">const</span> <span class="keyword">auto</span> &amp;valueIt = <a class="code hl_variable" href="classecstasy_1_1_instances.html#ab75cf0b10766154da309113b0ce8833c">_instances</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/unordered_map/find.html">find</a>(type);</div>
 <div class="line"><span class="lineno">  173</span> </div>
-<div class="line"><span class="lineno">  174</span>            <span class="keywordflow">if</span> (valueIt == <a class="code hl_variable" href="classecstasy_1_1_instances.html#ab75cf0b10766154da309113b0ce8833c">_instances</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/unordered_map/end.html">end</a>())</div>
+<div class="line"><span class="lineno">  174</span>            <span class="keywordflow">if</span> (valueIt == <a class="code hl_variable" href="classecstasy_1_1_instances.html#ab75cf0b10766154da309113b0ce8833c">_instances</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/unordered_map/end.html">end</a>()) [[unlikely]]</div>
 <div class="line"><span class="lineno">  175</span>                <span class="keywordflow">throw</span> <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a>(<span class="stringliteral">&quot;Instance not found&quot;</span>);</div>
 <div class="line"><span class="lineno">  176</span>            <span class="keywordflow">return</span> valueIt-&gt;second.get();</div>
 <div class="line"><span class="lineno">  177</span>        }</div>
@@ -854,7 +855,9 @@ template&lt;typename Base &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_instances_8hpp_source.html#l00253">253</a> of file <a class="el" href="_instances_8hpp_source.html">Instances.hpp</a>.</p>
+<p>The instances container. </p>
+
+<p class="definition">Definition at line <a class="el" href="_instances_8hpp_source.html#l00255">255</a> of file <a class="el" href="_instances_8hpp_source.html">Instances.hpp</a>.</p>
 
 </div>
 </div>

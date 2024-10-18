@@ -1,10 +1,10 @@
 <map id="src/ecstasy/serialization/concepts/has_extraction_operator.hpp" name="src/ecstasy/serialization/concepts/has_extraction_operator.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="300,5,484,60"/>
-<area shape="rect" id="Node000002" href="$ecstasy_2serialization_2_serializer_8hpp.html" title=" " alt="" coords="201,108,380,148"/>
+<area shape="rect" id="Node000001" title="Concept to check if a type can be saved with a serializer using the extraction operator." alt="" coords="300,5,484,60"/>
+<area shape="rect" id="Node000002" href="$ecstasy_2serialization_2_serializer_8hpp.html" title="RawSerializer class." alt="" coords="201,108,380,148"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="355,72,313,110,309,106,351,68"/>
 <area shape="rect" id="Node000006" href="$ecstasy_2serialization_2concepts_2include_8hpp.html" title=" " alt="" coords="404,108,583,148"/>
 <area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="433,68,475,106,471,110,429,72"/>
-<area shape="rect" id="Node000003" href="$_json_serializer_8hpp.html" title=" " alt="" coords="5,196,184,236"/>
+<area shape="rect" id="Node000003" href="$_json_serializer_8hpp.html" title="JsonSerializer class." alt="" coords="5,196,184,236"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="236,156,139,198,137,194,234,151"/>
 <area shape="rect" id="Node000004" href="$_raw_serializer_8hpp.html" title=" " alt="" coords="208,196,387,236"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="296,161,299,196,293,196,291,162"/>

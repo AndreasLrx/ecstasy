@@ -116,24 +116,24 @@ Collaboration diagram for ecstasy::integration::user_action::ActionBindings:</di
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a427229da39c47bda329ad0cf4a2f373a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#a427229da39c47bda329ad0cf4a2f373a">ActionBindings</a> ()</td></tr>
-<tr class="memdesc:a427229da39c47bda329ad0cf4a2f373a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new empty action binding container.  <br /></td></tr>
-<tr class="separator:a427229da39c47bda329ad0cf4a2f373a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8521e77ac5808817e4e631fa383d63fa"><td class="memItemLeft" align="right" valign="top">constexpr <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html">ActionBinding</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#a8521e77ac5808817e4e631fa383d63fa">getBindings</a> ()</td></tr>
-<tr class="memdesc:a8521e77ac5808817e4e631fa383d63fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Bindings.  <br /></td></tr>
-<tr class="separator:a8521e77ac5808817e4e631fa383d63fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1343d89562c6eab21c6e5b3db76f07f2"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html">ActionBinding</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#a1343d89562c6eab21c6e5b3db76f07f2">getBindings</a> () const</td></tr>
-<tr class="memdesc:a1343d89562c6eab21c6e5b3db76f07f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Bindings.  <br /></td></tr>
-<tr class="separator:a1343d89562c6eab21c6e5b3db76f07f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6388543be44e38317bba4bdd104e141d"><td class="memItemLeft" align="right" valign="top">toml::table&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#a6388543be44e38317bba4bdd104e141d">dump</a> () const</td></tr>
-<tr class="memdesc:a6388543be44e38317bba4bdd104e141d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dump the bindings as a toml table.  <br /></td></tr>
-<tr class="separator:a6388543be44e38317bba4bdd104e141d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58cdeacc7a9daa8e7014719d9ed98c98"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#a58cdeacc7a9daa8e7014719d9ed98c98">load</a> (const toml::table &amp;bindings)</td></tr>
-<tr class="memdesc:a58cdeacc7a9daa8e7014719d9ed98c98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a given toml table representing a list of bindings.  <br /></td></tr>
-<tr class="separator:a58cdeacc7a9daa8e7014719d9ed98c98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44cc831ae2bd4058e61f6c9816a85a51"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#a44cc831ae2bd4058e61f6c9816a85a51">contains</a> (<a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html">ActionBinding</a> action) const</td></tr>
-<tr class="memdesc:a44cc831ae2bd4058e61f6c9816a85a51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether <code>action</code> is contained in the internal <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html">ActionBinding</a> vector.  <br /></td></tr>
-<tr class="separator:a44cc831ae2bd4058e61f6c9816a85a51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4705e1be27e7b5d7543ca5d473b8f0a2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#a4705e1be27e7b5d7543ca5d473b8f0a2">ActionBindings</a> () noexcept=default</td></tr>
+<tr class="memdesc:a4705e1be27e7b5d7543ca5d473b8f0a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new empty action binding container.  <br /></td></tr>
+<tr class="separator:a4705e1be27e7b5d7543ca5d473b8f0a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b8bcc3afa86b3fc94d408fd9cf66aa8"><td class="memItemLeft" align="right" valign="top">constexpr <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html">ActionBinding</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#a5b8bcc3afa86b3fc94d408fd9cf66aa8">getBindings</a> () noexcept</td></tr>
+<tr class="memdesc:a5b8bcc3afa86b3fc94d408fd9cf66aa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Bindings.  <br /></td></tr>
+<tr class="separator:a5b8bcc3afa86b3fc94d408fd9cf66aa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e02831189b339dd629a89daf5429589"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html">ActionBinding</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#a5e02831189b339dd629a89daf5429589">getBindings</a> () const noexcept</td></tr>
+<tr class="memdesc:a5e02831189b339dd629a89daf5429589"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Bindings.  <br /></td></tr>
+<tr class="separator:a5e02831189b339dd629a89daf5429589"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58952986e2511c1f7c0d2edb5b18c24c"><td class="memItemLeft" align="right" valign="top">toml::table&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#a58952986e2511c1f7c0d2edb5b18c24c">dump</a> () const noexcept</td></tr>
+<tr class="memdesc:a58952986e2511c1f7c0d2edb5b18c24c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dump the bindings as a toml table.  <br /></td></tr>
+<tr class="separator:a58952986e2511c1f7c0d2edb5b18c24c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0e3c94e9f7f5945e66a641e62fd1d37"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#ad0e3c94e9f7f5945e66a641e62fd1d37">load</a> (const toml::table &amp;bindings) noexcept</td></tr>
+<tr class="memdesc:ad0e3c94e9f7f5945e66a641e62fd1d37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a given toml table representing a list of bindings.  <br /></td></tr>
+<tr class="separator:ad0e3c94e9f7f5945e66a641e62fd1d37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7810d7dffdb89da781b0cb3b8a2fd60"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#af7810d7dffdb89da781b0cb3b8a2fd60">contains</a> (<a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html">ActionBinding</a> action) const noexcept</td></tr>
+<tr class="memdesc:af7810d7dffdb89da781b0cb3b8a2fd60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether <code>action</code> is contained in the internal <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html">ActionBinding</a> vector.  <br /></td></tr>
+<tr class="separator:af7810d7dffdb89da781b0cb3b8a2fd60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -147,8 +147,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_action_bindings_8hpp_source.html#l00027">27</a> of file <a class="el" href="_action_bindings_8hpp_source.html">ActionBindings.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a427229da39c47bda329ad0cf4a2f373a" name="a427229da39c47bda329ad0cf4a2f373a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a427229da39c47bda329ad0cf4a2f373a">&#9670;&#160;</a></span>ActionBindings()</h2>
+<a id="a4705e1be27e7b5d7543ca5d473b8f0a2" name="a4705e1be27e7b5d7543ca5d473b8f0a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4705e1be27e7b5d7543ca5d473b8f0a2">&#9670;&#160;</a></span>ActionBindings()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -165,7 +165,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -174,18 +174,17 @@ Private Attributes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-25) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_action_bindings_8hpp_source.html#l00035">35</a> of file <a class="el" href="_action_bindings_8hpp_source.html">ActionBindings.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   36</span>        {</div>
-<div class="line"><span class="lineno">   37</span>        }</div>
-</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a44cc831ae2bd4058e61f6c9816a85a51" name="a44cc831ae2bd4058e61f6c9816a85a51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44cc831ae2bd4058e61f6c9816a85a51">&#9670;&#160;</a></span>contains()</h2>
+<a id="af7810d7dffdb89da781b0cb3b8a2fd60" name="af7810d7dffdb89da781b0cb3b8a2fd60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7810d7dffdb89da781b0cb3b8a2fd60">&#9670;&#160;</a></span>contains()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool ecstasy::integration::user_action::ActionBindings::contains </td>
@@ -195,6 +194,11 @@ Private Attributes</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Check whether <code>action</code> is contained in the internal <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html">ActionBinding</a> vector. </p>
@@ -212,16 +216,19 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">  108</span>    {</div>
 <div class="line"><span class="lineno">  109</span>        <span class="keywordflow">return</span> <a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/algorithm/find.html">std::find</a>(<a class="code hl_variable" href="classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#a405a25c0e6c7d94d419c6b5bae4f4801">_bindings</a>.cbegin(), <a class="code hl_variable" href="classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#a405a25c0e6c7d94d419c6b5bae4f4801">_bindings</a>.cend(), binding) != <a class="code hl_variable" href="classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#a405a25c0e6c7d94d419c6b5bae4f4801">_bindings</a>.cend();</div>
 <div class="line"><span class="lineno">  110</span>    }</div>
-<div class="ttc" id="aclassecstasy_1_1integration_1_1user__action_1_1_action_bindings_html_a405a25c0e6c7d94d419c6b5bae4f4801"><div class="ttname"><a href="classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#a405a25c0e6c7d94d419c6b5bae4f4801">ecstasy::integration::user_action::ActionBindings::_bindings</a></div><div class="ttdeci">std::vector&lt; ActionBinding &gt; _bindings</div><div class="ttdef"><b>Definition</b> <a href="_action_bindings_8hpp_source.html#l00102">ActionBindings.hpp:102</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1integration_1_1user__action_1_1_action_bindings_html_a405a25c0e6c7d94d419c6b5bae4f4801"><div class="ttname"><a href="classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#a405a25c0e6c7d94d419c6b5bae4f4801">ecstasy::integration::user_action::ActionBindings::_bindings</a></div><div class="ttdeci">std::vector&lt; ActionBinding &gt; _bindings</div><div class="ttdef"><b>Definition</b> <a href="_action_bindings_8hpp_source.html#l00101">ActionBindings.hpp:101</a></div></div>
 <div class="ttc" id="afind_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/algorithm/find.html">std::find</a></div><div class="ttdeci">T find(T... args)</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a6388543be44e38317bba4bdd104e141d" name="a6388543be44e38317bba4bdd104e141d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6388543be44e38317bba4bdd104e141d">&#9670;&#160;</a></span>dump()</h2>
+<a id="a58952986e2511c1f7c0d2edb5b18c24c" name="a58952986e2511c1f7c0d2edb5b18c24c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58952986e2511c1f7c0d2edb5b18c24c">&#9670;&#160;</a></span>dump()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">toml::table ecstasy::integration::user_action::ActionBindings::dump </td>
@@ -230,6 +237,11 @@ Private Attributes</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Dump the bindings as a toml table. </p>
@@ -277,43 +289,8 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a8521e77ac5808817e4e631fa383d63fa" name="a8521e77ac5808817e4e631fa383d63fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8521e77ac5808817e4e631fa383d63fa">&#9670;&#160;</a></span>getBindings() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html">ActionBinding</a> &gt; &amp; ecstasy::integration::user_action::ActionBindings::getBindings </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the Bindings. </p>
-<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;ActionBinding&gt;&amp; A reference to the internal container.</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-25) </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_action_bindings_8hpp_source.html#l00047">47</a> of file <a class="el" href="_action_bindings_8hpp_source.html">ActionBindings.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   48</span>        {</div>
-<div class="line"><span class="lineno">   49</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#a405a25c0e6c7d94d419c6b5bae4f4801">_bindings</a>;</div>
-<div class="line"><span class="lineno">   50</span>        }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a1343d89562c6eab21c6e5b3db76f07f2" name="a1343d89562c6eab21c6e5b3db76f07f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1343d89562c6eab21c6e5b3db76f07f2">&#9670;&#160;</a></span>getBindings() <span class="overload">[2/2]</span></h2>
+<a id="a5e02831189b339dd629a89daf5429589" name="a5e02831189b339dd629a89daf5429589"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e02831189b339dd629a89daf5429589">&#9670;&#160;</a></span>getBindings() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -330,7 +307,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -340,18 +317,56 @@ Private Attributes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-25) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_action_bindings_8hpp_source.html#l00060">60</a> of file <a class="el" href="_action_bindings_8hpp_source.html">ActionBindings.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   61</span>        {</div>
-<div class="line"><span class="lineno">   62</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#a405a25c0e6c7d94d419c6b5bae4f4801">_bindings</a>;</div>
-<div class="line"><span class="lineno">   63</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_action_bindings_8hpp_source.html#l00058">58</a> of file <a class="el" href="_action_bindings_8hpp_source.html">ActionBindings.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>        {</div>
+<div class="line"><span class="lineno">   60</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#a405a25c0e6c7d94d419c6b5bae4f4801">_bindings</a>;</div>
+<div class="line"><span class="lineno">   61</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a58cdeacc7a9daa8e7014719d9ed98c98" name="a58cdeacc7a9daa8e7014719d9ed98c98"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58cdeacc7a9daa8e7014719d9ed98c98">&#9670;&#160;</a></span>load()</h2>
+<a id="a5b8bcc3afa86b3fc94d408fd9cf66aa8" name="a5b8bcc3afa86b3fc94d408fd9cf66aa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b8bcc3afa86b3fc94d408fd9cf66aa8">&#9670;&#160;</a></span>getBindings() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html">ActionBinding</a> &gt; &amp; ecstasy::integration::user_action::ActionBindings::getBindings </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the Bindings. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;ActionBinding&gt;&amp; A reference to the internal container.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-25) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_action_bindings_8hpp_source.html#l00045">45</a> of file <a class="el" href="_action_bindings_8hpp_source.html">ActionBindings.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>        {</div>
+<div class="line"><span class="lineno">   47</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#a405a25c0e6c7d94d419c6b5bae4f4801">_bindings</a>;</div>
+<div class="line"><span class="lineno">   48</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad0e3c94e9f7f5945e66a641e62fd1d37" name="ad0e3c94e9f7f5945e66a641e62fd1d37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0e3c94e9f7f5945e66a641e62fd1d37">&#9670;&#160;</a></span>load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool ecstasy::integration::user_action::ActionBindings::load </td>
@@ -361,10 +376,15 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Load a given toml table representing a list of bindings. </p>
-<p>See the format of <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#a6388543be44e38317bba4bdd104e141d">dump()</a>.</p>
+<p>See the format of <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#a58952986e2511c1f7c0d2edb5b18c24c">dump()</a>.</p>
 <dl class="section warning"><dt>Warning</dt><dd>This method clear the internal bindings.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -384,13 +404,13 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   56</span>        <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/regex/match_results.html">std::cmatch</a> match;</div>
 <div class="line"><span class="lineno">   57</span> </div>
 <div class="line"><span class="lineno">   58</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;&amp;[key, value] : bindings) {</div>
-<div class="line"><span class="lineno">   59</span>            <span class="keywordflow">if</span> (!<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/regex/regex_match.html">std::regex_match</a>(key.data(), match, reActionName)) {</div>
+<div class="line"><span class="lineno">   59</span>            <span class="keywordflow">if</span> (!<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/regex/regex_match.html">std::regex_match</a>(key.data(), match, reActionName)) [[unlikely]] {</div>
 <div class="line"><span class="lineno">   60</span>                <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/io/cerr.html">std::cerr</a> &lt;&lt; <span class="stringliteral">&quot;Invalid action name.&quot;</span> &lt;&lt; <a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/io/manip/endl.html">std::endl</a>;</div>
 <div class="line"><span class="lineno">   61</span>                <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">   62</span>            }</div>
 <div class="line"><span class="lineno">   63</span> </div>
 <div class="line"><span class="lineno">   64</span>            <a class="code hl_typedef" href="structecstasy_1_1integration_1_1user__action_1_1_action.html#ae5da598d1270ea60396b4a402bc73e96">Action::Id</a> actionId = <a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/string/basic_string/stoul.html">std::stoul</a>(match[1].str());</div>
-<div class="line"><span class="lineno">   65</span>            <span class="keywordflow">if</span> (!value.is_array()) {</div>
+<div class="line"><span class="lineno">   65</span>            <span class="keywordflow">if</span> (!value.is_array()) [[unlikely]] {</div>
 <div class="line"><span class="lineno">   66</span>                <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/io/cerr.html">std::cerr</a> &lt;&lt; <span class="stringliteral">&quot;Action &#39;&quot;</span> &lt;&lt; key.data() &lt;&lt; <span class="stringliteral">&quot;&#39; is not a valid toml array.&quot;</span> &lt;&lt; <a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/io/manip/endl.html">std::endl</a>;</div>
 <div class="line"><span class="lineno">   67</span>                <span class="keywordflow">continue</span>;</div>
 <div class="line"><span class="lineno">   68</span>            }</div>
@@ -464,7 +484,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_action_bindings_8hpp_source.html#l00102">102</a> of file <a class="el" href="_action_bindings_8hpp_source.html">ActionBindings.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_action_bindings_8hpp_source.html#l00101">101</a> of file <a class="el" href="_action_bindings_8hpp_source.html">ActionBindings.hpp</a>.</p>
 
 </div>
 </div>

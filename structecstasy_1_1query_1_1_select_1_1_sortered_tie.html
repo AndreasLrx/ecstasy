@@ -100,13 +100,13 @@ $(document).ready(function(){initNavTree('structecstasy_1_1query_1_1_select_1_1_
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ab64550b0270ac9e87e2c44886cc29c1e"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structecstasy_1_1query_1_1_select.html#a534d67a4e74c6bbb765dc7c5c0981629">SelectedTuple</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1_select_1_1_sortered_tie.html#ab64550b0270ac9e87e2c44886cc29c1e">sort</a> (Valids &amp;...valids)</td></tr>
-<tr class="memdesc:ab64550b0270ac9e87e2c44886cc29c1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Final condition: all queryables are in the good order so tie them and return the tuple.  <br /></td></tr>
-<tr class="separator:ab64550b0270ac9e87e2c44886cc29c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe9b37f0347a7d1f58872d8b496ec5aa"><td class="memTemplParams" colspan="2">template&lt;Queryable Q, Queryable... Qs&gt; </td></tr>
-<tr class="memitem:afe9b37f0347a7d1f58872d8b496ec5aa"><td class="memTemplItemLeft" align="right" valign="top">static constexpr <a class="el" href="structecstasy_1_1query_1_1_select.html#a534d67a4e74c6bbb765dc7c5c0981629">SelectedTuple</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1_select_1_1_sortered_tie.html#afe9b37f0347a7d1f58872d8b496ec5aa">sort</a> (Valids &amp;...valids, Q &amp;current, Qs &amp;...lefts)</td></tr>
-<tr class="memdesc:afe9b37f0347a7d1f58872d8b496ec5aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recursively sort the queryables.  <br /></td></tr>
-<tr class="separator:afe9b37f0347a7d1f58872d8b496ec5aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a899b147f0c90051c95c2c6584ac716aa"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structecstasy_1_1query_1_1_select.html#a534d67a4e74c6bbb765dc7c5c0981629">SelectedTuple</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1_select_1_1_sortered_tie.html#a899b147f0c90051c95c2c6584ac716aa">sort</a> (Valids &amp;...valids) noexcept</td></tr>
+<tr class="memdesc:a899b147f0c90051c95c2c6584ac716aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Final condition: all queryables are in the good order so tie them and return the tuple.  <br /></td></tr>
+<tr class="separator:a899b147f0c90051c95c2c6584ac716aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a828992cda77cf3767ca2aa44849f3415"><td class="memTemplParams" colspan="2">template&lt;Queryable Q, Queryable... Qs&gt; </td></tr>
+<tr class="memitem:a828992cda77cf3767ca2aa44849f3415"><td class="memTemplItemLeft" align="right" valign="top">static constexpr <a class="el" href="structecstasy_1_1query_1_1_select.html#a534d67a4e74c6bbb765dc7c5c0981629">SelectedTuple</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1_select_1_1_sortered_tie.html#a828992cda77cf3767ca2aa44849f3415">sort</a> (Valids &amp;...valids, Q &amp;current, Qs &amp;...lefts) noexcept</td></tr>
+<tr class="memdesc:a828992cda77cf3767ca2aa44849f3415"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recursively sort the queryables.  <br /></td></tr>
+<tr class="separator:a828992cda77cf3767ca2aa44849f3415"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;Queryable... SelectedQueryables&gt;<br />
@@ -114,8 +114,8 @@ template&lt;typename... Valids&gt;<br />
 struct ecstasy::query::Select&lt; SelectedQueryables &gt;::SorteredTie&lt; Valids &gt;</div>
 <p class="definition">Definition at line <a class="el" href="_select_8hpp_source.html#l00069">69</a> of file <a class="el" href="_select_8hpp_source.html">Select.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab64550b0270ac9e87e2c44886cc29c1e" name="ab64550b0270ac9e87e2c44886cc29c1e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab64550b0270ac9e87e2c44886cc29c1e">&#9670;&#160;</a></span>sort() <span class="overload">[1/2]</span></h2>
+<a id="a899b147f0c90051c95c2c6584ac716aa" name="a899b147f0c90051c95c2c6584ac716aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a899b147f0c90051c95c2c6584ac716aa">&#9670;&#160;</a></span>sort() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -137,7 +137,7 @@ template&lt;typename... Valids&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -161,8 +161,8 @@ template&lt;typename... Valids&gt; </div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="afe9b37f0347a7d1f58872d8b496ec5aa" name="afe9b37f0347a7d1f58872d8b496ec5aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe9b37f0347a7d1f58872d8b496ec5aa">&#9670;&#160;</a></span>sort() <span class="overload">[2/2]</span></h2>
+<a id="a828992cda77cf3767ca2aa44849f3415" name="a828992cda77cf3767ca2aa44849f3415"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a828992cda77cf3767ca2aa44849f3415">&#9670;&#160;</a></span>sort() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -202,7 +202,7 @@ template&lt;Queryable Q, Queryable... Qs&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -232,14 +232,14 @@ template&lt;Queryable Q, Queryable... Qs&gt; </div>
 <div class="line"><span class="lineno">  103</span>                <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_variableRef" href="http://en.cppreference.com/w/cpp/types/is_same.html">std::is_same_v</a>&lt;</div>
 <div class="line"><span class="lineno">  104</span>                                  <span class="keyword">typename</span> <a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt;SelectedQueryables...&gt;::template Nth&lt;<span class="keyword">sizeof</span>...(Valids)&gt;,</div>
 <div class="line"><span class="lineno">  105</span>                                  Q&gt;)</div>
-<div class="line"><span class="lineno">  106</span>                    <span class="keywordflow">return</span> <a class="code hl_function" href="structecstasy_1_1query_1_1_select_1_1_sortered_tie.html#ab64550b0270ac9e87e2c44886cc29c1e">SorteredTie&lt;Valids..., Q&gt;::sort</a>(</div>
+<div class="line"><span class="lineno">  106</span>                    <span class="keywordflow">return</span> <a class="code hl_function" href="structecstasy_1_1query_1_1_select_1_1_sortered_tie.html#a899b147f0c90051c95c2c6584ac716aa">SorteredTie&lt;Valids..., Q&gt;::sort</a>(</div>
 <div class="line"><span class="lineno">  107</span>                        std::forward&lt;Valids &amp;&gt;(valids)..., current, std::forward&lt;Qs &amp;&gt;(lefts)...);</div>
 <div class="line"><span class="lineno">  108</span>                <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  109</span>                    <span class="keywordflow">return</span> <a class="code hl_function" href="structecstasy_1_1query_1_1_select_1_1_sortered_tie.html#ab64550b0270ac9e87e2c44886cc29c1e">SorteredTie&lt;Valids...&gt;::sort</a>(</div>
+<div class="line"><span class="lineno">  109</span>                    <span class="keywordflow">return</span> <a class="code hl_function" href="structecstasy_1_1query_1_1_select_1_1_sortered_tie.html#a899b147f0c90051c95c2c6584ac716aa">SorteredTie&lt;Valids...&gt;::sort</a>(</div>
 <div class="line"><span class="lineno">  110</span>                        std::forward&lt;Valids &amp;&gt;(valids)..., std::forward&lt;Qs &amp;&gt;(lefts)..., current);</div>
 <div class="line"><span class="lineno">  111</span>            }</div>
 <div class="ttc" id="ais_same_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/types/is_same.html">std::is_same_v</a></div><div class="ttdeci">T is_same_v</div></div>
-<div class="ttc" id="astructecstasy_1_1query_1_1_select_1_1_sortered_tie_html_ab64550b0270ac9e87e2c44886cc29c1e"><div class="ttname"><a href="structecstasy_1_1query_1_1_select_1_1_sortered_tie.html#ab64550b0270ac9e87e2c44886cc29c1e">ecstasy::query::Select::SorteredTie::sort</a></div><div class="ttdeci">static constexpr SelectedTuple sort(Valids &amp;...valids)</div><div class="ttdoc">Final condition: all queryables are in the good order so tie them and return the tuple.</div><div class="ttdef"><b>Definition</b> <a href="_select_8hpp_source.html#l00080">Select.hpp:80</a></div></div>
+<div class="ttc" id="astructecstasy_1_1query_1_1_select_1_1_sortered_tie_html_a899b147f0c90051c95c2c6584ac716aa"><div class="ttname"><a href="structecstasy_1_1query_1_1_select_1_1_sortered_tie.html#a899b147f0c90051c95c2c6584ac716aa">ecstasy::query::Select::SorteredTie::sort</a></div><div class="ttdeci">static constexpr SelectedTuple sort(Valids &amp;...valids) noexcept</div><div class="ttdoc">Final condition: all queryables are in the good order so tie them and return the tuple.</div><div class="ttdef"><b>Definition</b> <a href="_select_8hpp_source.html#l00080">Select.hpp:80</a></div></div>
 <div class="ttc" id="astructutil_1_1meta_1_1_traits_html"><div class="ttname"><a href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a></div><div class="ttdoc">Empty parameter pack helper type.</div><div class="ttdef"><b>Definition</b> <a href="_traits_8hpp_source.html#l00028">Traits.hpp:28</a></div></div>
 </div><!-- fragment -->
 </div>

@@ -96,6 +96,9 @@ $(document).ready(function(){initNavTree('_toml_array_node_8cpp.html',''); initR
   <div class="headertitle"><div class="title">TomlArrayNode.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Toml array node implementation.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_toml_array_node_8hpp_source.html">TomlArrayNode.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_toml_conversion_8hpp_source.html">TomlConversion.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_toml_node_factory_8hpp_source.html">TomlNodeFactory.hpp</a>&quot;</code><br />
@@ -104,23 +107,23 @@ Include dependency graph for TomlArrayNode.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="_toml_array_node_8cpp__incl.png" border="0" usemap="#asrc_2util_2serialization_2toml_2_toml_array_node_8cpp" alt=""/></div>
 <map name="asrc_2util_2serialization_2toml_2_toml_array_node_8cpp" id="asrc_2util_2serialization_2toml_2_toml_array_node_8cpp">
-<area shape="rect" title=" " alt="" coords="427,5,613,45"/>
-<area shape="rect" href="_toml_array_node_8hpp.html" title=" " alt="" coords="331,93,482,119"/>
+<area shape="rect" title="Toml array node implementation." alt="" coords="427,5,613,45"/>
+<area shape="rect" href="_toml_array_node_8hpp.html" title="Toml array node." alt="" coords="331,93,482,119"/>
 <area shape="poly" title=" " alt="" coords="494,48,436,87,433,83,491,43"/>
-<area shape="rect" href="_toml_conversion_8hpp.html" title=" " alt="" coords="627,247,781,273"/>
+<area shape="rect" href="_toml_conversion_8hpp.html" title="Toml conversion interface." alt="" coords="627,247,781,273"/>
 <area shape="poly" title=" " alt="" coords="544,43,599,96,658,165,680,200,696,234,692,236,675,203,654,168,595,99,540,47"/>
-<area shape="rect" href="_toml_node_factory_8hpp.html" title=" " alt="" coords="315,167,475,192"/>
+<area shape="rect" href="_toml_node_factory_8hpp.html" title="Toml node factory declaration." alt="" coords="315,167,475,192"/>
 <area shape="poly" title=" " alt="" coords="521,46,514,82,506,102,495,120,469,145,439,163,437,158,466,141,491,117,502,100,509,81,516,45"/>
-<area shape="rect" href="_toml_node_8hpp.html" title=" " alt="" coords="529,167,644,192"/>
+<area shape="rect" href="_toml_node_8hpp.html" title="Toml node implementation." alt="" coords="529,167,644,192"/>
 <area shape="poly" title=" " alt="" coords="437,116,546,159,544,164,435,121"/>
-<area shape="rect" href="_i_array_node_8hpp.html" title=" " alt="" coords="61,240,187,280"/>
+<area shape="rect" href="_i_array_node_8hpp.html" title="Array node interface." alt="" coords="61,240,187,280"/>
 <area shape="poly" title=" " alt="" coords="387,121,172,236,170,231,384,116"/>
 <area shape="poly" title=" " alt="" coords="605,190,677,237,674,242,603,194"/>
 <area shape="rect" title=" " alt="" coords="644,335,764,361"/>
 <area shape="poly" title=" " alt="" coords="645,187,733,207,771,221,795,238,802,252,802,265,790,290,766,312,740,331,737,326,763,308,786,287,797,264,797,253,791,242,769,226,732,212,644,192"/>
-<area shape="rect" href="_a_node_8hpp.html" title=" " alt="" coords="425,240,551,280"/>
+<area shape="rect" href="_a_node_8hpp.html" title="Abstract node partial implementation." alt="" coords="425,240,551,280"/>
 <area shape="poly" title=" " alt="" coords="574,194,524,233,521,229,570,190"/>
-<area shape="rect" href="_i_node_8hpp.html" title=" " alt="" coords="323,328,450,368"/>
+<area shape="rect" href="_i_node_8hpp.html" title="Serialization node interface." alt="" coords="323,328,450,368"/>
 <area shape="poly" title=" " alt="" coords="662,275,464,329,462,324,661,270"/>
 <area shape="poly" title=" " alt="" coords="707,273,707,321,701,321,701,273"/>
 <area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/header/chrono.html" title=" " alt="" coords="460,416,527,441"/>
@@ -136,12 +139,12 @@ Include dependency graph for TomlArrayNode.cpp:</div>
 <area shape="poly" title=" " alt="" coords="467,282,421,321,418,317,464,278"/>
 <area shape="poly" title=" " alt="" coords="182,278,317,321,316,326,181,283"/>
 <area shape="poly" title=" " alt="" coords="156,278,180,299,198,327,204,346,206,366,201,403,196,402,200,366,199,347,194,329,176,303,152,282"/>
-<area shape="rect" href="_polymorphic_iterator_8hpp.html" title=" " alt="" coords="5,335,184,361"/>
+<area shape="rect" href="_polymorphic_iterator_8hpp.html" title="Polymorphic iterator for value T." alt="" coords="5,335,184,361"/>
 <area shape="poly" title=" " alt="" coords="120,281,106,323,101,321,115,279"/>
 <area shape="poly" title=" " alt="" coords="111,359,169,405,165,409,107,363"/>
 <area shape="poly" title=" " alt="" coords="397,192,391,314,386,314,391,192"/>
 <area shape="poly" title=" " alt="" coords="440,190,500,209,564,238,591,257,616,278,679,325,676,329,613,282,588,261,561,242,498,214,438,195"/>
-<area shape="rect" href="_i_node_factory_8hpp.html" title=" " alt="" coords="211,240,349,280"/>
+<area shape="rect" href="_i_node_factory_8hpp.html" title="Node factory to hide underlying format." alt="" coords="211,240,349,280"/>
 <area shape="poly" title=" " alt="" coords="379,194,320,234,317,230,376,190"/>
 <area shape="poly" title=" " alt="" coords="305,278,354,317,351,321,302,282"/>
 </map>
@@ -158,7 +161,8 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<div class="textblock"><p>Toml array node implementation. </p>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2022-12-08</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) ECSTASY 2022 - 2024 </dd></dl>

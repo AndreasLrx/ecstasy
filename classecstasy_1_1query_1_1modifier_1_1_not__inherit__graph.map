@@ -1,7 +1,7 @@
 <map id="ecstasy::query::modifier::Not&lt; Q, AutoLock &gt;" name="ecstasy::query::modifier::Not&lt; Q, AutoLock &gt;">
 <area shape="rect" id="Node000001" title="Query modifier which simply inverts the bits." alt="" coords="5,181,183,221"/>
-<area shape="rect" id="Node000002" href="$classecstasy_1_1query_1_1modifier_1_1_modifier.html" title=" " alt="" coords="5,93,183,133"/>
+<area shape="rect" id="Node000002" href="$classecstasy_1_1query_1_1modifier_1_1_modifier.html" title="Base class for all query modifiers." alt="" coords="5,93,183,133"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,147,97,181,91,181,91,147"/>
-<area shape="rect" id="Node000003" href="$classecstasy_1_1query_1_1modifier_1_1_modifier_base.html" title="Base class for all query modifiers." alt="" coords="5,5,183,45"/>
+<area shape="rect" id="Node000003" href="$classecstasy_1_1query_1_1modifier_1_1_modifier_base.html" title="Type erased base class for all query modifiers." alt="" coords="5,5,183,45"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="97,59,97,93,91,93,91,59"/>
 </map>

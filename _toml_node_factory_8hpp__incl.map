@@ -1,8 +1,8 @@
 <map id="src/util/serialization/toml/TomlNodeFactory.hpp" name="src/util/serialization/toml/TomlNodeFactory.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="189,5,387,45"/>
-<area shape="rect" id="Node000002" href="$_i_node_8hpp.html" title=" " alt="" coords="171,181,298,221"/>
+<area shape="rect" id="Node000001" title="Toml node factory declaration." alt="" coords="189,5,387,45"/>
+<area shape="rect" id="Node000002" href="$_i_node_8hpp.html" title="Serialization node interface." alt="" coords="171,181,298,221"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="254,48,229,68,209,94,204,113,205,132,218,168,213,170,200,133,199,112,204,92,225,64,251,43"/>
-<area shape="rect" id="Node000008" href="$_i_node_factory_8hpp.html" title=" " alt="" coords="219,93,357,133"/>
+<area shape="rect" id="Node000008" href="$_i_node_factory_8hpp.html" title="Node factory to hide underlying format." alt="" coords="219,93,357,133"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="291,46,291,79,285,79,285,46"/>
 <area shape="rect" id="Node000009" title=" " alt="" coords="381,101,501,126"/>
 <area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="323,43,411,92,408,96,320,48"/>

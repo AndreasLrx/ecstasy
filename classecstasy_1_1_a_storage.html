@@ -178,9 +178,9 @@ Public Member Functions</h2></td></tr>
 <tr class="inherit_header pub_methods_classecstasy_1_1_i_storage"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classecstasy_1_1_i_storage')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classecstasy_1_1_i_storage.html">ecstasy::IStorage</a></td></tr>
 <tr class="memitem:aa8f594bbee0e3d777affb26390677671 inherit pub_methods_classecstasy_1_1_i_storage"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_storage.html#aa8f594bbee0e3d777affb26390677671">~IStorage</a> ()=default</td></tr>
 <tr class="separator:aa8f594bbee0e3d777affb26390677671 inherit pub_methods_classecstasy_1_1_i_storage"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15f593db3bd0022c24670f34b34a1655 inherit pub_methods_classecstasy_1_1_i_storage"><td class="memItemLeft" align="right" valign="top">virtual constexpr const <a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_storage.html#a15f593db3bd0022c24670f34b34a1655">getMask</a> () const =0</td></tr>
-<tr class="memdesc:a15f593db3bd0022c24670f34b34a1655 inherit pub_methods_classecstasy_1_1_i_storage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Component Mask.  <br /></td></tr>
-<tr class="separator:a15f593db3bd0022c24670f34b34a1655 inherit pub_methods_classecstasy_1_1_i_storage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c979e389d0d0b5576901500049effcd inherit pub_methods_classecstasy_1_1_i_storage"><td class="memItemLeft" align="right" valign="top">virtual constexpr const <a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_storage.html#a2c979e389d0d0b5576901500049effcd">getMask</a> () const noexcept=0</td></tr>
+<tr class="memdesc:a2c979e389d0d0b5576901500049effcd inherit pub_methods_classecstasy_1_1_i_storage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Component Mask.  <br /></td></tr>
+<tr class="separator:a2c979e389d0d0b5576901500049effcd inherit pub_methods_classecstasy_1_1_i_storage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4188b8316c1ee722db5a8a2c9c1de34b inherit pub_methods_classecstasy_1_1_i_storage"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_storage.html#a4188b8316c1ee722db5a8a2c9c1de34b">erase</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/container/span.html">std::span</a>&lt; <a class="el" href="classecstasy_1_1_entity.html">Entity</a> &gt; entities)=0</td></tr>
 <tr class="memdesc:a4188b8316c1ee722db5a8a2c9c1de34b inherit pub_methods_classecstasy_1_1_i_storage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase the components attached to the given entities.  <br /></td></tr>
 <tr class="separator:a4188b8316c1ee722db5a8a2c9c1de34b inherit pub_methods_classecstasy_1_1_i_storage"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -311,7 +311,7 @@ template&lt;typename C &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="_a_storage_8hpp_source.html#l00094">94</a> of file <a class="el" href="_a_storage_8hpp_source.html">AStorage.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   95</span>        {</div>
-<div class="line"><span class="lineno">   96</span>            <span class="keywordflow">if</span> (!<a class="code hl_function" href="classecstasy_1_1_a_storage.html#a5d5a338cfda0beeef9e73b66aec94e47">contains</a>(index))</div>
+<div class="line"><span class="lineno">   96</span>            <span class="keywordflow">if</span> (!<a class="code hl_function" href="classecstasy_1_1_a_storage.html#a5d5a338cfda0beeef9e73b66aec94e47">contains</a>(index)) [[unlikely]]</div>
 <div class="line"><span class="lineno">   97</span>                <span class="keywordflow">throw</span> <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/error/out_of_range.html">std::out_of_range</a>(<span class="stringliteral">&quot;Entity doesn&#39;t have the component&quot;</span>);</div>
 <div class="line"><span class="lineno">   98</span>            <span class="keywordflow">return</span> (*<span class="keyword">this</span>)[index];</div>
 <div class="line"><span class="lineno">   99</span>        }</div>
@@ -365,7 +365,7 @@ template&lt;typename C &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="_a_storage_8hpp_source.html#l00113">113</a> of file <a class="el" href="_a_storage_8hpp_source.html">AStorage.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  114</span>        {</div>
-<div class="line"><span class="lineno">  115</span>            <span class="keywordflow">if</span> (!<a class="code hl_function" href="classecstasy_1_1_a_storage.html#a5d5a338cfda0beeef9e73b66aec94e47">contains</a>(index))</div>
+<div class="line"><span class="lineno">  115</span>            <span class="keywordflow">if</span> (!<a class="code hl_function" href="classecstasy_1_1_a_storage.html#a5d5a338cfda0beeef9e73b66aec94e47">contains</a>(index)) [[unlikely]]</div>
 <div class="line"><span class="lineno">  116</span>                <span class="keywordflow">throw</span> <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/error/out_of_range.html">std::out_of_range</a>(<span class="stringliteral">&quot;Entity doesn&#39;t have the component&quot;</span>);</div>
 <div class="line"><span class="lineno">  117</span>            <span class="keywordflow">return</span> (*<span class="keyword">this</span>)[index];</div>
 <div class="line"><span class="lineno">  118</span>        }</div>
@@ -404,9 +404,9 @@ template&lt;typename C &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="_a_storage_8hpp_source.html#l00077">77</a> of file <a class="el" href="_a_storage_8hpp_source.html">AStorage.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   78</span>        {</div>
-<div class="line"><span class="lineno">   79</span>            <span class="keywordflow">return</span> (index &lt; <a class="code hl_function" href="classecstasy_1_1_i_storage.html#a15f593db3bd0022c24670f34b34a1655">getMask</a>().<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/iterator/size.html">size</a>()) &amp;&amp; <a class="code hl_function" href="classecstasy_1_1_i_storage.html#a15f593db3bd0022c24670f34b34a1655">getMask</a>()[index];</div>
+<div class="line"><span class="lineno">   79</span>            <span class="keywordflow">return</span> (index &lt; <a class="code hl_function" href="classecstasy_1_1_i_storage.html#a2c979e389d0d0b5576901500049effcd">getMask</a>().<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/iterator/size.html">size</a>()) &amp;&amp; <a class="code hl_function" href="classecstasy_1_1_i_storage.html#a2c979e389d0d0b5576901500049effcd">getMask</a>()[index];</div>
 <div class="line"><span class="lineno">   80</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1_i_storage_html_a15f593db3bd0022c24670f34b34a1655"><div class="ttname"><a href="classecstasy_1_1_i_storage.html#a15f593db3bd0022c24670f34b34a1655">ecstasy::IStorage::getMask</a></div><div class="ttdeci">virtual constexpr const util::BitSet &amp; getMask() const =0</div><div class="ttdoc">Get the Component Mask.</div></div>
+<div class="ttc" id="aclassecstasy_1_1_i_storage_html_a2c979e389d0d0b5576901500049effcd"><div class="ttname"><a href="classecstasy_1_1_i_storage.html#a2c979e389d0d0b5576901500049effcd">ecstasy::IStorage::getMask</a></div><div class="ttdeci">virtual constexpr const util::BitSet &amp; getMask() const noexcept=0</div><div class="ttdoc">Get the Component Mask.</div></div>
 <div class="ttc" id="asize_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/iterator/size.html">std::size</a></div><div class="ttdeci">T size(T... args)</div></div>
 </div><!-- fragment -->
 </div>

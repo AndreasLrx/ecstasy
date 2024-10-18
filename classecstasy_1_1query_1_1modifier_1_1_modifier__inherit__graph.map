@@ -1,5 +1,5 @@
 <map id="ecstasy::query::modifier::Modifier&lt; AutoLock &gt;" name="ecstasy::query::modifier::Modifier&lt; AutoLock &gt;">
-<area shape="rect" id="Node000001" title=" " alt="" coords="231,294,408,334"/>
+<area shape="rect" id="Node000001" title="Base class for all query modifiers." alt="" coords="231,294,408,334"/>
 <area shape="rect" id="Node000003" href="$classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html" title=" " alt="" coords="456,5,687,89"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="332,280,351,240,379,193,413,144,454,100,471,87,474,91,458,104,417,147,383,196,356,243,337,283"/>
 <area shape="rect" id="Node000005" href="$classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html" title=" " alt="" coords="466,113,677,197"/>
@@ -12,7 +12,7 @@
 <area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="356,341,402,376,457,409,486,421,484,426,455,414,399,381,352,345"/>
 <area shape="rect" id="Node000011" href="$classecstasy_1_1query_1_1modifier_1_1_not.html" title="Query modifier which simply inverts the bits." alt="" coords="483,487,660,527"/>
 <area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="341,344,389,410,421,444,457,473,484,486,481,491,455,478,417,448,385,413,337,347"/>
-<area shape="rect" id="Node000002" href="$classecstasy_1_1query_1_1modifier_1_1_modifier_base.html" title="Base class for all query modifiers." alt="" coords="5,294,183,334"/>
+<area shape="rect" id="Node000002" href="$classecstasy_1_1query_1_1modifier_1_1_modifier_base.html" title="Type erased base class for all query modifiers." alt="" coords="5,294,183,334"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,311,231,311,231,317,196,317"/>
 <area shape="rect" id="Node000004" href="$classecstasy_1_1query_1_1modifier_1_1_and_impl.html" title="Binary query modifier which performs a and between at least two queryables." alt="" coords="735,20,924,75"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="700,45,735,45,735,50,700,50"/>

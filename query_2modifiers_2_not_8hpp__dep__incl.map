@@ -1,8 +1,8 @@
 <map id="src/ecstasy/query/modifiers/Not.hpp" name="src/ecstasy/query/modifiers/Not.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="116,5,317,45"/>
+<area shape="rect" id="Node000001" title="Unary query modifier which performs a not operation on a queryable." alt="" coords="116,5,317,45"/>
 <area shape="rect" id="Node000002" href="$ecstasy_2query_2modifiers_2include_8hpp.html" title=" " alt="" coords="16,93,217,133"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,56,141,95,137,91,182,52"/>
-<area shape="rect" id="Node000005" href="$registry_2modifiers_2_not_8hpp.html" title=" " alt="" coords="243,93,393,133"/>
+<area shape="rect" id="Node000005" href="$registry_2modifiers_2_not_8hpp.html" title="Query modifier which returns a std::optional filled when the data if existing." alt="" coords="243,93,393,133"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="251,52,297,91,294,95,248,56"/>
 <area shape="rect" id="Node000003" href="$ecstasy_2query_2include_8hpp.html" title=" " alt="" coords="5,277,220,302"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="119,147,116,276,110,276,113,147"/>

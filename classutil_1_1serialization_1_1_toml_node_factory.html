@@ -203,9 +203,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a6bfe69dd76403cf50cc5ee0901b00532"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classutil_1_1serialization_1_1_toml_node_factory.html">TomlNodeFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_toml_node_factory.html#a6bfe69dd76403cf50cc5ee0901b00532">get</a> ()</td></tr>
-<tr class="memdesc:a6bfe69dd76403cf50cc5ee0901b00532"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the <a class="el" href="classutil_1_1serialization_1_1_toml_node_factory.html">TomlNodeFactory</a> singleton instance.  <br /></td></tr>
-<tr class="separator:a6bfe69dd76403cf50cc5ee0901b00532"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09f7c3d218e15521ef8099abb9ccd44e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classutil_1_1serialization_1_1_toml_node_factory.html">TomlNodeFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_toml_node_factory.html#a09f7c3d218e15521ef8099abb9ccd44e">get</a> () noexcept</td></tr>
+<tr class="memdesc:a09f7c3d218e15521ef8099abb9ccd44e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the <a class="el" href="classutil_1_1serialization_1_1_toml_node_factory.html">TomlNodeFactory</a> singleton instance.  <br /></td></tr>
+<tr class="separator:a09f7c3d218e15521ef8099abb9ccd44e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -443,9 +443,9 @@ Private Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_toml_node_factory_8cpp_source.html#l00100">100</a> of file <a class="el" href="_toml_node_factory_8cpp_source.html">TomlNodeFactory.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  101</span>    {</div>
-<div class="line"><span class="lineno">  102</span>        <span class="keywordflow">return</span> std::make_shared&lt;TomlNode&lt;toml::value&lt;toml::date&gt;&gt;&gt;(<a class="code hl_function" href="classutil_1_1serialization_1_1_toml_conversion.html#ab79fd53d03bfe3faadc637e2c5ed2881">TomlConversion::toToml</a>(date));</div>
+<div class="line"><span class="lineno">  102</span>        <span class="keywordflow">return</span> std::make_shared&lt;TomlNode&lt;toml::value&lt;toml::date&gt;&gt;&gt;(<a class="code hl_function" href="classutil_1_1serialization_1_1_toml_conversion.html#acef24e631f44f7b6ea91ee1d531a8d3b">TomlConversion::toToml</a>(date));</div>
 <div class="line"><span class="lineno">  103</span>    }</div>
-<div class="ttc" id="aclassutil_1_1serialization_1_1_toml_conversion_html_ab79fd53d03bfe3faadc637e2c5ed2881"><div class="ttname"><a href="classutil_1_1serialization_1_1_toml_conversion.html#ab79fd53d03bfe3faadc637e2c5ed2881">util::serialization::TomlConversion::toToml</a></div><div class="ttdeci">static toml::date toToml(INode::Date date)</div><div class="ttdoc">Convert a INode::Date to a toml::date.</div><div class="ttdef"><b>Definition</b> <a href="_toml_conversion_8cpp_source.html#l00017">TomlConversion.cpp:17</a></div></div>
+<div class="ttc" id="aclassutil_1_1serialization_1_1_toml_conversion_html_acef24e631f44f7b6ea91ee1d531a8d3b"><div class="ttname"><a href="classutil_1_1serialization_1_1_toml_conversion.html#acef24e631f44f7b6ea91ee1d531a8d3b">util::serialization::TomlConversion::toToml</a></div><div class="ttdeci">static toml::date toToml(const INode::Date &amp;date) noexcept</div><div class="ttdoc">Convert a INode::Date to a toml::date.</div><div class="ttdef"><b>Definition</b> <a href="_toml_conversion_8cpp_source.html#l00016">TomlConversion.cpp:16</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -489,7 +489,7 @@ Private Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_toml_node_factory_8cpp_source.html#l00110">110</a> of file <a class="el" href="_toml_node_factory_8cpp_source.html">TomlNodeFactory.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  111</span>    {</div>
-<div class="line"><span class="lineno">  112</span>        <span class="keywordflow">return</span> std::make_shared&lt;TomlNode&lt;toml::value&lt;toml::date_time&gt;&gt;&gt;(<a class="code hl_function" href="classutil_1_1serialization_1_1_toml_conversion.html#ab79fd53d03bfe3faadc637e2c5ed2881">TomlConversion::toToml</a>(dateTime));</div>
+<div class="line"><span class="lineno">  112</span>        <span class="keywordflow">return</span> std::make_shared&lt;TomlNode&lt;toml::value&lt;toml::date_time&gt;&gt;&gt;(<a class="code hl_function" href="classutil_1_1serialization_1_1_toml_conversion.html#acef24e631f44f7b6ea91ee1d531a8d3b">TomlConversion::toToml</a>(dateTime));</div>
 <div class="line"><span class="lineno">  113</span>    }</div>
 </div><!-- fragment -->
 </div>
@@ -534,7 +534,7 @@ Private Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_toml_node_factory_8cpp_source.html#l00105">105</a> of file <a class="el" href="_toml_node_factory_8cpp_source.html">TomlNodeFactory.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  106</span>    {</div>
-<div class="line"><span class="lineno">  107</span>        <span class="keywordflow">return</span> std::make_shared&lt;TomlNode&lt;toml::value&lt;toml::time&gt;&gt;&gt;(<a class="code hl_function" href="classutil_1_1serialization_1_1_toml_conversion.html#ab79fd53d03bfe3faadc637e2c5ed2881">TomlConversion::toToml</a>(time));</div>
+<div class="line"><span class="lineno">  107</span>        <span class="keywordflow">return</span> std::make_shared&lt;TomlNode&lt;toml::value&lt;toml::time&gt;&gt;&gt;(<a class="code hl_function" href="classutil_1_1serialization_1_1_toml_conversion.html#acef24e631f44f7b6ea91ee1d531a8d3b">TomlConversion::toToml</a>(time));</div>
 <div class="line"><span class="lineno">  108</span>    }</div>
 </div><!-- fragment -->
 </div>
@@ -735,7 +735,7 @@ Private Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  121</span>        <span class="keywordflow">return</span> res;</div>
 <div class="line"><span class="lineno">  122</span>    }</div>
 <div class="ttc" id="alock_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/thread/lock.html">std::lock</a></div><div class="ttdeci">T lock(T... args)</div></div>
-<div class="ttc" id="anamespaceutil_1_1serialization_html_a4ad992ea709272876f708522d11c51be"><div class="ttname"><a href="namespaceutil_1_1serialization.html#a4ad992ea709272876f708522d11c51be">util::serialization::NodePtr</a></div><div class="ttdeci">std::shared_ptr&lt; INode &gt; NodePtr</div><div class="ttdef"><b>Definition</b> <a href="_i_node_8hpp_source.html#l00451">INode.hpp:451</a></div></div>
+<div class="ttc" id="anamespaceutil_1_1serialization_html_a4ad992ea709272876f708522d11c51be"><div class="ttname"><a href="namespaceutil_1_1serialization.html#a4ad992ea709272876f708522d11c51be">util::serialization::NodePtr</a></div><div class="ttdeci">std::shared_ptr&lt; INode &gt; NodePtr</div><div class="ttdoc">Pointer to node.</div><div class="ttdef"><b>Definition</b> <a href="_i_node_8hpp_source.html#l00452">INode.hpp:452</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -835,8 +835,8 @@ Private Member Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a6bfe69dd76403cf50cc5ee0901b00532" name="a6bfe69dd76403cf50cc5ee0901b00532"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6bfe69dd76403cf50cc5ee0901b00532">&#9670;&#160;</a></span>get()</h2>
+<a id="a09f7c3d218e15521ef8099abb9ccd44e" name="a09f7c3d218e15521ef8099abb9ccd44e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09f7c3d218e15521ef8099abb9ccd44e">&#9670;&#160;</a></span>get()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -853,7 +853,7 @@ Private Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

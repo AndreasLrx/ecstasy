@@ -1,11 +1,11 @@
 <map id="src/util/serialization/INodeFactory.hpp" name="src/util/serialization/INodeFactory.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="239,5,390,45"/>
-<area shape="rect" id="Node000002" href="$_toml_node_factory_8hpp.html" title=" " alt="" coords="215,93,414,133"/>
+<area shape="rect" id="Node000001" title="Node factory to hide underlying format." alt="" coords="239,5,390,45"/>
+<area shape="rect" id="Node000002" href="$_toml_node_factory_8hpp.html" title="Toml node factory declaration." alt="" coords="215,93,414,133"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="317,59,317,93,312,93,312,59"/>
-<area shape="rect" id="Node000003" href="$_toml_array_node_8cpp.html" title=" " alt="" coords="5,181,192,221"/>
+<area shape="rect" id="Node000003" href="$_toml_array_node_8cpp.html" title="Toml array node implementation." alt="" coords="5,181,192,221"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="256,141,147,184,145,179,254,136"/>
-<area shape="rect" id="Node000004" href="$_toml_node_factory_8cpp.html" title=" " alt="" coords="216,181,413,221"/>
+<area shape="rect" id="Node000004" href="$_toml_node_factory_8cpp.html" title="Toml node factory implementation." alt="" coords="216,181,413,221"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="317,147,317,181,312,181,312,147"/>
-<area shape="rect" id="Node000005" href="$_toml_object_node_8cpp.html" title=" " alt="" coords="437,181,632,221"/>
+<area shape="rect" id="Node000005" href="$_toml_object_node_8cpp.html" title="Toml object node implementation." alt="" coords="437,181,632,221"/>
 <area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="376,136,487,179,486,184,374,141"/>
 </map>

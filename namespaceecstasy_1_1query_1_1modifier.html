@@ -110,15 +110,16 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class of query modifier operating on at least two queryables.  <a href="classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_maybe.html">Maybe</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1query_1_1_query.html">Query</a> modifier which returns a <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a> filled when the data if existing.  <a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1query_1_1_query.html" title="More high-level query class, wrapping the QueryImplementation.">Query</a> modifier which returns a <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a> filled when the data if existing.  <a href="classecstasy_1_1query_1_1modifier_1_1_maybe.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier.html">Modifier</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for all query modifiers.  <a href="classecstasy_1_1query_1_1modifier_1_1_modifier.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier_base.html">ModifierBase</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for all query modifiers.  <a href="classecstasy_1_1query_1_1modifier_1_1_modifier_base.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type erased base class for all query modifiers.  <a href="classecstasy_1_1query_1_1modifier_1_1_modifier_base.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html">Not</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1query_1_1_query.html">Query</a> modifier which simply inverts the bits.  <a href="classecstasy_1_1query_1_1modifier_1_1_not.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1query_1_1_query.html" title="More high-level query class, wrapping the QueryImplementation.">Query</a> modifier which simply inverts the bits.  <a href="classecstasy_1_1query_1_1modifier_1_1_not.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_or_impl.html">OrImpl</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binary query modifier which performs a or between at least two queryables.  <a href="classecstasy_1_1query_1_1modifier_1_1_or_impl.html#details">More...</a><br /></td></tr>
@@ -131,12 +132,15 @@ Classes</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:af3b38801bd60e121da0b71baaf547dcb"><td class="memTemplParams" colspan="2">template&lt;Queryable Q1, Queryable Q2, Queryable... Qs&gt; </td></tr>
 <tr class="memitem:af3b38801bd60e121da0b71baaf547dcb"><td class="memTemplItemLeft" align="right" valign="top">auto constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query_1_1modifier.html#af3b38801bd60e121da0b71baaf547dcb">And</a> (Q1 &amp;firstOperand, Q2 &amp;secondOperand, Qs &amp;...otherOperands)</td></tr>
+<tr class="memdesc:af3b38801bd60e121da0b71baaf547dcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binary query modifier which performs a and between at least two queryables.  <br /></td></tr>
 <tr class="separator:af3b38801bd60e121da0b71baaf547dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7bbce48d0944bf3f7d7a94288085936"><td class="memTemplParams" colspan="2">template&lt;Queryable Q1, Queryable Q2, Queryable... Qs&gt; </td></tr>
 <tr class="memitem:af7bbce48d0944bf3f7d7a94288085936"><td class="memTemplItemLeft" align="right" valign="top">auto constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query_1_1modifier.html#af7bbce48d0944bf3f7d7a94288085936">Or</a> (Q1 &amp;firstOperand, Q2 &amp;secondOperand, Qs &amp;...otherOperands)</td></tr>
+<tr class="memdesc:af7bbce48d0944bf3f7d7a94288085936"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binary query modifier which performs a or between at least two queryables.  <br /></td></tr>
 <tr class="separator:af7bbce48d0944bf3f7d7a94288085936"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33f419fd9483cc8440d37b724fc4054e"><td class="memTemplParams" colspan="2">template&lt;Queryable Q1, Queryable Q2, Queryable... Qs&gt; </td></tr>
 <tr class="memitem:a33f419fd9483cc8440d37b724fc4054e"><td class="memTemplItemLeft" align="right" valign="top">auto constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy_1_1query_1_1modifier.html#a33f419fd9483cc8440d37b724fc4054e">Xor</a> (Q1 &amp;firstOperand, Q2 &amp;secondOperand, Qs &amp;...otherOperands)</td></tr>
+<tr class="memdesc:a33f419fd9483cc8440d37b724fc4054e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binary query modifier which performs a xor between at least two queryables.  <br /></td></tr>
 <tr class="separator:a33f419fd9483cc8440d37b724fc4054e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -186,10 +190,31 @@ template&lt;Queryable Q1, Queryable Q2, Queryable... Qs&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00114">114</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  115</span>    {</div>
-<div class="line"><span class="lineno">  116</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classecstasy_1_1query_1_1modifier_1_1_and_impl.html">AndImpl</a>&lt;<span class="keyword">false</span>, Q1, Q2, Qs...&gt;(firstOperand, secondOperand, otherOperands...);</div>
-<div class="line"><span class="lineno">  117</span>    }</div>
+<p>Binary query modifier which performs a and between at least two queryables. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Q1</td><td>Left operand queryable type. </td></tr>
+    <tr><td class="paramname">Q2</td><td>Right operand queryable type. </td></tr>
+    <tr><td class="paramname">Qs</td><td>Additional operand queryable types.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">firstOperand</td><td>left queryable operand. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">secondOperand</td><td>right queryable operand. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">otherOperands</td><td>additional operands (optional).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>auto The resulting queryable modifier. </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-17) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_and_8hpp_source.html#l00128">128</a> of file <a class="el" href="query_2modifiers_2_and_8hpp_source.html">And.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  129</span>    {</div>
+<div class="line"><span class="lineno">  130</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classecstasy_1_1query_1_1modifier_1_1_and_impl.html">AndImpl</a>&lt;<span class="keyword">false</span>, Q1, Q2, Qs...&gt;(firstOperand, secondOperand, otherOperands...);</div>
+<div class="line"><span class="lineno">  131</span>    }</div>
 <div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_and_impl_html"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_and_impl.html">ecstasy::query::modifier::AndImpl</a></div><div class="ttdoc">Binary query modifier which performs a and between at least two queryables.</div><div class="ttdef"><b>Definition</b> <a href="query_2modifiers_2_and_8hpp_source.html#l00034">And.hpp:35</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -236,10 +261,31 @@ template&lt;Queryable Q1, Queryable Q2, Queryable... Qs&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_or_8hpp_source.html#l00144">144</a> of file <a class="el" href="query_2modifiers_2_or_8hpp_source.html">Or.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  145</span>    {</div>
-<div class="line"><span class="lineno">  146</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classecstasy_1_1query_1_1modifier_1_1_or_impl.html">OrImpl</a>&lt;<span class="keyword">false</span>, Q1, Q2, Qs...&gt;(firstOperand, secondOperand, otherOperands...);</div>
-<div class="line"><span class="lineno">  147</span>    }</div>
+<p>Binary query modifier which performs a or between at least two queryables. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Q1</td><td>Left operand queryable type. </td></tr>
+    <tr><td class="paramname">Q2</td><td>Right operand queryable type. </td></tr>
+    <tr><td class="paramname">Qs</td><td>Additional operand queryable types. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">firstOperand</td><td>left queryable operand. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">secondOperand</td><td>right queryable operand. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">otherOperands</td><td>additional operands (optional).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>auto The resulting queryable modifier.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-17) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_or_8hpp_source.html#l00159">159</a> of file <a class="el" href="query_2modifiers_2_or_8hpp_source.html">Or.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  160</span>    {</div>
+<div class="line"><span class="lineno">  161</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classecstasy_1_1query_1_1modifier_1_1_or_impl.html">OrImpl</a>&lt;<span class="keyword">false</span>, Q1, Q2, Qs...&gt;(firstOperand, secondOperand, otherOperands...);</div>
+<div class="line"><span class="lineno">  162</span>    }</div>
 <div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_or_impl_html"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_or_impl.html">ecstasy::query::modifier::OrImpl</a></div><div class="ttdoc">Binary query modifier which performs a or between at least two queryables.</div><div class="ttdef"><b>Definition</b> <a href="query_2modifiers_2_or_8hpp_source.html#l00035">Or.hpp:36</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -286,10 +332,31 @@ template&lt;Queryable Q1, Queryable Q2, Queryable... Qs&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_xor_8hpp_source.html#l00145">145</a> of file <a class="el" href="query_2modifiers_2_xor_8hpp_source.html">Xor.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  146</span>    {</div>
-<div class="line"><span class="lineno">  147</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classecstasy_1_1query_1_1modifier_1_1_xor_impl.html">XorImpl</a>&lt;<span class="keyword">false</span>, Q1, Q2, Qs...&gt;(firstOperand, secondOperand, otherOperands...);</div>
-<div class="line"><span class="lineno">  148</span>    }</div>
+<p>Binary query modifier which performs a xor between at least two queryables. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Q1</td><td>Left operand queryable type. </td></tr>
+    <tr><td class="paramname">Q2</td><td>Right operand queryable type. </td></tr>
+    <tr><td class="paramname">Qs</td><td>Additional operand queryable types. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">firstOperand</td><td>left queryable operand. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">secondOperand</td><td>right queryable operand. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">otherOperands</td><td>additional operands (optional).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>auto The resulting queryable modifier.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-17) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="query_2modifiers_2_xor_8hpp_source.html#l00160">160</a> of file <a class="el" href="query_2modifiers_2_xor_8hpp_source.html">Xor.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  161</span>    {</div>
+<div class="line"><span class="lineno">  162</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classecstasy_1_1query_1_1modifier_1_1_xor_impl.html">XorImpl</a>&lt;<span class="keyword">false</span>, Q1, Q2, Qs...&gt;(firstOperand, secondOperand, otherOperands...);</div>
+<div class="line"><span class="lineno">  163</span>    }</div>
 <div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_xor_impl_html"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_xor_impl.html">ecstasy::query::modifier::XorImpl</a></div><div class="ttdoc">Binary query modifier which performs a xor between at least two queryables.</div><div class="ttdef"><b>Definition</b> <a href="query_2modifiers_2_xor_8hpp_source.html#l00037">Xor.hpp:38</a></div></div>
 </div><!-- fragment -->
 </div>

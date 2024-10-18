@@ -6,7 +6,7 @@
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="209,47,169,92,165,88,206,44"/>
 <area shape="rect" id="Node000004" href="$_keyboard_8hpp.html" title=" " alt="" coords="202,93,402,133"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="244,44,278,81,274,85,240,47"/>
-<area shape="rect" id="Node000012" href="$_entity_8hpp.html" title=" " alt="" coords="683,93,865,133"/>
+<area shape="rect" id="Node000012" href="$_entity_8hpp.html" title="Encapsulate an index to an entity." alt="" coords="683,93,865,133"/>
 <area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="345,43,670,93,669,98,344,48"/>
 <area shape="rect" id="Node000005" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/array.html" title=" " alt="" coords="6,189,62,214"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="228,136,154,157,75,184,71,185,69,181,73,179,152,152,227,131"/>
@@ -14,9 +14,9 @@
 <area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="265,136,163,185,160,180,262,131"/>
 <area shape="rect" id="Node000007" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/unordered_map.html" title=" " alt="" coords="191,189,315,214"/>
 <area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="293,135,269,178,264,175,289,132"/>
-<area shape="rect" id="Node000008" href="$_resource_8hpp.html" title=" " alt="" coords="237,269,468,295"/>
+<area shape="rect" id="Node000008" href="$_resource_8hpp.html" title="Base class of all registry resources." alt="" coords="237,269,468,295"/>
 <area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="312,133,329,181,349,255,344,256,323,182,307,135"/>
-<area shape="rect" id="Node000010" href="$_serializable_enum_8hpp.html" title=" " alt="" coords="391,181,557,221"/>
+<area shape="rect" id="Node000010" href="$_serializable_enum_8hpp.html" title="Create a serializable enumeration type." alt="" coords="391,181,557,221"/>
 <area shape="poly" id="edge9_Node000004_Node000010" title=" " alt="" coords="341,131,425,173,423,178,339,136"/>
 <area shape="rect" id="Node000009" title=" " alt="" coords="499,343,641,368"/>
 <area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="388,292,523,336,521,341,387,297"/>
@@ -28,14 +28,14 @@
 <area shape="poly" id="edge13_Node000012_Node000014" title=" " alt="" coords="765,135,739,178,734,175,760,132"/>
 <area shape="rect" id="Node000015" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/stdexcept.html" title=" " alt="" coords="784,189,871,214"/>
 <area shape="poly" id="edge14_Node000012_Node000015" title=" " alt="" coords="788,132,815,175,810,178,784,135"/>
-<area shape="rect" id="Node000016" href="$_i_storage_8hpp.html" title=" " alt="" coords="778,269,997,295"/>
+<area shape="rect" id="Node000016" href="$_i_storage_8hpp.html" title="Abstract class for all components storage." alt="" coords="778,269,997,295"/>
 <area shape="poly" id="edge15_Node000012_Node000016" title=" " alt="" coords="828,131,860,151,886,180,893,199,897,219,895,256,890,256,891,219,888,200,881,183,856,155,825,136"/>
-<area shape="rect" id="Node000020" href="$_storage_concepts_8hpp.html" title=" " alt="" coords="946,181,1133,221"/>
+<area shape="rect" id="Node000020" href="$_storage_concepts_8hpp.html" title="Storage concepts and utilities." alt="" coords="946,181,1133,221"/>
 <area shape="poly" id="edge20_Node000012_Node000020" title=" " alt="" coords="833,131,969,175,968,180,831,136"/>
 <area shape="poly" id="edge17_Node000016_Node000009" title=" " alt="" coords="837,297,635,342,634,337,836,292"/>
 <area shape="rect" id="Node000017" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/span.html" title=" " alt="" coords="798,343,851,368"/>
 <area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="879,297,846,334,842,330,875,293"/>
-<area shape="rect" id="Node000018" href="$_traits_8hpp.html" title=" " alt="" coords="876,343,1024,368"/>
+<area shape="rect" id="Node000018" href="$_traits_8hpp.html" title="Helper types for parameter packs." alt="" coords="876,343,1024,368"/>
 <area shape="poly" id="edge18_Node000016_Node000018" title=" " alt="" coords="900,293,933,330,929,334,896,297"/>
 <area shape="rect" id="Node000019" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/tuple.html" title=" " alt="" coords="923,416,977,441"/>
 <area shape="poly" id="edge19_Node000018_Node000019" title=" " alt="" coords="953,368,953,402,947,402,947,368"/>

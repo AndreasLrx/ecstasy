@@ -110,9 +110,9 @@ Collaboration diagram for ecstasy::SystemInstances:</div>
 <div class="dyncontent">
 <div class="center"><img src="classecstasy_1_1_system_instances__coll__graph.png" border="0" usemap="#aecstasy_1_1_system_instances_coll__map" alt="Collaboration graph"/></div>
 <map name="aecstasy_1_1_system_instances_coll__map" id="aecstasy_1_1_system_instances_coll__map">
-<area shape="rect" title="Set of instances inheriting from the Base type." alt="" coords="355,35,545,60"/>
-<area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/container/map.html" title=" " alt="" coords="5,5,233,89"/>
-<area shape="poly" title=" " alt="" coords="247,45,355,45,355,50,247,50"/>
+<area shape="rect" title="Set of instances inheriting from the Base type." alt="" coords="401,27,592,53"/>
+<area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/container/map.html" title=" " alt="" coords="5,5,280,75"/>
+<area shape="poly" title=" " alt="" coords="294,37,401,37,401,43,294,43"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -167,19 +167,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af5a1ca761bd4062a0afb1897b19bcc3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_system_instances.html#af5a1ca761bd4062a0afb1897b19bcc3d">clear</a> ()</td></tr>
 <tr class="memdesc:af5a1ca761bd4062a0afb1897b19bcc3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all stored instances.  <br /></td></tr>
 <tr class="separator:af5a1ca761bd4062a0afb1897b19bcc3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13031e791fb17b2ea572b3b317f9edb3"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/map.html">std::map</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/pair.html">std::pair</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_index.html">std::type_index</a>, size_t &gt;, <a class="elRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html">std::unique_ptr</a>&lt; <a class="el" href="classecstasy_1_1_i_system.html">ISystem</a> &gt;, <a class="el" href="classecstasy_1_1_system_instances_1_1_comparer.html">Comparer</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_system_instances.html#a13031e791fb17b2ea572b3b317f9edb3">getInner</a> () const</td></tr>
-<tr class="memdesc:a13031e791fb17b2ea572b3b317f9edb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the backing container.  <br /></td></tr>
-<tr class="separator:a13031e791fb17b2ea572b3b317f9edb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a986e830bd8ee4cf8f23e8be26095aeea"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/map.html">std::map</a>&lt; <a class="el" href="classecstasy_1_1_system_instances.html#ab684fdcecaaf12f43b07a0846687d2a6">key_type</a>, <a class="elRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html">std::unique_ptr</a>&lt; <a class="el" href="classecstasy_1_1_i_system.html">ISystem</a> &gt;, <a class="el" href="classecstasy_1_1_system_instances_1_1_comparer.html">Comparer</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_system_instances.html#a986e830bd8ee4cf8f23e8be26095aeea">getInner</a> () const noexcept</td></tr>
+<tr class="memdesc:a986e830bd8ee4cf8f23e8be26095aeea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the backing container.  <br /></td></tr>
+<tr class="separator:a986e830bd8ee4cf8f23e8be26095aeea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
 Private Types</h2></td></tr>
 <tr class="memitem:ab684fdcecaaf12f43b07a0846687d2a6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_system_instances.html#ab684fdcecaaf12f43b07a0846687d2a6">key_type</a> = <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/pair.html">std::pair</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_index.html">std::type_index</a>, size_t &gt;</td></tr>
+<tr class="memdesc:ab684fdcecaaf12f43b07a0846687d2a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The internal map key type.  <br /></td></tr>
 <tr class="separator:ab684fdcecaaf12f43b07a0846687d2a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a6ec96c0f300b33663d077464b517f039"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/map.html">std::map</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/pair.html">std::pair</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_index.html">std::type_index</a>, size_t &gt;, <a class="elRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html">std::unique_ptr</a>&lt; <a class="el" href="classecstasy_1_1_i_system.html">ISystem</a> &gt;, <a class="el" href="classecstasy_1_1_system_instances_1_1_comparer.html">Comparer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_system_instances.html#a6ec96c0f300b33663d077464b517f039">_instances</a></td></tr>
-<tr class="separator:a6ec96c0f300b33663d077464b517f039"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc8639eb0c6aa22c177fc686fc49323e"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/map.html">std::map</a>&lt; <a class="el" href="classecstasy_1_1_system_instances.html#ab684fdcecaaf12f43b07a0846687d2a6">key_type</a>, <a class="elRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html">std::unique_ptr</a>&lt; <a class="el" href="classecstasy_1_1_i_system.html">ISystem</a> &gt;, <a class="el" href="classecstasy_1_1_system_instances_1_1_comparer.html">Comparer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_system_instances.html#adc8639eb0c6aa22c177fc686fc49323e">_instances</a></td></tr>
+<tr class="memdesc:adc8639eb0c6aa22c177fc686fc49323e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The internal map of instances.  <br /></td></tr>
+<tr class="separator:adc8639eb0c6aa22c177fc686fc49323e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Set of instances inheriting from the <b>Base</b> type. </p>
@@ -214,7 +216,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_system_instances_8hpp_source.html#l00035">35</a> of file <a class="el" href="_system_instances_8hpp_source.html">SystemInstances.hpp</a>.</p>
+<p>The internal map key type. </p>
+
+<p class="definition">Definition at line <a class="el" href="_system_instances_8hpp_source.html#l00036">36</a> of file <a class="el" href="_system_instances_8hpp_source.html">SystemInstances.hpp</a>.</p>
 
 </div>
 </div>
@@ -342,11 +346,11 @@ Private Attributes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_system_instances_8hpp_source.html#l00264">264</a> of file <a class="el" href="_system_instances_8hpp_source.html">SystemInstances.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  265</span>        {</div>
-<div class="line"><span class="lineno">  266</span>            <a class="code hl_variable" href="classecstasy_1_1_system_instances.html#a6ec96c0f300b33663d077464b517f039">_instances</a>.clear();</div>
-<div class="line"><span class="lineno">  267</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1_system_instances_html_a6ec96c0f300b33663d077464b517f039"><div class="ttname"><a href="classecstasy_1_1_system_instances.html#a6ec96c0f300b33663d077464b517f039">ecstasy::SystemInstances::_instances</a></div><div class="ttdeci">std::map&lt; std::pair&lt; std::type_index, size_t &gt;, std::unique_ptr&lt; ISystem &gt;, Comparer &gt; _instances</div><div class="ttdef"><b>Definition</b> <a href="_system_instances_8hpp_source.html#l00284">SystemInstances.hpp:284</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_system_instances_8hpp_source.html#l00310">310</a> of file <a class="el" href="_system_instances_8hpp_source.html">SystemInstances.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  311</span>        {</div>
+<div class="line"><span class="lineno">  312</span>            <a class="code hl_variable" href="classecstasy_1_1_system_instances.html#adc8639eb0c6aa22c177fc686fc49323e">_instances</a>.clear();</div>
+<div class="line"><span class="lineno">  313</span>        }</div>
+<div class="ttc" id="aclassecstasy_1_1_system_instances_html_adc8639eb0c6aa22c177fc686fc49323e"><div class="ttname"><a href="classecstasy_1_1_system_instances.html#adc8639eb0c6aa22c177fc686fc49323e">ecstasy::SystemInstances::_instances</a></div><div class="ttdeci">std::map&lt; key_type, std::unique_ptr&lt; ISystem &gt;, Comparer &gt; _instances</div><div class="ttdoc">The internal map of instances.</div><div class="ttdef"><b>Definition</b> <a href="_system_instances_8hpp_source.html#l00330">SystemInstances.hpp:330</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -386,11 +390,11 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_system_instances_8hpp_source.html#l00253">253</a> of file <a class="el" href="_system_instances_8hpp_source.html">SystemInstances.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  254</span>        {</div>
-<div class="line"><span class="lineno">  255</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classecstasy_1_1_system_instances.html#a81523f114e3546bb639d573a4db79c0d">contains</a>(<a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/type_index.html">std::type_index</a>(<span class="keyword">typeid</span>(Derived)));</div>
-<div class="line"><span class="lineno">  256</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1_system_instances_html_a81523f114e3546bb639d573a4db79c0d"><div class="ttname"><a href="classecstasy_1_1_system_instances.html#a81523f114e3546bb639d573a4db79c0d">ecstasy::SystemInstances::contains</a></div><div class="ttdeci">bool contains() const</div><div class="ttdoc">Check whether an instance of Derived is contained in the set.</div><div class="ttdef"><b>Definition</b> <a href="_system_instances_8hpp_source.html#l00253">SystemInstances.hpp:253</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_system_instances_8hpp_source.html#l00299">299</a> of file <a class="el" href="_system_instances_8hpp_source.html">SystemInstances.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  300</span>        {</div>
+<div class="line"><span class="lineno">  301</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classecstasy_1_1_system_instances.html#a81523f114e3546bb639d573a4db79c0d">contains</a>(<a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/type_index.html">std::type_index</a>(<span class="keyword">typeid</span>(Derived)));</div>
+<div class="line"><span class="lineno">  302</span>        }</div>
+<div class="ttc" id="aclassecstasy_1_1_system_instances_html_a81523f114e3546bb639d573a4db79c0d"><div class="ttname"><a href="classecstasy_1_1_system_instances.html#a81523f114e3546bb639d573a4db79c0d">ecstasy::SystemInstances::contains</a></div><div class="ttdeci">bool contains() const</div><div class="ttdoc">Check whether an instance of Derived is contained in the set.</div><div class="ttdef"><b>Definition</b> <a href="_system_instances_8hpp_source.html#l00299">SystemInstances.hpp:299</a></div></div>
 <div class="ttc" id="atype_index_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/types/type_index.html">std::type_index</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -430,10 +434,10 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_system_instances_8hpp_source.html#l00237">237</a> of file <a class="el" href="_system_instances_8hpp_source.html">SystemInstances.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  238</span>        {</div>
-<div class="line"><span class="lineno">  239</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_system_instances.html#a6ec96c0f300b33663d077464b517f039">_instances</a>.contains(type);</div>
-<div class="line"><span class="lineno">  240</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_system_instances_8hpp_source.html#l00283">283</a> of file <a class="el" href="_system_instances_8hpp_source.html">SystemInstances.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  284</span>        {</div>
+<div class="line"><span class="lineno">  285</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_system_instances.html#adc8639eb0c6aa22c177fc686fc49323e">_instances</a>.contains(type);</div>
+<div class="line"><span class="lineno">  286</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -487,18 +491,18 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_system_instances_8hpp_source.html#l00105">105</a> of file <a class="el" href="_system_instances_8hpp_source.html">SystemInstances.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  106</span>        {</div>
-<div class="line"><span class="lineno">  107</span>            <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/type_index.html">std::type_index</a> id(<span class="keyword">typeid</span>(Derived));</div>
-<div class="line"><span class="lineno">  108</span> </div>
-<div class="line"><span class="lineno">  109</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classecstasy_1_1_system_instances.html#a6ec96c0f300b33663d077464b517f039">_instances</a>.contains(<span class="keywordtype">id</span>))</div>
-<div class="line"><span class="lineno">  110</span>                <span class="keywordflow">throw</span> <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a>(<span class="stringliteral">&quot;Duplicate instance&quot;</span>);</div>
-<div class="line"><span class="lineno">  111</span> </div>
-<div class="line"><span class="lineno">  112</span>            <span class="keywordflow">return</span> *<span class="keyword">dynamic_cast&lt;</span>Derived *<span class="keyword">&gt;</span>(<a class="code hl_variable" href="classecstasy_1_1_system_instances.html#a6ec96c0f300b33663d077464b517f039">_instances</a></div>
-<div class="line"><span class="lineno">  113</span>                                                .emplace(<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/utility/pair/make_pair.html">std::make_pair</a>(<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/utility/pair/make_pair.html">std::make_pair</a>(<span class="keywordtype">id</span>, Priority),</div>
-<div class="line"><span class="lineno">  114</span>                                                    std::make_unique&lt;Derived, Args...&gt;(std::forward&lt;Args&gt;(args)...)))</div>
-<div class="line"><span class="lineno">  115</span>                                                .first-&gt;second.get());</div>
-<div class="line"><span class="lineno">  116</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_system_instances_8hpp_source.html#l00151">151</a> of file <a class="el" href="_system_instances_8hpp_source.html">SystemInstances.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  152</span>        {</div>
+<div class="line"><span class="lineno">  153</span>            <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/type_index.html">std::type_index</a> id(<span class="keyword">typeid</span>(Derived));</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classecstasy_1_1_system_instances.html#adc8639eb0c6aa22c177fc686fc49323e">_instances</a>.contains(<span class="keywordtype">id</span>)) [[unlikely]]</div>
+<div class="line"><span class="lineno">  156</span>                <span class="keywordflow">throw</span> <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a>(<span class="stringliteral">&quot;Duplicate instance&quot;</span>);</div>
+<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">  158</span>            <span class="keywordflow">return</span> *<span class="keyword">dynamic_cast&lt;</span>Derived *<span class="keyword">&gt;</span>(<a class="code hl_variable" href="classecstasy_1_1_system_instances.html#adc8639eb0c6aa22c177fc686fc49323e">_instances</a></div>
+<div class="line"><span class="lineno">  159</span>                                                .emplace(<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/utility/pair/make_pair.html">std::make_pair</a>(<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/utility/pair/make_pair.html">std::make_pair</a>(<span class="keywordtype">id</span>, Priority),</div>
+<div class="line"><span class="lineno">  160</span>                                                    std::make_unique&lt;Derived, Args...&gt;(std::forward&lt;Args&gt;(args)...)))</div>
+<div class="line"><span class="lineno">  161</span>                                                .first-&gt;second.get());</div>
+<div class="line"><span class="lineno">  162</span>        }</div>
 <div class="ttc" id="alogic_error_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a></div></div>
 <div class="ttc" id="amake_pair_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/utility/pair/make_pair.html">std::make_pair</a></div><div class="ttdeci">T make_pair(T... args)</div></div>
 </div><!-- fragment -->
@@ -546,10 +550,10 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_system_instances_8hpp_source.html#l00183">183</a> of file <a class="el" href="_system_instances_8hpp_source.html">SystemInstances.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  184</span>        {</div>
-<div class="line"><span class="lineno">  185</span>            <span class="keywordflow">return</span> *getPtr&lt;Derived&gt;();</div>
-<div class="line"><span class="lineno">  186</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_system_instances_8hpp_source.html#l00229">229</a> of file <a class="el" href="_system_instances_8hpp_source.html">SystemInstances.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  230</span>        {</div>
+<div class="line"><span class="lineno">  231</span>            <span class="keywordflow">return</span> *getPtr&lt;Derived&gt;();</div>
+<div class="line"><span class="lineno">  232</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -595,10 +599,10 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_system_instances_8hpp_source.html#l00148">148</a> of file <a class="el" href="_system_instances_8hpp_source.html">SystemInstances.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  149</span>        {</div>
-<div class="line"><span class="lineno">  150</span>            <span class="keywordflow">return</span> *getPtr&lt;Derived&gt;();</div>
-<div class="line"><span class="lineno">  151</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_system_instances_8hpp_source.html#l00194">194</a> of file <a class="el" href="_system_instances_8hpp_source.html">SystemInstances.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  195</span>        {</div>
+<div class="line"><span class="lineno">  196</span>            <span class="keywordflow">return</span> *getPtr&lt;Derived&gt;();</div>
+<div class="line"><span class="lineno">  197</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -643,11 +647,11 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_system_instances_8hpp_source.html#l00165">165</a> of file <a class="el" href="_system_instances_8hpp_source.html">SystemInstances.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  166</span>        {</div>
-<div class="line"><span class="lineno">  167</span>            <span class="keywordflow">return</span> *<a class="code hl_function" href="classecstasy_1_1_system_instances.html#a3afe7d48ed9e8d06b96413eb6f189939">getPtr</a>(type);</div>
-<div class="line"><span class="lineno">  168</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1_system_instances_html_a3afe7d48ed9e8d06b96413eb6f189939"><div class="ttname"><a href="classecstasy_1_1_system_instances.html#a3afe7d48ed9e8d06b96413eb6f189939">ecstasy::SystemInstances::getPtr</a></div><div class="ttdeci">Derived * getPtr() const</div><div class="ttdoc">Get a pointer to the contained instance of Derived.</div><div class="ttdef"><b>Definition</b> <a href="_system_instances_8hpp_source.html#l00222">SystemInstances.hpp:222</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_system_instances_8hpp_source.html#l00211">211</a> of file <a class="el" href="_system_instances_8hpp_source.html">SystemInstances.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  212</span>        {</div>
+<div class="line"><span class="lineno">  213</span>            <span class="keywordflow">return</span> *<a class="code hl_function" href="classecstasy_1_1_system_instances.html#a3afe7d48ed9e8d06b96413eb6f189939">getPtr</a>(type);</div>
+<div class="line"><span class="lineno">  214</span>        }</div>
+<div class="ttc" id="aclassecstasy_1_1_system_instances_html_a3afe7d48ed9e8d06b96413eb6f189939"><div class="ttname"><a href="classecstasy_1_1_system_instances.html#a3afe7d48ed9e8d06b96413eb6f189939">ecstasy::SystemInstances::getPtr</a></div><div class="ttdeci">Derived * getPtr() const</div><div class="ttdoc">Get a pointer to the contained instance of Derived.</div><div class="ttdef"><b>Definition</b> <a href="_system_instances_8hpp_source.html#l00268">SystemInstances.hpp:268</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -692,15 +696,15 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_system_instances_8hpp_source.html#l00130">130</a> of file <a class="el" href="_system_instances_8hpp_source.html">SystemInstances.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  131</span>        {</div>
-<div class="line"><span class="lineno">  132</span>            <span class="keywordflow">return</span> *<a class="code hl_function" href="classecstasy_1_1_system_instances.html#a3afe7d48ed9e8d06b96413eb6f189939">getPtr</a>(type);</div>
-<div class="line"><span class="lineno">  133</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_system_instances_8hpp_source.html#l00176">176</a> of file <a class="el" href="_system_instances_8hpp_source.html">SystemInstances.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  177</span>        {</div>
+<div class="line"><span class="lineno">  178</span>            <span class="keywordflow">return</span> *<a class="code hl_function" href="classecstasy_1_1_system_instances.html#a3afe7d48ed9e8d06b96413eb6f189939">getPtr</a>(type);</div>
+<div class="line"><span class="lineno">  179</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a13031e791fb17b2ea572b3b317f9edb3" name="a13031e791fb17b2ea572b3b317f9edb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13031e791fb17b2ea572b3b317f9edb3">&#9670;&#160;</a></span>getInner()</h2>
+<a id="a986e830bd8ee4cf8f23e8be26095aeea" name="a986e830bd8ee4cf8f23e8be26095aeea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a986e830bd8ee4cf8f23e8be26095aeea">&#9670;&#160;</a></span>getInner()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -709,7 +713,7 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/map.html">std::map</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/pair.html">std::pair</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_index.html">std::type_index</a>, size_t &gt;, <a class="elRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html">std::unique_ptr</a>&lt; <a class="el" href="classecstasy_1_1_i_system.html">ISystem</a> &gt;, <a class="el" href="classecstasy_1_1_system_instances_1_1_comparer.html">Comparer</a> &gt; &amp; ecstasy::SystemInstances::getInner </td>
+          <td class="memname">constexpr const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/map.html">std::map</a>&lt; <a class="el" href="classecstasy_1_1_system_instances.html#ab684fdcecaaf12f43b07a0846687d2a6">key_type</a>, <a class="elRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html">std::unique_ptr</a>&lt; <a class="el" href="classecstasy_1_1_i_system.html">ISystem</a> &gt;, <a class="el" href="classecstasy_1_1_system_instances_1_1_comparer.html">Comparer</a> &gt; &amp; ecstasy::SystemInstances::getInner </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -717,7 +721,7 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -727,10 +731,10 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_system_instances_8hpp_source.html#l00278">278</a> of file <a class="el" href="_system_instances_8hpp_source.html">SystemInstances.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  279</span>        {</div>
-<div class="line"><span class="lineno">  280</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_system_instances.html#a6ec96c0f300b33663d077464b517f039">_instances</a>;</div>
-<div class="line"><span class="lineno">  281</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_system_instances_8hpp_source.html#l00323">323</a> of file <a class="el" href="_system_instances_8hpp_source.html">SystemInstances.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  324</span>        {</div>
+<div class="line"><span class="lineno">  325</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_system_instances.html#adc8639eb0c6aa22c177fc686fc49323e">_instances</a>;</div>
+<div class="line"><span class="lineno">  326</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -776,10 +780,10 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_system_instances_8hpp_source.html#l00222">222</a> of file <a class="el" href="_system_instances_8hpp_source.html">SystemInstances.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  223</span>        {</div>
-<div class="line"><span class="lineno">  224</span>            <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span>Derived *<span class="keyword">&gt;</span>(<a class="code hl_function" href="classecstasy_1_1_system_instances.html#a3afe7d48ed9e8d06b96413eb6f189939">getPtr</a>(<a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/type_index.html">std::type_index</a>(<span class="keyword">typeid</span>(Derived))));</div>
-<div class="line"><span class="lineno">  225</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_system_instances_8hpp_source.html#l00268">268</a> of file <a class="el" href="_system_instances_8hpp_source.html">SystemInstances.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  269</span>        {</div>
+<div class="line"><span class="lineno">  270</span>            <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span>Derived *<span class="keyword">&gt;</span>(<a class="code hl_function" href="classecstasy_1_1_system_instances.html#a3afe7d48ed9e8d06b96413eb6f189939">getPtr</a>(<a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/type_index.html">std::type_index</a>(<span class="keyword">typeid</span>(Derived))));</div>
+<div class="line"><span class="lineno">  271</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -824,20 +828,20 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_system_instances_8hpp_source.html#l00200">200</a> of file <a class="el" href="_system_instances_8hpp_source.html">SystemInstances.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  201</span>        {</div>
-<div class="line"><span class="lineno">  202</span>            <span class="keyword">const</span> <span class="keyword">auto</span> &amp;valueIt = <a class="code hl_variable" href="classecstasy_1_1_system_instances.html#a6ec96c0f300b33663d077464b517f039">_instances</a>.find(type);</div>
-<div class="line"><span class="lineno">  203</span> </div>
-<div class="line"><span class="lineno">  204</span>            <span class="keywordflow">if</span> (valueIt == <a class="code hl_variable" href="classecstasy_1_1_system_instances.html#a6ec96c0f300b33663d077464b517f039">_instances</a>.end())</div>
-<div class="line"><span class="lineno">  205</span>                <span class="keywordflow">throw</span> <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a>(<span class="stringliteral">&quot;Instance not found&quot;</span>);</div>
-<div class="line"><span class="lineno">  206</span>            <span class="keywordflow">return</span> valueIt-&gt;second.get();</div>
-<div class="line"><span class="lineno">  207</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_system_instances_8hpp_source.html#l00246">246</a> of file <a class="el" href="_system_instances_8hpp_source.html">SystemInstances.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  247</span>        {</div>
+<div class="line"><span class="lineno">  248</span>            <span class="keyword">const</span> <span class="keyword">auto</span> &amp;valueIt = <a class="code hl_variable" href="classecstasy_1_1_system_instances.html#adc8639eb0c6aa22c177fc686fc49323e">_instances</a>.find(type);</div>
+<div class="line"><span class="lineno">  249</span> </div>
+<div class="line"><span class="lineno">  250</span>            <span class="keywordflow">if</span> (valueIt == <a class="code hl_variable" href="classecstasy_1_1_system_instances.html#adc8639eb0c6aa22c177fc686fc49323e">_instances</a>.end()) [[unlikely]]</div>
+<div class="line"><span class="lineno">  251</span>                <span class="keywordflow">throw</span> <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a>(<span class="stringliteral">&quot;Instance not found&quot;</span>);</div>
+<div class="line"><span class="lineno">  252</span>            <span class="keywordflow">return</span> valueIt-&gt;second.get();</div>
+<div class="line"><span class="lineno">  253</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a6ec96c0f300b33663d077464b517f039" name="a6ec96c0f300b33663d077464b517f039"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ec96c0f300b33663d077464b517f039">&#9670;&#160;</a></span>_instances</h2>
+<a id="adc8639eb0c6aa22c177fc686fc49323e" name="adc8639eb0c6aa22c177fc686fc49323e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc8639eb0c6aa22c177fc686fc49323e">&#9670;&#160;</a></span>_instances</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -846,7 +850,7 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/map.html">std::map</a>&lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/utility/pair.html">std::pair</a>&lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_index.html">std::type_index</a>, size_t&gt;, <a class="elRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html">std::unique_ptr</a>&lt;<a class="el" href="classecstasy_1_1_i_system.html">ISystem</a>&gt;, <a class="el" href="classecstasy_1_1_system_instances_1_1_comparer.html">Comparer</a>&gt; ecstasy::SystemInstances::_instances</td>
+          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/map.html">std::map</a>&lt;<a class="el" href="classecstasy_1_1_system_instances.html#ab684fdcecaaf12f43b07a0846687d2a6">key_type</a>, <a class="elRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html">std::unique_ptr</a>&lt;<a class="el" href="classecstasy_1_1_i_system.html">ISystem</a>&gt;, <a class="el" href="classecstasy_1_1_system_instances_1_1_comparer.html">Comparer</a>&gt; ecstasy::SystemInstances::_instances</td>
         </tr>
       </table>
   </td>
@@ -856,7 +860,9 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_system_instances_8hpp_source.html#l00284">284</a> of file <a class="el" href="_system_instances_8hpp_source.html">SystemInstances.hpp</a>.</p>
+<p>The internal map of instances. </p>
+
+<p class="definition">Definition at line <a class="el" href="_system_instances_8hpp_source.html#l00330">330</a> of file <a class="el" href="_system_instances_8hpp_source.html">SystemInstances.hpp</a>.</p>
 
 </div>
 </div>

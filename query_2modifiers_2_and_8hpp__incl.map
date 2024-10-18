@@ -1,17 +1,17 @@
 <map id="src/ecstasy/query/modifiers/And.hpp" name="src/ecstasy/query/modifiers/And.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="64,5,265,45"/>
+<area shape="rect" id="Node000001" title="Binary query modifier which performs a and between at least two queryables." alt="" coords="64,5,265,45"/>
 <area shape="rect" id="Node000002" href="$_binary_modifier_8hpp.html" title=" " alt="" coords="38,93,182,119"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,47,128,84,124,80,149,44"/>
-<area shape="rect" id="Node000004" href="$_queryable_8hpp.html" title=" " alt="" coords="132,167,307,207"/>
+<area shape="rect" id="Node000004" href="$_queryable_8hpp.html" title="Contains the concepts for queryable objects." alt="" coords="132,167,307,207"/>
 <area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="176,45,197,92,214,152,209,154,191,94,171,47"/>
-<area shape="rect" id="Node000003" href="$modifiers_2_modifier_8hpp.html" title=" " alt="" coords="5,174,108,199"/>
+<area shape="rect" id="Node000003" href="$modifiers_2_modifier_8hpp.html" title="Type erased base class for all query modifiers." alt="" coords="5,174,108,199"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="104,120,75,164,70,161,100,117"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="128,117,183,156,180,161,125,121"/>
 <area shape="rect" id="Node000005" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/concepts.html" title=" " alt="" coords="177,401,257,427"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="203,209,186,230,174,255,170,291,176,328,189,361,204,388,199,391,184,363,171,329,164,292,169,254,182,227,198,206"/>
 <area shape="rect" id="Node000006" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/cstddef.html" title=" " alt="" coords="184,255,255,280"/>
 <area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="222,207,222,241,217,241,217,207"/>
-<area shape="rect" id="Node000007" href="$_lockable_view_8hpp.html" title=" " alt="" coords="279,255,517,280"/>
+<area shape="rect" id="Node000007" href="$_lockable_view_8hpp.html" title="Thread safe view of a Lockable object." alt="" coords="279,255,517,280"/>
 <area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="263,204,360,247,358,252,261,209"/>
 <area shape="rect" id="Node000008" href="$_lockable_8hpp.html" title=" " alt="" coords="239,328,445,353"/>
 <area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="391,282,362,319,357,316,387,279"/>

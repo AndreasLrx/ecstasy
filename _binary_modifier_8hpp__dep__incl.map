@@ -1,14 +1,14 @@
 <map id="src/ecstasy/query/modifiers/BinaryModifier.hpp" name="src/ecstasy/query/modifiers/BinaryModifier.hpp">
 <area shape="rect" id="Node000001" title=" " alt="" coords="266,5,467,45"/>
-<area shape="rect" id="Node000002" href="$query_2modifiers_2_and_8hpp.html" title=" " alt="" coords="41,93,242,133"/>
+<area shape="rect" id="Node000002" href="$query_2modifiers_2_and_8hpp.html" title="Binary query modifier which performs a and between at least two queryables." alt="" coords="41,93,242,133"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="305,53,192,96,190,91,303,48"/>
-<area shape="rect" id="Node000009" href="$query_2modifiers_2_or_8hpp.html" title=" " alt="" coords="491,93,693,133"/>
+<area shape="rect" id="Node000009" href="$query_2modifiers_2_or_8hpp.html" title="Binary query modifier which performs a or between at least two queryables." alt="" coords="491,93,693,133"/>
 <area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="430,48,544,91,542,96,428,53"/>
-<area shape="rect" id="Node000013" href="$query_2modifiers_2_xor_8hpp.html" title=" " alt="" coords="266,93,467,133"/>
+<area shape="rect" id="Node000013" href="$query_2modifiers_2_xor_8hpp.html" title="Binary query modifier which performs a xor between at least two queryables." alt="" coords="266,93,467,133"/>
 <area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="369,59,369,93,364,93,364,59"/>
 <area shape="rect" id="Node000003" href="$ecstasy_2query_2modifiers_2include_8hpp.html" title=" " alt="" coords="179,181,381,221"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="185,138,251,179,248,184,182,143"/>
-<area shape="rect" id="Node000006" href="$registry_2modifiers_2_and_8hpp.html" title=" " alt="" coords="5,181,155,221"/>
+<area shape="rect" id="Node000006" href="$registry_2modifiers_2_and_8hpp.html" title="Binary query modifier which performs a and between at least two queryables." alt="" coords="5,181,155,221"/>
 <area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="122,146,96,183,91,180,118,143"/>
 <area shape="rect" id="Node000004" href="$ecstasy_2query_2include_8hpp.html" title=" " alt="" coords="159,365,374,390"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="280,235,270,365,265,364,275,235"/>
@@ -20,7 +20,7 @@
 <area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="474,323,475,357,470,357,468,323"/>
 <area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="439,408,387,447,383,443,436,403"/>
 <area shape="poly" id="edge10_Node000009_Node000003" title=" " alt="" coords="511,140,349,184,348,179,510,134"/>
-<area shape="rect" id="Node000010" href="$registry_2modifiers_2_or_8hpp.html" title=" " alt="" coords="595,181,744,221"/>
+<area shape="rect" id="Node000010" href="$registry_2modifiers_2_or_8hpp.html" title="Binary query modifier which performs a or between at least two queryables." alt="" coords="595,181,744,221"/>
 <area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="620,142,654,179,650,183,616,145"/>
 <area shape="poly" id="edge14_Node000010_Node000007" title=" " alt="" coords="614,229,514,272,512,267,612,224"/>
 <area shape="rect" id="Node000011" href="$_events_manager_8cpp.html" title=" " alt="" coords="577,269,772,309"/>
@@ -28,7 +28,7 @@
 <area shape="rect" id="Node000012" href="$_users_8cpp.html" title=" " alt="" coords="797,269,974,309"/>
 <area shape="poly" id="edge13_Node000010_Node000012" title=" " alt="" coords="730,224,839,267,837,272,728,229"/>
 <area shape="poly" id="edge16_Node000013_Node000003" title=" " alt="" coords="340,145,301,183,297,179,336,141"/>
-<area shape="rect" id="Node000014" href="$registry_2modifiers_2_xor_8hpp.html" title=" " alt="" coords="405,181,555,221"/>
+<area shape="rect" id="Node000014" href="$registry_2modifiers_2_xor_8hpp.html" title="Binary query modifier which performs a xor between at least two queryables." alt="" coords="405,181,555,221"/>
 <area shape="poly" id="edge17_Node000013_Node000014" title=" " alt="" coords="404,140,457,179,453,183,401,144"/>
 <area shape="poly" id="edge18_Node000014_Node000007" title=" " alt="" coords="479,235,474,269,469,269,473,235"/>
 </map>

@@ -1,12 +1,12 @@
 <map id="src/ecstasy/registry/modifiers/Not.hpp" name="src/ecstasy/registry/modifiers/Not.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="94,5,243,45"/>
+<area shape="rect" id="Node000001" title="Query modifier which returns a std::optional filled when the data if existing." alt="" coords="94,5,243,45"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,101,148,126"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,48,101,93,98,89,146,44"/>
-<area shape="rect" id="Node000003" href="$query_2modifiers_2_not_8hpp.html" title=" " alt="" coords="173,93,351,133"/>
+<area shape="rect" id="Node000003" href="$query_2modifiers_2_not_8hpp.html" title="Unary query modifier which performs a not operation on a queryable." alt="" coords="173,93,351,133"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="191,44,233,82,230,86,188,48"/>
-<area shape="rect" id="Node000004" href="$modifiers_2_modifier_8hpp.html" title=" " alt="" coords="48,189,151,214"/>
+<area shape="rect" id="Node000004" href="$modifiers_2_modifier_8hpp.html" title="Type erased base class for all query modifiers." alt="" coords="48,189,151,214"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="228,136,134,185,132,180,225,131"/>
-<area shape="rect" id="Node000005" href="$_queryable_8hpp.html" title=" " alt="" coords="175,181,349,221"/>
+<area shape="rect" id="Node000005" href="$_queryable_8hpp.html" title="Contains the concepts for queryable objects." alt="" coords="175,181,349,221"/>
 <area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="265,134,265,167,259,167,259,134"/>
 <area shape="rect" id="Node000010" href="$_bit_set_8hpp.html" title=" " alt="" coords="457,189,571,214"/>
 <area shape="poly" id="edge10_Node000003_Node000010" title=" " alt="" coords="318,131,468,182,467,187,316,136"/>
@@ -14,7 +14,7 @@
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="175,221,98,243,68,256,49,271,41,287,38,303,44,340,59,374,77,403,73,406,54,377,38,341,33,303,36,285,45,268,65,252,96,238,174,216"/>
 <area shape="rect" id="Node000007" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/cstddef.html" title=" " alt="" coords="323,269,393,295"/>
 <area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="287,219,335,258,332,263,284,224"/>
-<area shape="rect" id="Node000008" href="$_lockable_view_8hpp.html" title=" " alt="" coords="60,269,299,295"/>
+<area shape="rect" id="Node000008" href="$_lockable_view_8hpp.html" title="Thread safe view of a Lockable object." alt="" coords="60,269,299,295"/>
 <area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="244,223,203,262,200,258,240,220"/>
 <area shape="rect" id="Node000009" href="$_lockable_8hpp.html" title=" " alt="" coords="68,343,275,368"/>
 <area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="181,295,177,329,171,329,175,295"/>

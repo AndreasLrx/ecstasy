@@ -1,19 +1,19 @@
 <map id="src/util/serialization/toml/TomlConversion.hpp" name="src/util/serialization/toml/TomlConversion.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="220,5,412,45"/>
-<area shape="rect" id="Node000002" href="$_toml_array_node_8cpp.html" title=" " alt="" coords="5,269,192,309"/>
+<area shape="rect" id="Node000001" title="Toml conversion interface." alt="" coords="220,5,412,45"/>
+<area shape="rect" id="Node000002" href="$_toml_array_node_8cpp.html" title="Toml array node implementation." alt="" coords="5,269,192,309"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,41,155,61,132,76,113,95,100,115,92,138,86,186,89,232,96,268,91,269,84,233,80,186,86,136,95,113,109,92,129,72,153,56,206,36"/>
-<area shape="rect" id="Node000003" href="$_toml_conversion_8cpp.html" title=" " alt="" coords="123,93,314,133"/>
+<area shape="rect" id="Node000003" href="$_toml_conversion_8cpp.html" title="Toml conversion implementation." alt="" coords="123,93,314,133"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="286,56,242,95,238,91,283,52"/>
-<area shape="rect" id="Node000004" href="$_toml_node_8hpp.html" title=" " alt="" coords="338,93,491,133"/>
+<area shape="rect" id="Node000004" href="$_toml_node_8hpp.html" title="Toml node implementation." alt="" coords="338,93,491,133"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="350,52,395,91,391,95,346,56"/>
-<area shape="rect" id="Node000008" href="$_toml_object_node_8cpp.html" title=" " alt="" coords="455,269,649,309"/>
+<area shape="rect" id="Node000008" href="$_toml_object_node_8cpp.html" title="Toml object node implementation." alt="" coords="455,269,649,309"/>
 <area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="426,45,469,63,506,91,522,112,534,135,550,184,555,232,556,269,551,269,550,232,544,185,530,137,518,115,502,95,466,68,424,49"/>
-<area shape="rect" id="Node000005" href="$_toml_array_node_8hpp.html" title=" " alt="" coords="114,181,302,221"/>
+<area shape="rect" id="Node000005" href="$_toml_array_node_8hpp.html" title="Toml array node." alt="" coords="114,181,302,221"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="358,141,254,184,252,179,356,136"/>
-<area shape="rect" id="Node000007" href="$_toml_object_node_8hpp.html" title=" " alt="" coords="327,181,521,221"/>
+<area shape="rect" id="Node000007" href="$_toml_object_node_8hpp.html" title="Toml object node declaration." alt="" coords="327,181,521,221"/>
 <area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="421,147,425,181,419,181,416,147"/>
 <area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="175,232,125,271,121,267,171,228"/>
-<area shape="rect" id="Node000006" href="$_toml_node_factory_8cpp.html" title=" " alt="" coords="228,269,425,309"/>
+<area shape="rect" id="Node000006" href="$_toml_node_factory_8cpp.html" title="Toml node factory implementation." alt="" coords="228,269,425,309"/>
 <area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="247,227,302,267,299,271,244,232"/>
 <area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="394,232,350,271,346,267,391,228"/>
 <area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="465,227,525,267,522,271,462,232"/>

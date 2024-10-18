@@ -135,12 +135,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac86395a80adac282dcda40e537c0799f"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceutil_1_1serialization.html#a3235dfc13252d0b7eacdb86bc1e09a2c">NodeView</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#ac86395a80adac282dcda40e537c0799f">get</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> key)=0</td></tr>
 <tr class="memdesc:ac86395a80adac282dcda40e537c0799f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the node matching <code>key</code> if existing.  <br /></td></tr>
 <tr class="separator:ac86395a80adac282dcda40e537c0799f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab8e5420332c77336590ab11f6e09bc4"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceutil_1_1serialization.html#a0205346f475e840cdce95f716689825c">NodeCView</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#aab8e5420332c77336590ab11f6e09bc4">tryGet</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> key) const =0</td></tr>
-<tr class="memdesc:aab8e5420332c77336590ab11f6e09bc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the node matching <code>key</code>.  <br /></td></tr>
-<tr class="separator:aab8e5420332c77336590ab11f6e09bc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cc40473f309dc275497dbf14b3ad5e4"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceutil_1_1serialization.html#a3235dfc13252d0b7eacdb86bc1e09a2c">NodeView</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#a6cc40473f309dc275497dbf14b3ad5e4">tryGet</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> key)=0</td></tr>
-<tr class="memdesc:a6cc40473f309dc275497dbf14b3ad5e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the node matching <code>key</code>.  <br /></td></tr>
-<tr class="separator:a6cc40473f309dc275497dbf14b3ad5e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4b20acc7664756fe83058c5462b4d3f"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceutil_1_1serialization.html#a0205346f475e840cdce95f716689825c">NodeCView</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#ab4b20acc7664756fe83058c5462b4d3f">tryGet</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> key) const noexcept=0</td></tr>
+<tr class="memdesc:ab4b20acc7664756fe83058c5462b4d3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the node matching <code>key</code>.  <br /></td></tr>
+<tr class="separator:ab4b20acc7664756fe83058c5462b4d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeffee64bd2130ade60b84fcc3a9fa73c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceutil_1_1serialization.html#a3235dfc13252d0b7eacdb86bc1e09a2c">NodeView</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#aeffee64bd2130ade60b84fcc3a9fa73c">tryGet</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> key) noexcept=0</td></tr>
+<tr class="memdesc:aeffee64bd2130ade60b84fcc3a9fa73c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the node matching <code>key</code>.  <br /></td></tr>
+<tr class="separator:aeffee64bd2130ade60b84fcc3a9fa73c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a724cdffe49d76eab0ab72afad8634b8a"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#a724cdffe49d76eab0ab72afad8634b8a">insert</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> key, const <a class="el" href="classutil_1_1serialization_1_1_i_node.html">INode</a> &amp;value)=0</td></tr>
 <tr class="memdesc:a724cdffe49d76eab0ab72afad8634b8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to insert a new node at <code>key</code>.  <br /></td></tr>
 <tr class="separator:a724cdffe49d76eab0ab72afad8634b8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -153,33 +153,33 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab3badeaa8e52e7101d453fe6285e9f8c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#ab3badeaa8e52e7101d453fe6285e9f8c">clear</a> ()=0</td></tr>
 <tr class="memdesc:ab3badeaa8e52e7101d453fe6285e9f8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all the internal nodes.  <br /></td></tr>
 <tr class="separator:ab3badeaa8e52e7101d453fe6285e9f8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a890092ce386c5496b8b9726faf4d0e08"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#a890092ce386c5496b8b9726faf4d0e08">empty</a> () const =0</td></tr>
-<tr class="memdesc:a890092ce386c5496b8b9726faf4d0e08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the object is empty.  <br /></td></tr>
-<tr class="separator:a890092ce386c5496b8b9726faf4d0e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a155e9db1be0dcef088261fa72ae69da9"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#a155e9db1be0dcef088261fa72ae69da9">size</a> () const =0</td></tr>
-<tr class="memdesc:a155e9db1be0dcef088261fa72ae69da9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of node in <code>this</code>.  <br /></td></tr>
-<tr class="separator:a155e9db1be0dcef088261fa72ae69da9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d69176df5bcf83f2af99b810c3d7365"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#a9d69176df5bcf83f2af99b810c3d7365">contains</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> key) const =0</td></tr>
-<tr class="memdesc:a9d69176df5bcf83f2af99b810c3d7365"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if <code>key</code> match a node.  <br /></td></tr>
-<tr class="separator:a9d69176df5bcf83f2af99b810c3d7365"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0ca72ba28cd67dbf1816048b5732c7e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#a978e1fa1722a1cf927ceb2efb2f18cf3">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#ad0ca72ba28cd67dbf1816048b5732c7e">cbegin</a> () const =0</td></tr>
-<tr class="memdesc:ad0ca72ba28cd67dbf1816048b5732c7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the start iterator of the internal nodes.  <br /></td></tr>
-<tr class="separator:ad0ca72ba28cd67dbf1816048b5732c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a864e58c37793efdb59312df339b12a55"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#a978e1fa1722a1cf927ceb2efb2f18cf3">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#a864e58c37793efdb59312df339b12a55">begin</a> () const =0</td></tr>
-<tr class="memdesc:a864e58c37793efdb59312df339b12a55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the start iterator of the internal nodes.    <br /></td></tr>
-<tr class="separator:a864e58c37793efdb59312df339b12a55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8005cb9571fd5f1286460b933d3ec879"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#ab7721734f0127cadd367bd6762740fc6">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#a8005cb9571fd5f1286460b933d3ec879">begin</a> ()=0</td></tr>
-<tr class="memdesc:a8005cb9571fd5f1286460b933d3ec879"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the start iterator of the internal nodes.  <br /></td></tr>
-<tr class="separator:a8005cb9571fd5f1286460b933d3ec879"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a253f807d5d7a93d3a1d2e9c298d98b10"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#a978e1fa1722a1cf927ceb2efb2f18cf3">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#a253f807d5d7a93d3a1d2e9c298d98b10">cend</a> () const =0</td></tr>
-<tr class="memdesc:a253f807d5d7a93d3a1d2e9c298d98b10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the end iterator of the internal nodes.  <br /></td></tr>
-<tr class="separator:a253f807d5d7a93d3a1d2e9c298d98b10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe50497edf9d4175d8b249b84d83ffe8"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#a978e1fa1722a1cf927ceb2efb2f18cf3">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#afe50497edf9d4175d8b249b84d83ffe8">end</a> () const =0</td></tr>
-<tr class="memdesc:afe50497edf9d4175d8b249b84d83ffe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the end iterator of the internal nodes.    <br /></td></tr>
-<tr class="separator:afe50497edf9d4175d8b249b84d83ffe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24777ed78a8f293a58b82f7282769448"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#ab7721734f0127cadd367bd6762740fc6">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#a24777ed78a8f293a58b82f7282769448">end</a> ()=0</td></tr>
-<tr class="memdesc:a24777ed78a8f293a58b82f7282769448"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the end iterator of the internal nodes.  <br /></td></tr>
-<tr class="separator:a24777ed78a8f293a58b82f7282769448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab499dd0cda14d45071f753f1e40eb40e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#ab499dd0cda14d45071f753f1e40eb40e">empty</a> () const noexcept=0</td></tr>
+<tr class="memdesc:ab499dd0cda14d45071f753f1e40eb40e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the object is empty.  <br /></td></tr>
+<tr class="separator:ab499dd0cda14d45071f753f1e40eb40e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa07b627404269ae1b32639b4c3b07080"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#aa07b627404269ae1b32639b4c3b07080">size</a> () const noexcept=0</td></tr>
+<tr class="memdesc:aa07b627404269ae1b32639b4c3b07080"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of node in <code>this</code>.  <br /></td></tr>
+<tr class="separator:aa07b627404269ae1b32639b4c3b07080"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62e6d9fce074787665f819b88adac073"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#a62e6d9fce074787665f819b88adac073">contains</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> key) const noexcept=0</td></tr>
+<tr class="memdesc:a62e6d9fce074787665f819b88adac073"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if <code>key</code> match a node.  <br /></td></tr>
+<tr class="separator:a62e6d9fce074787665f819b88adac073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36ad8e0e85c170b17b7e4db84c73e8db"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#a978e1fa1722a1cf927ceb2efb2f18cf3">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#a36ad8e0e85c170b17b7e4db84c73e8db">cbegin</a> () const noexcept=0</td></tr>
+<tr class="memdesc:a36ad8e0e85c170b17b7e4db84c73e8db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the start iterator of the internal nodes.  <br /></td></tr>
+<tr class="separator:a36ad8e0e85c170b17b7e4db84c73e8db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00d8f423be8815cd61ccfba0b41aaa4d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#a978e1fa1722a1cf927ceb2efb2f18cf3">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#a00d8f423be8815cd61ccfba0b41aaa4d">begin</a> () const noexcept=0</td></tr>
+<tr class="memdesc:a00d8f423be8815cd61ccfba0b41aaa4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the start iterator of the internal nodes.    <br /></td></tr>
+<tr class="separator:a00d8f423be8815cd61ccfba0b41aaa4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a400a86244770e5e5e732423cf0258aef"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#ab7721734f0127cadd367bd6762740fc6">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#a400a86244770e5e5e732423cf0258aef">begin</a> () noexcept=0</td></tr>
+<tr class="memdesc:a400a86244770e5e5e732423cf0258aef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the start iterator of the internal nodes.  <br /></td></tr>
+<tr class="separator:a400a86244770e5e5e732423cf0258aef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace5ec7fc37260c254922bf516f4a12ea"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#a978e1fa1722a1cf927ceb2efb2f18cf3">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#ace5ec7fc37260c254922bf516f4a12ea">cend</a> () const noexcept=0</td></tr>
+<tr class="memdesc:ace5ec7fc37260c254922bf516f4a12ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the end iterator of the internal nodes.  <br /></td></tr>
+<tr class="separator:ace5ec7fc37260c254922bf516f4a12ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afba845aa1b3323d369c8714b3de13a93"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#a978e1fa1722a1cf927ceb2efb2f18cf3">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#afba845aa1b3323d369c8714b3de13a93">end</a> () const noexcept=0</td></tr>
+<tr class="memdesc:afba845aa1b3323d369c8714b3de13a93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the end iterator of the internal nodes.    <br /></td></tr>
+<tr class="separator:afba845aa1b3323d369c8714b3de13a93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a127c96898a0dcd713a987f7fa51e3ca2"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#ab7721734f0127cadd367bd6762740fc6">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_object_node.html#a127c96898a0dcd713a987f7fa51e3ca2">end</a> () noexcept=0</td></tr>
+<tr class="memdesc:a127c96898a0dcd713a987f7fa51e3ca2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the end iterator of the internal nodes.  <br /></td></tr>
+<tr class="separator:a127c96898a0dcd713a987f7fa51e3ca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-types" name="pro-types"></a>
 Protected Types</h2></td></tr>
@@ -297,8 +297,8 @@ template&lt;bool isConst&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a864e58c37793efdb59312df339b12a55" name="a864e58c37793efdb59312df339b12a55"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a864e58c37793efdb59312df339b12a55">&#9670;&#160;</a></span>begin() <span class="overload">[1/2]</span></h2>
+<a id="a00d8f423be8815cd61ccfba0b41aaa4d" name="a00d8f423be8815cd61ccfba0b41aaa4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00d8f423be8815cd61ccfba0b41aaa4d">&#9670;&#160;</a></span>begin() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -315,7 +315,7 @@ template&lt;bool isConst&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -325,12 +325,12 @@ template&lt;bool isConst&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08)   </dd></dl>
 
-<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_object_node.html#af28fe9eb625c83e9fe1d58ed47314d0c">util::serialization::TomlObjectNode</a>.</p>
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_object_node.html#aef78cb45780990850e82eb6833230f92">util::serialization::TomlObjectNode</a>.</p>
 
 </div>
 </div>
-<a id="a8005cb9571fd5f1286460b933d3ec879" name="a8005cb9571fd5f1286460b933d3ec879"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8005cb9571fd5f1286460b933d3ec879">&#9670;&#160;</a></span>begin() <span class="overload">[2/2]</span></h2>
+<a id="a400a86244770e5e5e732423cf0258aef" name="a400a86244770e5e5e732423cf0258aef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a400a86244770e5e5e732423cf0258aef">&#9670;&#160;</a></span>begin() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -347,7 +347,7 @@ template&lt;bool isConst&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -357,12 +357,12 @@ template&lt;bool isConst&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
 
-<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_object_node.html#a9663007fa03103fd07169340f496c624">util::serialization::TomlObjectNode</a>.</p>
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_object_node.html#a14dd8c8429d8fd2ea3100ce06a7a527e">util::serialization::TomlObjectNode</a>.</p>
 
 </div>
 </div>
-<a id="ad0ca72ba28cd67dbf1816048b5732c7e" name="ad0ca72ba28cd67dbf1816048b5732c7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0ca72ba28cd67dbf1816048b5732c7e">&#9670;&#160;</a></span>cbegin()</h2>
+<a id="a36ad8e0e85c170b17b7e4db84c73e8db" name="a36ad8e0e85c170b17b7e4db84c73e8db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36ad8e0e85c170b17b7e4db84c73e8db">&#9670;&#160;</a></span>cbegin()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -379,7 +379,7 @@ template&lt;bool isConst&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -389,12 +389,12 @@ template&lt;bool isConst&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
 
-<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_object_node.html#addae91aedbfec61d08edb208a4bac106">util::serialization::TomlObjectNode</a>.</p>
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_object_node.html#a1f501b45e7390b535685991958dd9a21">util::serialization::TomlObjectNode</a>.</p>
 
 </div>
 </div>
-<a id="a253f807d5d7a93d3a1d2e9c298d98b10" name="a253f807d5d7a93d3a1d2e9c298d98b10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a253f807d5d7a93d3a1d2e9c298d98b10">&#9670;&#160;</a></span>cend()</h2>
+<a id="ace5ec7fc37260c254922bf516f4a12ea" name="ace5ec7fc37260c254922bf516f4a12ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace5ec7fc37260c254922bf516f4a12ea">&#9670;&#160;</a></span>cend()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -411,7 +411,7 @@ template&lt;bool isConst&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -422,7 +422,7 @@ template&lt;bool isConst&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
 
-<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_object_node.html#a171c2340bd9aff8a57de39d9f283df82">util::serialization::TomlObjectNode</a>.</p>
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_object_node.html#ae4065d2c1d51c005bbdf84ab62cc49f2">util::serialization::TomlObjectNode</a>.</p>
 
 </div>
 </div>
@@ -453,12 +453,12 @@ template&lt;bool isConst&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
 
-<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_object_node.html#a946ca0a3ba3aea1e9590d7e9764ffd23">util::serialization::TomlObjectNode</a>.</p>
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_object_node.html#a5b40db042eb4b9472dfe1a051bdb9b7d">util::serialization::TomlObjectNode</a>.</p>
 
 </div>
 </div>
-<a id="a9d69176df5bcf83f2af99b810c3d7365" name="a9d69176df5bcf83f2af99b810c3d7365"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d69176df5bcf83f2af99b810c3d7365">&#9670;&#160;</a></span>contains()</h2>
+<a id="a62e6d9fce074787665f819b88adac073" name="a62e6d9fce074787665f819b88adac073"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62e6d9fce074787665f819b88adac073">&#9670;&#160;</a></span>contains()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -476,7 +476,7 @@ template&lt;bool isConst&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -492,12 +492,12 @@ template&lt;bool isConst&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
 
-<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_object_node.html#a7af7eb6549082d14cffcdb14bbf4f74d">util::serialization::TomlObjectNode</a>.</p>
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_object_node.html#a86e49accbb138e5c70696a1f6eec9a6d">util::serialization::TomlObjectNode</a>.</p>
 
 </div>
 </div>
-<a id="a890092ce386c5496b8b9726faf4d0e08" name="a890092ce386c5496b8b9726faf4d0e08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a890092ce386c5496b8b9726faf4d0e08">&#9670;&#160;</a></span>empty()</h2>
+<a id="ab499dd0cda14d45071f753f1e40eb40e" name="ab499dd0cda14d45071f753f1e40eb40e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab499dd0cda14d45071f753f1e40eb40e">&#9670;&#160;</a></span>empty()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -514,7 +514,7 @@ template&lt;bool isConst&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -524,12 +524,12 @@ template&lt;bool isConst&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
 
-<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_object_node.html#a4e7278b9574b12a60b1d250f255a2453">util::serialization::TomlObjectNode</a>.</p>
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_object_node.html#a985a255b5a71248cc2d810c4add9eeea">util::serialization::TomlObjectNode</a>.</p>
 
 </div>
 </div>
-<a id="afe50497edf9d4175d8b249b84d83ffe8" name="afe50497edf9d4175d8b249b84d83ffe8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe50497edf9d4175d8b249b84d83ffe8">&#9670;&#160;</a></span>end() <span class="overload">[1/2]</span></h2>
+<a id="afba845aa1b3323d369c8714b3de13a93" name="afba845aa1b3323d369c8714b3de13a93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afba845aa1b3323d369c8714b3de13a93">&#9670;&#160;</a></span>end() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -546,7 +546,7 @@ template&lt;bool isConst&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -557,12 +557,12 @@ template&lt;bool isConst&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08)   </dd></dl>
 
-<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_object_node.html#a4f75e42eb99984c84ab690601e1c9ed8">util::serialization::TomlObjectNode</a>.</p>
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_object_node.html#a1f5ec6089e44cd060489f96ad6e99ee2">util::serialization::TomlObjectNode</a>.</p>
 
 </div>
 </div>
-<a id="a24777ed78a8f293a58b82f7282769448" name="a24777ed78a8f293a58b82f7282769448"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24777ed78a8f293a58b82f7282769448">&#9670;&#160;</a></span>end() <span class="overload">[2/2]</span></h2>
+<a id="a127c96898a0dcd713a987f7fa51e3ca2" name="a127c96898a0dcd713a987f7fa51e3ca2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a127c96898a0dcd713a987f7fa51e3ca2">&#9670;&#160;</a></span>end() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -579,7 +579,7 @@ template&lt;bool isConst&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -590,7 +590,7 @@ template&lt;bool isConst&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
 
-<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_object_node.html#a50d00d5528618132bbf35de7b6c50004">util::serialization::TomlObjectNode</a>.</p>
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_object_node.html#ace1f7ac2296883b3b38eb4aebf544500">util::serialization::TomlObjectNode</a>.</p>
 
 </div>
 </div>
@@ -823,8 +823,8 @@ template&lt;bool isConst&gt; </div>
 
 </div>
 </div>
-<a id="a155e9db1be0dcef088261fa72ae69da9" name="a155e9db1be0dcef088261fa72ae69da9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a155e9db1be0dcef088261fa72ae69da9">&#9670;&#160;</a></span>size()</h2>
+<a id="aa07b627404269ae1b32639b4c3b07080" name="aa07b627404269ae1b32639b4c3b07080"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa07b627404269ae1b32639b4c3b07080">&#9670;&#160;</a></span>size()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -841,7 +841,7 @@ template&lt;bool isConst&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -851,12 +851,12 @@ template&lt;bool isConst&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
 
-<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_object_node.html#a44956905e3c64b7014b6f71afb18769b">util::serialization::TomlObjectNode</a>.</p>
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_object_node.html#ada8579b018f67a7fbbcf6279b7f4d620">util::serialization::TomlObjectNode</a>.</p>
 
 </div>
 </div>
-<a id="aab8e5420332c77336590ab11f6e09bc4" name="aab8e5420332c77336590ab11f6e09bc4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab8e5420332c77336590ab11f6e09bc4">&#9670;&#160;</a></span>tryGet() <span class="overload">[1/2]</span></h2>
+<a id="ab4b20acc7664756fe83058c5462b4d3f" name="ab4b20acc7664756fe83058c5462b4d3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4b20acc7664756fe83058c5462b4d3f">&#9670;&#160;</a></span>tryGet() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -874,7 +874,7 @@ template&lt;bool isConst&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -890,12 +890,12 @@ template&lt;bool isConst&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
 
-<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_object_node.html#a5eba29c5faa3336c2b0f5c9bef2aa810">util::serialization::TomlObjectNode</a>.</p>
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_object_node.html#afb25c310b1eaab5b019de219ecf36afa">util::serialization::TomlObjectNode</a>.</p>
 
 </div>
 </div>
-<a id="a6cc40473f309dc275497dbf14b3ad5e4" name="a6cc40473f309dc275497dbf14b3ad5e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cc40473f309dc275497dbf14b3ad5e4">&#9670;&#160;</a></span>tryGet() <span class="overload">[2/2]</span></h2>
+<a id="aeffee64bd2130ade60b84fcc3a9fa73c" name="aeffee64bd2130ade60b84fcc3a9fa73c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeffee64bd2130ade60b84fcc3a9fa73c">&#9670;&#160;</a></span>tryGet() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -913,7 +913,7 @@ template&lt;bool isConst&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -929,7 +929,7 @@ template&lt;bool isConst&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-08) </dd></dl>
 
-<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_object_node.html#a4755aa3eb34ac55657bc19e10524705f">util::serialization::TomlObjectNode</a>.</p>
+<p>Implemented in <a class="el" href="classutil_1_1serialization_1_1_toml_object_node.html#abccc09a7daf3291447205ef54ea5c479">util::serialization::TomlObjectNode</a>.</p>
 
 </div>
 </div>

@@ -98,13 +98,16 @@ $(document).ready(function(){initNavTree('classecstasy_1_1query_1_1_query.html',
 </div><!--header-->
 <div class="contents">
 
+<p>More high-level query class, wrapping the <a class="el" href="classecstasy_1_1query_1_1_query_implementation.html">QueryImplementation</a>.  
+ <a href="classecstasy_1_1query_1_1_query.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_query_8hpp_source.html">Query.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ecstasy::query::Query&lt; First, Others &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classecstasy_1_1query_1_1_query__inherit__graph.png" border="0" usemap="#aecstasy_1_1query_1_1_query_3_01_first_00_01_others_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="aecstasy_1_1query_1_1_query_3_01_first_00_01_others_01_4_inherit__map" id="aecstasy_1_1query_1_1_query_3_01_first_00_01_others_01_4_inherit__map">
-<area shape="rect" title=" " alt="" coords="320,13,483,53"/>
+<area shape="rect" title="More high&#45;level query class, wrapping the QueryImplementation." alt="" coords="320,13,483,53"/>
 <area shape="rect" href="classecstasy_1_1query_1_1_query_implementation.html" title=" " alt="" coords="5,5,272,60"/>
 <area shape="poly" title=" " alt="" coords="286,30,320,30,320,35,286,35"/>
 </map>
@@ -114,7 +117,7 @@ Collaboration diagram for ecstasy::query::Query&lt; First, Others &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classecstasy_1_1query_1_1_query__coll__graph.png" border="0" usemap="#aecstasy_1_1query_1_1_query_3_01_first_00_01_others_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="aecstasy_1_1query_1_1_query_3_01_first_00_01_others_01_4_coll__map" id="aecstasy_1_1query_1_1_query_3_01_first_00_01_others_01_4_coll__map">
-<area shape="rect" title=" " alt="" coords="320,13,483,53"/>
+<area shape="rect" title="More high&#45;level query class, wrapping the QueryImplementation." alt="" coords="320,13,483,53"/>
 <area shape="rect" href="classecstasy_1_1query_1_1_query_implementation.html" title=" " alt="" coords="5,5,272,60"/>
 <area shape="poly" title=" " alt="" coords="286,30,320,30,320,35,286,35"/>
 </map>
@@ -123,14 +126,26 @@ Collaboration diagram for ecstasy::query::Query&lt; First, Others &gt;:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a52bb4fb2e4913e5a967ef75ab016d617"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1_query.html#a52bb4fb2e4913e5a967ef75ab016d617">Query</a> (<a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a> &amp;mask, const <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt; First &amp;, Others &amp;... &gt; &amp;storages)</td></tr>
+<tr class="memdesc:a52bb4fb2e4913e5a967ef75ab016d617"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classecstasy_1_1query_1_1_query.html" title="More high-level query class, wrapping the QueryImplementation.">Query</a> from a bitmask already computed and a storages list.  <br /></td></tr>
 <tr class="separator:a52bb4fb2e4913e5a967ef75ab016d617"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8457437cef47fa5f5999edd5179bf4b2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1_query.html#a8457437cef47fa5f5999edd5179bf4b2">Query</a> (First &amp;first, Others &amp;...others)</td></tr>
+<tr class="memdesc:a8457437cef47fa5f5999edd5179bf4b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classecstasy_1_1query_1_1_query.html" title="More high-level query class, wrapping the QueryImplementation.">Query</a> from a list of storages.  <br /></td></tr>
 <tr class="separator:a8457437cef47fa5f5999edd5179bf4b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;Queryable First, Queryable... Others&gt;<br />
-class ecstasy::query::Query&lt; First, Others &gt;</div>
-<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00502">502</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
+class ecstasy::query::Query&lt; First, Others &gt;</div><p>More high-level query class, wrapping the <a class="el" href="classecstasy_1_1query_1_1_query_implementation.html">QueryImplementation</a>. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">First</td><td>First queryable type. </td></tr>
+    <tr><td class="paramname">Others</td><td>All other queryable types.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-17) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00602">602</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a52bb4fb2e4913e5a967ef75ab016d617" name="a52bb4fb2e4913e5a967ef75ab016d617"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a52bb4fb2e4913e5a967ef75ab016d617">&#9670;&#160;</a></span>Query() <span class="overload">[1/2]</span></h2>
@@ -168,10 +183,21 @@ template&lt;Queryable First, Queryable... Others&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00504">504</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  505</span>            : QueryImplementation&lt;<a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt;First, Others...&gt;, <a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits&lt;&gt;</a>&gt;(mask, storages)</div>
-<div class="line"><span class="lineno">  506</span>        {</div>
-<div class="line"><span class="lineno">  507</span>        }</div>
+<p>Construct a new <a class="el" href="classecstasy_1_1query_1_1_query.html" title="More high-level query class, wrapping the QueryImplementation.">Query</a> from a bitmask already computed and a storages list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mask</td><td>mask matching a precomputed query. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">storages</td><td>storages containing requested data.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-17) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00613">613</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  614</span>            : QueryImplementation&lt;<a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt;First, Others...&gt;, <a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits&lt;&gt;</a>&gt;(mask, storages)</div>
+<div class="line"><span class="lineno">  615</span>        {</div>
+<div class="line"><span class="lineno">  616</span>        }</div>
 <div class="ttc" id="astructutil_1_1meta_1_1_traits_html"><div class="ttname"><a href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a></div><div class="ttdoc">Empty parameter pack helper type.</div><div class="ttdef"><b>Definition</b> <a href="_traits_8hpp_source.html#l00028">Traits.hpp:28</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -212,11 +238,23 @@ template&lt;Queryable First, Queryable... Others&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00509">509</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  510</span>            : QueryImplementation&lt;<a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt;First, Others...&gt;, <a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits&lt;&gt;</a>&gt;(</div>
-<div class="line"><span class="lineno">  511</span>                first, std::forward&lt;Others &amp;&gt;(others)...)</div>
-<div class="line"><span class="lineno">  512</span>        {</div>
-<div class="line"><span class="lineno">  513</span>        }</div>
+<p>Construct a new <a class="el" href="classecstasy_1_1query_1_1_query.html" title="More high-level query class, wrapping the QueryImplementation.">Query</a> from a list of storages. </p>
+<p>The mask is computed from the storages.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">first</td><td>First storage. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">others</td><td>All other storages.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-17) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00627">627</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  628</span>            : QueryImplementation&lt;<a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt;First, Others...&gt;, <a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits&lt;&gt;</a>&gt;(</div>
+<div class="line"><span class="lineno">  629</span>                first, std::forward&lt;Others &amp;&gt;(others)...)</div>
+<div class="line"><span class="lineno">  630</span>        {</div>
+<div class="line"><span class="lineno">  631</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -202,7 +202,7 @@ requires <a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_fundam
 <tr class="memdesc:ad3d3c27cd32c7d67be7cd28a49e57ffb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the current value in the json document, and move the cursor to the next value.  <br /></td></tr>
 <tr class="separator:ad3d3c27cd32c7d67be7cd28a49e57ffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a662bbbc0c648f722f3e0340383801fad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html">JsonSerializer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html#a662bbbc0c648f722f3e0340383801fad">newNested</a> (rapidjson::Type type, bool create=true)</td></tr>
-<tr class="memdesc:a662bbbc0c648f722f3e0340383801fad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open a new nested object or array context in the current object (see <a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html#a8affecd1cf028e7f386e80a860ab9479">getWriteCursor</a>).  <br /></td></tr>
+<tr class="memdesc:a662bbbc0c648f722f3e0340383801fad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open a new nested object or array context in the current object (see <a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html#a820a9ede8c8086e03efe96944c57ae24">getWriteCursor</a>).  <br /></td></tr>
 <tr class="separator:a662bbbc0c648f722f3e0340383801fad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa547aaae001ffd4805c20963a31ea057"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html">JsonSerializer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html#aa547aaae001ffd4805c20963a31ea057">newNestedObject</a> (bool create=true)</td></tr>
 <tr class="memdesc:aa547aaae001ffd4805c20963a31ea057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for newNested(rapidjson::Type::kObjectType).  <br /></td></tr>
@@ -213,9 +213,9 @@ requires <a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_fundam
 <tr class="memitem:a645d2cea924297652f1c3540096823f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html">JsonSerializer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html#a645d2cea924297652f1c3540096823f9">closeNested</a> ()</td></tr>
 <tr class="memdesc:a645d2cea924297652f1c3540096823f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the current nested object or array opened with <a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html#aa547aaae001ffd4805c20963a31ea057">newNestedObject</a> or <a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html#a44151a379910585133e14aae13ee7b6d">newNestedArray</a> (or <a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html#a662bbbc0c648f722f3e0340383801fad">newNested</a>).  <br /></td></tr>
 <tr class="separator:a645d2cea924297652f1c3540096823f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8affecd1cf028e7f386e80a860ab9479"><td class="memItemLeft" align="right" valign="top">rapidjson::Value &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html#a8affecd1cf028e7f386e80a860ab9479">getWriteCursor</a> ()</td></tr>
-<tr class="memdesc:a8affecd1cf028e7f386e80a860ab9479"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a reference to the current cursor (ie nested objects or arrays).  <br /></td></tr>
-<tr class="separator:a8affecd1cf028e7f386e80a860ab9479"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a820a9ede8c8086e03efe96944c57ae24"><td class="memItemLeft" align="right" valign="top">rapidjson::Value &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html#a820a9ede8c8086e03efe96944c57ae24">getWriteCursor</a> () noexcept</td></tr>
+<tr class="memdesc:a820a9ede8c8086e03efe96944c57ae24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a reference to the current cursor (ie nested objects or arrays).  <br /></td></tr>
+<tr class="separator:a820a9ede8c8086e03efe96944c57ae24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93d3b28aa60d18b9d992d49692e29282"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html">JsonSerializer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html#a93d3b28aa60d18b9d992d49692e29282">addValue</a> (rapidjson::Value &amp;&amp;value)</td></tr>
 <tr class="memdesc:a93d3b28aa60d18b9d992d49692e29282"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a value to the current object or array.  <br /></td></tr>
 <tr class="separator:a93d3b28aa60d18b9d992d49692e29282"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -332,14 +332,19 @@ Private Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a08facc227b8d1c90bcd2b690d4ce0d27"><td class="memItemLeft" align="right" valign="top">rapidjson::Document&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html#a08facc227b8d1c90bcd2b690d4ce0d27">_document</a></td></tr>
+<tr class="memdesc:a08facc227b8d1c90bcd2b690d4ce0d27"><td class="mdescLeft">&#160;</td><td class="mdescRight">RapidJson document.  <br /></td></tr>
 <tr class="separator:a08facc227b8d1c90bcd2b690d4ce0d27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43f919e9b8281c73a1245eea9e365c68"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/stack.html">std::stack</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html">std::reference_wrapper</a>&lt; rapidjson::Value &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html#a43f919e9b8281c73a1245eea9e365c68">_stack</a></td></tr>
+<tr class="memdesc:a43f919e9b8281c73a1245eea9e365c68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stack of nested objects or arrays, to keep track of the current context.  <br /></td></tr>
 <tr class="separator:a43f919e9b8281c73a1245eea9e365c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad329628bfe2c48c2e837088a6cffc807"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/stack.html">std::stack</a>&lt; rapidjson::Value::ValueIterator &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html#ad329628bfe2c48c2e837088a6cffc807">_arrayIterators</a></td></tr>
+<tr class="memdesc:ad329628bfe2c48c2e837088a6cffc807"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stack of array iterators, to keep track of the current array element.  <br /></td></tr>
 <tr class="separator:ad329628bfe2c48c2e837088a6cffc807"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad25e8f9c9a5127dda2259fa1cce929ca"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/stack.html">std::stack</a>&lt; rapidjson::Value::MemberIterator &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html#ad25e8f9c9a5127dda2259fa1cce929ca">_objectIterators</a></td></tr>
+<tr class="memdesc:ad25e8f9c9a5127dda2259fa1cce929ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stack of object iterators, to keep track of the current object element.  <br /></td></tr>
 <tr class="separator:ad25e8f9c9a5127dda2259fa1cce929ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c3b21bda813bd35f91bea01f154fa93"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html#a2c3b21bda813bd35f91bea01f154fa93">_nextKey</a></td></tr>
+<tr class="memdesc:a2c3b21bda813bd35f91bea01f154fa93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Next key to use for the next object value.  <br /></td></tr>
 <tr class="separator:a2c3b21bda813bd35f91bea01f154fa93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
@@ -468,7 +473,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   67</span>        {</div>
 <div class="line"><span class="lineno">   68</span>            <a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#a08facc227b8d1c90bcd2b690d4ce0d27">_document</a>.SetArray();</div>
 <div class="line"><span class="lineno">   69</span>        };</div>
-<div class="ttc" id="aclassecstasy_1_1serialization_1_1_json_serializer_html_a08facc227b8d1c90bcd2b690d4ce0d27"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_json_serializer.html#a08facc227b8d1c90bcd2b690d4ce0d27">ecstasy::serialization::JsonSerializer::_document</a></div><div class="ttdeci">rapidjson::Document _document</div><div class="ttdef"><b>Definition</b> <a href="_json_serializer_8hpp_source.html#l00505">JsonSerializer.hpp:505</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1serialization_1_1_json_serializer_html_a08facc227b8d1c90bcd2b690d4ce0d27"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_json_serializer.html#a08facc227b8d1c90bcd2b690d4ce0d27">ecstasy::serialization::JsonSerializer::_document</a></div><div class="ttdeci">rapidjson::Document _document</div><div class="ttdoc">RapidJson document.</div><div class="ttdef"><b>Definition</b> <a href="_json_serializer_8hpp_source.html#l00506">JsonSerializer.hpp:506</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -666,7 +671,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_json_serializer_8hpp_source.html#l00483">483</a> of file <a class="el" href="_json_serializer_8hpp_source.html">JsonSerializer.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  484</span>        {</div>
-<div class="line"><span class="lineno">  485</span>            rapidjson::Value &amp;cursor = <a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a8affecd1cf028e7f386e80a860ab9479">getWriteCursor</a>();</div>
+<div class="line"><span class="lineno">  485</span>            rapidjson::Value &amp;cursor = <a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a820a9ede8c8086e03efe96944c57ae24">getWriteCursor</a>();</div>
 <div class="line"><span class="lineno">  486</span> </div>
 <div class="line"><span class="lineno">  487</span>            <span class="keywordflow">if</span> (cursor.IsObject()) {</div>
 <div class="line"><span class="lineno">  488</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#a2c3b21bda813bd35f91bea01f154fa93">_nextKey</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/string/basic_string/empty.html">empty</a>()) {</div>
@@ -685,8 +690,8 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">  501</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><span class="lineno">  502</span>        }</div>
 <div class="ttc" id="ac_str_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string/c_str.html">std::string::c_str</a></div><div class="ttdeci">T c_str(T... args)</div></div>
-<div class="ttc" id="aclassecstasy_1_1serialization_1_1_json_serializer_html_a2c3b21bda813bd35f91bea01f154fa93"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_json_serializer.html#a2c3b21bda813bd35f91bea01f154fa93">ecstasy::serialization::JsonSerializer::_nextKey</a></div><div class="ttdeci">std::string _nextKey</div><div class="ttdef"><b>Definition</b> <a href="_json_serializer_8hpp_source.html#l00509">JsonSerializer.hpp:509</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1serialization_1_1_json_serializer_html_a8affecd1cf028e7f386e80a860ab9479"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_json_serializer.html#a8affecd1cf028e7f386e80a860ab9479">ecstasy::serialization::JsonSerializer::getWriteCursor</a></div><div class="ttdeci">rapidjson::Value &amp; getWriteCursor()</div><div class="ttdoc">Get a reference to the current cursor (ie nested objects or arrays).</div><div class="ttdef"><b>Definition</b> <a href="_json_serializer_8hpp_source.html#l00463">JsonSerializer.hpp:463</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1serialization_1_1_json_serializer_html_a2c3b21bda813bd35f91bea01f154fa93"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_json_serializer.html#a2c3b21bda813bd35f91bea01f154fa93">ecstasy::serialization::JsonSerializer::_nextKey</a></div><div class="ttdeci">std::string _nextKey</div><div class="ttdoc">Next key to use for the next object value.</div><div class="ttdef"><b>Definition</b> <a href="_json_serializer_8hpp_source.html#l00514">JsonSerializer.hpp:514</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1serialization_1_1_json_serializer_html_a820a9ede8c8086e03efe96944c57ae24"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_json_serializer.html#a820a9ede8c8086e03efe96944c57ae24">ecstasy::serialization::JsonSerializer::getWriteCursor</a></div><div class="ttdeci">rapidjson::Value &amp; getWriteCursor() noexcept</div><div class="ttdoc">Get a reference to the current cursor (ie nested objects or arrays).</div><div class="ttdef"><b>Definition</b> <a href="_json_serializer_8hpp_source.html#l00463">JsonSerializer.hpp:463</a></div></div>
 <div class="ttc" id="aclear_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string/clear.html">std::string::clear</a></div><div class="ttdeci">T clear(T... args)</div></div>
 <div class="ttc" id="aempty_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string/empty.html">std::string::empty</a></div><div class="ttdeci">T empty(T... args)</div></div>
 <div class="ttc" id="alogic_error_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a></div></div>
@@ -721,11 +726,10 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#aa8ad6f4c995f7185cbbf3b3100550925">ecstasy::serialization::Serializer&lt; JsonSerializer &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_json_serializer_8hpp_source.html#l00535">535</a> of file <a class="el" href="_json_serializer_8hpp_source.html">JsonSerializer.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  536</span>        {</div>
-<div class="line"><span class="lineno">  537</span>            <a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a645d2cea924297652f1c3540096823f9">closeNested</a>();</div>
-<div class="line"><span class="lineno">  538</span>            <span class="keyword">static_cast&lt;</span><span class="keywordtype">void</span><span class="keyword">&gt;</span>(entity);</div>
-<div class="line"><span class="lineno">  539</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_json_serializer_8hpp_source.html#l00539">539</a> of file <a class="el" href="_json_serializer_8hpp_source.html">JsonSerializer.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  540</span>        {</div>
+<div class="line"><span class="lineno">  541</span>            <a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a645d2cea924297652f1c3540096823f9">closeNested</a>();</div>
+<div class="line"><span class="lineno">  542</span>        }</div>
 <div class="ttc" id="aclassecstasy_1_1serialization_1_1_json_serializer_html_a645d2cea924297652f1c3540096823f9"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_json_serializer.html#a645d2cea924297652f1c3540096823f9">ecstasy::serialization::JsonSerializer::closeNested</a></div><div class="ttdeci">JsonSerializer &amp; closeNested()</div><div class="ttdoc">Close the current nested object or array opened with newNestedObject or newNestedArray (or newNested)...</div><div class="ttdef"><b>Definition</b> <a href="_json_serializer_8hpp_source.html#l00447">JsonSerializer.hpp:447</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -758,13 +762,12 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#ab9d6d3733b26f98e5a58b2dc47dbc6d1">ecstasy::serialization::Serializer&lt; JsonSerializer &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_json_serializer_8hpp_source.html#l00550">550</a> of file <a class="el" href="_json_serializer_8hpp_source.html">JsonSerializer.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  551</span>        {</div>
-<div class="line"><span class="lineno">  552</span>            <a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#ad25e8f9c9a5127dda2259fa1cce929ca">_objectIterators</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/stack/pop.html">pop</a>();</div>
-<div class="line"><span class="lineno">  553</span>            <a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a645d2cea924297652f1c3540096823f9">closeNested</a>();</div>
-<div class="line"><span class="lineno">  554</span>            <span class="keyword">static_cast&lt;</span><span class="keywordtype">void</span><span class="keyword">&gt;</span>(entity);</div>
-<div class="line"><span class="lineno">  555</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1serialization_1_1_json_serializer_html_ad25e8f9c9a5127dda2259fa1cce929ca"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_json_serializer.html#ad25e8f9c9a5127dda2259fa1cce929ca">ecstasy::serialization::JsonSerializer::_objectIterators</a></div><div class="ttdeci">std::stack&lt; rapidjson::Value::MemberIterator &gt; _objectIterators</div><div class="ttdef"><b>Definition</b> <a href="_json_serializer_8hpp_source.html#l00508">JsonSerializer.hpp:508</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_json_serializer_8hpp_source.html#l00552">552</a> of file <a class="el" href="_json_serializer_8hpp_source.html">JsonSerializer.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  553</span>        {</div>
+<div class="line"><span class="lineno">  554</span>            <a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#ad25e8f9c9a5127dda2259fa1cce929ca">_objectIterators</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/stack/pop.html">pop</a>();</div>
+<div class="line"><span class="lineno">  555</span>            <a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a645d2cea924297652f1c3540096823f9">closeNested</a>();</div>
+<div class="line"><span class="lineno">  556</span>        }</div>
+<div class="ttc" id="aclassecstasy_1_1serialization_1_1_json_serializer_html_ad25e8f9c9a5127dda2259fa1cce929ca"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_json_serializer.html#ad25e8f9c9a5127dda2259fa1cce929ca">ecstasy::serialization::JsonSerializer::_objectIterators</a></div><div class="ttdeci">std::stack&lt; rapidjson::Value::MemberIterator &gt; _objectIterators</div><div class="ttdoc">Stack of object iterators, to keep track of the current object element.</div><div class="ttdef"><b>Definition</b> <a href="_json_serializer_8hpp_source.html#l00512">JsonSerializer.hpp:512</a></div></div>
 <div class="ttc" id="apop_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/stack/pop.html">std::stack::pop</a></div><div class="ttdeci">T pop(T... args)</div></div>
 </div><!-- fragment -->
 </div>
@@ -797,11 +800,10 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#a1fedfc0b212483c7b2539bf7b4f71f64">ecstasy::serialization::Serializer&lt; JsonSerializer &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_json_serializer_8hpp_source.html#l00528">528</a> of file <a class="el" href="_json_serializer_8hpp_source.html">JsonSerializer.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  529</span>        {</div>
-<div class="line"><span class="lineno">  530</span>            <a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#aa547aaae001ffd4805c20963a31ea057">newNestedObject</a>();</div>
-<div class="line"><span class="lineno">  531</span>            <span class="keyword">static_cast&lt;</span><span class="keywordtype">void</span><span class="keyword">&gt;</span>(entity);</div>
-<div class="line"><span class="lineno">  532</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_json_serializer_8hpp_source.html#l00533">533</a> of file <a class="el" href="_json_serializer_8hpp_source.html">JsonSerializer.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  534</span>        {</div>
+<div class="line"><span class="lineno">  535</span>            <a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#aa547aaae001ffd4805c20963a31ea057">newNestedObject</a>();</div>
+<div class="line"><span class="lineno">  536</span>        }</div>
 <div class="ttc" id="aclassecstasy_1_1serialization_1_1_json_serializer_html_aa547aaae001ffd4805c20963a31ea057"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_json_serializer.html#aa547aaae001ffd4805c20963a31ea057">ecstasy::serialization::JsonSerializer::newNestedObject</a></div><div class="ttdeci">JsonSerializer &amp; newNestedObject(bool create=true)</div><div class="ttdoc">Wrapper for newNested(rapidjson::Type::kObjectType).</div><div class="ttdef"><b>Definition</b> <a href="_json_serializer_8hpp_source.html#l00420">JsonSerializer.hpp:420</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -834,12 +836,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#a19fbf21d44578630c3e004c60b94255b">ecstasy::serialization::Serializer&lt; JsonSerializer &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_json_serializer_8hpp_source.html#l00542">542</a> of file <a class="el" href="_json_serializer_8hpp_source.html">JsonSerializer.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  543</span>        {</div>
-<div class="line"><span class="lineno">  544</span>            <a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#aa547aaae001ffd4805c20963a31ea057">newNestedObject</a>(<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  545</span>            <a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#ad25e8f9c9a5127dda2259fa1cce929ca">_objectIterators</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/stack/push.html">push</a>(<a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a8affecd1cf028e7f386e80a860ab9479">getWriteCursor</a>().MemberBegin());</div>
-<div class="line"><span class="lineno">  546</span>            <span class="keyword">static_cast&lt;</span><span class="keywordtype">void</span><span class="keyword">&gt;</span>(entity);</div>
-<div class="line"><span class="lineno">  547</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_json_serializer_8hpp_source.html#l00545">545</a> of file <a class="el" href="_json_serializer_8hpp_source.html">JsonSerializer.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  546</span>        {</div>
+<div class="line"><span class="lineno">  547</span>            <a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#aa547aaae001ffd4805c20963a31ea057">newNestedObject</a>(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  548</span>            <a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#ad25e8f9c9a5127dda2259fa1cce929ca">_objectIterators</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/stack/push.html">push</a>(<a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a820a9ede8c8086e03efe96944c57ae24">getWriteCursor</a>().MemberBegin());</div>
+<div class="line"><span class="lineno">  549</span>        }</div>
 <div class="ttc" id="apush_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/stack/push.html">std::stack::push</a></div><div class="ttdeci">T push(T... args)</div></div>
 </div><!-- fragment -->
 </div>
@@ -916,8 +917,8 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">  451</span>            <a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#a43f919e9b8281c73a1245eea9e365c68">_stack</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/stack/pop.html">pop</a>();</div>
 <div class="line"><span class="lineno">  452</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><span class="lineno">  453</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1serialization_1_1_json_serializer_html_a43f919e9b8281c73a1245eea9e365c68"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_json_serializer.html#a43f919e9b8281c73a1245eea9e365c68">ecstasy::serialization::JsonSerializer::_stack</a></div><div class="ttdeci">std::stack&lt; std::reference_wrapper&lt; rapidjson::Value &gt; &gt; _stack</div><div class="ttdef"><b>Definition</b> <a href="_json_serializer_8hpp_source.html#l00506">JsonSerializer.hpp:506</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1serialization_1_1_json_serializer_html_ad329628bfe2c48c2e837088a6cffc807"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_json_serializer.html#ad329628bfe2c48c2e837088a6cffc807">ecstasy::serialization::JsonSerializer::_arrayIterators</a></div><div class="ttdeci">std::stack&lt; rapidjson::Value::ValueIterator &gt; _arrayIterators</div><div class="ttdef"><b>Definition</b> <a href="_json_serializer_8hpp_source.html#l00507">JsonSerializer.hpp:507</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1serialization_1_1_json_serializer_html_a43f919e9b8281c73a1245eea9e365c68"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_json_serializer.html#a43f919e9b8281c73a1245eea9e365c68">ecstasy::serialization::JsonSerializer::_stack</a></div><div class="ttdeci">std::stack&lt; std::reference_wrapper&lt; rapidjson::Value &gt; &gt; _stack</div><div class="ttdoc">Stack of nested objects or arrays, to keep track of the current context.</div><div class="ttdef"><b>Definition</b> <a href="_json_serializer_8hpp_source.html#l00508">JsonSerializer.hpp:508</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1serialization_1_1_json_serializer_html_ad329628bfe2c48c2e837088a6cffc807"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_json_serializer.html#ad329628bfe2c48c2e837088a6cffc807">ecstasy::serialization::JsonSerializer::_arrayIterators</a></div><div class="ttdeci">std::stack&lt; rapidjson::Value::ValueIterator &gt; _arrayIterators</div><div class="ttdoc">Stack of array iterators, to keep track of the current array element.</div><div class="ttdef"><b>Definition</b> <a href="_json_serializer_8hpp_source.html#l00510">JsonSerializer.hpp:510</a></div></div>
 <div class="ttc" id="atop_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/stack/top.html">std::stack::top</a></div><div class="ttdeci">T top(T... args)</div></div>
 </div><!-- fragment -->
 </div>
@@ -968,8 +969,8 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a8affecd1cf028e7f386e80a860ab9479" name="a8affecd1cf028e7f386e80a860ab9479"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8affecd1cf028e7f386e80a860ab9479">&#9670;&#160;</a></span>getWriteCursor()</h2>
+<a id="a820a9ede8c8086e03efe96944c57ae24" name="a820a9ede8c8086e03efe96944c57ae24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a820a9ede8c8086e03efe96944c57ae24">&#9670;&#160;</a></span>getWriteCursor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -986,7 +987,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1080,22 +1081,22 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#af303b248dcf74b5246addee61542d776">ecstasy::serialization::Serializer&lt; JsonSerializer &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_json_serializer_8hpp_source.html#l00512">512</a> of file <a class="el" href="_json_serializer_8hpp_source.html">JsonSerializer.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  513</span>        {</div>
-<div class="line"><span class="lineno">  514</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a8affecd1cf028e7f386e80a860ab9479">getWriteCursor</a>().IsObject()) {</div>
-<div class="line"><span class="lineno">  515</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#ad25e8f9c9a5127dda2259fa1cce929ca">_objectIterators</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/stack/empty.html">empty</a>())</div>
-<div class="line"><span class="lineno">  516</span>                    <span class="keywordflow">throw</span> <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a>(</div>
-<div class="line"><span class="lineno">  517</span>                        <span class="stringliteral">&quot;No object iterator. This function should be called in an updateEntity context.&quot;</span>);</div>
-<div class="line"><span class="lineno">  518</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#ad25e8f9c9a5127dda2259fa1cce929ca">_objectIterators</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/stack/top.html">top</a>() == <a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a8affecd1cf028e7f386e80a860ab9479">getWriteCursor</a>().MemberEnd())</div>
-<div class="line"><span class="lineno">  519</span>                    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  520</span>                <a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#a2c3b21bda813bd35f91bea01f154fa93">_nextKey</a> = <a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#ad25e8f9c9a5127dda2259fa1cce929ca">_objectIterators</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/stack/top.html">top</a>()-&gt;name.GetString();</div>
-<div class="line"><span class="lineno">  521</span>                ++<a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#ad25e8f9c9a5127dda2259fa1cce929ca">_objectIterators</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/stack/top.html">top</a>();</div>
-<div class="line"><span class="lineno">  522</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="classecstasy_1_1serialization_1_1_serializer.html#aca94f6f9b9cb592461b7e197b1bd80c8">getEntityComponentSerializer</a>(<a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#a2c3b21bda813bd35f91bea01f154fa93">_nextKey</a>).<a class="code hl_function" href="classecstasy_1_1serialization_1_1_i_entity_component_serializer.html#a7b2fc1dfec1568eca920af88c94ce576">getComponentTypeInfo</a>().<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/types/type_info/hash_code.html">hash_code</a>();</div>
-<div class="line"><span class="lineno">  523</span>            } <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  524</span>                <span class="keywordflow">return</span> load&lt;std::size_t&gt;();</div>
-<div class="line"><span class="lineno">  525</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1serialization_1_1_i_entity_component_serializer_html_a7b2fc1dfec1568eca920af88c94ce576"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_i_entity_component_serializer.html#a7b2fc1dfec1568eca920af88c94ce576">ecstasy::serialization::IEntityComponentSerializer::getComponentTypeInfo</a></div><div class="ttdeci">virtual const std::type_info &amp; getComponentTypeInfo() const =0</div><div class="ttdoc">Get the type info of the component.</div></div>
-<div class="ttc" id="aclassecstasy_1_1serialization_1_1_serializer_html_aca94f6f9b9cb592461b7e197b1bd80c8"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_serializer.html#aca94f6f9b9cb592461b7e197b1bd80c8">ecstasy::serialization::Serializer&lt; JsonSerializer &gt;::getEntityComponentSerializer</a></div><div class="ttdeci">static IEntityComponentSerializer &amp; getEntityComponentSerializer(std::size_t hash)</div><div class="ttdoc">Get the Entity Component Serializer for a component type.</div><div class="ttdef"><b>Definition</b> <a href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00437">Serializer.hpp:437</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_json_serializer_8hpp_source.html#l00517">517</a> of file <a class="el" href="_json_serializer_8hpp_source.html">JsonSerializer.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  518</span>        {</div>
+<div class="line"><span class="lineno">  519</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a820a9ede8c8086e03efe96944c57ae24">getWriteCursor</a>().IsObject()) {</div>
+<div class="line"><span class="lineno">  520</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#ad25e8f9c9a5127dda2259fa1cce929ca">_objectIterators</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/stack/empty.html">empty</a>())</div>
+<div class="line"><span class="lineno">  521</span>                    <span class="keywordflow">throw</span> <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a>(</div>
+<div class="line"><span class="lineno">  522</span>                        <span class="stringliteral">&quot;No object iterator. This function should be called in an updateEntity context.&quot;</span>);</div>
+<div class="line"><span class="lineno">  523</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#ad25e8f9c9a5127dda2259fa1cce929ca">_objectIterators</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/stack/top.html">top</a>() == <a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a820a9ede8c8086e03efe96944c57ae24">getWriteCursor</a>().MemberEnd())</div>
+<div class="line"><span class="lineno">  524</span>                    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  525</span>                <a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#a2c3b21bda813bd35f91bea01f154fa93">_nextKey</a> = <a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#ad25e8f9c9a5127dda2259fa1cce929ca">_objectIterators</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/stack/top.html">top</a>()-&gt;name.GetString();</div>
+<div class="line"><span class="lineno">  526</span>                ++<a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#ad25e8f9c9a5127dda2259fa1cce929ca">_objectIterators</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/stack/top.html">top</a>();</div>
+<div class="line"><span class="lineno">  527</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="classecstasy_1_1serialization_1_1_serializer.html#aca94f6f9b9cb592461b7e197b1bd80c8">getEntityComponentSerializer</a>(<a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#a2c3b21bda813bd35f91bea01f154fa93">_nextKey</a>).<a class="code hl_function" href="classecstasy_1_1serialization_1_1_i_entity_component_serializer.html#a0e4e03b71abd2a249b1ccde1d37fd7e8">getComponentTypeInfo</a>().<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/types/type_info/hash_code.html">hash_code</a>();</div>
+<div class="line"><span class="lineno">  528</span>            } <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  529</span>                <span class="keywordflow">return</span> load&lt;std::size_t&gt;();</div>
+<div class="line"><span class="lineno">  530</span>        }</div>
+<div class="ttc" id="aclassecstasy_1_1serialization_1_1_i_entity_component_serializer_html_a0e4e03b71abd2a249b1ccde1d37fd7e8"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_i_entity_component_serializer.html#a0e4e03b71abd2a249b1ccde1d37fd7e8">ecstasy::serialization::IEntityComponentSerializer::getComponentTypeInfo</a></div><div class="ttdeci">virtual const std::type_info &amp; getComponentTypeInfo() const noexcept=0</div><div class="ttdoc">Get the type info of the component.</div></div>
+<div class="ttc" id="aclassecstasy_1_1serialization_1_1_serializer_html_aca94f6f9b9cb592461b7e197b1bd80c8"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_serializer.html#aca94f6f9b9cb592461b7e197b1bd80c8">ecstasy::serialization::Serializer&lt; JsonSerializer &gt;::getEntityComponentSerializer</a></div><div class="ttdeci">static IEntityComponentSerializer &amp; getEntityComponentSerializer(std::size_t hash)</div><div class="ttdoc">Get the Entity Component Serializer for a component type.</div><div class="ttdef"><b>Definition</b> <a href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00439">Serializer.hpp:439</a></div></div>
 <div class="ttc" id="ahash_code_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/types/type_info/hash_code.html">std::type_info::hash_code</a></div><div class="ttdeci">T hash_code(T... args)</div></div>
 </div><!-- fragment -->
 </div>
@@ -1212,7 +1213,7 @@ requires <a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_fundam
 </table>
 </div><div class="memdoc">
 
-<p>Open a new nested object or array context in the current object (see <a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html#a8affecd1cf028e7f386e80a860ab9479">getWriteCursor</a>). </p>
+<p>Open a new nested object or array context in the current object (see <a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html#a820a9ede8c8086e03efe96944c57ae24">getWriteCursor</a>). </p>
 <p>The context can be closed with <a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html#a645d2cea924297652f1c3540096823f9">closeNested</a>.</p>
 <dl class="section warning"><dt>Warning</dt><dd>If the context is an object you must set a key before adding a value to it.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -1232,7 +1233,7 @@ requires <a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_fundam
 <div class="line"><span class="lineno">  393</span>                <span class="keywordflow">throw</span> <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/error/invalid_argument.html">std::invalid_argument</a>(<span class="stringliteral">&quot;Invalid type for nested object.&quot;</span>);</div>
 <div class="line"><span class="lineno">  394</span> </div>
 <div class="line"><span class="lineno">  395</span>            <span class="keywordflow">if</span> (create) {</div>
-<div class="line"><span class="lineno">  396</span>                rapidjson::Value &amp;cursor = <a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a8affecd1cf028e7f386e80a860ab9479">getWriteCursor</a>();</div>
+<div class="line"><span class="lineno">  396</span>                rapidjson::Value &amp;cursor = <a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a820a9ede8c8086e03efe96944c57ae24">getWriteCursor</a>();</div>
 <div class="line"><span class="lineno">  397</span>                <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> key = <a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#a2c3b21bda813bd35f91bea01f154fa93">_nextKey</a>;</div>
 <div class="line"><span class="lineno">  398</span> </div>
 <div class="line"><span class="lineno">  399</span>                <a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a93d3b28aa60d18b9d992d49692e29282">addValue</a>(rapidjson::Value(type));</div>
@@ -1242,8 +1243,8 @@ requires <a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_fundam
 <div class="line"><span class="lineno">  403</span>                    <a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#a43f919e9b8281c73a1245eea9e365c68">_stack</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/stack/push.html">push</a>(cursor[key.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/string/basic_string/c_str.html">c_str</a>()]);</div>
 <div class="line"><span class="lineno">  404</span>            } <span class="keywordflow">else</span> {</div>
 <div class="line"><span class="lineno">  405</span>                <a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#a43f919e9b8281c73a1245eea9e365c68">_stack</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/stack/push.html">push</a>(<a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#ad3d3c27cd32c7d67be7cd28a49e57ffb">readCurrentValue</a>());</div>
-<div class="line"><span class="lineno">  406</span>                <span class="keywordflow">if</span> (<a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a8affecd1cf028e7f386e80a860ab9479">getWriteCursor</a>().IsArray())</div>
-<div class="line"><span class="lineno">  407</span>                    <a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#ad329628bfe2c48c2e837088a6cffc807">_arrayIterators</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/stack/push.html">push</a>(<a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a8affecd1cf028e7f386e80a860ab9479">getWriteCursor</a>().Begin());</div>
+<div class="line"><span class="lineno">  406</span>                <span class="keywordflow">if</span> (<a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a820a9ede8c8086e03efe96944c57ae24">getWriteCursor</a>().IsArray())</div>
+<div class="line"><span class="lineno">  407</span>                    <a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#ad329628bfe2c48c2e837088a6cffc807">_arrayIterators</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/stack/push.html">push</a>(<a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a820a9ede8c8086e03efe96944c57ae24">getWriteCursor</a>().Begin());</div>
 <div class="line"><span class="lineno">  408</span>            }</div>
 <div class="line"><span class="lineno">  409</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><span class="lineno">  410</span>        }</div>
@@ -1362,7 +1363,7 @@ requires <a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_fundam
 
 <p class="definition">Definition at line <a class="el" href="_json_serializer_8hpp_source.html#l00345">345</a> of file <a class="el" href="_json_serializer_8hpp_source.html">JsonSerializer.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  346</span>        {</div>
-<div class="line"><span class="lineno">  347</span>            rapidjson::Value &amp;cursor = <a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a8affecd1cf028e7f386e80a860ab9479">getWriteCursor</a>();</div>
+<div class="line"><span class="lineno">  347</span>            rapidjson::Value &amp;cursor = <a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a820a9ede8c8086e03efe96944c57ae24">getWriteCursor</a>();</div>
 <div class="line"><span class="lineno">  348</span> </div>
 <div class="line"><span class="lineno">  349</span>            <span class="keywordflow">if</span> (cursor.IsObject()) {</div>
 <div class="line"><span class="lineno">  350</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#a2c3b21bda813bd35f91bea01f154fa93">_nextKey</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/string/basic_string/empty.html">empty</a>())</div>
@@ -1509,7 +1510,7 @@ template&lt;typename T , typename  = typename std::enable_if&lt;                
 <div class="line"><span class="lineno">  206</span>                    array.PushBack(elem, <a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#a08facc227b8d1c90bcd2b690d4ce0d27">_document</a>.GetAllocator());</div>
 <div class="line"><span class="lineno">  207</span>                <a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a93d3b28aa60d18b9d992d49692e29282">addValue</a>(std::move(array.Move()));</div>
 <div class="line"><span class="lineno">  208</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;T, std::type_info&gt;) {</div>
-<div class="line"><span class="lineno">  209</span>                <span class="keywordflow">if</span> (<a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a8affecd1cf028e7f386e80a860ab9479">getWriteCursor</a>().IsObject()) {</div>
+<div class="line"><span class="lineno">  209</span>                <span class="keywordflow">if</span> (<a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a820a9ede8c8086e03efe96944c57ae24">getWriteCursor</a>().IsObject()) {</div>
 <div class="line"><span class="lineno">  210</span>                    <span class="comment">// Use name if the type is registered</span></div>
 <div class="line"><span class="lineno">  211</span>                    <span class="keyword">auto</span> componentSerializer = <a class="code hl_function" href="classecstasy_1_1serialization_1_1_serializer.html#ac17fa9262d24a8d7ddd2545d55d8817c">tryGetEntityComponentSerializer</a>(<span class="keywordtype">object</span>.hash_code());</div>
 <div class="line"><span class="lineno">  212</span> </div>
@@ -1531,7 +1532,7 @@ template&lt;typename T , typename  = typename std::enable_if&lt;                
 <div class="ttc" id="aclassecstasy_1_1serialization_1_1_json_serializer_html_a53d8fe0f0f166ff6c0a9b14a080df232a64acde787a1bc9ccb5afe23faebdd559"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_json_serializer.html#a53d8fe0f0f166ff6c0a9b14a080df232a64acde787a1bc9ccb5afe23faebdd559">ecstasy::serialization::JsonSerializer::NestedContextOp::NewObject</a></div><div class="ttdeci">@ NewObject</div><div class="ttdoc">Open a new object (Creating it in save mode)</div></div>
 <div class="ttc" id="aclassecstasy_1_1serialization_1_1_json_serializer_html_a53d8fe0f0f166ff6c0a9b14a080df232ad3d2e617335f08df83599665eef8a418"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_json_serializer.html#a53d8fe0f0f166ff6c0a9b14a080df232ad3d2e617335f08df83599665eef8a418">ecstasy::serialization::JsonSerializer::NestedContextOp::Close</a></div><div class="ttdeci">@ Close</div><div class="ttdoc">Close the current object or array.</div></div>
 <div class="ttc" id="aclassecstasy_1_1serialization_1_1_serializer_html_a4c418f96a2d5a800c66c8f20e1450475"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_serializer.html#a4c418f96a2d5a800c66c8f20e1450475">ecstasy::serialization::Serializer&lt; JsonSerializer &gt;::save</a></div><div class="ttdeci">JsonSerializer &amp; save(const U &amp;object)</div><div class="ttdoc">Save an object to the serializer.</div><div class="ttdef"><b>Definition</b> <a href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00162">Serializer.hpp:162</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1serialization_1_1_serializer_html_ac17fa9262d24a8d7ddd2545d55d8817c"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_serializer.html#ac17fa9262d24a8d7ddd2545d55d8817c">ecstasy::serialization::Serializer&lt; JsonSerializer &gt;::tryGetEntityComponentSerializer</a></div><div class="ttdeci">static std::optional&lt; std::reference_wrapper&lt; IEntityComponentSerializer &gt; &gt; tryGetEntityComponentSerializer(std::size_t hash)</div><div class="ttdoc">Try to get the Entity Component Serializer for a component type.</div><div class="ttdef"><b>Definition</b> <a href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00453">Serializer.hpp:453</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1serialization_1_1_serializer_html_ac17fa9262d24a8d7ddd2545d55d8817c"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_serializer.html#ac17fa9262d24a8d7ddd2545d55d8817c">ecstasy::serialization::Serializer&lt; JsonSerializer &gt;::tryGetEntityComponentSerializer</a></div><div class="ttdeci">static std::optional&lt; std::reference_wrapper&lt; IEntityComponentSerializer &gt; &gt; tryGetEntityComponentSerializer(std::size_t hash)</div><div class="ttdoc">Try to get the Entity Component Serializer for a component type.</div><div class="ttdef"><b>Definition</b> <a href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00456">Serializer.hpp:456</a></div></div>
 <div class="ttc" id="astructutil_1_1meta_1_1is__std__vector_html"><div class="ttname"><a href="structutil_1_1meta_1_1is__std__vector.html">util::meta::is_std_vector</a></div><div class="ttdoc">Check if a type is a std::vector.</div><div class="ttdef"><b>Definition</b> <a href="is__std__vector_8hpp_source.html#l00029">is_std_vector.hpp:29</a></div></div>
 <div class="ttc" id="ato_string_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string/to_string.html">std::to_string</a></div><div class="ttdeci">T to_string(T... args)</div></div>
 </div><!-- fragment -->
@@ -1682,7 +1683,7 @@ template&lt;typename U , typename  = typename std::enable_if&lt;(               
 <div class="line"><span class="lineno">  251</span>            <span class="comment">// Handle string key for object values</span></div>
 <div class="line"><span class="lineno">  252</span>            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;U, std::string&gt; || std::is_same_v&lt;U, std::string_view&gt;</div>
 <div class="line"><span class="lineno">  253</span>                || util::meta::is_type_bounded_array_v&lt;U, char&gt;) {</div>
-<div class="line"><span class="lineno">  254</span>                <span class="keywordflow">if</span> (<a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a8affecd1cf028e7f386e80a860ab9479">getWriteCursor</a>().IsObject() &amp;&amp; <a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#a2c3b21bda813bd35f91bea01f154fa93">_nextKey</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/string/basic_string/empty.html">empty</a>())</div>
+<div class="line"><span class="lineno">  254</span>                <span class="keywordflow">if</span> (<a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a820a9ede8c8086e03efe96944c57ae24">getWriteCursor</a>().IsObject() &amp;&amp; <a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#a2c3b21bda813bd35f91bea01f154fa93">_nextKey</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/string/basic_string/empty.html">empty</a>())</div>
 <div class="line"><span class="lineno">  255</span>                    <a class="code hl_variable" href="classecstasy_1_1serialization_1_1_json_serializer.html#a2c3b21bda813bd35f91bea01f154fa93">_nextKey</a> = <span class="keywordtype">object</span>;</div>
 <div class="line"><span class="lineno">  256</span>                <span class="keywordflow">else</span> {</div>
 <div class="line"><span class="lineno">  257</span>                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;U, std::string&gt;)</div>
@@ -1696,7 +1697,7 @@ template&lt;typename U , typename  = typename std::enable_if&lt;(               
 <div class="line"><span class="lineno">  265</span>                <a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a44151a379910585133e14aae13ee7b6d">newNestedArray</a>(<span class="keyword">false</span>);</div>
 <div class="line"><span class="lineno">  266</span> </div>
 <div class="line"><span class="lineno">  267</span>                <span class="comment">// Need to fetch the new cursor after the new nested array</span></div>
-<div class="line"><span class="lineno">  268</span>                <span class="keywordflow">if</span> (<a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a8affecd1cf028e7f386e80a860ab9479">getWriteCursor</a>().Size() != std::extent_v&lt;U&gt;)</div>
+<div class="line"><span class="lineno">  268</span>                <span class="keywordflow">if</span> (<a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a820a9ede8c8086e03efe96944c57ae24">getWriteCursor</a>().Size() != std::extent_v&lt;U&gt;)</div>
 <div class="line"><span class="lineno">  269</span>                    <span class="keywordflow">throw</span> <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/error/invalid_argument.html">std::invalid_argument</a>(<span class="stringliteral">&quot;Array size mismatch.&quot;</span>);</div>
 <div class="line"><span class="lineno">  270</span> </div>
 <div class="line"><span class="lineno">  271</span>                <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; std::extent_v&lt;U&gt;; i++)</div>
@@ -1706,7 +1707,7 @@ template&lt;typename U , typename  = typename std::enable_if&lt;(               
 <div class="line"><span class="lineno">  275</span>            <span class="comment">// Handle std::vector</span></div>
 <div class="line"><span class="lineno">  276</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_struct" href="structutil_1_1meta_1_1is__std__vector.html">util::meta::is_std_vector&lt;U&gt;::value</a>) {</div>
 <div class="line"><span class="lineno">  277</span>                <a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a44151a379910585133e14aae13ee7b6d">newNestedArray</a>(<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  278</span>                rapidjson::SizeType <a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#aee8547586688d3ff49d38e649b4b8759">size</a> = <a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a8affecd1cf028e7f386e80a860ab9479">getWriteCursor</a>().Size();</div>
+<div class="line"><span class="lineno">  278</span>                rapidjson::SizeType <a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#aee8547586688d3ff49d38e649b4b8759">size</a> = <a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#a820a9ede8c8086e03efe96944c57ae24">getWriteCursor</a>().Size();</div>
 <div class="line"><span class="lineno">  279</span> </div>
 <div class="line"><span class="lineno">  280</span>                <span class="keywordtype">object</span>.clear();</div>
 <div class="line"><span class="lineno">  281</span>                <span class="keywordtype">object</span>.reserve(<a class="code hl_function" href="classecstasy_1_1serialization_1_1_json_serializer.html#aee8547586688d3ff49d38e649b4b8759">size</a>);</div>
@@ -1747,7 +1748,9 @@ template&lt;typename U , typename  = typename std::enable_if&lt;(               
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_json_serializer_8hpp_source.html#l00507">507</a> of file <a class="el" href="_json_serializer_8hpp_source.html">JsonSerializer.hpp</a>.</p>
+<p>Stack of array iterators, to keep track of the current array element. </p>
+
+<p class="definition">Definition at line <a class="el" href="_json_serializer_8hpp_source.html#l00510">510</a> of file <a class="el" href="_json_serializer_8hpp_source.html">JsonSerializer.hpp</a>.</p>
 
 </div>
 </div>
@@ -1771,7 +1774,9 @@ template&lt;typename U , typename  = typename std::enable_if&lt;(               
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_json_serializer_8hpp_source.html#l00505">505</a> of file <a class="el" href="_json_serializer_8hpp_source.html">JsonSerializer.hpp</a>.</p>
+<p>RapidJson document. </p>
+
+<p class="definition">Definition at line <a class="el" href="_json_serializer_8hpp_source.html#l00506">506</a> of file <a class="el" href="_json_serializer_8hpp_source.html">JsonSerializer.hpp</a>.</p>
 
 </div>
 </div>
@@ -1795,7 +1800,9 @@ template&lt;typename U , typename  = typename std::enable_if&lt;(               
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_json_serializer_8hpp_source.html#l00509">509</a> of file <a class="el" href="_json_serializer_8hpp_source.html">JsonSerializer.hpp</a>.</p>
+<p>Next key to use for the next object value. </p>
+
+<p class="definition">Definition at line <a class="el" href="_json_serializer_8hpp_source.html#l00514">514</a> of file <a class="el" href="_json_serializer_8hpp_source.html">JsonSerializer.hpp</a>.</p>
 
 </div>
 </div>
@@ -1819,7 +1826,9 @@ template&lt;typename U , typename  = typename std::enable_if&lt;(               
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_json_serializer_8hpp_source.html#l00508">508</a> of file <a class="el" href="_json_serializer_8hpp_source.html">JsonSerializer.hpp</a>.</p>
+<p>Stack of object iterators, to keep track of the current object element. </p>
+
+<p class="definition">Definition at line <a class="el" href="_json_serializer_8hpp_source.html#l00512">512</a> of file <a class="el" href="_json_serializer_8hpp_source.html">JsonSerializer.hpp</a>.</p>
 
 </div>
 </div>
@@ -1843,7 +1852,9 @@ template&lt;typename U , typename  = typename std::enable_if&lt;(               
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_json_serializer_8hpp_source.html#l00506">506</a> of file <a class="el" href="_json_serializer_8hpp_source.html">JsonSerializer.hpp</a>.</p>
+<p>Stack of nested objects or arrays, to keep track of the current context. </p>
+
+<p class="definition">Definition at line <a class="el" href="_json_serializer_8hpp_source.html#l00508">508</a> of file <a class="el" href="_json_serializer_8hpp_source.html">JsonSerializer.hpp</a>.</p>
 
 </div>
 </div>

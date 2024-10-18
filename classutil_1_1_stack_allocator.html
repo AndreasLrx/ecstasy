@@ -130,9 +130,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a70f8ede04d0858fc004dca0b70e2a979"><td class="memTemplItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classutil_1_1_stack_allocator.html#a70f8ede04d0858fc004dca0b70e2a979">instanciate</a> (Args &amp;&amp;...args)</td></tr>
 <tr class="memdesc:a70f8ede04d0858fc004dca0b70e2a979"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instanciate a new instance of type T with lifetime attached to <b>this</b> lifetime.  <br /></td></tr>
 <tr class="separator:a70f8ede04d0858fc004dca0b70e2a979"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6414277c6268ba809e1186e24988011"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; Base * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1_stack_allocator.html#af6414277c6268ba809e1186e24988011">getInstances</a> () const</td></tr>
-<tr class="memdesc:af6414277c6268ba809e1186e24988011"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the internal instances vector.  <br /></td></tr>
-<tr class="separator:af6414277c6268ba809e1186e24988011"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f01f41a29766300c4502e236fa7d4ea"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; Base * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1_stack_allocator.html#a6f01f41a29766300c4502e236fa7d4ea">getInstances</a> () const noexcept</td></tr>
+<tr class="memdesc:a6f01f41a29766300c4502e236fa7d4ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the internal instances vector.  <br /></td></tr>
+<tr class="separator:a6f01f41a29766300c4502e236fa7d4ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -274,8 +274,8 @@ template&lt;size_t size, typename Base &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="af6414277c6268ba809e1186e24988011" name="af6414277c6268ba809e1186e24988011"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6414277c6268ba809e1186e24988011">&#9670;&#160;</a></span>getInstances()</h2>
+<a id="a6f01f41a29766300c4502e236fa7d4ea" name="a6f01f41a29766300c4502e236fa7d4ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f01f41a29766300c4502e236fa7d4ea">&#9670;&#160;</a></span>getInstances()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -294,7 +294,7 @@ template&lt;size_t size, typename Base &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

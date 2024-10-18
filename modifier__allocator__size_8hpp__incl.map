@@ -1,19 +1,19 @@
 <map id="src/ecstasy/registry/concepts/modifier_allocator_size.hpp" name="src/ecstasy/registry/concepts/modifier_allocator_size.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="54,5,261,60"/>
-<area shape="rect" id="Node000002" href="$concepts_2_modifier_8hpp.html" title=" " alt="" coords="118,196,293,236"/>
+<area shape="rect" id="Node000001" title="Get the allocator required size for a list of queryables." alt="" coords="54,5,261,60"/>
+<area shape="rect" id="Node000002" href="$concepts_2_modifier_8hpp.html" title="Contains the concepts for query modifiers." alt="" coords="118,196,293,236"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,59,185,147,196,182,191,183,180,149,160,61"/>
-<area shape="rect" id="Node000003" href="$_queryable_8hpp.html" title=" " alt="" coords="5,291,123,317"/>
+<area shape="rect" id="Node000003" href="$_queryable_8hpp.html" title="Contains the concepts for queryable objects." alt="" coords="5,291,123,317"/>
 <area shape="poly" id="edge9_Node000001_Node000003" title=" " alt="" coords="151,61,75,279,70,277,146,59"/>
-<area shape="rect" id="Node000009" href="$_registry_modifier_8hpp.html" title=" " alt="" coords="195,108,383,148"/>
+<area shape="rect" id="Node000009" href="$_registry_modifier_8hpp.html" title="Defines a RegistryModifier concept." alt="" coords="195,108,383,148"/>
 <area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="196,58,253,98,250,102,193,62"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="176,238,96,287,93,282,173,234"/>
-<area shape="rect" id="Node000008" href="$modifiers_2_modifier_8hpp.html" title=" " alt="" coords="147,284,325,324"/>
+<area shape="rect" id="Node000008" href="$modifiers_2_modifier_8hpp.html" title="Type erased base class for all query modifiers." alt="" coords="147,284,325,324"/>
 <area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="215,235,227,270,222,272,210,237"/>
 <area shape="rect" id="Node000004" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/concepts.html" title=" " alt="" coords="21,519,101,544"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="54,319,35,342,19,373,14,409,21,445,34,478,48,506,44,508,29,481,16,446,9,409,13,371,30,339,50,315"/>
 <area shape="rect" id="Node000005" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/cstddef.html" title=" " alt="" coords="29,372,99,397"/>
 <area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="67,317,67,358,61,358,61,317"/>
-<area shape="rect" id="Node000006" href="$_lockable_view_8hpp.html" title=" " alt="" coords="123,372,362,397"/>
+<area shape="rect" id="Node000006" href="$_lockable_view_8hpp.html" title="Thread safe view of a Lockable object." alt="" coords="123,372,362,397"/>
 <area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="91,314,205,364,203,369,89,319"/>
 <area shape="rect" id="Node000007" href="$_lockable_8hpp.html" title=" " alt="" coords="83,445,290,471"/>
 <area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="236,399,206,436,202,433,231,396"/>

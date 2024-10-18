@@ -99,14 +99,17 @@ $(document).ready(function(){initNavTree('structecstasy_1_1query_1_1_condition_3
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="structecstasy_1_1query_1_1_condition.html" title="Condition resolution structure.">Condition</a> resolution structure for a constant left operand and a member right operand.  
+ <a href="structecstasy_1_1query_1_1_condition_3_01_left_00_01ptr_00_01_comparer_01_4.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ecstasy::query::Condition&lt; Left, ptr, Comparer &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="structecstasy_1_1query_1_1_condition_3_01_left_00_01ptr_00_01_comparer_01_4__inherit__graph.png" border="0" usemap="#aecstasy_1_1query_1_1_condition_3_01_left_00_01ptr_00_01_comparer_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="aecstasy_1_1query_1_1_condition_3_01_left_00_01ptr_00_01_comparer_01_4_inherit__map" id="aecstasy_1_1query_1_1_condition_3_01_left_00_01ptr_00_01_comparer_01_4_inherit__map">
-<area shape="rect" title=" " alt="" coords="21,79,207,119"/>
-<area shape="rect" href="structecstasy_1_1query_1_1_condition_base.html" title=" " alt="" coords="5,5,223,31"/>
+<area shape="rect" title="Condition resolution structure for a constant left operand and a member right operand." alt="" coords="21,79,207,119"/>
+<area shape="rect" href="structecstasy_1_1query_1_1_condition_base.html" title="Base class for all conditions." alt="" coords="5,5,223,31"/>
 <area shape="poly" title=" " alt="" coords="117,44,117,79,111,79,111,44"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -115,8 +118,8 @@ Collaboration diagram for ecstasy::query::Condition&lt; Left, ptr, Comparer &gt;
 <div class="dyncontent">
 <div class="center"><img src="structecstasy_1_1query_1_1_condition_3_01_left_00_01ptr_00_01_comparer_01_4__coll__graph.png" border="0" usemap="#aecstasy_1_1query_1_1_condition_3_01_left_00_01ptr_00_01_comparer_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="aecstasy_1_1query_1_1_condition_3_01_left_00_01ptr_00_01_comparer_01_4_coll__map" id="aecstasy_1_1query_1_1_condition_3_01_left_00_01ptr_00_01_comparer_01_4_coll__map">
-<area shape="rect" title=" " alt="" coords="21,79,207,119"/>
-<area shape="rect" href="structecstasy_1_1query_1_1_condition_base.html" title=" " alt="" coords="5,5,223,31"/>
+<area shape="rect" title="Condition resolution structure for a constant left operand and a member right operand." alt="" coords="21,79,207,119"/>
+<area shape="rect" href="structecstasy_1_1query_1_1_condition_base.html" title="Base class for all conditions." alt="" coords="5,5,223,31"/>
 <area shape="poly" title=" " alt="" coords="117,44,117,79,111,79,111,44"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -131,18 +134,45 @@ Public Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a3c431ca355762332cc2e7622f013b031"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1_condition_3_01_left_00_01ptr_00_01_comparer_01_4.html#a3c431ca355762332cc2e7622f013b031">test</a> (const RightType &amp;right)</td></tr>
+<tr class="memdesc:a3c431ca355762332cc2e7622f013b031"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the condition.  <br /></td></tr>
 <tr class="separator:a3c431ca355762332cc2e7622f013b031"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c431ca355762332cc2e7622f013b031"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1_condition_3_01_left_00_01ptr_00_01_comparer_01_4.html#a3c431ca355762332cc2e7622f013b031">test</a> (const RightType &amp;right)</td></tr>
+<tr class="memdesc:a3c431ca355762332cc2e7622f013b031"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the condition.  <br /></td></tr>
 <tr class="separator:a3c431ca355762332cc2e7622f013b031"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename LeftType, LeftType Left, typename RightType, typename RightValueType, RightValueType RightType::* ptr, typename Comparer&gt;<br />
 requires (!<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_pointer.html">std::is_member_pointer_v</a>&lt;LeftType&gt; &amp;&amp; <a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_object_pointer.html">std::is_member_object_pointer_v</a>&lt;decltype(ptr)&gt;)<br />
-struct ecstasy::query::Condition&lt; Left, ptr, Comparer &gt;</div><dl class="section note"><dt>Note</dt><dd>Const - Member</dd>
-<dd>
-Const - Getter </dd></dl>
+struct ecstasy::query::Condition&lt; Left, ptr, Comparer &gt;</div><p><a class="el" href="structecstasy_1_1query_1_1_condition.html" title="Condition resolution structure.">Condition</a> resolution structure for a constant left operand and a member right operand. </p>
+<p><a class="el" href="structecstasy_1_1query_1_1_condition.html" title="Condition resolution structure.">Condition</a> resolution structure for a constant left operand and a getter right operand.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">LeftType</td><td>Left operand type. </td></tr>
+    <tr><td class="paramname">Left</td><td>Left operand value (const). </td></tr>
+    <tr><td class="paramname">RightType</td><td>Class containing the right operand. </td></tr>
+    <tr><td class="paramname">RightValueType</td><td>Right operand type. </td></tr>
+    <tr><td class="paramname">RightType::*ptr</td><td>Member pointer to the right operand. </td></tr>
+    <tr><td class="paramname">Comparer</td><td>Comparer to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-17)</dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">LeftType</td><td>Left operand type. </td></tr>
+    <tr><td class="paramname">Left</td><td>Left operand value (const). </td></tr>
+    <tr><td class="paramname">RightType</td><td>Class containing the right operand. </td></tr>
+    <tr><td class="paramname">RightValueType</td><td>Right operand type. </td></tr>
+    <tr><td class="paramname">ptr</td><td>Getter pointer to the right operand. </td></tr>
+    <tr><td class="paramname">Comparer</td><td>Comparer to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00046">46</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00100">100</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a12aebc997f7678c72908a82095ef7af3" name="a12aebc997f7678c72908a82095ef7af3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a12aebc997f7678c72908a82095ef7af3">&#9670;&#160;</a></span>Right <span class="overload">[1/2]</span></h2>
@@ -158,7 +188,7 @@ template&lt;typename LeftType , LeftType Left, typename RightType , typename Rig
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00048">48</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00102">102</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
 
 </div>
 </div>
@@ -176,7 +206,7 @@ template&lt;typename LeftType , LeftType Left, typename RightType , typename Rig
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00065">65</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00141">141</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
 
 </div>
 </div>
@@ -207,10 +237,21 @@ template&lt;typename LeftType , LeftType Left, typename RightType , typename Rig
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00050">50</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   51</span>        {</div>
-<div class="line"><span class="lineno">   52</span>            <span class="keywordflow">return</span> Comparer{}(Left, <a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/io/manip/left.html">right</a>.*ptr);</div>
-<div class="line"><span class="lineno">   53</span>        }</div>
+<p>Evaluate the condition. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">right</td><td>Right operand class instance.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool True if the condition is met.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-17) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00114">114</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  115</span>        {</div>
+<div class="line"><span class="lineno">  116</span>            <span class="keywordflow">return</span> Comparer{}(Left, <a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/io/manip/left.html">right</a>.*ptr);</div>
+<div class="line"><span class="lineno">  117</span>        }</div>
 <div class="ttc" id="aleft_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/manip/left.html">std::right</a></div><div class="ttdeci">T right(T... args)</div></div>
 </div><!-- fragment -->
 </div>
@@ -241,10 +282,21 @@ template&lt;typename LeftType , LeftType Left, typename RightType , typename Rig
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00067">67</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   68</span>        {</div>
-<div class="line"><span class="lineno">   69</span>            <span class="keywordflow">return</span> Comparer{}(Left, (<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/io/manip/left.html">right</a>.*ptr)());</div>
-<div class="line"><span class="lineno">   70</span>        }</div>
+<p>Evaluate the condition. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">right</td><td>Right operand class instance.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool True if the condition is met.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-17) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00153">153</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  154</span>        {</div>
+<div class="line"><span class="lineno">  155</span>            <span class="keywordflow">return</span> Comparer{}(Left, (<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/io/manip/left.html">right</a>.*ptr)());</div>
+<div class="line"><span class="lineno">  156</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>

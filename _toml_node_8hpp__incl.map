@@ -1,12 +1,12 @@
 <map id="src/util/serialization/toml/TomlNode.hpp" name="src/util/serialization/toml/TomlNode.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="257,5,410,45"/>
-<area shape="rect" id="Node000002" href="$_toml_conversion_8hpp.html" title=" " alt="" coords="256,101,411,126"/>
+<area shape="rect" id="Node000001" title="Toml node implementation." alt="" coords="257,5,410,45"/>
+<area shape="rect" id="Node000002" href="$_toml_conversion_8hpp.html" title="Toml conversion interface." alt="" coords="256,101,411,126"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="336,46,336,87,331,87,331,46"/>
 <area shape="rect" id="Node000009" title=" " alt="" coords="331,189,451,214"/>
 <area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="375,43,403,64,425,92,431,115,428,138,410,178,405,176,423,136,425,115,420,95,399,68,372,48"/>
-<area shape="rect" id="Node000010" href="$_a_node_8hpp.html" title=" " alt="" coords="105,93,231,133"/>
+<area shape="rect" id="Node000010" href="$_a_node_8hpp.html" title="Abstract node partial implementation." alt="" coords="105,93,231,133"/>
 <area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="298,48,218,89,215,85,296,43"/>
-<area shape="rect" id="Node000003" href="$_i_node_8hpp.html" title=" " alt="" coords="171,181,298,221"/>
+<area shape="rect" id="Node000003" href="$_i_node_8hpp.html" title="Serialization node interface." alt="" coords="171,181,298,221"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="322,128,268,174,265,170,318,124"/>
 <area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="343,125,377,175,373,178,339,128"/>
 <area shape="rect" id="Node000004" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/chrono.html" title=" " alt="" coords="5,269,72,295"/>

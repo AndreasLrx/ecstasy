@@ -143,7 +143,6 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to manage entity deletion safely within an iteration.  <a href="classecstasy_1_1_deletion_stack.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1_empty_type.html">EmptyType</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty type used with no_unique_address attribute to avoid memory overhead.  <a href="structecstasy_1_1_empty_type.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_entities.html">Entities</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1_resource.html" title="Resource class.">Resource</a> holding all the <a class="el" href="classecstasy_1_1_registry.html" title="Base of an ECS architecture.">Registry</a> entities.  <a href="classecstasy_1_1_entities.html#details">More...</a><br /></td></tr>
@@ -290,14 +289,13 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a53c8ca43801107dc959adbdc60810af8"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy.html#a53c8ca43801107dc959adbdc60810af8">queryable_type_t</a> = typename <a class="el" href="structecstasy_1_1queryable__type.html">queryable_type</a>&lt; C &gt;::type</td></tr>
 <tr class="memdesc:a53c8ca43801107dc959adbdc60810af8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to <a class="el" href="structecstasy_1_1queryable__type.html#a88cababc113f9c749d33546c3565a326">queryable_type&lt;C&gt;::type</a>.  <br /></td></tr>
 <tr class="separator:a53c8ca43801107dc959adbdc60810af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a029021666dc5e8cc0db0d817fc54a172"><td class="memTemplParams" colspan="2">template&lt;typename... Qs&gt; </td></tr>
-<tr class="memitem:a029021666dc5e8cc0db0d817fc54a172"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy.html#a029021666dc5e8cc0db0d817fc54a172">StackAllocator</a> = <a class="el" href="classutil_1_1_stack_allocator.html">util::StackAllocator</a>&lt; <a class="el" href="namespaceecstasy.html#ae3d09d8dc606623d5049790980069d46">modifiers_allocator_size_v</a>&lt; Qs... &gt;, <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier_base.html">query::modifier::ModifierBase</a> &gt;</td></tr>
-<tr class="separator:a029021666dc5e8cc0db0d817fc54a172"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a935f8c5172bfb738d9af3f1585f41cad"><td class="memTemplParams" colspan="2">template&lt;typename R , bool AutoLock = thread::AUTO_LOCK_RESOURCES_DEFAULT&gt; </td></tr>
 <tr class="memitem:a935f8c5172bfb738d9af3f1585f41cad"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy.html#a935f8c5172bfb738d9af3f1585f41cad">ResourceReference</a> = <a class="el" href="namespaceecstasy_1_1query.html#a897d7c05813e9c64ab715f1481cc4489">query::thread_safe_reference_t</a>&lt; R, AutoLock &gt;</td></tr>
+<tr class="memdesc:a935f8c5172bfb738d9af3f1585f41cad"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1_resource.html" title="Resource class.">Resource</a> reference type.  <br /></td></tr>
 <tr class="separator:a935f8c5172bfb738d9af3f1585f41cad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04209f7d5ba97ef54c6169c3148e44ed"><td class="memTemplParams" colspan="2">template&lt;typename R , bool AutoLock = thread::AUTO_LOCK_RESOURCES_DEFAULT&gt; </td></tr>
 <tr class="memitem:a04209f7d5ba97ef54c6169c3148e44ed"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy.html#a04209f7d5ba97ef54c6169c3148e44ed">RR</a> = <a class="el" href="namespaceecstasy.html#a935f8c5172bfb738d9af3f1585f41cad">ResourceReference</a>&lt; R, AutoLock &gt;</td></tr>
+<tr class="memdesc:a04209f7d5ba97ef54c6169c3148e44ed"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespaceecstasy.html#a935f8c5172bfb738d9af3f1585f41cad">ResourceReference</a> alias  <br /></td></tr>
 <tr class="separator:a04209f7d5ba97ef54c6169c3148e44ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c011da268733486119ae199f8bb4a04"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
 <tr class="memitem:a2c011da268733486119ae199f8bb4a04"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecstasy.html#a2c011da268733486119ae199f8bb4a04">getStorageType</a> = typename <a class="el" href="structecstasy_1_1get_storage_type_impl.html">getStorageTypeImpl</a>&lt; C &gt;::type</td></tr>
@@ -345,7 +343,7 @@ template&lt;typename T &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-24) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_component_type_8hpp_source.html#l00060">60</a> of file <a class="el" href="_component_type_8hpp_source.html">ComponentType.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component__type_8hpp_source.html#l00061">61</a> of file <a class="el" href="component__type_8hpp_source.html">component_type.hpp</a>.</p>
 
 </div>
 </div>
@@ -397,7 +395,7 @@ If C is const, the storage type will be const.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-22) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_storage_concepts_8hpp_source.html#l00090">90</a> of file <a class="el" href="_storage_concepts_8hpp_source.html">StorageConcepts.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_storage_concepts_8hpp_source.html#l00094">94</a> of file <a class="el" href="_storage_concepts_8hpp_source.html">StorageConcepts.hpp</a>.</p>
 
 </div>
 </div>
@@ -525,7 +523,7 @@ template&lt;typename C &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-25) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_queryable_type_8hpp_source.html#l00086">86</a> of file <a class="el" href="_queryable_type_8hpp_source.html">QueryableType.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="queryable__type_8hpp_source.html#l00086">86</a> of file <a class="el" href="queryable__type_8hpp_source.html">queryable_type.hpp</a>.</p>
 
 </div>
 </div>
@@ -543,7 +541,19 @@ template&lt;typename R , bool AutoLock = thread::AUTO_LOCK_RESOURCES_DEFAULT&gt;
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00050">50</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p><a class="el" href="classecstasy_1_1_resource.html" title="Resource class.">Resource</a> reference type. </p>
+<p>This type is used to reference a resource in a thread-safe way depending on the AutoLock parameter.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">R</td><td><a class="el" href="classecstasy_1_1_resource.html" title="Resource class.">Resource</a> type. </td></tr>
+    <tr><td class="paramname">AutoLock</td><td>Whether the resource should be locked automatically.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-17) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00059">59</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
@@ -561,25 +571,9 @@ template&lt;typename R , bool AutoLock = thread::AUTO_LOCK_RESOURCES_DEFAULT&gt;
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00052">52</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p><a class="el" href="namespaceecstasy.html#a935f8c5172bfb738d9af3f1585f41cad">ResourceReference</a> alias </p>
 
-</div>
-</div>
-<a id="a029021666dc5e8cc0db0d817fc54a172" name="a029021666dc5e8cc0db0d817fc54a172"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a029021666dc5e8cc0db0d817fc54a172">&#9670;&#160;</a></span>StackAllocator</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename... Qs&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespaceecstasy.html#a029021666dc5e8cc0db0d817fc54a172">ecstasy::StackAllocator</a> = typedef <a class="el" href="classutil_1_1_stack_allocator.html">util::StackAllocator</a>&lt;<a class="el" href="namespaceecstasy.html#ae3d09d8dc606623d5049790980069d46">modifiers_allocator_size_v</a>&lt;Qs...&gt;, <a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier_base.html">query::modifier::ModifierBase</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00048">48</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00062">62</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>

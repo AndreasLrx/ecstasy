@@ -95,14 +95,28 @@ $(document).ready(function(){initNavTree('conceptecstasy_1_1query_1_1_q_conditio
 </div><!--header-->
 <div class="contents">
 
+<p>Query Condition concept.  
+<a href="conceptecstasy_1_1query_1_1_q_condition.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="concepts_2_condition_8hpp_source.html">Condition.hpp</a>&gt;</code></p>
 <h2 class="groupheader">Concept definition</h2>
 <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> C&gt;</div>
 <div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptecstasy_1_1query_1_1_q_condition.html">ecstasy::query::QCondition</a> =  <span class="keyword">requires</span>(C &amp;condition) { <span class="keyword">requires</span> std::derived_from&lt;C, ecstasy::query::ConditionBase&gt;; }</div>
-<div class="ttc" id="aconceptecstasy_1_1query_1_1_q_condition_html"><div class="ttname"><a href="conceptecstasy_1_1query_1_1_q_condition.html">ecstasy::query::QCondition</a></div><div class="ttdef"><b>Definition</b> <a href="concepts_2_condition_8hpp_source.html#l00020">Condition.hpp:20</a></div></div>
+<div class="ttc" id="aconceptecstasy_1_1query_1_1_q_condition_html"><div class="ttname"><a href="conceptecstasy_1_1query_1_1_q_condition.html">ecstasy::query::QCondition</a></div><div class="ttdoc">Query Condition concept.</div><div class="ttdef"><b>Definition</b> <a href="concepts_2_condition_8hpp_source.html#l00034">Condition.hpp:34</a></div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="concepts_2_condition_8hpp_source.html#l00020">20</a> of file <a class="el" href="concepts_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<div class="textblock"><p>Query Condition concept. </p>
+<p>You should use QConditionConst, QConditionLeft, QConditionRight or QConditionLeftRight to be sure that the condition is valid.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This concept isn't sufficient to check if a type is a condition, it only checks if it derives from ConditionBase.</dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">C</td><td>The type to check.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-16) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="concepts_2_condition_8hpp_source.html#l00034">34</a> of file <a class="el" href="concepts_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

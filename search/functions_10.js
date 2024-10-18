@@ -48,7 +48,7 @@ var searchData=
   ['printf_45',['printf',['http://en.cppreference.com/w/cpp/io/c/fprintf.html',1,'std']]],
   ['priority_5fqueue_46',['priority_queue',['http://en.cppreference.com/w/cpp/container/priority_queue/priority_queue.html',1,'std::priority_queue']]],
   ['probabilities_47',['probabilities',['http://en.cppreference.com/w/cpp/numeric/random/discrete_distribution/probabilities.html',1,'std::discrete_distribution']]],
-  ['processbatch_48',['processBatch',['../classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe8a771cd3061befcfd40dda019e51f87d.html#aae779a35ac450964bc46874a657c9fb8',1,'ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt;, AutoLock &gt;']]],
+  ['processbatch_48',['processBatch',['../classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe8a771cd3061befcfd40dda019e51f87d.html#a162471d4e35b76580d307ee75b14b45d',1,'ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt;, AutoLock &gt;']]],
   ['promise_49',['promise',['http://en.cppreference.com/w/cpp/thread/promise/promise.html',1,'std::promise::promise()'],['http://en.cppreference.com/w/cpp/coroutine/coroutine_handle/promise.html',1,'std::coroutine_handle::promise()']]],
   ['propagate_5fconst_50',['propagate_const',['http://en.cppreference.com/w/cpp/experimental/propagate_const/propagate_const.html',1,'std::experimental::propagate_const']]],
   ['proximate_51',['proximate',['http://en.cppreference.com/w/cpp/filesystem/relative.html',1,'std::filesystem']]],

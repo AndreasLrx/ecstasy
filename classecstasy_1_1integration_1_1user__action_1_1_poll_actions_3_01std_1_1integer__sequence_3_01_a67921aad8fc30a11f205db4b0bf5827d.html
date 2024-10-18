@@ -248,7 +248,7 @@ template&lt;Action::Id... Actions&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="_poll_actions_8hpp_source.html#l00047">47</a> of file <a class="el" href="_poll_actions_8hpp_source.html">PollActions.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   48</span>        {</div>
-<div class="line"><span class="lineno">   49</span>            <span class="keywordflow">if</span> (!registry.hasResource&lt;<a class="code hl_typedef" href="namespaceecstasy_1_1integration_1_1user__action.html#a9b4f873eff13ede42a8a53839aea12b0">PendingActions</a>&gt;())</div>
+<div class="line"><span class="lineno">   49</span>            <span class="keywordflow">if</span> (!registry.hasResource&lt;<a class="code hl_typedef" href="namespaceecstasy_1_1integration_1_1user__action.html#a9b4f873eff13ede42a8a53839aea12b0">PendingActions</a>&gt;()) [[unlikely]]</div>
 <div class="line"><span class="lineno">   50</span>                <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">   51</span>            RR&lt;PendingActions&gt; pendingActions = registry.getResource&lt;<a class="code hl_typedef" href="namespaceecstasy_1_1integration_1_1user__action.html#a9b4f873eff13ede42a8a53839aea12b0">PendingActions</a>&gt;();</div>
 <div class="line"><span class="lineno">   52</span>            <span class="keywordflow">while</span> (!pendingActions-&gt;get().empty()) {</div>

@@ -1,8 +1,8 @@
 <map id="src/ecstasy/query/modifiers/Maybe.hpp" name="src/ecstasy/query/modifiers/Maybe.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="108,5,309,45"/>
+<area shape="rect" id="Node000001" title="Query modifier which returns a std::optional filled when the data if existing." alt="" coords="108,5,309,45"/>
 <area shape="rect" id="Node000002" href="$ecstasy_2query_2modifiers_2include_8hpp.html" title=" " alt="" coords="5,93,207,133"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,56,130,95,127,91,174,52"/>
-<area shape="rect" id="Node000005" href="$registry_2modifiers_2_maybe_8hpp.html" title=" " alt="" coords="266,93,429,133"/>
+<area shape="rect" id="Node000005" href="$registry_2modifiers_2_maybe_8hpp.html" title="Query modifier which returns a std::optional filled when the data if existing." alt="" coords="266,93,429,133"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="252,50,318,91,316,96,249,55"/>
 <area shape="rect" id="Node000003" href="$ecstasy_2query_2include_8hpp.html" title=" " alt="" coords="96,277,311,302"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="81,146,70,163,61,183,58,202,64,220,81,239,101,254,148,274,146,279,98,259,77,243,60,223,53,202,56,181,65,161,77,143"/>

@@ -7,7 +7,7 @@ var searchData=
   ['make_5funsigned_4',['make_unsigned',['http://en.cppreference.com/w/cpp/types/make_unsigned.html',1,'std']]],
   ['make_5funsigned_5ft_5',['make_unsigned_t',['http://en.cppreference.com/w/cpp/types/make_unsigned.html',1,'std']]],
   ['map_6',['map',['http://en.cppreference.com/w/cpp/container/map.html',1,'std::map'],['http://en.cppreference.com/w/cpp/container/map.html',1,'std::pmr::map']]],
-  ['map_3c_20std_3a_3apair_3c_20std_3a_3atype_5findex_2c_20size_5ft_20_3e_2c_20std_3a_3aunique_5fptr_3c_20ecstasy_3a_3aisystem_20_3e_2c_20ecstasy_3a_3asysteminstances_3a_3acomparer_20_3e_7',['map&lt; std::pair&lt; std::type_index, size_t &gt;, std::unique_ptr&lt; ecstasy::ISystem &gt;, ecstasy::SystemInstances::Comparer &gt;',['http://en.cppreference.com/w/cpp/container/map.html',1,'std']]],
+  ['map_3c_20std_3a_3apair_2c_20std_3a_3aunique_5fptr_3c_20ecstasy_3a_3aisystem_20_3e_2c_20ecstasy_3a_3asysteminstances_3a_3acomparer_20_3e_7',['map&lt; std::pair, std::unique_ptr&lt; ecstasy::ISystem &gt;, ecstasy::SystemInstances::Comparer &gt;',['http://en.cppreference.com/w/cpp/container/map.html',1,'std']]],
   ['map_3c_20std_3a_3astring_2c_20std_3a_3ashared_5fptr_2c_20std_3a_3aless_3c_3e_20_3e_8',['map&lt; std::string, std::shared_ptr, std::less&lt;&gt; &gt;',['http://en.cppreference.com/w/cpp/container/map.html',1,'std']]],
   ['mapstorage_9',['MapStorage',['../classecstasy_1_1_map_storage.html',1,'ecstasy']]],
   ['markerstorage_10',['MarkerStorage',['../classecstasy_1_1_marker_storage.html',1,'ecstasy']]],

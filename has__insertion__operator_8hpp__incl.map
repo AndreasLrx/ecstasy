@@ -1,8 +1,8 @@
 <map id="src/ecstasy/serialization/concepts/has_insertion_operator.hpp" name="src/ecstasy/serialization/concepts/has_insertion_operator.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="88,5,267,60"/>
-<area shape="rect" id="Node000002" href="$_i_serializer_8hpp.html" title=" " alt="" coords="27,181,183,221"/>
+<area shape="rect" id="Node000001" title="Concept to check if a type can be updated with a serializer using the insertion operator." alt="" coords="88,5,267,60"/>
+<area shape="rect" id="Node000002" href="$_i_serializer_8hpp.html" title="Interface for all serializer classes." alt="" coords="27,181,183,221"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,61,121,170,116,168,163,59"/>
-<area shape="rect" id="Node000005" href="$is__serializer_8hpp.html" title=" " alt="" coords="185,108,311,133"/>
+<area shape="rect" id="Node000005" href="$is__serializer_8hpp.html" title="Concept to check if a type is a serializer." alt="" coords="185,108,311,133"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="201,58,232,96,228,99,197,62"/>
 <area shape="rect" id="Node000003" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/filesystem.html" title=" " alt="" coords="5,269,96,295"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="94,223,69,260,64,256,90,220"/>

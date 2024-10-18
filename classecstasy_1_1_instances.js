@@ -11,7 +11,7 @@ var classecstasy_1_1_instances =
     [ "get", "classecstasy_1_1_instances.html#a8174b97939a47c9c74d182287a0e7b93", null ],
     [ "get", "classecstasy_1_1_instances.html#a9cc8239cafbd1a65a8b0919ce67b0b34", null ],
     [ "get", "classecstasy_1_1_instances.html#a115ed034917b6bcd3a0a0ab508bceb3e", null ],
-    [ "getInner", "classecstasy_1_1_instances.html#aaf543e46ccc08acf2e8a8c3633155634", null ],
+    [ "getInner", "classecstasy_1_1_instances.html#a301910795dd77d542a8a21d3914d1d79", null ],
     [ "getPtr", "classecstasy_1_1_instances.html#ad901e2fddc153f372eea64db9f4ca52b", null ],
     [ "getPtr", "classecstasy_1_1_instances.html#ada76cfbeabe36543abc1cee8ce28e9f1", null ],
     [ "_instances", "classecstasy_1_1_instances.html#ab75cf0b10766154da309113b0ce8833c", null ]

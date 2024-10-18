@@ -1,5 +1,5 @@
 var classecstasy_1_1_resource =
 [
-    [ "operator->", "classecstasy_1_1_resource.html#a6e8ce269598e967087b09cb413e6439e", null ],
-    [ "operator->", "classecstasy_1_1_resource.html#a2c2c365d3c0320b8bf3a92cc802def2d", null ]
+    [ "operator->", "classecstasy_1_1_resource.html#a4f468428be2751577f8e20cccae4435e", null ],
+    [ "operator->", "classecstasy_1_1_resource.html#aefe6c3174e1c9e93cfbf744a66a6c05c", null ]
 ];

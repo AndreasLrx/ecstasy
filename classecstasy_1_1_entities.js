@@ -9,7 +9,7 @@ var classecstasy_1_1_entities =
     [ "erase", "classecstasy_1_1_entities.html#a8ab0b16f21e56cbdc4f773e35a634077", null ],
     [ "erase", "classecstasy_1_1_entities.html#ac1d345131bb655f397da592fd22e8c5c", null ],
     [ "get", "classecstasy_1_1_entities.html#aa18c8409c5e64503fceed008dbb3366f", null ],
-    [ "getMask", "classecstasy_1_1_entities.html#a9d6a763f9322babde27e70378b72027c", null ],
+    [ "getMask", "classecstasy_1_1_entities.html#a48f7ad065564f0790fac6b9d6f174058", null ],
     [ "getQueryData", "classecstasy_1_1_entities.html#a0fb2172bdfac93a38d7b948a0f1a8570", null ],
     [ "isAlive", "classecstasy_1_1_entities.html#a909641851e5ced121a1e9030eb8ce787", null ],
     [ "kill", "classecstasy_1_1_entities.html#a5b5ee10b59fdbd21568254ad57903755", null ],

@@ -128,16 +128,16 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
-<tr class="memitem:aa11abcf7c688eda874e5a0b30a86a057"><td class="memTemplParams" colspan="2">template&lt;Queryable Q&gt; </td></tr>
-<tr class="memitem:aa11abcf7c688eda874e5a0b30a86a057"><td class="memTemplItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1_select.html#aa11abcf7c688eda874e5a0b30a86a057">isQueryableSelected</a> ()</td></tr>
-<tr class="separator:aa11abcf7c688eda874e5a0b30a86a057"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab638da882cf0271e8486b5033a6adf86"><td class="memTemplParams" colspan="2">template&lt;Queryable... Qs&gt; </td></tr>
-<tr class="memitem:ab638da882cf0271e8486b5033a6adf86"><td class="memTemplItemLeft" align="right" valign="top">static constexpr <a class="el" href="structecstasy_1_1query_1_1_select.html#a534d67a4e74c6bbb765dc7c5c0981629">SelectedTuple</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1_select.html#ab638da882cf0271e8486b5033a6adf86">tieQueryables</a> (Qs &amp;...queryables)</td></tr>
-<tr class="separator:ab638da882cf0271e8486b5033a6adf86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab42f513fb4c4dbcdfea0155e2ec6f614"><td class="memTemplParams" colspan="2">template&lt;Queryable... Queryables&gt; </td></tr>
-<tr class="memitem:ab42f513fb4c4dbcdfea0155e2ec6f614"><td class="memTemplItemLeft" align="right" valign="top">static constexpr <a class="el" href="structecstasy_1_1query_1_1_select.html#a534d67a4e74c6bbb765dc7c5c0981629">SelectedTuple</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1_select.html#ab42f513fb4c4dbcdfea0155e2ec6f614">filterQueryables</a> (Queryables &amp;...queryables)</td></tr>
-<tr class="memdesc:ab42f513fb4c4dbcdfea0155e2ec6f614"><td class="mdescLeft">&#160;</td><td class="mdescRight">Isolate the given queryables to keep only the <code>SelectedQueryables</code> ones.  <br /></td></tr>
-<tr class="separator:ab42f513fb4c4dbcdfea0155e2ec6f614"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcb7c9017b36ade613e5567e00ecc10d"><td class="memTemplParams" colspan="2">template&lt;Queryable Q&gt; </td></tr>
+<tr class="memitem:adcb7c9017b36ade613e5567e00ecc10d"><td class="memTemplItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1_select.html#adcb7c9017b36ade613e5567e00ecc10d">isQueryableSelected</a> () noexcept</td></tr>
+<tr class="separator:adcb7c9017b36ade613e5567e00ecc10d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89d45b7ee1626b17ea6ccbb95faad848"><td class="memTemplParams" colspan="2">template&lt;Queryable... Qs&gt; </td></tr>
+<tr class="memitem:a89d45b7ee1626b17ea6ccbb95faad848"><td class="memTemplItemLeft" align="right" valign="top">static constexpr <a class="el" href="structecstasy_1_1query_1_1_select.html#a534d67a4e74c6bbb765dc7c5c0981629">SelectedTuple</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1_select.html#a89d45b7ee1626b17ea6ccbb95faad848">tieQueryables</a> (Qs &amp;...queryables) noexcept</td></tr>
+<tr class="separator:a89d45b7ee1626b17ea6ccbb95faad848"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a505a45440844e3a87df7bfe66365d8cb"><td class="memTemplParams" colspan="2">template&lt;Queryable... Queryables&gt; </td></tr>
+<tr class="memitem:a505a45440844e3a87df7bfe66365d8cb"><td class="memTemplItemLeft" align="right" valign="top">static constexpr <a class="el" href="structecstasy_1_1query_1_1_select.html#a534d67a4e74c6bbb765dc7c5c0981629">SelectedTuple</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1_select.html#a505a45440844e3a87df7bfe66365d8cb">filterQueryables</a> (Queryables &amp;...queryables) noexcept</td></tr>
+<tr class="memdesc:a505a45440844e3a87df7bfe66365d8cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Isolate the given queryables to keep only the <code>SelectedQueryables</code> ones.  <br /></td></tr>
+<tr class="separator:a505a45440844e3a87df7bfe66365d8cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;Queryable... SelectedQueryables&gt;<br />
@@ -176,8 +176,8 @@ template&lt;Queryable... SelectedQueryables&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab42f513fb4c4dbcdfea0155e2ec6f614" name="ab42f513fb4c4dbcdfea0155e2ec6f614"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab42f513fb4c4dbcdfea0155e2ec6f614">&#9670;&#160;</a></span>filterQueryables()</h2>
+<a id="a505a45440844e3a87df7bfe66365d8cb" name="a505a45440844e3a87df7bfe66365d8cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a505a45440844e3a87df7bfe66365d8cb">&#9670;&#160;</a></span>filterQueryables()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -199,7 +199,7 @@ template&lt;Queryable... Queryables&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">private</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -221,18 +221,18 @@ template&lt;Queryable... Queryables&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-22) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_select_8hpp_source.html#l00235">235</a> of file <a class="el" href="_select_8hpp_source.html">Select.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  236</span>        {</div>
-<div class="line"><span class="lineno">  237</span>            <span class="keywordflow">return</span> FilterQueryables&lt;<a class="code hl_function" href="structecstasy_1_1query_1_1_select.html#aa11abcf7c688eda874e5a0b30a86a057">isQueryableSelected</a>&lt;<span class="keyword">typename</span> <a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt;Queryables...&gt;::First&gt;(),</div>
-<div class="line"><span class="lineno">  238</span>                <span class="keyword">typename</span> <a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits&lt;Queryables...&gt;::First</a>&gt;::value(std::forward&lt;Queryables &amp;&gt;(queryables)...);</div>
-<div class="line"><span class="lineno">  239</span>        }</div>
-<div class="ttc" id="astructecstasy_1_1query_1_1_select_html_aa11abcf7c688eda874e5a0b30a86a057"><div class="ttname"><a href="structecstasy_1_1query_1_1_select.html#aa11abcf7c688eda874e5a0b30a86a057">ecstasy::query::Select::isQueryableSelected</a></div><div class="ttdeci">static constexpr bool isQueryableSelected()</div><div class="ttdef"><b>Definition</b> <a href="_select_8hpp_source.html#l00055">Select.hpp:55</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_select_8hpp_source.html#l00236">236</a> of file <a class="el" href="_select_8hpp_source.html">Select.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  237</span>        {</div>
+<div class="line"><span class="lineno">  238</span>            <span class="keywordflow">return</span> FilterQueryables&lt;<a class="code hl_function" href="structecstasy_1_1query_1_1_select.html#adcb7c9017b36ade613e5567e00ecc10d">isQueryableSelected</a>&lt;<span class="keyword">typename</span> <a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt;Queryables...&gt;::First&gt;(),</div>
+<div class="line"><span class="lineno">  239</span>                <span class="keyword">typename</span> <a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits&lt;Queryables...&gt;::First</a>&gt;::value(std::forward&lt;Queryables &amp;&gt;(queryables)...);</div>
+<div class="line"><span class="lineno">  240</span>        }</div>
+<div class="ttc" id="astructecstasy_1_1query_1_1_select_html_adcb7c9017b36ade613e5567e00ecc10d"><div class="ttname"><a href="structecstasy_1_1query_1_1_select.html#adcb7c9017b36ade613e5567e00ecc10d">ecstasy::query::Select::isQueryableSelected</a></div><div class="ttdeci">static constexpr bool isQueryableSelected() noexcept</div><div class="ttdef"><b>Definition</b> <a href="_select_8hpp_source.html#l00055">Select.hpp:55</a></div></div>
 <div class="ttc" id="astructutil_1_1meta_1_1_traits_html"><div class="ttname"><a href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a></div><div class="ttdoc">Empty parameter pack helper type.</div><div class="ttdef"><b>Definition</b> <a href="_traits_8hpp_source.html#l00028">Traits.hpp:28</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="aa11abcf7c688eda874e5a0b30a86a057" name="aa11abcf7c688eda874e5a0b30a86a057"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa11abcf7c688eda874e5a0b30a86a057">&#9670;&#160;</a></span>isQueryableSelected()</h2>
+<a id="adcb7c9017b36ade613e5567e00ecc10d" name="adcb7c9017b36ade613e5567e00ecc10d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcb7c9017b36ade613e5567e00ecc10d">&#9670;&#160;</a></span>isQueryableSelected()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -253,7 +253,7 @@ template&lt;Queryable Q&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">private</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -266,8 +266,8 @@ template&lt;Queryable Q&gt; </div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ab638da882cf0271e8486b5033a6adf86" name="ab638da882cf0271e8486b5033a6adf86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab638da882cf0271e8486b5033a6adf86">&#9670;&#160;</a></span>tieQueryables()</h2>
+<a id="a89d45b7ee1626b17ea6ccbb95faad848" name="a89d45b7ee1626b17ea6ccbb95faad848"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89d45b7ee1626b17ea6ccbb95faad848">&#9670;&#160;</a></span>tieQueryables()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -289,7 +289,7 @@ template&lt;Queryable... Qs&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">private</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -371,27 +371,27 @@ template&lt;typename Conditions  = util::meta::Traits&lt;&gt;, Queryable FirstWh
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-22) </dd></dl>
 <p>Adjusts the masks only if required</p>
 
-<p class="definition">Definition at line <a class="el" href="_select_8hpp_source.html#l00261">261</a> of file <a class="el" href="_select_8hpp_source.html">Select.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  263</span>        {</div>
-<div class="line"><span class="lineno">  265</span>            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (is_queryable_with_adjust_v&lt;FirstWhere&gt;</div>
-<div class="line"><span class="lineno">  266</span>                || std::disjunction_v&lt;is_queryable_with_adjust&lt;Wheres&gt;...&gt;) {</div>
-<div class="line"><span class="lineno">  267</span>                <span class="keywordtype">size_t</span> maxSize = <a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/algorithm/max.html">std::max</a>({<a class="code hl_function" href="namespaceecstasy_1_1query.html#acfd7e544fa188d451a483608c36e3eb8">getQueryableMask</a>(firstWhere).<a class="code hl_function" href="classutil_1_1_bit_set.html#a1b7940aa2d91fd658b573692239866c0">size</a>(), <a class="code hl_function" href="namespaceecstasy_1_1query.html#acfd7e544fa188d451a483608c36e3eb8">getQueryableMask</a>(wheres).<a class="code hl_function" href="classutil_1_1_bit_set.html#a1b7940aa2d91fd658b573692239866c0">size</a>()...});</div>
-<div class="line"><span class="lineno">  268</span> </div>
-<div class="line"><span class="lineno">  269</span>                <a class="code hl_function" href="namespaceecstasy_1_1query.html#a4c703ad1e1c3899f179ed7702a365254">adjustMask</a>(firstWhere, maxSize);</div>
-<div class="line"><span class="lineno">  270</span>                (<a class="code hl_function" href="namespaceecstasy_1_1query.html#a4c703ad1e1c3899f179ed7702a365254">adjustMask</a>(wheres, maxSize), ...);</div>
-<div class="line"><span class="lineno">  271</span>            }</div>
-<div class="line"><span class="lineno">  272</span> </div>
-<div class="line"><span class="lineno">  273</span>            <a class="code hl_class" href="classutil_1_1_bit_set.html">util::BitSet</a> mask = (<a class="code hl_class" href="classutil_1_1_bit_set.html">util::BitSet</a>(<a class="code hl_function" href="namespaceecstasy_1_1query.html#acfd7e544fa188d451a483608c36e3eb8">getQueryableMask</a>(firstWhere)) &amp;= ... &amp;= <a class="code hl_function" href="namespaceecstasy_1_1query.html#acfd7e544fa188d451a483608c36e3eb8">getQueryableMask</a>(wheres));</div>
-<div class="line"><span class="lineno">  274</span> </div>
-<div class="line"><span class="lineno">  275</span>            <span class="keywordflow">return</span> QueryImplementation&lt;<a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt;SelectedQueryables...&gt;, Conditions&gt;(</div>
-<div class="line"><span class="lineno">  276</span>                mask, <a class="code hl_function" href="structecstasy_1_1query_1_1_select.html#ab42f513fb4c4dbcdfea0155e2ec6f614">filterQueryables</a>(firstWhere, wheres...));</div>
-<div class="line"><span class="lineno">  277</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_select_8hpp_source.html#l00262">262</a> of file <a class="el" href="_select_8hpp_source.html">Select.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  264</span>        {</div>
+<div class="line"><span class="lineno">  266</span>            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (is_queryable_with_adjust_v&lt;FirstWhere&gt;</div>
+<div class="line"><span class="lineno">  267</span>                || std::disjunction_v&lt;is_queryable_with_adjust&lt;Wheres&gt;...&gt;) {</div>
+<div class="line"><span class="lineno">  268</span>                <span class="keywordtype">size_t</span> maxSize = <a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/algorithm/max.html">std::max</a>({<a class="code hl_function" href="namespaceecstasy_1_1query.html#acfd7e544fa188d451a483608c36e3eb8">getQueryableMask</a>(firstWhere).<a class="code hl_function" href="classutil_1_1_bit_set.html#a1b7940aa2d91fd658b573692239866c0">size</a>(), <a class="code hl_function" href="namespaceecstasy_1_1query.html#acfd7e544fa188d451a483608c36e3eb8">getQueryableMask</a>(wheres).<a class="code hl_function" href="classutil_1_1_bit_set.html#a1b7940aa2d91fd658b573692239866c0">size</a>()...});</div>
+<div class="line"><span class="lineno">  269</span> </div>
+<div class="line"><span class="lineno">  270</span>                <a class="code hl_function" href="namespaceecstasy_1_1query.html#afbe7d533006fc028fdb604a8d54ee6c2">adjustMask</a>(firstWhere, maxSize);</div>
+<div class="line"><span class="lineno">  271</span>                (<a class="code hl_function" href="namespaceecstasy_1_1query.html#afbe7d533006fc028fdb604a8d54ee6c2">adjustMask</a>(wheres, maxSize), ...);</div>
+<div class="line"><span class="lineno">  272</span>            }</div>
+<div class="line"><span class="lineno">  273</span> </div>
+<div class="line"><span class="lineno">  274</span>            <a class="code hl_class" href="classutil_1_1_bit_set.html">util::BitSet</a> mask = (<a class="code hl_class" href="classutil_1_1_bit_set.html">util::BitSet</a>(<a class="code hl_function" href="namespaceecstasy_1_1query.html#acfd7e544fa188d451a483608c36e3eb8">getQueryableMask</a>(firstWhere)) &amp;= ... &amp;= <a class="code hl_function" href="namespaceecstasy_1_1query.html#acfd7e544fa188d451a483608c36e3eb8">getQueryableMask</a>(wheres));</div>
+<div class="line"><span class="lineno">  275</span> </div>
+<div class="line"><span class="lineno">  276</span>            <span class="keywordflow">return</span> QueryImplementation&lt;<a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt;SelectedQueryables...&gt;, Conditions&gt;(</div>
+<div class="line"><span class="lineno">  277</span>                mask, <a class="code hl_function" href="structecstasy_1_1query_1_1_select.html#a505a45440844e3a87df7bfe66365d8cb">filterQueryables</a>(firstWhere, wheres...));</div>
+<div class="line"><span class="lineno">  278</span>        }</div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html"><div class="ttname"><a href="classutil_1_1_bit_set.html">util::BitSet</a></div><div class="ttdoc">Mimics the API of std::bitset but with the dynamic properties of std::vector&lt;bool&gt;</div><div class="ttdef"><b>Definition</b> <a href="_bit_set_8hpp_source.html#l00035">BitSet.hpp:35</a></div></div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_a1b7940aa2d91fd658b573692239866c0"><div class="ttname"><a href="classutil_1_1_bit_set.html#a1b7940aa2d91fd658b573692239866c0">util::BitSet::size</a></div><div class="ttdeci">constexpr std::size_t size() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="_bit_set_8hpp_source.html#l00087">BitSet.hpp:87</a></div></div>
 <div class="ttc" id="amax_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/algorithm/max.html">std::max</a></div><div class="ttdeci">T max(T... args)</div></div>
-<div class="ttc" id="anamespaceecstasy_1_1query_html_a4c703ad1e1c3899f179ed7702a365254"><div class="ttname"><a href="namespaceecstasy_1_1query.html#a4c703ad1e1c3899f179ed7702a365254">ecstasy::query::adjustMask</a></div><div class="ttdeci">constexpr void adjustMask(T &amp;queryable, size_t maxSize)</div><div class="ttdoc">Adjust the queryable mask if needed.</div><div class="ttdef"><b>Definition</b> <a href="_queryable_need_adjust_8hpp_source.html#l00082">QueryableNeedAdjust.hpp:82</a></div></div>
-<div class="ttc" id="anamespaceecstasy_1_1query_html_acfd7e544fa188d451a483608c36e3eb8"><div class="ttname"><a href="namespaceecstasy_1_1query.html#acfd7e544fa188d451a483608c36e3eb8">ecstasy::query::getQueryableMask</a></div><div class="ttdeci">constexpr const util::BitSet &amp; getQueryableMask(const Q &amp;queryable)</div><div class="ttdoc">Get the mask of the queryable object.</div><div class="ttdef"><b>Definition</b> <a href="_queryable_8hpp_source.html#l00286">Queryable.hpp:286</a></div></div>
-<div class="ttc" id="astructecstasy_1_1query_1_1_select_html_ab42f513fb4c4dbcdfea0155e2ec6f614"><div class="ttname"><a href="structecstasy_1_1query_1_1_select.html#ab42f513fb4c4dbcdfea0155e2ec6f614">ecstasy::query::Select::filterQueryables</a></div><div class="ttdeci">static constexpr SelectedTuple filterQueryables(Queryables &amp;...queryables)</div><div class="ttdoc">Isolate the given queryables to keep only the SelectedQueryables ones.</div><div class="ttdef"><b>Definition</b> <a href="_select_8hpp_source.html#l00235">Select.hpp:235</a></div></div>
+<div class="ttc" id="anamespaceecstasy_1_1query_html_acfd7e544fa188d451a483608c36e3eb8"><div class="ttname"><a href="namespaceecstasy_1_1query.html#acfd7e544fa188d451a483608c36e3eb8">ecstasy::query::getQueryableMask</a></div><div class="ttdeci">constexpr const util::BitSet &amp; getQueryableMask(const Q &amp;queryable)</div><div class="ttdoc">Get the mask of the queryable object.</div><div class="ttdef"><b>Definition</b> <a href="_queryable_8hpp_source.html#l00293">Queryable.hpp:293</a></div></div>
+<div class="ttc" id="anamespaceecstasy_1_1query_html_afbe7d533006fc028fdb604a8d54ee6c2"><div class="ttname"><a href="namespaceecstasy_1_1query.html#afbe7d533006fc028fdb604a8d54ee6c2">ecstasy::query::adjustMask</a></div><div class="ttdeci">constexpr void adjustMask(T &amp;queryable, size_t maxSize) noexcept</div><div class="ttdoc">Adjust the queryable mask if needed.</div><div class="ttdef"><b>Definition</b> <a href="_queryable_need_adjust_8hpp_source.html#l00082">QueryableNeedAdjust.hpp:82</a></div></div>
+<div class="ttc" id="astructecstasy_1_1query_1_1_select_html_a505a45440844e3a87df7bfe66365d8cb"><div class="ttname"><a href="structecstasy_1_1query_1_1_select.html#a505a45440844e3a87df7bfe66365d8cb">ecstasy::query::Select::filterQueryables</a></div><div class="ttdeci">static constexpr SelectedTuple filterQueryables(Queryables &amp;...queryables) noexcept</div><div class="ttdoc">Isolate the given queryables to keep only the SelectedQueryables ones.</div><div class="ttdef"><b>Definition</b> <a href="_select_8hpp_source.html#l00236">Select.hpp:236</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

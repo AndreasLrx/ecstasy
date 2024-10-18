@@ -199,9 +199,9 @@ requires <a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_fundam
 <tr class="memitem:ac5ca6a4a827f47785be9a49b3ba3d07b"><td class="memTemplItemLeft" align="right" valign="top">U&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_raw_serializer.html#ac5ca6a4a827f47785be9a49b3ba3d07b">loadRaw</a> ()</td></tr>
 <tr class="memdesc:ac5ca6a4a827f47785be9a49b3ba3d07b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a raw type from the serializer.  <br /></td></tr>
 <tr class="separator:ac5ca6a4a827f47785be9a49b3ba3d07b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a196374856cce11ba264d3942c0081fd9"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_stringstream.html">std::stringstream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_raw_serializer.html#a196374856cce11ba264d3942c0081fd9">getStream</a> ()</td></tr>
-<tr class="memdesc:a196374856cce11ba264d3942c0081fd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the string stream of the serializer.  <br /></td></tr>
-<tr class="separator:a196374856cce11ba264d3942c0081fd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2bbfba6e7d0e0050a18b1c5512d74b7"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_stringstream.html">std::stringstream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_raw_serializer.html#af2bbfba6e7d0e0050a18b1c5512d74b7">getStream</a> () noexcept</td></tr>
+<tr class="memdesc:af2bbfba6e7d0e0050a18b1c5512d74b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the string stream of the serializer.  <br /></td></tr>
+<tr class="separator:af2bbfba6e7d0e0050a18b1c5512d74b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classecstasy_1_1serialization_1_1_serializer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classecstasy_1_1serialization_1_1_serializer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html">ecstasy::serialization::Serializer&lt; RawSerializer &gt;</a></td></tr>
 <tr class="memitem:ac5051dd82f67e14d8dcfd9fd24b56cbf inherit pub_methods_classecstasy_1_1serialization_1_1_serializer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#ac5051dd82f67e14d8dcfd9fd24b56cbf">Serializer</a> ()=default</td></tr>
 <tr class="memdesc:ac5051dd82f67e14d8dcfd9fd24b56cbf inherit pub_methods_classecstasy_1_1serialization_1_1_serializer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html" title="Serializer class.">Serializer</a>.  <br /></td></tr>
@@ -293,6 +293,7 @@ Private Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a1b9cb0e239292977cf42782d6bf911ae"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_stringstream.html">std::stringstream</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_raw_serializer.html#a1b9cb0e239292977cf42782d6bf911ae">_stream</a></td></tr>
+<tr class="memdesc:a1b9cb0e239292977cf42782d6bf911ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal string stream used as a buffer.  <br /></td></tr>
 <tr class="separator:a1b9cb0e239292977cf42782d6bf911ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
@@ -570,11 +571,10 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#aa8ad6f4c995f7185cbbf3b3100550925">ecstasy::serialization::Serializer&lt; RawSerializer &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_raw_serializer_8hpp_source.html#l00328">328</a> of file <a class="el" href="_raw_serializer_8hpp_source.html">RawSerializer.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  329</span>        {</div>
-<div class="line"><span class="lineno">  330</span>            <span class="comment">// Notify the end of the entity</span></div>
-<div class="line"><span class="lineno">  331</span>            save&lt;std::size_t&gt;(0);</div>
-<div class="line"><span class="lineno">  332</span>            <span class="keyword">static_cast&lt;</span><span class="keywordtype">void</span><span class="keyword">&gt;</span>(entity);</div>
+<p class="definition">Definition at line <a class="el" href="_raw_serializer_8hpp_source.html#l00329">329</a> of file <a class="el" href="_raw_serializer_8hpp_source.html">RawSerializer.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  330</span>        {</div>
+<div class="line"><span class="lineno">  331</span>            <span class="comment">// Notify the end of the entity</span></div>
+<div class="line"><span class="lineno">  332</span>            save&lt;std::size_t&gt;(0);</div>
 <div class="line"><span class="lineno">  333</span>        }</div>
 </div><!-- fragment -->
 </div>
@@ -665,7 +665,7 @@ template&lt;typename U &gt; </div>
 <div class="fragment"><div class="line"><span class="lineno">   97</span>        {</div>
 <div class="line"><span class="lineno">   98</span>            <a class="code hl_variable" href="classecstasy_1_1serialization_1_1_raw_serializer.html#a1b9cb0e239292977cf42782d6bf911ae">_stream</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/io/basic_stringstream/str.html">str</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><span class="lineno">   99</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1serialization_1_1_raw_serializer_html_a1b9cb0e239292977cf42782d6bf911ae"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_raw_serializer.html#a1b9cb0e239292977cf42782d6bf911ae">ecstasy::serialization::RawSerializer::_stream</a></div><div class="ttdeci">std::stringstream _stream</div><div class="ttdef"><b>Definition</b> <a href="_raw_serializer_8hpp_source.html#l00325">RawSerializer.hpp:325</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1serialization_1_1_raw_serializer_html_a1b9cb0e239292977cf42782d6bf911ae"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_raw_serializer.html#a1b9cb0e239292977cf42782d6bf911ae">ecstasy::serialization::RawSerializer::_stream</a></div><div class="ttdeci">std::stringstream _stream</div><div class="ttdoc">Internal string stream used as a buffer.</div><div class="ttdef"><b>Definition</b> <a href="_raw_serializer_8hpp_source.html#l00326">RawSerializer.hpp:326</a></div></div>
 <div class="ttc" id="astr_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_stringstream/str.html">std::stringstream::str</a></div><div class="ttdeci">T str(T... args)</div></div>
 </div><!-- fragment -->
 </div>
@@ -725,8 +725,8 @@ template&lt;typename U &gt; </div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a196374856cce11ba264d3942c0081fd9" name="a196374856cce11ba264d3942c0081fd9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a196374856cce11ba264d3942c0081fd9">&#9670;&#160;</a></span>getStream()</h2>
+<a id="af2bbfba6e7d0e0050a18b1c5512d74b7" name="af2bbfba6e7d0e0050a18b1c5512d74b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2bbfba6e7d0e0050a18b1c5512d74b7">&#9670;&#160;</a></span>getStream()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -743,7 +743,7 @@ template&lt;typename U &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1373,7 +1373,9 @@ template&lt;typename U , typename  = typename std::enable_if&lt;(               
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_raw_serializer_8hpp_source.html#l00325">325</a> of file <a class="el" href="_raw_serializer_8hpp_source.html">RawSerializer.hpp</a>.</p>
+<p>Internal string stream used as a buffer. </p>
+
+<p class="definition">Definition at line <a class="el" href="_raw_serializer_8hpp_source.html#l00326">326</a> of file <a class="el" href="_raw_serializer_8hpp_source.html">RawSerializer.hpp</a>.</p>
 
 </div>
 </div>

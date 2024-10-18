@@ -2,9 +2,9 @@
 <area shape="rect" id="Node000001" title=" " alt="" coords="45,5,187,45"/>
 <area shape="rect" id="Node000002" href="$_lockable_8hpp.html" title=" " alt="" coords="5,167,112,192"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,48,57,68,37,94,33,109,35,124,46,154,41,156,29,126,28,109,32,92,53,64,79,43"/>
-<area shape="rect" id="Node000004" href="$_lockable_view_8hpp.html" title=" " alt="" coords="47,93,185,119"/>
+<area shape="rect" id="Node000004" href="$_lockable_view_8hpp.html" title="Thread safe view of a Lockable object." alt="" coords="47,93,185,119"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="119,46,119,79,113,79,113,46"/>
-<area shape="rect" id="Node000005" href="$_shared_recursive_mutex_8hpp.html" title=" " alt="" coords="209,93,409,119"/>
+<area shape="rect" id="Node000005" href="$_shared_recursive_mutex_8hpp.html" title="Wrapper for std::shared_mutex allowing recursive locking by the same thread." alt="" coords="209,93,409,119"/>
 <area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="163,43,269,86,267,91,161,48"/>
 <area shape="rect" id="Node000003" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/concepts.html" title=" " alt="" coords="19,240,99,265"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="61,192,61,226,56,226,56,192"/>

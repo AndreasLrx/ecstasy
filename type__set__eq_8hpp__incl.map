@@ -1,6 +1,6 @@
 <map id="src/util/meta/type_set_eq.hpp" name="src/util/meta/type_set_eq.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,143,45"/>
-<area shape="rect" id="Node000002" href="$contains_8hpp.html" title=" " alt="" coords="21,93,127,119"/>
+<area shape="rect" id="Node000001" title="Test if two tuple types contains the exact same types independently of the order." alt="" coords="5,5,143,45"/>
+<area shape="rect" id="Node000002" href="$contains_8hpp.html" title="Checks if a type exists in a list of types." alt="" coords="21,93,127,119"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,46,77,79,71,79,71,46"/>
 <area shape="rect" id="Node000003" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/type_traits.html" title=" " alt="" coords="28,167,120,192"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="77,119,77,153,71,153,71,119"/>

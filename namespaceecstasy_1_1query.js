@@ -46,7 +46,7 @@ var namespaceecstasy_1_1query =
     [ "thread_safe_queryable_t", "namespaceecstasy_1_1query.html#a0caa083dda1d39db3372c518a6c49ae4", null ],
     [ "thread_safe_reference_t", "namespaceecstasy_1_1query.html#a897d7c05813e9c64ab715f1481cc4489", null ],
     [ "adjustMask", "namespaceecstasy_1_1query.html#abcdf71489379b2578159fe2551a60b34", null ],
-    [ "adjustMask", "namespaceecstasy_1_1query.html#a4c703ad1e1c3899f179ed7702a365254", null ],
+    [ "adjustMask", "namespaceecstasy_1_1query.html#afbe7d533006fc028fdb604a8d54ee6c2", null ],
     [ "getQueryableData", "namespaceecstasy_1_1query.html#a470c4c26c7b1a6d005e18ba6321d4f03", null ],
     [ "getQueryableMask", "namespaceecstasy_1_1query.html#acfd7e544fa188d451a483608c36e3eb8", null ],
     [ "is_queryable_v", "namespaceecstasy_1_1query.html#a2d0049da7e7d280f28107dae27b92003", null ],

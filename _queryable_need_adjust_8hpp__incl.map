@@ -1,12 +1,12 @@
 <map id="src/ecstasy/query/concepts/QueryableNeedAdjust.hpp" name="src/ecstasy/query/concepts/QueryableNeedAdjust.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,204,45"/>
-<area shape="rect" id="Node000002" href="$_queryable_8hpp.html" title=" " alt="" coords="46,93,163,119"/>
+<area shape="rect" id="Node000001" title="Defines a Queryable object type which has the adjustMask() implemented." alt="" coords="5,5,204,45"/>
+<area shape="rect" id="Node000002" href="$_queryable_8hpp.html" title="Contains the concepts for queryable objects." alt="" coords="46,93,163,119"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,46,107,79,102,79,102,46"/>
 <area shape="rect" id="Node000003" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/concepts.html" title=" " alt="" coords="62,313,142,339"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="93,121,75,141,61,168,56,203,62,239,75,273,89,300,84,303,70,275,57,241,50,203,55,166,71,138,89,117"/>
 <area shape="rect" id="Node000004" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/cstddef.html" title=" " alt="" coords="69,167,140,192"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="107,119,107,153,102,153,102,119"/>
-<area shape="rect" id="Node000005" href="$_lockable_view_8hpp.html" title=" " alt="" coords="164,167,403,192"/>
+<area shape="rect" id="Node000005" href="$_lockable_view_8hpp.html" title="Thread safe view of a Lockable object." alt="" coords="164,167,403,192"/>
 <area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="134,116,243,159,241,164,132,121"/>
 <area shape="rect" id="Node000006" href="$_lockable_8hpp.html" title=" " alt="" coords="124,240,331,265"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="276,194,247,231,243,228,272,191"/>

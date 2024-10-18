@@ -1,8 +1,8 @@
 <map id="ecstasy::query::modifier::BinaryModifier&lt; Derived, AutoLock, DataModifier, Q1, Q2, Qs &gt;" name="ecstasy::query::modifier::BinaryModifier&lt; Derived, AutoLock, DataModifier, Q1, Q2, Qs &gt;">
 <area shape="rect" id="Node000001" title="Base class of query modifier operating on at least two queryables." alt="" coords="664,77,859,147"/>
-<area shape="rect" id="Node000002" href="$classecstasy_1_1query_1_1modifier_1_1_modifier.html" title=" " alt="" coords="334,5,511,45"/>
+<area shape="rect" id="Node000002" href="$classecstasy_1_1query_1_1modifier_1_1_modifier.html" title="Base class for all query modifiers." alt="" coords="334,5,511,45"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="516,46,665,85,663,90,515,51"/>
-<area shape="rect" id="Node000003" href="$classecstasy_1_1query_1_1modifier_1_1_modifier_base.html" title="Base class for all query modifiers." alt="" coords="18,5,195,45"/>
+<area shape="rect" id="Node000003" href="$classecstasy_1_1query_1_1modifier_1_1_modifier_base.html" title="Type erased base class for all query modifiers." alt="" coords="18,5,195,45"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="209,23,334,23,334,28,209,28"/>
 <area shape="rect" id="Node000004" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/utility/tuple.html" title=" " alt="" coords="301,70,544,154"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="558,109,664,109,664,115,558,115"/>

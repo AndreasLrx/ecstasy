@@ -145,15 +145,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae5ec38f89997d70c29afdfc195cf1824"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1_entity.html">Entity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_entities_1_1_builder.html#ae5ec38f89997d70c29afdfc195cf1824">build</a> ()</td></tr>
 <tr class="memdesc:ae5ec38f89997d70c29afdfc195cf1824"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalize the entity, making it alive.  <br /></td></tr>
 <tr class="separator:ae5ec38f89997d70c29afdfc195cf1824"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d341f87ca2eea4e18ec90024cd360d2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classecstasy_1_1_entity.html">Entity</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_entities_1_1_builder.html#a1d341f87ca2eea4e18ec90024cd360d2">getEntity</a> () const</td></tr>
-<tr class="memdesc:a1d341f87ca2eea4e18ec90024cd360d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a const reference to the entity being built.  <br /></td></tr>
-<tr class="separator:a1d341f87ca2eea4e18ec90024cd360d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6b447980d50a9e339ecf1f5782a6a5d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classecstasy_1_1_entity.html">Entity</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_entities_1_1_builder.html#ae6b447980d50a9e339ecf1f5782a6a5d">getEntity</a> () const noexcept</td></tr>
+<tr class="memdesc:ae6b447980d50a9e339ecf1f5782a6a5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a const reference to the entity being built.  <br /></td></tr>
+<tr class="separator:ae6b447980d50a9e339ecf1f5782a6a5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a23640f44d02e707d9f1d023e9bf46c6f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_entities_1_1_builder.html#a23640f44d02e707d9f1d023e9bf46c6f">Builder</a> (<a class="el" href="classecstasy_1_1_entities.html">Entities</a> &amp;parent, <a class="el" href="classecstasy_1_1_entity.html">Entity</a> entity)</td></tr>
-<tr class="memdesc:a23640f44d02e707d9f1d023e9bf46c6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classecstasy_1_1_entities_1_1_builder.html" title="Entities builder to add multiple component to an entity on creation.">Builder</a>, this method can only be called by an <a class="el" href="classecstasy_1_1_entities.html">Entities</a>.  <br /></td></tr>
-<tr class="separator:a23640f44d02e707d9f1d023e9bf46c6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a682fa4ed4388af877aab83c251d31ae3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_entities_1_1_builder.html#a682fa4ed4388af877aab83c251d31ae3">Builder</a> (<a class="el" href="classecstasy_1_1_entities.html">Entities</a> &amp;parent, <a class="el" href="classecstasy_1_1_entity.html">Entity</a> entity) noexcept</td></tr>
+<tr class="memdesc:a682fa4ed4388af877aab83c251d31ae3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classecstasy_1_1_entities_1_1_builder.html" title="Entities builder to add multiple component to an entity on creation.">Builder</a>, this method can only be called by an <a class="el" href="classecstasy_1_1_entities.html">Entities</a>.  <br /></td></tr>
+<tr class="separator:a682fa4ed4388af877aab83c251d31ae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a86b731f71fa058fce5945d050d0b68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_entities_1_1_builder.html#a2a86b731f71fa058fce5945d050d0b68">assertNotBuilt</a> () const</td></tr>
 <tr class="memdesc:a2a86b731f71fa058fce5945d050d0b68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify if the builder has not already been consumed.  <br /></td></tr>
 <tr class="separator:a2a86b731f71fa058fce5945d050d0b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,10 +161,13 @@ Private Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ac30a0fcd51666f4b5cf052c97cd71895"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1_entities.html">Entities</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_entities_1_1_builder.html#ac30a0fcd51666f4b5cf052c97cd71895">_parent</a></td></tr>
+<tr class="memdesc:ac30a0fcd51666f4b5cf052c97cd71895"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the parent <a class="el" href="classecstasy_1_1_entities.html" title="Resource holding all the Registry entities.">Entities</a>.  <br /></td></tr>
 <tr class="separator:ac30a0fcd51666f4b5cf052c97cd71895"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a868e4d6da1e0968490c35cce06ec1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1_entity.html">Entity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_entities_1_1_builder.html#a5a868e4d6da1e0968490c35cce06ec1e">_entity</a></td></tr>
+<tr class="memdesc:a5a868e4d6da1e0968490c35cce06ec1e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1_entity.html" title="Encapsulate an index to an entity.">Entity</a> being built.  <br /></td></tr>
 <tr class="separator:a5a868e4d6da1e0968490c35cce06ec1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf6ac70889a7864107d23f9fe34c830e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_entities_1_1_builder.html#acf6ac70889a7864107d23f9fe34c830e">_built</a></td></tr>
+<tr class="memdesc:acf6ac70889a7864107d23f9fe34c830e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the builder has been consumed.  <br /></td></tr>
 <tr class="separator:acf6ac70889a7864107d23f9fe34c830e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa505450837157bbefe1cb94e09f521b4"><td class="memItemLeft" align="right" valign="top">friend&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_entities_1_1_builder.html#aa505450837157bbefe1cb94e09f521b4">Entities</a></td></tr>
 <tr class="separator:aa505450837157bbefe1cb94e09f521b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -212,8 +215,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a23640f44d02e707d9f1d023e9bf46c6f" name="a23640f44d02e707d9f1d023e9bf46c6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23640f44d02e707d9f1d023e9bf46c6f">&#9670;&#160;</a></span>Builder() <span class="overload">[2/2]</span></h2>
+<a id="a682fa4ed4388af877aab83c251d31ae3" name="a682fa4ed4388af877aab83c251d31ae3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a682fa4ed4388af877aab83c251d31ae3">&#9670;&#160;</a></span>Builder() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -241,7 +244,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -258,12 +261,12 @@ Private Attributes</h2></td></tr>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-19) </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_entities_8cpp_source.html#l00016">16</a> of file <a class="el" href="_entities_8cpp_source.html">Entities.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   16</span>                                                            : <a class="code hl_variable" href="classecstasy_1_1_entities_1_1_builder.html#ac30a0fcd51666f4b5cf052c97cd71895">_parent</a>(parent), <a class="code hl_variable" href="classecstasy_1_1_entities_1_1_builder.html#a5a868e4d6da1e0968490c35cce06ec1e">_entity</a>(entity), <a class="code hl_variable" href="classecstasy_1_1_entities_1_1_builder.html#acf6ac70889a7864107d23f9fe34c830e">_built</a>(<span class="keyword">false</span>)</div>
-<div class="line"><span class="lineno">   17</span>    {</div>
-<div class="line"><span class="lineno">   18</span>    }</div>
-<div class="ttc" id="aclassecstasy_1_1_entities_1_1_builder_html_a5a868e4d6da1e0968490c35cce06ec1e"><div class="ttname"><a href="classecstasy_1_1_entities_1_1_builder.html#a5a868e4d6da1e0968490c35cce06ec1e">ecstasy::Entities::Builder::_entity</a></div><div class="ttdeci">Entity _entity</div><div class="ttdef"><b>Definition</b> <a href="_entities_8hpp_source.html#l00129">Entities.hpp:129</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_entities_1_1_builder_html_ac30a0fcd51666f4b5cf052c97cd71895"><div class="ttname"><a href="classecstasy_1_1_entities_1_1_builder.html#ac30a0fcd51666f4b5cf052c97cd71895">ecstasy::Entities::Builder::_parent</a></div><div class="ttdeci">Entities &amp; _parent</div><div class="ttdef"><b>Definition</b> <a href="_entities_8hpp_source.html#l00128">Entities.hpp:128</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_entities_1_1_builder_html_acf6ac70889a7864107d23f9fe34c830e"><div class="ttname"><a href="classecstasy_1_1_entities_1_1_builder.html#acf6ac70889a7864107d23f9fe34c830e">ecstasy::Entities::Builder::_built</a></div><div class="ttdeci">bool _built</div><div class="ttdef"><b>Definition</b> <a href="_entities_8hpp_source.html#l00130">Entities.hpp:130</a></div></div>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>        : <a class="code hl_variable" href="classecstasy_1_1_entities_1_1_builder.html#ac30a0fcd51666f4b5cf052c97cd71895">_parent</a>(parent), <a class="code hl_variable" href="classecstasy_1_1_entities_1_1_builder.html#a5a868e4d6da1e0968490c35cce06ec1e">_entity</a>(entity), <a class="code hl_variable" href="classecstasy_1_1_entities_1_1_builder.html#acf6ac70889a7864107d23f9fe34c830e">_built</a>(<span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">   18</span>    {</div>
+<div class="line"><span class="lineno">   19</span>    }</div>
+<div class="ttc" id="aclassecstasy_1_1_entities_1_1_builder_html_a5a868e4d6da1e0968490c35cce06ec1e"><div class="ttname"><a href="classecstasy_1_1_entities_1_1_builder.html#a5a868e4d6da1e0968490c35cce06ec1e">ecstasy::Entities::Builder::_entity</a></div><div class="ttdeci">Entity _entity</div><div class="ttdoc">Entity being built.</div><div class="ttdef"><b>Definition</b> <a href="_entities_8hpp_source.html#l00133">Entities.hpp:133</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_entities_1_1_builder_html_ac30a0fcd51666f4b5cf052c97cd71895"><div class="ttname"><a href="classecstasy_1_1_entities_1_1_builder.html#ac30a0fcd51666f4b5cf052c97cd71895">ecstasy::Entities::Builder::_parent</a></div><div class="ttdeci">Entities &amp; _parent</div><div class="ttdoc">Reference to the parent Entities.</div><div class="ttdef"><b>Definition</b> <a href="_entities_8hpp_source.html#l00131">Entities.hpp:131</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_entities_1_1_builder_html_acf6ac70889a7864107d23f9fe34c830e"><div class="ttname"><a href="classecstasy_1_1_entities_1_1_builder.html#acf6ac70889a7864107d23f9fe34c830e">ecstasy::Entities::Builder::_built</a></div><div class="ttdeci">bool _built</div><div class="ttdoc">Whether the builder has been consumed.</div><div class="ttdef"><b>Definition</b> <a href="_entities_8hpp_source.html#l00135">Entities.hpp:135</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -301,12 +304,12 @@ Private Attributes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-19) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_entities_8cpp_source.html#l00020">20</a> of file <a class="el" href="_entities_8cpp_source.html">Entities.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   21</span>    {</div>
-<div class="line"><span class="lineno">   22</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classecstasy_1_1_entities_1_1_builder.html#acf6ac70889a7864107d23f9fe34c830e">_built</a>)</div>
-<div class="line"><span class="lineno">   23</span>            <span class="keywordflow">throw</span> <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a>(</div>
-<div class="line"><span class="lineno">   24</span>                <span class="stringliteral">&quot;Try to change entity using an Entities::Builder already consumed (build() has been called)&quot;</span>);</div>
-<div class="line"><span class="lineno">   25</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_entities_8cpp_source.html#l00021">21</a> of file <a class="el" href="_entities_8cpp_source.html">Entities.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>    {</div>
+<div class="line"><span class="lineno">   23</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classecstasy_1_1_entities_1_1_builder.html#acf6ac70889a7864107d23f9fe34c830e">_built</a>) [[unlikely]]</div>
+<div class="line"><span class="lineno">   24</span>            <span class="keywordflow">throw</span> <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a>(</div>
+<div class="line"><span class="lineno">   25</span>                <span class="stringliteral">&quot;Try to change entity using an Entities::Builder already consumed (build() has been called)&quot;</span>);</div>
+<div class="line"><span class="lineno">   26</span>    }</div>
 <div class="ttc" id="alogic_error_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -327,6 +330,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Finalize the entity, making it alive. </p>
+<dl class="section note"><dt>Note</dt><dd>This method can only be called once.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classecstasy_1_1_entity.html" title="Encapsulate an index to an entity.">Entity</a> Newly created entity.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -337,21 +341,21 @@ Private Attributes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-19) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_entities_8cpp_source.html#l00027">27</a> of file <a class="el" href="_entities_8cpp_source.html">Entities.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   28</span>    {</div>
-<div class="line"><span class="lineno">   29</span>        <a class="code hl_function" href="classecstasy_1_1_entities_1_1_builder.html#a2a86b731f71fa058fce5945d050d0b68">assertNotBuilt</a>();</div>
-<div class="line"><span class="lineno">   30</span>        <a class="code hl_variable" href="classecstasy_1_1_entities_1_1_builder.html#acf6ac70889a7864107d23f9fe34c830e">_built</a> = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   31</span>        <a class="code hl_variable" href="classecstasy_1_1_entities_1_1_builder.html#ac30a0fcd51666f4b5cf052c97cd71895">_parent</a>.<a class="code hl_variable" href="classecstasy_1_1_entities.html#a66333d5192ea6e070b9c2ecd178729f1">_alive</a>[<a class="code hl_variable" href="classecstasy_1_1_entities_1_1_builder.html#a5a868e4d6da1e0968490c35cce06ec1e">_entity</a>.<a class="code hl_function" href="classecstasy_1_1_entity.html#a303893300b586b78e7b47f2c67a0a3de">getIndex</a>()] = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   32</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_entities_1_1_builder.html#a5a868e4d6da1e0968490c35cce06ec1e">_entity</a>;</div>
-<div class="line"><span class="lineno">   33</span>    }</div>
-<div class="ttc" id="aclassecstasy_1_1_entities_1_1_builder_html_a2a86b731f71fa058fce5945d050d0b68"><div class="ttname"><a href="classecstasy_1_1_entities_1_1_builder.html#a2a86b731f71fa058fce5945d050d0b68">ecstasy::Entities::Builder::assertNotBuilt</a></div><div class="ttdeci">void assertNotBuilt() const</div><div class="ttdoc">Verify if the builder has not already been consumed.</div><div class="ttdef"><b>Definition</b> <a href="_entities_8cpp_source.html#l00020">Entities.cpp:20</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_entities_html_a66333d5192ea6e070b9c2ecd178729f1"><div class="ttname"><a href="classecstasy_1_1_entities.html#a66333d5192ea6e070b9c2ecd178729f1">ecstasy::Entities::_alive</a></div><div class="ttdeci">util::BitSet _alive</div><div class="ttdef"><b>Definition</b> <a href="_entities_8hpp_source.html#l00296">Entities.hpp:296</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_entity_html_a303893300b586b78e7b47f2c67a0a3de"><div class="ttname"><a href="classecstasy_1_1_entity.html#a303893300b586b78e7b47f2c67a0a3de">ecstasy::Entity::getIndex</a></div><div class="ttdeci">constexpr Index getIndex() const</div><div class="ttdoc">Get the entity identifier,.</div><div class="ttdef"><b>Definition</b> <a href="_entity_8hpp_source.html#l00050">Entity.hpp:50</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_entities_8cpp_source.html#l00028">28</a> of file <a class="el" href="_entities_8cpp_source.html">Entities.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>    {</div>
+<div class="line"><span class="lineno">   30</span>        <a class="code hl_function" href="classecstasy_1_1_entities_1_1_builder.html#a2a86b731f71fa058fce5945d050d0b68">assertNotBuilt</a>();</div>
+<div class="line"><span class="lineno">   31</span>        <a class="code hl_variable" href="classecstasy_1_1_entities_1_1_builder.html#acf6ac70889a7864107d23f9fe34c830e">_built</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   32</span>        <a class="code hl_variable" href="classecstasy_1_1_entities_1_1_builder.html#ac30a0fcd51666f4b5cf052c97cd71895">_parent</a>.<a class="code hl_variable" href="classecstasy_1_1_entities.html#a66333d5192ea6e070b9c2ecd178729f1">_alive</a>[<a class="code hl_variable" href="classecstasy_1_1_entities_1_1_builder.html#a5a868e4d6da1e0968490c35cce06ec1e">_entity</a>.<a class="code hl_function" href="classecstasy_1_1_entity.html#a0d506985125daa52cadbf326d915284c">getIndex</a>()] = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_entities_1_1_builder.html#a5a868e4d6da1e0968490c35cce06ec1e">_entity</a>;</div>
+<div class="line"><span class="lineno">   34</span>    }</div>
+<div class="ttc" id="aclassecstasy_1_1_entities_1_1_builder_html_a2a86b731f71fa058fce5945d050d0b68"><div class="ttname"><a href="classecstasy_1_1_entities_1_1_builder.html#a2a86b731f71fa058fce5945d050d0b68">ecstasy::Entities::Builder::assertNotBuilt</a></div><div class="ttdeci">void assertNotBuilt() const</div><div class="ttdoc">Verify if the builder has not already been consumed.</div><div class="ttdef"><b>Definition</b> <a href="_entities_8cpp_source.html#l00021">Entities.cpp:21</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_entities_html_a66333d5192ea6e070b9c2ecd178729f1"><div class="ttname"><a href="classecstasy_1_1_entities.html#a66333d5192ea6e070b9c2ecd178729f1">ecstasy::Entities::_alive</a></div><div class="ttdeci">util::BitSet _alive</div><div class="ttdoc">Mask of alive entities.</div><div class="ttdef"><b>Definition</b> <a href="_entities_8hpp_source.html#l00303">Entities.hpp:303</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_entity_html_a0d506985125daa52cadbf326d915284c"><div class="ttname"><a href="classecstasy_1_1_entity.html#a0d506985125daa52cadbf326d915284c">ecstasy::Entity::getIndex</a></div><div class="ttdeci">constexpr Index getIndex() const noexcept</div><div class="ttdoc">Get the entity identifier,.</div><div class="ttdef"><b>Definition</b> <a href="_entity_8hpp_source.html#l00050">Entity.hpp:50</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a1d341f87ca2eea4e18ec90024cd360d2" name="a1d341f87ca2eea4e18ec90024cd360d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d341f87ca2eea4e18ec90024cd360d2">&#9670;&#160;</a></span>getEntity()</h2>
+<a id="ae6b447980d50a9e339ecf1f5782a6a5d" name="ae6b447980d50a9e339ecf1f5782a6a5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6b447980d50a9e339ecf1f5782a6a5d">&#9670;&#160;</a></span>getEntity()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -368,7 +372,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -379,10 +383,10 @@ Private Attributes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-06-07) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_entities_8hpp_source.html#l00122">122</a> of file <a class="el" href="_entities_8hpp_source.html">Entities.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  123</span>            {</div>
-<div class="line"><span class="lineno">  124</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_entities_1_1_builder.html#a5a868e4d6da1e0968490c35cce06ec1e">_entity</a>;</div>
-<div class="line"><span class="lineno">  125</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_entities_8hpp_source.html#l00124">124</a> of file <a class="el" href="_entities_8hpp_source.html">Entities.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  125</span>            {</div>
+<div class="line"><span class="lineno">  126</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_entities_1_1_builder.html#a5a868e4d6da1e0968490c35cce06ec1e">_entity</a>;</div>
+<div class="line"><span class="lineno">  127</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -547,7 +551,9 @@ template&lt;IsContainerStorage S&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_entities_8hpp_source.html#l00130">130</a> of file <a class="el" href="_entities_8hpp_source.html">Entities.hpp</a>.</p>
+<p>Whether the builder has been consumed. </p>
+
+<p class="definition">Definition at line <a class="el" href="_entities_8hpp_source.html#l00135">135</a> of file <a class="el" href="_entities_8hpp_source.html">Entities.hpp</a>.</p>
 
 </div>
 </div>
@@ -571,7 +577,9 @@ template&lt;IsContainerStorage S&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_entities_8hpp_source.html#l00129">129</a> of file <a class="el" href="_entities_8hpp_source.html">Entities.hpp</a>.</p>
+<p><a class="el" href="classecstasy_1_1_entity.html" title="Encapsulate an index to an entity.">Entity</a> being built. </p>
+
+<p class="definition">Definition at line <a class="el" href="_entities_8hpp_source.html#l00133">133</a> of file <a class="el" href="_entities_8hpp_source.html">Entities.hpp</a>.</p>
 
 </div>
 </div>
@@ -595,7 +603,9 @@ template&lt;IsContainerStorage S&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_entities_8hpp_source.html#l00128">128</a> of file <a class="el" href="_entities_8hpp_source.html">Entities.hpp</a>.</p>
+<p>Reference to the parent <a class="el" href="classecstasy_1_1_entities.html" title="Resource holding all the Registry entities.">Entities</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="_entities_8hpp_source.html#l00131">131</a> of file <a class="el" href="_entities_8hpp_source.html">Entities.hpp</a>.</p>
 
 </div>
 </div>
@@ -619,7 +629,7 @@ template&lt;IsContainerStorage S&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_entities_8hpp_source.html#l00153">153</a> of file <a class="el" href="_entities_8hpp_source.html">Entities.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_entities_8hpp_source.html#l00158">158</a> of file <a class="el" href="_entities_8hpp_source.html">Entities.hpp</a>.</p>
 
 </div>
 </div>

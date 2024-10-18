@@ -94,6 +94,7 @@ $(document).ready(function(){initNavTree('classecstasy_1_1integration_1_1event_1
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classecstasy_1_1integration_1_1event_1_1_mouse-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ecstasy::integration::event::Mouse Class Reference</div></div>
@@ -155,12 +156,12 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8847d934ed25bbea7500eca503653da9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a8847d934ed25bbea7500eca503653da9">Mouse</a> ()</td></tr>
-<tr class="memdesc:a8847d934ed25bbea7500eca503653da9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html" title="Current mouse state.">Mouse</a> resource.  <br /></td></tr>
-<tr class="separator:a8847d934ed25bbea7500eca503653da9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6fda5e2ca760f0ad1adb664d246ce61"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#ae6fda5e2ca760f0ad1adb664d246ce61">~Mouse</a> ()=default</td></tr>
-<tr class="memdesc:ae6fda5e2ca760f0ad1adb664d246ce61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html" title="Current mouse state.">Mouse</a> resource.  <br /></td></tr>
-<tr class="separator:ae6fda5e2ca760f0ad1adb664d246ce61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac9c4240d5767cdb5c8cd1bdd6e58603"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#aac9c4240d5767cdb5c8cd1bdd6e58603">Mouse</a> () noexcept</td></tr>
+<tr class="memdesc:aac9c4240d5767cdb5c8cd1bdd6e58603"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html" title="Current mouse state.">Mouse</a> resource.  <br /></td></tr>
+<tr class="separator:aac9c4240d5767cdb5c8cd1bdd6e58603"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e08356a6b1b085fff1d0def5fc01c77"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a8e08356a6b1b085fff1d0def5fc01c77">~Mouse</a> () noexcept=default</td></tr>
+<tr class="memdesc:a8e08356a6b1b085fff1d0def5fc01c77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html" title="Current mouse state.">Mouse</a> resource.  <br /></td></tr>
+<tr class="separator:a8e08356a6b1b085fff1d0def5fc01c77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb132ec00d7f0ab2bbc71a61b9173782"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#acb132ec00d7f0ab2bbc71a61b9173782">isButtonDown</a> (<a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#ae02624c1f85027219f4f594abe1c0d8e">Button</a> button) const</td></tr>
 <tr class="memdesc:acb132ec00d7f0ab2bbc71a61b9173782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a mouse button is down.  <br /></td></tr>
 <tr class="separator:acb132ec00d7f0ab2bbc71a61b9173782"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -170,35 +171,41 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5899a13d981c6928abd03b92bbd8d961"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a5899a13d981c6928abd03b92bbd8d961">setButtonState</a> (<a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#ae02624c1f85027219f4f594abe1c0d8e">Button</a> button, bool down)</td></tr>
 <tr class="memdesc:a5899a13d981c6928abd03b92bbd8d961"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update a given button state.  <br /></td></tr>
 <tr class="separator:a5899a13d981c6928abd03b92bbd8d961"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10437a14974674d5dd5538069ce60966"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a10437a14974674d5dd5538069ce60966">getX</a> () const</td></tr>
-<tr class="memdesc:a10437a14974674d5dd5538069ce60966"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the X position of the mouse on the window.  <br /></td></tr>
-<tr class="separator:a10437a14974674d5dd5538069ce60966"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abba12a9822b6aaf344f2418b49b5709f"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#abba12a9822b6aaf344f2418b49b5709f">setX</a> (int x)</td></tr>
-<tr class="memdesc:abba12a9822b6aaf344f2418b49b5709f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the mouse x position.  <br /></td></tr>
-<tr class="separator:abba12a9822b6aaf344f2418b49b5709f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94a6015fff2d708002c9d4dfafe0d9af"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a94a6015fff2d708002c9d4dfafe0d9af">getY</a> () const</td></tr>
-<tr class="memdesc:a94a6015fff2d708002c9d4dfafe0d9af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the y position of the mouse on the window.  <br /></td></tr>
-<tr class="separator:a94a6015fff2d708002c9d4dfafe0d9af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63a73d2503ee213482d3d03be5cd584d"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a63a73d2503ee213482d3d03be5cd584d">setY</a> (int y)</td></tr>
-<tr class="memdesc:a63a73d2503ee213482d3d03be5cd584d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the mouse y position.  <br /></td></tr>
-<tr class="separator:a63a73d2503ee213482d3d03be5cd584d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64da94272e39a2fe79d7e26c1ecb7195"><td class="memItemLeft" align="right" valign="top">constexpr <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/pair.html">std::pair</a>&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a64da94272e39a2fe79d7e26c1ecb7195">getPosition</a> ()</td></tr>
-<tr class="memdesc:a64da94272e39a2fe79d7e26c1ecb7195"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the mouse position on the window.  <br /></td></tr>
-<tr class="separator:a64da94272e39a2fe79d7e26c1ecb7195"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afab9b812c336be92931c6487ac2dbd50"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#afab9b812c336be92931c6487ac2dbd50">setPosition</a> (int x, int y)</td></tr>
-<tr class="memdesc:afab9b812c336be92931c6487ac2dbd50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the mouse position.  <br /></td></tr>
-<tr class="separator:afab9b812c336be92931c6487ac2dbd50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af98232d624496de25a67bd3da792608b"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#af98232d624496de25a67bd3da792608b">getX</a> () const noexcept</td></tr>
+<tr class="memdesc:af98232d624496de25a67bd3da792608b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the X position of the mouse on the window.  <br /></td></tr>
+<tr class="separator:af98232d624496de25a67bd3da792608b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16f1fe2a45289c7e12cde5d80c8d2d88"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a16f1fe2a45289c7e12cde5d80c8d2d88">setX</a> (int x) noexcept</td></tr>
+<tr class="memdesc:a16f1fe2a45289c7e12cde5d80c8d2d88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the mouse x position.  <br /></td></tr>
+<tr class="separator:a16f1fe2a45289c7e12cde5d80c8d2d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1d350b5cf06c1a6611722ba85ac92bc"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#aa1d350b5cf06c1a6611722ba85ac92bc">getY</a> () const noexcept</td></tr>
+<tr class="memdesc:aa1d350b5cf06c1a6611722ba85ac92bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the y position of the mouse on the window.  <br /></td></tr>
+<tr class="separator:aa1d350b5cf06c1a6611722ba85ac92bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a421921131769e97e0f715a58467a0105"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a421921131769e97e0f715a58467a0105">setY</a> (int y) noexcept</td></tr>
+<tr class="memdesc:a421921131769e97e0f715a58467a0105"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the mouse y position.  <br /></td></tr>
+<tr class="separator:a421921131769e97e0f715a58467a0105"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e28aaba1ccabf119d2798cc7005a754"><td class="memItemLeft" align="right" valign="top">constexpr <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/pair.html">std::pair</a>&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a4e28aaba1ccabf119d2798cc7005a754">getPosition</a> () noexcept</td></tr>
+<tr class="memdesc:a4e28aaba1ccabf119d2798cc7005a754"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the mouse position on the window.  <br /></td></tr>
+<tr class="separator:a4e28aaba1ccabf119d2798cc7005a754"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf1faa8803baba6046bfbf4a7394a065"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#acf1faa8803baba6046bfbf4a7394a065">setPosition</a> (int x, int y) noexcept</td></tr>
+<tr class="memdesc:acf1faa8803baba6046bfbf4a7394a065"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the mouse position.  <br /></td></tr>
+<tr class="separator:acf1faa8803baba6046bfbf4a7394a065"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classecstasy_1_1_resource"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classecstasy_1_1_resource')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classecstasy_1_1_resource.html">ecstasy::Resource&lt; Mouse &gt;</a></td></tr>
-<tr class="memitem:a6e8ce269598e967087b09cb413e6439e inherit pub_methods_classecstasy_1_1_resource"><td class="memItemLeft" align="right" valign="top">Mouse *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_resource.html#a6e8ce269598e967087b09cb413e6439e">operator-&gt;</a> ()</td></tr>
-<tr class="memdesc:a6e8ce269598e967087b09cb413e6439e inherit pub_methods_classecstasy_1_1_resource"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compatibility for LockableView.  <br /></td></tr>
-<tr class="separator:a6e8ce269598e967087b09cb413e6439e inherit pub_methods_classecstasy_1_1_resource"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c2c365d3c0320b8bf3a92cc802def2d inherit pub_methods_classecstasy_1_1_resource"><td class="memItemLeft" align="right" valign="top">const Mouse *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_resource.html#a2c2c365d3c0320b8bf3a92cc802def2d">operator-&gt;</a> () const</td></tr>
-<tr class="memdesc:a2c2c365d3c0320b8bf3a92cc802def2d inherit pub_methods_classecstasy_1_1_resource"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compatibility for LockableView.    <br /></td></tr>
-<tr class="separator:a2c2c365d3c0320b8bf3a92cc802def2d inherit pub_methods_classecstasy_1_1_resource"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefe6c3174e1c9e93cfbf744a66a6c05c inherit pub_methods_classecstasy_1_1_resource"><td class="memItemLeft" align="right" valign="top">Mouse *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_resource.html#aefe6c3174e1c9e93cfbf744a66a6c05c">operator-&gt;</a> () noexcept</td></tr>
+<tr class="memdesc:aefe6c3174e1c9e93cfbf744a66a6c05c inherit pub_methods_classecstasy_1_1_resource"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compatibility for LockableView.  <br /></td></tr>
+<tr class="separator:aefe6c3174e1c9e93cfbf744a66a6c05c inherit pub_methods_classecstasy_1_1_resource"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f468428be2751577f8e20cccae4435e inherit pub_methods_classecstasy_1_1_resource"><td class="memItemLeft" align="right" valign="top">const Mouse *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_resource.html#a4f468428be2751577f8e20cccae4435e">operator-&gt;</a> () const noexcept</td></tr>
+<tr class="memdesc:a4f468428be2751577f8e20cccae4435e inherit pub_methods_classecstasy_1_1_resource"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compatibility for LockableView.    <br /></td></tr>
+<tr class="separator:a4f468428be2751577f8e20cccae4435e inherit pub_methods_classecstasy_1_1_resource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classecstasy_1_1_resource_base"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classecstasy_1_1_resource_base')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classecstasy_1_1_resource_base.html">ecstasy::ResourceBase</a></td></tr>
 <tr class="memitem:a4c034d619c11eeb2a5568dce369b003c inherit pub_methods_classecstasy_1_1_resource_base"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_resource_base.html#a4c034d619c11eeb2a5568dce369b003c">~ResourceBase</a> ()=default</td></tr>
 <tr class="memdesc:a4c034d619c11eeb2a5568dce369b003c inherit pub_methods_classecstasy_1_1_resource_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <br /></td></tr>
 <tr class="separator:a4c034d619c11eeb2a5568dce369b003c inherit pub_methods_classecstasy_1_1_resource_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a577b82478fbddfee655df94c78a8f6d2"><td class="memItemLeft" align="right" valign="top">static constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a577b82478fbddfee655df94c78a8f6d2">assertButtonValid</a> (<a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#ae02624c1f85027219f4f594abe1c0d8e">Button</a> button)</td></tr>
+<tr class="memdesc:a577b82478fbddfee655df94c78a8f6d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assert the validity of a mouse button.  <br /></td></tr>
+<tr class="separator:a577b82478fbddfee655df94c78a8f6d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -318,8 +325,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a8847d934ed25bbea7500eca503653da9" name="a8847d934ed25bbea7500eca503653da9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8847d934ed25bbea7500eca503653da9">&#9670;&#160;</a></span>Mouse()</h2>
+<a id="aac9c4240d5767cdb5c8cd1bdd6e58603" name="aac9c4240d5767cdb5c8cd1bdd6e58603"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac9c4240d5767cdb5c8cd1bdd6e58603">&#9670;&#160;</a></span>Mouse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -336,7 +343,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -347,14 +354,14 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_mouse_8hpp_source.html#l00065">65</a> of file <a class="el" href="_mouse_8hpp_source.html">Mouse.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   65</span>: <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a793cef61d9aa862a700cea573a7c3e15">_buttons</a>({<span class="keyword">false</span>}), <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a8738ecdbf1d436ad2df4636250e82e42">_x</a>(0), <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#af026c834988e398f099ac34addef81c2">_y</a>(0){};</div>
-<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_mouse_html_a793cef61d9aa862a700cea573a7c3e15"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a793cef61d9aa862a700cea573a7c3e15">ecstasy::integration::event::Mouse::_buttons</a></div><div class="ttdeci">std::array&lt; bool, static_cast&lt; int &gt;(Button::Count)&gt; _buttons</div><div class="ttdef"><b>Definition</b> <a href="_mouse_8hpp_source.html#l00208">Mouse.hpp:208</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_mouse_html_a8738ecdbf1d436ad2df4636250e82e42"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a8738ecdbf1d436ad2df4636250e82e42">ecstasy::integration::event::Mouse::_x</a></div><div class="ttdeci">int _x</div><div class="ttdef"><b>Definition</b> <a href="_mouse_8hpp_source.html#l00209">Mouse.hpp:209</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_mouse_html_af026c834988e398f099ac34addef81c2"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_mouse.html#af026c834988e398f099ac34addef81c2">ecstasy::integration::event::Mouse::_y</a></div><div class="ttdeci">int _y</div><div class="ttdef"><b>Definition</b> <a href="_mouse_8hpp_source.html#l00210">Mouse.hpp:210</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_mouse_html_a793cef61d9aa862a700cea573a7c3e15"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a793cef61d9aa862a700cea573a7c3e15">ecstasy::integration::event::Mouse::_buttons</a></div><div class="ttdeci">std::array&lt; bool, static_cast&lt; int &gt;(Button::Count)&gt; _buttons</div><div class="ttdef"><b>Definition</b> <a href="_mouse_8hpp_source.html#l00233">Mouse.hpp:233</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_mouse_html_a8738ecdbf1d436ad2df4636250e82e42"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a8738ecdbf1d436ad2df4636250e82e42">ecstasy::integration::event::Mouse::_x</a></div><div class="ttdeci">int _x</div><div class="ttdef"><b>Definition</b> <a href="_mouse_8hpp_source.html#l00235">Mouse.hpp:235</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_mouse_html_af026c834988e398f099ac34addef81c2"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_mouse.html#af026c834988e398f099ac34addef81c2">ecstasy::integration::event::Mouse::_y</a></div><div class="ttdeci">int _y</div><div class="ttdef"><b>Definition</b> <a href="_mouse_8hpp_source.html#l00237">Mouse.hpp:237</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ae6fda5e2ca760f0ad1adb664d246ce61" name="ae6fda5e2ca760f0ad1adb664d246ce61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6fda5e2ca760f0ad1adb664d246ce61">&#9670;&#160;</a></span>~Mouse()</h2>
+<a id="a8e08356a6b1b085fff1d0def5fc01c77" name="a8e08356a6b1b085fff1d0def5fc01c77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e08356a6b1b085fff1d0def5fc01c77">&#9670;&#160;</a></span>~Mouse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -371,7 +378,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -383,8 +390,58 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a64da94272e39a2fe79d7e26c1ecb7195" name="a64da94272e39a2fe79d7e26c1ecb7195"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64da94272e39a2fe79d7e26c1ecb7195">&#9670;&#160;</a></span>getPosition()</h2>
+<a id="a577b82478fbddfee655df94c78a8f6d2" name="a577b82478fbddfee655df94c78a8f6d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a577b82478fbddfee655df94c78a8f6d2">&#9670;&#160;</a></span>assertButtonValid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static constexpr void ecstasy::integration::event::Mouse::assertButtonValid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#ae02624c1f85027219f4f594abe1c0d8e">Button</a>&#160;</td>
+          <td class="paramname"><em>button</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Assert the validity of a mouse button. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">button</td><td>Button to assert.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="elRef" href="http://en.cppreference.com/w/cpp/error/invalid_argument.html">std::invalid_argument</a></td><td>If the button is invalid.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-13) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_mouse_8hpp_source.html#l00225">225</a> of file <a class="el" href="_mouse_8hpp_source.html">Mouse.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  226</span>        {</div>
+<div class="line"><span class="lineno">  227</span>            <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a><span class="keyword">&gt;</span>(button) &gt;= <span class="keyword">static_cast&lt;</span><a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a><span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#ae02624c1f85027219f4f594abe1c0d8eae93f994f01c537c4e2f7d8528c3eb5e9">Button::Count</a>)) [[unlikely]]</div>
+<div class="line"><span class="lineno">  228</span>                <span class="keywordflow">throw</span> <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/error/invalid_argument.html">std::invalid_argument</a>(<span class="stringliteral">&quot;Invalid mouse button&quot;</span>);</div>
+<div class="line"><span class="lineno">  229</span>        }</div>
+<div class="ttc" id="ainvalid_argument_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/error/invalid_argument.html">std::invalid_argument</a></div></div>
+<div class="ttc" id="asize_t_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4e28aaba1ccabf119d2798cc7005a754" name="a4e28aaba1ccabf119d2798cc7005a754"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e28aaba1ccabf119d2798cc7005a754">&#9670;&#160;</a></span>getPosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -401,7 +458,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -411,16 +468,16 @@ Private Attributes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-05) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_mouse_8hpp_source.html#l00185">185</a> of file <a class="el" href="_mouse_8hpp_source.html">Mouse.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  186</span>        {</div>
-<div class="line"><span class="lineno">  187</span>            <span class="keywordflow">return</span> <a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/utility/pair/make_pair.html">std::make_pair</a>(<a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a8738ecdbf1d436ad2df4636250e82e42">_x</a>, <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#af026c834988e398f099ac34addef81c2">_y</a>);</div>
-<div class="line"><span class="lineno">  188</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_mouse_8hpp_source.html#l00193">193</a> of file <a class="el" href="_mouse_8hpp_source.html">Mouse.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  194</span>        {</div>
+<div class="line"><span class="lineno">  195</span>            <span class="keywordflow">return</span> <a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/utility/pair/make_pair.html">std::make_pair</a>(<a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a8738ecdbf1d436ad2df4636250e82e42">_x</a>, <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#af026c834988e398f099ac34addef81c2">_y</a>);</div>
+<div class="line"><span class="lineno">  196</span>        }</div>
 <div class="ttc" id="amake_pair_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/utility/pair/make_pair.html">std::make_pair</a></div><div class="ttdeci">T make_pair(T... args)</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a10437a14974674d5dd5538069ce60966" name="a10437a14974674d5dd5538069ce60966"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10437a14974674d5dd5538069ce60966">&#9670;&#160;</a></span>getX()</h2>
+<a id="af98232d624496de25a67bd3da792608b" name="af98232d624496de25a67bd3da792608b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af98232d624496de25a67bd3da792608b">&#9670;&#160;</a></span>getX()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -437,7 +494,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -447,15 +504,15 @@ Private Attributes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-05) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_mouse_8hpp_source.html#l00129">129</a> of file <a class="el" href="_mouse_8hpp_source.html">Mouse.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  130</span>        {</div>
-<div class="line"><span class="lineno">  131</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a8738ecdbf1d436ad2df4636250e82e42">_x</a>;</div>
-<div class="line"><span class="lineno">  132</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_mouse_8hpp_source.html#l00137">137</a> of file <a class="el" href="_mouse_8hpp_source.html">Mouse.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  138</span>        {</div>
+<div class="line"><span class="lineno">  139</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a8738ecdbf1d436ad2df4636250e82e42">_x</a>;</div>
+<div class="line"><span class="lineno">  140</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a94a6015fff2d708002c9d4dfafe0d9af" name="a94a6015fff2d708002c9d4dfafe0d9af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94a6015fff2d708002c9d4dfafe0d9af">&#9670;&#160;</a></span>getY()</h2>
+<a id="aa1d350b5cf06c1a6611722ba85ac92bc" name="aa1d350b5cf06c1a6611722ba85ac92bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1d350b5cf06c1a6611722ba85ac92bc">&#9670;&#160;</a></span>getY()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -472,7 +529,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -482,10 +539,10 @@ Private Attributes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-05) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_mouse_8hpp_source.html#l00157">157</a> of file <a class="el" href="_mouse_8hpp_source.html">Mouse.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  158</span>        {</div>
-<div class="line"><span class="lineno">  159</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#af026c834988e398f099ac34addef81c2">_y</a>;</div>
-<div class="line"><span class="lineno">  160</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_mouse_8hpp_source.html#l00165">165</a> of file <a class="el" href="_mouse_8hpp_source.html">Mouse.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  166</span>        {</div>
+<div class="line"><span class="lineno">  167</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#af026c834988e398f099ac34addef81c2">_y</a>;</div>
+<div class="line"><span class="lineno">  168</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -521,13 +578,21 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool Whether the button is down or not.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="elRef" href="http://en.cppreference.com/w/cpp/error/invalid_argument.html">std::invalid_argument</a></td><td>If the button is invalid.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-05) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_mouse_8hpp_source.html#l00085">85</a> of file <a class="el" href="_mouse_8hpp_source.html">Mouse.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   86</span>        {</div>
-<div class="line"><span class="lineno">   87</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a793cef61d9aa862a700cea573a7c3e15">_buttons</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(button)];</div>
-<div class="line"><span class="lineno">   88</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_mouse_8hpp_source.html#l00087">87</a> of file <a class="el" href="_mouse_8hpp_source.html">Mouse.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   88</span>        {</div>
+<div class="line"><span class="lineno">   89</span>            <a class="code hl_function" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a577b82478fbddfee655df94c78a8f6d2">assertButtonValid</a>(button);</div>
+<div class="line"><span class="lineno">   90</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a793cef61d9aa862a700cea573a7c3e15">_buttons</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(button)];</div>
+<div class="line"><span class="lineno">   91</span>        }</div>
+<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_mouse_html_a577b82478fbddfee655df94c78a8f6d2"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a577b82478fbddfee655df94c78a8f6d2">ecstasy::integration::event::Mouse::assertButtonValid</a></div><div class="ttdeci">static constexpr void assertButtonValid(Button button)</div><div class="ttdoc">Assert the validity of a mouse button.</div><div class="ttdef"><b>Definition</b> <a href="_mouse_8hpp_source.html#l00225">Mouse.hpp:225</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -563,14 +628,20 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool Whether the button is up or not.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="elRef" href="http://en.cppreference.com/w/cpp/error/invalid_argument.html">std::invalid_argument</a></td><td>If the button is invalid.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-05) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_mouse_8hpp_source.html#l00100">100</a> of file <a class="el" href="_mouse_8hpp_source.html">Mouse.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  101</span>        {</div>
-<div class="line"><span class="lineno">  102</span>            <span class="keywordflow">return</span> !<a class="code hl_function" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#acb132ec00d7f0ab2bbc71a61b9173782">isButtonDown</a>(button);</div>
-<div class="line"><span class="lineno">  103</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_mouse_html_acb132ec00d7f0ab2bbc71a61b9173782"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_mouse.html#acb132ec00d7f0ab2bbc71a61b9173782">ecstasy::integration::event::Mouse::isButtonDown</a></div><div class="ttdeci">constexpr bool isButtonDown(Button button) const</div><div class="ttdoc">Check whether a mouse button is down.</div><div class="ttdef"><b>Definition</b> <a href="_mouse_8hpp_source.html#l00085">Mouse.hpp:85</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_mouse_8hpp_source.html#l00105">105</a> of file <a class="el" href="_mouse_8hpp_source.html">Mouse.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>        {</div>
+<div class="line"><span class="lineno">  107</span>            <span class="keywordflow">return</span> !<a class="code hl_function" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#acb132ec00d7f0ab2bbc71a61b9173782">isButtonDown</a>(button);</div>
+<div class="line"><span class="lineno">  108</span>        }</div>
+<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_mouse_html_acb132ec00d7f0ab2bbc71a61b9173782"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_mouse.html#acb132ec00d7f0ab2bbc71a61b9173782">ecstasy::integration::event::Mouse::isButtonDown</a></div><div class="ttdeci">constexpr bool isButtonDown(Button button) const</div><div class="ttdoc">Check whether a mouse button is down.</div><div class="ttdef"><b>Definition</b> <a href="_mouse_8hpp_source.html#l00087">Mouse.hpp:87</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -617,18 +688,25 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="elRef" href="http://en.cppreference.com/w/cpp/error/invalid_argument.html">std::invalid_argument</a></td><td>If the button is invalid.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-05) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_mouse_8hpp_source.html#l00116">116</a> of file <a class="el" href="_mouse_8hpp_source.html">Mouse.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  117</span>        {</div>
-<div class="line"><span class="lineno">  118</span>            <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a793cef61d9aa862a700cea573a7c3e15">_buttons</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(button)] = down;</div>
-<div class="line"><span class="lineno">  119</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_mouse_8hpp_source.html#l00123">123</a> of file <a class="el" href="_mouse_8hpp_source.html">Mouse.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  124</span>        {</div>
+<div class="line"><span class="lineno">  125</span>            <a class="code hl_function" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a577b82478fbddfee655df94c78a8f6d2">assertButtonValid</a>(button);</div>
+<div class="line"><span class="lineno">  126</span>            <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a793cef61d9aa862a700cea573a7c3e15">_buttons</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(button)] = down;</div>
+<div class="line"><span class="lineno">  127</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="afab9b812c336be92931c6487ac2dbd50" name="afab9b812c336be92931c6487ac2dbd50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afab9b812c336be92931c6487ac2dbd50">&#9670;&#160;</a></span>setPosition()</h2>
+<a id="acf1faa8803baba6046bfbf4a7394a065" name="acf1faa8803baba6046bfbf4a7394a065"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf1faa8803baba6046bfbf4a7394a065">&#9670;&#160;</a></span>setPosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -656,7 +734,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -673,16 +751,16 @@ Private Attributes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-05) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_mouse_8hpp_source.html#l00201">201</a> of file <a class="el" href="_mouse_8hpp_source.html">Mouse.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  202</span>        {</div>
-<div class="line"><span class="lineno">  203</span>            <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a8738ecdbf1d436ad2df4636250e82e42">_x</a> = x;</div>
-<div class="line"><span class="lineno">  204</span>            <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#af026c834988e398f099ac34addef81c2">_y</a> = y;</div>
-<div class="line"><span class="lineno">  205</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_mouse_8hpp_source.html#l00209">209</a> of file <a class="el" href="_mouse_8hpp_source.html">Mouse.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  210</span>        {</div>
+<div class="line"><span class="lineno">  211</span>            <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a8738ecdbf1d436ad2df4636250e82e42">_x</a> = x;</div>
+<div class="line"><span class="lineno">  212</span>            <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#af026c834988e398f099ac34addef81c2">_y</a> = y;</div>
+<div class="line"><span class="lineno">  213</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="abba12a9822b6aaf344f2418b49b5709f" name="abba12a9822b6aaf344f2418b49b5709f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abba12a9822b6aaf344f2418b49b5709f">&#9670;&#160;</a></span>setX()</h2>
+<a id="a16f1fe2a45289c7e12cde5d80c8d2d88" name="a16f1fe2a45289c7e12cde5d80c8d2d88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16f1fe2a45289c7e12cde5d80c8d2d88">&#9670;&#160;</a></span>setX()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -700,7 +778,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -716,15 +794,15 @@ Private Attributes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-05) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_mouse_8hpp_source.html#l00144">144</a> of file <a class="el" href="_mouse_8hpp_source.html">Mouse.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  145</span>        {</div>
-<div class="line"><span class="lineno">  146</span>            <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a8738ecdbf1d436ad2df4636250e82e42">_x</a> = x;</div>
-<div class="line"><span class="lineno">  147</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_mouse_8hpp_source.html#l00152">152</a> of file <a class="el" href="_mouse_8hpp_source.html">Mouse.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  153</span>        {</div>
+<div class="line"><span class="lineno">  154</span>            <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#a8738ecdbf1d436ad2df4636250e82e42">_x</a> = x;</div>
+<div class="line"><span class="lineno">  155</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a63a73d2503ee213482d3d03be5cd584d" name="a63a73d2503ee213482d3d03be5cd584d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63a73d2503ee213482d3d03be5cd584d">&#9670;&#160;</a></span>setY()</h2>
+<a id="a421921131769e97e0f715a58467a0105" name="a421921131769e97e0f715a58467a0105"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a421921131769e97e0f715a58467a0105">&#9670;&#160;</a></span>setY()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -742,7 +820,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -758,10 +836,10 @@ Private Attributes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-05) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_mouse_8hpp_source.html#l00172">172</a> of file <a class="el" href="_mouse_8hpp_source.html">Mouse.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  173</span>        {</div>
-<div class="line"><span class="lineno">  174</span>            <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#af026c834988e398f099ac34addef81c2">_y</a> = y;</div>
-<div class="line"><span class="lineno">  175</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_mouse_8hpp_source.html#l00180">180</a> of file <a class="el" href="_mouse_8hpp_source.html">Mouse.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  181</span>        {</div>
+<div class="line"><span class="lineno">  182</span>            <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#af026c834988e398f099ac34addef81c2">_y</a> = y;</div>
+<div class="line"><span class="lineno">  183</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -786,7 +864,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_mouse_8hpp_source.html#l00208">208</a> of file <a class="el" href="_mouse_8hpp_source.html">Mouse.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_mouse_8hpp_source.html#l00233">233</a> of file <a class="el" href="_mouse_8hpp_source.html">Mouse.hpp</a>.</p>
 
 </div>
 </div>
@@ -810,7 +888,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_mouse_8hpp_source.html#l00209">209</a> of file <a class="el" href="_mouse_8hpp_source.html">Mouse.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_mouse_8hpp_source.html#l00235">235</a> of file <a class="el" href="_mouse_8hpp_source.html">Mouse.hpp</a>.</p>
 
 </div>
 </div>
@@ -834,7 +912,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_mouse_8hpp_source.html#l00210">210</a> of file <a class="el" href="_mouse_8hpp_source.html">Mouse.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_mouse_8hpp_source.html#l00237">237</a> of file <a class="el" href="_mouse_8hpp_source.html">Mouse.hpp</a>.</p>
 
 </div>
 </div>

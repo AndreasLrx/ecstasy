@@ -154,8 +154,10 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a3b7af02a3e833ccdc69bf4440f0add57"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_registry_8hpp.html#afbab8d3e03b64c2dd9697c91ef11f5e8">NO_UNIQUE_ADDRESS</a> <a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#ada8ab10a8231b3a80d82d0fce68dfca7">ModifiersAllocator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#a3b7af02a3e833ccdc69bf4440f0add57">_modifiersAllocator</a></td></tr>
+<tr class="memdesc:a3b7af02a3e833ccdc69bf4440f0add57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifiers allocator. Is <a class="el" href="structecstasy_1_1_empty_type.html">EmptyType</a> if no modifier.  <br /></td></tr>
 <tr class="separator:a3b7af02a3e833ccdc69bf4440f0add57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9accc938d225617581a8130afbecc5d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_registry_8hpp.html#afbab8d3e03b64c2dd9697c91ef11f5e8">NO_UNIQUE_ADDRESS</a> <a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#a29f289787c1bafe1f5d3e2cd995b9a5b">ViewsAllocator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#a9accc938d225617581a8130afbecc5d0">_viewsAllocator</a></td></tr>
+<tr class="memdesc:a9accc938d225617581a8130afbecc5d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Views allocator. Is <a class="el" href="structecstasy_1_1_empty_type.html">EmptyType</a> if no view.  <br /></td></tr>
 <tr class="separator:a9accc938d225617581a8130afbecc5d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
@@ -185,7 +187,7 @@ Yes this is black magic and I'm proud of it (my brain hurts).</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-07)   </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00257">257</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00267">267</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="accaf9b7678705bd501e8d8b71c0a38c0" name="accaf9b7678705bd501e8d8b71c0a38c0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#accaf9b7678705bd501e8d8b71c0a38c0">&#9670;&#160;</a></span>HasModifiersAllocator</h2>
@@ -203,7 +205,7 @@ template&lt;typename... Selects, typename... Missings, typename... Conditions, b
 
 <p>Whether or not the query has a modifier allocator. </p>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00264">264</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00274">274</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
@@ -223,7 +225,7 @@ template&lt;typename... Selects, typename... Missings, typename... Conditions, b
 
 <p>Whether or not the query has a views allocator. </p>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00275">275</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00285">285</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
@@ -243,7 +245,7 @@ template&lt;typename... Selects, typename... Missings, typename... Conditions, b
 
 <p>Type of the modifiers allocator. </p>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00266">266</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00276">276</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
@@ -263,7 +265,7 @@ template&lt;typename... Selects, typename... Missings, typename... Conditions, b
 
 <p>Size in bytes of the modifiers allocator. 0 if no modifier. </p>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00262">262</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00272">272</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
@@ -294,7 +296,7 @@ template&lt;typename Q &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-07) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00294">294</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00304">304</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
@@ -314,7 +316,7 @@ template&lt;typename... Selects, typename... Missings, typename... Conditions, b
 
 <p>Type of the views allocator. </p>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00277">277</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00287">287</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
@@ -334,7 +336,7 @@ template&lt;typename... Selects, typename... Missings, typename... Conditions, b
 
 <p>Size in bytes of the views allocator. 0 if no view. </p>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00273">273</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00283">283</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
@@ -368,8 +370,8 @@ template&lt;typename... Selects, typename... Missings, typename... Conditions, b
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-07) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00304">304</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  304</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00314">314</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  314</span>{};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -420,15 +422,15 @@ template&lt;typename Q &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-07) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00320">320</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  321</span>            {</div>
-<div class="line"><span class="lineno">  322</span>                <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (AutoLock &amp;&amp; HasViewsAllocator::value &amp;&amp; thread::Lockable&lt;queryable_type_t&lt;Q&gt;&gt;)</div>
-<div class="line"><span class="lineno">  323</span>                    <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#a9accc938d225617581a8130afbecc5d0">_viewsAllocator</a>.template instanciate&lt;thread::LockableView&lt;queryable_type_t&lt;Q&gt;&gt;&gt;(</div>
-<div class="line"><span class="lineno">  324</span>                        getRegistryQueryable&lt;Q&gt;(registry));</div>
-<div class="line"><span class="lineno">  325</span>                <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  326</span>                    <span class="keywordflow">return</span> getRegistryQueryable&lt;Q&gt;(registry);</div>
-<div class="line"><span class="lineno">  327</span>            }</div>
-<div class="ttc" id="aclassecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168_html_a9accc938d225617581a8130afbecc5d0"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#a9accc938d225617581a8130afbecc5d0">ecstasy::Registry::RegistryStackQueryMemory&lt; util::meta::Traits&lt; Selects... &gt;, util::meta::Traits&lt; Missings... &gt;, util::meta::Traits&lt; Conditions... &gt;, AutoLock, Cs... &gt;::_viewsAllocator</a></div><div class="ttdeci">NO_UNIQUE_ADDRESS ViewsAllocator _viewsAllocator</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00331">Registry.hpp:331</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00330">330</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  331</span>            {</div>
+<div class="line"><span class="lineno">  332</span>                <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (AutoLock &amp;&amp; HasViewsAllocator::value &amp;&amp; thread::Lockable&lt;queryable_type_t&lt;Q&gt;&gt;)</div>
+<div class="line"><span class="lineno">  333</span>                    <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#a9accc938d225617581a8130afbecc5d0">_viewsAllocator</a>.template instanciate&lt;thread::LockableView&lt;queryable_type_t&lt;Q&gt;&gt;&gt;(</div>
+<div class="line"><span class="lineno">  334</span>                        getRegistryQueryable&lt;Q&gt;(registry));</div>
+<div class="line"><span class="lineno">  335</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  336</span>                    <span class="keywordflow">return</span> getRegistryQueryable&lt;Q&gt;(registry);</div>
+<div class="line"><span class="lineno">  337</span>            }</div>
+<div class="ttc" id="aclassecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168_html_a9accc938d225617581a8130afbecc5d0"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#a9accc938d225617581a8130afbecc5d0">ecstasy::Registry::RegistryStackQueryMemory&lt; util::meta::Traits&lt; Selects... &gt;, util::meta::Traits&lt; Missings... &gt;, util::meta::Traits&lt; Conditions... &gt;, AutoLock, Cs... &gt;::_viewsAllocator</a></div><div class="ttdeci">NO_UNIQUE_ADDRESS ViewsAllocator _viewsAllocator</div><div class="ttdoc">Views allocator. Is EmptyType if no view.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00343">Registry.hpp:343</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -478,15 +480,15 @@ template&lt;typename Q &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00347">347</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  348</span>            {</div>
-<div class="line"><span class="lineno">  349</span>                <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (HasModifiersAllocator::value &amp;&amp; (RegistryModifier&lt;Q&gt; || query::Modifier&lt;Q&gt;))</div>
-<div class="line"><span class="lineno">  350</span>                    <span class="keywordflow">return</span> registry.getQueryable&lt;Q, <a class="code hl_typedef" href="classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#ada8ab10a8231b3a80d82d0fce68dfca7">ModifiersAllocator</a>&gt;(<a class="code hl_variable" href="classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#a3b7af02a3e833ccdc69bf4440f0add57">_modifiersAllocator</a>);</div>
-<div class="line"><span class="lineno">  351</span>                <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  352</span>                    <span class="keywordflow">return</span> registry.getQueryable&lt;Q&gt;();</div>
-<div class="line"><span class="lineno">  353</span>            }</div>
-<div class="ttc" id="aclassecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168_html_a3b7af02a3e833ccdc69bf4440f0add57"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#a3b7af02a3e833ccdc69bf4440f0add57">ecstasy::Registry::RegistryStackQueryMemory&lt; util::meta::Traits&lt; Selects... &gt;, util::meta::Traits&lt; Missings... &gt;, util::meta::Traits&lt; Conditions... &gt;, AutoLock, Cs... &gt;::_modifiersAllocator</a></div><div class="ttdeci">NO_UNIQUE_ADDRESS ModifiersAllocator _modifiersAllocator</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00330">Registry.hpp:330</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168_html_ada8ab10a8231b3a80d82d0fce68dfca7"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#ada8ab10a8231b3a80d82d0fce68dfca7">ecstasy::Registry::RegistryStackQueryMemory&lt; util::meta::Traits&lt; Selects... &gt;, util::meta::Traits&lt; Missings... &gt;, util::meta::Traits&lt; Conditions... &gt;, AutoLock, Cs... &gt;::ModifiersAllocator</a></div><div class="ttdeci">std::conditional_t&lt; HasModifiersAllocator::value, util::StackAllocator&lt; ModifiersAllocatorSize::value, query::modifier::ModifierBase &gt;, EmptyType &gt; ModifiersAllocator</div><div class="ttdoc">Type of the modifiers allocator.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00266">Registry.hpp:270</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00359">359</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  360</span>            {</div>
+<div class="line"><span class="lineno">  361</span>                <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (HasModifiersAllocator::value &amp;&amp; (RegistryModifier&lt;Q&gt; || query::Modifier&lt;Q&gt;))</div>
+<div class="line"><span class="lineno">  362</span>                    <span class="keywordflow">return</span> registry.getQueryable&lt;Q, <a class="code hl_typedef" href="classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#ada8ab10a8231b3a80d82d0fce68dfca7">ModifiersAllocator</a>&gt;(<a class="code hl_variable" href="classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#a3b7af02a3e833ccdc69bf4440f0add57">_modifiersAllocator</a>);</div>
+<div class="line"><span class="lineno">  363</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  364</span>                    <span class="keywordflow">return</span> registry.getQueryable&lt;Q&gt;();</div>
+<div class="line"><span class="lineno">  365</span>            }</div>
+<div class="ttc" id="aclassecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168_html_a3b7af02a3e833ccdc69bf4440f0add57"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#a3b7af02a3e833ccdc69bf4440f0add57">ecstasy::Registry::RegistryStackQueryMemory&lt; util::meta::Traits&lt; Selects... &gt;, util::meta::Traits&lt; Missings... &gt;, util::meta::Traits&lt; Conditions... &gt;, AutoLock, Cs... &gt;::_modifiersAllocator</a></div><div class="ttdeci">NO_UNIQUE_ADDRESS ModifiersAllocator _modifiersAllocator</div><div class="ttdoc">Modifiers allocator. Is EmptyType if no modifier.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00341">Registry.hpp:341</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168_html_ada8ab10a8231b3a80d82d0fce68dfca7"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#ada8ab10a8231b3a80d82d0fce68dfca7">ecstasy::Registry::RegistryStackQueryMemory&lt; util::meta::Traits&lt; Selects... &gt;, util::meta::Traits&lt; Missings... &gt;, util::meta::Traits&lt; Conditions... &gt;, AutoLock, Cs... &gt;::ModifiersAllocator</a></div><div class="ttdeci">std::conditional_t&lt; HasModifiersAllocator::value, util::StackAllocator&lt; ModifiersAllocatorSize::value, query::modifier::ModifierBase &gt;, EmptyType &gt; ModifiersAllocator</div><div class="ttdoc">Type of the modifiers allocator.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00276">Registry.hpp:280</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -513,7 +515,9 @@ template&lt;typename... Selects, typename... Missings, typename... Conditions, b
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00330">330</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p>Modifiers allocator. Is <a class="el" href="structecstasy_1_1_empty_type.html">EmptyType</a> if no modifier. </p>
+
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00341">341</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
@@ -539,7 +543,9 @@ template&lt;typename... Selects, typename... Missings, typename... Conditions, b
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00331">331</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p>Views allocator. Is <a class="el" href="structecstasy_1_1_empty_type.html">EmptyType</a> if no view. </p>
+
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l00343">343</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>

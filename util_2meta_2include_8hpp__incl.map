@@ -1,24 +1,24 @@
 <map id="src/util/meta/include.hpp" name="src/util/meta/include.hpp">
 <area shape="rect" id="Node000001" title=" " alt="" coords="348,5,530,31"/>
-<area shape="rect" id="Node000002" href="$_traits_8hpp.html" title=" " alt="" coords="78,152,163,177"/>
+<area shape="rect" id="Node000002" href="$_traits_8hpp.html" title="Helper types for parameter packs." alt="" coords="78,152,163,177"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="348,21,254,24,154,33,68,51,36,64,14,80,9,90,9,98,20,116,44,131,73,145,70,149,41,136,16,119,3,100,4,88,10,77,33,60,66,46,153,28,254,19,347,16"/>
-<area shape="rect" id="Node000004" href="$apply_8hpp.html" title=" " alt="" coords="25,79,109,104"/>
+<area shape="rect" id="Node000004" href="$apply_8hpp.html" title="Apply a modification on all types in a list." alt="" coords="25,79,109,104"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="376,33,123,81,122,76,375,28"/>
-<area shape="rect" id="Node000005" href="$contains_8hpp.html" title=" " alt="" coords="310,152,416,177"/>
+<area shape="rect" id="Node000005" href="$contains_8hpp.html" title="Checks if a type exists in a list of types." alt="" coords="310,152,416,177"/>
 <area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="435,32,378,141,373,139,431,30"/>
-<area shape="rect" id="Node000007" href="$filter_8hpp.html" title=" " alt="" coords="133,79,212,104"/>
+<area shape="rect" id="Node000007" href="$filter_8hpp.html" title="Filter types from a list." alt="" coords="133,79,212,104"/>
 <area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="397,33,226,78,225,73,396,28"/>
-<area shape="rect" id="Node000008" href="$index_8hpp.html" title=" " alt="" coords="440,152,526,177"/>
+<area shape="rect" id="Node000008" href="$index_8hpp.html" title="Get the index of the first occurence of a type in a list of types." alt="" coords="440,152,526,177"/>
 <area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="497,28,537,46,555,60,569,77,574,88,574,99,564,118,546,134,524,148,521,143,542,130,560,115,569,97,569,89,565,80,551,64,534,51,495,33"/>
-<area shape="rect" id="Node000009" href="$add__optional_8hpp.html" title=" " alt="" coords="682,79,817,104"/>
+<area shape="rect" id="Node000009" href="$add__optional_8hpp.html" title="Add std::optional to a type if required." alt="" coords="682,79,817,104"/>
 <area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="490,28,687,73,686,78,488,33"/>
-<area shape="rect" id="Node000011" href="$is__std__vector_8hpp.html" title=" " alt="" coords="841,79,976,104"/>
+<area shape="rect" id="Node000011" href="$is__std__vector_8hpp.html" title="Check if a type is a std::vector." alt="" coords="841,79,976,104"/>
 <area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="515,28,828,75,827,80,514,33"/>
-<area shape="rect" id="Node000013" href="$is__type__bounded__array_8hpp.html" title=" " alt="" coords="550,152,749,177"/>
+<area shape="rect" id="Node000013" href="$is__type__bounded__array_8hpp.html" title="Check if a type is a bounded array of a given element type." alt="" coords="550,152,749,177"/>
 <area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="488,28,539,47,590,77,619,107,640,138,635,141,615,110,587,81,537,52,486,33"/>
-<area shape="rect" id="Node000014" href="$outer__join_8hpp.html" title=" " alt="" coords="236,79,351,104"/>
+<area shape="rect" id="Node000014" href="$outer__join_8hpp.html" title="Performs a left outer join between two parameter packs." alt="" coords="236,79,351,104"/>
 <area shape="poly" id="edge17_Node000001_Node000014" title=" " alt="" coords="417,33,331,75,328,70,415,28"/>
-<area shape="rect" id="Node000015" href="$type__set__eq_8hpp.html" title=" " alt="" coords="426,79,556,104"/>
+<area shape="rect" id="Node000015" href="$type__set__eq_8hpp.html" title="Test if two tuple types contains the exact same types independently of the order." alt="" coords="426,79,556,104"/>
 <area shape="poly" id="edge20_Node000001_Node000015" title=" " alt="" coords="450,29,477,66,472,69,446,33"/>
 <area shape="rect" id="Node000003" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/tuple.html" title=" " alt="" coords="93,225,148,251"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="123,178,123,212,118,212,118,178"/>

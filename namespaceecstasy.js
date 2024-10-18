@@ -60,7 +60,6 @@ var namespaceecstasy =
     [ "queryable_type_t", "namespaceecstasy.html#a53c8ca43801107dc959adbdc60810af8", null ],
     [ "ResourceReference", "namespaceecstasy.html#a935f8c5172bfb738d9af3f1585f41cad", null ],
     [ "RR", "namespaceecstasy.html#a04209f7d5ba97ef54c6169c3148e44ed", null ],
-    [ "StackAllocator", "namespaceecstasy.html#a029021666dc5e8cc0db0d817fc54a172", null ],
     [ "modifier_allocator_size_v", "namespaceecstasy.html#a2831a324e09dd41177dc35f2ad92a5b1", null ],
     [ "modifiers_allocator_size_v", "namespaceecstasy.html#ae3d09d8dc606623d5049790980069d46", null ]
 ];

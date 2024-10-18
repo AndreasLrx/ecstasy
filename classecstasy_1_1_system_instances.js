@@ -13,8 +13,8 @@ var classecstasy_1_1_system_instances =
     [ "get", "classecstasy_1_1_system_instances.html#aac25b8b20249fec4dc73552a52c413d3", null ],
     [ "get", "classecstasy_1_1_system_instances.html#a5bcf0ec74b2f43456be9503be91442b2", null ],
     [ "get", "classecstasy_1_1_system_instances.html#a41921426e86d8f9bc7f5890393b53f09", null ],
-    [ "getInner", "classecstasy_1_1_system_instances.html#a13031e791fb17b2ea572b3b317f9edb3", null ],
+    [ "getInner", "classecstasy_1_1_system_instances.html#a986e830bd8ee4cf8f23e8be26095aeea", null ],
     [ "getPtr", "classecstasy_1_1_system_instances.html#a3afe7d48ed9e8d06b96413eb6f189939", null ],
     [ "getPtr", "classecstasy_1_1_system_instances.html#a51da8c2d85879a698546fcd8754dcfbb", null ],
-    [ "_instances", "classecstasy_1_1_system_instances.html#a6ec96c0f300b33663d077464b517f039", null ]
+    [ "_instances", "classecstasy_1_1_system_instances.html#adc8639eb0c6aa22c177fc686fc49323e", null ]
 ];

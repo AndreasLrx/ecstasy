@@ -98,14 +98,17 @@ $(document).ready(function(){initNavTree('structecstasy_1_1query_1_1_condition_3
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="structecstasy_1_1query_1_1_condition.html" title="Condition resolution structure.">Condition</a> resolution structure for two constant operands.  
+ <a href="structecstasy_1_1query_1_1_condition_3_01_left_00_01_right_00_01_comparer_01_4.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ecstasy::query::Condition&lt; Left, Right, Comparer &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="structecstasy_1_1query_1_1_condition_3_01_left_00_01_right_00_01_comparer_01_4__inherit__graph.png" border="0" usemap="#aecstasy_1_1query_1_1_condition_3_01_left_00_01_right_00_01_comparer_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="aecstasy_1_1query_1_1_condition_3_01_left_00_01_right_00_01_comparer_01_4_inherit__map" id="aecstasy_1_1query_1_1_condition_3_01_left_00_01_right_00_01_comparer_01_4_inherit__map">
-<area shape="rect" title=" " alt="" coords="19,79,209,119"/>
-<area shape="rect" href="structecstasy_1_1query_1_1_condition_base.html" title=" " alt="" coords="5,5,223,31"/>
+<area shape="rect" title="Condition resolution structure for two constant operands." alt="" coords="19,79,209,119"/>
+<area shape="rect" href="structecstasy_1_1query_1_1_condition_base.html" title="Base class for all conditions." alt="" coords="5,5,223,31"/>
 <area shape="poly" title=" " alt="" coords="117,44,117,79,111,79,111,44"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -114,8 +117,8 @@ Collaboration diagram for ecstasy::query::Condition&lt; Left, Right, Comparer &g
 <div class="dyncontent">
 <div class="center"><img src="structecstasy_1_1query_1_1_condition_3_01_left_00_01_right_00_01_comparer_01_4__coll__graph.png" border="0" usemap="#aecstasy_1_1query_1_1_condition_3_01_left_00_01_right_00_01_comparer_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="aecstasy_1_1query_1_1_condition_3_01_left_00_01_right_00_01_comparer_01_4_coll__map" id="aecstasy_1_1query_1_1_condition_3_01_left_00_01_right_00_01_comparer_01_4_coll__map">
-<area shape="rect" title=" " alt="" coords="19,79,209,119"/>
-<area shape="rect" href="structecstasy_1_1query_1_1_condition_base.html" title=" " alt="" coords="5,5,223,31"/>
+<area shape="rect" title="Condition resolution structure for two constant operands." alt="" coords="19,79,209,119"/>
+<area shape="rect" href="structecstasy_1_1query_1_1_condition_base.html" title="Base class for all conditions." alt="" coords="5,5,223,31"/>
 <area shape="poly" title=" " alt="" coords="117,44,117,79,111,79,111,44"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -123,14 +126,27 @@ Collaboration diagram for ecstasy::query::Condition&lt; Left, Right, Comparer &g
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ac4c09afbdfe0a741859e1946d9d23e64"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecstasy_1_1query_1_1_condition_3_01_left_00_01_right_00_01_comparer_01_4.html#ac4c09afbdfe0a741859e1946d9d23e64">test</a> ()</td></tr>
+<tr class="memdesc:ac4c09afbdfe0a741859e1946d9d23e64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the condition.  <br /></td></tr>
 <tr class="separator:ac4c09afbdfe0a741859e1946d9d23e64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename LeftType, LeftType Left, typename RightType, RightType Right, typename Comparer&gt;<br />
 requires (!<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_pointer.html">std::is_member_pointer_v</a>&lt;LeftType&gt; &amp;&amp; !<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_member_pointer.html">std::is_member_pointer_v</a>&lt;RightType&gt;)<br />
-struct ecstasy::query::Condition&lt; Left, Right, Comparer &gt;</div><dl class="section note"><dt>Note</dt><dd>Const - Const, Will therefore always output the same result </dd></dl>
+struct ecstasy::query::Condition&lt; Left, Right, Comparer &gt;</div><p><a class="el" href="structecstasy_1_1query_1_1_condition.html" title="Condition resolution structure.">Condition</a> resolution structure for two constant operands. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">LeftType</td><td>Left operand type. </td></tr>
+    <tr><td class="paramname">Left</td><td>Left operand value (const). </td></tr>
+    <tr><td class="paramname">RightType</td><td>Right operand type. </td></tr>
+    <tr><td class="paramname">Right</td><td>Right operand value (const). </td></tr>
+    <tr><td class="paramname">Comparer</td><td>Comparer to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00031">31</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00063">63</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac4c09afbdfe0a741859e1946d9d23e64" name="ac4c09afbdfe0a741859e1946d9d23e64"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac4c09afbdfe0a741859e1946d9d23e64">&#9670;&#160;</a></span>test()</h2>
@@ -157,10 +173,15 @@ template&lt;typename LeftType , LeftType Left, typename RightType , RightType Ri
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00033">33</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   34</span>        {</div>
-<div class="line"><span class="lineno">   35</span>            <span class="keywordflow">return</span> Comparer{}(Left, Right);</div>
-<div class="line"><span class="lineno">   36</span>        }</div>
+<p>Evaluate the condition. </p>
+<dl class="section return"><dt>Returns</dt><dd>bool True if the condition is met.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-17) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="conditions_2_condition_8hpp_source.html#l00074">74</a> of file <a class="el" href="conditions_2_condition_8hpp_source.html">Condition.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>        {</div>
+<div class="line"><span class="lineno">   76</span>            <span class="keywordflow">return</span> Comparer{}(Left, Right);</div>
+<div class="line"><span class="lineno">   77</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>

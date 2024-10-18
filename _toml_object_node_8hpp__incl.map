@@ -1,16 +1,16 @@
 <map id="src/util/serialization/toml/TomlObjectNode.hpp" name="src/util/serialization/toml/TomlObjectNode.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="156,5,351,45"/>
-<area shape="rect" id="Node000002" href="$_toml_node_8hpp.html" title=" " alt="" coords="149,93,264,119"/>
+<area shape="rect" id="Node000001" title="Toml object node declaration." alt="" coords="156,5,351,45"/>
+<area shape="rect" id="Node000002" href="$_toml_node_8hpp.html" title="Toml node implementation." alt="" coords="149,93,264,119"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="244,47,223,83,218,80,240,44"/>
-<area shape="rect" id="Node000012" href="$_i_object_node_8hpp.html" title=" " alt="" coords="377,167,511,207"/>
+<area shape="rect" id="Node000012" href="$_i_object_node_8hpp.html" title="Object node interface." alt="" coords="377,167,511,207"/>
 <area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="278,43,412,156,409,160,274,48"/>
-<area shape="rect" id="Node000003" href="$_toml_conversion_8hpp.html" title=" " alt="" coords="47,174,201,199"/>
+<area shape="rect" id="Node000003" href="$_toml_conversion_8hpp.html" title="Toml conversion interface." alt="" coords="47,174,201,199"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="196,121,148,166,144,163,193,117"/>
 <area shape="rect" id="Node000010" title=" " alt="" coords="5,262,125,287"/>
 <area shape="poly" id="edge12_Node000002_Node000010" title=" " alt="" coords="149,113,119,119,88,130,59,146,37,168,30,188,32,209,40,230,51,249,46,252,35,233,27,210,24,187,32,165,56,141,86,125,117,114,148,108"/>
-<area shape="rect" id="Node000011" href="$_a_node_8hpp.html" title=" " alt="" coords="226,167,353,207"/>
+<area shape="rect" id="Node000011" href="$_a_node_8hpp.html" title="Abstract node partial implementation." alt="" coords="226,167,353,207"/>
 <area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="221,117,261,155,258,159,217,121"/>
-<area shape="rect" id="Node000004" href="$_i_node_8hpp.html" title=" " alt="" coords="205,255,331,295"/>
+<area shape="rect" id="Node000004" href="$_i_node_8hpp.html" title="Serialization node interface." alt="" coords="205,255,331,295"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="145,197,226,245,223,250,142,202"/>
 <area shape="poly" id="edge9_Node000003_Node000010" title=" " alt="" coords="118,201,84,252,79,249,114,198"/>
 <area shape="rect" id="Node000005" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/chrono.html" title=" " alt="" coords="40,343,107,368"/>
@@ -25,7 +25,7 @@
 <area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="292,293,338,331,335,336,289,297"/>
 <area shape="poly" id="edge11_Node000011_Node000004" title=" " alt="" coords="287,208,279,242,273,241,282,206"/>
 <area shape="poly" id="edge14_Node000012_Node000004" title=" " alt="" coords="407,209,320,251,318,246,404,204"/>
-<area shape="rect" id="Node000013" href="$_polymorphic_iterator_8hpp.html" title=" " alt="" coords="375,262,553,287"/>
+<area shape="rect" id="Node000013" href="$_polymorphic_iterator_8hpp.html" title="Polymorphic iterator for value T." alt="" coords="375,262,553,287"/>
 <area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="451,206,461,248,455,249,446,208"/>
 <area shape="poly" id="edge16_Node000013_Node000006" title=" " alt="" coords="468,287,473,329,468,329,463,288"/>
 </map>

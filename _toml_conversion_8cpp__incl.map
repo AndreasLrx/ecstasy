@@ -1,8 +1,8 @@
 <map id="src/util/serialization/toml/TomlConversion.cpp" name="src/util/serialization/toml/TomlConversion.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="213,5,403,45"/>
-<area shape="rect" id="Node000002" href="$_toml_conversion_8hpp.html" title=" " alt="" coords="231,93,385,119"/>
+<area shape="rect" id="Node000001" title="Toml conversion implementation." alt="" coords="213,5,403,45"/>
+<area shape="rect" id="Node000002" href="$_toml_conversion_8hpp.html" title="Toml conversion interface." alt="" coords="231,93,385,119"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="311,46,311,79,305,79,305,46"/>
-<area shape="rect" id="Node000003" href="$_i_node_8hpp.html" title=" " alt="" coords="171,167,298,207"/>
+<area shape="rect" id="Node000003" href="$_i_node_8hpp.html" title="Serialization node interface." alt="" coords="171,167,298,207"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="299,121,264,158,260,155,295,117"/>
 <area shape="rect" id="Node000009" title=" " alt="" coords="323,174,443,199"/>
 <area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="321,117,364,162,360,166,317,121"/>
