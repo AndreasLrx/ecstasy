@@ -36,6 +36,12 @@ namespace util::serialization
         ///
         [[nodiscard]] static TomlNodeFactory &get() noexcept;
 
+        /// @copydoc INodeFactory::exportStream().
+        void exportStream(const INode &node, std::ostream &stream) override final;
+
+        /// @copydoc INodeFactory::fromStream().
+        NodePtr fromStream(std::istream &stream) override final;
+
         ///
         /// @brief Create a node from a @ref toml::node object.
         ///
@@ -89,6 +95,20 @@ namespace util::serialization
         /// @since 1.0.0 (2024-10-18)
         ///
         TomlNodeFactory() = default;
+
+        /// @internal
+        /// @brief Create a Toml Node object from a @ref INode object.
+        ///
+        /// @note This method is temporary and will be removed in the future, after a refactor of the INode.
+        ///
+        /// @param[in] node INode object.
+        ///
+        /// @return std::unique_ptr<toml::node> Toml node object.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-21)
+        ///
+        [[nodiscard]] std::unique_ptr<toml::node> createTomlNode(const util::serialization::INode &node);
     };
 } // namespace util::serialization
 

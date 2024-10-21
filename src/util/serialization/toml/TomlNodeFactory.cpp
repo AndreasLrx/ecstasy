@@ -15,6 +15,59 @@
 
 namespace util::serialization
 {
+    std::unique_ptr<toml::node> TomlNodeFactory::createTomlNode(const INode &node)
+    {
+        if (node.isObject()) {
+            std::unique_ptr<toml::table> table = std::make_unique<toml::table>();
+
+            for (auto it : node.asObject())
+                table->insert(it.first, *createTomlNode(*it.second.lock()));
+            return table;
+        } else if (node.isArray()) {
+            std::unique_ptr<toml::array> array = std::make_unique<toml::array>();
+
+            for (auto it : node.asArray())
+                array->push_back(*createTomlNode(*it.lock()));
+            return array;
+        } else {
+            switch (node.getType()) {
+                case INode::Type::String: return std::make_unique<toml::value<std::string>>(node.asString());
+                case INode::Type::Integer: return std::make_unique<toml::value<int64_t>>(node.asInteger());
+                case INode::Type::Float: return std::make_unique<toml::value<double>>(node.asFloat());
+                case INode::Type::Boolean: return std::make_unique<toml::value<bool>>(node.asBoolean());
+                case INode::Type::Date:
+                    return std::make_unique<toml::value<toml::date>>(TomlConversion::toToml(node.asDate()));
+                case INode::Type::Time:
+                    return std::make_unique<toml::value<toml::time>>(TomlConversion::toToml(node.asTime()));
+                case INode::Type::DateTime:
+                    return std::make_unique<toml::value<toml::date_time>>(TomlConversion::toToml(node.asDateTime()));
+                default: return nullptr;
+            }
+        }
+    }
+
+    void TomlNodeFactory::exportStream(const INode &node, std::ostream &stream)
+    {
+        std::unique_ptr<toml::node> tomlNode = createTomlNode(node);
+
+        // We currently only support exporting objects and arrays.
+        // And the objects/arrays are not synced with the internal toml node for the moment, will be fixed later.
+        if (node.getType() == INode::Type::Object) {
+            stream << dynamic_cast<toml::table &>(*tomlNode);
+        } else if (node.getType() == INode::Type::Array) {
+            stream << dynamic_cast<toml::array &>(*tomlNode);
+
+        } else
+            throw std::runtime_error("Cannot export non-object/array node.");
+    }
+
+    NodePtr TomlNodeFactory::fromStream(std::istream &stream)
+    {
+        toml::parse_result result = toml::parse(stream);
+
+        return createFromToml(result);
+    }
+
     TomlNodeFactory &TomlNodeFactory::get() noexcept
     {
         static TomlNodeFactory instance;

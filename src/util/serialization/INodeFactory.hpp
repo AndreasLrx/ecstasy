@@ -28,6 +28,29 @@ namespace util::serialization
         virtual ~INodeFactory() = default;
 
         ///
+        /// @brief Export a node to a stream.
+        ///
+        /// @param[in] node Node to export.
+        /// @param[in] stream Stream to export to.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-21)
+        ///
+        virtual void exportStream(const INode &node, std::ostream &stream) = 0;
+
+        ///
+        /// @brief Import a node from a stream.
+        ///
+        /// @param[in] stream Stream to import from.
+        ///
+        /// @return NodePtr Imported node, or nullptr if the stream is invalid.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-21)
+        ///
+        virtual NodePtr fromStream(std::istream &stream) = 0;
+
+        ///
         /// @brief Construct an empty node from its type.
         ///
         /// @note @ref INode::Object and @ref INode::Array will return @ref IObjectNode and @ref IArrayNode pointers
