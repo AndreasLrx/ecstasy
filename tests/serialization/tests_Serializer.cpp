@@ -8,6 +8,8 @@
 #ifdef ECSTASY_SERIALIZER_JSON
     #include "ecstasy/serialization/JsonSerializer.hpp"
 #endif
+#include "ecstasy/serialization/NodeSerializer.hpp"
+#include "util/serialization/toml/TomlNodeFactory.hpp"
 
 using namespace ecstasy::serialization;
 
@@ -465,4 +467,39 @@ TEST(JsonSerializer, all)
     GTEST_ASSERT_EQ(e2.get<NPC>().pos.y, 0.f);
     GTEST_ASSERT_EQ(e2.get<Position>().x, 1.0f);
     GTEST_ASSERT_EQ(e2.get<Position>().y, -8456.0f);
+}
+
+TEST(NodeSerializer, all)
+{
+    NodeSerializer nodeSerializer(util::serialization::TomlNodeFactory::get());
+
+    // Fundamental types save and load
+    std::string empty = "";
+    nodeSerializer << static_cast<uint8_t>(21) << static_cast<uint16_t>(42) << static_cast<uint32_t>(84)
+                   << static_cast<uint64_t>(168) << -45612.f << empty << std::string_view("this is a test")
+                   << "raw string" << NodeSerializer::NewObject << "x" << 1.0f << "y" << -8456.0f
+                   << NodeSerializer::Close;
+
+    std::string toml = nodeSerializer.exportBytes();
+    GTEST_ASSERT_EQ(
+        toml, "[ 21, 42, 84, 168, -45612.0, '', 'this is a test', 'raw string', { x = 1.0, y = -8456.0 } ]");
+
+    nodeSerializer.resetCursor();
+    uint8_t u8 = 0;
+    uint16_t u16 = 0;
+    uint32_t u32 = 0;
+    uint64_t u64 = 0;
+    float f = 0;
+    std::string emptyLoaded, loaded, rawLoaded;
+    nodeSerializer >> u8 >> u16 >> u32 >> u64 >> f >> emptyLoaded >> loaded >> rawLoaded;
+    GTEST_ASSERT_EQ(u8, 21);
+    GTEST_ASSERT_EQ(u16, 42);
+    GTEST_ASSERT_EQ(u32, 84);
+    GTEST_ASSERT_EQ(u64, 168);
+    GTEST_ASSERT_EQ(f, -45612.f);
+    GTEST_ASSERT_EQ(emptyLoaded, "");
+    GTEST_ASSERT_EQ(loaded, "this is a test");
+    GTEST_ASSERT_EQ(rawLoaded, "raw string");
+    float x, y;
+    nodeSerializer >> NodeSerializer::NewObject >> "x" >> x >> "y" >> y >> NodeSerializer::Close;
 }

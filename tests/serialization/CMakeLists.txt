@@ -10,4 +10,5 @@ add_ecstasy_test(
     NAME ecstasy_test_serialization
     DISPLAY_NAME "Ecstasy-Serialization-Tests"
     SOURCES ${SRC}
+    INCLUDE_DIRS ${TomlPlusPlus_IncDir}
 )
