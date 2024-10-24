@@ -206,16 +206,13 @@ namespace ecstasy::serialization
                     array.PushBack(elem, _document.GetAllocator());
                 addValue(std::move(array.Move()));
             } else if constexpr (std::is_same_v<T, std::type_info>) {
-                if (getWriteCursor().IsObject()) {
-                    // Use name if the type is registered
-                    auto componentSerializer = tryGetEntityComponentSerializer(object.hash_code());
+                // Will raise an exception if the serializer is not registered
+                rtti::AType &type = rtti::TypeRegistry::getInstance().get(object);
 
-                    if (componentSerializer)
-                        save(componentSerializer->get().getTypeName());
-                    else
-                        save(std::to_string(object.hash_code()));
+                if (getWriteCursor().IsObject()) {
+                    save(type.getTypeName());
                 } else
-                    save(object.hash_code());
+                    save(type.getHash());
             } else if constexpr (std::is_fundamental_v<T>) {
                 addValue(rapidjson::Value(object));
             } else {
@@ -513,20 +510,22 @@ namespace ecstasy::serialization
         /// @brief Next key to use for the next object value.
         std::string _nextKey;
 
-        /// @copydoc loadComponentHash
-        [[nodiscard]] std::size_t loadComponentHash() override final
+        /// @copydoc loadComponentSerializer
+        [[nodiscard]] OptionalEntityComponentSerializer loadComponentSerializer() override final
         {
             if (getWriteCursor().IsObject()) {
                 if (_objectIterators.empty())
                     throw std::logic_error(
                         "No object iterator. This function should be called in an updateEntity context.");
                 if (_objectIterators.top() == getWriteCursor().MemberEnd())
-                    return 0;
+                    return std::nullopt;
                 _nextKey = _objectIterators.top()->name.GetString();
                 ++_objectIterators.top();
-                return getEntityComponentSerializer(_nextKey).getComponentTypeInfo().hash_code();
+                return ecstasy::rtti::TypeRegistry::getInstance().get(_nextKey).getSerializer<JsonSerializer>();
             } else
-                return load<std::size_t>();
+                return ecstasy::rtti::TypeRegistry::getInstance()
+                    .get(load<std::size_t>())
+                    .getSerializer<JsonSerializer>();
         }
 
         /// @copydoc beforeSaveEntity

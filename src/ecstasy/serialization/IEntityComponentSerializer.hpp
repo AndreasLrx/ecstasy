@@ -21,6 +21,11 @@ namespace ecstasy
     class IStorage;
     class RegistryEntity;
 
+    namespace rtti
+    {
+        class AType;
+    }
+
     namespace serialization
     {
         class ISerializer;
@@ -74,40 +79,14 @@ namespace ecstasy
             virtual ISerializer &load(ISerializer &serializer, IStorage &storage, RegistryEntity &entity) const = 0;
 
             ///
-            /// @brief Get the type info of the component storage.
-            ///
-            /// @return const std::type_info& Type info of the component storage.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2024-10-04)
-            ///
-            [[nodiscard]] virtual const std::type_info &getStorageTypeInfo() const noexcept = 0;
-
-            ///
             /// @brief Get the type info of the component.
             ///
-            /// @return const std::type_info& Type info of the component.
+            /// @return const std::type_info& Reference to the type info of the component.
             ///
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2024-10-11)
+            /// @since 1.0.0 (2024-10-25)
             ///
-            [[nodiscard]] virtual const std::type_info &getComponentTypeInfo() const noexcept = 0;
-
-            ////
-            /// @brief Get the Component Type Name
-            ///
-            /// @note Return the explicit name of the component if any and fallback on the type name.
-            ///
-            /// @return std::string_view Name of the component type.
-            ///
-            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-            /// @since 1.0.0 (2024-10-11)
-            ///
-            [[nodiscard]] virtual std::string_view getTypeName() const noexcept = 0;
-
-          private:
-            /// @brief Name of the component type.
-            std::string_view _name;
+            virtual const std::type_info &getType() const noexcept = 0;
         };
 
     } // namespace serialization

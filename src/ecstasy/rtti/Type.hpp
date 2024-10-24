@@ -16,6 +16,7 @@
 #include <string_view>
 
 #include "ecstasy/rtti/AType.hpp"
+#include "ecstasy/serialization/EntityComponentSerializer.hpp"
 #include "ecstasy/storages/StorageConcepts.hpp"
 
 namespace ecstasy
@@ -88,6 +89,30 @@ namespace ecstasy
             [[nodiscard]] std::string_view getTypeName() const noexcept override final
             {
                 return _name;
+            }
+
+            ///
+            /// @brief Register a new serializer for the component type.
+            ///
+            /// @tparam Serializer Type of the serializer to register.
+            ///
+            /// @return serialization::IEntityComponentSerializer& Reference to the registered serializer.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2024-10-25)
+            ///
+            template <std::derived_from<ecstasy::serialization::ISerializer> Serializer>
+            serialization::IEntityComponentSerializer &registerSerializer() noexcept
+            {
+                std::type_index index = std::type_index(typeid(Serializer));
+                auto iter = _serializers.find(index);
+
+                if (iter != _serializers.end())
+                    return *iter->second;
+
+                return *_serializers
+                            .emplace(index, std::make_unique<serialization::EntityComponentSerializer<T, Serializer>>())
+                            .first->second;
             }
 
           private:

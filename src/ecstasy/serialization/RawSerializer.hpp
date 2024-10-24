@@ -188,7 +188,7 @@ namespace ecstasy::serialization
                 for (const auto &elem : object)
                     *this << elem;
             } else if constexpr (std::is_same_v<T, std::type_info>) {
-                save(object.hash_code());
+                save(rtti::TypeRegistry::getInstance().get(object).getHash());
             } else {
                 return Parent::save(object);
             }
@@ -332,10 +332,16 @@ namespace ecstasy::serialization
             save<std::size_t>(0);
         }
 
-        /// @copydoc loadComponentHash
-        std::size_t loadComponentHash() override final
+        /// @copydoc loadComponentSerializer
+        OptionalEntityComponentSerializer loadComponentSerializer() override final
         {
-            return loadRaw<std::size_t>();
+            size_t hash = loadRaw<std::size_t>();
+
+            if (hash == 0)
+                return std::nullopt;
+
+            // Will raise an exception if the serializer is not registered
+            return ecstasy::rtti::TypeRegistry::getInstance().get(hash).getSerializer<RawSerializer>();
         }
     };
 } // namespace ecstasy::serialization

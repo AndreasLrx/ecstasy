@@ -12,11 +12,21 @@
 #ifndef ECSTASY_RTTI_ATYPE_HPP_
 #define ECSTASY_RTTI_ATYPE_HPP_
 
+#include <optional>
 #include <typeindex>
 #include <string_view>
+#include <type_traits>
+#include <unordered_map>
+
+#include "ecstasy/serialization/ISerializer.hpp"
 
 namespace ecstasy
 {
+    namespace serialization
+    {
+        class IEntityComponentSerializer;
+    }
+
     namespace rtti
     {
         ///
@@ -132,6 +142,66 @@ namespace ecstasy
             /// @since 1.0.0 (2024-10-24)
             ///
             [[nodiscard]] bool operator==(const std::string_view &rhs) const noexcept;
+
+            ///
+            /// @brief Check if a serializer is registered for the component type.
+            ///
+            /// @tparam Serializer Type of the serializer to check.
+            ///
+            /// @return bool Whether the serializer is registered or not.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2024-10-31)
+            ///
+            template <std::derived_from<ecstasy::serialization::ISerializer> Serializer>
+            [[nodiscard]] bool hasSerializer() const noexcept
+            {
+                return _serializers.contains(std::type_index(typeid(Serializer)));
+            }
+
+            ///
+            /// @brief Get a reference to the entity component serializer for the given serializer type.
+            ///
+            /// @tparam Serializer Type of the serializer to use.
+            ///
+            /// @return ecstasy::serialization::IEntityComponentSerializer& Reference to the serializer.
+            ///
+            /// @throw std::out_of_range If the serializer is not registered.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2024-10-31)
+            ///
+            template <std::derived_from<ecstasy::serialization::ISerializer> Serializer>
+            [[nodiscard]] ecstasy::serialization::IEntityComponentSerializer &getSerializer() const noexcept
+            {
+                return *_serializers.at(std::type_index(typeid(Serializer)));
+            }
+
+            ///
+            /// @brief Try to get a reference to the entity component serializer for the given serializer type.
+            ///
+            /// @tparam Serializer Type of the serializer to use.
+            ///
+            /// @return std::optional<std::reference_wrapper<ecstasy::serialization::IEntityComponentSerializer>>
+            /// Reference to the serializer if found, std::nullopt otherwise.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2024-10-31)
+            ///
+            template <std::derived_from<ecstasy::serialization::ISerializer> Serializer>
+            [[nodiscard]] std::optional<std::reference_wrapper<ecstasy::serialization::IEntityComponentSerializer>>
+            tryGetSerializer() const noexcept
+            {
+                auto res = _serializers.find(std::type_index(typeid(Serializer)));
+                if (res != _serializers.end())
+                    return std::ref(*res->second);
+                return std::nullopt;
+            }
+
+          protected:
+            /// @brief Hash of the type name.
+            std::unordered_map<std::type_index, std::unique_ptr<ecstasy::serialization::IEntityComponentSerializer>>
+                _serializers;
         };
 
         ///
