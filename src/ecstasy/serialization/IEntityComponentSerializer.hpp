@@ -10,8 +10,8 @@
 ///
 ///
 
-#ifndef ECSTASY_COMPONENT_ICOMPONESERIALIZERTTI_HPP_
-#define ECSTASY_COMPONENT_ICOMPONESERIALIZERTTI_HPP_
+#ifndef ECSTASY_SERIALIZATION_ICOMPONESERIALIZERTTI_HPP_
+#define ECSTASY_SERIALIZATION_ICOMPONESERIALIZERTTI_HPP_
 
 #include <functional>
 #include <typeindex>
@@ -104,9 +104,13 @@ namespace ecstasy
             /// @since 1.0.0 (2024-10-11)
             ///
             [[nodiscard]] virtual std::string_view getTypeName() const noexcept = 0;
+
+          private:
+            /// @brief Name of the component type.
+            std::string_view _name;
         };
 
     } // namespace serialization
 } // namespace ecstasy
 
-#endif /* !ECSTASY_COMPONENT_ICOMPONENT_SERIALIZER_HPP_ */
+#endif /* !ECSTASY_SERIALIZATION_ICOMPONESERIALIZERTTI_HPP_ */
