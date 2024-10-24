@@ -16,6 +16,7 @@
 #include <string_view>
 
 #include "ecstasy/rtti/AType.hpp"
+#include "ecstasy/serialization/IEntityComponentSerializer.hpp"
 #include "ecstasy/storages/StorageConcepts.hpp"
 
 namespace ecstasy

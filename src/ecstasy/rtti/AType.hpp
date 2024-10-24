@@ -14,6 +14,10 @@
 
 #include <typeindex>
 #include <string_view>
+#include <type_traits>
+
+#include "ecstasy/serialization/IEntityComponentSerializer.hpp"
+#include "ecstasy/serialization/ISerializer.hpp"
 
 namespace ecstasy
 {
@@ -132,6 +136,32 @@ namespace ecstasy
             /// @since 1.0.0 (2024-10-24)
             ///
             [[nodiscard]] bool operator==(const std::string_view &rhs) const noexcept;
+
+            template <std::derived_from<ecstasy::serialization::ISerializer> Serializer>
+            bool hasSerializer() const noexcept
+            {
+                return _serializers.contains(std::type_index(typeid(Serializer)));
+            }
+
+            template <std::derived_from<ecstasy::serialization::ISerializer> Serializer>
+            ecstasy::serialization::IEntityComponentSerializer &getSerializer() const noexcept
+            {
+                return *_serializers.at(std::type_index(typeid(Serializer)));
+            }
+
+            template <std::derived_from<ecstasy::serialization::ISerializer> Serializer>
+            std::optional<std::reference_wrapper<ecstasy::serialization::IEntityComponentSerializer>>
+            tryGetSerializer() const noexcept
+            {
+                auto res = _serializers.find(std::type_index(typeid(Serializer)));
+                if (res != _serializers.end())
+                    return std::ref(*res->second);
+                return std::nullopt;
+            }
+
+          private:
+            std::unordered_map<std::type_index, std::unique_ptr<ecstasy::serialization::IEntityComponentSerializer>>
+                _serializers;
         };
 
         ///

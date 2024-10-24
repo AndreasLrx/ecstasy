@@ -26,6 +26,8 @@
 #include "ecstasy/serialization/traits/can_save_type.hpp"
 #include "ecstasy/serialization/traits/can_update_type.hpp"
 
+#include "ecstasy/rtti/TypeRegistry.hpp"
+
 #define __CONCATENATE_DETAIL(x, y)      x##y
 #define __CONCATENATE(x, y)             __CONCATENATE_DETAIL(x, y)
 #define _REGISTER_SERIALIZABLES_AGAIN() _REGISTER_SERIALIZABLES_HELPER
@@ -227,9 +229,13 @@ namespace ecstasy::serialization
 
             for (IStorage &storage : storages) {
                 std::size_t hash = storage.getComponentTypeInfos().hash_code();
+                auto optional_type = ecstasy::rtti::TypeRegistry::getInstance().find(storage.getComponentTypeInfos());
 
-                if (this->hasEntityComponentSerializer(hash)) {
-                    this->getEntityComponentSerializer(hash).save(*this, storage, entity);
+                if (optional_type.has_value()) {
+                    auto &serializer = optional_type->get().tryGetSerializer<S>();
+
+                    if (serializer.has_value())
+                        serializer->get().save(*this, storage, entity);
                 }
             }
             afterSaveEntity(entity);
@@ -333,17 +339,13 @@ namespace ecstasy::serialization
             std::size_t component_hash = loadComponentHash();
 
             while (component_hash != 0) {
-                if (this->hasEntityComponentSerializer(component_hash)) {
-                    IEntityComponentSerializer &component = this->getEntityComponentSerializer(component_hash);
-                    IStorage &storage =
-                        entity.getRegistry().getStorages().get(std::type_index(component.getStorageTypeInfo()));
+                IEntityComponentSerializer &serializer =
+                    ecstasy::rtti::TypeRegistry::getInstance().get(component_hash).getSerializer<S>();
+                IStorage &storage =
+                    entity.getRegistry().getStorages().get(std::type_index(component.getStorageTypeInfo()));
 
-                    component.load(*this, storage, entity);
-                } else {
-                    throw std::out_of_range("Component with hash " + std::to_string(component_hash)
-                        + " not registered. Use "
-                          "registerComponent to register components.");
-                }
+                serializer.load(*this, storage, entity);
+
                 component_hash = loadComponentHash();
             }
             afterUpdateEntity(entity);
@@ -425,23 +427,6 @@ namespace ecstasy::serialization
         }
 
         ///
-        /// @brief Get the Entity Component Serializer for a component type.
-        ///
-        /// @param[in] hash Hash of the component type.
-        ///
-        /// @return IEntityComponentSerializer& Reference to the entity component serializer.
-        ///
-        /// @throw std::out_of_range If the component type is not registered.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2024-10-04)
-        ///
-        [[nodiscard]] static IEntityComponentSerializer &getEntityComponentSerializer(std::size_t hash)
-        {
-            return *getRegisteredComponents().at(hash);
-        }
-
-        ///
         /// @brief Try to get the Entity Component Serializer for a component type.
         ///
         /// @param[in] hash Hash of the component type.
@@ -462,44 +447,7 @@ namespace ecstasy::serialization
             return std::nullopt;
         }
 
-        ///
-        /// @brief Get the Entity Component Serializer from a component type name.
-        ///
-        /// @param[in] name Name of the component type.
-        ///
-        /// @return IEntityComponentSerializer& Reference to the entity component serializer.
-        ///
-        /// @throw std::out_of_range If the component type is not registered.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2024-10-11)
-        ///
-        [[nodiscard]] static IEntityComponentSerializer &getEntityComponentSerializer(std::string_view name)
-        {
-            for (auto &[hash, serializer] : getRegisteredComponents()) {
-                if (serializer->getTypeName() == name)
-                    return *serializer;
-            }
-            throw std::out_of_range("Component with name " + std::string(name) + " not registered.");
-        }
-
       protected:
-        ///
-        /// @brief Get a reference to the Registered Components map.
-        ///
-        /// @return std::unordered_map<std::size_t, std::unique_ptr<IEntityComponentSerializer>>& Reference to the
-        /// registered components map.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2024-10-10)
-        ///
-        [[nodiscard]] static std::unordered_map<std::size_t, std::unique_ptr<IEntityComponentSerializer>> &
-        getRegisteredComponents()
-        {
-            static std::unordered_map<std::size_t, std::unique_ptr<IEntityComponentSerializer>> registeredComponents;
-            return registeredComponents;
-        }
-
         ///
         /// @brief Load the hash of the next component type from the stream.
         ///

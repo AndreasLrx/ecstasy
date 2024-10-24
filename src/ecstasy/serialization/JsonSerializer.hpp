@@ -524,7 +524,7 @@ namespace ecstasy::serialization
                     return 0;
                 _nextKey = _objectIterators.top()->name.GetString();
                 ++_objectIterators.top();
-                return getEntityComponentSerializer(_nextKey).getComponentTypeInfo().hash_code();
+                return ecstasy::rtti::TypeRegistry::getInstance().get(_nextKey).getHash();
             } else
                 return load<std::size_t>();
         }
