@@ -9,8 +9,8 @@
 ///
 ///
 
-#ifndef ECSTASY_COMPONENT_COMPONENT_SERIALIZER_HPP_
-#define ECSTASY_COMPONENT_COMPONENT_SERIALIZER_HPP_
+#ifndef ECSTASY_SERIALIZATION_ENTITY_COMPONENT_SERIALIZER_HPP_
+#define ECSTASY_SERIALIZATION_ENTITY_COMPONENT_SERIALIZER_HPP_
 
 #include "ecstasy/serialization/IEntityComponentSerializer.hpp"
 
@@ -109,4 +109,4 @@ namespace ecstasy::serialization
 
 } // namespace ecstasy::serialization
 
-#endif /* !ECSTASY_COMPONENT_COMPONENT_SERIALIZER_HPP_ */
+#endif /* !ECSTASY_SERIALIZATION_ENTITY_COMPONENT_SERIALIZER_HPP_ */
