@@ -307,8 +307,8 @@ TEST(Serializer, ComponentsRTTI)
     ecstasy::Registry registry;
 
     // Ensure components are registered (or not)
-    GTEST_ASSERT_TRUE(RawSerializer::hasEntityComponentSerializer(typeid(Position).hash_code()));
-    GTEST_ASSERT_FALSE(RawSerializer::hasEntityComponentSerializer(typeid(NPC).hash_code()));
+    GTEST_ASSERT_TRUE(RawSerializer::hasEntityComponentSerializer<Position>());
+    GTEST_ASSERT_FALSE(RawSerializer::hasEntityComponentSerializer<NPC>());
 
     ecstasy::RegistryEntity entity(
         registry.entityBuilder().with<Position>(1.0f, -8456.0f).with<NPC>(Position(42.f, 0.f), "Steve").build(),
@@ -319,7 +319,8 @@ TEST(Serializer, ComponentsRTTI)
     // Check the serialized data
     rawSerializer.resetReadCursor();
     std::size_t component_hash = rawSerializer.load<std::size_t>();
-    GTEST_ASSERT_EQ(component_hash, typeid(Position).hash_code());
+    std::size_t expected_hash = ecstasy::rtti::TypeRegistry::getInstance().get<Position>().getHash();
+    GTEST_ASSERT_EQ(component_hash, expected_hash);
     Position posLoaded = Position(rawSerializer);
     GTEST_ASSERT_EQ(posLoaded.x, 1.0f);
     GTEST_ASSERT_EQ(posLoaded.y, -8456.0f);

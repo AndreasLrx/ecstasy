@@ -12,7 +12,9 @@
 #ifndef ECSTASY_SERIALIZATION_ENTITY_COMPONENT_SERIALIZER_HPP_
 #define ECSTASY_SERIALIZATION_ENTITY_COMPONENT_SERIALIZER_HPP_
 
+#include "ecstasy/resources/entity/RegistryEntity.hpp"
 #include "ecstasy/serialization/IEntityComponentSerializer.hpp"
+#include "ecstasy/storages/StorageConcepts.hpp"
 
 namespace ecstasy::serialization
 {
@@ -42,17 +44,6 @@ namespace ecstasy::serialization
         EntityComponentSerializer() noexcept : IEntityComponentSerializer()
         {
         }
-
-        ///
-        /// @brief Construct a new Component Rtti with a custom name.
-        ///
-        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2024-10-04)
-        ///
-        EntityComponentSerializer(std::string_view name) noexcept : IEntityComponentSerializer(), _name(name)
-        {
-        }
-
         ///
         /// @brief Destroy the Component Rtti
         ///
@@ -82,29 +73,11 @@ namespace ecstasy::serialization
                     .template update<Component>(dynamic_cast<StorageType &>(storage).at(entity.getIndex()));
         }
 
-        /// @copydoc IEntityComponentSerializer::getStorageTypeInfo
-        [[nodiscard]] const std::type_info &getStorageTypeInfo() const noexcept override final
-        {
-            return typeid(StorageType);
-        }
-
-        /// @copydoc IEntityComponentSerializer::getComponentTypeInfo
-        [[nodiscard]] const std::type_info &getComponentTypeInfo() const noexcept override final
+        /// @copydoc IEnttyComponentSerializer::getType
+        const std::type_info &getType() const noexcept override final
         {
             return typeid(Component);
         }
-
-        /// @copydoc IEntityComponentSerializer::getTypeName
-        [[nodiscard]] std::string_view getTypeName() const noexcept override final
-        {
-            if (_name.empty())
-                return typeid(Component).name();
-            return _name;
-        }
-
-      private:
-        /// @brief Name of the component type.
-        std::string_view _name;
     };
 
 } // namespace ecstasy::serialization
