@@ -556,16 +556,101 @@ If you want to handle thread safety yourself you still have multiple options:
 
    I know sometimes ecstasy can lock multiple times the same mutex because it is hard to detect. But if you know it and it is sensitive systems (running lot of times per frame) you can use the \*Ex methods to UnLock explicitly the same way.
 
+## Using cross platform RTTI
+
+### Why use custom RTTI implementation
+
+C++ already has its own RTTI integration with @ref std::type_info (as returned by @ref typeid).
+With this you can get a unique hash for each type using @ref std::type_info::hash_code().
+However, this hash is not cross platform since it is implementation specific. And most important, it is not guaranteed to stay the same between 2 runs.
+
+As explained in the @ref std::type_info::hash_code() documentation:
+
+    Returns an unspecified value (here denoted by hash code) such that for all std::type_info objects referring to the same type,
+    their hash code is the same.
+
+    No other guarantees are given: std::type_info objects referring to different types may have the same hash code
+    (although the standard recommends that implementations avoid this as much as possible),
+    and hash code for the same type can change between invocations of the same program.
+
+It also returns a @ref std::type_info::name() function, but its results are mangled in g++ (maybe clang too) but not in MSVC.
+
+For all these reasons, it make cross-platform serialization of custom types impossible using only @ref std::type_info.
+
+### How to use it
+
+#### How is it stored
+
+This custom rtti use mainly two classes: @ref ecstasy::rtti::TypeRegistry and @ref ecstasy::rtti::AType.
+
+The TypeRegistry is a singleton storing all AType instances.
+
+The @ref AType is the replacement of @ref std::type_info. It is mainly a wrapper over the @ref std::type_info with a user defined name (which is supposed to be the same for every program run) and therefore a cross platform hash which is the hash of the name.
+
+And it also contains the @ref ecstasy::serialization::IEntityComponentSerializer instances for the serialization part (see Serializing your entities section)
+
+#### Registering types
+
+First of all you need to register the types for which you want cross-platform RTTI using the macro @ref REGISTER_TYPES.
+
+```cpp
+// The macro is defined in this included
+#include <ecstasy/rtti/TypeRegistry.hpp>
+
+struct Position {
+    float x;
+    float y;
+};
+
+struct Size {
+    float width;
+    float height;
+};
+
+// You can register as much types as you want (variadic macro)
+REGISTER_TYPES(Position, Size);
+```
+
+@note
+I tried to do automatic type registration (ie not requiring to use a macro), but for all the above reasons, I couldn't find a way to do it.
+
+@note
+The macro @ref REGISTER_SERIALIZABLES will also register the type.
+
+You can also do it without the macro like this:
+
+```cpp
+// The macro is defined in this included
+#include <ecstasy/rtti/TypeRegistry.hpp>
+
+struct Position {
+    float x;
+    float y;
+};
+
+// This returns a reference to the new @ref AType created.
+ecstasy::rtti::TypeRegistry::getInstance().registerType<Position>("Position");
+```
+
+#### Querying types
+
+The type registry can be queried from multiple data types:
+
+- Using no data type but the type has a template parameter: `registry.has<Position>()`
+- Using the name hash as returned by @ref ecstasy::rtti::AType::getHash()
+- Using a const @ref std::type_info
+- Using another @ref ecstasy::rtti::AType
+- Using the cross platform name
+- Using a predicate (only for get/find methods)
+
 ## Serializing your entities
 
 Ecstasy has some built in serialization helpers in the @ref ecstasy::serialization namespace.
 
-@warning
-The entity serialization without specifying components is still WIP and will probably have a huge refactor.
-
 The current available serializers are the following:
 
 - RawSerializer: Custom binary serialization of components fields. Compact form but not related to any RFC.
+- JsonSerializer: Classic json serialization of components. Not compact but readable.
 
 If you need a missing serializer, you can write it yourself by inheriting the @ref ecstasy::serialization::Serializer class.
 In case of a commonly used serializer type (json/yaml/NDR...) feel free to open an issue about it.

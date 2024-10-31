@@ -14,12 +14,18 @@ struct Position {
     float y;
 };
 
+struct Velocity {
+    float x;
+    float y;
+};
+
 struct Size {
     float width;
     float height;
 };
 
-REGISTER_TYPES(Position, ecstasy::IStorage);
+// Size is not registered
+REGISTER_TYPES(Position, Velocity);
 
 TEST(TypeRegistry, all)
 {
@@ -51,6 +57,16 @@ TEST(TypeRegistry, all)
     ASSERT_EQ(registry.find("Position")->get(), position);
     ASSERT_EQ(registry.get(unregistered_position), position);
     ASSERT_EQ(registry.find(unregistered_position)->get(), position);
+    ASSERT_EQ(registry.getIf([](const auto &pair) {
+        return *pair.second == std::string_view("Position");
+    }),
+        position);
+    ASSERT_EQ(registry
+                  .findIf([](const auto &pair) {
+                      return *pair.second == std::string_view("Position");
+                  })
+                  ->get(),
+        position);
 
     // Unsuccessfull getters
     ASSERT_THROW(static_cast<void>(registry.get(unregistered_size.getHash())), std::out_of_range);
@@ -63,6 +79,14 @@ TEST(TypeRegistry, all)
     ASSERT_EQ(registry.find("Size"), std::nullopt);
     ASSERT_THROW(static_cast<void>(registry.get(unregistered_size)), std::out_of_range);
     ASSERT_EQ(registry.find(unregistered_size), std::nullopt);
+    ASSERT_THROW(static_cast<void>(registry.getIf([](const auto &pair) {
+        return *pair.second == std::string_view("Size");
+    })),
+        std::out_of_range);
+    ASSERT_EQ(registry.findIf([](const auto &pair) {
+        return *pair.second == std::string_view("Size");
+    }),
+        std::nullopt);
 
     // Register without using the macro and retry the has/get/find tests
     AType &size = registry.registerType<Size>("Size");
