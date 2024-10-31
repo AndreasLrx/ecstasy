@@ -39,7 +39,7 @@ namespace ecstasy::query
     template <Queryable... SelectedQueryables>
     struct Select {
       public:
-        /// @brief Resulting selected @ref ecstasy::query::Queryable tuple
+        /// @brief Resulting selected @ref ecstasy::query::Queryable "Queryable" tuple
         using SelectedTuple = std::tuple<SelectedQueryables &...>;
 
       private:
@@ -149,7 +149,8 @@ namespace ecstasy::query
         template <bool ContainsPivot, Queryable Pivot, Queryable... Lefts>
         struct FilterQueryables {
             ///
-            /// @brief Test if the @ref ecstasy::query::Queryable type Q must be kept in the resulting queryables.
+            /// @brief Test if the @ref ecstasy::query::Queryable "Queryable" type Q must be kept in the resulting
+            /// queryables.
             ///
             /// @tparam Q Evaluated type.
             ///
@@ -195,7 +196,7 @@ namespace ecstasy::query
             /// If @p rights is empty, it will call the @ref value() without @p nextPivot value to finalize the result.
             ///
             /// @tparam NextPivot Next Pivot type.
-            /// @tparam Rights Remaining @ref ecstasy::query::Queryable types.
+            /// @tparam Rights Remaining @ref ecstasy::query::Queryable "Queryable" types.
             ///
             /// @param[in] lefts Already accepted queryables.
             /// @param[in] pivot Inspected queryable, will be accepted if @p ContainsPivot is true.
@@ -247,12 +248,12 @@ namespace ecstasy::query
         ///
         /// @warning All queryables specified in @p SelectedQueryables @b must be passed as parameters.
         ///
-        /// @tparam Conditions @ref util::meta::Traits of multiple @ref ecstasy::query::Condition.
-        /// @tparam FirstWhere First @ref ecstasy::query::Queryable type.
-        /// @tparam Wheres Others @ref ecstasy::query::Queryable types.
+        /// @tparam Conditions @ref util::meta::Traits of multiple @ref ecstasy::query::Condition "Condition".
+        /// @tparam FirstWhere First @ref ecstasy::query::Queryable "Queryable" type.
+        /// @tparam Wheres Others @ref ecstasy::query::Queryable "Queryable" types.
         ///
-        /// @param[in] firstWhere first @ref ecstasy::query::Queryable instance.
-        /// @param[in] wheres others @ref ecstasy::query::Queryable instances.
+        /// @param[in] firstWhere first @ref ecstasy::query::Queryable "Queryable" instance.
+        /// @param[in] wheres others @ref ecstasy::query::Queryable "Queryable" instances.
         ///
         /// @return QueryImplementation<util::meta::Traits<SelectedQueryables...>, Conditions> Resulting query that can
         /// be iterated.

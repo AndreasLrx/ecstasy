@@ -39,7 +39,7 @@ namespace ecstasy::query::modifier
         using Internal = std::tuple<queryable_qualifiers_t<Q1, AutoLock>, queryable_qualifiers_t<Q2, AutoLock>,
             queryable_qualifiers_t<Qs, AutoLock>...>;
 
-        /// @brief @ref ecstasy::query::Queryable constaint.
+        /// @brief @ref ecstasy::query::Queryable "Queryable" constaint.
         // clang-format off
         using QueryData = std::tuple<
             typename DataModifier<typename Q1::QueryData>::type,
@@ -70,7 +70,7 @@ namespace ecstasy::query::modifier
         ///
         /// @brief Get the Mask of the internal queryables.
         ///
-        /// @note @ref ecstasy::query::Queryable constraint.
+        /// @note @ref ecstasy::query::Queryable "Queryable" constraint.
         /// @warning Use @p reloadMask() if the operand masks have changed since the construction.
         ///
         /// @return const util::BitSet& resulting mask.
@@ -86,7 +86,7 @@ namespace ecstasy::query::modifier
         ///
         /// @brief Get the operands data at the given index.
         ///
-        /// @note @ref ecstasy::query::Queryable constraint.
+        /// @note @ref ecstasy::query::Queryable "Queryable" constraint.
         ///
         /// @param[in] index Index of the entity.
         ///

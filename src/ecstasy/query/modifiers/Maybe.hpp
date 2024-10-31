@@ -43,7 +43,7 @@ namespace ecstasy::query::modifier
         /// @brief @ref Modifier constraint.
         using Operands = util::meta::Traits<Q>;
 
-        /// @brief @ref ecstasy::query::Queryable constaint.
+        /// @brief @ref ecstasy::query::Queryable "Queryable" constaint.
         using QueryData = util::meta::add_optional_t<queryable_data_t<Q>>;
 
         ///
@@ -62,7 +62,7 @@ namespace ecstasy::query::modifier
         ///
         /// @brief Get the flipped mask of the internal queryable.
         ///
-        /// @note @ref ecstasy::query::Queryable constraint.
+        /// @note @ref ecstasy::query::Queryable "Queryable" constraint.
         ///
         /// @return const util::BitSet& Flipped bitset.
         ///
@@ -77,7 +77,7 @@ namespace ecstasy::query::modifier
         ///
         /// @brief Get a std::optional filled with the data at index @p index if existing.
         ///
-        /// @note @ref ecstasy::query::Queryable constraint.
+        /// @note @ref ecstasy::query::Queryable "Queryable" constraint.
         /// @warning May throw exceptions, look at the @b Internal type equivalent method documentation.
         ///
         /// @param[in] index Index of the entity.

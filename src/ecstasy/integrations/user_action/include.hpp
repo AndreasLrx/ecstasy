@@ -25,7 +25,7 @@
 /// @brief User action integration.
 /// Includes user action bindings (link events to actions) and user action listeners.
 ///
-/// @note This depends on the @ref ecstasy::integration::event integration.
+/// @note This depends on the @ref ecstasy::integration::event "event" integration.
 /// @note Enabled by @b ECSTASY_INTEGRATIONS_USER_ACTION.
 ///
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)

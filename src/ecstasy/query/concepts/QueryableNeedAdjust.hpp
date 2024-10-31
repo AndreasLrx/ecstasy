@@ -68,7 +68,7 @@ namespace ecstasy::query
     ///
     /// @note This is mainly for modifiers purposes.
     /// @note This will call @ref adjustMask() method if implemented (see @ref ecstasy::query::QueryableNeedAdjust
-    /// concept).
+    /// "QueryableNeedAdjust" concept).
     ///
     /// @tparam T Type of the queryable.
     ///
@@ -94,7 +94,8 @@ namespace ecstasy::query
     }
 
     ///
-    /// @brief Checks if the given type match the @ref ecstasy::query::QueryableNeedAdjust concept.
+    /// @brief Checks if the given type match the @ref ecstasy::query::QueryableNeedAdjust "QueryableNeedAdjust"
+    /// concept.
     ///
     /// @tparam T Evaluated type.
     ///

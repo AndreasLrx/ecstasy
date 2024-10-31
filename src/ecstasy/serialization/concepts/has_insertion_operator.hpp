@@ -41,7 +41,7 @@ namespace ecstasy::serialization::concepts
 
     // clang-format off
     ///
-    /// @brief Alias for @ref ecstasy::serialization::concepts::has_insertion_operator "has_insertion_operator<S, C>::value".
+    /// @brief Alias for @ref ecstasy::serialization::concepts::has_insertion_operator "has_insertion_operator" "has_insertion_operator<S, C>::value".
     ///
     /// @tparam S Serializer type.
     /// @tparam C Component type.

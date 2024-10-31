@@ -33,7 +33,7 @@ namespace ecstasy::serialization::concepts
     ///
     template <typename S>
     concept is_serializer = requires(S &serializer) {
-        /// Serializer must inherit from the @ref ecstasy::serialization::ISerializer .
+        /// Serializer must inherit from the @ref ecstasy::serialization::ISerializer "ISerializer" .
         requires std::derived_from<S, ISerializer>;
 
         // clang-format off

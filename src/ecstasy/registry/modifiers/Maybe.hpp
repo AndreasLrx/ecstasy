@@ -19,7 +19,7 @@
 namespace ecstasy
 {
     ///
-    /// @brief Placeholder for @ref ecstasy::query::modifier::Maybe.
+    /// @brief Placeholder for @ref ecstasy::query::modifier::Maybe "Maybe".
     ///
     /// @tparam C Component type.
     /// @tparam AutoLock Whether the queryable should be locked automatically.

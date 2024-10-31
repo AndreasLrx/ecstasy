@@ -4,7 +4,7 @@ Explore the inner workings and technical details of Ecstasy. Gain insights into 
 
 ## Entities Management
 
-The @ref ecstasy::Entities resource is the container of the registry entities informations. It is designed to be used within a registry and doesn't make sense alone. This resource only manage the _lifetime_ of the entities. Meaning it only knows if an entity exist, if it is alive or killed etc... It has no knowledge about the entity components.
+The @ref ecstasy::Entities "Entities" resource is the container of the registry entities informations. It is designed to be used within a registry and doesn't make sense alone. This resource only manage the _lifetime_ of the entities. Meaning it only knows if an entity exist, if it is alive or killed etc... It has no knowledge about the entity components.
 
 An entity is in fact only an identifier, an index, it doesn't really contains components.
 To keep track of the entities and their status, two @ref util::BitSet and a @ref std::vector are used.
@@ -23,24 +23,24 @@ To keep track of the entities and their status, two @ref util::BitSet and a @ref
 
 1. Initialisation
 
-   The @ref ecstasy::Entities resource is initialized with a sentinel bit is set at the end of the bitsets, therefore they are never empty.
+   The @ref ecstasy::Entities "Entities" resource is initialized with a sentinel bit is set at the end of the bitsets, therefore they are never empty.
 
-2. Entity creation (@ref ecstasy::Entities::create)
+2. Entity creation (@ref ecstasy::Entities::create() "create()")
 
    A new bit is appended to the \_alive bitset, representing the new entity. If there is a killed entity in the bitset, takes this place instead of resizing the bitset.
 
-3. Entity deletion (@ref ecstasy::Entities::erase)
+3. Entity deletion (@ref ecstasy::Entities::erase() "erase()")
 
    Erasing an entity just means setting the bit at its index to false in \_alive bitset. The deletion is instant.
 
-4. Entity kill (@ref ecstasy::Entities::kill)
+4. Entity kill (@ref ecstasy::Entities::kill() "kill()")
 
    Killing an entity does not erase the entity, it only marks it for deletion. It set the bit at the entity index to true in \_killed bitset. If the bitset is too small, it is resize appropriately before.
-   To effectively delete the killed entities, you need to call @ref ecstasy::Entities::maintain.
+   To effectively delete the killed entities, you need to call @ref ecstasy::Entities::maintain() "maintain()".
 
 ## Components Management (MapStorage)
 
-Components management is made through the @ref ecstasy::IStorage. You can implement your own storage but the default storage is the @ref ecstasy::MapStorage and this part will only talk about it.
+Components management is made through the @ref ecstasy::IStorage "IStorage". You can implement your own storage but the default storage is the @ref ecstasy::MapStorage "MapStorage" and this part will only talk about it.
 
 The MapStorage keep tracks of the components using two members:
 
@@ -75,7 +75,7 @@ Then for each bit set, the query fetch the associated component in the position/
 
 ### Queryable and BitSet
 
-A storage is in fact a @ref ecstasy::query::Queryable. It is defined by three properties:
+A storage is in fact a @ref ecstasy::query::Queryable "Queryable". It is defined by three properties:
 
 - A bitset, accessible through a `getMask()` method
 - A type for the value to return on iteration, defined as a nested `QueryData` type
@@ -97,7 +97,7 @@ concept Queryable = requires(Q &queryable, Q const &cqueryable, std::size_t inde
 ```
 
 Knowing this I can re explain the query behavior.
-The query takes only @ref ecstasy::query::Queryable in inputs. It then does a bitwise `and` on the associated bitsets and save it.
+The query takes only @ref ecstasy::query::Queryable "Queryable" in inputs. It then does a bitwise `and` on the associated bitsets and save it.
 The class also defines an iterator to... iterate on the matching entities and on each match it returns a tuple of the values, fetched through the `getQueryData` method.
 
 You can also create a Query with a precomputed bitset as you can see below with the first constructor.
@@ -125,13 +125,13 @@ class Query : public QueryImplementation<util::meta::Traits<First, Others...>, u
 
 ### Registry basic query
 
-As we seen before, the @ref ecstasy::query::Query needs queryables. But we don't send any in the registry query:
+As we seen before, the @ref ecstasy::query::Query "Query" needs queryables. But we don't send any in the registry query:
 
 ```cpp
 registry.query<Position, Velocity>()
 ```
 
-Because magic happens in the registry, all the storages or resources are fetched with the @ref ecstasy::Registry::RegistryStackQueryMemory::getQueryable template method. This allows you to use types instead of storages.
+Because magic happens in the registry, all the storages or resources are fetched with the @ref ecstasy::Registry::RegistryStackQueryMemory::getQueryable() "getQueryable()" template method. This allows you to use types instead of storages.
 
 The following functionnalities (modifiers, conditions etc) respect the the zero-overhead C++ principle meaning if you don't use them it won't slow down your application.
 
@@ -145,7 +145,7 @@ We already have almost everything to implement the select where syntax. These ar
 - Construct our query with the precomputed mask and our selected queryables
 
 The hardest part is the first step, we already have the others. This basically means doing a left outer join to find the queryables present in the select clause (left) but not in the where clause (right).
-This was a nightmare to do and I can't explain better than the documented code so go see @ref ecstasy::query::Select and @ref ecstasy::Registry::Select classes as long as the @ref util::meta namespace (@ref util::meta::left_outer_join).
+This was a nightmare to do and I can't explain better than the documented code so go see @ref ecstasy::query::Select "Select" and @ref ecstasy::Registry::Select "Select" classes as long as the @ref util::meta namespace (@ref util::meta::left_outer_join).
 
 ### Modifiers
 
@@ -153,13 +153,13 @@ Modifiers are not complicated themselves. In fact they are only queryable wrappe
 The easier example is the Maybe. What does it means to query `registry.query<Maybe<Position>>` ?
 
 It means querying `Position`. But having all bit sets. And not returning a `Position` but a `std::optional<Position>`.
-Finally a Modifier is really a Queryable, returning a bitset and a query data. See @ref ecstasy::query::modifier::Maybe implementation for more details.
+Finally a Modifier is really a Queryable, returning a bitset and a query data. See @ref ecstasy::query::modifier::Maybe "Maybe" implementation for more details.
 
 The hard part about the modifiers is not their implementation but their allocation. Usual queryables are allocated by the registry and stored in the registry.
 Modifiers should be allocated only for the query lifetime. And we need to allocate data to store the wrapped queryable (example **Position** storage) and eventually the computed mask if there is one.
 
 The interesting part however about theses allocations is that the size can be computed at compile time if you hate yourself enough to do it. Luckily for you, I did.
-The solution about this was to use multiple inheritance black magic tricks mixed with some weird [non_unique_address](https://en.cppreference.com/w/cpp/language/attributes/no_unique_address) attribute, if you are curious about this you can find more details in the documentation of @ref ecstasy::Registry::RegistryStackQuery.
+The solution about this was to use multiple inheritance black magic tricks mixed with some weird [non_unique_address](https://en.cppreference.com/w/cpp/language/attributes/no_unique_address) attribute, if you are curious about this you can find more details in the documentation of @ref ecstasy::Registry::RegistryStackQuery "RegistryStackQuery".
 
 ### Conditions
 

@@ -162,7 +162,7 @@ namespace ecstasy
         ///
         /// @brief Proxy structure to extract the operand types using template partial specialization
         ///
-        /// @tparam Operands Must be a tuple of @ref ecstasy::query::Queryable types.
+        /// @tparam Operands Must be a tuple of @ref ecstasy::query::Queryable "Queryable" types.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-22)
@@ -656,7 +656,7 @@ namespace ecstasy
         ///
         /// @brief Proxy class to use @ref where method.
         ///
-        /// @note This is a registry helper for the @ref ecstasy::query::Select implementation.
+        /// @note This is a registry helper for the @ref ecstasy::query::Select "Select" implementation.
         ///
         /// @tparam Selects type of selected queryables.
         ///
