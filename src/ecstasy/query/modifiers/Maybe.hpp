@@ -29,7 +29,7 @@ namespace ecstasy::query::modifier
     /// @note All bits are set to true.
     ///
     /// @tparam Internal Type of the wrapped queryable.
-    /// @tparam AutoLock Lock the @ref Lockable queryables if true.
+    /// @tparam AutoLock Lock the @ref ecstasy::thread::Lockable "Lockable" queryables if true.
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-10-24)

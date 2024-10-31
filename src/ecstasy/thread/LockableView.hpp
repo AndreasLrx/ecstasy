@@ -44,7 +44,7 @@ namespace ecstasy::thread
       public:
         /// Type of the Lockable object.
         using LockableType = L;
-        /// @ref QueryableWrapper Constraint
+        /// @ref ecstasy::query::QueryableWrapper "QueryableWrapper" Constraint
         using WrappedType = L;
 
         ///

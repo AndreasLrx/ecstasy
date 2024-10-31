@@ -52,11 +52,11 @@ namespace ecstasy::query
 
     ///
     /// @brief Defines a type that can be queried in a const context.
-    /// In addition to the @ref QueryableObject concept, a const queryable object must have:
+    /// In addition to the @ref ecstasy::query::QueryableObject "QueryableObject" concept, a const queryable object must have:
     /// - An internal ConstQueryData type, which is the data stored in the queryable.
     /// - A const version of the method getQueryData returning ConstQueryData object.
     ///
-    /// @note This concept is a subset of @ref QueryableObject.
+    /// @note This concept is a subset of @ref ecstasy::query::QueryableObject "QueryableObject".
     /// @warning The type Q is not expected to be const qualified.
     ///
     /// @tparam Q Evaluated type.
@@ -76,8 +76,10 @@ namespace ecstasy::query
     ///
     /// @brief Defines a type that can be queried through a wrapper.
     ///
-    /// @note @ref LockableView is the reason of this concept.
-    /// @note The wrapped type must be a @ref QueryableObject or a const @ref ConstQueryableObject.
+    /// @note @ref ecstasy::thread::LockableView "LockableView" is the reason of this concept.
+    /// @note The wrapped type must be a @ref ecstasy::query::QueryableObject "QueryableObject" or a const 
+    /// @ref ecstasy::query::ConstQueryableObject "ConstQueryableObject".
+    ///
     /// @warning The getQueryable method must be const qualified from the wrapper since the wrapper itself is not expected to be modified.
     /// 
     /// @tparam W Wrapper type.
@@ -119,8 +121,9 @@ namespace ecstasy::query
     ///
     /// @brief Defines a type that can be queried.
     ///
-    /// @note This concept is a combination of @ref QueryableObject, @ref ConstQueryableObject and @ref
-    /// QueryableWrapper.
+    /// @note This concept is a combination of @ref ecstasy::query::QueryableObject "QueryableObject",
+    /// @ref ecstasy::query::ConstQueryableObject "ConstQueryableObject" and
+    /// @ref ecstasy::query::QueryableWrapper "QueryableWrapper".
     ///
     /// @tparam Q Evaluated type.
     ///
@@ -133,9 +136,11 @@ namespace ecstasy::query
 
     ///
     /// @brief Get the query data type of a queryable object.
-    /// By default, this is the QueryData type of the @ref QueryableObject.
-    /// If Q is a const @ref ConstQueryableObject, then the ConstQueryData type is returned.
-    /// If Q is a @ref QueryableWrapper, then the queryable_data is called on the wrapped type.
+    /// By default, this is the QueryData type of the @ref ecstasy::query::QueryableObject "QueryableObject".
+    /// If Q is a const @ref ecstasy::query::ConstQueryableObject "ConstQueryableObject", then the ConstQueryData
+    /// type is returned.
+    /// If Q is a @ref ecstasy::query::QueryableWrapper "QueryableWrapper", then the queryable_data is
+    /// called on the wrapped type.
     ///
     /// @tparam Q Queryable object.
     ///
@@ -172,8 +177,8 @@ namespace ecstasy::query
 
     ///
     /// @brief Get the thread safe type of a queryable type.
-    /// If @b ThreadSafe is false, @b Q is not @ref thread::Lockable the type is @b Q. If the type is lockable, then the
-    /// type is a @ref thread::LockableView<Q>.
+    /// If @b ThreadSafe is false, @b Q is not @ref ecstasy::thread::Lockable "Lockable" the type is @b Q. If the type
+    /// is lockable, then the type is a @ref ecstasy::thread::LockableView "LockableView<Q>".
     ///
     /// @tparam Q Queryable type.
     /// @tparam ThreadSafe Whether the queryable should be thread safe or not.
@@ -206,8 +211,9 @@ namespace ecstasy::query
 
     ///
     /// @brief Get the reference type of a maybe thread safe type.
-    /// If @b ThreadSafe is true and @b T is @ref thread::Lockable, then the type is a @ref thread::LockableView<T>.
-    /// Otherwise, the type is a reference to the type @b T.
+    /// If @b ThreadSafe is true and @b T is @ref ecstasy::thread::Lockable "Lockable", then the type is a
+    /// @ref ecstasy::thread::LockableView "LockableView<T>". Otherwise, the type is a @ref std::reference_wrapper of
+    /// @b T.
     ///
     /// @tparam T Type.
     /// @tparam ThreadSafe Whether the type should be thread safe or not. Default to true.
@@ -241,10 +247,10 @@ namespace ecstasy::query
     ///
     /// @brief Get the queryable type with the correct qualifiers.
     /// By default this is a reference to the type @b Q.
-    /// If Q is @ref thread::Lockable and @b AutoLock is true, then the type is a @ref thread_safe_queryable_t<Q>. It is
-    /// not a reference to the type because it will be implicitly constructed using the @ref thread::LockableView<Q>
-    /// constructor (taking Q&). Meaning a @ref ThreadSafeQuery will have LockableView<Q> in its storages but Q& in its
-    /// constructor.
+    /// If Q match @ref ecstasy::thread::Lockable "Lockable" and @b AutoLock is true, then the type is a @ref
+    /// thread_safe_queryable_t<Q>. It is not a reference to the type because it will be implicitly constructed using
+    /// the @ref ecstasy::thread::LockableView "LockableView<Q>" constructor (taking Q&).
+    /// Meaning a @ref ThreadSafeQuery will have LockableView<Q> in its storages but Q& in its constructor.
     ///
     /// @tparam Q Queryable object.
     /// @tparam AutoLock Whether the queryable should be locked while used or not.
@@ -275,10 +281,11 @@ namespace ecstasy::query
     template <typename Q, bool AutoLock = false>
     using queryable_qualifiers_t = typename queryable_qualifiers<Q, AutoLock>::type;
 
+    // clang-format off
     ///
     /// @brief Get the mask of the queryable object.
     ///
-    /// @note Required because the dot operator is not overloadable for @ref QueryableWrapper.
+    /// @note Required because the dot operator is not overloadable for @ref ecstasy::query::QueryableWrapper "QueryableWrapper".
     ///
     /// @tparam Q Queryable object.
     ///
@@ -289,6 +296,7 @@ namespace ecstasy::query
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2024-04-03)
     ///
+    // clang-format on
     template <Queryable Q>
     constexpr const util::BitSet &getQueryableMask(const Q &queryable)
     {
@@ -298,10 +306,11 @@ namespace ecstasy::query
             return queryable.getMask();
     }
 
+    // clang-format off
     ///
     /// @brief Get the query data at the given index.
     ///
-    /// @note Required because the dot operator is not overloadable for @ref QueryableWrapper.
+    /// @note Required because the dot operator is not overloadable for @ref ecstasy::query::QueryableWrapper "QueryableWrapper".
     ///
     /// @tparam Q Queryable object.
     /// @param[in] queryable Queryable object.
@@ -312,6 +321,7 @@ namespace ecstasy::query
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2024-04-03)
     ///
+    // clang-format on
     template <Queryable Q>
     constexpr queryable_data_t<Q> getQueryableData(Q &queryable, size_t index)
     {

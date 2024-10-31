@@ -127,7 +127,7 @@ namespace ecstasy::serialization
             return exportBytes().size();
         }
 
-        /// @copydoc ISerializer::importBytes
+        /// @copydoc ISerializer::importStream
         void importStream(std::istream &stream) override final
         {
             rapidjson::IStreamWrapper isw(stream);
@@ -224,9 +224,9 @@ namespace ecstasy::serialization
         /// @copydoc update
         template <typename U>
             requires std::is_same_v<U, NestedContextOp>
-        JsonSerializer &updateImpl(const U &op)
+        JsonSerializer &updateImpl(const U &object)
         {
-            switch (op) {
+            switch (object) {
                 case NestedContextOp::NewObject: newNestedObject(false); break;
                 case NestedContextOp::NewArray: newNestedArray(false); break;
                 case NestedContextOp::Close: closeNested(); break;
@@ -407,7 +407,7 @@ namespace ecstasy::serialization
         }
 
         ///
-        /// @brief Wrapper for @ref newNested(rapidjson::Type::kObjectType).
+        /// @brief Wrapper for @ref JsonSerializer::newNested() with @ref rapidjson::Type::kObjectType as parameter.
         ///
         /// @return JsonSerializer& Reference to @b this for chain calls.
         ///
@@ -420,7 +420,7 @@ namespace ecstasy::serialization
         }
 
         ///
-        /// @brief Wrapper for @ref newNested(rapidjson::Type::kArrayType).
+        /// @brief Wrapper for @ref JsonSerializer::newNested() with @ref rapidjson::Type::kArrayType as parameter.
         ///
         /// @return JsonSerializer& Reference to @b this for chain calls.
         ///
@@ -510,7 +510,7 @@ namespace ecstasy::serialization
         /// @brief Next key to use for the next object value.
         std::string _nextKey;
 
-        /// @copydoc loadComponentSerializer
+        /// @copydoc Serializer::loadComponentSerializer
         [[nodiscard]] OptionalEntityComponentSerializer loadComponentSerializer() override final
         {
             if (getWriteCursor().IsObject()) {
@@ -528,26 +528,26 @@ namespace ecstasy::serialization
                     .getSerializer<JsonSerializer>();
         }
 
-        /// @copydoc beforeSaveEntity
+        /// @copydoc Serializer::beforeSaveEntity
         void beforeSaveEntity([[maybe_unused]] RegistryEntity &entity) override final
         {
             newNestedObject();
         }
 
-        /// @copydoc afterSaveEntity
+        /// @copydoc Serializer::afterSaveEntity
         void afterSaveEntity([[maybe_unused]] RegistryEntity &entity) override final
         {
             closeNested();
         }
 
-        /// @copydoc beforeUpdateEntity
+        /// @copydoc Serializer::beforeUpdateEntity
         void beforeUpdateEntity([[maybe_unused]] RegistryEntity &entity) override final
         {
             newNestedObject(false);
             _objectIterators.push(getWriteCursor().MemberBegin());
         }
 
-        /// @copydoc afterUpdateEntity
+        /// @copydoc Serializer::afterUpdateEntity
         void afterUpdateEntity([[maybe_unused]] RegistryEntity &entity) override final
         {
             _objectIterators.pop();

@@ -530,8 +530,8 @@ By default ecstasy is not thread safe. By not thread safe I mean there is absolu
 
 But no worries it is just some compilation options to set:
 
-- @b ECSTASY_LOCKABLE_RESOURCES will make @ref IResource class validate the [Lockable](@ref ecstasy::thread::Lockable) concept.
-- @b ECSTASY_LOCKABLE_STORAGES will make @ref IStorage class validate the [Lockable](@ref ecstasy::thread::Lockable) concept.
+- @b ECSTASY_LOCKABLE_RESOURCES will make @ref ecstasy::IResource "IResource" class validate the [Lockable](@ref ecstasy::thread::Lockable) concept.
+- @b ECSTASY_LOCKABLE_STORAGES will make @ref ecstasy::IStorage "IStorage" class validate the [Lockable](@ref ecstasy::thread::Lockable) concept.
 - @b ECSTASY_AUTO_LOCK will lock any [Lockable](@ref ecstasy::thread::Lockable) queryables in any registry queries or registry modifiers.
 - @b ECSTASY_THREAD_SAFE will enable the three options above.
 
@@ -550,7 +550,7 @@ If you want to handle thread safety yourself you still have multiple options:
 
 2. Lock explicitly
 
-   Keep the resources/storages as lockable and use the @ref Registry::queryEx (and Select.whereEx) methods or @ref AndEx, @ref OrEx, @ref NotEx modifiers where you can explicitly specify the AutoLock value.
+   Keep the resources/storages as lockable and use the @ref ecstasy::Registry::queryEx "Registry::queryEx" (and Select.whereEx) methods or @ref ecstasy::AndEx "AndEx", @ref ecstasy::OrEx "OrEx" modifiers where you can explicitly specify the AutoLock value.
 
 3. AutoLock by default but disable when you know what you're doing
 
@@ -585,7 +585,7 @@ This custom rtti use mainly two classes: @ref ecstasy::rtti::TypeRegistry and @r
 
 The TypeRegistry is a singleton storing all AType instances.
 
-The @ref AType is the replacement of @ref std::type_info. It is mainly a wrapper over the @ref std::type_info with a user defined name (which is supposed to be the same for every program run) and therefore a cross platform hash which is the hash of the name.
+The @ref ecstasy::rtti::AType "AType" is the replacement of @ref std::type_info. It is mainly a wrapper over the @ref std::type_info with a user defined name (which is supposed to be the same for every program run) and therefore a cross platform hash which is the hash of the name.
 
 And it also contains the @ref ecstasy::serialization::IEntityComponentSerializer instances for the serialization part (see Serializing your entities section)
 

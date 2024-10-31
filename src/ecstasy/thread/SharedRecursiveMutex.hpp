@@ -108,7 +108,7 @@ namespace ecstasy::thread
         ///
         /// @brief Get the internal mutex.
         ///
-        /// @return constexpr const @ref std::shared_mutex& internal mutex.
+        /// @return constexpr const @ref std::shared_mutex & internal mutex.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-04-02)

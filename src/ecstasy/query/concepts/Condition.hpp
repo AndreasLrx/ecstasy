@@ -18,8 +18,9 @@ namespace ecstasy::query
 {
     ///
     /// @brief Query Condition concept.
-    /// You should use @ref QConditionConst, @ref QConditionLeft, @ref QConditionRight or @ref QConditionLeftRight to be
-    /// sure that the condition is valid.
+    /// You should use @ref ecstasy::query::QConditionConst "QConditionConst",
+    /// @ref ecstasy::query::QConditionLeft "QConditionLeft", @ref ecstasy::query::QConditionRight "QConditionRight" or
+    /// @ref ecstasy::query::QConditionLeftRight "QConditionLeftRight" to be sure that the condition is valid.
     ///
     /// @warning
     /// This concept isn't sufficient to check if a type is a condition, it only checks if it derives from

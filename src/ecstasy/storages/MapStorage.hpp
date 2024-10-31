@@ -72,7 +72,7 @@ namespace ecstasy
             return _components.emplace(std::make_pair(index, Component(std::forward<Args>(args)...))).first->second;
         }
 
-        /// @copydoc insert
+        /// @copydoc AStorage::insert
         Component &insert(Entity::Index index, Component &&c) override final
         {
             if constexpr (!std::movable<Component>)

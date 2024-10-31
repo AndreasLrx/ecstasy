@@ -29,6 +29,8 @@ namespace ecstasy::integration::event
     ///
     class Gamepad {
       public:
+#ifndef _DOXYGEN_
+
         // LCOV_EXCL_START
 
         SERIALIZABLE_ENUM(Button, -1, Unknown, FaceUp, FaceRight, FaceDown, FaceLeft, BumperLeft, BumperRight,
@@ -36,8 +38,8 @@ namespace ecstasy::integration::event
         SERIALIZABLE_ENUM(
             Axis, -1, Unknown, LeftX, LeftY, RightX, RightY, TriggerLeft, TriggerRight, DPadX, DPadY, Count)
 
-        // LCOV_EXCL_STOP
-#ifdef _DOXYGEN_
+            // LCOV_EXCL_STOP
+#else
         /// @brief Gamepad buttons
         enum class Button {
             Unknown = -1, ///< Unhandled button
@@ -257,6 +259,7 @@ namespace ecstasy::integration::event
         /// @brief Check whether a button is valid.
         ///
         /// @param[in] button evaluated button.
+        /// @param[in] allowUnknown Whether the Unknown button is valid or not.
         ///
         /// @throw std::invalid_argument If the button is invalid
         ///
@@ -274,6 +277,7 @@ namespace ecstasy::integration::event
         /// @brief Check whether an axis is valid.
         ///
         /// @param[in] axis evaluated axis.
+        /// @param[in] allowUnknown Whether the Unknown axis is valid or not.
         ///
         /// @throw std::invalid_argument If the axis is invalid.
         ///

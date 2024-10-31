@@ -24,9 +24,10 @@ namespace ecstasy
     /// @brief Try to get the type of a queryable associated to a type stored in the registry (component, storage,
     /// resource...).
     /// Returns C if:
-    /// - C is derived from the @ref ecstasy::IResource class and match the @ref Queryable concept.
-    /// - C match the @ref ecstasy::IsStorage concept and match the @ref Queryable concept.
-    /// - C is a const type matching the @ref ConstQueryableObject concept.
+    /// - C is derived from the @ref ecstasy::IResource class and match the @ref ecstasy::query::Queryable "Queryable"
+    /// concept.
+    /// - C match the @ref ecstasy::IsStorage concept and match the @ref ecstasy::query::Queryable "Queryable" concept.
+    /// - C is a const type matching the @ref ecstasy::query::ConstQueryableObject "ConstQueryableObject" concept.
     /// - C match the @ref ecstasy::query::Modifier
     /// Returns C::Modifier if C match the @ref ecstasy::RegistryModifier concept.
     /// Otherwise, returns @ref getStorageType<C>.

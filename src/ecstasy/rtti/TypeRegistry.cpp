@@ -21,10 +21,12 @@ namespace ecstasy::rtti
         return instance;
     }
 
+    /// @cond Doxygen_Suppress
     bool TypeRegistry::has(std::size_t name_hash) const noexcept
     {
         return _types.contains(name_hash);
     }
+    /// @endcond
 
     TypeRegistry::OptionalATypeReference TypeRegistry::findIf(const Predicate &p) const noexcept
     {

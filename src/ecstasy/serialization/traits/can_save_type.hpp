@@ -38,7 +38,7 @@ namespace ecstasy::serialization::traits
         : std::true_type {};
 
     ///
-    /// @brief Alias for @ref can_save_type::value.
+    /// @brief Alias for @ref ecstasy::serialization::traits::can_save_type "can_save_type<S, C>::value".
     ///
     /// @tparam S Serializer type.
     /// @tparam C Component type.
@@ -65,14 +65,16 @@ namespace ecstasy::serialization::traits
     struct has_save_impl_for_type<S, T, std::void_t<decltype(std::declval<S &>().saveImpl(std::declval<const T &>()))>>
         : std::true_type {};
 
+    // clang-format off
     ///
-    /// @brief Alias for @ref has_save_impl_for_type::value.
+    /// @brief Alias for @ref ecstasy::serialization::traits::has_save_impl_for_type "has_save_impl_for_type<S, C>::value".
     ///
     /// @tparam S Serializer type.
     /// @tparam C Component type.
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2024-06-11)
     ///
+    // clang-format on
     template <typename S, typename C>
     bool constexpr has_save_impl_for_type_v = has_save_impl_for_type<S, C>::value;
 

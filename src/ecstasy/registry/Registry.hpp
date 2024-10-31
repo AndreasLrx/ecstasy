@@ -254,7 +254,7 @@ namespace ecstasy
         /// @tparam Missings Selected queryables not given in the where clause (in  @b Cs... ) in a @ref
         /// util::meta::Traits.
         /// @tparam Conditions Query runtime conditions in a @ref util::meta::Traits.
-        /// @tparam AutoLock Whether or not the @ref thread::Lockable queryables must be locked.
+        /// @tparam AutoLock Whether or not the @ref ecstasy::thread::Lockable "Lockable" queryables must be locked.
         /// @tparam Cs Selected components already present in the where clause. (Missings + Cs are all the components
         /// queried).
         ///
@@ -791,7 +791,7 @@ namespace ecstasy
         ///
         /// @brief Construct a new Registry.
         ///
-        /// @param[in] addEntities Whether or not the @ref Entities @ref Resource should be declared or not in the
+        /// @param[in] addEntities Whether or not the @ref Entities @ref IResource should be declared or not in the
         /// registry.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)

@@ -110,7 +110,16 @@ namespace ecstasy::rtti
             return find(target).has_value();
         }
 
-        /// @copydoc TypeRegistry::has()
+        ///
+        /// @brief Check if a type is registered from its hash.
+        ///
+        /// @param[in] name_hash Hash of the type name.
+        ///
+        /// @return bool True if the type is registered, false otherwise.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-31)
+        ///
         [[nodiscard]] bool has(size_t name_hash) const noexcept;
 
         ///
@@ -181,7 +190,16 @@ namespace ecstasy::rtti
             return std::ref(*result->second);
         }
 
-        /// @copydoc TypeRegistry::find()
+        ///
+        /// @brief Search for a registered type from its hash.
+        ///
+        /// @param[in] name_hash Hash of the type name.
+        ///
+        /// @return OptionalATypeReference Optional reference to the type if found, std::nullopt otherwise.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-31)
+        ///
         [[nodiscard]] OptionalATypeReference find(std::size_t name_hash) const noexcept;
 
         ///
@@ -224,7 +242,18 @@ namespace ecstasy::rtti
             throw std::out_of_range("Type not found.");
         }
 
-        /// @copydoc TypeRegistry::get()
+        ///
+        /// @brief Get a reference to the AType instance from its name hash.
+        ///
+        /// @param[in] name_hash Hash of the type name.
+        ///
+        /// @return AType& Reference to the type.
+        ///
+        /// @throw std::out_of_range If the type is not found.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-10-31)
+        ///
         [[nodiscard]] AType &get(std::size_t name_hash) const;
 
         ///

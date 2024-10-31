@@ -39,8 +39,9 @@ namespace ecstasy::serialization::concepts
         // clang-format on
     };
 
+    // clang-format off
     ///
-    /// @brief Alias for @ref has_insertion_operator::value.
+    /// @brief Alias for @ref ecstasy::serialization::concepts::has_insertion_operator "has_insertion_operator<S, C>::value".
     ///
     /// @tparam S Serializer type.
     /// @tparam C Component type.
@@ -48,6 +49,7 @@ namespace ecstasy::serialization::concepts
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2024-06-11)
     ///
+    // clang-format on
     template <typename S, typename C>
     bool constexpr has_insertion_operator_v = has_insertion_operator<S, C>;
 

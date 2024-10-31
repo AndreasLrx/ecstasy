@@ -53,7 +53,7 @@ namespace ecstasy::serialization::concepts
     };
 
     ///
-    /// @brief Alias for @ref is_serializer::value.
+    /// @brief Alias for @ref ecstasy::serialization::concepts::is_serializer "is_serializer<S>".
     ///
     /// @tparam S Serializer type.
     ///
