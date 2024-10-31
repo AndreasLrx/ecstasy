@@ -33,7 +33,7 @@ namespace ecstasy::query
     ///
     /// @brief Query components presents in all given queryables.
     ///
-    /// @note See @ref ecstasy::query::modifier for advanced queries using queryable modifiers.
+    /// @note See @ref ecstasy::query::modifier "modifier" for advanced queries using queryable modifiers.
     ///
     /// @tparam First First storage class.
     /// @tparam Others All other storage classes.
@@ -471,7 +471,7 @@ namespace ecstasy::query
         ///
         /// @brief Get the Query Mask. All bit set means an entity match the chained request.
         ///
-        /// @note @ref ecstasy::query::QueryableObject constraint.
+        /// @note @ref ecstasy::query::QueryableObject "QueryableObject" constraint.
         ///
         /// @return const util::BitSet& Query BitMask.
         ///
@@ -486,7 +486,7 @@ namespace ecstasy::query
         ///
         /// @brief Query the components associated to the given entity.
         ///
-        /// @note @ref ecstasy::query::QueryableObject constraint.
+        /// @note @ref ecstasy::query::QueryableObject "QueryableObject" constraint.
         ///
         /// @param[in] index Index of the entity.
         ///

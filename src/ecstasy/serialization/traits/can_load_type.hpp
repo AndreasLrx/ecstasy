@@ -37,7 +37,8 @@ namespace ecstasy::serialization::traits
     struct can_load_type<S, T, std::void_t<decltype(std::declval<S &>().template load<T>())>> : std::true_type {};
 
     ///
-    /// @brief Alias for @ref ecstasy::serialization::traits::can_load_type "can_load_type<S, C>::value".
+    /// @brief Alias for @ref ecstasy::serialization::traits::can_load_type "can_load_type" "can_load_type<S,
+    /// C>::value".
     ///
     /// @tparam S Serializer type.
     /// @tparam C Component type.

@@ -178,7 +178,7 @@ namespace ecstasy::query
     ///
     /// @brief Get the thread safe type of a queryable type.
     /// If @b ThreadSafe is false, @b Q is not @ref ecstasy::thread::Lockable "Lockable" the type is @b Q. If the type
-    /// is lockable, then the type is a @ref ecstasy::thread::LockableView "LockableView<Q>".
+    /// is lockable, then the type is a @ref ecstasy::thread::LockableView "LockableView" "LockableView<Q>".
     ///
     /// @tparam Q Queryable type.
     /// @tparam ThreadSafe Whether the queryable should be thread safe or not.
@@ -332,7 +332,7 @@ namespace ecstasy::query
     }
 
     ///
-    /// @brief Checks if the given type match the @ref ecstasy::query::Queryable concept.
+    /// @brief Checks if the given type match the @ref ecstasy::query::Queryable "Queryable" concept.
     ///
     /// @tparam T Evaluated type.
     ///

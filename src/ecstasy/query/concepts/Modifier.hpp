@@ -19,8 +19,8 @@ namespace ecstasy::query
 {
     ///
     /// @brief Defines a query modifier type.
-    /// A modifier is a queryable type, that inherits from @ref ecstasy::query::modifier::ModifierBase and has an
-    /// Operands type.
+    /// A modifier is a queryable type, that inherits from @ref ecstasy::query::modifier::ModifierBase "ModifierBase"
+    /// and has an Operands type.
     ///
     /// @tparam M Evaluated type.
     ///
@@ -32,7 +32,7 @@ namespace ecstasy::query
         /// Data stored in the queryable.
         requires Queryable<M>;
 
-        /// Modifiers must inherit from the @ref ecstasy::query::modifier::Modifier .
+        /// Modifiers must inherit from the @ref ecstasy::query::modifier::Modifier "Modifier" .
         requires std::derived_from<M, ecstasy::query::modifier::ModifierBase>;
 
         /// Modifier operands

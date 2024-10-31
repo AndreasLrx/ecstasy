@@ -194,13 +194,13 @@ entities.maintain();
 
 ## Implement a custom storage {#CustomStorageTutorial}
 
-You can specify which storage you want a component to use with the define @ref SET_COMPONENT_STORAGE. By default the @ref ecstasy::MapStorage is used for all components but you may implement a more suitable storage based on your component.
+You can specify which storage you want a component to use with the define @ref SET_COMPONENT_STORAGE. By default the @ref ecstasy::MapStorage "MapStorage" is used for all components but you may implement a more suitable storage based on your component.
 
-To create a custom storage, you need to validate the @ref ecstasy::IsStorage concept. In addition you also need to implement the contains and emplace methods (see MapStorage).
+To create a custom storage, you need to validate the @ref ecstasy::IsStorage "IsStorage" concept. In addition you also need to implement the contains and emplace methods (see MapStorage).
 
 ## Making registry queries {#QueryTutorial}
 
-When you populated your registry with entities and resources you can query them with the... @ref ecstasy::Registry::query method.
+When you populated your registry with entities and resources you can query them with the... @ref ecstasy::Registry::query() "query()" method.
 It will iterate on every entities having the requested components and return a reference of them.
 
 The easiest syntax is to use tuple unpacking in a for loop:
@@ -263,7 +263,7 @@ Modifiers can be nested and used in simple queries as well as in Select ... Wher
 
 1. @ref ecstasy::Maybe
 
-   The first and important modifier is the @ref ecstasy::Maybe operator. It match on any entity and instead of returning a reference to the component it will returns a @ref std::optional containing (or not) the component.
+   The first and important modifier is the @ref ecstasy::Maybe "Maybe" operator. It match on any entity and instead of returning a reference to the component it will returns a @ref std::optional containing (or not) the component.
    Here comes an example:
 
    ```cpp
@@ -291,7 +291,7 @@ Modifiers can be nested and used in simple queries as well as in Select ... Wher
    }
    ```
 
-3. @ref ecstasy::Or / @ref ecstasy::Xor
+3. @ref ecstasy::Or "Or" / @ref ecstasy::Xor "Xor"
 
    Performs a `Or`/`XOr` between the given components. Returned values are of type std::tuple<std::optional<Q1>, std::optional<Q2>...>.
    It works for at least two components but can take more than 2.
@@ -407,7 +407,7 @@ Conditions supports comparisons with:
 
 ## Using systems
 
-To create systems, you only have to create a new class inheriting the @ref ecstasy::ISystem class and implement the @ref ecstasy::ISystem::run method.
+To create systems, you only have to create a new class inheriting the @ref ecstasy::ISystem "ISystem" class and implement the @ref ecstasy::ISystem::run() "run()" method.
 
 For example here is how you would create a Movement system:
 
@@ -490,11 +490,11 @@ But you can use the system priorities/groups to order them and be able to specif
 
 ## Using resources
 
-Creating a resource is even simpler than creating a system: you only have to inherit @ref ecstasy::IResource.
-And in case you cannot modify the inheritance tree of your object, you can just declare a using with @ref ecstasy::ObjectWrapper (like @ref ecstasy::integration::user_action::PendingActions ).
+Creating a resource is even simpler than creating a system: you only have to inherit @ref ecstasy::IResource "IResource".
+And in case you cannot modify the inheritance tree of your object, you can just declare a using with @ref ecstasy::ObjectWrapper "ObjectWrapper" (like @ref ecstasy::integration::user_action::PendingActions "PendingActions" ).
 
 @note
-@ref ecstasy::Registry::getResource will return a @ref ecstasy::ResourceReference (optional thread safe proxy) and you will therefore need to use the `get()` method.
+@ref ecstasy::Registry::getResource() "getResource()" will return a @ref ecstasy::ResourceReference "ResourceReference" (optional thread safe proxy) and you will therefore need to use the `get()` method.
 
 For example here is how you would create and use an absolutely must have Counter system:
 
@@ -550,7 +550,7 @@ If you want to handle thread safety yourself you still have multiple options:
 
 2. Lock explicitly
 
-   Keep the resources/storages as lockable and use the @ref ecstasy::Registry::queryEx "Registry::queryEx" (and Select.whereEx) methods or @ref ecstasy::AndEx "AndEx", @ref ecstasy::OrEx "OrEx" modifiers where you can explicitly specify the AutoLock value.
+   Keep the resources/storages as lockable and use the @ref ecstasy::Registry::queryEx "queryEx" "Registry::queryEx" (and Select.whereEx) methods or @ref ecstasy::AndEx "AndEx", @ref ecstasy::OrEx "OrEx" modifiers where you can explicitly specify the AutoLock value.
 
 3. AutoLock by default but disable when you know what you're doing
 
@@ -581,13 +581,13 @@ For all these reasons, it make cross-platform serialization of custom types impo
 
 #### How is it stored
 
-This custom rtti use mainly two classes: @ref ecstasy::rtti::TypeRegistry and @ref ecstasy::rtti::AType.
+This custom rtti use mainly two classes: @ref ecstasy::rtti::TypeRegistry "TypeRegistry" and @ref ecstasy::rtti::AType "AType".
 
 The TypeRegistry is a singleton storing all AType instances.
 
 The @ref ecstasy::rtti::AType "AType" is the replacement of @ref std::type_info. It is mainly a wrapper over the @ref std::type_info with a user defined name (which is supposed to be the same for every program run) and therefore a cross platform hash which is the hash of the name.
 
-And it also contains the @ref ecstasy::serialization::IEntityComponentSerializer instances for the serialization part (see Serializing your entities section)
+And it also contains the @ref ecstasy::serialization::IEntityComponentSerializer "IEntityComponentSerializer" instances for the serialization part (see Serializing your entities section)
 
 #### Registering types
 
@@ -652,7 +652,7 @@ The current available serializers are the following:
 - RawSerializer: Custom binary serialization of components fields. Compact form but not related to any RFC.
 - JsonSerializer: Classic json serialization of components. Not compact but readable.
 
-If you need a missing serializer, you can write it yourself by inheriting the @ref ecstasy::serialization::Serializer class.
+If you need a missing serializer, you can write it yourself by inheriting the @ref ecstasy::serialization::Serializer "Serializer" class.
 In case of a commonly used serializer type (json/yaml/NDR...) feel free to open an issue about it.
 
 @warning
@@ -674,10 +674,10 @@ struct Position {
 
 Serializer should support fundamental and container types by default but it depends on the serializer implementation.
 
-| Serializer                                  | Fundamental (integers, floats, doubles...) | strings | containers |
-| ------------------------------------------- | ------------------------------------------ | ------- | ---------- |
-| @ref ecstasy::serialization::RawSerializer  | Ok                                         | OK      | Ok         |
-| @ref ecstasy::serialization::JsonSerializer | Ok                                         | OK      | Ok         |
+| Serializer                                                   | Fundamental (integers, floats, doubles...) | strings | containers |
+| ------------------------------------------------------------ | ------------------------------------------ | ------- | ---------- |
+| @ref ecstasy::serialization::RawSerializer "RawSerializer"   | Ok                                         | OK      | Ok         |
+| @ref ecstasy::serialization::JsonSerializer "JsonSerializer" | Ok                                         | OK      | Ok         |
 
 **1. Saving**
 

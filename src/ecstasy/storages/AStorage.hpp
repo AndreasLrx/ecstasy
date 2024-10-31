@@ -36,9 +36,9 @@ namespace ecstasy
         /// @brief IsStorage constraint
         using Component = C;
 
-        /// @brief @ref ecstasy::query::QueryableObject constraint.
+        /// @brief @ref ecstasy::query::QueryableObject "QueryableObject" constraint.
         using QueryData = C &;
-        /// @brief @ref ecstasy::query::ConstQueryableObject constraint.
+        /// @brief @ref ecstasy::query::ConstQueryableObject "ConstQueryableObject" constraint.
         using ConstQueryData = const C &;
 
         ///
@@ -134,7 +134,7 @@ namespace ecstasy
 
         /// @copydoc operator[](Entity::Index)
         ///
-        /// @note @ref ecstasy::query::QueryableObject constraint.
+        /// @note @ref ecstasy::query::QueryableObject "QueryableObject" constraint.
         [[nodiscard]] QueryData getQueryData(Entity::Index index)
         {
             return (*this)[index];
@@ -157,7 +157,7 @@ namespace ecstasy
 
         /// @copydoc operator[](Entity::Index)
         ///
-        /// @note @ref ecstasy::query::ConstQueryableObject constraint.
+        /// @note @ref ecstasy::query::ConstQueryableObject "ConstQueryableObject" constraint.
         [[nodiscard]] ConstQueryData getQueryData(Entity::Index index) const
         {
             return (*this)[index];

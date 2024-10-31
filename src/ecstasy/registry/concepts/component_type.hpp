@@ -20,8 +20,8 @@ namespace ecstasy
 {
     ///
     /// @brief Get the component type of the given type. For a component it return the component itself, for a @ref
-    /// ecstasy::RegistryModifier it returns the modifier query data, and for a @ref ecstasy::IsStorage it returns the
-    /// storage data.
+    /// ecstasy::RegistryModifier it returns the modifier query data, and for a @ref ecstasy::IsStorage "IsStorage" it
+    /// returns the storage data.
     ///
     /// @tparam T Evaluated type.
     ///

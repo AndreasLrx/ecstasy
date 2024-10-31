@@ -18,7 +18,7 @@
 namespace ecstasy
 {
     ///
-    /// @brief Placeholder for @ref ecstasy::query::modifier::Or.
+    /// @brief Placeholder for @ref ecstasy::query::modifier::Or "Or".
     ///
     /// @tparam C1 left operand type.
     /// @tparam C2 right operand type.
@@ -34,7 +34,8 @@ namespace ecstasy
     };
 
     ///
-    /// @brief Placeholder for @ref ecstasy::query::modifier::Or. This extended version allows to specify the AutoLock.
+    /// @brief Placeholder for @ref ecstasy::query::modifier::Or "Or". This extended version allows to specify the
+    /// AutoLock.
     ///
     /// @tparam AutoLock Whether the queryables should be locked automatically.
     /// @tparam C1 left operand type.
