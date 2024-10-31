@@ -386,7 +386,7 @@ namespace ecstasy::serialization
         ///
         JsonSerializer &newNested(rapidjson::Type type, bool create = true)
         {
-            if (type != rapidjson::Type::kObjectType && type != rapidjson::Type::kArrayType)
+            if (type != rapidjson::kObjectType && type != rapidjson::kArrayType)
                 throw std::invalid_argument("Invalid type for nested object.");
 
             if (create) {
@@ -407,7 +407,7 @@ namespace ecstasy::serialization
         }
 
         ///
-        /// @brief Wrapper for @ref JsonSerializer::newNested() with @ref rapidjson::Type::kObjectType as parameter.
+        /// @brief Wrapper for @ref JsonSerializer::newNested() with @ref rapidjson::kObjectType as parameter.
         ///
         /// @return JsonSerializer& Reference to @b this for chain calls.
         ///
@@ -416,11 +416,11 @@ namespace ecstasy::serialization
         ///
         JsonSerializer &newNestedObject(bool create = true)
         {
-            return newNested(rapidjson::Type::kObjectType, create);
+            return newNested(rapidjson::kObjectType, create);
         }
 
         ///
-        /// @brief Wrapper for @ref JsonSerializer::newNested() with @ref rapidjson::Type::kArrayType as parameter.
+        /// @brief Wrapper for @ref JsonSerializer::newNested() with @ref rapidjson::kArrayType as parameter.
         ///
         /// @return JsonSerializer& Reference to @b this for chain calls.
         ///
@@ -429,7 +429,7 @@ namespace ecstasy::serialization
         ///
         JsonSerializer &newNestedArray(bool create = true)
         {
-            return newNested(rapidjson::Type::kArrayType, create);
+            return newNested(rapidjson::kArrayType, create);
         }
 
         ///
