@@ -85,6 +85,11 @@ var annotated_dup =
         [ "views_allocator_size< AutoLock, Q, Qs... >", "structecstasy_1_1query_1_1views__allocator__size_3_01_auto_lock_00_01_q_00_01_qs_8_8_8_01_4.html", null ],
         [ "views_allocator_size< true, Q, Qs... >", "structecstasy_1_1query_1_1views__allocator__size_3_01true_00_01_q_00_01_qs_8_8_8_01_4.html", null ]
       ] ],
+      [ "rtti", "namespaceecstasy_1_1rtti.html", [
+        [ "AType", "classecstasy_1_1rtti_1_1_a_type.html", "classecstasy_1_1rtti_1_1_a_type" ],
+        [ "Type", "classecstasy_1_1rtti_1_1_type.html", "classecstasy_1_1rtti_1_1_type" ],
+        [ "TypeRegistry", "classecstasy_1_1rtti_1_1_type_registry.html", "classecstasy_1_1rtti_1_1_type_registry" ]
+      ] ],
       [ "serialization", "namespaceecstasy_1_1serialization.html", [
         [ "traits", "namespaceecstasy_1_1serialization_1_1traits.html", [
           [ "can_load_type", "structecstasy_1_1serialization_1_1traits_1_1can__load__type.html", null ],

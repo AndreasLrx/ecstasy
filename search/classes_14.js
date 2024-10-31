@@ -39,12 +39,14 @@ var searchData=
   ['tuple_36',['tuple',['http://en.cppreference.com/w/cpp/utility/tuple.html',1,'std']]],
   ['tuple_3c_20queryable_5fqualifiers_5ft_3c_20first_2c_20autolock_20_3e_2c_20queryable_5fqualifiers_5ft_3c_20others_2c_20autolock_20_3e_2e_2e_2e_20_3e_37',['tuple&lt; queryable_qualifiers_t&lt; First, AutoLock &gt;, queryable_qualifiers_t&lt; Others, AutoLock &gt;... &gt;',['http://en.cppreference.com/w/cpp/utility/tuple.html',1,'std']]],
   ['tuple_3c_20queryable_5fqualifiers_5ft_3c_20q1_2c_20autolock_20_3e_2c_20queryable_5fqualifiers_5ft_3c_20q2_2c_20autolock_20_3e_2c_20queryable_5fqualifiers_5ft_3c_20qs_2c_20autolock_20_3e_2e_2e_2e_20_3e_38',['tuple&lt; queryable_qualifiers_t&lt; Q1, AutoLock &gt;, queryable_qualifiers_t&lt; Q2, AutoLock &gt;, queryable_qualifiers_t&lt; Qs, AutoLock &gt;... &gt;',['http://en.cppreference.com/w/cpp/utility/tuple.html',1,'std']]],
-  ['type_5fidentity_39',['type_identity',['http://en.cppreference.com/w/cpp/types/type_identity.html',1,'std']]],
-  ['type_5fidentity_5ft_40',['type_identity_t',['http://en.cppreference.com/w/cpp/types/type_identity.html',1,'std']]],
-  ['type_5findex_41',['type_index',['http://en.cppreference.com/w/cpp/types/type_index.html',1,'std']]],
-  ['type_5finfo_42',['type_info',['http://en.cppreference.com/w/cpp/types/type_info.html',1,'std']]],
-  ['type_5fset_5feq_43',['type_set_eq',['../structutil_1_1meta_1_1type__set__eq.html',1,'util::meta']]],
-  ['type_5fset_5feq_3c_20std_3a_3atuple_3c_20ts1_2e_2e_2e_20_3e_2c_20std_3a_3atuple_3c_20ts2_2e_2e_2e_20_3e_20_3e_44',['type_set_eq&lt; std::tuple&lt; Ts1... &gt;, std::tuple&lt; Ts2... &gt; &gt;',['../structutil_1_1meta_1_1type__set__eq_3_01std_1_1tuple_3_01_ts1_8_8_8_01_4_00_01std_1_1tuple_3_01_ts2_8_8_8_01_4_01_4.html',1,'util::meta']]],
-  ['tzdb_45',['tzdb',['http://en.cppreference.com/w/cpp/chrono/tzdb.html',1,'std::chrono']]],
-  ['tzdb_5flist_46',['tzdb_list',['http://en.cppreference.com/w/cpp/chrono/tzdb_list.html',1,'std::chrono']]]
+  ['type_39',['Type',['../classecstasy_1_1rtti_1_1_type.html',1,'ecstasy::rtti']]],
+  ['type_5fidentity_40',['type_identity',['http://en.cppreference.com/w/cpp/types/type_identity.html',1,'std']]],
+  ['type_5fidentity_5ft_41',['type_identity_t',['http://en.cppreference.com/w/cpp/types/type_identity.html',1,'std']]],
+  ['type_5findex_42',['type_index',['http://en.cppreference.com/w/cpp/types/type_index.html',1,'std']]],
+  ['type_5finfo_43',['type_info',['http://en.cppreference.com/w/cpp/types/type_info.html',1,'std']]],
+  ['type_5fset_5feq_44',['type_set_eq',['../structutil_1_1meta_1_1type__set__eq.html',1,'util::meta']]],
+  ['type_5fset_5feq_3c_20std_3a_3atuple_3c_20ts1_2e_2e_2e_20_3e_2c_20std_3a_3atuple_3c_20ts2_2e_2e_2e_20_3e_20_3e_45',['type_set_eq&lt; std::tuple&lt; Ts1... &gt;, std::tuple&lt; Ts2... &gt; &gt;',['../structutil_1_1meta_1_1type__set__eq_3_01std_1_1tuple_3_01_ts1_8_8_8_01_4_00_01std_1_1tuple_3_01_ts2_8_8_8_01_4_01_4.html',1,'util::meta']]],
+  ['typeregistry_46',['TypeRegistry',['../classecstasy_1_1rtti_1_1_type_registry.html',1,'ecstasy::rtti']]],
+  ['tzdb_47',['tzdb',['http://en.cppreference.com/w/cpp/chrono/tzdb.html',1,'std::chrono']]],
+  ['tzdb_5flist_48',['tzdb_list',['http://en.cppreference.com/w/cpp/chrono/tzdb_list.html',1,'std::chrono']]]
 ];

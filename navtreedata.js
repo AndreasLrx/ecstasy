@@ -73,47 +73,55 @@ var NAVTREE =
       [ "Using systems", "md_doc_2_tutorial.html#autotoc_md42", null ],
       [ "Using resources", "md_doc_2_tutorial.html#autotoc_md43", null ],
       [ "Ensuring Thread Safety", "md_doc_2_tutorial.html#EnsuringThreadSafety", null ],
-      [ "Serializing your entities", "md_doc_2_tutorial.html#autotoc_md44", [
-        [ "Using a serializer", "md_doc_2_tutorial.html#autotoc_md45", [
-          [ "Common types", "md_doc_2_tutorial.html#autotoc_md46", null ],
-          [ "Custom types", "md_doc_2_tutorial.html#autotoc_md47", null ],
-          [ "Working with Entities", "md_doc_2_tutorial.html#autotoc_md48", null ]
+      [ "Using cross platform RTTI", "md_doc_2_tutorial.html#autotoc_md44", [
+        [ "Why use custom RTTI implementation", "md_doc_2_tutorial.html#autotoc_md45", null ],
+        [ "How to use it", "md_doc_2_tutorial.html#autotoc_md46", [
+          [ "How is it stored", "md_doc_2_tutorial.html#autotoc_md47", null ],
+          [ "Registering types", "md_doc_2_tutorial.html#autotoc_md48", null ],
+          [ "Querying types", "md_doc_2_tutorial.html#autotoc_md49", null ]
+        ] ]
+      ] ],
+      [ "Serializing your entities", "md_doc_2_tutorial.html#autotoc_md50", [
+        [ "Using a serializer", "md_doc_2_tutorial.html#autotoc_md51", [
+          [ "Common types", "md_doc_2_tutorial.html#autotoc_md52", null ],
+          [ "Custom types", "md_doc_2_tutorial.html#autotoc_md53", null ],
+          [ "Working with Entities", "md_doc_2_tutorial.html#autotoc_md54", null ]
         ] ]
       ] ]
     ] ],
     [ "Technical Implementations", "md_doc_2_technical_implementation.html", [
-      [ "Entities Management", "md_doc_2_technical_implementation.html#autotoc_md50", null ],
-      [ "Components Management (MapStorage)", "md_doc_2_technical_implementation.html#autotoc_md51", null ],
-      [ "Query", "md_doc_2_technical_implementation.html#autotoc_md52", null ]
+      [ "Entities Management", "md_doc_2_technical_implementation.html#autotoc_md56", null ],
+      [ "Components Management (MapStorage)", "md_doc_2_technical_implementation.html#autotoc_md57", null ],
+      [ "Query", "md_doc_2_technical_implementation.html#autotoc_md58", null ]
     ] ],
     [ "Events integration", "md_doc_2integrations_2events.html", [
-      [ "Description", "md_doc_2integrations_2events.html#autotoc_md61", [
-        [ "How to get feedback", "md_doc_2integrations_2events.html#autotoc_md62", null ],
-        [ "Event flow", "md_doc_2integrations_2events.html#autotoc_md63", null ]
+      [ "Description", "md_doc_2integrations_2events.html#autotoc_md67", [
+        [ "How to get feedback", "md_doc_2integrations_2events.html#autotoc_md68", null ],
+        [ "Event flow", "md_doc_2integrations_2events.html#autotoc_md69", null ]
       ] ],
-      [ "Example", "md_doc_2integrations_2events.html#autotoc_md64", [
-        [ "Creating listeners components", "md_doc_2integrations_2events.html#autotoc_md65", null ],
-        [ "Sending an event", "md_doc_2integrations_2events.html#autotoc_md66", null ],
-        [ "Accessing an input state", "md_doc_2integrations_2events.html#autotoc_md67", null ]
+      [ "Example", "md_doc_2integrations_2events.html#autotoc_md70", [
+        [ "Creating listeners components", "md_doc_2integrations_2events.html#autotoc_md71", null ],
+        [ "Sending an event", "md_doc_2integrations_2events.html#autotoc_md72", null ],
+        [ "Accessing an input state", "md_doc_2integrations_2events.html#autotoc_md73", null ]
       ] ]
     ] ],
     [ "SFML integration", "md_doc_2integrations_2sfml.html", [
-      [ "Description", "md_doc_2integrations_2sfml.html#autotoc_md69", null ],
-      [ "Usage", "md_doc_2integrations_2sfml.html#autotoc_md70", null ]
+      [ "Description", "md_doc_2integrations_2sfml.html#autotoc_md75", null ],
+      [ "Usage", "md_doc_2integrations_2sfml.html#autotoc_md76", null ]
     ] ],
     [ "User Actions integration", "md_doc_2integrations_2user__actions.html", [
-      [ "Description", "md_doc_2integrations_2user__actions.html#autotoc_md72", null ],
-      [ "Usage", "md_doc_2integrations_2user__actions.html#autotoc_md73", [
-        [ "Register your actions and bindings", "md_doc_2integrations_2user__actions.html#autotoc_md74", null ],
-        [ "Listen to your actions", "md_doc_2integrations_2user__actions.html#autotoc_md75", [
-          [ "ActionListener", "md_doc_2integrations_2user__actions.html#autotoc_md76", null ],
-          [ "ActionListeners", "md_doc_2integrations_2user__actions.html#autotoc_md77", null ],
-          [ "ActionIdListener", "md_doc_2integrations_2user__actions.html#autotoc_md78", null ]
+      [ "Description", "md_doc_2integrations_2user__actions.html#autotoc_md78", null ],
+      [ "Usage", "md_doc_2integrations_2user__actions.html#autotoc_md79", [
+        [ "Register your actions and bindings", "md_doc_2integrations_2user__actions.html#autotoc_md80", null ],
+        [ "Listen to your actions", "md_doc_2integrations_2user__actions.html#autotoc_md81", [
+          [ "ActionListener", "md_doc_2integrations_2user__actions.html#autotoc_md82", null ],
+          [ "ActionListeners", "md_doc_2integrations_2user__actions.html#autotoc_md83", null ],
+          [ "ActionIdListener", "md_doc_2integrations_2user__actions.html#autotoc_md84", null ]
         ] ],
-        [ "Using intermediate actions", "md_doc_2integrations_2user__actions.html#autotoc_md79", null ],
-        [ "Saving and loading the bindings", "md_doc_2integrations_2user__actions.html#autotoc_md80", [
-          [ "Saving", "md_doc_2integrations_2user__actions.html#autotoc_md81", null ],
-          [ "Loading", "md_doc_2integrations_2user__actions.html#autotoc_md82", null ]
+        [ "Using intermediate actions", "md_doc_2integrations_2user__actions.html#autotoc_md85", null ],
+        [ "Saving and loading the bindings", "md_doc_2integrations_2user__actions.html#autotoc_md86", [
+          [ "Saving", "md_doc_2integrations_2user__actions.html#autotoc_md87", null ],
+          [ "Loading", "md_doc_2integrations_2user__actions.html#autotoc_md88", null ]
         ] ]
       ] ]
     ] ],
@@ -154,24 +162,25 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "01__basic__window_2main_8cpp.html",
-"_storage_concepts_8hpp.html",
-"classecstasy_1_1_instances.html#ada76cfbeabe36543abc1cee8ce28e9f1",
-"classecstasy_1_1_registry_1_1_select.html#ad2da777410e2aee990c3564a998106ec",
-"classecstasy_1_1integration_1_1event_1_1_gamepad_combination_listener.html#a582d5243b93356a9d25447a19bf97095",
-"classecstasy_1_1integration_1_1sfml_1_1_render_window.html#a620f8d42347e26a47dc8979fa767e940",
-"classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html#a6db978f9a8ed5286409648973fb2d5b3",
-"classecstasy_1_1serialization_1_1_raw_serializer.html#a8f93e4286530d22bab9db262aecaa9d8",
-"classutil_1_1_bit_set_1_1_reference.html#af77f2857c5c505b333c619de59446340",
-"classutil_1_1serialization_1_1_i_node_factory.html#ab5da91311c808c8c4a333a3b8211f4ca",
-"classutil_1_1serialization_1_1_toml_object_node.html#a86e49accbb138e5c70696a1f6eec9a6d",
-"cpp/algorithm/shift.html",
-"cpp/experimental/type_trait_variable_templates.html",
-"cpp/memory/shared_ptr/pointer_cast.html",
-"cpp/string/byte/strtof.html",
-"dir_13af086a2b4f3f42e1124b964311462f.html",
-"md_doc_2integrations_2sfml.html#autotoc_md70",
-"structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa8ed4d3c0783d6f909907e1592ffe47ac",
-"structecstasy_1_1query_1_1_select_1_1_filter_queryables.html#a9bd5caf2dbefc4a90f87d15d9b5d3b8e"
+"_shared_recursive_mutex_8hpp.html",
+"classecstasy_1_1_instances.html#a60a0a52241c58dd76d10144fba5c8307",
+"classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#ae6a0979483eb1a06e84922357f00ca28",
+"classecstasy_1_1integration_1_1event_1_1_gamepad.html#af0f4687925fe97b9b703f92253c2e571aebcc5da4a444a0a699ceab62d93abc35",
+"classecstasy_1_1integration_1_1sfml_1_1_encoding.html#af2f3d430d9bd4d27e094d50eb35f058a",
+"classecstasy_1_1query_1_1modifier_1_1_and_impl.html#a896ac70a187fcec57f854fc575b21a29",
+"classecstasy_1_1serialization_1_1_json_serializer.html#a20be92bab0cddd1ec02702e4eff8d972",
+"classutil_1_1_bit_set.html#a0314c01283427177909d5977641ec6f1",
+"classutil_1_1serialization_1_1_i_node.html#a605ed86fc1c6e533484ce54f63628f00",
+"classutil_1_1serialization_1_1_toml_conversion.html#a5680f5a5f3c594b6c1a34abde1eedc72",
+"cpp/algorithm/ranges/find.html",
+"cpp/experimental/new_delete_resource.html",
+"cpp/io/manip/unitbuf.html",
+"cpp/numeric/special_functions/cyl_neumann.html",
+"cpp/types/is_swappable.html",
+"functions_r.html",
+"registry_2modifiers_2_not_8hpp.html",
+"structecstasy_1_1integration_1_1user__action_1_1_action_id_listener.html#a0edb68a032d82442850df4c482623189",
+"structutil_1_1meta_1_1_traits_3_01_arg_00_01_args_8_8_8_01_4.html#a37457752027ce8ceb510051e784df526"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

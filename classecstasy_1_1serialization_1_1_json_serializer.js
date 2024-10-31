@@ -20,7 +20,7 @@ var classecstasy_1_1serialization_1_1_json_serializer =
     [ "exportStream", "classecstasy_1_1serialization_1_1_json_serializer.html#aa6e14a74b11bfc9115fcca7d02370f3c", null ],
     [ "getWriteCursor", "classecstasy_1_1serialization_1_1_json_serializer.html#a820a9ede8c8086e03efe96944c57ae24", null ],
     [ "importStream", "classecstasy_1_1serialization_1_1_json_serializer.html#ad9cd3c79179ee4c4c7e7dead668a07e5", null ],
-    [ "loadComponentHash", "classecstasy_1_1serialization_1_1_json_serializer.html#a64074618dac8ff48c8770672b4264e45", null ],
+    [ "loadComponentSerializer", "classecstasy_1_1serialization_1_1_json_serializer.html#a99d5a83888418bc989e5b7a8ab745547", null ],
     [ "loadImpl", "classecstasy_1_1serialization_1_1_json_serializer.html#adf59ddc2f0e66ec98820041f14134d8e", null ],
     [ "newNested", "classecstasy_1_1serialization_1_1_json_serializer.html#a662bbbc0c648f722f3e0340383801fad", null ],
     [ "newNestedArray", "classecstasy_1_1serialization_1_1_json_serializer.html#a44151a379910585133e14aae13ee7b6d", null ],

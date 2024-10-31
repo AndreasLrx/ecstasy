@@ -11,7 +11,7 @@ var classecstasy_1_1serialization_1_1_raw_serializer =
     [ "exportStream", "classecstasy_1_1serialization_1_1_raw_serializer.html#ad5a8f3ccb99b5a0bcab858455008dc1e", null ],
     [ "getStream", "classecstasy_1_1serialization_1_1_raw_serializer.html#af2bbfba6e7d0e0050a18b1c5512d74b7", null ],
     [ "importStream", "classecstasy_1_1serialization_1_1_raw_serializer.html#acfbc254580176cef7d2bf444b8b666ec", null ],
-    [ "loadComponentHash", "classecstasy_1_1serialization_1_1_raw_serializer.html#a477bd0c9f211c98916f1ff3c719df0f0", null ],
+    [ "loadComponentSerializer", "classecstasy_1_1serialization_1_1_raw_serializer.html#a0707015d6cadac0590cad930ea8c2e7b", null ],
     [ "loadImpl", "classecstasy_1_1serialization_1_1_raw_serializer.html#a073e4d870d08c9efb622d9e6b378b952", null ],
     [ "loadRaw", "classecstasy_1_1serialization_1_1_raw_serializer.html#ac5ca6a4a827f47785be9a49b3ba3d07b", null ],
     [ "resetCursors", "classecstasy_1_1serialization_1_1_raw_serializer.html#a5e317d6a54e3d5ed9954adcdf4770760", null ],

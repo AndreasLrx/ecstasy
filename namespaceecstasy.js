@@ -2,6 +2,7 @@ var namespaceecstasy =
 [
     [ "integration", "namespaceecstasy_1_1integration.html", "namespaceecstasy_1_1integration" ],
     [ "query", "namespaceecstasy_1_1query.html", "namespaceecstasy_1_1query" ],
+    [ "rtti", "namespaceecstasy_1_1rtti.html", "namespaceecstasy_1_1rtti" ],
     [ "serialization", "namespaceecstasy_1_1serialization.html", "namespaceecstasy_1_1serialization" ],
     [ "thread", "namespaceecstasy_1_1thread.html", "namespaceecstasy_1_1thread" ],
     [ "And", "structecstasy_1_1_and.html", "structecstasy_1_1_and" ],

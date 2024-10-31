@@ -102,5 +102,6 @@ var searchData=
   ['atomic_5fwchar_5ft_99',['atomic_wchar_t',['http://en.cppreference.com/w/cpp/atomic/atomic.html',1,'std']]],
   ['atomic_5fweak_5fptr_100',['atomic_weak_ptr',['http://en.cppreference.com/w/cpp/experimental/atomic_weak_ptr.html',1,'std::experimental']]],
   ['atto_101',['atto',['http://en.cppreference.com/w/cpp/numeric/ratio/ratio.html',1,'std']]],
-  ['auto_5fptr_102',['auto_ptr',['http://en.cppreference.com/w/cpp/memory/auto_ptr.html',1,'std']]]
+  ['atype_102',['AType',['../classecstasy_1_1rtti_1_1_a_type.html',1,'ecstasy::rtti']]],
+  ['auto_5fptr_103',['auto_ptr',['http://en.cppreference.com/w/cpp/memory/auto_ptr.html',1,'std']]]
 ];

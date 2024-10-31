@@ -19,6 +19,9 @@ var hierarchy =
     [ "ecstasy::AndEx< AutoLock, C1, C2, Cs >", "structecstasy_1_1_and_ex.html", null ],
     [ "util::meta::apply< Functor, Ts >", "structutil_1_1meta_1_1apply.html", null ],
     [ "util::meta::apply< Functor, Traits< Ts... > >", "structutil_1_1meta_1_1apply_3_01_functor_00_01_traits_3_01_ts_8_8_8_01_4_01_4.html", null ],
+    [ "ecstasy::rtti::AType", "classecstasy_1_1rtti_1_1_a_type.html", [
+      [ "ecstasy::rtti::Type< T >", "classecstasy_1_1rtti_1_1_type.html", null ]
+    ] ],
     [ "util::BitSet", "classutil_1_1_bit_set.html", null ],
     [ "ecstasy::Entities::Builder", "classecstasy_1_1_entities_1_1_builder.html", null ],
     [ "ecstasy::SystemInstances::Comparer", "classecstasy_1_1_system_instances_1_1_comparer.html", null ],
@@ -283,6 +286,7 @@ var hierarchy =
       [ "util::meta::_type_set_eq< std::tuple<>, std::tuple<> >", "structutil_1_1meta_1_1__type__set__eq_3_01std_1_1tuple_3_4_00_01std_1_1tuple_3_4_01_4.html", null ],
       [ "util::meta::is_std_vector< std::vector< T, A > >", "structutil_1_1meta_1_1is__std__vector_3_01std_1_1vector_3_01_t_00_01_a_01_4_01_4.html", null ]
     ] ],
+    [ "ecstasy::rtti::TypeRegistry", "classecstasy_1_1rtti_1_1_type_registry.html", null ],
     [ "ecstasy::integration::user_action::Users::UserActionLink", "structecstasy_1_1integration_1_1user__action_1_1_users_1_1_user_action_link.html", null ],
     [ "ecstasy::integration::user_action::UserProfile", "classecstasy_1_1integration_1_1user__action_1_1_user_profile.html", null ],
     [ "ecstasy::Xor< C1, C2, Cs >", "structecstasy_1_1_xor.html", null ],

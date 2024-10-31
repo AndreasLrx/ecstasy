@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ECSTASY: src/ecstasy/serialization -&gt; resources Relation</title>
+<title>ECSTASY: ecstasy::rtti::is_comparable_with_atype Concept Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -65,7 +65,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('dir_eed27aa5dca7a2eea6a73849448ad14f.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('conceptecstasy_1_1rtti_1_1is__comparable__with__atype.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -90,13 +90,41 @@ $(document).ready(function(){initNavTree('dir_eed27aa5dca7a2eea6a73849448ad14f.h
 </div>
 </div>
 
+<div class="header">
+  <div class="headertitle"><div class="title">ecstasy::rtti::is_comparable_with_atype Concept Reference</div></div>
+</div><!--header-->
 <div class="contents">
-<h3>serialization &rarr; resources Relation</h3><table class="dirtab"><tr class="dirtab"><th class="dirtab">File in src/ecstasy/serialization</th><th class="dirtab">Includes file in src/ecstasy/resources</th></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="ecstasy_2serialization_2_serializer_8hpp.html">Serializer.hpp</a></td><td class="dirtab"><a class="el" href="dir_9c4985e03a334e11ec441bcb2c34f55b.html">entity</a>&#160;/&#160;<a class="el" href="_registry_entity_8hpp.html">RegistryEntity.hpp</a></td></tr></table></div><!-- contents -->
+
+<p>Concept to check if a type is comparable with AType.  
+<a href="conceptecstasy_1_1rtti_1_1is__comparable__with__atype.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_a_type_8hpp_source.html">AType.hpp</a>&gt;</code></p>
+<h2 class="groupheader">Concept definition</h2>
+<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptecstasy_1_1rtti_1_1is__comparable__with__atype.html">ecstasy::rtti::is_comparable_with_atype</a> =  <span class="keyword">requires</span>(AType &amp;a, T t) {</div>
+<div class="line">            {</div>
+<div class="line">                a == t</div>
+<div class="line">            } -&gt; std::convertible_to&lt;bool&gt;; </div>
+<div class="line">        }</div>
+<div class="ttc" id="aconceptecstasy_1_1rtti_1_1is__comparable__with__atype_html"><div class="ttname"><a href="conceptecstasy_1_1rtti_1_1is__comparable__with__atype.html">ecstasy::rtti::is_comparable_with_atype</a></div><div class="ttdoc">Concept to check if a type is comparable with AType.</div><div class="ttdef"><b>Definition</b> <a href="_a_type_8hpp_source.html#l00216">AType.hpp:216</a></div></div>
+</div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Concept to check if a type is comparable with AType. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type to check.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-24) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_a_type_8hpp_source.html#l00216">216</a> of file <a class="el" href="_a_type_8hpp_source.html">AType.hpp</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_6b0b9537e2784bce85aaa1605580a3a0.html">ecstasy</a></li><li class="navelem"><a class="el" href="dir_eed27aa5dca7a2eea6a73849448ad14f.html">serialization</a></li>
+    <li class="navelem"><a class="el" href="namespaceecstasy.html">ecstasy</a></li><li class="navelem"><a class="el" href="namespaceecstasy_1_1rtti.html">rtti</a></li><li class="navelem"><a class="el" href="conceptecstasy_1_1rtti_1_1is__comparable__with__atype.html">is_comparable_with_atype</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
   </ul>
 </div>

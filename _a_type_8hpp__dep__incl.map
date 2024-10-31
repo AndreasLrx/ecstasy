@@ -1,0 +1,24 @@
+<map id="src/ecstasy/rtti/AType.hpp" name="src/ecstasy/rtti/AType.hpp">
+<area shape="rect" id="Node000001" title="File containing the AType interface for cross&#45;platform type information." alt="" coords="340,5,528,31"/>
+<area shape="rect" id="Node000002" href="$_a_type_8cpp.html" title="AType class implementation." alt="" coords="133,79,319,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="388,38,261,81,259,76,387,33"/>
+<area shape="rect" id="Node000003" href="$_type_8hpp.html" title="File containing the Type class (AType implementation) for cross&#45;platform type information." alt="" coords="344,79,524,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="437,44,437,79,431,79,431,44"/>
+<area shape="rect" id="Node000006" href="$ecstasy_2rtti_2include_8hpp.html" title=" " alt="" coords="463,233,661,258"/>
+<area shape="poly" id="edge12_Node000001_Node000006" title=" " alt="" coords="484,34,514,52,539,77,558,118,566,163,568,203,566,233,561,232,563,203,561,163,553,120,534,80,510,56,481,39"/>
+<area shape="rect" id="Node000004" href="$_type_registry_8hpp.html" title=" " alt="" coords="237,152,469,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="412,115,368,154,364,150,409,111"/>
+<area shape="poly" id="edge11_Node000003_Node000006" title=" " alt="" coords="454,113,554,231,550,234,450,116"/>
+<area shape="rect" id="Node000005" href="$_type_registry_8cpp.html" title="TypeRegistry class implementation." alt="" coords="5,233,236,258"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="307,184,155,235,154,230,305,179"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="397,180,532,230,531,235,395,185"/>
+<area shape="rect" id="Node000007" href="$ecstasy_2serialization_2_serializer_8hpp.html" title="RawSerializer class." alt="" coords="261,225,439,265"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="354,191,353,225,348,225,349,191"/>
+<area shape="rect" id="Node000008" href="$_json_serializer_8hpp.html" title="JsonSerializer class." alt="" coords="58,313,237,353"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="294,273,193,316,191,311,292,268"/>
+<area shape="rect" id="Node000009" href="$_raw_serializer_8hpp.html" title=" " alt="" coords="261,313,439,353"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="353,279,353,313,347,313,347,279"/>
+<area shape="rect" id="Node000010" href="$ecstasy_2serialization_2include_8hpp.html" title=" " alt="" coords="323,401,502,441"/>
+<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="411,270,435,288,454,312,459,336,455,361,444,384,431,403,427,400,439,381,450,359,454,336,449,314,431,292,408,274"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="374,363,401,400,397,403,370,366"/>
+</map>

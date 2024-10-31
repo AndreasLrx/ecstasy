@@ -16,8 +16,11 @@ var searchData=
   ['traits_2ehpp_13',['Traits.hpp',['../_traits_8hpp.html',1,'']]],
   ['tuple_14',['tuple',['http://en.cppreference.com/w/cpp/header/tuple.html',1,'']]],
   ['tutorial_2emd_15',['Tutorial.md',['../_tutorial_8md.html',1,'']]],
-  ['type_5fset_5feq_2ehpp_16',['type_set_eq.hpp',['../type__set__eq_8hpp.html',1,'']]],
-  ['type_5ftraits_17',['type_traits',['http://en.cppreference.com/w/cpp/header/type_traits.html',1,'']]],
-  ['typeindex_18',['typeindex',['http://en.cppreference.com/w/cpp/header/typeindex.html',1,'']]],
-  ['typeinfo_19',['typeinfo',['http://en.cppreference.com/w/cpp/header/typeinfo.html',1,'']]]
+  ['type_2ehpp_16',['Type.hpp',['../_type_8hpp.html',1,'']]],
+  ['type_5fset_5feq_2ehpp_17',['type_set_eq.hpp',['../type__set__eq_8hpp.html',1,'']]],
+  ['type_5ftraits_18',['type_traits',['http://en.cppreference.com/w/cpp/header/type_traits.html',1,'']]],
+  ['typeindex_19',['typeindex',['http://en.cppreference.com/w/cpp/header/typeindex.html',1,'']]],
+  ['typeinfo_20',['typeinfo',['http://en.cppreference.com/w/cpp/header/typeinfo.html',1,'']]],
+  ['typeregistry_2ecpp_21',['TypeRegistry.cpp',['../_type_registry_8cpp.html',1,'']]],
+  ['typeregistry_2ehpp_22',['TypeRegistry.hpp',['../_type_registry_8hpp.html',1,'']]]
 ];

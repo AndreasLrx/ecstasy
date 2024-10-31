@@ -1,12 +1,22 @@
 <map id="src/ecstasy/serialization/EntityComponentSerializer.hpp" name="src/ecstasy/serialization/EntityComponentSerializer.hpp">
-<area shape="rect" id="Node000001" title="Entity component serializer class bound to a specific component and a serializer type." alt="" coords="184,5,411,45"/>
-<area shape="rect" id="Node000002" href="$ecstasy_2serialization_2_serializer_8hpp.html" title="RawSerializer class." alt="" coords="208,93,387,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="300,59,300,93,295,93,295,59"/>
-<area shape="rect" id="Node000003" href="$_json_serializer_8hpp.html" title="JsonSerializer class." alt="" coords="5,181,184,221"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="242,141,140,184,138,179,239,136"/>
-<area shape="rect" id="Node000004" href="$_raw_serializer_8hpp.html" title=" " alt="" coords="208,181,387,221"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="300,147,300,181,295,181,295,147"/>
-<area shape="rect" id="Node000005" href="$ecstasy_2serialization_2include_8hpp.html" title=" " alt="" coords="271,269,449,309"/>
-<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="358,138,382,156,401,180,407,204,402,229,391,252,378,271,374,268,387,249,397,227,401,204,396,182,379,160,355,142"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="321,231,348,268,344,271,317,234"/>
+<area shape="rect" id="Node000001" title="Entity component serializer class bound to a specific component and a serializer type." alt="" coords="305,5,532,45"/>
+<area shape="rect" id="Node000002" href="$_type_8hpp.html" title="File containing the Type class (AType implementation) for cross&#45;platform type information." alt="" coords="253,93,433,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="393,57,356,95,352,91,389,53"/>
+<area shape="rect" id="Node000006" href="$ecstasy_2serialization_2_serializer_8hpp.html" title="RawSerializer class." alt="" coords="483,240,661,280"/>
+<area shape="poly" id="edge11_Node000001_Node000006" title=" " alt="" coords="441,55,562,238,557,241,436,58"/>
+<area shape="rect" id="Node000003" href="$_type_registry_8hpp.html" title=" " alt="" coords="227,167,459,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="345,132,345,167,340,167,340,132"/>
+<area shape="rect" id="Node000005" href="$ecstasy_2rtti_2include_8hpp.html" title=" " alt="" coords="5,247,203,273"/>
+<area shape="poly" id="edge10_Node000002_Node000005" title=" " alt="" coords="301,126,259,145,216,169,160,211,118,249,114,245,156,207,213,164,257,140,299,121"/>
+<area shape="rect" id="Node000004" href="$_type_registry_8cpp.html" title="TypeRegistry class implementation." alt="" coords="227,247,458,273"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="345,206,345,247,340,247,340,206"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="296,199,140,250,138,245,294,194"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="390,194,518,237,516,242,388,199"/>
+<area shape="rect" id="Node000007" href="$_json_serializer_8hpp.html" title="JsonSerializer class." alt="" coords="280,328,459,368"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="516,288,415,330,413,326,514,283"/>
+<area shape="rect" id="Node000008" href="$_raw_serializer_8hpp.html" title=" " alt="" coords="483,328,661,368"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="575,294,575,328,569,328,569,294"/>
+<area shape="rect" id="Node000009" href="$ecstasy_2serialization_2include_8hpp.html" title=" " alt="" coords="545,416,724,456"/>
+<area shape="poly" id="edge9_Node000006_Node000009" title=" " alt="" coords="633,285,657,303,676,327,681,351,677,375,666,398,653,417,649,414,661,396,672,374,676,351,671,329,653,307,630,289"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="596,378,623,414,619,417,592,381"/>
 </map>

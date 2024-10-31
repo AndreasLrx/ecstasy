@@ -16,6 +16,9 @@ var concepts =
         [ "QueryableWrapperNeedAdjust", "conceptecstasy_1_1query_1_1_queryable_wrapper_need_adjust.html", null ],
         [ "QueryableNeedAdjust", "conceptecstasy_1_1query_1_1_queryable_need_adjust.html", null ]
       ] ],
+      [ "rtti", "namespaceecstasy_1_1rtti.html", [
+        [ "is_comparable_with_atype", "conceptecstasy_1_1rtti_1_1is__comparable__with__atype.html", null ]
+      ] ],
       [ "serialization", "namespaceecstasy_1_1serialization.html", [
         [ "concepts", "namespaceecstasy_1_1serialization_1_1concepts.html", [
           [ "has_extraction_operator", "conceptecstasy_1_1serialization_1_1concepts_1_1has__extraction__operator.html", null ],

@@ -543,16 +543,84 @@ Ensuring Thread Safety</h1>
 </li>
 </ol>
 <h1><a class="anchor" id="autotoc_md44"></a>
+Using cross platform RTTI</h1>
+<h2><a class="anchor" id="autotoc_md45"></a>
+Why use custom RTTI implementation</h2>
+<p>C++ already has its own RTTI integration with <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a> (as returned by typeid). With this you can get a unique hash for each type using <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info/hash_code.html">std::type_info::hash_code()</a>. However, this hash is not cross platform since it is implementation specific. And most important, it is not guaranteed to stay the same between 2 runs.</p>
+<p>As explained in the <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info/hash_code.html">std::type_info::hash_code()</a> documentation: </p><pre class="fragment">Returns an unspecified value (here denoted by hash code) such that for all std::type_info objects referring to the same type,
+their hash code is the same.
+
+No other guarantees are given: std::type_info objects referring to different types may have the same hash code
+(although the standard recommends that implementations avoid this as much as possible),
+and hash code for the same type can change between invocations of the same program.
+</pre><p> It also returns a <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info/name.html">std::type_info::name()</a> function, but its results are mangled in g++ (maybe clang too) but not in MSVC.</p>
+<p>For all these reasons, it make cross-platform serialization of custom types impossible using only <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a>.</p>
+<h2><a class="anchor" id="autotoc_md46"></a>
+How to use it</h2>
+<h3><a class="anchor" id="autotoc_md47"></a>
+How is it stored</h3>
+<p>This custom rtti use mainly two classes: <a class="el" href="classecstasy_1_1rtti_1_1_type_registry.html">ecstasy::rtti::TypeRegistry</a> and <a class="el" href="classecstasy_1_1rtti_1_1_a_type.html">ecstasy::rtti::AType</a>.</p>
+<p>The TypeRegistry is a singleton storing all AType instances.</p>
+<p>The AType is the replacement of <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a>. It is mainly a wrapper over the <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a> with a user defined name (which is supposed to be the same for every program run) and therefore a cross platform hash which is the hash of the name.</p>
+<p>And it also contains the <a class="el" href="classecstasy_1_1serialization_1_1_i_entity_component_serializer.html">ecstasy::serialization::IEntityComponentSerializer</a> instances for the serialization part (see Serializing your entities section)</p>
+<h3><a class="anchor" id="autotoc_md48"></a>
+Registering types</h3>
+<p>First of all you need to register the types for which you want cross-platform RTTI using the macro <a class="el" href="_type_registry_8hpp.html#ad7044dbc834b00bd27108e9a8df4dcd8">REGISTER_TYPES</a>.</p>
+<div class="fragment"><div class="line"><span class="comment">// The macro is defined in this included</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_type_registry_8hpp.html">ecstasy/rtti/TypeRegistry.hpp</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>Position {</div>
+<div class="line">    <span class="keywordtype">float</span> x;</div>
+<div class="line">    <span class="keywordtype">float</span> y;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>Size {</div>
+<div class="line">    <span class="keywordtype">float</span> width;</div>
+<div class="line">    <span class="keywordtype">float</span> height;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// You can register as much types as you want (variadic macro)</span></div>
+<div class="line"><a class="code hl_define" href="_type_registry_8hpp.html#ad7044dbc834b00bd27108e9a8df4dcd8">REGISTER_TYPES</a>(Position, Size);</div>
+<div class="ttc" id="a_type_registry_8hpp_html"><div class="ttname"><a href="_type_registry_8hpp.html">TypeRegistry.hpp</a></div></div>
+<div class="ttc" id="a_type_registry_8hpp_html_ad7044dbc834b00bd27108e9a8df4dcd8"><div class="ttname"><a href="_type_registry_8hpp.html#ad7044dbc834b00bd27108e9a8df4dcd8">REGISTER_TYPES</a></div><div class="ttdeci">#define REGISTER_TYPES(TYPE,...)</div><div class="ttdoc">Register multiple component types.</div><div class="ttdef"><b>Definition</b> <a href="_type_registry_8hpp_source.html#l00041">TypeRegistry.hpp:41</a></div></div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>I tried to do automatic type registration (ie not requiring to use a macro), but for all the above reasons, I couldn't find a way to do it.</dd>
+<dd>
+The macro <a class="el" href="ecstasy_2serialization_2_serializer_8hpp.html#a0ca77627672ee4d0c582e482138445c6">REGISTER_SERIALIZABLES</a> will also register the type.</dd></dl>
+<p>You can also do it without the macro like this:</p>
+<div class="fragment"><div class="line"><span class="comment">// The macro is defined in this included</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_type_registry_8hpp.html">ecstasy/rtti/TypeRegistry.hpp</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>Position {</div>
+<div class="line">    <span class="keywordtype">float</span> x;</div>
+<div class="line">    <span class="keywordtype">float</span> y;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This returns a reference to the new @ref AType created.</span></div>
+<div class="line"><a class="code hl_function" href="classecstasy_1_1rtti_1_1_type_registry.html#a07f65105bd02f2d10883effc1916b460">ecstasy::rtti::TypeRegistry::getInstance</a>().<a class="code hl_function" href="classecstasy_1_1rtti_1_1_type_registry.html#aea9f3c3694443622a964231690a886f2">registerType</a>&lt;Position&gt;(<span class="stringliteral">&quot;Position&quot;</span>);</div>
+<div class="ttc" id="aclassecstasy_1_1rtti_1_1_type_registry_html_a07f65105bd02f2d10883effc1916b460"><div class="ttname"><a href="classecstasy_1_1rtti_1_1_type_registry.html#a07f65105bd02f2d10883effc1916b460">ecstasy::rtti::TypeRegistry::getInstance</a></div><div class="ttdeci">static TypeRegistry &amp; getInstance() noexcept</div><div class="ttdoc">Get the Instance object.</div><div class="ttdef"><b>Definition</b> <a href="_type_registry_8cpp_source.html#l00017">TypeRegistry.cpp:17</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1rtti_1_1_type_registry_html_aea9f3c3694443622a964231690a886f2"><div class="ttname"><a href="classecstasy_1_1rtti_1_1_type_registry.html#aea9f3c3694443622a964231690a886f2">ecstasy::rtti::TypeRegistry::registerType</a></div><div class="ttdeci">AType &amp; registerType(std::string_view name)</div><div class="ttdoc">Register a type in the registry.</div><div class="ttdef"><b>Definition</b> <a href="_type_registry_8hpp_source.html#l00084">TypeRegistry.hpp:84</a></div></div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md49"></a>
+Querying types</h3>
+<p>The type registry can be queried from multiple data types:</p>
+<ul>
+<li>Using no data type but the type has a template parameter: <code>registry.has&lt;Position&gt;()</code></li>
+<li>Using the name hash as returned by <a class="el" href="classecstasy_1_1rtti_1_1_a_type.html#a0b1a60bfc99960065bd9198d95c32616">ecstasy::rtti::AType::getHash()</a></li>
+<li>Using a const <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a></li>
+<li>Using another <a class="el" href="classecstasy_1_1rtti_1_1_a_type.html">ecstasy::rtti::AType</a></li>
+<li>Using the cross platform name</li>
+<li>Using a predicate (only for get/find methods)</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md50"></a>
 Serializing your entities</h1>
 <p>Ecstasy has some built in serialization helpers in the <a class="el" href="namespaceecstasy_1_1serialization.html">ecstasy::serialization</a> namespace.</p>
-<dl class="section warning"><dt>Warning</dt><dd>The entity serialization without specifying components is still WIP and will probably have a huge refactor.</dd></dl>
 <p>The current available serializers are the following:</p>
 <ul>
 <li>RawSerializer: Custom binary serialization of components fields. Compact form but not related to any RFC.</li>
+<li>JsonSerializer: Classic json serialization of components. Not compact but readable.</li>
 </ul>
 <p>If you need a missing serializer, you can write it yourself by inheriting the <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html">ecstasy::serialization::Serializer</a> class. In case of a commonly used serializer type (json/yaml/NDR...) feel free to open an issue about it.</p>
 <dl class="section warning"><dt>Warning</dt><dd>The RawSerializer uses a <a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_stringstream.html">std::stringstream</a>. Therefore there are cursor positions, if you need to read twice the data, you need to reset the read cursor position.</dd></dl>
-<h2><a class="anchor" id="autotoc_md45"></a>
+<h2><a class="anchor" id="autotoc_md51"></a>
 Using a serializer</h2>
 <p>Following examples below will be using the RawSerializer type and the example component Position:</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>Position {</div>
@@ -560,7 +628,7 @@ Using a serializer</h2>
 <div class="line">    <span class="keywordtype">float</span> x;</div>
 <div class="line">    <span class="keywordtype">float</span> y;</div>
 <div class="line">};</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md46"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md52"></a>
 Common types</h3>
 <p>Serializer should support fundamental and container types by default but it depends on the serializer implementation.</p>
 <table class="markdownTable">
@@ -622,7 +690,7 @@ Common types</h3>
 <div class="line"><span class="comment">// Fill your serializer with previously saved data using import methods</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> my_number = serializer.load&lt;<span class="keywordtype">int</span>&gt;();</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md47"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md53"></a>
 Custom types</h3>
 <p>If you are working with custom type (ie components) you can implement the extraction (**&gt;&gt;**) and insertion operator (**&lt;&lt;**) with the said serializer type for the <em>save</em>/_update_. And a constructor taking the serializer as parameter for the <em>load</em>.</p>
 <dl class="section note"><dt>Note</dt><dd>The operators doesn't have to be inside the class, you can define it outside the class if you don't have access to the class definition. However it cannot work for the constructor.</dd></dl>
@@ -647,8 +715,8 @@ Custom types</h3>
 </div><!-- fragment --><p>If you need to (de)serialize the type from the save/update/loadEntity methods, you first need to register the type as serializable by the expected Serializer using the variadic macro <a class="el" href="ecstasy_2serialization_2_serializer_8hpp.html#a0ca77627672ee4d0c582e482138445c6">REGISTER_SERIALIZABLES</a></p>
 <p>For example, if you want you type Position to be serializable by the RawSerializer and the (maybe to come) JsonSerializer:</p>
 <div class="fragment"><div class="line"><a class="code hl_define" href="ecstasy_2serialization_2_serializer_8hpp.html#a0ca77627672ee4d0c582e482138445c6">REGISTER_SERIALIZABLES</a>(Position, RawSerializer, JsonSerializer)</div>
-<div class="ttc" id="aecstasy_2serialization_2_serializer_8hpp_html_a0ca77627672ee4d0c582e482138445c6"><div class="ttname"><a href="ecstasy_2serialization_2_serializer_8hpp.html#a0ca77627672ee4d0c582e482138445c6">REGISTER_SERIALIZABLES</a></div><div class="ttdeci">#define REGISTER_SERIALIZABLES(COMPONENT, a1,...)</div><div class="ttdoc">Register a component to multiple serializers.</div><div class="ttdef"><b>Definition</b> <a href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00052">Serializer.hpp:52</a></div></div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md48"></a>
+<div class="ttc" id="aecstasy_2serialization_2_serializer_8hpp_html_a0ca77627672ee4d0c582e482138445c6"><div class="ttname"><a href="ecstasy_2serialization_2_serializer_8hpp.html#a0ca77627672ee4d0c582e482138445c6">REGISTER_SERIALIZABLES</a></div><div class="ttdeci">#define REGISTER_SERIALIZABLES(COMPONENT, a1,...)</div><div class="ttdoc">Register a component to multiple serializers.</div><div class="ttdef"><b>Definition</b> <a href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00054">Serializer.hpp:54</a></div></div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md54"></a>
 Working with Entities</h3>
 <p>Since you can serialize any type, you can serialize entity components manually using the functions above.</p>
 <p>You can save entity components explicitly using the templated saveEntity method, or every registered components with the classic saveEntity method.</p>
