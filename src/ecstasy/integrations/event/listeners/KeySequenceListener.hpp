@@ -157,17 +157,19 @@ namespace ecstasy::integration::event
             return _callback;
         }
 
+        // clang-format off
         ///
         /// @brief Get the key held.
         ///
         /// @note The key held is the current sequence key pressed but not yet released (it will be pushed in the
         /// validated keys on release)
         ///
-        /// @return Keyboard::Key Key held if any, @ref Keyboard::Key::Unknown otherwise.
+        /// @return Keyboard::Key Key held if any, @ref ecstasy::integration::event::Keyboard::Key::Unknown "Key::Unknown"  otherwise.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-11-20)
         ///
+        // clang-format on
         [[nodiscard]] constexpr Keyboard::Key getHeldKey() const noexcept
         {
             return _heldKey;

@@ -31,23 +31,29 @@ namespace ecstasy
     template <typename T>
     struct component_type;
 
+    /// @cond Doxygen_Suppress
     /// @copydoc component_type
     template <typename T>
     struct component_type {
         using type = T;
     };
+    /// @endcond
 
+    /// @cond Doxygen_Suppress
     /// @copydoc component_type
     template <RegistryModifier Q>
     struct component_type<Q> {
         using type = typename Q::QueryData;
     };
+    /// @endcond
 
+    /// @cond Doxygen_Suppress
     /// @copydoc component_type
     template <IsStorage S>
     struct component_type<S> {
         using type = typename S::Component;
     };
+    /// @endcond
 
     ///
     /// @brief Helper for component_type<T>::type.

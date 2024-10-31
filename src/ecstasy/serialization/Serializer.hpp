@@ -433,7 +433,7 @@ namespace ecstasy::serialization
         ///
         /// @brief Load the next component serializer from the stream.
         ///
-        /// @note Return @ref std::nullopt if no more components are available.
+        /// @note Return @ref std::nullopt_t if no more components are available.
         ///
         /// @return OptionalEntityComponentSerializer Optional reference to the next component serializer.
         ///

@@ -36,7 +36,7 @@ namespace ecstasy
         ///
         /// @tparam Args Type of the arguments to forward to the component constructor.
         ///
-        /// @param[in] args Args to forward to the component constructor.
+        /// @param[in] componentArgs Args to forward to the component constructor.
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-04-22)
@@ -75,7 +75,7 @@ namespace ecstasy
             return _defaultComponent;
         }
 
-        /// @copydoc insert
+        /// @copydoc AStorage::insert
         Component &insert(Entity::Index index, Component &&c) override final
         {
             (void)c;

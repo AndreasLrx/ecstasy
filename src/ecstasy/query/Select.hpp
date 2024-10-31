@@ -1,7 +1,8 @@
 ///
 /// @file Select.hpp
 /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-/// @brief Advanced @ref Query. It allows to select which data must be kept from a query request.
+/// @brief Advanced @ref ecstasy::query::Query "Query". It allows to select which data must be kept from a query
+/// request.
 /// @version 1.0.0
 /// @date 2022-10-21
 ///
@@ -24,7 +25,8 @@
 namespace ecstasy::query
 {
     ///
-    /// @brief Advanced @ref Query. It allows to select which data must be kept from a query request.
+    /// @brief Advanced @ref ecstasy::query::Query "Query". It allows to select which data must be kept from a query
+    /// request.
     ///
     /// @note Cannot do AutoLock at this scope because of variable lifetimes (see where method).  For thread safety,
     /// queryables lock must be done before calling the where method.

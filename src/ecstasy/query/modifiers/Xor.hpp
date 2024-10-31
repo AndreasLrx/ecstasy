@@ -25,7 +25,7 @@ namespace ecstasy::query::modifier
     /// @warning Since the mask of multiple operands is (Q1 ^ Q2) ^ Qs..., it is true when an odd number of operands
     /// match a given id.
     ///
-    /// @tparam AutoLock Lock the @ref Lockable queryables if true.
+    /// @tparam AutoLock Lock the @ref ecstasy::thread::Lockable "Lockable" queryables if true.
     /// @tparam Q1 Left operand queryable type.
     /// @tparam Q2 Right operand queryable type.
     /// @tparam Qs Additional operand queryable types.

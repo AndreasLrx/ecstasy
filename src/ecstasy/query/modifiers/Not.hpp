@@ -26,7 +26,7 @@ namespace ecstasy::query::modifier
     /// should @b never select this queryable.
     ///
     /// @tparam Q Type of the wrapped queryable.
-    /// @tparam AutoLock Lock the @ref Lockable queryables if true.
+    /// @tparam AutoLock Lock the @ref ecstasy::thread::Lockable "Lockable" queryables if true.
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-10-24)

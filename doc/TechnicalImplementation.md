@@ -73,7 +73,7 @@ The query can then perform a simple bitwise `and` on all the bitset and has its 
 When you query the registry, the bitset is computed only upon creation and you iterate on the computed bitset.
 Then for each bit set, the query fetch the associated component in the position/velocity storage.
 
-#### Queryable and BitSet
+### Queryable and BitSet
 
 A storage is in fact a @ref ecstasy::query::Queryable. It is defined by three properties:
 
@@ -123,7 +123,7 @@ class Query : public QueryImplementation<util::meta::Traits<First, Others...>, u
 };
 ```
 
-#### Registry basic query
+### Registry basic query
 
 As we seen before, the @ref ecstasy::query::Query needs queryables. But we don't send any in the registry query:
 
@@ -135,7 +135,7 @@ Because magic happens in the registry, all the storages or resources are fetched
 
 The following functionnalities (modifiers, conditions etc) respect the the zero-overhead C++ principle meaning if you don't use them it won't slow down your application.
 
-#### Select where
+### Select where
 
 We already have almost everything to implement the select where syntax. These are the steps of resolution of the query:
 
@@ -147,7 +147,7 @@ We already have almost everything to implement the select where syntax. These ar
 The hardest part is the first step, we already have the others. This basically means doing a left outer join to find the queryables present in the select clause (left) but not in the where clause (right).
 This was a nightmare to do and I can't explain better than the documented code so go see @ref ecstasy::query::Select and @ref ecstasy::Registry::Select classes as long as the @ref util::meta namespace (@ref util::meta::left_outer_join).
 
-#### Modifiers
+### Modifiers
 
 Modifiers are not complicated themselves. In fact they are only queryable wrappers.
 The easier example is the Maybe. What does it means to query `registry.query<Maybe<Position>>` ?
@@ -161,7 +161,7 @@ Modifiers should be allocated only for the query lifetime. And we need to alloca
 The interesting part however about theses allocations is that the size can be computed at compile time if you hate yourself enough to do it. Luckily for you, I did.
 The solution about this was to use multiple inheritance black magic tricks mixed with some weird [non_unique_address](https://en.cppreference.com/w/cpp/language/attributes/no_unique_address) attribute, if you are curious about this you can find more details in the documentation of @ref ecstasy::Registry::RegistryStackQuery.
 
-#### Conditions
+### Conditions
 
 In opposite to modifiers, conditions are not queryable and doesn't use bitset either.
 The conditions are checked at runtime (because it check runtime values) on the query iteration.
@@ -169,15 +169,15 @@ The conditions are checked at runtime (because it check runtime values) on the q
 Meaning if you iterate three times the same query the conditions will be evaluated three times for each matching entities.
 But the good part about it is that it check the condition only when the values are fetched and doesn't make an extra fetch just for the condition.
 
-#### AutoLock
+### AutoLock
 
 The query parts have an `AutoLock` boolean template parameter. If it is set to true, it will wrap any queryables validating the [Lockable](@ref ecstasy::thread::Lockable) concept in a [LockableView](@ref ecstasy::thread::LockableView). This use the [RAII](https://en.cppreference.com/w/cpp/language/raii) concept: wrapping the lockable in the views will lock them upon view construction and unlock them upon view destruction.
 
 1. Make everything lockable
 
-   If you want thread safety, you need to be able to lock your storages and resources (especially @ref Entities) otherwise they will never be locked.
+   If you want thread safety, you need to be able to lock your storages and resources (especially @ref ecstasy::Entities "Entities" ) otherwise they will never be locked.
 
-   For this you can use the compilation options @b ECSTASY_LOCKABLE_RESOURCES and/or @b ECSTASY_LOCKABLE_STORAGES. It will make the @ref Resources and/or @ref IStorage inherit from [SharedRecursiveMutex](@ref ecstasy::thread::SharedRecursiveMutex), thus validating the Lockable concept.
+   For this you can use the compilation options @b ECSTASY_LOCKABLE_RESOURCES and/or @b ECSTASY_LOCKABLE_STORAGES. It will make the @ref ecstasy::IResource "IResources" and/or @ref ecstasy::IStorage "IStorages" inherit from [SharedRecursiveMutex](@ref ecstasy::thread::SharedRecursiveMutex), thus validating the Lockable concept.
 
    @note
    This is disabled by default to avoid memory overhead of the mutex fields (ie: Zero-overhead principle).
@@ -186,7 +186,7 @@ The query parts have an `AutoLock` boolean template parameter. If it is set to t
 
 2. Skeptical Lock Mechanism (ie: [SharedRecursiveMutex](@ref ecstasy::thread::SharedRecursiveMutex))
 
-   The [SharedRecursiveMutex](@ref ecstasy::thread::SharedRecursiveMutex) (SRM, too loong to write) is made in a way to be @ref Lockable either with or without the const qualifier but the behavior will change:
+   The [SharedRecursiveMutex](@ref ecstasy::thread::SharedRecursiveMutex) (SRM, too loong to write) is made in a way to be @ref ecstasy::thread::Lockable "Lockable" either with or without the const qualifier but the behavior will change:
 
    - Calling `lock()`/`unlock()` on a non-const SRM will perform an **exclusive lock/unlock on the mutex**
    - Calling `lock()`/`unlock()` on a const SRM will perform a **shared lock/unlock on the mutex**
@@ -215,9 +215,9 @@ The query parts have an `AutoLock` boolean template parameter. If it is set to t
       The modifiers also have an @b AutoLock template parameters. If it it set it works exactly as the QueryImplementation: it locks the queryables upon construction using implicit LV constructor.
 
       @note
-      By default the RegistryModifiers AutoLock value will be set from @b ECSTASY_AUTO_LOCK but you can use the extended version if you want to set/unset only one (@ref AndEx, @ref OrEx, @ref XorEx , the @ref Maybe and @ref Not don't have extended version because the classic version already supports a second AutoLock parameter).
+      By default the RegistryModifiers AutoLock value will be set from @b ECSTASY_AUTO_LOCK but you can use the extended version if you want to set/unset only one (@ref ecstasy::AndEx "AndEx", @ref ecstasy::OrEx "OrEx", @ref ecstasy::XorEx "XorEx" , the @ref ecstasy::Maybe "Maybe" and @ref ecstasy::Not "Not" don't have extended version because the classic version already supports a second AutoLock parameter).
 
-#### Resolution Order
+### Resolution Order
 
 We have seen everything, not in the lowest details but enough to understand most of the query behaviors. Here is the resolution order of all those functionnality.
 

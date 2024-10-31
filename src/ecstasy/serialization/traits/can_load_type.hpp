@@ -37,7 +37,7 @@ namespace ecstasy::serialization::traits
     struct can_load_type<S, T, std::void_t<decltype(std::declval<S &>().template load<T>())>> : std::true_type {};
 
     ///
-    /// @brief Alias for @ref can_load_type::value.
+    /// @brief Alias for @ref ecstasy::serialization::traits::can_load_type "can_load_type<S, C>::value".
     ///
     /// @tparam S Serializer type.
     /// @tparam C Component type.
@@ -64,14 +64,16 @@ namespace ecstasy::serialization::traits
     struct has_load_impl_for_type<S, T, std::void_t<decltype(std::declval<S &>().template loadImpl<T>())>>
         : std::true_type {};
 
+    // clang-format off
     ///
-    /// @brief Alias for @ref has_load_impl_for_type::value.
+    /// @brief Alias for @ref ecstasy::serialization::traits::has_load_impl_for_type "has_load_impl_for_type<S, C>::value".
     ///
     /// @tparam S Serializer type.
     /// @tparam C Component type.
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2024-06-11)
     ///
+    // clang-format on
     template <typename S, typename C>
     bool constexpr has_load_impl_for_type_v = has_load_impl_for_type<S, C>::value;
 

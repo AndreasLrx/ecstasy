@@ -73,7 +73,7 @@ namespace ecstasy
                 erase(entity.getIndex());
         }
 
-        /// @copydoc contains
+        /// @copydoc IStorage::contains
         bool contains(Entity::Index index) const noexcept override final
         {
             return (index < getMask().size()) && getMask()[index];
@@ -163,7 +163,7 @@ namespace ecstasy
             return (*this)[index];
         };
 
-        /// @copybrief getComponentTypeInfos
+        /// @copydoc IStorage::getComponentTypeInfos
         [[nodiscard]] const std::type_info &getComponentTypeInfos() const noexcept override final
         {
             return typeid(Component);

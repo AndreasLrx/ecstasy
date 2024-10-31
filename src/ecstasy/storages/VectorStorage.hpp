@@ -98,7 +98,7 @@ namespace ecstasy
             return _components[index];
         }
 
-        /// @copydoc insert
+        /// @copydoc AStorage::insert
         Component &insert(Entity::Index index, Component &&c) override final
         {
             if constexpr (!std::movable<Component>)

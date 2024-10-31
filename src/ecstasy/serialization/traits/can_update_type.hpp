@@ -38,7 +38,7 @@ namespace ecstasy::serialization::traits
         : std::true_type {};
 
     ///
-    /// @brief Alias for @ref can_update_type::value.
+    /// @brief Alias for @ref ecstasy::serialization::traits::can_update_type "can_update_type<S, C>::value".
     ///
     /// @tparam S Serializer type.
     /// @tparam C Component type.
@@ -66,7 +66,8 @@ namespace ecstasy::serialization::traits
         : std::true_type {};
 
     ///
-    /// @brief Alias for @ref has_update_impl_for_type::value.
+    /// @brief Alias for @ref ecstasy::serialization::traits::has_update_impl_for_type
+    /// "has_update_impl_for_typ<S, C>::value".
     ///
     /// @tparam S Serializer type.
     /// @tparam C Component type.

@@ -21,7 +21,7 @@ namespace ecstasy::query::modifier
     /// @brief Base class of query modifier operating on at least two queryables.
     ///
     /// @tparam Derived Derived class implementing the modifier.
-    /// @tparam AutoLock Lock the @ref Lockable queryables if true.
+    /// @tparam AutoLock Lock the @ref ecstasy::thread::Lockable "Lockable" queryables if true.
     /// @tparam DataModifier Meta class implementing a type modifying the queryable data types (example std::optional).
     /// @tparam Q1 Left operand queryable type.
     /// @tparam Q2 Right operand queryable type.

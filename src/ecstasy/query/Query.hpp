@@ -29,6 +29,7 @@ namespace ecstasy::query
     class Entities;
     class IStorage;
 
+    // clang-format off
     ///
     /// @brief Query components presents in all given queryables.
     ///
@@ -36,25 +37,28 @@ namespace ecstasy::query
     ///
     /// @tparam First First storage class.
     /// @tparam Others All other storage classes.
-    /// @tparam AutoLock Whether the query must be thread safe or not (locking any @ref Lockable queryable).
+    /// @tparam AutoLock Whether the query must be thread safe or not (locking any @ref ecstasy::thread::Lockable "Lockable" queryable).
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2022-10-20)
     ///
+    // clang-format on
     template <typename Storages, typename Conditions = void, bool AutoLock = false>
     class QueryImplementation {};
 
+    // clang-format off
     ///
     /// @brief @ref QueryImplementation specialization.
     ///
     /// @tparam First First queryable type.
     /// @tparam Others All other queryable types.
     /// @tparam Conditions All query conditions.
-    /// @tparam AutoLock Whether the query must be thread safe or not (locking any @ref Lockable queryable).
+    /// @tparam AutoLock Whether the query must be thread safe or not (locking any @ref ecstasy::thread::Lockable "Lockable" queryable).
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2024-10-17)
     ///
+    // clang-format on
     template <Queryable First, Queryable... Others, typename... Conditions, bool AutoLock>
     class QueryImplementation<util::meta::Traits<First, Others...>, util::meta::Traits<Conditions...>, AutoLock> {
       public:
@@ -208,8 +212,7 @@ namespace ecstasy::query
             ///
             /// @brief Increments the iterator in place.
             ///
-            /// @warning It is undefined behavior to increment the iterator past the end sentinel ( @ref
-            /// ecstasy::query::Query::end() ).
+            /// @warning It is undefined behavior to increment the iterator past the end sentinel
             ///
             /// @return Iterator& @b this.
             ///
@@ -227,8 +230,7 @@ namespace ecstasy::query
             ///
             /// @brief Copies the iterator and increments the copy, please use pre-incrementation instead.
             ///
-            /// @warning It is undefined behavior to increment the iterator past the end sentinel ( @ref
-            /// ecstasy::query::Query::end() ).
+            /// @warning It is undefined behavior to increment the iterator past the end sentinel.
             /// @warning This creates a copy of the iterator!
             ///
             /// @return Iterator The incremented copy.
@@ -632,8 +634,8 @@ namespace ecstasy::query
     };
 
     ///
-    /// @brief More high-level query class, wrapping the @ref QueryImplementation and locking all @ref Lockable
-    /// queryables.
+    /// @brief More high-level query class, wrapping the @ref QueryImplementation and locking all @ref
+    /// ecstasy::thread::Lockable "Lockable" queryables.
     ///
     /// @tparam Qs All queryable types.
     ///

@@ -143,7 +143,7 @@ namespace ecstasy::serialization
             return _stream.str().size();
         }
 
-        /// @copydoc ISerializer::importBytes
+        /// @copydoc ISerializer::importStream
         void importStream(std::istream &stream) override final
         {
             clear();
@@ -325,14 +325,14 @@ namespace ecstasy::serialization
         /// @brief Internal string stream used as a buffer.
         std::stringstream _stream;
 
-        /// @copydoc afterSaveEntity
+        /// @copydoc Serializer::afterSaveEntity
         void afterSaveEntity([[maybe_unused]] RegistryEntity &entity) override final
         {
             // Notify the end of the entity
             save<std::size_t>(0);
         }
 
-        /// @copydoc loadComponentSerializer
+        /// @copydoc Serializer::loadComponentSerializer
         OptionalEntityComponentSerializer loadComponentSerializer() override final
         {
             size_t hash = loadRaw<std::size_t>();

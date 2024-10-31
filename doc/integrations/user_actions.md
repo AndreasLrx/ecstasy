@@ -34,8 +34,8 @@ enum class Actions : size_t { MoveLeft, MoveRight, MoveHorizontal, Jump, Count }
 
 Now to create the bindings follow these steps:
 
-- Add a [Users](@ref ecstasy::integrations::user_action::Users) resource to the registry
-- Add your [Action bindings](@ref ecstasy::integrations::user_action::ActionBinding) to your users
+- Add a [Users](@ref ecstasy::integration::user_action::Users) resource to the registry
+- Add your [Action bindings](@ref ecstasy::integration::user_action::ActionBinding) to your users
 - Notify the user resources bindings have changed
 
 ```cpp

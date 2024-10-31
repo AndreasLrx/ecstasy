@@ -34,7 +34,7 @@ namespace ecstasy::query::modifier
     ///
     /// @brief Base class for all query modifiers.
     ///
-    /// @tparam AutoLock Lock the @ref Lockable queryables if true.
+    /// @tparam AutoLock Lock the @ref ecstasy::thread::Lockable "Lockable" queryables if true.
     ///
     /// @author Andréas Leroux (andreas.leroux@epitech.eu)
     /// @since 1.0.0 (2024-10-17)

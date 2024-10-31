@@ -73,7 +73,7 @@ namespace ecstasy::serialization
                     .template update<Component>(dynamic_cast<StorageType &>(storage).at(entity.getIndex()));
         }
 
-        /// @copydoc IEnttyComponentSerializer::getType
+        /// @copydoc IEntityComponentSerializer::getType
         const std::type_info &getType() const noexcept override final
         {
             return typeid(Component);
