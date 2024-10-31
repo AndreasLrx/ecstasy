@@ -48,10 +48,10 @@ namespace util::serialization
         ///
         [[nodiscard]] NodePtr createFromToml(const toml::node &node);
 
-        /// @copydoc INodeFactory::create().
+        /// @copydoc INodeFactory::create(INode::Type).
         [[nodiscard]] NodePtr create(INode::Type type) override final;
 
-        /// @copydoc INodeFactory::create().
+        /// @copydoc INodeFactory::create(const INode &).
         [[nodiscard]] NodePtr create(const INode &node) override final;
 
         /// @copydoc INodeFactory::createObject().
@@ -60,25 +60,25 @@ namespace util::serialization
         /// @copydoc INodeFactory::createArray().
         [[nodiscard]] NodePtr createArray(const IArrayNode &array) override final;
 
-        /// @copydoc INodeFactory::create().
+        /// @copydoc INodeFactory::create(std::string_view).
         [[nodiscard]] NodePtr create(std::string_view string) override final;
 
-        /// @copydoc INodeFactory::create().
+        /// @copydoc INodeFactory::create(int64_t).
         [[nodiscard]] NodePtr create(int64_t integer) override final;
 
-        /// @copydoc INodeFactory::create().
+        /// @copydoc INodeFactory::create(double).
         [[nodiscard]] NodePtr create(double floatingPoint) override final;
 
-        /// @copydoc INodeFactory::create().
+        /// @copydoc INodeFactory::create(bool).
         [[nodiscard]] NodePtr create(bool boolean) override final;
 
-        /// @copydoc INodeFactory::create().
+        /// @copydoc INodeFactory::create(INode::Date).
         [[nodiscard]] NodePtr create(INode::Date date) override final;
 
-        /// @copydoc INodeFactory::create().
+        /// @copydoc INodeFactory::create(INode::Time).
         [[nodiscard]] NodePtr create(INode::Time time) override final;
 
-        /// @copydoc INodeFactory::create().
+        /// @copydoc INodeFactory::create(INode::DateTime).
         [[nodiscard]] NodePtr create(INode::DateTime dateTime) override final;
 
       private:
