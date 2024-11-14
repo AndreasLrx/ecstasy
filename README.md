@@ -33,7 +33,7 @@
 @endcond TURN_OFF_DOXYGEN
 -->
 
-### Introduction
+## Introduction
 
 Ecstasy is a modern C++ library that implements an Entity Component System (ECS) architecture with a strong focus on performance, flexibility, and ease of use.
 
@@ -47,7 +47,7 @@ Some key features include:
 
 Get started with Ecstasy today and experience a new level of performance and productivity in your ECS-based projects!
 
-### Code Example
+## Code Example
 
 _The following is a basic example extracted from the [Tutorial](https://andreaslrx.github.io/ecstasy/md_doc_2_tutorial.html)._
 
@@ -100,11 +100,11 @@ int main() {
 }
 ```
 
-### Building
+## Building
 
 Follow the [building documentation](https://andreaslrx.github.io/ecstasy/md_doc_2_building.html)
 
-### Documentation
+## Documentation
 
 You can see the documentation [online](https://andreaslrx.github.io/ecstasy/).
 
@@ -118,17 +118,26 @@ doxygen
 xdg-open doc/build/html/index.html
 ```
 
-### Contributing
+## Contributing
 
 ECSTASY is an open source project. If you want to get involved and suggest some additional features, file a bug report or submit a patch, create an issue or submit a pull request.
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 If you want to contribute with pull requests, look at the [Contributing.md](/CONTRIBUTING.md)
 
-### License
+## License
 
 The ECSTASY library is distributed under the [MIT license](https://opensource.org/licenses/MIT).
 In short, ECSTASY is free for any use (commercial or personal, proprietary or open-source). You can use ECSTASY in your project without any restriction. You can even omit to mention that you use ECSTASY -- although it would be appreciated.
 
-### Authors
+### External tools License
+
+Some of ECSTASY parts use external tools. Therefore their licenses extend to your project if you use the associated [options](https://andreaslrx.github.io/ecstasy/md_doc_2_building.html#CMakeOptions).
+
+- [Google Tests](https://github.com/google/googletest/) [[BSD 3-Clause](https://github.com/google/googletest/blob/main/LICENSE)]: BUILD_TEST_SUITE
+- [Rapidjson](https://github.com/Tencent/rapidjson/) [[MIT](https://github.com/Tencent/rapidjson/blob/master/license.txt)]: ECSTASY_SERIALIZER_JSON
+- [Toml++](https://github.com/marzer/tomlplusplus/) [[MIT](https://github.com/marzer/tomlplusplus/blob/master/LICENSE)]: ECSTASY_SERIALIZER_TOML (Also induced by ECSTASY_INTEGRATIONS_USER_ACTION)
+- [SFML](https://github.com/SFML/SFML/) [[ZLIB](https://github.com/SFML/SFML/blob/master/license.md)]: ECSTASY_INTEGRATIONS_SFML
+
+## Authors
 
 - Andréas Leroux (andreas.leroux@epitech.eu)

@@ -1,14 +1,18 @@
-# Glossary
+# Glossary {#GlossaryStart}
 
-This page will help you define the various concepts used in ecstasy (most are common to other ECS).
+This page will help you understand the various concepts used in ecstasy (most are common to other ECS).
 Do not hesitate to create an issue if a definition is still complicated or if a complex term is missing.
+
+If you're not familiar with the concept of ECS, go see this quite complete general FAQ [here](https://github.com/SanderMertens/ecs-faq).
+
+The following definitions may be redundant for common notions but will also explain ECSTASY specific concepts.
 
 ## Entity
 
 An entity represents a distinct object or item in the registry. It is an abstract, unique identifier that groups together components to define its characteristics and behavior.
 Entities in an ECS can be seen as a link between multiple components.
 
-References: [Entity](@ref ecstasy::Entity), [Entities](@ref ecstasy::Entities)
+References: [Entity](@ref ecstasy::Entity), [RegistryEntity](@ref ecstasy::RegistryEntity), [Entities](@ref ecstasy::Entities)
 
 ## Component
 
@@ -23,15 +27,17 @@ struct Position {
 };
 ```
 
+@note
+There is almost no constraint on component types in ECSTASY, so you can use external library classes as components.
+
 ## Storage
 
-A storage is a component container. It is used to store and manage components. It organizes components for efficient access and iteration during system execution, facilitating quick retrieval and manipulation of entity data.
+A storage is a component container. It is used to store and manage components and their associated entity identifier. It organizes components for efficient access and iteration during system execution, facilitating quick retrieval and manipulation of entity data.
 
 @note
-Ecstasy currently implements a single storage type: [MapStorage](@ref ecstasy::MapStorage).
-However you can create [custom storages](#CustomStorageTutorial).
+Ecstasy already implements some storage types but you can also create [your own](#CustomStorageTutorial).
 
-References: [IStorage](@ref ecstasy::IStorage), [getStorageType](@ref ecstasy::getStorageType), [IsStorage](@ref ecstasy::IsStorage), [MapStorage](@ref ecstasy::MapStorage), [Registry.addStorage()](@ref ecstasy::Registry::addStorage)
+References: @ref ecstasy::IStorage "IStorage", @ref ecstasy::AStorage, @ref ecstasy::MapStorage "MapStorage", @ref ecstasy::MarkerStorage "MarkerStorage", @ref ecstasy::VectorStorage "VectorStorage", @ref ecstasy::IsStorage "IsStorage", @ref ecstasy::getStorageType "getStorageType", @ref ecstasy::Registry::addStorage "Registry.addStorage()"
 
 ## System
 
@@ -55,7 +61,7 @@ References: [ISystem](@ref ecstasy::ISystem), [Registry.addSystem()](@ref ecstas
 
 ## Resource
 
-A resource is a shared and globally accessible piece of data that can be utilized by systems or entities in the ECS. Resources typically represent data that is not tied to a specific entity but is needed by various parts of the [registry](@ref ecstasy::Registry), such as configuration settings or global parameters.
+A resource is a shared and globally accessible piece of data that can be used by systems or entities in the ECS. Resources typically represent data that is not tied to a specific entity but is needed by various parts of the [registry](@ref ecstasy::Registry), such as configuration settings or global parameters.
 
 @note
 In ecstasy, the [Entities](@ref ecstasy::Entities) class is a resource present by default in the [registry](@ref ecstasy::Registry).
@@ -104,6 +110,7 @@ References: [IResource](@ref ecstasy::IResource), [registry.addResource()](@ref 
 ## Registry
 
 The registry is a centralized database or manager responsible for creating, managing, and tracking entities within the ECS. It maintains the relationships between entities and their components and provides essential functionality for entity lifecycle management.
+Sometimes called a `world` in other ECS frameworks.
 
 The registry contains:
 
@@ -158,9 +165,9 @@ concept Queryable = requires(Q &queryable, Q const &cqueryable, std::size_t inde
 };
 ```
 
-In fact there is multiple Queryable sub concepts such as [QueryableObject](@ref ecstasy::query::Queryable) (example above), [ConstQueryableObject](@ref ecstasy::query::ConstQueryableObject) and [QueryableWrapper](@ref ecstasy::query::QueryableWrapper). A Queryable must validate at least one of the said concepts.
+In fact there is multiple @ref ecstasy::query::Queryable "Queryable" sub concepts such as [QueryableObject](@ref ecstasy::query::QueryableObject) (example above), [ConstQueryableObject](@ref ecstasy::query::ConstQueryableObject) and [QueryableWrapper](@ref ecstasy::query::QueryableWrapper). A Queryable must validate at least one of the said concepts.
 
-References: [Queryable](@ref ecstasy::query::Queryable), [Queryable](@ref ecstasy::query::Queryable), [ConstQueryableObject](@ref ecstasy::query::ConstQueryableObject), [QueryableWrapper](@ref ecstasy::query::QueryableWrapper)
+References: [Queryable](@ref ecstasy::query::Queryable), [QueryableObject](@ref ecstasy::query::QueryableObject), [ConstQueryableObject](@ref ecstasy::query::ConstQueryableObject), [QueryableWrapper](@ref ecstasy::query::QueryableWrapper)
 
 ### Batch Query
 
@@ -255,12 +262,12 @@ The condition cannot works if the evaluated type is not in the query queryables.
 
 Ecstasy provides the following conditions:
 
-- [EqualTo =](@ref ecstasy::EqualTo)
-- [NotEqualTo !=](@ref ecstasy::NotEqualTo)
-- [Greater >](@ref ecstasy::Greater)
-- [GreaterEqual >=](@ref ecstasy::GreaterEqual)
-- [Less <](@ref ecstasy::Less)
-- [LessEqual <=](@ref ecstasy::LessEqual)
+- [EqualTo (=)](@ref ecstasy::EqualTo)
+- [NotEqualTo (!=)](@ref ecstasy::NotEqualTo)
+- [Greater (>)](@ref ecstasy::Greater)
+- [GreaterEqual (>=)](@ref ecstasy::GreaterEqual)
+- [Less (<)](@ref ecstasy::Less)
+- [LessEqual (<=)](@ref ecstasy::LessEqual)
 
 And here is a little example where the two loops does the same thing:
 

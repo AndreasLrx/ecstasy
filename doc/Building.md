@@ -1,13 +1,11 @@
 # Building
 
-To build Ecstasy project from sources, follow these steps:
-
-### Prerequisites
+## Prerequisites
 
 1. Install [CMake](https://cmake.org/resources/) (version 3.19 or higher)
 2. Install a C++ compiler with [C++20](https://en.cppreference.com/w/cpp/20) support (Ex: G++ 8, Clang 14 or MSVC 2022)
 
-### Build Steps
+## Build Steps
 
 1. Clone the Ecstasy repository
 
@@ -27,11 +25,11 @@ To build Ecstasy project from sources, follow these steps:
    cmake --build build --config Release -j
    ```
 
-#### IDEs
+### IDEs
 
-The library may also be built with any IDE that has [CMakePresets.json](/CMakePresets.json) support, such as Visual Sudio, VSCode + CMake Tools, or CLion.
+The library may also be built with any IDE that has [CMakePresets.json](https://github.com/AndreasLrx/ecstasy/blob/main/CMakePresets.json) support, such as Visual Sudio, VSCode + CMake Tools, or CLion.
 
-### Using as a CMake package
+## Using as a CMake package
 
 I recommand using ecstasy as a CMake package. This allows easier static link and if you want to use SFML it is contained in ecstasy with the **ECSTASY_INTEGRATIONS_SFML** option.
 An example project may be done one day to have a concrete CMake example. If you want, feel free to do it and I will link it here (or even better, make a PR)
@@ -87,7 +85,7 @@ _I am writing these lines because I suffered too much with CMake and if it can s
    target_link_libraries(my_super_target PUBLIC ecstasy)
    ```
 
-### CMake options
+## CMake options {#CMakeOptions}
 
 You can find more details about the options and their dependencies in [Options.cmake](/cmake/Options.cmake). <br>
 _In case this documentation is not up to date with the [Options.cmake](/cmake/Options.cmake) file, open an issue._

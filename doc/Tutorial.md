@@ -1,7 +1,7 @@
 # Tutorial
 
 @note
-The tutorials on this page will help you to use ecstasy, not to understands the concepts and terms. I strongly advise you to look at the [glossary](@ref Glossary.md) before following any tutorials (except the getting started).
+The tutorials on this page will help you to use ecstasy, not to understands the concepts and terms. I strongly advise you to look at the [glossary](https://andreaslrx.github.io/ecstasy/md_doc_2_glossary.html) before following any tutorials (except the getting started).
 
 ## Getting Started {#GettingStarted}
 
@@ -15,7 +15,8 @@ The usual order when using ecstasy is the following:
 - Run the registry systems with [runSystems](@ref ecstasy::Registry::runSystems)
 
 In this example we create 10 entities. Every entities have a position component and only even entities have a velocity component.
-The Movement system will iterate on every entities having a position **and** a velocity component and add the velocity vector to the position. (Know this is not a perfect approach because the velocity should depend on the elapsed time)
+The Movement system will iterate on every entities having a position **and** a velocity component and add the velocity vector to the position. (Know this is not a perfect approach because the velocity should depend on the elapsed time).
+
 Finally we run the systems over and over.
 
 ```cpp
@@ -71,7 +72,7 @@ int main() {
 
 ### Creating entities
 
-There is 3 ways to create new entities in the registry:
+There are 3 ways to create new entities in the registry:
 
 - Using the [registry](@ref ecstasy::Registry) [builder](@ref ecstasy::Registry::EntityBuilder)
 - Using the [entities](@ref ecstasy::Entities) [builder](@ref ecstasy::Entities::Builder)
