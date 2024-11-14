@@ -42,7 +42,6 @@ var classecstasy_1_1integration_1_1event_1_1_gamepad =
     [ "isButtonDown", "classecstasy_1_1integration_1_1event_1_1_gamepad.html#a017b457e531eb5dd054d309b8de42f99", null ],
     [ "isButtonUp", "classecstasy_1_1integration_1_1event_1_1_gamepad.html#acdf0c1cd065f25d5209c2aeedfbc3c03", null ],
     [ "isConnected", "classecstasy_1_1integration_1_1event_1_1_gamepad.html#aac273ef8e06d8d1698288bcf062bf1a9", null ],
-    [ "SERIALIZABLE_ENUM", "classecstasy_1_1integration_1_1event_1_1_gamepad.html#aa97619e26e9e4004dabeccbc2381e4c9", null ],
     [ "setAxisValue", "classecstasy_1_1integration_1_1event_1_1_gamepad.html#aed25ad998426f30acf649190df78565c", null ],
     [ "setButtonState", "classecstasy_1_1integration_1_1event_1_1_gamepad.html#abd324bc6749b09eb5c70f271174a092d", null ],
     [ "setConnected", "classecstasy_1_1integration_1_1event_1_1_gamepad.html#a74ba7e01d79c8f3c91855f82beea0eb6", null ],
@@ -50,14 +49,5 @@ var classecstasy_1_1integration_1_1event_1_1_gamepad =
     [ "_axis", "classecstasy_1_1integration_1_1event_1_1_gamepad.html#a7e79a51d8d945d348858479b51f4b3c0", null ],
     [ "_buttons", "classecstasy_1_1integration_1_1event_1_1_gamepad.html#ae30a96478a4012c430805146be7f4d88", null ],
     [ "_connected", "classecstasy_1_1integration_1_1event_1_1_gamepad.html#ad5462f934cd9c85a81a18884e876001e", null ],
-    [ "_id", "classecstasy_1_1integration_1_1event_1_1_gamepad.html#a3a90a451dd0aa43a9a018346ea6b8419", null ],
-    [ "DPadX", "classecstasy_1_1integration_1_1event_1_1_gamepad.html#a36f9d04ad082e3a412713f7be8086aa2", null ],
-    [ "DPadY", "classecstasy_1_1integration_1_1event_1_1_gamepad.html#ab5fce694238025eb7928cac94e4d9ef9", null ],
-    [ "LeftX", "classecstasy_1_1integration_1_1event_1_1_gamepad.html#a092bd75ccc55182072842a43efe055c6", null ],
-    [ "LeftY", "classecstasy_1_1integration_1_1event_1_1_gamepad.html#a6a5e15280a43a8bfd7edf2385ca9bfbf", null ],
-    [ "RightX", "classecstasy_1_1integration_1_1event_1_1_gamepad.html#a2c5c1e7d9b7a82d7c7ed6902e6ce7424", null ],
-    [ "RightY", "classecstasy_1_1integration_1_1event_1_1_gamepad.html#a0244bd81557911356548dd7067d353d0", null ],
-    [ "TriggerLeft", "classecstasy_1_1integration_1_1event_1_1_gamepad.html#ae8ba78a1477cdfb1f343b64d9628e9fb", null ],
-    [ "TriggerRight", "classecstasy_1_1integration_1_1event_1_1_gamepad.html#a40b929c679ca306d090e29b1889fb7c9", null ],
-    [ "Unknown", "classecstasy_1_1integration_1_1event_1_1_gamepad.html#a2f3662b764ea08a6055c9320f9d4b257", null ]
+    [ "_id", "classecstasy_1_1integration_1_1event_1_1_gamepad.html#a3a90a451dd0aa43a9a018346ea6b8419", null ]
 ];

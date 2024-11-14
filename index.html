@@ -96,8 +96,8 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a></p>
 <h5>If you're wondering if the name of the project has any real significance, it doesn't.</h5>
-<h2><a class="anchor" id="autotoc_md1"></a>
-Introduction</h2>
+<h1><a class="anchor" id="introduction"></a>
+Introduction</h1>
 <p>Ecstasy is a modern C++ library that implements an Entity Component System (ECS) architecture with a strong focus on performance, flexibility, and ease of use.</p>
 <p>Some key features include:</p>
 <ul>
@@ -108,8 +108,8 @@ Introduction</h2>
 <li>Provides an excellent opportunity for cooking eggs during compilation 😉</li>
 </ul>
 <p>Get started with Ecstasy today and experience a new level of performance and productivity in your ECS-based projects!</p>
-<h2><a class="anchor" id="autotoc_md2"></a>
-Code Example</h2>
+<h1><a class="anchor" id="code-example"></a>
+Code Example</h1>
 <p><em>The following is a basic example extracted from the <a href="https://andreaslrx.github.io/ecstasy/md_doc_2_tutorial.html">Tutorial</a>.</em></p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_registry_8hpp.html">ecstasy/registry/Registry.hpp</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_i_system_8hpp.html">ecstasy/system/ISystem.hpp</a>&gt;</span></div>
@@ -169,11 +169,11 @@ Code Example</h2>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a4418ff08eb494b1babb2ee715035d20a"><div class="ttname"><a href="classecstasy_1_1_registry.html#a4418ff08eb494b1babb2ee715035d20a">ecstasy::Registry::entityBuilder</a></div><div class="ttdeci">EntityBuilder entityBuilder() noexcept</div><div class="ttdoc">Create a new entity builder.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8cpp_source.html#l00033">Registry.cpp:33</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a5595f1c0811c0d7f658c01f49da8dc37"><div class="ttname"><a href="classecstasy_1_1_registry.html#a5595f1c0811c0d7f658c01f49da8dc37">ecstasy::Registry::runSystems</a></div><div class="ttdeci">void runSystems()</div><div class="ttdoc">Run all systems present in the registry.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8cpp_source.html#l00084">Registry.cpp:84</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a9ae0f363babc862fecb95e860730f5b7"><div class="ttname"><a href="classecstasy_1_1_registry.html#a9ae0f363babc862fecb95e860730f5b7">ecstasy::Registry::addSystem</a></div><div class="ttdeci">S &amp; addSystem(Args &amp;&amp;...args)</div><div class="ttdoc">Add a new system in the registry.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00832">Registry.hpp:832</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
-Building</h2>
+</div><!-- fragment --><h1><a class="anchor" id="building"></a>
+Building</h1>
 <p>Follow the <a href="https://andreaslrx.github.io/ecstasy/md_doc_2_building.html">building documentation</a></p>
-<h2><a class="anchor" id="autotoc_md4"></a>
-Documentation</h2>
+<h1><a class="anchor" id="documentation"></a>
+Documentation</h1>
 <p>You can see the documentation <a href="https://andreaslrx.github.io/ecstasy/">online</a>.</p>
 <p>You can also build it locally using <a href="https://www.doxygen.nl/">Doxygen</a>:</p>
 <div class="fragment"><div class="line"># Run at the root of the project</div>
@@ -181,14 +181,23 @@ Documentation</h2>
 <div class="line"> </div>
 <div class="line"># Open the generated pages</div>
 <div class="line">xdg-open doc/build/html/index.html</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md5"></a>
-Contributing</h2>
+</div><!-- fragment --><h1><a class="anchor" id="contributing"></a>
+Contributing</h1>
 <p>ECSTASY is an open source project. If you want to get involved and suggest some additional features, file a bug report or submit a patch, create an issue or submit a pull request. Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. If you want to contribute with pull requests, look at the Contributing.md</p>
-<h2><a class="anchor" id="autotoc_md6"></a>
-License</h2>
+<h1><a class="anchor" id="license"></a>
+License</h1>
 <p>The ECSTASY library is distributed under the <a href="https://opensource.org/licenses/MIT">MIT license</a>. In short, ECSTASY is free for any use (commercial or personal, proprietary or open-source). You can use ECSTASY in your project without any restriction. You can even omit to mention that you use ECSTASY &ndash; although it would be appreciated.</p>
-<h2><a class="anchor" id="autotoc_md7"></a>
-Authors</h2>
+<h2><a class="anchor" id="external-tools-license"></a>
+External tools License</h2>
+<p>Some of ECSTASY parts use external tools. Therefore their licenses extend to your project if you use the associated <a href="https://andreaslrx.github.io/ecstasy/md_doc_2_building.html#CMakeOptions">options</a>.</p>
+<ul>
+<li><a href="https://github.com/google/googletest/">Google Tests</a> [<a href="https://github.com/google/googletest/blob/main/LICENSE">BSD 3-Clause</a>]: BUILD_TEST_SUITE</li>
+<li><a href="https://github.com/Tencent/rapidjson/">Rapidjson</a> [<a href="https://github.com/Tencent/rapidjson/blob/master/license.txt">MIT</a>]: ECSTASY_SERIALIZER_JSON</li>
+<li><a href="https://github.com/marzer/tomlplusplus/">Toml++</a> [<a href="https://github.com/marzer/tomlplusplus/blob/master/LICENSE">MIT</a>]: ECSTASY_SERIALIZER_TOML (Also induced by ECSTASY_INTEGRATIONS_USER_ACTION)</li>
+<li><a href="https://github.com/SFML/SFML/">SFML</a> [<a href="https://github.com/SFML/SFML/blob/master/license.md">ZLIB</a>]: ECSTASY_INTEGRATIONS_SFML</li>
+</ul>
+<h1><a class="anchor" id="authors"></a>
+Authors</h1>
 <ul>
 <li>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </li>
 </ul>

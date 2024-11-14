@@ -95,22 +95,22 @@ $(document).ready(function(){initNavTree('md_doc_2integrations_2events.html','')
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#autotoc_md67">Description</a><ul><li class="level2"><a href="#autotoc_md68">How to get feedback</a></li>
-<li class="level2"><a href="#autotoc_md69">Event flow</a></li>
+<ul><li class="level1"><a href="#description">Description</a><ul><li class="level2"><a href="#how-to-get-feedback">How to get feedback</a></li>
+<li class="level2"><a href="#event-flow">Event flow</a></li>
 </ul>
 </li>
-<li class="level1"><a href="#autotoc_md70">Example</a><ul><li class="level2"><a href="#autotoc_md71">Creating listeners components</a></li>
-<li class="level2"><a href="#autotoc_md72">Sending an event</a></li>
-<li class="level2"><a href="#autotoc_md73">Accessing an input state</a></li>
+<li class="level1"><a href="#example">Example</a><ul><li class="level2"><a href="#creating-listeners-components">Creating listeners components</a></li>
+<li class="level2"><a href="#sending-an-event">Sending an event</a></li>
+<li class="level2"><a href="#accessing-an-input-state">Accessing an input state</a></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="textblock"><p><a class="anchor" id="autotoc_md66"></a></p>
-<h1><a class="anchor" id="autotoc_md67"></a>
+<div class="textblock"><p><a class="anchor" id="events-integration"></a></p>
+<h1><a class="anchor" id="description"></a>
 Description</h1>
 <p>The <a class="el" href="namespaceecstasy_1_1integration_1_1event.html">event integration</a> contains helpers to manage events. <b>It does not detect the events</b> but it allows the use of associated listeners.</p>
-<h2><a class="anchor" id="autotoc_md68"></a>
+<h2><a class="anchor" id="how-to-get-feedback"></a>
 How to get feedback</h2>
 <p>There is two ways of getting event feedbacks:</p>
 <ul>
@@ -119,7 +119,7 @@ How to get feedback</h2>
 </ul>
 <p>Listeners are callbacks (usually lambdas) attached to an entity as a component. They are called with the registry, the entity and the event references as parameters.</p>
 <p>Input resources are optional resources you can use to keep track of the inputs states. It allows to have access to input states at any moments, for example to check whether a particular key is still being pressed.</p>
-<h2><a class="anchor" id="autotoc_md69"></a>
+<h2><a class="anchor" id="event-flow"></a>
 Event flow</h2>
 <ol type="1">
 <li><p class="startli">Register your listeners and resources</p>
@@ -137,10 +137,10 @@ Event flow</h2>
 <p class="startli">Finally if the <a class="el" href="namespaceecstasy_1_1integration_1_1user__action.html">user action integration</a> is enabled, and there is a <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_users.html">user_action::Users</a> resource, it will call its handleEvent method to detect and handle actions.</p>
 </li>
 </ol>
-<h1><a class="anchor" id="autotoc_md70"></a>
+<h1><a class="anchor" id="example"></a>
 Example</h1>
 <p>These examples are mostly extracted from the SFML integration demo working with events, because it is made for!</p>
-<h2><a class="anchor" id="autotoc_md71"></a>
+<h2><a class="anchor" id="creating-listeners-components"></a>
 Creating listeners components</h2>
 <dl class="section note"><dt>Note</dt><dd>You can find the different listeners types in the <a class="el" href="dir_d93d52effc53fa915804937554a898ef.html">listeners</a> folder.</dd>
 <dd>
@@ -198,7 +198,7 @@ You can have multiple entities listening for the same event</dd></dl>
 <div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_mouse_wheel_scroll_event_html"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_mouse_wheel_scroll_event.html">ecstasy::integration::event::MouseWheelScrollEvent</a></div><div class="ttdoc">Event describing when a mouse wheel is scrolled.</div><div class="ttdef"><b>Definition</b> <a href="_mouse_wheel_scroll_event_8hpp_source.html#l00025">MouseWheelScrollEvent.hpp:25</a></div></div>
 <div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_mouse_wheel_scroll_event_html_a210d76d9185b0015063be46610719cc3"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_mouse_wheel_scroll_event.html#a210d76d9185b0015063be46610719cc3">ecstasy::integration::event::MouseWheelScrollEvent::wheel</a></div><div class="ttdeci">Mouse::Wheel wheel</div><div class="ttdoc">target wheel.</div><div class="ttdef"><b>Definition</b> <a href="_mouse_wheel_scroll_event_8hpp_source.html#l00029">MouseWheelScrollEvent.hpp:29</a></div></div>
 <div class="ttc" id="astructecstasy_1_1integration_1_1event_1_1_mouse_wheel_scroll_event_html_a21634f07964822eb7afece16b5159fee"><div class="ttname"><a href="structecstasy_1_1integration_1_1event_1_1_mouse_wheel_scroll_event.html#a21634f07964822eb7afece16b5159fee">ecstasy::integration::event::MouseWheelScrollEvent::delta</a></div><div class="ttdeci">float delta</div><div class="ttdoc">Wheel offset (positive is up/left and negative is down/right)</div><div class="ttdef"><b>Definition</b> <a href="_mouse_wheel_scroll_event_8hpp_source.html#l00027">MouseWheelScrollEvent.hpp:27</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md72"></a>
+</div><!-- fragment --><h2><a class="anchor" id="sending-an-event"></a>
 Sending an event</h2>
 <dl class="section note"><dt>Note</dt><dd>You can find the different event types in the <a class="el" href="dir_a8078633be16197a18b2342aa1868a9d.html">events</a> folder.</dd>
 <dd>
@@ -237,7 +237,7 @@ This example detect its events from an SFML window.</dd></dl>
 <div class="line">      }</div>
 <div class="line">   }</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md73"></a>
+</div><!-- fragment --><h2><a class="anchor" id="accessing-an-input-state"></a>
 Accessing an input state</h2>
 <p>If you don't want to have listeners or if you need to be able to check an input state, here is how you can do it.</p>
 <dl class="section note"><dt>Note</dt><dd>You can find the different input types in the <a class="el" href="dir_1ee6296ae77f12e2ec152e792b5317de.html">inputs</a> folder.</dd></dl>
@@ -263,7 +263,7 @@ Accessing an input state</h2>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a516a8ea8065455d601a30e1d3afbef52"><div class="ttname"><a href="classecstasy_1_1_registry.html#a516a8ea8065455d601a30e1d3afbef52">ecstasy::Registry::getResource</a></div><div class="ttdeci">ResourceReference&lt; const R, Locked &gt; getResource() const</div><div class="ttdoc">Get the Resource of type R.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00906">Registry.hpp:906</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a79cab84435e7b20e9c41aae9cc543cfa"><div class="ttname"><a href="classecstasy_1_1_registry.html#a79cab84435e7b20e9c41aae9cc543cfa">ecstasy::Registry::addResource</a></div><div class="ttdeci">R &amp; addResource(Args &amp;&amp;...args)</div><div class="ttdoc">Add a new resource in the registry.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00853">Registry.hpp:853</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_keyboard_html"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_keyboard.html">ecstasy::integration::event::Keyboard</a></div><div class="ttdoc">Current Keyboard state.</div><div class="ttdef"><b>Definition</b> <a href="_keyboard_8hpp_source.html#l00030">Keyboard.hpp:30</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_keyboard_html_aebf0a964a4821dc4ea4bbd07a5fcb736"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#aebf0a964a4821dc4ea4bbd07a5fcb736">ecstasy::integration::event::Keyboard::isKeyDown</a></div><div class="ttdeci">constexpr bool isKeyDown(Key key) const</div><div class="ttdoc">Check whether a key is down.</div><div class="ttdef"><b>Definition</b> <a href="_keyboard_8hpp_source.html#l00181">Keyboard.hpp:181</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_keyboard_html_aebf0a964a4821dc4ea4bbd07a5fcb736"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#aebf0a964a4821dc4ea4bbd07a5fcb736">ecstasy::integration::event::Keyboard::isKeyDown</a></div><div class="ttdeci">constexpr bool isKeyDown(Key key) const</div><div class="ttdoc">Check whether a key is down.</div><div class="ttdef"><b>Definition</b> <a href="_keyboard_8hpp_source.html#l00183">Keyboard.hpp:183</a></div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

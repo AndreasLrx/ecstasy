@@ -1,5 +1,23 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/is_base_of.html" title=" " alt="" coords="5,5,204,45"/>
-<area shape="rect" id="Node000001" href="$structecstasy_1_1_registry_1_1_select_1_1_is_condition.html" title="Test whether a given type is a condition." alt="" coords="252,5,511,45"/>
-<area shape="poly" id="edge81_Node000000_Node000001" title=" " alt="" coords="218,23,252,23,252,28,218,28"/>
+<area shape="rect" id="Node000000" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/integral_constant.html" title=" " alt="" coords="5,438,117,463"/>
+<area shape="rect" id="Node000001" href="$structecstasy_1_1query_1_1is__queryable_3_01_t_01_4.html" title="Checks if the given type match the Queryable concept." alt="" coords="217,5,352,45"/>
+<area shape="poly" id="edge83_Node000000_Node000001" title=" " alt="" coords="63,424,76,341,97,230,127,125,144,84,163,55,188,38,216,28,218,33,190,43,167,59,149,86,132,127,103,232,81,341,69,425"/>
+<area shape="rect" id="Node000002" href="$structecstasy_1_1query_1_1is__queryable__with__adjust_3_01_t_01_4.html" title="Checks if the given type match the QueryableNeedAdjust concept." alt="" coords="177,69,392,109"/>
+<area shape="poly" id="edge84_Node000000_Node000002" title=" " alt="" coords="60,424,65,362,79,280,93,237,110,194,134,154,164,119,179,107,183,112,167,123,138,157,115,197,98,239,85,282,70,363,65,425"/>
+<area shape="rect" id="Node000003" href="$structecstasy_1_1serialization_1_1traits_1_1can__load__type_3_01_s_00_01_t_00_01std_1_1void__t_355fac616e5d5cef23b8cc5cb6ec42564.html" title="Concept to check if a type can be updated with a serializer." alt="" coords="171,134,398,218"/>
+<area shape="poly" id="edge85_Node000000_Node000003" title=" " alt="" coords="66,424,78,382,97,330,126,276,163,227,177,216,180,220,167,231,130,279,102,332,83,384,71,425"/>
+<area shape="rect" id="Node000004" href="$structecstasy_1_1serialization_1_1traits_1_1can__save__type_3_01_s_00_01_t_00_01std_1_1void__t_3f047b2e31f70f7fd0ee6176f1ca914e7.html" title="Concept to check if a type can be saved with a serializer." alt="" coords="165,242,404,326"/>
+<area shape="poly" id="edge86_Node000000_Node000004" title=" " alt="" coords="77,425,114,380,164,335,181,324,184,328,167,339,118,384,82,429"/>
+<area shape="rect" id="Node000005" href="$structecstasy_1_1serialization_1_1traits_1_1can__update__type_3_01_s_00_01_t_00_01std_1_1void__t45d7947f1b390ef11c086bf0be051dfd.html" title="Concept to check if a type can be updated with a serializer." alt="" coords="178,350,391,434"/>
+<area shape="poly" id="edge87_Node000000_Node000005" title=" " alt="" coords="123,432,177,418,178,423,124,437"/>
+<area shape="rect" id="Node000006" href="$structecstasy_1_1serialization_1_1traits_1_1has__load__impl__for__type_3_01_s_00_01_t_00_01std_1984c1959d90b7970ad9598d748a3517b.html" title="Concept to check if a serializer has a specific load implementation for a type." alt="" coords="181,459,389,557"/>
+<area shape="poly" id="edge88_Node000000_Node000006" title=" " alt="" coords="126,464,181,479,180,484,124,469"/>
+<area shape="rect" id="Node000007" href="$structecstasy_1_1serialization_1_1traits_1_1has__save__impl__for__type_3_01_s_00_01_t_00_01std_10874f3ca517d6278146bb8b8ad405957.html" title="Concept to check if a serializer has a specific save implementation for a type." alt="" coords="171,581,399,680"/>
+<area shape="poly" id="edge89_Node000000_Node000007" title=" " alt="" coords="81,473,118,519,167,567,183,579,180,583,164,571,114,523,77,476"/>
+<area shape="rect" id="Node000008" href="$structecstasy_1_1serialization_1_1traits_1_1has__update__impl__for__type_3_01_s_00_01_t_00_01std43c639ac8e926e09a4c13e869525b7a1.html" title="Concept to check if a serializer has a specific update implementation for a type." alt="" coords="169,704,400,803"/>
+<area shape="poly" id="edge90_Node000000_Node000008" title=" " alt="" coords="70,477,82,522,101,578,129,637,167,690,180,702,176,706,163,694,124,640,96,580,77,523,65,478"/>
+<area shape="rect" id="Node000009" href="$structutil_1_1meta_1_1__type__set__eq_3_01std_1_1tuple_3_4_00_01std_1_1tuple_3_4_01_4.html" title=" " alt="" coords="199,827,370,882"/>
+<area shape="poly" id="edge91_Node000000_Node000009" title=" " alt="" coords="65,477,68,544,82,634,95,682,113,729,137,773,167,813,183,826,201,835,198,840,180,830,163,817,132,776,108,731,90,683,77,635,63,544,60,477"/>
+<area shape="rect" id="Node000010" href="$structutil_1_1meta_1_1is__std__vector_3_01std_1_1vector_3_01_t_00_01_a_01_4_01_4.html" title="Check if a type is a std::vector." alt="" coords="207,906,362,961"/>
+<area shape="poly" id="edge92_Node000000_Node000010" title=" " alt="" coords="68,476,80,569,100,693,130,813,147,860,167,892,186,907,208,917,206,922,183,911,163,895,143,862,125,815,95,694,74,569,63,477"/>
 </map>

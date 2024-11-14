@@ -94,15 +94,15 @@ $(document).ready(function(){initNavTree('md_doc_2_building.html',''); initResiz
   <div class="headertitle"><div class="title">Building</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md8"></a> To build Ecstasy project from sources, follow these steps:</p>
-<h2><a class="anchor" id="autotoc_md9"></a>
-Prerequisites</h2>
+<div class="textblock"><p><a class="anchor" id="building-1"></a> </p>
+<h1><a class="anchor" id="prerequisites"></a>
+Prerequisites</h1>
 <ol type="1">
 <li>Install <a href="https://cmake.org/resources/">CMake</a> (version 3.19 or higher)</li>
 <li>Install a C++ compiler with <a href="https://en.cppreference.com/w/cpp/20">C++20</a> support (Ex: G++ 8, Clang 14 or MSVC 2022)</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md10"></a>
-Build Steps</h2>
+<h1><a class="anchor" id="build-steps"></a>
+Build Steps</h1>
 <ol type="1">
 <li><p class="startli">Clone the Ecstasy repository</p>
 <div class="fragment"><div class="line">git clone git@github.com:AndreasLrx/ecstasy.git</div>
@@ -114,11 +114,11 @@ Build Steps</h2>
 <div class="fragment"><div class="line">cmake --build build --config Release -j</div>
 </div><!-- fragment --></li>
 </ol>
-<h3><a class="anchor" id="autotoc_md11"></a>
-IDEs</h3>
-<p>The library may also be built with any IDE that has <a href="/CMakePresets.json">CMakePresets.json</a> support, such as Visual Sudio, VSCode + CMake Tools, or CLion.</p>
-<h2><a class="anchor" id="autotoc_md12"></a>
-Using as a CMake package</h2>
+<h2><a class="anchor" id="ides"></a>
+IDEs</h2>
+<p>The library may also be built with any IDE that has <a href="https://github.com/AndreasLrx/ecstasy/blob/main/CMakePresets.json">CMakePresets.json</a> support, such as Visual Sudio, VSCode + CMake Tools, or CLion.</p>
+<h1><a class="anchor" id="using-as-a-cmake-package"></a>
+Using as a CMake package</h1>
 <p>I recommand using ecstasy as a CMake package. This allows easier static link and if you want to use SFML it is contained in ecstasy with the <b>ECSTASY_INTEGRATIONS_SFML</b> option. An example project may be done one day to have a concrete CMake example. If you want, feel free to do it and I will link it here (or even better, make a PR) <br  />
  <em>I am writing these lines because I suffered too much with CMake and if it can save some of your time and mental health, it's worth it.</em></p>
 <ol type="1">
@@ -159,8 +159,8 @@ Using as a CMake package</h2>
 <div class="fragment"><div class="line">target_link_libraries(my_super_target PUBLIC ecstasy)</div>
 </div><!-- fragment --></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md13"></a>
-CMake options</h2>
+<h1><a class="anchor" id="CMakeOptions"></a>
+CMake options</h1>
 <p>You can find more details about the options and their dependencies in <a href="/cmake/Options.cmake">Options.cmake</a>. <br  />
  <em>In case this documentation is not up to date with the <a href="/cmake/Options.cmake">Options.cmake</a> file, open an issue.</em></p>
 <table class="markdownTable">

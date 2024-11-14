@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('classecstasy_1_1query_1_1_thread_safe_
 </div><!--header-->
 <div class="contents">
 
-<p>More high-level query class, wrapping the <a class="el" href="classecstasy_1_1query_1_1_query_implementation.html">QueryImplementation</a> and locking all Lockable queryables.  
+<p>More high-level query class, wrapping the <a class="el" href="classecstasy_1_1query_1_1_query_implementation.html">QueryImplementation</a> and locking all <a class="el" href="conceptecstasy_1_1thread_1_1_lockable.html">Lockable</a> queryables.  
  <a href="classecstasy_1_1query_1_1_thread_safe_query.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_query_8hpp_source.html">Query.hpp</a>&gt;</code></p>
@@ -134,7 +134,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;Queryable... Qs&gt;<br />
-class ecstasy::query::ThreadSafeQuery&lt; Qs &gt;</div><p>More high-level query class, wrapping the <a class="el" href="classecstasy_1_1query_1_1_query_implementation.html">QueryImplementation</a> and locking all Lockable queryables. </p>
+class ecstasy::query::ThreadSafeQuery&lt; Qs &gt;</div><p>More high-level query class, wrapping the <a class="el" href="classecstasy_1_1query_1_1_query_implementation.html">QueryImplementation</a> and locking all <a class="el" href="conceptecstasy_1_1thread_1_1_lockable.html">Lockable</a> queryables. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Qs</td><td>All queryable types.</td></tr>
@@ -144,7 +144,7 @@ class ecstasy::query::ThreadSafeQuery&lt; Qs &gt;</div><p>More high-level query 
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00644">644</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00646">646</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af718b47bdbc2f9e83c60660f98f0faac" name="af718b47bdbc2f9e83c60660f98f0faac"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af718b47bdbc2f9e83c60660f98f0faac">&#9670;&#160;</a></span>ThreadSafeQuery() <span class="overload">[1/2]</span></h2>
@@ -193,10 +193,10 @@ template&lt;Queryable... Qs&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00655">655</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  656</span>            : QueryImplementation&lt;<a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt;Qs...&gt;, <a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits&lt;&gt;</a>, <span class="keyword">true</span>&gt;(mask, storages)</div>
-<div class="line"><span class="lineno">  657</span>        {</div>
-<div class="line"><span class="lineno">  658</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00657">657</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  658</span>            : QueryImplementation&lt;<a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt;Qs...&gt;, <a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits&lt;&gt;</a>, <span class="keyword">true</span>&gt;(mask, storages)</div>
+<div class="line"><span class="lineno">  659</span>        {</div>
+<div class="line"><span class="lineno">  660</span>        }</div>
 <div class="ttc" id="astructutil_1_1meta_1_1_traits_html"><div class="ttname"><a href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a></div><div class="ttdoc">Empty parameter pack helper type.</div><div class="ttdef"><b>Definition</b> <a href="_traits_8hpp_source.html#l00028">Traits.hpp:28</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -238,10 +238,10 @@ template&lt;Queryable... Qs&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00668">668</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  669</span>            : QueryImplementation&lt;<a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt;Qs...&gt;, <a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits&lt;&gt;</a>, <span class="keyword">true</span>&gt;(std::forward&lt;Qs &amp;&gt;(others)...)</div>
-<div class="line"><span class="lineno">  670</span>        {</div>
-<div class="line"><span class="lineno">  671</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00670">670</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  671</span>            : QueryImplementation&lt;<a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt;Qs...&gt;, <a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits&lt;&gt;</a>, <span class="keyword">true</span>&gt;(std::forward&lt;Qs &amp;&gt;(others)...)</div>
+<div class="line"><span class="lineno">  672</span>        {</div>
+<div class="line"><span class="lineno">  673</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>

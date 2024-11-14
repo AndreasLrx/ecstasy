@@ -95,40 +95,40 @@ $(document).ready(function(){initNavTree('md_doc_2integrations_2user__actions.ht
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#autotoc_md78">Description</a></li>
-<li class="level1"><a href="#autotoc_md79">Usage</a><ul><li class="level2"><a href="#autotoc_md80">Register your actions and bindings</a></li>
-<li class="level2"><a href="#autotoc_md81">Listen to your actions</a><ul><li class="level3"><a href="#autotoc_md82">ActionListener</a></li>
-<li class="level3"><a href="#autotoc_md83">ActionListeners</a></li>
-<li class="level3"><a href="#autotoc_md84">ActionIdListener</a></li>
+<ul><li class="level1"><a href="#description-2">Description</a></li>
+<li class="level1"><a href="#usage-1">Usage</a><ul><li class="level2"><a href="#register-your-actions-and-bindings">Register your actions and bindings</a></li>
+<li class="level2"><a href="#listen-to-your-actions">Listen to your actions</a><ul><li class="level3"><a href="#actionlistener">ActionListener</a></li>
+<li class="level3"><a href="#actionlisteners">ActionListeners</a></li>
+<li class="level3"><a href="#actionidlistener">ActionIdListener</a></li>
 </ul>
 </li>
-<li class="level2"><a href="#autotoc_md85">Using intermediate actions</a></li>
-<li class="level2"><a href="#autotoc_md86">Saving and loading the bindings</a><ul><li class="level3"><a href="#autotoc_md87">Saving</a></li>
-<li class="level3"><a href="#autotoc_md88">Loading</a></li>
+<li class="level2"><a href="#using-intermediate-actions">Using intermediate actions</a></li>
+<li class="level2"><a href="#saving-and-loading-the-bindings">Saving and loading the bindings</a><ul><li class="level3"><a href="#saving">Saving</a></li>
+<li class="level3"><a href="#loading">Loading</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="textblock"><p><a class="anchor" id="autotoc_md77"></a></p>
-<h1><a class="anchor" id="autotoc_md78"></a>
+<div class="textblock"><p><a class="anchor" id="user-actions-integration"></a></p>
+<h1><a class="anchor" id="description-2"></a>
 Description</h1>
 <p>The <a class="el" href="namespaceecstasy_1_1integration_1_1user__action.html">user actions integration</a> allows to map events to an action. Actions can be mapped to keyboard, mouse or gamepad, making the handle of different inputs easier since you don't have to deal with the different event types between keyboard/gamepad. It also helps dealing with local multiplayer as an action can be linked to a specific user. Finally it has included toml serialization functions to save/load the user keybinds.</p>
 <p>If you don't really understand what is an Action here is an example: You play a 2D plateformer game where you can <em>move left</em>, <em>move right</em> and <em>jump</em>, these are your 3 actions. If you have local multiplayer you will need these actions for <b>each player</b>, that's why "user actions", action binding are attached to a specific player.</p>
 <dl class="section warning"><dt>Warning</dt><dd>This integration requires the event integration</dd></dl>
-<h1><a class="anchor" id="autotoc_md79"></a>
+<h1><a class="anchor" id="usage-1"></a>
 Usage</h1>
 <p>We'll see how to implement listeners for the example of a 2D platformer. Move actions will be configured with arrows and ZQSD on keyboard, and left axis and left/right triggers on gamepad.</p>
-<h2><a class="anchor" id="autotoc_md80"></a>
+<h2><a class="anchor" id="register-your-actions-and-bindings"></a>
 Register your actions and bindings</h2>
 <p>An action is simply and identifier. An action binding is a link between an action identifier, a user identifier and an event (multiple bindings can be linked to the same action/user id).</p>
 <p>The easier to define your action identifiers is simply to use an enum.</p>
 <div class="fragment"><div class="line"><span class="keyword">enum class</span> Actions : <span class="keywordtype">size_t</span> { MoveLeft, MoveRight, MoveHorizontal, Jump, Count };</div>
 </div><!-- fragment --><p>Now to create the bindings follow these steps:</p>
 <ul>
-<li>Add a Users resource to the registry</li>
-<li>Add your Action bindings to your users</li>
+<li>Add a <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_users.html">Users</a> resource to the registry</li>
+<li>Add your <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html">Action bindings</a> to your users</li>
 <li>Notify the user resources bindings have changed</li>
 </ul>
 <div class="fragment"><div class="line"><span class="keyword">using </span>eua = <a class="code hl_namespace" href="namespaceecstasy_1_1integration_1_1user__action.html">ecstasy::integration::user_action</a>;</div>
@@ -163,7 +163,7 @@ Register your actions and bindings</h2>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a79cab84435e7b20e9c41aae9cc543cfa"><div class="ttname"><a href="classecstasy_1_1_registry.html#a79cab84435e7b20e9c41aae9cc543cfa">ecstasy::Registry::addResource</a></div><div class="ttdeci">R &amp; addResource(Args &amp;&amp;...args)</div><div class="ttdoc">Add a new resource in the registry.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00853">Registry.hpp:853</a></div></div>
 <div class="ttc" id="anamespaceecstasy_1_1integration_1_1event_html"><div class="ttname"><a href="namespaceecstasy_1_1integration_1_1event.html">ecstasy::integration::event</a></div><div class="ttdoc">Event integration.</div><div class="ttdef"><b>Definition</b> <a href="_event_8hpp_source.html#l00024">Event.hpp:25</a></div></div>
 <div class="ttc" id="anamespaceecstasy_1_1integration_1_1user__action_html"><div class="ttname"><a href="namespaceecstasy_1_1integration_1_1user__action.html">ecstasy::integration::user_action</a></div><div class="ttdoc">User action integration.</div><div class="ttdef"><b>Definition</b> <a href="_action_8hpp_source.html#l00017">Action.hpp:18</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md81"></a>
+</div><!-- fragment --><h2><a class="anchor" id="listen-to-your-actions"></a>
 Listen to your actions</h2>
 <p>There are 3 component types to have action listeners:</p>
 <ul>
@@ -174,7 +174,7 @@ Listen to your actions</h2>
 <dl class="section note"><dt>Note</dt><dd>They can be used together, either on different entities or on the same entity.</dd>
 <dd>
 Listeners can be targeted toward an action type (identifier), if you want to match all actions you can use the special identifier <a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_action.html#abfc74bb7c7919963a9658153588e33db">Actions::All</a></dd></dl>
-<h3><a class="anchor" id="autotoc_md82"></a>
+<h3><a class="anchor" id="actionlistener"></a>
 ActionListener</h3>
 <p><a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_action_listener.html">ActionListener</a> are the easiest listeners, but you can attach only one of them to each entities.</p>
 <div class="fragment"><div class="line"><span class="keyword">using </span>eua = <a class="code hl_namespace" href="namespaceecstasy_1_1integration_1_1user__action.html">ecstasy::integration::user_action</a>;</div>
@@ -202,7 +202,7 @@ ActionListener</h3>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a4418ff08eb494b1babb2ee715035d20a"><div class="ttname"><a href="classecstasy_1_1_registry.html#a4418ff08eb494b1babb2ee715035d20a">ecstasy::Registry::entityBuilder</a></div><div class="ttdeci">EntityBuilder entityBuilder() noexcept</div><div class="ttdoc">Create a new entity builder.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8cpp_source.html#l00033">Registry.cpp:33</a></div></div>
 <div class="ttc" id="acout_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/cout.html">std::cout</a></div></div>
 <div class="ttc" id="aendl_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/manip/endl.html">std::endl</a></div><div class="ttdeci">T endl(T... args)</div></div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md83"></a>
+</div><!-- fragment --><h3><a class="anchor" id="actionlisteners"></a>
 ActionListeners</h3>
 <p><a class="el" href="namespaceecstasy_1_1integration_1_1user__action.html#a463f381fdabb7e1e0b9b5ca3a2173fa1">ActionListeners</a> allows to handle all actions independently in a single component, but it is quite verbose to instantiate.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Using Action::All does not work with this component</dd></dl>
@@ -229,7 +229,7 @@ ActionListeners</h3>
 <div class="line">      })</div>
 <div class="line">      .build();</div>
 <div class="line">}</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md84"></a>
+</div><!-- fragment --><h3><a class="anchor" id="actionidlistener"></a>
 ActionIdListener</h3>
 <p><a class="el" href="structecstasy_1_1integration_1_1user__action_1_1_action_id_listener.html">ActionIdListener</a> are templated listeners bound to a specific action. It is mostly the same as basic ActionListener, but since they are templated you can have multiple instances on the same entity.</p>
 <p>To make them works you need to add a resource and a system first:</p>
@@ -264,7 +264,7 @@ ActionIdListener</h3>
 <div class="line">      .build();</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a9ae0f363babc862fecb95e860730f5b7"><div class="ttname"><a href="classecstasy_1_1_registry.html#a9ae0f363babc862fecb95e860730f5b7">ecstasy::Registry::addSystem</a></div><div class="ttdeci">S &amp; addSystem(Args &amp;&amp;...args)</div><div class="ttdoc">Add a new system in the registry.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00832">Registry.hpp:832</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md85"></a>
+</div><!-- fragment --><h2><a class="anchor" id="using-intermediate-actions"></a>
 Using intermediate actions</h2>
 <p>You may have noticed the <code>MoveHorizontal</code> action in the register part but not in the listener. It is because this action is different because it expects an input between -1 and 1, as would be the value produced from a gamepad axis (joystick).</p>
 <p>But the buttons/key return either 1 or 0 (pressed or not) so they are not compatible with a gamepad axis. What we can do however to make them compatible is use <code>MoveLeft</code> and <code>MoveRight</code> as intermediate actions, and use <code>MoveHorizontal</code> for your game logic.</p>
@@ -298,22 +298,23 @@ Using intermediate actions</h2>
 <div class="line">      .build();</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a516a8ea8065455d601a30e1d3afbef52"><div class="ttname"><a href="classecstasy_1_1_registry.html#a516a8ea8065455d601a30e1d3afbef52">ecstasy::Registry::getResource</a></div><div class="ttdeci">ResourceReference&lt; const R, Locked &gt; getResource() const</div><div class="ttdoc">Get the Resource of type R.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00906">Registry.hpp:906</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md86"></a>
+</div><!-- fragment --><h2><a class="anchor" id="saving-and-loading-the-bindings"></a>
 Saving and loading the bindings</h2>
 <p>You can convert <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_user_profile.html">UserProfile</a> bindings to/from toml format using <code>dump()</code> and <code>load()</code> methods.</p>
 <p>Examples are much better so here it is!</p>
-<h3><a class="anchor" id="autotoc_md87"></a>
+<h3><a class="anchor" id="saving"></a>
 Saving</h3>
 <div class="fragment"><div class="line"><span class="keyword">using </span>eua = <a class="code hl_namespace" href="namespaceecstasy_1_1integration_1_1user__action.html">ecstasy::integration::user_action</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> saveProfile(<a class="code hl_class" href="classecstasy_1_1_registry.html">ecstasy::Registry</a> &amp;registry, eua::UserProfile::Id userId = 0)</div>
 <div class="line">{</div>
 <div class="line">   <span class="comment">// Consider we called the setupActions from above</span></div>
-<div class="line">   toml::table out = registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a516a8ea8065455d601a30e1d3afbef52">getResource</a>&lt;eua::Users&gt;().getUserProfile(userId).dump();</div>
+<div class="line">   <a class="code hl_classRef" href="https://marzer.github.io/tomlplusplus/classtoml_1_1table.html">toml::table</a> out = registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a516a8ea8065455d601a30e1d3afbef52">getResource</a>&lt;eua::Users&gt;().getUserProfile(userId).dump();</div>
 <div class="line"> </div>
 <div class="line">   <span class="comment">// Just replace this with a filestream if you want to save to a file</span></div>
 <div class="line">   <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/io/cout.html">std::cout</a>&lt;&lt; out &lt;&lt;<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/io/manip/endl.html">std::endl</a>;</div>
 <div class="line">}</div>
+<div class="ttc" id="aclasstoml_1_1table_html"><div class="ttname"><a href="https://marzer.github.io/tomlplusplus/classtoml_1_1table.html">toml::table</a></div></div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>The action are registered by their ids until there is an easy way to serialize them. For the moment ecstasy only has size_t values when serializing so it is serialized as it. (Comments with action names are manually added for better comprehension)</dd></dl>
 <div class="fragment"><div class="line">id = 0</div>
 <div class="line"> </div>
@@ -326,19 +327,22 @@ Saving</h3>
 <div class="line">Action-2 = [ &#39;GamepadAxis-&gt;LeftX&#39; ]</div>
 <div class="line"># Jump</div>
 <div class="line">Action-3 = [ &#39;Key-&gt;Space&#39;, &#39;GamepadButton-&gt;FaceDown&#39; ]</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md88"></a>
+</div><!-- fragment --><h3><a class="anchor" id="loading"></a>
 Loading</h3>
 <div class="fragment"><div class="line"><span class="keyword">using </span>eua = <a class="code hl_namespace" href="namespaceecstasy_1_1integration_1_1user__action.html">ecstasy::integration::user_action</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> loadProfile(<a class="code hl_class" href="classecstasy_1_1_registry.html">ecstasy::Registry</a> &amp;registry, <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> bindings)</div>
 <div class="line">{</div>
 <div class="line">   <span class="comment">// Consider we called the setupActions from above</span></div>
-<div class="line">   toml::table in = toml::parse(bindings);</div>
+<div class="line">   <a class="code hl_classRef" href="https://marzer.github.io/tomlplusplus/classtoml_1_1table.html">toml::table</a> in = <a class="code hl_functionRef" href="https://marzer.github.io/tomlplusplus/namespacetoml.html#ada8654fb4ceef15c20fc1d5e0cc734dd">toml::parse</a>(bindings);</div>
 <div class="line"> </div>
-<div class="line">   <span class="keyword">auto</span> &amp;profile = registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a516a8ea8065455d601a30e1d3afbef52">getResource</a>&lt;eua::Users&gt;().getUserProfile(<span class="keyword">static_cast&lt;</span>UserProfile::Id<span class="keyword">&gt;</span>(in.get(<span class="stringliteral">&quot;id&quot;</span>)-&gt;as_integer()-&gt;get()));</div>
+<div class="line">   <span class="keyword">auto</span> &amp;profile = registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a516a8ea8065455d601a30e1d3afbef52">getResource</a>&lt;eua::Users&gt;().getUserProfile(<span class="keyword">static_cast&lt;</span>UserProfile::Id<span class="keyword">&gt;</span>(in.<a class="code hl_functionRef" href="https://marzer.github.io/tomlplusplus/classtoml_1_1table.html#ae6811ea7c692ac71880693e225c66aed">get</a>(<span class="stringliteral">&quot;id&quot;</span>)-&gt;<a class="code hl_functionRef" href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html#a9e1419c3f99eda7767d114095b1ad793">as_integer</a>()-&gt;get()));</div>
 <div class="line">   profile.load(in);</div>
 <div class="line">}</div>
 <div class="ttc" id="abasic_string_view_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a></div></div>
+<div class="ttc" id="aclasstoml_1_1node_html_a9e1419c3f99eda7767d114095b1ad793"><div class="ttname"><a href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html#a9e1419c3f99eda7767d114095b1ad793">toml::node::as_integer</a></div><div class="ttdeci">virtual toml::value&lt; int64_t &gt; * as_integer() noexcept=0</div></div>
+<div class="ttc" id="aclasstoml_1_1table_html_ae6811ea7c692ac71880693e225c66aed"><div class="ttname"><a href="https://marzer.github.io/tomlplusplus/classtoml_1_1table.html#ae6811ea7c692ac71880693e225c66aed">toml::table::get</a></div><div class="ttdeci">node * get(std::string_view key) noexcept</div></div>
+<div class="ttc" id="anamespacetoml_html_ada8654fb4ceef15c20fc1d5e0cc734dd"><div class="ttname"><a href="https://marzer.github.io/tomlplusplus/namespacetoml.html#ada8654fb4ceef15c20fc1d5e0cc734dd">toml::parse</a></div><div class="ttdeci">parse_result parse(std::string_view doc, std::string_view source_path={})</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

@@ -125,7 +125,7 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2af32239db3dce4f415c059cbb2e7efb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a2af32239db3dce4f415c059cbb2e7efb">KeySequenceListener</a> (const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; Keyboard::Key &gt; &amp;sequence, <a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4370e80208bd66e5e695592c41c9c0ea">Callback</a> callback) noexcept</td></tr>
+<tr class="memitem:a2af32239db3dce4f415c059cbb2e7efb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a2af32239db3dce4f415c059cbb2e7efb">KeySequenceListener</a> (const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3">Keyboard::Key</a> &gt; &amp;sequence, <a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4370e80208bd66e5e695592c41c9c0ea">Callback</a> callback) noexcept</td></tr>
 <tr class="memdesc:a2af32239db3dce4f415c059cbb2e7efb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Key Sequence Listener object.  <br /></td></tr>
 <tr class="separator:a2af32239db3dce4f415c059cbb2e7efb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7937de17d7929f58983be5723f93d068"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a7937de17d7929f58983be5723f93d068">~KeySequenceListener</a> () noexcept=default</td></tr>
@@ -143,32 +143,32 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acc9f823d7924192620fbfe9d7651bc74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#acc9f823d7924192620fbfe9d7651bc74">operator()</a> (<a class="el" href="classecstasy_1_1_registry.html">Registry</a> &amp;registry, <a class="el" href="classecstasy_1_1_entity.html">Entity</a> e, bool force=false)</td></tr>
 <tr class="memdesc:acc9f823d7924192620fbfe9d7651bc74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call the callback and <a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#aeca401e415394d5219f682ee8b4b5a68">reset()</a> if the sequence is complete or if <code>force</code>.  <br /></td></tr>
 <tr class="separator:acc9f823d7924192620fbfe9d7651bc74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9521d47c77f3ef48cf4481817a02e979"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a9521d47c77f3ef48cf4481817a02e979">setSequence</a> (const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; Keyboard::Key &gt; &amp;newSequence) noexcept</td></tr>
+<tr class="memitem:a9521d47c77f3ef48cf4481817a02e979"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a9521d47c77f3ef48cf4481817a02e979">setSequence</a> (const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3">Keyboard::Key</a> &gt; &amp;newSequence) noexcept</td></tr>
 <tr class="memdesc:a9521d47c77f3ef48cf4481817a02e979"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the expected sequence.  <br /></td></tr>
 <tr class="separator:a9521d47c77f3ef48cf4481817a02e979"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a376d44614d1568282788741fcf7adf35"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; Keyboard::Key &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a376d44614d1568282788741fcf7adf35">getSequence</a> () const noexcept</td></tr>
+<tr class="memitem:a376d44614d1568282788741fcf7adf35"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3">Keyboard::Key</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a376d44614d1568282788741fcf7adf35">getSequence</a> () const noexcept</td></tr>
 <tr class="memdesc:a376d44614d1568282788741fcf7adf35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the expected sequence.  <br /></td></tr>
 <tr class="separator:a376d44614d1568282788741fcf7adf35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24263350f4a1e5e590ffc2be17da98a1"><td class="memItemLeft" align="right" valign="top">constexpr <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; Keyboard::Key &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a24263350f4a1e5e590ffc2be17da98a1">getSequence</a> () noexcept</td></tr>
+<tr class="memitem:a24263350f4a1e5e590ffc2be17da98a1"><td class="memItemLeft" align="right" valign="top">constexpr <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3">Keyboard::Key</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a24263350f4a1e5e590ffc2be17da98a1">getSequence</a> () noexcept</td></tr>
 <tr class="memdesc:a24263350f4a1e5e590ffc2be17da98a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the expected sequence.  <br /></td></tr>
 <tr class="separator:a24263350f4a1e5e590ffc2be17da98a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47f8dd1bca066db23689ca48d8cbfa2e"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4370e80208bd66e5e695592c41c9c0ea">Callback</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a47f8dd1bca066db23689ca48d8cbfa2e">getCallback</a> () const noexcept</td></tr>
 <tr class="memdesc:a47f8dd1bca066db23689ca48d8cbfa2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the sequence completion callback.  <br /></td></tr>
 <tr class="separator:a47f8dd1bca066db23689ca48d8cbfa2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2eac4256490f80c4d914911763710d27"><td class="memItemLeft" align="right" valign="top">constexpr Keyboard::Key&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a2eac4256490f80c4d914911763710d27">getHeldKey</a> () const noexcept</td></tr>
+<tr class="memitem:a2eac4256490f80c4d914911763710d27"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3">Keyboard::Key</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a2eac4256490f80c4d914911763710d27">getHeldKey</a> () const noexcept</td></tr>
 <tr class="memdesc:a2eac4256490f80c4d914911763710d27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the key held.  <br /></td></tr>
 <tr class="separator:a2eac4256490f80c4d914911763710d27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd113da3b1adf71abb722c944c97118e"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; Keyboard::Key &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#abd113da3b1adf71abb722c944c97118e">getValidatedKeys</a> () const noexcept</td></tr>
+<tr class="memitem:abd113da3b1adf71abb722c944c97118e"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3">Keyboard::Key</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#abd113da3b1adf71abb722c944c97118e">getValidatedKeys</a> () const noexcept</td></tr>
 <tr class="memdesc:abd113da3b1adf71abb722c944c97118e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Validated Keys.  <br /></td></tr>
 <tr class="separator:abd113da3b1adf71abb722c944c97118e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:ae5a7f5c2f0f5f2139049194c077351d5"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; Keyboard::Key &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#ae5a7f5c2f0f5f2139049194c077351d5">_sequence</a></td></tr>
+<tr class="memitem:ae5a7f5c2f0f5f2139049194c077351d5"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3">Keyboard::Key</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#ae5a7f5c2f0f5f2139049194c077351d5">_sequence</a></td></tr>
 <tr class="separator:ae5a7f5c2f0f5f2139049194c077351d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af25572501e883a1e9a7dfb276338f5ed"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; Keyboard::Key &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#af25572501e883a1e9a7dfb276338f5ed">_validatedKeys</a></td></tr>
+<tr class="memitem:af25572501e883a1e9a7dfb276338f5ed"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3">Keyboard::Key</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#af25572501e883a1e9a7dfb276338f5ed">_validatedKeys</a></td></tr>
 <tr class="separator:af25572501e883a1e9a7dfb276338f5ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ba47de613b115836bd6f22ec8a65f22"><td class="memItemLeft" align="right" valign="top">Keyboard::Key&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4ba47de613b115836bd6f22ec8a65f22">_heldKey</a></td></tr>
+<tr class="memitem:a4ba47de613b115836bd6f22ec8a65f22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3">Keyboard::Key</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4ba47de613b115836bd6f22ec8a65f22">_heldKey</a></td></tr>
 <tr class="separator:a4ba47de613b115836bd6f22ec8a65f22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f0c716cacc953272e9870ce5cf47f81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4370e80208bd66e5e695592c41c9c0ea">Callback</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a6f0c716cacc953272e9870ce5cf47f81">_callback</a></td></tr>
 <tr class="separator:a6f0c716cacc953272e9870ce5cf47f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -212,7 +212,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">ecstasy::integration::event::KeySequenceListener::KeySequenceListener </td>
           <td>(</td>
-          <td class="paramtype">const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; Keyboard::Key &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3">Keyboard::Key</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>sequence</em>, </td>
         </tr>
         <tr>
@@ -252,8 +252,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   19</span>    {</div>
 <div class="line"><span class="lineno">   20</span>        <a class="code hl_function" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#aeca401e415394d5219f682ee8b4b5a68">reset</a>();</div>
 <div class="line"><span class="lineno">   21</span>    }</div>
-<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_key_sequence_listener_html_a6f0c716cacc953272e9870ce5cf47f81"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a6f0c716cacc953272e9870ce5cf47f81">ecstasy::integration::event::KeySequenceListener::_callback</a></div><div class="ttdeci">Callback _callback</div><div class="ttdef"><b>Definition</b> <a href="_key_sequence_listener_8hpp_source.html#l00199">KeySequenceListener.hpp:199</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_key_sequence_listener_html_ae5a7f5c2f0f5f2139049194c077351d5"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#ae5a7f5c2f0f5f2139049194c077351d5">ecstasy::integration::event::KeySequenceListener::_sequence</a></div><div class="ttdeci">std::vector&lt; Keyboard::Key &gt; _sequence</div><div class="ttdef"><b>Definition</b> <a href="_key_sequence_listener_8hpp_source.html#l00193">KeySequenceListener.hpp:193</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_key_sequence_listener_html_a6f0c716cacc953272e9870ce5cf47f81"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a6f0c716cacc953272e9870ce5cf47f81">ecstasy::integration::event::KeySequenceListener::_callback</a></div><div class="ttdeci">Callback _callback</div><div class="ttdef"><b>Definition</b> <a href="_key_sequence_listener_8hpp_source.html#l00201">KeySequenceListener.hpp:201</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_key_sequence_listener_html_ae5a7f5c2f0f5f2139049194c077351d5"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#ae5a7f5c2f0f5f2139049194c077351d5">ecstasy::integration::event::KeySequenceListener::_sequence</a></div><div class="ttdeci">std::vector&lt; Keyboard::Key &gt; _sequence</div><div class="ttdef"><b>Definition</b> <a href="_key_sequence_listener_8hpp_source.html#l00195">KeySequenceListener.hpp:195</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_key_sequence_listener_html_aeca401e415394d5219f682ee8b4b5a68"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#aeca401e415394d5219f682ee8b4b5a68">ecstasy::integration::event::KeySequenceListener::reset</a></div><div class="ttdeci">void reset() noexcept</div><div class="ttdoc">Reset the sequence completion.</div><div class="ttdef"><b>Definition</b> <a href="_key_sequence_listener_8cpp_source.html#l00062">KeySequenceListener.cpp:62</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -333,7 +333,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr Keyboard::Key ecstasy::integration::event::KeySequenceListener::getHeldKey </td>
+          <td class="memname">constexpr <a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3">Keyboard::Key</a> ecstasy::integration::event::KeySequenceListener::getHeldKey </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -348,15 +348,15 @@ Private Attributes</h2></td></tr>
 
 <p>Get the key held. </p>
 <dl class="section note"><dt>Note</dt><dd>The key held is the current sequence key pressed but not yet released (it will be pushed in the validated keys on release)</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>Keyboard::Key Key held if any, Keyboard::Key::Unknown otherwise.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3" title="Keyboard keys.">Keyboard::Key</a> Key held if any, <a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a88183b946cc5f0e8c96b2e66e1c74a7e">Key::Unknown</a> otherwise.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-20) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_key_sequence_listener_8hpp_source.html#l00171">171</a> of file <a class="el" href="_key_sequence_listener_8hpp_source.html">KeySequenceListener.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  172</span>        {</div>
-<div class="line"><span class="lineno">  173</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4ba47de613b115836bd6f22ec8a65f22">_heldKey</a>;</div>
-<div class="line"><span class="lineno">  174</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_key_sequence_listener_html_a4ba47de613b115836bd6f22ec8a65f22"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4ba47de613b115836bd6f22ec8a65f22">ecstasy::integration::event::KeySequenceListener::_heldKey</a></div><div class="ttdeci">Keyboard::Key _heldKey</div><div class="ttdef"><b>Definition</b> <a href="_key_sequence_listener_8hpp_source.html#l00197">KeySequenceListener.hpp:197</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_key_sequence_listener_8hpp_source.html#l00173">173</a> of file <a class="el" href="_key_sequence_listener_8hpp_source.html">KeySequenceListener.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  174</span>        {</div>
+<div class="line"><span class="lineno">  175</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4ba47de613b115836bd6f22ec8a65f22">_heldKey</a>;</div>
+<div class="line"><span class="lineno">  176</span>        }</div>
+<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_key_sequence_listener_html_a4ba47de613b115836bd6f22ec8a65f22"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4ba47de613b115836bd6f22ec8a65f22">ecstasy::integration::event::KeySequenceListener::_heldKey</a></div><div class="ttdeci">Keyboard::Key _heldKey</div><div class="ttdef"><b>Definition</b> <a href="_key_sequence_listener_8hpp_source.html#l00199">KeySequenceListener.hpp:199</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -370,7 +370,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; Keyboard::Key &gt; &amp; ecstasy::integration::event::KeySequenceListener::getSequence </td>
+          <td class="memname">constexpr const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3">Keyboard::Key</a> &gt; &amp; ecstasy::integration::event::KeySequenceListener::getSequence </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -405,7 +405,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; Keyboard::Key &gt; &amp; ecstasy::integration::event::KeySequenceListener::getSequence </td>
+          <td class="memname">constexpr <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3">Keyboard::Key</a> &gt; &amp; ecstasy::integration::event::KeySequenceListener::getSequence </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -441,7 +441,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; Keyboard::Key &gt; &amp; ecstasy::integration::event::KeySequenceListener::getValidatedKeys </td>
+          <td class="memname">constexpr const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3">Keyboard::Key</a> &gt; &amp; ecstasy::integration::event::KeySequenceListener::getValidatedKeys </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -460,11 +460,11 @@ Private Attributes</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-20) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_key_sequence_listener_8hpp_source.html#l00186">186</a> of file <a class="el" href="_key_sequence_listener_8hpp_source.html">KeySequenceListener.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  187</span>        {</div>
-<div class="line"><span class="lineno">  188</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#af25572501e883a1e9a7dfb276338f5ed">_validatedKeys</a>;</div>
-<div class="line"><span class="lineno">  189</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_key_sequence_listener_html_af25572501e883a1e9a7dfb276338f5ed"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#af25572501e883a1e9a7dfb276338f5ed">ecstasy::integration::event::KeySequenceListener::_validatedKeys</a></div><div class="ttdeci">std::vector&lt; Keyboard::Key &gt; _validatedKeys</div><div class="ttdef"><b>Definition</b> <a href="_key_sequence_listener_8hpp_source.html#l00195">KeySequenceListener.hpp:195</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_key_sequence_listener_8hpp_source.html#l00188">188</a> of file <a class="el" href="_key_sequence_listener_8hpp_source.html">KeySequenceListener.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  189</span>        {</div>
+<div class="line"><span class="lineno">  190</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#af25572501e883a1e9a7dfb276338f5ed">_validatedKeys</a>;</div>
+<div class="line"><span class="lineno">  191</span>        }</div>
+<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_key_sequence_listener_html_af25572501e883a1e9a7dfb276338f5ed"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#af25572501e883a1e9a7dfb276338f5ed">ecstasy::integration::event::KeySequenceListener::_validatedKeys</a></div><div class="ttdeci">std::vector&lt; Keyboard::Key &gt; _validatedKeys</div><div class="ttdef"><b>Definition</b> <a href="_key_sequence_listener_8hpp_source.html#l00197">KeySequenceListener.hpp:197</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -589,8 +589,9 @@ Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="_key_sequence_listener_8cpp_source.html#l00062">62</a> of file <a class="el" href="_key_sequence_listener_8cpp_source.html">KeySequenceListener.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   63</span>    {</div>
 <div class="line"><span class="lineno">   64</span>        <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#af25572501e883a1e9a7dfb276338f5ed">_validatedKeys</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/vector/clear.html">clear</a>();</div>
-<div class="line"><span class="lineno">   65</span>        <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4ba47de613b115836bd6f22ec8a65f22">_heldKey</a> = Keyboard::Key::Unknown;</div>
+<div class="line"><span class="lineno">   65</span>        <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4ba47de613b115836bd6f22ec8a65f22">_heldKey</a> = <a class="code hl_enumvalue" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a88183b946cc5f0e8c96b2e66e1c74a7e">Keyboard::Key::Unknown</a>;</div>
 <div class="line"><span class="lineno">   66</span>    }</div>
+<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_keyboard_html_af7a1ffe443594240aaf7d589a7558fe3a88183b946cc5f0e8c96b2e66e1c74a7e"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a88183b946cc5f0e8c96b2e66e1c74a7e">ecstasy::integration::event::Keyboard::Key::Unknown</a></div><div class="ttdeci">@ Unknown</div><div class="ttdoc">Unhandled key.</div></div>
 <div class="ttc" id="aclear_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/vector/clear.html">std::vector::clear</a></div><div class="ttdeci">T clear(T... args)</div></div>
 </div><!-- fragment -->
 </div>
@@ -607,7 +608,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void ecstasy::integration::event::KeySequenceListener::setSequence </td>
           <td>(</td>
-          <td class="paramtype">const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; Keyboard::Key &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3">Keyboard::Key</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>newSequence</em></td><td>)</td>
           <td></td>
         </tr>
@@ -677,16 +678,16 @@ Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="_key_sequence_listener_8cpp_source.html#l00023">23</a> of file <a class="el" href="_key_sequence_listener_8cpp_source.html">KeySequenceListener.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   24</span>    {</div>
 <div class="line"><span class="lineno">   25</span>        <span class="keywordflow">if</span> (<a class="code hl_namespace" href="namespaceecstasy_1_1integration_1_1event.html">event</a>.pressed) {</div>
-<div class="line"><span class="lineno">   26</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4ba47de613b115836bd6f22ec8a65f22">_heldKey</a> == Keyboard::Key::Unknown &amp;&amp; <a class="code hl_namespace" href="namespaceecstasy_1_1integration_1_1event.html">event</a>.key == <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#ae5a7f5c2f0f5f2139049194c077351d5">_sequence</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/vector/at.html">at</a>(<a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#af25572501e883a1e9a7dfb276338f5ed">_validatedKeys</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/vector/size.html">size</a>()))</div>
+<div class="line"><span class="lineno">   26</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4ba47de613b115836bd6f22ec8a65f22">_heldKey</a> == <a class="code hl_enumvalue" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a88183b946cc5f0e8c96b2e66e1c74a7e">Keyboard::Key::Unknown</a> &amp;&amp; <a class="code hl_namespace" href="namespaceecstasy_1_1integration_1_1event.html">event</a>.key == <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#ae5a7f5c2f0f5f2139049194c077351d5">_sequence</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/vector/at.html">at</a>(<a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#af25572501e883a1e9a7dfb276338f5ed">_validatedKeys</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/vector/size.html">size</a>()))</div>
 <div class="line"><span class="lineno">   27</span>                <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4ba47de613b115836bd6f22ec8a65f22">_heldKey</a> = <span class="keyword">event</span>.key;</div>
-<div class="line"><span class="lineno">   28</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4ba47de613b115836bd6f22ec8a65f22">_heldKey</a> != Keyboard::Key::Unknown || !<a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#af25572501e883a1e9a7dfb276338f5ed">_validatedKeys</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/vector/empty.html">empty</a>()) {</div>
+<div class="line"><span class="lineno">   28</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4ba47de613b115836bd6f22ec8a65f22">_heldKey</a> != <a class="code hl_enumvalue" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a88183b946cc5f0e8c96b2e66e1c74a7e">Keyboard::Key::Unknown</a> || !<a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#af25572501e883a1e9a7dfb276338f5ed">_validatedKeys</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/vector/empty.html">empty</a>()) {</div>
 <div class="line"><span class="lineno">   29</span>                <a class="code hl_function" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#aeca401e415394d5219f682ee8b4b5a68">reset</a>();</div>
 <div class="line"><span class="lineno">   31</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#ab07fb96810d70f8d07b6c3c138639424">update</a>(<a class="code hl_namespace" href="namespaceecstasy_1_1integration_1_1event.html">event</a>);</div>
 <div class="line"><span class="lineno">   32</span>            }</div>
 <div class="line"><span class="lineno">   33</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   34</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4ba47de613b115836bd6f22ec8a65f22">_heldKey</a> != Keyboard::Key::Unknown &amp;&amp; <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4ba47de613b115836bd6f22ec8a65f22">_heldKey</a> == <a class="code hl_namespace" href="namespaceecstasy_1_1integration_1_1event.html">event</a>.key) {</div>
+<div class="line"><span class="lineno">   34</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4ba47de613b115836bd6f22ec8a65f22">_heldKey</a> != <a class="code hl_enumvalue" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a88183b946cc5f0e8c96b2e66e1c74a7e">Keyboard::Key::Unknown</a> &amp;&amp; <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4ba47de613b115836bd6f22ec8a65f22">_heldKey</a> == <a class="code hl_namespace" href="namespaceecstasy_1_1integration_1_1event.html">event</a>.key) {</div>
 <div class="line"><span class="lineno">   35</span>                <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#af25572501e883a1e9a7dfb276338f5ed">_validatedKeys</a>.<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/container/vector/push_back.html">push_back</a>(<a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4ba47de613b115836bd6f22ec8a65f22">_heldKey</a>);</div>
-<div class="line"><span class="lineno">   36</span>                <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4ba47de613b115836bd6f22ec8a65f22">_heldKey</a> = Keyboard::Key::Unknown;</div>
+<div class="line"><span class="lineno">   36</span>                <a class="code hl_variable" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#a4ba47de613b115836bd6f22ec8a65f22">_heldKey</a> = <a class="code hl_enumvalue" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a88183b946cc5f0e8c96b2e66e1c74a7e">Keyboard::Key::Unknown</a>;</div>
 <div class="line"><span class="lineno">   37</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="classecstasy_1_1integration_1_1event_1_1_key_sequence_listener.html#abfe0a87a43f31ecd77f9cd19e1f6a392">isComplete</a>();</div>
 <div class="line"><span class="lineno">   38</span>            }</div>
 <div class="line"><span class="lineno">   39</span>        }</div>
@@ -721,7 +722,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_key_sequence_listener_8hpp_source.html#l00199">199</a> of file <a class="el" href="_key_sequence_listener_8hpp_source.html">KeySequenceListener.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_key_sequence_listener_8hpp_source.html#l00201">201</a> of file <a class="el" href="_key_sequence_listener_8hpp_source.html">KeySequenceListener.hpp</a>.</p>
 
 </div>
 </div>
@@ -735,7 +736,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Keyboard::Key ecstasy::integration::event::KeySequenceListener::_heldKey</td>
+          <td class="memname"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3">Keyboard::Key</a> ecstasy::integration::event::KeySequenceListener::_heldKey</td>
         </tr>
       </table>
   </td>
@@ -745,7 +746,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_key_sequence_listener_8hpp_source.html#l00197">197</a> of file <a class="el" href="_key_sequence_listener_8hpp_source.html">KeySequenceListener.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_key_sequence_listener_8hpp_source.html#l00199">199</a> of file <a class="el" href="_key_sequence_listener_8hpp_source.html">KeySequenceListener.hpp</a>.</p>
 
 </div>
 </div>
@@ -759,7 +760,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt;Keyboard::Key&gt; ecstasy::integration::event::KeySequenceListener::_sequence</td>
+          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt;<a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3">Keyboard::Key</a>&gt; ecstasy::integration::event::KeySequenceListener::_sequence</td>
         </tr>
       </table>
   </td>
@@ -769,7 +770,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_key_sequence_listener_8hpp_source.html#l00193">193</a> of file <a class="el" href="_key_sequence_listener_8hpp_source.html">KeySequenceListener.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_key_sequence_listener_8hpp_source.html#l00195">195</a> of file <a class="el" href="_key_sequence_listener_8hpp_source.html">KeySequenceListener.hpp</a>.</p>
 
 </div>
 </div>
@@ -783,7 +784,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt;Keyboard::Key&gt; ecstasy::integration::event::KeySequenceListener::_validatedKeys</td>
+          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt;<a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3">Keyboard::Key</a>&gt; ecstasy::integration::event::KeySequenceListener::_validatedKeys</td>
         </tr>
       </table>
   </td>
@@ -793,7 +794,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_key_sequence_listener_8hpp_source.html#l00195">195</a> of file <a class="el" href="_key_sequence_listener_8hpp_source.html">KeySequenceListener.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_key_sequence_listener_8hpp_source.html#l00197">197</a> of file <a class="el" href="_key_sequence_listener_8hpp_source.html">KeySequenceListener.hpp</a>.</p>
 
 </div>
 </div>

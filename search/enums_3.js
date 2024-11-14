@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nestedcontextop_0',['NestedContextOp',['../classecstasy_1_1serialization_1_1_json_serializer.html#a53d8fe0f0f166ff6c0a9b14a080df232',1,'ecstasy::serialization::JsonSerializer']]]
+  ['joystick_0',['Joystick',['../classecstasy_1_1integration_1_1event_1_1_gamepad.html#adafea92d40762f46cd73b1900ac008c1',1,'ecstasy::integration::event::Gamepad']]]
 ];

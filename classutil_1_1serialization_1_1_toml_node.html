@@ -134,7 +134,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a3e3e25a6dbd9e3052af124a4b693fcae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <br /></td></tr>
 <tr class="separator:a3e3e25a6dbd9e3052af124a4b693fcae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd5299dbf08f8b04c9ca7e90d87dc3f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_toml_node.html#abd5299dbf08f8b04c9ca7e90d87dc3f0">TomlNode</a> (const N &amp;node) noexcept(<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_copy_constructible.html">std::is_nothrow_copy_constructible_v</a>&lt; N &gt;)</td></tr>
-<tr class="memdesc:abd5299dbf08f8b04c9ca7e90d87dc3f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Toml Node from a toml::node derived class object.  <br /></td></tr>
+<tr class="memdesc:abd5299dbf08f8b04c9ca7e90d87dc3f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Toml Node from a <a class="elRef" href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html">toml::node</a> derived class object.  <br /></td></tr>
 <tr class="separator:abd5299dbf08f8b04c9ca7e90d87dc3f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e7421fa619123d26a4f0c5837188829"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
 <tr class="memitem:a5e7421fa619123d26a4f0c5837188829"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_toml_node.html#a5e7421fa619123d26a4f0c5837188829">TomlNode</a> (Args &amp;&amp;...args) noexcept(<a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_constructible.html">std::is_nothrow_constructible_v</a>&lt; N, Args... &gt;)</td></tr>
@@ -393,7 +393,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename N&gt;<br />
-requires std::derived_from&lt;N, toml::node&gt; &amp;&amp; std::copy_constructible&lt;N&gt;<br />
+requires std::derived_from&lt;N, <a class="elRef" href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html">toml::node</a>&gt; &amp;&amp; std::copy_constructible&lt;N&gt;<br />
 class util::serialization::TomlNode&lt; N &gt;</div><p>Serialization node. </p>
 <p>Can be any type of <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3">INode::Type</a>.</p>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
@@ -458,7 +458,7 @@ template&lt;typename N &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Construct a new Toml Node from a toml::node derived class object. </p>
+<p>Construct a new Toml Node from a <a class="elRef" href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html">toml::node</a> derived class object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">node</td><td>Inner node.</td></tr>

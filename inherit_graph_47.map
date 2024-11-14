@@ -1,25 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classecstasy_1_1query_1_1modifier_1_1_modifier_base.html" title="Type erased base class for all query modifiers." alt="" coords="5,262,183,302"/>
-<area shape="rect" id="Node000001" href="$classecstasy_1_1query_1_1modifier_1_1_modifier.html" title=" " alt="" coords="231,230,408,270"/>
-<area shape="poly" id="edge28_Node000000_Node000001" title=" " alt="" coords="196,265,230,260,231,265,196,270"/>
-<area shape="rect" id="Node000002" href="$classecstasy_1_1query_1_1modifier_1_1_modifier.html" title="Base class for all query modifiers." alt="" coords="231,294,408,334"/>
-<area shape="poly" id="edge29_Node000000_Node000002" title=" " alt="" coords="196,294,231,299,230,304,196,299"/>
-<area shape="rect" id="Node000003" href="$classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html" title=" " alt="" coords="456,5,687,89"/>
-<area shape="poly" id="edge30_Node000002_Node000003" title=" " alt="" coords="403,283,406,280,422,258,429,236,430,192,431,147,438,123,454,99,465,88,469,91,458,102,443,125,436,148,436,192,434,237,426,260,410,284,407,287"/>
-<area shape="rect" id="Node000005" href="$classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html" title=" " alt="" coords="466,113,677,197"/>
-<area shape="poly" id="edge32_Node000002_Node000005" title=" " alt="" coords="400,285,406,280,422,263,430,245,438,227,454,208,471,195,474,200,458,212,443,230,435,248,426,266,410,284,403,289"/>
-<area shape="rect" id="Node000007" href="$classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html" title=" " alt="" coords="466,221,677,305"/>
-<area shape="poly" id="edge34_Node000002_Node000007" title=" " alt="" coords="421,291,465,282,467,287,422,296"/>
-<area shape="rect" id="Node000009" href="$classecstasy_1_1query_1_1modifier_1_1_binary_modifier.html" title="Base class of query modifier operating on at least two queryables." alt="" coords="474,330,669,399"/>
-<area shape="poly" id="edge36_Node000002_Node000009" title=" " alt="" coords="422,332,474,342,473,348,421,337"/>
-<area shape="rect" id="Node000010" href="$classecstasy_1_1query_1_1modifier_1_1_maybe.html" title="Query modifier which returns a std::optional filled when the data if existing." alt="" coords="480,423,663,463"/>
-<area shape="poly" id="edge37_Node000002_Node000010" title=" " alt="" coords="356,341,402,376,457,409,486,421,484,426,455,414,399,381,352,345"/>
-<area shape="rect" id="Node000011" href="$classecstasy_1_1query_1_1modifier_1_1_not.html" title="Query modifier which simply inverts the bits." alt="" coords="483,487,660,527"/>
-<area shape="poly" id="edge38_Node000002_Node000011" title=" " alt="" coords="341,344,389,410,421,444,457,473,484,486,481,491,455,478,417,448,385,413,337,347"/>
-<area shape="rect" id="Node000004" href="$classecstasy_1_1query_1_1modifier_1_1_and_impl.html" title="Binary query modifier which performs a and between at least two queryables." alt="" coords="735,20,924,75"/>
-<area shape="poly" id="edge31_Node000003_Node000004" title=" " alt="" coords="700,45,735,45,735,50,700,50"/>
-<area shape="rect" id="Node000006" href="$classecstasy_1_1query_1_1modifier_1_1_or_impl.html" title="Binary query modifier which performs a or between at least two queryables." alt="" coords="740,128,919,183"/>
-<area shape="poly" id="edge33_Node000005_Node000006" title=" " alt="" coords="691,153,740,153,740,158,691,158"/>
-<area shape="rect" id="Node000008" href="$classecstasy_1_1query_1_1modifier_1_1_xor_impl.html" title="Binary query modifier which performs a xor between at least two queryables." alt="" coords="736,236,923,291"/>
-<area shape="poly" id="edge35_Node000007_Node000008" title=" " alt="" coords="690,261,736,261,736,266,690,266"/>
+<area shape="rect" id="Node000000" href="$structecstasy_1_1query_1_1queryable__data.html" title="Get the query data type of a queryable object." alt="" coords="5,5,193,45"/>
 </map>

@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('md_doc_2_tutorial.html',''); initResiz
   <div class="headertitle"><div class="title">Tutorial</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md36"></a> </p><dl class="section note"><dt>Note</dt><dd>The tutorials on this page will help you to use ecstasy, not to understands the concepts and terms. I strongly advise you to look at the <a class="el" href="_glossary_8md.html">glossary</a> before following any tutorials (except the getting started).</dd></dl>
+<div class="textblock"><p><a class="anchor" id="tutorial"></a> </p><dl class="section note"><dt>Note</dt><dd>The tutorials on this page will help you to use ecstasy, not to understands the concepts and terms. I strongly advise you to look at the <a href="https://andreaslrx.github.io/ecstasy/md_doc_2_glossary.html">glossary</a> before following any tutorials (except the getting started).</dd></dl>
 <h1><a class="anchor" id="GettingStarted"></a>
 Getting Started</h1>
 <p>Here is a basic example of how to use the ECS. The usual order when using ecstasy is the following:</p>
@@ -105,7 +105,8 @@ Getting Started</h1>
 <li>Populate the register with <a class="el" href="classecstasy_1_1_entity.html">Entities</a></li>
 <li>Run the registry systems with <a class="el" href="classecstasy_1_1_registry.html#a5595f1c0811c0d7f658c01f49da8dc37">runSystems</a></li>
 </ul>
-<p>In this example we create 10 entities. Every entities have a position component and only even entities have a velocity component. The Movement system will iterate on every entities having a position <b>and</b> a velocity component and add the velocity vector to the position. (Know this is not a perfect approach because the velocity should depend on the elapsed time) Finally we run the systems over and over.</p>
+<p>In this example we create 10 entities. Every entities have a position component and only even entities have a velocity component. The Movement system will iterate on every entities having a position <b>and</b> a velocity component and add the velocity vector to the position. (Know this is not a perfect approach because the velocity should depend on the elapsed time).</p>
+<p>Finally we run the systems over and over.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_registry_8hpp.html">ecstasy/registry/Registry.hpp</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_i_system_8hpp.html">ecstasy/system/ISystem.hpp</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_map_storage_8hpp.html">ecstasy/storages/MapStorage.hpp</a>&gt;</span></div>
@@ -164,11 +165,11 @@ Getting Started</h1>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a4418ff08eb494b1babb2ee715035d20a"><div class="ttname"><a href="classecstasy_1_1_registry.html#a4418ff08eb494b1babb2ee715035d20a">ecstasy::Registry::entityBuilder</a></div><div class="ttdeci">EntityBuilder entityBuilder() noexcept</div><div class="ttdoc">Create a new entity builder.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8cpp_source.html#l00033">Registry.cpp:33</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a5595f1c0811c0d7f658c01f49da8dc37"><div class="ttname"><a href="classecstasy_1_1_registry.html#a5595f1c0811c0d7f658c01f49da8dc37">ecstasy::Registry::runSystems</a></div><div class="ttdeci">void runSystems()</div><div class="ttdoc">Run all systems present in the registry.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8cpp_source.html#l00084">Registry.cpp:84</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a9ae0f363babc862fecb95e860730f5b7"><div class="ttname"><a href="classecstasy_1_1_registry.html#a9ae0f363babc862fecb95e860730f5b7">ecstasy::Registry::addSystem</a></div><div class="ttdeci">S &amp; addSystem(Args &amp;&amp;...args)</div><div class="ttdoc">Add a new system in the registry.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00832">Registry.hpp:832</a></div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md37"></a>
+</div><!-- fragment --><h1><a class="anchor" id="using-entities"></a>
 Using entities</h1>
-<h2><a class="anchor" id="autotoc_md38"></a>
+<h2><a class="anchor" id="creating-entities"></a>
 Creating entities</h2>
-<p>There is 3 ways to create new entities in the registry:</p>
+<p>There are 3 ways to create new entities in the registry:</p>
 <ul>
 <li>Using the <a class="el" href="classecstasy_1_1_registry.html">registry</a> <a class="el" href="classecstasy_1_1_registry_1_1_entity_builder.html">builder</a></li>
 <li>Using the <a class="el" href="classecstasy_1_1_entities.html">entities</a> <a class="el" href="classecstasy_1_1_entities_1_1_builder.html">builder</a></li>
@@ -203,7 +204,7 @@ Since the <a class="el" href="classecstasy_1_1_entities_1_1_builder.html">entiti
 <div class="ttc" id="aclassecstasy_1_1_registry_1_1_entity_builder_html_ad6baf09aa8fb77d6c470295f02859aaf"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_entity_builder.html#ad6baf09aa8fb77d6c470295f02859aaf">ecstasy::Registry::EntityBuilder::build</a></div><div class="ttdeci">Entity build()</div><div class="ttdoc">Finalize the entity, making it alive.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8cpp_source.html#l00022">Registry.cpp:22</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a9fa7247f6c5383c37be80ee116de1e62"><div class="ttname"><a href="classecstasy_1_1_registry.html#a9fa7247f6c5383c37be80ee116de1e62">ecstasy::Registry::getStorage</a></div><div class="ttdeci">const getStorageType&lt; C &gt; &amp; getStorage() const</div><div class="ttdoc">Get the Storage for the component type C.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00942">Registry.hpp:942</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_aa5e142b869a115fca7f24debea38681b"><div class="ttname"><a href="classecstasy_1_1_registry.html#aa5e142b869a115fca7f24debea38681b">ecstasy::Registry::getEntities</a></div><div class="ttdeci">ResourceReference&lt; const Entities, Locked &gt; getEntities() const</div><div class="ttdoc">Get the Entities resource.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00994">Registry.hpp:994</a></div></div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md39"></a>
+</div><!-- fragment --><h3><a class="anchor" id="using-type-resolution"></a>
 Using type resolution</h3>
 <p>You can add Component storages, Resources, Systems, or even the Registry instance to the <code>with</code> template parameters. This will fetch them from the registry and forward them to the component constructor.</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>NeedStorage {</div>
@@ -219,7 +220,7 @@ Using type resolution</h3>
 <div class="line">                        .<a class="code hl_function" href="classecstasy_1_1_registry_1_1_entity_builder.html#ae55a0fc396c88eeedb1795b3fd6cb0f7">with</a>&lt;NeedStorage, Position&gt;() <span class="comment">// No need to send registry.getStorage&lt;Position&gt;() as parameters</span></div>
 <div class="line">                        .build();</div>
 <div class="ttc" id="aclassecstasy_1_1_map_storage_html"><div class="ttname"><a href="classecstasy_1_1_map_storage.html">ecstasy::MapStorage</a></div><div class="ttdoc">Associative Map to store entity components Recommended for sparse components.</div><div class="ttdef"><b>Definition</b> <a href="_map_storage_8hpp_source.html#l00031">MapStorage.hpp:31</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md40"></a>
+</div><!-- fragment --><h2><a class="anchor" id="manage-entity-component"></a>
 Manage entity component</h2>
 <p>When you have an instance of an <a class="el" href="classecstasy_1_1_entity.html">Entity</a> you can check the presence of a component, get it or add one. Always by sending the component storage. However, you can also use the <a class="el" href="classecstasy_1_1_registry_entity.html">RegistryEntity</a> class which, as its name says, is linked to a registry. It is only syntactic sugar to avoid fetching yourself storages from the registry.</p>
 <p>Examples:</p>
@@ -247,7 +248,7 @@ Manage entity component</h2>
 <div class="ttc" id="aclassecstasy_1_1_registry_entity_html_a66d16e8a12f364fdd94a12d11767f9f8"><div class="ttname"><a href="classecstasy_1_1_registry_entity.html#a66d16e8a12f364fdd94a12d11767f9f8">ecstasy::RegistryEntity::add</a></div><div class="ttdeci">C &amp; add(Args &amp;&amp;...args)</div><div class="ttdoc">Add a component to the entity.</div><div class="ttdef"><b>Definition</b> <a href="_registry_entity_8hpp_source.html#l00055">RegistryEntity.hpp:55</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_entity_html_ab8309218f27a95840495e9615cdde286"><div class="ttname"><a href="classecstasy_1_1_registry_entity.html#ab8309218f27a95840495e9615cdde286">ecstasy::RegistryEntity::has</a></div><div class="ttdeci">bool has() const</div><div class="ttdoc">Test if the entity has an associated component in the storage S.</div><div class="ttdef"><b>Definition</b> <a href="_registry_entity_8hpp_source.html#l00109">RegistryEntity.hpp:109</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a273b519ae0177c7350b44d93f6306fdf"><div class="ttname"><a href="classecstasy_1_1_registry.html#a273b519ae0177c7350b44d93f6306fdf">ecstasy::Registry::getEntity</a></div><div class="ttdeci">Entity getEntity(Entity::Index index)</div><div class="ttdoc">Get the Entity at the index index.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8cpp_source.html#l00038">Registry.cpp:38</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md41"></a>
+</div><!-- fragment --><h2><a class="anchor" id="delete-entities"></a>
 Delete entities</h2>
 <p>First I need to define two words used in the entities context</p>
 <ul>
@@ -280,11 +281,11 @@ Delete entities</h2>
 <div class="ttc" id="anamespaceecstasy_html"><div class="ttname"><a href="namespaceecstasy.html">ecstasy</a></div><div class="ttdoc">Namespace containing all symbols specific to ecstasy.</div><div class="ttdef"><b>Definition</b> <a href="ecstasy_8hpp_source.html#l00029">ecstasy.hpp:30</a></div></div>
 </div><!-- fragment --><h1><a class="anchor" id="CustomStorageTutorial"></a>
 Implement a custom storage</h1>
-<p>You can specify which storage you want a component to use with the define <a class="el" href="_storage_concepts_8hpp.html#a5081c2ba8fc64b28d27cdf3d74ffa960">SET_COMPONENT_STORAGE</a>. By default the <a class="el" href="classecstasy_1_1_map_storage.html">ecstasy::MapStorage</a> is used for all components but you may implement a more suitable storage based on your component.</p>
-<p>To create a custom storage, you need to validate the <a class="el" href="conceptecstasy_1_1_is_storage.html">ecstasy::IsStorage</a> concept. In addition you also need to implement the contains and emplace methods (see MapStorage).</p>
+<p>You can specify which storage you want a component to use with the define <a class="el" href="_storage_concepts_8hpp.html#a5081c2ba8fc64b28d27cdf3d74ffa960">SET_COMPONENT_STORAGE</a>. By default the <a class="el" href="classecstasy_1_1_map_storage.html">MapStorage</a> is used for all components but you may implement a more suitable storage based on your component.</p>
+<p>To create a custom storage, you need to validate the <a class="el" href="conceptecstasy_1_1_is_storage.html">IsStorage</a> concept. In addition you also need to implement the contains and emplace methods (see MapStorage).</p>
 <h1><a class="anchor" id="QueryTutorial"></a>
 Making registry queries</h1>
-<p>When you populated your registry with entities and resources you can query them with the... <a class="el" href="classecstasy_1_1_registry.html#a827c2ce78375ab3c8cd3027f6c531eb6">ecstasy::Registry::query</a> method. It will iterate on every entities having the requested components and return a reference of them.</p>
+<p>When you populated your registry with entities and resources you can query them with the... <a class="el" href="classecstasy_1_1_registry.html#a827c2ce78375ab3c8cd3027f6c531eb6">query()</a> method. It will iterate on every entities having the requested components and return a reference of them.</p>
 <p>The easiest syntax is to use tuple unpacking in a for loop:</p>
 <dl class="section note"><dt>Note</dt><dd>You should get used to querying your types as const if you don't modify them because of <a class="el" href="md_doc_2_tutorial.html#EnsuringThreadSafety">thread safety</a></dd></dl>
 <div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span> [position, velocity] : registry.query&lt;Position, const Velocity&gt;()) {</div>
@@ -318,7 +319,7 @@ Using modifiers</h2>
 <dl class="section note"><dt>Note</dt><dd>Modifiers can be nested and used in simple queries as well as in Select ... Where ...</dd></dl>
 <ol type="1">
 <li><p class="startli"><a class="el" href="structecstasy_1_1_maybe.html">ecstasy::Maybe</a></p>
-<p class="startli">The first and important modifier is the <a class="el" href="structecstasy_1_1_maybe.html">ecstasy::Maybe</a> operator. It match on any entity and instead of returning a reference to the component it will returns a <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a> containing (or not) the component. Here comes an example:</p>
+<p class="startli">The first and important modifier is the <a class="el" href="structecstasy_1_1_maybe.html">Maybe</a> operator. It match on any entity and instead of returning a reference to the component it will returns a <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a> containing (or not) the component. Here comes an example:</p>
 <div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span> [position, velocity, mDensity] : registry.query&lt;Position, const Velocity, Maybe&lt;const Density&gt;&gt;()) {</div>
 <div class="line">    <span class="keywordtype">float</span> multiplier = 1;</div>
 <div class="line">    <span class="comment">// Density is a std::optional&lt;std::reference_wrappper&lt;const Density&amp;&gt;&gt;</span></div>
@@ -336,7 +337,7 @@ Using modifiers</h2>
 <div class="line">    position.y += velocity.y;</div>
 <div class="line">}</div>
 </div><!-- fragment --></li>
-<li><p class="startli"><a class="el" href="structecstasy_1_1_or.html">ecstasy::Or</a> / <a class="el" href="structecstasy_1_1_xor.html">ecstasy::Xor</a></p>
+<li><p class="startli"><a class="el" href="structecstasy_1_1_or.html">Or</a> / <a class="el" href="structecstasy_1_1_xor.html">Xor</a></p>
 <p class="startli">Performs a <code>Or</code>/<code>XOr</code> between the given components. Returned values are of type <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt;std::optional&lt;Q1&gt;, std::optional&lt;Q2&gt;...&gt;. It works for at least two components but can take more than 2. I really don't know real use case of this but well that was fun to code. For an easier access on the tuple you could leave the Or in the where clause and add Maybe selects in the Select:</p>
 <div class="fragment"><div class="line"><span class="comment">// Assuming positions is a std::vector&lt;Position&gt;</span></div>
 <div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span> [position, positions, velocity] : registry.select&lt;Maybe&lt;Position&gt;, Maybe&lt;Positions&gt;, const Velocity&gt;().where&lt;Or&lt;Position, Positions&gt;&gt;()) {</div>
@@ -415,9 +416,9 @@ Using conditions</h2>
 <div class="line">}</div>
 </div><!-- fragment --></li>
 </ol>
-<h1><a class="anchor" id="autotoc_md42"></a>
+<h1><a class="anchor" id="using-systems"></a>
 Using systems</h1>
-<p>To create systems, you only have to create a new class inheriting the <a class="el" href="classecstasy_1_1_i_system.html">ecstasy::ISystem</a> class and implement the <a class="el" href="classecstasy_1_1_i_system.html#aa9cf50e42a827f26e5d7e2c5d7fe9c46">ecstasy::ISystem::run</a> method.</p>
+<p>To create systems, you only have to create a new class inheriting the <a class="el" href="classecstasy_1_1_i_system.html">ISystem</a> class and implement the <a class="el" href="classecstasy_1_1_i_system.html#aa9cf50e42a827f26e5d7e2c5d7fe9c46">run()</a> method.</p>
 <p>For example here is how you would create a Movement system:</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>Movement : <span class="keyword">public</span> <a class="code hl_class" href="classecstasy_1_1_i_system.html">ecstasy::ISystem</a> {</div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_function" href="classecstasy_1_1_i_system.html#aa9cf50e42a827f26e5d7e2c5d7fe9c46">run</a>(<a class="code hl_class" href="classecstasy_1_1_registry.html">ecstasy::Registry</a> &amp;registry) <span class="keyword">override</span> <span class="keyword">final</span></div>
@@ -482,10 +483,10 @@ Using systems</h1>
 <div class="line">registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a5595f1c0811c0d7f658c01f49da8dc37">runSystems</a>(def, mask); <span class="comment">// DEF</span></div>
 </div><!-- fragment --></li>
 </ol>
-<h1><a class="anchor" id="autotoc_md43"></a>
+<h1><a class="anchor" id="using-resources"></a>
 Using resources</h1>
-<p>Creating a resource is even simpler than creating a system: you only have to inherit <a class="el" href="classecstasy_1_1_i_resource.html">ecstasy::IResource</a>. And in case you cannot modify the inheritance tree of your object, you can just declare a using with <a class="el" href="classecstasy_1_1_object_wrapper.html">ecstasy::ObjectWrapper</a> (like <a class="el" href="namespaceecstasy_1_1integration_1_1user__action.html#a9b4f873eff13ede42a8a53839aea12b0">ecstasy::integration::user_action::PendingActions</a> ).</p>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="classecstasy_1_1_registry.html#a516a8ea8065455d601a30e1d3afbef52">ecstasy::Registry::getResource</a> will return a <a class="el" href="namespaceecstasy.html#a935f8c5172bfb738d9af3f1585f41cad">ecstasy::ResourceReference</a> (optional thread safe proxy) and you will therefore need to use the <code>get()</code> method.</dd></dl>
+<p>Creating a resource is even simpler than creating a system: you only have to inherit <a class="el" href="classecstasy_1_1_i_resource.html">IResource</a>. And in case you cannot modify the inheritance tree of your object, you can just declare a using with <a class="el" href="classecstasy_1_1_object_wrapper.html">ObjectWrapper</a> (like <a class="el" href="namespaceecstasy_1_1integration_1_1user__action.html#a9b4f873eff13ede42a8a53839aea12b0">PendingActions</a> ).</p>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="classecstasy_1_1_registry.html#a6a5ab5ddcdc07e2e94c94cbb31a5c2e3">getResource()</a> will return a <a class="el" href="namespaceecstasy.html#a935f8c5172bfb738d9af3f1585f41cad">ResourceReference</a> (optional thread safe proxy) and you will therefore need to use the <code>get()</code> method.</dd></dl>
 <p>For example here is how you would create and use an absolutely must have Counter system:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_i_resource_8hpp.html">ecstasy/resources/IResource.hpp</a>&gt;</span></div>
 <div class="line"> </div>
@@ -519,8 +520,8 @@ Ensuring Thread Safety</h1>
 <p>By default ecstasy is not thread safe. By not thread safe I mean there is absolutely nothing enabled to prevent your threads to do whatever they want at the same time.</p>
 <p>But no worries it is just some compilation options to set:</p>
 <ul>
-<li><b>ECSTASY_LOCKABLE_RESOURCES</b> will make IResource class validate the <a class="el" href="conceptecstasy_1_1thread_1_1_lockable.html">Lockable</a> concept.</li>
-<li><b>ECSTASY_LOCKABLE_STORAGES</b> will make IStorage class validate the <a class="el" href="conceptecstasy_1_1thread_1_1_lockable.html">Lockable</a> concept.</li>
+<li><b>ECSTASY_LOCKABLE_RESOURCES</b> will make <a class="el" href="classecstasy_1_1_i_resource.html">IResource</a> class validate the <a class="el" href="conceptecstasy_1_1thread_1_1_lockable.html">Lockable</a> concept.</li>
+<li><b>ECSTASY_LOCKABLE_STORAGES</b> will make <a class="el" href="classecstasy_1_1_i_storage.html">IStorage</a> class validate the <a class="el" href="conceptecstasy_1_1thread_1_1_lockable.html">Lockable</a> concept.</li>
 <li><b>ECSTASY_AUTO_LOCK</b> will lock any <a class="el" href="conceptecstasy_1_1thread_1_1_lockable.html">Lockable</a> queryables in any registry queries or registry modifiers.</li>
 <li><b>ECSTASY_THREAD_SAFE</b> will enable the three options above.</li>
 </ul>
@@ -536,15 +537,15 @@ Ensuring Thread Safety</h1>
 <p class="startli">Just disable the above options and do what you want, but outside the queries because of encapsulation you will not have the same generic access.</p>
 </li>
 <li><p class="startli">Lock explicitly</p>
-<p class="startli">Keep the resources/storages as lockable and use the Registry::queryEx (and Select.whereEx) methods or AndEx, OrEx, NotEx modifiers where you can explicitly specify the AutoLock value.</p>
+<p class="startli">Keep the resources/storages as lockable and use the <a class="el" href="classecstasy_1_1_registry.html#ad2dcff29b1572f42791329d7c18ec35b">queryEx</a> "Registry::queryEx" (and Select.whereEx) methods or <a class="el" href="structecstasy_1_1_and_ex.html">AndEx</a>, <a class="el" href="structecstasy_1_1_or_ex.html">OrEx</a> modifiers where you can explicitly specify the AutoLock value.</p>
 </li>
 <li><p class="startli">AutoLock by default but disable when you know what you're doing</p>
 <p class="startli">I know sometimes ecstasy can lock multiple times the same mutex because it is hard to detect. But if you know it and it is sensitive systems (running lot of times per frame) you can use the *Ex methods to UnLock explicitly the same way.</p>
 </li>
 </ol>
-<h1><a class="anchor" id="autotoc_md44"></a>
+<h1><a class="anchor" id="using-cross-platform-rtti"></a>
 Using cross platform RTTI</h1>
-<h2><a class="anchor" id="autotoc_md45"></a>
+<h2><a class="anchor" id="why-use-custom-rtti-implementation"></a>
 Why use custom RTTI implementation</h2>
 <p>C++ already has its own RTTI integration with <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a> (as returned by typeid). With this you can get a unique hash for each type using <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info/hash_code.html">std::type_info::hash_code()</a>. However, this hash is not cross platform since it is implementation specific. And most important, it is not guaranteed to stay the same between 2 runs.</p>
 <p>As explained in the <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info/hash_code.html">std::type_info::hash_code()</a> documentation: </p><pre class="fragment">Returns an unspecified value (here denoted by hash code) such that for all std::type_info objects referring to the same type,
@@ -555,15 +556,15 @@ No other guarantees are given: std::type_info objects referring to different typ
 and hash code for the same type can change between invocations of the same program.
 </pre><p> It also returns a <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info/name.html">std::type_info::name()</a> function, but its results are mangled in g++ (maybe clang too) but not in MSVC.</p>
 <p>For all these reasons, it make cross-platform serialization of custom types impossible using only <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a>.</p>
-<h2><a class="anchor" id="autotoc_md46"></a>
+<h2><a class="anchor" id="how-to-use-it"></a>
 How to use it</h2>
-<h3><a class="anchor" id="autotoc_md47"></a>
+<h3><a class="anchor" id="how-is-it-stored"></a>
 How is it stored</h3>
-<p>This custom rtti use mainly two classes: <a class="el" href="classecstasy_1_1rtti_1_1_type_registry.html">ecstasy::rtti::TypeRegistry</a> and <a class="el" href="classecstasy_1_1rtti_1_1_a_type.html">ecstasy::rtti::AType</a>.</p>
+<p>This custom rtti use mainly two classes: <a class="el" href="classecstasy_1_1rtti_1_1_type_registry.html">TypeRegistry</a> and <a class="el" href="classecstasy_1_1rtti_1_1_a_type.html">AType</a>.</p>
 <p>The TypeRegistry is a singleton storing all AType instances.</p>
-<p>The AType is the replacement of <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a>. It is mainly a wrapper over the <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a> with a user defined name (which is supposed to be the same for every program run) and therefore a cross platform hash which is the hash of the name.</p>
-<p>And it also contains the <a class="el" href="classecstasy_1_1serialization_1_1_i_entity_component_serializer.html">ecstasy::serialization::IEntityComponentSerializer</a> instances for the serialization part (see Serializing your entities section)</p>
-<h3><a class="anchor" id="autotoc_md48"></a>
+<p>The <a class="el" href="classecstasy_1_1rtti_1_1_a_type.html">AType</a> is the replacement of <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a>. It is mainly a wrapper over the <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a> with a user defined name (which is supposed to be the same for every program run) and therefore a cross platform hash which is the hash of the name.</p>
+<p>And it also contains the <a class="el" href="classecstasy_1_1serialization_1_1_i_entity_component_serializer.html">IEntityComponentSerializer</a> instances for the serialization part (see Serializing your entities section)</p>
+<h3><a class="anchor" id="registering-types"></a>
 Registering types</h3>
 <p>First of all you need to register the types for which you want cross-platform RTTI using the macro <a class="el" href="_type_registry_8hpp.html#ad7044dbc834b00bd27108e9a8df4dcd8">REGISTER_TYPES</a>.</p>
 <div class="fragment"><div class="line"><span class="comment">// The macro is defined in this included</span></div>
@@ -599,7 +600,7 @@ The macro <a class="el" href="ecstasy_2serialization_2_serializer_8hpp.html#a0ca
 <div class="line"><a class="code hl_function" href="classecstasy_1_1rtti_1_1_type_registry.html#a07f65105bd02f2d10883effc1916b460">ecstasy::rtti::TypeRegistry::getInstance</a>().<a class="code hl_function" href="classecstasy_1_1rtti_1_1_type_registry.html#aea9f3c3694443622a964231690a886f2">registerType</a>&lt;Position&gt;(<span class="stringliteral">&quot;Position&quot;</span>);</div>
 <div class="ttc" id="aclassecstasy_1_1rtti_1_1_type_registry_html_a07f65105bd02f2d10883effc1916b460"><div class="ttname"><a href="classecstasy_1_1rtti_1_1_type_registry.html#a07f65105bd02f2d10883effc1916b460">ecstasy::rtti::TypeRegistry::getInstance</a></div><div class="ttdeci">static TypeRegistry &amp; getInstance() noexcept</div><div class="ttdoc">Get the Instance object.</div><div class="ttdef"><b>Definition</b> <a href="_type_registry_8cpp_source.html#l00017">TypeRegistry.cpp:17</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1rtti_1_1_type_registry_html_aea9f3c3694443622a964231690a886f2"><div class="ttname"><a href="classecstasy_1_1rtti_1_1_type_registry.html#aea9f3c3694443622a964231690a886f2">ecstasy::rtti::TypeRegistry::registerType</a></div><div class="ttdeci">AType &amp; registerType(std::string_view name)</div><div class="ttdoc">Register a type in the registry.</div><div class="ttdef"><b>Definition</b> <a href="_type_registry_8hpp_source.html#l00084">TypeRegistry.hpp:84</a></div></div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md49"></a>
+</div><!-- fragment --><h3><a class="anchor" id="querying-types"></a>
 Querying types</h3>
 <p>The type registry can be queried from multiple data types:</p>
 <ul>
@@ -610,7 +611,7 @@ Querying types</h3>
 <li>Using the cross platform name</li>
 <li>Using a predicate (only for get/find methods)</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md50"></a>
+<h1><a class="anchor" id="serializing-your-entities"></a>
 Serializing your entities</h1>
 <p>Ecstasy has some built in serialization helpers in the <a class="el" href="namespaceecstasy_1_1serialization.html">ecstasy::serialization</a> namespace.</p>
 <p>The current available serializers are the following:</p>
@@ -618,9 +619,9 @@ Serializing your entities</h1>
 <li>RawSerializer: Custom binary serialization of components fields. Compact form but not related to any RFC.</li>
 <li>JsonSerializer: Classic json serialization of components. Not compact but readable.</li>
 </ul>
-<p>If you need a missing serializer, you can write it yourself by inheriting the <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html">ecstasy::serialization::Serializer</a> class. In case of a commonly used serializer type (json/yaml/NDR...) feel free to open an issue about it.</p>
+<p>If you need a missing serializer, you can write it yourself by inheriting the <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html">Serializer</a> class. In case of a commonly used serializer type (json/yaml/NDR...) feel free to open an issue about it.</p>
 <dl class="section warning"><dt>Warning</dt><dd>The RawSerializer uses a <a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_stringstream.html">std::stringstream</a>. Therefore there are cursor positions, if you need to read twice the data, you need to reset the read cursor position.</dd></dl>
-<h2><a class="anchor" id="autotoc_md51"></a>
+<h2><a class="anchor" id="using-a-serializer"></a>
 Using a serializer</h2>
 <p>Following examples below will be using the RawSerializer type and the example component Position:</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>Position {</div>
@@ -628,16 +629,16 @@ Using a serializer</h2>
 <div class="line">    <span class="keywordtype">float</span> x;</div>
 <div class="line">    <span class="keywordtype">float</span> y;</div>
 <div class="line">};</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md52"></a>
+</div><!-- fragment --><h3><a class="anchor" id="common-types"></a>
 Common types</h3>
 <p>Serializer should support fundamental and container types by default but it depends on the serializer implementation.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Serializer   </th><th class="markdownTableHeadNone">Fundamental (integers, floats, doubles...)   </th><th class="markdownTableHeadNone">strings   </th><th class="markdownTableHeadNone">containers    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="classecstasy_1_1serialization_1_1_raw_serializer.html">ecstasy::serialization::RawSerializer</a>   </td><td class="markdownTableBodyNone">Ok   </td><td class="markdownTableBodyNone">OK   </td><td class="markdownTableBodyNone">Ok    </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="classecstasy_1_1serialization_1_1_raw_serializer.html">RawSerializer</a>   </td><td class="markdownTableBodyNone">Ok   </td><td class="markdownTableBodyNone">OK   </td><td class="markdownTableBodyNone">Ok    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html">ecstasy::serialization::JsonSerializer</a>   </td><td class="markdownTableBodyNone">Ok   </td><td class="markdownTableBodyNone">OK   </td><td class="markdownTableBodyNone">Ok   </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="classecstasy_1_1serialization_1_1_json_serializer.html">JsonSerializer</a>   </td><td class="markdownTableBodyNone">Ok   </td><td class="markdownTableBodyNone">OK   </td><td class="markdownTableBodyNone">Ok   </td></tr>
 </table>
 <p><b>1. Saving</b></p>
 <p>To save an object in a serializer, you can either call the method <b>save</b> or use the insertion operator **&lt;&lt;**</p>
@@ -690,7 +691,7 @@ Common types</h3>
 <div class="line"><span class="comment">// Fill your serializer with previously saved data using import methods</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> my_number = serializer.load&lt;<span class="keywordtype">int</span>&gt;();</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md53"></a>
+</div><!-- fragment --><h3><a class="anchor" id="custom-types"></a>
 Custom types</h3>
 <p>If you are working with custom type (ie components) you can implement the extraction (**&gt;&gt;**) and insertion operator (**&lt;&lt;**) with the said serializer type for the <em>save</em>/_update_. And a constructor taking the serializer as parameter for the <em>load</em>.</p>
 <dl class="section note"><dt>Note</dt><dd>The operators doesn't have to be inside the class, you can define it outside the class if you don't have access to the class definition. However it cannot work for the constructor.</dd></dl>
@@ -706,17 +707,17 @@ Custom types</h3>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Insertion operator for update</span></div>
-<div class="line">Position &amp;<a class="code hl_function" href="namespaceutil.html#a61516938bebca76c22e965e24066591e">operator&lt;&lt;</a>(RawSerializer &amp;serializer)</div>
+<div class="line">Position &amp;<a class="code hl_functionRef" href="https://marzer.github.io/tomlplusplus/namespacetoml.html#aba6195d5e83ab18f30c9a211384e2c1a">operator&lt;&lt;</a>(RawSerializer &amp;serializer)</div>
 <div class="line">{</div>
 <div class="line">    serializer &gt;&gt; x &gt;&gt; y;</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespaceutil_html_a61516938bebca76c22e965e24066591e"><div class="ttname"><a href="namespaceutil.html#a61516938bebca76c22e965e24066591e">util::operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;output, BitSet const &amp;set)</div><div class="ttdoc">Prints the contents of set into output.</div><div class="ttdef"><b>Definition</b> <a href="_bit_set_8cpp_source.html#l00189">BitSet.cpp:189</a></div></div>
+<div class="ttc" id="anamespacetoml_html_aba6195d5e83ab18f30c9a211384e2c1a"><div class="ttname"><a href="https://marzer.github.io/tomlplusplus/namespacetoml.html#aba6195d5e83ab18f30c9a211384e2c1a">toml::operator&lt;&lt;</a></div><div class="ttdeci">std::basic_ostream&lt; Char &gt; &amp; operator&lt;&lt;(std::basic_ostream&lt; Char &gt; &amp;lhs, node_type rhs)</div></div>
 </div><!-- fragment --><p>If you need to (de)serialize the type from the save/update/loadEntity methods, you first need to register the type as serializable by the expected Serializer using the variadic macro <a class="el" href="ecstasy_2serialization_2_serializer_8hpp.html#a0ca77627672ee4d0c582e482138445c6">REGISTER_SERIALIZABLES</a></p>
 <p>For example, if you want you type Position to be serializable by the RawSerializer and the (maybe to come) JsonSerializer:</p>
 <div class="fragment"><div class="line"><a class="code hl_define" href="ecstasy_2serialization_2_serializer_8hpp.html#a0ca77627672ee4d0c582e482138445c6">REGISTER_SERIALIZABLES</a>(Position, RawSerializer, JsonSerializer)</div>
 <div class="ttc" id="aecstasy_2serialization_2_serializer_8hpp_html_a0ca77627672ee4d0c582e482138445c6"><div class="ttname"><a href="ecstasy_2serialization_2_serializer_8hpp.html#a0ca77627672ee4d0c582e482138445c6">REGISTER_SERIALIZABLES</a></div><div class="ttdeci">#define REGISTER_SERIALIZABLES(COMPONENT, a1,...)</div><div class="ttdoc">Register a component to multiple serializers.</div><div class="ttdef"><b>Definition</b> <a href="ecstasy_2serialization_2_serializer_8hpp_source.html#l00054">Serializer.hpp:54</a></div></div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md54"></a>
+</div><!-- fragment --><h3><a class="anchor" id="working-with-entities"></a>
 Working with Entities</h3>
 <p>Since you can serialize any type, you can serialize entity components manually using the functions above.</p>
 <p>You can save entity components explicitly using the templated saveEntity method, or every registered components with the classic saveEntity method.</p>

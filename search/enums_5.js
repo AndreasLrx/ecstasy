@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['wheel_0',['Wheel',['../classecstasy_1_1integration_1_1event_1_1_mouse.html#a3c1e7b5b3d6fa0fc7a4abd900363a2c6',1,'ecstasy::integration::event::Mouse']]]
+  ['nestedcontextop_0',['NestedContextOp',['../classecstasy_1_1serialization_1_1_json_serializer.html#a53d8fe0f0f166ff6c0a9b14a080df232',1,'ecstasy::serialization::JsonSerializer']]],
+  ['node_5ftype_1',['node_type',['https://marzer.github.io/tomlplusplus/namespacetoml.html#abac3e84bbf1f2c90717fca107055f48d',1,'toml']]]
 ];

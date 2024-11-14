@@ -127,14 +127,14 @@ Collaboration diagram for util::serialization::TomlNodeFactory:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a16960642a92d20105168b67aebe6e0a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceutil_1_1serialization.html#a4ad992ea709272876f708522d11c51be">NodePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_toml_node_factory.html#a16960642a92d20105168b67aebe6e0a7">createFromToml</a> (const toml::node &amp;node)</td></tr>
-<tr class="memdesc:a16960642a92d20105168b67aebe6e0a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a node from a toml::node object.  <br /></td></tr>
+<tr class="memitem:a16960642a92d20105168b67aebe6e0a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceutil_1_1serialization.html#a4ad992ea709272876f708522d11c51be">NodePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_toml_node_factory.html#a16960642a92d20105168b67aebe6e0a7">createFromToml</a> (const <a class="elRef" href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html">toml::node</a> &amp;node)</td></tr>
+<tr class="memdesc:a16960642a92d20105168b67aebe6e0a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a node from a <a class="elRef" href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html">toml::node</a> object.  <br /></td></tr>
 <tr class="separator:a16960642a92d20105168b67aebe6e0a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a40ca95aaf3bb361f7b5420cf53347d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceutil_1_1serialization.html#a4ad992ea709272876f708522d11c51be">NodePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_toml_node_factory.html#a6a40ca95aaf3bb361f7b5420cf53347d">create</a> (<a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3">INode::Type</a> type) override final</td></tr>
 <tr class="memdesc:a6a40ca95aaf3bb361f7b5420cf53347d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an empty node from its type.    <br /></td></tr>
 <tr class="separator:a6a40ca95aaf3bb361f7b5420cf53347d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b04d2d1a2f339b1d051fc7c7dbfe809"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceutil_1_1serialization.html#a4ad992ea709272876f708522d11c51be">NodePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_toml_node_factory.html#a8b04d2d1a2f339b1d051fc7c7dbfe809">create</a> (const <a class="el" href="classutil_1_1serialization_1_1_i_node.html">INode</a> &amp;node) override final</td></tr>
-<tr class="memdesc:a8b04d2d1a2f339b1d051fc7c7dbfe809"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an empty node from its type.    <br /></td></tr>
+<tr class="memdesc:a8b04d2d1a2f339b1d051fc7c7dbfe809"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a copy of an existing node.    <br /></td></tr>
 <tr class="separator:a8b04d2d1a2f339b1d051fc7c7dbfe809"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a2d0dca75e5d445a0315047a78f3358"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceutil_1_1serialization.html#a4ad992ea709272876f708522d11c51be">NodePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_toml_node_factory.html#a4a2d0dca75e5d445a0315047a78f3358">createObject</a> (const <a class="el" href="classutil_1_1serialization_1_1_i_object_node.html">IObjectNode</a> &amp;object) override final</td></tr>
 <tr class="memdesc:a4a2d0dca75e5d445a0315047a78f3358"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a497031794414a552435f90151ac3b54b">INode::Type::Object</a> node.    <br /></td></tr>
@@ -143,25 +143,25 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a1e19096eaee47deb14c1355143d9cae6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a4410ec34d9e6c1a68100ca0ce033fb17">INode::Type::Array</a> node.    <br /></td></tr>
 <tr class="separator:a1e19096eaee47deb14c1355143d9cae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97558b09a94c03c028734cfedf4fd824"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceutil_1_1serialization.html#a4ad992ea709272876f708522d11c51be">NodePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_toml_node_factory.html#a97558b09a94c03c028734cfedf4fd824">create</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> string) override final</td></tr>
-<tr class="memdesc:a97558b09a94c03c028734cfedf4fd824"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an empty node from its type.    <br /></td></tr>
+<tr class="memdesc:a97558b09a94c03c028734cfedf4fd824"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a27118326006d3829667a400ad23d5d98">INode::Type::String</a> node.    <br /></td></tr>
 <tr class="separator:a97558b09a94c03c028734cfedf4fd824"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab366d90c36c89269ef0cd24625b42bf1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceutil_1_1serialization.html#a4ad992ea709272876f708522d11c51be">NodePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_toml_node_factory.html#ab366d90c36c89269ef0cd24625b42bf1">create</a> (int64_t integer) override final</td></tr>
-<tr class="memdesc:ab366d90c36c89269ef0cd24625b42bf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an empty node from its type.    <br /></td></tr>
+<tr class="memdesc:ab366d90c36c89269ef0cd24625b42bf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3aa0faef0851b4294c06f2b94bb1cb2044">INode::Type::Integer</a> node.    <br /></td></tr>
 <tr class="separator:ab366d90c36c89269ef0cd24625b42bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9e4ba48a48d2439769493556cfc76a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceutil_1_1serialization.html#a4ad992ea709272876f708522d11c51be">NodePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_toml_node_factory.html#ab9e4ba48a48d2439769493556cfc76a6">create</a> (double floatingPoint) override final</td></tr>
-<tr class="memdesc:ab9e4ba48a48d2439769493556cfc76a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an empty node from its type.    <br /></td></tr>
+<tr class="memdesc:ab9e4ba48a48d2439769493556cfc76a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a22ae0e2b89e5e3d477f988cc36d3272b">INode::Type::Float</a> node.    <br /></td></tr>
 <tr class="separator:ab9e4ba48a48d2439769493556cfc76a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6aed256d85112541fd3999ded4640ba4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceutil_1_1serialization.html#a4ad992ea709272876f708522d11c51be">NodePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_toml_node_factory.html#a6aed256d85112541fd3999ded4640ba4">create</a> (bool boolean) override final</td></tr>
-<tr class="memdesc:a6aed256d85112541fd3999ded4640ba4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an empty node from its type.    <br /></td></tr>
+<tr class="memdesc:a6aed256d85112541fd3999ded4640ba4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a27226c864bac7454a8504f8edb15d95b">INode::Type::Boolean</a> node.    <br /></td></tr>
 <tr class="separator:a6aed256d85112541fd3999ded4640ba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d02a3083321a8c63c374607d6880382"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceutil_1_1serialization.html#a4ad992ea709272876f708522d11c51be">NodePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_toml_node_factory.html#a1d02a3083321a8c63c374607d6880382">create</a> (<a class="el" href="classutil_1_1serialization_1_1_i_node.html#a0e14dfafcb14e1093e981894be66b4f1">INode::Date</a> date) override final</td></tr>
-<tr class="memdesc:a1d02a3083321a8c63c374607d6880382"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an empty node from its type.    <br /></td></tr>
+<tr class="memdesc:a1d02a3083321a8c63c374607d6880382"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a44749712dbec183e983dcd78a7736c41">INode::Type::Date</a> node.    <br /></td></tr>
 <tr class="separator:a1d02a3083321a8c63c374607d6880382"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21e35b8f2ff9c10d480ac535ee581ec0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceutil_1_1serialization.html#a4ad992ea709272876f708522d11c51be">NodePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_toml_node_factory.html#a21e35b8f2ff9c10d480ac535ee581ec0">create</a> (<a class="el" href="classutil_1_1serialization_1_1_i_node.html#a4cda90228e7fdd9a8a67f80a5935d64d">INode::Time</a> time) override final</td></tr>
-<tr class="memdesc:a21e35b8f2ff9c10d480ac535ee581ec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an empty node from its type.    <br /></td></tr>
+<tr class="memdesc:a21e35b8f2ff9c10d480ac535ee581ec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3aa76d4ef5f3f6a672bbfab2865563e530">INode::Type::Time</a> node.    <br /></td></tr>
 <tr class="separator:a21e35b8f2ff9c10d480ac535ee581ec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48b7bf9c038ed04e8ce2f6e2a806006e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceutil_1_1serialization.html#a4ad992ea709272876f708522d11c51be">NodePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_toml_node_factory.html#a48b7bf9c038ed04e8ce2f6e2a806006e">create</a> (<a class="el" href="classutil_1_1serialization_1_1_i_node.html#a50f8c055816e07dc218914dd864fe34d">INode::DateTime</a> dateTime) override final</td></tr>
-<tr class="memdesc:a48b7bf9c038ed04e8ce2f6e2a806006e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an empty node from its type.    <br /></td></tr>
+<tr class="memdesc:a48b7bf9c038ed04e8ce2f6e2a806006e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a8cf10d2341ed01492506085688270c1e">INode::Type::DateTime</a> node.    <br /></td></tr>
 <tr class="separator:a48b7bf9c038ed04e8ce2f6e2a806006e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classutil_1_1serialization_1_1_i_node_factory"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classutil_1_1serialization_1_1_i_node_factory')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classutil_1_1serialization_1_1_i_node_factory.html">util::serialization::INodeFactory</a></td></tr>
 <tr class="memitem:ae1140c0f8dfeacf7bbf88d2befa0c7cf inherit pub_methods_classutil_1_1serialization_1_1_i_node_factory"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1serialization_1_1_i_node_factory.html#ae1140c0f8dfeacf7bbf88d2befa0c7cf">~INodeFactory</a> ()=default</td></tr>
@@ -269,15 +269,14 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Construct an empty node from its type.   </p>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a497031794414a552435f90151ac3b54b">INode::Object</a> and <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a4410ec34d9e6c1a68100ca0ce033fb17">INode::Array</a> will return <a class="el" href="classutil_1_1serialization_1_1_i_object_node.html">IObjectNode</a> and <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html">IArrayNode</a> pointers respectively.</dd></dl>
+<p>Construct a <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a27226c864bac7454a8504f8edb15d95b">INode::Type::Boolean</a> node.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>Node type.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">boolean</td><td>node data.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>NodePtr New node instance, or nullptr if the type is not supported.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>NodePtr New node instance, or nullptr if the type/copy is not supported.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-12)   </dd></dl>
 
@@ -314,15 +313,14 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Construct an empty node from its type.   </p>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a497031794414a552435f90151ac3b54b">INode::Object</a> and <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a4410ec34d9e6c1a68100ca0ce033fb17">INode::Array</a> will return <a class="el" href="classutil_1_1serialization_1_1_i_object_node.html">IObjectNode</a> and <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html">IArrayNode</a> pointers respectively.</dd></dl>
+<p>Construct a copy of an existing node.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>Node type.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">node</td><td>Node to copy.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>NodePtr New node instance, or nullptr if the type is not supported.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>NodePtr New node instance, or nullptr if the type/copy is not supported.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-12)   </dd></dl>
 
@@ -382,15 +380,14 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Construct an empty node from its type.   </p>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a497031794414a552435f90151ac3b54b">INode::Object</a> and <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a4410ec34d9e6c1a68100ca0ce033fb17">INode::Array</a> will return <a class="el" href="classutil_1_1serialization_1_1_i_object_node.html">IObjectNode</a> and <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html">IArrayNode</a> pointers respectively.</dd></dl>
+<p>Construct a <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a22ae0e2b89e5e3d477f988cc36d3272b">INode::Type::Float</a> node.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>Node type.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">floatingPoint</td><td>node data.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>NodePtr New node instance, or nullptr if the type is not supported.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>NodePtr New node instance, or nullptr if the type/copy is not supported.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-12)   </dd></dl>
 
@@ -427,15 +424,14 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Construct an empty node from its type.   </p>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a497031794414a552435f90151ac3b54b">INode::Object</a> and <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a4410ec34d9e6c1a68100ca0ce033fb17">INode::Array</a> will return <a class="el" href="classutil_1_1serialization_1_1_i_object_node.html">IObjectNode</a> and <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html">IArrayNode</a> pointers respectively.</dd></dl>
+<p>Construct a <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a44749712dbec183e983dcd78a7736c41">INode::Type::Date</a> node.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>Node type.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">date</td><td>node data.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>NodePtr New node instance, or nullptr if the type is not supported.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>NodePtr New node instance, or nullptr if the type/copy is not supported.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-12)   </dd></dl>
 
@@ -473,15 +469,14 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Construct an empty node from its type.   </p>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a497031794414a552435f90151ac3b54b">INode::Object</a> and <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a4410ec34d9e6c1a68100ca0ce033fb17">INode::Array</a> will return <a class="el" href="classutil_1_1serialization_1_1_i_object_node.html">IObjectNode</a> and <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html">IArrayNode</a> pointers respectively.</dd></dl>
+<p>Construct a <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a8cf10d2341ed01492506085688270c1e">INode::Type::DateTime</a> node.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>Node type.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dateTime</td><td>node data.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>NodePtr New node instance, or nullptr if the type is not supported.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>NodePtr New node instance, or nullptr if the type/copy is not supported.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-12)   </dd></dl>
 
@@ -518,15 +513,14 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Construct an empty node from its type.   </p>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a497031794414a552435f90151ac3b54b">INode::Object</a> and <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a4410ec34d9e6c1a68100ca0ce033fb17">INode::Array</a> will return <a class="el" href="classutil_1_1serialization_1_1_i_object_node.html">IObjectNode</a> and <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html">IArrayNode</a> pointers respectively.</dd></dl>
+<p>Construct a <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3aa76d4ef5f3f6a672bbfab2865563e530">INode::Type::Time</a> node.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>Node type.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">time</td><td>node data.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>NodePtr New node instance, or nullptr if the type is not supported.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>NodePtr New node instance, or nullptr if the type/copy is not supported.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-12)   </dd></dl>
 
@@ -592,10 +586,12 @@ Private Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">   55</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3aa76d4ef5f3f6a672bbfab2865563e530">INode::Type::Time</a>: <span class="keywordflow">return</span> std::make_shared&lt;TomlNode&lt;toml::value&lt;toml::time&gt;&gt;&gt;(0, 0, 0, 0);</div>
 <div class="line"><span class="lineno">   56</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a8cf10d2341ed01492506085688270c1e">INode::Type::DateTime</a>:</div>
 <div class="line"><span class="lineno">   58</span>                <span class="keywordflow">return</span> std::make_shared&lt;TomlNode&lt;toml::value&lt;toml::date_time&gt;&gt;&gt;(</div>
-<div class="line"><span class="lineno">   59</span>                    toml::date(1970, 1, 1), toml::time(0, 0, 0, 0));</div>
+<div class="line"><span class="lineno">   59</span>                    <a class="code hl_structRef" href="https://marzer.github.io/tomlplusplus/structtoml_1_1date.html">toml::date</a>(1970, 1, 1), <a class="code hl_structRef" href="https://marzer.github.io/tomlplusplus/structtoml_1_1time.html">toml::time</a>(0, 0, 0, 0));</div>
 <div class="line"><span class="lineno">   60</span>            <span class="keywordflow">default</span>: <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
 <div class="line"><span class="lineno">   61</span>        }</div>
 <div class="line"><span class="lineno">   62</span>    }</div>
+<div class="ttc" id="astructtoml_1_1date_html"><div class="ttname"><a href="https://marzer.github.io/tomlplusplus/structtoml_1_1date.html">toml::date</a></div></div>
+<div class="ttc" id="astructtoml_1_1time_html"><div class="ttname"><a href="https://marzer.github.io/tomlplusplus/structtoml_1_1time.html">toml::time</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -623,15 +619,14 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Construct an empty node from its type.   </p>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a497031794414a552435f90151ac3b54b">INode::Object</a> and <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a4410ec34d9e6c1a68100ca0ce033fb17">INode::Array</a> will return <a class="el" href="classutil_1_1serialization_1_1_i_object_node.html">IObjectNode</a> and <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html">IArrayNode</a> pointers respectively.</dd></dl>
+<p>Construct a <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3aa0faef0851b4294c06f2b94bb1cb2044">INode::Type::Integer</a> node.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>Node type.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">integer</td><td>node data.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>NodePtr New node instance, or nullptr if the type is not supported.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>NodePtr New node instance, or nullptr if the type/copy is not supported.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-12)   </dd></dl>
 
@@ -668,15 +663,14 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Construct an empty node from its type.   </p>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a497031794414a552435f90151ac3b54b">INode::Object</a> and <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a4410ec34d9e6c1a68100ca0ce033fb17">INode::Array</a> will return <a class="el" href="classutil_1_1serialization_1_1_i_object_node.html">IObjectNode</a> and <a class="el" href="classutil_1_1serialization_1_1_i_array_node.html">IArrayNode</a> pointers respectively.</dd></dl>
+<p>Construct a <a class="el" href="classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a27118326006d3829667a400ad23d5d98">INode::Type::String</a> node.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>Node type.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">string</td><td>node data.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>NodePtr New node instance, or nullptr if the type is not supported.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>NodePtr New node instance, or nullptr if the type/copy is not supported.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-12-12)   </dd></dl>
 
@@ -748,14 +742,14 @@ Private Member Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespaceutil_1_1serialization.html#a4ad992ea709272876f708522d11c51be">NodePtr</a> util::serialization::TomlNodeFactory::createFromToml </td>
           <td>(</td>
-          <td class="paramtype">const toml::node &amp;&#160;</td>
+          <td class="paramtype">const <a class="elRef" href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html">toml::node</a> &amp;&#160;</td>
           <td class="paramname"><em>node</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Create a node from a toml::node object. </p>
+<p>Create a node from a <a class="elRef" href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html">toml::node</a> object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">node</td><td>Toml node.</td></tr>
@@ -768,22 +762,32 @@ Private Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_toml_node_factory_8cpp_source.html#l00025">25</a> of file <a class="el" href="_toml_node_factory_8cpp_source.html">TomlNodeFactory.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   26</span>    {</div>
-<div class="line"><span class="lineno">   27</span>        <span class="keywordflow">switch</span> (node.type()) {</div>
-<div class="line"><span class="lineno">   28</span>            <span class="keywordflow">case</span> toml::node_type::table: <span class="keywordflow">return</span> std::make_shared&lt;TomlObjectNode&gt;(*node.as_table());</div>
-<div class="line"><span class="lineno">   29</span>            <span class="keywordflow">case</span> toml::node_type::array: <span class="keywordflow">return</span> std::make_shared&lt;TomlArrayNode&gt;(*node.as_array());</div>
+<div class="line"><span class="lineno">   27</span>        <span class="keywordflow">switch</span> (node.<a class="code hl_functionRef" href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html#a10f389035ce13abb00a1191358af6334">type</a>()) {</div>
+<div class="line"><span class="lineno">   28</span>            <span class="keywordflow">case</span> toml::node_type::table: <span class="keywordflow">return</span> std::make_shared&lt;TomlObjectNode&gt;(*node.<a class="code hl_functionRef" href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html#ac0ca09368b80436100a1eb042daccacc">as_table</a>());</div>
+<div class="line"><span class="lineno">   29</span>            <span class="keywordflow">case</span> toml::node_type::array: <span class="keywordflow">return</span> std::make_shared&lt;TomlArrayNode&gt;(*node.<a class="code hl_functionRef" href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html#a43bc08c435e4fbf5ebbcf34f902a6377">as_array</a>());</div>
 <div class="line"><span class="lineno">   30</span>            <span class="keywordflow">case</span> toml::node_type::string:</div>
-<div class="line"><span class="lineno">   31</span>                <span class="keywordflow">return</span> std::make_shared&lt;TomlNode&lt;toml::value&lt;std::string&gt;&gt;&gt;(*node.as_string());</div>
-<div class="line"><span class="lineno">   32</span>            <span class="keywordflow">case</span> toml::node_type::integer: <span class="keywordflow">return</span> std::make_shared&lt;TomlNode&lt;toml::value&lt;int64_t&gt;&gt;&gt;(*node.as_integer());</div>
+<div class="line"><span class="lineno">   31</span>                <span class="keywordflow">return</span> std::make_shared&lt;TomlNode&lt;toml::value&lt;std::string&gt;&gt;&gt;(*node.<a class="code hl_functionRef" href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html#a8560597586915efad21f288f591c23cd">as_string</a>());</div>
+<div class="line"><span class="lineno">   32</span>            <span class="keywordflow">case</span> toml::node_type::integer: <span class="keywordflow">return</span> std::make_shared&lt;TomlNode&lt;toml::value&lt;int64_t&gt;&gt;&gt;(*node.<a class="code hl_functionRef" href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html#a9e1419c3f99eda7767d114095b1ad793">as_integer</a>());</div>
 <div class="line"><span class="lineno">   33</span>            <span class="keywordflow">case</span> toml::node_type::floating_point:</div>
-<div class="line"><span class="lineno">   34</span>                <span class="keywordflow">return</span> std::make_shared&lt;TomlNode&lt;toml::value&lt;double&gt;&gt;&gt;(*node.as_floating_point());</div>
-<div class="line"><span class="lineno">   35</span>            <span class="keywordflow">case</span> toml::node_type::boolean: <span class="keywordflow">return</span> std::make_shared&lt;TomlNode&lt;toml::value&lt;bool&gt;&gt;&gt;(*node.as_boolean());</div>
-<div class="line"><span class="lineno">   36</span>            <span class="keywordflow">case</span> toml::node_type::date: <span class="keywordflow">return</span> std::make_shared&lt;TomlNode&lt;toml::value&lt;toml::date&gt;&gt;&gt;(*node.as_date());</div>
-<div class="line"><span class="lineno">   37</span>            <span class="keywordflow">case</span> toml::node_type::time: <span class="keywordflow">return</span> std::make_shared&lt;TomlNode&lt;toml::value&lt;toml::time&gt;&gt;&gt;(*node.as_time());</div>
+<div class="line"><span class="lineno">   34</span>                <span class="keywordflow">return</span> std::make_shared&lt;TomlNode&lt;toml::value&lt;double&gt;&gt;&gt;(*node.<a class="code hl_functionRef" href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html#a61d3f2c50952a1c989f82b54c5c2eeda">as_floating_point</a>());</div>
+<div class="line"><span class="lineno">   35</span>            <span class="keywordflow">case</span> toml::node_type::boolean: <span class="keywordflow">return</span> std::make_shared&lt;TomlNode&lt;toml::value&lt;bool&gt;&gt;&gt;(*node.<a class="code hl_functionRef" href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html#aea93e54eb94c6cb48d240766983fa493">as_boolean</a>());</div>
+<div class="line"><span class="lineno">   36</span>            <span class="keywordflow">case</span> toml::node_type::date: <span class="keywordflow">return</span> std::make_shared&lt;TomlNode&lt;toml::value&lt;toml::date&gt;&gt;&gt;(*node.<a class="code hl_functionRef" href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html#adcf92e730609341bb1e3c0ae1d12c36f">as_date</a>());</div>
+<div class="line"><span class="lineno">   37</span>            <span class="keywordflow">case</span> toml::node_type::time: <span class="keywordflow">return</span> std::make_shared&lt;TomlNode&lt;toml::value&lt;toml::time&gt;&gt;&gt;(*node.<a class="code hl_functionRef" href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html#a2d88fef8e892aae05c3e9886fdef7dce">as_time</a>());</div>
 <div class="line"><span class="lineno">   38</span>            <span class="keywordflow">case</span> toml::node_type::date_time:</div>
-<div class="line"><span class="lineno">   39</span>                <span class="keywordflow">return</span> std::make_shared&lt;TomlNode&lt;toml::value&lt;toml::date_time&gt;&gt;&gt;(*node.as_date_time());</div>
+<div class="line"><span class="lineno">   39</span>                <span class="keywordflow">return</span> std::make_shared&lt;TomlNode&lt;toml::value&lt;toml::date_time&gt;&gt;&gt;(*node.<a class="code hl_functionRef" href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html#ae1312e66ac95fc1cf6ae12f48e000b2a">as_date_time</a>());</div>
 <div class="line"><span class="lineno">   40</span>            <span class="keywordflow">default</span>: <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
 <div class="line"><span class="lineno">   41</span>        }</div>
 <div class="line"><span class="lineno">   42</span>    }</div>
+<div class="ttc" id="aclasstoml_1_1node_html_a10f389035ce13abb00a1191358af6334"><div class="ttname"><a href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html#a10f389035ce13abb00a1191358af6334">toml::node::type</a></div><div class="ttdeci">virtual node_type type() const noexcept=0</div></div>
+<div class="ttc" id="aclasstoml_1_1node_html_a2d88fef8e892aae05c3e9886fdef7dce"><div class="ttname"><a href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html#a2d88fef8e892aae05c3e9886fdef7dce">toml::node::as_time</a></div><div class="ttdeci">virtual toml::value&lt; time &gt; * as_time() noexcept=0</div></div>
+<div class="ttc" id="aclasstoml_1_1node_html_a43bc08c435e4fbf5ebbcf34f902a6377"><div class="ttname"><a href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html#a43bc08c435e4fbf5ebbcf34f902a6377">toml::node::as_array</a></div><div class="ttdeci">virtual array * as_array() noexcept=0</div></div>
+<div class="ttc" id="aclasstoml_1_1node_html_a61d3f2c50952a1c989f82b54c5c2eeda"><div class="ttname"><a href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html#a61d3f2c50952a1c989f82b54c5c2eeda">toml::node::as_floating_point</a></div><div class="ttdeci">virtual toml::value&lt; double &gt; * as_floating_point() noexcept=0</div></div>
+<div class="ttc" id="aclasstoml_1_1node_html_a8560597586915efad21f288f591c23cd"><div class="ttname"><a href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html#a8560597586915efad21f288f591c23cd">toml::node::as_string</a></div><div class="ttdeci">virtual toml::value&lt; std::string &gt; * as_string() noexcept=0</div></div>
+<div class="ttc" id="aclasstoml_1_1node_html_a9e1419c3f99eda7767d114095b1ad793"><div class="ttname"><a href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html#a9e1419c3f99eda7767d114095b1ad793">toml::node::as_integer</a></div><div class="ttdeci">virtual toml::value&lt; int64_t &gt; * as_integer() noexcept=0</div></div>
+<div class="ttc" id="aclasstoml_1_1node_html_ac0ca09368b80436100a1eb042daccacc"><div class="ttname"><a href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html#ac0ca09368b80436100a1eb042daccacc">toml::node::as_table</a></div><div class="ttdeci">virtual table * as_table() noexcept=0</div></div>
+<div class="ttc" id="aclasstoml_1_1node_html_adcf92e730609341bb1e3c0ae1d12c36f"><div class="ttname"><a href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html#adcf92e730609341bb1e3c0ae1d12c36f">toml::node::as_date</a></div><div class="ttdeci">virtual toml::value&lt; date &gt; * as_date() noexcept=0</div></div>
+<div class="ttc" id="aclasstoml_1_1node_html_ae1312e66ac95fc1cf6ae12f48e000b2a"><div class="ttname"><a href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html#ae1312e66ac95fc1cf6ae12f48e000b2a">toml::node::as_date_time</a></div><div class="ttdeci">virtual toml::value&lt; date_time &gt; * as_date_time() noexcept=0</div></div>
+<div class="ttc" id="aclasstoml_1_1node_html_aea93e54eb94c6cb48d240766983fa493"><div class="ttname"><a href="https://marzer.github.io/tomlplusplus/classtoml_1_1node.html#aea93e54eb94c6cb48d240766983fa493">toml::node::as_boolean</a></div><div class="ttdeci">virtual toml::value&lt; bool &gt; * as_boolean() noexcept=0</div></div>
 </div><!-- fragment -->
 </div>
 </div>

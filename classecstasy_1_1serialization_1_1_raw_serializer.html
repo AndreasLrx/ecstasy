@@ -164,7 +164,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ad0f3ff7c1c21c8fa86ffbacd54464834"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of the serializer content (in bytes).    <br /></td></tr>
 <tr class="separator:ad0f3ff7c1c21c8fa86ffbacd54464834"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfbc254580176cef7d2bf444b8b666ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_raw_serializer.html#acfbc254580176cef7d2bf444b8b666ec">importStream</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_istream.html">std::istream</a> &amp;stream) override final</td></tr>
-<tr class="memdesc:acfbc254580176cef7d2bf444b8b666ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Import data from a string into the serializer.    <br /></td></tr>
+<tr class="memdesc:acfbc254580176cef7d2bf444b8b666ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Import data from a stream into the serializer.    <br /></td></tr>
 <tr class="separator:acfbc254580176cef7d2bf444b8b666ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5a8f3ccb99b5a0bcab858455008dc1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_raw_serializer.html#ad5a8f3ccb99b5a0bcab858455008dc1e">exportStream</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;stream) const override final</td></tr>
 <tr class="memdesc:ad5a8f3ccb99b5a0bcab858455008dc1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export the serializer content to a stream.    <br /></td></tr>
@@ -286,8 +286,10 @@ requires <a class="elRef" href="http://en.cppreference.com/w/cpp/types/is_fundam
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:ae1ecc041c75aabaf011fcc7e505c92bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_raw_serializer.html#ae1ecc041c75aabaf011fcc7e505c92bb">afterSaveEntity</a> (<a class="el" href="classecstasy_1_1_registry_entity.html">RegistryEntity</a> &amp;entity) override final</td></tr>
+<tr class="memdesc:ae1ecc041c75aabaf011fcc7e505c92bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional method triggered at the end of <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#a70e09fccc644879cfbb903855e830d0c">saveEntity</a>.    <br /></td></tr>
 <tr class="separator:ae1ecc041c75aabaf011fcc7e505c92bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0707015d6cadac0590cad930ea8c2e7b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#abed7ac63f0906b6808e529e04f61e831">OptionalEntityComponentSerializer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1serialization_1_1_raw_serializer.html#a0707015d6cadac0590cad930ea8c2e7b">loadComponentSerializer</a> () override final</td></tr>
+<tr class="memdesc:a0707015d6cadac0590cad930ea8c2e7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load the next component serializer from the stream.    <br /></td></tr>
 <tr class="separator:a0707015d6cadac0590cad930ea8c2e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -498,7 +500,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   83</span>        {</div>
 <div class="line"><span class="lineno">   84</span>            <a class="code hl_function" href="classecstasy_1_1serialization_1_1_raw_serializer.html#acfbc254580176cef7d2bf444b8b666ec">importStream</a>(stream);</div>
 <div class="line"><span class="lineno">   85</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1serialization_1_1_raw_serializer_html_acfbc254580176cef7d2bf444b8b666ec"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_raw_serializer.html#acfbc254580176cef7d2bf444b8b666ec">ecstasy::serialization::RawSerializer::importStream</a></div><div class="ttdeci">void importStream(std::istream &amp;stream) override final</div><div class="ttdoc">Import data from a string into the serializer.</div><div class="ttdef"><b>Definition</b> <a href="_raw_serializer_8hpp_source.html#l00147">RawSerializer.hpp:147</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1serialization_1_1_raw_serializer_html_acfbc254580176cef7d2bf444b8b666ec"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_raw_serializer.html#acfbc254580176cef7d2bf444b8b666ec">ecstasy::serialization::RawSerializer::importStream</a></div><div class="ttdeci">void importStream(std::istream &amp;stream) override final</div><div class="ttdoc">Import data from a stream into the serializer.</div><div class="ttdef"><b>Definition</b> <a href="_raw_serializer_8hpp_source.html#l00147">RawSerializer.hpp:147</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -556,7 +558,15 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p></p>
+<p>Optional method triggered at the end of <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#a70e09fccc644879cfbb903855e830d0c">saveEntity</a>.   </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">entity</td><td><a class="el" href="classecstasy_1_1_entity.html" title="Encapsulate an index to an entity.">Entity</a> being saved.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-11)   </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#aa8ad6f4c995f7185cbbf3b3100550925">ecstasy::serialization::Serializer&lt; RawSerializer &gt;</a>.</p>
 
@@ -773,11 +783,10 @@ template&lt;typename U &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Import data from a string into the serializer.   </p>
-<dl class="section note"><dt>Note</dt><dd>Calls the importStream method with a stringstream.</dd></dl>
+<p>Import data from a stream into the serializer.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">content</td><td>String to import.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">stream</td><td>Stream to import.</td></tr>
   </table>
   </dd>
 </dl>
@@ -820,7 +829,11 @@ template&lt;typename U &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p></p>
+<p>Load the next component serializer from the stream.   </p>
+<dl class="section note"><dt>Note</dt><dd>Return <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional/nullopt_t.html">std::nullopt_t</a> if no more components are available.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>OptionalEntityComponentSerializer Optional reference to the next component serializer.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-04)   </dd></dl>
 
 <p>Implements <a class="el" href="classecstasy_1_1serialization_1_1_serializer.html#a58d4944be5a867b0eb4cf6f28d220b83">ecstasy::serialization::Serializer&lt; RawSerializer &gt;</a>.</p>
 
@@ -836,7 +849,7 @@ template&lt;typename U &gt; </div>
 <div class="line"><span class="lineno">  345</span>        }</div>
 <div class="ttc" id="aclassecstasy_1_1rtti_1_1_a_type_html_a20c5eb6ac1a41abbd9499bfb4fbf1e9b"><div class="ttname"><a href="classecstasy_1_1rtti_1_1_a_type.html#a20c5eb6ac1a41abbd9499bfb4fbf1e9b">ecstasy::rtti::AType::getSerializer</a></div><div class="ttdeci">ecstasy::serialization::IEntityComponentSerializer &amp; getSerializer() const noexcept</div><div class="ttdoc">Get a reference to the entity component serializer for the given serializer type.</div><div class="ttdef"><b>Definition</b> <a href="_a_type_8hpp_source.html#l00175">AType.hpp:175</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1rtti_1_1_type_registry_html_a07f65105bd02f2d10883effc1916b460"><div class="ttname"><a href="classecstasy_1_1rtti_1_1_type_registry.html#a07f65105bd02f2d10883effc1916b460">ecstasy::rtti::TypeRegistry::getInstance</a></div><div class="ttdeci">static TypeRegistry &amp; getInstance() noexcept</div><div class="ttdoc">Get the Instance object.</div><div class="ttdef"><b>Definition</b> <a href="_type_registry_8cpp_source.html#l00017">TypeRegistry.cpp:17</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1rtti_1_1_type_registry_html_a33b8627b78468104ca85027b2530cb7c"><div class="ttname"><a href="classecstasy_1_1rtti_1_1_type_registry.html#a33b8627b78468104ca85027b2530cb7c">ecstasy::rtti::TypeRegistry::get</a></div><div class="ttdeci">AType &amp; get(const T &amp;target) const</div><div class="ttdoc">Get a reference to the AType instance matching the target.</div><div class="ttdef"><b>Definition</b> <a href="_type_registry_8hpp_source.html#l00218">TypeRegistry.hpp:218</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1rtti_1_1_type_registry_html_a33b8627b78468104ca85027b2530cb7c"><div class="ttname"><a href="classecstasy_1_1rtti_1_1_type_registry.html#a33b8627b78468104ca85027b2530cb7c">ecstasy::rtti::TypeRegistry::get</a></div><div class="ttdeci">AType &amp; get(const T &amp;target) const</div><div class="ttdoc">Get a reference to the AType instance matching the target.</div><div class="ttdef"><b>Definition</b> <a href="_type_registry_8hpp_source.html#l00236">TypeRegistry.hpp:236</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1serialization_1_1_raw_serializer_html_afffef057c108728347d1e69bf3c4394e"><div class="ttname"><a href="classecstasy_1_1serialization_1_1_raw_serializer.html#afffef057c108728347d1e69bf3c4394e">ecstasy::serialization::RawSerializer::RawSerializer</a></div><div class="ttdeci">RawSerializer()=default</div><div class="ttdoc">Construct a new Raw Serializer instance.</div></div>
 </div><!-- fragment -->
 </div>

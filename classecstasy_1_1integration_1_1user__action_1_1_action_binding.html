@@ -129,7 +129,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a55a412bb1a676bd8d1158f7db5619b27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a mouse button action binding.  <br /></td></tr>
 <tr class="separator:a55a412bb1a676bd8d1158f7db5619b27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec33dd792815112a26ab1aa29674acf4"><td class="memTemplParams" colspan="2">template&lt;typename E , typename  = is_valid_action_id&lt;E&gt;&gt; </td></tr>
-<tr class="memitem:aec33dd792815112a26ab1aa29674acf4"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#aec33dd792815112a26ab1aa29674acf4">ActionBinding</a> (E id, event::Keyboard::Key input)</td></tr>
+<tr class="memitem:aec33dd792815112a26ab1aa29674acf4"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#aec33dd792815112a26ab1aa29674acf4">ActionBinding</a> (E id, <a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3">event::Keyboard::Key</a> input)</td></tr>
 <tr class="memdesc:aec33dd792815112a26ab1aa29674acf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a key action binding.  <br /></td></tr>
 <tr class="separator:aec33dd792815112a26ab1aa29674acf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaeee4c9e1d5f23de3df818987f8c2cc2"><td class="memTemplParams" colspan="2">template&lt;typename E , typename  = is_valid_action_id&lt;E&gt;&gt; </td></tr>
@@ -157,7 +157,7 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a22c43518fecad543b26b6cc6e99ae45e"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="classecstasy_1_1integration_1_1event_1_1_mouse.html#ae02624c1f85027219f4f594abe1c0d8e">event::Mouse::Button</a>&#160;&#160;&#160;<a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a0aef6144f03d7d76bfa57362aab067a1">mouseButton</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
 <tr class="memdesc:a22c43518fecad543b26b6cc6e99ae45e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a61ae233154a98f65414a9e4fc94eecfea49dabe49d62a3521f7c10400138c38d5">Type::MouseButton</a> associated data.  <a href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a0aef6144f03d7d76bfa57362aab067a1">More...</a><br /></td></tr>
 <tr class="separator:a22c43518fecad543b26b6cc6e99ae45e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa96d21320517eaf4af897bcb3107fca4"><td class="memItemLeft" >&#160;&#160;&#160;event::Keyboard::Key&#160;&#160;&#160;<a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a84fa5b2deb161cefa7d8f1746f23c938">key</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memitem:aa96d21320517eaf4af897bcb3107fca4"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3">event::Keyboard::Key</a>&#160;&#160;&#160;<a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a84fa5b2deb161cefa7d8f1746f23c938">key</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
 <tr class="memdesc:aa96d21320517eaf4af897bcb3107fca4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a61ae233154a98f65414a9e4fc94eecfea897356954c2cd3d41b221e3f24f99bba">Type::Key</a> associated data.  <a href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a84fa5b2deb161cefa7d8f1746f23c938">More...</a><br /></td></tr>
 <tr class="separator:aa96d21320517eaf4af897bcb3107fca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fd90d15a61dc8151d44ff65573263bb"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="classecstasy_1_1integration_1_1event_1_1_gamepad.html#af0f4687925fe97b9b703f92253c2e571">event::Gamepad::Button</a>&#160;&#160;&#160;<a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a5c5c0ba50ad322f3167c7b3c7eae5bf0">gamepadButton</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
@@ -348,7 +348,7 @@ template&lt;typename E , typename  = is_valid_action_id&lt;E&gt;&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">event::Keyboard::Key&#160;</td>
+          <td class="paramtype"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3">event::Keyboard::Key</a>&#160;</td>
           <td class="paramname"><em>input</em>&#160;</td>
         </tr>
         <tr>
@@ -392,7 +392,7 @@ template&lt;typename E , typename  = is_valid_action_id&lt;E&gt;&gt; </div>
 <div class="line"><span class="lineno">  114</span>        {</div>
 <div class="line"><span class="lineno">  115</span>            <a class="code hl_function" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#aabfeb456e7f5e1d7acc432129fe604bd">event::Keyboard::assertKeyValid</a>(input);</div>
 <div class="line"><span class="lineno">  116</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_keyboard_html_aabfeb456e7f5e1d7acc432129fe604bd"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#aabfeb456e7f5e1d7acc432129fe604bd">ecstasy::integration::event::Keyboard::assertKeyValid</a></div><div class="ttdeci">static constexpr void assertKeyValid(Key key, bool allowUnknown=false)</div><div class="ttdoc">Check whether a key is valid.</div><div class="ttdef"><b>Definition</b> <a href="_keyboard_8hpp_source.html#l00233">Keyboard.hpp:233</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_keyboard_html_aabfeb456e7f5e1d7acc432129fe604bd"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#aabfeb456e7f5e1d7acc432129fe604bd">ecstasy::integration::event::Keyboard::assertKeyValid</a></div><div class="ttdeci">static constexpr void assertKeyValid(Key key, bool allowUnknown=false)</div><div class="ttdoc">Check whether a key is valid.</div><div class="ttdef"><b>Definition</b> <a href="_keyboard_8hpp_source.html#l00236">Keyboard.hpp:236</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1integration_1_1user__action_1_1_action_binding_html_a84fa5b2deb161cefa7d8f1746f23c938"><div class="ttname"><a href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a84fa5b2deb161cefa7d8f1746f23c938">ecstasy::integration::user_action::ActionBinding::key</a></div><div class="ttdeci">event::Keyboard::Key key</div><div class="ttdoc">Type::Key associated data.</div><div class="ttdef"><b>Definition</b> <a href="_action_binding_8hpp_source.html#l00210">ActionBinding.hpp:210</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -461,7 +461,7 @@ template&lt;typename E , typename  = is_valid_action_id&lt;E&gt;&gt; </div>
 <div class="line"><span class="lineno">  134</span>        {</div>
 <div class="line"><span class="lineno">  135</span>            <a class="code hl_function" href="classecstasy_1_1integration_1_1event_1_1_gamepad.html#aa868146122be70ca90cdcc75a5497ed4">event::Gamepad::assertButtonValid</a>(input);</div>
 <div class="line"><span class="lineno">  136</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_gamepad_html_aa868146122be70ca90cdcc75a5497ed4"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_gamepad.html#aa868146122be70ca90cdcc75a5497ed4">ecstasy::integration::event::Gamepad::assertButtonValid</a></div><div class="ttdeci">static constexpr void assertButtonValid(Button button, bool allowUnknown=false)</div><div class="ttdoc">Check whether a button is valid.</div><div class="ttdef"><b>Definition</b> <a href="_gamepad_8hpp_source.html#l00266">Gamepad.hpp:266</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_gamepad_html_aa868146122be70ca90cdcc75a5497ed4"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_gamepad.html#aa868146122be70ca90cdcc75a5497ed4">ecstasy::integration::event::Gamepad::assertButtonValid</a></div><div class="ttdeci">static constexpr void assertButtonValid(Button button, bool allowUnknown=false)</div><div class="ttdoc">Check whether a button is valid.</div><div class="ttdef"><b>Definition</b> <a href="_gamepad_8hpp_source.html#l00269">Gamepad.hpp:269</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1integration_1_1user__action_1_1_action_binding_html_a5c5c0ba50ad322f3167c7b3c7eae5bf0"><div class="ttname"><a href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a5c5c0ba50ad322f3167c7b3c7eae5bf0">ecstasy::integration::user_action::ActionBinding::gamepadButton</a></div><div class="ttdeci">event::Gamepad::Button gamepadButton</div><div class="ttdoc">Type::GamepadButton associated data.</div><div class="ttdef"><b>Definition</b> <a href="_action_binding_8hpp_source.html#l00211">ActionBinding.hpp:211</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -530,7 +530,7 @@ template&lt;typename E , typename  = is_valid_action_id&lt;E&gt;&gt; </div>
 <div class="line"><span class="lineno">  154</span>        {</div>
 <div class="line"><span class="lineno">  155</span>            <a class="code hl_function" href="classecstasy_1_1integration_1_1event_1_1_gamepad.html#a0582add52ac0a023e5fdeeba2dc167af">event::Gamepad::assertAxisValid</a>(input);</div>
 <div class="line"><span class="lineno">  156</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_gamepad_html_a0582add52ac0a023e5fdeeba2dc167af"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_gamepad.html#a0582add52ac0a023e5fdeeba2dc167af">ecstasy::integration::event::Gamepad::assertAxisValid</a></div><div class="ttdeci">static constexpr void assertAxisValid(Axis axis, bool allowUnknown=false)</div><div class="ttdoc">Check whether an axis is valid.</div><div class="ttdef"><b>Definition</b> <a href="_gamepad_8hpp_source.html#l00283">Gamepad.hpp:283</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1integration_1_1event_1_1_gamepad_html_a0582add52ac0a023e5fdeeba2dc167af"><div class="ttname"><a href="classecstasy_1_1integration_1_1event_1_1_gamepad.html#a0582add52ac0a023e5fdeeba2dc167af">ecstasy::integration::event::Gamepad::assertAxisValid</a></div><div class="ttdeci">static constexpr void assertAxisValid(Axis axis, bool allowUnknown=false)</div><div class="ttdoc">Check whether an axis is valid.</div><div class="ttdef"><b>Definition</b> <a href="_gamepad_8hpp_source.html#l00287">Gamepad.hpp:287</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1integration_1_1user__action_1_1_action_binding_html_a1a36b3127613cd11b8a18f734c2706ed"><div class="ttname"><a href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a1a36b3127613cd11b8a18f734c2706ed">ecstasy::integration::user_action::ActionBinding::gamepadAxis</a></div><div class="ttdeci">event::Gamepad::Axis gamepadAxis</div><div class="ttdoc">Type::GamepadAxis associated data.</div><div class="ttdef"><b>Definition</b> <a href="_action_binding_8hpp_source.html#l00212">ActionBinding.hpp:212</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -601,7 +601,7 @@ template&lt;typename E , typename  = is_valid_action_id&lt;E&gt;&gt; </div>
 </div><div class="memdoc">
 
 <p>Anonymous union to ease facilitate the wrapped data access. </p>
-<dl class="section warning"><dt>Warning</dt><dd>Only the member associated to the current <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_action_binding.html#a9a7439130f0ea756f5e8850043bc78b9">type</a> is valid.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Only the member associated to the current <a class="elRef" href="https://rapidjson.org/md_doc_2schema.html#type">type</a> is valid.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-11-25) </dd></dl>
 
@@ -670,7 +670,7 @@ template&lt;typename E , typename  = is_valid_action_id&lt;E&gt;&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">event::Keyboard::Key ecstasy::integration::user_action::ActionBinding::key</td>
+          <td class="memname"><a class="el" href="classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3">event::Keyboard::Key</a> ecstasy::integration::user_action::ActionBinding::key</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -144,7 +144,7 @@ Public Types</h2></td></tr>
 <tr class="memdesc:a15ec501fbb8ec49c4e6df219285fb4f2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_modifier.html">Modifier</a> constraint.  <br /></td></tr>
 <tr class="separator:a15ec501fbb8ec49c4e6df219285fb4f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a521d2f33440dcf568b12bda957459b3e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1query_1_1modifier_1_1_not.html#a521d2f33440dcf568b12bda957459b3e">QueryData</a> = <a class="el" href="namespaceecstasy_1_1query.html#a21d395b16bed191c3d72445cd7c0fad1">queryable_data_t</a>&lt; Q &gt;</td></tr>
-<tr class="memdesc:a521d2f33440dcf568b12bda957459b3e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="conceptecstasy_1_1query_1_1_queryable.html">ecstasy::query::Queryable</a> constaint.  <br /></td></tr>
+<tr class="memdesc:a521d2f33440dcf568b12bda957459b3e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="conceptecstasy_1_1query_1_1_queryable.html">Queryable</a> constaint.  <br /></td></tr>
 <tr class="separator:a521d2f33440dcf568b12bda957459b3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -189,7 +189,7 @@ class ecstasy::query::modifier::Not&lt; Q, AutoLock &gt;</div><p><a class="el" h
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Q</td><td>Type of the wrapped queryable. </td></tr>
-    <tr><td class="paramname">AutoLock</td><td>Lock the Lockable queryables if true.</td></tr>
+    <tr><td class="paramname">AutoLock</td><td>Lock the <a class="el" href="conceptecstasy_1_1thread_1_1_lockable.html">Lockable</a> queryables if true.</td></tr>
   </table>
   </dd>
 </dl>
@@ -252,7 +252,7 @@ template&lt;Queryable Q, bool AutoLock = false&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="conceptecstasy_1_1query_1_1_queryable.html">ecstasy::query::Queryable</a> constaint. </p>
+<p><a class="el" href="conceptecstasy_1_1query_1_1_queryable.html">Queryable</a> constaint. </p>
 
 <p class="definition">Definition at line <a class="el" href="query_2modifiers_2_not_8hpp_source.html#l00044">44</a> of file <a class="el" href="query_2modifiers_2_not_8hpp_source.html">Not.hpp</a>.</p>
 
@@ -303,7 +303,7 @@ template&lt;Queryable Q, bool AutoLock = false&gt; </div>
 <div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_not_html_aa15ac727311666767d80967ad1521fb0"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_not.html#aa15ac727311666767d80967ad1521fb0">ecstasy::query::modifier::Not::_mask</a></div><div class="ttdeci">util::BitSet _mask</div><div class="ttdoc">Mask of the internal queryable.</div><div class="ttdef"><b>Definition</b> <a href="query_2modifiers_2_not_8hpp_source.html#l00128">Not.hpp:128</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1query_1_1modifier_1_1_not_html_aff319d6425982083ae96e065da259489"><div class="ttname"><a href="classecstasy_1_1query_1_1modifier_1_1_not.html#aff319d6425982083ae96e065da259489">ecstasy::query::modifier::Not::_internal</a></div><div class="ttdeci">Internal _internal</div><div class="ttdoc">Wrapped queryable.</div><div class="ttdef"><b>Definition</b> <a href="query_2modifiers_2_not_8hpp_source.html#l00126">Not.hpp:126</a></div></div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_affeb7b19f28f56c803f223d1dc96b85c"><div class="ttname"><a href="classutil_1_1_bit_set.html#affeb7b19f28f56c803f223d1dc96b85c">util::BitSet::flip</a></div><div class="ttdeci">BitSet &amp; flip() noexcept</div><div class="ttdoc">Flips all the bits in the set.</div><div class="ttdef"><b>Definition</b> <a href="_bit_set_8cpp_source.html#l00052">BitSet.cpp:52</a></div></div>
-<div class="ttc" id="anamespaceecstasy_1_1query_html_acfd7e544fa188d451a483608c36e3eb8"><div class="ttname"><a href="namespaceecstasy_1_1query.html#acfd7e544fa188d451a483608c36e3eb8">ecstasy::query::getQueryableMask</a></div><div class="ttdeci">constexpr const util::BitSet &amp; getQueryableMask(const Q &amp;queryable)</div><div class="ttdoc">Get the mask of the queryable object.</div><div class="ttdef"><b>Definition</b> <a href="_queryable_8hpp_source.html#l00293">Queryable.hpp:293</a></div></div>
+<div class="ttc" id="anamespaceecstasy_1_1query_html_acfd7e544fa188d451a483608c36e3eb8"><div class="ttname"><a href="namespaceecstasy_1_1query.html#acfd7e544fa188d451a483608c36e3eb8">ecstasy::query::getQueryableMask</a></div><div class="ttdeci">constexpr const util::BitSet &amp; getQueryableMask(const Q &amp;queryable)</div><div class="ttdoc">Get the mask of the queryable object.</div><div class="ttdef"><b>Definition</b> <a href="_queryable_8hpp_source.html#l00301">Queryable.hpp:301</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -386,7 +386,7 @@ template&lt;Queryable Q, bool AutoLock = false&gt; </div>
 </div><div class="memdoc">
 
 <p>Get the flipped mask of the internal queryable. </p>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="conceptecstasy_1_1query_1_1_queryable.html">ecstasy::query::Queryable</a> constraint.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="conceptecstasy_1_1query_1_1_queryable.html">Queryable</a> constraint.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>const <a class="el" href="classutil_1_1_bit_set.html" title="Mimics the API of std::bitset but with the dynamic properties of std::vector&lt;bool&gt;">util::BitSet</a>&amp; Flipped bitset.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-24) </dd></dl>
@@ -425,7 +425,7 @@ template&lt;Queryable Q, bool AutoLock = false&gt; </div>
 </div><div class="memdoc">
 
 <p>Get the internal query data at the given index. </p>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="conceptecstasy_1_1query_1_1_queryable.html">ecstasy::query::Queryable</a> constraint. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="conceptecstasy_1_1query_1_1_queryable.html">Queryable</a> constraint. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>May throw exceptions, look at the <b>Internal</b> type equivalent method documentation. </dd>
 <dd>
 Since this is a not modifier, all bit set to true in the masks means there <b>isn't</b> data at the associated index. Therefore you <b>must</b> <b>not</b> call this method for bits set to true in the mask.</dd></dl>
@@ -443,7 +443,7 @@ Since this is a not modifier, all bit set to true in the masks means there <b>is
 <div class="fragment"><div class="line"><span class="lineno">   90</span>        {</div>
 <div class="line"><span class="lineno">   91</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceecstasy_1_1query.html#a470c4c26c7b1a6d005e18ba6321d4f03">getQueryableData</a>(<a class="code hl_variable" href="classecstasy_1_1query_1_1modifier_1_1_not.html#aff319d6425982083ae96e065da259489">_internal</a>, index);</div>
 <div class="line"><span class="lineno">   92</span>        }</div>
-<div class="ttc" id="anamespaceecstasy_1_1query_html_a470c4c26c7b1a6d005e18ba6321d4f03"><div class="ttname"><a href="namespaceecstasy_1_1query.html#a470c4c26c7b1a6d005e18ba6321d4f03">ecstasy::query::getQueryableData</a></div><div class="ttdeci">constexpr queryable_data_t&lt; Q &gt; getQueryableData(Q &amp;queryable, size_t index)</div><div class="ttdoc">Get the query data at the given index.</div><div class="ttdef"><b>Definition</b> <a href="_queryable_8hpp_source.html#l00316">Queryable.hpp:316</a></div></div>
+<div class="ttc" id="anamespaceecstasy_1_1query_html_a470c4c26c7b1a6d005e18ba6321d4f03"><div class="ttname"><a href="namespaceecstasy_1_1query.html#a470c4c26c7b1a6d005e18ba6321d4f03">ecstasy::query::getQueryableData</a></div><div class="ttdeci">constexpr queryable_data_t&lt; Q &gt; getQueryableData(Q &amp;queryable, size_t index)</div><div class="ttdoc">Get the query data at the given index.</div><div class="ttdef"><b>Definition</b> <a href="_queryable_8hpp_source.html#l00326">Queryable.hpp:326</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

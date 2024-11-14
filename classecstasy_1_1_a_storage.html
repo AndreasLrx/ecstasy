@@ -136,10 +136,10 @@ Public Types</h2></td></tr>
 <tr class="memdesc:a2e05faeb7287592c19ff2dbcfdeba24b"><td class="mdescLeft">&#160;</td><td class="mdescRight">IsStorage constraint.  <br /></td></tr>
 <tr class="separator:a2e05faeb7287592c19ff2dbcfdeba24b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a678de89f259b449c186d2813d648f8d2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_a_storage.html#a678de89f259b449c186d2813d648f8d2">QueryData</a> = C &amp;</td></tr>
-<tr class="memdesc:a678de89f259b449c186d2813d648f8d2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="conceptecstasy_1_1query_1_1_queryable_object.html">ecstasy::query::QueryableObject</a> constraint.  <br /></td></tr>
+<tr class="memdesc:a678de89f259b449c186d2813d648f8d2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="conceptecstasy_1_1query_1_1_queryable_object.html">QueryableObject</a> constraint.  <br /></td></tr>
 <tr class="separator:a678de89f259b449c186d2813d648f8d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a720cfb5a3b35c4b7e63aab77d2fd8dd9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_a_storage.html#a720cfb5a3b35c4b7e63aab77d2fd8dd9">ConstQueryData</a> = const C &amp;</td></tr>
-<tr class="memdesc:a720cfb5a3b35c4b7e63aab77d2fd8dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="conceptecstasy_1_1query_1_1_const_queryable_object.html">ecstasy::query::ConstQueryableObject</a> constraint.  <br /></td></tr>
+<tr class="memdesc:a720cfb5a3b35c4b7e63aab77d2fd8dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="conceptecstasy_1_1query_1_1_const_queryable_object.html">ConstQueryableObject</a> constraint.  <br /></td></tr>
 <tr class="separator:a720cfb5a3b35c4b7e63aab77d2fd8dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -151,6 +151,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a565dfd64b653f3c23cea0ed34ee87382"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase multiple <b>Component</b> instances associated to the given <code>entities</code>.  <br /></td></tr>
 <tr class="separator:a565dfd64b653f3c23cea0ed34ee87382"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d5a338cfda0beeef9e73b66aec94e47"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_a_storage.html#a5d5a338cfda0beeef9e73b66aec94e47">contains</a> (<a class="el" href="classecstasy_1_1_entity.html#ad83d7f7e44a390c9c36e0079fd505b35">Entity::Index</a> index) const noexcept override final</td></tr>
+<tr class="memdesc:a5d5a338cfda0beeef9e73b66aec94e47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test if the entity index match a <b>Component</b> instance.    <br /></td></tr>
 <tr class="separator:a5d5a338cfda0beeef9e73b66aec94e47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b9150c01289385490972e8052132a31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1_a_storage.html#a2e05faeb7287592c19ff2dbcfdeba24b">Component</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_a_storage.html#a4b9150c01289385490972e8052132a31">at</a> (<a class="el" href="classecstasy_1_1_entity.html#ad83d7f7e44a390c9c36e0079fd505b35">Entity::Index</a> index)</td></tr>
 <tr class="memdesc:a4b9150c01289385490972e8052132a31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the <b>Component</b> instance associated to the given entity and perform bound checking.  <br /></td></tr>
@@ -171,6 +172,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a5f8cd4d86aca35f01d1c81f5df5c8594"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the <b>Component</b> instance associated to the given entity.    <br /></td></tr>
 <tr class="separator:a5f8cd4d86aca35f01d1c81f5df5c8594"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab25f1caf270c78c88c8b0a80d64a1fe6"><td class="memItemLeft" align="right" valign="top">const <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_a_storage.html#ab25f1caf270c78c88c8b0a80d64a1fe6">getComponentTypeInfos</a> () const noexcept override final</td></tr>
+<tr class="memdesc:ab25f1caf270c78c88c8b0a80d64a1fe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Component stored type infos.    <br /></td></tr>
 <tr class="separator:ab25f1caf270c78c88c8b0a80d64a1fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74cbf9ca50c452329bd43c05ba6322ed"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classecstasy_1_1_a_storage.html#a2e05faeb7287592c19ff2dbcfdeba24b">Component</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_a_storage.html#a74cbf9ca50c452329bd43c05ba6322ed">insert</a> (<a class="el" href="classecstasy_1_1_entity.html#ad83d7f7e44a390c9c36e0079fd505b35">Entity::Index</a> index, <a class="el" href="classecstasy_1_1_a_storage.html#a2e05faeb7287592c19ff2dbcfdeba24b">Component</a> &amp;&amp;c)=0</td></tr>
 <tr class="memdesc:a74cbf9ca50c452329bd43c05ba6322ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new <b>Component</b> instance associated to the given entity.  <br /></td></tr>
@@ -239,7 +241,7 @@ template&lt;typename C &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="conceptecstasy_1_1query_1_1_const_queryable_object.html">ecstasy::query::ConstQueryableObject</a> constraint. </p>
+<p><a class="el" href="conceptecstasy_1_1query_1_1_const_queryable_object.html">ConstQueryableObject</a> constraint. </p>
 
 <p class="definition">Definition at line <a class="el" href="_a_storage_8hpp_source.html#l00042">42</a> of file <a class="el" href="_a_storage_8hpp_source.html">AStorage.hpp</a>.</p>
 
@@ -259,7 +261,7 @@ template&lt;typename C &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="conceptecstasy_1_1query_1_1_queryable_object.html">ecstasy::query::QueryableObject</a> constraint. </p>
+<p><a class="el" href="conceptecstasy_1_1query_1_1_queryable_object.html">QueryableObject</a> constraint. </p>
 
 <p class="definition">Definition at line <a class="el" href="_a_storage_8hpp_source.html#l00040">40</a> of file <a class="el" href="_a_storage_8hpp_source.html">AStorage.hpp</a>.</p>
 
@@ -315,7 +317,7 @@ template&lt;typename C &gt; </div>
 <div class="line"><span class="lineno">   97</span>                <span class="keywordflow">throw</span> <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/error/out_of_range.html">std::out_of_range</a>(<span class="stringliteral">&quot;Entity doesn&#39;t have the component&quot;</span>);</div>
 <div class="line"><span class="lineno">   98</span>            <span class="keywordflow">return</span> (*<span class="keyword">this</span>)[index];</div>
 <div class="line"><span class="lineno">   99</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1_a_storage_html_a5d5a338cfda0beeef9e73b66aec94e47"><div class="ttname"><a href="classecstasy_1_1_a_storage.html#a5d5a338cfda0beeef9e73b66aec94e47">ecstasy::AStorage::contains</a></div><div class="ttdeci">bool contains(Entity::Index index) const noexcept override final</div><div class="ttdef"><b>Definition</b> <a href="_a_storage_8hpp_source.html#l00077">AStorage.hpp:77</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_a_storage_html_a5d5a338cfda0beeef9e73b66aec94e47"><div class="ttname"><a href="classecstasy_1_1_a_storage.html#a5d5a338cfda0beeef9e73b66aec94e47">ecstasy::AStorage::contains</a></div><div class="ttdeci">bool contains(Entity::Index index) const noexcept override final</div><div class="ttdoc">Test if the entity index match a Component instance.</div><div class="ttdef"><b>Definition</b> <a href="_a_storage_8hpp_source.html#l00077">AStorage.hpp:77</a></div></div>
 <div class="ttc" id="aout_of_range_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/error/out_of_range.html">std::out_of_range</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -398,7 +400,16 @@ template&lt;typename C &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p></p>
+<p>Test if the entity index match a <b>Component</b> instance.   </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Index of the entity.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool True if the entity has a component, false otherwise.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-19)   </dd></dl>
 
 <p>Implements <a class="el" href="classecstasy_1_1_i_storage.html#acff621f7894acd9d73ea903148b8a4fc">ecstasy::IStorage</a>.</p>
 
@@ -526,7 +537,10 @@ template&lt;typename C &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p></p>
+<p>Get the Component stored type infos.   </p>
+<dl class="section return"><dt>Returns</dt><dd>const <a class="elRef" href="http://en.cppreference.com/w/cpp/types/type_info.html">std::type_info</a>&amp; Type informations of the component stored in the storage.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-06-11)   </dd></dl>
 
 <p>Implements <a class="el" href="classecstasy_1_1_i_storage.html#a2da70acd215f03b0cea2a0a764e75f0a">ecstasy::IStorage</a>.</p>
 
@@ -575,7 +589,7 @@ template&lt;typename C &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Component&amp; Reference to the associated component.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-19)  </dd></dl>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="conceptecstasy_1_1query_1_1_queryable_object.html">ecstasy::query::QueryableObject</a> constraint. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="conceptecstasy_1_1query_1_1_queryable_object.html">QueryableObject</a> constraint. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_a_storage_8hpp_source.html#l00138">138</a> of file <a class="el" href="_a_storage_8hpp_source.html">AStorage.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  139</span>        {</div>
@@ -621,7 +635,7 @@ template&lt;typename C &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Component&amp; Reference to the associated component.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-19)  </dd></dl>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="conceptecstasy_1_1query_1_1_const_queryable_object.html">ecstasy::query::ConstQueryableObject</a> constraint. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="conceptecstasy_1_1query_1_1_const_queryable_object.html">ConstQueryableObject</a> constraint. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_a_storage_8hpp_source.html#l00161">161</a> of file <a class="el" href="_a_storage_8hpp_source.html">AStorage.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  162</span>        {</div>

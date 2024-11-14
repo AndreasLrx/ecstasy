@@ -1,13 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$structecstasy_1_1query_1_1_condition_base.html" title="Base class for all conditions." alt="" coords="5,141,223,166"/>
-<area shape="rect" id="Node000001" href="$structecstasy_1_1query_1_1_condition.html" title="Condition resolution structure." alt="" coords="289,5,479,45"/>
-<area shape="poly" id="edge23_Node000000_Node000001" title=" " alt="" coords="142,130,199,92,270,55,301,43,303,48,272,60,202,97,145,135"/>
-<area shape="rect" id="Node000002" href="$structecstasy_1_1query_1_1_condition_3_01_left_00_01_right_00_01_comparer_01_4.html" title="Condition resolution structure for two constant operands." alt="" coords="289,69,479,109"/>
-<area shape="poly" id="edge24_Node000000_Node000002" title=" " alt="" coords="181,135,298,107,299,112,183,140"/>
-<area shape="rect" id="Node000003" href="$structecstasy_1_1query_1_1_condition_3_01_left_00_01ptr_00_01_comparer_01_4.html" title="Condition resolution structure for a constant left operand and a member right operand." alt="" coords="291,133,477,173"/>
-<area shape="poly" id="edge25_Node000000_Node000003" title=" " alt="" coords="236,151,291,151,291,156,236,156"/>
-<area shape="rect" id="Node000004" href="$structecstasy_1_1query_1_1_condition_3_01ptr_00_01_right_00_01_comparer_01_4.html" title="Condition resolution structure for a member left operand and a constant right operand." alt="" coords="291,197,477,237"/>
-<area shape="poly" id="edge26_Node000000_Node000004" title=" " alt="" coords="183,167,299,195,298,200,181,172"/>
-<area shape="rect" id="Node000005" href="$structecstasy_1_1query_1_1_condition_3_01ptr_left_00_01ptr_right_00_01_comparer_01_4.html" title="Condition resolution structure for a member left operand and a member right operand." alt="" coords="271,261,497,301"/>
-<area shape="poly" id="edge27_Node000000_Node000005" title=" " alt="" coords="145,172,202,210,272,247,303,259,301,264,270,252,199,214,142,176"/>
+<area shape="rect" id="Node000000" href="$structecstasy_1_1query_1_1queryable__data_3_01const_01_q_01_4.html" title="Get the query data type of a queryable object." alt="" coords="5,5,193,45"/>
 </map>

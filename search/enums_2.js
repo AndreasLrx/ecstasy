@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['joystick_0',['Joystick',['../classecstasy_1_1integration_1_1event_1_1_gamepad.html#adafea92d40762f46cd73b1900ac008c1',1,'ecstasy::integration::event::Gamepad']]]
+  ['format_5fflags_0',['format_flags',['https://marzer.github.io/tomlplusplus/namespacetoml.html#a2102aa80bc57783d96180f36e1f64f6a',1,'toml']]]
 ];

@@ -145,7 +145,7 @@ class ecstasy::query::Query&lt; First, Others &gt;</div><p>More high-level query
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00602">602</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00604">604</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a52bb4fb2e4913e5a967ef75ab016d617" name="a52bb4fb2e4913e5a967ef75ab016d617"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a52bb4fb2e4913e5a967ef75ab016d617">&#9670;&#160;</a></span>Query() <span class="overload">[1/2]</span></h2>
@@ -194,10 +194,10 @@ template&lt;Queryable First, Queryable... Others&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00613">613</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  614</span>            : QueryImplementation&lt;<a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt;First, Others...&gt;, <a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits&lt;&gt;</a>&gt;(mask, storages)</div>
-<div class="line"><span class="lineno">  615</span>        {</div>
-<div class="line"><span class="lineno">  616</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00615">615</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  616</span>            : QueryImplementation&lt;<a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt;First, Others...&gt;, <a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits&lt;&gt;</a>&gt;(mask, storages)</div>
+<div class="line"><span class="lineno">  617</span>        {</div>
+<div class="line"><span class="lineno">  618</span>        }</div>
 <div class="ttc" id="astructutil_1_1meta_1_1_traits_html"><div class="ttname"><a href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a></div><div class="ttdoc">Empty parameter pack helper type.</div><div class="ttdef"><b>Definition</b> <a href="_traits_8hpp_source.html#l00028">Traits.hpp:28</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -250,11 +250,11 @@ template&lt;Queryable First, Queryable... Others&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00627">627</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  628</span>            : QueryImplementation&lt;<a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt;First, Others...&gt;, <a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits&lt;&gt;</a>&gt;(</div>
-<div class="line"><span class="lineno">  629</span>                first, std::forward&lt;Others &amp;&gt;(others)...)</div>
-<div class="line"><span class="lineno">  630</span>        {</div>
-<div class="line"><span class="lineno">  631</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_query_8hpp_source.html#l00629">629</a> of file <a class="el" href="_query_8hpp_source.html">Query.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  630</span>            : QueryImplementation&lt;<a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits</a>&lt;First, Others...&gt;, <a class="code hl_struct" href="structutil_1_1meta_1_1_traits.html">util::meta::Traits&lt;&gt;</a>&gt;(</div>
+<div class="line"><span class="lineno">  631</span>                first, std::forward&lt;Others &amp;&gt;(others)...)</div>
+<div class="line"><span class="lineno">  632</span>        {</div>
+<div class="line"><span class="lineno">  633</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -113,10 +113,10 @@ Public Types</h2></td></tr>
 requires query::ConstQueryableObject&lt;Q&gt;<br />
 struct ecstasy::queryable_type&lt; const Q &gt;</div><p>Try to get the type of a queryable associated to a type stored in the registry (component, storage, resource...).   </p>
 <p>Returns C if:</p><ul>
-<li>C is derived from the <a class="el" href="classecstasy_1_1_i_resource.html">ecstasy::IResource</a> class and match the Queryable concept.</li>
-<li>C match the <a class="el" href="conceptecstasy_1_1_is_storage.html">ecstasy::IsStorage</a> concept and match the Queryable concept.</li>
-<li>C is a const type matching the ConstQueryableObject concept.</li>
-<li>C match the <a class="el" href="conceptecstasy_1_1query_1_1_modifier.html">ecstasy::query::Modifier</a> Returns C::Modifier if C match the <a class="el" href="conceptecstasy_1_1_registry_modifier.html">ecstasy::RegistryModifier</a> concept. Otherwise, returns <a class="el" href="namespaceecstasy.html#a2c011da268733486119ae199f8bb4a04">getStorageType&lt;C&gt;</a>.</li>
+<li>C is derived from the <a class="el" href="classecstasy_1_1_i_resource.html">IResource</a> class and match the <a class="el" href="conceptecstasy_1_1query_1_1_queryable.html">Queryable</a> concept.</li>
+<li>C match the <a class="el" href="conceptecstasy_1_1_is_storage.html">IsStorage</a> concept and match the <a class="el" href="conceptecstasy_1_1query_1_1_queryable.html">Queryable</a> concept.</li>
+<li>C is a const type matching the <a class="el" href="conceptecstasy_1_1query_1_1_const_queryable_object.html">ConstQueryableObject</a> concept.</li>
+<li>C match the <a class="el" href="conceptecstasy_1_1query_1_1_modifier.html">ecstasy::query::Modifier</a> Returns C::Modifier if C match the <a class="el" href="conceptecstasy_1_1_registry_modifier.html">RegistryModifier</a> concept. Otherwise, returns <a class="el" href="namespaceecstasy.html#a2c011da268733486119ae199f8bb4a04">getStorageType&lt;C&gt;</a>.</li>
 </ul>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -127,7 +127,7 @@ struct ecstasy::queryable_type&lt; const Q &gt;</div><p>Try to get the type of a
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-25)   </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="queryable__type_8hpp_source.html#l00047">47</a> of file <a class="el" href="queryable__type_8hpp_source.html">queryable_type.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="queryable__type_8hpp_source.html#l00049">49</a> of file <a class="el" href="queryable__type_8hpp_source.html">queryable_type.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="af1d170170773ff24aedf0efe5204cca7" name="af1d170170773ff24aedf0efe5204cca7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af1d170170773ff24aedf0efe5204cca7">&#9670;&#160;</a></span>type</h2>
@@ -143,7 +143,7 @@ template&lt;query::Queryable Q&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="queryable__type_8hpp_source.html#l00048">48</a> of file <a class="el" href="queryable__type_8hpp_source.html">queryable_type.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="queryable__type_8hpp_source.html#l00050">50</a> of file <a class="el" href="queryable__type_8hpp_source.html">queryable_type.hpp</a>.</p>
 
 </div>
 </div>

@@ -23,7 +23,7 @@ var searchData=
   ['raw_5fstorage_5fiterator_20',['raw_storage_iterator',['http://en.cppreference.com/w/cpp/memory/raw_storage_iterator.html',1,'std']]],
   ['rawserializer_21',['RawSerializer',['../classecstasy_1_1serialization_1_1_raw_serializer.html',1,'ecstasy::serialization']]],
   ['readable_5ftraits_22',['readable_traits',['http://en.cppreference.com/w/cpp/iterator/readable_traits.html',1,'std']]],
-  ['rebind_23',['rebind',['http://en.cppreference.com/w/cpp/memory/pointer_traits.html',1,'std::pointer_traits']]],
+  ['rebind_23',['rebind',['https://rapidjson.org/structrapidjson_1_1_std_allocator_1_1rebind.html',1,'rapidjson::StdAllocator::rebind&lt; typename U &gt;'],['http://en.cppreference.com/w/cpp/memory/pointer_traits.html',1,'std::pointer_traits::rebind']]],
   ['rebind_5falloc_24',['rebind_alloc',['http://en.cppreference.com/w/cpp/memory/allocator_traits.html',1,'std::allocator_traits']]],
   ['rebind_5ftraits_25',['rebind_traits',['http://en.cppreference.com/w/cpp/memory/allocator_traits.html',1,'std::allocator_traits']]],
   ['recursive_5fdirectory_5fiterator_26',['recursive_directory_iterator',['http://en.cppreference.com/w/cpp/experimental/fs/recursive_directory_iterator.html',1,'std::experimental::filesystem::recursive_directory_iterator'],['http://en.cppreference.com/w/cpp/filesystem/recursive_directory_iterator.html',1,'std::filesystem::recursive_directory_iterator']]],

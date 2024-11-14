@@ -26,8 +26,6 @@ var hierarchy =
     [ "ecstasy::Entities::Builder", "classecstasy_1_1_entities_1_1_builder.html", null ],
     [ "ecstasy::SystemInstances::Comparer", "classecstasy_1_1_system_instances_1_1_comparer.html", null ],
     [ "ecstasy::component_type< T >", "structecstasy_1_1component__type.html", null ],
-    [ "ecstasy::component_type< Q >", "structecstasy_1_1component__type_3_01_q_01_4.html", null ],
-    [ "ecstasy::component_type< S >", "structecstasy_1_1component__type_3_01_s_01_4.html", null ],
     [ "util::serialization::PolymorphicIterator< T >::Concept", "structutil_1_1serialization_1_1_polymorphic_iterator_1_1_concept.html", [
       [ "util::serialization::PolymorphicIterator< T >::Model< Iter >", "classutil_1_1serialization_1_1_polymorphic_iterator_1_1_model.html", null ]
     ] ],

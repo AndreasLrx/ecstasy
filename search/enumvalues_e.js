@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['right_0',['Right',['../classecstasy_1_1integration_1_1event_1_1_gamepad.html#adafea92d40762f46cd73b1900ac008c1a92b09c7c48c520c3c55e497875da437c',1,'ecstasy::integration::event::Gamepad::Right'],['../classecstasy_1_1integration_1_1event_1_1_mouse.html#ae02624c1f85027219f4f594abe1c0d8ea92b09c7c48c520c3c55e497875da437c',1,'ecstasy::integration::event::Mouse::Right']]],
-  ['rightx_1',['RightX',['../classecstasy_1_1integration_1_1event_1_1_gamepad.html#a3889e689614987816a56b70ee93cabccaf65093a3b6fbe7ca323cdd462c394ca6',1,'ecstasy::integration::event::Gamepad']]],
-  ['righty_2',['RightY',['../classecstasy_1_1integration_1_1event_1_1_gamepad.html#a3889e689614987816a56b70ee93cabccafcca84f800ce96085bd389237137ecc3',1,'ecstasy::integration::event::Gamepad']]]
+  ['o_0',['O',['../classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3af186217753c37b9b9f958d906208506e',1,'ecstasy::integration::event::Keyboard']]],
+  ['object_1',['Object',['../classutil_1_1serialization_1_1_i_node.html#aa3abfc99c8041058ee34b5abf150b7a3a497031794414a552435f90151ac3b54b',1,'util::serialization::INode']]]
 ];
