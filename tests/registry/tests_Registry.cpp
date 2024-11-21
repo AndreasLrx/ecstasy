@@ -903,23 +903,46 @@ PRINT(D);
 PRINT(E);
 PRINT(F);
 
-TEST(Registry, SystemPriorities_Letters_Ascending)
+TEST(Registry, Pipeline_Implicit_Order)
 {
     ecstasy::Registry registry;
     testing::internal::CaptureStdout();
 
-    registry.addSystem<A, 0>();
-    registry.addSystem<B, 1>();
-    registry.addSystem<C, 2>();
-    registry.addSystem<D, 3>();
-    registry.addSystem<E, 4>();
-    registry.addSystem<F, 5>();
+    registry.addSystem<A>();
+    registry.addSystem<B>();
+    registry.addSystem<C>();
+    registry.addSystem<D>();
+    registry.addSystem<E>();
+    registry.addSystem<F>();
+
+    const ecstasy::Pipeline &pipeline = registry.getPipeline();
+
+    GTEST_ASSERT_EQ(
+        pipeline.getSystemPhase<A>().getId(), static_cast<size_t>(ecstasy::Pipeline::PredefinedPhases::OnUpdate));
 
     registry.runSystems();
     GTEST_ASSERT_EQ(testing::internal::GetCapturedStdout(), "ABCDEF");
 }
 
-TEST(Registry, SystemPriorities_Letters_Descending)
+TEST(Registry, Pipeline_Explicit_Order)
+{
+    ecstasy::Registry registry;
+    testing::internal::CaptureStdout();
+
+    registry.addSystem<A, 0>();
+    registry.addSystem<D, 3>();
+    registry.addSystem<B, 1>();
+    registry.addSystem<E, 4>();
+    registry.addSystem<C, 2>();
+    registry.addSystem<F, 5>();
+
+    GTEST_ASSERT_EQ(registry.getPipeline().getSystemPhase<E>().getId(), 4);
+
+    registry.runSystems();
+    GTEST_ASSERT_EQ(testing::internal::GetCapturedStdout(), "ABCDEF");
+}
+
+TEST(Registry, Pipeline_Explicit_Descending)
 {
     ecstasy::Registry registry;
     testing::internal::CaptureStdout();
@@ -935,30 +958,29 @@ TEST(Registry, SystemPriorities_Letters_Descending)
     GTEST_ASSERT_EQ(testing::internal::GetCapturedStdout(), "FEDCBA");
 }
 
-TEST(Registry, SystemPriorities_Group)
+TEST(Registry, Pipeline_Custom_Phases)
 {
-    size_t mask = 0xff00;
-    const size_t abc = 0x0100;
-    const size_t def = 0x0200;
+    const size_t abc = 1;
+    const size_t def = 2;
 
     ecstasy::Registry registry;
     testing::internal::CaptureStdout();
 
-    registry.addSystem<A, abc + 1>();
-    registry.addSystem<B, abc + 2>();
-    registry.addSystem<C, abc + 3>();
-    registry.addSystem<D, def + 1>();
-    registry.addSystem<E, def + 2>();
-    registry.addSystem<F, def + 3>();
+    registry.addSystem<A, abc>();
+    registry.addSystem<B, abc>();
+    registry.addSystemInPhase<D>(def);
+    registry.addSystemInPhase<C>(abc);
+    registry.addSystem<E, def>();
+    registry.addSystem<F, def>();
 
     registry.runSystems();
     EXPECT_EQ(testing::internal::GetCapturedStdout(), "ABCDEF");
 
     testing::internal::CaptureStdout();
-    registry.runSystems(abc, mask);
+    registry.runSystemsPhase(abc);
     EXPECT_EQ(testing::internal::GetCapturedStdout(), "ABC");
     testing::internal::CaptureStdout();
-    registry.runSystems(def, mask);
+    registry.runSystemsPhase(def);
     EXPECT_EQ(testing::internal::GetCapturedStdout(), "DEF");
 }
 

@@ -433,61 +433,44 @@ registry.runSystem<Movement>();
 registry.runSystems();
 ```
 
-By default systems added with `Registry.addSystem()` have the same priority and the order of execution is undefined when calling `Registry.runSystems()`.
-But you can use the system priorities/groups to order them and be able to specify their priority and run a given system group.
+### Pipeline
 
-1. Priority
+By default systems added with `Registry.addSystem()` run in the registration order. But you can use @ref ecstasy::Pipeline "pipelines" to have a better configuration of your systems run order.
 
-   When adding a system to the registry you can add a priority to each system as a second template parameter.
-   Calling `runSystems()` will run the systems in ascending priority order.
+You can group your systems into @ref ecstasy::Pipeline::Phase "phases" which will have an associated priority, being also its identifier.
+Some predefined phases already exists and may be enough for you: @ref ecstasy::Pipeline::PredefinedPhases "PredefinedPhases".
 
-   @warning
-   You can set the same priority for multiple systems but it doesn't ensure they will always run in the same order.
+@note
+If you don't specify a phase, the @ref ecstasy::Pipeline::PredefinedPhases::OnUpdate "OnUpdate" is used.
 
-   ```cpp
-       ecstasy::Registry registry;
+@warning
+I strongly recommend you to use enum types, or const values/macros.
 
-       registry.addSystem<A, 1>();
-       registry.addSystem<B, 2>();
-       registry.addSystem<C, 3>();
-       registry.addSystem<D, 4>();
-       registry.addSystem<E, 5>();
-       registry.addSystem<F, 6>();
-       registry.runSystems(); // ABCDEF
-       // If you want you can still call systems one by one
-       registry.runSystem<A>(); // A
-   ```
+```cpp
+    ecstasy::Registry registry;
 
-2. Group and masks
+    // Default to OnUpdate
+    registry.addSystem<A>();
+    // Explicit OnUpdate, require to be casted as size_t if template parameter
+    registry.addSystem<B, static_cast<size_t>(Pipeline::PedefinedPhases::OnUpdate)>();
+    // Explicit OnLoad but using enum value directly
+    registry.addSystemInPhase<C>(Pipeline::PedefinedPhases::OnLoad);
+    registry.addSystem<D, 250>();
+    registry.addSystem<E, 251>();
+    registry.addSystem<F, Pipeline::PedefinedPhases::OnUpdate>();
 
-   In fact their is nothing more than the priority value. But using bitmask you can create groups.
 
-   The following example use 8 bits for the group id and 8 for the system priority.
-
-   ```cpp
-       ecstasy::Registry registry;
-       // Mask of the group part on the priority (bits 8->15)
-       size_t mask = 0xff00;
-       // Groups 'identifiers'
-       const size_t abc = 0x0100;
-       const size_t def = 0x0200;
-
-       // Group 'abc'
-       registry.addSystem<A, abc + 1>();
-       registry.addSystem<B, abc + 2>();
-       registry.addSystem<C, abc + 3>();
-       // Group 'def'
-       registry.addSystem<D, def + 1>();
-       registry.addSystem<E, def + 2>();
-       registry.addSystem<F, def + 3>();
-
-       // The following still calls the systems in the right order because their priorities are still ascending
-       registry.runSystems(); // ABCDEF
-
-       // You can run a system group by sending the group id and the mask
-       registry.runSystems(abc, mask); // ABC
-       registry.runSystems(def, mask); // DEF
-   ```
+    // Will run in order:
+    // - OnLoad(100): C
+    // - Custom 250: D
+    // - Custom 251: E
+    // - OnUpdate(400): BCF
+    registry.runSystems();
+    // If you want you can still call systems one by one
+    registry.runSystem<A>(); // A
+    // Or even phase by phase
+    registry.runSystemsPhase<Pipeline::PredefinedPhases::OnUpdate>();
+```
 
 ## Using resources
 

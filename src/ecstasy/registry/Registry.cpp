@@ -24,7 +24,7 @@ namespace ecstasy
         return _builder.build();
     }
 
-    Registry::Registry(bool addEntities)
+    Registry::Registry(bool addEntities) : _pipeline(*this)
     {
         if (addEntities)
             addResource<Entities>();
@@ -81,23 +81,19 @@ namespace ecstasy
             storage.second->erase(entities);
     }
 
-    void Registry::runSystems()
+    void Registry::runSystem(const std::type_index &systemId)
     {
-        for (auto &[type, system] : _systems.getInner())
-            system->run(*this);
+        _systems.get(systemId).run(*this);
     }
 
-    void Registry::runSystems(size_t group, size_t mask)
+    void Registry::runSystems()
     {
-        auto &systems = _systems.getInner();
-        auto it = systems.begin();
+        _pipeline.run();
+    }
 
-        // Run all systems with the same group and mask
-        while (it != systems.end()) {
-            if ((it->first.second & mask) == group)
-                it->second->run(*this);
-            ++it;
-        }
+    void Registry::runSystemsPhase(Pipeline::PhaseId phase)
+    {
+        _pipeline.run(phase);
     }
 
     void Registry::clear()

@@ -26,6 +26,7 @@
 #include "ecstasy/storages/StorageConcepts.hpp"
 #include "ecstasy/storages/SystemInstances.hpp"
 #include "ecstasy/system/ISystem.hpp"
+#include "ecstasy/system/Pipeline.hpp"
 #include "ecstasy/thread/LockableView.hpp"
 #include "util/Allocator.hpp"
 #include "util/StackAllocator.hpp"
@@ -34,6 +35,7 @@
 #include "concepts/component_type.hpp"
 #include "concepts/queryable_type.hpp"
 #include "ecstasy/registry/concepts/modifier_allocator_size.hpp"
+#include "util/meta/is_size_t_convertible.hpp"
 #include "util/meta/outer_join.hpp"
 
 #ifdef _MSC_VER
@@ -815,8 +817,11 @@ namespace ecstasy
         ///
         /// @brief Add a new system in the registry.
         ///
+        /// @note Call @ref addSystemInPhase to add a system in a specific phase using runtime phase id or an Enum type
+        /// for phase id.
+        ///
         /// @tparam S System to add.
-        /// @tparam Priority System priority. See @ref Registry::runSystems().
+        /// @tparam Phase System phase. See @ref Pipeline.
         /// @tparam Args The type of arguments to pass to the constructor of @b S.
         ///
         /// @param[in] args The arguments to pass to the constructor of @b S.
@@ -828,10 +833,36 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-17)
         ///
-        template <std::derived_from<ISystem> S, size_t Priority = 0, typename... Args>
+        template <std::derived_from<ISystem> S,
+            Pipeline::PhaseId Phase = static_cast<Pipeline::PhaseId>(Pipeline::PredefinedPhases::OnUpdate),
+            typename... Args>
         S &addSystem(Args &&...args)
         {
-            return _systems.emplace<S, Priority>(std::forward<Args>(args)...);
+            return addSystemInPhase<S>(Phase, std::forward<Args>(args)...);
+        }
+
+        ///
+        /// @brief Add a new system in the registry in a specific phase.
+        ///
+        /// @tparam S System to add.
+        /// @tparam T Phase id type. Usually an enum convertible to size_t, or a size_t directly.
+        /// @tparam Args The type of arguments to pass to the constructor of @b S.
+        ///
+        /// @param[in] phaseId Phase id where to add the system.
+        /// @param[in] args The arguments to pass to the constructor of @b S.
+        ///
+        /// @return S& newly created System.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-11-21)
+        ///
+        template <std::derived_from<ISystem> S, util::meta::is_size_t_convertible T, typename... Args>
+        S &addSystemInPhase(T phaseId, Args &&...args)
+        {
+            S &system = _systems.emplace<S>(std::forward<Args>(args)...);
+
+            _pipeline.addSystem(typeid(S), static_cast<size_t>(phaseId));
+            return system;
         }
 
         ///
@@ -1171,10 +1202,20 @@ namespace ecstasy
         }
 
         ///
+        /// @brief Run a specific system from the registry.
+        ///
+        /// @param[in] systemId System type index to run.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-11-21)
+        ///
+        void runSystem(const std::type_index &systemId);
+
+        ///
         /// @brief Run all systems present in the registry.
         ///
-        /// @note Systems are run in ascending priority order. If two systems have the same priority, run order is
-        /// undefined.
+        /// @note Systems are run in ascending registration order. You can have further control using
+        /// @ref ecstasy::Pipeline::Phase "Phases".
         ///
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2022-10-17)
@@ -1182,20 +1223,14 @@ namespace ecstasy
         void runSystems();
 
         ///
-        /// @brief Run all systems whose priority match the given group.
+        /// @brief Run all systems present in the registry for the given phase.
         ///
-        /// @note The system groups can be seen as an internet network: The @p group 'id' is the network address, the
-        /// @p mask is the network mask and each system priority in the group is a host in the network range.
+        /// @param[in] phase Phase to run the systems for.
         ///
-        /// @note Systems in the group are run in ascending priority order. If two systems have the same priority, run
-        /// order is undefined.
-        ///
-        /// @param[in] group Group priority 'id'.
-        /// @param[in] mask Priority 'id' mask.
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
-        /// @since 1.0.0 (2022-12-19)
+        /// @since 1.0.0 (2024-11-21)
         ///
-        void runSystems(size_t group, size_t mask);
+        void runSystemsPhase(Pipeline::PhaseId phase);
 
         ///
         /// @brief Get a const reference to the storages instances.
@@ -1223,13 +1258,41 @@ namespace ecstasy
             return _storages;
         }
 
+        ///
+        /// @brief Get a reference to the registry pipeline.
+        ///
+        /// @return Pipeline& Reference to the registry pipeline instance.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-11-21)
+        ///
+        [[nodiscard]] constexpr Pipeline &getPipeline() noexcept
+        {
+            return _pipeline;
+        }
+
+        ///
+        /// @brief Get a const reference to the registry pipeline.
+        ///
+        /// @return const Pipeline& Const reference to the registry pipeline instance.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-11-21)
+        ///
+        [[nodiscard]] constexpr const Pipeline &getPipeline() const noexcept
+        {
+            return _pipeline;
+        }
+
       private:
         /// @brief Registry resources.
         Instances<IResource> _resources;
         /// @brief Registry storages.
         Instances<IStorage> _storages;
         /// @brief Registry systems.
-        SystemInstances _systems;
+        Instances<ISystem> _systems;
+        /// @brief System pipeline.
+        Pipeline _pipeline;
 
         /// @internal
         /// @brief Erase all the @p entity components.
