@@ -9,6 +9,7 @@ set(SRC
     ${INCROOT}/filter.hpp
     ${INCROOT}/include.hpp
     ${INCROOT}/index.hpp
+    ${INCROOT}/is_size_t_convertible.hpp
     ${INCROOT}/is_std_vector.hpp
     ${INCROOT}/is_type_bounded_array.hpp
     ${INCROOT}/outer_join.hpp
