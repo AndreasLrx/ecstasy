@@ -32,6 +32,7 @@ var namespaceecstasy =
     [ "ObjectWrapper", "classecstasy_1_1_object_wrapper.html", "classecstasy_1_1_object_wrapper" ],
     [ "Or", "structecstasy_1_1_or.html", "structecstasy_1_1_or" ],
     [ "OrEx", "structecstasy_1_1_or_ex.html", "structecstasy_1_1_or_ex" ],
+    [ "Pipeline", "classecstasy_1_1_pipeline.html", "classecstasy_1_1_pipeline" ],
     [ "queryable_type", "structecstasy_1_1queryable__type.html", "structecstasy_1_1queryable__type" ],
     [ "queryable_type< const Q >", "structecstasy_1_1queryable__type_3_01const_01_q_01_4.html", "structecstasy_1_1queryable__type_3_01const_01_q_01_4" ],
     [ "queryable_type< M >", "structecstasy_1_1queryable__type_3_01_m_01_4.html", "structecstasy_1_1queryable__type_3_01_m_01_4" ],

@@ -107,6 +107,7 @@ var hierarchy =
     [ "ecstasy::Instances< Base >", "classecstasy_1_1_instances.html", null ],
     [ "ecstasy::Instances< ecstasy::IResource >", "classecstasy_1_1_instances.html", null ],
     [ "ecstasy::Instances< ecstasy::IStorage >", "classecstasy_1_1_instances.html", null ],
+    [ "ecstasy::Instances< ecstasy::ISystem >", "classecstasy_1_1_instances.html", null ],
     [ "std::integral_constant< bool, !IsCondition< T >::value >", "http://en.cppreference.com/w/cpp/types/integral_constant.html", [
       [ "ecstasy::Registry::Select< Selects >::IsNotCondition< T >", "structecstasy_1_1_registry_1_1_select_1_1_is_not_condition.html", null ]
     ] ],
@@ -219,6 +220,8 @@ var hierarchy =
     [ "ecstasy::Not< C, AutoLock >", "structecstasy_1_1_not.html", null ],
     [ "ecstasy::Or< C1, C2, Cs >", "structecstasy_1_1_or.html", null ],
     [ "ecstasy::OrEx< AutoLock, C1, C2, Cs >", "structecstasy_1_1_or_ex.html", null ],
+    [ "ecstasy::Pipeline::Phase", "classecstasy_1_1_pipeline_1_1_phase.html", null ],
+    [ "ecstasy::Pipeline", "classecstasy_1_1_pipeline.html", null ],
     [ "ecstasy::integration::user_action::PollActions< Actions >", "classecstasy_1_1integration_1_1user__action_1_1_poll_actions.html", null ],
     [ "util::serialization::PolymorphicIterator< T >", "classutil_1_1serialization_1_1_polymorphic_iterator.html", null ],
     [ "ecstasy::query::queryable_data< Q >", "structecstasy_1_1query_1_1queryable__data.html", null ],

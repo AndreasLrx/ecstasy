@@ -1,5 +1,15 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/integral_constant.html" title=" " alt="" coords="5,5,205,89"/>
-<area shape="rect" id="Node000001" href="$structecstasy_1_1query_1_1views__allocator__size_3_01true_00_01_q_00_01_qs_8_8_8_01_4.html" title="Get the thread safe type of a queryable type." alt="" coords="253,20,417,75"/>
-<area shape="poly" id="edge77_Node000000_Node000001" title=" " alt="" coords="219,45,253,45,253,50,219,50"/>
+<area shape="rect" id="Node000000" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/integral_constant.html" title=" " alt="" coords="5,101,168,141"/>
+<area shape="rect" id="Node000001" href="$structecstasy_1_1modifier__allocator__size.html" title=" " alt="" coords="235,5,432,45"/>
+<area shape="poly" id="edge69_Node000000_Node000001" title=" " alt="" coords="134,92,215,55,251,43,252,48,217,60,137,97"/>
+<area shape="rect" id="Node000004" href="$structecstasy_1_1modifier__allocator__size.html" title="Get the allocator required size for this queryable." alt="" coords="235,69,432,109"/>
+<area shape="poly" id="edge71_Node000000_Node000004" title=" " alt="" coords="181,106,234,100,235,105,182,112"/>
+<area shape="rect" id="Node000005" href="$structecstasy_1_1modifiers__allocator__size.html" title="Get the allocator required size for a list of queryables." alt="" coords="250,133,417,173"/>
+<area shape="poly" id="edge72_Node000000_Node000005" title=" " alt="" coords="182,131,250,140,249,145,182,136"/>
+<area shape="rect" id="Node000006" href="$structecstasy_1_1query_1_1views__allocator__size.html" title="Get the size of the allocator required for the given queryable types." alt="" coords="216,197,451,237"/>
+<area shape="poly" id="edge73_Node000000_Node000006" title=" " alt="" coords="137,145,217,183,252,195,251,200,215,188,134,150"/>
+<area shape="rect" id="Node000002" href="$structecstasy_1_1modifier__allocator__size_3_01_m_01_4.html" title="Get the allocator required size for this queryable." alt="" coords="499,141,696,181"/>
+<area shape="poly" id="edge70_Node000001_Node000002" title=" " alt="" coords="435,48,452,55,521,97,575,139,572,143,518,101,449,60,433,53"/>
+<area shape="rect" id="Node000003" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/integral_constant.html" title=" " alt="" coords="225,261,441,331"/>
+<area shape="poly" id="edge74_Node000003_Node000002" title=" " alt="" coords="437,253,449,247,512,212,565,179,568,184,515,217,452,252,439,258"/>
 </map>

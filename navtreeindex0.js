@@ -196,6 +196,10 @@ var NAVTREEINDEX0 =
 "_pending_actions_8hpp.html":[11,0,1,0,0,2,6],
 "_pending_actions_8hpp.html#a9b4f873eff13ede42a8a53839aea12b0":[11,0,1,0,0,2,6,0],
 "_pending_actions_8hpp_source.html":[11,0,1,0,0,2,6],
+"_pipeline_8cpp.html":[11,0,1,0,7,2],
+"_pipeline_8cpp_source.html":[11,0,1,0,7,2],
+"_pipeline_8hpp.html":[11,0,1,0,7,3],
+"_pipeline_8hpp_source.html":[11,0,1,0,7,3],
 "_poll_actions_8hpp.html":[11,0,1,0,0,2,7],
 "_poll_actions_8hpp_source.html":[11,0,1,0,0,2,7],
 "_poll_events_8cpp.html":[11,0,1,0,0,1,2,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX0 =
 "_serializable_enum_8hpp.html#a61af11852be6ce892f96a1f6d63fd680":[11,0,1,1,1,9,4],
 "_serializable_enum_8hpp.html#ab39d84903b41655a94277f4c4474e157":[11,0,1,1,1,9,0],
 "_serializable_enum_8hpp.html#ab84da5f5f04f20606b54433dd9299fc3":[11,0,1,1,1,9,1],
-"_serializable_enum_8hpp.html#ac4c31d3c1e1c506ae1c3da8018df9df3":[11,0,1,1,1,9,2],
-"_serializable_enum_8hpp.html#acd9fbb4df4bc6927538efdd7ab95d7cd":[11,0,1,1,1,9,3],
-"_serializable_enum_8hpp_source.html":[11,0,1,1,1,9],
-"_shared_recursive_mutex_8cpp.html":[11,0,1,0,8,3],
-"_shared_recursive_mutex_8cpp_source.html":[11,0,1,0,8,3]
+"_serializable_enum_8hpp.html#ac4c31d3c1e1c506ae1c3da8018df9df3":[11,0,1,1,1,9,2]
 };

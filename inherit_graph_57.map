@@ -1,3 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$structecstasy_1_1query_1_1_select.html" title="Advanced Query." alt="" coords="5,5,188,45"/>
+<area shape="rect" id="Node000000" href="$classecstasy_1_1query_1_1_query_implementation.html" title=" " alt="" coords="5,53,272,107"/>
+<area shape="rect" id="Node000001" href="$classecstasy_1_1query_1_1_query.html" title=" " alt="" coords="320,5,580,75"/>
+<area shape="poly" id="edge39_Node000000_Node000001" title=" " alt="" coords="285,58,319,54,320,59,286,64"/>
+<area shape="rect" id="Node000004" href="$classecstasy_1_1query_1_1_query.html" title="More high&#45;level query class, wrapping the QueryImplementation." alt="" coords="369,99,531,139"/>
+<area shape="poly" id="edge41_Node000000_Node000004" title=" " alt="" coords="286,96,369,106,368,111,285,101"/>
+<area shape="rect" id="Node000002" href="$classecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_85f410b7f998e9fe9b0fa2e936412400.html" title="Registry query allocating everything on the stack (if allocation required)." alt="" coords="628,62,860,175"/>
+<area shape="poly" id="edge40_Node000001_Node000002" title=" " alt="" coords="594,76,628,85,627,90,592,81"/>
+<area shape="rect" id="Node000003" href="$classecstasy_1_1_registry_1_1_registry_stack_query_memory.html" title="Base class of RegistryStackQuery." alt="" coords="335,163,565,232"/>
+<area shape="poly" id="edge42_Node000003_Node000002" title=" " alt="" coords="578,160,627,147,628,152,579,166"/>
 </map>

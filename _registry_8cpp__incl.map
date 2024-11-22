@@ -1,152 +1,156 @@
 <map id="src/ecstasy/registry/Registry.cpp" name="src/ecstasy/registry/Registry.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="1435,5,1584,45"/>
-<area shape="rect" id="Node000002" href="$_registry_8hpp.html" title="Registry class definition." alt="" coords="1898,93,2001,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1585,37,1885,91,1884,96,1584,43"/>
-<area shape="rect" id="Node000036" href="$_entities_8hpp.html" title="Definition of the Entities class." alt="" coords="967,167,1148,207"/>
-<area shape="poly" id="edge100_Node000001_Node000036" title=" " alt="" coords="1457,48,1124,165,1123,160,1455,43"/>
-<area shape="rect" id="Node000003" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/optional.html" title=" " alt="" coords="2816,174,2891,199"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="2001,106,2405,124,2636,141,2732,152,2805,164,2816,167,2814,172,2803,169,2731,157,2636,147,2405,130,2001,112"/>
-<area shape="rect" id="Node000004" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/span.html" title=" " alt="" coords="1181,519,1235,544"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="1898,111,1725,119,1614,129,1497,142,1383,161,1281,186,1237,200,1200,217,1169,236,1147,256,1142,265,1142,273,1148,294,1156,308,1165,317,1176,327,1185,342,1199,385,1207,430,1211,505,1206,505,1202,431,1194,386,1180,344,1172,330,1162,321,1151,311,1143,296,1136,274,1137,264,1143,253,1166,232,1197,213,1235,196,1280,180,1382,155,1496,137,1613,123,1725,114,1897,106"/>
-<area shape="rect" id="Node000005" href="$_registry_modifier_8hpp.html" title="Defines a RegistryModifier concept." alt="" coords="1731,262,1949,287"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="1924,121,1893,140,1865,168,1855,187,1848,208,1843,248,1838,247,1843,207,1850,185,1861,165,1889,136,1921,116"/>
-<area shape="rect" id="Node000010" href="$_lockable_view_8hpp.html" title="Thread safe view of a Lockable object." alt="" coords="2073,519,2311,544"/>
-<area shape="poly" id="edge73_Node000002_Node000010" title=" " alt="" coords="2001,106,2078,110,2166,120,2245,137,2275,149,2295,165,2316,192,2327,215,2333,246,2332,285,2323,335,2301,397,2265,472,2248,495,2226,513,2223,509,2244,491,2260,469,2296,395,2318,334,2327,284,2327,246,2321,217,2312,195,2291,169,2272,154,2243,142,2165,125,2078,115,2001,111"/>
-<area shape="rect" id="Node000012" href="$modifiers_2_modifier_8hpp.html" title="Type erased base class for all query modifiers." alt="" coords="1877,431,2056,471"/>
-<area shape="poly" id="edge41_Node000002_Node000012" title=" " alt="" coords="2001,107,2072,112,2152,122,2222,139,2249,151,2267,165,2281,185,2288,206,2288,226,2283,246,2260,285,2223,321,2177,353,2126,383,2029,428,2027,423,2123,378,2174,349,2220,316,2256,281,2279,244,2283,226,2282,207,2276,188,2263,168,2246,155,2221,144,2151,127,2072,117,2001,112"/>
-<area shape="rect" id="Node000013" href="$_allocator_8hpp.html" title=" " alt="" coords="798,350,930,375"/>
-<area shape="poly" id="edge74_Node000002_Node000013" title=" " alt="" coords="1898,110,1680,112,1384,120,1237,127,1108,138,1010,151,977,160,956,169,936,185,920,205,894,251,879,298,870,337,865,336,873,297,890,249,915,202,933,182,953,164,975,155,1009,146,1108,132,1237,122,1383,115,1680,107,1898,105"/>
-<area shape="rect" id="Node000016" href="$_query_8hpp.html" title="Query components presents in all given queryables." alt="" coords="2866,262,3049,287"/>
-<area shape="poly" id="edge15_Node000002_Node000016" title=" " alt="" coords="2001,104,2082,107,2185,115,2299,133,2357,147,2412,164,2431,174,2444,185,2457,195,2476,204,2573,233,2673,252,2769,263,2852,269,2852,274,2768,268,2672,257,2571,238,2474,209,2454,199,2441,189,2428,178,2410,169,2355,152,2298,139,2185,121,2081,112,2001,110"/>
-<area shape="rect" id="Node000021" href="$conditions_2_condition_8hpp.html" title="Contains the condition resolution structures." alt="" coords="2517,431,2701,471"/>
-<area shape="poly" id="edge40_Node000002_Node000021" title=" " alt="" coords="2001,104,2093,106,2201,115,2253,122,2299,133,2336,147,2362,165,2371,184,2373,210,2368,274,2361,338,2363,363,2370,381,2390,396,2422,409,2505,430,2503,435,2420,414,2387,401,2366,384,2358,365,2356,338,2362,274,2368,210,2366,185,2358,168,2334,152,2297,138,2252,128,2200,120,2092,112,2001,110"/>
-<area shape="rect" id="Node000032" href="$_select_8hpp.html" title="Advanced Query. It allows to select which data must be kept from a query request." alt="" coords="3309,174,3494,199"/>
-<area shape="poly" id="edge31_Node000002_Node000032" title=" " alt="" coords="2001,107,3295,177,3295,182,2001,113"/>
-<area shape="poly" id="edge42_Node000002_Node000036" title=" " alt="" coords="1898,112,1588,130,1379,147,1167,169,1163,170,1162,165,1166,164,1379,142,1588,125,1898,107"/>
-<area shape="rect" id="Node000040" href="$_i_storage_8hpp.html" title="Abstract class for all components storage." alt="" coords="1419,438,1637,463"/>
-<area shape="poly" id="edge58_Node000002_Node000040" title=" " alt="" coords="1898,112,1822,118,1735,128,1656,145,1626,156,1606,169,1581,197,1562,229,1549,264,1539,300,1530,370,1529,424,1524,424,1525,370,1534,299,1544,263,1558,227,1577,193,1602,165,1624,151,1655,140,1734,123,1821,112,1898,107"/>
-<area shape="rect" id="Node000042" href="$_storage_concepts_8hpp.html" title="Storage concepts and utilities." alt="" coords="1616,343,1803,383"/>
-<area shape="poly" id="edge65_Node000002_Node000042" title=" " alt="" coords="1898,112,1825,117,1743,127,1670,143,1644,155,1626,168,1615,188,1612,208,1615,230,1624,252,1650,295,1681,331,1677,334,1646,298,1619,255,1610,231,1607,208,1610,186,1622,165,1641,150,1669,138,1742,121,1824,111,1897,106"/>
-<area shape="rect" id="Node000044" href="$_instances_8hpp.html" title="Set of instances inheriting from the Base type." alt="" coords="355,350,581,375"/>
-<area shape="poly" id="edge59_Node000002_Node000044" title=" " alt="" coords="1898,110,1680,111,1372,118,1212,126,1062,136,934,151,838,169,786,186,735,207,637,256,555,305,496,344,493,340,552,300,635,251,732,202,784,181,837,164,933,145,1062,131,1212,120,1372,113,1680,106,1898,104"/>
-<area shape="rect" id="Node000047" href="$_system_instances_8hpp.html" title=" " alt="" coords="5,350,280,375"/>
-<area shape="poly" id="edge66_Node000002_Node000047" title=" " alt="" coords="1898,111,1662,115,1322,125,977,142,834,155,726,169,646,187,565,208,409,258,276,308,182,347,180,342,274,303,407,253,563,203,644,181,725,164,833,149,977,137,1322,119,1662,110,1898,105"/>
-<area shape="rect" id="Node000049" href="$_i_system_8hpp.html" title="System interface, base class of all systems." alt="" coords="2582,174,2791,199"/>
-<area shape="poly" id="edge72_Node000002_Node000049" title=" " alt="" coords="2001,109,2244,130,2563,164,2602,169,2601,175,2562,169,2243,135,2000,114"/>
-<area shape="rect" id="Node000050" href="$_stack_allocator_8hpp.html" title="Stack Allocator." alt="" coords="605,350,773,375"/>
-<area shape="poly" id="edge75_Node000002_Node000050" title=" " alt="" coords="1898,111,1674,117,1365,128,1077,145,973,156,913,169,879,185,847,206,789,253,741,301,708,341,704,337,737,298,785,249,844,201,877,181,911,164,972,151,1077,140,1365,122,1673,111,1898,106"/>
-<area shape="rect" id="Node000053" href="$apply_8hpp.html" title="Apply a modification on all types in a list." alt="" coords="3097,262,3244,287"/>
-<area shape="poly" id="edge79_Node000002_Node000053" title=" " alt="" coords="2001,108,2242,128,2370,144,2423,153,2462,164,2482,174,2495,185,2508,195,2526,204,2604,227,2672,239,2732,245,2789,245,2909,242,2980,244,3062,252,3096,257,3095,262,3061,257,2979,250,2909,248,2789,250,2732,250,2671,245,2603,232,2524,209,2505,200,2492,189,2479,178,2460,169,2421,159,2369,149,2241,133,2001,113"/>
-<area shape="rect" id="Node000054" href="$filter_8hpp.html" title="Filter types from a list." alt="" coords="3331,262,3474,287"/>
-<area shape="poly" id="edge81_Node000002_Node000054" title=" " alt="" coords="2001,107,2267,125,2410,141,2469,152,2513,164,2531,174,2543,185,2555,195,2572,204,2636,220,2717,231,2911,241,3105,245,3256,252,3318,259,3317,264,3256,257,3105,251,2910,246,2717,236,2635,225,2570,209,2552,200,2539,189,2528,178,2511,169,2468,157,2409,147,2267,130,2001,112"/>
-<area shape="rect" id="Node000055" href="$component__type_8hpp.html" title="Get the component type of the given type." alt="" coords="1636,167,1793,207"/>
-<area shape="poly" id="edge83_Node000002_Node000055" title=" " alt="" coords="1916,121,1785,165,1783,160,1914,116"/>
-<area shape="rect" id="Node000056" href="$queryable__type_8hpp.html" title="Defines the queryable_type type trait." alt="" coords="1875,167,2024,207"/>
-<area shape="poly" id="edge87_Node000002_Node000056" title=" " alt="" coords="1952,119,1952,153,1947,153,1947,119"/>
-<area shape="rect" id="Node000057" href="$modifier__allocator__size_8hpp.html" title="Get the allocator required size for a list of queryables." alt="" coords="2048,167,2253,207"/>
-<area shape="poly" id="edge93_Node000002_Node000057" title=" " alt="" coords="1980,116,2091,159,2089,164,1978,121"/>
-<area shape="rect" id="Node000058" href="$outer__join_8hpp.html" title="Performs a left outer join between two parameter packs." alt="" coords="3765,262,3944,287"/>
-<area shape="poly" id="edge97_Node000002_Node000058" title=" " alt="" coords="2001,105,2294,107,2730,116,3178,134,3366,147,3507,164,3594,183,3680,207,3815,254,3813,259,3678,212,3593,188,3506,169,3365,152,3178,139,2730,121,2293,113,2001,110"/>
-<area shape="rect" id="Node000006" href="$concepts_2_modifier_8hpp.html" title="Contains the concepts for query modifiers." alt="" coords="1827,343,2002,383"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1852,286,1891,330,1887,334,1848,289"/>
-<area shape="poly" id="edge12_Node000005_Node000013" title=" " alt="" coords="1731,287,1044,345,944,355,943,350,1044,340,1730,282"/>
-<area shape="rect" id="Node000007" href="$_queryable_8hpp.html" title="Contains the concepts for queryable objects." alt="" coords="2133,438,2251,463"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1976,380,2143,431,2141,436,1975,385"/>
-<area shape="poly" id="edge11_Node000006_Node000012" title=" " alt="" coords="1928,382,1950,418,1946,420,1924,384"/>
-<area shape="rect" id="Node000008" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/concepts.html" title=" " alt="" coords="1872,665,1952,691"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="2164,466,2115,489,2063,521,2023,554,1986,591,1931,656,1927,653,1982,588,2019,551,2060,517,2112,484,2162,461"/>
-<area shape="poly" id="edge8_Node000007_Node000010" title=" " alt="" coords="2195,464,2195,505,2189,505,2189,464"/>
-<area shape="rect" id="Node000011" href="$_lockable_8hpp.html" title=" " alt="" coords="2050,592,2257,617"/>
-<area shape="poly" id="edge9_Node000010_Node000011" title=" " alt="" coords="2188,546,2168,581,2164,579,2183,543"/>
-<area shape="poly" id="edge10_Node000011_Node000008" title=" " alt="" coords="2115,620,1965,664,1964,659,2114,615"/>
-<area shape="rect" id="Node000014" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/memory.html" title=" " alt="" coords="641,438,719,463"/>
-<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="840,378,719,434,716,430,838,373"/>
-<area shape="rect" id="Node000015" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/vector.html" title=" " alt="" coords="871,438,934,463"/>
-<area shape="poly" id="edge14_Node000013_Node000015" title=" " alt="" coords="872,374,894,424,889,426,867,377"/>
-<area shape="poly" id="edge22_Node000016_Node000007" title=" " alt="" coords="2881,290,2792,311,2745,326,2700,345,2685,355,2675,365,2664,376,2648,385,2598,403,2547,418,2443,438,2346,449,2265,452,2264,447,2345,443,2442,433,2546,413,2597,398,2646,380,2661,371,2671,361,2682,351,2697,340,2743,321,2791,306,2880,285"/>
-<area shape="rect" id="Node000017" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/algorithm.html" title=" " alt="" coords="3384,350,3469,375"/>
-<area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="3035,285,3215,313,3366,340,3380,344,3378,349,3365,345,3214,318,3034,290"/>
-<area shape="rect" id="Node000018" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/functional.html" title=" " alt="" coords="3222,350,3309,375"/>
-<area shape="poly" id="edge17_Node000016_Node000018" title=" " alt="" coords="3001,285,3203,340,3215,344,3214,349,3202,345,3000,290"/>
-<area shape="rect" id="Node000019" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/thread.html" title=" " alt="" coords="2909,350,2973,375"/>
-<area shape="poly" id="edge18_Node000016_Node000019" title=" " alt="" coords="2958,288,2949,337,2943,336,2953,287"/>
-<area shape="rect" id="Node000020" href="$concepts_2_condition_8hpp.html" title="Contains all the condition concepts." alt="" coords="2710,350,2885,375"/>
-<area shape="poly" id="edge19_Node000016_Node000020" title=" " alt="" coords="2937,290,2832,346,2830,341,2935,285"/>
-<area shape="poly" id="edge25_Node000016_Node000021" title=" " alt="" coords="3028,285,3086,299,3139,320,3158,333,3170,348,3171,365,3161,385,3139,397,3099,407,2983,425,2844,438,2715,447,2715,441,2844,433,2982,420,3098,402,3137,392,3157,381,3166,364,3165,350,3154,336,3136,324,3085,304,3027,290"/>
-<area shape="rect" id="Node000022" href="$_queryable_need_adjust_8hpp.html" title="Defines a Queryable object type which has the adjustMask() implemented." alt="" coords="2379,350,2634,375"/>
-<area shape="poly" id="edge23_Node000016_Node000022" title=" " alt="" coords="2898,290,2580,350,2579,345,2897,285"/>
-<area shape="rect" id="Node000023" href="$_bit_set_8hpp.html" title=" " alt="" coords="1056,350,1171,375"/>
-<area shape="poly" id="edge26_Node000016_Node000023" title=" " alt="" coords="2866,283,1184,361,1184,355,2866,278"/>
-<area shape="rect" id="Node000028" href="$_traits_8hpp.html" title="Helper types for parameter packs." alt="" coords="3483,519,3631,544"/>
-<area shape="poly" id="edge28_Node000016_Node000028" title=" " alt="" coords="3030,285,3203,314,3279,329,3323,340,3534,508,3531,512,3320,345,3278,334,3202,319,3030,290"/>
-<area shape="rect" id="Node000030" href="$index_8hpp.html" title="Get the index of the first occurence of a type in a list of types." alt="" coords="2997,350,3147,375"/>
-<area shape="poly" id="edge30_Node000016_Node000030" title=" " alt="" coords="2974,285,3047,340,3044,344,2971,290"/>
-<area shape="poly" id="edge20_Node000020_Node000021" title=" " alt="" coords="2773,378,2664,427,2662,423,2771,373"/>
-<area shape="poly" id="edge21_Node000021_Node000008" title=" " alt="" coords="2580,473,2448,545,2361,586,2270,620,2188,642,2105,658,1966,675,1965,670,2104,652,2187,637,2269,615,2359,581,2446,540,2577,469"/>
-<area shape="poly" id="edge24_Node000022_Node000007" title=" " alt="" coords="2465,378,2248,437,2247,432,2464,373"/>
-<area shape="poly" id="edge27_Node000023_Node000015" title=" " alt="" coords="1086,378,945,435,943,430,1084,373"/>
-<area shape="rect" id="Node000029" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/tuple.html" title=" " alt="" coords="3741,592,3795,617"/>
-<area shape="poly" id="edge29_Node000028_Node000029" title=" " alt="" coords="3592,541,3728,587,3726,592,3590,547"/>
-<area shape="poly" id="edge35_Node000032_Node000016" title=" " alt="" coords="3342,202,3030,262,3029,257,3341,197"/>
-<area shape="poly" id="edge32_Node000032_Node000017" title=" " alt="" coords="3380,202,3348,224,3333,239,3322,256,3317,275,3322,293,3333,309,3347,322,3380,342,3377,346,3344,326,3329,312,3318,296,3311,275,3318,254,3329,235,3345,220,3377,197"/>
-<area shape="poly" id="edge36_Node000032_Node000028" title=" " alt="" coords="3456,197,3589,226,3681,252,3714,270,3739,287,3759,309,3777,342,3784,373,3777,402,3760,428,3735,452,3704,472,3671,490,3608,516,3606,512,3669,485,3702,468,3731,448,3756,425,3772,400,3778,373,3772,344,3755,312,3736,291,3712,275,3679,257,3588,232,3455,202"/>
-<area shape="poly" id="edge34_Node000032_Node000029" title=" " alt="" coords="3494,184,3616,186,3753,196,3818,205,3876,217,3924,232,3958,253,3978,277,3985,302,3984,361,3984,452,3979,482,3965,509,3945,531,3920,550,3863,579,3809,597,3808,592,3861,574,3917,546,3941,527,3961,506,3974,481,3979,452,3979,361,3980,302,3973,279,3954,257,3922,237,3875,222,3817,210,3752,201,3616,192,3494,189"/>
-<area shape="rect" id="Node000033" title=" " alt="" coords="2027,350,2101,375"/>
-<area shape="poly" id="edge33_Node000032_Node000033" title=" " alt="" coords="3309,202,2855,257,2115,357,2115,352,2854,252,3308,196"/>
-<area shape="rect" id="Node000034" href="$contains_8hpp.html" title="Checks if a type exists in a list of types." alt="" coords="3595,350,3763,375"/>
-<area shape="poly" id="edge37_Node000032_Node000034" title=" " alt="" coords="3495,188,3536,195,3579,207,3619,226,3654,253,3667,272,3676,294,3682,336,3677,336,3671,295,3663,274,3650,257,3616,230,3577,212,3535,200,3494,193"/>
-<area shape="rect" id="Node000035" href="$type__set__eq_8hpp.html" title="Test if two tuple types contains the exact same types independently of the order." alt="" coords="3499,255,3640,295"/>
-<area shape="poly" id="edge38_Node000032_Node000035" title=" " alt="" coords="3425,197,3521,246,3519,251,3423,202"/>
-<area shape="poly" id="edge39_Node000035_Node000034" title=" " alt="" coords="3595,293,3654,339,3651,343,3592,297"/>
-<area shape="poly" id="edge43_Node000036_Node000004" title=" " alt="" coords="1053,207,1043,242,1035,286,1035,335,1039,359,1046,382,1072,423,1106,459,1142,488,1176,509,1173,514,1139,492,1102,463,1068,426,1042,384,1034,360,1029,335,1030,286,1038,240,1048,206"/>
-<area shape="poly" id="edge44_Node000036_Node000015" title=" " alt="" coords="1041,208,1002,256,983,290,971,319,944,384,919,427,915,425,939,381,966,317,978,288,998,253,1037,205"/>
-<area shape="poly" id="edge57_Node000036_Node000023" title=" " alt="" coords="1066,206,1108,336,1103,337,1061,208"/>
-<area shape="rect" id="Node000037" href="$_entity_8hpp.html" title="Encapsulate an index to an entity." alt="" coords="1417,262,1503,287"/>
-<area shape="poly" id="edge45_Node000036_Node000037" title=" " alt="" coords="1149,199,1271,222,1405,252,1416,255,1415,260,1403,257,1270,227,1148,205"/>
-<area shape="rect" id="Node000043" href="$_i_resource_8hpp.html" title="Base class of all registry resources." alt="" coords="1157,262,1392,287"/>
-<area shape="poly" id="edge55_Node000036_Node000043" title=" " alt="" coords="1106,204,1234,255,1232,259,1104,209"/>
-<area shape="poly" id="edge46_Node000037_Node000033" title=" " alt="" coords="1504,277,1765,304,1910,322,2015,340,2025,343,2024,348,2014,345,1909,327,1765,309,1503,283"/>
-<area shape="rect" id="Node000039" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/stdexcept.html" title=" " alt="" coords="313,438,399,463"/>
-<area shape="poly" id="edge47_Node000037_Node000039" title=" " alt="" coords="1431,290,1404,297,1219,303,867,309,518,321,398,331,361,338,344,345,335,362,334,383,338,404,346,424,341,426,333,406,329,383,330,361,341,341,360,333,397,326,517,316,867,304,1219,298,1404,292,1430,285"/>
-<area shape="poly" id="edge48_Node000037_Node000040" title=" " alt="" coords="1467,286,1521,424,1516,426,1462,288"/>
-<area shape="poly" id="edge52_Node000037_Node000042" title=" " alt="" coords="1494,285,1642,336,1640,341,1493,290"/>
-<area shape="poly" id="edge49_Node000040_Node000004" title=" " alt="" coords="1482,466,1249,523,1247,518,1481,461"/>
-<area shape="poly" id="edge51_Node000040_Node000028" title=" " alt="" coords="1637,456,1865,468,2804,504,3469,525,3469,530,2803,509,1865,473,1637,461"/>
-<area shape="rect" id="Node000041" title=" " alt="" coords="1358,519,1501,544"/>
-<area shape="poly" id="edge50_Node000040_Node000041" title=" " alt="" coords="1515,466,1456,512,1453,508,1512,461"/>
-<area shape="poly" id="edge53_Node000042_Node000008" title=" " alt="" coords="1724,382,1899,652,1895,655,1719,385"/>
-<area shape="poly" id="edge54_Node000042_Node000040" title=" " alt="" coords="1671,385,1565,435,1563,430,1668,380"/>
-<area shape="poly" id="edge56_Node000043_Node000041" title=" " alt="" coords="1284,286,1417,505,1413,508,1279,289"/>
-<area shape="poly" id="edge60_Node000044_Node000008" title=" " alt="" coords="468,376,464,422,469,447,482,469,527,504,587,535,660,562,745,586,839,606,940,622,1154,647,1370,663,1571,671,1858,675,1858,680,1570,677,1370,668,1153,653,939,628,838,611,744,591,659,567,585,540,524,508,478,472,464,449,459,422,463,376"/>
-<area shape="poly" id="edge61_Node000044_Node000014" title=" " alt="" coords="498,373,640,430,638,435,496,378"/>
-<area shape="poly" id="edge62_Node000044_Node000039" title=" " alt="" coords="455,378,384,431,381,427,451,373"/>
-<area shape="rect" id="Node000045" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/typeindex.html" title=" " alt="" coords="202,438,289,463"/>
-<area shape="poly" id="edge63_Node000044_Node000045" title=" " alt="" coords="439,378,289,435,287,430,437,373"/>
-<area shape="rect" id="Node000046" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/unordered_map.html" title=" " alt="" coords="493,438,617,463"/>
-<area shape="poly" id="edge64_Node000044_Node000046" title=" " alt="" coords="482,374,535,426,531,430,478,377"/>
-<area shape="poly" id="edge67_Node000047_Node000008" title=" " alt="" coords="136,377,124,397,113,421,109,447,111,458,117,469,151,508,185,540,220,564,254,583,289,597,325,606,399,613,479,612,566,607,661,606,766,615,926,634,1089,648,1407,666,1677,673,1858,674,1858,680,1677,679,1407,672,1089,654,925,639,765,620,661,612,566,613,479,617,399,618,324,611,288,602,252,588,217,569,182,544,147,512,112,472,106,460,103,447,107,420,119,394,132,374"/>
-<area shape="poly" id="edge69_Node000047_Node000014" title=" " alt="" coords="244,373,455,399,555,414,629,428,640,431,638,436,627,433,555,419,454,404,243,378"/>
-<area shape="poly" id="edge70_Node000047_Node000039" title=" " alt="" coords="172,373,315,430,314,435,170,378"/>
-<area shape="poly" id="edge71_Node000047_Node000045" title=" " alt="" coords="158,373,222,427,219,431,155,378"/>
-<area shape="rect" id="Node000048" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/map.html" title=" " alt="" coords="127,438,177,463"/>
-<area shape="poly" id="edge68_Node000047_Node000048" title=" " alt="" coords="147,375,152,424,147,424,141,376"/>
-<area shape="poly" id="edge77_Node000050_Node000014" title=" " alt="" coords="691,376,685,424,680,424,685,375"/>
-<area shape="poly" id="edge78_Node000050_Node000015" title=" " alt="" coords="719,373,862,430,860,435,717,378"/>
-<area shape="rect" id="Node000051" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/cstring.html" title=" " alt="" coords="743,438,809,463"/>
-<area shape="poly" id="edge76_Node000050_Node000051" title=" " alt="" coords="703,374,756,426,752,430,699,377"/>
-<area shape="poly" id="edge80_Node000053_Node000028" title=" " alt="" coords="3241,285,3387,312,3449,327,3483,340,3501,358,3515,379,3537,424,3550,468,3557,505,3552,506,3545,469,3532,425,3511,381,3497,362,3480,345,3447,332,3386,317,3240,290"/>
-<area shape="poly" id="edge82_Node000054_Node000028" title=" " alt="" coords="3444,285,3488,306,3510,322,3528,341,3548,382,3559,427,3563,470,3562,505,3557,505,3557,470,3554,428,3543,384,3523,344,3506,326,3486,311,3442,290"/>
-<area shape="poly" id="edge84_Node000055_Node000005" title=" " alt="" coords="1744,205,1813,252,1810,256,1741,209"/>
-<area shape="poly" id="edge85_Node000055_Node000040" title=" " alt="" coords="1703,209,1606,344,1547,428,1542,425,1602,341,1699,205"/>
-<area shape="poly" id="edge86_Node000055_Node000042" title=" " alt="" coords="1717,207,1713,329,1708,329,1711,207"/>
-<area shape="poly" id="edge90_Node000056_Node000005" title=" " alt="" coords="1927,209,1868,255,1864,251,1923,205"/>
-<area shape="poly" id="edge88_Node000056_Node000006" title=" " alt="" coords="1973,205,1990,223,2005,246,2012,271,2008,296,1991,319,1969,337,1965,333,1987,315,2003,294,2007,271,2000,248,1986,227,1969,209"/>
-<area shape="poly" id="edge89_Node000056_Node000007" title=" " alt="" coords="1973,205,2027,253,2073,295,2115,341,2179,425,2174,428,2111,344,2069,299,2024,257,1970,209"/>
-<area shape="poly" id="edge92_Node000056_Node000042" title=" " alt="" coords="1961,206,1974,249,1973,274,1963,296,1945,307,1910,319,1816,342,1814,337,1908,314,1942,302,1959,293,1968,273,1968,250,1956,207"/>
-<area shape="poly" id="edge91_Node000056_Node000043" title=" " alt="" coords="1875,200,1806,209,1406,257,1366,263,1365,257,1405,252,1805,204,1874,195"/>
-<area shape="poly" id="edge96_Node000057_Node000005" title=" " alt="" coords="2083,209,1895,261,1894,256,2082,204"/>
-<area shape="poly" id="edge94_Node000057_Node000006" title=" " alt="" coords="2132,209,2085,251,2027,297,1963,338,1960,333,2024,292,2082,246,2129,205"/>
-<area shape="poly" id="edge95_Node000057_Node000007" title=" " alt="" coords="2176,205,2195,227,2210,254,2220,300,2219,348,2212,391,2203,426,2198,424,2207,390,2214,347,2215,301,2206,256,2191,230,2172,209"/>
-<area shape="poly" id="edge98_Node000058_Node000028" title=" " alt="" coords="3859,287,3862,323,3861,372,3849,426,3837,451,3820,473,3792,490,3748,504,3646,523,3645,518,3747,499,3790,485,3817,469,3833,448,3844,424,3855,372,3857,323,3854,288"/>
-<area shape="poly" id="edge99_Node000058_Node000034" title=" " alt="" coords="3832,290,3716,346,3714,341,3830,285"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="1220,5,1369,45"/>
+<area shape="rect" id="Node000002" href="$_registry_8hpp.html" title="Registry class definition." alt="" coords="1643,93,1746,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1370,39,1630,89,1629,95,1369,44"/>
+<area shape="rect" id="Node000036" href="$_entities_8hpp.html" title="Definition of the Entities class." alt="" coords="331,167,512,207"/>
+<area shape="poly" id="edge104_Node000001_Node000036" title=" " alt="" coords="1220,43,526,169,525,164,1219,38"/>
+<area shape="rect" id="Node000003" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/optional.html" title=" " alt="" coords="4125,174,4200,199"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1746,105,2220,109,2960,120,3683,137,3950,150,4107,164,4122,167,4120,173,4106,169,3950,155,3683,143,2960,125,2220,115,1746,110"/>
+<area shape="rect" id="Node000004" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/span.html" title=" " alt="" coords="80,519,133,544"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="1643,110,1327,114,866,124,425,141,264,154,207,161,170,169,109,185,57,200,37,210,21,225,12,246,8,274,8,364,10,386,16,407,35,447,61,481,85,507,81,511,56,484,31,449,11,409,5,387,3,364,3,273,6,244,17,222,34,206,55,195,108,180,169,164,206,156,263,149,424,136,866,118,1327,109,1643,105"/>
+<area shape="rect" id="Node000005" href="$_registry_modifier_8hpp.html" title="Defines a RegistryModifier concept." alt="" coords="1237,262,1456,287"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="1643,112,1597,117,1543,127,1488,144,1436,169,1413,187,1392,209,1362,252,1357,249,1388,205,1409,183,1433,164,1486,139,1542,122,1596,112,1643,107"/>
+<area shape="rect" id="Node000010" href="$_lockable_view_8hpp.html" title="Thread safe view of a Lockable object." alt="" coords="2959,519,3198,544"/>
+<area shape="poly" id="edge76_Node000002_Node000010" title=" " alt="" coords="1746,107,2154,127,2452,146,2771,171,3083,203,3356,241,3469,263,3562,287,3630,313,3654,326,3670,341,3689,369,3697,394,3694,418,3683,438,3663,456,3637,471,3568,495,3483,512,3390,523,3212,533,3212,527,3390,518,3482,507,3567,490,3635,466,3660,451,3679,435,3689,416,3691,395,3684,371,3666,344,3651,331,3628,318,3560,292,3468,268,3355,246,3082,208,2771,176,2451,151,2154,132,1746,112"/>
+<area shape="rect" id="Node000012" href="$modifiers_2_modifier_8hpp.html" title="Type erased base class for all query modifiers." alt="" coords="677,431,856,471"/>
+<area shape="poly" id="edge39_Node000002_Node000012" title=" " alt="" coords="1643,111,1355,115,941,126,547,143,403,155,319,169,274,183,239,197,211,219,185,256,177,275,174,291,175,306,180,318,200,338,230,352,302,369,357,380,436,402,517,419,664,439,663,444,516,424,434,407,355,385,300,375,229,357,197,342,176,321,170,307,168,291,172,273,180,253,207,215,237,193,272,178,318,164,402,150,546,138,941,120,1355,110,1643,105"/>
+<area shape="rect" id="Node000013" href="$_allocator_8hpp.html" title=" " alt="" coords="1071,350,1203,375"/>
+<area shape="poly" id="edge77_Node000002_Node000013" title=" " alt="" coords="1643,111,1510,117,1344,128,1197,145,1147,156,1120,169,1108,187,1102,208,1100,231,1101,255,1113,300,1128,337,1123,339,1108,302,1096,255,1094,231,1096,207,1103,185,1117,165,1145,151,1196,139,1343,122,1509,112,1643,106"/>
+<area shape="rect" id="Node000016" href="$_query_8hpp.html" title="Query components presents in all given queryables." alt="" coords="2934,262,3117,287"/>
+<area shape="poly" id="edge13_Node000002_Node000016" title=" " alt="" coords="1746,106,1885,110,2084,119,2314,137,2547,164,2667,185,2784,210,2971,256,2970,261,2783,215,2666,190,2546,169,2313,142,2083,125,1885,115,1746,111"/>
+<area shape="rect" id="Node000021" href="$conditions_2_condition_8hpp.html" title="Contains the condition resolution structures." alt="" coords="2608,431,2792,471"/>
+<area shape="poly" id="edge38_Node000002_Node000021" title=" " alt="" coords="1746,105,1928,108,2166,117,2283,124,2384,134,2461,148,2488,156,2504,165,2526,190,2536,216,2538,243,2536,270,2533,298,2533,325,2540,353,2557,381,2584,405,2616,423,2614,428,2581,410,2553,384,2535,355,2528,326,2528,298,2531,270,2533,243,2531,217,2522,193,2501,169,2486,160,2460,153,2384,140,2282,130,2166,122,1928,113,1746,110"/>
+<area shape="rect" id="Node000032" href="$_select_8hpp.html" title="Advanced Query. It allows to select which data must be kept from a query request." alt="" coords="3657,174,3842,199"/>
+<area shape="poly" id="edge29_Node000002_Node000032" title=" " alt="" coords="1746,105,2649,122,3218,139,3457,151,3638,164,3677,169,3676,174,3637,169,3457,156,3218,145,2649,127,1746,111"/>
+<area shape="poly" id="edge40_Node000002_Node000036" title=" " alt="" coords="1643,110,1462,113,1189,121,863,139,526,169,526,164,863,134,1188,116,1462,108,1643,105"/>
+<area shape="rect" id="Node000040" href="$_i_storage_8hpp.html" title="Abstract class for all components storage." alt="" coords="233,438,452,463"/>
+<area shape="poly" id="edge56_Node000002_Node000040" title=" " alt="" coords="1643,111,1322,116,858,127,430,145,285,156,240,162,217,169,191,189,172,213,160,239,155,267,157,296,166,325,181,354,202,381,220,397,241,411,286,431,283,436,239,416,217,402,198,384,176,357,161,327,152,297,150,267,155,238,167,210,187,186,215,164,239,157,284,151,429,139,857,122,1322,111,1643,105"/>
+<area shape="rect" id="Node000042" href="$_storage_concepts_8hpp.html" title="Storage concepts and utilities." alt="" coords="380,343,567,383"/>
+<area shape="poly" id="edge63_Node000002_Node000042" title=" " alt="" coords="1643,113,1386,131,1217,147,1046,169,837,197,748,217,638,257,581,290,513,337,510,332,578,286,636,252,747,212,836,192,1045,164,1216,142,1386,125,1643,107"/>
+<area shape="rect" id="Node000044" href="$_instances_8hpp.html" title="Set of instances inheriting from the Base type." alt="" coords="1581,262,1808,287"/>
+<area shape="poly" id="edge57_Node000002_Node000044" title=" " alt="" coords="1697,119,1697,248,1692,248,1692,119"/>
+<area shape="rect" id="Node000047" href="$_system_instances_8hpp.html" title=" " alt="" coords="1832,262,2107,287"/>
+<area shape="poly" id="edge64_Node000002_Node000047" title=" " alt="" coords="1715,116,1940,253,1937,257,1712,121"/>
+<area shape="rect" id="Node000049" href="$_i_system_8hpp.html" title="System interface, base class of all systems." alt="" coords="2179,350,2389,375"/>
+<area shape="poly" id="edge70_Node000002_Node000049" title=" " alt="" coords="1746,108,1890,122,2074,148,2164,167,2245,191,2310,219,2335,235,2353,253,2359,265,2360,277,2352,302,2334,325,2313,344,2309,340,2330,321,2347,299,2355,277,2354,266,2349,256,2331,240,2308,224,2243,196,2163,173,2073,154,1889,127,1746,113"/>
+<area shape="rect" id="Node000050" href="$_pipeline_8hpp.html" title=" " alt="" coords="2131,262,2339,287"/>
+<area shape="poly" id="edge71_Node000002_Node000050" title=" " alt="" coords="1733,116,2185,255,2184,261,1731,121"/>
+<area shape="rect" id="Node000051" href="$_stack_allocator_8hpp.html" title="Stack Allocator." alt="" coords="879,350,1047,375"/>
+<area shape="poly" id="edge78_Node000002_Node000051" title=" " alt="" coords="1643,110,1517,111,1356,119,1275,126,1202,137,1140,151,1096,169,1073,186,1051,206,1016,252,990,300,973,338,969,336,985,297,1012,250,1047,202,1069,182,1093,164,1139,146,1201,132,1275,121,1355,114,1516,106,1643,104"/>
+<area shape="rect" id="Node000054" href="$apply_8hpp.html" title="Apply a modification on all types in a list." alt="" coords="3984,438,4131,463"/>
+<area shape="poly" id="edge81_Node000002_Node000054" title=" " alt="" coords="1746,104,2176,104,2838,109,3178,116,3482,127,3718,142,3801,152,3855,164,3898,179,3930,196,3958,219,3987,253,4015,296,4034,343,4056,424,4051,425,4029,345,4010,299,3983,256,3954,223,3927,200,3896,184,3854,169,3800,158,3717,148,3481,132,3178,121,2838,114,2176,109,1746,110"/>
+<area shape="rect" id="Node000055" href="$filter_8hpp.html" title="Filter types from a list." alt="" coords="4214,438,4357,463"/>
+<area shape="poly" id="edge83_Node000002_Node000055" title=" " alt="" coords="1746,104,2264,104,3069,110,3476,117,3829,128,4089,143,4170,153,4213,164,4243,188,4265,219,4279,254,4289,292,4295,366,4291,424,4286,424,4289,366,4283,293,4274,256,4260,222,4239,192,4211,169,4169,158,4088,148,3829,133,3475,122,3069,115,2264,110,1746,110"/>
+<area shape="rect" id="Node000056" href="$component__type_8hpp.html" title="Get the component type of the given type." alt="" coords="536,167,693,207"/>
+<area shape="poly" id="edge85_Node000002_Node000056" title=" " alt="" coords="1643,111,1486,115,1256,124,987,142,712,169,707,170,707,165,712,164,986,136,1256,119,1486,109,1643,105"/>
+<area shape="rect" id="Node000057" href="$queryable__type_8hpp.html" title="Defines the queryable_type type trait." alt="" coords="1131,167,1280,207"/>
+<area shape="poly" id="edge89_Node000002_Node000057" title=" " alt="" coords="1644,118,1294,174,1293,169,1643,113"/>
+<area shape="rect" id="Node000058" href="$modifier__allocator__size_8hpp.html" title="Get the allocator required size for a list of queryables." alt="" coords="1447,167,1652,207"/>
+<area shape="poly" id="edge95_Node000002_Node000058" title=" " alt="" coords="1674,121,1598,162,1595,158,1672,116"/>
+<area shape="rect" id="Node000059" href="$is__size__t__convertible_8hpp.html" title="Check if a type is a std::size_t or convertible to it." alt="" coords="2349,167,2491,207"/>
+<area shape="poly" id="edge99_Node000002_Node000059" title=" " alt="" coords="1746,107,1998,126,2164,142,2331,164,2336,165,2335,170,2330,169,2163,148,1998,131,1746,113"/>
+<area shape="rect" id="Node000060" href="$outer__join_8hpp.html" title="Performs a left outer join between two parameter packs." alt="" coords="4075,262,4253,287"/>
+<area shape="poly" id="edge101_Node000002_Node000060" title=" " alt="" coords="1746,105,2233,108,2986,118,3366,125,3696,135,3939,148,4016,156,4057,164,4087,181,4113,204,4151,249,4147,252,4109,207,4084,186,4055,169,4015,161,3939,153,3696,141,3365,131,2986,123,2233,114,1746,110"/>
+<area shape="rect" id="Node000006" href="$concepts_2_modifier_8hpp.html" title="Contains the concepts for query modifiers." alt="" coords="1279,343,1454,383"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1352,287,1362,328,1356,330,1347,288"/>
+<area shape="poly" id="edge10_Node000005_Node000013" title=" " alt="" coords="1319,290,1179,347,1177,342,1317,285"/>
+<area shape="rect" id="Node000007" href="$_queryable_8hpp.html" title="Contains the concepts for queryable objects." alt="" coords="2467,438,2584,463"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1454,373,1519,380,1789,403,2055,421,2453,443,2453,449,2054,426,1789,408,1518,385,1454,378"/>
+<area shape="poly" id="edge9_Node000006_Node000012" title=" " alt="" coords="1279,379,870,437,869,432,1278,374"/>
+<area shape="rect" id="Node000008" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/concepts.html" title=" " alt="" coords="2127,519,2207,544"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="2480,466,2449,473,2221,522,2220,517,2447,468,2479,461"/>
+<area shape="poly" id="edge8_Node000007_Node000010" title=" " alt="" coords="2565,461,2597,468,2779,497,2946,516,2945,521,2778,502,2595,473,2564,466"/>
+<area shape="rect" id="Node000014" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/memory.html" title=" " alt="" coords="1276,438,1353,463"/>
+<area shape="poly" id="edge11_Node000013_Node000014" title=" " alt="" coords="1162,373,1280,430,1277,434,1160,378"/>
+<area shape="rect" id="Node000015" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/vector.html" title=" " alt="" coords="931,438,994,463"/>
+<area shape="poly" id="edge12_Node000013_Node000015" title=" " alt="" coords="1115,378,1000,434,998,429,1113,373"/>
+<area shape="poly" id="edge20_Node000016_Node000007" title=" " alt="" coords="3117,274,3212,279,3314,289,3361,298,3403,309,3436,323,3459,341,3469,363,3467,374,3459,385,3439,397,3406,407,3309,420,3181,427,3037,430,2761,429,2658,430,2596,433,2577,437,2576,432,2596,428,2657,424,2761,424,3037,424,3181,422,3308,415,3405,402,3437,392,3456,381,3462,372,3464,363,3455,344,3434,328,3401,314,3360,303,3313,295,3212,284,3117,279"/>
+<area shape="rect" id="Node000017" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/algorithm.html" title=" " alt="" coords="3571,350,3656,375"/>
+<area shape="poly" id="edge14_Node000016_Node000017" title=" " alt="" coords="3117,280,3318,301,3436,318,3553,340,3567,343,3565,349,3551,345,3435,324,3317,307,3117,286"/>
+<area shape="rect" id="Node000018" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/functional.html" title=" " alt="" coords="2817,350,2903,375"/>
+<area shape="poly" id="edge15_Node000016_Node000018" title=" " alt="" coords="3004,290,2896,346,2893,341,3002,285"/>
+<area shape="rect" id="Node000019" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/thread.html" title=" " alt="" coords="2928,350,2992,375"/>
+<area shape="poly" id="edge16_Node000016_Node000019" title=" " alt="" coords="3019,289,2980,340,2975,337,3014,286"/>
+<area shape="rect" id="Node000020" href="$concepts_2_condition_8hpp.html" title="Contains all the condition concepts." alt="" coords="2566,350,2741,375"/>
+<area shape="poly" id="edge17_Node000016_Node000020" title=" " alt="" coords="2976,290,2717,350,2715,344,2975,285"/>
+<area shape="poly" id="edge23_Node000016_Node000021" title=" " alt="" coords="2958,290,2883,311,2844,326,2807,345,2761,381,2725,421,2721,418,2757,378,2804,340,2841,321,2881,306,2957,285"/>
+<area shape="rect" id="Node000022" href="$_queryable_need_adjust_8hpp.html" title="Defines a Queryable object type which has the adjustMask() implemented." alt="" coords="3190,350,3445,375"/>
+<area shape="poly" id="edge21_Node000016_Node000022" title=" " alt="" coords="3065,285,3266,343,3264,349,3064,290"/>
+<area shape="rect" id="Node000023" href="$_bit_set_8hpp.html" title=" " alt="" coords="740,350,855,375"/>
+<area shape="poly" id="edge24_Node000016_Node000023" title=" " alt="" coords="2934,281,1768,315,1155,334,867,345,847,349,846,344,866,340,1155,328,1768,309,2934,276"/>
+<area shape="rect" id="Node000028" href="$_traits_8hpp.html" title="Helper types for parameter packs." alt="" coords="3873,519,4021,544"/>
+<area shape="poly" id="edge26_Node000016_Node000028" title=" " alt="" coords="3117,278,3196,285,3288,297,3385,315,3481,340,3521,359,3560,380,3748,456,3901,512,3899,517,3746,461,3558,385,3519,364,3479,345,3384,320,3287,302,3196,290,3117,283"/>
+<area shape="rect" id="Node000030" href="$index_8hpp.html" title="Get the index of the first occurence of a type in a list of types." alt="" coords="3016,350,3165,375"/>
+<area shape="poly" id="edge28_Node000016_Node000030" title=" " alt="" coords="3036,286,3075,337,3071,340,3032,289"/>
+<area shape="poly" id="edge18_Node000020_Node000021" title=" " alt="" coords="2662,374,2685,417,2681,420,2657,377"/>
+<area shape="poly" id="edge19_Node000021_Node000008" title=" " alt="" coords="2608,471,2596,473,2221,526,2220,521,2596,468,2607,466"/>
+<area shape="poly" id="edge22_Node000022_Node000007" title=" " alt="" coords="3238,378,3178,385,3014,398,2886,403,2759,411,2596,433,2577,437,2576,432,2596,428,2758,406,2886,398,3014,393,3177,380,3237,373"/>
+<area shape="poly" id="edge25_Node000023_Node000015" title=" " alt="" coords="821,373,929,429,927,434,818,378"/>
+<area shape="rect" id="Node000029" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/tuple.html" title=" " alt="" coords="3815,592,3870,617"/>
+<area shape="poly" id="edge27_Node000028_Node000029" title=" " alt="" coords="3931,546,3873,586,3870,582,3928,542"/>
+<area shape="poly" id="edge33_Node000032_Node000016" title=" " alt="" coords="3657,202,3131,264,3130,258,3656,196"/>
+<area shape="poly" id="edge30_Node000032_Node000017" title=" " alt="" coords="3743,201,3633,341,3629,337,3738,198"/>
+<area shape="poly" id="edge34_Node000032_Node000028" title=" " alt="" coords="3843,190,3876,198,3909,210,3939,228,3964,253,3972,274,3976,302,3975,372,3965,447,3954,506,3949,505,3960,446,3969,372,3971,302,3967,275,3959,256,3936,232,3907,215,3874,203,3841,195"/>
+<area shape="poly" id="edge32_Node000032_Node000029" title=" " alt="" coords="3752,199,3757,277,3772,382,3803,492,3835,578,3830,580,3798,494,3767,383,3752,277,3747,200"/>
+<area shape="rect" id="Node000033" title=" " alt="" coords="641,350,716,375"/>
+<area shape="poly" id="edge31_Node000032_Node000033" title=" " alt="" coords="3656,192,3195,198,2544,210,1928,230,1702,242,1570,257,1541,266,1520,277,1498,288,1469,297,1357,317,1262,325,1177,326,1098,322,1019,318,934,319,839,326,729,345,718,348,716,343,727,340,839,321,934,313,1019,313,1098,317,1178,320,1262,320,1357,312,1467,292,1496,283,1517,272,1539,261,1569,252,1702,237,1927,224,2544,205,3195,192,3656,186"/>
+<area shape="rect" id="Node000034" href="$contains_8hpp.html" title="Checks if a type exists in a list of types." alt="" coords="3781,350,3949,375"/>
+<area shape="poly" id="edge35_Node000032_Node000034" title=" " alt="" coords="3755,199,3771,242,3798,293,3819,318,3842,339,3838,343,3815,322,3794,296,3766,244,3750,201"/>
+<area shape="rect" id="Node000035" href="$type__set__eq_8hpp.html" title="Test if two tuple types contains the exact same types independently of the order." alt="" coords="3808,255,3949,295"/>
+<area shape="poly" id="edge36_Node000032_Node000035" title=" " alt="" coords="3768,197,3840,245,3837,249,3765,202"/>
+<area shape="poly" id="edge37_Node000035_Node000034" title=" " alt="" coords="3878,295,3872,337,3867,336,3873,295"/>
+<area shape="poly" id="edge41_Node000036_Node000004" title=" " alt="" coords="331,195,293,202,253,214,217,232,185,257,162,285,144,317,130,351,121,386,111,453,109,505,103,505,105,453,116,385,125,350,139,315,157,282,181,253,214,227,251,209,291,197,330,190"/>
+<area shape="poly" id="edge42_Node000036_Node000015" title=" " alt="" coords="434,206,449,248,450,273,444,296,426,314,406,321,386,328,370,344,363,364,364,372,370,381,380,388,399,394,455,404,612,416,772,423,868,428,919,437,918,442,868,433,772,428,611,422,454,409,397,399,378,392,366,385,359,374,358,363,366,341,383,323,404,316,423,310,439,293,445,272,444,249,429,208"/>
+<area shape="poly" id="edge55_Node000036_Node000023" title=" " alt="" coords="512,202,524,204,589,209,673,214,754,226,785,237,807,253,818,273,820,296,810,338,805,337,814,295,812,275,803,256,783,242,752,231,672,219,588,215,524,209,512,207"/>
+<area shape="rect" id="Node000037" href="$_entity_8hpp.html" title="Encapsulate an index to an entity." alt="" coords="707,262,794,287"/>
+<area shape="poly" id="edge43_Node000036_Node000037" title=" " alt="" coords="494,204,695,256,694,261,493,209"/>
+<area shape="rect" id="Node000043" href="$_i_resource_8hpp.html" title="Base class of all registry resources." alt="" coords="195,262,429,287"/>
+<area shape="poly" id="edge53_Node000036_Node000043" title=" " alt="" coords="399,209,340,255,336,251,395,205"/>
+<area shape="poly" id="edge44_Node000037_Node000033" title=" " alt="" coords="743,289,700,341,695,337,739,286"/>
+<area shape="rect" id="Node000039" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/stdexcept.html" title=" " alt="" coords="1530,350,1617,375"/>
+<area shape="poly" id="edge45_Node000037_Node000039" title=" " alt="" coords="795,276,1078,298,1271,317,1467,340,1517,348,1516,353,1466,345,1270,322,1077,304,794,281"/>
+<area shape="poly" id="edge46_Node000037_Node000040" title=" " alt="" coords="728,290,682,314,631,345,606,366,580,385,501,417,423,438,422,432,499,412,577,380,603,362,628,341,680,309,726,285"/>
+<area shape="poly" id="edge50_Node000037_Node000042" title=" " alt="" coords="714,290,548,341,547,336,712,285"/>
+<area shape="poly" id="edge47_Node000040_Node000004" title=" " alt="" coords="309,466,147,519,146,514,308,461"/>
+<area shape="poly" id="edge49_Node000040_Node000028" title=" " alt="" coords="452,457,665,468,1233,481,2201,499,3859,526,3859,531,2201,504,1233,487,665,473,452,462"/>
+<area shape="rect" id="Node000041" title=" " alt="" coords="215,519,358,544"/>
+<area shape="poly" id="edge48_Node000040_Node000041" title=" " alt="" coords="337,465,305,509,301,506,332,462"/>
+<area shape="poly" id="edge51_Node000042_Node000008" title=" " alt="" coords="500,381,572,427,618,450,666,468,758,482,916,493,1348,511,1801,522,2113,527,2113,532,1801,527,1348,516,916,499,758,487,665,473,616,455,569,432,497,385"/>
+<area shape="poly" id="edge52_Node000042_Node000040" title=" " alt="" coords="446,385,374,432,371,428,443,381"/>
+<area shape="poly" id="edge54_Node000043_Node000041" title=" " alt="" coords="305,289,263,347,240,388,224,431,220,451,224,470,238,491,257,508,254,512,234,494,219,472,214,451,219,430,236,386,258,345,300,286"/>
+<area shape="poly" id="edge58_Node000044_Node000008" title=" " alt="" coords="1711,285,1835,381,1909,434,1965,468,2041,498,2113,517,2112,522,2040,503,1963,473,1906,438,1832,385,1708,290"/>
+<area shape="poly" id="edge59_Node000044_Node000014" title=" " alt="" coords="1656,290,1591,313,1520,345,1494,365,1468,385,1413,413,1360,436,1358,431,1411,409,1465,380,1491,360,1517,340,1589,308,1654,285"/>
+<area shape="poly" id="edge60_Node000044_Node000039" title=" " alt="" coords="1680,290,1603,344,1600,339,1677,285"/>
+<area shape="rect" id="Node000045" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/typeindex.html" title=" " alt="" coords="1942,350,2029,375"/>
+<area shape="poly" id="edge61_Node000044_Node000045" title=" " alt="" coords="1735,285,1934,343,1932,349,1733,290"/>
+<area shape="rect" id="Node000046" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/unordered_map.html" title=" " alt="" coords="1641,350,1765,375"/>
+<area shape="poly" id="edge62_Node000044_Node000046" title=" " alt="" coords="1698,287,1703,336,1698,336,1693,288"/>
+<area shape="poly" id="edge65_Node000047_Node000008" title=" " alt="" coords="1961,289,1947,308,1934,332,1928,357,1929,370,1933,381,1949,406,1970,428,2017,465,2068,493,2115,512,2113,517,2066,497,2014,469,1966,432,1945,409,1928,384,1923,371,1922,357,1929,330,1943,305,1957,286"/>
+<area shape="poly" id="edge67_Node000047_Node000014" title=" " alt="" coords="1955,290,1881,337,1831,363,1778,385,1666,415,1552,435,1448,446,1367,451,1367,445,1448,440,1551,429,1665,410,1776,380,1829,359,1878,332,1952,285"/>
+<area shape="poly" id="edge68_Node000047_Node000039" title=" " alt="" coords="1898,290,1772,313,1630,345,1619,348,1617,343,1629,340,1771,308,1897,285"/>
+<area shape="poly" id="edge69_Node000047_Node000045" title=" " alt="" coords="1974,287,1983,336,1978,337,1969,288"/>
+<area shape="rect" id="Node000048" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/map.html" title=" " alt="" coords="2053,350,2104,375"/>
+<area shape="poly" id="edge66_Node000047_Node000048" title=" " alt="" coords="1986,285,2055,339,2051,343,1982,290"/>
+<area shape="poly" id="edge74_Node000050_Node000015" title=" " alt="" coords="2225,289,2166,345,2117,385,2080,398,2037,408,1936,422,1820,430,1695,432,1452,431,1264,433,1008,449,1008,444,1264,428,1452,426,1695,427,1819,424,1935,417,2036,403,2079,393,2115,380,2162,341,2221,286"/>
+<area shape="poly" id="edge73_Node000050_Node000045" title=" " alt="" coords="2202,290,2033,348,2031,343,2200,285"/>
+<area shape="poly" id="edge72_Node000050_Node000048" title=" " alt="" coords="2215,290,2113,346,2110,341,2212,285"/>
+<area shape="poly" id="edge75_Node000050_Node000049" title=" " alt="" coords="2244,286,2273,336,2268,339,2239,289"/>
+<area shape="poly" id="edge79_Node000051_Node000014" title=" " alt="" coords="1010,373,1263,434,1262,439,1009,378"/>
+<area shape="poly" id="edge80_Node000051_Node000015" title=" " alt="" coords="965,376,965,424,960,424,960,376"/>
+<area shape="poly" id="edge82_Node000054_Node000028" title=" " alt="" coords="4043,466,3976,513,3973,508,4039,461"/>
+<area shape="poly" id="edge84_Node000055_Node000028" title=" " alt="" coords="4237,466,4010,518,4009,513,4235,461"/>
+<area shape="poly" id="edge86_Node000056_Node000005" title=" " alt="" coords="694,195,1236,258,1235,263,693,200"/>
+<area shape="poly" id="edge87_Node000056_Node000040" title=" " alt="" coords="585,209,370,344,359,364,352,385,346,425,341,424,347,383,355,361,366,341,583,205"/>
+<area shape="poly" id="edge88_Node000056_Node000042" title=" " alt="" coords="604,209,538,296,503,335,499,331,534,293,600,205"/>
+<area shape="poly" id="edge92_Node000057_Node000005" title=" " alt="" coords="1238,204,1318,253,1315,257,1235,209"/>
+<area shape="poly" id="edge90_Node000057_Node000006" title=" " alt="" coords="1207,207,1210,249,1216,272,1227,293,1253,317,1284,335,1281,340,1250,321,1223,296,1211,274,1204,250,1201,207"/>
+<area shape="poly" id="edge91_Node000057_Node000007" title=" " alt="" coords="1204,207,1199,248,1200,271,1205,294,1216,324,1227,346,1244,364,1269,380,1296,390,1339,399,1462,414,1622,425,1805,434,2176,443,2453,446,2453,452,2176,449,1805,439,1622,431,1461,419,1338,404,1295,395,1267,385,1240,368,1223,349,1211,326,1200,295,1195,272,1194,248,1198,206"/>
+<area shape="poly" id="edge94_Node000057_Node000042" title=" " alt="" coords="1130,189,1040,192,930,202,811,223,752,238,696,257,679,266,667,275,639,297,590,321,542,340,540,335,588,316,636,292,664,271,676,261,694,252,751,233,810,218,929,197,1040,187,1130,184"/>
+<area shape="poly" id="edge93_Node000057_Node000043" title=" " alt="" coords="1131,198,443,263,443,258,1130,193"/>
+<area shape="poly" id="edge98_Node000058_Node000005" title=" " alt="" coords="1506,209,1387,259,1385,254,1504,204"/>
+<area shape="poly" id="edge96_Node000058_Node000006" title=" " alt="" coords="1540,208,1510,251,1470,297,1414,338,1411,333,1466,293,1506,247,1536,205"/>
+<area shape="poly" id="edge97_Node000058_Node000007" title=" " alt="" coords="1652,185,1824,187,2027,196,2127,204,2218,216,2295,232,2352,252,2380,269,2407,290,2453,337,2490,385,2515,424,2510,427,2485,388,2449,340,2403,294,2377,274,2350,257,2293,237,2217,222,2126,210,2027,201,1824,192,1652,190"/>
+<area shape="poly" id="edge100_Node000059_Node000008" title=" " alt="" coords="2426,207,2430,242,2430,288,2423,337,2415,362,2404,384,2386,409,2364,431,2315,468,2264,497,2217,516,2215,512,2261,492,2312,464,2361,427,2381,405,2399,381,2410,360,2418,336,2425,287,2424,242,2421,207"/>
+<area shape="poly" id="edge102_Node000060_Node000028" title=" " alt="" coords="4169,287,4175,322,4177,371,4169,424,4159,450,4145,472,4122,494,4094,509,4065,520,4035,527,4034,522,4063,515,4092,505,4119,489,4141,469,4155,447,4164,423,4172,371,4170,323,4164,288"/>
+<area shape="poly" id="edge103_Node000060_Node000034" title=" " alt="" coords="4124,290,3919,349,3918,344,4123,285"/>
 </map>

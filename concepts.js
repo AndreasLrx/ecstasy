@@ -33,5 +33,10 @@ var concepts =
       [ "ExplicitComponentStorage", "conceptecstasy_1_1_explicit_component_storage.html", null ],
       [ "IsStorage", "conceptecstasy_1_1_is_storage.html", null ],
       [ "IsContainerStorage", "conceptecstasy_1_1_is_container_storage.html", null ]
+    ] ],
+    [ "util", "namespaceutil.html", [
+      [ "meta", "namespaceutil_1_1meta.html", [
+        [ "is_size_t_convertible", "conceptutil_1_1meta_1_1is__size__t__convertible.html", null ]
+      ] ]
     ] ]
 ];

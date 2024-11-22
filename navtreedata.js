@@ -77,7 +77,9 @@ var NAVTREE =
         [ "Using modifiers", "md_doc_2_tutorial.html#ModifiersTutorial", null ],
         [ "Using conditions", "md_doc_2_tutorial.html#ConditionsTutorial", null ]
       ] ],
-      [ "Using systems", "md_doc_2_tutorial.html#using-systems", null ],
+      [ "Using systems", "md_doc_2_tutorial.html#using-systems", [
+        [ "Pipeline", "md_doc_2_tutorial.html#pipeline", null ]
+      ] ],
       [ "Using resources", "md_doc_2_tutorial.html#using-resources", null ],
       [ "Ensuring Thread Safety", "md_doc_2_tutorial.html#EnsuringThreadSafety", null ],
       [ "Using cross platform RTTI", "md_doc_2_tutorial.html#using-cross-platform-rtti", [
@@ -177,26 +179,27 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "01__basic__window_2main_8cpp.html",
-"_shared_recursive_mutex_8hpp.html",
-"classecstasy_1_1_instances.html#a60a0a52241c58dd76d10144fba5c8307",
-"classecstasy_1_1_registry_1_1_registry_stack_query_memory_3_01util_1_1meta_1_1_traits_3_01_selecfcfaca0c668d0d83b5ea7096197c8168.html#ae6a0979483eb1a06e84922357f00ca28",
-"classecstasy_1_1integration_1_1event_1_1_gamepad_combination_listener.html#a7908e765d57dfe6304ad121c839f539a",
-"classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3a69691c7bdcc3ce6d5d8a1361f22d04ac",
-"classecstasy_1_1integration_1_1user__action_1_1_action_bindings.html#a4705e1be27e7b5d7543ca5d473b8f0a2",
-"classecstasy_1_1query_1_1modifier_1_1_not.html#a15ec501fbb8ec49c4e6df219285fb4f2",
-"classecstasy_1_1serialization_1_1_json_serializer.html#ae84160a3d01aa403043460835e9fa0b7",
-"classutil_1_1_bit_set.html#adbc690e56987545c1ffef321f4bfc8cf",
-"classutil_1_1serialization_1_1_i_node.html#ac05418b34fe552da8863de6063bbbe0b",
-"classutil_1_1serialization_1_1_toml_node_factory.html#ab9e4ba48a48d2439769493556cfc76a6",
-"cpp/algorithm/ranges/stable_partition.html",
-"cpp/experimental/type_trait_variable_templates.html",
-"cpp/memory/make_obj_using_allocator.html",
-"cpp/string/byte/islower.html",
-"cpp/utility/program/_Exit.html",
-"group___r_a_p_i_d_j_s_o_n___e_r_r_o_r_s.html#gga7d3acf640886b1f2552dc8c4cd6dea60a2a81a684f39fc882ec99f07e86343f73",
-"namespacerapidjson.html#a81379eb4e94a0386d71d15fda882ebc9a02748971d6ea0c5e22c69b8aa7f344ea",
-"structecstasy_1_1integration_1_1event_1_1_event.html#a428f3f906bf2f40cf2dcec224662719aa7584c169de594c27f00084b93186fd7c",
-"structecstasy_1_1query_1_1_select_1_1_filter_queryables.html#a7051c608bc6c336292ace020d23bd8c9"
+"_serializable_enum_8hpp.html#acd9fbb4df4bc6927538efdd7ab95d7cd",
+"classecstasy_1_1_instances.html#a44d1c54af9858d2af30ad67451b9b99f",
+"classecstasy_1_1_registry.html#aa5e142b869a115fca7f24debea38681b",
+"classecstasy_1_1integration_1_1event_1_1_gamepad.html#a3889e689614987816a56b70ee93cabccad3021a6b02d47cff51b581fdaf46c15d",
+"classecstasy_1_1integration_1_1event_1_1_keyboard.html#aabfeb456e7f5e1d7acc432129fe604bd",
+"classecstasy_1_1integration_1_1event_1_1_mouse.html#ae02624c1f85027219f4f594abe1c0d8e",
+"classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe8a771cd3061befcfd40dda019e51f87d.html#a644e2cc90b875b375f3aa4fc0ee1fdf2",
+"classecstasy_1_1serialization_1_1_i_serializer.html#a1760f7f115483e1cd6df7c324eaab74f",
+"classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ab2bba21505692e117c3c52d4a3180387",
+"classutil_1_1serialization_1_1_i_node.html#a0b89177663afcf736b8d1748ad4b24cf",
+"classutil_1_1serialization_1_1_toml_array_node.html#ace77593f7fda67ac0931c2c12a9e8aa6",
+"cpp/algorithm/partial_sort.html",
+"cpp/experimental/fs/is_socket.html",
+"cpp/io/manip/flush.html",
+"cpp/numeric/rotr.html",
+"cpp/types/is_invocable.html",
+"functions_func_i.html",
+"namespaceecstasy.html#a2831a324e09dd41177dc35f2ad92a5b1",
+"queryable__type_8hpp_source.html",
+"structecstasy_1_1integration_1_1user__action_1_1_action_listener.html#a340efa74795f713e6d400f908f30dd92",
+"structutil_1_1meta_1_1_traits_3_01_arg_00_01_args_8_8_8_01_4.html#a900401353121cf6caa16acac13f64540"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

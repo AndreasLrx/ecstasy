@@ -19,11 +19,12 @@ var searchData=
   ['vector_3c_20keyboard_3a_3akey_20_3e_16',['vector&lt; Keyboard::Key &gt;',['http://en.cppreference.com/w/cpp/container/vector.html',1,'std']]],
   ['vector_3c_20std_3a_3afunction_3c_20e_20_3e_20_3e_17',['vector&lt; std::function&lt; E &gt; &gt;',['http://en.cppreference.com/w/cpp/container/vector.html',1,'std']]],
   ['vector_3c_20std_3a_3ashared_5fptr_20_3e_18',['vector&lt; std::shared_ptr &gt;',['http://en.cppreference.com/w/cpp/container/vector.html',1,'std']]],
-  ['vector_3c_20std_3a_3auint64_5ft_20_3e_19',['vector&lt; std::uint64_t &gt;',['http://en.cppreference.com/w/cpp/container/vector.html',1,'std']]],
-  ['vector_3c_20std_3a_3aunique_5fptr_3c_20base_20_3e_20_3e_20',['vector&lt; std::unique_ptr&lt; Base &gt; &gt;',['http://en.cppreference.com/w/cpp/container/vector.html',1,'std']]],
-  ['vectorstorage_21',['VectorStorage',['../classecstasy_1_1_vector_storage.html',1,'ecstasy']]],
-  ['views_5fallocator_5fsize_22',['views_allocator_size',['../structecstasy_1_1query_1_1views__allocator__size.html',1,'ecstasy::query']]],
-  ['views_5fallocator_5fsize_3c_20autolock_2c_20q_2c_20qs_2e_2e_2e_20_3e_23',['views_allocator_size&lt; AutoLock, Q, Qs... &gt;',['../structecstasy_1_1query_1_1views__allocator__size_3_01_auto_lock_00_01_q_00_01_qs_8_8_8_01_4.html',1,'ecstasy::query']]],
-  ['views_5fallocator_5fsize_3c_20true_2c_20q_2c_20qs_2e_2e_2e_20_3e_24',['views_allocator_size&lt; true, Q, Qs... &gt;',['../structecstasy_1_1query_1_1views__allocator__size_3_01true_00_01_q_00_01_qs_8_8_8_01_4.html',1,'ecstasy::query']]],
-  ['void_5ft_25',['void_t',['http://en.cppreference.com/w/cpp/experimental/void_t.html',1,'std::experimental::void_t'],['http://en.cppreference.com/w/cpp/types/void_t.html',1,'std::void_t']]]
+  ['vector_3c_20std_3a_3atype_5findex_20_3e_19',['vector&lt; std::type_index &gt;',['http://en.cppreference.com/w/cpp/container/vector.html',1,'std']]],
+  ['vector_3c_20std_3a_3auint64_5ft_20_3e_20',['vector&lt; std::uint64_t &gt;',['http://en.cppreference.com/w/cpp/container/vector.html',1,'std']]],
+  ['vector_3c_20std_3a_3aunique_5fptr_3c_20base_20_3e_20_3e_21',['vector&lt; std::unique_ptr&lt; Base &gt; &gt;',['http://en.cppreference.com/w/cpp/container/vector.html',1,'std']]],
+  ['vectorstorage_22',['VectorStorage',['../classecstasy_1_1_vector_storage.html',1,'ecstasy']]],
+  ['views_5fallocator_5fsize_23',['views_allocator_size',['../structecstasy_1_1query_1_1views__allocator__size.html',1,'ecstasy::query']]],
+  ['views_5fallocator_5fsize_3c_20autolock_2c_20q_2c_20qs_2e_2e_2e_20_3e_24',['views_allocator_size&lt; AutoLock, Q, Qs... &gt;',['../structecstasy_1_1query_1_1views__allocator__size_3_01_auto_lock_00_01_q_00_01_qs_8_8_8_01_4.html',1,'ecstasy::query']]],
+  ['views_5fallocator_5fsize_3c_20true_2c_20q_2c_20qs_2e_2e_2e_20_3e_25',['views_allocator_size&lt; true, Q, Qs... &gt;',['../structecstasy_1_1query_1_1views__allocator__size_3_01true_00_01_q_00_01_qs_8_8_8_01_4.html',1,'ecstasy::query']]],
+  ['void_5ft_26',['void_t',['http://en.cppreference.com/w/cpp/experimental/void_t.html',1,'std::experimental::void_t'],['http://en.cppreference.com/w/cpp/types/void_t.html',1,'std::void_t']]]
 ];

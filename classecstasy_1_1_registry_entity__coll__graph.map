@@ -1,19 +1,26 @@
 <map id="ecstasy::RegistryEntity" name="ecstasy::RegistryEntity">
-<area shape="rect" id="Node000001" title="Entity containing a reference to the registry." alt="" coords="957,95,1128,121"/>
-<area shape="rect" id="Node000002" href="$classecstasy_1_1_entity.html" title="Encapsulate an index to an entity." alt="" coords="723,71,840,97"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="854,88,957,98,957,103,853,93"/>
-<area shape="rect" id="Node000003" href="$classecstasy_1_1_registry.html" title="Base of an ECS architecture." alt="" coords="715,121,848,146"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="861,123,933,116,957,114,957,119,934,121,862,128"/>
-<area shape="rect" id="Node000004" href="$classecstasy_1_1_instances.html" title=" " alt="" coords="410,32,583,72"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="581,73,737,118,735,123,580,78"/>
-<area shape="rect" id="Node000005" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/unordered_map.html" title=" " alt="" coords="60,5,225,75"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="239,41,409,46,409,52,239,46"/>
-<area shape="rect" id="Node000006" href="$classecstasy_1_1_instances.html" title=" " alt="" coords="415,113,578,153"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="591,131,714,131,714,136,591,136"/>
-<area shape="rect" id="Node000007" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/unordered_map.html" title=" " alt="" coords="60,99,225,168"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="239,131,415,131,415,136,239,136"/>
-<area shape="rect" id="Node000008" href="$classecstasy_1_1_system_instances.html" title="Set of instances inheriting from the Base type." alt="" coords="401,195,592,221"/>
-<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="559,189,731,143,733,149,561,194"/>
-<area shape="rect" id="Node000009" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/map.html" title=" " alt="" coords="5,192,280,261"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="294,216,401,210,401,216,294,221"/>
+<area shape="rect" id="Node000001" title="Entity containing a reference to the registry." alt="" coords="884,58,1055,83"/>
+<area shape="rect" id="Node000002" href="$classecstasy_1_1_entity.html" title="Encapsulate an index to an entity." alt="" coords="611,41,728,66"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="742,55,884,63,883,68,742,60"/>
+<area shape="rect" id="Node000003" href="$classecstasy_1_1_registry.html" title="Base of an ECS architecture." alt="" coords="603,121,736,146"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="743,115,907,81,908,86,744,121"/>
+<area shape="rect" id="Node000010" href="$classecstasy_1_1_pipeline.html" title="Pipeline of systems to orchestrate the execution of systems." alt="" coords="904,189,1035,214"/>
+<area shape="poly" id="edge12_Node000010_Node000003" title=" " alt="" coords="750,140,861,160,938,186,936,191,859,165,749,145"/>
+<area shape="rect" id="Node000004" href="$classecstasy_1_1_instances.html" title=" " alt="" coords="292,32,465,72"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="464,73,624,118,622,123,463,78"/>
+<area shape="rect" id="Node000005" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/unordered_map.html" title=" " alt="" coords="5,5,171,75"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="184,41,292,46,292,51,184,47"/>
+<area shape="rect" id="Node000006" href="$classecstasy_1_1_instances.html" title=" " alt="" coords="297,113,460,153"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="474,131,602,131,602,136,474,136"/>
+<area shape="rect" id="Node000007" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/unordered_map.html" title=" " alt="" coords="5,99,171,168"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="184,131,297,131,297,136,184,136"/>
+<area shape="rect" id="Node000008" href="$classecstasy_1_1_instances.html" title=" " alt="" coords="297,192,460,232"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="466,186,621,144,622,149,467,191"/>
+<area shape="rect" id="Node000009" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/unordered_map.html" title=" " alt="" coords="5,192,171,261"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="184,219,297,213,297,219,185,224"/>
+<area shape="poly" id="edge9_Node000003_Node000010" title=" " alt="" coords="890,199,833,192,774,180,731,165,694,148,696,144,733,160,775,175,834,187,891,194"/>
+<area shape="rect" id="Node000011" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="588,204,751,244"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="765,224,860,220,913,211,914,217,860,225,765,229"/>
+<area shape="rect" id="Node000012" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/map.html" title=" " alt="" coords="594,269,745,323"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="757,273,859,244,939,212,941,217,861,249,759,279"/>
 </map>

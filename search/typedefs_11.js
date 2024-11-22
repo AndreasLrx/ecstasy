@@ -10,5 +10,6 @@ var searchData=
   ['storagetype_7',['StorageType',['../classecstasy_1_1rtti_1_1_type.html#a5a201d6ef4f629e95f509519bda70676',1,'ecstasy::rtti::Type::StorageType'],['../classecstasy_1_1serialization_1_1_entity_component_serializer.html#a5b4ce4344e7c783bbf39cb31107c0a88',1,'ecstasy::serialization::EntityComponentSerializer::StorageType']]],
   ['stringbuffer_8',['StringBuffer',['https://rapidjson.org/namespacerapidjson.html#ac0765ea91f41539645c4b78689d03f21',1,'rapidjson']]],
   ['stringreftype_9',['StringRefType',['https://rapidjson.org/classrapidjson_1_1_generic_value.html#a559eb9cea54364a35518b02f6d74f379',1,'rapidjson::GenericValue']]],
-  ['stringstream_10',['StringStream',['https://rapidjson.org/namespacerapidjson.html#a021f77051e9f85188fc2f71ff5a15ebc',1,'rapidjson']]]
+  ['stringstream_10',['StringStream',['https://rapidjson.org/namespacerapidjson.html#a021f77051e9f85188fc2f71ff5a15ebc',1,'rapidjson']]],
+  ['systemiterator_11',['SystemIterator',['../classecstasy_1_1_pipeline.html#adb4001e26f0e155fd5107ccc0e4454f0',1,'ecstasy::Pipeline']]]
 ];
