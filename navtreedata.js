@@ -78,7 +78,12 @@ var NAVTREE =
         [ "Using conditions", "md_doc_2_tutorial.html#ConditionsTutorial", null ]
       ] ],
       [ "Using systems", "md_doc_2_tutorial.html#using-systems", [
-        [ "Pipeline", "md_doc_2_tutorial.html#pipeline", null ]
+        [ "Pipeline", "md_doc_2_tutorial.html#pipeline", null ],
+        [ "Timers", "md_doc_2_tutorial.html#timers", [
+          [ "Interval", "md_doc_2_tutorial.html#interval", null ],
+          [ "Rate", "md_doc_2_tutorial.html#rate", null ],
+          [ "Tips when using timers on Systems and Phases", "md_doc_2_tutorial.html#tips-when-using-timers-on-systems-and-phases", null ]
+        ] ]
       ] ],
       [ "Using resources", "md_doc_2_tutorial.html#using-resources", null ],
       [ "Ensuring Thread Safety", "md_doc_2_tutorial.html#EnsuringThreadSafety", null ],
@@ -180,26 +185,26 @@ var NAVTREEINDEX =
 [
 "01__basic__window_2main_8cpp.html",
 "_serializable_enum_8hpp.html#acd9fbb4df4bc6927538efdd7ab95d7cd",
-"classecstasy_1_1_instances.html#a44d1c54af9858d2af30ad67451b9b99f",
-"classecstasy_1_1_registry.html#aa5e142b869a115fca7f24debea38681b",
-"classecstasy_1_1integration_1_1event_1_1_gamepad.html#a3889e689614987816a56b70ee93cabccad3021a6b02d47cff51b581fdaf46c15d",
-"classecstasy_1_1integration_1_1event_1_1_keyboard.html#aabfeb456e7f5e1d7acc432129fe604bd",
-"classecstasy_1_1integration_1_1event_1_1_mouse.html#ae02624c1f85027219f4f594abe1c0d8e",
-"classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe8a771cd3061befcfd40dda019e51f87d.html#a644e2cc90b875b375f3aa4fc0ee1fdf2",
-"classecstasy_1_1serialization_1_1_i_serializer.html#a1760f7f115483e1cd6df7c324eaab74f",
-"classecstasy_1_1thread_1_1_shared_recursive_mutex.html#ab2bba21505692e117c3c52d4a3180387",
-"classutil_1_1serialization_1_1_i_node.html#a0b89177663afcf736b8d1748ad4b24cf",
-"classutil_1_1serialization_1_1_toml_array_node.html#ace77593f7fda67ac0931c2c12a9e8aa6",
-"cpp/algorithm/partial_sort.html",
-"cpp/experimental/fs/is_socket.html",
-"cpp/io/manip/flush.html",
-"cpp/numeric/rotr.html",
-"cpp/types/is_invocable.html",
-"functions_func_i.html",
-"namespaceecstasy.html#a2831a324e09dd41177dc35f2ad92a5b1",
-"queryable__type_8hpp_source.html",
-"structecstasy_1_1integration_1_1user__action_1_1_action_listener.html#a340efa74795f713e6d400f908f30dd92",
-"structutil_1_1meta_1_1_traits_3_01_arg_00_01_args_8_8_8_01_4.html#a900401353121cf6caa16acac13f64540"
+"classecstasy_1_1_instances.html#a115ed034917b6bcd3a0a0ab508bceb3e",
+"classecstasy_1_1_registry.html#a8d598f5f47d1a481303a89579a0827f2",
+"classecstasy_1_1_vector_storage.html#a5ade2210e123abff476d4148707b3094",
+"classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html#a7ecca4499ed73261c74918fe1abf96b0",
+"classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3ae902674982fc99aa343cdd94da7476c3",
+"classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe85d7ffd57dbe8185bd42d6b1216253c8.html#a1026ee502720e32309b574deb8348e63",
+"classecstasy_1_1rtti_1_1_type.html#aedaa6265714188d9ec24104fda9cf20f",
+"classecstasy_1_1serialization_1_1_serializer.html#ab57cc26efd48513c4d72b3d5a82ca1ba",
+"classutil_1_1serialization_1_1_a_node.html#aa8777bd96604bebca6e50bb3cd27d858",
+"classutil_1_1serialization_1_1_polymorphic_iterator.html#abb8fdf818d2d1911d65d9d3d681da176",
+"concepts_2_modifier_8hpp_source.html",
+"cpp/chrono/current_zone.html",
+"cpp/io/c/fprintf.html",
+"cpp/numeric/math/fabs.html",
+"cpp/string/wide/wcstol.html",
+"ecstasy_2registry_2include_8hpp_source.html",
+"md_doc_2_technical_implementation.html#entities-management",
+"namespacetoml.html#a7b8ef907d9629d139a30d874b345b195",
+"structecstasy_1_1integration_1_1event_1_1_gamepad_connected_event.html",
+"structecstasy_1_1queryable__type_3_01_s_01_4.html#a0443dd251bf124ba002fa5176ef7e13a"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

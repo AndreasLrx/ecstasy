@@ -721,7 +721,7 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.
 <div class="line"><span class="lineno">  864</span>            <a class="code hl_variable" href="classecstasy_1_1_registry.html#abd538c191a416ee80e9b174bbfb2b4c7">_pipeline</a>.<a class="code hl_function" href="classecstasy_1_1_pipeline.html#aca8c0cdfe0e0e9c469f933362578fd92">addSystem</a>(<span class="keyword">typeid</span>(S), <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(phaseId));</div>
 <div class="line"><span class="lineno">  865</span>            <span class="keywordflow">return</span> <a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/utility/program/system.html">system</a>;</div>
 <div class="line"><span class="lineno">  866</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1_pipeline_html_aca8c0cdfe0e0e9c469f933362578fd92"><div class="ttname"><a href="classecstasy_1_1_pipeline.html#aca8c0cdfe0e0e9c469f933362578fd92">ecstasy::Pipeline::addSystem</a></div><div class="ttdeci">void addSystem(std::type_index system, PhaseId phase=static_cast&lt; std::size_t &gt;(PredefinedPhases::OnUpdate))</div><div class="ttdoc">Add a system to the pipeline.</div><div class="ttdef"><b>Definition</b> <a href="_pipeline_8cpp_source.html#l00039">Pipeline.cpp:39</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_pipeline_html_aca8c0cdfe0e0e9c469f933362578fd92"><div class="ttname"><a href="classecstasy_1_1_pipeline.html#aca8c0cdfe0e0e9c469f933362578fd92">ecstasy::Pipeline::addSystem</a></div><div class="ttdeci">void addSystem(std::type_index system, PhaseId phase=static_cast&lt; std::size_t &gt;(PredefinedPhases::OnUpdate))</div><div class="ttdoc">Add a system to the pipeline.</div><div class="ttdef"><b>Definition</b> <a href="_pipeline_8cpp_source.html#l00041">Pipeline.cpp:41</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a30221a4bba6858b3b5b19d088a98a6df"><div class="ttname"><a href="classecstasy_1_1_registry.html#a30221a4bba6858b3b5b19d088a98a6df">ecstasy::Registry::_systems</a></div><div class="ttdeci">Instances&lt; ISystem &gt; _systems</div><div class="ttdoc">Registry systems.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l01293">Registry.hpp:1293</a></div></div>
 <div class="ttc" id="asystem_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/utility/program/system.html">std::system</a></div><div class="ttdeci">T system(T... args)</div></div>
 </div><!-- fragment -->
@@ -747,13 +747,13 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2023-02-06) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8cpp_source.html#l00099">99</a> of file <a class="el" href="_registry_8cpp_source.html">Registry.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  100</span>    {</div>
-<div class="line"><span class="lineno">  101</span>        <a class="code hl_variable" href="classecstasy_1_1_registry.html#a9f7070df12878b824677c3c055d4f41c">_resources</a>.clear();</div>
-<div class="line"><span class="lineno">  102</span>        <a class="code hl_variable" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.clear();</div>
-<div class="line"><span class="lineno">  103</span>        <a class="code hl_variable" href="classecstasy_1_1_registry.html#a30221a4bba6858b3b5b19d088a98a6df">_systems</a>.clear();</div>
-<div class="line"><span class="lineno">  104</span>        addResource&lt;Entities&gt;();</div>
-<div class="line"><span class="lineno">  105</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8cpp_source.html#l00102">102</a> of file <a class="el" href="_registry_8cpp_source.html">Registry.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  103</span>    {</div>
+<div class="line"><span class="lineno">  104</span>        <a class="code hl_variable" href="classecstasy_1_1_registry.html#a9f7070df12878b824677c3c055d4f41c">_resources</a>.clear();</div>
+<div class="line"><span class="lineno">  105</span>        <a class="code hl_variable" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.clear();</div>
+<div class="line"><span class="lineno">  106</span>        <a class="code hl_variable" href="classecstasy_1_1_registry.html#a30221a4bba6858b3b5b19d088a98a6df">_systems</a>.clear();</div>
+<div class="line"><span class="lineno">  107</span>        addResource&lt;Entities&gt;();</div>
+<div class="line"><span class="lineno">  108</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2176,8 +2176,11 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.
 
 <p class="definition">Definition at line <a class="el" href="_registry_8cpp_source.html#l00084">84</a> of file <a class="el" href="_registry_8cpp_source.html">Registry.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   85</span>    {</div>
-<div class="line"><span class="lineno">   86</span>        <a class="code hl_variable" href="classecstasy_1_1_registry.html#a30221a4bba6858b3b5b19d088a98a6df">_systems</a>.get(systemId).run(*<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">   87</span>    }</div>
+<div class="line"><span class="lineno">   86</span>        ISystem &amp;<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/utility/program/system.html">system</a> = <a class="code hl_variable" href="classecstasy_1_1_registry.html#a30221a4bba6858b3b5b19d088a98a6df">_systems</a>.get(systemId);</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">if</span> (<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/utility/program/system.html">system</a>.getTimer().trigger())</div>
+<div class="line"><span class="lineno">   89</span>            <a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/utility/program/system.html">system</a>.run(*<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   90</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2201,11 +2204,11 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8cpp_source.html#l00089">89</a> of file <a class="el" href="_registry_8cpp_source.html">Registry.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   90</span>    {</div>
-<div class="line"><span class="lineno">   91</span>        <a class="code hl_variable" href="classecstasy_1_1_registry.html#abd538c191a416ee80e9b174bbfb2b4c7">_pipeline</a>.<a class="code hl_function" href="classecstasy_1_1_pipeline.html#a9d564d3ed41f97d45979c3de4ede2039">run</a>();</div>
-<div class="line"><span class="lineno">   92</span>    }</div>
-<div class="ttc" id="aclassecstasy_1_1_pipeline_html_a9d564d3ed41f97d45979c3de4ede2039"><div class="ttname"><a href="classecstasy_1_1_pipeline.html#a9d564d3ed41f97d45979c3de4ede2039">ecstasy::Pipeline::run</a></div><div class="ttdeci">void run() const</div><div class="ttdoc">Run a frame of the pipeline.</div><div class="ttdef"><b>Definition</b> <a href="_pipeline_8cpp_source.html#l00057">Pipeline.cpp:57</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_registry_8cpp_source.html#l00092">92</a> of file <a class="el" href="_registry_8cpp_source.html">Registry.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   93</span>    {</div>
+<div class="line"><span class="lineno">   94</span>        <a class="code hl_variable" href="classecstasy_1_1_registry.html#abd538c191a416ee80e9b174bbfb2b4c7">_pipeline</a>.<a class="code hl_function" href="classecstasy_1_1_pipeline.html#ac3f8057b122f4cd419b540b14a15dc9e">run</a>();</div>
+<div class="line"><span class="lineno">   95</span>    }</div>
+<div class="ttc" id="aclassecstasy_1_1_pipeline_html_ac3f8057b122f4cd419b540b14a15dc9e"><div class="ttname"><a href="classecstasy_1_1_pipeline.html#ac3f8057b122f4cd419b540b14a15dc9e">ecstasy::Pipeline::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Run a frame of the pipeline.</div><div class="ttdef"><b>Definition</b> <a href="_pipeline_8cpp_source.html#l00059">Pipeline.cpp:59</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2235,10 +2238,10 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-11-21) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8cpp_source.html#l00094">94</a> of file <a class="el" href="_registry_8cpp_source.html">Registry.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   95</span>    {</div>
-<div class="line"><span class="lineno">   96</span>        <a class="code hl_variable" href="classecstasy_1_1_registry.html#abd538c191a416ee80e9b174bbfb2b4c7">_pipeline</a>.<a class="code hl_function" href="classecstasy_1_1_pipeline.html#a9d564d3ed41f97d45979c3de4ede2039">run</a>(phase);</div>
-<div class="line"><span class="lineno">   97</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8cpp_source.html#l00097">97</a> of file <a class="el" href="_registry_8cpp_source.html">Registry.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   98</span>    {</div>
+<div class="line"><span class="lineno">   99</span>        <a class="code hl_variable" href="classecstasy_1_1_registry.html#abd538c191a416ee80e9b174bbfb2b4c7">_pipeline</a>.<a class="code hl_function" href="classecstasy_1_1_pipeline.html#ac3f8057b122f4cd419b540b14a15dc9e">run</a>(phase);</div>
+<div class="line"><span class="lineno">  100</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>

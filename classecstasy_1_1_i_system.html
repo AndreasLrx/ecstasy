@@ -122,6 +122,7 @@ $(document).ready(function(){initNavTree('classecstasy_1_1_i_system.html',''); i
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classecstasy_1_1_i_system-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ecstasy::ISystem Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
@@ -143,6 +144,26 @@ Inheritance diagram for ecstasy::ISystem:</div>
 <area shape="poly" title=" " alt="" coords="151,77,186,84,185,89,150,83"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for ecstasy::ISystem:</div>
+<div class="dyncontent">
+<div class="center"><img src="classecstasy_1_1_i_system__coll__graph.png" border="0" usemap="#aecstasy_1_1_i_system_coll__map" alt="Collaboration graph"/></div>
+<map name="aecstasy_1_1_i_system_coll__map" id="aecstasy_1_1_i_system_coll__map">
+<area shape="rect" title="System interface, base class of all systems." alt="" coords="903,84,1035,109"/>
+<area shape="rect" href="classecstasy_1_1_timer.html" title="Timer class to control the execution of systems." alt="" coords="691,84,808,109"/>
+<area shape="poly" title=" " alt="" coords="822,94,902,94,902,99,822,99"/>
+<area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/chrono/time_point.html" title=" " alt="" coords="373,5,545,60"/>
+<area shape="poly" title=" " alt="" coords="559,50,667,74,698,81,697,87,666,79,558,56"/>
+<area shape="rect" href="structecstasy_1_1_timer_1_1_time_interval.html" title=" " alt="" coords="355,84,563,109"/>
+<area shape="poly" title=" " alt="" coords="577,94,691,94,691,99,577,99"/>
+<area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/chrono/duration.html" title=" " alt="" coords="5,81,189,107"/>
+<area shape="poly" title=" " alt="" coords="203,92,354,93,354,99,203,97"/>
+<area shape="rect" href="structecstasy_1_1_timer_1_1_rate.html" title=" " alt="" coords="381,136,536,161"/>
+<area shape="poly" title=" " alt="" coords="550,134,666,114,699,107,700,112,667,119,550,139"/>
+<area shape="rect" target="_parent" href="http://en.cppreference.com/w/cpp/types/integer.html" title=" " alt="" coords="46,141,149,167"/>
+<area shape="poly" title=" " alt="" coords="163,150,381,147,381,152,163,156"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -152,13 +173,25 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa9cf50e42a827f26e5d7e2c5d7fe9c46"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_system.html#aa9cf50e42a827f26e5d7e2c5d7fe9c46">run</a> (<a class="el" href="classecstasy_1_1_registry.html">Registry</a> &amp;registry)=0</td></tr>
 <tr class="memdesc:aa9cf50e42a827f26e5d7e2c5d7fe9c46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the system.  <br /></td></tr>
 <tr class="separator:aa9cf50e42a827f26e5d7e2c5d7fe9c46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21e44626d8bcc0863156af01524670c6"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classecstasy_1_1_timer.html">Timer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_system.html#a21e44626d8bcc0863156af01524670c6">getTimer</a> () noexcept</td></tr>
+<tr class="memdesc:a21e44626d8bcc0863156af01524670c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the system timer.  <br /></td></tr>
+<tr class="separator:a21e44626d8bcc0863156af01524670c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6822b4ef8e028a835914dad26de20195"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="classecstasy_1_1_timer.html">Timer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_system.html#a6822b4ef8e028a835914dad26de20195">getTimer</a> () const noexcept</td></tr>
+<tr class="memdesc:a6822b4ef8e028a835914dad26de20195"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the system timer.  <br /></td></tr>
+<tr class="separator:a6822b4ef8e028a835914dad26de20195"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ad1eaa1ab64808e38be6fd787244c53de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1_timer.html">Timer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_system.html#ad1eaa1ab64808e38be6fd787244c53de">_timer</a></td></tr>
+<tr class="memdesc:ad1eaa1ab64808e38be6fd787244c53de"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1_timer.html" title="Timer class to control the execution of systems.">Timer</a> to control the execution of the system.  <br /></td></tr>
+<tr class="separator:ad1eaa1ab64808e38be6fd787244c53de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>System interface, base class of all systems. </p>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_system_8hpp_source.html#l00026">26</a> of file <a class="el" href="_i_system_8hpp_source.html">ISystem.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_system_8hpp_source.html#l00028">28</a> of file <a class="el" href="_i_system_8hpp_source.html">ISystem.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2dc5c878cf6e31c7102d613f7a2651d1" name="a2dc5c878cf6e31c7102d613f7a2651d1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2dc5c878cf6e31c7102d613f7a2651d1">&#9670;&#160;</a></span>~ISystem()</h2>
@@ -188,6 +221,79 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6822b4ef8e028a835914dad26de20195" name="a6822b4ef8e028a835914dad26de20195"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6822b4ef8e028a835914dad26de20195">&#9670;&#160;</a></span>getTimer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const <a class="el" href="classecstasy_1_1_timer.html">Timer</a> &amp; ecstasy::ISystem::getTimer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the system timer. </p>
+<dl class="section note"><dt>Note</dt><dd>The timer is used to control the execution of the system. You can also use <a class="el" href="classecstasy_1_1_pipeline_1_1_phase.html">Phase</a> scale timers.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>const <a class="el" href="classecstasy_1_1_timer.html" title="Timer class to control the execution of systems.">Timer</a>&amp; Reference to the system timer.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-11-22) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_i_system_8hpp_source.html#l00070">70</a> of file <a class="el" href="_i_system_8hpp_source.html">ISystem.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   71</span>        {</div>
+<div class="line"><span class="lineno">   72</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_i_system.html#ad1eaa1ab64808e38be6fd787244c53de">_timer</a>;</div>
+<div class="line"><span class="lineno">   73</span>        }</div>
+<div class="ttc" id="aclassecstasy_1_1_i_system_html_ad1eaa1ab64808e38be6fd787244c53de"><div class="ttname"><a href="classecstasy_1_1_i_system.html#ad1eaa1ab64808e38be6fd787244c53de">ecstasy::ISystem::_timer</a></div><div class="ttdeci">Timer _timer</div><div class="ttdoc">Timer to control the execution of the system.</div><div class="ttdef"><b>Definition</b> <a href="_i_system_8hpp_source.html#l00077">ISystem.hpp:77</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a21e44626d8bcc0863156af01524670c6" name="a21e44626d8bcc0863156af01524670c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21e44626d8bcc0863156af01524670c6">&#9670;&#160;</a></span>getTimer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classecstasy_1_1_timer.html">Timer</a> &amp; ecstasy::ISystem::getTimer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the system timer. </p>
+<dl class="section note"><dt>Note</dt><dd>The timer is used to control the execution of the system. You can also use <a class="el" href="classecstasy_1_1_pipeline_1_1_phase.html">Phase</a> scale timers.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classecstasy_1_1_timer.html" title="Timer class to control the execution of systems.">Timer</a>&amp; Reference to the system timer.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-11-22) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_i_system_8hpp_source.html#l00054">54</a> of file <a class="el" href="_i_system_8hpp_source.html">ISystem.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   55</span>        {</div>
+<div class="line"><span class="lineno">   56</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_i_system.html#ad1eaa1ab64808e38be6fd787244c53de">_timer</a>;</div>
+<div class="line"><span class="lineno">   57</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="aa9cf50e42a827f26e5d7e2c5d7fe9c46" name="aa9cf50e42a827f26e5d7e2c5d7fe9c46"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa9cf50e42a827f26e5d7e2c5d7fe9c46">&#9670;&#160;</a></span>run()</h2>
 
@@ -223,6 +329,33 @@ Public Member Functions</h2></td></tr>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-17) </dd></dl>
 
 <p>Implemented in <a class="el" href="classecstasy_1_1integration_1_1sfml_1_1_poll_events.html#ae913b6b727d39772bc8f1ded91db2b66">ecstasy::integration::sfml::PollEvents</a>, and <a class="el" href="classecstasy_1_1integration_1_1user__action_1_1_poll_actions_3_01std_1_1integer__sequence_3_01_a67921aad8fc30a11f205db4b0bf5827d.html#a4e2b8671cec4db6693ba44b1ea6920fc">ecstasy::integration::user_action::PollActions&lt; std::integer_sequence&lt; Action::Id, Actions... &gt; &gt;</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ad1eaa1ab64808e38be6fd787244c53de" name="ad1eaa1ab64808e38be6fd787244c53de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1eaa1ab64808e38be6fd787244c53de">&#9670;&#160;</a></span>_timer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classecstasy_1_1_timer.html">Timer</a> ecstasy::ISystem::_timer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classecstasy_1_1_timer.html" title="Timer class to control the execution of systems.">Timer</a> to control the execution of the system. </p>
+
+<p class="definition">Definition at line <a class="el" href="_i_system_8hpp_source.html#l00077">77</a> of file <a class="el" href="_i_system_8hpp_source.html">ISystem.hpp</a>.</p>
 
 </div>
 </div>

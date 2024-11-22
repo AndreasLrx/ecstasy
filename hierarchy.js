@@ -248,6 +248,7 @@ var hierarchy =
     [ "ecstasy::query::QueryImplementation< util::meta::Traits< RegistryStackQueryMemory< util::meta::Traits< Selects... >, util::meta::Traits< Missings... >, Conditions, AutoLock, Cs... >::template QueryableType< Selects >... >, Conditions >", "classecstasy_1_1query_1_1_query_implementation.html", [
       [ "ecstasy::Registry::RegistryStackQuery< util::meta::Traits< Selects... >, util::meta::Traits< Missings... >, Conditions, util::meta::Traits< Cs... >, AutoLock >", "classecstasy_1_1_registry_1_1_registry_stack_query_3_01util_1_1meta_1_1_traits_3_01_selects_8_8_20e16f590d1e6d3a51f200dbd071ad9a.html", null ]
     ] ],
+    [ "ecstasy::Timer::Rate", "structecstasy_1_1_timer_1_1_rate.html", null ],
     [ "util::BitSet::Reference", "classutil_1_1_bit_set_1_1_reference.html", null ],
     [ "ecstasy::Registry", "classecstasy_1_1_registry.html", null ],
     [ "ecstasy::Registry::RegistryStackQuery< Selects, Missings, Condition, Cs, AutoLock >", "classecstasy_1_1_registry_1_1_registry_stack_query.html", null ],
@@ -272,6 +273,8 @@ var hierarchy =
     [ "ecstasy::query::thread_safe_queryable< Q, true >", "structecstasy_1_1query_1_1thread__safe__queryable_3_01_q_00_01true_01_4.html", null ],
     [ "ecstasy::query::thread_safe_reference< T, ThreadSafe >", "structecstasy_1_1query_1_1thread__safe__reference.html", null ],
     [ "ecstasy::query::thread_safe_reference< T, true >", "structecstasy_1_1query_1_1thread__safe__reference_3_01_t_00_01true_01_4.html", null ],
+    [ "ecstasy::Timer::TimeInterval", "structecstasy_1_1_timer_1_1_time_interval.html", null ],
+    [ "ecstasy::Timer", "classecstasy_1_1_timer.html", null ],
     [ "util::serialization::TomlConversion", "classutil_1_1serialization_1_1_toml_conversion.html", null ],
     [ "util::meta::Traits< Args >", "structutil_1_1meta_1_1_traits.html", null ],
     [ "util::meta::Traits< Arg, Args... >", "structutil_1_1meta_1_1_traits_3_01_arg_00_01_args_8_8_8_01_4.html", null ],

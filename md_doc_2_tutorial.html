@@ -187,12 +187,12 @@ Getting Started</h1>
 <div class="ttc" id="a_map_storage_8hpp_html"><div class="ttname"><a href="_map_storage_8hpp.html">MapStorage.hpp</a></div><div class="ttdoc">Associative Map to store entity components.</div></div>
 <div class="ttc" id="a_registry_8hpp_html"><div class="ttname"><a href="_registry_8hpp.html">Registry.hpp</a></div><div class="ttdoc">Registry class definition.</div></div>
 <div class="ttc" id="aclassecstasy_1_1_entity_html"><div class="ttname"><a href="classecstasy_1_1_entity.html">ecstasy::Entity</a></div><div class="ttdoc">Encapsulate an index to an entity.</div><div class="ttdef"><b>Definition</b> <a href="_entity_8hpp_source.html#l00035">Entity.hpp:35</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_i_system_html"><div class="ttname"><a href="classecstasy_1_1_i_system.html">ecstasy::ISystem</a></div><div class="ttdoc">System interface, base class of all systems.</div><div class="ttdef"><b>Definition</b> <a href="_i_system_8hpp_source.html#l00026">ISystem.hpp:26</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_i_system_html"><div class="ttname"><a href="classecstasy_1_1_i_system.html">ecstasy::ISystem</a></div><div class="ttdoc">System interface, base class of all systems.</div><div class="ttdef"><b>Definition</b> <a href="_i_system_8hpp_source.html#l00028">ISystem.hpp:28</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_i_system_html_aa9cf50e42a827f26e5d7e2c5d7fe9c46"><div class="ttname"><a href="classecstasy_1_1_i_system.html#aa9cf50e42a827f26e5d7e2c5d7fe9c46">ecstasy::ISystem::run</a></div><div class="ttdeci">virtual void run(Registry &amp;registry)=0</div><div class="ttdoc">Run the system.</div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_1_1_entity_builder_html_ae55a0fc396c88eeedb1795b3fd6cb0f7"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_entity_builder.html#ae55a0fc396c88eeedb1795b3fd6cb0f7">ecstasy::Registry::EntityBuilder::with</a></div><div class="ttdeci">EntityBuilder &amp; with(Args &amp;&amp;...args)</div><div class="ttdoc">Add a component to the builder target entity.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00566">Registry.hpp:566</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html"><div class="ttname"><a href="classecstasy_1_1_registry.html">ecstasy::Registry</a></div><div class="ttdoc">Base of an ECS architecture.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00082">Registry.hpp:82</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a4418ff08eb494b1babb2ee715035d20a"><div class="ttname"><a href="classecstasy_1_1_registry.html#a4418ff08eb494b1babb2ee715035d20a">ecstasy::Registry::entityBuilder</a></div><div class="ttdeci">EntityBuilder entityBuilder() noexcept</div><div class="ttdoc">Create a new entity builder.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8cpp_source.html#l00033">Registry.cpp:33</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_a5595f1c0811c0d7f658c01f49da8dc37"><div class="ttname"><a href="classecstasy_1_1_registry.html#a5595f1c0811c0d7f658c01f49da8dc37">ecstasy::Registry::runSystems</a></div><div class="ttdeci">void runSystems()</div><div class="ttdoc">Run all systems present in the registry.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8cpp_source.html#l00089">Registry.cpp:89</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_a5595f1c0811c0d7f658c01f49da8dc37"><div class="ttname"><a href="classecstasy_1_1_registry.html#a5595f1c0811c0d7f658c01f49da8dc37">ecstasy::Registry::runSystems</a></div><div class="ttdeci">void runSystems()</div><div class="ttdoc">Run all systems present in the registry.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8cpp_source.html#l00092">Registry.cpp:92</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a9ae0f363babc862fecb95e860730f5b7"><div class="ttname"><a href="classecstasy_1_1_registry.html#a9ae0f363babc862fecb95e860730f5b7">ecstasy::Registry::addSystem</a></div><div class="ttdeci">S &amp; addSystem(Args &amp;&amp;...args)</div><div class="ttdoc">Add a new system in the registry.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00839">Registry.hpp:839</a></div></div>
 </div><!-- fragment --><h1><a class="anchor" id="using-entities"></a>
 Using entities</h1>
@@ -497,9 +497,59 @@ Pipeline</h2>
 <div class="line">registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a59904982ed7490f12c63628951178dd5">runSystem</a>&lt;A&gt;(); <span class="comment">// A</span></div>
 <div class="line"><span class="comment">// Or even phase by phase</span></div>
 <div class="line">registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a87ea61b910c851341c56445eeb9a9793">runSystemsPhase</a>&lt;Pipeline::PredefinedPhases::OnUpdate&gt;();</div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_a87ea61b910c851341c56445eeb9a9793"><div class="ttname"><a href="classecstasy_1_1_registry.html#a87ea61b910c851341c56445eeb9a9793">ecstasy::Registry::runSystemsPhase</a></div><div class="ttdeci">void runSystemsPhase(Pipeline::PhaseId phase)</div><div class="ttdoc">Run all systems present in the registry for the given phase.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8cpp_source.html#l00094">Registry.cpp:94</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_a87ea61b910c851341c56445eeb9a9793"><div class="ttname"><a href="classecstasy_1_1_registry.html#a87ea61b910c851341c56445eeb9a9793">ecstasy::Registry::runSystemsPhase</a></div><div class="ttdeci">void runSystemsPhase(Pipeline::PhaseId phase)</div><div class="ttdoc">Run all systems present in the registry for the given phase.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8cpp_source.html#l00097">Registry.cpp:97</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_html_a98077408125f98da6cfd88e639575a9e"><div class="ttname"><a href="classecstasy_1_1_registry.html#a98077408125f98da6cfd88e639575a9e">ecstasy::Registry::addSystemInPhase</a></div><div class="ttdeci">S &amp; addSystemInPhase(T phaseId, Args &amp;&amp;...args)</div><div class="ttdoc">Add a new system in the registry in a specific phase.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00860">Registry.hpp:860</a></div></div>
-</div><!-- fragment --><h1><a class="anchor" id="using-resources"></a>
+</div><!-- fragment --><h2><a class="anchor" id="timers"></a>
+Timers</h2>
+<p>By default, phases and systems are runned at each frame (ie each <code>registry.run()</code> call). However you may want to limit them to run every two frames, or every 5 seconds. This is possible through the <a class="el" href="classecstasy_1_1_timer.html">Timer</a> class.</p>
+<p>Every <a class="el" href="classecstasy_1_1_i_system.html">ISystem</a> and <a class="el" href="classecstasy_1_1_pipeline_1_1_phase.html">Phase</a> have a timer instance accessible through <code>getTimer()</code> getter.</p>
+<h3><a class="anchor" id="interval"></a>
+Interval</h3>
+<p>Want to limit your system to run at a specific time ? Use <a class="el" href="classecstasy_1_1_timer.html#a85812afbf3cd1e1d1800d5d212383e1e">setInterval()</a> function:</p>
+<dl class="section warning"><dt>Warning</dt><dd>Setting an interval means it will always wait <b>at least</b> the required interval between two systems calls but it can be longer.</dd></dl>
+<div class="fragment"><div class="line"><a class="code hl_class" href="classecstasy_1_1_registry.html">ecstasy::Registry</a> registry;</div>
+<div class="line"> </div>
+<div class="line">registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a9ae0f363babc862fecb95e860730f5b7">addSystem</a>&lt;MySystem&gt;().getTimer().setInterval(<a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/chrono/duration.html">std::chrono::milliseconds</a>(500));</div>
+<div class="line"><span class="comment">// Thanks to std::chrono, you can easily use other time units</span></div>
+<div class="line">registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a9ae0f363babc862fecb95e860730f5b7">addSystem</a>&lt;MySystem&gt;().getTimer().setInterval(<a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/chrono/duration.html">std::chrono::seconds</a>(5));</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Set render to every 16ms -&gt; ~60Hz</span></div>
+<div class="line">registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a51a911df7d6d8061e18a8d3c00723a1a">getPipeline</a>().<a class="code hl_function" href="classecstasy_1_1_pipeline.html#a429f0d7e23d11b114420e09bdbe1ff4d">getPhase</a>(Pipeline::PredefinedPhases::OnStore).<a class="code hl_function" href="classecstasy_1_1_pipeline_1_1_phase.html#a56909c76f9256fe520e5353f9c1a78b9">getTimer</a>().<a class="code hl_function" href="classecstasy_1_1_timer.html#a85812afbf3cd1e1d1800d5d212383e1e">setInterval</a>(<a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/chrono/duration.html">std::chrono::milliseconds</a>(16));</div>
+<div class="ttc" id="aclassecstasy_1_1_pipeline_1_1_phase_html_a56909c76f9256fe520e5353f9c1a78b9"><div class="ttname"><a href="classecstasy_1_1_pipeline_1_1_phase.html#a56909c76f9256fe520e5353f9c1a78b9">ecstasy::Pipeline::Phase::getTimer</a></div><div class="ttdeci">constexpr Timer &amp; getTimer() noexcept</div><div class="ttdoc">Get the phase timer.</div><div class="ttdef"><b>Definition</b> <a href="_pipeline_8hpp_source.html#l00150">Pipeline.hpp:150</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_pipeline_html_a429f0d7e23d11b114420e09bdbe1ff4d"><div class="ttname"><a href="classecstasy_1_1_pipeline.html#a429f0d7e23d11b114420e09bdbe1ff4d">ecstasy::Pipeline::getPhase</a></div><div class="ttdeci">Phase &amp; getPhase(PhaseId id, bool autoRegister=true)</div><div class="ttdoc">Get a Phase instance from its identifier.</div><div class="ttdef"><b>Definition</b> <a href="_pipeline_8cpp_source.html#l00076">Pipeline.cpp:76</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_a51a911df7d6d8061e18a8d3c00723a1a"><div class="ttname"><a href="classecstasy_1_1_registry.html#a51a911df7d6d8061e18a8d3c00723a1a">ecstasy::Registry::getPipeline</a></div><div class="ttdeci">constexpr Pipeline &amp; getPipeline() noexcept</div><div class="ttdoc">Get a reference to the registry pipeline.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l01269">Registry.hpp:1269</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_timer_html_a85812afbf3cd1e1d1800d5d212383e1e"><div class="ttname"><a href="classecstasy_1_1_timer.html#a85812afbf3cd1e1d1800d5d212383e1e">ecstasy::Timer::setInterval</a></div><div class="ttdeci">void setInterval(Interval interval) noexcept</div><div class="ttdoc">Set the Interval of the timer.</div><div class="ttdef"><b>Definition</b> <a href="_timer_8cpp_source.html#l00051">Timer.cpp:51</a></div></div>
+<div class="ttc" id="aduration_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/chrono/duration.html">std::chrono::milliseconds</a></div></div>
+</div><!-- fragment --><h3><a class="anchor" id="rate"></a>
+Rate</h3>
+<p>Want to limit your system to run at a frame frequency instead ? Use <a class="el" href="classecstasy_1_1_timer.html#a50c724b0e7c14157cc2affea4785a732">setRate()</a> function:</p>
+<div class="fragment"><div class="line"><a class="code hl_class" href="classecstasy_1_1_registry.html">ecstasy::Registry</a> registry;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Will run every two frames (ie run one, skip one)</span></div>
+<div class="line">registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a9ae0f363babc862fecb95e860730f5b7">addSystem</a>&lt;MySystem&gt;().getTimer().setRate(2);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Will render every 5 frames</span></div>
+<div class="line">registry.<a class="code hl_function" href="classecstasy_1_1_registry.html#a51a911df7d6d8061e18a8d3c00723a1a">getPipeline</a>().<a class="code hl_function" href="classecstasy_1_1_pipeline.html#a429f0d7e23d11b114420e09bdbe1ff4d">getPhase</a>(Pipeline::PredefinedPhases::OnStore).<a class="code hl_function" href="classecstasy_1_1_pipeline_1_1_phase.html#a56909c76f9256fe520e5353f9c1a78b9">getTimer</a>().<a class="code hl_function" href="classecstasy_1_1_timer.html#a50c724b0e7c14157cc2affea4785a732">setRate</a>(5);</div>
+<div class="ttc" id="aclassecstasy_1_1_timer_html_a50c724b0e7c14157cc2affea4785a732"><div class="ttname"><a href="classecstasy_1_1_timer.html#a50c724b0e7c14157cc2affea4785a732">ecstasy::Timer::setRate</a></div><div class="ttdeci">void setRate(std::uint32_t rate) noexcept</div><div class="ttdoc">Set the Rate of the timer.</div><div class="ttdef"><b>Definition</b> <a href="_timer_8cpp_source.html#l00033">Timer.cpp:33</a></div></div>
+</div><!-- fragment --><h3><a class="anchor" id="tips-when-using-timers-on-systems-and-phases"></a>
+Tips when using timers on Systems and Phases</h3>
+<p>The one sentence to remember about combining system and phases timers is this one: <b>The system timer is only evaluated if the phase timer succeed.</b></p>
+<p>Below are some resulting behaviors.</p>
+<ol type="1">
+<li><p class="startli">System and Phase rates</p>
+<p class="startli">Combined rates are multiplied. Inverting the values will have the same behaviors. Ex: Rate limit of 5 on the system and 2 on the phase will result in a system rate of 10 frames.</p>
+</li>
+<li><p class="startli">Phase interval and system rate</p>
+<p class="startli">The final interval is the phase interval multiplied by the system rate. Ex: Interval of 5s with rate of 3 will result in a system interval of 15s.</p>
+</li>
+<li><p class="startli">Phase rate (R) and system interval (I)</p>
+<p class="startli">The system will be called at frames when the frame id is a multiple of the <code>R</code> <b>and</b> at least <code>I</code> seconds elapsed since last system call.</p>
+</li>
+<li><p class="startli">Phase and system intervals</p>
+<p class="startli">The longest interval need to be satisfied. They are not added.</p>
+</li>
+</ol>
+<h1><a class="anchor" id="using-resources"></a>
 Using resources</h1>
 <p>Creating a resource is even simpler than creating a system: you only have to inherit <a class="el" href="classecstasy_1_1_i_resource.html">IResource</a>. And in case you cannot modify the inheritance tree of your object, you can just declare a using with <a class="el" href="classecstasy_1_1_object_wrapper.html">ObjectWrapper</a> (like <a class="el" href="namespaceecstasy_1_1integration_1_1user__action.html#a9b4f873eff13ede42a8a53839aea12b0">PendingActions</a> ).</p>
 <dl class="section note"><dt>Note</dt><dd><a class="el" href="classecstasy_1_1_registry.html#a6a5ab5ddcdc07e2e94c94cbb31a5c2e3">getResource()</a> will return a <a class="el" href="namespaceecstasy.html#a935f8c5172bfb738d9af3f1585f41cad">ResourceReference</a> (optional thread safe proxy) and you will therefore need to use the <code>get()</code> method.</dd></dl>

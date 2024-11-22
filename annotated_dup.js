@@ -153,6 +153,7 @@ var annotated_dup =
       [ "Registry", "classecstasy_1_1_registry.html", "classecstasy_1_1_registry" ],
       [ "RegistryEntity", "classecstasy_1_1_registry_entity.html", "classecstasy_1_1_registry_entity" ],
       [ "SystemInstances", "classecstasy_1_1_system_instances.html", "classecstasy_1_1_system_instances" ],
+      [ "Timer", "classecstasy_1_1_timer.html", "classecstasy_1_1_timer" ],
       [ "VectorStorage", "classecstasy_1_1_vector_storage.html", "classecstasy_1_1_vector_storage" ],
       [ "Xor", "structecstasy_1_1_xor.html", "structecstasy_1_1_xor" ],
       [ "XorEx", "structecstasy_1_1_xor_ex.html", "structecstasy_1_1_xor_ex" ]

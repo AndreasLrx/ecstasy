@@ -1,5 +1,13 @@
 <map id="src/ecstasy/integrations/sfml/systems/PollEvents.hpp" name="src/ecstasy/integrations/sfml/systems/PollEvents.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,220,45"/>
-<area shape="rect" id="Node000002" href="$_i_system_8hpp.html" title="System interface, base class of all systems." alt="" coords="8,93,217,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,46,115,79,110,79,110,46"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="22,5,237,45"/>
+<area shape="rect" id="Node000002" href="$_i_system_8hpp.html" title="System interface, base class of all systems." alt="" coords="25,93,234,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,46,132,79,127,79,127,46"/>
+<area shape="rect" id="Node000003" href="$_timer_8hpp.html" title=" " alt="" coords="33,167,226,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="132,119,132,153,127,153,127,119"/>
+<area shape="rect" id="Node000004" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/chrono.html" title=" " alt="" coords="5,240,72,265"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="116,194,66,233,63,229,113,190"/>
+<area shape="rect" id="Node000005" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/cstdint.html" title=" " alt="" coords="96,240,163,265"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="132,192,132,226,127,226,127,192"/>
+<area shape="rect" id="Node000006" href="/home/runner/work/ecstasy/ecstasy/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/ctime.html" title=" " alt="" coords="187,240,245,265"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="145,190,193,229,190,233,142,194"/>
 </map>

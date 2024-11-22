@@ -199,28 +199,31 @@ $(document).ready(function(){initNavTree('_registry_8cpp_source.html',''); initR
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classecstasy_1_1_registry.html#a67afe3508ade4130b679f29fe2eec089">   84</a></span>    <span class="keywordtype">void</span> Registry::runSystem(<span class="keyword">const</span> <a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/type_index.html">std::type_index</a> &amp;systemId)</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        _systems.get(systemId).run(*<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classecstasy_1_1_registry.html#a5595f1c0811c0d7f658c01f49da8dc37">   89</a></span>    <span class="keywordtype">void</span> Registry::runSystems()</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    {</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        _pipeline.run();</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    }</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="classecstasy_1_1_registry.html#a87ea61b910c851341c56445eeb9a9793">   94</a></span>    <span class="keywordtype">void</span> Registry::runSystemsPhase(<a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">Pipeline::PhaseId</a> phase)</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    {</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        _pipeline.run(phase);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="classecstasy_1_1_registry.html#a8b69fc21286f8a5ee83d2f5871a927e7">   99</a></span>    <span class="keywordtype">void</span> Registry::clear()</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    {</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        _resources.clear();</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        _storages.clear();</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        _systems.clear();</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        addResource&lt;Entities&gt;();</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>} <span class="comment">// namespace ecstasy</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <a class="code hl_class" href="classecstasy_1_1_i_system.html">ISystem</a> &amp;system = _systems.get(systemId);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordflow">if</span> (system.getTimer().trigger())</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            system.run(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="classecstasy_1_1_registry.html#a5595f1c0811c0d7f658c01f49da8dc37">   92</a></span>    <span class="keywordtype">void</span> Registry::runSystems()</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        _pipeline.run();</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classecstasy_1_1_registry.html#a87ea61b910c851341c56445eeb9a9793">   97</a></span>    <span class="keywordtype">void</span> Registry::runSystemsPhase(<a class="code hl_classRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">Pipeline::PhaseId</a> phase)</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        _pipeline.run(phase);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="classecstasy_1_1_registry.html#a8b69fc21286f8a5ee83d2f5871a927e7">  102</a></span>    <span class="keywordtype">void</span> Registry::clear()</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        _resources.clear();</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        _storages.clear();</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        _systems.clear();</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        addResource&lt;Entities&gt;();</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>} <span class="comment">// namespace ecstasy</span></div>
 <div class="ttc" id="a_entities_8hpp_html"><div class="ttname"><a href="_entities_8hpp.html">Entities.hpp</a></div><div class="ttdoc">Definition of the Entities class.</div></div>
 <div class="ttc" id="a_registry_8hpp_html"><div class="ttname"><a href="_registry_8hpp.html">Registry.hpp</a></div><div class="ttdoc">Registry class definition.</div></div>
 <div class="ttc" id="aclassecstasy_1_1_entities_1_1_builder_html_ae5ec38f89997d70c29afdfc195cf1824"><div class="ttname"><a href="classecstasy_1_1_entities_1_1_builder.html#ae5ec38f89997d70c29afdfc195cf1824">ecstasy::Entities::Builder::build</a></div><div class="ttdeci">Entity build()</div><div class="ttdoc">Finalize the entity, making it alive.</div><div class="ttdef"><b>Definition</b> <a href="_entities_8cpp_source.html#l00028">Entities.cpp:28</a></div></div>
@@ -230,6 +233,7 @@ $(document).ready(function(){initNavTree('_registry_8cpp_source.html',''); initR
 <div class="ttc" id="aclassecstasy_1_1_entity_html_a0d506985125daa52cadbf326d915284c"><div class="ttname"><a href="classecstasy_1_1_entity.html#a0d506985125daa52cadbf326d915284c">ecstasy::Entity::getIndex</a></div><div class="ttdeci">constexpr Index getIndex() const noexcept</div><div class="ttdoc">Get the entity identifier,.</div><div class="ttdef"><b>Definition</b> <a href="_entity_8hpp_source.html#l00050">Entity.hpp:50</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_entity_html_ad83d7f7e44a390c9c36e0079fd505b35"><div class="ttname"><a href="classecstasy_1_1_entity.html#ad83d7f7e44a390c9c36e0079fd505b35">ecstasy::Entity::Index</a></div><div class="ttdeci">size_t Index</div><div class="ttdoc">The entity identifier type.</div><div class="ttdef"><b>Definition</b> <a href="_entity_8hpp_source.html#l00038">Entity.hpp:38</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_entity_html_aedd2cea83d94e06702e063c75b0b1ddb"><div class="ttname"><a href="classecstasy_1_1_entity.html#aedd2cea83d94e06702e063c75b0b1ddb">ecstasy::Entity::get</a></div><div class="ttdeci">const S::Component &amp; get(S &amp;storage) const</div><div class="ttdoc">Try to fetch the instance of component C associated to the current entity.</div><div class="ttdef"><b>Definition</b> <a href="_entity_8hpp_source.html#l00178">Entity.hpp:178</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_i_system_html"><div class="ttname"><a href="classecstasy_1_1_i_system.html">ecstasy::ISystem</a></div><div class="ttdoc">System interface, base class of all systems.</div><div class="ttdef"><b>Definition</b> <a href="_i_system_8hpp_source.html#l00028">ISystem.hpp:28</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_1_1_entity_builder_html"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_entity_builder.html">ecstasy::Registry::EntityBuilder</a></div><div class="ttdoc">Entity Builder using the registry storages.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00537">Registry.hpp:537</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_1_1_entity_builder_html_a0187e8664dd4bec9d34f15fae2ef601c"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_entity_builder.html#a0187e8664dd4bec9d34f15fae2ef601c">ecstasy::Registry::EntityBuilder::_builder</a></div><div class="ttdeci">Entities::Builder _builder</div><div class="ttdoc">Entities builder.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l00643">Registry.hpp:643</a></div></div>
 <div class="ttc" id="aclassecstasy_1_1_registry_1_1_entity_builder_html_abaac6f2e9bb8085102d04900be11b597"><div class="ttname"><a href="classecstasy_1_1_registry_1_1_entity_builder.html#abaac6f2e9bb8085102d04900be11b597">ecstasy::Registry::EntityBuilder::EntityBuilder</a></div><div class="ttdeci">EntityBuilder(const EntityBuilder &amp;other)=delete</div><div class="ttdoc">Copy constructor is deleted.</div></div>
