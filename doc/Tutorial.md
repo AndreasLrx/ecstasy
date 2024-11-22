@@ -472,6 +472,71 @@ I strongly recommend you to use enum types, or const values/macros.
     registry.runSystemsPhase<Pipeline::PredefinedPhases::OnUpdate>();
 ```
 
+### Timers
+
+By default, phases and systems are runned at each frame (ie each `registry.run()` call).
+However you may want to limit them to run every two frames, or every 5 seconds.
+This is possible through the @ref ecstasy::Timer "Timer" class.
+
+Every @ref ecstasy::ISystem "ISystem" and @ref ecstasy::Pipeline::Phase "Phase" have a timer instance accessible through `getTimer()` getter.
+
+#### Interval
+
+Want to limit your system to run at a specific time ? Use @ref ecstasy::Timer::setInterval "setInterval()" function:
+
+@warning
+Setting an interval means it will always wait **at least** the required interval between two systems calls but it can be longer.
+
+```cpp
+ecstasy::Registry registry;
+
+registry.addSystem<MySystem>().getTimer().setInterval(std::chrono::milliseconds(500));
+// Thanks to std::chrono, you can easily use other time units
+registry.addSystem<MySystem>().getTimer().setInterval(std::chrono::seconds(5));
+
+// Set render to every 16ms -> ~60Hz
+registry.getPipeline().getPhase(Pipeline::PredefinedPhases::OnStore).getTimer().setInterval(std::chrono::milliseconds(16));
+```
+
+#### Rate
+
+Want to limit your system to run at a frame frequency instead ? Use @ref ecstasy::Timer::setRate "setRate()" function:
+
+```cpp
+ecstasy::Registry registry;
+
+// Will run every two frames (ie run one, skip one)
+registry.addSystem<MySystem>().getTimer().setRate(2);
+
+// Will render every 5 frames
+registry.getPipeline().getPhase(Pipeline::PredefinedPhases::OnStore).getTimer().setRate(5);
+```
+
+#### Tips when using timers on Systems and Phases
+
+The one sentence to remember about combining system and phases timers is this one:
+**The system timer is only evaluated if the phase timer succeed.**
+
+Below are some resulting behaviors.
+
+1. System and Phase rates
+
+   Combined rates are multiplied. Inverting the values will have the same behaviors.
+   Ex: Rate limit of 5 on the system and 2 on the phase will result in a system rate of 10 frames.
+
+2. Phase interval and system rate
+
+   The final interval is the phase interval multiplied by the system rate.
+   Ex: Interval of 5s with rate of 3 will result in a system interval of 15s.
+
+3. Phase rate (R) and system interval (I)
+
+   The system will be called at frames when the frame id is a multiple of the `R` **and** at least `I` seconds elapsed since last system call.
+
+4. Phase and system intervals
+
+   The longest interval need to be satisfied. They are not added.
+
 ## Using resources
 
 Creating a resource is even simpler than creating a system: you only have to inherit @ref ecstasy::IResource "IResource".

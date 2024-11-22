@@ -12,6 +12,8 @@
 #ifndef ECSTASY_SYSTEM_ISYSTEM_HPP_
 #define ECSTASY_SYSTEM_ISYSTEM_HPP_
 
+#include "ecstasy/system/Timer.hpp"
+
 namespace ecstasy
 {
     /// @brief Forward declaration of Registry class.
@@ -37,6 +39,42 @@ namespace ecstasy
         /// @since 1.0.0 (2022-10-17)
         ///
         virtual void run(Registry &registry) = 0;
+
+        ///
+        /// @brief Get the system timer.
+        ///
+        /// @note The timer is used to control the execution of the system. You can also use
+        /// @ref ecstasy::Pipeline::Phase "Phase" scale timers.
+        ///
+        /// @return Timer& Reference to the system timer.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-11-22)
+        ///
+        [[nodiscard]] constexpr Timer &getTimer() noexcept
+        {
+            return _timer;
+        }
+
+        ///
+        /// @brief Get the system timer.
+        ///
+        /// @note The timer is used to control the execution of the system. You can also use
+        /// @ref ecstasy::Pipeline::Phase "Phase" scale timers.
+        ///
+        /// @return const Timer& Reference to the system timer.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2024-11-22)
+        ///
+        [[nodiscard]] constexpr const Timer &getTimer() const noexcept
+        {
+            return _timer;
+        }
+
+      private:
+        /// @brief Timer to control the execution of the system.
+        Timer _timer;
     };
 } // namespace ecstasy
 

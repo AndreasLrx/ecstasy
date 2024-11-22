@@ -83,7 +83,10 @@ namespace ecstasy
 
     void Registry::runSystem(const std::type_index &systemId)
     {
-        _systems.get(systemId).run(*this);
+        ISystem &system = _systems.get(systemId);
+
+        if (system.getTimer().trigger())
+            system.run(*this);
     }
 
     void Registry::runSystems()
