@@ -16,6 +16,7 @@
 #include <typeindex>
 #include <vector>
 #include "ecstasy/system/ISystem.hpp"
+#include "ecstasy/system/Timer.hpp"
 
 namespace ecstasy
 {
@@ -72,7 +73,7 @@ namespace ecstasy
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2024-11-21)
             ///
-            constexpr Phase(Pipeline &pipeline, PhaseId id) : _pipeline(pipeline), _begin(), _size(0), _id(id)
+            Phase(Pipeline &pipeline, PhaseId id) : _pipeline(pipeline), _begin(), _size(0), _id(id)
             {
             }
 
@@ -83,7 +84,7 @@ namespace ecstasy
             /// @author Andréas Leroux (andreas.leroux@epitech.eu)
             /// @since 1.0.0 (2024-11-21)
             ///
-            void run() const;
+            void run();
 
             ///
             /// @brief Get the number of systems in this phase.
@@ -132,6 +133,44 @@ namespace ecstasy
             ///
             [[nodiscard]] SystemIterator end() const noexcept;
 
+            ///
+            /// @brief Get the phase timer.
+            ///
+            /// @note The timer is used to control the execution of the phase. You can also use
+            /// @ref ecstasy::ISystem "ISystem" scale timers.
+            ///
+            /// @warning Rate limiting both the phase and the systems will result in multiplied timers (not added).
+            /// However interval timers will be cumulative.
+            ///
+            /// @return Timer& Reference to the system timer.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2024-11-22)
+            ///
+            [[nodiscard]] constexpr Timer &getTimer() noexcept
+            {
+                return _timer;
+            }
+
+            ///
+            /// @brief Get the phase timer.
+            ///
+            /// @note The timer is used to control the execution of the phase. You can also use
+            /// @ref ecstasy::ISystem "ISystem" scale timers.
+            ///
+            /// @warning Rate limiting both the phase and the systems will result in multiplied timers (not added).
+            /// However interval timers will be cumulative.
+            ///
+            /// @return const Timer& Reference to the system timer.
+            ///
+            /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+            /// @since 1.0.0 (2024-11-22)
+            ///
+            [[nodiscard]] constexpr const Timer &getTimer() const noexcept
+            {
+                return _timer;
+            }
+
           private:
             /// @brief Owning pipeline.
             Pipeline &_pipeline;
@@ -141,6 +180,8 @@ namespace ecstasy
             std::size_t _size;
             /// @brief Identifier of the phase.
             PhaseId _id;
+            /// @brief Timer to control the execution of the phase.
+            Timer _timer;
 
             ///
             /// @brief Get the index of the first system in this phase.
@@ -266,7 +307,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-11-21)
         ///
-        void run() const;
+        void run();
 
         ///
         /// @brief Run a specific phase of the pipeline.
@@ -276,7 +317,7 @@ namespace ecstasy
         /// @author Andréas Leroux (andreas.leroux@epitech.eu)
         /// @since 1.0.0 (2024-11-21)
         ///
-        void run(PhaseId phase) const;
+        void run(PhaseId phase);
 
       private:
         /// @brief Ordered list of systems.

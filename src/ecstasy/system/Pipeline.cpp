@@ -25,8 +25,10 @@ namespace ecstasy
         return _pipeline._systemsIds.begin() + static_cast<long>(end_idx());
     }
 
-    void Pipeline::Phase::run() const
+    void Pipeline::Phase::run()
     {
+        if (!_timer.trigger())
+            return;
         for (auto it = begin(); it < end(); ++it) {
             _pipeline._registry.runSystem(*it);
         }
@@ -54,14 +56,14 @@ namespace ecstasy
         }
     }
 
-    void Pipeline::run() const
+    void Pipeline::run()
     {
         for (auto &phase : _phases) {
             phase.second.run();
         }
     }
 
-    void Pipeline::run(Pipeline::PhaseId phase) const
+    void Pipeline::run(Pipeline::PhaseId phase)
     {
         auto phaseIt = _phases.find(phase);
 

@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include <math.h>
+#include <thread>
 #include "ecstasy/query/conditions/include.hpp"
 #include "ecstasy/registry/Registry.hpp"
 #include "ecstasy/registry/modifiers/And.hpp"
@@ -922,6 +923,97 @@ TEST(Registry, Pipeline_Implicit_Order)
 
     registry.runSystems();
     GTEST_ASSERT_EQ(testing::internal::GetCapturedStdout(), "ABCDEF");
+}
+
+TEST(Timer, Pipeline_system_timers_rates)
+{
+    ecstasy::Registry registry;
+    testing::internal::CaptureStdout();
+
+    // No timer, run every frame
+    registry.addSystem<A>();
+    // Run every 2 frames
+    ecstasy::ISystem &b = registry.addSystem<B>();
+    GTEST_ASSERT_EQ(b.getTimer().getType(), ecstasy::Timer::Type::Rate);
+    EXPECT_EQ(b.getTimer().getRate(), 1);
+    EXPECT_THROW(static_cast<void>(b.getTimer().getInterval()), std::runtime_error);
+    b.getTimer().setRate(2);
+    EXPECT_EQ(b.getTimer().getRate(), 2);
+    EXPECT_THROW(static_cast<void>(b.getTimer().getInterval()), std::runtime_error);
+    // Run every 4 frames
+    registry.addSystem<C>().getTimer().setRate(4);
+    // Run every 8 frames
+    registry.addSystem<D>().getTimer().setRate(8);
+    // Run every 16 frames
+    registry.addSystem<E>().getTimer().setRate(16);
+
+    for (int i = 0; i < 32; i++) {
+        registry.runSystems();
+    }
+    // Every systems are runned at first frame, then their rate applies
+    GTEST_ASSERT_EQ(
+        testing::internal::GetCapturedStdout(), "ABCDEAABAABCAABAABCDAABAABCAABAABCDEAABAABCAABAABCDAABAABCAABA");
+}
+
+TEST(Timer, Pipeline_system_timers_intervals)
+{
+    ecstasy::Registry registry;
+    testing::internal::CaptureStdout();
+
+    // No timer, run every frame
+    registry.addSystem<A>();
+
+    // Run every 2 frames
+    ecstasy::ISystem &b = registry.addSystem<B>();
+    b.getTimer().setInterval(std::chrono::milliseconds(200));
+    GTEST_ASSERT_EQ(b.getTimer().getType(), ecstasy::Timer::Type::TimeInterval);
+    EXPECT_EQ(b.getTimer().getInterval(), std::chrono::milliseconds(200));
+    EXPECT_THROW(static_cast<void>(b.getTimer().getRate()), std::runtime_error);
+
+    // Run every 4 frames
+    registry.addSystem<C>().getTimer().setInterval(std::chrono::milliseconds(350));
+    // Run every 8 frames
+    registry.addSystem<D>().getTimer().setInterval(std::chrono::milliseconds(800));
+    // Run every 16 frames
+    registry.addSystem<E>().getTimer().setInterval(std::chrono::seconds(1));
+
+    auto start = std::chrono::system_clock::now();
+    auto end = std::chrono::system_clock::now();
+    long loops = 0;
+    while (start + std::chrono::seconds(3) > end) {
+        ++loops;
+        registry.runSystems();
+        if (loops == 1)
+            start = std::chrono::system_clock::now();
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        end = std::chrono::system_clock::now();
+    }
+
+    std::string captured = testing::internal::GetCapturedStdout();
+
+    auto nb_a = std::count_if(captured.begin(), captured.end(), [](char c) {
+        return c == 'A';
+    });
+    auto nb_b = std::count_if(captured.begin(), captured.end(), [](char c) {
+        return c == 'B';
+    });
+    auto nb_c = std::count_if(captured.begin(), captured.end(), [](char c) {
+        return c == 'C';
+    });
+    auto nb_d = std::count_if(captured.begin(), captured.end(), [](char c) {
+        return c == 'D';
+    });
+    auto nb_e = std::count_if(captured.begin(), captured.end(), [](char c) {
+        return c == 'E';
+    });
+    auto nb_ms = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+
+    // Not sure about these values, but they should be close
+    GTEST_ASSERT_EQ(nb_a, loops);
+    ASSERT_NEAR(nb_b, nb_ms / 200, 1);
+    ASSERT_NEAR(nb_c, nb_ms / 350, 1);
+    ASSERT_NEAR(nb_d, nb_ms / 800, 1);
+    ASSERT_NEAR(nb_e, nb_ms / 1000, 1);
 }
 
 TEST(Registry, Pipeline_Explicit_Order)
