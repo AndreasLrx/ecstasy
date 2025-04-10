@@ -1,3 +1,4 @@
+#include <chrono>
 #include <gtest/gtest.h>
 #include "ecstasy/query/Query.hpp"
 #include "ecstasy/resources/entity/Entities.hpp"

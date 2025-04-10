@@ -443,7 +443,7 @@ namespace ecstasy::serialization
         ///
         JsonSerializer &closeNested()
         {
-            if (_stack.top().get().IsArray())
+            if (_stack.top().get().IsArray() && !_arrayIterators.empty())
                 _arrayIterators.pop();
             _stack.pop();
             return *this;
@@ -496,6 +496,45 @@ namespace ecstasy::serialization
                 cursor.PushBack(value, _document.GetAllocator());
             }
             return *this;
+        }
+
+        ///
+        /// @brief Check if the current cursor is at the end of an array.
+        ///
+        /// @return bool True if the cursor is at the end of an array, false otherwise.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2025-04-10)
+        ///
+        bool isArrayEnd()
+        {
+            rapidjson::Value &cursor = getWriteCursor();
+
+            if (!cursor.IsArray()) {
+                throw std::invalid_argument("Invalid cursor type. Expected object or array.");
+            }
+            // If the array is empty, push the first element (first document element)
+            if (_arrayIterators.empty())
+                _arrayIterators.push(cursor.Begin());
+            return _arrayIterators.top() == cursor.End();
+        }
+
+        ///
+        /// @brief Get the size of the current array.
+        ///
+        /// @return size_t Size of the current array.
+        ///
+        /// @author Andréas Leroux (andreas.leroux@epitech.eu)
+        /// @since 1.0.0 (2025-04-10)
+        ///
+        size_t getArraySize()
+        {
+            rapidjson::Value &cursor = getWriteCursor();
+
+            if (!cursor.IsArray()) {
+                throw std::invalid_argument("Invalid cursor type. Expected object or array.");
+            }
+            return cursor.Size();
         }
 
       private:
