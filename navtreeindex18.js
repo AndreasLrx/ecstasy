@@ -1,5 +1,9 @@
 var NAVTREEINDEX18 =
 {
+"md_doc_2_technical_implementation.html":[4],
+"md_doc_2_technical_implementation.html#autolock":[4,2,5],
+"md_doc_2_technical_implementation.html#components-management-mapstorage":[4,1],
+"md_doc_2_technical_implementation.html#conditions":[4,2,4],
 "md_doc_2_technical_implementation.html#entities-management":[4,0],
 "md_doc_2_technical_implementation.html#modifiers":[4,2,3],
 "md_doc_2_technical_implementation.html#query-1":[4,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX18 =
 "namespacetoml.html#a3c5daa4563e3aff2b5e6460aa97d28df":[8,0,3,37],
 "namespacetoml.html#a4bccd753f54404e0097457514177fcbb":[8,0,3,3],
 "namespacetoml.html#a4e4126f63ba560963de095cd9bee0704":[8,0,3,43],
-"namespacetoml.html#a513bdc4a19071f0be70e92bb6cb1a1a3":[8,0,3,40],
-"namespacetoml.html#a5a5b291fdf3ecb9ad8bef4d6e689c402":[8,0,3,17],
-"namespacetoml.html#a6355193bb51dc19b1f1509c6dac46b23":[8,0,3,19],
-"namespacetoml.html#a64ce7ed6974d2b17823565bc67c40873":[8,0,3,45],
-"namespacetoml.html#a73eba6a34e7c7c4a4d311100800e1bb5":[8,0,3,13]
+"namespacetoml.html#a513bdc4a19071f0be70e92bb6cb1a1a3":[8,0,3,40]
 };

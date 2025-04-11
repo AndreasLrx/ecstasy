@@ -192,19 +192,19 @@ var NAVTREEINDEX =
 "classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3ae902674982fc99aa343cdd94da7476c3",
 "classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe85d7ffd57dbe8185bd42d6b1216253c8.html#a1026ee502720e32309b574deb8348e63",
 "classecstasy_1_1rtti_1_1_type.html#aedaa6265714188d9ec24104fda9cf20f",
-"classecstasy_1_1serialization_1_1_serializer.html#ab57cc26efd48513c4d72b3d5a82ca1ba",
-"classutil_1_1serialization_1_1_a_node.html#aa8777bd96604bebca6e50bb3cd27d858",
-"classutil_1_1serialization_1_1_polymorphic_iterator.html#abb8fdf818d2d1911d65d9d3d681da176",
-"concepts_2_modifier_8hpp_source.html",
-"cpp/chrono/current_zone.html",
-"cpp/io/c/fprintf.html",
-"cpp/numeric/math/fabs.html",
-"cpp/string/wide/wcstol.html",
-"ecstasy_2registry_2include_8hpp_source.html",
-"md_doc_2_technical_implementation.html#entities-management",
-"namespacetoml.html#a7b8ef907d9629d139a30d874b345b195",
-"structecstasy_1_1integration_1_1event_1_1_gamepad_connected_event.html",
-"structecstasy_1_1queryable__type_3_01_s_01_4.html#a0443dd251bf124ba002fa5176ef7e13a"
+"classecstasy_1_1serialization_1_1_serializer.html#aa8ad6f4c995f7185cbbf3b3100550925",
+"classutil_1_1serialization_1_1_a_node.html#a9cfea3cd840f25d07ad07723e1fc1de2",
+"classutil_1_1serialization_1_1_polymorphic_iterator.html#a668f931c08d101a2b5943d925fe9d4c6",
+"concepts.html",
+"cpp/chrono/c/timespec.html",
+"cpp/io/c/fgetwc.html",
+"cpp/numeric/math/exp.html",
+"cpp/string/wide/wcstof.html",
+"ecstasy_2query_2modifiers_2include_8hpp_source.html",
+"md_doc_2_technical_implementation.html",
+"namespacetoml.html#a5a5b291fdf3ecb9ad8bef4d6e689c402",
+"structecstasy_1_1integration_1_1event_1_1_gamepad_button_released_event.html",
+"structecstasy_1_1queryable__type_3_01_r_01_4.html#a19a90bbae0148beba23b958230c1f885"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

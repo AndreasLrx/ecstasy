@@ -1,5 +1,9 @@
 var NAVTREEINDEX17 =
 {
+"ecstasy_2query_2modifiers_2include_8hpp_source.html":[11,0,1,0,1,2,2],
+"ecstasy_2registry_2concepts_2include_8hpp.html":[11,0,1,0,2,0,1],
+"ecstasy_2registry_2concepts_2include_8hpp_source.html":[11,0,1,0,2,0,1],
+"ecstasy_2registry_2include_8hpp.html":[11,0,1,0,2,4],
 "ecstasy_2registry_2include_8hpp_source.html":[11,0,1,0,2,4],
 "ecstasy_2registry_2modifiers_2include_8hpp.html":[11,0,1,0,2,1,1],
 "ecstasy_2registry_2modifiers_2include_8hpp_source.html":[11,0,1,0,2,1,1],
@@ -194,8 +198,8 @@ var NAVTREEINDEX17 =
 "has__insertion__operator_8hpp.html#adee80e58d0fbc14b8e0dc90755815c77":[11,0,1,0,5,0,1,1],
 "has__insertion__operator_8hpp_source.html":[11,0,1,0,5,0,1],
 "hierarchy.html":[10,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#authors":[0,6],
 "index.html#building":[0,2],
 "index.html#code-example":[0,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX17 =
 "md_doc_2_glossary.html#storage":[2,2],
 "md_doc_2_glossary.html#system":[2,3],
 "md_doc_2_glossary.html#thread":[2,7],
-"md_doc_2_glossary.html#variable-actions":[2,8,1],
-"md_doc_2_technical_implementation.html":[4],
-"md_doc_2_technical_implementation.html#autolock":[4,2,5],
-"md_doc_2_technical_implementation.html#components-management-mapstorage":[4,1],
-"md_doc_2_technical_implementation.html#conditions":[4,2,4]
+"md_doc_2_glossary.html#variable-actions":[2,8,1]
 };
