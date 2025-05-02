@@ -1,8 +1,8 @@
 var searchData=
 [
   ['reader_0',['Reader',['https://rapidjson.org/namespacerapidjson.html#ad5310edd1226f5b3ea82dc0d4d3740c6',1,'rapidjson']]],
-  ['reference_1',['reference',['../classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe85d7ffd57dbe8185bd42d6b1216253c8.html#ab6f1b90c58abbce66cf79706caefbd86',1,'ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt;, AutoLock &gt;::Iterator::reference'],['../classutil_1_1serialization_1_1_polymorphic_iterator.html#add3b399246433e5470bbb9638d74edfa',1,'util::serialization::PolymorphicIterator::reference']]],
-  ['reference_2',['Reference',['https://rapidjson.org/classrapidjson_1_1_generic_member_iterator.html#abe27838f8dc71fdb38028ef27ae0b4f2',1,'rapidjson::GenericMemberIterator']]],
+  ['reference_1',['Reference',['https://rapidjson.org/classrapidjson_1_1_generic_member_iterator.html#abe27838f8dc71fdb38028ef27ae0b4f2',1,'rapidjson::GenericMemberIterator']]],
+  ['reference_2',['reference',['../classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe85d7ffd57dbe8185bd42d6b1216253c8.html#ab6f1b90c58abbce66cf79706caefbd86',1,'ecstasy::query::QueryImplementation&lt; util::meta::Traits&lt; First, Others... &gt;, util::meta::Traits&lt; Conditions... &gt;, AutoLock &gt;::Iterator::reference'],['../classutil_1_1serialization_1_1_polymorphic_iterator.html#add3b399246433e5470bbb9638d74edfa',1,'util::serialization::PolymorphicIterator::reference']]],
   ['registryselectstackquery_3',['RegistrySelectStackQuery',['../classecstasy_1_1_registry.html#a8d598f5f47d1a481303a89579a0827f2',1,'ecstasy::Registry']]],
   ['registryselectstackquerymemory_4',['RegistrySelectStackQueryMemory',['../classecstasy_1_1_registry.html#a58c8eefe0ba356280290101705d9d450',1,'ecstasy::Registry']]],
   ['resourcereference_5',['ResourceReference',['../namespaceecstasy.html#a935f8c5172bfb738d9af3f1585f41cad',1,'ecstasy']]],

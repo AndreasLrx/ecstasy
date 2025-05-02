@@ -313,6 +313,10 @@ requires query::Queryable&lt;S&gt;</td></tr>
 <tr class="memitem:aba17762b3e392840085dcc7fc48895ac"><td class="memTemplItemLeft" align="right" valign="top">S &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#aba17762b3e392840085dcc7fc48895ac">getSystem</a> ()</td></tr>
 <tr class="memdesc:aba17762b3e392840085dcc7fc48895ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the System of type <b>S</b>.  <br /></td></tr>
 <tr class="separator:aba17762b3e392840085dcc7fc48895ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bb7b911feec677899a3b99c41c4d509"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.html">ISystem</a> &gt; S&gt; </td></tr>
+<tr class="memitem:a2bb7b911feec677899a3b99c41c4d509"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#a2bb7b911feec677899a3b99c41c4d509">hasSystem</a> ()</td></tr>
+<tr class="memdesc:a2bb7b911feec677899a3b99c41c4d509"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether there is an instance of system S in the registry.  <br /></td></tr>
+<tr class="separator:a2bb7b911feec677899a3b99c41c4d509"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a827c2ce78375ab3c8cd3027f6c531eb6"><td class="memTemplParams" colspan="2">template&lt;typename C , typename... Cs&gt; </td></tr>
 <tr class="memitem:a827c2ce78375ab3c8cd3027f6c531eb6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1_registry.html#a8d598f5f47d1a481303a89579a0827f2">RegistrySelectStackQuery</a>&lt; thread::AUTO_LOCK_DEFAULT, <a class="el" href="namespaceecstasy.html#a53c8ca43801107dc959adbdc60810af8">queryable_type_t</a>&lt; C &gt;, <a class="el" href="namespaceecstasy.html#a53c8ca43801107dc959adbdc60810af8">queryable_type_t</a>&lt; Cs &gt;... &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_registry.html#a827c2ce78375ab3c8cd3027f6c531eb6">query</a> ()</td></tr>
 <tr class="memdesc:a827c2ce78375ab3c8cd3027f6c531eb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a query for the given components.  <br /></td></tr>
@@ -459,7 +463,7 @@ template&lt;bool AutoLock, typename... Selects&gt; </div>
 <div class="line"><span class="lineno">   29</span>        <span class="keywordflow">if</span> (addEntities)</div>
 <div class="line"><span class="lineno">   30</span>            addResource&lt;Entities&gt;();</div>
 <div class="line"><span class="lineno">   31</span>    }</div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_abd538c191a416ee80e9b174bbfb2b4c7"><div class="ttname"><a href="classecstasy_1_1_registry.html#abd538c191a416ee80e9b174bbfb2b4c7">ecstasy::Registry::_pipeline</a></div><div class="ttdeci">Pipeline _pipeline</div><div class="ttdoc">System pipeline.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l01295">Registry.hpp:1295</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_abd538c191a416ee80e9b174bbfb2b4c7"><div class="ttname"><a href="classecstasy_1_1_registry.html#abd538c191a416ee80e9b174bbfb2b4c7">ecstasy::Registry::_pipeline</a></div><div class="ttdeci">Pipeline _pipeline</div><div class="ttdoc">System pipeline.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l01309">Registry.hpp:1309</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -545,7 +549,7 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_resourc
 <div class="fragment"><div class="line"><span class="lineno">  885</span>        {</div>
 <div class="line"><span class="lineno">  886</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a9f7070df12878b824677c3c055d4f41c">_resources</a>.emplace&lt;R&gt;(std::forward&lt;Args&gt;(args)...);</div>
 <div class="line"><span class="lineno">  887</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_a9f7070df12878b824677c3c055d4f41c"><div class="ttname"><a href="classecstasy_1_1_registry.html#a9f7070df12878b824677c3c055d4f41c">ecstasy::Registry::_resources</a></div><div class="ttdeci">Instances&lt; IResource &gt; _resources</div><div class="ttdoc">Registry resources.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l01289">Registry.hpp:1289</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_a9f7070df12878b824677c3c055d4f41c"><div class="ttname"><a href="classecstasy_1_1_registry.html#a9f7070df12878b824677c3c055d4f41c">ecstasy::Registry::_resources</a></div><div class="ttdeci">Instances&lt; IResource &gt; _resources</div><div class="ttdoc">Registry resources.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l01303">Registry.hpp:1303</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -595,7 +599,7 @@ template&lt;typename C &gt; </div>
 <div class="fragment"><div class="line"><span class="lineno">  903</span>        {</div>
 <div class="line"><span class="lineno">  904</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>.emplace&lt;getStorageType&lt;C&gt;&gt;();</div>
 <div class="line"><span class="lineno">  905</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_a0a614c68449908484ab0db56fcf12cdb"><div class="ttname"><a href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">ecstasy::Registry::_storages</a></div><div class="ttdeci">Instances&lt; IStorage &gt; _storages</div><div class="ttdoc">Registry storages.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l01291">Registry.hpp:1291</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_a0a614c68449908484ab0db56fcf12cdb"><div class="ttname"><a href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">ecstasy::Registry::_storages</a></div><div class="ttdeci">Instances&lt; IStorage &gt; _storages</div><div class="ttdoc">Registry storages.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l01305">Registry.hpp:1305</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -722,7 +726,7 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.
 <div class="line"><span class="lineno">  865</span>            <span class="keywordflow">return</span> <a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/utility/program/system.html">system</a>;</div>
 <div class="line"><span class="lineno">  866</span>        }</div>
 <div class="ttc" id="aclassecstasy_1_1_pipeline_html_aca8c0cdfe0e0e9c469f933362578fd92"><div class="ttname"><a href="classecstasy_1_1_pipeline.html#aca8c0cdfe0e0e9c469f933362578fd92">ecstasy::Pipeline::addSystem</a></div><div class="ttdeci">void addSystem(std::type_index system, PhaseId phase=static_cast&lt; std::size_t &gt;(PredefinedPhases::OnUpdate))</div><div class="ttdoc">Add a system to the pipeline.</div><div class="ttdef"><b>Definition</b> <a href="_pipeline_8cpp_source.html#l00041">Pipeline.cpp:41</a></div></div>
-<div class="ttc" id="aclassecstasy_1_1_registry_html_a30221a4bba6858b3b5b19d088a98a6df"><div class="ttname"><a href="classecstasy_1_1_registry.html#a30221a4bba6858b3b5b19d088a98a6df">ecstasy::Registry::_systems</a></div><div class="ttdeci">Instances&lt; ISystem &gt; _systems</div><div class="ttdoc">Registry systems.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l01293">Registry.hpp:1293</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_registry_html_a30221a4bba6858b3b5b19d088a98a6df"><div class="ttname"><a href="classecstasy_1_1_registry.html#a30221a4bba6858b3b5b19d088a98a6df">ecstasy::Registry::_systems</a></div><div class="ttdeci">Instances&lt; ISystem &gt; _systems</div><div class="ttdoc">Registry systems.</div><div class="ttdef"><b>Definition</b> <a href="_registry_8hpp_source.html#l01307">Registry.hpp:1307</a></div></div>
 <div class="ttc" id="asystem_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/utility/program/system.html">std::system</a></div><div class="ttdeci">T system(T... args)</div></div>
 </div><!-- fragment -->
 </div>
@@ -1343,10 +1347,10 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_registry.
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-11-21) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01282">1282</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1283</span>        {</div>
-<div class="line"><span class="lineno"> 1284</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#abd538c191a416ee80e9b174bbfb2b4c7">_pipeline</a>;</div>
-<div class="line"><span class="lineno"> 1285</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01296">1296</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1297</span>        {</div>
+<div class="line"><span class="lineno"> 1298</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#abd538c191a416ee80e9b174bbfb2b4c7">_pipeline</a>;</div>
+<div class="line"><span class="lineno"> 1299</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1378,10 +1382,10 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_registry.
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-11-21) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01269">1269</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1270</span>        {</div>
-<div class="line"><span class="lineno"> 1271</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#abd538c191a416ee80e9b174bbfb2b4c7">_pipeline</a>;</div>
-<div class="line"><span class="lineno"> 1272</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01283">1283</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1284</span>        {</div>
+<div class="line"><span class="lineno"> 1285</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#abd538c191a416ee80e9b174bbfb2b4c7">_pipeline</a>;</div>
+<div class="line"><span class="lineno"> 1286</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1831,10 +1835,10 @@ template&lt;typename C &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-06-11) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01243">1243</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1244</span>        {</div>
-<div class="line"><span class="lineno"> 1245</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>;</div>
-<div class="line"><span class="lineno"> 1246</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01257">1257</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1258</span>        {</div>
+<div class="line"><span class="lineno"> 1259</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>;</div>
+<div class="line"><span class="lineno"> 1260</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1866,10 +1870,10 @@ template&lt;typename C &gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-10-04) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01256">1256</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1257</span>        {</div>
-<div class="line"><span class="lineno"> 1258</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>;</div>
-<div class="line"><span class="lineno"> 1259</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01270">1270</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1271</span>        {</div>
+<div class="line"><span class="lineno"> 1272</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a0a614c68449908484ab0db56fcf12cdb">_storages</a>;</div>
+<div class="line"><span class="lineno"> 1273</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2010,6 +2014,48 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_resourc
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a2bb7b911feec677899a3b99c41c4d509" name="a2bb7b911feec677899a3b99c41c4d509"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bb7b911feec677899a3b99c41c4d509">&#9670;&#160;</a></span>hasSystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.html">ISystem</a> &gt; S&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ecstasy::Registry::hasSystem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks whether there is an instance of system S in the registry. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">S</td><td><a class="el" href="classecstasy_1_1_i_system.html" title="System interface, base class of all systems.">ISystem</a> type.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2025-05-02) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01102">1102</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1103</span>        {</div>
+<div class="line"><span class="lineno"> 1104</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_registry.html#a30221a4bba6858b3b5b19d088a98a6df">_systems</a>.contains&lt;S&gt;();</div>
+<div class="line"><span class="lineno"> 1105</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a827c2ce78375ab3c8cd3027f6c531eb6" name="a827c2ce78375ab3c8cd3027f6c531eb6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a827c2ce78375ab3c8cd3027f6c531eb6">&#9670;&#160;</a></span>query()</h2>
 
@@ -2047,10 +2093,10 @@ template&lt;typename C , typename... Cs&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-20) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01108">1108</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1109</span>        {</div>
-<div class="line"><span class="lineno"> 1110</span>            <span class="keywordflow">return</span> RegistrySelectStackQuery&lt;thread::AUTO_LOCK_DEFAULT, queryable_type_t&lt;C&gt;, queryable_type_t&lt;Cs&gt;...&gt;(*this);</div>
-<div class="line"><span class="lineno"> 1111</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01122">1122</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1123</span>        {</div>
+<div class="line"><span class="lineno"> 1124</span>            <span class="keywordflow">return</span> RegistrySelectStackQuery&lt;thread::AUTO_LOCK_DEFAULT, queryable_type_t&lt;C&gt;, queryable_type_t&lt;Cs&gt;...&gt;(*this);</div>
+<div class="line"><span class="lineno"> 1125</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2093,10 +2139,10 @@ template&lt;bool AutoLock, typename C , typename... Cs&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2024-04-07) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01128">1128</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1129</span>        {</div>
-<div class="line"><span class="lineno"> 1130</span>            <span class="keywordflow">return</span> RegistrySelectStackQuery&lt;AutoLock, queryable_type_t&lt;C&gt;, queryable_type_t&lt;Cs&gt;...&gt;(*this);</div>
-<div class="line"><span class="lineno"> 1131</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01142">1142</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1143</span>        {</div>
+<div class="line"><span class="lineno"> 1144</span>            <span class="keywordflow">return</span> RegistrySelectStackQuery&lt;AutoLock, queryable_type_t&lt;C&gt;, queryable_type_t&lt;Cs&gt;...&gt;(*this);</div>
+<div class="line"><span class="lineno"> 1145</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2141,10 +2187,10 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-17) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01199">1199</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1200</span>        {</div>
-<div class="line"><span class="lineno"> 1201</span>            <a class="code hl_variable" href="classecstasy_1_1_registry.html#a30221a4bba6858b3b5b19d088a98a6df">_systems</a>.get&lt;S&gt;().run(*<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno"> 1202</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01213">1213</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1214</span>        {</div>
+<div class="line"><span class="lineno"> 1215</span>            <a class="code hl_variable" href="classecstasy_1_1_registry.html#a30221a4bba6858b3b5b19d088a98a6df">_systems</a>.get&lt;S&gt;().run(*<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno"> 1216</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2178,7 +2224,7 @@ template&lt;std::derived_from&lt; <a class="el" href="classecstasy_1_1_i_system.
 <div class="fragment"><div class="line"><span class="lineno">   85</span>    {</div>
 <div class="line"><span class="lineno">   86</span>        ISystem &amp;<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/utility/program/system.html">system</a> = <a class="code hl_variable" href="classecstasy_1_1_registry.html#a30221a4bba6858b3b5b19d088a98a6df">_systems</a>.get(systemId);</div>
 <div class="line"><span class="lineno">   87</span> </div>
-<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">if</span> (<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/utility/program/system.html">system</a>.getTimer().trigger())</div>
+<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">if</span> (<a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/utility/program/system.html">system</a>.enabled() &amp;&amp; <a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/utility/program/system.html">system</a>.getTimer().trigger())</div>
 <div class="line"><span class="lineno">   89</span>            <a class="code hl_functionRef" href="http://en.cppreference.com/w/cpp/utility/program/system.html">system</a>.run(*<span class="keyword">this</span>);</div>
 <div class="line"><span class="lineno">   90</span>    }</div>
 </div><!-- fragment -->
@@ -2283,10 +2329,10 @@ template&lt;typename C , typename... Cs&gt; </div>
 <dl class="section author"><dt>Author</dt><dd>Andréas Leroux (<a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'as.'+'le'+'rou'+'x@'+'epi'+'te'+'ch.'+'eu'; return false;">andre<span class="obfuscator">.nosp@m.</span>as.l<span class="obfuscator">.nosp@m.</span>eroux<span class="obfuscator">.nosp@m.</span>@epi<span class="obfuscator">.nosp@m.</span>tech.<span class="obfuscator">.nosp@m.</span>eu</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 (2022-10-24) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01149">1149</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1150</span>        {</div>
-<div class="line"><span class="lineno"> 1151</span>            <span class="keywordflow">return</span> Select&lt;queryable_type_t&lt;C&gt;, queryable_type_t&lt;Cs&gt;...&gt;(*this);</div>
-<div class="line"><span class="lineno"> 1152</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01163">1163</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1164</span>        {</div>
+<div class="line"><span class="lineno"> 1165</span>            <span class="keywordflow">return</span> Select&lt;queryable_type_t&lt;C&gt;, queryable_type_t&lt;Cs&gt;...&gt;(*this);</div>
+<div class="line"><span class="lineno"> 1166</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2313,7 +2359,7 @@ template&lt;typename C , typename... Cs&gt; </div>
 
 <p>System pipeline. </p>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01295">1295</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01309">1309</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
@@ -2339,7 +2385,7 @@ template&lt;typename C , typename... Cs&gt; </div>
 
 <p><a class="el" href="classecstasy_1_1_registry.html" title="Base of an ECS architecture.">Registry</a> resources. </p>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01289">1289</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01303">1303</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
@@ -2365,7 +2411,7 @@ template&lt;typename C , typename... Cs&gt; </div>
 
 <p><a class="el" href="classecstasy_1_1_registry.html" title="Base of an ECS architecture.">Registry</a> storages. </p>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01291">1291</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01305">1305</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>
@@ -2391,7 +2437,7 @@ template&lt;typename C , typename... Cs&gt; </div>
 
 <p><a class="el" href="classecstasy_1_1_registry.html" title="Base of an ECS architecture.">Registry</a> systems. </p>
 
-<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01293">1293</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_registry_8hpp_source.html#l01307">1307</a> of file <a class="el" href="_registry_8hpp_source.html">Registry.hpp</a>.</p>
 
 </div>
 </div>

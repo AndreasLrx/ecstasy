@@ -179,12 +179,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6822b4ef8e028a835914dad26de20195"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="classecstasy_1_1_timer.html">Timer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_system.html#a6822b4ef8e028a835914dad26de20195">getTimer</a> () const noexcept</td></tr>
 <tr class="memdesc:a6822b4ef8e028a835914dad26de20195"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the system timer.  <br /></td></tr>
 <tr class="separator:a6822b4ef8e028a835914dad26de20195"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cf55b28598f3d4168d567c5fea77b19"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_system.html#a6cf55b28598f3d4168d567c5fea77b19">enabled</a> () const noexcept</td></tr>
+<tr class="memdesc:a6cf55b28598f3d4168d567c5fea77b19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the system is enabled.  <br /></td></tr>
+<tr class="separator:a6cf55b28598f3d4168d567c5fea77b19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c95216b1dbf1702b7dd64fb864e5595"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_system.html#a3c95216b1dbf1702b7dd64fb864e5595">disable</a> () noexcept</td></tr>
+<tr class="memdesc:a3c95216b1dbf1702b7dd64fb864e5595"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable the system.  <br /></td></tr>
+<tr class="separator:a3c95216b1dbf1702b7dd64fb864e5595"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a846fe41fa030db2baf8d38a3f640fc0d"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_system.html#a846fe41fa030db2baf8d38a3f640fc0d">enable</a> () noexcept</td></tr>
+<tr class="memdesc:a846fe41fa030db2baf8d38a3f640fc0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the system.  <br /></td></tr>
+<tr class="separator:a846fe41fa030db2baf8d38a3f640fc0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ad1eaa1ab64808e38be6fd787244c53de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecstasy_1_1_timer.html">Timer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_system.html#ad1eaa1ab64808e38be6fd787244c53de">_timer</a></td></tr>
 <tr class="memdesc:ad1eaa1ab64808e38be6fd787244c53de"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecstasy_1_1_timer.html" title="Timer class to control the execution of systems.">Timer</a> to control the execution of the system.  <br /></td></tr>
 <tr class="separator:ad1eaa1ab64808e38be6fd787244c53de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ac7c31ba401b6f7c1c8277531780204"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecstasy_1_1_i_system.html#a3ac7c31ba401b6f7c1c8277531780204">_disabled</a> = false</td></tr>
+<tr class="memdesc:a3ac7c31ba401b6f7c1c8277531780204"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the timer is disabled.  <br /></td></tr>
+<tr class="separator:a3ac7c31ba401b6f7c1c8277531780204"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>System interface, base class of all systems. </p>
@@ -221,6 +233,109 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3c95216b1dbf1702b7dd64fb864e5595" name="a3c95216b1dbf1702b7dd64fb864e5595"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c95216b1dbf1702b7dd64fb864e5595">&#9670;&#160;</a></span>disable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr void ecstasy::ISystem::disable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Disable the system. </p>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2025-05-02) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_i_system_8hpp_source.html#l00092">92</a> of file <a class="el" href="_i_system_8hpp_source.html">ISystem.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   93</span>        {</div>
+<div class="line"><span class="lineno">   94</span>            <a class="code hl_variable" href="classecstasy_1_1_i_system.html#a3ac7c31ba401b6f7c1c8277531780204">_disabled</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   95</span>        }</div>
+<div class="ttc" id="aclassecstasy_1_1_i_system_html_a3ac7c31ba401b6f7c1c8277531780204"><div class="ttname"><a href="classecstasy_1_1_i_system.html#a3ac7c31ba401b6f7c1c8277531780204">ecstasy::ISystem::_disabled</a></div><div class="ttdeci">bool _disabled</div><div class="ttdoc">Whether the timer is disabled.</div><div class="ttdef"><b>Definition</b> <a href="_i_system_8hpp_source.html#l00112">ISystem.hpp:112</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a846fe41fa030db2baf8d38a3f640fc0d" name="a846fe41fa030db2baf8d38a3f640fc0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a846fe41fa030db2baf8d38a3f640fc0d">&#9670;&#160;</a></span>enable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr void ecstasy::ISystem::enable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enable the system. </p>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2025-05-02) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_i_system_8hpp_source.html#l00103">103</a> of file <a class="el" href="_i_system_8hpp_source.html">ISystem.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  104</span>        {</div>
+<div class="line"><span class="lineno">  105</span>            <a class="code hl_variable" href="classecstasy_1_1_i_system.html#a3ac7c31ba401b6f7c1c8277531780204">_disabled</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  106</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6cf55b28598f3d4168d567c5fea77b19" name="a6cf55b28598f3d4168d567c5fea77b19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cf55b28598f3d4168d567c5fea77b19">&#9670;&#160;</a></span>enabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool ecstasy::ISystem::enabled </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether the system is enabled. </p>
+<dl class="section author"><dt>Author</dt><dd>Andréas Leroux </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 (2025-05-02) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_i_system_8hpp_source.html#l00081">81</a> of file <a class="el" href="_i_system_8hpp_source.html">ISystem.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   82</span>        {</div>
+<div class="line"><span class="lineno">   83</span>            <span class="keywordflow">return</span> !<a class="code hl_variable" href="classecstasy_1_1_i_system.html#a3ac7c31ba401b6f7c1c8277531780204">_disabled</a>;</div>
+<div class="line"><span class="lineno">   84</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a6822b4ef8e028a835914dad26de20195" name="a6822b4ef8e028a835914dad26de20195"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6822b4ef8e028a835914dad26de20195">&#9670;&#160;</a></span>getTimer() <span class="overload">[1/2]</span></h2>
 
@@ -254,7 +369,7 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   71</span>        {</div>
 <div class="line"><span class="lineno">   72</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classecstasy_1_1_i_system.html#ad1eaa1ab64808e38be6fd787244c53de">_timer</a>;</div>
 <div class="line"><span class="lineno">   73</span>        }</div>
-<div class="ttc" id="aclassecstasy_1_1_i_system_html_ad1eaa1ab64808e38be6fd787244c53de"><div class="ttname"><a href="classecstasy_1_1_i_system.html#ad1eaa1ab64808e38be6fd787244c53de">ecstasy::ISystem::_timer</a></div><div class="ttdeci">Timer _timer</div><div class="ttdoc">Timer to control the execution of the system.</div><div class="ttdef"><b>Definition</b> <a href="_i_system_8hpp_source.html#l00077">ISystem.hpp:77</a></div></div>
+<div class="ttc" id="aclassecstasy_1_1_i_system_html_ad1eaa1ab64808e38be6fd787244c53de"><div class="ttname"><a href="classecstasy_1_1_i_system.html#ad1eaa1ab64808e38be6fd787244c53de">ecstasy::ISystem::_timer</a></div><div class="ttdeci">Timer _timer</div><div class="ttdoc">Timer to control the execution of the system.</div><div class="ttdef"><b>Definition</b> <a href="_i_system_8hpp_source.html#l00110">ISystem.hpp:110</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -333,6 +448,32 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a3ac7c31ba401b6f7c1c8277531780204" name="a3ac7c31ba401b6f7c1c8277531780204"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ac7c31ba401b6f7c1c8277531780204">&#9670;&#160;</a></span>_disabled</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ecstasy::ISystem::_disabled = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether the timer is disabled. </p>
+
+<p class="definition">Definition at line <a class="el" href="_i_system_8hpp_source.html#l00112">112</a> of file <a class="el" href="_i_system_8hpp_source.html">ISystem.hpp</a>.</p>
+
+</div>
+</div>
 <a id="ad1eaa1ab64808e38be6fd787244c53de" name="ad1eaa1ab64808e38be6fd787244c53de"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad1eaa1ab64808e38be6fd787244c53de">&#9670;&#160;</a></span>_timer</h2>
 
@@ -355,7 +496,7 @@ Private Attributes</h2></td></tr>
 
 <p><a class="el" href="classecstasy_1_1_timer.html" title="Timer class to control the execution of systems.">Timer</a> to control the execution of the system. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_system_8hpp_source.html#l00077">77</a> of file <a class="el" href="_i_system_8hpp_source.html">ISystem.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_system_8hpp_source.html#l00110">110</a> of file <a class="el" href="_i_system_8hpp_source.html">ISystem.hpp</a>.</p>
 
 </div>
 </div>

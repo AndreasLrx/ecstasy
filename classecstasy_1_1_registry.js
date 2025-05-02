@@ -48,6 +48,7 @@ var classecstasy_1_1_registry =
     [ "getStorageSafe", "classecstasy_1_1_registry.html#a425b11006bbd0b2175d739d64e0ebdaa", null ],
     [ "getSystem", "classecstasy_1_1_registry.html#aba17762b3e392840085dcc7fc48895ac", null ],
     [ "hasResource", "classecstasy_1_1_registry.html#aec79cde823bf51eb899cf5d3a20fd863", null ],
+    [ "hasSystem", "classecstasy_1_1_registry.html#a2bb7b911feec677899a3b99c41c4d509", null ],
     [ "query", "classecstasy_1_1_registry.html#a827c2ce78375ab3c8cd3027f6c531eb6", null ],
     [ "queryEx", "classecstasy_1_1_registry.html#ad2dcff29b1572f42791329d7c18ec35b", null ],
     [ "runSystem", "classecstasy_1_1_registry.html#a59904982ed7490f12c63628951178dd5", null ],

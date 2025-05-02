@@ -78,6 +78,7 @@ var NAVTREE =
         [ "Using conditions", "md_doc_2_tutorial.html#ConditionsTutorial", null ]
       ] ],
       [ "Using systems", "md_doc_2_tutorial.html#using-systems", [
+        [ "Disabling systems", "md_doc_2_tutorial.html#disabling-systems", null ],
         [ "Pipeline", "md_doc_2_tutorial.html#pipeline", null ],
         [ "Timers", "md_doc_2_tutorial.html#timers", [
           [ "Interval", "md_doc_2_tutorial.html#interval", null ],
@@ -185,26 +186,26 @@ var NAVTREEINDEX =
 [
 "01__basic__window_2main_8cpp.html",
 "_serializable_enum_8hpp.html#acd9fbb4df4bc6927538efdd7ab95d7cd",
-"classecstasy_1_1_instances.html#a115ed034917b6bcd3a0a0ab508bceb3e",
-"classecstasy_1_1_registry.html#a8d598f5f47d1a481303a89579a0827f2",
-"classecstasy_1_1_vector_storage.html#a5ade2210e123abff476d4148707b3094",
-"classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html#a7ecca4499ed73261c74918fe1abf96b0",
-"classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3ae902674982fc99aa343cdd94da7476c3",
-"classecstasy_1_1query_1_1_query_implementation_3_01util_1_1meta_1_1_traits_3_01_first_00_01_othe85d7ffd57dbe8185bd42d6b1216253c8.html#a1026ee502720e32309b574deb8348e63",
-"classecstasy_1_1rtti_1_1_type.html#aedaa6265714188d9ec24104fda9cf20f",
-"classecstasy_1_1serialization_1_1_serializer.html#aa8ad6f4c995f7185cbbf3b3100550925",
-"classutil_1_1serialization_1_1_a_node.html#a9cfea3cd840f25d07ad07723e1fc1de2",
-"classutil_1_1serialization_1_1_polymorphic_iterator.html#a668f931c08d101a2b5943d925fe9d4c6",
-"concepts.html",
-"cpp/chrono/c/timespec.html",
-"cpp/io/c/fgetwc.html",
-"cpp/numeric/math/exp.html",
-"cpp/string/wide/wcstof.html",
-"ecstasy_2query_2modifiers_2include_8hpp_source.html",
-"md_doc_2_technical_implementation.html",
-"namespacetoml.html#a5a5b291fdf3ecb9ad8bef4d6e689c402",
-"structecstasy_1_1integration_1_1event_1_1_gamepad_button_released_event.html",
-"structecstasy_1_1queryable__type_3_01_r_01_4.html#a19a90bbae0148beba23b958230c1f885"
+"classecstasy_1_1_i_system.html#a846fe41fa030db2baf8d38a3f640fc0d",
+"classecstasy_1_1_registry.html#a7fa946004fd4ba4c61376adcbaeef69f",
+"classecstasy_1_1_vector_storage.html#a144e9d8e870e653fe72a7825a242af99",
+"classecstasy_1_1integration_1_1event_1_1_key_combination_listener.html#a32ef3fcc1cfb763e508a9ec8e7df0b29",
+"classecstasy_1_1integration_1_1event_1_1_keyboard.html#af7a1ffe443594240aaf7d589a7558fe3ae1dffc8709f31a4987c8a88334107e89",
+"classecstasy_1_1query_1_1_query_implementation.html",
+"classecstasy_1_1rtti_1_1_type.html#a724565e47d77a404886cee67ef7be23d",
+"classecstasy_1_1serialization_1_1_serializer.html#a87d5193febdf4f9e7e694e64b27bd7c6",
+"classutil_1_1serialization_1_1_a_node.html#a558057dbf1e8679d1e970b8fd409d309",
+"classutil_1_1serialization_1_1_polymorphic_iterator.html#a0ce2ae57702ccc7f5c94ecb782f1db78",
+"conceptecstasy_1_1rtti_1_1is__comparable__with__atype.html",
+"cpp/atomic/kill_dependency.html",
+"cpp/filesystem/temp_directory_path.html",
+"cpp/numeric/math/ceil.html",
+"cpp/string/wide/wcslen.html",
+"ecstasy_2integrations_2sfml_2util_2include_8hpp_source.html",
+"md_doc_2_glossary.html#queryable",
+"namespacetoml.html#a2102aa80bc57783d96180f36e1f64f6a",
+"structecstasy_1_1integration_1_1event_1_1_gamepad_button_event.html#a8e530b540784587bd1bdeed040ccdced",
+"structecstasy_1_1queryable__type.html#a88cababc113f9c749d33546c3565a326"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
