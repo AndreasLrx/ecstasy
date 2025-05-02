@@ -85,7 +85,7 @@ namespace ecstasy
     {
         ISystem &system = _systems.get(systemId);
 
-        if (system.getTimer().trigger())
+        if (system.enabled() && system.getTimer().trigger())
             system.run(*this);
     }
 

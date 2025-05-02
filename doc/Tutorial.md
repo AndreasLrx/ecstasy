@@ -433,6 +433,21 @@ registry.runSystem<Movement>();
 registry.runSystems();
 ```
 
+### Disabling systems
+
+If you want to temporary disable a system, you can use the @ref ecstasy::ISystem::disable() "disable()" method.
+
+```cpp
+// Using previous code example
+
+registry.getSystem<Movement>().disable();
+// re enable it with
+registry.getSystem<Movement>().enable();
+
+// And use this to check whether the system is enabled or not
+registry.getSystem<Movement>().enabled();
+```
+
 ### Pipeline
 
 By default systems added with `Registry.addSystem()` run in the registration order. But you can use @ref ecstasy::Pipeline "pipelines" to have a better configuration of your systems run order.
