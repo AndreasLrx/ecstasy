@@ -72,9 +72,44 @@ namespace ecstasy
             return _timer;
         }
 
+        ///
+        /// @brief Whether the system is enabled.
+        ///
+        /// @author Andréas Leroux
+        /// @since 1.0.0 (2025-05-02)
+        ///
+        [[nodiscard]] constexpr bool enabled() const noexcept
+        {
+            return !_disabled;
+        }
+
+        ///
+        /// @brief Disable the system.
+        ///
+        /// @author Andréas Leroux
+        /// @since 1.0.0 (2025-05-02)
+        ///
+        constexpr void disable() noexcept
+        {
+            _disabled = true;
+        }
+
+        ///
+        /// @brief Enable the system.
+        ///
+        /// @author Andréas Leroux
+        /// @since 1.0.0 (2025-05-02)
+        ///
+        constexpr void enable() noexcept
+        {
+            _disabled = false;
+        }
+
       private:
         /// @brief Timer to control the execution of the system.
         Timer _timer;
+        /// @brief Whether the timer is disabled
+        bool _disabled = false;
     };
 } // namespace ecstasy
 

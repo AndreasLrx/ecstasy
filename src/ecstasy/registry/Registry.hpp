@@ -1091,6 +1091,20 @@ namespace ecstasy
         }
 
         ///
+        /// @brief Checks whether there is an instance of system S in the registry.
+        ///
+        /// @tparam S ISystem type.
+        ///
+        /// @author Andréas Leroux
+        /// @since 1.0.0 (2025-05-02)
+        ///
+        template <std::derived_from<ISystem> S>
+        [[nodiscard]] bool hasSystem()
+        {
+            return _systems.contains<S>();
+        }
+
+        ///
         /// @brief Construct a query for the given components.
         ///
         /// @tparam C First component type.
